@@ -1,0 +1,605 @@
+TITLE: Solving quantum mechanical problems with Machine Learning
+AUTHOR: Morten Hjorth-Jensen {copyright, 1999-present|CC BY-NC} at Department of Physics and Astronomy and National Superconducting Cyclotron Laboratory, Michigan State University
+DATE: today 
+
+
+
+!split
+===== Quantum Monte Carlo Motivation =====
+!bblock
+Given a hamiltonian $H$ and a trial wave function $\Psi_T$, the variational principle states that the expectation value of $\langle H \rangle$, defined through 
+!bt
+\[
+   E[H]= \langle H \rangle =
+   \frac{\int d\bm{R}\Psi^{\ast}_T(\bm{R})H(\bm{R})\Psi_T(\bm{R})}
+        {\int d\bm{R}\Psi^{\ast}_T(\bm{R})\Psi_T(\bm{R})},
+\]
+!et
+is an upper bound to the ground state energy $E_0$ of the hamiltonian $H$, that is 
+!bt
+\[
+    E_0 \le \langle H \rangle .
+\]
+!et
+In general, the integrals involved in the calculation of various  expectation values  are multi-dimensional ones. Traditional integration methods such as the Gauss-Legendre will not be adequate for say the  computation of the energy of a many-body system.
+!eblock
+
+
+!split
+===== Quantum Monte Carlo Motivation =====
+!bblock Basic steps
+Choose a trial wave function
+$\psi_T(\bm{R})$.
+!bt
+\[
+   P(\bm{R})= \frac{\left|\psi_T(\bm{R})\right|^2}{\int \left|\psi_T(\bm{R})\right|^2d\bm{R}}.
+\]
+!et
+This is our new probability distribution function  (PDF).
+The approximation to the expectation value of the Hamiltonian is now 
+!bt
+\[
+   E[H(\bm{\alpha})] = 
+   \frac{\int d\bm{R}\Psi^{\ast}_T(\bm{R},\bm{\alpha})H(\bm{R})\Psi_T(\bm{R},\bm{\alpha})}
+        {\int d\bm{R}\Psi^{\ast}_T(\bm{R},\bm{\alpha})\Psi_T(\bm{R},\bm{\alpha})}.
+\]
+!et
+!eblock
+
+
+!split
+===== Quantum Monte Carlo Motivation =====
+!bblock
+Define a new quantity
+!bt
+\[
+   E_L(\bm{R},\bm{\alpha})=\frac{1}{\psi_T(\bm{R},\bm{\alpha})}H\psi_T(\bm{R},\bm{\alpha}),
+\]
+!et
+called the local energy, which, together with our trial PDF yields
+!bt
+\[
+  E[H(\bm{\alpha})]=\int P(\bm{R})E_L(\bm{R}) d\bm{R}\approx \frac{1}{N}\sum_{i=1}^NE_L(\bm{R_i},\bm{\alpha})
+\]
+!et
+with $N$ being the number of Monte Carlo samples.
+!eblock
+
+
+
+
+
+
+
+!split
+===== Quantum Monte Carlo =====
+!bblock
+The Algorithm for performing a variational Monte Carlo calculations runs thus as this
+       
+  *  Initialisation: Fix the number of Monte Carlo steps. Choose an initial $\bm{R}$ and variational parameters $\alpha$ and calculate $\left|\psi_T^{\alpha}(\bm{R})\right|^2$. 
+  *  Initialise the energy and the variance and start the Monte Carlo calculation.
+     *  Calculate  a trial position  $\bm{R}_p=\bm{R}+r*step$ where $r$ is a random variable $r \in [0,1]$.
+     *  Metropolis algorithm to accept or reject this move  $w = P(\bm{R}_p)/P(\bm{R})$.
+     *  If the step is accepted, then we set $\bm{R}=\bm{R}_p$. 
+     *  Update averages
+  *  Finish and compute final averages.
+      
+Observe that the jumping in space is governed by the variable *step*. This is Called brute-force sampling.
+Need importance sampling to get more relevant sampling, see lectures below.
+!eblock
+
+!split
+===== Technicalities of the quantum dot system =====
+
+Here we add details about the quantum dot system
+
+
+!split
+===== The VMC code =====
+
+!bc pycod
+# Importing various packages
+from math import exp, sqrt
+from random import random, seed
+import numpy as np
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+from matplotlib import cm
+from matplotlib.ticker import LinearLocator, FormatStrFormatter
+import sys
+
+#Trial wave function for quantum dots in two dims
+def WaveFunction(r,alpha,beta):
+    argument = 0.0
+    wf = 0.0
+    # standard harmonic oscillator
+    for i in range(NumberParticles):
+        r_single_particle = 0.0
+        for j in range(Dimension):
+            r_single_particle += r[i,j]**2
+        argument += (r_single_particle)
+    wf = exp(-0.5*argument*alpha)
+    #Electron-electron contribution
+    for i1 in range(NumberParticles-1):
+        for i2 in range(i1+1,NumberParticles):
+            r_12 = 0.0
+            for j in range(Dimension):
+                r_12 += (r[i1,j] - r[i2,j])**2
+            wf *= exp(r_12/(1.0+beta*r_12))
+    return wf
+
+#Local energy  for quantum dots in two dims
+def LocalEnergy(r,wf,alpha,beta):
+    
+ #Kinetic energy
+    r_plus = r.copy()
+    r_minus = r.copy()
+    e_kinetic = 0.0
+    for i in range(NumberParticles):
+        for j in range(Dimension):
+            r_plus[i,j] = r[i,j] + h
+            r_minus[i,j] = r[i,j] - h
+            wf_minus = WaveFunction(r_minus,alpha,beta)
+            wf_plus = WaveFunction(r_plus,alpha,beta)
+            e_kinetic -= wf_minus+wf_plus-2*wf;
+            r_plus[i,j] = r[i,j]
+            r_minus[i,j] = r[i,j]
+
+    e_kinetic = .5*h2*e_kinetic/wf
+    
+    #Potential energy
+    e_potential = 0.0
+    
+    #Harmonic oscillator contribution
+    for i in range(NumberParticles):
+        r_single_particle = 0.0
+        for j in range(Dimension):
+            r_single_particle += r[i,j]**2
+        e_potential += 0.5*r_single_particle
+
+    #Electron-electron contribution
+    for i1 in range(NumberParticles-1):
+        for i2 in range(i1+1,NumberParticles):
+            r_12 = 0.0
+            for j in range(Dimension):
+                r_12 += (r[i1,j] - r[i2,j])**2
+            e_potential += 1.0/sqrt(r_12)
+    
+    return e_potential + e_kinetic
+
+# The Monte Carlo sampling with the Metropolis algo
+def MonteCarloSampling():
+
+    NumberMCcycles= 10000
+    StepSize = 1.0
+    # positions
+    PositionOld = np.zeros((NumberParticles,Dimension), np.double)
+    PositionNew = np.zeros((NumberParticles,Dimension), np.double)
+    # seed for rng generator
+    seed()
+    # start variational parameter
+    alpha = 0.9
+    for ia in range(MaxVariations):
+        alpha += .025
+        AlphaValues[ia] = alpha
+        beta = 0.3 
+        for jb in range(MaxVariations):
+            beta += .05
+            BetaValues[jb] = beta
+            energy = energy2 = 0.0
+            DeltaE = 0.0
+            #Initial position
+            for i in range(NumberParticles):
+                for j in range(Dimension):
+                    PositionOld[i,j] = StepSize * (random() - .5)
+            wfold = WaveFunction(PositionOld,alpha,beta)
+
+            #Loop over MC MCcycles
+            for MCcycle in range(NumberMCcycles):
+                #Trial position
+                for i in range(NumberParticles):
+                    for j in range(Dimension):
+                        PositionNew[i,j] = PositionOld[i,j] + StepSize * (random() - .5)
+                wfnew = WaveFunction(PositionNew,alpha,beta)
+
+                #Metropolis test to see whether we accept the move
+                if random() < wfnew**2 / wfold**2:
+                   PositionOld = PositionNew.copy()
+                   wfold = wfnew
+                   DeltaE = LocalEnergy(PositionOld,wfold,alpha,beta)
+                energy += DeltaE
+                energy2 += DeltaE**2
+
+            #We calculate mean, variance and error ...
+            energy /= NumberMCcycles
+            energy2 /= NumberMCcycles
+            variance = energy2 - energy**2
+            error = sqrt(variance/NumberMCcycles)
+            Energies[ia,jb] = energy    
+    return Energies, AlphaValues, BetaValues
+
+
+#Here starts the main program with variable declarations
+h = 0.001
+h2 = 1.0/(h*h)
+NumberParticles = 2
+Dimension = 2
+MaxVariations = 10
+Energies = np.zeros((MaxVariations,MaxVariations))
+AlphaValues = np.zeros(MaxVariations)
+BetaValues = np.zeros(MaxVariations)
+(Energies, AlphaValues, BetaValues) = MonteCarloSampling()
+# Prepare for plots
+fig = plt.figure()
+ax = fig.gca(projection='3d')
+# Plot the surface.
+X, Y = np.meshgrid(AlphaValues, BetaValues)
+surf = ax.plot_surface(X, Y, Energies,cmap=cm.coolwarm,linewidth=0, antialiased=False)
+# Customize the z axis.
+zmin = np.matrix(Energies).min()
+zmax = np.matrix(Energies).max()
+ax.set_zlim(zmin, zmax)
+ax.set_xlabel(r'$\alpha$')
+ax.set_ylabel(r'$\beta$')
+ax.set_zlabel(r'$\langle E \rangle$')
+ax.zaxis.set_major_locator(LinearLocator(10))
+ax.zaxis.set_major_formatter(FormatStrFormatter('%.02f'))
+# Add a color bar which maps values to colors.
+fig.colorbar(surf, shrink=0.5, aspect=5)
+plt.show()
+
+!ec
+
+
+!split
+===== What is Machine Learning? =====
+
+Machine learning is the science of giving computers the ability to learn without being explicitly programmed. 
+The idea is that there exist generic algorithms which can be used to find patterns in a broad class of data sets without 
+having to write code specifically for each problem. The algorithm will build its own logic based on the data.  
+
+Machine learning is a subfield of computer science, and is closely related to computational statistics. 
+It evolved from the study of pattern recognition in artificial intelligence (AI) research, and has made contributions to
+AI tasks like computer vision, natural language processing 
+and speech recognition. It has also, especially in later years, 
+found applications in a wide variety of other areas, including bioinformatics, economy, physics, finance and marketing. 
+
+!split
+===== Types of Machine Learning =====
+
+
+The approaches to machine learning are many, but are often split into two main categories. 
+In *supervised learning* we know the answer to a problem,
+and let the computer deduce the logic behind it. On the other hand, *unsupervised learning*
+is a method for finding patterns and relationship in data sets without any prior knowledge of the system.
+Some authours also operate with a third category, namely *reinforcement learning*. This is a paradigm 
+of learning inspired by behavioural psychology, where learning is achieved by trial-and-error, 
+solely from rewards and punishment.
+
+Another way to categorize machine learning tasks is to consider the desired output of a system.
+Some of the most common tasks are:
+
+  * Classification: Outputs are divided into two or more classes. The goal is to   produce a model that assigns inputs into one of these classes. An example is to identify  digits based on pictures of hand-written ones. Classification is typically supervised learning.
+
+  * Regression: Finding a functional relationship between an input data set and a reference data set.   The goal is to construct a function that maps input data to continuous output values.
+
+  * Clustering: Data are divided into groups with certain common traits, without knowing the different groups beforehand.  It is thus a form of unsupervised learning.
+
+
+!split
+===== Artificial neurons  =====
+The field of artificial neural networks has a long history of development, and is closely connected with 
+the advancement of computer science and computers in general. A model of artificial neurons 
+was first developed by McCulloch and Pitts in 1943  to study signal processing in the brain and 
+has later been refined by others. The general idea is to mimic neural networks in the human brain, which
+is composed of billions of neurons that communicate with each other by sending electrical signals. 
+Each neuron accumulates its incoming signals, 
+which must exceed an activation threshold to yield an output. If the threshold is not overcome, the neuron
+remains inactive, i.e. has zero output.  
+
+This behaviour has inspired a simple mathematical model for an artificial neuron.
+
+!bt
+\begin{equation}
+ y = f\left(\sum_{i=1}^n w_ix_i\right) = f(u)
+ label{artificialNeuron}
+\end{equation}
+!et
+Here, the output $y$ of the neuron is the value of its activation function, which have as input
+a weighted sum of signals $x_i, \dots ,x_n$ received by $n$ other neurons.
+
+!split
+===== Neural network types =====
+
+An artificial neural network (NN), is a computational model that consists of layers of connected neurons, or *nodes*. 
+It is supposed to mimic a biological nervous system by letting each neuron interact with other neurons
+by sending signals in the form of mathematical functions between layers. 
+A wide variety of different NNs have
+been developed, but most of them consist of an input layer, an output layer and eventual layers in-between, called
+*hidden layers*. All layers can contain an arbitrary number of nodes, and each connection between two nodes
+is associated with a weight variable. 
+
+
+
+!split
+===== Boltzmann Machines =====
+
+Why use a generative ("dreaming") model rather than the more well known discirminative deep neural networks (DNN)? 
+
+* Discriminitave methods have several limitations: They are supervised learning methods, thus requiring labeled data. And there are tasks they cannot accomplish, like drawing new examples from an unknown probability distribution.
+
+* A generative model can learn to represent and sample from a probability distribution. The core idea is to learn a parametric model of the probability distribution from which the training data was drawn. As an example
+
+  o A model for images could learn to draw new examples of cats and dogs, given a training dataset of images of cats and dogs.
+  o Generate a sample of an ordered or disordered Ising model phase, having been given samples of such phases.
+  o Model the trial wave function for Monte Carlo calculations
+
+
+!split
+===== Some similarities and differences from DNNs =====
+
+ o Both use gradient-descent based learning procedures for minimizing cost functions
+ o Energy based models don't use backpropagation and automatic differentiation for computing gradients, instead turning to Markov Chain Monte Carlo methods.
+ o DNNs often have several hidden layers. A restricted Boltzmann machine has only one hidden layer, however several RBMs can be stacked to make up Deep Belief Networks, of which they constitute the building blocks.
+
+History: The RBM was developed by amongst others Geoffrey Hinton, called by some the "Godfather of Deep Learning", working with the University of Toronto and Google.
+
+
+!split
+===== The structure of the RBM network =====
+
+FIGURE: [figures/RBM.pdf, width=800 frac=1.0]
+
+
+
+!split
+===== The network =====
+
+_The network layers_:
+  o The function $\mathbf{x}$ represents the visible layer, a vector of $M$ elements (nodes). This layer represents both what the RBM might be given as training input, \textit{and} what we want it to be able to reconstruct. This might for example be the pixels of an image, the spin values of the Ising model, or coefficients representing speech.
+  o The function $\mathbf{h}$ represents the hidden, or latent, layer. A vector of $N$ elements (nodes). Also called "feature detectors".
+
+!split
+===== Goals =====
+
+The goal of the hidden layer is to increase the model's expressive power. We encode complex interactions between visible variables by introducing additional, hidden variables that interact with visible degrees of freedom in a simple manner, yet still reproduce the complex correlations between visible degrees in the data once marginalized over (integrated out).
+
+Examples of this trick being employed in physics: 
+  o The Hubbard-Stratonovich transformation
+  o The introduction of ghost fields in gauge theory
+
+_The network parameters, to be optimized/learned_:
+  o $\mathbf{a}$ represents the visible bias, a vector of same lenght as $\mathbf{x}$.
+  o $\mathbf{b}$ represents the hidden bias, a vector of same lenght as $\mathbf{h}$.
+  o $W$ represents the interaction weights, a matrix of size $M\times N$.
+
+!split
+===== Joint distribution and the Energy function =====
+The restricted Boltzmann machine is described by a Bolztmann distribution
+!bt
+\begin{align}
+	P_{rbm}(\mathbf{x},\mathbf{h}) = \frac{1}{Z} e^{-\frac{1}{T_0}E(\mathbf{x},\mathbf{h})},
+\end{align}
+!et
+where $Z$ is the normalization constant or partition function, defined as 
+!bt
+\begin{align}
+	Z = \int \int e^{-\frac{1}{T_0}E(\mathbf{x},\mathbf{h})} d\mathbf{x} d\mathbf{h}.
+\end{align}
+!et
+It is common to ignore $T_0$ by setting it to one. 
+
+!split
+===== Network Elements =====
+
+The function $E(\mathbf{x},\mathbf{h})$ gives the _energy_ of a
+configuration (pair of vectors) $(\mathbf{x}, \mathbf{h})$. The lower
+the energy of a configuration, the higher the probability of it. This
+function also depends on the parameters $\mathbf{a}$, $\mathbf{b}$ and
+$W$. Thus, when we adjust them during the learning procedure, we are
+adjusting the energy function to best fit our problem.
+
+!split
+===== Defining different types of RBMs =====
+There are different variants of RBMs, and the differences lie in the types of visible and hidden units we choose as well as in the implementation of the energy function $E(\mathbf{x},\mathbf{h})$. 
+
+!bblock Binary-Binary RBM:
+
+RBMs were first developed using binary units in both the visible and hidden layer. The corresponding energy function is defined as follows:
+!bt
+\begin{align}
+	E(\mathbf{x}, \mathbf{h}) = - \sum_i^M x_i a_i- \sum_j^N b_j h_j - \sum_{i,j}^{M,N} x_i w_{ij} h_j,
+\end{align}
+!et
+where the binary values taken on by the nodes are most commonly 0 and 1.
+!eblock
+!bblock Gaussian-Binary RBM:
+
+Another varient is the RBM where the visible units are Gaussian while the hidden units remain binary:
+!bt
+\begin{align}
+	E(\mathbf{x}, \mathbf{h}) = \sum_i^M \frac{(x_i - a_i)^2}{2\sigma_i^2} - \sum_j^N b_j h_j - \sum_{i,j}^{M,N} \frac{x_i w_{ij} h_j}{\sigma_i^2}. 
+\end{align}
+!et
+!eblock
+
+!split
+===== More about RBMs =====
+o Useful when we model continuous data (i.e., we wish $\mathbf{x}$ to be continuous)
+o Requires a smaller learning rate, since there's no upper bound to the value a component might take in the reconstruction
+
+Other types of units include:
+ o Softmax and multinomial units
+ o Gaussian visible and hidden units
+ o Binomial units
+ o Rectified linear units
+
+
+!split
+===== Sampling: Metropolis sampling =====
+In order to sample from the RBM probability distribution it is common to use Markov Chain Monte Carlo (MCMC) algorithms such as Metropolis-Hastings or Gibbs sampling.
+
+
+
+Metropolis sampling starts by suggesting a new configuration $\bm{x}^{k+1}$. In the brute force method this is done by some random change of the visible units. The new configuration is then accepted with the acceptance probability
+!bt
+\begin{align}
+	A(\bm{x}^k \rightarrow \bm{x}^{k+1}) = \text{min} (1, \frac{P(\bm{x}^{k+1})}{P(\bm{x}^k)}),
+\end{align} 
+!et
+where we need the marginalized probability
+!bt
+\begin{align}
+	P(\bm{x})  &= \sum_\mathbf{h} P_{rbm}(\mathbf{x}, \mathbf{h}) \\
+				&= \frac{1}{Z}\sum_\mathbf{h} e^{-E(\mathbf{x}, \mathbf{h})}.
+\end{align}
+!et
+
+!split
+===== Sampling: Gibbs sampling =====
+
+In this method we sample from the joint probability $P_{rbm} (\mathbf{x}, \mathbf{h})$ by way of a two step sampling process. We alternately update the visible and hidden units.
+New samples are generated according to the conditional probabilities $P(x_i|\mathbf{h})$ and $P(h_j|\mathbf{x})$ respectively and accepted with the probability of $1$. While the the visible nodes are dependent on the hidden nodes and vice versa, the nodes are independent of other nodes within the same layer. This is due to there being no intra layer interactions in the restricted Boltzmann machine.
+
+The conditional probabilities are often referred to as the activitation functions in the neural networks context due to their role in determining the node outputs. For the binary-binary RBM they are
+!bt
+\begin{align}
+	P(h_j = 1 | \bm{x}) &= \frac{1}{1 + e^{-b_j - \sum_i x_i w_{ij}}} \\
+	P(x_i = 1 | \bm{h}) &= \frac{1}{1 + e^{-a_j - \sum_j h_j w_{ij}}},
+\end{align}
+!et
+where we recognize the logistic sigmoid function $\sigma (x) = 1/(1+exp(-x))$.
+
+!split
+===== Gaussian RBM =====
+For the Gaussian-Binary RBM the conditional probabilities are
+!bt
+\begin{align}
+	P(x_i|\mathbf{h}) &= \mathcal{N}(x_i; a_i+ \sum_j h_j w_{ij}, \sigma^2) \\
+	P(h_j=1|\mathbf{x}) &=  \frac{1}{1+e^{-b_j-\frac{1}{\sigma^2} \sum_i x_i w_{ij}}},
+\end{align}
+!et
+while the visible units now follow a normal distribution, we see the hidden units again follow the logistic sigmoid function.
+
+!split
+===== Cost function =====
+When working with a training dataset, the most common training approach is maximizing the log-likelihood of the training data. The log likelihood characterizes the log-probability of generating the observed data using our generative model. Using this method our cost function is chosen as the negative log-likelihood. The learning then consists of trying to find parameters that maximize the probability of the dataset, and is known as Maximum Likelihood Estimation (MLE).
+Denoting the parameters as $\bm{\theta} = a_1,...,a_M,b_1,...,b_N,w_{11},...,w_{MN}$, the log-likelihood is given by
+!bt
+\begin{align}
+	\mathcal{L}(\{ \theta_i \}) &= \langle \text{log} P_\theta(\bm{x}) \rangle_{data} \\
+	&= - \langle E(\bm{x}; \{ \theta_i\}) \rangle_{data} - \text{log} Z(\{ \theta_i\}),
+\end{align}
+!et
+where we used that the normalization constant does not depend on the data, $\langle \text{log} Z(\{ \theta_i\}) \rangle = \text{log} Z(\{ \theta_i\})$
+Our cost function is the negative log-likelihood, $\mathcal{C}(\{ \theta_i \}) = - \mathcal{L}(\{ \theta_i \})$
+
+!split
+===== Optimization / Training =====
+The training procedure of choice often is Stochastic Gradient Descent (SGD). It consists of a series of iterations where we update the parameters according to the equation
+!bt
+\begin{align}
+	\bm{\theta}_{k+1} = \bm{\theta}_k - \eta \nabla \mathcal{C} (\bm{\theta}_k)
+\end{align}
+!et
+at each $k$-th iteration. There are a range of variants of the algorithm which aim at making the learning rate $\eta$ more adaptive so the method might be more efficient while remaining stable.
+
+We now need the gradient of the cost function in order to minimize it. We find that
+!bt
+\begin{align}
+	\frac{\partial \mathcal{C}(\{ \theta_i\})}{\partial \theta_i}
+	&= \langle \frac{\partial E(\bm{x}; \theta_i)}{\partial \theta_i} \rangle_{data}
+	+ \frac{\partial \text{log} Z(\{ \theta_i\})}{\partial \theta_i} \\
+	&= \langle O_i(\bm{x}) \rangle_{data} - \langle O_i(\bm{x}) \rangle_{model},
+\end{align}
+!et
+where in order to simplify notation we defined the "operator"
+!bt
+\begin{align}
+	O_i(\bm{x}) = \frac{\partial E(\bm{x}; \theta_i)}{\partial \theta_i}, 
+\end{align}
+!et
+and used the statistical mechanics relationship between expectation values and the log-partition function:
+!bt
+\begin{align}
+	\langle O_i(\bm{x}) \rangle_{model} = \text{Tr} P_\theta(\bm{x})O_i(\bm{x}) = - \frac{\partial \text{log} Z(\{ \theta_i\})}{\partial \theta_i}.
+\end{align}
+!et
+
+!split 
+=====  More on RBMs =====
+The data-dependent term in the gradient is known as the positive phase of the gradient, while the model-dependent term is known as the negative phase of the gradient. The aim of the training is to lower the energy of configurations that are near observed data points (increasing their probability), and raising the energy of configurations that are far from observed data points (decreasing their probability).
+
+The gradient of the negative log-likelihood cost function of a Binary-Binary RBM is then
+!bt
+\begin{align}
+	\frac{\partial \mathcal{C} (w_{ij}, a_i, b_j)}{\partial w_{ij}} =& \langle x_i h_j \rangle_{data} - \langle x_i h_j \rangle_{model} \\
+	\frac{\partial \mathcal{C} (w_{ij}, a_i, b_j)}{\partial a_{ij}} =& \langle x_i \rangle_{data} - \langle x_i \rangle_{model} \\
+	\frac{\partial \mathcal{C} (w_{ij}, a_i, b_j)}{\partial b_{ij}} =& \langle h_i \rangle_{data} - \langle h_i \rangle_{model}. \\
+\end{align}
+!et
+To get the expecation values with respect to the \textit{data}, we set the visible units to each of the observed samples in the training data, then update the hidden units according to the conditional probability found before. We then average over all samples in the training data to calculate expectation values with respect to the data. 
+
+!split
+===== Which sampling to use =====
+To get the expectation values with respect to the \textit{model}, we use Gibbs sampling. We can either initialize the $\bm{x}$ randomly or with a training sample. While we ideally want a large number of Gibbs iterations $n\rightarrow n$, one might decide to truncate it earlier for efficiency. Doing this while having intialized $\bm{x}$ with a training data vector is referred to as contrastive divergence (CD), because one is then closer to approximating the gradient of this function than the negative log-likelihood. The contrastive divergence function is the difference between two Kullback-Leibler divergences (also called relative entropy), which measure how one probability distribution diverges from a second, expected probability distribution (in this case the estimated one from the ground truth one).
+
+!split
+===== RBMs for the quantum many body problem =====
+The idea of applying RBMs to quantum many body problems was presented by G. Carleo and M. Troyer, working with ETH Zurich and Microsoft Research.
+
+Some of their motivation included
+
+* "The wave function $\Psi$ is a monolithic mathematical quantity that contains all the information on a quantum state, be it a single particle or a complex molecule. In principle, an exponential amount of information is needed to fully encode a generic many-body quantum state."
+* There are still interesting open problems, including fundamental questions ranging from the dynamical properties of high-dimensional systems to the exact ground-state properties of strongly interacting fermions.
+* The difficulty lies in finding a general strategy to reduce the exponential complexity of the full many-body wave function down to its most essential features. That is
+ o $\rightarrow$ Dimensional reduction
+ o $\rightarrow$ Feature extraction
+* Among the most successful techniques to attack these challenges, artifical neural networks play a prominent role.
+* Want to understand whether an artifical neural network may adapt to describe a quantum system.
+
+!split
+===== Choose the right RBM ===== 
+
+Carleo and Troyer applied the RBM to the quantum mechanical spin lattice systems of the Ising model and Heisenberg model, with encouraging results. Our goal is to test the method on systems of moving particles. For the spin lattice systems it was natural to use a binary-binary RBM, with the nodes taking values of 1 and -1. For moving particles, on the other hand, we want the visible nodes to be continuous, representing position coordinates. Thus, we start by choosing a Gaussian-binary RBM, where the visible nodes are continuous and hidden nodes take on values of 0 or 1. If eventually we would like the hidden nodes to be continuous as well the rectified linear units seem like the most relevant choice.
+
+!split
+===== Representing the wave function =====
+The wavefunction should be a probability amplitude depending on $\bm{x}$. The RBM model is given by the joint distribution of $\bm{x}$ and $\bm{h}$
+!bt
+\begin{align}
+	F_{rbm}(\mathbf{x},\mathbf{h}) = \frac{1}{Z} e^{-\frac{1}{T_0}E(\mathbf{x},\mathbf{h})}.
+\end{align}
+!et
+To find the marginal distribution of $\bm{x}$ we set:
+!bt
+\begin{align}
+	F_{rbm}(\mathbf{x}) &= \sum_\mathbf{h} F_{rbm}(\mathbf{x}, \mathbf{h}) \\
+				&= \frac{1}{Z}\sum_\mathbf{h} e^{-E(\mathbf{x}, \mathbf{h})}.
+\end{align}
+!et
+Now this is what we use to represent the wave function, calling it a neural-network quantum state (NQS)
+!bt
+\begin{align}
+	\Psi (\mathbf{X}) &= F_{rbm}(\mathbf{x}) \\
+	&= \frac{1}{Z}\sum_{\bm{h}} e^{-E(\mathbf{x}, \mathbf{h})} \\
+	&= \frac{1}{Z} \sum_{\{h_j\}} e^{-\sum_i^M \frac{(x_i - a_i)^2}{2\sigma^2} + \sum_j^N b_j h_j + \sum_{i,j}^{M,N} \frac{x_i w_{ij} h_j}{\sigma^2}} \\
+	&= \frac{1}{Z} e^{-\sum_i^M \frac{(x_i - a_i)^2}{2\sigma^2}} \prod_j^N (1 + e^{b_j + \sum_i^M \frac{x_i w_{ij}}{\sigma^2}}). \\
+\end{align}
+!et
+
+!split
+===== Choose the cost function =====
+Now we don't necessarily have training data (unless we generate it by using some other method). However, what we do have is the variational principle which allows us to obtain the ground state wave function by minimizing the expectation value of the energy of a trial wavefunction (corresponding to the untrained NQS). Similarly to the traditional variational Monte Carlo method then, it is the local energy we wish to minimize. The gradient to use for the stochastic gradient descent procedure is
+!bt
+\begin{align}
+	G_i = \frac{\partial \langle E_L \rangle}{\partial \theta_i}
+	= 2(\langle E_L \frac{1}{\Psi}\frac{\partial \Psi}{\partial \theta_i} \rangle - \langle E_L \rangle \langle \frac{1}{\Psi}\frac{\partial \Psi}{\partial \theta_i} \rangle ),
+\end{align}
+!et
+where the local energy is given by
+!bt
+\begin{align}
+	E_L = \frac{1}{\Psi} \hat{\mathbf{H}} \Psi.
+\end{align}
+!et

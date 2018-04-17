@@ -1,0 +1,4 @@
+running preprocess -DFORMAT=html -DDEVICE=screen  overview.do.txt > tmp_preprocess__overview.do.txt
+running mako on tmp_preprocess__overview.do.txt to make tmp_mako__overview.do.txt
+translating doconce text in tmp_mako__overview.do.txt to html
+output in overview.html

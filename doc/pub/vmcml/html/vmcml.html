@@ -1,0 +1,905 @@
+<!--
+Automatically generated HTML file from DocOnce source
+(https://github.com/hplgit/doconce/)
+-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="DocOnce: https://github.com/hplgit/doconce/" />
+<meta name="description" content="Solving quantum mechanical problems with Machine Learning">
+
+<title>Solving quantum mechanical problems with Machine Learning</title>
+
+
+<style type="text/css">
+/* bloodish style */
+
+body {
+  font-family: Helvetica, Verdana, Arial, Sans-serif;
+  color: #404040;
+  background: #ffffff;
+}
+h1 { font-size: 1.8em;  color: #8A0808; }
+h2 { font-size: 1.6em;  color: #8A0808; }
+h3 { font-size: 1.4em;  color: #8A0808; }
+h4 { color: #8A0808; }
+a { color: #8A0808; text-decoration:none; }
+tt { font-family: "Courier New", Courier; }
+/* pre style removed because it will interfer with pygments */
+p { text-indent: 0px; }
+hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+p.caption { width: 80%; font-style: normal; text-align: left; }
+hr.figure { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+.alert-text-small   { font-size: 80%;  }
+.alert-text-large   { font-size: 130%; }
+.alert-text-normal  { font-size: 90%;  }
+.alert {
+  padding:8px 35px 8px 14px; margin-bottom:18px;
+  text-shadow:0 1px 0 rgba(255,255,255,0.5);
+  border:1px solid #bababa;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  color: #555;
+  background-color: #f8f8f8;
+  background-position: 10px 5px;
+  background-repeat: no-repeat;
+  background-size: 38px;
+  padding-left: 55px;
+  width: 75%;
+ }
+.alert-block {padding-top:14px; padding-bottom:14px}
+.alert-block > p, .alert-block > ul {margin-bottom:1em}
+.alert li {margin-top: 1em}
+.alert-block p+p {margin-top:5px}
+.alert-notice { background-image: url(https://cdn.rawgit.com/hplgit/doconce/master/bundled/html_images/small_gray_notice.png); }
+.alert-summary  { background-image:url(https://cdn.rawgit.com/hplgit/doconce/master/bundled/html_images/small_gray_summary.png); }
+.alert-warning { background-image: url(https://cdn.rawgit.com/hplgit/doconce/master/bundled/html_images/small_gray_warning.png); }
+.alert-question {background-image:url(https://cdn.rawgit.com/hplgit/doconce/master/bundled/html_images/small_gray_question.png); }
+
+div { text-align: justify; text-justify: inter-word; }
+</style>
+
+
+</head>
+
+<!-- tocinfo
+{'highest level': 2,
+ 'sections': [('Quantum Monte Carlo Motivation', 2, None, '___sec0'),
+              ('Quantum Monte Carlo Motivation', 2, None, '___sec1'),
+              ('Quantum Monte Carlo Motivation', 2, None, '___sec2'),
+              ('Quantum Monte Carlo', 2, None, '___sec3'),
+              ('Technicalities of the quantum dot system', 2, None, '___sec4'),
+              ('The VMC code', 2, None, '___sec5'),
+              ('What is Machine Learning?', 2, None, '___sec6'),
+              ('Types of Machine Learning', 2, None, '___sec7'),
+              ('Artificial neurons', 2, None, '___sec8'),
+              ('Neural network types', 2, None, '___sec9'),
+              ('Boltzmann Machines', 2, None, '___sec10'),
+              ('Some similarities and differences from DNNs',
+               2,
+               None,
+               '___sec11'),
+              ('The structure of the RBM network', 2, None, '___sec12'),
+              ('The network', 2, None, '___sec13'),
+              ('Goals', 2, None, '___sec14'),
+              ('Joint distribution and the Energy function',
+               2,
+               None,
+               '___sec15'),
+              ('Network Elements', 2, None, '___sec16'),
+              ('Defining different types of RBMs', 2, None, '___sec17'),
+              ('More about RBMs', 2, None, '___sec18'),
+              ('Sampling: Metropolis sampling', 2, None, '___sec19'),
+              ('Sampling: Gibbs sampling', 2, None, '___sec20'),
+              ('Gaussian RBM', 2, None, '___sec21'),
+              ('Cost function', 2, None, '___sec22'),
+              ('Optimization / Training', 2, None, '___sec23'),
+              ('More on RBMs', 2, None, '___sec24'),
+              ('Which sampling to use', 2, None, '___sec25'),
+              ('RBMs for the quantum many body problem', 2, None, '___sec26'),
+              ('Choose the right RBM', 2, None, '___sec27'),
+              ('Representing the wave function', 2, None, '___sec28'),
+              ('Choose the cost function', 2, None, '___sec29')]}
+end of tocinfo -->
+
+<body>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+     equationNumbers: {  autoNumber: "AMS"  },
+     extensions: ["AMSmath.js", "AMSsymbols.js", "autobold.js", "color.js"]
+  }
+});
+</script>
+<script type="text/javascript" async
+ src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+    
+<!-- ------------------- main content ---------------------- -->
+
+
+
+<center><h1>Solving quantum mechanical problems with Machine Learning</h1></center>  <!-- document title -->
+
+<p>
+<!-- author(s): Morten Hjorth-Jensen -->
+
+<center>
+<b>Morten Hjorth-Jensen</b> 
+</center>
+
+<p>
+<!-- institution -->
+
+<center><b>Department of Physics and Astronomy and National Superconducting Cyclotron Laboratory, Michigan State University</b></center>
+<br>
+<p>
+<center><h4>Apr 17, 2018 </h4></center> <!-- date -->
+<br>
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec0">Quantum Monte Carlo Motivation </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+Given a hamiltonian \( H \) and a trial wave function \( \Psi_T \), the variational principle states that the expectation value of \( \langle H \rangle \), defined through 
+$$
+   E[H]= \langle H \rangle =
+   \frac{\int d\boldsymbol{R}\Psi^{\ast}_T(\boldsymbol{R})H(\boldsymbol{R})\Psi_T(\boldsymbol{R})}
+        {\int d\boldsymbol{R}\Psi^{\ast}_T(\boldsymbol{R})\Psi_T(\boldsymbol{R})},
+$$
+
+is an upper bound to the ground state energy \( E_0 \) of the hamiltonian \( H \), that is 
+$$
+    E_0 \le \langle H \rangle .
+$$
+
+In general, the integrals involved in the calculation of various  expectation values  are multi-dimensional ones. Traditional integration methods such as the Gauss-Legendre will not be adequate for say the  computation of the energy of a many-body system.
+</div>
+
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec1">Quantum Monte Carlo Motivation </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b>Basic steps.</b>
+<p>
+Choose a trial wave function
+\( \psi_T(\boldsymbol{R}) \).
+$$
+   P(\boldsymbol{R})= \frac{\left|\psi_T(\boldsymbol{R})\right|^2}{\int \left|\psi_T(\boldsymbol{R})\right|^2d\boldsymbol{R}}.
+$$
+
+This is our new probability distribution function  (PDF).
+The approximation to the expectation value of the Hamiltonian is now 
+$$
+   E[H(\boldsymbol{\alpha})] = 
+   \frac{\int d\boldsymbol{R}\Psi^{\ast}_T(\boldsymbol{R},\boldsymbol{\alpha})H(\boldsymbol{R})\Psi_T(\boldsymbol{R},\boldsymbol{\alpha})}
+        {\int d\boldsymbol{R}\Psi^{\ast}_T(\boldsymbol{R},\boldsymbol{\alpha})\Psi_T(\boldsymbol{R},\boldsymbol{\alpha})}.
+$$
+</div>
+
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec2">Quantum Monte Carlo Motivation </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+Define a new quantity
+$$
+   E_L(\boldsymbol{R},\boldsymbol{\alpha})=\frac{1}{\psi_T(\boldsymbol{R},\boldsymbol{\alpha})}H\psi_T(\boldsymbol{R},\boldsymbol{\alpha}),
+$$
+
+called the local energy, which, together with our trial PDF yields
+$$
+  E[H(\boldsymbol{\alpha})]=\int P(\boldsymbol{R})E_L(\boldsymbol{R}) d\boldsymbol{R}\approx \frac{1}{N}\sum_{i=1}^NE_L(\boldsymbol{R_i},\boldsymbol{\alpha})
+$$
+
+with \( N \) being the number of Monte Carlo samples.
+</div>
+
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec3">Quantum Monte Carlo </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+The Algorithm for performing a variational Monte Carlo calculations runs thus as this
+
+<ul>
+   <li> Initialisation: Fix the number of Monte Carlo steps. Choose an initial \( \boldsymbol{R} \) and variational parameters \( \alpha \) and calculate \( \left|\psi_T^{\alpha}(\boldsymbol{R})\right|^2 \).</li> 
+   <li> Initialise the energy and the variance and start the Monte Carlo calculation.</li>
+
+<ul>
+      <li> Calculate  a trial position  \( \boldsymbol{R}_p=\boldsymbol{R}+r*step \) where \( r \) is a random variable \( r \in [0,1] \).</li>
+      <li> Metropolis algorithm to accept or reject this move  \( w = P(\boldsymbol{R}_p)/P(\boldsymbol{R}) \).</li>
+      <li> If the step is accepted, then we set \( \boldsymbol{R}=\boldsymbol{R}_p \).</li> 
+      <li> Update averages</li>
+</ul>
+
+   <li> Finish and compute final averages.</li>
+</ul>
+
+Observe that the jumping in space is governed by the variable <em>step</em>. This is Called brute-force sampling.
+Need importance sampling to get more relevant sampling, see lectures below.
+</div>
+
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec4">Technicalities of the quantum dot system </h2>
+
+<p>
+Here we add details about the quantum dot system
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec5">The VMC code </h2>
+
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #408080; font-style: italic"># Importing various packages</span>
+<span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">math</span> <span style="color: #008000; font-weight: bold">import</span> exp, sqrt
+<span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">random</span> <span style="color: #008000; font-weight: bold">import</span> random, seed
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">numpy</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">np</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">matplotlib.pyplot</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">plt</span>
+<span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">mpl_toolkits.mplot3d</span> <span style="color: #008000; font-weight: bold">import</span> Axes3D
+<span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">matplotlib</span> <span style="color: #008000; font-weight: bold">import</span> cm
+<span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">matplotlib.ticker</span> <span style="color: #008000; font-weight: bold">import</span> LinearLocator, FormatStrFormatter
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">sys</span>
+
+<span style="color: #408080; font-style: italic">#Trial wave function for quantum dots in two dims</span>
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">WaveFunction</span>(r,alpha,beta):
+    argument <span style="color: #666666">=</span> <span style="color: #666666">0.0</span>
+    wf <span style="color: #666666">=</span> <span style="color: #666666">0.0</span>
+    <span style="color: #408080; font-style: italic"># standard harmonic oscillator</span>
+    <span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(NumberParticles):
+        r_single_particle <span style="color: #666666">=</span> <span style="color: #666666">0.0</span>
+        <span style="color: #008000; font-weight: bold">for</span> j <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(Dimension):
+            r_single_particle <span style="color: #666666">+=</span> r[i,j]<span style="color: #666666">**2</span>
+        argument <span style="color: #666666">+=</span> (r_single_particle)
+    wf <span style="color: #666666">=</span> exp(<span style="color: #666666">-0.5*</span>argument<span style="color: #666666">*</span>alpha)
+    <span style="color: #408080; font-style: italic">#Electron-electron contribution</span>
+    <span style="color: #008000; font-weight: bold">for</span> i1 <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(NumberParticles<span style="color: #666666">-1</span>):
+        <span style="color: #008000; font-weight: bold">for</span> i2 <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(i1<span style="color: #666666">+1</span>,NumberParticles):
+            r_12 <span style="color: #666666">=</span> <span style="color: #666666">0.0</span>
+            <span style="color: #008000; font-weight: bold">for</span> j <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(Dimension):
+                r_12 <span style="color: #666666">+=</span> (r[i1,j] <span style="color: #666666">-</span> r[i2,j])<span style="color: #666666">**2</span>
+            wf <span style="color: #666666">*=</span> exp(r_12<span style="color: #666666">/</span>(<span style="color: #666666">1.0+</span>beta<span style="color: #666666">*</span>r_12))
+    <span style="color: #008000; font-weight: bold">return</span> wf
+
+<span style="color: #408080; font-style: italic">#Local energy  for quantum dots in two dims</span>
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">LocalEnergy</span>(r,wf,alpha,beta):
+    
+ <span style="color: #408080; font-style: italic">#Kinetic energy</span>
+    r_plus <span style="color: #666666">=</span> r<span style="color: #666666">.</span>copy()
+    r_minus <span style="color: #666666">=</span> r<span style="color: #666666">.</span>copy()
+    e_kinetic <span style="color: #666666">=</span> <span style="color: #666666">0.0</span>
+    <span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(NumberParticles):
+        <span style="color: #008000; font-weight: bold">for</span> j <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(Dimension):
+            r_plus[i,j] <span style="color: #666666">=</span> r[i,j] <span style="color: #666666">+</span> h
+            r_minus[i,j] <span style="color: #666666">=</span> r[i,j] <span style="color: #666666">-</span> h
+            wf_minus <span style="color: #666666">=</span> WaveFunction(r_minus,alpha,beta)
+            wf_plus <span style="color: #666666">=</span> WaveFunction(r_plus,alpha,beta)
+            e_kinetic <span style="color: #666666">-=</span> wf_minus<span style="color: #666666">+</span>wf_plus<span style="color: #666666">-2*</span>wf;
+            r_plus[i,j] <span style="color: #666666">=</span> r[i,j]
+            r_minus[i,j] <span style="color: #666666">=</span> r[i,j]
+
+    e_kinetic <span style="color: #666666">=</span> <span style="color: #666666">.5*</span>h2<span style="color: #666666">*</span>e_kinetic<span style="color: #666666">/</span>wf
+    
+    <span style="color: #408080; font-style: italic">#Potential energy</span>
+    e_potential <span style="color: #666666">=</span> <span style="color: #666666">0.0</span>
+    
+    <span style="color: #408080; font-style: italic">#Harmonic oscillator contribution</span>
+    <span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(NumberParticles):
+        r_single_particle <span style="color: #666666">=</span> <span style="color: #666666">0.0</span>
+        <span style="color: #008000; font-weight: bold">for</span> j <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(Dimension):
+            r_single_particle <span style="color: #666666">+=</span> r[i,j]<span style="color: #666666">**2</span>
+        e_potential <span style="color: #666666">+=</span> <span style="color: #666666">0.5*</span>r_single_particle
+
+    <span style="color: #408080; font-style: italic">#Electron-electron contribution</span>
+    <span style="color: #008000; font-weight: bold">for</span> i1 <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(NumberParticles<span style="color: #666666">-1</span>):
+        <span style="color: #008000; font-weight: bold">for</span> i2 <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(i1<span style="color: #666666">+1</span>,NumberParticles):
+            r_12 <span style="color: #666666">=</span> <span style="color: #666666">0.0</span>
+            <span style="color: #008000; font-weight: bold">for</span> j <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(Dimension):
+                r_12 <span style="color: #666666">+=</span> (r[i1,j] <span style="color: #666666">-</span> r[i2,j])<span style="color: #666666">**2</span>
+            e_potential <span style="color: #666666">+=</span> <span style="color: #666666">1.0/</span>sqrt(r_12)
+    
+    <span style="color: #008000; font-weight: bold">return</span> e_potential <span style="color: #666666">+</span> e_kinetic
+
+<span style="color: #408080; font-style: italic"># The Monte Carlo sampling with the Metropolis algo</span>
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">MonteCarloSampling</span>():
+
+    NumberMCcycles<span style="color: #666666">=</span> <span style="color: #666666">10000</span>
+    StepSize <span style="color: #666666">=</span> <span style="color: #666666">1.0</span>
+    <span style="color: #408080; font-style: italic"># positions</span>
+    PositionOld <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros((NumberParticles,Dimension), np<span style="color: #666666">.</span>double)
+    PositionNew <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros((NumberParticles,Dimension), np<span style="color: #666666">.</span>double)
+    <span style="color: #408080; font-style: italic"># seed for rng generator</span>
+    seed()
+    <span style="color: #408080; font-style: italic"># start variational parameter</span>
+    alpha <span style="color: #666666">=</span> <span style="color: #666666">0.9</span>
+    <span style="color: #008000; font-weight: bold">for</span> ia <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(MaxVariations):
+        alpha <span style="color: #666666">+=</span> <span style="color: #666666">.025</span>
+        AlphaValues[ia] <span style="color: #666666">=</span> alpha
+        beta <span style="color: #666666">=</span> <span style="color: #666666">0.3</span> 
+        <span style="color: #008000; font-weight: bold">for</span> jb <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(MaxVariations):
+            beta <span style="color: #666666">+=</span> <span style="color: #666666">.05</span>
+            BetaValues[jb] <span style="color: #666666">=</span> beta
+            energy <span style="color: #666666">=</span> energy2 <span style="color: #666666">=</span> <span style="color: #666666">0.0</span>
+            DeltaE <span style="color: #666666">=</span> <span style="color: #666666">0.0</span>
+            <span style="color: #408080; font-style: italic">#Initial position</span>
+            <span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(NumberParticles):
+                <span style="color: #008000; font-weight: bold">for</span> j <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(Dimension):
+                    PositionOld[i,j] <span style="color: #666666">=</span> StepSize <span style="color: #666666">*</span> (random() <span style="color: #666666">-</span> <span style="color: #666666">.5</span>)
+            wfold <span style="color: #666666">=</span> WaveFunction(PositionOld,alpha,beta)
+
+            <span style="color: #408080; font-style: italic">#Loop over MC MCcycles</span>
+            <span style="color: #008000; font-weight: bold">for</span> MCcycle <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(NumberMCcycles):
+                <span style="color: #408080; font-style: italic">#Trial position</span>
+                <span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(NumberParticles):
+                    <span style="color: #008000; font-weight: bold">for</span> j <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(Dimension):
+                        PositionNew[i,j] <span style="color: #666666">=</span> PositionOld[i,j] <span style="color: #666666">+</span> StepSize <span style="color: #666666">*</span> (random() <span style="color: #666666">-</span> <span style="color: #666666">.5</span>)
+                wfnew <span style="color: #666666">=</span> WaveFunction(PositionNew,alpha,beta)
+
+                <span style="color: #408080; font-style: italic">#Metropolis test to see whether we accept the move</span>
+                <span style="color: #008000; font-weight: bold">if</span> random() <span style="color: #666666">&lt;</span> wfnew<span style="color: #666666">**2</span> <span style="color: #666666">/</span> wfold<span style="color: #666666">**2</span>:
+                   PositionOld <span style="color: #666666">=</span> PositionNew<span style="color: #666666">.</span>copy()
+                   wfold <span style="color: #666666">=</span> wfnew
+                   DeltaE <span style="color: #666666">=</span> LocalEnergy(PositionOld,wfold,alpha,beta)
+                energy <span style="color: #666666">+=</span> DeltaE
+                energy2 <span style="color: #666666">+=</span> DeltaE<span style="color: #666666">**2</span>
+
+            <span style="color: #408080; font-style: italic">#We calculate mean, variance and error ...</span>
+            energy <span style="color: #666666">/=</span> NumberMCcycles
+            energy2 <span style="color: #666666">/=</span> NumberMCcycles
+            variance <span style="color: #666666">=</span> energy2 <span style="color: #666666">-</span> energy<span style="color: #666666">**2</span>
+            error <span style="color: #666666">=</span> sqrt(variance<span style="color: #666666">/</span>NumberMCcycles)
+            Energies[ia,jb] <span style="color: #666666">=</span> energy    
+    <span style="color: #008000; font-weight: bold">return</span> Energies, AlphaValues, BetaValues
+
+
+<span style="color: #408080; font-style: italic">#Here starts the main program with variable declarations</span>
+h <span style="color: #666666">=</span> <span style="color: #666666">0.001</span>
+h2 <span style="color: #666666">=</span> <span style="color: #666666">1.0/</span>(h<span style="color: #666666">*</span>h)
+NumberParticles <span style="color: #666666">=</span> <span style="color: #666666">2</span>
+Dimension <span style="color: #666666">=</span> <span style="color: #666666">2</span>
+MaxVariations <span style="color: #666666">=</span> <span style="color: #666666">10</span>
+Energies <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros((MaxVariations,MaxVariations))
+AlphaValues <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros(MaxVariations)
+BetaValues <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros(MaxVariations)
+(Energies, AlphaValues, BetaValues) <span style="color: #666666">=</span> MonteCarloSampling()
+<span style="color: #408080; font-style: italic"># Prepare for plots</span>
+fig <span style="color: #666666">=</span> plt<span style="color: #666666">.</span>figure()
+ax <span style="color: #666666">=</span> fig<span style="color: #666666">.</span>gca(projection<span style="color: #666666">=</span><span style="color: #BA2121">&#39;3d&#39;</span>)
+<span style="color: #408080; font-style: italic"># Plot the surface.</span>
+X, Y <span style="color: #666666">=</span> np<span style="color: #666666">.</span>meshgrid(AlphaValues, BetaValues)
+surf <span style="color: #666666">=</span> ax<span style="color: #666666">.</span>plot_surface(X, Y, Energies,cmap<span style="color: #666666">=</span>cm<span style="color: #666666">.</span>coolwarm,linewidth<span style="color: #666666">=0</span>, antialiased<span style="color: #666666">=</span><span style="color: #008000">False</span>)
+<span style="color: #408080; font-style: italic"># Customize the z axis.</span>
+zmin <span style="color: #666666">=</span> np<span style="color: #666666">.</span>matrix(Energies)<span style="color: #666666">.</span>min()
+zmax <span style="color: #666666">=</span> np<span style="color: #666666">.</span>matrix(Energies)<span style="color: #666666">.</span>max()
+ax<span style="color: #666666">.</span>set_zlim(zmin, zmax)
+ax<span style="color: #666666">.</span>set_xlabel(<span style="color: #BA2121">r&#39;$\alpha$&#39;</span>)
+ax<span style="color: #666666">.</span>set_ylabel(<span style="color: #BA2121">r&#39;$\beta$&#39;</span>)
+ax<span style="color: #666666">.</span>set_zlabel(<span style="color: #BA2121">r&#39;$\langle E \rangle$&#39;</span>)
+ax<span style="color: #666666">.</span>zaxis<span style="color: #666666">.</span>set_major_locator(LinearLocator(<span style="color: #666666">10</span>))
+ax<span style="color: #666666">.</span>zaxis<span style="color: #666666">.</span>set_major_formatter(FormatStrFormatter(<span style="color: #BA2121">&#39;</span><span style="color: #BB6688; font-weight: bold">%.02f</span><span style="color: #BA2121">&#39;</span>))
+<span style="color: #408080; font-style: italic"># Add a color bar which maps values to colors.</span>
+fig<span style="color: #666666">.</span>colorbar(surf, shrink<span style="color: #666666">=0.5</span>, aspect<span style="color: #666666">=5</span>)
+plt<span style="color: #666666">.</span>show()
+</pre></div>
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec6">What is Machine Learning? </h2>
+
+<p>
+Machine learning is the science of giving computers the ability to learn without being explicitly programmed. 
+The idea is that there exist generic algorithms which can be used to find patterns in a broad class of data sets without 
+having to write code specifically for each problem. The algorithm will build its own logic based on the data.
+
+<p>
+Machine learning is a subfield of computer science, and is closely related to computational statistics. 
+It evolved from the study of pattern recognition in artificial intelligence (AI) research, and has made contributions to
+AI tasks like computer vision, natural language processing 
+and speech recognition. It has also, especially in later years, 
+found applications in a wide variety of other areas, including bioinformatics, economy, physics, finance and marketing.
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec7">Types of Machine Learning </h2>
+
+<p>
+The approaches to machine learning are many, but are often split into two main categories. 
+In <em>supervised learning</em> we know the answer to a problem,
+and let the computer deduce the logic behind it. On the other hand, <em>unsupervised learning</em>
+is a method for finding patterns and relationship in data sets without any prior knowledge of the system.
+Some authours also operate with a third category, namely <em>reinforcement learning</em>. This is a paradigm 
+of learning inspired by behavioural psychology, where learning is achieved by trial-and-error, 
+solely from rewards and punishment.
+
+<p>
+Another way to categorize machine learning tasks is to consider the desired output of a system.
+Some of the most common tasks are:
+
+<ul>
+  <li> Classification: Outputs are divided into two or more classes. The goal is to   produce a model that assigns inputs into one of these classes. An example is to identify  digits based on pictures of hand-written ones. Classification is typically supervised learning.</li>
+  <li> Regression: Finding a functional relationship between an input data set and a reference data set.   The goal is to construct a function that maps input data to continuous output values.</li>
+  <li> Clustering: Data are divided into groups with certain common traits, without knowing the different groups beforehand.  It is thus a form of unsupervised learning.</li>
+</ul>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec8">Artificial neurons  </h2>
+The field of artificial neural networks has a long history of development, and is closely connected with 
+the advancement of computer science and computers in general. A model of artificial neurons 
+was first developed by McCulloch and Pitts in 1943  to study signal processing in the brain and 
+has later been refined by others. The general idea is to mimic neural networks in the human brain, which
+is composed of billions of neurons that communicate with each other by sending electrical signals. 
+Each neuron accumulates its incoming signals, 
+which must exceed an activation threshold to yield an output. If the threshold is not overcome, the neuron
+remains inactive, i.e. has zero output.
+
+<p>
+This behaviour has inspired a simple mathematical model for an artificial neuron.
+
+$$
+\begin{equation}
+ y = f\left(\sum_{i=1}^n w_ix_i\right) = f(u)
+\label{artificialNeuron}
+\end{equation}
+$$
+
+Here, the output \( y \) of the neuron is the value of its activation function, which have as input
+a weighted sum of signals \( x_i, \dots ,x_n \) received by \( n \) other neurons.
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec9">Neural network types </h2>
+
+<p>
+An artificial neural network (NN), is a computational model that consists of layers of connected neurons, or <em>nodes</em>. 
+It is supposed to mimic a biological nervous system by letting each neuron interact with other neurons
+by sending signals in the form of mathematical functions between layers. 
+A wide variety of different NNs have
+been developed, but most of them consist of an input layer, an output layer and eventual layers in-between, called
+<em>hidden layers</em>. All layers can contain an arbitrary number of nodes, and each connection between two nodes
+is associated with a weight variable.
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec10">Boltzmann Machines </h2>
+
+<p>
+Why use a generative ("dreaming") model rather than the more well known discirminative deep neural networks (DNN)? 
+
+<ul>
+<li> Discriminitave methods have several limitations: They are supervised learning methods, thus requiring labeled data. And there are tasks they cannot accomplish, like drawing new examples from an unknown probability distribution.</li>
+<li> A generative model can learn to represent and sample from a probability distribution. The core idea is to learn a parametric model of the probability distribution from which the training data was drawn. As an example
+
+<ol type="a"></li>
+ <li> A model for images could learn to draw new examples of cats and dogs, given a training dataset of images of cats and dogs.</li>
+ <li> Generate a sample of an ordered or disordered Ising model phase, having been given samples of such phases.</li>
+ <li> Model the trial wave function for Monte Carlo calculations</li>
+</ol>
+
+</ul>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec11">Some similarities and differences from DNNs </h2>
+
+<ol>
+<li> Both use gradient-descent based learning procedures for minimizing cost functions</li>
+<li> Energy based models don't use backpropagation and automatic differentiation for computing gradients, instead turning to Markov Chain Monte Carlo methods.</li>
+<li> DNNs often have several hidden layers. A restricted Boltzmann machine has only one hidden layer, however several RBMs can be stacked to make up Deep Belief Networks, of which they constitute the building blocks.</li>
+</ol>
+
+History: The RBM was developed by amongst others Geoffrey Hinton, called by some the "Godfather of Deep Learning", working with the University of Toronto and Google.
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec12">The structure of the RBM network </h2>
+
+<p>
+<br /><br /><center><p><img src="figures/RBM.png" align="bottom" width=800></p></center><br /><br />
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec13">The network </h2>
+
+<p>
+<b>The network layers</b>:
+
+<ol>
+ <li> The function \( \mathbf{x} \) represents the visible layer, a vector of \( M \) elements (nodes). This layer represents both what the RBM might be given as training input, \textit{and} what we want it to be able to reconstruct. This might for example be the pixels of an image, the spin values of the Ising model, or coefficients representing speech.</li>
+ <li> The function \( \mathbf{h} \) represents the hidden, or latent, layer. A vector of \( N \) elements (nodes). Also called "feature detectors".</li>
+</ol>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec14">Goals </h2>
+
+<p>
+The goal of the hidden layer is to increase the model's expressive power. We encode complex interactions between visible variables by introducing additional, hidden variables that interact with visible degrees of freedom in a simple manner, yet still reproduce the complex correlations between visible degrees in the data once marginalized over (integrated out).
+
+<p>
+Examples of this trick being employed in physics: 
+
+<ol>
+ <li> The Hubbard-Stratonovich transformation</li>
+ <li> The introduction of ghost fields in gauge theory</li>
+</ol>
+
+<b>The network parameters, to be optimized/learned</b>:
+
+<ol>
+ <li> \( \mathbf{a} \) represents the visible bias, a vector of same lenght as \( \mathbf{x} \).</li>
+ <li> \( \mathbf{b} \) represents the hidden bias, a vector of same lenght as \( \mathbf{h} \).</li>
+ <li> \( W \) represents the interaction weights, a matrix of size \( M\times N \).</li>
+</ol>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec15">Joint distribution and the Energy function </h2>
+The restricted Boltzmann machine is described by a Bolztmann distribution
+$$
+\begin{align}
+	P_{rbm}(\mathbf{x},\mathbf{h}) = \frac{1}{Z} e^{-\frac{1}{T_0}E(\mathbf{x},\mathbf{h})},
+\label{_auto1}
+\end{align}
+$$
+
+where \( Z \) is the normalization constant or partition function, defined as 
+$$
+\begin{align}
+	Z = \int \int e^{-\frac{1}{T_0}E(\mathbf{x},\mathbf{h})} d\mathbf{x} d\mathbf{h}.
+\label{_auto2}
+\end{align}
+$$
+
+It is common to ignore \( T_0 \) by setting it to one.
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec16">Network Elements </h2>
+
+<p>
+The function \( E(\mathbf{x},\mathbf{h}) \) gives the <b>energy</b> of a
+configuration (pair of vectors) \( (\mathbf{x}, \mathbf{h}) \). The lower
+the energy of a configuration, the higher the probability of it. This
+function also depends on the parameters \( \mathbf{a} \), \( \mathbf{b} \) and
+\( W \). Thus, when we adjust them during the learning procedure, we are
+adjusting the energy function to best fit our problem.
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec17">Defining different types of RBMs </h2>
+There are different variants of RBMs, and the differences lie in the types of visible and hidden units we choose as well as in the implementation of the energy function \( E(\mathbf{x},\mathbf{h}) \).
+
+<p>
+<div class="alert alert-block alert-block alert-text-normal">
+<b>Binary-Binary RBM:</b>
+<p>
+
+<p>
+RBMs were first developed using binary units in both the visible and hidden layer. The corresponding energy function is defined as follows:
+$$
+\begin{align}
+	E(\mathbf{x}, \mathbf{h}) = - \sum_i^M x_i a_i- \sum_j^N b_j h_j - \sum_{i,j}^{M,N} x_i w_{ij} h_j,
+\label{_auto3}
+\end{align}
+$$
+
+where the binary values taken on by the nodes are most commonly 0 and 1.
+</div>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b>Gaussian-Binary RBM:</b>
+<p>
+
+<p>
+Another varient is the RBM where the visible units are Gaussian while the hidden units remain binary:
+$$
+\begin{align}
+	E(\mathbf{x}, \mathbf{h}) = \sum_i^M \frac{(x_i - a_i)^2}{2\sigma_i^2} - \sum_j^N b_j h_j - \sum_{i,j}^{M,N} \frac{x_i w_{ij} h_j}{\sigma_i^2}. 
+\label{_auto4}
+\end{align}
+$$
+</div>
+
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec18">More about RBMs </h2>
+
+<ol>
+<li> Useful when we model continuous data (i.e., we wish \( \mathbf{x} \) to be continuous)</li>
+<li> Requires a smaller learning rate, since there's no upper bound to the value a component might take in the reconstruction</li>
+</ol>
+
+Other types of units include:
+
+<ol>
+<li> Softmax and multinomial units</li>
+<li> Gaussian visible and hidden units</li>
+<li> Binomial units</li>
+<li> Rectified linear units</li>
+</ol>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec19">Sampling: Metropolis sampling </h2>
+In order to sample from the RBM probability distribution it is common to use Markov Chain Monte Carlo (MCMC) algorithms such as Metropolis-Hastings or Gibbs sampling.
+
+<p>
+Metropolis sampling starts by suggesting a new configuration \( \boldsymbol{x}^{k+1} \). In the brute force method this is done by some random change of the visible units. The new configuration is then accepted with the acceptance probability
+$$
+\begin{align}
+	A(\boldsymbol{x}^k \rightarrow \boldsymbol{x}^{k+1}) = \text{min} (1, \frac{P(\boldsymbol{x}^{k+1})}{P(\boldsymbol{x}^k)}),
+\label{_auto5}
+\end{align} 
+$$
+
+where we need the marginalized probability
+$$
+\begin{align}
+	P(\boldsymbol{x})  &= \sum_\mathbf{h} P_{rbm}(\mathbf{x}, \mathbf{h}) 
+\label{_auto6}\\
+				&= \frac{1}{Z}\sum_\mathbf{h} e^{-E(\mathbf{x}, \mathbf{h})}.
+\label{_auto7}
+\end{align}
+$$
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec20">Sampling: Gibbs sampling </h2>
+
+<p>
+In this method we sample from the joint probability \( P_{rbm} (\mathbf{x}, \mathbf{h}) \) by way of a two step sampling process. We alternately update the visible and hidden units.
+New samples are generated according to the conditional probabilities \( P(x_i|\mathbf{h}) \) and \( P(h_j|\mathbf{x}) \) respectively and accepted with the probability of \( 1 \). While the the visible nodes are dependent on the hidden nodes and vice versa, the nodes are independent of other nodes within the same layer. This is due to there being no intra layer interactions in the restricted Boltzmann machine.
+
+<p>
+The conditional probabilities are often referred to as the activitation functions in the neural networks context due to their role in determining the node outputs. For the binary-binary RBM they are
+$$
+\begin{align}
+	P(h_j = 1 | \boldsymbol{x}) &= \frac{1}{1 + e^{-b_j - \sum_i x_i w_{ij}}} 
+\label{_auto8}\\
+	P(x_i = 1 | \boldsymbol{h}) &= \frac{1}{1 + e^{-a_j - \sum_j h_j w_{ij}}},
+\label{_auto9}
+\end{align}
+$$
+
+where we recognize the logistic sigmoid function \( \sigma (x) = 1/(1+exp(-x)) \).
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec21">Gaussian RBM </h2>
+For the Gaussian-Binary RBM the conditional probabilities are
+$$
+\begin{align}
+	P(x_i|\mathbf{h}) &= \mathcal{N}(x_i; a_i+ \sum_j h_j w_{ij}, \sigma^2) 
+\label{_auto10}\\
+	P(h_j=1|\mathbf{x}) &=  \frac{1}{1+e^{-b_j-\frac{1}{\sigma^2} \sum_i x_i w_{ij}}},
+\label{_auto11}
+\end{align}
+$$
+
+while the visible units now follow a normal distribution, we see the hidden units again follow the logistic sigmoid function.
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec22">Cost function </h2>
+When working with a training dataset, the most common training approach is maximizing the log-likelihood of the training data. The log likelihood characterizes the log-probability of generating the observed data using our generative model. Using this method our cost function is chosen as the negative log-likelihood. The learning then consists of trying to find parameters that maximize the probability of the dataset, and is known as Maximum Likelihood Estimation (MLE).
+Denoting the parameters as \( \boldsymbol{\theta} = a_1,...,a_M,b_1,...,b_N,w_{11},...,w_{MN} \), the log-likelihood is given by
+$$
+\begin{align}
+	\mathcal{L}(\{ \theta_i \}) &= \langle \text{log} P_\theta(\boldsymbol{x}) \rangle_{data} 
+\label{_auto12}\\
+	&= - \langle E(\boldsymbol{x}; \{ \theta_i\}) \rangle_{data} - \text{log} Z(\{ \theta_i\}),
+\label{_auto13}
+\end{align}
+$$
+
+where we used that the normalization constant does not depend on the data, \( \langle \text{log} Z(\{ \theta_i\}) \rangle = \text{log} Z(\{ \theta_i\}) \)
+Our cost function is the negative log-likelihood, \( \mathcal{C}(\{ \theta_i \}) = - \mathcal{L}(\{ \theta_i \}) \)
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec23">Optimization / Training </h2>
+The training procedure of choice often is Stochastic Gradient Descent (SGD). It consists of a series of iterations where we update the parameters according to the equation
+$$
+\begin{align}
+	\boldsymbol{\theta}_{k+1} = \boldsymbol{\theta}_k - \eta \nabla \mathcal{C} (\boldsymbol{\theta}_k)
+\label{_auto14}
+\end{align}
+$$
+
+at each \( k \)-th iteration. There are a range of variants of the algorithm which aim at making the learning rate \( \eta \) more adaptive so the method might be more efficient while remaining stable.
+
+<p>
+We now need the gradient of the cost function in order to minimize it. We find that
+$$
+\begin{align}
+	\frac{\partial \mathcal{C}(\{ \theta_i\})}{\partial \theta_i}
+	&= \langle \frac{\partial E(\boldsymbol{x}; \theta_i)}{\partial \theta_i} \rangle_{data}
+	+ \frac{\partial \text{log} Z(\{ \theta_i\})}{\partial \theta_i} 
+\label{_auto15}\\
+	&= \langle O_i(\boldsymbol{x}) \rangle_{data} - \langle O_i(\boldsymbol{x}) \rangle_{model},
+\label{_auto16}
+\end{align}
+$$
+
+where in order to simplify notation we defined the "operator"
+$$
+\begin{align}
+	O_i(\boldsymbol{x}) = \frac{\partial E(\boldsymbol{x}; \theta_i)}{\partial \theta_i}, 
+\label{_auto17}
+\end{align}
+$$
+
+and used the statistical mechanics relationship between expectation values and the log-partition function:
+$$
+\begin{align}
+	\langle O_i(\boldsymbol{x}) \rangle_{model} = \text{Tr} P_\theta(\boldsymbol{x})O_i(\boldsymbol{x}) = - \frac{\partial \text{log} Z(\{ \theta_i\})}{\partial \theta_i}.
+\label{_auto18}
+\end{align}
+$$
+
+<p>
+<!-- !split  -->
+
+<h2 id="___sec24">More on RBMs </h2>
+The data-dependent term in the gradient is known as the positive phase of the gradient, while the model-dependent term is known as the negative phase of the gradient. The aim of the training is to lower the energy of configurations that are near observed data points (increasing their probability), and raising the energy of configurations that are far from observed data points (decreasing their probability).
+
+<p>
+The gradient of the negative log-likelihood cost function of a Binary-Binary RBM is then
+$$
+\begin{align}
+	\frac{\partial \mathcal{C} (w_{ij}, a_i, b_j)}{\partial w_{ij}} =& \langle x_i h_j \rangle_{data} - \langle x_i h_j \rangle_{model} 
+\label{_auto19}\\
+	\frac{\partial \mathcal{C} (w_{ij}, a_i, b_j)}{\partial a_{ij}} =& \langle x_i \rangle_{data} - \langle x_i \rangle_{model} 
+\label{_auto20}\\
+	\frac{\partial \mathcal{C} (w_{ij}, a_i, b_j)}{\partial b_{ij}} =& \langle h_i \rangle_{data} - \langle h_i \rangle_{model}. 
+\label{_auto21}\\
+\label{_auto22}
+\end{align}
+$$
+
+To get the expecation values with respect to the \textit{data}, we set the visible units to each of the observed samples in the training data, then update the hidden units according to the conditional probability found before. We then average over all samples in the training data to calculate expectation values with respect to the data.
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec25">Which sampling to use </h2>
+To get the expectation values with respect to the \textit{model}, we use Gibbs sampling. We can either initialize the \( \boldsymbol{x} \) randomly or with a training sample. While we ideally want a large number of Gibbs iterations \( n\rightarrow n \), one might decide to truncate it earlier for efficiency. Doing this while having intialized \( \boldsymbol{x} \) with a training data vector is referred to as contrastive divergence (CD), because one is then closer to approximating the gradient of this function than the negative log-likelihood. The contrastive divergence function is the difference between two Kullback-Leibler divergences (also called relative entropy), which measure how one probability distribution diverges from a second, expected probability distribution (in this case the estimated one from the ground truth one).
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec26">RBMs for the quantum many body problem </h2>
+The idea of applying RBMs to quantum many body problems was presented by G. Carleo and M. Troyer, working with ETH Zurich and Microsoft Research.
+
+<p>
+Some of their motivation included
+
+<ul>
+<li> "The wave function \( \Psi \) is a monolithic mathematical quantity that contains all the information on a quantum state, be it a single particle or a complex molecule. In principle, an exponential amount of information is needed to fully encode a generic many-body quantum state."</li>
+<li> There are still interesting open problems, including fundamental questions ranging from the dynamical properties of high-dimensional systems to the exact ground-state properties of strongly interacting fermions.</li>
+<li> The difficulty lies in finding a general strategy to reduce the exponential complexity of the full many-body wave function down to its most essential features. That is
+
+<ol type="a"></li>
+<li> \( \rightarrow \) Dimensional reduction</li>
+<li> \( \rightarrow \) Feature extraction</li>
+</ol>
+
+<li> Among the most successful techniques to attack these challenges, artifical neural networks play a prominent role.</li>
+<li> Want to understand whether an artifical neural network may adapt to describe a quantum system.</li>
+</ul>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec27">Choose the right RBM </h2>
+
+<p>
+Carleo and Troyer applied the RBM to the quantum mechanical spin lattice systems of the Ising model and Heisenberg model, with encouraging results. Our goal is to test the method on systems of moving particles. For the spin lattice systems it was natural to use a binary-binary RBM, with the nodes taking values of 1 and -1. For moving particles, on the other hand, we want the visible nodes to be continuous, representing position coordinates. Thus, we start by choosing a Gaussian-binary RBM, where the visible nodes are continuous and hidden nodes take on values of 0 or 1. If eventually we would like the hidden nodes to be continuous as well the rectified linear units seem like the most relevant choice.
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec28">Representing the wave function </h2>
+The wavefunction should be a probability amplitude depending on \( \boldsymbol{x} \). The RBM model is given by the joint distribution of \( \boldsymbol{x} \) and \( \boldsymbol{h} \)
+$$
+\begin{align}
+	F_{rbm}(\mathbf{x},\mathbf{h}) = \frac{1}{Z} e^{-\frac{1}{T_0}E(\mathbf{x},\mathbf{h})}.
+\label{_auto23}
+\end{align}
+$$
+
+To find the marginal distribution of \( \boldsymbol{x} \) we set:
+$$
+\begin{align}
+	F_{rbm}(\mathbf{x}) &= \sum_\mathbf{h} F_{rbm}(\mathbf{x}, \mathbf{h}) 
+\label{_auto24}\\
+				&= \frac{1}{Z}\sum_\mathbf{h} e^{-E(\mathbf{x}, \mathbf{h})}.
+\label{_auto25}
+\end{align}
+$$
+
+Now this is what we use to represent the wave function, calling it a neural-network quantum state (NQS)
+$$
+\begin{align}
+	\Psi (\mathbf{X}) &= F_{rbm}(\mathbf{x}) 
+\label{_auto26}\\
+	&= \frac{1}{Z}\sum_{\boldsymbol{h}} e^{-E(\mathbf{x}, \mathbf{h})} 
+\label{_auto27}\\
+	&= \frac{1}{Z} \sum_{\{h_j\}} e^{-\sum_i^M \frac{(x_i - a_i)^2}{2\sigma^2} + \sum_j^N b_j h_j + \sum_{i,j}^{M,N} \frac{x_i w_{ij} h_j}{\sigma^2}} 
+\label{_auto28}\\
+	&= \frac{1}{Z} e^{-\sum_i^M \frac{(x_i - a_i)^2}{2\sigma^2}} \prod_j^N (1 + e^{b_j + \sum_i^M \frac{x_i w_{ij}}{\sigma^2}}). 
+\label{_auto29}\\
+\label{_auto30}
+\end{align}
+$$
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec29">Choose the cost function </h2>
+Now we don't necessarily have training data (unless we generate it by using some other method). However, what we do have is the variational principle which allows us to obtain the ground state wave function by minimizing the expectation value of the energy of a trial wavefunction (corresponding to the untrained NQS). Similarly to the traditional variational Monte Carlo method then, it is the local energy we wish to minimize. The gradient to use for the stochastic gradient descent procedure is
+$$
+\begin{align}
+	G_i = \frac{\partial \langle E_L \rangle}{\partial \theta_i}
+	= 2(\langle E_L \frac{1}{\Psi}\frac{\partial \Psi}{\partial \theta_i} \rangle - \langle E_L \rangle \langle \frac{1}{\Psi}\frac{\partial \Psi}{\partial \theta_i} \rangle ),
+\label{_auto31}
+\end{align}
+$$
+
+where the local energy is given by
+$$
+\begin{align}
+	E_L = \frac{1}{\Psi} \hat{\mathbf{H}} \Psi.
+\label{_auto32}
+\end{align}
+$$
+
+
+<!-- ------------------- end of main content --------------- -->
+
+
+<center style="font-size:80%">
+<!-- copyright --> &copy; 1999-2018, Morten Hjorth-Jensen. Released under CC Attribution-NonCommercial 4.0 license
+</center>
+
+
+</body>
+</html>
+    
+
