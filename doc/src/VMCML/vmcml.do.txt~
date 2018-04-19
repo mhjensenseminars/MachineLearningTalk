@@ -2,106 +2,6 @@ TITLE: Solving quantum mechanical problems with Machine Learning
 AUTHOR: Morten Hjorth-Jensen {copyright, 1999-present|CC BY-NC} at Department of Physics and Astronomy and National Superconducting Cyclotron Laboratory, Michigan State University
 DATE: today 
 
-!split
-===== What is Machine Learning? =====
-
-Machine learning is the science of giving computers the ability to
-learn without being explicitly programmed.  The idea is that there
-exist generic algorithms which can be used to find patterns in a broad
-class of data sets without having to write code specifically for each
-problem. The algorithm will build its own logic based on the data.
-
-Machine learning is a subfield of computer science, and is closely
-related to computational statistics.  It evolved from the study of
-pattern recognition in artificial intelligence (AI) research, and has
-made contributions to AI tasks like computer vision, natural language
-processing and speech recognition. It has also, especially in later
-years, found applications in a wide variety of other areas, including
-bioinformatics, economy, physics, finance and marketing.
-
-!split
-===== Types of Machine Learning =====
-
-
-The approaches to machine learning are many, but are often split into two main categories. 
-In *supervised learning* we know the answer to a problem,
-and let the computer deduce the logic behind it. On the other hand, *unsupervised learning*
-is a method for finding patterns and relationship in data sets without any prior knowledge of the system.
-Some authours also operate with a third category, namely *reinforcement learning*. This is a paradigm 
-of learning inspired by behavioural psychology, where learning is achieved by trial-and-error, 
-solely from rewards and punishment.
-
-Another way to categorize machine learning tasks is to consider the desired output of a system.
-Some of the most common tasks are:
-
-  * Classification: Outputs are divided into two or more classes. The goal is to   produce a model that assigns inputs into one of these classes. An example is to identify  digits based on pictures of hand-written ones. Classification is typically supervised learning.
-
-  * Regression: Finding a functional relationship between an input data set and a reference data set.   The goal is to construct a function that maps input data to continuous output values.
-
-  * Clustering: Data are divided into groups with certain common traits, without knowing the different groups beforehand.  It is thus a form of unsupervised learning.
-
-
-!split
-===== Artificial neurons  =====
-
-The field of artificial neural networks has a long history of
-development, and is closely connected with the advancement of computer
-science and computers in general. A model of artificial neurons was
-first developed by McCulloch and Pitts in 1943 to study signal
-processing in the brain and has later been refined by others. The
-general idea is to mimic neural networks in the human brain, which is
-composed of billions of neurons that communicate with each other by
-sending electrical signals.  Each neuron accumulates its incoming
-signals, which must exceed an activation threshold to yield an
-output. If the threshold is not overcome, the neuron remains inactive,
-i.e. has zero output.
-
-This behaviour has inspired a simple mathematical model for an artificial neuron.
-
-!bt
-\begin{equation}
- y = f\left(\sum_{i=1}^n w_ix_i\right) = f(u)
- label{artificialNeuron}
-\end{equation}
-!et
-Here, the output $y$ of the neuron is the value of its activation function, which have as input
-a weighted sum of signals $x_i, \dots ,x_n$ received by $n$ other neurons.
-
-!split
-===== add figure =====
-
-* Have figure for neural net
-!split
-===== Neural network types =====
-
-An artificial neural network (NN), is a computational model that consists of layers of connected neurons, or *nodes*. 
-It is supposed to mimic a biological nervous system by letting each neuron interact with other neurons
-by sending signals in the form of mathematical functions between layers. 
-A wide variety of different NNs have
-been developed, but most of them consist of an input layer, an output layer and eventual layers in-between, called
-*hidden layers*. All layers can contain an arbitrary number of nodes, and each connection between two nodes
-is associated with a weight variable. 
-
-* make a meaningful figure
-
-
-!split
-=====  More on ML =====
-
-* add references, Piekarewicz, Mehta et al, Murphy
-* own lecture notes in machine learning
-* list various methods on machine learning
-
-!split
-===== Add about quantum dots as system and why =====
-
-* mention taut's articles and set up system with trial wf. 
-* have figure of quantum dot potential 
-* set up hamiltonian
-* Motivate why we do this when we cna compute things so well as we do now
-* give links to codes and slides
-* list how to compile c++ codes
-* have c++ code in c++ for vmc as well, together with c++ for ML
 
 
 !split
@@ -207,42 +107,70 @@ from mpl_toolkits.mplot3d import Axes3D
 from matplotlib import cm
 from matplotlib.ticker import LinearLocator, FormatStrFormatter
 import sys
-from numba import jit
-
-
-
-#Read name of output file from command line
-if len(sys.argv) == 2:
-    outfilename = sys.argv[1]
-else:
-    print('\nError: Name of output file must be given as command line argument.\n')
-outfile = open(outfilename,'w')
 
 #Trial wave function for quantum dots in two dims
 def WaveFunction(r,alpha,beta):
-    r1 = r[0,0]**2 + r[0,1]**2
-    r2 = r[1,0]**2 + r[1,1]**2
-    r12 = sqrt((r[0,0]-r[1,0])**2 + (r[0,1]-r[1,1])**2)
-    deno = r12/(1+beta*r12)
-    return exp(-0.5*alpha*(r1+r2)+deno)
+    argument = 0.0
+    wf = 0.0
+    # standard harmonic oscillator
+    for i in range(NumberParticles):
+        r_single_particle = 0.0
+        for j in range(Dimension):
+            r_single_particle += r[i,j]**2
+        argument += (r_single_particle)
+    wf = exp(-0.5*argument*alpha)
+    #Electron-electron contribution
+    for i1 in range(NumberParticles-1):
+        for i2 in range(i1+1,NumberParticles):
+            r_12 = 0.0
+            for j in range(Dimension):
+                r_12 += (r[i1,j] - r[i2,j])**2
+            wf *= exp(r_12/(1.0+beta*r_12))
+    return wf
 
-#Local energy  for quantum dots in two dims, using analytical local energy
-def LocalEnergy(r,alpha,beta):
+#Local energy  for quantum dots in two dims
+def LocalEnergy(r,wf,alpha,beta):
     
-    r1 = (r[0,0]**2 + r[0,1]**2)
-    r2 = (r[1,0]**2 + r[1,1]**2)
-    r12 = sqrt((r[0,0]-r[1,0])**2 + (r[0,1]-r[1,1])**2)
-    deno = 1.0/(1+beta*r12)
-    deno2 = deno*deno
-    return 0.5*(1-alpha*alpha)*(r1 + r2) +2.0*alpha + 1.0/r12+deno2*(alpha*r12-deno2+2*beta*deno-1.0/r12)
+ #Kinetic energy
+    r_plus = r.copy()
+    r_minus = r.copy()
+    e_kinetic = 0.0
+    for i in range(NumberParticles):
+        for j in range(Dimension):
+            r_plus[i,j] = r[i,j] + h
+            r_minus[i,j] = r[i,j] - h
+            wf_minus = WaveFunction(r_minus,alpha,beta)
+            wf_plus = WaveFunction(r_plus,alpha,beta)
+            e_kinetic -= wf_minus+wf_plus-2*wf;
+            r_plus[i,j] = r[i,j]
+            r_minus[i,j] = r[i,j]
+
+    e_kinetic = .5*h2*e_kinetic/wf
+    
+    #Potential energy
+    e_potential = 0.0
+    
+    #Harmonic oscillator contribution
+    for i in range(NumberParticles):
+        r_single_particle = 0.0
+        for j in range(Dimension):
+            r_single_particle += r[i,j]**2
+        e_potential += 0.5*r_single_particle
+
+    #Electron-electron contribution
+    for i1 in range(NumberParticles-1):
+        for i2 in range(i1+1,NumberParticles):
+            r_12 = 0.0
+            for j in range(Dimension):
+                r_12 += (r[i1,j] - r[i2,j])**2
+            e_potential += 1.0/sqrt(r_12)
+    
+    return e_potential + e_kinetic
 
 # The Monte Carlo sampling with the Metropolis algo
-# jit decorator tells Numba to compile this function.
-# The argument types will be inferred by Numba when function is called.
-@jit
 def MonteCarloSampling():
 
-    NumberMCcycles= 100000
+    NumberMCcycles= 10000
     StepSize = 1.0
     # positions
     PositionOld = np.zeros((NumberParticles,Dimension), np.double)
@@ -254,9 +182,9 @@ def MonteCarloSampling():
     for ia in range(MaxVariations):
         alpha += .025
         AlphaValues[ia] = alpha
-        beta = 0.2 
+        beta = 0.3 
         for jb in range(MaxVariations):
-            beta += .01
+            beta += .05
             BetaValues[jb] = beta
             energy = energy2 = 0.0
             DeltaE = 0.0
@@ -278,7 +206,7 @@ def MonteCarloSampling():
                 if random() < wfnew**2 / wfold**2:
                    PositionOld = PositionNew.copy()
                    wfold = wfnew
-                   DeltaE = LocalEnergy(PositionOld,alpha,beta)
+                   DeltaE = LocalEnergy(PositionOld,wfold,alpha,beta)
                 energy += DeltaE
                 energy2 += DeltaE**2
 
@@ -288,19 +216,19 @@ def MonteCarloSampling():
             variance = energy2 - energy**2
             error = sqrt(variance/NumberMCcycles)
             Energies[ia,jb] = energy    
-            outfile.write('%f %f %f %f %f\n' %(alpha,beta,energy,variance,error))
     return Energies, AlphaValues, BetaValues
 
 
 #Here starts the main program with variable declarations
+h = 0.001
+h2 = 1.0/(h*h)
 NumberParticles = 2
-Dimension = 3
+Dimension = 2
 MaxVariations = 10
 Energies = np.zeros((MaxVariations,MaxVariations))
 AlphaValues = np.zeros(MaxVariations)
 BetaValues = np.zeros(MaxVariations)
 (Energies, AlphaValues, BetaValues) = MonteCarloSampling()
-outfile.close()
 # Prepare for plots
 fig = plt.figure()
 ax = fig.gca(projection='3d')
@@ -322,6 +250,74 @@ plt.show()
 
 !ec
 
+
+!split
+===== What is Machine Learning? =====
+
+Machine learning is the science of giving computers the ability to learn without being explicitly programmed. 
+The idea is that there exist generic algorithms which can be used to find patterns in a broad class of data sets without 
+having to write code specifically for each problem. The algorithm will build its own logic based on the data.  
+
+Machine learning is a subfield of computer science, and is closely related to computational statistics. 
+It evolved from the study of pattern recognition in artificial intelligence (AI) research, and has made contributions to
+AI tasks like computer vision, natural language processing 
+and speech recognition. It has also, especially in later years, 
+found applications in a wide variety of other areas, including bioinformatics, economy, physics, finance and marketing. 
+
+!split
+===== Types of Machine Learning =====
+
+
+The approaches to machine learning are many, but are often split into two main categories. 
+In *supervised learning* we know the answer to a problem,
+and let the computer deduce the logic behind it. On the other hand, *unsupervised learning*
+is a method for finding patterns and relationship in data sets without any prior knowledge of the system.
+Some authours also operate with a third category, namely *reinforcement learning*. This is a paradigm 
+of learning inspired by behavioural psychology, where learning is achieved by trial-and-error, 
+solely from rewards and punishment.
+
+Another way to categorize machine learning tasks is to consider the desired output of a system.
+Some of the most common tasks are:
+
+  * Classification: Outputs are divided into two or more classes. The goal is to   produce a model that assigns inputs into one of these classes. An example is to identify  digits based on pictures of hand-written ones. Classification is typically supervised learning.
+
+  * Regression: Finding a functional relationship between an input data set and a reference data set.   The goal is to construct a function that maps input data to continuous output values.
+
+  * Clustering: Data are divided into groups with certain common traits, without knowing the different groups beforehand.  It is thus a form of unsupervised learning.
+
+
+!split
+===== Artificial neurons  =====
+The field of artificial neural networks has a long history of development, and is closely connected with 
+the advancement of computer science and computers in general. A model of artificial neurons 
+was first developed by McCulloch and Pitts in 1943  to study signal processing in the brain and 
+has later been refined by others. The general idea is to mimic neural networks in the human brain, which
+is composed of billions of neurons that communicate with each other by sending electrical signals. 
+Each neuron accumulates its incoming signals, 
+which must exceed an activation threshold to yield an output. If the threshold is not overcome, the neuron
+remains inactive, i.e. has zero output.  
+
+This behaviour has inspired a simple mathematical model for an artificial neuron.
+
+!bt
+\begin{equation}
+ y = f\left(\sum_{i=1}^n w_ix_i\right) = f(u)
+ label{artificialNeuron}
+\end{equation}
+!et
+Here, the output $y$ of the neuron is the value of its activation function, which have as input
+a weighted sum of signals $x_i, \dots ,x_n$ received by $n$ other neurons.
+
+!split
+===== Neural network types =====
+
+An artificial neural network (NN), is a computational model that consists of layers of connected neurons, or *nodes*. 
+It is supposed to mimic a biological nervous system by letting each neuron interact with other neurons
+by sending signals in the form of mathematical functions between layers. 
+A wide variety of different NNs have
+been developed, but most of them consist of an input layer, an output layer and eventual layers in-between, called
+*hidden layers*. All layers can contain an arbitrary number of nodes, and each connection between two nodes
+is associated with a weight variable. 
 
 
 
