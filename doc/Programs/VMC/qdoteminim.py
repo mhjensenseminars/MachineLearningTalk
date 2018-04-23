@@ -40,8 +40,8 @@ def DerivativeWFansatz(r,alpha,beta):
     r12 = sqrt((r[0,0]-r[1,0])**2 + (r[0,1]-r[1,1])**2)
     deno = 1.0/(1+beta*r12)
     deno2 = deno*deno
-    WfDer[0] = -(r1+r2)
-    WfDer[1] = -r12*deno2
+    WfDer[0] = -0.5*(r1+r2)
+    WfDer[1] = -r12*r12*deno2
     return  WfDer
 
 # Setting up the quantum force for the two-electron quantum dot, recall that it is a vector
@@ -125,7 +125,7 @@ def EnergyMinimization(alpha, beta):
 NumberParticles = 2
 Dimension = 2
 # guess for variational parameters
-alpha = 0.9
+alpha = 1.0
 beta = 0.3
 # Set up iteration using stochastic gradient method
 Energy = 0
