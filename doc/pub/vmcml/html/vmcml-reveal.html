@@ -239,7 +239,7 @@ of code developers and contributors keeps increasing.
 <p>
 Not all the
 algorithms and methods can be given a rigorous mathematical
-justification, opening up thereby lots of large room for experimenting
+justification, opening up thereby for experimenting
 and trial and error and thereby exciting new developments.
 </div>
 
@@ -264,7 +264,7 @@ opportunities. Add quantum computing and there you are.
 
 
 <section>
-<h2 id="___sec5">Members of the ML family </h2>
+<h2 id="___sec5">Some members of the ML family </h2>
 
 <p>
 <div class="alert alert-block alert-block alert-text-normal">
@@ -276,7 +276,7 @@ opportunities. Add quantum computing and there you are.
 <p><li> Bayesian statistics and regression</li>
 <p><li> Support vector machines and finally various variants of</li>
 <p><li> Artifical neural networks and deep learning</li>
-<p><li> and many other algos</li>
+<p><li> ....</li>
 </ol>
 </div>
 </section>
@@ -642,11 +642,11 @@ $$
 $$
 <p>&nbsp;<br>
 
-where the $\alpha_i$s  are our variational parameters.
+where the $\alpha$s represent our variational parameters, two in this case.
 
 <p>
-Why does the trial function look like this? How did we get there? <b>This</b> will be our motivation for switching to
-Machine Learning later here.
+Why does the trial function look like this? How did we get there? <b>This will be our main motivation</b> for switching to
+Machine Learning.
 
 
 </div>
@@ -985,7 +985,7 @@ History: The RBM was developed by amongst others Geoffrey Hinton, called by some
 <b>The network layers</b>:
 
 <ol>
- <p><li> The function \( \mathbf{x} \) represents the visible layer, a vector of \( M \) elements (nodes). This layer represents both what the RBM might be given as training input, and what we want it to be able to reconstruct. This might for example be the pixels of an image, the spin values of the Ising model, or coefficients representing speech.</li>
+ <p><li> A function \( \mathbf{x} \) that represents the visible layer, a vector of \( M \) elements (nodes). This layer represents both what the RBM might be given as training input, and what we want it to be able to reconstruct. This might for example be the pixels of an image, the spin values of the Ising model, or coefficients representing speech.</li>
  <p><li> The function \( \mathbf{h} \) represents the hidden, or latent, layer. A vector of \( N \) elements (nodes). Also called "feature detectors".</li>
 </ol>
 </section>
@@ -1009,7 +1009,7 @@ Examples of this trick being employed in physics:
 <b>The network parameters, to be optimized/learned</b>:
 
 <ol>
- <p><li> \( \mathbf{a} \) represents the visible bias, a vector of same lenght as \( \mathbf{x} \).</li>
+ <p><li> \( \mathbf{a} \) represents the visible bias, a vector of same length as \( \mathbf{x} \).</li>
  <p><li> \( \mathbf{b} \) represents the hidden bias, a vector of same lenght as \( \mathbf{h} \).</li>
  <p><li> \( W \) represents the interaction weights, a matrix of size \( M\times N \).</li>
 </ol>
@@ -1401,7 +1401,17 @@ You find the codes for the simple two-electron case at the Github repository <a 
 
 
 <section>
-<h2 id="___sec50">Conclusions and where do we stand </h2>
+<h2 id="___sec50">Energy as function of iterations  </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<br /><br /><center><p><img src="figures/MLrbm.png" align="bottom" width=700></p></center><br /><br />
+</div>
+</section>
+
+
+<section>
+<h2 id="___sec51">Conclusions and where do we stand </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <ul>

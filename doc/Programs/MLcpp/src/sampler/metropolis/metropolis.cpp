@@ -1,5 +1,5 @@
 #include "metropolis.h"
-
+using namespace std;
 Metropolis::Metropolis(int nSamples, int nCycles, Hamiltonian *hamiltonian,
                        NeuralQuantumState *nqs) : Sampler(nSamples, nCycles, hamiltonian, nqs) {
     m_psi = m_nqs->computePsi(); // Set the Psi variable to correspond to the initial positions

@@ -1,5 +1,5 @@
 #include "gibbs.h"
-
+using namespace std;
 Gibbs::Gibbs(int nSamples, int nCycles, Hamiltonian *hamiltonian,
              NeuralQuantumState *nqs) : Sampler(nSamples, nCycles, hamiltonian, nqs) {
 

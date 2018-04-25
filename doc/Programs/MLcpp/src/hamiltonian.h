@@ -1,6 +1,6 @@
 #ifndef HAMILTONIAN_H
 #define HAMILTONIAN_H
-
+using namespace std;
 #include "neuralquantumstate.h"
 
 class Hamiltonian {

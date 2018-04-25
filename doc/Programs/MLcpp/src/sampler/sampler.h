@@ -1,8 +1,8 @@
 #ifndef SAMPLER_H
 #define SAMPLER_H
 
-#include "hamiltonian.h"
-
+#include "../hamiltonian.h"
+using namespace std;
 class Sampler {
 private:
     int m_nSamples;

@@ -1,8 +1,9 @@
 #ifndef NEURALQUANTUMSTATE_H
 #define NEURALQUANTUMSTATE_H
 
-#include <Eigen/Dense>
-
+#include <random>
+#include "Eigen/Dense"
+using namespace std;
 class NeuralQuantumState {
 private:
     double m_psiFactor1;

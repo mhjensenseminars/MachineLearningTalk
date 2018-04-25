@@ -60,7 +60,7 @@ of code developers and contributors keeps increasing.
 !bblock
 Not all the
 algorithms and methods can be given a rigorous mathematical
-justification, opening up thereby lots of large room for experimenting
+justification, opening up thereby for experimenting
 and trial and error and thereby exciting new developments. 
 !eblock
 
@@ -77,7 +77,7 @@ opportunities. Add quantum computing and there you are.
 !eblock
 
 !split 
-===== Members of the ML family =====
+===== Some members of the ML family =====
 
 !bblock
 o Linear regression and its variants, in essence polynomial regression
@@ -86,7 +86,7 @@ o Nearest neighbors models
 o Bayesian statistics and regression
 o Support vector machines and finally various variants of
 o Artifical neural networks and deep learning
-o and many other algos
+o ....
 !eblock
 
 !split
@@ -360,10 +360,10 @@ Our trial wave function has the following form
 label{eq:trial}
 \end{equation}
 !et
-where the $\alpha_i$s  are our variational parameters.
+where the $\alpha$s represent our variational parameters, two in this case.
 
-Why does the trial function look like this? How did we get there? _This_ will be our motivation for switching to
-Machine Learning later here.
+Why does the trial function look like this? How did we get there? _This will be our main motivation_ for switching to
+Machine Learning.
 
 !eblock
 
@@ -650,7 +650,7 @@ FIGURE: [figures/RBM.pdf, width=800 frac=1.0]
 ===== The network =====
 
 _The network layers_:
-  o The function $\mathbf{x}$ represents the visible layer, a vector of $M$ elements (nodes). This layer represents both what the RBM might be given as training input, and what we want it to be able to reconstruct. This might for example be the pixels of an image, the spin values of the Ising model, or coefficients representing speech.
+  o A function $\mathbf{x}$ that represents the visible layer, a vector of $M$ elements (nodes). This layer represents both what the RBM might be given as training input, and what we want it to be able to reconstruct. This might for example be the pixels of an image, the spin values of the Ising model, or coefficients representing speech.
   o The function $\mathbf{h}$ represents the hidden, or latent, layer. A vector of $N$ elements (nodes). Also called "feature detectors".
 
 !split
@@ -663,7 +663,7 @@ Examples of this trick being employed in physics:
   o The introduction of ghost fields in gauge theory
 
 _The network parameters, to be optimized/learned_:
-  o $\mathbf{a}$ represents the visible bias, a vector of same lenght as $\mathbf{x}$.
+  o $\mathbf{a}$ represents the visible bias, a vector of same length as $\mathbf{x}$.
   o $\mathbf{b}$ represents the hidden bias, a vector of same lenght as $\mathbf{h}$.
   o $W$ represents the interaction weights, a matrix of size $M\times N$.
 
@@ -908,6 +908,13 @@ where the local energy is given by
 !bblock
 You find the codes for the simple two-electron case at the Github repository URL:"https://github.com/mhjensenseminars/MachineLearningTalk/tree/master/doc/Programs/MLcpp/src". Python codes to come, only c++ as of now. 
 !eblock
+
+!split
+===== Energy as function of iterations  =====
+!bblock
+FIGURE: [figures/MLrbm.pdf, width=700 frac=0.9]
+!eblock
+
 
 !split
 ===== Conclusions and where do we stand =====

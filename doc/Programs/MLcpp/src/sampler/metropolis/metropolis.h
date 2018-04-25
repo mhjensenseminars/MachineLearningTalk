@@ -1,7 +1,7 @@
 #ifndef METROPOLIS_H
 #define METROPOLIS_H
-
-#include "sampler/sampler.h"
+using namespace std;
+#include "../sampler.h"
 
 class Metropolis : public Sampler {
 private:

@@ -1,6 +1,6 @@
 #include "neuralquantumstate.h"
 #include <random>
-
+using namespace std;
 NeuralQuantumState::NeuralQuantumState(int nh, int nx, int dim, double sigma) {
     std::random_device rd;
     m_randomEngine = std::mt19937_64(rd());

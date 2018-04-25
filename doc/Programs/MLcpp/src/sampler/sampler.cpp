@@ -1,4 +1,6 @@
 #include "sampler.h"
+#include <random>
+using namespace std;
 
 Sampler::Sampler(int nSamples, int nCycles, Hamiltonian *hamiltonian,
                  NeuralQuantumState *nqs) {
