@@ -147,7 +147,7 @@ MathJax.Hub.Config({
 <center><b>Department of Physics and Astronomy and National Superconducting Cyclotron Laboratory, Michigan State University</b></center>
 <br>
 <p>&nbsp;<br>
-<center><h4>Apr 25, 2018 </h4></center> <!-- date -->
+<center><h4>Apr 28, 2018 </h4></center> <!-- date -->
 <br>
 <p>
 
@@ -1401,7 +1401,97 @@ You find the codes for the simple two-electron case at the Github repository <a 
 
 
 <section>
-<h2 id="___sec50">Energy as function of iterations  </h2>
+<h2 id="___sec50">Basic functions  </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+
+<!-- code=c++ (!bc cppcod) typeset with pygments style "perldoc" -->
+<div class="highlight" style="background: #eeeedd"><pre style="font-size: 80%; line-height: 125%"><span></span><span style="color: #1e889b">#include</span> <span style="color: #228B22">&quot;hamiltonian.h&quot;</span><span style="color: #1e889b"></span>
+
+
+Hamiltonian::Hamiltonian(<span style="color: #00688B; font-weight: bold">double</span> omega, <span style="color: #00688B; font-weight: bold">bool</span> includeInteraction) {
+    m_omega = omega;
+    m_includeInteraction = includeInteraction;
+}
+
+
+<span style="color: #00688B; font-weight: bold">double</span> Hamiltonian::computeLocalEnergy(NeuralQuantumState &amp;nqs) {
+    Eigen::VectorXd Q = nqs.m_b + (<span style="color: #B452CD">1.0</span>/nqs.m_sig2)*(nqs.m_x.transpose()*nqs.m_w).transpose();
+    <span style="color: #00688B; font-weight: bold">double</span> ElocTemp = <span style="color: #B452CD">0</span>;
+    <span style="color: #228B22">// Loop over the visibles (n_particles*n_coordinates) for the Laplacian</span>
+    <span style="color: #8B008B; font-weight: bold">for</span> (<span style="color: #00688B; font-weight: bold">int</span> r=<span style="color: #B452CD">0</span>; r&lt;nqs.m_nx; r++) {
+        <span style="color: #00688B; font-weight: bold">double</span> sum1 = <span style="color: #B452CD">0</span>;
+        <span style="color: #00688B; font-weight: bold">double</span> sum2 = <span style="color: #B452CD">0</span>;
+        <span style="color: #8B008B; font-weight: bold">for</span> (<span style="color: #00688B; font-weight: bold">int</span> j=<span style="color: #B452CD">0</span>; j&lt;nqs.m_nh; j++) {
+            sum1 += nqs.m_w(r,j)/(<span style="color: #B452CD">1.0</span>+exp(-Q(j)));
+            sum2 += nqs.m_w(r,j)*nqs.m_w(r,j)*exp(Q(j))/((exp(Q(j))+<span style="color: #B452CD">1.0</span>)*(exp(Q(j))+<span style="color: #B452CD">1.0</span>));
+        }
+        <span style="color: #00688B; font-weight: bold">double</span> der1lnPsi = -(nqs.m_x(r) - nqs.m_a(r))/nqs.m_sig2 + sum1/nqs.m_sig2;
+        <span style="color: #00688B; font-weight: bold">double</span> der2lnPsi = -<span style="color: #B452CD">1.0</span>/nqs.m_sig2 + sum2/(nqs.m_sig2*nqs.m_sig2);
+        <span style="color: #228B22">// The last term is the Harmonic Oscillator potential</span>
+        ElocTemp += -der1lnPsi*der1lnPsi - der2lnPsi + m_omega*m_omega*nqs.m_x(r)*nqs.m_x(r);
+
+
+    }
+    ElocTemp = <span style="color: #B452CD">0.5</span>*ElocTemp;
+
+    <span style="color: #228B22">// With interaction:</span>
+    <span style="color: #8B008B; font-weight: bold">if</span> (m_includeInteraction) {
+        ElocTemp += interaction(nqs.m_x, nqs.m_nx, nqs.m_dim);
+    }
+
+    <span style="color: #8B008B; font-weight: bold">return</span> ElocTemp;
+}
+
+Eigen::VectorXd Hamiltonian::computeLocalEnergyGradientComponent(NeuralQuantumState &amp;nqs) {
+
+    <span style="color: #228B22">// Compute the 1/psi * dPsi/dalpha_i, that is Psi derived wrt each RBM parameter.</span>
+    Eigen::VectorXd Q = nqs.m_b + (<span style="color: #B452CD">1.0</span>/nqs.m_sig2)*(nqs.m_x.transpose()*nqs.m_w).transpose();
+    Eigen::VectorXd derPsiTemp;
+    derPsiTemp.resize(nqs.m_nx + nqs.m_nh + nqs.m_nx*nqs.m_nh);
+
+    <span style="color: #8B008B; font-weight: bold">for</span> (<span style="color: #00688B; font-weight: bold">int</span> k=<span style="color: #B452CD">0</span>; k&lt;nqs.m_nx; k++) {
+        derPsiTemp(k) = (nqs.m_x(k) - nqs.m_a(k))/nqs.m_sig2;
+    }
+    <span style="color: #8B008B; font-weight: bold">for</span> (<span style="color: #00688B; font-weight: bold">int</span> k=nqs.m_nx; k&lt;(nqs.m_nx+nqs.m_nh); k++) {
+        derPsiTemp(k) = <span style="color: #B452CD">1.0</span>/(<span style="color: #B452CD">1.0</span>+exp(-Q(k-nqs.m_nx)));
+    }
+    <span style="color: #00688B; font-weight: bold">int</span> k=nqs.m_nx + nqs.m_nh;
+    <span style="color: #8B008B; font-weight: bold">for</span> (<span style="color: #00688B; font-weight: bold">int</span> i=<span style="color: #B452CD">0</span>; i&lt;nqs.m_nx; i++) {
+        <span style="color: #8B008B; font-weight: bold">for</span> (<span style="color: #00688B; font-weight: bold">int</span> j=<span style="color: #B452CD">0</span>; j&lt;nqs.m_nh; j++) {
+            derPsiTemp(k) = nqs.m_x(i)/(nqs.m_sig2*(<span style="color: #B452CD">1.0</span>+exp(-Q(j))));
+            k++;
+        }
+    }
+    <span style="color: #8B008B; font-weight: bold">return</span> derPsiTemp;
+}
+
+<span style="color: #00688B; font-weight: bold">double</span> Hamiltonian::interaction(Eigen::VectorXd x, <span style="color: #00688B; font-weight: bold">int</span> nx, <span style="color: #00688B; font-weight: bold">int</span> dim) {
+    <span style="color: #00688B; font-weight: bold">double</span> interactionTerm = <span style="color: #B452CD">0</span>;
+    <span style="color: #00688B; font-weight: bold">double</span> rDistance;
+    <span style="color: #228B22">// Loop over each particle</span>
+    <span style="color: #8B008B; font-weight: bold">for</span> (<span style="color: #00688B; font-weight: bold">int</span> r=<span style="color: #B452CD">0</span>; r&lt;nx-dim; r+=dim) {
+        <span style="color: #228B22">// Loop over each particle s that particle r hasn&#39;t been paired with</span>
+        <span style="color: #8B008B; font-weight: bold">for</span> (<span style="color: #00688B; font-weight: bold">int</span> s=(r+dim); s&lt;nx; s+=dim) {
+            rDistance = <span style="color: #B452CD">0</span>;
+            <span style="color: #228B22">// Loop over each dimension</span>
+            <span style="color: #8B008B; font-weight: bold">for</span> (<span style="color: #00688B; font-weight: bold">int</span> i=<span style="color: #B452CD">0</span>; i&lt;dim; i++) {
+                rDistance += (x(r+i) - x(s+i))*(x(r+i) - x(s+i));
+            }
+            interactionTerm += <span style="color: #B452CD">1.0</span>/sqrt(rDistance);
+        }
+    }
+    <span style="color: #8B008B; font-weight: bold">return</span> interactionTerm;
+}
+</pre></div>
+
+</div>
+</section>
+
+
+<section>
+<h2 id="___sec51">Energy as function of iterations  </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -1411,7 +1501,7 @@ You find the codes for the simple two-electron case at the Github repository <a 
 
 
 <section>
-<h2 id="___sec51">Conclusions and where do we stand </h2>
+<h2 id="___sec52">Conclusions and where do we stand </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <ul>
