@@ -1,6 +1,6 @@
 # 2-electron VMC code for 2dim quantum dot with importance sampling
 # Using gaussian rng for new positions and Metropolis- Hastings 
-# No energy minimization
+# Added energy minimization
 from math import exp, sqrt
 from random import random, seed, normalvariate
 import numpy as np

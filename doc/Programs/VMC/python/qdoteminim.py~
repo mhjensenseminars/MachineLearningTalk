@@ -9,7 +9,6 @@ from mpl_toolkits.mplot3d import Axes3D
 from matplotlib import cm
 from matplotlib.ticker import LinearLocator, FormatStrFormatter
 import sys
-from numba import jit
 
 
 
@@ -54,10 +53,13 @@ def QuantumForce(r,alpha,beta):
     qforce[1,:] = -2*r[1,:]*alpha*(r[1,:]-r[0,:])*deno*deno/r12
     return qforce
     
+
+# Adaptive Stochastic gradient 
+def ASGD(gradients)
+    theta = theta - eta*gradients
+    return theta
+
 # Computing the derivative of the energy and the energy 
-# jit decorator tells Numba to compile this function.
-# The argument types will be inferred by Numba when function is called.
-@jit
 def EnergyMinimization(alpha, beta):
 
     NumberMCcycles= 10000
