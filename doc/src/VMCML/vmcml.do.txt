@@ -429,7 +429,7 @@ for anti-parallel spins and
 \]
 !et
 for anti-parallel spins. 
-This is so-called cusp condition for the relative motion, resulting in a minimal requirement
+This is the so-called cusp condition for the relative motion, resulting in a minimal requirement
 for the correlation part of the wave fuction.
 For general systems containing more than say two electrons, we have this
 condition for each electron pair $ij$.
