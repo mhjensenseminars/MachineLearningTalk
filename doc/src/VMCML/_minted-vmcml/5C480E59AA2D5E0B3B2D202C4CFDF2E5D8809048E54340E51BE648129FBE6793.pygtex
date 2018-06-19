@@ -1,0 +1,109 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+\PYGdefault{c+c1}{\PYGdefaultZsh{} Importing various packages}
+\PYGdefault{k+kn}{from} \PYGdefault{n+nn}{math} \PYGdefault{k+kn}{import} \PYGdefault{n}{exp}\PYGdefault{p}{,} \PYGdefault{n}{sqrt}
+\PYGdefault{k+kn}{from} \PYGdefault{n+nn}{random} \PYGdefault{k+kn}{import} \PYGdefault{n}{random}\PYGdefault{p}{,} \PYGdefault{n}{seed}
+\PYGdefault{k+kn}{import} \PYGdefault{n+nn}{numpy} \PYGdefault{k+kn}{as} \PYGdefault{n+nn}{np}
+\PYGdefault{k+kn}{import} \PYGdefault{n+nn}{matplotlib.pyplot} \PYGdefault{k+kn}{as} \PYGdefault{n+nn}{plt}
+\PYGdefault{k+kn}{from} \PYGdefault{n+nn}{mpl\PYGdefaultZus{}toolkits.mplot3d} \PYGdefault{k+kn}{import} \PYGdefault{n}{Axes3D}
+\PYGdefault{k+kn}{from} \PYGdefault{n+nn}{matplotlib} \PYGdefault{k+kn}{import} \PYGdefault{n}{cm}
+\PYGdefault{k+kn}{from} \PYGdefault{n+nn}{matplotlib.ticker} \PYGdefault{k+kn}{import} \PYGdefault{n}{LinearLocator}\PYGdefault{p}{,} \PYGdefault{n}{FormatStrFormatter}
+\PYGdefault{k+kn}{import} \PYGdefault{n+nn}{sys}
+
+\PYGdefault{c+c1}{\PYGdefaultZsh{}Trial wave function for quantum dots in two dims}
+\PYGdefault{k}{def} \PYGdefault{n+nf}{WaveFunction}\PYGdefault{p}{(}\PYGdefault{n}{r}\PYGdefault{p}{,}\PYGdefault{n}{alpha}\PYGdefault{p}{,}\PYGdefault{n}{beta}\PYGdefault{p}{):}
+    \PYGdefault{n}{r1} \PYGdefault{o}{=} \PYGdefault{n}{r}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{,}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{]}\PYGdefault{o}{**}\PYGdefault{l+m+mi}{2} \PYGdefault{o}{+} \PYGdefault{n}{r}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{,}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{]}\PYGdefault{o}{**}\PYGdefault{l+m+mi}{2}
+    \PYGdefault{n}{r2} \PYGdefault{o}{=} \PYGdefault{n}{r}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{,}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{]}\PYGdefault{o}{**}\PYGdefault{l+m+mi}{2} \PYGdefault{o}{+} \PYGdefault{n}{r}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{,}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{]}\PYGdefault{o}{**}\PYGdefault{l+m+mi}{2}
+    \PYGdefault{n}{r12} \PYGdefault{o}{=} \PYGdefault{n}{sqrt}\PYGdefault{p}{((}\PYGdefault{n}{r}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{,}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{]}\PYGdefault{o}{\PYGdefaultZhy{}}\PYGdefault{n}{r}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{,}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{])}\PYGdefault{o}{**}\PYGdefault{l+m+mi}{2} \PYGdefault{o}{+} \PYGdefault{p}{(}\PYGdefault{n}{r}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{,}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{]}\PYGdefault{o}{\PYGdefaultZhy{}}\PYGdefault{n}{r}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{,}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{])}\PYGdefault{o}{**}\PYGdefault{l+m+mi}{2}\PYGdefault{p}{)}
+    \PYGdefault{n}{deno} \PYGdefault{o}{=} \PYGdefault{n}{r12}\PYGdefault{o}{/}\PYGdefault{p}{(}\PYGdefault{l+m+mi}{1}\PYGdefault{o}{+}\PYGdefault{n}{beta}\PYGdefault{o}{*}\PYGdefault{n}{r12}\PYGdefault{p}{)}
+    \PYGdefault{k}{return} \PYGdefault{n}{exp}\PYGdefault{p}{(}\PYGdefault{o}{\PYGdefaultZhy{}}\PYGdefault{l+m+mf}{0.5}\PYGdefault{o}{*}\PYGdefault{n}{alpha}\PYGdefault{o}{*}\PYGdefault{p}{(}\PYGdefault{n}{r1}\PYGdefault{o}{+}\PYGdefault{n}{r2}\PYGdefault{p}{)}\PYGdefault{o}{+}\PYGdefault{n}{deno}\PYGdefault{p}{)}
+
+\PYGdefault{c+c1}{\PYGdefaultZsh{}Local energy  for quantum dots in two dims, using analytical local energy}
+\PYGdefault{k}{def} \PYGdefault{n+nf}{LocalEnergy}\PYGdefault{p}{(}\PYGdefault{n}{r}\PYGdefault{p}{,}\PYGdefault{n}{alpha}\PYGdefault{p}{,}\PYGdefault{n}{beta}\PYGdefault{p}{):}
+
+    \PYGdefault{n}{r1} \PYGdefault{o}{=} \PYGdefault{p}{(}\PYGdefault{n}{r}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{,}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{]}\PYGdefault{o}{**}\PYGdefault{l+m+mi}{2} \PYGdefault{o}{+} \PYGdefault{n}{r}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{,}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{]}\PYGdefault{o}{**}\PYGdefault{l+m+mi}{2}\PYGdefault{p}{)}
+    \PYGdefault{n}{r2} \PYGdefault{o}{=} \PYGdefault{p}{(}\PYGdefault{n}{r}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{,}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{]}\PYGdefault{o}{**}\PYGdefault{l+m+mi}{2} \PYGdefault{o}{+} \PYGdefault{n}{r}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{,}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{]}\PYGdefault{o}{**}\PYGdefault{l+m+mi}{2}\PYGdefault{p}{)}
+    \PYGdefault{n}{r12} \PYGdefault{o}{=} \PYGdefault{n}{sqrt}\PYGdefault{p}{((}\PYGdefault{n}{r}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{,}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{]}\PYGdefault{o}{\PYGdefaultZhy{}}\PYGdefault{n}{r}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{,}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{])}\PYGdefault{o}{**}\PYGdefault{l+m+mi}{2} \PYGdefault{o}{+} \PYGdefault{p}{(}\PYGdefault{n}{r}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{,}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{]}\PYGdefault{o}{\PYGdefaultZhy{}}\PYGdefault{n}{r}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{,}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{])}\PYGdefault{o}{**}\PYGdefault{l+m+mi}{2}\PYGdefault{p}{)}
+    \PYGdefault{n}{deno} \PYGdefault{o}{=} \PYGdefault{l+m+mf}{1.0}\PYGdefault{o}{/}\PYGdefault{p}{(}\PYGdefault{l+m+mi}{1}\PYGdefault{o}{+}\PYGdefault{n}{beta}\PYGdefault{o}{*}\PYGdefault{n}{r12}\PYGdefault{p}{)}
+    \PYGdefault{n}{deno2} \PYGdefault{o}{=} \PYGdefault{n}{deno}\PYGdefault{o}{*}\PYGdefault{n}{deno}
+    \PYGdefault{k}{return} \PYGdefault{l+m+mf}{0.5}\PYGdefault{o}{*}\PYGdefault{p}{(}\PYGdefault{l+m+mi}{1}\PYGdefault{o}{\PYGdefaultZhy{}}\PYGdefault{n}{alpha}\PYGdefault{o}{*}\PYGdefault{n}{alpha}\PYGdefault{p}{)}\PYGdefault{o}{*}\PYGdefault{p}{(}\PYGdefault{n}{r1} \PYGdefault{o}{+} \PYGdefault{n}{r2}\PYGdefault{p}{)} \PYGdefault{o}{+}\PYGdefault{l+m+mf}{2.0}\PYGdefault{o}{*}\PYGdefault{n}{alpha} \PYGdefault{o}{+} \PYGdefault{l+m+mf}{1.0}\PYGdefault{o}{/}\PYGdefault{n}{r12}\PYGdefault{o}{+}\PYGdefault{n}{deno2}\PYGdefault{o}{*}\PYGdefault{p}{(}\PYGdefault{n}{alpha}\PYGdefault{o}{*}\PYGdefault{n}{r12}\PYGdefault{o}{\PYGdefaultZhy{}}\PYGdefault{n}{deno2}\PYGdefault{o}{+}\PYGdefault{l+m+mi}{2}\PYGdefault{o}{*}\PYGdefault{n}{beta}\PYGdefault{o}{*}\PYGdefault{n}{deno}\PYGdefault{o}{\PYGdefaultZhy{}}\PYGdefault{l+m+mf}{1.0}\PYGdefault{o}{/}\PYGdefault{n}{r12}\PYGdefault{p}{)}
+
+\PYGdefault{c+c1}{\PYGdefaultZsh{} The Monte Carlo sampling with the Metropolis algo}
+\PYGdefault{k}{def} \PYGdefault{n+nf}{MonteCarloSampling}\PYGdefault{p}{():}
+
+    \PYGdefault{n}{NumberMCcycles}\PYGdefault{o}{=} \PYGdefault{l+m+mi}{100000}
+    \PYGdefault{n}{StepSize} \PYGdefault{o}{=} \PYGdefault{l+m+mf}{1.0}
+    \PYGdefault{c+c1}{\PYGdefaultZsh{} positions}
+    \PYGdefault{n}{PositionOld} \PYGdefault{o}{=} \PYGdefault{n}{np}\PYGdefault{o}{.}\PYGdefault{n}{zeros}\PYGdefault{p}{((}\PYGdefault{n}{NumberParticles}\PYGdefault{p}{,}\PYGdefault{n}{Dimension}\PYGdefault{p}{),} \PYGdefault{n}{np}\PYGdefault{o}{.}\PYGdefault{n}{double}\PYGdefault{p}{)}
+    \PYGdefault{n}{PositionNew} \PYGdefault{o}{=} \PYGdefault{n}{np}\PYGdefault{o}{.}\PYGdefault{n}{zeros}\PYGdefault{p}{((}\PYGdefault{n}{NumberParticles}\PYGdefault{p}{,}\PYGdefault{n}{Dimension}\PYGdefault{p}{),} \PYGdefault{n}{np}\PYGdefault{o}{.}\PYGdefault{n}{double}\PYGdefault{p}{)}
+    \PYGdefault{c+c1}{\PYGdefaultZsh{} seed for rng generator}
+    \PYGdefault{n}{seed}\PYGdefault{p}{()}
+    \PYGdefault{c+c1}{\PYGdefaultZsh{} start variational parameter}
+    \PYGdefault{n}{alpha} \PYGdefault{o}{=} \PYGdefault{l+m+mf}{0.9}
+    \PYGdefault{k}{for} \PYGdefault{n}{ia} \PYGdefault{o+ow}{in} \PYGdefault{n+nb}{range}\PYGdefault{p}{(}\PYGdefault{n}{MaxVariations}\PYGdefault{p}{):}
+        \PYGdefault{n}{alpha} \PYGdefault{o}{+=} \PYGdefault{o}{.}\PYGdefault{l+m+mo}{025}
+        \PYGdefault{n}{AlphaValues}\PYGdefault{p}{[}\PYGdefault{n}{ia}\PYGdefault{p}{]} \PYGdefault{o}{=} \PYGdefault{n}{alpha}
+        \PYGdefault{n}{beta} \PYGdefault{o}{=} \PYGdefault{l+m+mf}{0.2}
+        \PYGdefault{k}{for} \PYGdefault{n}{jb} \PYGdefault{o+ow}{in} \PYGdefault{n+nb}{range}\PYGdefault{p}{(}\PYGdefault{n}{MaxVariations}\PYGdefault{p}{):}
+            \PYGdefault{n}{beta} \PYGdefault{o}{+=} \PYGdefault{o}{.}\PYGdefault{l+m+mo}{01}
+            \PYGdefault{n}{BetaValues}\PYGdefault{p}{[}\PYGdefault{n}{jb}\PYGdefault{p}{]} \PYGdefault{o}{=} \PYGdefault{n}{beta}
+            \PYGdefault{n}{energy} \PYGdefault{o}{=} \PYGdefault{n}{energy2} \PYGdefault{o}{=} \PYGdefault{l+m+mf}{0.0}
+            \PYGdefault{n}{DeltaE} \PYGdefault{o}{=} \PYGdefault{l+m+mf}{0.0}
+            \PYGdefault{c+c1}{\PYGdefaultZsh{}Initial position}
+            \PYGdefault{k}{for} \PYGdefault{n}{i} \PYGdefault{o+ow}{in} \PYGdefault{n+nb}{range}\PYGdefault{p}{(}\PYGdefault{n}{NumberParticles}\PYGdefault{p}{):}
+                \PYGdefault{k}{for} \PYGdefault{n}{j} \PYGdefault{o+ow}{in} \PYGdefault{n+nb}{range}\PYGdefault{p}{(}\PYGdefault{n}{Dimension}\PYGdefault{p}{):}
+                    \PYGdefault{n}{PositionOld}\PYGdefault{p}{[}\PYGdefault{n}{i}\PYGdefault{p}{,}\PYGdefault{n}{j}\PYGdefault{p}{]} \PYGdefault{o}{=} \PYGdefault{n}{StepSize} \PYGdefault{o}{*} \PYGdefault{p}{(}\PYGdefault{n}{random}\PYGdefault{p}{()} \PYGdefault{o}{\PYGdefaultZhy{}} \PYGdefault{o}{.}\PYGdefault{l+m+mi}{5}\PYGdefault{p}{)}
+            \PYGdefault{n}{wfold} \PYGdefault{o}{=} \PYGdefault{n}{WaveFunction}\PYGdefault{p}{(}\PYGdefault{n}{PositionOld}\PYGdefault{p}{,}\PYGdefault{n}{alpha}\PYGdefault{p}{,}\PYGdefault{n}{beta}\PYGdefault{p}{)}
+
+            \PYGdefault{c+c1}{\PYGdefaultZsh{}Loop over MC MCcycles}
+            \PYGdefault{k}{for} \PYGdefault{n}{MCcycle} \PYGdefault{o+ow}{in} \PYGdefault{n+nb}{range}\PYGdefault{p}{(}\PYGdefault{n}{NumberMCcycles}\PYGdefault{p}{):}
+                \PYGdefault{c+c1}{\PYGdefaultZsh{}Trial position}
+                \PYGdefault{k}{for} \PYGdefault{n}{i} \PYGdefault{o+ow}{in} \PYGdefault{n+nb}{range}\PYGdefault{p}{(}\PYGdefault{n}{NumberParticles}\PYGdefault{p}{):}
+                    \PYGdefault{k}{for} \PYGdefault{n}{j} \PYGdefault{o+ow}{in} \PYGdefault{n+nb}{range}\PYGdefault{p}{(}\PYGdefault{n}{Dimension}\PYGdefault{p}{):}
+                        \PYGdefault{n}{PositionNew}\PYGdefault{p}{[}\PYGdefault{n}{i}\PYGdefault{p}{,}\PYGdefault{n}{j}\PYGdefault{p}{]} \PYGdefault{o}{=} \PYGdefault{n}{PositionOld}\PYGdefault{p}{[}\PYGdefault{n}{i}\PYGdefault{p}{,}\PYGdefault{n}{j}\PYGdefault{p}{]} \PYGdefault{o}{+} \PYGdefault{n}{StepSize} \PYGdefault{o}{*} \PYGdefault{p}{(}\PYGdefault{n}{random}\PYGdefault{p}{()} \PYGdefault{o}{\PYGdefaultZhy{}} \PYGdefault{o}{.}\PYGdefault{l+m+mi}{5}\PYGdefault{p}{)}
+                \PYGdefault{n}{wfnew} \PYGdefault{o}{=} \PYGdefault{n}{WaveFunction}\PYGdefault{p}{(}\PYGdefault{n}{PositionNew}\PYGdefault{p}{,}\PYGdefault{n}{alpha}\PYGdefault{p}{,}\PYGdefault{n}{beta}\PYGdefault{p}{)}
+
+                \PYGdefault{c+c1}{\PYGdefaultZsh{}Metropolis test to see whether we accept the move}
+                \PYGdefault{k}{if} \PYGdefault{n}{random}\PYGdefault{p}{()} \PYGdefault{o}{\PYGdefaultZlt{}} \PYGdefault{n}{wfnew}\PYGdefault{o}{**}\PYGdefault{l+m+mi}{2} \PYGdefault{o}{/} \PYGdefault{n}{wfold}\PYGdefault{o}{**}\PYGdefault{l+m+mi}{2}\PYGdefault{p}{:}
+                   \PYGdefault{n}{PositionOld} \PYGdefault{o}{=} \PYGdefault{n}{PositionNew}\PYGdefault{o}{.}\PYGdefault{n}{copy}\PYGdefault{p}{()}
+                   \PYGdefault{n}{wfold} \PYGdefault{o}{=} \PYGdefault{n}{wfnew}
+                   \PYGdefault{n}{DeltaE} \PYGdefault{o}{=} \PYGdefault{n}{LocalEnergy}\PYGdefault{p}{(}\PYGdefault{n}{PositionOld}\PYGdefault{p}{,}\PYGdefault{n}{alpha}\PYGdefault{p}{,}\PYGdefault{n}{beta}\PYGdefault{p}{)}
+                \PYGdefault{n}{energy} \PYGdefault{o}{+=} \PYGdefault{n}{DeltaE}
+                \PYGdefault{n}{energy2} \PYGdefault{o}{+=} \PYGdefault{n}{DeltaE}\PYGdefault{o}{**}\PYGdefault{l+m+mi}{2}
+
+            \PYGdefault{c+c1}{\PYGdefaultZsh{}We calculate mean, variance and error ...}
+            \PYGdefault{n}{energy} \PYGdefault{o}{/=} \PYGdefault{n}{NumberMCcycles}
+            \PYGdefault{n}{energy2} \PYGdefault{o}{/=} \PYGdefault{n}{NumberMCcycles}
+            \PYGdefault{n}{variance} \PYGdefault{o}{=} \PYGdefault{n}{energy2} \PYGdefault{o}{\PYGdefaultZhy{}} \PYGdefault{n}{energy}\PYGdefault{o}{**}\PYGdefault{l+m+mi}{2}
+            \PYGdefault{n}{error} \PYGdefault{o}{=} \PYGdefault{n}{sqrt}\PYGdefault{p}{(}\PYGdefault{n}{variance}\PYGdefault{o}{/}\PYGdefault{n}{NumberMCcycles}\PYGdefault{p}{)}
+            \PYGdefault{n}{Energies}\PYGdefault{p}{[}\PYGdefault{n}{ia}\PYGdefault{p}{,}\PYGdefault{n}{jb}\PYGdefault{p}{]} \PYGdefault{o}{=} \PYGdefault{n}{energy}
+    \PYGdefault{k}{return} \PYGdefault{n}{Energies}\PYGdefault{p}{,} \PYGdefault{n}{AlphaValues}\PYGdefault{p}{,} \PYGdefault{n}{BetaValues}
+
+
+\PYGdefault{c+c1}{\PYGdefaultZsh{}Here starts the main program with variable declarations}
+\PYGdefault{n}{NumberParticles} \PYGdefault{o}{=} \PYGdefault{l+m+mi}{2}
+\PYGdefault{n}{Dimension} \PYGdefault{o}{=} \PYGdefault{l+m+mi}{2}
+\PYGdefault{n}{MaxVariations} \PYGdefault{o}{=} \PYGdefault{l+m+mi}{10}
+\PYGdefault{n}{Energies} \PYGdefault{o}{=} \PYGdefault{n}{np}\PYGdefault{o}{.}\PYGdefault{n}{zeros}\PYGdefault{p}{((}\PYGdefault{n}{MaxVariations}\PYGdefault{p}{,}\PYGdefault{n}{MaxVariations}\PYGdefault{p}{))}
+\PYGdefault{n}{AlphaValues} \PYGdefault{o}{=} \PYGdefault{n}{np}\PYGdefault{o}{.}\PYGdefault{n}{zeros}\PYGdefault{p}{(}\PYGdefault{n}{MaxVariations}\PYGdefault{p}{)}
+\PYGdefault{n}{BetaValues} \PYGdefault{o}{=} \PYGdefault{n}{np}\PYGdefault{o}{.}\PYGdefault{n}{zeros}\PYGdefault{p}{(}\PYGdefault{n}{MaxVariations}\PYGdefault{p}{)}
+\PYGdefault{p}{(}\PYGdefault{n}{Energies}\PYGdefault{p}{,} \PYGdefault{n}{AlphaValues}\PYGdefault{p}{,} \PYGdefault{n}{BetaValues}\PYGdefault{p}{)} \PYGdefault{o}{=} \PYGdefault{n}{MonteCarloSampling}\PYGdefault{p}{()}
+
+\PYGdefault{c+c1}{\PYGdefaultZsh{} Prepare for plots}
+\PYGdefault{n}{fig} \PYGdefault{o}{=} \PYGdefault{n}{plt}\PYGdefault{o}{.}\PYGdefault{n}{figure}\PYGdefault{p}{()}
+\PYGdefault{n}{ax} \PYGdefault{o}{=} \PYGdefault{n}{fig}\PYGdefault{o}{.}\PYGdefault{n}{gca}\PYGdefault{p}{(}\PYGdefault{n}{projection}\PYGdefault{o}{=}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}3d\PYGdefaultZsq{}}\PYGdefault{p}{)}
+\PYGdefault{c+c1}{\PYGdefaultZsh{} Plot the surface.}
+\PYGdefault{n}{X}\PYGdefault{p}{,} \PYGdefault{n}{Y} \PYGdefault{o}{=} \PYGdefault{n}{np}\PYGdefault{o}{.}\PYGdefault{n}{meshgrid}\PYGdefault{p}{(}\PYGdefault{n}{AlphaValues}\PYGdefault{p}{,} \PYGdefault{n}{BetaValues}\PYGdefault{p}{)}
+\PYGdefault{n}{surf} \PYGdefault{o}{=} \PYGdefault{n}{ax}\PYGdefault{o}{.}\PYGdefault{n}{plot\PYGdefaultZus{}surface}\PYGdefault{p}{(}\PYGdefault{n}{X}\PYGdefault{p}{,} \PYGdefault{n}{Y}\PYGdefault{p}{,} \PYGdefault{n}{Energies}\PYGdefault{p}{,}\PYGdefault{n}{cmap}\PYGdefault{o}{=}\PYGdefault{n}{cm}\PYGdefault{o}{.}\PYGdefault{n}{coolwarm}\PYGdefault{p}{,}\PYGdefault{n}{linewidth}\PYGdefault{o}{=}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{,} \PYGdefault{n}{antialiased}\PYGdefault{o}{=}\PYGdefault{n+nb+bp}{False}\PYGdefault{p}{)}
+\PYGdefault{c+c1}{\PYGdefaultZsh{} Customize the z axis.}
+\PYGdefault{n}{zmin} \PYGdefault{o}{=} \PYGdefault{n}{np}\PYGdefault{o}{.}\PYGdefault{n}{matrix}\PYGdefault{p}{(}\PYGdefault{n}{Energies}\PYGdefault{p}{)}\PYGdefault{o}{.}\PYGdefault{n}{min}\PYGdefault{p}{()}
+\PYGdefault{n}{zmax} \PYGdefault{o}{=} \PYGdefault{n}{np}\PYGdefault{o}{.}\PYGdefault{n}{matrix}\PYGdefault{p}{(}\PYGdefault{n}{Energies}\PYGdefault{p}{)}\PYGdefault{o}{.}\PYGdefault{n}{max}\PYGdefault{p}{()}
+\PYGdefault{n}{ax}\PYGdefault{o}{.}\PYGdefault{n}{set\PYGdefaultZus{}zlim}\PYGdefault{p}{(}\PYGdefault{n}{zmin}\PYGdefault{p}{,} \PYGdefault{n}{zmax}\PYGdefault{p}{)}
+\PYGdefault{n}{ax}\PYGdefault{o}{.}\PYGdefault{n}{set\PYGdefaultZus{}xlabel}\PYGdefault{p}{(}\PYGdefault{l+s+sa}{r}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}\PYGdefaultZdl{}\PYGdefaultZbs{}alpha\PYGdefaultZdl{}\PYGdefaultZsq{}}\PYGdefault{p}{)}
+\PYGdefault{n}{ax}\PYGdefault{o}{.}\PYGdefault{n}{set\PYGdefaultZus{}ylabel}\PYGdefault{p}{(}\PYGdefault{l+s+sa}{r}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}\PYGdefaultZdl{}\PYGdefaultZbs{}beta\PYGdefaultZdl{}\PYGdefaultZsq{}}\PYGdefault{p}{)}
+\PYGdefault{n}{ax}\PYGdefault{o}{.}\PYGdefault{n}{set\PYGdefaultZus{}zlabel}\PYGdefault{p}{(}\PYGdefault{l+s+sa}{r}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}\PYGdefaultZdl{}\PYGdefaultZbs{}langle E \PYGdefaultZbs{}rangle\PYGdefaultZdl{}\PYGdefaultZsq{}}\PYGdefault{p}{)}
+\PYGdefault{n}{ax}\PYGdefault{o}{.}\PYGdefault{n}{zaxis}\PYGdefault{o}{.}\PYGdefault{n}{set\PYGdefaultZus{}major\PYGdefaultZus{}locator}\PYGdefault{p}{(}\PYGdefault{n}{LinearLocator}\PYGdefault{p}{(}\PYGdefault{l+m+mi}{10}\PYGdefault{p}{))}
+\PYGdefault{n}{ax}\PYGdefault{o}{.}\PYGdefault{n}{zaxis}\PYGdefault{o}{.}\PYGdefault{n}{set\PYGdefaultZus{}major\PYGdefaultZus{}formatter}\PYGdefault{p}{(}\PYGdefault{n}{FormatStrFormatter}\PYGdefault{p}{(}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{l+s+si}{\PYGdefaultZpc{}.02f}\PYGdefault{l+s+s1}{\PYGdefaultZsq{}}\PYGdefault{p}{))}
+\PYGdefault{c+c1}{\PYGdefaultZsh{} Add a color bar which maps values to colors.}
+\PYGdefault{n}{fig}\PYGdefault{o}{.}\PYGdefault{n}{colorbar}\PYGdefault{p}{(}\PYGdefault{n}{surf}\PYGdefault{p}{,} \PYGdefault{n}{shrink}\PYGdefault{o}{=}\PYGdefault{l+m+mf}{0.5}\PYGdefault{p}{,} \PYGdefault{n}{aspect}\PYGdefault{o}{=}\PYGdefault{l+m+mi}{5}\PYGdefault{p}{)}
+\PYGdefault{n}{plt}\PYGdefault{o}{.}\PYGdefault{n}{show}\PYGdefault{p}{()}
+\end{Verbatim}

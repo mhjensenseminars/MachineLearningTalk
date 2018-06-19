@@ -1,0 +1,23 @@
+\frametitle{Conclusions and where do we stand}
+
+\begin{block}{}
+\begin{itemize}
+\item A simple extension of the work of \href{{http://science.sciencemag.org/content/355/6325/602}}{G. Carleo and M. Troyer, Science \textbf{355}, Issue 6325, pp. 602-606 (2017)} gives excellent results for two-electron systems.
+
+\item To come: Analysis of wave function from ML and compare with diffusion and Variational Monte Carlo calculations as well as the analytical results of Taut for the two-electron case.
+
+\item Extend to more fermions. How do we deal with the antisymmetry of the multi-fermion wave function?
+\begin{enumerate}
+
+ \item Use standard Hartree-Fock theory to define an optimal Slater determinant. Takes care of the antisymmetry.
+
+ \item Use thereafter ML to determine the correlated part of the wafe function (Jastrow factor).
+
+ \item Test this for multi-fermion systems and compare with other many-body methods.
+\end{enumerate}
+
+\noindent
+\end{itemize}
+
+\noindent
+\end{block}
