@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  19 JUN 2018 06:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  19 JUN 2018 12:55
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1309,25 +1309,26 @@ Overfull \hbox (36.56229pt too wide) in paragraph at lines 166--167
 thub . com / mhjensenseminars / MachineLearningTalk$[][]\T1/lmr/m/n/10 (-20) ,
  []
 
-LaTeX Font Info:    Try loading font information for OMS+lmr on input line 179.
+LaTeX Font Info:    Try loading font information for OMS+lmr on input line 199.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/lm/omslmr.fd
 File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 179.
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 199.
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <8> not available
-(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 204.
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 203.
  [1
 
 {/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2] [3]
  [4]
-<figures/Hudson_Bay_data.pdf, id=81, 578.16pt x 433.62pt>
+<figures/Hudson_Bay_data.pdf, id=83, 578.16pt x 433.62pt>
 File: figures/Hudson_Bay_data.pdf Graphic file (type pdf)
 
 <use figures/Hudson_Bay_data.pdf>
-Package pdftex.def Info: figures/Hudson_Bay_data.pdf used on input line 419.
+Package pdftex.def Info: figures/Hudson_Bay_data.pdf used on input line 439.
 (pdftex.def)             Requested size: 310.4979pt x 232.87433pt.
+ [5]
 \openout3 = `vmcml.pyg'.
 
 
@@ -1335,22 +1336,22 @@ Package pdftex.def Info: figures/Hudson_Bay_data.pdf used on input line 419.
 93.pygtex
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <9> not available
 (Font)              Font shape `T1/lmtt/b/n' tried instead on input line 2.
- [5 <./figures/Hudson_Bay_data.pdf>])
-<figures/perceptron.png, id=137, 578.16pt x 278.03876pt>
+) [6 <./figures/Hudson_Bay_data.pdf>]
+<figures/perceptron.png, id=148, 578.16pt x 278.03876pt>
 File: figures/perceptron.png Graphic file (type png)
 
 <use figures/perceptron.png>
-Package pdftex.def Info: figures/perceptron.png used on input line 494.
+Package pdftex.def Info: figures/perceptron.png used on input line 514.
 (pdftex.def)             Requested size: 310.4979pt x 149.31987pt.
- [6]
-<figures/dnn.png, id=147, 1023.825pt x 424.58624pt>
+
+<figures/dnn.png, id=150, 1023.825pt x 424.58624pt>
 File: figures/dnn.png Graphic file (type png)
  <use figures/dnn.png>
-Package pdftex.def Info: figures/dnn.png used on input line 519.
+Package pdftex.def Info: figures/dnn.png used on input line 539.
 (pdftex.def)             Requested size: 207.0021pt x 85.84218pt.
 
-[7 <./figures/perceptron.png> <./figures/dnn.png>] [8]
-Overfull \hbox (16.73291pt too wide) in paragraph at lines 623--624
+[7 <./figures/perceptron.png>] [8 <./figures/dnn.png>]
+Overfull \hbox (16.73291pt too wide) in paragraph at lines 643--644
 []\T1/lmr/m/n/10 (-20) Metropolis al-go-rithm to ac-cept or re-ject this move $
 \OML/lmm/m/it/10 w \OT1/lmr/m/n/10 (-20) = \OML/lmm/m/it/10 P\OT1/lmr/m/n/10 (-
 20) (\OML/cmm/b/it/10 R[]\OML/lmm/m/it/10 ; \OML/cmm/b/it/10 \OT1/lmr/m/n/10 (
@@ -1358,60 +1359,66 @@ Overfull \hbox (16.73291pt too wide) in paragraph at lines 623--624
 /10 ; \OML/cmm/b/it/10 \OT1/lmr/m/n/10 (-20) )$\T1/lmr/m/n/10 (-20) . 
  []
 
+[9]
+Overfull \hbox (2.38016pt too wide) detected at line 698
+[] \OML/lmm/m/it/10 E[]\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 R\OT1/lmr/m/n/10 ) = [
+] [] \OMS/lmsy/m/n/10 R[]\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 r[]\OT1/lmr/m/n/10 )
+ = 0\OML/lmm/m/it/10 :
+ []
+
 \openout3 = `vmcml.pyg'.
 
 
 (./_minted-vmcml/5C480E59AA2D5E0B3B2D202C4CFDF2E5D8809048E54340E51BE648129FBE67
-93.pygtex [9] [10]) [11] [12]
-Overfull \hbox (23.41531pt too wide) detected at line 872
+93.pygtex [10] [11]) [12]
+Overfull \hbox (23.41531pt too wide) detected at line 933
 \OMS/lmsy/m/n/10 h\OML/lmm/m/it/10 E[]\OMS/lmsy/m/n/10 i \OT1/lmr/m/n/10 = \OMS
 /lmsy/m/n/10 h\OML/lmm/m/it/10 H[]\OMS/lmsy/m/n/10 i \OT1/lmr/m/n/10 = [] = [] 
 \OMS/lmsy/m/n/10 ^^B [] \OT1/lmr/m/n/10 = []\OML/lmm/m/it/10 :
  []
 
-
-Overfull \hbox (109.32198pt too wide) detected at line 900
+[13]
+Overfull \hbox (109.32198pt too wide) detected at line 961
 [] \OT1/lmr/m/n/10 = 2 [] + \OMS/lmsy/m/n/10 h[]\OML/lmm/m/it/10 E[][]\OMS/lmsy
 /m/n/10 i \OT1/lmr/m/n/10 + \OMS/lmsy/m/n/10 h[]\OML/lmm/m/it/10 E[][]\OMS/lmsy
 /m/n/10 i ^^@ h[]ih\OML/lmm/m/it/10 E[][]\OMS/lmsy/m/n/10 ih[]ih\OML/lmm/m/it/1
 0 E[][]\OMS/lmsy/m/n/10 i\OML/lmm/m/it/10 :
  []
 
-[13] <figures/RBM.pdf, id=218, 461.725pt x 180.675pt>
+[14] <figures/RBM.pdf, id=233, 461.725pt x 180.675pt>
 File: figures/RBM.pdf Graphic file (type pdf)
  <use figures/RBM.pdf>
-Package pdftex.def Info: figures/RBM.pdf used on input line 956.
+Package pdftex.def Info: figures/RBM.pdf used on input line 1017.
 (pdftex.def)             Requested size: 345.0pt x 135.00139pt.
 
-[14 <./figures/RBM.pdf>] [15] [16] [17] [18] [19] [20]
+[15 <./figures/RBM.pdf>] [16] [17] [18] [19] [20] [21]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 1244.
+(Font)              <12> on input line 1307.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 1244.
+(Font)              <8> on input line 1307.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 1244.
+(Font)              <6> on input line 1307.
 
-<figures/figN2.pdf, id=353, 462.52798pt x 346.89601pt>
+<figures/figN2.pdf, id=372, 462.52798pt x 346.89601pt>
 File: figures/figN2.pdf Graphic file (type pdf)
  <use figures/figN2.pdf>
-Package pdftex.def Info: figures/figN2.pdf used on input line 1253.
+Package pdftex.def Info: figures/figN2.pdf used on input line 1316.
 (pdftex.def)             Requested size: 310.4979pt x 232.88492pt.
 
-[21] <figures/figN6.pdf, id=370, 462.52798pt x 346.89601pt>
+<figures/figN6.pdf, id=373, 462.52798pt x 346.89601pt>
 File: figures/figN6.pdf Graphic file (type pdf)
-
-<use figures/figN6.pdf>
-Package pdftex.def Info: figures/figN6.pdf used on input line 1271.
+ <use figures/figN6.pdf>
+Package pdftex.def Info: figures/figN6.pdf used on input line 1334.
 (pdftex.def)             Requested size: 310.4979pt x 232.88492pt.
- [22 <./figures/figN2.pdf>]
+
+[22 <./figures/figN2.pdf>] [23 <./figures/figN6.pdf>]
 runsystem(rm "vmcml.pyg")...executed.
 
- [23 <./figures/figN6.pdf>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1312.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1312.
-
-(./vmcml.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1312.
+ [24]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1381.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1381.
+ (./vmcml.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1381.
 
 
  *File List*
@@ -1569,19 +1576,19 @@ figures/figN2.pdf
 figures/figN6.pdf
  ***********
 
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1312.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1381.
 
 Package rerunfilecheck Info: File `vmcml.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 27807 strings out of 493089
- 529773 string characters out of 6134842
- 651542 words of memory out of 5000000
+ 27818 strings out of 493089
+ 529870 string characters out of 6134842
+ 651544 words of memory out of 5000000
  30455 multiletter control sequences out of 15000+600000
- 92673 words of font info for 143 fonts, out of 8000000 for 9000
+ 92756 words of font info for 144 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 67i,14n,64p,10390b,587s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 67i,14n,64p,10390b,582s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/
 texlive/2015/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/20
 15/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2015/texmf-d
@@ -1609,10 +1616,10 @@ l/texlive/2015/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2
 dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2015/texmf-dist/fonts
 /type1/public/lm/lmtt9.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/publ
 ic/lm/lmtti10.pfb>
-Output written on vmcml.pdf (23 pages, 1156071 bytes).
+Output written on vmcml.pdf (24 pages, 1161354 bytes).
 PDF statistics:
- 603 PDF objects out of 1000 (max. 8388607)
- 417 compressed objects within 5 object streams
- 174 named destinations out of 1000 (max. 500000)
+ 618 PDF objects out of 1000 (max. 8388607)
+ 431 compressed objects within 5 object streams
+ 183 named destinations out of 1000 (max. 500000)
  29227 words of extra memory for PDF output out of 29859 (max. 10000000)
 

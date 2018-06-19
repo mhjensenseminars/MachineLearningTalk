@@ -14,6 +14,20 @@ The hope is that after this talk you have gotten the basic ideas to get you star
 Try it out and please don't hesitate to swing by if something is unclear.
 !eblock
 
+
+!split
+===== Why? =====
+
+How can we avoid the dimensionality curse? Many possibilities
+o smarter basis functions
+o resummation of specific correlations
+o stochastic sampling of high-lying states (stochastic FCI, CC and soon SRG)
+o many more
+
+Machine Learning and Quantum Computing hold also great promise in tackling the 
+ever increasing dimensionalities. Here we will focus on Machine Learning.
+
+
 !split
 ===== Overview =====
 !bblock
@@ -31,7 +45,7 @@ named such a wave function/network a *neural network quantum state* (NQS). In th
 spin lattice systems of the Ising model and Heisenberg model, with
 encouraging results.
 
-Thanks to Vilde Flugsrud for many discussions and interpretations of the above paper.
+Thanks to Vilde Flugsrud and Alfred Alocias Mariadason for many discussions and interpretations of the above paper.
 
 
 !split
@@ -150,8 +164,14 @@ Some of the most common tasks are:
 * A cute paper by "Utama and Piekarewicz, Validating neural-network refinements of nuclear mass models, Phys. Rev. C 97, 014306 ":"https://journals.aps.org/prc/abstract/10.1103/PhysRevC.97.014306"
 * "Every issue of Physical Review Letters has now one or more articles on ML":"https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.120.156001"
 * "Books and lectures notes":"https://github.com/CompPhysics/MachineLearning"
-* See also Metha and Schwab, arXiv.1410.3831
+* See also Metha and Schwab, arXiv.1410.3831, how to link Variational renormalization group theory with deep learning (recommended read)
 !eblock
+
+
+!split
+===== Another interesting article =====
+
+Here we will use so-called _reduced Boltzmann Machines_ to simulate quantum many-body problems. For Monte Carlo aficionados, there is a very close similarity with what are called _shadow wave functions_, see the work of "Pederiva and Kalos and collaborators, Phys Rev. E 90, 053304 (2014)":"https://journals.aps.org/pre/abstract/10.1103/PhysRevE.90.053304".
 
 !split
 ===== Just for fun illustration of scikit-learn: Hudson bay data =====
@@ -367,6 +387,55 @@ Why does the trial function look like this? How did we get there? _This will be 
 Machine Learning.
 
 !eblock
+
+!split
+===== The correlation part of the wave function =====
+
+To find an ansatz for the correlated part of the wave function, it is useful to rewrite the two-particle
+local energy in terms of the relative and center-of-mass motion.
+Let us denote the distance between the two electrons as
+$r_{12}$. We omit the center-of-mass motion since we are only interested in the case when
+$r_{12} \rightarrow 0$. The contribution from the center-of-mass (CoM) variable ${\bf R}_{\mathrm{CoM}}$
+gives only a finite contribution.
+We focus only on the terms that are relevant for $r_{12}$ and for three dimensions. The relevant local energy becomes then
+!bt
+\[
+\lim_{r_{12} \rightarrow 0}E_L(R)=
+    \frac{1}{{\cal R}_T(r_{12})}\left(2\frac{d^2}{dr_{ij}^2}+\frac{4}{r_{ij}}\frac{d}{dr_{ij}}+
+\frac{2}{r_{ij}}-\frac{l(l+1)}{r_{ij}^2}+2E
+\right){\cal R}_T(r_{12}) = 0.
+\]
+!et
+Set $l=0$ and we have the so-called _cusp_ condition
+!bt
+\[
+\frac{d {\cal R}_T(r_{12})}{dr_{12}} = -\frac{1}{2(l+1)}
+{\cal R}_T(r_{12})\qquad r_{12}\to 0
+\]
+!et
+
+!split
+===== Resulting ansatz =====
+The above  results in
+!bt
+\[
+{\cal R}_T  \propto \exp{(r_{ij}/2)}, 
+\]
+!et 
+for anti-parallel spins and 
+!bt
+\[
+{\cal R}_T  \propto \exp{(r_{ij}/4)}, 
+\]
+!et
+for anti-parallel spins. 
+This is so-called cusp condition for the relative motion, resulting in a minimal requirement
+for the correlation part of the wave fuction.
+For general systems containing more than say two electrons, we have this
+condition for each electron pair $ij$.
+
+
+
 
 
 !split
@@ -907,100 +976,30 @@ where the local energy is given by
 !split
 ===== Running the codes =====
 !bblock
-You find the codes for the simple two-electron case at the Github repository URL:"https://github.com/mhjensenseminars/MachineLearningTalk/tree/master/doc/Programs/MLcpp/src". Python codes to come, only c++ as of now. 
+You can find the codes for the simple two-electron case at the Github repository URL:"https://github.com/mhjensenseminars/MachineLearningTalk/tree/master/doc/Programs/MLcpp/src". Python codes to come, only c++ as of now. 
+
+The trial wave function is based on the product of a Slater determinant with Gaussian orbitals, a simple Jastrow factor $\exp{(r_{ij})}$ and the reduced Boltzmann machines. 
+
+The Broyden-Fletcher-Goldfarb-Shanno algorithm was used to perform the minimization.
+
 !eblock
 
-!split
-===== Basic functions  =====
-!bblock
-!bc cppcod
-#include "hamiltonian.h"
-
-
-Hamiltonian::Hamiltonian(double omega, bool includeInteraction) {
-    m_omega = omega;
-    m_includeInteraction = includeInteraction;
-}
-
-
-double Hamiltonian::computeLocalEnergy(NeuralQuantumState &nqs) {
-    Eigen::VectorXd Q = nqs.m_b + (1.0/nqs.m_sig2)*(nqs.m_x.transpose()*nqs.m_w).transpose();
-    double ElocTemp = 0;
-    // Loop over the visibles (n_particles*n_coordinates) for the Laplacian
-    for (int r=0; r<nqs.m_nx; r++) {
-        double sum1 = 0;
-        double sum2 = 0;
-        for (int j=0; j<nqs.m_nh; j++) {
-            sum1 += nqs.m_w(r,j)/(1.0+exp(-Q(j)));
-            sum2 += nqs.m_w(r,j)*nqs.m_w(r,j)*exp(Q(j))/((exp(Q(j))+1.0)*(exp(Q(j))+1.0));
-        }
-        double der1lnPsi = -(nqs.m_x(r) - nqs.m_a(r))/nqs.m_sig2 + sum1/nqs.m_sig2;
-        double der2lnPsi = -1.0/nqs.m_sig2 + sum2/(nqs.m_sig2*nqs.m_sig2);
-        // The last term is the Harmonic Oscillator potential
-        ElocTemp += -der1lnPsi*der1lnPsi - der2lnPsi + m_omega*m_omega*nqs.m_x(r)*nqs.m_x(r);
-
-
-    }
-    ElocTemp = 0.5*ElocTemp;
-
-    // With interaction:
-    if (m_includeInteraction) {
-        ElocTemp += interaction(nqs.m_x, nqs.m_nx, nqs.m_dim);
-    }
-
-    return ElocTemp;
-}
-
-Eigen::VectorXd Hamiltonian::computeLocalEnergyGradientComponent(NeuralQuantumState &nqs) {
-
-    // Compute the 1/psi * dPsi/dalpha_i, that is Psi derived wrt each RBM parameter.
-    Eigen::VectorXd Q = nqs.m_b + (1.0/nqs.m_sig2)*(nqs.m_x.transpose()*nqs.m_w).transpose();
-    Eigen::VectorXd derPsiTemp;
-    derPsiTemp.resize(nqs.m_nx + nqs.m_nh + nqs.m_nx*nqs.m_nh);
-
-    for (int k=0; k<nqs.m_nx; k++) {
-        derPsiTemp(k) = (nqs.m_x(k) - nqs.m_a(k))/nqs.m_sig2;
-    }
-    for (int k=nqs.m_nx; k<(nqs.m_nx+nqs.m_nh); k++) {
-        derPsiTemp(k) = 1.0/(1.0+exp(-Q(k-nqs.m_nx)));
-    }
-    int k=nqs.m_nx + nqs.m_nh;
-    for (int i=0; i<nqs.m_nx; i++) {
-        for (int j=0; j<nqs.m_nh; j++) {
-            derPsiTemp(k) = nqs.m_x(i)/(nqs.m_sig2*(1.0+exp(-Q(j))));
-            k++;
-        }
-    }
-    return derPsiTemp;
-}
-
-double Hamiltonian::interaction(Eigen::VectorXd x, int nx, int dim) {
-    double interactionTerm = 0;
-    double rDistance;
-    // Loop over each particle
-    for (int r=0; r<nx-dim; r+=dim) {
-        // Loop over each particle s that particle r hasn't been paired with
-        for (int s=(r+dim); s<nx; s+=dim) {
-            rDistance = 0;
-            // Loop over each dimension
-            for (int i=0; i<dim; i++) {
-                rDistance += (x(r+i) - x(s+i))*(x(r+i) - x(s+i));
-            }
-            interactionTerm += 1.0/sqrt(rDistance);
-        }
-    }
-    return interactionTerm;
-}
-!ec
-!eblock
 
 
 
 !split
-===== Energy as function of iterations  =====
+===== Energy as function of iterations, $N=2$ electrons  =====
 !bblock
-FIGURE: [figures/MLrbm.pdf, width=700 frac=0.9]
+FIGURE: [figures/figN2.pdf, width=700 frac=0.9]
 !eblock
+
+
+!split
+===== Energy as function of iterations, $N=6$ electrons  =====
+!bblock
+FIGURE: [figures/figN6.pdf, width=700 frac=0.9]
+!eblock
+
 
 
 !split

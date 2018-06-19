@@ -1,9 +1,12 @@
+*** error: file has a mako construction ${\bf R}'
+    but seemingly no definition in <%...%>'
+    (it is not a command-line given mako variable either).
+    However, if this is a variable in a Makefile or Bash script
+    run with --no_mako - and you cannot use mako and Makefile or Bash variables
+    in the same document!
+
 translating doconce text in vmcml.do.txt to html
 *** replacing \bm{...} by \boldsymbol{...} (\bm is not supported by MathJax)
-figure figures/figN2.pdf must have extension(s) .html, .png, .gif, .jpg, .jpeg, .svg
-....image conversion: convert figures/figN2.pdf figures/figN2.png
-figure figures/figN6.pdf must have extension(s) .html, .png, .gif, .jpg, .jpeg, .svg
-....image conversion: convert figures/figN6.pdf figures/figN6.png
 figure file figures/Hudson_Bay_data:
     can use figures/Hudson_Bay_data.png for format html
 *** warning: math block in HTML must have space around <:
@@ -15,6 +18,13 @@ figure file figures/Hudson_Bay_data:
 \]
 
 output in vmcml-reveal.html
+*** error: file has a mako construction ${\bf R}'
+    but seemingly no definition in <%...%>'
+    (it is not a command-line given mako variable either).
+    However, if this is a variable in a Makefile or Bash script
+    run with --no_mako - and you cannot use mako and Makefile or Bash variables
+    in the same document!
+
 translating doconce text in vmcml.do.txt to html
 *** replacing \bm{...} by \boldsymbol{...} (\bm is not supported by MathJax)
 figure file figures/Hudson_Bay_data:
@@ -28,6 +38,13 @@ figure file figures/Hudson_Bay_data:
 \]
 
 output in vmcml-solarized.html
+*** error: file has a mako construction ${\bf R}'
+    but seemingly no definition in <%...%>'
+    (it is not a command-line given mako variable either).
+    However, if this is a variable in a Makefile or Bash script
+    run with --no_mako - and you cannot use mako and Makefile or Bash variables
+    in the same document!
+
 translating doconce text in vmcml.do.txt to html
 *** replacing \bm{...} by \boldsymbol{...} (\bm is not supported by MathJax)
 figure file figures/Hudson_Bay_data:
@@ -41,6 +58,13 @@ figure file figures/Hudson_Bay_data:
 \]
 
 output in vmcml.html
+*** error: file has a mako construction ${\bf R}'
+    but seemingly no definition in <%...%>'
+    (it is not a command-line given mako variable either).
+    However, if this is a variable in a Makefile or Bash script
+    run with --no_mako - and you cannot use mako and Makefile or Bash variables
+    in the same document!
+
 translating doconce text in vmcml.do.txt to html
 *** replacing \bm{...} by \boldsymbol{...} (\bm is not supported by MathJax)
 figure file figures/Hudson_Bay_data:
@@ -54,20 +78,174 @@ figure file figures/Hudson_Bay_data:
 \]
 
 output in vmcml-bs.html
+*** error: file has a mako construction ${\bf R}'
+    but seemingly no definition in <%...%>'
+    (it is not a command-line given mako variable either).
+    However, if this is a variable in a Makefile or Bash script
+    run with --no_mako - and you cannot use mako and Makefile or Bash variables
+    in the same document!
+
 translating doconce text in vmcml.do.txt to ipynb
 *** replacing \bm{...} by \boldsymbol{...} (\bm is not supported by MathJax)
 figure file figures/Hudson_Bay_data:
     can use figures/Hudson_Bay_data.png for format ipynb
 collected all required additional files in ipynb-vmcml-src.tar.gz which must be distributed with the notebook
 output in vmcml.ipynb
+*** error: file has a mako construction ${\bf R}'
+    but seemingly no definition in <%...%>'
+    (it is not a command-line given mako variable either).
+    However, if this is a variable in a Makefile or Bash script
+    run with --no_mako - and you cannot use mako and Makefile or Bash variables
+    in the same document!
+
 translating doconce text in vmcml.do.txt to pdflatex
 figure file figures/Hudson_Bay_data:
     can use figures/Hudson_Bay_data.pdf for format pdflatex
 output in vmcml.p.tex
+*** error: file has a mako construction ${\bf R}'
+    but seemingly no definition in <%...%>'
+    (it is not a command-line given mako variable either).
+    However, if this is a variable in a Makefile or Bash script
+    run with --no_mako - and you cannot use mako and Makefile or Bash variables
+    in the same document!
+
 translating doconce text in vmcml.do.txt to pdflatex
 figure file figures/Hudson_Bay_data:
     can use figures/Hudson_Bay_data.pdf for format pdflatex
 output in vmcml.p.tex
+*** error: file has a mako construction ${\bf R}'
+    but seemingly no definition in <%...%>'
+    (it is not a command-line given mako variable either).
+    However, if this is a variable in a Makefile or Bash script
+    run with --no_mako - and you cannot use mako and Makefile or Bash variables
+    in the same document!
+
+translating doconce text in vmcml.do.txt to pdflatex
+figure file figures/Hudson_Bay_data:
+    can use figures/Hudson_Bay_data.pdf for format pdflatex
+output in vmcml.p.tex
+*** error: file has a mako construction ${\bf R}'
+    but seemingly no definition in <%...%>'
+    (it is not a command-line given mako variable either).
+    However, if this is a variable in a Makefile or Bash script
+    run with --no_mako - and you cannot use mako and Makefile or Bash variables
+    in the same document!
+
+translating doconce text in vmcml.do.txt to html
+*** replacing \bm{...} by \boldsymbol{...} (\bm is not supported by MathJax)
+figure file figures/Hudson_Bay_data:
+    can use figures/Hudson_Bay_data.png for format html
+*** warning: math block in HTML must have space around <:
+\[ \hat{V}= \sum_{i<j}^N \frac{1}{r_{ij}},
+\]
+
+    changed to
+\[ \hat{V}= \sum_{i < j}^N \frac{1}{r_{ij}},
+\]
+
+output in vmcml-reveal.html
+*** error: file has a mako construction ${\bf R}'
+    but seemingly no definition in <%...%>'
+    (it is not a command-line given mako variable either).
+    However, if this is a variable in a Makefile or Bash script
+    run with --no_mako - and you cannot use mako and Makefile or Bash variables
+    in the same document!
+
+translating doconce text in vmcml.do.txt to html
+*** replacing \bm{...} by \boldsymbol{...} (\bm is not supported by MathJax)
+figure file figures/Hudson_Bay_data:
+    can use figures/Hudson_Bay_data.png for format html
+*** warning: math block in HTML must have space around <:
+\[ \hat{V}= \sum_{i<j}^N \frac{1}{r_{ij}},
+\]
+
+    changed to
+\[ \hat{V}= \sum_{i < j}^N \frac{1}{r_{ij}},
+\]
+
+output in vmcml-solarized.html
+*** error: file has a mako construction ${\bf R}'
+    but seemingly no definition in <%...%>'
+    (it is not a command-line given mako variable either).
+    However, if this is a variable in a Makefile or Bash script
+    run with --no_mako - and you cannot use mako and Makefile or Bash variables
+    in the same document!
+
+translating doconce text in vmcml.do.txt to html
+*** replacing \bm{...} by \boldsymbol{...} (\bm is not supported by MathJax)
+figure file figures/Hudson_Bay_data:
+    can use figures/Hudson_Bay_data.png for format html
+*** warning: math block in HTML must have space around <:
+\[ \hat{V}= \sum_{i<j}^N \frac{1}{r_{ij}},
+\]
+
+    changed to
+\[ \hat{V}= \sum_{i < j}^N \frac{1}{r_{ij}},
+\]
+
+output in vmcml.html
+*** error: file has a mako construction ${\bf R}'
+    but seemingly no definition in <%...%>'
+    (it is not a command-line given mako variable either).
+    However, if this is a variable in a Makefile or Bash script
+    run with --no_mako - and you cannot use mako and Makefile or Bash variables
+    in the same document!
+
+translating doconce text in vmcml.do.txt to html
+*** replacing \bm{...} by \boldsymbol{...} (\bm is not supported by MathJax)
+figure file figures/Hudson_Bay_data:
+    can use figures/Hudson_Bay_data.png for format html
+*** warning: math block in HTML must have space around <:
+\[ \hat{V}= \sum_{i<j}^N \frac{1}{r_{ij}},
+\]
+
+    changed to
+\[ \hat{V}= \sum_{i < j}^N \frac{1}{r_{ij}},
+\]
+
+output in vmcml-bs.html
+*** error: file has a mako construction ${\bf R}'
+    but seemingly no definition in <%...%>'
+    (it is not a command-line given mako variable either).
+    However, if this is a variable in a Makefile or Bash script
+    run with --no_mako - and you cannot use mako and Makefile or Bash variables
+    in the same document!
+
+translating doconce text in vmcml.do.txt to ipynb
+*** replacing \bm{...} by \boldsymbol{...} (\bm is not supported by MathJax)
+figure file figures/Hudson_Bay_data:
+    can use figures/Hudson_Bay_data.png for format ipynb
+collected all required additional files in ipynb-vmcml-src.tar.gz which must be distributed with the notebook
+output in vmcml.ipynb
+*** error: file has a mako construction ${\bf R}'
+    but seemingly no definition in <%...%>'
+    (it is not a command-line given mako variable either).
+    However, if this is a variable in a Makefile or Bash script
+    run with --no_mako - and you cannot use mako and Makefile or Bash variables
+    in the same document!
+
+translating doconce text in vmcml.do.txt to pdflatex
+figure file figures/Hudson_Bay_data:
+    can use figures/Hudson_Bay_data.pdf for format pdflatex
+output in vmcml.p.tex
+*** error: file has a mako construction ${\bf R}'
+    but seemingly no definition in <%...%>'
+    (it is not a command-line given mako variable either).
+    However, if this is a variable in a Makefile or Bash script
+    run with --no_mako - and you cannot use mako and Makefile or Bash variables
+    in the same document!
+
+translating doconce text in vmcml.do.txt to pdflatex
+figure file figures/Hudson_Bay_data:
+    can use figures/Hudson_Bay_data.pdf for format pdflatex
+output in vmcml.p.tex
+*** error: file has a mako construction ${\bf R}'
+    but seemingly no definition in <%...%>'
+    (it is not a command-line given mako variable either).
+    However, if this is a variable in a Makefile or Bash script
+    run with --no_mako - and you cannot use mako and Makefile or Bash variables
+    in the same document!
+
 translating doconce text in vmcml.do.txt to pdflatex
 figure file figures/Hudson_Bay_data:
     can use figures/Hudson_Bay_data.pdf for format pdflatex
