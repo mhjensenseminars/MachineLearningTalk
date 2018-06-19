@@ -1,13 +1,16 @@
 import numpy as np
 from scipy.optimize import minimize
 def DerivativeE(x):
-    return x[0]-1.0/(4*x[0]*x[0]*x[0]);
+    return x-1.0/(4*x*x*x);
 
 def Energy(x):
-   return x[0]*x[0]*0.5+1.0/(8*x[0]*x[0]);
-x0 = np.zeros(1)
+   return x*x*0.5+1.0/(8*x*x);
 x0 = 1.0
-#res = minimize(Energy, x0, method='powell', options={'xtol': 1e-8, 'disp': True})
+eta = 0.1
+Niterations = 1000
 
-res = minimize(Energy, x0, method='BFGS', options={'xtol': 1e-8, 'disp': True})
-#res = minimize(rosen, x0, method='nelder-mead',
+for iter in range(Niterations):
+    gradients = DerivativeE(x0)
+    x0 -= eta*gradients
+
+print(x0)

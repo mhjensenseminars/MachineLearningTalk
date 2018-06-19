@@ -54,11 +54,6 @@ def QuantumForce(r,alpha,beta):
     return qforce
     
 
-# Adaptive Stochastic gradient 
-def ASGD(gradients)
-    theta = theta - eta*gradients
-    return theta
-
 # Computing the derivative of the energy and the energy 
 def EnergyMinimization(alpha, beta):
 
@@ -132,5 +127,17 @@ beta = 0.3
 # Set up iteration using stochastic gradient method
 Energy = 0
 EDerivative = np.zeros((2), np.double)
-Energy, EDerivative = EnergyMinimization(alpha,beta)
+eta = 0.1
+Niterations = 100
+
+for iter in range(Niterations):
+    Energy, EDerivative = EnergyMinimization(alpha,beta)
+    alphagradient = EDerivative[0]
+    betagradient = EDerivative[1]
+    alpha -= eta*alphagradient
+    beta -= eta*betagradient 
+
+print(alpha, beta)
 print(Energy, EDerivative[0], EDerivative[1])
+
+

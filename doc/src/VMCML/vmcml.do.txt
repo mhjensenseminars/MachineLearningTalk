@@ -150,8 +150,14 @@ Some of the most common tasks are:
 * A cute paper by "Utama and Piekarewicz, Validating neural-network refinements of nuclear mass models, Phys. Rev. C 97, 014306 ":"https://journals.aps.org/prc/abstract/10.1103/PhysRevC.97.014306"
 * "Every issue of Physical Review Letters has now one or more articles on ML":"https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.120.156001"
 * "Books and lectures notes":"https://github.com/CompPhysics/MachineLearning"
-* See also Metha and Schwab, arXiv.1410.3831
+* See also Metha and Schwab, arXiv.1410.3831, how to link Variational renormalization group theory with deep learning
 !eblock
+
+
+!split
+===== Another interesting article =====
+
+Here we will use so-called _reduced Boltzmann Machines_ to simulate quantum many-body problems. For Monte Carlo aficionados, there is a very close similarity with what are called _shadow wave functions_, see the work of "Pederiva and Kalos and collaborators, Phys Rev. E 90, 053304 (2014)":"https://journals.aps.org/pre/abstract/10.1103/PhysRevE.90.053304".
 
 !split
 ===== Just for fun illustration of scikit-learn: Hudson bay data =====
@@ -907,7 +913,7 @@ where the local energy is given by
 !split
 ===== Running the codes =====
 !bblock
-You find the codes for the simple two-electron case at the Github repository URL:"https://github.com/mhjensenseminars/MachineLearningTalk/tree/master/doc/Programs/MLcpp/src". Python codes to come, only c++ as of now. 
+You can find the codes for the simple two-electron case at the Github repository URL:"https://github.com/mhjensenseminars/MachineLearningTalk/tree/master/doc/Programs/MLcpp/src". Python codes to come, only c++ as of now. 
 !eblock
 
 !split
