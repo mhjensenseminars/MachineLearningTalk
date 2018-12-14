@@ -138,16 +138,17 @@ MathJax.Hub.Config({
 <!-- author(s): Morten Hjorth-Jensen -->
 
 <center>
-<b>Morten Hjorth-Jensen</b> 
+<b>Morten Hjorth-Jensen</b> [1, 2]
 </center>
 
-<p>
-<!-- institution -->
+<p>&nbsp;<br>
+<!-- institution(s) -->
 
-<center><b>Department of Physics and Astronomy and National Superconducting Cyclotron Laboratory, Michigan State University</b></center>
+<center>[1] <b>Department of Physics and Astronomy and National Superconducting Cyclotron Laboratory, Michigan State University, USA</b></center>
+<center>[2] <b>Department of Physics and Center for Computing in Science Education, University of Oslo, Norway</b></center>
 <br>
 <p>&nbsp;<br>
-<center><h4>Jun 19, 2018 </h4></center> <!-- date -->
+<center><h4>Dec 14, 2018 </h4></center> <!-- date -->
 <br>
 <p>
 
@@ -183,7 +184,7 @@ How can we avoid the dimensionality curse? Many possibilities
 <ol>
 <p><li> smarter basis functions</li>
 <p><li> resummation of specific correlations</li>
-<p><li> stochastic sampling of high-lying states (stochastic FCI, CC and soon SRG)</li>
+<p><li> stochastic sampling of high-lying states (stochastic FCI, CC and SRG/IMSRG)</li>
 <p><li> many more</li>
 </ol>
 <p>
@@ -217,7 +218,7 @@ spin lattice systems of the Ising model and Heisenberg model, with
 encouraging results.
 
 <p>
-Thanks to Vilde Flugsrud and Alfred Alocias Mariadason for many discussions and interpretations of the above paper.
+Thanks to Jane Kim (MSU), Vilde Flugsrud (UiO), Alfred Alocias Mariadason (UiO) for many discussions and interpretations.
 </section>
 
 
@@ -283,26 +284,44 @@ opportunities. Add quantum computing and there you are.
 
 
 <section>
-<h2 id="___sec6">Some members of the ML family </h2>
+<h2 id="___sec6">Knowledge of Statistical analysis and optimization of data </h2>
+Some key elements that enter much of the discussion on ML:
+
+<ol>
+<p><li> Basic concepts, expectation values, variance, covariance, correlation functions and errors;</li>
+<p><li> Simpler models, binomial distribution, the Poisson distribution, simple and multivariate normal distributions;</li>
+<p><li> Central elements of Bayesian statistics and modeling;</li>
+<p><li> Central elements from linear algebra</li>
+<p><li> Gradient methods for data optimization</li>
+<p><li> Monte Carlo methods, Markov chains, Metropolis-Hastings algorithm;</li>
+<p><li> Estimation of errors using cross-validation, blocking, bootstrapping and jackknife methods;</li>
+<p><li> Practical optimization using Singular-value decomposition and least squares for parameterizing data.</li>
+<p><li> Principal Component Analysis.</li>
+</ol>
+</section>
+
+
+<section>
+<h2 id="___sec7">Some members of the ML family </h2>
 
 <p>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <ol>
-<p><li> Linear regression and its variants, in essence polynomial regression</li>
+<p><li> Linear regression and its variants, Logistic regression</li>
 <p><li> Decision tree algorithms, from simpler to more complex ones like random forests</li>
-<p><li> Nearest neighbors models</li>
-<p><li> Bayesian statistics and regression</li>
+<p><li> Bayesian statistics</li> 
 <p><li> Support vector machines and finally various variants of</li>
 <p><li> Artifical neural networks and deep learning</li>
-<p><li> ....</li>
+<p><li> Convolutional NN, autoenconders</li>
+<p><li> and many more</li>
 </ol>
 </div>
 </section>
 
 
 <section>
-<h2 id="___sec7">What are the basic ingredients? </h2>
+<h2 id="___sec8">What are the basic ingredients? </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -321,7 +340,7 @@ We seek to minimize the function \( \mathcal{C} (\mathbf{x}, f(\mathbf{\alpha}))
 
 
 <section>
-<h2 id="___sec8">What is Machine Learning? </h2>
+<h2 id="___sec9">What is Machine Learning? </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -347,7 +366,7 @@ You will notice however that many of the basic ideas discussed do come from Phys
 
 
 <section>
-<h2 id="___sec9">Types of Machine Learning </h2>
+<h2 id="___sec10">Types of Machine Learning </h2>
 
 <p>
 <div class="alert alert-block alert-block alert-text-normal">
@@ -378,7 +397,7 @@ Some of the most common tasks are:
 
 
 <section>
-<h2 id="___sec10">References </h2>
+<h2 id="___sec11">References </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <ul>
@@ -393,7 +412,7 @@ Some of the most common tasks are:
 
 
 <section>
-<h2 id="___sec11">Another interesting article </h2>
+<h2 id="___sec12">Another interesting article </h2>
 
 <p>
 Here we will use so-called <b>reduced Boltzmann Machines</b> to simulate quantum many-body problems. For Monte Carlo aficionados, there is a very close similarity with what are called <b>shadow wave functions</b>, see the work of <a href="https://journals.aps.org/pre/abstract/10.1103/PhysRevE.90.053304" target="_blank">Pederiva and Kalos and collaborators, Phys Rev. E 90, 053304 (2014)</a>.
@@ -401,61 +420,134 @@ Here we will use so-called <b>reduced Boltzmann Machines</b> to simulate quantum
 
 
 <section>
-<h2 id="___sec12">Just for fun illustration of scikit-learn: Hudson bay data </h2>
-<div class="alert alert-block alert-block alert-text-normal">
-<b></b>
-<p>
-Most mammalian predators rely on a variety of prey, which complicates mathematical modeling; however, a few predators have become highly specialized and seek almost exclusively a single prey species. An example of this simplified predator-prey interaction is seen in Canadian northern forests, where the populations of the lynx and the snowshoe hare are intertwined in a life and death struggle.
+<h2 id="___sec13">Courses on Data science and Machine Learning  at UiO </h2>
 
 <p>
-One reason that this particular system has been so extensively studied is that the Hudson Bay company kept careful records of all furs from the early 1800s into the 1900s. The records for the furs collected by the Hudson Bay company showed distinct oscillations (approximately 12 year periods), suggesting that these species caused almost periodic fluctuations of each other's populations. The table here shows data from 1900 to 1920.
+The link here <a href="https://www.mn.uio.no/english/research/about/centre-focus/innovation/data-science/studies/" target="_blank"><tt>https://www.mn.uio.no/english/research/about/centre-focus/innovation/data-science/studies/</tt></a>  gives an excellent overview of courses on Machine learning at UiO.
 
-
-</div>
+<ol>
+<p><li> <a href="http://www.uio.no/studier/emner/matnat/math/STK2100/index-eng.html" target="_blank">STK2100 Machine learning and statistical methods for prediction and classification</a>.</li> 
+<p><li> <a href="https://www.uio.no/studier/emner/matnat/ifi/IN3050/index-eng.html" target="_blank">IN3050 Introduction to Artificial Intelligence and Machine Learning</a>. Introductory course in machine learning and AI with an algorithmic approach.</li> 
+<p><li> <a href="http://www.uio.no/studier/emner/matnat/math/STK-INF3000/index-eng.html" target="_blank">STK-INF3000/4000 Selected Topics in Data Science</a>. The course provides insight into selected contemporary relevant topics within Data Science.</li> 
+<p><li> <a href="https://www.uio.no/studier/emner/matnat/ifi/IN4080/index.html" target="_blank">IN4080 Natural Language Processing</a>. Probabilistic and machine learning techniques applied to natural language processing.</li> 
+<p><li> <a href="https://www.uio.no/studier/emner/matnat/math/STK-IN4300/index-eng.html" target="_blank">STK-IN4300 &#8211; Statistical learning methods in Data Science</a>. An advanced introduction to statistical and machine learning. For students with a good mathematics and statistics background.</li>
+<p><li> <a href="http://www.uio.no/studier/emner/matnat/ifi/INF4490/" target="_blank">INF4490 Biologically Inspired Computing</a>. An introduction to self-adapting methods also called artificial intelligence or machine learning.</li> 
+<p><li> <a href="https://www.uio.no/studier/emner/matnat/ifi/IN-STK5000/index-eng.html" target="_blank">IN-STK5000  Adaptive Methods for Data-Based Decision Making</a>. Methods for adaptive collection and processing of data based on machine learning techniques.</li> 
+<p><li> <a href="https://www.uio.no/studier/emner/matnat/ifi/IN5400/" target="_blank">IN5400/INF5860 &#8211; Machine Learning for Image Analysis</a>. An introduction to deep learning with particular emphasis on applications within Image analysis, but useful for other application areas too.</li>
+<p><li> <a href="https://www.uio.no/studier/emner/matnat/its/TEK5040/" target="_blank">TEK5040 &#8211; Dyp l&#230;ring for autonome systemer</a>. The course addresses advanced algorithms and architectures for deep learning with neural networks. The course provides an introduction to how deep-learning techniques can be used in the construction of key parts of advanced autonomous systems that exist in physical environments and cyber environments.</li>
+</ol>
 </section>
 
 
 <section>
-<h2 id="___sec13">Hares and lynx in Hudson bay from 1900 to 1920 </h2>
+<h2 id="___sec14">Additional courses of interest </h2>
 
-<p>
-<br /><br /><center><p><img src="figures/Hudson_Bay_data.png" align="bottom" width=700></p></center><br /><br />
+<ol>
+<p><li> <a href="https://www.uio.no/studier/emner/matnat/math/STK4051/index-eng.html" target="_blank">STK4051 Computational Statistics</a></li>
+<p><li> <a href="https://www.uio.no/studier/emner/matnat/math/STK4021/index-eng.html" target="_blank">STK4021 Applied Bayesian Analysis and Numerical Methods</a></li>
+</ol>
 </section>
 
 
 <section>
-<h2 id="___sec14">Linear regression in Python  </h2>
-<div class="alert alert-block alert-block alert-text-normal">
-<b></b>
+<h2 id="___sec15">Decision trees and Regression  </h2>
 <p>
 
 <!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
 <div class="highlight" style="background: #eeeedd"><pre style="font-size: 80%; line-height: 125%"><span></span><span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">numpy</span> <span style="color: #8B008B; font-weight: bold">as</span> <span style="color: #008b45; text-decoration: underline">np</span>
 <span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">matplotlib.pyplot</span> <span style="color: #8B008B; font-weight: bold">as</span> <span style="color: #008b45; text-decoration: underline">plt</span>
-<span style="color: #8B008B; font-weight: bold">from</span> <span style="color: #008b45; text-decoration: underline">IPython.display</span> <span style="color: #8B008B; font-weight: bold">import</span> display
-<span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">sklearn</span>
+<span style="color: #8B008B; font-weight: bold">from</span> <span style="color: #008b45; text-decoration: underline">sklearn.preprocessing</span> <span style="color: #8B008B; font-weight: bold">import</span> PolynomialFeatures
 <span style="color: #8B008B; font-weight: bold">from</span> <span style="color: #008b45; text-decoration: underline">sklearn.linear_model</span> <span style="color: #8B008B; font-weight: bold">import</span> LinearRegression
+
+steps=<span style="color: #B452CD">250</span>
+
+distance=<span style="color: #B452CD">0</span>
+x=<span style="color: #B452CD">0</span>
+distance_list=[]
+steps_list=[]
+<span style="color: #8B008B; font-weight: bold">while</span> x&lt;steps:
+    distance+=np.random.randint(-<span style="color: #B452CD">1</span>,<span style="color: #B452CD">2</span>)
+    distance_list.append(distance)
+    x+=<span style="color: #B452CD">1</span>
+    steps_list.append(x)
+plt.plot(steps_list,distance_list, color=<span style="color: #CD5555">&#39;green&#39;</span>, label=<span style="color: #CD5555">&quot;Random Walk Data&quot;</span>)
+
+steps_list=np.asarray(steps_list)
+distance_list=np.asarray(distance_list)
+
+X=steps_list[:,np.newaxis]
+
+<span style="color: #228B22">#Polynomial fits</span>
+
+<span style="color: #228B22">#Degree 2</span>
+poly_features=PolynomialFeatures(degree=<span style="color: #B452CD">2</span>, include_bias=<span style="color: #658b00">False</span>)
+X_poly=poly_features.fit_transform(X)
+
+lin_reg=LinearRegression()
+poly_fit=lin_reg.fit(X_poly,distance_list)
+b=lin_reg.coef_
+c=lin_reg.intercept_
+<span style="color: #8B008B; font-weight: bold">print</span> (<span style="color: #CD5555">&quot;2nd degree coefficients:&quot;</span>)
+<span style="color: #8B008B; font-weight: bold">print</span> (<span style="color: #CD5555">&quot;zero power: &quot;</span>,c)
+<span style="color: #8B008B; font-weight: bold">print</span> (<span style="color: #CD5555">&quot;first power: &quot;</span>, b[<span style="color: #B452CD">0</span>])
+<span style="color: #8B008B; font-weight: bold">print</span> (<span style="color: #CD5555">&quot;second power: &quot;</span>,b[<span style="color: #B452CD">1</span>])
+
+z = np.arange(<span style="color: #B452CD">0</span>, steps, .<span style="color: #B452CD">01</span>)
+z_mod=b[<span style="color: #B452CD">1</span>]*z**<span style="color: #B452CD">2</span>+b[<span style="color: #B452CD">0</span>]*z+c
+
+fit_mod=b[<span style="color: #B452CD">1</span>]*X**<span style="color: #B452CD">2</span>+b[<span style="color: #B452CD">0</span>]*X+c
+plt.plot(z, z_mod, color=<span style="color: #CD5555">&#39;r&#39;</span>, label=<span style="color: #CD5555">&quot;2nd Degree Fit&quot;</span>)
+plt.title(<span style="color: #CD5555">&quot;Polynomial Regression&quot;</span>)
+
+plt.xlabel(<span style="color: #CD5555">&quot;Steps&quot;</span>)
+plt.ylabel(<span style="color: #CD5555">&quot;Distance&quot;</span>)
+
+<span style="color: #228B22">#Degree 10</span>
+poly_features10=PolynomialFeatures(degree=<span style="color: #B452CD">10</span>, include_bias=<span style="color: #658b00">False</span>)
+X_poly10=poly_features10.fit_transform(X)
+
+poly_fit10=lin_reg.fit(X_poly10,distance_list)
+
+y_plot=poly_fit10.predict(X_poly10)
+plt.plot(X, y_plot, color=<span style="color: #CD5555">&#39;black&#39;</span>, label=<span style="color: #CD5555">&quot;10th Degree Fit&quot;</span>)
+
+plt.legend()
+plt.show()
+
+
+<span style="color: #228B22">#Decision Tree Regression</span>
 <span style="color: #8B008B; font-weight: bold">from</span> <span style="color: #008b45; text-decoration: underline">sklearn.tree</span> <span style="color: #8B008B; font-weight: bold">import</span> DecisionTreeRegressor
+regr_1=DecisionTreeRegressor(max_depth=<span style="color: #B452CD">2</span>)
+regr_2=DecisionTreeRegressor(max_depth=<span style="color: #B452CD">5</span>)
+regr_3=DecisionTreeRegressor(max_depth=<span style="color: #B452CD">7</span>)
+regr_1.fit(X, distance_list)
+regr_2.fit(X, distance_list)
+regr_3.fit(X, distance_list)
 
+X_test = np.arange(<span style="color: #B452CD">0.0</span>, steps, <span style="color: #B452CD">0.01</span>)[:, np.newaxis]
+y_1 = regr_1.predict(X_test)
+y_2 = regr_2.predict(X_test)
+y_3=regr_3.predict(X_test)
 
-data = np.loadtxt(<span style="color: #CD5555">&#39;src/Hudson_Bay.csv&#39;</span>, delimiter=<span style="color: #CD5555">&#39;,&#39;</span>, skiprows=<span style="color: #B452CD">1</span>)
-x = data[:,<span style="color: #B452CD">0</span>]
-y = data[:,<span style="color: #B452CD">1</span>]
-line = np.linspace(<span style="color: #B452CD">1900</span>,<span style="color: #B452CD">1920</span>,<span style="color: #B452CD">1000</span>,endpoint=<span style="color: #658b00">False</span>).reshape(-<span style="color: #B452CD">1</span>,<span style="color: #B452CD">1</span>)
-reg = DecisionTreeRegressor(min_samples_split=<span style="color: #B452CD">3</span>).fit(x.reshape(-<span style="color: #B452CD">1</span>,<span style="color: #B452CD">1</span>),y.reshape(-<span style="color: #B452CD">1</span>,<span style="color: #B452CD">1</span>))
-plt.plot(line, reg.predict(line), label=<span style="color: #CD5555">&quot;decision tree&quot;</span>)
-regline = LinearRegression().fit(x.reshape(-<span style="color: #B452CD">1</span>,<span style="color: #B452CD">1</span>),y.reshape(-<span style="color: #B452CD">1</span>,<span style="color: #B452CD">1</span>))
-plt.plot(line, regline.predict(line), label= <span style="color: #CD5555">&quot;Linear Regression&quot;</span>)
-plt.plot(x, y, label= <span style="color: #CD5555">&quot;Linear Regression&quot;</span>)
+<span style="color: #228B22"># Plot the results</span>
+plt.figure()
+plt.scatter(X, distance_list, s=<span style="color: #B452CD">2.5</span>, c=<span style="color: #CD5555">&quot;black&quot;</span>, label=<span style="color: #CD5555">&quot;data&quot;</span>)
+plt.plot(X_test, y_1, color=<span style="color: #CD5555">&quot;red&quot;</span>,
+         label=<span style="color: #CD5555">&quot;max_depth=2&quot;</span>, linewidth=<span style="color: #B452CD">2</span>)
+plt.plot(X_test, y_2, color=<span style="color: #CD5555">&quot;green&quot;</span>, label=<span style="color: #CD5555">&quot;max_depth=5&quot;</span>, linewidth=<span style="color: #B452CD">2</span>)
+plt.plot(X_test, y_3, color=<span style="color: #CD5555">&quot;m&quot;</span>, label=<span style="color: #CD5555">&quot;max_depth=7&quot;</span>, linewidth=<span style="color: #B452CD">2</span>)
+
+plt.xlabel(<span style="color: #CD5555">&quot;Data&quot;</span>)
+plt.ylabel(<span style="color: #CD5555">&quot;Darget&quot;</span>)
+plt.title(<span style="color: #CD5555">&quot;Decision Tree Regression&quot;</span>)
+plt.legend()
 plt.show()
 </pre></div>
-
-</div>
 </section>
 
 
 <section>
-<h2 id="___sec15">Artificial neurons  </h2>
+<h2 id="___sec16">Artificial neurons  </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -487,7 +579,7 @@ a weighted sum of signals \( x_i, \dots ,x_n \) received by \( n \) other neuron
 
 
 <section>
-<h2 id="___sec16">A simple perceptron model </h2>
+<h2 id="___sec17">A simple perceptron model </h2>
 
 <p>
 <br /><br /><center><p><img src="figures/perceptron.png" align="bottom" width=700></p></center><br /><br />
@@ -495,7 +587,7 @@ a weighted sum of signals \( x_i, \dots ,x_n \) received by \( n \) other neuron
 
 
 <section>
-<h2 id="___sec17">Neural network types </h2>
+<h2 id="___sec18">Neural network types </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -514,7 +606,7 @@ is associated with a weight variable.
 
 
 <section>
-<h2 id="___sec18">The system: two electrons in a harmonic oscillator trap in two dimensions </h2>
+<h2 id="___sec19">The system: two electrons in a harmonic oscillator trap in two dimensions </h2>
 
 <p>
 The Hamiltonian of the quantum dot is given by
@@ -546,7 +638,7 @@ This system has analytical solutions in two and three dimensions (<a href="https
 
 
 <section>
-<h2 id="___sec19">Quantum Monte Carlo Motivation </h2>
+<h2 id="___sec20">Quantum Monte Carlo Motivation </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -572,7 +664,7 @@ In general, the integrals involved in the calculation of various  expectation va
 
 
 <section>
-<h2 id="___sec20">Quantum Monte Carlo Motivation </h2>
+<h2 id="___sec21">Quantum Monte Carlo Motivation </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b>Basic steps.</b>
 <p>
@@ -598,7 +690,7 @@ $$
 
 
 <section>
-<h2 id="___sec21">Quantum Monte Carlo Motivation </h2>
+<h2 id="___sec22">Quantum Monte Carlo Motivation </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b>Define a new quantity.</b>
 <p>&nbsp;<br>
@@ -620,7 +712,7 @@ with \( N \) being the number of Monte Carlo samples.
 
 
 <section>
-<h2 id="___sec22">Quantum Monte Carlo </h2>
+<h2 id="___sec23">Quantum Monte Carlo </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -653,7 +745,7 @@ Need importance sampling to get more relevant sampling.
 
 
 <section>
-<h2 id="___sec23">The trial wave function </h2>
+<h2 id="___sec24">The trial wave function </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -682,7 +774,7 @@ Machine Learning.
 
 
 <section>
-<h2 id="___sec24">The correlation part of the wave function </h2>
+<h2 id="___sec25">The correlation part of the wave function </h2>
 
 <p>
 To find an ansatz for the correlated part of the wave function, it is useful to rewrite the two-particle
@@ -712,7 +804,7 @@ $$
 
 
 <section>
-<h2 id="___sec25">Resulting ansatz </h2>
+<h2 id="___sec26">Resulting ansatz </h2>
 The above  results in
 <p>&nbsp;<br>
 $$
@@ -736,7 +828,7 @@ condition for each electron pair \( ij \).
 
 
 <section>
-<h2 id="___sec26">The VMC code </h2>
+<h2 id="___sec27">The VMC code </h2>
 
 <p>
 
@@ -853,7 +945,7 @@ plt.show()
 
 
 <section>
-<h2 id="___sec27">Technical aspect, improvements and how to define the cost function </h2>
+<h2 id="___sec28">Technical aspect, improvements and how to define the cost function </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -874,7 +966,7 @@ One way to achieve this is to minimize the energy as function of the variational
 
 
 <section>
-<h2 id="___sec28">Energy derivatives </h2>
+<h2 id="___sec29">Energy derivatives </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -900,7 +992,7 @@ $$
 
 
 <section>
-<h2 id="___sec29">Derivatives of the local energy </h2>
+<h2 id="___sec30">Derivatives of the local energy </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -932,7 +1024,7 @@ We can then use methods like stochastic gradient or other minimization methods t
 
 
 <section>
-<h2 id="___sec30">How do we define our cost function? </h2>
+<h2 id="___sec31">How do we define our cost function? </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -947,7 +1039,7 @@ How should we define the cost function?
 
 
 <section>
-<h2 id="___sec31">Meet the variance and its derivatives  </h2>
+<h2 id="___sec32">Meet the variance and its derivatives  </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b>Why the variance?</b>
 <p>
@@ -987,7 +1079,7 @@ Variation is then performed by minimizing both the energy and the variance.
 
 
 <section>
-<h2 id="___sec32">The variance defines the cost function  </h2>
+<h2 id="___sec33">The variance defines the cost function  </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -1019,7 +1111,22 @@ Evaluating the cost function means having to evaluate the above second derivativ
 
 
 <section>
-<h2 id="___sec33">Boltzmann Machines </h2>
+<h2 id="___sec34">Why Boltzmann machines? </h2>
+
+<p>
+What is known as restricted Boltzmann Machines (RMB) have received a lot of attention lately. 
+One of the major reasons is that they can be stacked layer-wise to build deep neural networks that capture complicated statistics.
+
+<p>
+The original RBMs had just one visible layer and a hidden layer, but recently so-called Gaussian-binary RBMs have gained quite some popularity in imaging since they are capable of modeling continuous data that are common to natural images.
+
+<p>
+Furthermore, they have been used to solve complicated quantum mechanical many-particle problems or classical statistical physics problems like the Ising and Potts classes of models.
+</section>
+
+
+<section>
+<h2 id="___sec35">Boltzmann Machines </h2>
 
 <p>
 Why use a generative model rather than the more well known discriminative deep neural networks (DNN)? 
@@ -1031,7 +1138,7 @@ Why use a generative model rather than the more well known discriminative deep n
 <ol type="a"></li>
  <p><li> A model for images could learn to draw new examples of cats and dogs, given a training dataset of images of cats and dogs.</li>
  <p><li> Generate a sample of an ordered or disordered Ising model phase, having been given samples of such phases.</li>
- <p><li> Model the trial wave function for Monte Carlo calculations</li>
+ <p><li> Model the trial function for Monte Carlo calculations</li>
 </ol>
 <p>
 </ul>
@@ -1039,7 +1146,7 @@ Why use a generative model rather than the more well known discriminative deep n
 
 
 <section>
-<h2 id="___sec34">Some similarities and differences from DNNs </h2>
+<h2 id="___sec36">Some similarities and differences from DNNs </h2>
 
 <ol>
 <p><li> Both use gradient-descent based learning procedures for minimizing cost functions</li>
@@ -1053,7 +1160,68 @@ History: The RBM was developed by amongst others Geoffrey Hinton, called by some
 
 
 <section>
-<h2 id="___sec35">The structure of the RBM network </h2>
+<h2 id="___sec37">Boltzmann machines (BM) </h2>
+
+<p>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+A BM is what we would call an undirected probabilistic graphical model
+with stochastic continuous or discrete units.
+</div>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+It is interpreted as a stochastic recurrent neural network where the
+state of each unit(neurons/nodes) depends on the units it is connected
+to. The weights in the network represent thus the strength of the
+interaction between various units/nodes.
+</div>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+It turns into a Hopfield network if we choose deterministic rather
+than stochastic units. In contrast to a Hopfield network, a BM is a
+so-called generative model. It allows us to generate new samples from
+the learned distribution.
+</div>
+</section>
+
+
+<section>
+<h2 id="___sec38">A standard BM setup </h2>
+
+<p>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+A standard BM network is divided into a set of observable and visible units \( \hat{x} \) and a set of unknown hidden units/nodes \( \hat{h} \).
+</div>
+
+<p>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+Additionally there can be bias nodes for the hidden and visible layers. These biases are normally set to \( 1 \).
+</div>
+
+<p>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+BMs are stackable, meaning they cwe can train a BM which serves as input to another BM. We can construct deep networks for learning complex PDFs. The layers can be trained one after another, a feature which makes them popular in deep learning
+</div>
+
+<p>
+However, they are often hard to train. This leads to the introduction of so-called restricted BMs, or RBMS.
+Here we take away all lateral connections between nodes in the visible layer as well as connections between nodes in the hidden layer. The network is illustrated in the figure below.
+</section>
+
+
+<section>
+<h2 id="___sec39">The structure of the RBM network </h2>
 
 <p>
 <br /><br /><center><p><img src="figures/RBM.png" align="bottom" width=800></p></center><br /><br />
@@ -1061,7 +1229,7 @@ History: The RBM was developed by amongst others Geoffrey Hinton, called by some
 
 
 <section>
-<h2 id="___sec36">The network </h2>
+<h2 id="___sec40">The network </h2>
 
 <p>
 <b>The network layers</b>:
@@ -1074,7 +1242,7 @@ History: The RBM was developed by amongst others Geoffrey Hinton, called by some
 
 
 <section>
-<h2 id="___sec37">Goals </h2>
+<h2 id="___sec41">Goals </h2>
 
 <p>
 The goal of the hidden layer is to increase the model's expressive power. We encode complex interactions between visible variables by introducing additional, hidden variables that interact with visible degrees of freedom in a simple manner, yet still reproduce the complex correlations between visible degrees in the data once marginalized over (integrated out).
@@ -1100,8 +1268,10 @@ Examples of this trick being employed in physics:
 
 
 <section>
-<h2 id="___sec38">Joint distribution and the Energy function </h2>
-The restricted Boltzmann machine is described by a Bolztmann distribution
+<h2 id="___sec42">Joint distribution </h2>
+
+<p>
+The restricted Boltzmann machine is described by a Boltzmann distribution
 <p>&nbsp;<br>
 $$
 \begin{align}
@@ -1126,7 +1296,7 @@ It is common to ignore \( T_0 \) by setting it to one.
 
 
 <section>
-<h2 id="___sec39">Network Elements </h2>
+<h2 id="___sec43">Network Elements, the energy function  </h2>
 
 <p>
 The function \( E(\mathbf{x},\mathbf{h}) \) gives the <b>energy</b> of a
@@ -1135,11 +1305,28 @@ the energy of a configuration, the higher the probability of it. This
 function also depends on the parameters \( \mathbf{a} \), \( \mathbf{b} \) and
 \( W \). Thus, when we adjust them during the learning procedure, we are
 adjusting the energy function to best fit our problem.
+
+<p>
+An expression for the energy function is
+<p>&nbsp;<br>
+$$
+E(\hat{x},\hat{h}) = -\sum_{ia}^{NA}b_i^a \alpha_i^a(x_i)-\sum_{jd}^{MD}c_j^d \beta_j^d(h_j)-\sum_{ijad}^{NAMD}b_i^a \alpha_i^a(x_i)c_j^d \beta_j^d(h_j)w_{ij}^{ad}.
+$$
+<p>&nbsp;<br>
+
+<p>
+Here \( \beta_j^d(h_j) \) and \( \alpha_i^a(x_j) \) are so-called transfer functions that map a given input value to a desired feature value. The labels \( a \) and \( d \) denote that there can be multiple transfer functions per variable. The first sum depends only on the visible units. The second on the hidden ones. <b>Note</b> that there is no connection between nodes in a layer.
+
+<p>
+The quantities \( b \) and \( c \) can be interpreted as the visible and hidden biases, respectively.
+
+<p>
+The connection between the nodes in the two layers is given by the weights \( w_{ij} \).
 </section>
 
 
 <section>
-<h2 id="___sec40">Defining different types of RBMs </h2>
+<h2 id="___sec44">Defining different types of RBMs </h2>
 There are different variants of RBMs, and the differences lie in the types of visible and hidden units we choose as well as in the implementation of the energy function \( E(\mathbf{x},\mathbf{h}) \).
 
 <p>
@@ -1176,7 +1363,7 @@ $$
 
 
 <section>
-<h2 id="___sec41">More about RBMs </h2>
+<h2 id="___sec45">More about RBMs </h2>
 
 <ol>
 <p><li> Useful when we model continuous data (i.e., we wish \( \mathbf{x} \) to be continuous)</li>
@@ -1196,7 +1383,7 @@ Other types of units include:
 
 
 <section>
-<h2 id="___sec42">Sampling: Metropolis sampling </h2>
+<h2 id="___sec46">Sampling: Metropolis sampling </h2>
 In order to sample from the RBM probability distribution it is common to use Markov Chain Monte Carlo (MCMC) algorithms such as Metropolis-Hastings or Gibbs sampling.
 
 <p>
@@ -1225,7 +1412,7 @@ $$
 
 
 <section>
-<h2 id="___sec43">Sampling: Gibbs sampling </h2>
+<h2 id="___sec47">Sampling: Gibbs sampling </h2>
 
 <p>
 In this method we sample from the joint probability \( P_{rbm} (\mathbf{x}, \mathbf{h}) \) by way of a two step sampling process. We alternately update the visible and hidden units.
@@ -1249,7 +1436,7 @@ where we recognize the logistic sigmoid function \( \sigma (x) = 1/(1+exp(-x)) \
 
 
 <section>
-<h2 id="___sec44">Gaussian RBM </h2>
+<h2 id="___sec48">Gaussian RBM </h2>
 For the Gaussian-Binary RBM the conditional probabilities are
 <p>&nbsp;<br>
 $$
@@ -1267,7 +1454,7 @@ while the visible units now follow a normal distribution, we see the hidden unit
 
 
 <section>
-<h2 id="___sec45">Cost function </h2>
+<h2 id="___sec49">Cost function </h2>
 
 <p>
 When working with a training dataset, the most common training approach is maximizing the log-likelihood of the training data. The log likelihood characterizes the log-probability of generating the observed data using our generative model. Using this method our cost function is chosen as the negative log-likelihood. The learning then consists of trying to find parameters that maximize the probability of the dataset, and is known as Maximum Likelihood Estimation (MLE).
@@ -1289,7 +1476,9 @@ Our cost function is the negative log-likelihood, \( \mathcal{C}(\{ \theta_i \})
 
 
 <section>
-<h2 id="___sec46">Optimization / Training </h2>
+<h2 id="___sec50">Optimization / Training </h2>
+
+<p>
 The training procedure of choice often is Stochastic Gradient Descent (SGD). It consists of a series of iterations where we update the parameters according to the equation
 <p>&nbsp;<br>
 $$
@@ -1340,7 +1529,7 @@ $$
 
 
 <section>
-<h2 id="___sec47">More on RBMs </h2>
+<h2 id="___sec51">More on RBMs </h2>
 
 <p>
 The data-dependent term in the gradient is known as the positive phase of the gradient, while the model-dependent term is known as the negative phase of the gradient. The aim of the training is to lower the energy of configurations that are near observed data points (increasing their probability), and raising the energy of configurations that are far from observed data points (decreasing their probability).
@@ -1366,7 +1555,7 @@ To get the expecation values with respect to the <em>data</em>, we set the visib
 
 
 <section>
-<h2 id="___sec48">Which sampling to use </h2>
+<h2 id="___sec52">Which sampling to use </h2>
 
 <p>
 To get the expectation values with respect to the <em>model</em>, we use Gibbs sampling. We can either initialize the \( \boldsymbol{x} \) randomly or with a training sample. While we ideally want a large number of Gibbs iterations \( n\rightarrow n \), one might decide to truncate it earlier for efficiency. Doing this while having intialized \( \boldsymbol{x} \) with a training data vector is referred to as contrastive divergence (CD), because one is then closer to approximating the gradient of this function than the negative log-likelihood. The contrastive divergence function is the difference between two Kullback-Leibler divergences (also called relative entropy), which measure how one probability distribution diverges from a second, expected probability distribution (in this case the estimated one from the ground truth one).
@@ -1374,7 +1563,7 @@ To get the expectation values with respect to the <em>model</em>, we use Gibbs s
 
 
 <section>
-<h2 id="___sec49">RBMs for the quantum many body problem </h2>
+<h2 id="___sec53">RBMs for the quantum many body problem </h2>
 
 <p>
 The idea of applying RBMs to quantum many body problems was presented by G. Carleo and M. Troyer, working with ETH Zurich and Microsoft Research.
@@ -1398,7 +1587,7 @@ Some of their motivation included
 
 
 <section>
-<h2 id="___sec50">Choose the right RBM </h2>
+<h2 id="___sec54">Choose the right RBM </h2>
 
 <p>
 Carleo and Troyer applied the RBM to the quantum mechanical spin lattice systems of the Ising model and Heisenberg model, with encouraging results. Our goal is to test the method on systems of moving particles. For the spin lattice systems it was natural to use a binary-binary RBM, with the nodes taking values of 1 and -1. For moving particles, on the other hand, we want the visible nodes to be continuous, representing position coordinates. Thus, we start by choosing a Gaussian-binary RBM, where the visible nodes are continuous and hidden nodes take on values of 0 or 1. If eventually we would like the hidden nodes to be continuous as well the rectified linear units seem like the most relevant choice.
@@ -1406,7 +1595,7 @@ Carleo and Troyer applied the RBM to the quantum mechanical spin lattice systems
 
 
 <section>
-<h2 id="___sec51">Representing the wave function </h2>
+<h2 id="___sec55">Representing the wave function </h2>
 The wavefunction should be a probability amplitude depending on \( \boldsymbol{x} \). The RBM model is given by the joint distribution of \( \boldsymbol{x} \) and \( \boldsymbol{h} \)
 <p>&nbsp;<br>
 $$
@@ -1449,7 +1638,7 @@ $$
 
 
 <section>
-<h2 id="___sec52">Choose the cost function </h2>
+<h2 id="___sec56">Choose the cost function </h2>
 Now we don't necessarily have training data (unless we generate it by using some other method). However, what we do have is the variational principle which allows us to obtain the ground state wave function by minimizing the expectation value of the energy of a trial wavefunction (corresponding to the untrained NQS). Similarly to the traditional variational Monte Carlo method then, it is the local energy we wish to minimize. The gradient to use for the stochastic gradient descent procedure is
 <p>&nbsp;<br>
 $$
@@ -1474,7 +1663,7 @@ $$
 
 
 <section>
-<h2 id="___sec53">Running the codes </h2>
+<h2 id="___sec57">Running the codes </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -1484,7 +1673,7 @@ You can find the codes for the simple two-electron case at the Github repository
 The trial wave function is based on the product of a Slater determinant with Gaussian orbitals, a simple Jastrow factor \( \exp{(r_{ij})} \) and the reduced Boltzmann machines.
 
 <p>
-The Broyden-Fletcher-Goldfarb-Shanno algorithm was used to perform the minimization. We used \( 14 \) hidden nodes in the calculations below.
+The Broyden-Fletcher-Goldfarb-Shanno algorithm was used for the minimization. We used \( 14 \) hidden nodes in the calculations below.
 
 
 </div>
@@ -1492,7 +1681,7 @@ The Broyden-Fletcher-Goldfarb-Shanno algorithm was used to perform the minimizat
 
 
 <section>
-<h2 id="___sec54">Energy as function of iterations, \( N=2 \) electrons  </h2>
+<h2 id="___sec58">Energy as function of iterations, \( N=2 \) electrons  </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -1502,7 +1691,7 @@ The Broyden-Fletcher-Goldfarb-Shanno algorithm was used to perform the minimizat
 
 
 <section>
-<h2 id="___sec55">Energy as function of iterations, \( N=6 \) electrons  </h2>
+<h2 id="___sec59">Energy as function of iterations, \( N=6 \) electrons  </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -1512,7 +1701,7 @@ The Broyden-Fletcher-Goldfarb-Shanno algorithm was used to perform the minimizat
 
 
 <section>
-<h2 id="___sec56">Conclusions and where do we stand </h2>
+<h2 id="___sec60">Conclusions and where do we stand </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <ul>
@@ -1530,6 +1719,149 @@ The Broyden-Fletcher-Goldfarb-Shanno algorithm was used to perform the minimizat
 <p><li> Can we use ML to find out which correlations are relevant and thereby diminish the dimensionality problem in say CC or SRG theories?</li>
 </ul>
 </div>
+</section>
+
+
+<section>
+<h2 id="___sec61">Additional material  </h2>
+</section>
+
+
+<section>
+<h2 id="___sec62">Kullback-Leibler relative entropy </h2>
+
+<p>
+When the goal of the training is to approximate a probability
+distribution, as it is in generative modeling, another relevant
+measure is the <b>Kullback-Leibler divergence</b>, also known as the
+relative entropy or Shannon entropy. It is a non-symmetric measure of the
+dissimilarity between two probability density functions \( p \) and
+\( q \). If \( p \) is the unkown probability which we approximate with \( q \),
+we can measure the difference by
+<p>&nbsp;<br>
+$$
+\begin{align}
+	\text{KL}(p||q) = \int_{-\infty}^{\infty} p (\boldsymbol{x}) \log \frac{p(\boldsymbol{x})}{q(\boldsymbol{x})}  d\boldsymbol{x}.
+\tag{34}
+\end{align}
+$$
+<p>&nbsp;<br>
+
+<p>
+Thus, the Kullback-Leibler divergence between the distribution of the
+training data \( f(\boldsymbol{x}) \) and the model distribution \( p(\boldsymbol{x}|
+\boldsymbol{\theta}) \) is
+
+<p>&nbsp;<br>
+$$
+\begin{align}
+	\text{KL} (f(\boldsymbol{x})|| p(\boldsymbol{x}| \boldsymbol{\theta})) =& \int_{-\infty}^{\infty}
+	f (\boldsymbol{x}) \log \frac{f(\boldsymbol{x})}{p(\boldsymbol{x}| \boldsymbol{\theta})} d\boldsymbol{x} 
+\tag{35}\\
+	=& \int_{-\infty}^{\infty} f(\boldsymbol{x}) \log f(\boldsymbol{x}) d\boldsymbol{x} - \int_{-\infty}^{\infty} f(\boldsymbol{x}) \log
+	p(\boldsymbol{x}| \boldsymbol{\theta}) d\boldsymbol{x} 
+\tag{36}\\
+	%=& \mathbb{E}_{f(\boldsymbol{x})} (\log f(\boldsymbol{x})) - \mathbb{E}_{f(\boldsymbol{x})} (\log p(\boldsymbol{x}| \boldsymbol{\theta}))
+	=& \langle \log f(\boldsymbol{x}) \rangle_{f(\boldsymbol{x})} - \langle \log p(\boldsymbol{x}| \boldsymbol{\theta}) \rangle_{f(\boldsymbol{x})} 
+\tag{37}\\
+	=& \langle \log f(\boldsymbol{x}) \rangle_{data} + \langle E(\boldsymbol{x}) \rangle_{data} + \log Z 
+\tag{38}\\
+	=& \langle \log f(\boldsymbol{x}) \rangle_{data} + \mathcal{C}_{LL} .
+\tag{39}
+\end{align}
+$$
+<p>&nbsp;<br>
+
+<p>
+The first term is constant with respect to \( \boldsymbol{\theta} \) since \( f(\boldsymbol{x}) \) is independent of \( \boldsymbol{\theta} \). Thus the Kullback-Leibler Divergence is minimal when the second term is minimal. The second term is the log-likelihood cost function, hence minimizing the Kullback-Leibler divergence is equivalent to maximizing the log-likelihood.
+</section>
+
+
+<section>
+<h2 id="___sec63">Optimizing the cost function </h2>
+
+<p>
+To further understand generative models it is useful to study the
+gradient of the cost function which is needed in order to minimize it
+using methods like stochastic gradient descent.
+
+<p>
+The partition function is the generating function of
+expectation values, in particular there are mathematical relationships
+between expectation values and the log-partition function. In this
+case we have
+<p>&nbsp;<br>
+$$
+\begin{align}
+	\langle \frac{ \partial E(\boldsymbol{x}; \theta_i) } { \partial \theta_i} \rangle_{model}
+	= \int p(\boldsymbol{x}| \boldsymbol{\theta}) \frac{ \partial E(\boldsymbol{x}; \theta_i) } { \partial \theta_i} d\boldsymbol{x} 
+	= -\frac{\partial \log Z(\theta_i)}{ \partial  \theta_i} .
+\tag{40}
+\end{align}
+$$
+<p>&nbsp;<br>
+
+<p>
+Here \( \langle \cdot \rangle_{model} \) is the expectation value over the model probability distribution \( p(\boldsymbol{x}| \boldsymbol{\theta}) \).
+</section>
+
+
+<section>
+<h2 id="___sec64">Setting up for gradient descent calculations </h2>
+
+<p>
+Using the previous relationship we can express the gradient of the cost function as
+
+<p>&nbsp;<br>
+$$
+\begin{align}
+	\frac{\partial \mathcal{C}_{LL}}{\partial \theta_i}
+	=& \langle \frac{ \partial E(\boldsymbol{x}; \theta_i) } { \partial \theta_i} \rangle_{data} + \frac{\partial \log Z(\theta_i)}{ \partial  \theta_i} 
+\tag{41}\\
+	=& \langle \frac{ \partial E(\boldsymbol{x}; \theta_i) } { \partial \theta_i} \rangle_{data} - \langle \frac{ \partial E(\boldsymbol{x}; \theta_i) } { \partial \theta_i} \rangle_{model} 
+\tag{42}\\
+	%=& \langle O_i(\boldsymbol{x}) \rangle_{data} - \langle O_i(\boldsymbol{x}) \rangle_{model}
+\tag{43}
+\end{align}
+$$
+<p>&nbsp;<br>
+
+<p>
+This expression shows that the gradient of the log-likelihood cost
+function is a <b>difference of moments</b>, with one calculated from
+the data and one calculated from the model. The data-dependent term is
+called the <b>positive phase</b> and the model-dependent term is
+called the <b>negative phase</b> of the gradient. We see now that
+minimizing the cost function results in lowering the energy of
+configurations \( \boldsymbol{x} \) near points in the training data and
+increasing the energy of configurations not observed in the training
+data. That means we increase the model's probability of configurations
+similar to those in the training data.
+</section>
+
+
+<section>
+<h2 id="___sec65">More interpretations </h2>
+
+<p>
+The gradient of the cost function also demonstrates why gradients of
+unsupervised, generative models must be computed differently from for
+those of for example FNNs. While the data-dependent expectation value
+is easily calculated based on the samples \( \boldsymbol{x}_i \) in the training
+data, we must sample from the model in order to generate samples from
+which to caclulate the model-dependent term. We sample from the model
+by using MCMC-based methods. We can not sample from the model directly
+because the partition function \( Z \) is generally intractable.
+
+<p>
+As in supervised machine learning problems, the goal is also here to
+perform well on <b>unseen</b> data, that is to have good
+generalization from the training data. The distribution \( f(x) \) we
+approximate is not the <b>true</b> distribution we wish to estimate,
+it is limited to the training data. Hence, in unsupervised training as
+well it is important to prevent overfitting to the training data. Thus
+it is common to add regularizers to the cost function in the same
+manner as we discussed for say linear regression.
 </section>
 
 
