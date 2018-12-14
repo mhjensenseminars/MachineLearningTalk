@@ -85,8 +85,7 @@ understanding errors and Monte Carlo methods is important in order to understand
 various algorithms and methods. 
 !eblock
 
-_Job market, a personal statement_: "A familiarity with ML is almost becoming a prerequisite for many of the most exciting employment 
-opportunities. Add quantum computing and there you are":https://www.analyticsindiamag.com/top-countries-hiring-most-number-of-artificial-intelligence-machine-learning-experts/".
+_Job market, a personal statement_: "A familiarity with ML is almost becoming a prerequisite for many of the most exciting employment opportunities":"https://www.analyticsindiamag.com/top-countries-hiring-most-number-of-artificial-intelligence-machine-learning-experts/". And add quantum computing and there you are!
 
 
 !split
