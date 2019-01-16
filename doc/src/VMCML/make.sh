@@ -51,7 +51,6 @@ system doconce format ipynb $name $opt
 
 
 
-
 # Publish
 dest=../../pub
 if [ ! -d $dest/$name ]; then
@@ -83,3 +82,7 @@ tar czf ${ipynb_tarfile} README.txt
 fi
 cp ${ipynb_tarfile} $dest/$name/ipynb
 EOF
+
+
+
+
