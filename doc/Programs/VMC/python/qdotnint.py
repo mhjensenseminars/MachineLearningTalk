@@ -63,9 +63,9 @@ def EnergyMinimization(alpha):
     seed()
     energy = 0.0
     DeltaE = 0.0
-    EnergyDer = np.zeros((2), np.double)
-    DeltaPsi = np.zeros((2), np.double)
-    DerivativePsiE = np.zeros((2), np.double)
+    EnergyDer = 0.0
+    DeltaPsi = 0.0
+    DerivativePsiE = 0.0
     #Initial position
     for i in range(NumberParticles):
         for j in range(Dimension):
@@ -106,22 +106,25 @@ def EnergyMinimization(alpha):
     DerivativePsiE /= NumberMCcycles
     DeltaPsi /= NumberMCcycles
     EnergyDer  = 2*(DerivativePsiE-DeltaPsi*energy)
-    return energy #, EnergyDer
+    return energy, EnergyDer
 
 
 #Here starts the main program with variable declarations
 NumberParticles = 2
 Dimension = 2
 # guess for variational parameters
-x0 = np.zeros(1)
-x0 = 0.9
+x0 = 1.5
 # Set up iteration using stochastic gradient method
-Energy = 0
-EDerivative = np.zeros((1), np.double)
-Energy = EnergyMinimization(x0)
-#print(Energy, EDerivative[0])
+Energy =0 ; EnergyDer = 0
+Energy, EnergyDer = EnergyMinimization(x0)
+print(Energy, EnergyDer)
 
-res = minimize(EnergyMinimization, x0, method='powell', options={'xtol': 1e-8, 'disp': True})
+eta = 0.01
+Niterations = 100
+
+for iter in range(Niterations):
+    gradients = EnergyDer
+    x0 -= eta*gradients
+    Energy, EnergyDer = EnergyMinimization(x0)
+
 print(x0)
-#res = minimize(Energy, x0, method='BFGS', options={'xtol': 1e-8, 'disp': True})
-#res = minimize(rosen, x0, method='nelder-mead',

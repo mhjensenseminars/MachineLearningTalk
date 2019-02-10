@@ -8,7 +8,7 @@ def Energy(x):
    return x*x*0.5+1.0/(8*x*x);
 x0 = 1.0
 eta = 0.1
-Niterations = 1000
+Niterations = 100
 
 for iter in range(Niterations):
     gradients = DerivativeE(x0)
