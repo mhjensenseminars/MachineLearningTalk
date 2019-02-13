@@ -106,9 +106,10 @@ def EnergyMinimization(alpha, beta):
                     QuantumForceOld[i,j] = QuantumForceNew[i,j]
                 wfold = wfnew
         DeltaE = LocalEnergy(PositionOld,alpha,beta)
-        DeltaPsi = DerivativeWFansatz(PositionOld,alpha,beta)
+        DerPsi = DerivativeWFansatz(PositionOld,alpha,beta)
+        DeltaPsi += DerPsi
         energy += DeltaE
-        DerivativePsiE += DeltaPsi*DeltaE
+        DerivativePsiE += DerPsi*DeltaE
             
     # We calculate mean, variance and error (no blocking applied)
     energy /= NumberMCcycles
@@ -122,8 +123,8 @@ def EnergyMinimization(alpha, beta):
 NumberParticles = 2
 Dimension = 2
 # guess for variational parameters
-alpha = 1.0
-beta = 0.3
+alpha = 0.9
+beta = 0.2
 # Set up iteration using stochastic gradient method
 Energy = 0
 EDerivative = np.zeros((2), np.double)

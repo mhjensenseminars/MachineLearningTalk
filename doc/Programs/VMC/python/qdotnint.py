@@ -31,7 +31,7 @@ def DerivativeWFansatz(r,alpha):
     
     r1 = (r[0,0]**2 + r[0,1]**2)
     r2 = (r[1,0]**2 + r[1,1]**2)
-    WfDer = -(r1+r2)
+    WfDer = -0.5*(r1+r2)
     return  WfDer
 
 # Setting up the quantum force for the two-electron quantum dot, recall that it is a vector
@@ -88,7 +88,7 @@ def EnergyMinimization(alpha):
 	                              (D*TimeStep*0.5*(QuantumForceOld[i,j]-QuantumForceNew[i,j])-\
                                       PositionNew[i,j]+PositionOld[i,j])
       
-            GreensFunction = exp(GreensFunction)
+            GreensFunction = 1.0#exp(GreensFunction)
             ProbabilityRatio = GreensFunction*wfnew**2/wfold**2
             #Metropolis-Hastings test to see whether we accept the move
             if random() <= ProbabilityRatio:
@@ -97,15 +97,17 @@ def EnergyMinimization(alpha):
                     QuantumForceOld[i,j] = QuantumForceNew[i,j]
                 wfold = wfnew
         DeltaE = LocalEnergy(PositionOld,alpha)
-        DeltaPsi = DerivativeWFansatz(PositionOld,alpha)
+        DerPsi = DerivativeWFansatz(PositionOld,alpha)
+        DeltaPsi +=DerPsi
         energy += DeltaE
-        DerivativePsiE += DeltaPsi*DeltaE
+        DerivativePsiE += DerPsi*DeltaE
             
     # We calculate mean, variance and error (no blocking applied)
     energy /= NumberMCcycles
     DerivativePsiE /= NumberMCcycles
     DeltaPsi /= NumberMCcycles
     EnergyDer  = 2*(DerivativePsiE-DeltaPsi*energy)
+    print(energy, DerivativePsiE, DeltaPsi*energy)
     return energy, EnergyDer
 
 
@@ -113,18 +115,17 @@ def EnergyMinimization(alpha):
 NumberParticles = 2
 Dimension = 2
 # guess for variational parameters
-x0 = 1.5
+x0 = 0.9
 # Set up iteration using stochastic gradient method
 Energy =0 ; EnergyDer = 0
 Energy, EnergyDer = EnergyMinimization(x0)
-print(Energy, EnergyDer)
-
-eta = 0.01
+eta = 0.5
 Niterations = 100
 
 for iter in range(Niterations):
     gradients = EnergyDer
     x0 -= eta*gradients
     Energy, EnergyDer = EnergyMinimization(x0)
+    print(Energy, EnergyDer)
+    print(x0)
 
-print(x0)
