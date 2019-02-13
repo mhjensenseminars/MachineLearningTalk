@@ -130,7 +130,7 @@ Energy = 0
 EDerivative = np.zeros((2), np.double)
 eta = 0.1
 Niterations = 100
-# implement scikit-learn functionality 
+# 
 for iter in range(Niterations):
     Energy, EDerivative = EnergyMinimization(alpha,beta)
     alphagradient = EDerivative[0]
