@@ -111,7 +111,7 @@ def EnergyMinimization(alpha, beta):
         energy += DeltaE
         DerivativePsiE += DerPsi*DeltaE
             
-    # We calculate mean, variance and error (no blocking applied)
+    # We calculate mean values
     energy /= NumberMCcycles
     DerivativePsiE /= NumberMCcycles
     DeltaPsi /= NumberMCcycles
@@ -130,7 +130,7 @@ Energy = 0
 EDerivative = np.zeros((2), np.double)
 eta = 0.1
 Niterations = 100
-
+# implement scikit-learn functionality 
 for iter in range(Niterations):
     Energy, EDerivative = EnergyMinimization(alpha,beta)
     alphagradient = EDerivative[0]

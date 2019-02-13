@@ -119,6 +119,7 @@ x0 = 0.9
 # Set up iteration using stochastic gradient method
 Energy =0 ; EnergyDer = 0
 Energy, EnergyDer = EnergyMinimization(x0)
+
 eta = 0.5
 Niterations = 100
 
