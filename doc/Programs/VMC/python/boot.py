@@ -1,4 +1,4 @@
-from numpy import *
+from numpy import zeros, arange, mean, std, loadtxt
 from numpy.random import randint
 from time import time
 
@@ -11,17 +11,17 @@ def boot(data, statistic, R):
         t[i] = statistic(data[randint(0,n,n)])
 
     # analysis
-    print "Runtime: %g sec" % (time()-t0); print "Bootstrap Statistics :"
-    print "original           bias      std. error"
-    print "%8g %14g %15g" % (statistic(data), \
+    print ("Runtime: %g sec" % (time()-t0)); print ("Bootstrap Statistics :")
+    print ("original           bias      std. error")
+    print ("%8g %14g %15g" % (statistic(data), \
                              mean(t) - statistic(data), \
-                             std(t))
+                             std(t)))
     return t
 
 # Demo
 
 
-X = loadtxt("Energies.dat")
+X = loadtxt("resources/data.txt")
 
 # statistic to be estimated. Takes two args.
 # arg1: the data
