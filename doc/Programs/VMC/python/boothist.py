@@ -38,7 +38,7 @@ y = mlab.normpdf( binsboot, mean(t), std(t))
 lt = plt.plot(binsboot, y, 'r--', linewidth=1)
 plt.xlabel('Smarts')
 plt.ylabel('Probability')
-plt.axis([2.5, 3.5, 0, 500000])
+plt.axis([2.99, 3.01, 0, max(binsboot)])
 plt.grid(True)
 
 plt.show()

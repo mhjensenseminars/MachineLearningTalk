@@ -192,7 +192,7 @@ res = minimize(Energy, x0, method='BFGS', jac=EnergyDerivative, options={'gtol':
 x0 = res.x
 print(x0)
 # Compute the energy again with the optimal parameters and increased number of Monte Cycles
-NumberMCcycles= 1000000
+NumberMCcycles= 100000
 Printout = True
 outfile = open("Energies.dat",'w')
 print(Energy(x0))
