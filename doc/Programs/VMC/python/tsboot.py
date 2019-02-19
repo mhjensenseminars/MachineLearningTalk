@@ -27,7 +27,7 @@ def tsboot(data,statistic,R,l):
 
 # data
 T0 = time()
-X = loadtxt("resources/data.txt")
+X = loadtxt("Energies.dat")
 
 # statistic to be estimated. Takes two args.
 # arg1: the data

@@ -21,7 +21,7 @@ def boot(data, statistic, R):
 # Demo
 
 
-X = loadtxt("resources/data.txt")
+X = loadtxt("Energies.dat")
 
 # statistic to be estimated. Takes two args.
 # arg1: the data
@@ -31,4 +31,4 @@ def stat(data):
 
 
 # boot returns the bootstrap sample
-t = boot(X, stat, 2**9)
+t = boot(X, stat, 2**10)
