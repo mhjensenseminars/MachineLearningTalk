@@ -90,39 +90,57 @@ Automatically generated HTML file from DocOnce source
               ('How do we define our cost function?', 2, None, '___sec29'),
               ('Meet the variance and its derivatives', 2, None, '___sec30'),
               ('The variance defines the cost function', 2, None, '___sec31'),
-              ('Why Boltzmann machines?', 2, None, '___sec32'),
-              ('Boltzmann Machines', 2, None, '___sec33'),
+              ('The code for two electrons in two dims with no Coulomb '
+               'interaction',
+               2,
+               None,
+               '___sec32'),
+              ('Why Boltzmann machines?', 2, None, '___sec33'),
+              ('Boltzmann Machines', 2, None, '___sec34'),
               ('Some similarities and differences from DNNs',
                2,
                None,
-               '___sec34'),
-              ('Boltzmann machines (BM)', 2, None, '___sec35'),
-              ('A standard BM setup', 2, None, '___sec36'),
-              ('The structure of the RBM network', 2, None, '___sec37'),
-              ('The network', 2, None, '___sec38'),
-              ('Goals', 2, None, '___sec39'),
-              ('Joint distribution', 2, None, '___sec40'),
-              ('Network Elements, the energy function', 2, None, '___sec41'),
-              ('Defining different types of RBMs', 2, None, '___sec42'),
-              ('Sampling: Metropolis sampling', 2, None, '___sec43'),
-              ('Gaussian RBM', 2, None, '___sec44'),
-              ('Cost function', 2, None, '___sec45'),
-              ('Optimization / Training', 2, None, '___sec46'),
-              ('More on RBMs', 2, None, '___sec47'),
-              ('RBMs for the quantum many body problem', 2, None, '___sec48'),
-              ('Choose the right RBM', 2, None, '___sec49'),
-              ('Representing the wave function', 2, None, '___sec50'),
-              ('Choose the cost function', 2, None, '___sec51'),
-              ('Running the codes', 2, None, '___sec52'),
+               '___sec35'),
+              ('Boltzmann machines (BM)', 2, None, '___sec36'),
+              ('A standard BM setup', 2, None, '___sec37'),
+              ('The structure of the RBM network', 2, None, '___sec38'),
+              ('The network', 2, None, '___sec39'),
+              ('Goals', 2, None, '___sec40'),
+              ('Joint distribution', 2, None, '___sec41'),
+              ('Network Elements, the energy function', 2, None, '___sec42'),
+              ('Defining different types of RBMs', 2, None, '___sec43'),
+              ('Sampling: Metropolis sampling', 2, None, '___sec44'),
+              ('Gaussian RBM', 2, None, '___sec45'),
+              ('RBMs for the quantum many body problem', 2, None, '___sec46'),
+              ('Choose the right RBM', 2, None, '___sec47'),
+              ('Representing the wave function', 2, None, '___sec48'),
+              ('Choose the cost/loss function', 2, None, '___sec49'),
+              ('Running the codes', 2, None, '___sec50'),
               ('Energy as function of iterations, $N=2$ electrons',
                2,
                None,
-               '___sec53'),
+               '___sec51'),
               ('Energy as function of iterations, $N=6$ electrons',
                2,
                None,
-               '___sec54'),
-              ('Conclusions and where do we stand', 2, None, '___sec55')]}
+               '___sec52'),
+              ('Conclusions and where do we stand', 2, None, '___sec53'),
+              ('Appendix: Mathematical details', 2, None, '___sec54'),
+              ('Marginal Probability Density Functions', 3, None, '___sec55'),
+              ('Conditional Probability Density Functions',
+               3,
+               None,
+               '___sec56'),
+              ('Gaussian-Binary Restricted Boltzmann Machines',
+               3,
+               None,
+               '___sec57'),
+              ('Joint Probability Density Function', 3, None, '___sec58'),
+              ('Marginal Probability Density Functions', 3, None, '___sec59'),
+              ('Conditional Probability Density Functions',
+               3,
+               None,
+               '___sec60')]}
 end of tocinfo -->
 
 <body>
@@ -160,62 +178,67 @@ MathJax.Hub.Config({
       <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Contents <b class="caret"></b></a>
         <ul class="dropdown-menu">
-     <!-- navigation toc: --> <li><a href="._unitn-bs001.html#___sec0" style="font-size: 80%;">What is this talk about?</a></li>
-     <!-- navigation toc: --> <li><a href="._unitn-bs002.html#___sec1" style="font-size: 80%;">Why?</a></li>
-     <!-- navigation toc: --> <li><a href="._unitn-bs003.html#___sec2" style="font-size: 80%;">Overview</a></li>
-     <!-- navigation toc: --> <li><a href="._unitn-bs004.html#___sec3" style="font-size: 80%;">What are the Machine Learning calculations here based on?</a></li>
-     <!-- navigation toc: --> <li><a href="._unitn-bs005.html#___sec4" style="font-size: 80%;">A new world</a></li>
-     <!-- navigation toc: --> <li><a href="._unitn-bs006.html#___sec5" style="font-size: 80%;">Lots of room for creativity</a></li>
-     <!-- navigation toc: --> <li><a href="._unitn-bs007.html#___sec6" style="font-size: 80%;">Knowledge of Statistical analysis and optimization of data</a></li>
-     <!-- navigation toc: --> <li><a href="._unitn-bs008.html#___sec7" style="font-size: 80%;">Some members of the ML family</a></li>
-     <!-- navigation toc: --> <li><a href="._unitn-bs009.html#___sec8" style="font-size: 80%;">What are the basic ingredients?</a></li>
-     <!-- navigation toc: --> <li><a href="._unitn-bs010.html#___sec9" style="font-size: 80%;">What is Machine Learning?</a></li>
-     <!-- navigation toc: --> <li><a href="._unitn-bs011.html#___sec10" style="font-size: 80%;">Types of Machine Learning</a></li>
-     <!-- navigation toc: --> <li><a href="._unitn-bs012.html#___sec11" style="font-size: 80%;">References</a></li>
-     <!-- navigation toc: --> <li><a href="._unitn-bs013.html#___sec12" style="font-size: 80%;">Another interesting article</a></li>
-     <!-- navigation toc: --> <li><a href="._unitn-bs014.html#___sec13" style="font-size: 80%;">Decision trees and Regression</a></li>
-     <!-- navigation toc: --> <li><a href="._unitn-bs015.html#___sec14" style="font-size: 80%;">Artificial neurons</a></li>
-     <!-- navigation toc: --> <li><a href="._unitn-bs016.html#___sec15" style="font-size: 80%;">A simple perceptron model</a></li>
-     <!-- navigation toc: --> <li><a href="._unitn-bs017.html#___sec16" style="font-size: 80%;">Neural network types</a></li>
-     <!-- navigation toc: --> <li><a href="._unitn-bs018.html#___sec17" style="font-size: 80%;">The system: two electrons in a harmonic oscillator trap in two dimensions</a></li>
-     <!-- navigation toc: --> <li><a href="._unitn-bs019.html#___sec18" style="font-size: 80%;">Quantum Monte Carlo Motivation</a></li>
-     <!-- navigation toc: --> <li><a href="._unitn-bs020.html#___sec19" style="font-size: 80%;">Quantum Monte Carlo Motivation</a></li>
-     <!-- navigation toc: --> <li><a href="._unitn-bs021.html#___sec20" style="font-size: 80%;">Quantum Monte Carlo Motivation</a></li>
-     <!-- navigation toc: --> <li><a href="._unitn-bs022.html#___sec21" style="font-size: 80%;">Quantum Monte Carlo</a></li>
-     <!-- navigation toc: --> <li><a href="._unitn-bs023.html#___sec22" style="font-size: 80%;">The trial wave function</a></li>
-     <!-- navigation toc: --> <li><a href="._unitn-bs024.html#___sec23" style="font-size: 80%;">The correlation part of the wave function</a></li>
-     <!-- navigation toc: --> <li><a href="._unitn-bs025.html#___sec24" style="font-size: 80%;">Resulting ansatz</a></li>
-     <!-- navigation toc: --> <li><a href="._unitn-bs026.html#___sec25" style="font-size: 80%;">The VMC code</a></li>
-     <!-- navigation toc: --> <li><a href="._unitn-bs027.html#___sec26" style="font-size: 80%;">Technical aspect, improvements and how to define the cost function</a></li>
-     <!-- navigation toc: --> <li><a href="._unitn-bs028.html#___sec27" style="font-size: 80%;">Energy derivatives</a></li>
-     <!-- navigation toc: --> <li><a href="._unitn-bs029.html#___sec28" style="font-size: 80%;">Derivatives of the local energy</a></li>
-     <!-- navigation toc: --> <li><a href="._unitn-bs030.html#___sec29" style="font-size: 80%;">How do we define our cost function?</a></li>
-     <!-- navigation toc: --> <li><a href="._unitn-bs031.html#___sec30" style="font-size: 80%;">Meet the variance and its derivatives</a></li>
-     <!-- navigation toc: --> <li><a href="._unitn-bs032.html#___sec31" style="font-size: 80%;">The variance defines the cost function</a></li>
-     <!-- navigation toc: --> <li><a href="._unitn-bs033.html#___sec32" style="font-size: 80%;">Why Boltzmann machines?</a></li>
-     <!-- navigation toc: --> <li><a href="._unitn-bs034.html#___sec33" style="font-size: 80%;">Boltzmann Machines</a></li>
-     <!-- navigation toc: --> <li><a href="._unitn-bs035.html#___sec34" style="font-size: 80%;">Some similarities and differences from DNNs</a></li>
-     <!-- navigation toc: --> <li><a href="._unitn-bs036.html#___sec35" style="font-size: 80%;">Boltzmann machines (BM)</a></li>
-     <!-- navigation toc: --> <li><a href="._unitn-bs037.html#___sec36" style="font-size: 80%;">A standard BM setup</a></li>
-     <!-- navigation toc: --> <li><a href="._unitn-bs038.html#___sec37" style="font-size: 80%;">The structure of the RBM network</a></li>
-     <!-- navigation toc: --> <li><a href="._unitn-bs039.html#___sec38" style="font-size: 80%;">The network</a></li>
-     <!-- navigation toc: --> <li><a href="._unitn-bs040.html#___sec39" style="font-size: 80%;">Goals</a></li>
-     <!-- navigation toc: --> <li><a href="._unitn-bs041.html#___sec40" style="font-size: 80%;">Joint distribution</a></li>
-     <!-- navigation toc: --> <li><a href="._unitn-bs042.html#___sec41" style="font-size: 80%;">Network Elements, the energy function</a></li>
-     <!-- navigation toc: --> <li><a href="._unitn-bs043.html#___sec42" style="font-size: 80%;">Defining different types of RBMs</a></li>
-     <!-- navigation toc: --> <li><a href="._unitn-bs044.html#___sec43" style="font-size: 80%;">Sampling: Metropolis sampling</a></li>
-     <!-- navigation toc: --> <li><a href="._unitn-bs045.html#___sec44" style="font-size: 80%;">Gaussian RBM</a></li>
-     <!-- navigation toc: --> <li><a href="._unitn-bs046.html#___sec45" style="font-size: 80%;">Cost function</a></li>
-     <!-- navigation toc: --> <li><a href="._unitn-bs047.html#___sec46" style="font-size: 80%;">Optimization / Training</a></li>
-     <!-- navigation toc: --> <li><a href="._unitn-bs048.html#___sec47" style="font-size: 80%;">More on RBMs</a></li>
-     <!-- navigation toc: --> <li><a href="._unitn-bs049.html#___sec48" style="font-size: 80%;">RBMs for the quantum many body problem</a></li>
-     <!-- navigation toc: --> <li><a href="._unitn-bs050.html#___sec49" style="font-size: 80%;">Choose the right RBM</a></li>
-     <!-- navigation toc: --> <li><a href="._unitn-bs051.html#___sec50" style="font-size: 80%;">Representing the wave function</a></li>
-     <!-- navigation toc: --> <li><a href="._unitn-bs052.html#___sec51" style="font-size: 80%;">Choose the cost function</a></li>
-     <!-- navigation toc: --> <li><a href="._unitn-bs053.html#___sec52" style="font-size: 80%;">Running the codes</a></li>
-     <!-- navigation toc: --> <li><a href="._unitn-bs054.html#___sec53" style="font-size: 80%;">Energy as function of iterations, \( N=2 \) electrons</a></li>
-     <!-- navigation toc: --> <li><a href="#___sec54" style="font-size: 80%;">Energy as function of iterations, \( N=6 \) electrons</a></li>
-     <!-- navigation toc: --> <li><a href="._unitn-bs056.html#___sec55" style="font-size: 80%;">Conclusions and where do we stand</a></li>
+     <!-- navigation toc: --> <li><a href="._unitn-bs001.html#___sec0" style="font-size: 80%;"><b>What is this talk about?</b></a></li>
+     <!-- navigation toc: --> <li><a href="._unitn-bs002.html#___sec1" style="font-size: 80%;"><b>Why?</b></a></li>
+     <!-- navigation toc: --> <li><a href="._unitn-bs003.html#___sec2" style="font-size: 80%;"><b>Overview</b></a></li>
+     <!-- navigation toc: --> <li><a href="._unitn-bs004.html#___sec3" style="font-size: 80%;"><b>What are the Machine Learning calculations here based on?</b></a></li>
+     <!-- navigation toc: --> <li><a href="._unitn-bs005.html#___sec4" style="font-size: 80%;"><b>A new world</b></a></li>
+     <!-- navigation toc: --> <li><a href="._unitn-bs006.html#___sec5" style="font-size: 80%;"><b>Lots of room for creativity</b></a></li>
+     <!-- navigation toc: --> <li><a href="._unitn-bs007.html#___sec6" style="font-size: 80%;"><b>Knowledge of Statistical analysis and optimization of data</b></a></li>
+     <!-- navigation toc: --> <li><a href="._unitn-bs008.html#___sec7" style="font-size: 80%;"><b>Some members of the ML family</b></a></li>
+     <!-- navigation toc: --> <li><a href="._unitn-bs009.html#___sec8" style="font-size: 80%;"><b>What are the basic ingredients?</b></a></li>
+     <!-- navigation toc: --> <li><a href="._unitn-bs010.html#___sec9" style="font-size: 80%;"><b>What is Machine Learning?</b></a></li>
+     <!-- navigation toc: --> <li><a href="._unitn-bs011.html#___sec10" style="font-size: 80%;"><b>Types of Machine Learning</b></a></li>
+     <!-- navigation toc: --> <li><a href="._unitn-bs012.html#___sec11" style="font-size: 80%;"><b>References</b></a></li>
+     <!-- navigation toc: --> <li><a href="._unitn-bs013.html#___sec12" style="font-size: 80%;"><b>Another interesting article</b></a></li>
+     <!-- navigation toc: --> <li><a href="._unitn-bs014.html#___sec13" style="font-size: 80%;"><b>Decision trees and Regression</b></a></li>
+     <!-- navigation toc: --> <li><a href="._unitn-bs015.html#___sec14" style="font-size: 80%;"><b>Artificial neurons</b></a></li>
+     <!-- navigation toc: --> <li><a href="._unitn-bs016.html#___sec15" style="font-size: 80%;"><b>A simple perceptron model</b></a></li>
+     <!-- navigation toc: --> <li><a href="._unitn-bs017.html#___sec16" style="font-size: 80%;"><b>Neural network types</b></a></li>
+     <!-- navigation toc: --> <li><a href="._unitn-bs018.html#___sec17" style="font-size: 80%;"><b>The system: two electrons in a harmonic oscillator trap in two dimensions</b></a></li>
+     <!-- navigation toc: --> <li><a href="._unitn-bs019.html#___sec18" style="font-size: 80%;"><b>Quantum Monte Carlo Motivation</b></a></li>
+     <!-- navigation toc: --> <li><a href="._unitn-bs020.html#___sec19" style="font-size: 80%;"><b>Quantum Monte Carlo Motivation</b></a></li>
+     <!-- navigation toc: --> <li><a href="._unitn-bs021.html#___sec20" style="font-size: 80%;"><b>Quantum Monte Carlo Motivation</b></a></li>
+     <!-- navigation toc: --> <li><a href="._unitn-bs022.html#___sec21" style="font-size: 80%;"><b>Quantum Monte Carlo</b></a></li>
+     <!-- navigation toc: --> <li><a href="._unitn-bs023.html#___sec22" style="font-size: 80%;"><b>The trial wave function</b></a></li>
+     <!-- navigation toc: --> <li><a href="._unitn-bs024.html#___sec23" style="font-size: 80%;"><b>The correlation part of the wave function</b></a></li>
+     <!-- navigation toc: --> <li><a href="._unitn-bs025.html#___sec24" style="font-size: 80%;"><b>Resulting ansatz</b></a></li>
+     <!-- navigation toc: --> <li><a href="._unitn-bs026.html#___sec25" style="font-size: 80%;"><b>The VMC code</b></a></li>
+     <!-- navigation toc: --> <li><a href="._unitn-bs027.html#___sec26" style="font-size: 80%;"><b>Technical aspect, improvements and how to define the cost function</b></a></li>
+     <!-- navigation toc: --> <li><a href="._unitn-bs028.html#___sec27" style="font-size: 80%;"><b>Energy derivatives</b></a></li>
+     <!-- navigation toc: --> <li><a href="._unitn-bs029.html#___sec28" style="font-size: 80%;"><b>Derivatives of the local energy</b></a></li>
+     <!-- navigation toc: --> <li><a href="._unitn-bs030.html#___sec29" style="font-size: 80%;"><b>How do we define our cost function?</b></a></li>
+     <!-- navigation toc: --> <li><a href="._unitn-bs031.html#___sec30" style="font-size: 80%;"><b>Meet the variance and its derivatives</b></a></li>
+     <!-- navigation toc: --> <li><a href="._unitn-bs032.html#___sec31" style="font-size: 80%;"><b>The variance defines the cost function</b></a></li>
+     <!-- navigation toc: --> <li><a href="._unitn-bs033.html#___sec32" style="font-size: 80%;"><b>The code for two electrons in two dims with no Coulomb interaction</b></a></li>
+     <!-- navigation toc: --> <li><a href="._unitn-bs034.html#___sec33" style="font-size: 80%;"><b>Why Boltzmann machines?</b></a></li>
+     <!-- navigation toc: --> <li><a href="._unitn-bs035.html#___sec34" style="font-size: 80%;"><b>Boltzmann Machines</b></a></li>
+     <!-- navigation toc: --> <li><a href="._unitn-bs036.html#___sec35" style="font-size: 80%;"><b>Some similarities and differences from DNNs</b></a></li>
+     <!-- navigation toc: --> <li><a href="._unitn-bs037.html#___sec36" style="font-size: 80%;"><b>Boltzmann machines (BM)</b></a></li>
+     <!-- navigation toc: --> <li><a href="._unitn-bs038.html#___sec37" style="font-size: 80%;"><b>A standard BM setup</b></a></li>
+     <!-- navigation toc: --> <li><a href="._unitn-bs039.html#___sec38" style="font-size: 80%;"><b>The structure of the RBM network</b></a></li>
+     <!-- navigation toc: --> <li><a href="._unitn-bs040.html#___sec39" style="font-size: 80%;"><b>The network</b></a></li>
+     <!-- navigation toc: --> <li><a href="._unitn-bs041.html#___sec40" style="font-size: 80%;"><b>Goals</b></a></li>
+     <!-- navigation toc: --> <li><a href="._unitn-bs042.html#___sec41" style="font-size: 80%;"><b>Joint distribution</b></a></li>
+     <!-- navigation toc: --> <li><a href="._unitn-bs043.html#___sec42" style="font-size: 80%;"><b>Network Elements, the energy function</b></a></li>
+     <!-- navigation toc: --> <li><a href="._unitn-bs044.html#___sec43" style="font-size: 80%;"><b>Defining different types of RBMs</b></a></li>
+     <!-- navigation toc: --> <li><a href="._unitn-bs045.html#___sec44" style="font-size: 80%;"><b>Sampling: Metropolis sampling</b></a></li>
+     <!-- navigation toc: --> <li><a href="._unitn-bs046.html#___sec45" style="font-size: 80%;"><b>Gaussian RBM</b></a></li>
+     <!-- navigation toc: --> <li><a href="._unitn-bs047.html#___sec46" style="font-size: 80%;"><b>RBMs for the quantum many body problem</b></a></li>
+     <!-- navigation toc: --> <li><a href="._unitn-bs048.html#___sec47" style="font-size: 80%;"><b>Choose the right RBM</b></a></li>
+     <!-- navigation toc: --> <li><a href="._unitn-bs049.html#___sec48" style="font-size: 80%;"><b>Representing the wave function</b></a></li>
+     <!-- navigation toc: --> <li><a href="._unitn-bs050.html#___sec49" style="font-size: 80%;"><b>Choose the cost/loss function</b></a></li>
+     <!-- navigation toc: --> <li><a href="._unitn-bs051.html#___sec50" style="font-size: 80%;"><b>Running the codes</b></a></li>
+     <!-- navigation toc: --> <li><a href="._unitn-bs052.html#___sec51" style="font-size: 80%;"><b>Energy as function of iterations, \( N=2 \) electrons</b></a></li>
+     <!-- navigation toc: --> <li><a href="._unitn-bs053.html#___sec52" style="font-size: 80%;"><b>Energy as function of iterations, \( N=6 \) electrons</b></a></li>
+     <!-- navigation toc: --> <li><a href="._unitn-bs054.html#___sec53" style="font-size: 80%;"><b>Conclusions and where do we stand</b></a></li>
+     <!-- navigation toc: --> <li><a href="#___sec54" style="font-size: 80%;"><b>Appendix: Mathematical details</b></a></li>
+     <!-- navigation toc: --> <li><a href="#___sec55" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Marginal Probability Density Functions</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec56" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Conditional Probability Density Functions</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec57" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Gaussian-Binary Restricted Boltzmann Machines</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec58" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Joint Probability Density Function</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec59" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Marginal Probability Density Functions</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec60" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Conditional Probability Density Functions</a></li>
 
         </ul>
       </li>
@@ -231,16 +254,318 @@ MathJax.Hub.Config({
 <a name="part0055"></a>
 <!-- !split -->
 
-<h2 id="___sec54" class="anchor">Energy as function of iterations, \( N=6 \) electrons  </h2>
-<div class="panel panel-default">
-<div class="panel-body">
-<p> <!-- subsequent paragraphs come in larger fonts, so start with a paragraph -->
-<br /><br /><center><p><img src="figures/figN6.png" align="bottom" width=700></p></center><br /><br />
-</div>
-</div>
-
+<h2 id="___sec54" class="anchor">Appendix: Mathematical details </h2>
 
 <p>
+The original RBM had binary visible and hidden nodes. They were
+showned to be universal approximators of discrete distributions.
+It was also shown that adding hidden units yields
+strictly improved modelling power. The common choice of binary values
+are 0 and 1. However, in some physics applications, -1 and 1 might be
+a more natural choice. We will here use 0 and 1.
+
+$$
+\begin{align}
+	E_{BB}(\boldsymbol{x}, \mathbf{h}) = - \sum_i^M x_i a_i- \sum_j^N b_j h_j - \sum_{i,j}^{M,N} x_i w_{ij} h_j.
+\tag{18}
+\end{align}
+$$
+
+
+$$
+\begin{align}
+	p_{BB}(\boldsymbol{x}, \boldsymbol{h}) =& \frac{1}{Z_{BB}} e^{\sum_i^M a_i x_i + \sum_j^N b_j h_j + \sum_{ij}^{M,N} x_i w_{ij} h_j} 
+\tag{19}\\
+	=& \frac{1}{Z_{BB}} e^{\boldsymbol{x}^T \boldsymbol{a} + \boldsymbol{b}^T \boldsymbol{h} + \boldsymbol{x}^T \boldsymbol{W} \boldsymbol{h}}
+\tag{20}
+\end{align}
+$$
+
+<p>
+with the partition function
+
+$$
+\begin{align}
+	Z_{BB} = \sum_{\boldsymbol{x}, \boldsymbol{h}} e^{\boldsymbol{x}^T \boldsymbol{a} + \boldsymbol{b}^T \boldsymbol{h} + \boldsymbol{x}^T \boldsymbol{W} \boldsymbol{h}} .
+\tag{21}
+\end{align}
+$$
+
+<h3 id="___sec55" class="anchor">Marginal Probability Density Functions </h3>
+
+<p>
+In order to find the probability of any configuration of the visible units we derive the marginal probability density function.
+
+$$
+\begin{align}
+	p_{BB} (\boldsymbol{x}) =& \sum_{\boldsymbol{h}} p_{BB} (\boldsymbol{x}, \boldsymbol{h}) 
+\tag{22}\\
+	=& \frac{1}{Z_{BB}} \sum_{\boldsymbol{h}} e^{\boldsymbol{x}^T \boldsymbol{a} + \boldsymbol{b}^T \boldsymbol{h} + \boldsymbol{x}^T \boldsymbol{W} \boldsymbol{h}} \nonumber \\
+	=& \frac{1}{Z_{BB}} e^{\boldsymbol{x}^T \boldsymbol{a}} \sum_{\boldsymbol{h}} e^{\sum_j^N (b_j + \boldsymbol{x}^T \boldsymbol{w}_{\ast j})h_j} \nonumber \\
+	=& \frac{1}{Z_{BB}} e^{\boldsymbol{x}^T \boldsymbol{a}} \sum_{\boldsymbol{h}} \prod_j^N e^{ (b_j + \boldsymbol{x}^T \boldsymbol{w}_{\ast j})h_j} \nonumber \\
+	=& \frac{1}{Z_{BB}} e^{\boldsymbol{x}^T \boldsymbol{a}} \bigg ( \sum_{h_1} e^{(b_1 + \boldsymbol{x}^T \boldsymbol{w}_{\ast 1})h_1}
+	\times \sum_{h_2} e^{(b_2 + \boldsymbol{x}^T \boldsymbol{w}_{\ast 2})h_2} \times \nonumber \\
+	& ... \times \sum_{h_2} e^{(b_N + \boldsymbol{x}^T \boldsymbol{w}_{\ast N})h_N} \bigg ) \nonumber \\
+	=& \frac{1}{Z_{BB}} e^{\boldsymbol{x}^T \boldsymbol{a}} \prod_j^N \sum_{h_j} e^{(b_j + \boldsymbol{x}^T \boldsymbol{w}_{\ast j}) h_j} \nonumber \\
+	=& \frac{1}{Z_{BB}} e^{\boldsymbol{x}^T \boldsymbol{a}} \prod_j^N (1 + e^{b_j + \boldsymbol{x}^T \boldsymbol{w}_{\ast j}}) .
+\tag{23}
+\end{align}
+$$
+
+<p>
+A similar derivation yields the marginal probability of the hidden units
+
+$$
+\begin{align}
+	p_{BB} (\boldsymbol{h}) = \frac{1}{Z_{BB}} e^{\boldsymbol{b}^T \boldsymbol{h}} \prod_i^M (1 + e^{a_i + \boldsymbol{w}_{i\ast}^T \boldsymbol{h}}) .
+\tag{24}
+\end{align}
+$$
+
+<h3 id="___sec56" class="anchor">Conditional Probability Density Functions </h3>
+
+<p>
+We derive the probability of the hidden units given the visible units using Bayes' rule
+
+$$
+\begin{align}
+	p_{BB} (\boldsymbol{h}|\boldsymbol{x}) =& \frac{p_{BB} (\boldsymbol{x}, \boldsymbol{h})}{p_{BB} (\boldsymbol{x})} \nonumber \\
+	=& \frac{ \frac{1}{Z_{BB}}  e^{\boldsymbol{x}^T \boldsymbol{a} + \boldsymbol{b}^T \boldsymbol{h} + \boldsymbol{x}^T \boldsymbol{W} \boldsymbol{h}} }
+	        {\frac{1}{Z_{BB}} e^{\boldsymbol{x}^T \boldsymbol{a}} \prod_j^N (1 + e^{b_j + \boldsymbol{x}^T \boldsymbol{w}_{\ast j}})} \nonumber \\
+	=& \frac{  e^{\boldsymbol{x}^T \boldsymbol{a}} e^{ \sum_j^N (b_j + \boldsymbol{x}^T \boldsymbol{w}_{\ast j} ) h_j} }
+	        { e^{\boldsymbol{x}^T \boldsymbol{a}} \prod_j^N (1 + e^{b_j + \boldsymbol{x}^T \boldsymbol{w}_{\ast j}})} \nonumber \\
+	=& \prod_j^N \frac{ e^{(b_j + \boldsymbol{x}^T \boldsymbol{w}_{\ast j} ) h_j}  }
+	{1 + e^{b_j + \boldsymbol{x}^T \boldsymbol{w}_{\ast j}}} \nonumber \\
+	=& \prod_j^N p_{BB} (h_j| \boldsymbol{x}) .
+\tag{25}
+\end{align}
+$$
+
+<p>
+From this we find the probability of a hidden unit being "on" or "off":
+
+$$
+\begin{align}
+	p_{BB} (h_j=1 | \boldsymbol{x}) =&   \frac{ e^{(b_j + \boldsymbol{x}^T \boldsymbol{w}_{\ast j} ) h_j}  }
+	{1 + e^{b_j + \boldsymbol{x}^T \boldsymbol{w}_{\ast j}}} 
+\tag{26}\\
+	=&  \frac{ e^{(b_j + \boldsymbol{x}^T \boldsymbol{w}_{\ast j} )}  }
+	{1 + e^{b_j + \boldsymbol{x}^T \boldsymbol{w}_{\ast j}}} 
+\tag{27}\\
+	=&  \frac{ 1 }{1 + e^{-(b_j + \boldsymbol{x}^T \boldsymbol{w}_{\ast j})} } ,
+\tag{28}
+\end{align}
+$$
+
+and
+
+$$
+\begin{align}
+	p_{BB} (h_j=0 | \boldsymbol{x}) =\frac{ 1 }{1 + e^{b_j + \boldsymbol{x}^T \boldsymbol{w}_{\ast j}} } .
+\tag{29}
+\end{align}
+$$
+
+<p>
+Similarly we have that the conditional probability of the visible units given the hidden ones are
+
+$$
+\begin{align}
+	p_{BB} (\boldsymbol{x}|\boldsymbol{h}) =& \prod_i^M \frac{ e^{ (a_i + \boldsymbol{w}_{i\ast}^T \boldsymbol{h}) x_i} }{ 1 + e^{a_i + \boldsymbol{w}_{i\ast}^T \boldsymbol{h}} } 
+\tag{30}\\
+	&= \prod_i^M p_{BB} (x_i | \boldsymbol{h}) .
+\tag{31}
+\end{align}
+$$
+
+
+$$
+\begin{align}
+	p_{BB} (x_i=1 | \boldsymbol{h}) =& \frac{1}{1 + e^{-(a_i + \boldsymbol{w}_{i\ast}^T \boldsymbol{h} )}} 
+\tag{32}\\
+	p_{BB} (x_i=0 | \boldsymbol{h}) =& \frac{1}{1 + e^{a_i + \boldsymbol{w}_{i\ast}^T \boldsymbol{h} }} .
+\tag{33}
+\end{align}
+$$
+
+<h3 id="___sec57" class="anchor">Gaussian-Binary Restricted Boltzmann Machines </h3>
+
+<p>
+Inserting into the expression for \( E_{RBM}(\boldsymbol{x},\boldsymbol{h}) \) in equation  results in the energy
+
+$$
+\begin{align}
+	E_{GB}(\boldsymbol{x}, \boldsymbol{h}) =& \sum_i^M \frac{(x_i - a_i)^2}{2\sigma_i^2}
+	- \sum_j^N b_j h_j 
+	-\sum_{ij}^{M,N} \frac{x_i w_{ij} h_j}{\sigma_i^2} \nonumber \\
+	=& \norm*{\frac{\boldsymbol{x} -\boldsymbol{a}}{2\boldsymbol{\sigma}}}^2 - \boldsymbol{b}^T \boldsymbol{h} 
+	- (\frac{\boldsymbol{x}}{\boldsymbol{\sigma}^2})^T \boldsymbol{W}\boldsymbol{h} . 
+\tag{34}
+\end{align}
+$$
+
+<h3 id="___sec58" class="anchor">Joint Probability Density Function </h3>
+
+$$
+\begin{align}
+	p_{GB} (\boldsymbol{x}, \boldsymbol{h}) =& \frac{1}{Z_{GB}} e^{-\norm*{\frac{\boldsymbol{x} -\boldsymbol{a}}{2\boldsymbol{\sigma}}}^2 + \boldsymbol{b}^T \boldsymbol{h} 
+	+ (\frac{\boldsymbol{x}}{\boldsymbol{\sigma}^2})^T \boldsymbol{W}\boldsymbol{h}} \nonumber \\
+	=& \frac{1}{Z_{GB}} e^{- \sum_i^M \frac{(x_i - a_i)^2}{2\sigma_i^2}
+	+ \sum_j^N b_j h_j 
+	+\sum_{ij}^{M,N} \frac{x_i w_{ij} h_j}{\sigma_i^2}} \nonumber \\
+	=& \frac{1}{Z_{GB}} \prod_{ij}^{M,N} e^{-\frac{(x_i - a_i)^2}{2\sigma_i^2}
+	+ b_j h_j 
+	+\frac{x_i w_{ij} h_j}{\sigma_i^2}} ,
+\tag{35}
+\end{align}
+$$
+
+<p>
+with the partition function given by
+
+$$
+\begin{align}
+	Z_{GB} =& \int \sum_{\tilde{\boldsymbol{h}}}^{\tilde{\boldsymbol{H}}} e^{-\norm*{\frac{\tilde{\boldsymbol{x}} -\boldsymbol{a}}{2\boldsymbol{\sigma}}}^2 + \boldsymbol{b}^T \tilde{\boldsymbol{h}} 
+	+ (\frac{\tilde{\boldsymbol{x}}}{\boldsymbol{\sigma}^2})^T \boldsymbol{W}\tilde{\boldsymbol{h}}} \dif \tilde{\boldsymbol{x}} .
+\tag{36}
+\end{align}
+$$
+
+<h3 id="___sec59" class="anchor">Marginal Probability Density Functions </h3>
+
+<p>
+We proceed to find the marginal probability densitites of the
+Gaussian-binary RBM. We first marginalize over the binary hidden units
+to find \( p_{GB} (\boldsymbol{x}) \)
+
+$$
+\begin{align}
+	p_{GB} (\boldsymbol{x}) =& \sum_{\tilde{\boldsymbol{h}}}^{\tilde{\boldsymbol{H}}} p_{GB} (\boldsymbol{x}, \tilde{\boldsymbol{h}}) \nonumber \\
+	=& \frac{1}{Z_{GB}} \sum_{\tilde{\boldsymbol{h}}}^{\tilde{\boldsymbol{H}}} 
+	e^{-\norm*{\frac{\boldsymbol{x} -\boldsymbol{a}}{2\boldsymbol{\sigma}}}^2 + \boldsymbol{b}^T \tilde{\boldsymbol{h}} 
+	+ (\frac{\boldsymbol{x}}{\boldsymbol{\sigma}^2})^T \boldsymbol{W}\tilde{\boldsymbol{h}}} \nonumber \\
+	=& \frac{1}{Z_{GB}} e^{-\norm*{\frac{\boldsymbol{x} -\boldsymbol{a}}{2\boldsymbol{\sigma}}}^2}
+	\prod_j^N (1 + e^{b_j + (\frac{\boldsymbol{x}}{\boldsymbol{\sigma}^2})^T \boldsymbol{w}_{\ast j}} ) .
+\tag{37}
+\end{align}
+$$
+
+<p>
+We next marginalize over the visible units. This is the first time we
+marginalize over continuous values. We rewrite the exponential factor
+dependent on \( \boldsymbol{x} \) as a Gaussian function before we integrate in
+the last step.
+
+$$
+\begin{align}
+	p_{GB} (\boldsymbol{h}) =& \int p_{GB} (\tilde{\boldsymbol{x}}, \boldsymbol{h}) \dif \tilde{\boldsymbol{x}} \nonumber \\
+	=& \frac{1}{Z_{GB}} \int e^{-\norm*{\frac{\tilde{\boldsymbol{x}} -\boldsymbol{a}}{2\boldsymbol{\sigma}}}^2 + \boldsymbol{b}^T \boldsymbol{h} 
+	+ (\frac{\tilde{\boldsymbol{x}}}{\boldsymbol{\sigma}^2})^T \boldsymbol{W}\boldsymbol{h}} \dif \tilde{\boldsymbol{x}} \nonumber \\
+	=& \frac{1}{Z_{GB}} e^{\boldsymbol{b}^T \boldsymbol{h} } \int \prod_i^M
+	e^{- \frac{(\tilde{x}_i - a_i)^2}{2\sigma_i^2} + \frac{\tilde{x}_i \boldsymbol{w}_{i\ast}^T \boldsymbol{h}}{\sigma_i^2} } \dif \tilde{\boldsymbol{x}} \nonumber \\
+	=& \frac{1}{Z_{GB}} e^{\boldsymbol{b}^T \boldsymbol{h} }
+	\biggl( \int e^{- \frac{(\tilde{x}_1 - a_1)^2}{2\sigma_1^2} + \frac{\tilde{x}_1 \boldsymbol{w}_{1\ast}^T \boldsymbol{h}}{\sigma_1^2} } \dif \tilde{x}_1 \nonumber \\
+	& \times \int e^{- \frac{(\tilde{x}_2 - a_2)^2}{2\sigma_2^2} + \frac{\tilde{x}_2 \boldsymbol{w}_{2\ast}^T \boldsymbol{h}}{\sigma_2^2} } \dif \tilde{x}_2 \nonumber \\
+	& \times ... \nonumber \\
+	&\times \int e^{- \frac{(\tilde{x}_M - a_M)^2}{2\sigma_M^2} + \frac{\tilde{x}_M \boldsymbol{w}_{M\ast}^T \boldsymbol{h}}{\sigma_M^2} } \dif \tilde{x}_M \biggr) \nonumber \\
+	=& \frac{1}{Z_{GB}} e^{\boldsymbol{b}^T \boldsymbol{h}} \prod_i^M
+	\int e^{- \frac{(\tilde{x}_i - a_i)^2 - 2\tilde{x}_i \boldsymbol{w}_{i\ast}^T \boldsymbol{h}}{2\sigma_i^2} } \dif \tilde{x}_i \nonumber \\
+	=& \frac{1}{Z_{GB}} e^{\boldsymbol{b}^T \boldsymbol{h}} \prod_i^M
+	\int e^{- \frac{\tilde{x}_i^2 - 2\tilde{x}_i(a_i + \tilde{x}_i \boldsymbol{w}_{i\ast}^T \boldsymbol{h}) + a_i^2}{2\sigma_i^2} } \dif \tilde{x}_i \nonumber \\
+	=& \frac{1}{Z_{GB}} e^{\boldsymbol{b}^T \boldsymbol{h}} \prod_i^M
+	\int e^{- \frac{\tilde{x}_i^2 - 2\tilde{x}_i(a_i + \boldsymbol{w}_{i\ast}^T \boldsymbol{h}) + (a_i + \boldsymbol{w}_{i\ast}^T \boldsymbol{h})^2 - (a_i + \boldsymbol{w}_{i\ast}^T \boldsymbol{h})^2 + a_i^2}{2\sigma_i^2} } \dif \tilde{x}_i \nonumber \\
+	=& \frac{1}{Z_{GB}} e^{\boldsymbol{b}^T \boldsymbol{h}} \prod_i^M
+	\int e^{- \frac{(\tilde{x}_i - (a_i + \boldsymbol{w}_{i\ast}^T \boldsymbol{h}))^2 - a_i^2 -2a_i \boldsymbol{w}_{i\ast}^T \boldsymbol{h} - (\boldsymbol{w}_{i\ast}^T \boldsymbol{h})^2 + a_i^2}{2\sigma_i^2} } \dif \tilde{x}_i \nonumber \\
+	=& \frac{1}{Z_{GB}} e^{\boldsymbol{b}^T \boldsymbol{h}} \prod_i^M
+	e^{\frac{2a_i \boldsymbol{w}_{i\ast}^T \boldsymbol{h} +(\boldsymbol{w}_{i\ast}^T \boldsymbol{h})^2 }{2\sigma_i^2}}
+	\int e^{- \frac{(\tilde{x}_i - a_i - \boldsymbol{w}_{i\ast}^T \boldsymbol{h})^2}{2\sigma_i^2}}
+	\dif \tilde{x}_i \nonumber \\
+	=& \frac{1}{Z_{GB}} e^{\boldsymbol{b}^T \boldsymbol{h}} \prod_i^M
+	\sqrt{2\pi \sigma_i^2}
+	e^{\frac{2a_i \boldsymbol{w}_{i\ast}^T \boldsymbol{h} +(\boldsymbol{w}_{i\ast}^T \boldsymbol{h})^2 }{2\sigma_i^2}} .
+\tag{38}
+\end{align}
+$$
+
+<h3 id="___sec60" class="anchor">Conditional Probability Density Functions </h3>
+
+<p>
+We finish by deriving the conditional probabilities.
+$$
+\begin{align}
+	p_{GB} (\boldsymbol{h}| \boldsymbol{x}) =& \frac{p_{GB} (\boldsymbol{x}, \boldsymbol{h})}{p_{GB} (\boldsymbol{x})} \nonumber \\
+	=& \frac{\frac{1}{Z_{GB}} e^{-\norm*{\frac{\boldsymbol{x} -\boldsymbol{a}}{2\boldsymbol{\sigma}}}^2 + \boldsymbol{b}^T \boldsymbol{h} 
+	+ (\frac{\boldsymbol{x}}{\boldsymbol{\sigma}^2})^T \boldsymbol{W}\boldsymbol{h}}}
+	{\frac{1}{Z_{GB}} e^{-\norm*{\frac{\boldsymbol{x} -\boldsymbol{a}}{2\boldsymbol{\sigma}}}^2}
+	\prod_j^N (1 + e^{b_j + (\frac{\boldsymbol{x}}{\boldsymbol{\sigma}^2})^T \boldsymbol{w}_{\ast j}} ) }
+	\nonumber \\
+	=& \prod_j^N \frac{e^{(b_j + (\frac{\boldsymbol{x}}{\boldsymbol{\sigma}^2})^T \boldsymbol{w}_{\ast j})h_j } }
+	{1 + e^{b_j + (\frac{\boldsymbol{x}}{\boldsymbol{\sigma}^2})^T \boldsymbol{w}_{\ast j}}} \nonumber \\
+	=& \prod_j^N p_{GB} (h_j|\boldsymbol{x})
+\tag{39}
+\end{align}
+$$
+
+The conditional probability of a binary hidden unit \( h_j \) being on or off again take the form of sigmoid functions
+
+$$
+\begin{align}
+	p_{GB} (h_j =1 | \boldsymbol{x}) =& \frac{e^{b_j + (\frac{\boldsymbol{x}}{\boldsymbol{\sigma}^2})^T \boldsymbol{w}_{\ast j} } }
+	{1 + e^{b_j + (\frac{\boldsymbol{x}}{\boldsymbol{\sigma}^2})^T \boldsymbol{w}_{\ast j}}} \nonumber \\
+	=& \frac{1}{1 + e^{-b_j - (\frac{\boldsymbol{x}}{\boldsymbol{\sigma}^2})^T \boldsymbol{w}_{\ast j}}} 
+\tag{40}\\
+	p_{GB} (h_j =0 | \boldsymbol{x}) =&
+	\frac{1}{1 + e^{b_j +(\frac{\boldsymbol{x}}{\boldsymbol{\sigma}^2})^T \boldsymbol{w}_{\ast j}}} .
+\tag{41}
+\end{align}
+$$
+
+<p>
+The conditional probability of the continuous \( \boldsymbol{x} \) now has another form, however.
+
+$$
+\begin{align}
+	p_{GB} (\boldsymbol{x}|\boldsymbol{h})
+	=& \frac{p_{GB} (\boldsymbol{x}, \boldsymbol{h})}{p_{GB} (\boldsymbol{h})} \nonumber \\
+	=& \frac{\frac{1}{Z_{GB}} e^{-\norm*{\frac{\boldsymbol{x} -\boldsymbol{a}}{2\boldsymbol{\sigma}}}^2 + \boldsymbol{b}^T \boldsymbol{h} 
+	+ (\frac{\boldsymbol{x}}{\boldsymbol{\sigma}^2})^T \boldsymbol{W}\boldsymbol{h}}}
+	{\frac{1}{Z_{GB}} e^{\boldsymbol{b}^T \boldsymbol{h}} \prod_i^M
+	\sqrt{2\pi \sigma_i^2}
+	e^{\frac{2a_i \boldsymbol{w}_{i\ast}^T \boldsymbol{h} +(\boldsymbol{w}_{i\ast}^T \boldsymbol{h})^2 }{2\sigma_i^2}}}
+	\nonumber \\
+	=& \prod_i^M \frac{1}{\sqrt{2\pi \sigma_i^2}}
+	\frac{e^{- \frac{(x_i - a_i)^2}{2\sigma_i^2} + \frac{x_i \boldsymbol{w}_{i\ast}^T \boldsymbol{h}}{2\sigma_i^2} }}
+	{e^{\frac{2a_i \boldsymbol{w}_{i\ast}^T \boldsymbol{h} +(\boldsymbol{w}_{i\ast}^T \boldsymbol{h})^2 }{2\sigma_i^2}}}
+	\nonumber \\
+	=& \prod_i^M \frac{1}{\sqrt{2\pi \sigma_i^2}}
+	\frac{e^{-\frac{x_i^2 - 2a_i x_i + a_i^2 - 2x_i \boldsymbol{w}_{i\ast}^T\boldsymbol{h} }{2\sigma_i^2} } }
+	{e^{\frac{2a_i \boldsymbol{w}_{i\ast}^T \boldsymbol{h} +(\boldsymbol{w}_{i\ast}^T \boldsymbol{h})^2 }{2\sigma_i^2}}}
+	\nonumber \\
+	=& \prod_i^M \frac{1}{\sqrt{2\pi \sigma_i^2}}
+	e^{- \frac{x_i^2 - 2a_i x_i + a_i^2 - 2x_i \boldsymbol{w}_{i\ast}^T\boldsymbol{h}
+	+ 2a_i \boldsymbol{w}_{i\ast}^T \boldsymbol{h} +(\boldsymbol{w}_{i\ast}^T \boldsymbol{h})^2}
+	{2\sigma_i^2} }
+	\nonumber \\
+	=& \prod_i^M \frac{1}{\sqrt{2\pi \sigma_i^2}}
+	e^{ - \frac{(x_i - b_i - \boldsymbol{w}_{i\ast}^T \boldsymbol{h})^2}{2\sigma_i^2}} \nonumber \\
+	=& \prod_i^M \mathcal{N}
+	(x_i | b_i + \boldsymbol{w}_{i\ast}^T \boldsymbol{h}, \sigma_i^2) 
+\tag{42}\\
+	\Rightarrow p_{GB} (x_i|\boldsymbol{h}) =& \mathcal{N}
+	(x_i | b_i + \boldsymbol{w}_{i\ast}^T \boldsymbol{h}, \sigma_i^2) .
+\tag{43}
+\end{align}
+$$
+
+<p>
+The form of these conditional probabilities explain the name
+"Gaussian" and the form of the Gaussian-binary energy function. We see
+that the conditional probability of \( x_i \) given \( \boldsymbol{h} \) is a normal
+distribution with mean \( b_i + \boldsymbol{w}_{i\ast}^T \boldsymbol{h} \) and variance
+\( \sigma_i^2 \).
+
+<p>
+
 <p>
 <!-- navigation buttons at the bottom of the page -->
 <ul class="pagination">
@@ -256,8 +581,6 @@ MathJax.Hub.Config({
   <li><a href="._unitn-bs053.html">54</a></li>
   <li><a href="._unitn-bs054.html">55</a></li>
   <li class="active"><a href="._unitn-bs055.html">56</a></li>
-  <li><a href="._unitn-bs056.html">57</a></li>
-  <li><a href="._unitn-bs056.html">&raquo;</a></li>
 </ul>
 <!-- ------------------- end of main content --------------- -->
 
