@@ -16,11 +16,6 @@ AUTHOR: Morten Hjorth-Jensen  Email:hjensen@msu.edu
 
 
 
- * LaTeX PDF:
-   * For printing:
-     * "Standard one-page format": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/vmcml/pdf/vmcml-print.pdf", compact: "6 pages per sheet": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/vmcml/pdf/vmcml-print6.pdf"
-   * For screen viewing:
-     * "standard Beamer format": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/vmcml/pdf/vmcml-beamer.pdf"
  * HTML:
    * "Plain html style": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/vmcml/html/vmcml.html"
    * "reveal.js beige slide style": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/vmcml/html/vmcml-reveal.html"
@@ -34,11 +29,6 @@ AUTHOR: Morten Hjorth-Jensen  Email:hjensen@msu.edu
 
 
 
- * LaTeX PDF:
-   * For printing:
-     * "Standard one-page format": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/unitn/pdf/unitn-print.pdf", compact: "6 pages per sheet": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/unitn/pdf/unitn-print6.pdf"
-   * For screen viewing:
-     * "standard Beamer format": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/unitn/pdf/unitn-beamer.pdf"
  * HTML:
    * "Plain html style": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/unitn/html/unitn.html"
    * "reveal.js beige slide style": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/unitn/html/unitn-reveal.html"
