@@ -1,3 +1,34 @@
+# Common imports
+import os
+
+# Where to save the figures and data files
+PROJECT_ROOT_DIR = "Results"
+FIGURE_ID = "Results/FigureFiles"
+DATA_ID = "Results/VMCQdotMetropolis"
+
+if not os.path.exists(PROJECT_ROOT_DIR):
+    os.mkdir(PROJECT_ROOT_DIR)
+
+if not os.path.exists(FIGURE_ID):
+    os.makedirs(FIGURE_ID)
+
+if not os.path.exists(DATA_ID):
+    os.makedirs(DATA_ID)
+
+def image_path(fig_id):
+    return os.path.join(FIGURE_ID, fig_id)
+
+def data_path(dat_id):
+    return os.path.join(DATA_ID, dat_id)
+
+def save_fig(fig_id):
+    plt.savefig(image_path(fig_id) + ".png", format='png')
+
+outfile = open(data_path("VMCQdotMetropolis.dat"),'w')
+
+
+
+
 # 2-electron VMC for quantum dot system in two dimensions
 # Brute force Metropolis, no importance sampling and no energy minimization
 from math import exp, sqrt
@@ -10,12 +41,7 @@ from matplotlib.ticker import LinearLocator, FormatStrFormatter
 import sys
 from numba import jit
 
-#Read name of output file from command line
-if len(sys.argv) == 2:
-    outfilename = sys.argv[1]
-else:
-    print('\nError: Name of output file must be given as command line argument.\n')
-outfile = open(outfilename,'w')
+#outfile = open(outfilename,'w')
 
 # Trial wave function for the 2-electron quantum dot in two dims
 def WaveFunction(r,alpha,beta):
@@ -41,7 +67,7 @@ def LocalEnergy(r,alpha,beta):
 @jit
 def MonteCarloSampling():
 
-    NumberMCcycles= 100000
+    NumberMCcycles= 10000
     StepSize = 1.0
     # positions
     PositionOld = np.zeros((NumberParticles,Dimension), np.double)
@@ -88,8 +114,9 @@ def MonteCarloSampling():
             variance = energy2 - energy**2
             error = sqrt(variance/NumberMCcycles)
             Energies[ia,jb] = energy    
+            Variances[ia,jb] = variance    
             outfile.write('%f %f %f %f %f\n' %(alpha,beta,energy,variance,error))
-    return Energies, AlphaValues, BetaValues
+    return Energies, Variances, AlphaValues, BetaValues
 
 
 #Here starts the main program with variable declarations
@@ -97,9 +124,10 @@ NumberParticles = 2
 Dimension = 2
 MaxVariations = 10
 Energies = np.zeros((MaxVariations,MaxVariations))
+Variances = np.zeros((MaxVariations,MaxVariations))
 AlphaValues = np.zeros(MaxVariations)
 BetaValues = np.zeros(MaxVariations)
-(Energies, AlphaValues, BetaValues) = MonteCarloSampling()
+(Energies, Variances, AlphaValues, BetaValues) = MonteCarloSampling()
 outfile.close()
 
 # Prepare for plots
@@ -119,5 +147,10 @@ ax.zaxis.set_major_locator(LinearLocator(10))
 ax.zaxis.set_major_formatter(FormatStrFormatter('%.02f'))
 # Add a color bar which maps values to colors.
 fig.colorbar(surf, shrink=0.5, aspect=5)
+save_fig("QdotMetropolis")
 plt.show()
+
+
+
+
 
