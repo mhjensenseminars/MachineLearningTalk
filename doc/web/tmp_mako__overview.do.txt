@@ -30,5 +30,23 @@ AUTHOR: Morten Hjorth-Jensen  Email:hjensen@msu.edu
 
 
 
+===== Talk at University of Trento, March 12, 2019 =====
+
+
+
+ * LaTeX PDF:
+   * For printing:
+     * "Standard one-page format": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/unitn/pdf/unitn-print.pdf", compact: "6 pages per sheet": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/unitn/pdf/unitn-print6.pdf"
+   * For screen viewing:
+     * "standard Beamer format": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/unitn/pdf/unitn-beamer.pdf"
+ * HTML:
+   * "Plain html style": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/unitn/html/unitn.html"
+   * "reveal.js beige slide style": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/unitn/html/unitn-reveal.html"
+   * "Bootstrap style": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/unitn/html/unitn-bs.html"
+ * iPython notebook:
+   * "ipynb file": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/unitn/ipynb/unitn.ipynb"
+
+
+
 
 

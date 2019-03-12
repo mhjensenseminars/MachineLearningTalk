@@ -4,22 +4,15 @@ TITLE: Slides and various material
 
 TOC: off
 # #else
-TITLE: Slides and various material for the computing in science education project and nuclear physics education
-AUTHOR: Morten Hjorth-Jensen  Email:hjensen@nscl.msu.edu
+TITLE: Machine learning talks
+AUTHOR: Morten Hjorth-Jensen  Email:hjensen@msu.edu
 # #endif
 
 <%
-pub_url = 'http://mhjensenseminars.github.io/EducationalSeminars/doc/pub'
-published = ['cse', 'csebio', 'np', 'talent', 'NPretreatComputation', 'NPretreatEducation', 'NPCompetences', 'cleancode',]
+pub_url = 'http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub'
+published = ['vmcml',]
 chapters = {
- 'cse': 'Computing in science education',
- 'csebio': 'Computing in life science education',
- 'np': 'Nuclear physics courses, Talent and FRIB theory center',
- 'talent': 'Nuclear Talent perspectives',
- 'NPretreatComputation': 'Computations and education',
- 'NPretreatEducation': 'Nuclear physics  education',
- 'NPCompetences': 'What do we need',
- 'cleancode': 'Why clean code matters',
+ 'vmcml': 'From variational Monte Carlo to machine learning',
 }
 %>
 
@@ -43,20 +36,6 @@ chapters = {
 
 <%def name="slide_types(name)">
 </%def>
-
-The material is produced in various formats for printing and on-screen reading.
-
-!split
-The PDF files are based on LaTeX and have seldom technical
-failures that cannot be easily corrected.
-The HTML-based files, called ``HTML'' and ``ipynb'' below, apply MathJax
-for rendering LaTeX formulas and sometimes this technology gives rise
-to unexpected failures (e.g.,
-incorrect rendering in a web page despite correct LaTeX syntax in the
-formula). Consult the corresponding PDF
-files if you find missing or incorrectly rendered
-formulas in HTML or ipython notebook files.
-
 
 ======= Slides in various formats =======
 
