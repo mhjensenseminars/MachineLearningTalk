@@ -7,9 +7,9 @@ Automatically generated HTML file from DocOnce source
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="DocOnce: https://github.com/hplgit/doconce/" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="Solving quantum mechanical problems with Machine Learning">
+<meta name="description" content="Solving Quantum Mechanical Many-body Problems with Machine Learning Algorithms">
 
-<title>Solving quantum mechanical problems with Machine Learning</title>
+<title>Solving Quantum Mechanical Many-body Problems with Machine Learning Algorithms</title>
 
 <!-- Bootstrap style: bootstrap -->
 <link href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
@@ -104,36 +104,25 @@ Automatically generated HTML file from DocOnce source
               ('Joint distribution', 2, None, '___sec40'),
               ('Network Elements, the energy function', 2, None, '___sec41'),
               ('Defining different types of RBMs', 2, None, '___sec42'),
-              ('More about RBMs', 2, None, '___sec43'),
-              ('Sampling: Metropolis sampling', 2, None, '___sec44'),
-              ('Sampling: Gibbs sampling', 2, None, '___sec45'),
-              ('Gaussian RBM', 2, None, '___sec46'),
-              ('Cost function', 2, None, '___sec47'),
-              ('Optimization / Training', 2, None, '___sec48'),
-              ('More on RBMs', 2, None, '___sec49'),
-              ('Which sampling to use', 2, None, '___sec50'),
-              ('RBMs for the quantum many body problem', 2, None, '___sec51'),
-              ('Choose the right RBM', 2, None, '___sec52'),
-              ('Representing the wave function', 2, None, '___sec53'),
-              ('Choose the cost function', 2, None, '___sec54'),
-              ('Running the codes', 2, None, '___sec55'),
+              ('Sampling: Metropolis sampling', 2, None, '___sec43'),
+              ('Gaussian RBM', 2, None, '___sec44'),
+              ('Cost function', 2, None, '___sec45'),
+              ('Optimization / Training', 2, None, '___sec46'),
+              ('More on RBMs', 2, None, '___sec47'),
+              ('RBMs for the quantum many body problem', 2, None, '___sec48'),
+              ('Choose the right RBM', 2, None, '___sec49'),
+              ('Representing the wave function', 2, None, '___sec50'),
+              ('Choose the cost function', 2, None, '___sec51'),
+              ('Running the codes', 2, None, '___sec52'),
               ('Energy as function of iterations, $N=2$ electrons',
                2,
                None,
-               '___sec56'),
+               '___sec53'),
               ('Energy as function of iterations, $N=6$ electrons',
                2,
                None,
-               '___sec57'),
-              ('Conclusions and where do we stand', 2, None, '___sec58'),
-              ('Additional material', 2, None, '___sec59'),
-              ('Kullback-Leibler relative entropy', 2, None, '___sec60'),
-              ('Optimizing the cost function', 2, None, '___sec61'),
-              ('Setting up for gradient descent calculations',
-               2,
-               None,
-               '___sec62'),
-              ('More interpretations', 2, None, '___sec63')]}
+               '___sec54'),
+              ('Conclusions and where do we stand', 2, None, '___sec55')]}
 end of tocinfo -->
 
 <body>
@@ -163,7 +152,7 @@ MathJax.Hub.Config({
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-    <a class="navbar-brand" href="unitn-bs.html">Solving quantum mechanical problems with Machine Learning</a>
+    <a class="navbar-brand" href="unitn-bs.html">Solving Quantum Mechanical Many-body Problems with Machine Learning Algorithms</a>
   </div>
 
   <div class="navbar-collapse collapse navbar-responsive-collapse">
@@ -214,27 +203,19 @@ MathJax.Hub.Config({
      <!-- navigation toc: --> <li><a href="._unitn-bs041.html#___sec40" style="font-size: 80%;">Joint distribution</a></li>
      <!-- navigation toc: --> <li><a href="._unitn-bs042.html#___sec41" style="font-size: 80%;">Network Elements, the energy function</a></li>
      <!-- navigation toc: --> <li><a href="._unitn-bs043.html#___sec42" style="font-size: 80%;">Defining different types of RBMs</a></li>
-     <!-- navigation toc: --> <li><a href="._unitn-bs044.html#___sec43" style="font-size: 80%;">More about RBMs</a></li>
-     <!-- navigation toc: --> <li><a href="._unitn-bs045.html#___sec44" style="font-size: 80%;">Sampling: Metropolis sampling</a></li>
-     <!-- navigation toc: --> <li><a href="._unitn-bs046.html#___sec45" style="font-size: 80%;">Sampling: Gibbs sampling</a></li>
-     <!-- navigation toc: --> <li><a href="._unitn-bs047.html#___sec46" style="font-size: 80%;">Gaussian RBM</a></li>
-     <!-- navigation toc: --> <li><a href="._unitn-bs048.html#___sec47" style="font-size: 80%;">Cost function</a></li>
-     <!-- navigation toc: --> <li><a href="._unitn-bs049.html#___sec48" style="font-size: 80%;">Optimization / Training</a></li>
-     <!-- navigation toc: --> <li><a href="._unitn-bs050.html#___sec49" style="font-size: 80%;">More on RBMs</a></li>
-     <!-- navigation toc: --> <li><a href="._unitn-bs051.html#___sec50" style="font-size: 80%;">Which sampling to use</a></li>
-     <!-- navigation toc: --> <li><a href="._unitn-bs052.html#___sec51" style="font-size: 80%;">RBMs for the quantum many body problem</a></li>
-     <!-- navigation toc: --> <li><a href="._unitn-bs053.html#___sec52" style="font-size: 80%;">Choose the right RBM</a></li>
-     <!-- navigation toc: --> <li><a href="._unitn-bs054.html#___sec53" style="font-size: 80%;">Representing the wave function</a></li>
-     <!-- navigation toc: --> <li><a href="._unitn-bs055.html#___sec54" style="font-size: 80%;">Choose the cost function</a></li>
-     <!-- navigation toc: --> <li><a href="._unitn-bs056.html#___sec55" style="font-size: 80%;">Running the codes</a></li>
-     <!-- navigation toc: --> <li><a href="._unitn-bs057.html#___sec56" style="font-size: 80%;">Energy as function of iterations, \( N=2 \) electrons</a></li>
-     <!-- navigation toc: --> <li><a href="._unitn-bs058.html#___sec57" style="font-size: 80%;">Energy as function of iterations, \( N=6 \) electrons</a></li>
-     <!-- navigation toc: --> <li><a href="._unitn-bs059.html#___sec58" style="font-size: 80%;">Conclusions and where do we stand</a></li>
-     <!-- navigation toc: --> <li><a href="._unitn-bs060.html#___sec59" style="font-size: 80%;">Additional material</a></li>
-     <!-- navigation toc: --> <li><a href="._unitn-bs061.html#___sec60" style="font-size: 80%;">Kullback-Leibler relative entropy</a></li>
-     <!-- navigation toc: --> <li><a href="._unitn-bs062.html#___sec61" style="font-size: 80%;">Optimizing the cost function</a></li>
-     <!-- navigation toc: --> <li><a href="._unitn-bs063.html#___sec62" style="font-size: 80%;">Setting up for gradient descent calculations</a></li>
-     <!-- navigation toc: --> <li><a href="._unitn-bs064.html#___sec63" style="font-size: 80%;">More interpretations</a></li>
+     <!-- navigation toc: --> <li><a href="._unitn-bs044.html#___sec43" style="font-size: 80%;">Sampling: Metropolis sampling</a></li>
+     <!-- navigation toc: --> <li><a href="._unitn-bs045.html#___sec44" style="font-size: 80%;">Gaussian RBM</a></li>
+     <!-- navigation toc: --> <li><a href="._unitn-bs046.html#___sec45" style="font-size: 80%;">Cost function</a></li>
+     <!-- navigation toc: --> <li><a href="._unitn-bs047.html#___sec46" style="font-size: 80%;">Optimization / Training</a></li>
+     <!-- navigation toc: --> <li><a href="._unitn-bs048.html#___sec47" style="font-size: 80%;">More on RBMs</a></li>
+     <!-- navigation toc: --> <li><a href="._unitn-bs049.html#___sec48" style="font-size: 80%;">RBMs for the quantum many body problem</a></li>
+     <!-- navigation toc: --> <li><a href="._unitn-bs050.html#___sec49" style="font-size: 80%;">Choose the right RBM</a></li>
+     <!-- navigation toc: --> <li><a href="._unitn-bs051.html#___sec50" style="font-size: 80%;">Representing the wave function</a></li>
+     <!-- navigation toc: --> <li><a href="._unitn-bs052.html#___sec51" style="font-size: 80%;">Choose the cost function</a></li>
+     <!-- navigation toc: --> <li><a href="._unitn-bs053.html#___sec52" style="font-size: 80%;">Running the codes</a></li>
+     <!-- navigation toc: --> <li><a href="._unitn-bs054.html#___sec53" style="font-size: 80%;">Energy as function of iterations, \( N=2 \) electrons</a></li>
+     <!-- navigation toc: --> <li><a href="._unitn-bs055.html#___sec54" style="font-size: 80%;">Energy as function of iterations, \( N=6 \) electrons</a></li>
+     <!-- navigation toc: --> <li><a href="._unitn-bs056.html#___sec55" style="font-size: 80%;">Conclusions and where do we stand</a></li>
 
         </ul>
       </li>
@@ -299,7 +280,7 @@ This system has analytical solutions in two and three dimensions (<a href="https
   <li><a href="._unitn-bs026.html">27</a></li>
   <li><a href="._unitn-bs027.html">28</a></li>
   <li><a href="">...</a></li>
-  <li><a href="._unitn-bs064.html">65</a></li>
+  <li><a href="._unitn-bs056.html">57</a></li>
   <li><a href="._unitn-bs019.html">&raquo;</a></li>
 </ul>
 <!-- ------------------- end of main content --------------- -->

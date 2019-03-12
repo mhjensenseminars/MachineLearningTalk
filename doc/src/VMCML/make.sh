@@ -81,7 +81,6 @@ EOF
 tar czf ${ipynb_tarfile} README.txt
 fi
 cp ${ipynb_tarfile} $dest/$name/ipynb
-EOF
 
 
 
