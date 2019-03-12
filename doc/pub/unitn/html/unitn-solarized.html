@@ -130,37 +130,26 @@ div { text-align: justify; text-justify: inter-word; }
               ('Network Elements, the energy function', 2, None, '___sec42'),
               ('Defining different types of RBMs', 2, None, '___sec43'),
               ('Sampling: Metropolis sampling', 2, None, '___sec44'),
-              ('Gaussian RBM', 2, None, '___sec45'),
-              ('RBMs for the quantum many body problem', 2, None, '___sec46'),
-              ('Choose the right RBM', 2, None, '___sec47'),
-              ('Representing the wave function', 2, None, '___sec48'),
-              ('Choose the cost/loss function', 2, None, '___sec49'),
-              ('Running the codes', 2, None, '___sec50'),
+              ('RBMs for the quantum many body problem', 2, None, '___sec45'),
+              ('Choose the right RBM', 2, None, '___sec46'),
+              ('Representing the wave function', 2, None, '___sec47'),
+              ('Choose the cost/loss function', 2, None, '___sec48'),
+              ('Running the codes', 2, None, '___sec49'),
               ('Energy as function of iterations, $N=2$ electrons',
                2,
                None,
-               '___sec51'),
+               '___sec50'),
               ('Energy as function of iterations, $N=6$ electrons',
                2,
                None,
-               '___sec52'),
-              ('Conclusions and where do we stand', 2, None, '___sec53'),
-              ('Appendix: Mathematical details', 2, None, '___sec54'),
-              ('Marginal Probability Density Functions', 3, None, '___sec55'),
+               '___sec51'),
+              ('Conclusions and where do we stand', 2, None, '___sec52'),
+              ('Appendix: Mathematical details', 2, None, '___sec53'),
+              ('Marginal Probability Density Functions', 3, None, '___sec54'),
               ('Conditional Probability Density Functions',
                3,
                None,
-               '___sec56'),
-              ('Gaussian-Binary Restricted Boltzmann Machines',
-               3,
-               None,
-               '___sec57'),
-              ('Joint Probability Density Function', 3, None, '___sec58'),
-              ('Marginal Probability Density Functions', 3, None, '___sec59'),
-              ('Conditional Probability Density Functions',
-               3,
-               None,
-               '___sec60')]}
+               '___sec55')]}
 end of tocinfo -->
 
 <body>
@@ -202,7 +191,7 @@ MathJax.Hub.Config({
 <center>[2] <b>Department of Physics and Center for Computing in Science Education, University of Oslo, Norway</b></center>
 <br>
 <p>
-<center><h4>University of Trento, March 12, 2019</h4></center> <!-- date -->
+<center><h4>University of Trento, March 12, 2019. Codes and slides at <a href="https://github.com/mhjensenseminars/MachineLearningTalk" target="_blank"><tt>https://github.com/mhjensenseminars/MachineLearningTalk</tt></a></h4></center> <!-- date -->
 <br>
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
@@ -974,7 +963,7 @@ One way to achieve this is to minimize the energy as function of the variational
 To find the derivatives of the local energy expectation value as function of the variational parameters, we can use the chain rule and the hermiticity of the Hamiltonian.
 
 <p>
-Let us define (with the notation \( \langle E[\boldsymbol{\alpha}]= \rangle \langle  E_L\rangle \))
+Let us define (with the notation \( \langle E[\boldsymbol{\alpha}]\rangle =\langle  E_L\rangle \))
 $$
 \bar{E}_{\alpha_i}=\frac{d\langle  E_L\rangle}{d\alpha_i},
 $$
@@ -1084,10 +1073,11 @@ standard gradient methods.
 <p>
 This leads to however a more complicated expression, with obvious errors when evaluating integrals by Monte Carlo integration. Less used, see however <a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.94.150201" target="_blank">Filippi and Umrigar</a>. The expression becomes complicated
 $$
-\begin*{align}
-\bar{E}_{ij} &= 2\left[ \langle (\frac{\bar{\Psi}_{ij}}{\Psi}+\frac{\bar{\Psi}_{j}}{\Psi}\frac{\bar{\Psi}_{i}}{\Psi})(E_L-\langle E\rangle)\rangle -\langle \frac{\bar{\Psi}_{i}}{\Psi}\rangle\bar{E}_j-\langle \frac{\bar{\Psi}_{j}}{\Psi}\rangle\bar{E}_i\right] \\
+\begin{align}
+\bar{E}_{ij} &= 2\left[ \langle (\frac{\bar{\Psi}_{ij}}{\Psi}+\frac{\bar{\Psi}_{j}}{\Psi}\frac{\bar{\Psi}_{i}}{\Psi})(E_L-\langle E\rangle)\rangle -\langle \frac{\bar{\Psi}_{i}}{\Psi}\rangle\bar{E}_j-\langle \frac{\bar{\Psi}_{j}}{\Psi}\rangle\bar{E}_i\right] 
+\label{_auto1}\\ \nonumber
 &+\langle \frac{\bar{\Psi}_{i}}{\Psi}E_L{_j}\rangle +\langle \frac{\bar{\Psi}_{j}}{\Psi}E_L{_i}\rangle -\langle \frac{\bar{\Psi}_{i}}{\Psi}\rangle\langle E_L{_j}\rangle \langle \frac{\bar{\Psi}_{j}}{\Psi}\rangle\langle E_L{_i}\rangle.  
-\end*{align}
+\end{align}
 $$
 
 <p>
@@ -1459,7 +1449,7 @@ The restricted Boltzmann machine is described by a Boltzmann distribution
 $$
 \begin{align}
 	P_{rbm}(\mathbf{x},\mathbf{h}) = \frac{1}{Z} e^{-\frac{1}{T_0}E(\mathbf{x},\mathbf{h})},
-\label{_auto1}
+\label{_auto2}
 \end{align}
 $$
 
@@ -1467,7 +1457,7 @@ where \( Z \) is the normalization constant or partition function, defined as
 $$
 \begin{align}
 	Z = \int \int e^{-\frac{1}{T_0}E(\mathbf{x},\mathbf{h})} d\mathbf{x} d\mathbf{h}.
-\label{_auto2}
+\label{_auto3}
 \end{align}
 $$
 
@@ -1505,6 +1495,8 @@ The connection between the nodes in the two layers is given by the weights \( w_
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
 <h2 id="___sec43">Defining different types of RBMs </h2>
+
+<p>
 There are different variants of RBMs, and the differences lie in the types of visible and hidden units we choose as well as in the implementation of the energy function \( E(\mathbf{x},\mathbf{h}) \).
 
 <p>
@@ -1517,7 +1509,7 @@ RBMs were first developed using binary units in both the visible and hidden laye
 $$
 \begin{align}
 	E(\mathbf{x}, \mathbf{h}) = - \sum_i^M x_i a_i- \sum_j^N b_j h_j - \sum_{i,j}^{M,N} x_i w_{ij} h_j,
-\label{_auto3}
+\label{_auto4}
 \end{align}
 $$
 
@@ -1533,7 +1525,7 @@ Another varient is the RBM where the visible units are Gaussian while the hidden
 $$
 \begin{align}
 	E(\mathbf{x}, \mathbf{h}) = \sum_i^M \frac{(x_i - a_i)^2}{2\sigma_i^2} - \sum_j^N b_j h_j - \sum_{i,j}^{M,N} \frac{x_i w_{ij} h_j}{\sigma_i^2}. 
-\label{_auto4}
+\label{_auto5}
 \end{align}
 $$
 </div>
@@ -1548,23 +1540,7 @@ In order to sample from the RBM probability distribution it is common to use Mar
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec45">Gaussian RBM </h2>
-For the Gaussian-Binary RBM the conditional probabilities are
-$$
-\begin{align}
-	P(x_i|\mathbf{h}) &= \mathcal{N}(x_i; a_i+ \sum_j h_j w_{ij}, \sigma^2) 
-\label{_auto5}\\
-	P(h_j=1|\mathbf{x}) &=  \frac{1}{1+e^{-b_j-\frac{1}{\sigma^2} \sum_i x_i w_{ij}}},
-\label{_auto6}
-\end{align}
-$$
-
-while the visible units now follow a normal distribution, we see the hidden units again follow the logistic sigmoid function.
-
-<p>
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-
-<h2 id="___sec46">RBMs for the quantum many body problem </h2>
+<h2 id="___sec45">RBMs for the quantum many body problem </h2>
 
 <p>
 The idea of applying RBMs to quantum many body problems was presented by G. Carleo and M. Troyer, working with ETH Zurich and Microsoft Research.
@@ -1588,7 +1564,7 @@ Some of their motivation included
 
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec47">Choose the right RBM </h2>
+<h2 id="___sec46">Choose the right RBM </h2>
 
 <p>
 Carleo and Troyer applied the RBM to the quantum mechanical spin
@@ -1606,12 +1582,14 @@ seem like the most relevant choice.
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec48">Representing the wave function </h2>
+<h2 id="___sec47">Representing the wave function </h2>
+
+<p>
 The wavefunction should be a probability amplitude depending on \( \boldsymbol{x} \). The RBM model is given by the joint distribution of \( \boldsymbol{x} \) and \( \boldsymbol{h} \)
 $$
 \begin{align}
 	F_{rbm}(\mathbf{x},\mathbf{h}) = \frac{1}{Z} e^{-\frac{1}{T_0}E(\mathbf{x},\mathbf{h})}.
-\label{_auto7}
+\label{_auto6}
 \end{align}
 $$
 
@@ -1619,9 +1597,9 @@ To find the marginal distribution of \( \boldsymbol{x} \) we set:
 $$
 \begin{align}
 	F_{rbm}(\mathbf{x}) &= \sum_\mathbf{h} F_{rbm}(\mathbf{x}, \mathbf{h}) 
-\label{_auto8}\\
+\label{_auto7}\\
 				&= \frac{1}{Z}\sum_\mathbf{h} e^{-E(\mathbf{x}, \mathbf{h})}.
-\label{_auto9}
+\label{_auto8}
 \end{align}
 $$
 
@@ -1629,27 +1607,27 @@ Now this is what we use to represent the wave function, calling it a neural-netw
 $$
 \begin{align}
 	\Psi (\mathbf{x}) &= F_{rbm}(\mathbf{x}) 
-\label{_auto10}\\
+\label{_auto9}\\
 	&= \frac{1}{Z}\sum_{\boldsymbol{h}} e^{-E(\mathbf{x}, \mathbf{h})} 
-\label{_auto11}\\
+\label{_auto10}\\
 	&= \frac{1}{Z} \sum_{\{h_j\}} e^{-\sum_i^M \frac{(x_i - a_i)^2}{2\sigma^2} + \sum_j^N b_j h_j + \sum_{i,j}^{M,N} \frac{x_i w_{ij} h_j}{\sigma^2}} 
-\label{_auto12}\\
+\label{_auto11}\\
 	&= \frac{1}{Z} e^{-\sum_i^M \frac{(x_i - a_i)^2}{2\sigma^2}} \prod_j^N (1 + e^{b_j + \sum_i^M \frac{x_i w_{ij}}{\sigma^2}}). 
-\label{_auto13}\\
-\label{_auto14}
+\label{_auto12}\\
+\label{_auto13}
 \end{align}
 $$
 
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec49">Choose the cost/loss function </h2>
+<h2 id="___sec48">Choose the cost/loss function </h2>
 Now we don't necessarily have training data (unless we generate it by using some other method). However, what we do have is the variational principle which allows us to obtain the ground state wave function by minimizing the expectation value of the energy of a trial wavefunction (corresponding to the untrained NQS). Similarly to the traditional variational Monte Carlo method then, it is the local energy we wish to minimize. The gradient to use for the stochastic gradient descent procedure is
 $$
 \begin{align}
 	C_i = \frac{\partial \langle E_L \rangle}{\partial \theta_i}
 	= 2(\langle E_L \frac{1}{\Psi}\frac{\partial \Psi}{\partial \theta_i} \rangle - \langle E_L \rangle \langle \frac{1}{\Psi}\frac{\partial \Psi}{\partial \theta_i} \rangle ),
-\label{_auto15}
+\label{_auto14}
 \end{align}
 $$
 
@@ -1657,14 +1635,14 @@ where the local energy is given by
 $$
 \begin{align}
 	E_L = \frac{1}{\Psi} \hat{\mathbf{H}} \Psi.
-\label{_auto16}
+\label{_auto15}
 \end{align}
 $$
 
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec50">Running the codes </h2>
+<h2 id="___sec49">Running the codes </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -1683,7 +1661,7 @@ The Broyden-Fletcher-Goldfarb-Shanno algorithm was used for the minimization. We
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec51">Energy as function of iterations, \( N=2 \) electrons  </h2>
+<h2 id="___sec50">Energy as function of iterations, \( N=2 \) electrons  </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -1694,7 +1672,7 @@ The Broyden-Fletcher-Goldfarb-Shanno algorithm was used for the minimization. We
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec52">Energy as function of iterations, \( N=6 \) electrons  </h2>
+<h2 id="___sec51">Energy as function of iterations, \( N=6 \) electrons  </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -1705,7 +1683,7 @@ The Broyden-Fletcher-Goldfarb-Shanno algorithm was used for the minimization. We
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec53">Conclusions and where do we stand </h2>
+<h2 id="___sec52">Conclusions and where do we stand </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -1719,6 +1697,7 @@ The Broyden-Fletcher-Goldfarb-Shanno algorithm was used for the minimization. We
 
 <ol type="a"></li>
  <li> Here we used standard Hartree-Fock theory to define an optimal Slater determinant. Takes care of the antisymmetry. What about constructing an anti-symmetrized network function?</li>
+ <li> Compare with calculations done with Shadow wave functions.</li>
  <li> Use thereafter ML to determine the correlated part of the wafe function (including a standard Jastrow factor).</li>
  <li> Test this for multi-fermion systems and compare with other many-body methods.</li>
 </ol>
@@ -1731,7 +1710,7 @@ The Broyden-Fletcher-Goldfarb-Shanno algorithm was used for the minimization. We
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec54">Appendix: Mathematical details </h2>
+<h2 id="___sec53">Appendix: Mathematical details </h2>
 
 <p>
 The original RBM had binary visible and hidden nodes. They were
@@ -1741,10 +1720,13 @@ strictly improved modelling power. The common choice of binary values
 are 0 and 1. However, in some physics applications, -1 and 1 might be
 a more natural choice. We will here use 0 and 1.
 
+<p>
+Here we look at some of the relevant equations for a binary-binary RBM.
+
 $$
 \begin{align}
 	E_{BB}(\boldsymbol{x}, \mathbf{h}) = - \sum_i^M x_i a_i- \sum_j^N b_j h_j - \sum_{i,j}^{M,N} x_i w_{ij} h_j.
-\label{_auto17}
+\label{_auto16}
 \end{align}
 $$
 
@@ -1752,9 +1734,9 @@ $$
 $$
 \begin{align}
 	p_{BB}(\boldsymbol{x}, \boldsymbol{h}) =& \frac{1}{Z_{BB}} e^{\sum_i^M a_i x_i + \sum_j^N b_j h_j + \sum_{ij}^{M,N} x_i w_{ij} h_j} 
-\label{_auto18}\\
+\label{_auto17}\\
 	=& \frac{1}{Z_{BB}} e^{\boldsymbol{x}^T \boldsymbol{a} + \boldsymbol{b}^T \boldsymbol{h} + \boldsymbol{x}^T \boldsymbol{W} \boldsymbol{h}}
-\label{_auto19}
+\label{_auto18}
 \end{align}
 $$
 
@@ -1764,11 +1746,11 @@ with the partition function
 $$
 \begin{align}
 	Z_{BB} = \sum_{\boldsymbol{x}, \boldsymbol{h}} e^{\boldsymbol{x}^T \boldsymbol{a} + \boldsymbol{b}^T \boldsymbol{h} + \boldsymbol{x}^T \boldsymbol{W} \boldsymbol{h}} .
-\label{_auto20}
+\label{_auto19}
 \end{align}
 $$
 
-<h3 id="___sec55">Marginal Probability Density Functions </h3>
+<h3 id="___sec54">Marginal Probability Density Functions </h3>
 
 <p>
 In order to find the probability of any configuration of the visible units we derive the marginal probability density function.
@@ -1776,7 +1758,7 @@ In order to find the probability of any configuration of the visible units we de
 $$
 \begin{align}
 	p_{BB} (\boldsymbol{x}) =& \sum_{\boldsymbol{h}} p_{BB} (\boldsymbol{x}, \boldsymbol{h}) 
-\label{_auto21}\\
+\label{_auto20}\\
 	=& \frac{1}{Z_{BB}} \sum_{\boldsymbol{h}} e^{\boldsymbol{x}^T \boldsymbol{a} + \boldsymbol{b}^T \boldsymbol{h} + \boldsymbol{x}^T \boldsymbol{W} \boldsymbol{h}} \nonumber \\
 	=& \frac{1}{Z_{BB}} e^{\boldsymbol{x}^T \boldsymbol{a}} \sum_{\boldsymbol{h}} e^{\sum_j^N (b_j + \boldsymbol{x}^T \boldsymbol{w}_{\ast j})h_j} \nonumber \\
 	=& \frac{1}{Z_{BB}} e^{\boldsymbol{x}^T \boldsymbol{a}} \sum_{\boldsymbol{h}} \prod_j^N e^{ (b_j + \boldsymbol{x}^T \boldsymbol{w}_{\ast j})h_j} \nonumber \\
@@ -1785,7 +1767,7 @@ $$
 	& ... \times \sum_{h_2} e^{(b_N + \boldsymbol{x}^T \boldsymbol{w}_{\ast N})h_N} \bigg ) \nonumber \\
 	=& \frac{1}{Z_{BB}} e^{\boldsymbol{x}^T \boldsymbol{a}} \prod_j^N \sum_{h_j} e^{(b_j + \boldsymbol{x}^T \boldsymbol{w}_{\ast j}) h_j} \nonumber \\
 	=& \frac{1}{Z_{BB}} e^{\boldsymbol{x}^T \boldsymbol{a}} \prod_j^N (1 + e^{b_j + \boldsymbol{x}^T \boldsymbol{w}_{\ast j}}) .
-\label{_auto22}
+\label{_auto21}
 \end{align}
 $$
 
@@ -1795,11 +1777,11 @@ A similar derivation yields the marginal probability of the hidden units
 $$
 \begin{align}
 	p_{BB} (\boldsymbol{h}) = \frac{1}{Z_{BB}} e^{\boldsymbol{b}^T \boldsymbol{h}} \prod_i^M (1 + e^{a_i + \boldsymbol{w}_{i\ast}^T \boldsymbol{h}}) .
-\label{_auto23}
+\label{_auto22}
 \end{align}
 $$
 
-<h3 id="___sec56">Conditional Probability Density Functions </h3>
+<h3 id="___sec55">Conditional Probability Density Functions </h3>
 
 <p>
 We derive the probability of the hidden units given the visible units using Bayes' rule
@@ -1814,7 +1796,7 @@ $$
 	=& \prod_j^N \frac{ e^{(b_j + \boldsymbol{x}^T \boldsymbol{w}_{\ast j} ) h_j}  }
 	{1 + e^{b_j + \boldsymbol{x}^T \boldsymbol{w}_{\ast j}}} \nonumber \\
 	=& \prod_j^N p_{BB} (h_j| \boldsymbol{x}) .
-\label{_auto24}
+\label{_auto23}
 \end{align}
 $$
 
@@ -1825,12 +1807,12 @@ $$
 \begin{align}
 	p_{BB} (h_j=1 | \boldsymbol{x}) =&   \frac{ e^{(b_j + \boldsymbol{x}^T \boldsymbol{w}_{\ast j} ) h_j}  }
 	{1 + e^{b_j + \boldsymbol{x}^T \boldsymbol{w}_{\ast j}}} 
-\label{_auto25}\\
+\label{_auto24}\\
 	=&  \frac{ e^{(b_j + \boldsymbol{x}^T \boldsymbol{w}_{\ast j} )}  }
 	{1 + e^{b_j + \boldsymbol{x}^T \boldsymbol{w}_{\ast j}}} 
-\label{_auto26}\\
+\label{_auto25}\\
 	=&  \frac{ 1 }{1 + e^{-(b_j + \boldsymbol{x}^T \boldsymbol{w}_{\ast j})} } ,
-\label{_auto27}
+\label{_auto26}
 \end{align}
 $$
 
@@ -1839,7 +1821,7 @@ and
 $$
 \begin{align}
 	p_{BB} (h_j=0 | \boldsymbol{x}) =\frac{ 1 }{1 + e^{b_j + \boldsymbol{x}^T \boldsymbol{w}_{\ast j}} } .
-\label{_auto28}
+\label{_auto27}
 \end{align}
 $$
 
@@ -1849,9 +1831,9 @@ Similarly we have that the conditional probability of the visible units given th
 $$
 \begin{align}
 	p_{BB} (\boldsymbol{x}|\boldsymbol{h}) =& \prod_i^M \frac{ e^{ (a_i + \boldsymbol{w}_{i\ast}^T \boldsymbol{h}) x_i} }{ 1 + e^{a_i + \boldsymbol{w}_{i\ast}^T \boldsymbol{h}} } 
-\label{_auto29}\\
+\label{_auto28}\\
 	&= \prod_i^M p_{BB} (x_i | \boldsymbol{h}) .
-\label{_auto30}
+\label{_auto29}
 \end{align}
 $$
 
@@ -1859,187 +1841,11 @@ $$
 $$
 \begin{align}
 	p_{BB} (x_i=1 | \boldsymbol{h}) =& \frac{1}{1 + e^{-(a_i + \boldsymbol{w}_{i\ast}^T \boldsymbol{h} )}} 
-\label{_auto31}\\
+\label{_auto30}\\
 	p_{BB} (x_i=0 | \boldsymbol{h}) =& \frac{1}{1 + e^{a_i + \boldsymbol{w}_{i\ast}^T \boldsymbol{h} }} .
-\label{_auto32}
+\label{_auto31}
 \end{align}
 $$
-
-<h3 id="___sec57">Gaussian-Binary Restricted Boltzmann Machines </h3>
-
-<p>
-Inserting into the expression for \( E_{RBM}(\boldsymbol{x},\boldsymbol{h}) \) in equation  results in the energy
-
-$$
-\begin{align}
-	E_{GB}(\boldsymbol{x}, \boldsymbol{h}) =& \sum_i^M \frac{(x_i - a_i)^2}{2\sigma_i^2}
-	- \sum_j^N b_j h_j 
-	-\sum_{ij}^{M,N} \frac{x_i w_{ij} h_j}{\sigma_i^2} \nonumber \\
-	=& \norm*{\frac{\boldsymbol{x} -\boldsymbol{a}}{2\boldsymbol{\sigma}}}^2 - \boldsymbol{b}^T \boldsymbol{h} 
-	- (\frac{\boldsymbol{x}}{\boldsymbol{\sigma}^2})^T \boldsymbol{W}\boldsymbol{h} . 
-\label{_auto33}
-\end{align}
-$$
-
-<h3 id="___sec58">Joint Probability Density Function </h3>
-
-$$
-\begin{align}
-	p_{GB} (\boldsymbol{x}, \boldsymbol{h}) =& \frac{1}{Z_{GB}} e^{-\norm*{\frac{\boldsymbol{x} -\boldsymbol{a}}{2\boldsymbol{\sigma}}}^2 + \boldsymbol{b}^T \boldsymbol{h} 
-	+ (\frac{\boldsymbol{x}}{\boldsymbol{\sigma}^2})^T \boldsymbol{W}\boldsymbol{h}} \nonumber \\
-	=& \frac{1}{Z_{GB}} e^{- \sum_i^M \frac{(x_i - a_i)^2}{2\sigma_i^2}
-	+ \sum_j^N b_j h_j 
-	+\sum_{ij}^{M,N} \frac{x_i w_{ij} h_j}{\sigma_i^2}} \nonumber \\
-	=& \frac{1}{Z_{GB}} \prod_{ij}^{M,N} e^{-\frac{(x_i - a_i)^2}{2\sigma_i^2}
-	+ b_j h_j 
-	+\frac{x_i w_{ij} h_j}{\sigma_i^2}} ,
-\label{_auto34}
-\end{align}
-$$
-
-<p>
-with the partition function given by
-
-$$
-\begin{align}
-	Z_{GB} =& \int \sum_{\tilde{\boldsymbol{h}}}^{\tilde{\boldsymbol{H}}} e^{-\norm*{\frac{\tilde{\boldsymbol{x}} -\boldsymbol{a}}{2\boldsymbol{\sigma}}}^2 + \boldsymbol{b}^T \tilde{\boldsymbol{h}} 
-	+ (\frac{\tilde{\boldsymbol{x}}}{\boldsymbol{\sigma}^2})^T \boldsymbol{W}\tilde{\boldsymbol{h}}} \dif \tilde{\boldsymbol{x}} .
-\label{_auto35}
-\end{align}
-$$
-
-<h3 id="___sec59">Marginal Probability Density Functions </h3>
-
-<p>
-We proceed to find the marginal probability densitites of the
-Gaussian-binary RBM. We first marginalize over the binary hidden units
-to find \( p_{GB} (\boldsymbol{x}) \)
-
-$$
-\begin{align}
-	p_{GB} (\boldsymbol{x}) =& \sum_{\tilde{\boldsymbol{h}}}^{\tilde{\boldsymbol{H}}} p_{GB} (\boldsymbol{x}, \tilde{\boldsymbol{h}}) \nonumber \\
-	=& \frac{1}{Z_{GB}} \sum_{\tilde{\boldsymbol{h}}}^{\tilde{\boldsymbol{H}}} 
-	e^{-\norm*{\frac{\boldsymbol{x} -\boldsymbol{a}}{2\boldsymbol{\sigma}}}^2 + \boldsymbol{b}^T \tilde{\boldsymbol{h}} 
-	+ (\frac{\boldsymbol{x}}{\boldsymbol{\sigma}^2})^T \boldsymbol{W}\tilde{\boldsymbol{h}}} \nonumber \\
-	=& \frac{1}{Z_{GB}} e^{-\norm*{\frac{\boldsymbol{x} -\boldsymbol{a}}{2\boldsymbol{\sigma}}}^2}
-	\prod_j^N (1 + e^{b_j + (\frac{\boldsymbol{x}}{\boldsymbol{\sigma}^2})^T \boldsymbol{w}_{\ast j}} ) .
-\label{_auto36}
-\end{align}
-$$
-
-<p>
-We next marginalize over the visible units. This is the first time we
-marginalize over continuous values. We rewrite the exponential factor
-dependent on \( \boldsymbol{x} \) as a Gaussian function before we integrate in
-the last step.
-
-$$
-\begin{align}
-	p_{GB} (\boldsymbol{h}) =& \int p_{GB} (\tilde{\boldsymbol{x}}, \boldsymbol{h}) \dif \tilde{\boldsymbol{x}} \nonumber \\
-	=& \frac{1}{Z_{GB}} \int e^{-\norm*{\frac{\tilde{\boldsymbol{x}} -\boldsymbol{a}}{2\boldsymbol{\sigma}}}^2 + \boldsymbol{b}^T \boldsymbol{h} 
-	+ (\frac{\tilde{\boldsymbol{x}}}{\boldsymbol{\sigma}^2})^T \boldsymbol{W}\boldsymbol{h}} \dif \tilde{\boldsymbol{x}} \nonumber \\
-	=& \frac{1}{Z_{GB}} e^{\boldsymbol{b}^T \boldsymbol{h} } \int \prod_i^M
-	e^{- \frac{(\tilde{x}_i - a_i)^2}{2\sigma_i^2} + \frac{\tilde{x}_i \boldsymbol{w}_{i\ast}^T \boldsymbol{h}}{\sigma_i^2} } \dif \tilde{\boldsymbol{x}} \nonumber \\
-	=& \frac{1}{Z_{GB}} e^{\boldsymbol{b}^T \boldsymbol{h} }
-	\biggl( \int e^{- \frac{(\tilde{x}_1 - a_1)^2}{2\sigma_1^2} + \frac{\tilde{x}_1 \boldsymbol{w}_{1\ast}^T \boldsymbol{h}}{\sigma_1^2} } \dif \tilde{x}_1 \nonumber \\
-	& \times \int e^{- \frac{(\tilde{x}_2 - a_2)^2}{2\sigma_2^2} + \frac{\tilde{x}_2 \boldsymbol{w}_{2\ast}^T \boldsymbol{h}}{\sigma_2^2} } \dif \tilde{x}_2 \nonumber \\
-	& \times ... \nonumber \\
-	&\times \int e^{- \frac{(\tilde{x}_M - a_M)^2}{2\sigma_M^2} + \frac{\tilde{x}_M \boldsymbol{w}_{M\ast}^T \boldsymbol{h}}{\sigma_M^2} } \dif \tilde{x}_M \biggr) \nonumber \\
-	=& \frac{1}{Z_{GB}} e^{\boldsymbol{b}^T \boldsymbol{h}} \prod_i^M
-	\int e^{- \frac{(\tilde{x}_i - a_i)^2 - 2\tilde{x}_i \boldsymbol{w}_{i\ast}^T \boldsymbol{h}}{2\sigma_i^2} } \dif \tilde{x}_i \nonumber \\
-	=& \frac{1}{Z_{GB}} e^{\boldsymbol{b}^T \boldsymbol{h}} \prod_i^M
-	\int e^{- \frac{\tilde{x}_i^2 - 2\tilde{x}_i(a_i + \tilde{x}_i \boldsymbol{w}_{i\ast}^T \boldsymbol{h}) + a_i^2}{2\sigma_i^2} } \dif \tilde{x}_i \nonumber \\
-	=& \frac{1}{Z_{GB}} e^{\boldsymbol{b}^T \boldsymbol{h}} \prod_i^M
-	\int e^{- \frac{\tilde{x}_i^2 - 2\tilde{x}_i(a_i + \boldsymbol{w}_{i\ast}^T \boldsymbol{h}) + (a_i + \boldsymbol{w}_{i\ast}^T \boldsymbol{h})^2 - (a_i + \boldsymbol{w}_{i\ast}^T \boldsymbol{h})^2 + a_i^2}{2\sigma_i^2} } \dif \tilde{x}_i \nonumber \\
-	=& \frac{1}{Z_{GB}} e^{\boldsymbol{b}^T \boldsymbol{h}} \prod_i^M
-	\int e^{- \frac{(\tilde{x}_i - (a_i + \boldsymbol{w}_{i\ast}^T \boldsymbol{h}))^2 - a_i^2 -2a_i \boldsymbol{w}_{i\ast}^T \boldsymbol{h} - (\boldsymbol{w}_{i\ast}^T \boldsymbol{h})^2 + a_i^2}{2\sigma_i^2} } \dif \tilde{x}_i \nonumber \\
-	=& \frac{1}{Z_{GB}} e^{\boldsymbol{b}^T \boldsymbol{h}} \prod_i^M
-	e^{\frac{2a_i \boldsymbol{w}_{i\ast}^T \boldsymbol{h} +(\boldsymbol{w}_{i\ast}^T \boldsymbol{h})^2 }{2\sigma_i^2}}
-	\int e^{- \frac{(\tilde{x}_i - a_i - \boldsymbol{w}_{i\ast}^T \boldsymbol{h})^2}{2\sigma_i^2}}
-	\dif \tilde{x}_i \nonumber \\
-	=& \frac{1}{Z_{GB}} e^{\boldsymbol{b}^T \boldsymbol{h}} \prod_i^M
-	\sqrt{2\pi \sigma_i^2}
-	e^{\frac{2a_i \boldsymbol{w}_{i\ast}^T \boldsymbol{h} +(\boldsymbol{w}_{i\ast}^T \boldsymbol{h})^2 }{2\sigma_i^2}} .
-\label{_auto37}
-\end{align}
-$$
-
-<h3 id="___sec60">Conditional Probability Density Functions </h3>
-
-<p>
-We finish by deriving the conditional probabilities.
-$$
-\begin{align}
-	p_{GB} (\boldsymbol{h}| \boldsymbol{x}) =& \frac{p_{GB} (\boldsymbol{x}, \boldsymbol{h})}{p_{GB} (\boldsymbol{x})} \nonumber \\
-	=& \frac{\frac{1}{Z_{GB}} e^{-\norm*{\frac{\boldsymbol{x} -\boldsymbol{a}}{2\boldsymbol{\sigma}}}^2 + \boldsymbol{b}^T \boldsymbol{h} 
-	+ (\frac{\boldsymbol{x}}{\boldsymbol{\sigma}^2})^T \boldsymbol{W}\boldsymbol{h}}}
-	{\frac{1}{Z_{GB}} e^{-\norm*{\frac{\boldsymbol{x} -\boldsymbol{a}}{2\boldsymbol{\sigma}}}^2}
-	\prod_j^N (1 + e^{b_j + (\frac{\boldsymbol{x}}{\boldsymbol{\sigma}^2})^T \boldsymbol{w}_{\ast j}} ) }
-	\nonumber \\
-	=& \prod_j^N \frac{e^{(b_j + (\frac{\boldsymbol{x}}{\boldsymbol{\sigma}^2})^T \boldsymbol{w}_{\ast j})h_j } }
-	{1 + e^{b_j + (\frac{\boldsymbol{x}}{\boldsymbol{\sigma}^2})^T \boldsymbol{w}_{\ast j}}} \nonumber \\
-	=& \prod_j^N p_{GB} (h_j|\boldsymbol{x})
-\label{_auto38}
-\end{align}
-$$
-
-The conditional probability of a binary hidden unit \( h_j \) being on or off again take the form of sigmoid functions
-
-$$
-\begin{align}
-	p_{GB} (h_j =1 | \boldsymbol{x}) =& \frac{e^{b_j + (\frac{\boldsymbol{x}}{\boldsymbol{\sigma}^2})^T \boldsymbol{w}_{\ast j} } }
-	{1 + e^{b_j + (\frac{\boldsymbol{x}}{\boldsymbol{\sigma}^2})^T \boldsymbol{w}_{\ast j}}} \nonumber \\
-	=& \frac{1}{1 + e^{-b_j - (\frac{\boldsymbol{x}}{\boldsymbol{\sigma}^2})^T \boldsymbol{w}_{\ast j}}} 
-\label{_auto39}\\
-	p_{GB} (h_j =0 | \boldsymbol{x}) =&
-	\frac{1}{1 + e^{b_j +(\frac{\boldsymbol{x}}{\boldsymbol{\sigma}^2})^T \boldsymbol{w}_{\ast j}}} .
-\label{_auto40}
-\end{align}
-$$
-
-<p>
-The conditional probability of the continuous \( \boldsymbol{x} \) now has another form, however.
-
-$$
-\begin{align}
-	p_{GB} (\boldsymbol{x}|\boldsymbol{h})
-	=& \frac{p_{GB} (\boldsymbol{x}, \boldsymbol{h})}{p_{GB} (\boldsymbol{h})} \nonumber \\
-	=& \frac{\frac{1}{Z_{GB}} e^{-\norm*{\frac{\boldsymbol{x} -\boldsymbol{a}}{2\boldsymbol{\sigma}}}^2 + \boldsymbol{b}^T \boldsymbol{h} 
-	+ (\frac{\boldsymbol{x}}{\boldsymbol{\sigma}^2})^T \boldsymbol{W}\boldsymbol{h}}}
-	{\frac{1}{Z_{GB}} e^{\boldsymbol{b}^T \boldsymbol{h}} \prod_i^M
-	\sqrt{2\pi \sigma_i^2}
-	e^{\frac{2a_i \boldsymbol{w}_{i\ast}^T \boldsymbol{h} +(\boldsymbol{w}_{i\ast}^T \boldsymbol{h})^2 }{2\sigma_i^2}}}
-	\nonumber \\
-	=& \prod_i^M \frac{1}{\sqrt{2\pi \sigma_i^2}}
-	\frac{e^{- \frac{(x_i - a_i)^2}{2\sigma_i^2} + \frac{x_i \boldsymbol{w}_{i\ast}^T \boldsymbol{h}}{2\sigma_i^2} }}
-	{e^{\frac{2a_i \boldsymbol{w}_{i\ast}^T \boldsymbol{h} +(\boldsymbol{w}_{i\ast}^T \boldsymbol{h})^2 }{2\sigma_i^2}}}
-	\nonumber \\
-	=& \prod_i^M \frac{1}{\sqrt{2\pi \sigma_i^2}}
-	\frac{e^{-\frac{x_i^2 - 2a_i x_i + a_i^2 - 2x_i \boldsymbol{w}_{i\ast}^T\boldsymbol{h} }{2\sigma_i^2} } }
-	{e^{\frac{2a_i \boldsymbol{w}_{i\ast}^T \boldsymbol{h} +(\boldsymbol{w}_{i\ast}^T \boldsymbol{h})^2 }{2\sigma_i^2}}}
-	\nonumber \\
-	=& \prod_i^M \frac{1}{\sqrt{2\pi \sigma_i^2}}
-	e^{- \frac{x_i^2 - 2a_i x_i + a_i^2 - 2x_i \boldsymbol{w}_{i\ast}^T\boldsymbol{h}
-	+ 2a_i \boldsymbol{w}_{i\ast}^T \boldsymbol{h} +(\boldsymbol{w}_{i\ast}^T \boldsymbol{h})^2}
-	{2\sigma_i^2} }
-	\nonumber \\
-	=& \prod_i^M \frac{1}{\sqrt{2\pi \sigma_i^2}}
-	e^{ - \frac{(x_i - b_i - \boldsymbol{w}_{i\ast}^T \boldsymbol{h})^2}{2\sigma_i^2}} \nonumber \\
-	=& \prod_i^M \mathcal{N}
-	(x_i | b_i + \boldsymbol{w}_{i\ast}^T \boldsymbol{h}, \sigma_i^2) 
-\label{_auto41}\\
-	\Rightarrow p_{GB} (x_i|\boldsymbol{h}) =& \mathcal{N}
-	(x_i | b_i + \boldsymbol{w}_{i\ast}^T \boldsymbol{h}, \sigma_i^2) .
-\label{_auto42}
-\end{align}
-$$
-
-<p>
-The form of these conditional probabilities explain the name
-"Gaussian" and the form of the Gaussian-binary energy function. We see
-that the conditional probability of \( x_i \) given \( \boldsymbol{h} \) is a normal
-distribution with mean \( b_i + \boldsymbol{w}_{i\ast}^T \boldsymbol{h} \) and variance
-\( \sigma_i^2 \).
 
 <p>
 
