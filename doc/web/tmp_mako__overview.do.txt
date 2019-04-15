@@ -12,7 +12,7 @@ AUTHOR: Morten Hjorth-Jensen  Email:hjensen@msu.edu
 
 ======= Slides in various formats =======
 
-===== From variational Monte Carlo to machine learning =====
+===== From variational Monte Carlo to machine learning, talks at Michigan State University April and June 2018 =====
 
 
 
@@ -35,6 +35,19 @@ AUTHOR: Morten Hjorth-Jensen  Email:hjensen@msu.edu
    * "Bootstrap style": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/unitn/html/unitn-bs.html"
  * iPython notebook:
    * "ipynb file": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/unitn/ipynb/unitn.ipynb"
+
+
+
+===== Talk at University of Ohio, Athens, April 16, 2019 =====
+
+
+
+ * HTML:
+   * "Plain html style": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/uniohio/html/uniohio.html"
+   * "reveal.js beige slide style": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/uniohio/html/uniohio-reveal.html"
+   * "Bootstrap style": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/uniohio/html/uniohio-bs.html"
+ * iPython notebook:
+   * "ipynb file": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/uniohio/ipynb/uniohio.ipynb"
 
 
 
