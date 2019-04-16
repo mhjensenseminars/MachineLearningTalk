@@ -20,7 +20,7 @@ More in depth notebooks are at
 o Making a professional Monte Carlo code for quantum mechanical simulations URL:"https://github.com/CompPhysics/ComputationalPhysics2/blob/gh-pages/doc/pub/notebook1/ipynb/notebook1.ipynb"
 o From Variational Monte Carlo to Boltzmann Machines URL:"https://github.com/CompPhysics/ComputationalPhysics2/blob/gh-pages/doc/pub/notebook2/ipynb/notebook2.ipynb"
 
-Feel free to try them  out and please don't hesitate to ask by if something is unclear.
+Feel free to try them  out and please don't hesitate to ask if something is unclear.
 
 And look up the FRIB-TA summer school at "MSU May 20-23 on Machine Learning for Nuclear Physics":"https://indico.frib.msu.edu/event/16/".
 !eblock
@@ -75,9 +75,9 @@ Popular software packages written in Python for ML are
 
 * "Scikit-learn":"http://scikit-learn.org/stable/", 
 * "Tensorflow":"https://www.tensorflow.org/",
-* "PyTorch":"http://pytorch.org/" and 
-* "Keras":"https://keras.io/".
-These are all freely available at their respective GitHub sites. They 
+* "PyTorch":"http://pytorch.org/"
+* "Keras":"https://keras.io/",
+and more. These are all freely available at their respective GitHub sites. They 
 encompass communities of developers in the thousands or more. And the number
 of code developers and contributors keeps increasing.
 !eblock
@@ -192,7 +192,6 @@ Some of the most common tasks are:
 * A cute paper by "Utama and Piekarewicz, Validating neural-network refinements of nuclear mass models, Phys. Rev. C 97, 014306 ":"https://journals.aps.org/prc/abstract/10.1103/PhysRevC.97.014306"
 * "Every issue of Physical Review Letters has now one or more articles on ML":"https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.120.156001"
 * "Books and lectures notes":"https://github.com/CompPhysics/MachineLearning" and see also the course "FYS-STK3155/4155":"https://www.uio.no/studier/emner/matnat/fys/FYS-STK4155/h18/index.html"
-* "My own course on Applied Data Analysis and Machine Learning":"https://github.com/CompPhysics/MachineLearning" 
 !eblock
 
 
