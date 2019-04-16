@@ -229,7 +229,7 @@ MathJax.Hub.Config({
      <!-- navigation toc: --> <li><a href="._uniohio-bs042.html#___sec41" style="font-size: 80%;"><b>Goals</b></a></li>
      <!-- navigation toc: --> <li><a href="._uniohio-bs043.html#___sec42" style="font-size: 80%;"><b>Joint distribution</b></a></li>
      <!-- navigation toc: --> <li><a href="._uniohio-bs044.html#___sec43" style="font-size: 80%;"><b>Network Elements, the energy function</b></a></li>
-     <!-- navigation toc: --> <li><a href="._uniohio-bs045.html#___sec44" style="font-size: 80%;"><b>Defining different types of RBMs</b></a></li>
+     <!-- navigation toc: --> <li><a href="#___sec44" style="font-size: 80%;"><b>Defining different types of RBMs</b></a></li>
      <!-- navigation toc: --> <li><a href="._uniohio-bs046.html#___sec45" style="font-size: 80%;"><b>Sampling: Metropolis sampling</b></a></li>
      <!-- navigation toc: --> <li><a href="._uniohio-bs047.html#___sec46" style="font-size: 80%;"><b>RBMs for the quantum many body problem</b></a></li>
      <!-- navigation toc: --> <li><a href="._uniohio-bs048.html#___sec47" style="font-size: 80%;"><b>Choose the right RBM</b></a></li>
@@ -258,54 +258,76 @@ MathJax.Hub.Config({
 
 <p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p> <!-- add vertical space -->
 
-<a name="part0000"></a>
-<!-- ------------------- main content ---------------------- -->
+<a name="part0045"></a>
+<!-- !split -->
 
-
-
-<div class="jumbotron">
-<center><h1>Solving Quantum Mechanical Many-body Problems with Machine Learning Algorithms</h1></center>  <!-- document title -->
+<h2 id="___sec44" class="anchor">Defining different types of RBMs </h2>
 
 <p>
-<!-- author(s): Morten Hjorth-Jensen -->
-
-<center>
-<b>Morten Hjorth-Jensen</b> [1, 2]
-</center>
+There are different variants of RBMs, and the differences lie in the types of visible and hidden units we choose as well as in the implementation of the energy function \( E(\mathbf{x},\mathbf{h}) \).
 
 <p>
-<!-- institution(s) -->
+<div class="panel panel-default">
+<div class="panel-body">
+<p> <!-- subsequent paragraphs come in larger fonts, so start with a paragraph -->
 
-<center>[1] <b>Department of Physics and Astronomy and National Superconducting Cyclotron Laboratory, Michigan State University, USA</b></center>
-<center>[2] <b>Department of Physics and Center for Computing in Science Education, University of Oslo, Norway</b></center>
-<br>
 <p>
-<center><h4>University of Ohio, Athens, April 16, 2019. Codes and slides at <a href="https://github.com/mhjensenseminars/MachineLearningTalk" target="_self"><tt>https://github.com/mhjensenseminars/MachineLearningTalk</tt></a></h4></center> <!-- date -->
-<br>
+RBMs were first developed using binary units in both the visible and hidden layer. The corresponding energy function is defined as follows:
+$$
+\begin{align}
+	E(\mathbf{x}, \mathbf{h}) = - \sum_i^M x_i a_i- \sum_j^N b_j h_j - \sum_{i,j}^{M,N} x_i w_{ij} h_j,
+\tag{5}
+\end{align}
+$$
+
+where the binary values taken on by the nodes are most commonly 0 and 1.
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-body">
+<p> <!-- subsequent paragraphs come in larger fonts, so start with a paragraph -->
+
 <p>
+Another varient is the RBM where the visible units are Gaussian while the hidden units remain binary:
+$$
+\begin{align}
+	E(\mathbf{x}, \mathbf{h}) = \sum_i^M \frac{(x_i - a_i)^2}{2\sigma_i^2} - \sum_j^N b_j h_j - \sum_{i,j}^{M,N} \frac{x_i w_{ij} h_j}{\sigma_i^2}. 
+\tag{6}
+\end{align}
+$$
+</div>
+</div>
 
 
-<p><a href="._uniohio-bs001.html" class="btn btn-primary btn-lg">Read &raquo;</a></p>
-
-
-</div> <!-- end jumbotron -->
-
+<p>
 <p>
 <!-- navigation buttons at the bottom of the page -->
 <ul class="pagination">
-  <li class="active"><a href="._uniohio-bs000.html">1</a></li>
-  <li><a href="._uniohio-bs001.html">2</a></li>
-  <li><a href="._uniohio-bs002.html">3</a></li>
-  <li><a href="._uniohio-bs003.html">4</a></li>
-  <li><a href="._uniohio-bs004.html">5</a></li>
-  <li><a href="._uniohio-bs005.html">6</a></li>
-  <li><a href="._uniohio-bs006.html">7</a></li>
-  <li><a href="._uniohio-bs007.html">8</a></li>
-  <li><a href="._uniohio-bs008.html">9</a></li>
-  <li><a href="._uniohio-bs009.html">10</a></li>
+<li><a href="._uniohio-bs044.html">&laquo;</a></li>
+  <li><a href="._uniohio-bs000.html">1</a></li>
+  <li><a href="">...</a></li>
+  <li><a href="._uniohio-bs037.html">38</a></li>
+  <li><a href="._uniohio-bs038.html">39</a></li>
+  <li><a href="._uniohio-bs039.html">40</a></li>
+  <li><a href="._uniohio-bs040.html">41</a></li>
+  <li><a href="._uniohio-bs041.html">42</a></li>
+  <li><a href="._uniohio-bs042.html">43</a></li>
+  <li><a href="._uniohio-bs043.html">44</a></li>
+  <li><a href="._uniohio-bs044.html">45</a></li>
+  <li class="active"><a href="._uniohio-bs045.html">46</a></li>
+  <li><a href="._uniohio-bs046.html">47</a></li>
+  <li><a href="._uniohio-bs047.html">48</a></li>
+  <li><a href="._uniohio-bs048.html">49</a></li>
+  <li><a href="._uniohio-bs049.html">50</a></li>
+  <li><a href="._uniohio-bs050.html">51</a></li>
+  <li><a href="._uniohio-bs051.html">52</a></li>
+  <li><a href="._uniohio-bs052.html">53</a></li>
+  <li><a href="._uniohio-bs053.html">54</a></li>
+  <li><a href="._uniohio-bs054.html">55</a></li>
   <li><a href="">...</a></li>
   <li><a href="._uniohio-bs059.html">60</a></li>
-  <li><a href="._uniohio-bs001.html">&raquo;</a></li>
+  <li><a href="._uniohio-bs046.html">&raquo;</a></li>
 </ul>
 <!-- ------------------- end of main content --------------- -->
 
@@ -322,7 +344,7 @@ MathJax.Hub.Config({
 
 
 <center style="font-size:80%">
-<!-- copyright --> &copy; 1999-2019, Morten Hjorth-Jensen. Released under CC Attribution-NonCommercial 4.0 license
+<!-- copyright only on the titlepage -->
 </center>
 
 

@@ -194,7 +194,7 @@ MathJax.Hub.Config({
      <!-- navigation toc: --> <li><a href="._uniohio-bs007.html#___sec6" style="font-size: 80%;"><b>Lots of room for creativity</b></a></li>
      <!-- navigation toc: --> <li><a href="._uniohio-bs008.html#___sec7" style="font-size: 80%;"><b>Knowledge of Statistical analysis and optimization of data</b></a></li>
      <!-- navigation toc: --> <li><a href="._uniohio-bs009.html#___sec8" style="font-size: 80%;"><b>Some members of the ML family</b></a></li>
-     <!-- navigation toc: --> <li><a href="._uniohio-bs010.html#___sec9" style="font-size: 80%;"><b>What are the basic ingredients?</b></a></li>
+     <!-- navigation toc: --> <li><a href="#___sec9" style="font-size: 80%;"><b>What are the basic ingredients?</b></a></li>
      <!-- navigation toc: --> <li><a href="._uniohio-bs011.html#___sec10" style="font-size: 80%;"><b>What is Machine Learning?</b></a></li>
      <!-- navigation toc: --> <li><a href="._uniohio-bs012.html#___sec11" style="font-size: 80%;"><b>Types of Machine Learning</b></a></li>
      <!-- navigation toc: --> <li><a href="._uniohio-bs013.html#___sec12" style="font-size: 80%;"><b>References</b></a></li>
@@ -258,43 +258,33 @@ MathJax.Hub.Config({
 
 <p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p> <!-- add vertical space -->
 
-<a name="part0000"></a>
-<!-- ------------------- main content ---------------------- -->
+<a name="part0010"></a>
+<!-- !split -->
 
+<h2 id="___sec9" class="anchor">What are the basic ingredients? </h2>
+<div class="panel panel-default">
+<div class="panel-body">
+<p> <!-- subsequent paragraphs come in larger fonts, so start with a paragraph -->
+Almost every problem in ML and data science starts with the same ingredients:
 
+<ul>
+<li> The dataset \( \mathbf{x} \) (could be some observable quantity of the system we are studying)</li>
+<li> A model which is a function of a set of parameters \( \mathbf{\alpha} \) that relates to the dataset, say a likelihood  function \( p(\mathbf{x}\vert \mathbf{\alpha}) \) or just a simple model \( f(\mathbf{\alpha}) \)</li>
+<li> A so-called <b>cost</b> function \( \mathcal{C} (\mathbf{x}, f(\mathbf{\alpha})) \) which allows us to decide how well our model represents the dataset.</li> 
+</ul>
 
-<div class="jumbotron">
-<center><h1>Solving Quantum Mechanical Many-body Problems with Machine Learning Algorithms</h1></center>  <!-- document title -->
+We seek to minimize the function \( \mathcal{C} (\mathbf{x}, f(\mathbf{\alpha})) \) by finding the parameter values which minimize \( \mathcal{C} \). This leads to  various minimization algorithms.
+</div>
+</div>
+
 
 <p>
-<!-- author(s): Morten Hjorth-Jensen -->
-
-<center>
-<b>Morten Hjorth-Jensen</b> [1, 2]
-</center>
-
-<p>
-<!-- institution(s) -->
-
-<center>[1] <b>Department of Physics and Astronomy and National Superconducting Cyclotron Laboratory, Michigan State University, USA</b></center>
-<center>[2] <b>Department of Physics and Center for Computing in Science Education, University of Oslo, Norway</b></center>
-<br>
-<p>
-<center><h4>University of Ohio, Athens, April 16, 2019. Codes and slides at <a href="https://github.com/mhjensenseminars/MachineLearningTalk" target="_self"><tt>https://github.com/mhjensenseminars/MachineLearningTalk</tt></a></h4></center> <!-- date -->
-<br>
-<p>
-
-
-<p><a href="._uniohio-bs001.html" class="btn btn-primary btn-lg">Read &raquo;</a></p>
-
-
-</div> <!-- end jumbotron -->
-
 <p>
 <!-- navigation buttons at the bottom of the page -->
 <ul class="pagination">
-  <li class="active"><a href="._uniohio-bs000.html">1</a></li>
-  <li><a href="._uniohio-bs001.html">2</a></li>
+<li><a href="._uniohio-bs009.html">&laquo;</a></li>
+  <li><a href="._uniohio-bs000.html">1</a></li>
+  <li><a href="">...</a></li>
   <li><a href="._uniohio-bs002.html">3</a></li>
   <li><a href="._uniohio-bs003.html">4</a></li>
   <li><a href="._uniohio-bs004.html">5</a></li>
@@ -303,9 +293,19 @@ MathJax.Hub.Config({
   <li><a href="._uniohio-bs007.html">8</a></li>
   <li><a href="._uniohio-bs008.html">9</a></li>
   <li><a href="._uniohio-bs009.html">10</a></li>
+  <li class="active"><a href="._uniohio-bs010.html">11</a></li>
+  <li><a href="._uniohio-bs011.html">12</a></li>
+  <li><a href="._uniohio-bs012.html">13</a></li>
+  <li><a href="._uniohio-bs013.html">14</a></li>
+  <li><a href="._uniohio-bs014.html">15</a></li>
+  <li><a href="._uniohio-bs015.html">16</a></li>
+  <li><a href="._uniohio-bs016.html">17</a></li>
+  <li><a href="._uniohio-bs017.html">18</a></li>
+  <li><a href="._uniohio-bs018.html">19</a></li>
+  <li><a href="._uniohio-bs019.html">20</a></li>
   <li><a href="">...</a></li>
   <li><a href="._uniohio-bs059.html">60</a></li>
-  <li><a href="._uniohio-bs001.html">&raquo;</a></li>
+  <li><a href="._uniohio-bs011.html">&raquo;</a></li>
 </ul>
 <!-- ------------------- end of main content --------------- -->
 
@@ -322,7 +322,7 @@ MathJax.Hub.Config({
 
 
 <center style="font-size:80%">
-<!-- copyright --> &copy; 1999-2019, Morten Hjorth-Jensen. Released under CC Attribution-NonCommercial 4.0 license
+<!-- copyright only on the titlepage -->
 </center>
 
 

@@ -11,12 +11,22 @@ to solve quantum mechanical many-body problems. And why this could be of interes
 
 The hope is that after this talk you have gotten the basic ideas to get you started. Peeping into URL:"https://github.com/mhjensenseminars/MachineLearningTalk", you'll find a Jupyter notebook, slides, codes etc that will allow you to reproduce the simulations discussed here, and perhaps run your own very first calculations.
 
-Try it out and please don't hesitate to swing by if something is unclear.
+
+!split
+===== More material =====
+
+More in depth notebooks are at 
+o Making a professional Monte Carlo code for quantum mechanical simulations URL:"https://github.com/CompPhysics/ComputationalPhysics2/blob/gh-pages/doc/pub/notebook1/ipynb/notebook1.ipynb"
+o From Variational Monte Carlo to Boltzmann Machines URL:"https://github.com/CompPhysics/ComputationalPhysics2/blob/gh-pages/doc/pub/notebook2/ipynb/notebook2.ipynb"
+
+Feel free to try them  out and please don't hesitate to ask by if something is unclear.
+
+And look up the FRIB-TA summer school at "MSU May 20-23 on Machine Learning for Nuclear Physics":"https://indico.frib.msu.edu/event/16/".
 !eblock
 
 
 !split
-===== Why? =====
+===== Why? Basic motivation =====
 
 How can we avoid the dimensionality curse? Many possibilities
 o smarter basis functions
@@ -34,7 +44,6 @@ ever increasing dimensionalities. Here we will focus on Machine Learning.
 * Short intro to Machine Learning
 * Variational Monte Carlo (Markov Chain Monte Carlo, $\mathrm{MC}^2$) and two-electron quantum dots, solving quantum mechanical problems in a stochastic way. It  will serve as  our motivation for switching to Machine Learning. 
 * From Variational Monte Carlo to Boltzmann Machines and Machine Learning
-* And a link to so-called _Shadow wave functions_
 !eblock
 
 !split
@@ -46,7 +55,7 @@ named such a wave function/network a *neural network quantum state* (NQS). In th
 spin lattice systems of the Ising model and Heisenberg model, with
 encouraging results.
 
-Thanks to Jane Kim (MSU), Vilde Flugsrud (UiO), Alfred Alocias Mariadason (UiO) for many discussions and interpretations.
+Thanks to Jane Kim (MSU), Vilde Flugsrud (UiO), Alfred Alocias Mariadason (UiO) and Even Nordhagen (UiO) for many discussions and interpretations.
 
 
 !split
@@ -147,6 +156,7 @@ years, found applications in a wide variety of other areas, including
 bioinformatics, economy, physics, finance and marketing.
 
 You will notice however that many of the basic ideas discussed here come from Physics!
+
 !eblock
 
 !split
@@ -179,7 +189,7 @@ Some of the most common tasks are:
 * A cute paper by "Utama and Piekarewicz, Validating neural-network refinements of nuclear mass models, Phys. Rev. C 97, 014306 ":"https://journals.aps.org/prc/abstract/10.1103/PhysRevC.97.014306"
 * "Every issue of Physical Review Letters has now one or more articles on ML":"https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.120.156001"
 * "Books and lectures notes":"https://github.com/CompPhysics/MachineLearning" and see also the course "FYS-STK3155/4155":"https://www.uio.no/studier/emner/matnat/fys/FYS-STK4155/h18/index.html"
-* See also Metha and Schwab, arXiv.1410.3831, how to link Variational renormalization group theory with deep learning (recommended read)
+* "My own course on Applied Data Analysis and Machine Learning":"https://github.com/CompPhysics/MachineLearning" 
 !eblock
 
 
@@ -1206,7 +1216,7 @@ where the local energy is given by
 !bblock
 You can find the codes for the simple two-electron case at the Github repository URL:"https://github.com/mhjensenseminars/MachineLearningTalk/tree/master/doc/Programs/MLcpp/src". Python codes to come, only c++ as of now. 
 
-The trial wave function is based on the product of a Slater determinant with Gaussian orbitals, a simple Jastrow factor $\exp{(r_{ij})}$ and the reduced Boltzmann machines. 
+The trial wave function are based on the product of a Slater determinant with either only Hermitian polynomials or Gaussian orbitals, with and without a Pade-Jastrow factor (PJ).
 
 The Broyden-Fletcher-Goldfarb-Shanno algorithm was used for the minimization. We used $14$ hidden nodes in the calculations below.
 
@@ -1221,13 +1231,36 @@ The Broyden-Fletcher-Goldfarb-Shanno algorithm was used for the minimization. We
 FIGURE: [figures/figN2.pdf, width=700 frac=0.9]
 !eblock
 
+!split
+===== Energy as function of iterations, no Physics info $N=2$ electrons  =====
+!bblock
+FIGURE: [figures/energy2.png, width=700 frac=0.9]
+!eblock
+
 
 !split
 ===== Energy as function of iterations, $N=6$ electrons  =====
 !bblock
-FIGURE: [figures/figN6.pdf, width=700 frac=0.9]
+FIGURE: [figures/energy6.png, width=700 frac=0.9]
 !eblock
 
+!split
+===== Wave function analysis, onebody densities $N=2$ =====
+!bblock
+FIGURE: [figures/onebody2.png, width=700 frac=0.9]
+!eblock
+
+!split
+===== Wave function analysis, onebody densities $N=6$ =====
+!bblock
+FIGURE: [figures/onebody6.png, width=700 frac=0.9]
+!eblock
+
+!split
+===== Wave function analysis, onebody densities $N=12$ =====
+!bblock
+FIGURE: [figures/onebody12.png, width=700 frac=0.9]
+!eblock
 
 
 !split
@@ -1235,7 +1268,7 @@ FIGURE: [figures/figN6.pdf, width=700 frac=0.9]
 !bblock
 * A simple extension of the work of "G. Carleo and M. Troyer, Science _355_, Issue 6325, pp. 602-606 (2017)":"http://science.sciencemag.org/content/355/6325/602" gives excellent results for two-electron systems as well as good agreement with standard VMC calculations for $N=6$ and $N=12$ electrons.
 * Minimization problem can be tricky.
-* Anti-symmetry dealt with multiplying the trail wave function with an optimized Slater determinant.
+* Anti-symmetry dealt with multiplying the trail wave function with either a simple or an optimized Slater determinant.
 * To come: Analysis of wave function from ML and compare with diffusion and Variational Monte Carlo calculations as well as the analytical results of Taut for the two-electron case.
 * Extend to more fermions. How do we deal with the antisymmetry of the multi-fermion wave function?
   o Here we used standard Hartree-Fock theory to define an optimal Slater determinant. Takes care of the antisymmetry. What about constructing an anti-symmetrized network function?
@@ -1264,7 +1297,7 @@ FIGURE: [figures/figN6.pdf, width=700 frac=0.9]
 
 
 The original RBM had binary visible and hidden nodes. They were
-showned to be universal approximators of discrete distributions.
+showne to be universal approximators of discrete distributions.
 It was also shown that adding hidden units yields
 strictly improved modelling power. The common choice of binary values
 are 0 and 1. However, in some physics applications, -1 and 1 might be
