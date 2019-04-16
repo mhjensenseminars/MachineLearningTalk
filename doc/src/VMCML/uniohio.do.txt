@@ -10,11 +10,12 @@ The main aim is to give you a short and pedestrian introduction to  how we can u
 to solve quantum mechanical many-body problems. And why this could be of interest. 
 
 The hope is that after this talk you have gotten the basic ideas to get you started. Peeping into URL:"https://github.com/mhjensenseminars/MachineLearningTalk", you'll find a Jupyter notebook, slides, codes etc that will allow you to reproduce the simulations discussed here, and perhaps run your own very first calculations.
+!eblock
 
 
 !split
 ===== More material =====
-
+!bblock
 More in depth notebooks are at 
 o Making a professional Monte Carlo code for quantum mechanical simulations URL:"https://github.com/CompPhysics/ComputationalPhysics2/blob/gh-pages/doc/pub/notebook1/ipynb/notebook1.ipynb"
 o From Variational Monte Carlo to Boltzmann Machines URL:"https://github.com/CompPhysics/ComputationalPhysics2/blob/gh-pages/doc/pub/notebook2/ipynb/notebook2.ipynb"
@@ -28,6 +29,7 @@ And look up the FRIB-TA summer school at "MSU May 20-23 on Machine Learning for 
 !split
 ===== Why? Basic motivation =====
 
+!bblock
 How can we avoid the dimensionality curse? Many possibilities
 o smarter basis functions
 o resummation of specific correlations
@@ -36,7 +38,7 @@ o many more
 
 Machine Learning and Quantum Computing hold also great promise in tackling the 
 ever increasing dimensionalities. Here we will focus on Machine Learning.
-
+!eblock
 
 !split
 ===== Overview =====
@@ -49,6 +51,7 @@ ever increasing dimensionalities. Here we will focus on Machine Learning.
 !split
 ===== What are the Machine Learning calculations here based on? =====
 
+!bblock
 This work is inspired by the idea of representing the wave function with
 a restricted Boltzmann machine (RBM), presented recently by "G. Carleo and M. Troyer, Science _355_, Issue 6325, pp. 602-606 (2017)":"http://science.sciencemag.org/content/355/6325/602". They
 named such a wave function/network a *neural network quantum state* (NQS). In their article they apply it to the quantum mechanical
@@ -56,7 +59,7 @@ spin lattice systems of the Ising model and Heisenberg model, with
 encouraging results.
 
 Thanks to Jane Kim (MSU), Vilde Flugsrud (UiO), Alfred Alocias Mariadason (UiO) and Even Nordhagen (UiO) for many discussions and interpretations.
-
+!eblock
 
 !split
 ===== A new world =====
