@@ -1,0 +1,90 @@
+TITLE: QIS Research and Innnovation for Nuclear Science
+AUTHOR: Alexei Bazavov, Scott Bogner, Morten Hjorth-Jensen, Dean Lee, and Andrea Shindler
+DATE: today 
+
+
+!split
+===== Background  =====
+!bblock
+* MSU is planning an application to the NSF for a center of excellence QLCI – CI: Institute for Quantum Computing and Control (ICQ2)
+* This application involves scientists from 
+  o Department of Physics and Astronomy
+  o Computational Mathematics Science and Engineering (CMSE) 
+  o Department of Chemistry
+  o Department of Electrical and Computer Engineering
+  o Chemical Engineering and Material Science
+  o National Superconducting Cyclotron Laboratory (NSCL) and Facility for Rare Isotope Beams (FRIB)
+  o Department of Mathematics
+
+* The lead PIs are
+ o PI: Angela Wilson, Chemistry
+ o Co-PI: Andrew Christlieb, CMSE
+ o Co-PI: Mark Dykman, Physics and Astronomy
+ o Co-PI: Marcos Dantus
+ o Co-PI: Timothy Grotjohn, Electrical and Computer Engineering 
+ o Co-PI: Johannes Pollanen, Physics and Astronomy
+
+Additional MSU Co-PIs and Senior Personnel: John Albrect, Alexei Bazavov, Norman Birge1, Matthew Hirn, Morten Hjorth-Jensen, Dean Lee, Huey-Wen Lin, Mohammad Maghrebi, Elizabeth Munch, John Papapolymerou, Andrea Shindler, Michael Shapiro
+
+
+!eblock
+
+
+!split
+===== Synopsis of MSU Challenge Institute  =====
+
+!bblock
+A grand challenge of quantum information science is to develop systems and algorithms that will be minimally negatively affected by noise or would even take advantage of it. The Institute for Quantum Computing and Control (IQC2) at Michigan State University will deliver means toward meeting this challenge, raising quantum information science to the next level. The physicists, engineers, and chemists in the Institute will develop means to measure the spectral and statistical properties of noise in current quantum computing devices, while mathematicians and theoretical quantum information scientists will build models for the statistics of the noise and develop novel methods for engineering entanglement and coherence using noise. The results will enable new sensor technologies based on a broad spectrum of quantum systems that include superconducting circuits and resonators and trapped electrons, and taking advantage of new platforms such as isotopically pure diamond. In parallel, understanding noise will allow our experts in computational data science and machine learning to deliver next-generation hybrid quantum-classical algorithms for optimization, quantum machine learning, and the simulation of chemical structure and nuclear matter. Our tightly knit interdisciplinary team, along with our strategic partnerships with industry, national labs and startup companies, is well positioned to educate, develop and deliver the next-generation US quantum workforce.
+!eblock
+
+
+!bblock
+The scope of the MSU center could be broader than the NSF proposal.  For example the MSU center might seek future support in quantum sensing, which might be of interest for nuclear experimentalists.
+!eblock
+
+
+!split
+===== More Background =====
+
+!bblock 
+On May 31, several of us submitted an application to the DoE entitled _From Quarks to Stars; A Quantum Computing Approach to the Nuclear Many-Body Problem_
+This application falls under the 
+* DOE Quantum Horizons: QIS Research and Innnovation for Nuclear Science call
+* We = Alexei Bazavov, Scott Bogner, Patrick Coles (LANL), Heiko Hergert, Matthew Hirn, Morten Hjorth-Jensen, Dean Lee, Huey-Wen Lin, and Andrea Shindler
+* We asked for one PD and three Grad students over three years, in total 1MUSD. Result pending. 
+!eblock
+
+
+!split
+===== More on the DoE application =====
+!bblock
+It has five main work packages with a focus on Quantum Simulation Algorithms
+o Software for Quantum Simulations (Patrick Coles and Matthew Hirn) 
+o Lattice QCD (Alexei Bazavov, Huey-Wen Lin and Andrea Shindler)
+o Variational adiabatic evolution (Dean Lee)
+o Nuclear structure, Finite Nuclei and Infinite Nuclear Matter (Scott Bogner, Morten HJ, Heiko Hergert)
+o Workforce development (all)
+!eblock
+
+!split
+===== Back to the center application =====
+
+If funded, we may expect if fully funded over all years something like
+15 student years and 7.5 PD years which would benefit FRIB activities
+(theory).  Most likely this would amount to something between 1.7MUSD
+and 1.9 MUSD. From the mail which came via the CNS, this could amount
+to a 20kUSD per year contribution on the 250kUSD for the center.
+
+Presently from the FRIB side this is mainly a theory-based initiative. 
+We have not discussed how Nuclear Experiment can be involved (see also the document of "Cloet et al":"https://arxiv.org/abs/1903.05453", Opportunities for Nuclear Physics and Quantum Information Science.
+
+
+!split
+===== For discussion =====
+* Is this of interest to us as a lab? 
+* There is a lot of theory activity with promise of circumventing some of the traditional theory bottlenecks (increased dimensionalities etc etc). 
+* Quantum computing (QC) and quantum information (QI), and Machine Learning,  are topics we believe could be of great interest to the lab, experiment and theory
+
+
+
+
