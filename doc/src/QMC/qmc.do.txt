@@ -86,5 +86,8 @@ We have not discussed how Nuclear Experiment can be involved (see also the docum
 * Quantum computing (QC) and quantum information (QI), and Machine Learning,  are topics we believe could be of great interest to the lab, experiment and theory
 
 
+!bblock A possible recomendation:
+The faculty recommends that the laboratory provide matching funds for the MSU NSF Quantum Leap Challenge Institute proposal, with matching costs proportionally shared by the participating MSU departments and units according to the amount of NSF funds awarded.  The establishment of an MSU Institute for Quantum Science and Computing would provide new opportunities for laboratory research and workforce development.
+!eblock
 
 
