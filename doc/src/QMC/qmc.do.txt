@@ -1,4 +1,4 @@
-TITLE: QIS Research and Innnovation for Nuclear Science
+TITLE: QIS Research and Innovation for Nuclear Science
 AUTHOR: Alexei Bazavov, Scott Bogner, Morten Hjorth-Jensen, Dean Lee, and Andrea Shindler
 DATE: today 
 
