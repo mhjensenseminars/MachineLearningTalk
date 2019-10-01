@@ -1,0 +1,134 @@
+TITLE: Deep Learning and convergence of many-body methods
+AUTHOR: Morten Hjorth-Jensen {copyright, 1999-present|CC BY-NC} at Department of Physics and Astronomy and National Superconducting Cyclotron Laboratory, Michigan State University, USA & Department of Physics and Center for Computing in Science Education, University of Oslo, Norway
+DATE: Today
+
+
+
+!split
+===== Recurrent neural networks: Overarching view =====
+
+There is much focus on feedforward neural networks, ncluding
+convolutional neural networks as well.  The output or the activations
+flow only in one direction, from the input layer to the output layer.
+
+A recurrent neural network (RNN) looks very much like a feedforward
+neural network, except that it also has connections pointing
+backward. 
+
+RNNs are used to analyze time series data such as stock prices, and
+tell you when to buy or sell. In autonomous driving systems, they can
+anticipate car trajectories and help avoid accidents. More generally,
+they can work on sequences of arbitrary lengths, rather than on
+fixed-sized inputs like all the nets we have discussed so far. For
+example, they can take sentences, documents, or audio samples as
+input, making them extremely useful for natural language processing
+systems such as automatic translation and speech-to-text.
+
+
+!split
+=====  Set up of an RNN =====
+
+The figure here displays a simple example of an RNN, with inputs $x_t$
+at a given time $t$ and outputs $y_t$.  Introducing time as a variable
+offers an intutitive way of understanding these networks. In addition
+to the inputs $x_t$, the layer at a time $t$ receives also as input
+the output from the previous layer $t-1$, that is $y_{t1}$.
+
+This means also that we need to have weights that link both the inputs $x_t$ to the outputs $y_t$ as well as weights that link
+the output from the previous time $y_{t-1}$ and $y_t$.   The figure here shows an example of a simple RNN.
+
+
+FIGURE: [figures/rnn.png, width=700 frac=0.9]
+
+
+!split 
+===== A layer of recurrent neurons (left), unrolled through time (right) =====
+
+You can easily create a layer of recurrent neurons. At each time step t, every neuron receives both the
+input vector $x(t)$ and the output vector from the previous time step $y(t–1)$, as shown in figure here. 
+
+FIGURE: [figures/rnnlayer.png, width=700 frac=0.9]
+
+!split
+===== Performing IMSRG calculations with RNNs =====
+
+Calculational details:
+o We used a simple pairing model with four particles and four doubly degenerate levels, see LNP 936, chapter 8, 10 and 11.
+o We run an IMSRG calculation (Magnus expansion with $s_{\mathrm{max}}=10$, step size $ds=0.001$$, White generator
+o The training was done for $s\in [0,0.5]$ and testing for $s \in [0.5,10]$. Training data evenly spaced.
+o Activation functions are _tanh_ and _RELU_ and we used RNN and LSTM (Long short-term memory networks). They both had the same number of units in each layer, so the networks were structured like this:
+  *  input --> recurrent hidden layer (1000 units) --> recurrent hidden layer (100 units) --> dense hidden layer (10 units) --> output (1 unit)
+o We used MSE as the loss function and Adam as the optimizer method. Finally, the networks both trained for 5000 epochs with a batch size of 28. 
+
+
+!split
+===== Defining the inputs =====
+
+In the IMSRG we are transforming a matrix via repeated applications of unitary transformation to diagonal form, that is we have 
+at $s=0$ a dense matrix
+
+!bt
+\[
+\mathbf{A}=    \begin{bmatrix} a_{11}(s=0) & a_{12}(s=0) & a_{13}(s=0)   & \dots    & \dots  &\dots     & a_{1n}(s=0) \\
+                                a_{21}(s=0) & a_{22}(s=0)& a_{23}(s=0) & \dots    & \dots  &\dots     &\dots \\
+                                a_{31}(s=0)   & a_{32}(s=0) & a_{33}(s=0) & a_{34}(s=0)  &\dots       &\dots & \dots \\
+                                \dots  & \dots & \dots & \dots  &\dots      &\dots & \dots\\
+                                a_{(n-1)1}(s=0)   & \dots & \dots & \dots  &\dots a_{(n-1)(n-2)}(s=0)      &a_{(n-1)(n-1)}(s=0) & a_{(n-1)n}(s=0)\\
+                                a_{n1}(s=0)   & \dots & \dots & \dots  &\dots       &a_{n(n-1)1}(s=0) & a_{nn}(s=0)\end{bmatrix},
+\]
+!et
+
+and for the next $s$ value we may have
+
+!bt
+\[
+\mathbf{\tilde{A}}=    \begin{bmatrix} a_{11}(s=1) & a_{12}(s=1) & 0   & 0    & \dots  &0     & 0 \\
+                                a_{21}(s=1) & a_{22}(s=1)& a_{23}(s=1) & 0    & \dots  &0     &0 \\
+                                0   & a_{32}(s=1) & a_{33}(s=1) & a_{34}(s=1)  &0       &\dots & 0\\
+                                \dots  & \dots & \dots & \dots  &\dots      &\dots & \dots\\
+                                0   & \dots & \dots & \dots  &\dots a_{(n-1)(n-2)}(s=1)      &a_{(n-1)(n-1)}(s=1) & a_{(n-1)n}(s=1)\\
+                                0   & \dots & \dots & \dots  &\dots       &a_{n(n-1)1}(s=1) & a_{nn}(s=1)\end{bmatrix},
+\]
+!et
+
+and finally we have
+
+!bt
+\[
+\mathbf{D}=    \begin{bmatrix} a_{11}(s=\infty) & 0 & 0   & 0    & \dots  &0     & 0 \\
+                                0 & a_{22}(s=\infty)& 0 & 0    & \dots  &0     &0 \\
+                                0   & 0 & a_{33}(s=\infty) & 0  &0       &\dots & 0\\
+                                \dots  & \dots & \dots & \dots  &\dots      &\dots & \dots\\
+                                0   & \dots & \dots & \dots  &\dots       &a_{(n-1)(n-1)}(s=\infty) & \\
+                                0   & \dots & \dots & \dots  &\dots       &0 & a_{nn}(s=\infty)\end{bmatrix}.
+\]
+!et
+
+
+!split
+===== Using the upper left diagonal matrix element to predict =====
+
+We then use the upper left diagonal matrix element as our input to the training, that is we run training and testing as
+o $a_{11}(s=s_0=0)$, $a_{11}(s_1)$ and $a_{11}(s_2)$ to predict $a_{11}(s_3)$  
+o Then we use $a_{11}(s_1)$, $a_{11}(s_2)$ and $a_{11}(s_3)$ to predict $a_{11}(s_4)$    
+o continue till we reach $s=10$. 
+!split
+===== Using a $tanh$ activation function  =====
+
+FIGURE: [figures/predictions_tanh.png, width=700 frac=0.9]
+
+
+!split
+===== Using a RELU activation function  =====
+
+FIGURE: [figures/predictions_relu.png, width=700 frac=0.9]
+
+
+
+!split
+===== Coupled Cluster theory =====
+
+We have also performed Coupled Cluster and used the correlation energy calculated for the same pairing model with exact CCD calculations 
+up to N=12$ particles. RNNs have been used in the same way to extrapolate to $N=40$, with excellent results. 
+
+
