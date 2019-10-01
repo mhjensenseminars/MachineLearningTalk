@@ -191,7 +191,7 @@ Some of the most common tasks are:
 !split
 ===== References =====
 !bblock
-* An excellent reference, "Mehta *et al.*":"https://arxiv.org/abs/1803.08823" and "Physics Reports (2019)":"https://www.sciencedirect.com/science/article/pii/S0370157319300766?via%3Dihub".
+* An excellent reference, "Mehta et al.":"https://arxiv.org/abs/1803.08823" and "Physics Reports (2019)":"https://www.sciencedirect.com/science/article/pii/S0370157319300766?via%3Dihub".
 * "Machine Learning and the Physical Sciences by Carleo et al":"https://arxiv.org/abs/1903.10563"
 * "Many-electron systems with Deep Learning":"https://arxiv.org/pdf/1909.02487.pdf"
 * "Every issue of Physical Review Letters has now one or more articles on ML":"https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.120.156001"
