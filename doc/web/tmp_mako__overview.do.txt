@@ -51,5 +51,18 @@ AUTHOR: Morten Hjorth-Jensen  Email:hjensen@msu.edu
 
 
 
+===== Talk at University of Surrey, Guildford, UK, October 1, 2019 =====
+
+
+
+ * HTML:
+   * "Plain html style": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/unisurrey/html/unisurrey.html"
+   * "reveal.js beige slide style": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/unisurrey/html/unisurrey-reveal.html"
+   * "Bootstrap style": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/unisurrey/html/unisurrey-bs.html"
+ * iPython notebook:
+   * "ipynb file": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/unisurrey/ipynb/unisurrey.ipynb"
+
+
+
 
 
