@@ -22,7 +22,7 @@ o From Variational Monte Carlo to Boltzmann Machines URL:"https://github.com/Com
 
 Feel free to try them  out and please don't hesitate to ask if something is unclear.
 
-And look up the FRIB-TA summer school at "MSU May 20-23 on Machine Learning for Nuclear Physics":"https://indico.frib.msu.edu/event/16/".
+
 !eblock
 
 
@@ -58,7 +58,7 @@ named such a wave function/network a *neural network quantum state* (NQS). In th
 spin lattice systems of the Ising model and Heisenberg model, with
 encouraging results.
 
-Thanks to Jane Kim (MSU), Julie Butler (MSU), Vilde Flugsrud (UiO), Alfred Alocias Mariadason (UiO), Even Nordhagen (UiO) and Bendik Samseth (UiO) for many discussions and interpretations.
+Thanks to Jane Kim (MSU), Julie Butler (MSU), Vilde Flugsrud (UiO), Alfred Alocias Mariadason (UiO), Even Nordhagen (UiO), Bendik Samseth (UiO) and Robert Solli (UiO) for many discussions and interpretations.
 !eblock
 
 !split
@@ -189,8 +189,12 @@ Some of the most common tasks are:
 ===== References =====
 !bblock
 * An excellent reference, "Mehta *et al.*, arXiv:1803.08823 and Physics Reports (2019).
+* "Machine Learning and the Physical Sciences by Carleo et al":"https://arxiv.org/abs/1903.10563"
+* "Many-electron systems with Deep Learning":"https://arxiv.org/pdf/1909.02487.pdf"
 * A cute paper by "Utama and Piekarewicz, Validating neural-network refinements of nuclear mass models, Phys. Rev. C 97, 014306 ":"https://journals.aps.org/prc/abstract/10.1103/PhysRevC.97.014306"
 * "Every issue of Physical Review Letters has now one or more articles on ML":"https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.120.156001"
+* "Classifying Nuclear Physics  experiments from the NSCL":"https://github.com/copperwire/thesis/blob/master/main.pdf"
+* "Software and thesis on many-body methods and Machine Learning":"https://github.com/bsamseth/qflow"
 * "Books and lectures notes":"https://github.com/CompPhysics/MachineLearning" and see also the course "FYS-STK3155/4155":"https://www.uio.no/studier/emner/matnat/fys/FYS-STK4155/h18/index.html"
 !eblock
 
@@ -202,98 +206,231 @@ Here we will use so-called _reduced Boltzmann Machines_ to simulate quantum many
 
 
 !split
-===== Decision trees and Regression  =====
+===== Fitting Nuclear Masses  =====
+
+Let us now dive into  nuclear physics and remind ourselves briefly about some basic features about binding
+energies.  A basic quantity which can be measured for the ground
+states of nuclei is the atomic mass $M(N, Z)$ of the neutral atom with
+atomic mass number $A$ and charge $Z$. The number of neutrons is $N$. There are indeed several sophisticated experiments worldwide which allow us to measure this quantity to high precision (parts per million even). 
+
+Atomic masses are usually tabulated in terms of the mass excess defined by
+!bt
+\[
+\Delta M(N, Z) =  M(N, Z) - uA,
+\]
+!et
+where $u$ is the Atomic Mass Unit 
+!bt
+\[
+u = M(^{12}\mathrm{C})/12 = 931.4940954(57) \hspace{0.1cm} \mathrm{MeV}/c^2.
+\]
+!et
+
+In the "2016 mass evaluation of by W.J.Huang, G.Audi, M.Wang, F.G.Kondev, S.Naimi and X.Xu":"http://nuclearmasses.org/resources_folder/Wang_2017_Chinese_Phys_C_41_030003.pdf"
+there are data on masses and decays of 3437 nuclei.
+
+The nuclear binding energy is defined as the energy required to break
+up a given nucleus into its constituent parts of $N$ neutrons and $Z$
+protons. In terms of the atomic masses $M(N, Z)$ the binding energy is
+defined by
+
+
+!bt
+\[
+BE(N, Z) = ZM_H c^2 + Nm_n c^2 - M(N, Z)c^2 ,
+\]
+!et
+where $M_H$ is the mass of the hydrogen atom and $m_n$ is the mass of the neutron.
+In terms of the mass excess the binding energy is given by
+!bt
+\[
+BE(N, Z) = Z\Delta_H c^2 + N\Delta_n c^2 -\Delta(N, Z)c^2 ,
+\]
+!et
+where $\Delta_H c^2 = 7.2890$ MeV and $\Delta_n c^2 = 8.0713$ MeV.
+
+
+A popular and physically intuitive model which can be used to parametrize 
+the experimental binding energies as function of $A$, is the so-called 
+_liquid drop model_. The ansatz is based on the following expression
+
+!bt
+\[ 
+BE(N,Z) = a_1A-a_2A^{2/3}-a_3\frac{Z^2}{A^{1/3}}-a_4\frac{(N-Z)^2}{A},
+\]
+!et
+
+where $A$ stands for the number of nucleons and the $a_i$s are parameters which are determined by a fit 
+to the experimental data.  
+
+=== Organizing our data ===
+
+Let us start with reading and organizing our data. 
+We start with the compilation of masses and binding energies from 2016.
+After having downloaded this file to our own computer, we are now ready to read the file and start structuring our data.
+
+
+We start with preparing folders for storing our calculations and the data file over masses and binding energies. We import also various modules that we will find useful in order to present various Machine Learning methods. Here we focus mainly on the functionality of _scikit-learn_.
 !bc pycod
+# Common imports
 import numpy as np
+import pandas as pd
 import matplotlib.pyplot as plt
-from sklearn.preprocessing import PolynomialFeatures
-from sklearn.linear_model import LinearRegression
+import sklearn.linear_model as skl
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import mean_squared_error, r2_score, mean_absolute_error
+import os
 
-steps=250
+# Where to save the figures and data files
+PROJECT_ROOT_DIR = "Results"
+FIGURE_ID = "Results/FigureFiles"
+DATA_ID = "DataFiles/"
 
-distance=0
-x=0
-distance_list=[]
-steps_list=[]
-while x<steps:
-    distance+=np.random.randint(-1,2)
-    distance_list.append(distance)
-    x+=1
-    steps_list.append(x)
-plt.plot(steps_list,distance_list, color='green', label="Random Walk Data")
+if not os.path.exists(PROJECT_ROOT_DIR):
+    os.mkdir(PROJECT_ROOT_DIR)
 
-steps_list=np.asarray(steps_list)
-distance_list=np.asarray(distance_list)
+if not os.path.exists(FIGURE_ID):
+    os.makedirs(FIGURE_ID)
 
-X=steps_list[:,np.newaxis]
+if not os.path.exists(DATA_ID):
+    os.makedirs(DATA_ID)
 
-#Polynomial fits
+def image_path(fig_id):
+    return os.path.join(FIGURE_ID, fig_id)
 
-#Degree 2
-poly_features=PolynomialFeatures(degree=2, include_bias=False)
-X_poly=poly_features.fit_transform(X)
+def data_path(dat_id):
+    return os.path.join(DATA_ID, dat_id)
 
-lin_reg=LinearRegression()
-poly_fit=lin_reg.fit(X_poly,distance_list)
-b=lin_reg.coef_
-c=lin_reg.intercept_
-print ("2nd degree coefficients:")
-print ("zero power: ",c)
-print ("first power: ", b[0])
-print ("second power: ",b[1])
+def save_fig(fig_id):
+    plt.savefig(image_path(fig_id) + ".png", format='png')
 
-z = np.arange(0, steps, .01)
-z_mod=b[1]*z**2+b[0]*z+c
-
-fit_mod=b[1]*X**2+b[0]*X+c
-plt.plot(z, z_mod, color='r', label="2nd Degree Fit")
-plt.title("Polynomial Regression")
-
-plt.xlabel("Steps")
-plt.ylabel("Distance")
-
-#Degree 10
-poly_features10=PolynomialFeatures(degree=10, include_bias=False)
-X_poly10=poly_features10.fit_transform(X)
-
-poly_fit10=lin_reg.fit(X_poly10,distance_list)
-
-y_plot=poly_fit10.predict(X_poly10)
-plt.plot(X, y_plot, color='black', label="10th Degree Fit")
-
-plt.legend()
-plt.show()
-
-
-#Decision Tree Regression
-from sklearn.tree import DecisionTreeRegressor
-regr_1=DecisionTreeRegressor(max_depth=2)
-regr_2=DecisionTreeRegressor(max_depth=5)
-regr_3=DecisionTreeRegressor(max_depth=7)
-regr_1.fit(X, distance_list)
-regr_2.fit(X, distance_list)
-regr_3.fit(X, distance_list)
-
-X_test = np.arange(0.0, steps, 0.01)[:, np.newaxis]
-y_1 = regr_1.predict(X_test)
-y_2 = regr_2.predict(X_test)
-y_3=regr_3.predict(X_test)
-
-# Plot the results
-plt.figure()
-plt.scatter(X, distance_list, s=2.5, c="black", label="data")
-plt.plot(X_test, y_1, color="red",
-         label="max_depth=2", linewidth=2)
-plt.plot(X_test, y_2, color="green", label="max_depth=5", linewidth=2)
-plt.plot(X_test, y_3, color="m", label="max_depth=7", linewidth=2)
-
-plt.xlabel("Data")
-plt.ylabel("Darget")
-plt.title("Decision Tree Regression")
-plt.legend()
-plt.show()
-
+infile = open(data_path("MassEval2016.dat"),'r')
 !ec
+
+
+Before we proceed, we define also a function for making our plots. You can obviously avoid this and simply set up various _matplotlib_ commands every time you need them. You may however find it convenient to collect all such commands in one function and simply call this function. 
+!bc pycod 
+from pylab import plt, mpl
+plt.style.use('seaborn')
+mpl.rcParams['font.family'] = 'serif'
+
+def MakePlot(x,y, styles, labels, axlabels):
+    plt.figure(figsize=(10,6))
+    for i in range(len(x)):
+        plt.plot(x[i], y[i], styles[i], label = labels[i])
+        plt.xlabel(axlabels[0])
+        plt.ylabel(axlabels[1])
+    plt.legend(loc=0)
+!ec
+
+Our next step is to read the data on experimental binding energies and
+reorganize them as functions of the mass number $A$, the number of
+protons $Z$ and neutrons $N$ using _pandas_.  Before we do this it is
+always useful (unless you have a binary file or other types of compressed
+data) to actually open the file and simply take a look at it!
+
+
+In particular, the program that outputs the final nuclear masses is written in Fortran with a specific format. It means that we need to figure out the format and which columns contain the data we are interested in. Pandas comes with a function that reads formatted output. After having admired the file, we are now ready to start massaging it with _pandas_. The file begins with some basic format information.
+!bc pycod 
+"""                                                                                                                         
+This is taken from the data file of the mass 2016 evaluation.                                                               
+All files are 3436 lines long with 124 character per line.                                                                  
+       Headers are 39 lines long.                                                                                           
+   col 1     :  Fortran character control: 1 = page feed  0 = line feed                                                     
+   format    :  a1,i3,i5,i5,i5,1x,a3,a4,1x,f13.5,f11.5,f11.3,f9.3,1x,a2,f11.3,f9.3,1x,i3,1x,f12.5,f11.5                     
+   These formats are reflected in the pandas widths variable below, see the statement                                       
+   widths=(1,3,5,5,5,1,3,4,1,13,11,11,9,1,2,11,9,1,3,1,12,11,1),                                                            
+   Pandas has also a variable header, with length 39 in this case.                                                          
+"""
+!ec
+
+The data we are interested in are in columns 2, 3, 4 and 11, giving us
+the number of neutrons, protons, mass numbers and binding energies,
+respectively. We add also for the sake of completeness the element name. The data are in fixed-width formatted lines and we will
+covert them into the _pandas_ DataFrame structure.
+
+!bc pycod 
+# Read the experimental data with Pandas
+Masses = pd.read_fwf(infile, usecols=(2,3,4,6,11),
+              names=('N', 'Z', 'A', 'Element', 'Ebinding'),
+              widths=(1,3,5,5,5,1,3,4,1,13,11,11,9,1,2,11,9,1,3,1,12,11,1),
+              header=39,
+              index_col=False)
+
+# Extrapolated values are indicated by '#' in place of the decimal place, so
+# the Ebinding column won't be numeric. Coerce to float and drop these entries.
+Masses['Ebinding'] = pd.to_numeric(Masses['Ebinding'], errors='coerce')
+Masses = Masses.dropna()
+# Convert from keV to MeV.
+Masses['Ebinding'] /= 1000
+
+# Group the DataFrame by nucleon number, A.
+Masses = Masses.groupby('A')
+# Find the rows of the grouped DataFrame with the maximum binding energy.
+Masses = Masses.apply(lambda t: t[t.Ebinding==t.Ebinding.max()])
+!ec
+
+We have now read in the data, grouped them according to the variables we are interested in. 
+We see how easy it is to reorganize the data using _pandas_. If we
+were to do these operations in C/C++ or Fortran, we would have had to
+write various functions/subroutines which perform the above
+reorganizations for us.  Having reorganized the data, we can now start
+to make some simple fits using both the functionalities in _numpy_ and
+_Scikit-Learn_ afterwards. 
+
+Now we define five variables which contain
+the number of nucleons $A$, the number of protons $Z$ and the number of neutrons $N$, the element name and finally the energies themselves.
+!bc pycod 
+A = Masses['A']
+Z = Masses['Z']
+N = Masses['N']
+Element = Masses['Element']
+Energies = Masses['Ebinding']
+print(Masses)
+!ec
+The next step, and we will define this mathematically later, is to set up the so-called _design matrix_. We will throughout call this matrix $\bm{X}$.
+It has dimensionality $p\times n$, where $n$ is the number of data points and $p$ are the so-called predictors. In our case here they are given by the number of polynomials in $A$ we wish to include in the fit. 
+!bc pycod
+# Now we set up the design matrix X
+X = np.zeros((len(A),5))
+X[:,0] = 1
+X[:,1] = A
+X[:,2] = A**(2.0/3.0)
+X[:,3] = A**(-1.0/3.0)
+X[:,4] = A**(-1.0)
+!ec
+With _scikitlearn_ we are now ready to use linear regression and fit our data.
+!bc pycod 
+clf = skl.LinearRegression().fit(X, Energies)
+fity = clf.predict(X)
+!ec
+Pretty simple!  
+Now we can print measures of how our fit is doing, the coefficients from the fits and plot the final fit together with our data.
+!bc pycod
+# The mean squared error                               
+print("Mean squared error: %.2f" % mean_squared_error(Energies, fity))
+# Explained variance score: 1 is perfect prediction                                 
+print('Variance score: %.2f' % r2_score(Energies, fity))
+# Mean absolute error                                                           
+print('Mean absolute error: %.2f' % mean_absolute_error(Energies, fity))
+print(clf.coef_, clf.intercept_)
+
+Masses['Eapprox']  = fity
+# Generate a plot comparing the experimental with the fitted values values.
+fig, ax = plt.subplots()
+ax.set_xlabel(r'$A = N + Z$')
+ax.set_ylabel(r'$E_\mathrm{bind}\,/\mathrm{MeV}$')
+ax.plot(Masses['A'], Masses['Ebinding'], alpha=0.7, lw=2,
+            label='Ame2016')
+ax.plot(Masses['A'], Masses['Eapprox'], alpha=0.7, lw=2, c='m',
+            label='Fit')
+ax.legend()
+save_fig("Masses2016")
+plt.show()
+!ec
+
+
+
 
 
 
@@ -1216,11 +1353,12 @@ where the local energy is given by
 !split
 ===== Running the codes =====
 !bblock
-You can find the codes for the simple two-electron case at the Github repository URL:"https://github.com/mhjensenseminars/MachineLearningTalk/tree/master/doc/Programs/MLcpp/src". Python codes to come, only c++ as of now. 
+You can find the codes for the simple two-electron case at the Github repository URL:"https://github.com/mhjensenseminars/MachineLearningTalk/tree/master/doc/Programs/MLcpp/src". 
+
+See Python code in additional material here.
 
 The trial wave function are based on the product of a Slater determinant with either only Hermitian polynomials or Gaussian orbitals, with and without a Pade-Jastrow factor (PJ).
 
-The Broyden-Fletcher-Goldfarb-Shanno algorithm was used for the minimization. We used $14$ hidden nodes in the calculations below.
 
 !eblock
 
@@ -1265,6 +1403,7 @@ FIGURE: [figures/onebody12.png, width=700 frac=0.9]
 !eblock
 
 
+
 !split
 ===== Conclusions and where do we stand =====
 !bblock
@@ -1273,11 +1412,11 @@ FIGURE: [figures/onebody12.png, width=700 frac=0.9]
 * Anti-symmetry dealt with multiplying the trail wave function with either a simple or an optimized Slater determinant.
 * To come: Analysis of wave function from ML and compare with diffusion and Variational Monte Carlo calculations as well as the analytical results of Taut for the two-electron case.
 * Extend to more fermions. How do we deal with the antisymmetry of the multi-fermion wave function?
-  o Here we used standard Hartree-Fock theory to define an optimal Slater determinant. Takes care of the antisymmetry. What about constructing an anti-symmetrized network function?
+  o Here we also used standard Hartree-Fock theory to define an optimal Slater determinant. Takes care of the antisymmetry. What about constructing an anti-symmetrized network function?
   o Compare with calculations done with Shadow wave functions.
   o Use thereafter ML to determine the correlated part of the wafe function (including a standard Jastrow factor).
   o Test this for multi-fermion systems and compare with other many-body methods.
-* Can we use ML to find out which correlations are relevant and thereby diminish the dimensionality problem in say CC or SRG theories?
+* Can we use ML to find out which correlations are relevant and thereby diminish the dimensionality problem in say CC or SRG theories? Fully possible with for example Recurrent Neural Networks.
 
 !eblock
 
@@ -1409,5 +1548,266 @@ Similarly we have that the conditional probability of the visible units given th
 	p_{BB} (x_i=0 | \bm{h}) =& \frac{1}{1 + e^{a_i + \bm{w}_{i\ast}^T \bm{h} }} .
 \end{align}
 !et
+
+
+!split
+===== Python version for the two non-interacting particles =====
+
+!bc pycod
+# 2-electron VMC code for 2dim quantum dot with importance sampling
+# Using gaussian rng for new positions and Metropolis- Hastings 
+# Added restricted boltzmann machine method for dealing with the wavefunction
+# RBM code based heavily off of:
+# https://github.com/CompPhysics/ComputationalPhysics2/tree/gh-pages/doc/Programs/BoltzmannMachines/MLcpp/src/CppCode/ob
+from math import exp, sqrt
+from random import random, seed, normalvariate
+import numpy as np
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+from matplotlib import cm
+from matplotlib.ticker import LinearLocator, FormatStrFormatter
+import sys
+
+
+
+# Trial wave function for the 2-electron quantum dot in two dims
+def WaveFunction(r,a,b,w):
+    sigma=1.0
+    sig2 = sigma**2
+    Psi1 = 0.0
+    Psi2 = 1.0
+    Q = Qfac(r,b,w)
+    
+    for iq in range(NumberParticles):
+        for ix in range(Dimension):
+            Psi1 += (r[iq,ix]-a[iq,ix])**2
+            
+    for ih in range(NumberHidden):
+        Psi2 *= (1.0 + np.exp(Q[ih]))
+        
+    Psi1 = np.exp(-Psi1/(2*sig2))
+
+    return Psi1*Psi2
+
+# Local energy  for the 2-electron quantum dot in two dims, using analytical local energy
+def LocalEnergy(r,a,b,w):
+    sigma=1.0
+    sig2 = sigma**2
+    locenergy = 0.0
+    
+    Q = Qfac(r,b,w)
+
+    for iq in range(NumberParticles):
+        for ix in range(Dimension):
+            sum1 = 0.0
+            sum2 = 0.0
+            for ih in range(NumberHidden):
+                sum1 += w[iq,ix,ih]/(1+np.exp(-Q[ih]))
+                sum2 += w[iq,ix,ih]**2 * np.exp(Q[ih]) / (1.0 + np.exp(Q[ih]))**2
+    
+            dlnpsi1 = -(r[iq,ix] - a[iq,ix]) /sig2 + sum1/sig2
+            dlnpsi2 = -1/sig2 + sum2/sig2**2
+            locenergy += 0.5*(-dlnpsi1*dlnpsi1 - dlnpsi2 + r[iq,ix]**2)
+            
+    if(interaction==True):
+        for iq1 in range(NumberParticles):
+            for iq2 in range(iq1):
+                distance = 0.0
+                for ix in range(Dimension):
+                    distance += (r[iq1,ix] - r[iq2,ix])**2
+                    
+                locenergy += 1/sqrt(distance)
+                
+    return locenergy
+
+# Derivate of wave function ansatz as function of variational parameters
+def DerivativeWFansatz(r,a,b,w):
+    
+    sigma=1.0
+    sig2 = sigma**2
+    
+    Q = Qfac(r,b,w)
+    
+    WfDer = np.empty((3,),dtype=object)
+    WfDer = [np.copy(a),np.copy(b),np.copy(w)]
+    
+    WfDer[0] = (r-a)/sig2
+    WfDer[1] = 1 / (1 + np.exp(-Q))
+    
+    for ih in range(NumberHidden):
+        WfDer[2][:,:,ih] = w[:,:,ih] / (sig2*(1+np.exp(-Q[ih])))
+            
+    return  WfDer
+
+# Setting up the quantum force for the two-electron quantum dot, recall that it is a vector
+def QuantumForce(r,a,b,w):
+
+    sigma=1.0
+    sig2 = sigma**2
+    
+    qforce = np.zeros((NumberParticles,Dimension), np.double)
+    sum1 = np.zeros((NumberParticles,Dimension), np.double)
+    
+    Q = Qfac(r,b,w)
+    
+    for ih in range(NumberHidden):
+        sum1 += w[:,:,ih]/(1+np.exp(-Q[ih]))
+    
+    qforce = 2*(-(r-a)/sig2 + sum1/sig2)
+    
+    return qforce
+    
+def Qfac(r,b,w):
+    Q = np.zeros((NumberHidden), np.double)
+    temp = np.zeros((NumberHidden), np.double)
+    
+    for ih in range(NumberHidden):
+        temp[ih] = (r*w[:,:,ih]).sum()
+        
+    Q = b + temp
+    
+    return Q
+    
+# Computing the derivative of the energy and the energy 
+def EnergyMinimization(a,b,w):
+
+    NumberMCcycles= 10000
+    # Parameters in the Fokker-Planck simulation of the quantum force
+    D = 0.5
+    TimeStep = 0.05
+    # positions
+    PositionOld = np.zeros((NumberParticles,Dimension), np.double)
+    PositionNew = np.zeros((NumberParticles,Dimension), np.double)
+    # Quantum force
+    QuantumForceOld = np.zeros((NumberParticles,Dimension), np.double)
+    QuantumForceNew = np.zeros((NumberParticles,Dimension), np.double)
+
+    # seed for rng generator 
+    seed()
+    energy = 0.0
+    DeltaE = 0.0
+
+    EnergyDer = np.empty((3,),dtype=object)
+    DeltaPsi = np.empty((3,),dtype=object)
+    DerivativePsiE = np.empty((3,),dtype=object)
+    EnergyDer = [np.copy(a),np.copy(b),np.copy(w)]
+    DeltaPsi = [np.copy(a),np.copy(b),np.copy(w)]
+    DerivativePsiE = [np.copy(a),np.copy(b),np.copy(w)]
+    for i in range(3): EnergyDer[i].fill(0.0)
+    for i in range(3): DeltaPsi[i].fill(0.0)
+    for i in range(3): DerivativePsiE[i].fill(0.0)
+
+    
+    #Initial position
+    for i in range(NumberParticles):
+        for j in range(Dimension):
+            PositionOld[i,j] = normalvariate(0.0,1.0)*sqrt(TimeStep)
+    wfold = WaveFunction(PositionOld,a,b,w)
+    QuantumForceOld = QuantumForce(PositionOld,a,b,w)
+
+    #Loop over MC MCcycles
+    for MCcycle in range(NumberMCcycles):
+        #Trial position moving one particle at the time
+        for i in range(NumberParticles):
+            for j in range(Dimension):
+                PositionNew[i,j] = PositionOld[i,j]+normalvariate(0.0,1.0)*sqrt(TimeStep)+\
+                                       QuantumForceOld[i,j]*TimeStep*D
+            wfnew = WaveFunction(PositionNew,a,b,w)
+            QuantumForceNew = QuantumForce(PositionNew,a,b,w)
+            
+            GreensFunction = 0.0
+            for j in range(Dimension):
+                GreensFunction += 0.5*(QuantumForceOld[i,j]+QuantumForceNew[i,j])*\
+                                      (D*TimeStep*0.5*(QuantumForceOld[i,j]-QuantumForceNew[i,j])-\
+                                      PositionNew[i,j]+PositionOld[i,j])
+      
+            GreensFunction = exp(GreensFunction)
+            ProbabilityRatio = GreensFunction*wfnew**2/wfold**2
+            #Metropolis-Hastings test to see whether we accept the move
+            if random() <= ProbabilityRatio:
+                for j in range(Dimension):
+                    PositionOld[i,j] = PositionNew[i,j]
+                    QuantumForceOld[i,j] = QuantumForceNew[i,j]
+                wfold = wfnew
+        #print("wf new:        ", wfnew)
+        #print("force on 1 new:", QuantumForceNew[0,:])
+        #print("pos of 1 new:  ", PositionNew[0,:])
+        #print("force on 2 new:", QuantumForceNew[1,:])
+        #print("pos of 2 new:  ", PositionNew[1,:])
+        DeltaE = LocalEnergy(PositionOld,a,b,w)
+        DerPsi = DerivativeWFansatz(PositionOld,a,b,w)
+        
+        DeltaPsi[0] += DerPsi[0]
+        DeltaPsi[1] += DerPsi[1]
+        DeltaPsi[2] += DerPsi[2]
+        
+        energy += DeltaE
+
+        DerivativePsiE[0] += DerPsi[0]*DeltaE
+        DerivativePsiE[1] += DerPsi[1]*DeltaE
+        DerivativePsiE[2] += DerPsi[2]*DeltaE
+            
+    # We calculate mean values
+    energy /= NumberMCcycles
+    DerivativePsiE[0] /= NumberMCcycles
+    DerivativePsiE[1] /= NumberMCcycles
+    DerivativePsiE[2] /= NumberMCcycles
+    DeltaPsi[0] /= NumberMCcycles
+    DeltaPsi[1] /= NumberMCcycles
+    DeltaPsi[2] /= NumberMCcycles
+    EnergyDer[0]  = 2*(DerivativePsiE[0]-DeltaPsi[0]*energy)
+    EnergyDer[1]  = 2*(DerivativePsiE[1]-DeltaPsi[1]*energy)
+    EnergyDer[2]  = 2*(DerivativePsiE[2]-DeltaPsi[2]*energy)
+    return energy, EnergyDer
+
+
+#Here starts the main program with variable declarations
+NumberParticles = 2
+Dimension = 2
+NumberHidden = 2
+
+interaction=False
+
+# guess for parameters
+a=np.random.normal(loc=0.0, scale=0.001, size=(NumberParticles,Dimension))
+b=np.random.normal(loc=0.0, scale=0.001, size=(NumberHidden))
+w=np.random.normal(loc=0.0, scale=0.001, size=(NumberParticles,Dimension,NumberHidden))
+# Set up iteration using stochastic gradient method
+Energy = 0
+EDerivative = np.empty((3,),dtype=object)
+EDerivative = [np.copy(a),np.copy(b),np.copy(w)]
+# Learning rate eta, max iterations, need to change to adaptive learning rate
+eta = 0.001
+MaxIterations = 50
+iter = 0
+np.seterr(invalid='raise')
+Energies = np.zeros(MaxIterations)
+EnergyDerivatives1 = np.zeros(MaxIterations)
+EnergyDerivatives2 = np.zeros(MaxIterations)
+
+while iter < MaxIterations:
+    Energy, EDerivative = EnergyMinimization(a,b,w)
+    agradient = EDerivative[0]
+    bgradient = EDerivative[1]
+    wgradient = EDerivative[2]
+    a -= eta*agradient
+    b -= eta*bgradient 
+    w -= eta*wgradient 
+    Energies[iter] = Energy
+    print("Energy:",Energy)
+
+    iter += 1
+
+#nice printout with Pandas
+import pandas as pd
+from pandas import DataFrame
+pd.set_option('max_columns', 6)
+data ={'Energy':Energies}#,'A Derivative':EnergyDerivatives1,'B Derivative':EnergyDerivatives2,'Weights Derivative':EnergyDerivatives3}
+
+frame = pd.DataFrame(data)
+print(frame)
+!ec
+
+
 
 
