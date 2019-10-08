@@ -64,5 +64,18 @@ AUTHOR: Morten Hjorth-Jensen  Email:hjensen@msu.edu
 
 
 
+===== Talk at University of Oslo, October 8, 2019 =====
+
+
+
+ * HTML:
+   * "Plain html style": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/uio2019/html/uio2019.html"
+   * "reveal.js beige slide style": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/uio2019/html/uio2019-reveal.html"
+   * "Bootstrap style": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/uio2019/html/uio2019-bs.html"
+ * iPython notebook:
+   * "ipynb file": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/uio2019/ipynb/uio2019.ipynb"
+
+
+
 
 
