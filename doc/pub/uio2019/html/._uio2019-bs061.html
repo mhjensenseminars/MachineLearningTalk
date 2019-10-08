@@ -211,7 +211,7 @@ MathJax.Hub.Config({
         <ul class="dropdown-menu">
      <!-- navigation toc: --> <li><a href="._uio2019-bs001.html#___sec0" style="font-size: 80%;"><b>What is this talk about?</b></a></li>
      <!-- navigation toc: --> <li><a href="._uio2019-bs002.html#___sec1" style="font-size: 80%;"><b>More material</b></a></li>
-     <!-- navigation toc: --> <li><a href="#___sec2" style="font-size: 80%;"><b>Why? Basic motivation</b></a></li>
+     <!-- navigation toc: --> <li><a href="._uio2019-bs003.html#___sec2" style="font-size: 80%;"><b>Why? Basic motivation</b></a></li>
      <!-- navigation toc: --> <li><a href="._uio2019-bs004.html#___sec3" style="font-size: 80%;"><b>Overview</b></a></li>
      <!-- navigation toc: --> <li><a href="._uio2019-bs005.html#___sec4" style="font-size: 80%;"><b>What is Machine Learning?</b></a></li>
      <!-- navigation toc: --> <li><a href="._uio2019-bs006.html#___sec5" style="font-size: 80%;"><b>What are the Machine Learning calculations here based on?</b></a></li>
@@ -270,7 +270,7 @@ MathJax.Hub.Config({
      <!-- navigation toc: --> <li><a href="._uio2019-bs058.html#___sec58" style="font-size: 80%;"><b>Addendum: Recurrent neural networks: Overarching view</b></a></li>
      <!-- navigation toc: --> <li><a href="._uio2019-bs059.html#___sec59" style="font-size: 80%;"><b>Set up of an RNN</b></a></li>
      <!-- navigation toc: --> <li><a href="._uio2019-bs060.html#___sec60" style="font-size: 80%;"><b>A layer of recurrent neurons (left), unrolled through time (right)</b></a></li>
-     <!-- navigation toc: --> <li><a href="._uio2019-bs061.html#___sec61" style="font-size: 80%;"><b>Performing IMSRG calculations with RNNs</b></a></li>
+     <!-- navigation toc: --> <li><a href="#___sec61" style="font-size: 80%;"><b>Performing IMSRG calculations with RNNs</b></a></li>
      <!-- navigation toc: --> <li><a href="._uio2019-bs062.html#___sec62" style="font-size: 80%;"><b>Defining the inputs</b></a></li>
      <!-- navigation toc: --> <li><a href="._uio2019-bs063.html#___sec63" style="font-size: 80%;"><b>Using the upper left diagonal matrix element to predict</b></a></li>
      <!-- navigation toc: --> <li><a href="._uio2019-bs064.html#___sec64" style="font-size: 80%;"><b>Using a \( tanh \) activation function</b></a></li>
@@ -291,51 +291,49 @@ MathJax.Hub.Config({
 
 <p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p> <!-- add vertical space -->
 
-<a name="part0003"></a>
+<a name="part0061"></a>
 <!-- !split -->
 
-<h2 id="___sec2" class="anchor">Why? Basic motivation </h2>
+<h2 id="___sec61" class="anchor">Performing IMSRG calculations with RNNs </h2>
 
 <p>
-<div class="panel panel-default">
-<div class="panel-body">
-<p> <!-- subsequent paragraphs come in larger fonts, so start with a paragraph -->
-How can we avoid the dimensionality curse in physics studies? Many possibilities
+Calculational details:
 
 <ol>
-<li> smarter basis functions</li>
-<li> resummation of specific correlations</li>
-<li> stochastic sampling</li>
-<li> many more</li>
+<li> We used a simple pairing model with four particles and four doubly degenerate levels, see LNP 936, chapter 8, 10 and 11.</li>
+<li> We run an IMSRG calculation (Magnus expansion with \( s_{\mathrm{max}}=10 \), step size $ds=0.001$$, White generator</li>
+<li> The training was done for \( s\in [0,0.5] \) and testing for \( s \in [0.5,10] \). Training data evenly spaced.</li>
+<li> Activation functions are <b>tanh</b> and <b>RELU</b> and we used RNN and LSTM (Long short-term memory networks). They both had the same number of units in each layer, so the networks were structured like this:</li>
+
+<ul>
+   <li> input --> recurrent hidden layer (1000 units) --> recurrent hidden layer (100 units) --> dense hidden layer (10 units) --> output (1 unit)</li>
+</ul>
+
+<li> We used MSE as the loss function and Adam as the optimizer method. Finally, the networks both trained for 5000 epochs with a batch size of 28.</li> 
 </ol>
 
-Machine Learning and Quantum Computing hold also great promise in tackling the 
-ever increasing dimensionalities. Here we will focus on Machine Learning.
-</div>
-</div>
-
-
-<p>
 <p>
 <!-- navigation buttons at the bottom of the page -->
 <ul class="pagination">
-<li><a href="._uio2019-bs002.html">&laquo;</a></li>
+<li><a href="._uio2019-bs060.html">&laquo;</a></li>
   <li><a href="._uio2019-bs000.html">1</a></li>
-  <li><a href="._uio2019-bs001.html">2</a></li>
-  <li><a href="._uio2019-bs002.html">3</a></li>
-  <li class="active"><a href="._uio2019-bs003.html">4</a></li>
-  <li><a href="._uio2019-bs004.html">5</a></li>
-  <li><a href="._uio2019-bs005.html">6</a></li>
-  <li><a href="._uio2019-bs006.html">7</a></li>
-  <li><a href="._uio2019-bs007.html">8</a></li>
-  <li><a href="._uio2019-bs008.html">9</a></li>
-  <li><a href="._uio2019-bs009.html">10</a></li>
-  <li><a href="._uio2019-bs010.html">11</a></li>
-  <li><a href="._uio2019-bs011.html">12</a></li>
-  <li><a href="._uio2019-bs012.html">13</a></li>
   <li><a href="">...</a></li>
+  <li><a href="._uio2019-bs053.html">54</a></li>
+  <li><a href="._uio2019-bs054.html">55</a></li>
+  <li><a href="._uio2019-bs055.html">56</a></li>
+  <li><a href="._uio2019-bs056.html">57</a></li>
+  <li><a href="._uio2019-bs057.html">58</a></li>
+  <li><a href="._uio2019-bs058.html">59</a></li>
+  <li><a href="._uio2019-bs059.html">60</a></li>
+  <li><a href="._uio2019-bs060.html">61</a></li>
+  <li class="active"><a href="._uio2019-bs061.html">62</a></li>
+  <li><a href="._uio2019-bs062.html">63</a></li>
+  <li><a href="._uio2019-bs063.html">64</a></li>
+  <li><a href="._uio2019-bs064.html">65</a></li>
+  <li><a href="._uio2019-bs065.html">66</a></li>
+  <li><a href="._uio2019-bs066.html">67</a></li>
   <li><a href="._uio2019-bs067.html">68</a></li>
-  <li><a href="._uio2019-bs004.html">&raquo;</a></li>
+  <li><a href="._uio2019-bs062.html">&raquo;</a></li>
 </ul>
 <!-- ------------------- end of main content --------------- -->
 

@@ -199,12 +199,12 @@ Feel free to try them  out and please don't hesitate to ask if something is uncl
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
-How can we avoid the dimensionality curse? Many possibilities
+How can we avoid the dimensionality curse in physics studies? Many possibilities
 
 <ol>
 <p><li> smarter basis functions</li>
 <p><li> resummation of specific correlations</li>
-<p><li> stochastic sampling of high-lying states (stochastic FCI, CC and SRG/IMSRG)</li>
+<p><li> stochastic sampling</li>
 <p><li> many more</li>
 </ol>
 <p>
@@ -238,15 +238,6 @@ learn without being explicitly programmed.  The idea is that there
 exist generic algorithms which can be used to find patterns in a broad
 class of data sets without having to write code specifically for each
 problem. The algorithm will build its own logic based on the data.
-
-<p>
-Machine learning is a subfield of computer science, and is closely
-related to computational statistics.  It evolved from the study of
-pattern recognition in artificial intelligence (AI) research, and has
-made contributions to AI tasks like computer vision, natural language
-processing and speech recognition. It has also, especially in later
-years, found applications in a wide variety of other areas, including
-bioinformatics, economy, physics, finance and marketing.
 
 
 </div>
@@ -330,6 +321,8 @@ various algorithms and methods.
 
 <section>
 <h2 id="___sec8">Knowledge of Statistical analysis and optimization of data </h2>
+
+<p>
 Some key elements that enter much of the discussion on ML:
 
 <ol>
@@ -428,6 +421,11 @@ Some of the most common tasks are:
 <p><li> <a href="https://github.com/bsamseth/qflow" target="_blank">Software and thesis on many-body methods and Machine Learning</a></li>
 <p><li> <a href="https://github.com/CompPhysics/MachineLearning" target="_blank">Books and lectures notes</a> and see also the course <a href="https://www.uio.no/studier/emner/matnat/fys/FYS-STK4155/h18/index.html" target="_blank">FYS-STK3155/4155</a></li>
 </ul>
+<p>
+
+Look up also work on solving PDEs, ODEs, eigenvalue problems and more with deep learning methods.
+
+
 </div>
 </section>
 
@@ -745,7 +743,150 @@ is associated with a weight variable.
 
 
 <section>
-<h2 id="___sec18">The system: two electrons in a harmonic oscillator trap in two dimensions </h2>
+<h2 id="___sec18">Why Boltzmann machines? </h2>
+
+<p>
+What is known as restricted Boltzmann Machines (RMB) have received a
+lot of attention lately.  One of the major reasons is that they can be
+stacked layer-wise to build deep neural networks that capture
+complicated statistics.
+
+<p>
+The original RBMs had just one visible layer and a hidden layer, but
+recently so-called Gaussian-binary RBMs have gained quite some
+popularity in imaging since they are capable of modeling continuous
+data that are common to natural images.
+
+<p>
+Furthermore, they have been used to solve complicated quantum
+mechanical many-particle problems or classical statistical physics
+problems like the Ising and Potts classes of models.
+</section>
+
+
+<section>
+<h2 id="___sec19">Boltzmann Machines </h2>
+
+<p>
+Why use a generative model rather than the more well known discriminative deep neural networks (DNN)? 
+
+<ul>
+<p><li> Discriminitave methods have several limitations: They are mainly supervised learning methods, thus requiring labeled data. And there are tasks they cannot accomplish, like drawing new examples from an unknown probability distribution.</li>
+<p><li> A generative model can learn to represent and sample from a probability distribution. The core idea is to learn a parametric model of the probability distribution from which the training data was drawn. As an example
+
+<ol type="a"></li>
+ <p><li> A model for images could learn to draw new examples of cats and dogs, given a training dataset of images of cats and dogs.</li>
+ <p><li> Generate a sample of an ordered or disordered Ising model phase, having been given samples of such phases.</li>
+ <p><li> Model the trial function for Monte Carlo calculations</li>
+</ol>
+<p>
+</ul>
+</section>
+
+
+<section>
+<h2 id="___sec20">Some similarities and differences from DNNs </h2>
+
+<ol>
+<p><li> Both use gradient-descent based learning procedures for minimizing cost functions</li>
+<p><li> Energy based models don't use backpropagation and automatic differentiation for computing gradients, instead turning to Markov Chain Monte Carlo methods.</li>
+<p><li> DNNs often have several hidden layers. A restricted Boltzmann machine has normally only one hidden layer, however several RBMs can be stacked to make up Deep Belief Networks, of which they constitute the building blocks.</li>
+</ol>
+<p>
+
+History: The RBM was developed by amongst others Geoffrey Hinton, called by some the "Godfather of Deep Learning", working with the University of Toronto and Google.
+</section>
+
+
+<section>
+<h2 id="___sec21">Boltzmann machines (BM) </h2>
+
+<p>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+A BM is what we would call an undirected probabilistic graphical model
+with stochastic continuous or discrete units.
+</div>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+It is interpreted as a stochastic recurrent neural network where the
+state of each unit(neurons/nodes) depends on the units it is connected
+to. The weights in the network represent thus the strength of the
+interaction between various units/nodes.
+</div>
+</section>
+
+
+<section>
+<h2 id="___sec22">A standard BM setup </h2>
+
+<p>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+A standard BM network is divided into a set of observable and visible units \( \hat{x} \) and a set of unknown hidden units/nodes \( \hat{h} \).
+</div>
+
+<p>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+Additionally there can be bias nodes for the hidden and visible layers. These biases are normally set to \( 1 \).
+</div>
+
+<p>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+BMs are stackable, meaning we can train a BM which serves as input to another BM. We can construct deep networks for learning complex PDFs. The layers can be trained one after another, a feature which makes them popular in deep learning
+</div>
+
+<p>
+However, they are often hard to train. This leads to the introduction of so-called restricted BMs, or RBMS.
+Here we take away all lateral connections between nodes in the visible layer as well as connections between nodes in the hidden layer. The network is illustrated in the figure below.
+</section>
+
+
+<section>
+<h2 id="___sec23">The structure of the RBM network </h2>
+
+<p>
+<br /><br /><center><p><img src="figures/RBM.png" align="bottom" width=800></p></center><br /><br />
+</section>
+
+
+<section>
+<h2 id="___sec24">The network </h2>
+
+<p>
+<b>The network layers</b>:
+
+<ol>
+ <p><li> A function \( \mathbf{x} \) that represents the visible layer, a vector of \( M \) elements (nodes). This layer represents both what the RBM might be given as training input, and what we want it to be able to reconstruct. This might for example be the pixels of an image, the spin values of the Ising model, or coefficients representing speech.</li>
+ <p><li> The function \( \mathbf{h} \) represents the hidden, or latent, layer. A vector of \( N \) elements (nodes). Also called "feature detectors".</li>
+</ol>
+</section>
+
+
+<section>
+<h2 id="___sec25">Parameters </h2>
+
+<p>
+<b>The network parameters, to be optimized/learned</b>:
+
+<ol>
+ <p><li> \( \mathbf{a} \) represents the visible bias, a vector of same length as \( \mathbf{x} \).</li>
+ <p><li> \( \mathbf{b} \) represents the hidden bias, a vector of same lenght as \( \mathbf{h} \).</li>
+ <p><li> \( W \) represents the interaction weights, a matrix of size \( M\times N \).</li>
+</ol>
+</section>
+
+
+<section>
+<h2 id="___sec26">The system: electrons in a traps in two or three dimensions </h2>
 
 <p>
 The Hamiltonian of the quantum dot is given by
@@ -777,7 +918,7 @@ This system has analytical solutions in two and three dimensions (<a href="https
 
 
 <section>
-<h2 id="___sec19">Quantum Monte Carlo Motivation </h2>
+<h2 id="___sec27">Quantum Monte Carlo Motivation </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -803,7 +944,7 @@ In general, the integrals involved in the calculation of various  expectation va
 
 
 <section>
-<h2 id="___sec20">Quantum Monte Carlo Motivation </h2>
+<h2 id="___sec28">Quantum Monte Carlo Motivation </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b>Basic steps.</b>
 <p>
@@ -829,7 +970,7 @@ $$
 
 
 <section>
-<h2 id="___sec21">Quantum Monte Carlo Motivation </h2>
+<h2 id="___sec29">Quantum Monte Carlo Motivation </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b>Define a new quantity.</b>
 <p>&nbsp;<br>
@@ -851,7 +992,7 @@ with \( N \) being the number of Monte Carlo samples.
 
 
 <section>
-<h2 id="___sec22">Quantum Monte Carlo </h2>
+<h2 id="___sec30">Quantum Monte Carlo </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -884,7 +1025,7 @@ Need importance sampling to get more relevant sampling.
 
 
 <section>
-<h2 id="___sec23">The trial wave function </h2>
+<h2 id="___sec31">The trial wave function </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -913,7 +1054,7 @@ Machine Learning.
 
 
 <section>
-<h2 id="___sec24">The correlation part of the wave function </h2>
+<h2 id="___sec32">The correlation part of the wave function </h2>
 
 <p>
 To find an ansatz for the correlated part of the wave function, it is useful to rewrite the two-particle
@@ -942,7 +1083,7 @@ $$
 
 
 <section>
-<h2 id="___sec25">Resulting ansatz </h2>
+<h2 id="___sec33">Resulting ansatz </h2>
 The above  results in
 <p>&nbsp;<br>
 $$
@@ -966,7 +1107,7 @@ condition for each electron pair \( ij \).
 
 
 <section>
-<h2 id="___sec26">The VMC code </h2>
+<h2 id="___sec34">The VMC code </h2>
 
 <p>
 
@@ -1083,7 +1224,7 @@ plt.show()
 
 
 <section>
-<h2 id="___sec27">Technical aspect, improvements and how to define the cost function </h2>
+<h2 id="___sec35">Technical aspect, improvements and how to define the cost function </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -1107,7 +1248,7 @@ One way to achieve this is to minimize the energy as function of the variational
 
 
 <section>
-<h2 id="___sec28">Energy derivatives </h2>
+<h2 id="___sec36">Energy derivatives </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -1133,7 +1274,7 @@ $$
 
 
 <section>
-<h2 id="___sec29">Derivatives of the local energy </h2>
+<h2 id="___sec37">Derivatives of the local energy </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -1165,7 +1306,7 @@ We can then use methods like stochastic gradient or other minimization methods t
 
 
 <section>
-<h2 id="___sec30">How do we define our cost function? </h2>
+<h2 id="___sec38">How do we define our cost function? </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -1180,7 +1321,7 @@ How should we define the cost function?
 
 
 <section>
-<h2 id="___sec31">Meet the variance and its derivatives  </h2>
+<h2 id="___sec39">Meet the variance and its derivatives  </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b>Why the variance?</b>
 <p>
@@ -1220,7 +1361,7 @@ Variation is then performed by minimizing both the energy and the variance.
 
 
 <section>
-<h2 id="___sec32">The variance defines the cost function  </h2>
+<h2 id="___sec40">The variance defines the cost function  </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -1256,7 +1397,7 @@ Evaluating the cost function means having to evaluate the above second derivativ
 
 
 <section>
-<h2 id="___sec33">The code for two electrons in two dims with no Coulomb interaction </h2>
+<h2 id="___sec41">The code for two electrons in two dims with no Coulomb interaction </h2>
 
 <p>
 We present here the code (including importance sampling) for finding the optimal parameter \( \alpha \) using gradient descent with a given learning rate \( \eta \). In principle we should run calculations for various learning rates.
@@ -1445,171 +1586,7 @@ parameter is \( 1.0 \), as it should.
 
 
 <section>
-<h2 id="___sec34">Why Boltzmann machines? </h2>
-
-<p>
-What is known as restricted Boltzmann Machines (RMB) have received a
-lot of attention lately.  One of the major reasons is that they can be
-stacked layer-wise to build deep neural networks that capture
-complicated statistics.
-
-<p>
-The original RBMs had just one visible layer and a hidden layer, but
-recently so-called Gaussian-binary RBMs have gained quite some
-popularity in imaging since they are capable of modeling continuous
-data that are common to natural images.
-
-<p>
-Furthermore, they have been used to solve complicated quantum
-mechanical many-particle problems or classical statistical physics
-problems like the Ising and Potts classes of models.
-</section>
-
-
-<section>
-<h2 id="___sec35">Boltzmann Machines </h2>
-
-<p>
-Why use a generative model rather than the more well known discriminative deep neural networks (DNN)? 
-
-<ul>
-<p><li> Discriminitave methods have several limitations: They are mainly supervised learning methods, thus requiring labeled data. And there are tasks they cannot accomplish, like drawing new examples from an unknown probability distribution.</li>
-<p><li> A generative model can learn to represent and sample from a probability distribution. The core idea is to learn a parametric model of the probability distribution from which the training data was drawn. As an example
-
-<ol type="a"></li>
- <p><li> A model for images could learn to draw new examples of cats and dogs, given a training dataset of images of cats and dogs.</li>
- <p><li> Generate a sample of an ordered or disordered Ising model phase, having been given samples of such phases.</li>
- <p><li> Model the trial function for Monte Carlo calculations</li>
-</ol>
-<p>
-</ul>
-</section>
-
-
-<section>
-<h2 id="___sec36">Some similarities and differences from DNNs </h2>
-
-<ol>
-<p><li> Both use gradient-descent based learning procedures for minimizing cost functions</li>
-<p><li> Energy based models don't use backpropagation and automatic differentiation for computing gradients, instead turning to Markov Chain Monte Carlo methods.</li>
-<p><li> DNNs often have several hidden layers. A restricted Boltzmann machine has normally only one hidden layer, however several RBMs can be stacked to make up Deep Belief Networks, of which they constitute the building blocks.</li>
-</ol>
-<p>
-
-History: The RBM was developed by amongst others Geoffrey Hinton, called by some the "Godfather of Deep Learning", working with the University of Toronto and Google.
-</section>
-
-
-<section>
-<h2 id="___sec37">Boltzmann machines (BM) </h2>
-
-<p>
-<div class="alert alert-block alert-block alert-text-normal">
-<b></b>
-<p>
-A BM is what we would call an undirected probabilistic graphical model
-with stochastic continuous or discrete units.
-</div>
-
-<div class="alert alert-block alert-block alert-text-normal">
-<b></b>
-<p>
-It is interpreted as a stochastic recurrent neural network where the
-state of each unit(neurons/nodes) depends on the units it is connected
-to. The weights in the network represent thus the strength of the
-interaction between various units/nodes.
-</div>
-
-<div class="alert alert-block alert-block alert-text-normal">
-<b></b>
-<p>
-It turns into a Hopfield network if we choose deterministic rather
-than stochastic units. In contrast to a Hopfield network, a BM is a
-so-called generative model. It allows us to generate new samples from
-the learned distribution.
-</div>
-</section>
-
-
-<section>
-<h2 id="___sec38">A standard BM setup </h2>
-
-<p>
-<div class="alert alert-block alert-block alert-text-normal">
-<b></b>
-<p>
-A standard BM network is divided into a set of observable and visible units \( \hat{x} \) and a set of unknown hidden units/nodes \( \hat{h} \).
-</div>
-
-<p>
-<div class="alert alert-block alert-block alert-text-normal">
-<b></b>
-<p>
-Additionally there can be bias nodes for the hidden and visible layers. These biases are normally set to \( 1 \).
-</div>
-
-<p>
-<div class="alert alert-block alert-block alert-text-normal">
-<b></b>
-<p>
-BMs are stackable, meaning we can train a BM which serves as input to another BM. We can construct deep networks for learning complex PDFs. The layers can be trained one after another, a feature which makes them popular in deep learning
-</div>
-
-<p>
-However, they are often hard to train. This leads to the introduction of so-called restricted BMs, or RBMS.
-Here we take away all lateral connections between nodes in the visible layer as well as connections between nodes in the hidden layer. The network is illustrated in the figure below.
-</section>
-
-
-<section>
-<h2 id="___sec39">The structure of the RBM network </h2>
-
-<p>
-<br /><br /><center><p><img src="figures/RBM.png" align="bottom" width=800></p></center><br /><br />
-</section>
-
-
-<section>
-<h2 id="___sec40">The network </h2>
-
-<p>
-<b>The network layers</b>:
-
-<ol>
- <p><li> A function \( \mathbf{x} \) that represents the visible layer, a vector of \( M \) elements (nodes). This layer represents both what the RBM might be given as training input, and what we want it to be able to reconstruct. This might for example be the pixels of an image, the spin values of the Ising model, or coefficients representing speech.</li>
- <p><li> The function \( \mathbf{h} \) represents the hidden, or latent, layer. A vector of \( N \) elements (nodes). Also called "feature detectors".</li>
-</ol>
-</section>
-
-
-<section>
-<h2 id="___sec41">Goals </h2>
-
-<p>
-The goal of the hidden layer is to increase the model's expressive power. We encode complex interactions between visible variables by introducing additional, hidden variables that interact with visible degrees of freedom in a simple manner, yet still reproduce the complex correlations between visible degrees in the data once marginalized over (integrated out).
-
-<p>
-Examples of this trick being employed in physics: 
-
-<ol>
- <p><li> The Hubbard-Stratonovich transformation</li>
- <p><li> The introduction of ghost fields in gauge theory</li>
- <p><li> Shadow wave functions in Quantum Monte Carlo simulations</li>
-</ol>
-<p>
-
-<b>The network parameters, to be optimized/learned</b>:
-
-<ol>
- <p><li> \( \mathbf{a} \) represents the visible bias, a vector of same length as \( \mathbf{x} \).</li>
- <p><li> \( \mathbf{b} \) represents the hidden bias, a vector of same lenght as \( \mathbf{h} \).</li>
- <p><li> \( W \) represents the interaction weights, a matrix of size \( M\times N \).</li>
-</ol>
-</section>
-
-
-<section>
-<h2 id="___sec42">Joint distribution </h2>
+<h2 id="___sec42">Can we use Boltzmann machines to solve the same problem?  </h2>
 
 <p>
 The restricted Boltzmann machine is described by a Boltzmann distribution
@@ -1908,24 +1885,178 @@ The trial wave function are based on the product of a Slater determinant with ei
 <ul>
 <p><li> A simple extension of the work of <a href="http://science.sciencemag.org/content/355/6325/602" target="_blank">G. Carleo and M. Troyer, Science <b>355</b>, Issue 6325, pp. 602-606 (2017)</a> gives excellent results for two-electron systems as well as good agreement with standard VMC calculations for \( N=6 \) and \( N=12 \) electrons.</li>
 <p><li> Minimization problem can be tricky.</li>
-<p><li> Anti-symmetry dealt with multiplying the trail wave function with either a simple or an optimized Slater determinant.</li>
-<p><li> To come: Analysis of wave function from ML and compare with diffusion and Variational Monte Carlo calculations as well as the analytical results of Taut for the two-electron case.</li>
+<p><li> Anti-symmetry dealt with by multiplying the trail wave function with either a simple or an optimized Slater determinant.</li>
+<p><li> To come: Analysis of wave function from ML and compare with diffusion and Variational Monte Carlo calculations</li>
 <p><li> Extend to more fermions. How do we deal with the antisymmetry of the multi-fermion wave function?
 
 <ol type="a"></li>
- <p><li> Here we also used standard Hartree-Fock theory to define an optimal Slater determinant. Takes care of the antisymmetry. What about constructing an anti-symmetrized network function?</li>
- <p><li> Compare with calculations done with Shadow wave functions.</li>
- <p><li> Use thereafter ML to determine the correlated part of the wafe function (including a standard Jastrow factor).</li>
  <p><li> Test this for multi-fermion systems and compare with other many-body methods.</li>
 </ol>
-<p><li> Can we use ML to find out which correlations are relevant and thereby diminish the dimensionality problem in say CC or SRG theories? Fully possible with for example Recurrent Neural Networks.</li>
+<p><li> Can we use ML to find out which correlations are relevant and thereby diminish the dimensionality problem in other popular many-body methods? Fully possible with for example Recurrent Neural Networks.</li>
 </ul>
 </div>
 </section>
 
 
 <section>
-<h2 id="___sec58">Appendix: Mathematical details </h2>
+<h2 id="___sec58">Addendum: Recurrent neural networks: Overarching view </h2>
+
+<p>
+There is much focus on feedforward neural networks, including
+convolutional neural networks as well.  The output or the activations
+flow only in one direction, from the input layer to the output layer.
+
+<p>
+A recurrent neural network (RNN) looks very much like a feed forward
+neural network, except that it also has connections pointing
+backward.
+
+<p>
+RNNs are used to analyze time series data such as stock prices, and
+tell you when to buy or sell. In autonomous driving systems, they can
+anticipate car trajectories and help avoid accidents. More generally,
+they can work on sequences of arbitrary lengths, rather than on
+fixed-sized inputs like all the nets we have discussed so far. For
+example, they can take sentences, documents, or audio samples as
+input, making them extremely useful for natural language processing
+systems such as automatic translation and speech-to-text.
+</section>
+
+
+<section>
+<h2 id="___sec59">Set up of an RNN </h2>
+
+<p>
+The figure here displays a simple example of an RNN, with inputs \( x_t \)
+at a given time \( t \) and outputs \( y_t \).  Introducing time as a variable
+offers an intutitive way of understanding these networks. In addition
+to the inputs \( x_t \), the layer at a time \( t \) receives also as input
+the output from the previous layer \( t-1 \), that is \( y_{t1} \).
+
+<p>
+This means also that we need to have weights that link both the inputs \( x_t \) to the outputs \( y_t \) as well as weights that link
+the output from the previous time \( y_{t-1} \) and \( y_t \).   The figure here shows an example of a simple RNN.
+
+<p>
+<br /><br /><center><p><img src="figures/rnn.png" align="bottom" width=700></p></center><br /><br />
+</section>
+
+
+<section>
+<h2 id="___sec60">A layer of recurrent neurons (left), unrolled through time (right) </h2>
+
+<p>
+You can easily create a layer of recurrent neurons. At each time step t, every neuron receives both the
+input vector \( x(t) \) and the output vector from the previous time step \( y(t&#8211;1) \), as shown in figure here.
+
+<p>
+<br /><br /><center><p><img src="figures/rnnlayer.png" align="bottom" width=700></p></center><br /><br />
+</section>
+
+
+<section>
+<h2 id="___sec61">Performing IMSRG calculations with RNNs </h2>
+
+<p>
+Calculational details:
+
+<ol>
+<p><li> We used a simple pairing model with four particles and four doubly degenerate levels, see LNP 936, chapter 8, 10 and 11.</li>
+<p><li> We run an IMSRG calculation (Magnus expansion with \( s_{\mathrm{max}}=10 \), step size $ds=0.001$$, White generator</li>
+<p><li> The training was done for \( s\in [0,0.5] \) and testing for \( s \in [0.5,10] \). Training data evenly spaced.</li>
+<p><li> Activation functions are <b>tanh</b> and <b>RELU</b> and we used RNN and LSTM (Long short-term memory networks). They both had the same number of units in each layer, so the networks were structured like this:</li>
+
+<ul>
+
+<p><li> input --> recurrent hidden layer (1000 units) --> recurrent hidden layer (100 units) --> dense hidden layer (10 units) --> output (1 unit)</li>
+</ul>
+<p><li> We used MSE as the loss function and Adam as the optimizer method. Finally, the networks both trained for 5000 epochs with a batch size of 28.</li> 
+</ol>
+</section>
+
+
+<section>
+<h2 id="___sec62">Defining the inputs </h2>
+
+<p>
+In the IMSRG we are transforming a matrix via repeated applications of unitary transformation to diagonal form, that is we have 
+at \( s=0 \) a dense matrix
+
+<p>&nbsp;<br>
+$$
+\mathbf{A}=    \begin{bmatrix} a_{11}(s=0) & a_{12}(s=0) & a_{13}(s=0)   & \dots    & \dots  &\dots     & a_{1n}(s=0) \\
+                                a_{21}(s=0) & a_{22}(s=0)& a_{23}(s=0) & \dots    & \dots  &\dots     &\dots \\
+                                a_{31}(s=0)   & a_{32}(s=0) & a_{33}(s=0) & a_{34}(s=0)  &\dots       &\dots & \dots \\
+                                \dots  & \dots & \dots & \dots  &\dots      &\dots & \dots\\
+                                a_{(n-1)1}(s=0)   & \dots & \dots & \dots  &\dots a_{(n-1)(n-2)}(s=0)      &a_{(n-1)(n-1)}(s=0) & a_{(n-1)n}(s=0)\\
+                                a_{n1}(s=0)   & \dots & \dots & \dots  &\dots       &a_{n(n-1)1}(s=0) & a_{nn}(s=0)\end{bmatrix},
+$$
+<p>&nbsp;<br>
+
+<p>
+and for the next \( s \) value we may have
+
+<p>&nbsp;<br>
+$$
+\mathbf{\tilde{A}}=    \begin{bmatrix} a_{11}(s=1) & a_{12}(s=1) & 0   & 0    & \dots  &0     & 0 \\
+                                a_{21}(s=1) & a_{22}(s=1)& a_{23}(s=1) & 0    & \dots  &0     &0 \\
+                                0   & a_{32}(s=1) & a_{33}(s=1) & a_{34}(s=1)  &0       &\dots & 0\\
+                                \dots  & \dots & \dots & \dots  &\dots      &\dots & \dots\\
+                                0   & \dots & \dots & \dots  &\dots a_{(n-1)(n-2)}(s=1)      &a_{(n-1)(n-1)}(s=1) & a_{(n-1)n}(s=1)\\
+                                0   & \dots & \dots & \dots  &\dots       &a_{n(n-1)1}(s=1) & a_{nn}(s=1)\end{bmatrix},
+$$
+<p>&nbsp;<br>
+
+<p>
+and finally we have
+
+<p>&nbsp;<br>
+$$
+\mathbf{D}=    \begin{bmatrix} a_{11}(s=\infty) & 0 & 0   & 0    & \dots  &0     & 0 \\
+                                0 & a_{22}(s=\infty)& 0 & 0    & \dots  &0     &0 \\
+                                0   & 0 & a_{33}(s=\infty) & 0  &0       &\dots & 0\\
+                                \dots  & \dots & \dots & \dots  &\dots      &\dots & \dots\\
+                                0   & \dots & \dots & \dots  &\dots       &a_{(n-1)(n-1)}(s=\infty) & \\
+                                0   & \dots & \dots & \dots  &\dots       &0 & a_{nn}(s=\infty)\end{bmatrix}.
+$$
+<p>&nbsp;<br>
+</section>
+
+
+<section>
+<h2 id="___sec63">Using the upper left diagonal matrix element to predict </h2>
+
+<p>
+We then use the upper left diagonal matrix element as our input to the training, that is we run training and testing as
+
+<ol>
+<p><li> \( a_{11}(s=s_0=0) \), \( a_{11}(s_1) \) and \( a_{11}(s_2) \) to predict \( a_{11}(s_3) \)</li>
+
+<p><li> Then we use \( a_{11}(s_1) \), \( a_{11}(s_2) \) and \( a_{11}(s_3) \) to predict \( a_{11}(s_4) \)</li>
+
+<p><li> continue till we reach \( s=10 \).</li> 
+</ol>
+</section>
+
+
+<section>
+<h2 id="___sec64">Using a \( tanh \) activation function  </h2>
+
+<p>
+<br /><br /><center><p><img src="figures/predictions_tanh.png" align="bottom" width=700></p></center><br /><br />
+</section>
+
+
+<section>
+<h2 id="___sec65">Using a RELU activation function  </h2>
+
+<p>
+<br /><br /><center><p><img src="figures/predictions_relu.png" align="bottom" width=700></p></center><br /><br />
+</section>
+
+
+<section>
+<h2 id="___sec66">Appendix: Mathematical details </h2>
 
 <p>
 The original RBM had binary visible and hidden nodes. They were
@@ -1970,7 +2101,7 @@ $$
 $$
 <p>&nbsp;<br>
 
-<h3 id="___sec59">Marginal Probability Density Functions </h3>
+<h3 id="___sec67">Marginal Probability Density Functions </h3>
 
 <p>
 In order to find the probability of any configuration of the visible units we derive the marginal probability density function.
@@ -2005,7 +2136,7 @@ $$
 $$
 <p>&nbsp;<br>
 
-<h3 id="___sec60">Conditional Probability Density Functions </h3>
+<h3 id="___sec68">Conditional Probability Density Functions </h3>
 
 <p>
 We derive the probability of the hidden units given the visible units using Bayes' rule
@@ -2083,7 +2214,7 @@ $$
 
 
 <section>
-<h2 id="___sec61">Python version for the two non-interacting particles </h2>
+<h2 id="___sec69">Python version for the two non-interacting particles </h2>
 
 <p>
 

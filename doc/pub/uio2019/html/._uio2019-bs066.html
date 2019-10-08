@@ -211,7 +211,7 @@ MathJax.Hub.Config({
         <ul class="dropdown-menu">
      <!-- navigation toc: --> <li><a href="._uio2019-bs001.html#___sec0" style="font-size: 80%;"><b>What is this talk about?</b></a></li>
      <!-- navigation toc: --> <li><a href="._uio2019-bs002.html#___sec1" style="font-size: 80%;"><b>More material</b></a></li>
-     <!-- navigation toc: --> <li><a href="#___sec2" style="font-size: 80%;"><b>Why? Basic motivation</b></a></li>
+     <!-- navigation toc: --> <li><a href="._uio2019-bs003.html#___sec2" style="font-size: 80%;"><b>Why? Basic motivation</b></a></li>
      <!-- navigation toc: --> <li><a href="._uio2019-bs004.html#___sec3" style="font-size: 80%;"><b>Overview</b></a></li>
      <!-- navigation toc: --> <li><a href="._uio2019-bs005.html#___sec4" style="font-size: 80%;"><b>What is Machine Learning?</b></a></li>
      <!-- navigation toc: --> <li><a href="._uio2019-bs006.html#___sec5" style="font-size: 80%;"><b>What are the Machine Learning calculations here based on?</b></a></li>
@@ -275,9 +275,9 @@ MathJax.Hub.Config({
      <!-- navigation toc: --> <li><a href="._uio2019-bs063.html#___sec63" style="font-size: 80%;"><b>Using the upper left diagonal matrix element to predict</b></a></li>
      <!-- navigation toc: --> <li><a href="._uio2019-bs064.html#___sec64" style="font-size: 80%;"><b>Using a \( tanh \) activation function</b></a></li>
      <!-- navigation toc: --> <li><a href="._uio2019-bs065.html#___sec65" style="font-size: 80%;"><b>Using a RELU activation function</b></a></li>
-     <!-- navigation toc: --> <li><a href="._uio2019-bs066.html#___sec66" style="font-size: 80%;"><b>Appendix: Mathematical details</b></a></li>
-     <!-- navigation toc: --> <li><a href="._uio2019-bs066.html#___sec67" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Marginal Probability Density Functions</a></li>
-     <!-- navigation toc: --> <li><a href="._uio2019-bs066.html#___sec68" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Conditional Probability Density Functions</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec66" style="font-size: 80%;"><b>Appendix: Mathematical details</b></a></li>
+     <!-- navigation toc: --> <li><a href="#___sec67" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Marginal Probability Density Functions</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec68" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Conditional Probability Density Functions</a></li>
      <!-- navigation toc: --> <li><a href="._uio2019-bs067.html#___sec69" style="font-size: 80%;"><b>Python version for the two non-interacting particles</b></a></li>
 
         </ul>
@@ -291,51 +291,164 @@ MathJax.Hub.Config({
 
 <p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p> <!-- add vertical space -->
 
-<a name="part0003"></a>
+<a name="part0066"></a>
 <!-- !split -->
 
-<h2 id="___sec2" class="anchor">Why? Basic motivation </h2>
+<h2 id="___sec66" class="anchor">Appendix: Mathematical details </h2>
 
 <p>
-<div class="panel panel-default">
-<div class="panel-body">
-<p> <!-- subsequent paragraphs come in larger fonts, so start with a paragraph -->
-How can we avoid the dimensionality curse in physics studies? Many possibilities
+The original RBM had binary visible and hidden nodes. They were
+showne to be universal approximators of discrete distributions.
+It was also shown that adding hidden units yields
+strictly improved modelling power. The common choice of binary values
+are 0 and 1. However, in some physics applications, -1 and 1 might be
+a more natural choice. We will here use 0 and 1.
 
-<ol>
-<li> smarter basis functions</li>
-<li> resummation of specific correlations</li>
-<li> stochastic sampling</li>
-<li> many more</li>
-</ol>
+<p>
+Here we look at some of the relevant equations for a binary-binary RBM.
 
-Machine Learning and Quantum Computing hold also great promise in tackling the 
-ever increasing dimensionalities. Here we will focus on Machine Learning.
-</div>
-</div>
+$$
+\begin{align}
+	E_{BB}(\boldsymbol{x}, \mathbf{h}) = - \sum_i^M x_i a_i- \sum_j^N b_j h_j - \sum_{i,j}^{M,N} x_i w_{ij} h_j.
+\tag{17}
+\end{align}
+$$
 
+
+$$
+\begin{align}
+	p_{BB}(\boldsymbol{x}, \boldsymbol{h}) =& \frac{1}{Z_{BB}} e^{\sum_i^M a_i x_i + \sum_j^N b_j h_j + \sum_{ij}^{M,N} x_i w_{ij} h_j} 
+\tag{18}\\
+	=& \frac{1}{Z_{BB}} e^{\boldsymbol{x}^T \boldsymbol{a} + \boldsymbol{b}^T \boldsymbol{h} + \boldsymbol{x}^T \boldsymbol{W} \boldsymbol{h}}
+\tag{19}
+\end{align}
+$$
+
+<p>
+with the partition function
+
+$$
+\begin{align}
+	Z_{BB} = \sum_{\boldsymbol{x}, \boldsymbol{h}} e^{\boldsymbol{x}^T \boldsymbol{a} + \boldsymbol{b}^T \boldsymbol{h} + \boldsymbol{x}^T \boldsymbol{W} \boldsymbol{h}} .
+\tag{20}
+\end{align}
+$$
+
+<h3 id="___sec67" class="anchor">Marginal Probability Density Functions </h3>
+
+<p>
+In order to find the probability of any configuration of the visible units we derive the marginal probability density function.
+
+$$
+\begin{align}
+	p_{BB} (\boldsymbol{x}) =& \sum_{\boldsymbol{h}} p_{BB} (\boldsymbol{x}, \boldsymbol{h}) 
+\tag{21}\\
+	=& \frac{1}{Z_{BB}} \sum_{\boldsymbol{h}} e^{\boldsymbol{x}^T \boldsymbol{a} + \boldsymbol{b}^T \boldsymbol{h} + \boldsymbol{x}^T \boldsymbol{W} \boldsymbol{h}} \nonumber \\
+	=& \frac{1}{Z_{BB}} e^{\boldsymbol{x}^T \boldsymbol{a}} \sum_{\boldsymbol{h}} e^{\sum_j^N (b_j + \boldsymbol{x}^T \boldsymbol{w}_{\ast j})h_j} \nonumber \\
+	=& \frac{1}{Z_{BB}} e^{\boldsymbol{x}^T \boldsymbol{a}} \sum_{\boldsymbol{h}} \prod_j^N e^{ (b_j + \boldsymbol{x}^T \boldsymbol{w}_{\ast j})h_j} \nonumber \\
+	=& \frac{1}{Z_{BB}} e^{\boldsymbol{x}^T \boldsymbol{a}} \bigg ( \sum_{h_1} e^{(b_1 + \boldsymbol{x}^T \boldsymbol{w}_{\ast 1})h_1}
+	\times \sum_{h_2} e^{(b_2 + \boldsymbol{x}^T \boldsymbol{w}_{\ast 2})h_2} \times \nonumber \\
+	& ... \times \sum_{h_2} e^{(b_N + \boldsymbol{x}^T \boldsymbol{w}_{\ast N})h_N} \bigg ) \nonumber \\
+	=& \frac{1}{Z_{BB}} e^{\boldsymbol{x}^T \boldsymbol{a}} \prod_j^N \sum_{h_j} e^{(b_j + \boldsymbol{x}^T \boldsymbol{w}_{\ast j}) h_j} \nonumber \\
+	=& \frac{1}{Z_{BB}} e^{\boldsymbol{x}^T \boldsymbol{a}} \prod_j^N (1 + e^{b_j + \boldsymbol{x}^T \boldsymbol{w}_{\ast j}}) .
+\tag{22}
+\end{align}
+$$
+
+<p>
+A similar derivation yields the marginal probability of the hidden units
+
+$$
+\begin{align}
+	p_{BB} (\boldsymbol{h}) = \frac{1}{Z_{BB}} e^{\boldsymbol{b}^T \boldsymbol{h}} \prod_i^M (1 + e^{a_i + \boldsymbol{w}_{i\ast}^T \boldsymbol{h}}) .
+\tag{23}
+\end{align}
+$$
+
+<h3 id="___sec68" class="anchor">Conditional Probability Density Functions </h3>
+
+<p>
+We derive the probability of the hidden units given the visible units using Bayes' rule
+
+$$
+\begin{align}
+	p_{BB} (\boldsymbol{h}|\boldsymbol{x}) =& \frac{p_{BB} (\boldsymbol{x}, \boldsymbol{h})}{p_{BB} (\boldsymbol{x})} \nonumber \\
+	=& \frac{ \frac{1}{Z_{BB}}  e^{\boldsymbol{x}^T \boldsymbol{a} + \boldsymbol{b}^T \boldsymbol{h} + \boldsymbol{x}^T \boldsymbol{W} \boldsymbol{h}} }
+	        {\frac{1}{Z_{BB}} e^{\boldsymbol{x}^T \boldsymbol{a}} \prod_j^N (1 + e^{b_j + \boldsymbol{x}^T \boldsymbol{w}_{\ast j}})} \nonumber \\
+	=& \frac{  e^{\boldsymbol{x}^T \boldsymbol{a}} e^{ \sum_j^N (b_j + \boldsymbol{x}^T \boldsymbol{w}_{\ast j} ) h_j} }
+	        { e^{\boldsymbol{x}^T \boldsymbol{a}} \prod_j^N (1 + e^{b_j + \boldsymbol{x}^T \boldsymbol{w}_{\ast j}})} \nonumber \\
+	=& \prod_j^N \frac{ e^{(b_j + \boldsymbol{x}^T \boldsymbol{w}_{\ast j} ) h_j}  }
+	{1 + e^{b_j + \boldsymbol{x}^T \boldsymbol{w}_{\ast j}}} \nonumber \\
+	=& \prod_j^N p_{BB} (h_j| \boldsymbol{x}) .
+\tag{24}
+\end{align}
+$$
+
+<p>
+From this we find the probability of a hidden unit being "on" or "off":
+
+$$
+\begin{align}
+	p_{BB} (h_j=1 | \boldsymbol{x}) =&   \frac{ e^{(b_j + \boldsymbol{x}^T \boldsymbol{w}_{\ast j} ) h_j}  }
+	{1 + e^{b_j + \boldsymbol{x}^T \boldsymbol{w}_{\ast j}}} 
+\tag{25}\\
+	=&  \frac{ e^{(b_j + \boldsymbol{x}^T \boldsymbol{w}_{\ast j} )}  }
+	{1 + e^{b_j + \boldsymbol{x}^T \boldsymbol{w}_{\ast j}}} 
+\tag{26}\\
+	=&  \frac{ 1 }{1 + e^{-(b_j + \boldsymbol{x}^T \boldsymbol{w}_{\ast j})} } ,
+\tag{27}
+\end{align}
+$$
+
+and
+
+$$
+\begin{align}
+	p_{BB} (h_j=0 | \boldsymbol{x}) =\frac{ 1 }{1 + e^{b_j + \boldsymbol{x}^T \boldsymbol{w}_{\ast j}} } .
+\tag{28}
+\end{align}
+$$
+
+<p>
+Similarly we have that the conditional probability of the visible units given the hidden ones are
+
+$$
+\begin{align}
+	p_{BB} (\boldsymbol{x}|\boldsymbol{h}) =& \prod_i^M \frac{ e^{ (a_i + \boldsymbol{w}_{i\ast}^T \boldsymbol{h}) x_i} }{ 1 + e^{a_i + \boldsymbol{w}_{i\ast}^T \boldsymbol{h}} } 
+\tag{29}\\
+	&= \prod_i^M p_{BB} (x_i | \boldsymbol{h}) .
+\tag{30}
+\end{align}
+$$
+
+
+$$
+\begin{align}
+	p_{BB} (x_i=1 | \boldsymbol{h}) =& \frac{1}{1 + e^{-(a_i + \boldsymbol{w}_{i\ast}^T \boldsymbol{h} )}} 
+\tag{31}\\
+	p_{BB} (x_i=0 | \boldsymbol{h}) =& \frac{1}{1 + e^{a_i + \boldsymbol{w}_{i\ast}^T \boldsymbol{h} }} .
+\tag{32}
+\end{align}
+$$
 
 <p>
 <p>
 <!-- navigation buttons at the bottom of the page -->
 <ul class="pagination">
-<li><a href="._uio2019-bs002.html">&laquo;</a></li>
+<li><a href="._uio2019-bs065.html">&laquo;</a></li>
   <li><a href="._uio2019-bs000.html">1</a></li>
-  <li><a href="._uio2019-bs001.html">2</a></li>
-  <li><a href="._uio2019-bs002.html">3</a></li>
-  <li class="active"><a href="._uio2019-bs003.html">4</a></li>
-  <li><a href="._uio2019-bs004.html">5</a></li>
-  <li><a href="._uio2019-bs005.html">6</a></li>
-  <li><a href="._uio2019-bs006.html">7</a></li>
-  <li><a href="._uio2019-bs007.html">8</a></li>
-  <li><a href="._uio2019-bs008.html">9</a></li>
-  <li><a href="._uio2019-bs009.html">10</a></li>
-  <li><a href="._uio2019-bs010.html">11</a></li>
-  <li><a href="._uio2019-bs011.html">12</a></li>
-  <li><a href="._uio2019-bs012.html">13</a></li>
   <li><a href="">...</a></li>
+  <li><a href="._uio2019-bs058.html">59</a></li>
+  <li><a href="._uio2019-bs059.html">60</a></li>
+  <li><a href="._uio2019-bs060.html">61</a></li>
+  <li><a href="._uio2019-bs061.html">62</a></li>
+  <li><a href="._uio2019-bs062.html">63</a></li>
+  <li><a href="._uio2019-bs063.html">64</a></li>
+  <li><a href="._uio2019-bs064.html">65</a></li>
+  <li><a href="._uio2019-bs065.html">66</a></li>
+  <li class="active"><a href="._uio2019-bs066.html">67</a></li>
   <li><a href="._uio2019-bs067.html">68</a></li>
-  <li><a href="._uio2019-bs004.html">&raquo;</a></li>
+  <li><a href="._uio2019-bs067.html">&raquo;</a></li>
 </ul>
 <!-- ------------------- end of main content --------------- -->
 
