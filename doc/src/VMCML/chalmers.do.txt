@@ -1,6 +1,7 @@
 TITLE: Solving Quantum Mechanical Many-body Problems with Machine Learning Algorithms
 AUTHOR: Morten Hjorth-Jensen {copyright, 1999-present|CC BY-NC} at Department of Physics and Astronomy and National Superconducting Cyclotron Laboratory, Michigan State University, USA & Department of Physics and Center for Computing in Science Education, University of Oslo, Norway
-DATE: Chalmers Tekniska H\"{o}gskola, G\"{o}teborg, Sverige, October  28, 2019. Codes and slides at URL:"https://github.com/mhjensenseminars/MachineLearningTalk"
+DATE: Chalmers Tekniska Høgskola, Gøteborg, Sverige, October  28, 2019. Codes and slides at URL:"https://github.com/mhjensenseminars/MachineLearningTalk"
+
 
 
 !split
@@ -124,32 +125,16 @@ various algorithms and methods.
 _Job market, a personal statement_: "A familiarity with ML is almost becoming a prerequisite for many of the most exciting employment opportunities":"https://www.analyticsindiamag.com/top-countries-hiring-most-number-of-artificial-intelligence-machine-learning-experts/". And add quantum computing and there you are!
 
 
-!split
-===== Knowledge of Statistical analysis and optimization of data =====
-Some key elements that enter much of the discussion on ML:
-o Basic concepts, expectation values, variance, covariance, correlation functions and errors;
-o Simpler models, binomial distribution, the Poisson distribution, simple and multivariate normal distributions;
-o Central elements of Bayesian statistics and modeling;
-o Central elements from linear algebra
-o Gradient methods for data optimization
-o Monte Carlo methods, Markov chains, Metropolis-Hastings algorithm;
-o Estimation of errors using cross-validation, blocking, bootstrapping and jackknife methods;
-o Practical optimization using Singular-value decomposition and least squares for parameterizing data.
-o Principal Component Analysis.
-
-
-
-
 !split 
 ===== Some members of the ML family =====
 
 !bblock
 o Linear regression and its variants, Logistic regression
 o Decision tree algorithms, from simpler to more complex ones like random forests
-o Bayesian statistics 
+o Bayesian statistics
 o Support vector machines and finally various variants of
 o Artifical neural networks (NN) and deep learning
-o Convolutional NN, autoenconders, Recurrent NN, Boltzmann machines
+o Convolutional NN, autoenconders, Recurrent NN, Boltzmann machines, Bayesian Neural Networks
 o and many more
 !eblock
 
@@ -1400,28 +1385,30 @@ FIGURE: [figures/onebody2.png, width=700 frac=0.9]
 !eblock
 
 !split
-===== Wave function analysis, onebody densities $N=6$, $\hbar\omega=1.0$ =====
+===== Onebody densities $N=6$, $\hbar\omega=1.0$ =====
+
 !bblock
 FIGURE: [figures/OB6hw1.png, width=700 frac=0.9]
 !eblock
 
 
 !split
-===== Wave function analysis, onebody densities $N=6$, $\hbar\omega=0.1$ =====
+===== Onebody densities $N=6$, $\hbar\omega=0.1$ =====
+
 !bblock
 FIGURE: [figures/OB6hw01.png, width=700 frac=0.9]
 !eblock
 
 
 !split
-===== Wave function analysis, onebody densities $N=30$, $\hbar\omega=1.0$ =====
+===== Onebody densities $N=30$, $\hbar\omega=1.0$ =====
 !bblock
 FIGURE: [figures/OB30hw1.png, width=700 frac=0.9]
 !eblock
 
 
 !split
-===== Wave function analysis, onebody densities $N=30$, $\hbar\omega=0.1$ =====
+===== Onebody densities $N=30$, $\hbar\omega=0.1$ =====
 !bblock
 FIGURE: [figures/OB30hw01.png, width=700 frac=0.9]
 !eblock
