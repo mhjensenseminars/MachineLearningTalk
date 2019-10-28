@@ -1400,16 +1400,33 @@ FIGURE: [figures/onebody2.png, width=700 frac=0.9]
 !eblock
 
 !split
-===== Wave function analysis, onebody densities $N=6$ =====
+===== Wave function analysis, onebody densities $N=6$, $\hbar\omega=1.0$ =====
 !bblock
-FIGURE: [figures/onebody6.png, width=700 frac=0.9]
+FIGURE: [figures/OB6hw1.png, width=700 frac=0.9]
 !eblock
 
+
 !split
-===== Wave function analysis, onebody densities $N=12$ =====
+===== Wave function analysis, onebody densities $N=6$, $\hbar\omega=0.1$ =====
 !bblock
-FIGURE: [figures/onebody12.png, width=700 frac=0.9]
+FIGURE: [figures/OB6hw01.png, width=700 frac=0.9]
 !eblock
+
+
+!split
+===== Wave function analysis, onebody densities $N=30$, $\hbar\omega=1.0$ =====
+!bblock
+FIGURE: [figures/OB30hw1.png, width=700 frac=0.9]
+!eblock
+
+
+!split
+===== Wave function analysis, onebody densities $N=30$, $\hbar\omega=0.1$ =====
+!bblock
+FIGURE: [figures/OB30hw01.png, width=700 frac=0.9]
+!eblock
+
+
 
 
 

@@ -158,25 +158,37 @@ div { text-align: justify; text-justify: inter-word; }
                2,
                None,
                '___sec54'),
-              ('Wave function analysis, onebody densities $N=6$',
+              ('Wave function analysis, onebody densities $N=6$, '
+               '$\\hbar\\omega=1.0$',
                2,
                None,
                '___sec55'),
-              ('Wave function analysis, onebody densities $N=12$',
+              ('Wave function analysis, onebody densities $N=6$, '
+               '$\\hbar\\omega=0.1$',
                2,
                None,
                '___sec56'),
-              ('Conclusions and where do we stand', 2, None, '___sec57'),
-              ('Appendix: Mathematical details', 2, None, '___sec58'),
-              ('Marginal Probability Density Functions', 3, None, '___sec59'),
+              ('Wave function analysis, onebody densities $N=30$, '
+               '$\\hbar\\omega=1.0$',
+               2,
+               None,
+               '___sec57'),
+              ('Wave function analysis, onebody densities $N=30$, '
+               '$\\hbar\\omega=0.1$',
+               2,
+               None,
+               '___sec58'),
+              ('Conclusions and where do we stand', 2, None, '___sec59'),
+              ('Appendix: Mathematical details', 2, None, '___sec60'),
+              ('Marginal Probability Density Functions', 3, None, '___sec61'),
               ('Conditional Probability Density Functions',
                3,
                None,
-               '___sec60'),
+               '___sec62'),
               ('Python version for the two non-interacting particles',
                2,
                None,
-               '___sec61')]}
+               '___sec63')]}
 end of tocinfo -->
 
 <body>
@@ -1909,29 +1921,51 @@ The trial wave function are based on the product of a Slater determinant with ei
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec55">Wave function analysis, onebody densities \( N=6 \) </h2>
+<h2 id="___sec55">Wave function analysis, onebody densities \( N=6 \), \( \hbar\omega=1.0 \) </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
-<br /><br /><center><p><img src="figures/onebody6.png" align="bottom" width=700></p></center><br /><br />
+<br /><br /><center><p><img src="figures/OB6hw1.png" align="bottom" width=700></p></center><br /><br />
 </div>
 
 
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec56">Wave function analysis, onebody densities \( N=12 \) </h2>
+<h2 id="___sec56">Wave function analysis, onebody densities \( N=6 \), \( \hbar\omega=0.1 \) </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
-<br /><br /><center><p><img src="figures/onebody12.png" align="bottom" width=700></p></center><br /><br />
+<br /><br /><center><p><img src="figures/OB6hw01.png" align="bottom" width=700></p></center><br /><br />
 </div>
 
 
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec57">Conclusions and where do we stand </h2>
+<h2 id="___sec57">Wave function analysis, onebody densities \( N=30 \), \( \hbar\omega=1.0 \) </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<br /><br /><center><p><img src="figures/OB30hw1.png" align="bottom" width=700></p></center><br /><br />
+</div>
+
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec58">Wave function analysis, onebody densities \( N=30 \), \( \hbar\omega=0.1 \) </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<br /><br /><center><p><img src="figures/OB30hw01.png" align="bottom" width=700></p></center><br /><br />
+</div>
+
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec59">Conclusions and where do we stand </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -1958,7 +1992,7 @@ The trial wave function are based on the product of a Slater determinant with ei
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec58">Appendix: Mathematical details </h2>
+<h2 id="___sec60">Appendix: Mathematical details </h2>
 
 <p>
 The original RBM had binary visible and hidden nodes. They were
@@ -1998,7 +2032,7 @@ $$
 \end{align}
 $$
 
-<h3 id="___sec59">Marginal Probability Density Functions </h3>
+<h3 id="___sec61">Marginal Probability Density Functions </h3>
 
 <p>
 In order to find the probability of any configuration of the visible units we derive the marginal probability density function.
@@ -2029,7 +2063,7 @@ $$
 \end{align}
 $$
 
-<h3 id="___sec60">Conditional Probability Density Functions </h3>
+<h3 id="___sec62">Conditional Probability Density Functions </h3>
 
 <p>
 We derive the probability of the hidden units given the visible units using Bayes' rule
@@ -2098,7 +2132,7 @@ $$
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec61">Python version for the two non-interacting particles </h2>
+<h2 id="___sec63">Python version for the two non-interacting particles </h2>
 
 <p>
 

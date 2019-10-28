@@ -133,25 +133,37 @@ Automatically generated HTML file from DocOnce source
                2,
                None,
                '___sec54'),
-              ('Wave function analysis, onebody densities $N=6$',
+              ('Wave function analysis, onebody densities $N=6$, '
+               '$\\hbar\\omega=1.0$',
                2,
                None,
                '___sec55'),
-              ('Wave function analysis, onebody densities $N=12$',
+              ('Wave function analysis, onebody densities $N=6$, '
+               '$\\hbar\\omega=0.1$',
                2,
                None,
                '___sec56'),
-              ('Conclusions and where do we stand', 2, None, '___sec57'),
-              ('Appendix: Mathematical details', 2, None, '___sec58'),
-              ('Marginal Probability Density Functions', 3, None, '___sec59'),
+              ('Wave function analysis, onebody densities $N=30$, '
+               '$\\hbar\\omega=1.0$',
+               2,
+               None,
+               '___sec57'),
+              ('Wave function analysis, onebody densities $N=30$, '
+               '$\\hbar\\omega=0.1$',
+               2,
+               None,
+               '___sec58'),
+              ('Conclusions and where do we stand', 2, None, '___sec59'),
+              ('Appendix: Mathematical details', 2, None, '___sec60'),
+              ('Marginal Probability Density Functions', 3, None, '___sec61'),
               ('Conditional Probability Density Functions',
                3,
                None,
-               '___sec60'),
+               '___sec62'),
               ('Python version for the two non-interacting particles',
                2,
                None,
-               '___sec61')]}
+               '___sec63')]}
 end of tocinfo -->
 
 <body>
@@ -244,13 +256,15 @@ MathJax.Hub.Config({
      <!-- navigation toc: --> <li><a href="._chalmers-bs052.html#___sec52" style="font-size: 80%;"><b>Energy as function of iterations, no Physics info \( N=2 \) electrons</b></a></li>
      <!-- navigation toc: --> <li><a href="._chalmers-bs053.html#___sec53" style="font-size: 80%;"><b>Energy as function of iterations, \( N=6 \) electrons</b></a></li>
      <!-- navigation toc: --> <li><a href="._chalmers-bs054.html#___sec54" style="font-size: 80%;"><b>Wave function analysis, onebody densities \( N=2 \)</b></a></li>
-     <!-- navigation toc: --> <li><a href="._chalmers-bs055.html#___sec55" style="font-size: 80%;"><b>Wave function analysis, onebody densities \( N=6 \)</b></a></li>
-     <!-- navigation toc: --> <li><a href="._chalmers-bs056.html#___sec56" style="font-size: 80%;"><b>Wave function analysis, onebody densities \( N=12 \)</b></a></li>
-     <!-- navigation toc: --> <li><a href="#___sec57" style="font-size: 80%;"><b>Conclusions and where do we stand</b></a></li>
-     <!-- navigation toc: --> <li><a href="._chalmers-bs058.html#___sec58" style="font-size: 80%;"><b>Appendix: Mathematical details</b></a></li>
-     <!-- navigation toc: --> <li><a href="._chalmers-bs058.html#___sec59" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Marginal Probability Density Functions</a></li>
-     <!-- navigation toc: --> <li><a href="._chalmers-bs058.html#___sec60" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Conditional Probability Density Functions</a></li>
-     <!-- navigation toc: --> <li><a href="._chalmers-bs059.html#___sec61" style="font-size: 80%;"><b>Python version for the two non-interacting particles</b></a></li>
+     <!-- navigation toc: --> <li><a href="._chalmers-bs055.html#___sec55" style="font-size: 80%;"><b>Wave function analysis, onebody densities \( N=6 \), \( \hbar\omega=1.0 \)</b></a></li>
+     <!-- navigation toc: --> <li><a href="._chalmers-bs056.html#___sec56" style="font-size: 80%;"><b>Wave function analysis, onebody densities \( N=6 \), \( \hbar\omega=0.1 \)</b></a></li>
+     <!-- navigation toc: --> <li><a href="#___sec57" style="font-size: 80%;"><b>Wave function analysis, onebody densities \( N=30 \), \( \hbar\omega=1.0 \)</b></a></li>
+     <!-- navigation toc: --> <li><a href="._chalmers-bs058.html#___sec58" style="font-size: 80%;"><b>Wave function analysis, onebody densities \( N=30 \), \( \hbar\omega=0.1 \)</b></a></li>
+     <!-- navigation toc: --> <li><a href="._chalmers-bs059.html#___sec59" style="font-size: 80%;"><b>Conclusions and where do we stand</b></a></li>
+     <!-- navigation toc: --> <li><a href="._chalmers-bs060.html#___sec60" style="font-size: 80%;"><b>Appendix: Mathematical details</b></a></li>
+     <!-- navigation toc: --> <li><a href="._chalmers-bs060.html#___sec61" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Marginal Probability Density Functions</a></li>
+     <!-- navigation toc: --> <li><a href="._chalmers-bs060.html#___sec62" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Conditional Probability Density Functions</a></li>
+     <!-- navigation toc: --> <li><a href="._chalmers-bs061.html#___sec63" style="font-size: 80%;"><b>Python version for the two non-interacting particles</b></a></li>
 
         </ul>
       </li>
@@ -266,27 +280,11 @@ MathJax.Hub.Config({
 <a name="part0057"></a>
 <!-- !split -->
 
-<h2 id="___sec57" class="anchor">Conclusions and where do we stand </h2>
+<h2 id="___sec57" class="anchor">Wave function analysis, onebody densities \( N=30 \), \( \hbar\omega=1.0 \) </h2>
 <div class="panel panel-default">
 <div class="panel-body">
 <p> <!-- subsequent paragraphs come in larger fonts, so start with a paragraph -->
-
-<ul>
-<li> Extension of the work of <a href="http://science.sciencemag.org/content/355/6325/602" target="_self">G. Carleo and M. Troyer, Science <b>355</b>, Issue 6325, pp. 602-606 (2017)</a> gives excellent results for two-electron systems as well as good agreement with standard VMC calculations for \( N=6 \) and \( N=12 \) electrons.</li>
-<li> Minimization problem can be tricky.</li>
-<li> Anti-symmetry dealt with multiplying the trail wave function with either a simple or an optimized Slater determinant.</li>
-<li> To come: Analysis of wave function from ML and compare with diffusion and Variational Monte Carlo calculations as well as comparison with Shadow wave functions approach.</li>
-<li> Extend to more fermions. How do we deal with the antisymmetry of the multi-fermion wave function?
-
-<ol type="a"></li>
- <li> Here we also used standard Hartree-Fock theory to define an optimal Slater determinant. Takes care of the antisymmetry. What about constructing an anti-symmetrized network function?</li>
- <li> Compare with calculations done with Shadow wave functions.</li>
- <li> Use thereafter ML to determine the correlated part of the wafe function (including a standard Jastrow factor).</li>
- <li> Test this for multi-fermion systems and compare with other many-body methods.</li>
-</ol>
-
-<li> Can we use ML to find out which correlations are relevant and thereby diminish the dimensionality problem in say CC or SRG theories? Fully possible with for example Recurrent Neural Networks.</li>
-</ul>
+<br /><br /><center><p><img src="figures/OB30hw1.png" align="bottom" width=700></p></center><br /><br />
 </div>
 </div>
 
@@ -309,6 +307,8 @@ MathJax.Hub.Config({
   <li class="active"><a href="._chalmers-bs057.html">58</a></li>
   <li><a href="._chalmers-bs058.html">59</a></li>
   <li><a href="._chalmers-bs059.html">60</a></li>
+  <li><a href="._chalmers-bs060.html">61</a></li>
+  <li><a href="._chalmers-bs061.html">62</a></li>
   <li><a href="._chalmers-bs058.html">&raquo;</a></li>
 </ul>
 <!-- ------------------- end of main content --------------- -->

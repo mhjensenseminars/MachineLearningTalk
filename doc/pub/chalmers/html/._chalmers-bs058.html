@@ -133,25 +133,37 @@ Automatically generated HTML file from DocOnce source
                2,
                None,
                '___sec54'),
-              ('Wave function analysis, onebody densities $N=6$',
+              ('Wave function analysis, onebody densities $N=6$, '
+               '$\\hbar\\omega=1.0$',
                2,
                None,
                '___sec55'),
-              ('Wave function analysis, onebody densities $N=12$',
+              ('Wave function analysis, onebody densities $N=6$, '
+               '$\\hbar\\omega=0.1$',
                2,
                None,
                '___sec56'),
-              ('Conclusions and where do we stand', 2, None, '___sec57'),
-              ('Appendix: Mathematical details', 2, None, '___sec58'),
-              ('Marginal Probability Density Functions', 3, None, '___sec59'),
+              ('Wave function analysis, onebody densities $N=30$, '
+               '$\\hbar\\omega=1.0$',
+               2,
+               None,
+               '___sec57'),
+              ('Wave function analysis, onebody densities $N=30$, '
+               '$\\hbar\\omega=0.1$',
+               2,
+               None,
+               '___sec58'),
+              ('Conclusions and where do we stand', 2, None, '___sec59'),
+              ('Appendix: Mathematical details', 2, None, '___sec60'),
+              ('Marginal Probability Density Functions', 3, None, '___sec61'),
               ('Conditional Probability Density Functions',
                3,
                None,
-               '___sec60'),
+               '___sec62'),
               ('Python version for the two non-interacting particles',
                2,
                None,
-               '___sec61')]}
+               '___sec63')]}
 end of tocinfo -->
 
 <body>
@@ -244,13 +256,15 @@ MathJax.Hub.Config({
      <!-- navigation toc: --> <li><a href="._chalmers-bs052.html#___sec52" style="font-size: 80%;"><b>Energy as function of iterations, no Physics info \( N=2 \) electrons</b></a></li>
      <!-- navigation toc: --> <li><a href="._chalmers-bs053.html#___sec53" style="font-size: 80%;"><b>Energy as function of iterations, \( N=6 \) electrons</b></a></li>
      <!-- navigation toc: --> <li><a href="._chalmers-bs054.html#___sec54" style="font-size: 80%;"><b>Wave function analysis, onebody densities \( N=2 \)</b></a></li>
-     <!-- navigation toc: --> <li><a href="._chalmers-bs055.html#___sec55" style="font-size: 80%;"><b>Wave function analysis, onebody densities \( N=6 \)</b></a></li>
-     <!-- navigation toc: --> <li><a href="._chalmers-bs056.html#___sec56" style="font-size: 80%;"><b>Wave function analysis, onebody densities \( N=12 \)</b></a></li>
-     <!-- navigation toc: --> <li><a href="._chalmers-bs057.html#___sec57" style="font-size: 80%;"><b>Conclusions and where do we stand</b></a></li>
-     <!-- navigation toc: --> <li><a href="#___sec58" style="font-size: 80%;"><b>Appendix: Mathematical details</b></a></li>
-     <!-- navigation toc: --> <li><a href="#___sec59" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Marginal Probability Density Functions</a></li>
-     <!-- navigation toc: --> <li><a href="#___sec60" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Conditional Probability Density Functions</a></li>
-     <!-- navigation toc: --> <li><a href="._chalmers-bs059.html#___sec61" style="font-size: 80%;"><b>Python version for the two non-interacting particles</b></a></li>
+     <!-- navigation toc: --> <li><a href="._chalmers-bs055.html#___sec55" style="font-size: 80%;"><b>Wave function analysis, onebody densities \( N=6 \), \( \hbar\omega=1.0 \)</b></a></li>
+     <!-- navigation toc: --> <li><a href="._chalmers-bs056.html#___sec56" style="font-size: 80%;"><b>Wave function analysis, onebody densities \( N=6 \), \( \hbar\omega=0.1 \)</b></a></li>
+     <!-- navigation toc: --> <li><a href="._chalmers-bs057.html#___sec57" style="font-size: 80%;"><b>Wave function analysis, onebody densities \( N=30 \), \( \hbar\omega=1.0 \)</b></a></li>
+     <!-- navigation toc: --> <li><a href="#___sec58" style="font-size: 80%;"><b>Wave function analysis, onebody densities \( N=30 \), \( \hbar\omega=0.1 \)</b></a></li>
+     <!-- navigation toc: --> <li><a href="._chalmers-bs059.html#___sec59" style="font-size: 80%;"><b>Conclusions and where do we stand</b></a></li>
+     <!-- navigation toc: --> <li><a href="._chalmers-bs060.html#___sec60" style="font-size: 80%;"><b>Appendix: Mathematical details</b></a></li>
+     <!-- navigation toc: --> <li><a href="._chalmers-bs060.html#___sec61" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Marginal Probability Density Functions</a></li>
+     <!-- navigation toc: --> <li><a href="._chalmers-bs060.html#___sec62" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Conditional Probability Density Functions</a></li>
+     <!-- navigation toc: --> <li><a href="._chalmers-bs061.html#___sec63" style="font-size: 80%;"><b>Python version for the two non-interacting particles</b></a></li>
 
         </ul>
       </li>
@@ -266,142 +280,14 @@ MathJax.Hub.Config({
 <a name="part0058"></a>
 <!-- !split -->
 
-<h2 id="___sec58" class="anchor">Appendix: Mathematical details </h2>
+<h2 id="___sec58" class="anchor">Wave function analysis, onebody densities \( N=30 \), \( \hbar\omega=0.1 \) </h2>
+<div class="panel panel-default">
+<div class="panel-body">
+<p> <!-- subsequent paragraphs come in larger fonts, so start with a paragraph -->
+<br /><br /><center><p><img src="figures/OB30hw01.png" align="bottom" width=700></p></center><br /><br />
+</div>
+</div>
 
-<p>
-The original RBM had binary visible and hidden nodes. They were
-showne to be universal approximators of discrete distributions.
-It was also shown that adding hidden units yields
-strictly improved modelling power. The common choice of binary values
-are 0 and 1. However, in some physics applications, -1 and 1 might be
-a more natural choice. We will here use 0 and 1.
-
-<p>
-Here we look at some of the relevant equations for a binary-binary RBM.
-
-$$
-\begin{align}
-	E_{BB}(\boldsymbol{x}, \mathbf{h}) = - \sum_i^M x_i a_i- \sum_j^N b_j h_j - \sum_{i,j}^{M,N} x_i w_{ij} h_j.
-\tag{17}
-\end{align}
-$$
-
-
-$$
-\begin{align}
-	p_{BB}(\boldsymbol{x}, \boldsymbol{h}) =& \frac{1}{Z_{BB}} e^{\sum_i^M a_i x_i + \sum_j^N b_j h_j + \sum_{ij}^{M,N} x_i w_{ij} h_j} 
-\tag{18}\\
-	=& \frac{1}{Z_{BB}} e^{\boldsymbol{x}^T \boldsymbol{a} + \boldsymbol{b}^T \boldsymbol{h} + \boldsymbol{x}^T \boldsymbol{W} \boldsymbol{h}}
-\tag{19}
-\end{align}
-$$
-
-<p>
-with the partition function
-
-$$
-\begin{align}
-	Z_{BB} = \sum_{\boldsymbol{x}, \boldsymbol{h}} e^{\boldsymbol{x}^T \boldsymbol{a} + \boldsymbol{b}^T \boldsymbol{h} + \boldsymbol{x}^T \boldsymbol{W} \boldsymbol{h}} .
-\tag{20}
-\end{align}
-$$
-
-<h3 id="___sec59" class="anchor">Marginal Probability Density Functions </h3>
-
-<p>
-In order to find the probability of any configuration of the visible units we derive the marginal probability density function.
-
-$$
-\begin{align}
-	p_{BB} (\boldsymbol{x}) =& \sum_{\boldsymbol{h}} p_{BB} (\boldsymbol{x}, \boldsymbol{h}) 
-\tag{21}\\
-	=& \frac{1}{Z_{BB}} \sum_{\boldsymbol{h}} e^{\boldsymbol{x}^T \boldsymbol{a} + \boldsymbol{b}^T \boldsymbol{h} + \boldsymbol{x}^T \boldsymbol{W} \boldsymbol{h}} \nonumber \\
-	=& \frac{1}{Z_{BB}} e^{\boldsymbol{x}^T \boldsymbol{a}} \sum_{\boldsymbol{h}} e^{\sum_j^N (b_j + \boldsymbol{x}^T \boldsymbol{w}_{\ast j})h_j} \nonumber \\
-	=& \frac{1}{Z_{BB}} e^{\boldsymbol{x}^T \boldsymbol{a}} \sum_{\boldsymbol{h}} \prod_j^N e^{ (b_j + \boldsymbol{x}^T \boldsymbol{w}_{\ast j})h_j} \nonumber \\
-	=& \frac{1}{Z_{BB}} e^{\boldsymbol{x}^T \boldsymbol{a}} \bigg ( \sum_{h_1} e^{(b_1 + \boldsymbol{x}^T \boldsymbol{w}_{\ast 1})h_1}
-	\times \sum_{h_2} e^{(b_2 + \boldsymbol{x}^T \boldsymbol{w}_{\ast 2})h_2} \times \nonumber \\
-	& ... \times \sum_{h_2} e^{(b_N + \boldsymbol{x}^T \boldsymbol{w}_{\ast N})h_N} \bigg ) \nonumber \\
-	=& \frac{1}{Z_{BB}} e^{\boldsymbol{x}^T \boldsymbol{a}} \prod_j^N \sum_{h_j} e^{(b_j + \boldsymbol{x}^T \boldsymbol{w}_{\ast j}) h_j} \nonumber \\
-	=& \frac{1}{Z_{BB}} e^{\boldsymbol{x}^T \boldsymbol{a}} \prod_j^N (1 + e^{b_j + \boldsymbol{x}^T \boldsymbol{w}_{\ast j}}) .
-\tag{22}
-\end{align}
-$$
-
-<p>
-A similar derivation yields the marginal probability of the hidden units
-
-$$
-\begin{align}
-	p_{BB} (\boldsymbol{h}) = \frac{1}{Z_{BB}} e^{\boldsymbol{b}^T \boldsymbol{h}} \prod_i^M (1 + e^{a_i + \boldsymbol{w}_{i\ast}^T \boldsymbol{h}}) .
-\tag{23}
-\end{align}
-$$
-
-<h3 id="___sec60" class="anchor">Conditional Probability Density Functions </h3>
-
-<p>
-We derive the probability of the hidden units given the visible units using Bayes' rule
-
-$$
-\begin{align}
-	p_{BB} (\boldsymbol{h}|\boldsymbol{x}) =& \frac{p_{BB} (\boldsymbol{x}, \boldsymbol{h})}{p_{BB} (\boldsymbol{x})} \nonumber \\
-	=& \frac{ \frac{1}{Z_{BB}}  e^{\boldsymbol{x}^T \boldsymbol{a} + \boldsymbol{b}^T \boldsymbol{h} + \boldsymbol{x}^T \boldsymbol{W} \boldsymbol{h}} }
-	        {\frac{1}{Z_{BB}} e^{\boldsymbol{x}^T \boldsymbol{a}} \prod_j^N (1 + e^{b_j + \boldsymbol{x}^T \boldsymbol{w}_{\ast j}})} \nonumber \\
-	=& \frac{  e^{\boldsymbol{x}^T \boldsymbol{a}} e^{ \sum_j^N (b_j + \boldsymbol{x}^T \boldsymbol{w}_{\ast j} ) h_j} }
-	        { e^{\boldsymbol{x}^T \boldsymbol{a}} \prod_j^N (1 + e^{b_j + \boldsymbol{x}^T \boldsymbol{w}_{\ast j}})} \nonumber \\
-	=& \prod_j^N \frac{ e^{(b_j + \boldsymbol{x}^T \boldsymbol{w}_{\ast j} ) h_j}  }
-	{1 + e^{b_j + \boldsymbol{x}^T \boldsymbol{w}_{\ast j}}} \nonumber \\
-	=& \prod_j^N p_{BB} (h_j| \boldsymbol{x}) .
-\tag{24}
-\end{align}
-$$
-
-<p>
-From this we find the probability of a hidden unit being "on" or "off":
-
-$$
-\begin{align}
-	p_{BB} (h_j=1 | \boldsymbol{x}) =&   \frac{ e^{(b_j + \boldsymbol{x}^T \boldsymbol{w}_{\ast j} ) h_j}  }
-	{1 + e^{b_j + \boldsymbol{x}^T \boldsymbol{w}_{\ast j}}} 
-\tag{25}\\
-	=&  \frac{ e^{(b_j + \boldsymbol{x}^T \boldsymbol{w}_{\ast j} )}  }
-	{1 + e^{b_j + \boldsymbol{x}^T \boldsymbol{w}_{\ast j}}} 
-\tag{26}\\
-	=&  \frac{ 1 }{1 + e^{-(b_j + \boldsymbol{x}^T \boldsymbol{w}_{\ast j})} } ,
-\tag{27}
-\end{align}
-$$
-
-and
-
-$$
-\begin{align}
-	p_{BB} (h_j=0 | \boldsymbol{x}) =\frac{ 1 }{1 + e^{b_j + \boldsymbol{x}^T \boldsymbol{w}_{\ast j}} } .
-\tag{28}
-\end{align}
-$$
-
-<p>
-Similarly we have that the conditional probability of the visible units given the hidden ones are
-
-$$
-\begin{align}
-	p_{BB} (\boldsymbol{x}|\boldsymbol{h}) =& \prod_i^M \frac{ e^{ (a_i + \boldsymbol{w}_{i\ast}^T \boldsymbol{h}) x_i} }{ 1 + e^{a_i + \boldsymbol{w}_{i\ast}^T \boldsymbol{h}} } 
-\tag{29}\\
-	&= \prod_i^M p_{BB} (x_i | \boldsymbol{h}) .
-\tag{30}
-\end{align}
-$$
-
-
-$$
-\begin{align}
-	p_{BB} (x_i=1 | \boldsymbol{h}) =& \frac{1}{1 + e^{-(a_i + \boldsymbol{w}_{i\ast}^T \boldsymbol{h} )}} 
-\tag{31}\\
-	p_{BB} (x_i=0 | \boldsymbol{h}) =& \frac{1}{1 + e^{a_i + \boldsymbol{w}_{i\ast}^T \boldsymbol{h} }} .
-\tag{32}
-\end{align}
-$$
 
 <p>
 <p>
@@ -420,6 +306,8 @@ $$
   <li><a href="._chalmers-bs057.html">58</a></li>
   <li class="active"><a href="._chalmers-bs058.html">59</a></li>
   <li><a href="._chalmers-bs059.html">60</a></li>
+  <li><a href="._chalmers-bs060.html">61</a></li>
+  <li><a href="._chalmers-bs061.html">62</a></li>
   <li><a href="._chalmers-bs059.html">&raquo;</a></li>
 </ul>
 <!-- ------------------- end of main content --------------- -->
