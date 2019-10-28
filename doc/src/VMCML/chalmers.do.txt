@@ -584,7 +584,7 @@ label{eq:trial}
 !et
 where the variables $\alpha_1$ and $\alpha_2$ represent our variational parameters.
 
-Why does the trial function look like this? How did we get there? _This will one of our main motivations_ for switching to
+Why does the trial function look like this? How did we get there? _This is one of our main motivations_ for switching to
 Machine Learning.
 
 !eblock
