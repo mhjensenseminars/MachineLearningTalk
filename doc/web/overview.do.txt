@@ -10,7 +10,7 @@ AUTHOR: Morten Hjorth-Jensen  Email:hjensen@msu.edu
 
 <%
 pub_url = 'http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub'
-published = ['vmcml', 'unitn', 'uniohio', 'unisurrey', 'uio2019',]
+published = ['vmcml', 'unitn', 'uniohio', 'unisurrey', 'uio2019', 'chalmers',]
 chapters = {
  'vmcml': 'From variational Monte Carlo to machine learning, talks at Michigan State University April and June 2018',
  'uniuio': 'Talk at University of Oslo, December 14, 2018',
@@ -18,6 +18,7 @@ chapters = {
  'uniohio': 'Talk at University of Ohio, Athens, April 16, 2019',
  'unisurrey': 'Talk at University of Surrey, Guildford, UK, October 1, 2019',
  'uio2019': 'Talk at University of Oslo, October 8, 2019',
+ 'chalmers': 'Talk at Chalmers, October 28, 2019',
 }
 %>
 
