@@ -90,5 +90,18 @@ AUTHOR: Morten Hjorth-Jensen  Email:hjensen@msu.edu
 
 
 
+===== AI and ML slides =====
+
+
+
+ * HTML:
+   * "Plain html style": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/overview/html/overview.html"
+   * "reveal.js beige slide style": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/overview/html/overview-reveal.html"
+   * "Bootstrap style": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/overview/html/overview-bs.html"
+ * iPython notebook:
+   * "ipynb file": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/overview/ipynb/overview.ipynb"
+
+
+
 
 
