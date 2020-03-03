@@ -1,5 +1,5 @@
 TITLE: Solving Quantum Mechanical Many-body Problems with Machine Learning Algorithms
-AUTHOR: Morten Hjorth-Jensen {copyright, 1999-present|CC BY-NC} at Department of Physics and Astronomy and National Superconducting Cyclotron Laboratory, Michigan State University, USA & Department of Physics and Center for Computing in Science Education, University of Oslo, Norway
+AUTHOR: Morten Hjorth-Jensen {copyright, 1999-present|CC BY-NC} at Department of Physics and Astronomy and Facility for Rare Ion Beams and National Superconducting Cyclotron Laboratory, Michigan State University, USA & Department of Physics and Center for Computing in Science Education, University of Oslo, Norway
 DATE: University of Oslo, Dept of Mathematics, March 3, 2020. Codes and slides at URL:"https://github.com/mhjensenseminars/MachineLearningTalk"
 
 
