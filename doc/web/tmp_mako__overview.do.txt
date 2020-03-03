@@ -90,6 +90,19 @@ AUTHOR: Morten Hjorth-Jensen  Email:hjensen@msu.edu
 
 
 
+===== UiO, Math Dept, March 3, 2020 =====
+
+
+
+ * HTML:
+   * "Plain html style": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/uiomath/html/uiomath.html"
+   * "reveal.js beige slide style": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/uiomath/html/uiomath-reveal.html"
+   * "Bootstrap style": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/uiomath/html/uiomath-bs.html"
+ * iPython notebook:
+   * "ipynb file": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/uiomath/ipynb/uiomath.ipynb"
+
+
+
 ===== AI and ML slides =====
 
 
