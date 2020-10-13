@@ -238,7 +238,7 @@ named such a wave function/network a *neural network quantum state* (NQS). In th
 spin lattice systems of the Ising model and Heisenberg model, with
 encouraging results. See also the recent work by "Adams et al.":"https://arxiv.org/abs/2007.14282".
 
-Thanks to Daniel Bazin (MSU), Jane Kim (MSU), Julie Butler (MSU), Sean Liddick (MSU), Michelle Kuchera (Davidson), Vilde Flugsrud (UiO), Even Nordhagen (UiO), Bendik Samseth (UiO) and Robert Solli (UiO) for many discussions and interpretations.
+Thanks to Daniel Bazin (MSU), Jane Kim (MSU), Julie Butler (MSU), Sean Liddick (MSU), Michelle Kuchera (Davidson College), Vilde Flugsrud (UiO), Even Nordhagen (UiO), Bendik Samseth (UiO) and Robert Solli (UiO) for many discussions and interpretations.
 !eblock
 
 
@@ -803,35 +803,7 @@ Another variant is the RBM where the visible units are Gaussian while the hidden
 
 
 
-!split
-===== RBMs for the quantum many body problem =====
 
-The idea of applying RBMs to quantum many body problems was presented by G. Carleo and M. Troyer, working with ETH Zurich and Microsoft Research.
-
-Some of their motivation included
-
-* The wave function $\Psi$ is a monolithic mathematical quantity that contains all the information on a quantum state, be it a single particle or a complex molecule. In principle, an exponential amount of information is needed to fully encode a generic many-body quantum state.
-* There are still interesting open problems, including fundamental questions ranging from the dynamical properties of high-dimensional systems to the exact ground-state properties of strongly interacting fermions.
-* The difficulty lies in finding a general strategy to reduce the exponential complexity of the full many-body wave function down to its most essential features. That is
- o $\rightarrow$ Dimensional reduction
- o $\rightarrow$ Feature extraction
-* Among the most successful techniques to attack these challenges, artifical neural networks play a prominent role.
-* Want to understand whether an artifical neural network may adapt to describe a quantum system.
-
-!split
-===== Choose the right RBM ===== 
-
-Carleo and Troyer applied the RBM to the quantum mechanical spin
-lattice systems of the Ising model and Heisenberg model, with
-encouraging results. Our goal is to test the method on systems of
-moving particles. For the spin lattice systems it was natural to use a
-binary-binary RBM, with the nodes taking values of 1 and -1. For
-moving particles, on the other hand, we want the visible nodes to be
-continuous, representing position coordinates. Thus, we start by
-choosing a Gaussian-binary RBM, where the visible nodes are continuous
-and hidden nodes take on values of 0 or 1. If eventually we would like
-the hidden nodes to be continuous as well the rectified linear units
-seem like the most relevant choice.
 
 !split
 ===== Representing the wave function =====
@@ -954,8 +926,46 @@ FIGURE: [figures/OB30hw1.png, width=700 frac=0.9]
 FIGURE: [figures/OB30hw01.png, width=700 frac=0.9]
 !eblock
 
+!split
+===== Or using Deep Learning Neural Networks =====
+
+" "Machine Learning and the Deuteron by Kebble and Rios":"https://www.sciencedirect.com/science/article/pii/S0370269320305463?via%3Dihub"
+"Variational Monte Carlo calculations of $A\le 4$ nuclei with an artificial neural-network correlator ansatz by Adams et al.":"https://arxiv.org/abs/2007.14282"
+
+_Adams et al_:
+
+!bt
+\begin{align}
+H_{LO} &=-\sum_i \frac{{\vec{\nabla}_i^2}}{2m_N}
++\sum_{i<j} {\left(C_1  + C_2\, \vec{\sigma_i}\cdot\vec{\sigma_j}\right)
+e^{-r_{ij}^2\Lambda^2 / 4 }}
+\nonumber\\
+&+D_0 \sum_{i<j<k} \sum_{\text{cyc}}
+{e^{-\left(r_{ik}^2+r_{ij}^2\right)\Lambda^2/4}}\,,
+\end{align}
+!et
+
+where $m_N$ is the mass of the nucleon, $\vec{\sigma_i}$ is the Pauli
+matrix acting on nucleon $i$, and $\sum_{\text{cyc}}$ stands for the
+cyclic permutation of $i$, $j$, and $k$. The low-energy constants
+$C_1$ and $C_2$ are fit to the deuteron binding energy and to the
+neutron-neutron scattering length
 
 
+!split
+=====  Replacing the Jastrow factor with Neural Networks =====
+
+An appealing feature of the ANN ansatz is that it is more general than the more conventional product of two-
+and three-body spin-independent Jastrow functions
+!bt
+\begin{align}
+|\Psi_V^J \rangle = \prod_{i<j<k} \Big( 1-\sum_{\text{cyc}} u(r_{ij}) u(r_{jk})\Big) \prod_{i<j} f(r_{ij}) | \Phi\rangle\,,
+\end{align}
+!et
+which is commonly used for nuclear Hamiltonians that do not contain tensor and spin-orbit terms.
+The above function is replaced by a four-layer Neural Network. 
+
+FIGURE: [figures/energyconvergence.pdf, width=700 frac=0.9]
 
 
 !split
@@ -1369,9 +1379,6 @@ print(frame)
 !ec
 
 
-
-
-https://journals.aps.org/prresearch/abstract/10.1103/PhysRevResearch.2.033429
 
 
 

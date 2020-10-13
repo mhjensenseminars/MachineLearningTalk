@@ -465,7 +465,7 @@ spin lattice systems of the Ising model and Heisenberg model, with
 encouraging results. See also the recent work by <a href="https://arxiv.org/abs/2007.14282" target="_blank">Adams et al.</a>.
 
 <p>
-Thanks to Daniel Bazin (MSU), Jane Kim (MSU), Julie Butler (MSU), Sean Liddick (MSU), Michelle Kuchera (Davidson), Vilde Flugsrud (UiO), Even Nordhagen (UiO), Bendik Samseth (UiO) and Robert Solli (UiO) for many discussions and interpretations.
+Thanks to Daniel Bazin (MSU), Jane Kim (MSU), Julie Butler (MSU), Sean Liddick (MSU), Michelle Kuchera (Davidson College), Vilde Flugsrud (UiO), Even Nordhagen (UiO), Bendik Samseth (UiO) and Robert Solli (UiO) for many discussions and interpretations.
 </div>
 </section>
 
@@ -1196,49 +1196,7 @@ $$
 
 
 <section>
-<h2 id="___sec43">RBMs for the quantum many body problem </h2>
-
-<p>
-The idea of applying RBMs to quantum many body problems was presented by G. Carleo and M. Troyer, working with ETH Zurich and Microsoft Research.
-
-<p>
-Some of their motivation included
-
-<ul>
-<p><li> The wave function \( \Psi \) is a monolithic mathematical quantity that contains all the information on a quantum state, be it a single particle or a complex molecule. In principle, an exponential amount of information is needed to fully encode a generic many-body quantum state.</li>
-<p><li> There are still interesting open problems, including fundamental questions ranging from the dynamical properties of high-dimensional systems to the exact ground-state properties of strongly interacting fermions.</li>
-<p><li> The difficulty lies in finding a general strategy to reduce the exponential complexity of the full many-body wave function down to its most essential features. That is
-
-<ol type="a"></li>
-<p><li> \( \rightarrow \) Dimensional reduction</li>
-<p><li> \( \rightarrow \) Feature extraction</li>
-</ol>
-<p><li> Among the most successful techniques to attack these challenges, artifical neural networks play a prominent role.</li>
-<p><li> Want to understand whether an artifical neural network may adapt to describe a quantum system.</li>
-</ul>
-</section>
-
-
-<section>
-<h2 id="___sec44">Choose the right RBM </h2>
-
-<p>
-Carleo and Troyer applied the RBM to the quantum mechanical spin
-lattice systems of the Ising model and Heisenberg model, with
-encouraging results. Our goal is to test the method on systems of
-moving particles. For the spin lattice systems it was natural to use a
-binary-binary RBM, with the nodes taking values of 1 and -1. For
-moving particles, on the other hand, we want the visible nodes to be
-continuous, representing position coordinates. Thus, we start by
-choosing a Gaussian-binary RBM, where the visible nodes are continuous
-and hidden nodes take on values of 0 or 1. If eventually we would like
-the hidden nodes to be continuous as well the rectified linear units
-seem like the most relevant choice.
-</section>
-
-
-<section>
-<h2 id="___sec45">Representing the wave function </h2>
+<h2 id="___sec43">Representing the wave function </h2>
 
 <p>
 The wavefunction should be a probability amplitude depending on \( \boldsymbol{x} \). The RBM model is given by the joint distribution of \( \boldsymbol{x} \) and \( \boldsymbol{h} \)
@@ -1283,7 +1241,7 @@ $$
 
 
 <section>
-<h2 id="___sec46">Choose the cost/loss function </h2>
+<h2 id="___sec44">Choose the cost/loss function </h2>
 
 <p>
 Now we don't necessarily have training data (unless we generate it by
@@ -1318,7 +1276,7 @@ $$
 
 
 <section>
-<h2 id="___sec47">Running the codes </h2>
+<h2 id="___sec45">Running the codes </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -1336,7 +1294,7 @@ The trial wave function are based on the product of a Slater determinant with ei
 
 
 <section>
-<h2 id="___sec48">Energy as function of iterations, \( N=2 \) electrons  </h2>
+<h2 id="___sec46">Energy as function of iterations, \( N=2 \) electrons  </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -1346,7 +1304,7 @@ The trial wave function are based on the product of a Slater determinant with ei
 
 
 <section>
-<h2 id="___sec49">Energy as function of iterations, no Physics info \( N=2 \) electrons  </h2>
+<h2 id="___sec47">Energy as function of iterations, no Physics info \( N=2 \) electrons  </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -1356,7 +1314,7 @@ The trial wave function are based on the product of a Slater determinant with ei
 
 
 <section>
-<h2 id="___sec50">Energy as function of iterations, \( N=6 \) electrons  </h2>
+<h2 id="___sec48">Energy as function of iterations, \( N=6 \) electrons  </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -1366,7 +1324,7 @@ The trial wave function are based on the product of a Slater determinant with ei
 
 
 <section>
-<h2 id="___sec51">Wave function analysis, onebody densities \( N=2 \) </h2>
+<h2 id="___sec49">Wave function analysis, onebody densities \( N=2 \) </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -1376,7 +1334,7 @@ The trial wave function are based on the product of a Slater determinant with ei
 
 
 <section>
-<h2 id="___sec52">Onebody densities \( N=6 \), \( \hbar\omega=1.0 \) a.u. </h2>
+<h2 id="___sec50">Onebody densities \( N=6 \), \( \hbar\omega=1.0 \) a.u. </h2>
 
 <p>
 <div class="alert alert-block alert-block alert-text-normal">
@@ -1388,7 +1346,7 @@ The trial wave function are based on the product of a Slater determinant with ei
 
 
 <section>
-<h2 id="___sec53">Onebody densities \( N=6 \), \( \hbar\omega=0.1 \) a.u. </h2>
+<h2 id="___sec51">Onebody densities \( N=6 \), \( \hbar\omega=0.1 \) a.u. </h2>
 
 <p>
 <div class="alert alert-block alert-block alert-text-normal">
@@ -1400,7 +1358,7 @@ The trial wave function are based on the product of a Slater determinant with ei
 
 
 <section>
-<h2 id="___sec54">Onebody densities \( N=30 \), \( \hbar\omega=1.0 \) a.u. </h2>
+<h2 id="___sec52">Onebody densities \( N=30 \), \( \hbar\omega=1.0 \) a.u. </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -1410,12 +1368,68 @@ The trial wave function are based on the product of a Slater determinant with ei
 
 
 <section>
-<h2 id="___sec55">Onebody densities \( N=30 \), \( \hbar\omega=0.1 \) a.u. </h2>
+<h2 id="___sec53">Onebody densities \( N=30 \), \( \hbar\omega=0.1 \) a.u. </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
 <br /><br /><center><p><img src="figures/OB30hw01.png" align="bottom" width=700></p></center><br /><br />
 </div>
+</section>
+
+
+<section>
+<h2 id="___sec54">Or using Deep Learning Neural Networks </h2>
+
+<p>
+" <a href="https://www.sciencedirect.com/science/article/pii/S0370269320305463?via%3Dihub" target="_blank">Machine Learning and the Deuteron by Kebble and Rios</a>
+<a href="https://arxiv.org/abs/2007.14282" target="_blank">Variational Monte Carlo calculations of \( A\le 4 \) nuclei with an artificial neural-network correlator ansatz by Adams et al.</a>
+
+<p>
+<b>Adams et al</b>:
+
+<p>&nbsp;<br>
+$$
+\begin{align}
+H_{LO} &=-\sum_i \frac{{\vec{\nabla}_i^2}}{2m_N}
++\sum_{i < j} {\left(C_1  + C_2\, \vec{\sigma_i}\cdot\vec{\sigma_j}\right)
+e^{-r_{ij}^2\Lambda^2 / 4 }}
+\nonumber\\
+&+D_0 \sum_{i < j < k} \sum_{\text{cyc}}
+{e^{-\left(r_{ik}^2+r_{ij}^2\right)\Lambda^2/4}}\,,
+\tag{17}
+\end{align}
+$$
+<p>&nbsp;<br>
+
+<p>
+where \( m_N \) is the mass of the nucleon, \( \vec{\sigma_i} \) is the Pauli
+matrix acting on nucleon \( i \), and \( \sum_{\text{cyc}} \) stands for the
+cyclic permutation of \( i \), \( j \), and \( k \). The low-energy constants
+\( C_1 \) and \( C_2 \) are fit to the deuteron binding energy and to the
+neutron-neutron scattering length
+</section>
+
+
+<section>
+<h2 id="___sec55">Replacing the Jastrow factor with Neural Networks </h2>
+
+<p>
+An appealing feature of the ANN ansatz is that it is more general than the more conventional product of two-
+and three-body spin-independent Jastrow functions
+<p>&nbsp;<br>
+$$
+\begin{align}
+|\Psi_V^J \rangle = \prod_{i < j < k} \Big( 1-\sum_{\text{cyc}} u(r_{ij}) u(r_{jk})\Big) \prod_{i < j} f(r_{ij}) | \Phi\rangle\,,
+\tag{18}
+\end{align}
+$$
+<p>&nbsp;<br>
+
+which is commonly used for nuclear Hamiltonians that do not contain tensor and spin-orbit terms.
+The above function is replaced by a four-layer Neural Network.
+
+<p>
+<br /><br /><center><p><img src="figures/energyconvergence.png" align="bottom" width=700></p></center><br /><br />
 </section>
 
 
@@ -1460,7 +1474,7 @@ Here we look at some of the relevant equations for a binary-binary RBM.
 $$
 \begin{align}
 	E_{BB}(\boldsymbol{x}, \mathbf{h}) = - \sum_i^M x_i a_i- \sum_j^N b_j h_j - \sum_{i,j}^{M,N} x_i w_{ij} h_j.
-\tag{17}
+\tag{19}
 \end{align}
 $$
 <p>&nbsp;<br>
@@ -1469,9 +1483,9 @@ $$
 $$
 \begin{align}
 	p_{BB}(\boldsymbol{x}, \boldsymbol{h}) =& \frac{1}{Z_{BB}} e^{\sum_i^M a_i x_i + \sum_j^N b_j h_j + \sum_{ij}^{M,N} x_i w_{ij} h_j} 
-\tag{18}\\
+\tag{20}\\
 	=& \frac{1}{Z_{BB}} e^{\boldsymbol{x}^T \boldsymbol{a} + \boldsymbol{b}^T \boldsymbol{h} + \boldsymbol{x}^T \boldsymbol{W} \boldsymbol{h}}
-\tag{19}
+\tag{21}
 \end{align}
 $$
 <p>&nbsp;<br>
@@ -1483,7 +1497,7 @@ with the partition function
 $$
 \begin{align}
 	Z_{BB} = \sum_{\boldsymbol{x}, \boldsymbol{h}} e^{\boldsymbol{x}^T \boldsymbol{a} + \boldsymbol{b}^T \boldsymbol{h} + \boldsymbol{x}^T \boldsymbol{W} \boldsymbol{h}} .
-\tag{20}
+\tag{22}
 \end{align}
 $$
 <p>&nbsp;<br>
@@ -1497,7 +1511,7 @@ In order to find the probability of any configuration of the visible units we de
 $$
 \begin{align}
 	p_{BB} (\boldsymbol{x}) =& \sum_{\boldsymbol{h}} p_{BB} (\boldsymbol{x}, \boldsymbol{h}) 
-\tag{21}\\
+\tag{23}\\
 	=& \frac{1}{Z_{BB}} \sum_{\boldsymbol{h}} e^{\boldsymbol{x}^T \boldsymbol{a} + \boldsymbol{b}^T \boldsymbol{h} + \boldsymbol{x}^T \boldsymbol{W} \boldsymbol{h}} \nonumber \\
 	=& \frac{1}{Z_{BB}} e^{\boldsymbol{x}^T \boldsymbol{a}} \sum_{\boldsymbol{h}} e^{\sum_j^N (b_j + \boldsymbol{x}^T \boldsymbol{w}_{\ast j})h_j} \nonumber \\
 	=& \frac{1}{Z_{BB}} e^{\boldsymbol{x}^T \boldsymbol{a}} \sum_{\boldsymbol{h}} \prod_j^N e^{ (b_j + \boldsymbol{x}^T \boldsymbol{w}_{\ast j})h_j} \nonumber \\
@@ -1506,7 +1520,7 @@ $$
 	& ... \times \sum_{h_2} e^{(b_N + \boldsymbol{x}^T \boldsymbol{w}_{\ast N})h_N} \bigg ) \nonumber \\
 	=& \frac{1}{Z_{BB}} e^{\boldsymbol{x}^T \boldsymbol{a}} \prod_j^N \sum_{h_j} e^{(b_j + \boldsymbol{x}^T \boldsymbol{w}_{\ast j}) h_j} \nonumber \\
 	=& \frac{1}{Z_{BB}} e^{\boldsymbol{x}^T \boldsymbol{a}} \prod_j^N (1 + e^{b_j + \boldsymbol{x}^T \boldsymbol{w}_{\ast j}}) .
-\tag{22}
+\tag{24}
 \end{align}
 $$
 <p>&nbsp;<br>
@@ -1518,7 +1532,7 @@ A similar derivation yields the marginal probability of the hidden units
 $$
 \begin{align}
 	p_{BB} (\boldsymbol{h}) = \frac{1}{Z_{BB}} e^{\boldsymbol{b}^T \boldsymbol{h}} \prod_i^M (1 + e^{a_i + \boldsymbol{w}_{i\ast}^T \boldsymbol{h}}) .
-\tag{23}
+\tag{25}
 \end{align}
 $$
 <p>&nbsp;<br>
@@ -1539,7 +1553,7 @@ $$
 	=& \prod_j^N \frac{ e^{(b_j + \boldsymbol{x}^T \boldsymbol{w}_{\ast j} ) h_j}  }
 	{1 + e^{b_j + \boldsymbol{x}^T \boldsymbol{w}_{\ast j}}} \nonumber \\
 	=& \prod_j^N p_{BB} (h_j| \boldsymbol{x}) .
-\tag{24}
+\tag{26}
 \end{align}
 $$
 <p>&nbsp;<br>
@@ -1552,12 +1566,12 @@ $$
 \begin{align}
 	p_{BB} (h_j=1 | \boldsymbol{x}) =&   \frac{ e^{(b_j + \boldsymbol{x}^T \boldsymbol{w}_{\ast j} ) h_j}  }
 	{1 + e^{b_j + \boldsymbol{x}^T \boldsymbol{w}_{\ast j}}} 
-\tag{25}\\
+\tag{27}\\
 	=&  \frac{ e^{(b_j + \boldsymbol{x}^T \boldsymbol{w}_{\ast j} )}  }
 	{1 + e^{b_j + \boldsymbol{x}^T \boldsymbol{w}_{\ast j}}} 
-\tag{26}\\
+\tag{28}\\
 	=&  \frac{ 1 }{1 + e^{-(b_j + \boldsymbol{x}^T \boldsymbol{w}_{\ast j})} } ,
-\tag{27}
+\tag{29}
 \end{align}
 $$
 <p>&nbsp;<br>
@@ -1568,7 +1582,7 @@ and
 $$
 \begin{align}
 	p_{BB} (h_j=0 | \boldsymbol{x}) =\frac{ 1 }{1 + e^{b_j + \boldsymbol{x}^T \boldsymbol{w}_{\ast j}} } .
-\tag{28}
+\tag{30}
 \end{align}
 $$
 <p>&nbsp;<br>
@@ -1580,9 +1594,9 @@ Similarly we have that the conditional probability of the visible units given th
 $$
 \begin{align}
 	p_{BB} (\boldsymbol{x}|\boldsymbol{h}) =& \prod_i^M \frac{ e^{ (a_i + \boldsymbol{w}_{i\ast}^T \boldsymbol{h}) x_i} }{ 1 + e^{a_i + \boldsymbol{w}_{i\ast}^T \boldsymbol{h}} } 
-\tag{29}\\
+\tag{31}\\
 	&= \prod_i^M p_{BB} (x_i | \boldsymbol{h}) .
-\tag{30}
+\tag{32}
 \end{align}
 $$
 <p>&nbsp;<br>
@@ -1591,9 +1605,9 @@ $$
 $$
 \begin{align}
 	p_{BB} (x_i=1 | \boldsymbol{h}) =& \frac{1}{1 + e^{-(a_i + \boldsymbol{w}_{i\ast}^T \boldsymbol{h} )}} 
-\tag{31}\\
+\tag{33}\\
 	p_{BB} (x_i=0 | \boldsymbol{h}) =& \frac{1}{1 + e^{a_i + \boldsymbol{w}_{i\ast}^T \boldsymbol{h} }} .
-\tag{32}
+\tag{34}
 \end{align}
 $$
 <p>&nbsp;<br>
@@ -1859,8 +1873,6 @@ data ={<span style="color: #CD5555">&#39;Energy&#39;</span>:Energies}<span style
 frame = pd.DataFrame(data)
 <span style="color: #658b00">print</span>(frame)
 </pre></div>
-<p>
-https://journals.aps.org/prresearch/abstract/10.1103/PhysRevResearch.2.033429
 </section>
 
 
