@@ -1,6 +1,6 @@
-# Strange way of testing for vortex...
 TITLE: Machine learning talks
 AUTHOR: Morten Hjorth-Jensen  Email:hjensen@msu.edu
+DATE: today
 
 
 
@@ -100,6 +100,19 @@ AUTHOR: Morten Hjorth-Jensen  Email:hjensen@msu.edu
    * "Bootstrap style": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/uiomath/html/uiomath-bs.html"
  * iPython notebook:
    * "ipynb file": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/uiomath/ipynb/uiomath.ipynb"
+
+
+
+===== Uni-Padova, October 13, 2020 =====
+
+
+
+ * HTML:
+   * "Plain html style": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/unipd/html/unipd.html"
+   * "reveal.js beige slide style": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/unipd/html/unipd-reveal.html"
+   * "Bootstrap style": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/unipd/html/unipd-bs.html"
+ * iPython notebook:
+   * "ipynb file": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/unipd/ipynb/unipd.ipynb"
 
 
 

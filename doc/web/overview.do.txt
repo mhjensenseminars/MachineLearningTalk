@@ -1,16 +1,10 @@
-# Strange way of testing for vortex...
-# #ifdef NON_VORTEX
-TITLE: Slides and various material
-
-TOC: off
-# #else
 TITLE: Machine learning talks
 AUTHOR: Morten Hjorth-Jensen  Email:hjensen@msu.edu
-# #endif
+DATE: today
 
 <%
 pub_url = 'http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub'
-published = ['vmcml', 'unitn', 'uniohio', 'unisurrey', 'uio2019', 'chalmers', 'uiomath', 'overview',]
+published = ['vmcml', 'unitn', 'uniohio', 'unisurrey', 'uio2019', 'chalmers', 'uiomath', 'unipd', 'overview',]
 chapters = {
  'vmcml': 'From variational Monte Carlo to machine learning, talks at Michigan State University April and June 2018',
  'uniuio': 'Talk at University of Oslo, December 14, 2018',
@@ -20,6 +14,7 @@ chapters = {
  'uio2019': 'Talk at University of Oslo, October 8, 2019',
  'chalmers': 'Talk at Chalmers, October 28, 2019',
  'uiomath': 'UiO, Math Dept, March 3, 2020',
+ 'unipd': 'Uni-Padova, October 13, 2020',
  'overview': 'AI and ML slides',
 }
 %>
