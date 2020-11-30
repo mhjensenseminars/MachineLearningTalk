@@ -1,6 +1,6 @@
 TITLE: Machine Learning meets Nuclear Physics
 AUTHOR: Morten Hjorth-Jensen {copyright, 1999-present|CC BY-NC} at Department of Physics and Astronomy and FRIB/NSCL Laboratory, Michigan State University, USA & Department of Physics and Center for Computing in Science Education, University of Oslo, Norway
-DATE: "Xth Tastes of Nuclear Physics":"http://nuclear.uwc.ac.za/index.php/tastes-of-nuclear-physics/", November 30-December 3, 2020. Codes and slides at URL:"https://github.com/mhjensenseminars/MachineLearningTalk"
+DATE: "Xth Tastes of Nuclear Physics":"http://nuclear.uwc.ac.za/index.php/tastes-of-nuclear-physics/", November 30-December 3, 2020. Codes and slides at URL:"https://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/WorkshopTastesNP/html/WorkshopTastesNP-reveal.html"
 
 
 !split
@@ -10,6 +10,9 @@ The main aim is to give you a short and pedestrian introduction to  how we can u
 to solve quantum mechanical many-body problems and how we can use such techniques in nuclear experiments. And why this could be of interest. 
 
 The hope is that after this talk you have gotten the basic ideas to get you started. Peeping into URL:"https://github.com/mhjensenseminars/MachineLearningTalk", you'll find a Jupyter notebook, slides, codes etc that will allow you to reproduce the simulations discussed here, and perhaps run your own very first calculations.
+
+See also URL:"https://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/WorkshopTastesNP/html/WorkshopTastesNP-reveal.html" for these slides.
+
 !eblock
 
 
@@ -20,6 +23,8 @@ More in depth notebooks and lecture notes are at
 o Making a professional Monte Carlo code for quantum mechanical simulations URL:"https://github.com/CompPhysics/ComputationalPhysics2/blob/gh-pages/doc/pub/notebook1/ipynb/notebook1.ipynb"
 o From Variational Monte Carlo to Boltzmann Machines URL:"https://github.com/CompPhysics/ComputationalPhysics2/blob/gh-pages/doc/pub/notebook2/ipynb/notebook2.ipynb"
 o "Nuclear Talent course on Machine Learning in Nuclear Experiment and Theory, June 22 - July 3, 2020":"https://nucleartalent.github.io/MachineLearningECT/doc/web/course.html"
+o "Machine Learning course":"https://compphysics.github.io/MachineLearning/doc/web/course.html"
+
 
 Feel free to try them  out and please don't hesitate to ask if something is unclear.
 
@@ -37,6 +42,7 @@ o resummation of specific correlations
 o stochastic sampling of high-lying states (stochastic FCI, CC and SRG/IMSRG)
 o many more
 
+
 Machine Learning and Quantum Computing hold also great promise in tackling the 
 ever increasing dimensionalities. Here we will focus on Machine Learning.
 !eblock
@@ -47,6 +53,7 @@ ever increasing dimensionalities. Here we will focus on Machine Learning.
 * Short intro to Machine Learning
 * Variational Monte Carlo (Markov Chain Monte Carlo, $\mathrm{MC}^2$) and many-body problems, solving quantum mechanical problems in a stochastic way. It  will serve as  our motivation for switching to Machine Learning. 
 * From Variational Monte Carlo to Boltzmann Machines and Deep  Learning
+* Machine Learning and Experiment
 !eblock
 
 
@@ -161,6 +168,7 @@ The large amount of degrees of freedom pertain to both theory and experiment in 
 * "Report from the A.I. For Nuclear Physics  Workshop by Bedaque et al.":"https://arxiv.org/abs/2006.05422"
 !eblock
 
+
 !split
 ===== What are the Machine Learning calculations here based on? =====
 
@@ -171,7 +179,7 @@ named such a wave function/network a *neural network quantum state* (NQS). In th
 spin lattice systems of the Ising model and Heisenberg model, with
 encouraging results. See also the recent work by "Adams et al.":"https://arxiv.org/abs/2007.14282".
 
-Thanks to Daniel Bazin (MSU), Jane Kim (MSU), Julie Butler (MSU), Sean Liddick (MSU), Michelle Kuchera (Davidson College), Vilde Flugsrud (UiO), Even Nordhagen (UiO), Bendik Samseth (UiO) and Robert Solli (UiO) for many discussions and interpretations.
+Thanks to Daniel Bazin (MSU), Jane Kim (MSU), Julie Butler (MSU), Dean Lee (MSU), Sean Liddick (MSU), Michelle Kuchera (Davidson College), Vilde Flugsrud (UiO), Even Nordhagen (UiO), Bendik Samseth (UiO) and Robert Solli (UiO) for many discussions and interpretations.
 !eblock
 
 
@@ -351,74 +359,6 @@ Observe that the jumping in space is governed by the variable *step*. This is of
 Need importance sampling to get more relevant sampling. 
 !eblock
 
-!split
-===== The trial wave function =====
-!bblock
-We want to perform  a Variational Monte Carlo calculation of the ground state of two electrons in a quantum dot well with different oscillator energies, assuming total spin $S=0$.
-Our trial wave function has the following form
-!bt
-\begin{equation}
-   \psi_{T}(\bm{r}_1,\bm{r}_2) = 
-   C\exp{\left(-\alpha_1\omega(r_1^2+r_2^2)/2\right)}
-   \exp{\left(\frac{r_{12}}{(1+\alpha_2 r_{12})}\right)}, 
-label{eq:trial}
-\end{equation}
-!et
-where the variables $\alpha_1$ and $\alpha_2$ represent our variational parameters.
-
-Why does the trial function look like this? How did we get there? _This is one of our main motivations_ for switching to
-Machine Learning.
-
-!eblock
-
-!split
-===== The correlation part of the wave function =====
-
-To find an ansatz for the correlated part of the wave function, it is useful to rewrite the two-particle
-local energy in terms of the relative and center-of-mass motion.
-Let us denote the distance between the two electrons as
-$r_{12}$. We omit the center-of-mass motion since we are only interested in the case when
-$r_{12} \rightarrow 0$. The contribution from the center-of-mass (CoM) variable $\bm{R}_{\mathrm{CoM}}$
-gives only a finite contribution.
-We focus only on the terms that are relevant for $r_{12}$ and for three dimensions. The relevant local energy operator becomes then (with $l=0$)
-!bt
-\[
-\lim_{r_{12} \rightarrow 0}E_L(R)=
-    \frac{1}{{\cal R}_T(r_{12})}\left(-2\frac{d^2}{dr_{ij}^2}-\frac{4}{r_{ij}}\frac{d}{dr_{ij}}+
-\frac{2}{r_{ij}}\right){\cal R}_T(r_{12}).
-\]
-!et
-In order to avoid divergencies when $r_{12}\rightarrow 0$ we obtain  the so-called _cusp_ condition
-!bt
-\[
-\frac{d {\cal R}_T(r_{12})}{dr_{12}} = \frac{1}{2}
-{\cal R}_T(r_{12})\qquad r_{12}\to 0
-\]
-!et
-
-!split
-===== Resulting ansatz =====
-The above  results in
-!bt
-\[
-{\cal R}_T  \propto \exp{(r_{ij}/2)}, 
-\]
-!et 
-for anti-parallel spins and 
-!bt
-\[
-{\cal R}_T  \propto \exp{(r_{ij}/4)}, 
-\]
-!et
-for anti-parallel spins. 
-This is the so-called cusp condition for the relative motion, resulting in a minimal requirement
-for the correlation part of the wave fuction.
-For general systems containing more than say two electrons, we have this
-condition for each electron pair $ij$.
-
-
-
-
 
 !split
 ===== Energy derivatives =====
@@ -465,74 +405,6 @@ and
 These integrals are evaluted using MC intergration (with all its possible error sources). 
 We can then use methods like stochastic gradient or other minimization methods to find the optimal variational parameters (I don't discuss this topic here, but these methods are very important in ML). 
 !eblock
-
-!split
-===== How do we define our cost function? =====
-!bblock
-We have a model, our likelihood function. 
-
-How should we define the cost function?
-
-!eblock
-
-!split
-===== Meet the variance and its derivatives  =====
-!bblock Why the variance?
-Suppose the trial function (our model) is the exact wave function. The action of the hamiltionan
-on the wave function
-!bt
-\[
-   H\Psi = \mathrm{constant}\times \Psi,
-\]
-!et
-The integral which defines various 
-expectation values involving moments of the hamiltonian becomes then
-!bt
-\[
-   \langle E^n \rangle =   \langle H^n \rangle =
-   \frac{\int d\bm{R}\Psi^{\ast}(\bm{R})H^n(\bm{R})\Psi(\bm{R})}
-        {\int d\bm{R}\Psi^{\ast}(\bm{R})\Psi(\bm{R})}=
-\mathrm{constant}\times\frac{\int d\bm{R}\Psi^{\ast}(\bm{R})\Psi(\bm{R})}
-        {\int d\bm{R}\Psi^{\ast}(\bm{R})\Psi(\bm{R})}=\mathrm{constant}.
-\]
-!et
-_This gives an important information: If I want the variance, the exact wave function leads to zero variance!_
-The variance is defined as 
-!bt
-\[
-\sigma_E = \langle E^2\rangle - \langle E\rangle^2.
-\]
-!et
-Variation is then performed by minimizing both the energy and the variance.
-
-!eblock
-
-
-!split
-===== The variance defines the cost function  =====
-!bblock 
-We can then take the derivatives of 
-!bt
-\[
-\sigma_E = \langle E^2\rangle - \langle E\rangle^2,
-\]
-!et
-with respect to the variational parameters. The derivatives of the variance can then be used to defined the
-so-called Hessian matrix, which in turn allows us to use minimization methods like Newton's method or 
-standard gradient methods. 
-
-This leads to however a more complicated expression, with obvious errors when evaluating integrals by Monte Carlo integration. Less used, see however "Filippi and Umrigar":"https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.94.150201". The expression becomes complicated
-!bt
-\begin{align}
-\bar{E}_{ij} &= 2\left[ \langle (\frac{\bar{\Psi}_{ij}}{\Psi}+\frac{\bar{\Psi}_{j}}{\Psi}\frac{\bar{\Psi}_{i}}{\Psi})(E_L-\langle E\rangle)\rangle -\langle \frac{\bar{\Psi}_{i}}{\Psi}\rangle\bar{E}_j-\langle \frac{\bar{\Psi}_{j}}{\Psi}\rangle\bar{E}_i\right] \\ \nonumber
-&+\langle \frac{\bar{\Psi}_{i}}{\Psi}E_L{_j}\rangle +\langle \frac{\bar{\Psi}_{j}}{\Psi}E_L{_i}\rangle -\langle \frac{\bar{\Psi}_{i}}{\Psi}\rangle\langle E_L{_j}\rangle \langle \frac{\bar{\Psi}_{j}}{\Psi}\rangle\langle E_L{_i}\rangle.  
-\end{align}
-!et
-
-Evaluating the cost function means having to evaluate the above second derivative of the energy. 
-
-!eblock
-
 
 
 !split
@@ -818,14 +690,13 @@ FIGURE: [figures/energyconvergence.pdf, width=700 frac=0.9]
 ===== Conclusions and where do we stand =====
 !bblock
 * Lots of experimental analysis coming, see for example "Unsupervised Learning for Identifying Events in Active Target Experiments by Solli et al.":"https://arxiv.org/abs/2008.02757" as well references and examples in  "Report from the A.I. For Nuclear Physics  Workshop by Bedaque et al.":"https://arxiv.org/abs/2006.05422".
-* Extension of the work of "G. Carleo and M. Troyer, Science _355_, Issue 6325, pp. 602-606 (2017)":"http://science.sciencemag.org/content/355/6325/602" gives excellent results for two-electron systems as well as good agreement with standard VMC calculations for $N=6$ and $N=12$ electrons.
-* Promising results. Next step is to use trial wave function in final Green's function Monte Carlo calculations. 
+* Extension of the work of "G. Carleo and M. Troyer, Science _355_, Issue 6325, pp. 602-606 (2017)":"http://science.sciencemag.org/content/355/6325/602" gives excellent results for two-electron systems as well as good agreement with standard VMC calculations for many  electrons.
+* Promising results with neural Networks as well. Next step is to use trial wave function in final Green's function Monte Carlo calculations. 
 * Minimization problem can be tricky.
 * Anti-symmetry dealt with multiplying the trail wave function with either a simple or an optimized Slater determinant.
 * Extend to more fermions. How do we deal with the antisymmetry of the multi-fermion wave function?
   o Here we also used standard Hartree-Fock theory to define an optimal Slater determinant. Takes care of the antisymmetry. What about constructing an anti-symmetrized network function?
   o Use thereafter ML to determine the correlated part of the wafe function (including a standard Jastrow factor).
-  o Test this for multi-fermion systems and compare with other many-body methods.
 * Can we use ML to find out which correlations are relevant and thereby diminish the dimensionality problem in say CC or SRG theories? 
 * And many more exciting research avenues
 !eblock
