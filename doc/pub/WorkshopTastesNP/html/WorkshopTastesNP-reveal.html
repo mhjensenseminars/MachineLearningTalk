@@ -484,7 +484,89 @@ is associated with a weight variable.
 
 
 <section>
-<h2 id="___sec16">The first system: electrons in a harmonic oscillator trap in two dimensions </h2>
+<h2 id="___sec16">Nuclear Physics Experiments $^{46}$Ar </h2>
+
+<p>
+Two- and three-dimensional representations of two events from the
+$^{46}$Ar experiment. Each row is one event in two projections,
+where the color intensity of each point indicates higher charge values
+recorded by the detector. The top row illustrates a carbon event with
+a large fraction of noise, while the bottom row shows a proton event
+almost free of noise. See <a href="https://arxiv.org/abs/2008.02757" target="_blank">Unsupervised Learning for Identifying Events in Active Target Experiments by Solli et al.</a>
+
+<p>
+<br /><br /><center><p><img src="figures/examples_raw.png" align="bottom" width=500></p></center><br /><br />
+</section>
+
+
+<section>
+<h2 id="___sec17">Why Machine Learning? </h2>
+
+<p>
+The traditional Monte Carlo event selection process does not have a
+well-defined method to quantify the effectiveness of the event
+selection.
+
+<p>
+In addition, the selection task normally produces  a binary result only, either
+a <b>good</b> or <b>bad</b> fit to the event of interest. A <b>bad</b>
+fit is then assumed to be a different event type, and is removed from
+the analysis.
+
+<p>
+In a broader perspective, an
+unsupervised classification algorithm would offer the possibility to
+<em>discover</em> rare events which may not be expected or are
+overlooked. These events would likely be filtered out using the
+traditional methods. From a practical point of view, compared to
+supervised learning, it also avoids the necessary labeling task of the
+learning set events, which is error prone and time consuming.
+</section>
+
+
+<section>
+<h2 id="___sec18">Why Machine Learning for Experimental Analysis? </h2>
+
+<p>
+The \( \chi^2 \) approach used in the traditional analysis performed on
+the $^{46}$Ar data is extremely expensive from a computational stand
+because it involves the simulation of thousands of tracks for each
+recorded event.
+
+<p>
+These events are in turn simulated for each iteration of the Monte
+Carlo fitting sequence.  Even though the reaction of interest in the
+above experiment had the largest cross section (elastic scattering),
+the time spent on Monte Carlo fitting of <em>all</em> of the events
+produced in the experiment was the largest computational bottleneck in
+the analysis. In the case of an experiment where the reaction of
+interest would represent less than a few percent of the total cross
+section, this procedure would become highly inefficient and
+prohibitive. Adding to this the large amount of data produced in this
+experiment (with even larger data sets expected in future
+experiments), the analysis simply begs for more efficient analysis
+tools.
+</section>
+
+
+<section>
+<h2 id="___sec19">More arguments </h2>
+
+<p>
+The computationally expensive fitting procedure
+would be applied to every event, instead of the few percent of the
+events that are of interest for the analysis.  An unsupervised ML
+algorithm able to separate the data without <em>a priori</em> knowledge
+of the different types of events increases the efficiency of the
+analysis tremendously, and allows the downstream analysis to
+concentrate on the fitting efforts only on events of interest. In
+addition, the clustering allows for more exploration of the data,
+potentially enabling new discovery of unexpected reaction types.
+</section>
+
+
+<section>
+<h2 id="___sec20">The first theoretical system: electrons in a harmonic oscillator trap in two dimensions </h2>
 
 <p>
 The Hamiltonian of the quantum dot is given by
@@ -516,7 +598,7 @@ This system has analytical solutions in two and three dimensions (<a href="https
 
 
 <section>
-<h2 id="___sec17">Quantum Monte Carlo Motivation </h2>
+<h2 id="___sec21">Quantum Monte Carlo Motivation </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -542,7 +624,7 @@ In general, the integrals involved in the calculation of various  expectation va
 
 
 <section>
-<h2 id="___sec18">Quantum Monte Carlo Motivation </h2>
+<h2 id="___sec22">Quantum Monte Carlo Motivation </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b>Basic steps.</b>
 <p>
@@ -568,7 +650,7 @@ $$
 
 
 <section>
-<h2 id="___sec19">Quantum Monte Carlo Motivation </h2>
+<h2 id="___sec23">Quantum Monte Carlo Motivation </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b>Define a new quantity.</b>
 <p>&nbsp;<br>
@@ -590,7 +672,7 @@ with \( N \) being the number of Monte Carlo samples.
 
 
 <section>
-<h2 id="___sec20">Quantum Monte Carlo </h2>
+<h2 id="___sec24">Quantum Monte Carlo </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -623,7 +705,7 @@ Need importance sampling to get more relevant sampling.
 
 
 <section>
-<h2 id="___sec21">Energy derivatives </h2>
+<h2 id="___sec25">Energy derivatives </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -649,7 +731,7 @@ $$
 
 
 <section>
-<h2 id="___sec22">Derivatives of the local energy </h2>
+<h2 id="___sec26">Derivatives of the local energy </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -681,7 +763,7 @@ We can then use methods like stochastic gradient or other minimization methods t
 
 
 <section>
-<h2 id="___sec23">Why Boltzmann machines? </h2>
+<h2 id="___sec27">Why Boltzmann machines? </h2>
 
 <p>
 What is known as restricted Boltzmann Machines (RMB) have received a
@@ -703,7 +785,7 @@ problems like the Ising and Potts classes of models.
 
 
 <section>
-<h2 id="___sec24">A standard BM setup </h2>
+<h2 id="___sec28">A standard BM setup </h2>
 
 <p>
 <div class="alert alert-block alert-block alert-text-normal">
@@ -733,7 +815,7 @@ Here we take away all lateral connections between nodes in the visible layer as 
 
 
 <section>
-<h2 id="___sec25">The structure of the RBM network </h2>
+<h2 id="___sec29">The structure of the RBM network </h2>
 
 <p>
 <br /><br /><center><p><img src="figures/RBM.png" align="bottom" width=800></p></center><br /><br />
@@ -741,7 +823,7 @@ Here we take away all lateral connections between nodes in the visible layer as 
 
 
 <section>
-<h2 id="___sec26">The network </h2>
+<h2 id="___sec30">The network </h2>
 
 <p>
 <b>The network layers</b>:
@@ -754,7 +836,7 @@ Here we take away all lateral connections between nodes in the visible layer as 
 
 
 <section>
-<h2 id="___sec27">Goals </h2>
+<h2 id="___sec31">Goals </h2>
 
 <p>
 The goal of the hidden layer is to increase the model's expressive
@@ -785,7 +867,7 @@ Examples of this trick being employed in physics:
 
 
 <section>
-<h2 id="___sec28">Joint distribution </h2>
+<h2 id="___sec32">Joint distribution </h2>
 
 <p>
 The restricted Boltzmann machine is described by a Boltzmann distribution
@@ -813,7 +895,7 @@ It is common to ignore \( T_0 \) by setting it to one.
 
 
 <section>
-<h2 id="___sec29">Defining different types of RBMs </h2>
+<h2 id="___sec33">Defining different types of RBMs </h2>
 
 <p>
 There are different variants of RBMs, and the differences lie in the types of visible and hidden units we choose as well as in the implementation of the energy function \( E(\mathbf{x},\mathbf{h}) \).
@@ -852,7 +934,7 @@ $$
 
 
 <section>
-<h2 id="___sec30">Representing the wave function </h2>
+<h2 id="___sec34">Representing the wave function </h2>
 
 <p>
 The wavefunction should be a probability amplitude depending on \( \boldsymbol{x} \). The RBM model is given by the joint distribution of \( \boldsymbol{x} \) and \( \boldsymbol{h} \)
@@ -897,7 +979,7 @@ $$
 
 
 <section>
-<h2 id="___sec31">Choose the cost/loss function </h2>
+<h2 id="___sec35">Choose the cost/loss function </h2>
 
 <p>
 Now we don't necessarily have training data (unless we generate it by
@@ -932,7 +1014,7 @@ $$
 
 
 <section>
-<h2 id="___sec32">Running the codes </h2>
+<h2 id="___sec36">Running the codes </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -950,7 +1032,7 @@ The trial wave function are based on the product of a Slater determinant with ei
 
 
 <section>
-<h2 id="___sec33">Energy as function of iterations, \( N=2 \) electrons  </h2>
+<h2 id="___sec37">Energy as function of iterations, \( N=2 \) electrons  </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -960,7 +1042,7 @@ The trial wave function are based on the product of a Slater determinant with ei
 
 
 <section>
-<h2 id="___sec34">Energy as function of iterations, no Physics info \( N=2 \) electrons  </h2>
+<h2 id="___sec38">Energy as function of iterations, no Physics info \( N=2 \) electrons  </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -970,7 +1052,7 @@ The trial wave function are based on the product of a Slater determinant with ei
 
 
 <section>
-<h2 id="___sec35">Onebody densities \( N=6 \), \( \hbar\omega=1.0 \) a.u. </h2>
+<h2 id="___sec39">Onebody densities \( N=6 \), \( \hbar\omega=1.0 \) a.u. </h2>
 
 <p>
 <div class="alert alert-block alert-block alert-text-normal">
@@ -982,7 +1064,7 @@ The trial wave function are based on the product of a Slater determinant with ei
 
 
 <section>
-<h2 id="___sec36">Onebody densities \( N=6 \), \( \hbar\omega=0.1 \) a.u. </h2>
+<h2 id="___sec40">Onebody densities \( N=6 \), \( \hbar\omega=0.1 \) a.u. </h2>
 
 <p>
 <div class="alert alert-block alert-block alert-text-normal">
@@ -994,7 +1076,7 @@ The trial wave function are based on the product of a Slater determinant with ei
 
 
 <section>
-<h2 id="___sec37">Onebody densities \( N=30 \), \( \hbar\omega=1.0 \) a.u. </h2>
+<h2 id="___sec41">Onebody densities \( N=30 \), \( \hbar\omega=1.0 \) a.u. </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -1004,7 +1086,7 @@ The trial wave function are based on the product of a Slater determinant with ei
 
 
 <section>
-<h2 id="___sec38">Onebody densities \( N=30 \), \( \hbar\omega=0.1 \) a.u. </h2>
+<h2 id="___sec42">Onebody densities \( N=30 \), \( \hbar\omega=0.1 \) a.u. </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -1014,7 +1096,7 @@ The trial wave function are based on the product of a Slater determinant with ei
 
 
 <section>
-<h2 id="___sec39">Or using Deep Learning Neural Networks </h2>
+<h2 id="___sec43">Or using Deep Learning Neural Networks </h2>
 
 <p>
 <a href="https://www.sciencedirect.com/science/article/pii/S0370269320305463?via%3Dihub" target="_blank">Machine Learning and the Deuteron by Kebble and Rios</a> and 
@@ -1047,7 +1129,7 @@ neutron-neutron scattering length
 
 
 <section>
-<h2 id="___sec40">Replacing the Jastrow factor with Neural Networks </h2>
+<h2 id="___sec44">Replacing the Jastrow factor with Neural Networks </h2>
 
 <p>
 An appealing feature of the ANN ansatz is that it is more general than the more conventional product of two-
@@ -1070,7 +1152,7 @@ The above function is replaced by a four-layer Neural Network.
 
 
 <section>
-<h2 id="___sec41">Conclusions and where do we stand </h2>
+<h2 id="___sec45">Conclusions and where do we stand </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <ul>
@@ -1093,7 +1175,7 @@ The above function is replaced by a four-layer Neural Network.
 
 
 <section>
-<h2 id="___sec42">Appendix: Mathematical details </h2>
+<h2 id="___sec46">Appendix: Mathematical details </h2>
 
 <p>
 The original RBM had binary visible and hidden nodes. They were
@@ -1138,7 +1220,7 @@ $$
 $$
 <p>&nbsp;<br>
 
-<h3 id="___sec43">Marginal Probability Density Functions </h3>
+<h3 id="___sec47">Marginal Probability Density Functions </h3>
 
 <p>
 In order to find the probability of any configuration of the visible units we derive the marginal probability density function.
@@ -1173,7 +1255,7 @@ $$
 $$
 <p>&nbsp;<br>
 
-<h3 id="___sec44">Conditional Probability Density Functions </h3>
+<h3 id="___sec48">Conditional Probability Density Functions </h3>
 
 <p>
 We derive the probability of the hidden units given the visible units using Bayes' rule
@@ -1251,7 +1333,7 @@ $$
 
 
 <section>
-<h2 id="___sec45">Python version for the two non-interacting particles </h2>
+<h2 id="___sec49">Python version for the two non-interacting particles </h2>
 
 <p>
 

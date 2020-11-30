@@ -255,9 +255,82 @@ FIGURE: [figures/dnn.png, width=500 frac=0.6]
 !eblock
 
 
+!split
+===== Nuclear Physics Experiments $^{46}$Ar =====
+
+Two- and three-dimensional representations of two events from the
+$^{46}$Ar experiment. Each row is one event in two projections,
+where the color intensity of each point indicates higher charge values
+recorded by the detector. The top row illustrates a carbon event with
+a large fraction of noise, while the bottom row shows a proton event
+almost free of noise. See "Unsupervised Learning for Identifying Events in Active Target Experiments by Solli et al.":"https://arxiv.org/abs/2008.02757"
+
+FIGURE: [figures/examples_raw.pdf, width=500 frac=0.6]
+
 
 !split
-===== The first system: electrons in a harmonic oscillator trap in two dimensions =====
+===== Why Machine Learning? =====
+
+The traditional Monte Carlo event selection process does not have a
+well-defined method to quantify the effectiveness of the event
+selection.
+
+In addition, the selection task normally produces  a binary result only, either
+a _good_ or _bad_ fit to the event of interest. A _bad_
+fit is then assumed to be a different event type, and is removed from
+the analysis. 
+
+In a broader perspective, an
+unsupervised classification algorithm would offer the possibility to
+*discover* rare events which may not be expected or are
+overlooked. These events would likely be filtered out using the
+traditional methods. From a practical point of view, compared to
+supervised learning, it also avoids the necessary labeling task of the
+learning set events, which is error prone and time consuming.
+
+
+!split
+===== Why Machine Learning for Experimental Analysis? =====
+
+The $\chi^2$ approach used in the traditional analysis performed on
+the $^{46}$Ar data is extremely expensive from a computational stand
+because it involves the simulation of thousands of tracks for each
+recorded event.
+
+
+These events are in turn simulated for each iteration of the Monte
+Carlo fitting sequence.  Even though the reaction of interest in the
+above experiment had the largest cross section (elastic scattering),
+the time spent on Monte Carlo fitting of *all* of the events
+produced in the experiment was the largest computational bottleneck in
+the analysis. In the case of an experiment where the reaction of
+interest would represent less than a few percent of the total cross
+section, this procedure would become highly inefficient and
+prohibitive. Adding to this the large amount of data produced in this
+experiment (with even larger data sets expected in future
+experiments), the analysis simply begs for more efficient analysis
+tools.
+
+
+!split
+===== More arguments =====
+
+The computationally expensive fitting procedure
+would be applied to every event, instead of the few percent of the
+events that are of interest for the analysis.  An unsupervised ML
+algorithm able to separate the data without *a priori* knowledge
+of the different types of events increases the efficiency of the
+analysis tremendously, and allows the downstream analysis to
+concentrate on the fitting efforts only on events of interest. In
+addition, the clustering allows for more exploration of the data,
+potentially enabling new discovery of unexpected reaction types.
+
+
+
+
+
+!split
+===== The first theoretical system: electrons in a harmonic oscillator trap in two dimensions =====
 
 The Hamiltonian of the quantum dot is given by
 !bt
