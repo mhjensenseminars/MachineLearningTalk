@@ -75,70 +75,69 @@ div { text-align: justify; text-justify: inter-word; }
               ('ML in Nuclear Physics, Examples', 2, None, '___sec8'),
               ('More examples', 2, None, '___sec9'),
               ('Selected References', 2, None, '___sec10'),
-              ('Some members of the ML family', 2, None, '___sec11'),
-              ('What are the basic ingredients?', 2, None, '___sec12'),
-              ('Neural network types', 2, None, '___sec13'),
-              ('Nuclear Physics Experiments $^{46}$Ar', 2, None, '___sec14'),
-              ('Why Machine Learning?', 2, None, '___sec15'),
+              ('What are the basic ingredients?', 2, None, '___sec11'),
+              ('Neural network types', 2, None, '___sec12'),
+              ('Nuclear Physics Experiments Argon-46', 2, None, '___sec13'),
+              ('Why Machine Learning?', 2, None, '___sec14'),
               ('Why Machine Learning for Experimental Analysis?',
                2,
                None,
-               '___sec16'),
-              ('More arguments', 2, None, '___sec17'),
+               '___sec15'),
+              ('More arguments', 2, None, '___sec16'),
               ('The first theoretical system: electrons in a harmonic '
                'oscillator trap in two dimensions',
                2,
                None,
-               '___sec18'),
+               '___sec17'),
+              ('Quantum Monte Carlo Motivation', 2, None, '___sec18'),
               ('Quantum Monte Carlo Motivation', 2, None, '___sec19'),
               ('Quantum Monte Carlo Motivation', 2, None, '___sec20'),
-              ('Quantum Monte Carlo Motivation', 2, None, '___sec21'),
-              ('Energy derivatives', 2, None, '___sec22'),
-              ('Derivatives of the local energy', 2, None, '___sec23'),
-              ('Why Boltzmann machines?', 2, None, '___sec24'),
-              ('A standard BM setup', 2, None, '___sec25'),
-              ('The structure of the RBM network', 2, None, '___sec26'),
-              ('The network', 2, None, '___sec27'),
-              ('Joint distribution', 2, None, '___sec28'),
-              ('Defining different types of RBMs', 2, None, '___sec29'),
-              ('Representing the wave function', 2, None, '___sec30'),
-              ('Choose the cost/loss function', 2, None, '___sec31'),
-              ('Running the codes', 2, None, '___sec32'),
+              ('Energy derivatives', 2, None, '___sec21'),
+              ('Derivatives of the local energy', 2, None, '___sec22'),
+              ('Why Boltzmann machines?', 2, None, '___sec23'),
+              ('A standard BM setup', 2, None, '___sec24'),
+              ('The structure of the RBM network', 2, None, '___sec25'),
+              ('The network', 2, None, '___sec26'),
+              ('Joint distribution', 2, None, '___sec27'),
+              ('Defining different types of RBMs', 2, None, '___sec28'),
+              ('Representing the wave function', 2, None, '___sec29'),
+              ('Choose the cost/loss function', 2, None, '___sec30'),
+              ('Running the codes', 2, None, '___sec31'),
               ('Energy as function of iterations, $N=2$ electrons',
                2,
                None,
-               '___sec33'),
+               '___sec32'),
               ('Energy as function of iterations, no Physics info $N=2$ '
                'electrons',
                2,
                None,
-               '___sec34'),
+               '___sec33'),
               ('Onebody densities $N=6$, $\\hbar\\omega=1.0$ a.u.',
                2,
                None,
-               '___sec35'),
+               '___sec34'),
               ('Onebody densities $N=6$, $\\hbar\\omega=0.1$ a.u.',
                2,
                None,
-               '___sec36'),
+               '___sec35'),
               ('Onebody densities $N=30$, $\\hbar\\omega=1.0$ a.u.',
                2,
                None,
-               '___sec37'),
+               '___sec36'),
               ('Onebody densities $N=30$, $\\hbar\\omega=0.1$ a.u.',
                2,
                None,
-               '___sec38'),
-              ('Or using Deep Learning Neural Networks', 2, None, '___sec39'),
+               '___sec37'),
+              ('Or using Deep Learning Neural Networks', 2, None, '___sec38'),
               ('Replacing the Jastrow factor with Neural Networks',
                2,
                None,
-               '___sec40'),
-              ('Conclusions and where do we stand', 2, None, '___sec41'),
+               '___sec39'),
+              ('Conclusions and where do we stand', 2, None, '___sec40'),
               ('What are the Machine Learning calculations here based on?',
                2,
                None,
-               '___sec42')]}
+               '___sec41')]}
 end of tocinfo -->
 
 <body>
@@ -180,7 +179,7 @@ MathJax.Hub.Config({
 <center>[2] <b>Department of Physics and Center for Computing in Science Education, University of Oslo, Norway</b></center>
 <br>
 <p>
-<center><h4><a href="http://nuclear.uwc.ac.za/index.php/tastes-of-nuclear-physics/" target="_blank">Xth Tastes of Nuclear Physics</a>, November 30-December 3, 2020. Codes and slides at <a href="https://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/WorkshopTastesNP/html/WorkshopTastesNP-reveal.html" target="_blank"><tt>https://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/WorkshopTastesNP/html/WorkshopTastesNP-reveal.html</tt></a></h4></center> <!-- date -->
+<center><h4><a href="http://nuclear.uwc.ac.za/index.php/tastes-of-nuclear-physics/" target="_blank">Xth Tastes of Nuclear Physics</a>, November 30-December 3, 2020. <a href="https://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/WorkshopTastesNP/html/WorkshopTastesNP-reveal.html" target="_blank">Codes and slides</a></h4></center> <!-- date -->
 <br>
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
@@ -392,7 +391,7 @@ The large amount of degrees of freedom pertain to both theory and experiment in 
 <p>
 
 <ul>
-<li> An excellent reference, <a href="https://arxiv.org/abs/1803.08823" target="_blank">Mehta et al.</a> and <a href="https://www.sciencedirect.com/science/article/pii/S0370157319300766?via%3Dihub" target="_blank">Physics Reports (2019)</a>.</li>
+<li> <a href="https://arxiv.org/abs/1803.08823" target="_blank">Mehta et al.</a> and <a href="https://www.sciencedirect.com/science/article/pii/S0370157319300766?via%3Dihub" target="_blank">Physics Reports (2019)</a>.</li>
 <li> <a href="https://link.aps.org/doi/10.1103/RevModPhys.91.045002" target="_blank">Machine Learning and the Physical Sciences by Carleo et al</a></li>
 <li> <a href="https://journals.aps.org/prresearch/abstract/10.1103/PhysRevResearch.2.033429" target="_blank">Ab initio solution of the many-electron Schr&#246;dinger equation with deep neural networks by Pfau et al.</a>.</li>
 <li> <a href="https://www.sciencedirect.com/science/article/pii/S0370269320305463?via%3Dihub" target="_blank">Machine Learning and the Deuteron by Kebble and Rios</a></li>
@@ -404,31 +403,9 @@ The large amount of degrees of freedom pertain to both theory and experiment in 
 
 
 <p>
-<!-- !split  -->
-
-<h2 id="___sec11">Some members of the ML family </h2>
-
-<p>
-<div class="alert alert-block alert-block alert-text-normal">
-<b></b>
-<p>
-
-<ol>
-<li> Linear regression and its variants, Logistic regression</li>
-<li> Decision tree algorithms, from simpler to more complex ones like random forests</li>
-<li> Bayesian statistics</li>
-<li> Support vector machines and finally various variants of</li>
-<li> Artifical neural networks (NN) and deep learning</li>
-<li> Convolutional NN, autoenconders, Recurrent NN, Boltzmann machines, Bayesian Neural Networks</li>
-<li> and many more</li>
-</ol>
-</div>
-
-
-<p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec12">What are the basic ingredients? </h2>
+<h2 id="___sec11">What are the basic ingredients? </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -447,7 +424,7 @@ We seek to minimize the function \( \mathcal{C} (\mathbf{x}, f(\mathbf{\alpha}))
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec13">Neural network types </h2>
+<h2 id="___sec12">Neural network types </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -467,15 +444,15 @@ is associated with a weight variable.
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec14">Nuclear Physics Experiments $^{46}$Ar </h2>
+<h2 id="___sec13">Nuclear Physics Experiments Argon-46 </h2>
 
 <p>
 Two- and three-dimensional representations of two events from the
-$^{46}$Ar experiment. Each row is one event in two projections,
+Argon-46 experiment. Each row is one event in two projections,
 where the color intensity of each point indicates higher charge values
-recorded by the detector. The top row illustrates a carbon event with
-a large fraction of noise, while the bottom row shows a proton event
-almost free of noise. See <a href="https://arxiv.org/abs/2008.02757" target="_blank">Unsupervised Learning for Identifying Events in Active Target Experiments by Solli et al.</a>
+recorded by the detector. The bottom row illustrates a carbon event with
+a large fraction of noise, while the top row shows a proton event
+almost free of noise. See <a href="https://arxiv.org/abs/2008.02757" target="_blank">Unsupervised Learning for Identifying Events in Active Target Experiments by Solli et al.</a> for more detials.
 
 <p>
 <br /><br /><center><p><img src="figures/examples_raw.png" align="bottom" width=500></p></center><br /><br />
@@ -483,7 +460,7 @@ almost free of noise. See <a href="https://arxiv.org/abs/2008.02757" target="_bl
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec15">Why Machine Learning? </h2>
+<h2 id="___sec14">Why Machine Learning? </h2>
 
 <p>
 The traditional Monte Carlo event selection process does not have a
@@ -508,7 +485,7 @@ learning set events, which is error prone and time consuming.
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec16">Why Machine Learning for Experimental Analysis? </h2>
+<h2 id="___sec15">Why Machine Learning for Experimental Analysis? </h2>
 
 <p>
 The \( \chi^2 \) approach used in the traditional analysis performed on
@@ -533,7 +510,7 @@ tools.
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec17">More arguments </h2>
+<h2 id="___sec16">More arguments </h2>
 
 <p>
 The computationally expensive fitting procedure
@@ -549,7 +526,7 @@ potentially enabling new discovery of unexpected reaction types.
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec18">The first theoretical system: electrons in a harmonic oscillator trap in two dimensions </h2>
+<h2 id="___sec17">The first theoretical system: electrons in a harmonic oscillator trap in two dimensions </h2>
 
 <p>
 The Hamiltonian of the quantum dot is given by
@@ -575,7 +552,7 @@ This system has analytical solutions in two and three dimensions (<a href="https
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec19">Quantum Monte Carlo Motivation </h2>
+<h2 id="___sec18">Quantum Monte Carlo Motivation </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -598,7 +575,7 @@ In general, the integrals involved in the calculation of various  expectation va
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec20">Quantum Monte Carlo Motivation </h2>
+<h2 id="___sec19">Quantum Monte Carlo Motivation </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b>Basic steps.</b>
 <p>
@@ -621,7 +598,7 @@ $$
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec21">Quantum Monte Carlo Motivation </h2>
+<h2 id="___sec20">Quantum Monte Carlo Motivation </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b>Define a new quantity.</b>
 <p>
@@ -641,7 +618,7 @@ with \( N \) being the number of Monte Carlo samples.
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec22">Energy derivatives </h2>
+<h2 id="___sec21">Energy derivatives </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -664,7 +641,7 @@ $$
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec23">Derivatives of the local energy </h2>
+<h2 id="___sec22">Derivatives of the local energy </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -697,7 +674,7 @@ very important in ML).
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec24">Why Boltzmann machines? </h2>
+<h2 id="___sec23">Why Boltzmann machines? </h2>
 
 <p>
 What is known as restricted Boltzmann Machines (RMB) have received a
@@ -719,7 +696,7 @@ problems like the Ising and Potts classes of models.
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec25">A standard BM setup </h2>
+<h2 id="___sec24">A standard BM setup </h2>
 
 <p>
 <div class="alert alert-block alert-block alert-text-normal">
@@ -752,7 +729,7 @@ Here we take away all lateral connections between nodes in the visible layer as 
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec26">The structure of the RBM network </h2>
+<h2 id="___sec25">The structure of the RBM network </h2>
 
 <p>
 <br /><br /><center><p><img src="figures/RBM.png" align="bottom" width=800></p></center><br /><br />
@@ -760,7 +737,7 @@ Here we take away all lateral connections between nodes in the visible layer as 
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec27">The network </h2>
+<h2 id="___sec26">The network </h2>
 
 <p>
 <b>The network layers</b>:
@@ -772,7 +749,7 @@ Here we take away all lateral connections between nodes in the visible layer as 
 
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec28">Joint distribution </h2>
+<h2 id="___sec27">Joint distribution </h2>
 
 <p>
 The restricted Boltzmann machine is described by a Boltzmann distribution
@@ -796,7 +773,7 @@ It is common to ignore \( T_0 \) by setting it to one.
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec29">Defining different types of RBMs </h2>
+<h2 id="___sec28">Defining different types of RBMs </h2>
 
 <p>
 There are different variants of RBMs, and the differences lie in the types of visible and hidden units we choose as well as in the implementation of the energy function \( E(\mathbf{x},\mathbf{h}) \).
@@ -836,7 +813,7 @@ $$
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec30">Representing the wave function </h2>
+<h2 id="___sec29">Representing the wave function </h2>
 
 <p>
 The wavefunction should be a probability amplitude depending on \( \boldsymbol{x} \). The RBM model is given by the joint distribution of \( \boldsymbol{x} \) and \( \boldsymbol{h} \)
@@ -875,7 +852,7 @@ $$
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec31">Choose the cost/loss function </h2>
+<h2 id="___sec30">Choose the cost/loss function </h2>
 
 <p>
 Now we don't necessarily have training data (unless we generate it by
@@ -906,7 +883,7 @@ $$
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec32">Running the codes </h2>
+<h2 id="___sec31">Running the codes </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -922,7 +899,7 @@ The trial wave function are based on the product of a Slater determinant with ei
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec33">Energy as function of iterations, \( N=2 \) electrons  </h2>
+<h2 id="___sec32">Energy as function of iterations, \( N=2 \) electrons  </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -933,7 +910,7 @@ The trial wave function are based on the product of a Slater determinant with ei
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec34">Energy as function of iterations, no Physics info \( N=2 \) electrons  </h2>
+<h2 id="___sec33">Energy as function of iterations, no Physics info \( N=2 \) electrons  </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -944,7 +921,7 @@ The trial wave function are based on the product of a Slater determinant with ei
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec35">Onebody densities \( N=6 \), \( \hbar\omega=1.0 \) a.u. </h2>
+<h2 id="___sec34">Onebody densities \( N=6 \), \( \hbar\omega=1.0 \) a.u. </h2>
 
 <p>
 <div class="alert alert-block alert-block alert-text-normal">
@@ -957,7 +934,7 @@ The trial wave function are based on the product of a Slater determinant with ei
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec36">Onebody densities \( N=6 \), \( \hbar\omega=0.1 \) a.u. </h2>
+<h2 id="___sec35">Onebody densities \( N=6 \), \( \hbar\omega=0.1 \) a.u. </h2>
 
 <p>
 <div class="alert alert-block alert-block alert-text-normal">
@@ -970,7 +947,7 @@ The trial wave function are based on the product of a Slater determinant with ei
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec37">Onebody densities \( N=30 \), \( \hbar\omega=1.0 \) a.u. </h2>
+<h2 id="___sec36">Onebody densities \( N=30 \), \( \hbar\omega=1.0 \) a.u. </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -981,7 +958,7 @@ The trial wave function are based on the product of a Slater determinant with ei
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec38">Onebody densities \( N=30 \), \( \hbar\omega=0.1 \) a.u. </h2>
+<h2 id="___sec37">Onebody densities \( N=30 \), \( \hbar\omega=0.1 \) a.u. </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -992,7 +969,7 @@ The trial wave function are based on the product of a Slater determinant with ei
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec39">Or using Deep Learning Neural Networks </h2>
+<h2 id="___sec38">Or using Deep Learning Neural Networks </h2>
 
 <p>
 <a href="https://www.sciencedirect.com/science/article/pii/S0370269320305463?via%3Dihub" target="_blank">Machine Learning and the Deuteron by Kebble and Rios</a> and 
@@ -1023,7 +1000,7 @@ neutron-neutron scattering length
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec40">Replacing the Jastrow factor with Neural Networks </h2>
+<h2 id="___sec39">Replacing the Jastrow factor with Neural Networks </h2>
 
 <p>
 An appealing feature of the ANN ansatz is that it is more general than the more conventional product of two-
@@ -1044,7 +1021,7 @@ The above function is replaced by a four-layer Neural Network.
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec41">Conclusions and where do we stand </h2>
+<h2 id="___sec40">Conclusions and where do we stand </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -1071,7 +1048,7 @@ The above function is replaced by a four-layer Neural Network.
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec42">What are the Machine Learning calculations here based on? </h2>
+<h2 id="___sec41">What are the Machine Learning calculations here based on? </h2>
 
 <p>
 <div class="alert alert-block alert-block alert-text-normal">

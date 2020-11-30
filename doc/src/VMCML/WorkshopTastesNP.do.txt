@@ -1,6 +1,6 @@
 TITLE: Machine Learning meets Nuclear Physics
 AUTHOR: Morten Hjorth-Jensen {copyright, 1999-present|CC BY-NC} at Department of Physics and Astronomy and FRIB/NSCL Laboratory, Michigan State University, USA & Department of Physics and Center for Computing in Science Education, University of Oslo, Norway
-DATE: "Xth Tastes of Nuclear Physics":"http://nuclear.uwc.ac.za/index.php/tastes-of-nuclear-physics/", November 30-December 3, 2020. Codes and slides at URL:"https://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/WorkshopTastesNP/html/WorkshopTastesNP-reveal.html"
+DATE: "Xth Tastes of Nuclear Physics":"http://nuclear.uwc.ac.za/index.php/tastes-of-nuclear-physics/", November 30-December 3, 2020. "Codes and slides":"https://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/WorkshopTastesNP/html/WorkshopTastesNP-reveal.html"
 
 
 !split
@@ -159,7 +159,7 @@ The large amount of degrees of freedom pertain to both theory and experiment in 
 !split
 ===== Selected References =====
 !bblock
-* An excellent reference, "Mehta et al.":"https://arxiv.org/abs/1803.08823" and "Physics Reports (2019)":"https://www.sciencedirect.com/science/article/pii/S0370157319300766?via%3Dihub".
+* "Mehta et al.":"https://arxiv.org/abs/1803.08823" and "Physics Reports (2019)":"https://www.sciencedirect.com/science/article/pii/S0370157319300766?via%3Dihub".
 * "Machine Learning and the Physical Sciences by Carleo et al":"https://link.aps.org/doi/10.1103/RevModPhys.91.045002"
 * "Ab initio solution of the many-electron Schrödinger equation with deep neural networks by Pfau et al.":"https://journals.aps.org/prresearch/abstract/10.1103/PhysRevResearch.2.033429".
 * "Machine Learning and the Deuteron by Kebble and Rios":"https://www.sciencedirect.com/science/article/pii/S0370269320305463?via%3Dihub"
@@ -170,21 +170,6 @@ The large amount of degrees of freedom pertain to both theory and experiment in 
 
 
 
-
-
-
-!split 
-===== Some members of the ML family =====
-
-!bblock
-o Linear regression and its variants, Logistic regression
-o Decision tree algorithms, from simpler to more complex ones like random forests
-o Bayesian statistics
-o Support vector machines and finally various variants of
-o Artifical neural networks (NN) and deep learning
-o Convolutional NN, autoenconders, Recurrent NN, Boltzmann machines, Bayesian Neural Networks
-o and many more
-!eblock
 
 
 !split
@@ -215,14 +200,14 @@ FIGURE: [figures/dnn.png, width=500 frac=0.6]
 
 
 !split
-===== Nuclear Physics Experiments $^{46}$Ar =====
+===== Nuclear Physics Experiments Argon-46 =====
 
 Two- and three-dimensional representations of two events from the
-$^{46}$Ar experiment. Each row is one event in two projections,
+Argon-46 experiment. Each row is one event in two projections,
 where the color intensity of each point indicates higher charge values
-recorded by the detector. The top row illustrates a carbon event with
-a large fraction of noise, while the bottom row shows a proton event
-almost free of noise. See "Unsupervised Learning for Identifying Events in Active Target Experiments by Solli et al.":"https://arxiv.org/abs/2008.02757"
+recorded by the detector. The bottom row illustrates a carbon event with
+a large fraction of noise, while the top row shows a proton event
+almost free of noise. See "Unsupervised Learning for Identifying Events in Active Target Experiments by Solli et al.":"https://arxiv.org/abs/2008.02757" for more detials.
 
 FIGURE: [figures/examples_raw.png, width=500 frac=0.6]
 
