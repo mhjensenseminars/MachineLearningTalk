@@ -44,7 +44,7 @@ o many more
 
 
 Machine Learning and Quantum Computing hold also great promise in tackling the 
-ever increasing dimensionalities. Here we will focus on Machine Learning.
+ever increasing dimensionalities. The hot field is now _Quantum Machine Learning_. Here we will focus on Machine Learning.
 !eblock
 
 !split
@@ -169,18 +169,6 @@ The large amount of degrees of freedom pertain to both theory and experiment in 
 !eblock
 
 
-!split
-===== What are the Machine Learning calculations here based on? =====
-
-!bblock
-This work is inspired by the idea of representing the wave function with
-a restricted Boltzmann machine (RBM), presented recently by "G. Carleo and M. Troyer, Science _355_, Issue 6325, pp. 602-606 (2017)":"http://science.sciencemag.org/content/355/6325/602". They
-named such a wave function/network a *neural network quantum state* (NQS). In their article they apply it to the quantum mechanical
-spin lattice systems of the Ising model and Heisenberg model, with
-encouraging results. See also the recent work by "Adams et al.":"https://arxiv.org/abs/2007.14282".
-
-Thanks to Daniel Bazin (MSU), Jane Kim (MSU), Julie Butler (MSU), Dean Lee (MSU), Sean Liddick (MSU), Michelle Kuchera (Davidson College), Vilde Flugsrud (UiO), Even Nordhagen (UiO), Bendik Samseth (UiO) and Robert Solli (UiO) for many discussions and interpretations.
-!eblock
 
 
 
@@ -197,35 +185,6 @@ o Artifical neural networks (NN) and deep learning
 o Convolutional NN, autoenconders, Recurrent NN, Boltzmann machines, Bayesian Neural Networks
 o and many more
 !eblock
-
-!split
-===== A Frequentist approach to data analysis  =====
-
-When you hear phrases like _predictions and estimations_ and
-_correlations and causations_, what do you think of?  May be you think
-of the difference between classifying new data points and generating
-new data points.
-Or perhaps you consider that correlations represent some kind of symmetric statements like
-if $A$ is correlated with $B$, then $B$ is correlated with
-$A$. Causation on the other hand is directional, that is if $A$ causes $B$, $B$ does not
-necessarily cause $A$.
-
-These concepts are in some sense the difference between machine
-learning and statistics. In machine learning and prediction based
-tasks, we are often interested in developing algorithms that are
-capable of learning patterns from given data in an automated fashion,
-and then using these learned patterns to make predictions or
-assessments of newly given data. In many cases, our primary concern
-is the quality of the predictions or assessments, and we are less
-concerned about the underlying patterns that were learned in order
-to make these predictions.
-
-
-In machine learning we normally use "a so-called frequentist approach":"https://en.wikipedia.org/wiki/Frequentist_inference",
-where the aim is to make predictions and find correlations. We focus
-less on for example extracting a probability distribution function (PDF). The PDF can be
-used in turn to make estimations and find causations such as given $A$
-what is the likelihood of finding $B$.
 
 
 !split
@@ -265,7 +224,7 @@ recorded by the detector. The top row illustrates a carbon event with
 a large fraction of noise, while the bottom row shows a proton event
 almost free of noise. See "Unsupervised Learning for Identifying Events in Active Target Experiments by Solli et al.":"https://arxiv.org/abs/2008.02757"
 
-FIGURE: [figures/examples_raw.pdf, width=500 frac=0.6]
+FIGURE: [figures/examples_raw.png, width=500 frac=0.6]
 
 
 !split
@@ -415,22 +374,6 @@ with $N$ being the number of Monte Carlo samples.
 !eblock
 
 
-!split
-===== Quantum Monte Carlo =====
-!bblock
-The Algorithm for performing a variational Monte Carlo calculations runs thus as this
-       
-  *  Initialisation: Fix the number of Monte Carlo steps. Choose an initial $\bm{R}$ and variational parameters $\alpha$ and calculate $\left|\psi_T(\bm{R},\bm{\alpha})\right|^2$. 
-  *  Initialise the energy and the variance and start the Monte Carlo calculation by looping over trials.
-     *  Calculate  a trial position  $\bm{R}_p=\bm{R}+r*step$ where $r$ is a random variable $r \in [0,1]$.
-     *  Metropolis algorithm to accept or reject this move  $w = P(\bm{R}_p,\bm{\alpha})/P(\bm{R},\bm{\alpha})$.
-     *  If the step is accepted, then we set $\bm{R}=\bm{R}_p$. 
-     *  Update averages
-  *  Finish and compute final averages.
-      
-Observe that the jumping in space is governed by the variable *step*. This is often called brute-force sampling.
-Need importance sampling to get more relevant sampling. 
-!eblock
 
 
 !split
@@ -475,8 +418,15 @@ and
 \langle \frac{\bar{\Psi}_{i}}{\Psi}\rangle\langle E_L\rangle
 \]
 !et
-These integrals are evaluted using MC intergration (with all its possible error sources). 
-We can then use methods like stochastic gradient or other minimization methods to find the optimal variational parameters (I don't discuss this topic here, but these methods are very important in ML). 
+
+
+These integrals are evaluted using MC intergration (with all its
+possible error sources).  We can then use methods like stochastic
+gradient or other minimization methods to find the optimal variational
+parameters (I don't discuss this topic here, but these methods are
+very important in ML).
+
+
 !eblock
 
 
@@ -533,27 +483,6 @@ FIGURE: [figures/RBM.pdf, width=800 frac=1.0]
 _The network layers_:
   o A function $\mathbf{x}$ that represents the visible layer, a vector of $M$ elements (nodes). This layer represents both what the RBM might be given as training input, and what we want it to be able to reconstruct. This might for example be the pixels of an image, the spin values of the Ising model, or coefficients representing speech.
   o The function $\mathbf{h}$ represents the hidden, or latent, layer. A vector of $N$ elements (nodes). Also called "feature detectors".
-
-!split
-===== Goals =====
-
-The goal of the hidden layer is to increase the model's expressive
-power. We encode complex interactions between visible variables by
-introducing additional, hidden variables that interact with visible
-degrees of freedom in a simple manner, yet still reproduce the complex
-correlations between visible degrees in the data once marginalized
-over (integrated out).
-
-Examples of this trick being employed in physics: 
-  o The Hubbard-Stratonovich transformation
-  o The introduction of ghost fields in gauge theory
-  o Shadow wave functions in Quantum Monte Carlo simulations
-_The network parameters, to be optimized/learned_:
-  o $\mathbf{a}$ represents the visible bias, a vector of same length as $\mathbf{x}$.
-  o $\mathbf{b}$ represents the hidden bias, a vector of same lenght as $\mathbf{h}$.
-  o $W$ represents the interaction weights, a matrix of size $M\times N$.
-
-
 
 
 !split
@@ -647,7 +576,7 @@ procedure is
 
 !bt
 \begin{align}
-	C_i = \frac{\partial \langle E_L \rangle}{\partial \theta_i}
+	\frac{\partial \langle E_L \rangle}{\partial \theta_i}
 	= 2(\langle E_L \frac{1}{\Psi}\frac{\partial \Psi}{\partial \theta_i} \rangle - \langle E_L \rangle \langle \frac{1}{\Psi}\frac{\partial \Psi}{\partial \theta_i} \rangle ),
 \end{align}
 !et
@@ -664,7 +593,6 @@ where the local energy is given by
 !bblock
 You can find the codes for the simple two-electron case at the Github repository URL:"https://github.com/mhjensenseminars/MachineLearningTalk/tree/master/doc/Programs/MLcpp/src". 
 
-See Python code in additional material here.
 
 The trial wave function are based on the product of a Slater determinant with either only Hermitian polynomials or Gaussian orbitals, with and without a Pade-Jastrow factor (PJ).
 
@@ -781,397 +709,18 @@ FIGURE: [figures/energyconvergence.pdf, width=700 frac=0.9]
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 !split
-===== Appendix: Mathematical details =====
+===== What are the Machine Learning calculations here based on? =====
 
+!bblock
+This work is inspired by the idea of representing the wave function with
+a restricted Boltzmann machine (RBM), presented recently by "G. Carleo and M. Troyer, Science _355_, Issue 6325, pp. 602-606 (2017)":"http://science.sciencemag.org/content/355/6325/602". They
+named such a wave function/network a *neural network quantum state* (NQS). In their article they apply it to the quantum mechanical
+spin lattice systems of the Ising model and Heisenberg model, with
+encouraging results. See also the recent work by "Adams et al.":"https://arxiv.org/abs/2007.14282".
 
-The original RBM had binary visible and hidden nodes. They were
-showne to be universal approximators of discrete distributions.
-It was also shown that adding hidden units yields
-strictly improved modelling power. The common choice of binary values
-are 0 and 1. However, in some physics applications, -1 and 1 might be
-a more natural choice. We will here use 0 and 1.
-
-Here we look at some of the relevant equations for a binary-binary RBM.
-
-!bt
-\begin{align}
-	E_{BB}(\bm{x}, \mathbf{h}) = - \sum_i^M x_i a_i- \sum_j^N b_j h_j - \sum_{i,j}^{M,N} x_i w_{ij} h_j.
-\end{align}
-!et
-
-
-
-!bt
-\begin{align}
-	p_{BB}(\bm{x}, \bm{h}) =& \frac{1}{Z_{BB}} e^{\sum_i^M a_i x_i + \sum_j^N b_j h_j + \sum_{ij}^{M,N} x_i w_{ij} h_j} \\
-	=& \frac{1}{Z_{BB}} e^{\bm{x}^T \bm{a} + \bm{b}^T \bm{h} + \bm{x}^T \bm{W} \bm{h}}
-\end{align}
-!et
-
-with the partition function
-
-!bt
-\begin{align}
-	Z_{BB} = \sum_{\bm{x}, \bm{h}} e^{\bm{x}^T \bm{a} + \bm{b}^T \bm{h} + \bm{x}^T \bm{W} \bm{h}} .
-\end{align}
-!et
-
-=== Marginal Probability Density Functions ===
-
-In order to find the probability of any configuration of the visible units we derive the marginal probability density function.
-
-!bt
-\begin{align}
-	p_{BB} (\bm{x}) =& \sum_{\bm{h}} p_{BB} (\bm{x}, \bm{h}) \\
-	=& \frac{1}{Z_{BB}} \sum_{\bm{h}} e^{\bm{x}^T \bm{a} + \bm{b}^T \bm{h} + \bm{x}^T \bm{W} \bm{h}} \nonumber \\
-	=& \frac{1}{Z_{BB}} e^{\bm{x}^T \bm{a}} \sum_{\bm{h}} e^{\sum_j^N (b_j + \bm{x}^T \bm{w}_{\ast j})h_j} \nonumber \\
-	=& \frac{1}{Z_{BB}} e^{\bm{x}^T \bm{a}} \sum_{\bm{h}} \prod_j^N e^{ (b_j + \bm{x}^T \bm{w}_{\ast j})h_j} \nonumber \\
-	=& \frac{1}{Z_{BB}} e^{\bm{x}^T \bm{a}} \bigg ( \sum_{h_1} e^{(b_1 + \bm{x}^T \bm{w}_{\ast 1})h_1}
-	\times \sum_{h_2} e^{(b_2 + \bm{x}^T \bm{w}_{\ast 2})h_2} \times \nonumber \\
-	& ... \times \sum_{h_2} e^{(b_N + \bm{x}^T \bm{w}_{\ast N})h_N} \bigg ) \nonumber \\
-	=& \frac{1}{Z_{BB}} e^{\bm{x}^T \bm{a}} \prod_j^N \sum_{h_j} e^{(b_j + \bm{x}^T \bm{w}_{\ast j}) h_j} \nonumber \\
-	=& \frac{1}{Z_{BB}} e^{\bm{x}^T \bm{a}} \prod_j^N (1 + e^{b_j + \bm{x}^T \bm{w}_{\ast j}}) .
-\end{align}
-!et
-
-A similar derivation yields the marginal probability of the hidden units
-
-!bt
-\begin{align}
-	p_{BB} (\bm{h}) = \frac{1}{Z_{BB}} e^{\bm{b}^T \bm{h}} \prod_i^M (1 + e^{a_i + \bm{w}_{i\ast}^T \bm{h}}) .
-\end{align}
-!et
-
-=== Conditional Probability Density Functions ===
-
-We derive the probability of the hidden units given the visible units using Bayes' rule
-
-!bt
-\begin{align}
-	p_{BB} (\bm{h}|\bm{x}) =& \frac{p_{BB} (\bm{x}, \bm{h})}{p_{BB} (\bm{x})} \nonumber \\
-	=& \frac{ \frac{1}{Z_{BB}}  e^{\bm{x}^T \bm{a} + \bm{b}^T \bm{h} + \bm{x}^T \bm{W} \bm{h}} }
-	        {\frac{1}{Z_{BB}} e^{\bm{x}^T \bm{a}} \prod_j^N (1 + e^{b_j + \bm{x}^T \bm{w}_{\ast j}})} \nonumber \\
-	=& \frac{  e^{\bm{x}^T \bm{a}} e^{ \sum_j^N (b_j + \bm{x}^T \bm{w}_{\ast j} ) h_j} }
-	        { e^{\bm{x}^T \bm{a}} \prod_j^N (1 + e^{b_j + \bm{x}^T \bm{w}_{\ast j}})} \nonumber \\
-	=& \prod_j^N \frac{ e^{(b_j + \bm{x}^T \bm{w}_{\ast j} ) h_j}  }
-	{1 + e^{b_j + \bm{x}^T \bm{w}_{\ast j}}} \nonumber \\
-	=& \prod_j^N p_{BB} (h_j| \bm{x}) .
-\end{align}
-!et
-
-From this we find the probability of a hidden unit being "on" or "off":
-
-!bt
-\begin{align}
-	p_{BB} (h_j=1 | \bm{x}) =&   \frac{ e^{(b_j + \bm{x}^T \bm{w}_{\ast j} ) h_j}  }
-	{1 + e^{b_j + \bm{x}^T \bm{w}_{\ast j}}} \\
-	=&  \frac{ e^{(b_j + \bm{x}^T \bm{w}_{\ast j} )}  }
-	{1 + e^{b_j + \bm{x}^T \bm{w}_{\ast j}}} \\
-	=&  \frac{ 1 }{1 + e^{-(b_j + \bm{x}^T \bm{w}_{\ast j})} } ,
-\end{align}
-!et
-and
-
-!bt
-\begin{align}
-	p_{BB} (h_j=0 | \bm{x}) =\frac{ 1 }{1 + e^{b_j + \bm{x}^T \bm{w}_{\ast j}} } .
-\end{align}
-!et
-
-
-Similarly we have that the conditional probability of the visible units given the hidden ones are
-
-!bt
-\begin{align}
-	p_{BB} (\bm{x}|\bm{h}) =& \prod_i^M \frac{ e^{ (a_i + \bm{w}_{i\ast}^T \bm{h}) x_i} }{ 1 + e^{a_i + \bm{w}_{i\ast}^T \bm{h}} } \\
-	&= \prod_i^M p_{BB} (x_i | \bm{h}) .
-\end{align}
-!et
-
-
-!bt
-\begin{align}
-	p_{BB} (x_i=1 | \bm{h}) =& \frac{1}{1 + e^{-(a_i + \bm{w}_{i\ast}^T \bm{h} )}} \\
-	p_{BB} (x_i=0 | \bm{h}) =& \frac{1}{1 + e^{a_i + \bm{w}_{i\ast}^T \bm{h} }} .
-\end{align}
-!et
-
-
-!split
-===== Python version for the two non-interacting particles =====
-
-!bc pycod
-# 2-electron VMC code for 2dim quantum dot with importance sampling
-# Using gaussian rng for new positions and Metropolis- Hastings 
-# Added restricted boltzmann machine method for dealing with the wavefunction
-# RBM code based heavily off of:
-# https://github.com/CompPhysics/ComputationalPhysics2/tree/gh-pages/doc/Programs/BoltzmannMachines/MLcpp/src/CppCode/ob
-from math import exp, sqrt
-from random import random, seed, normalvariate
-import numpy as np
-import matplotlib.pyplot as plt
-from mpl_toolkits.mplot3d import Axes3D
-from matplotlib import cm
-from matplotlib.ticker import LinearLocator, FormatStrFormatter
-import sys
-
-
-
-# Trial wave function for the 2-electron quantum dot in two dims
-def WaveFunction(r,a,b,w):
-    sigma=1.0
-    sig2 = sigma**2
-    Psi1 = 0.0
-    Psi2 = 1.0
-    Q = Qfac(r,b,w)
-    
-    for iq in range(NumberParticles):
-        for ix in range(Dimension):
-            Psi1 += (r[iq,ix]-a[iq,ix])**2
-            
-    for ih in range(NumberHidden):
-        Psi2 *= (1.0 + np.exp(Q[ih]))
-        
-    Psi1 = np.exp(-Psi1/(2*sig2))
-
-    return Psi1*Psi2
-
-# Local energy  for the 2-electron quantum dot in two dims, using analytical local energy
-def LocalEnergy(r,a,b,w):
-    sigma=1.0
-    sig2 = sigma**2
-    locenergy = 0.0
-    
-    Q = Qfac(r,b,w)
-
-    for iq in range(NumberParticles):
-        for ix in range(Dimension):
-            sum1 = 0.0
-            sum2 = 0.0
-            for ih in range(NumberHidden):
-                sum1 += w[iq,ix,ih]/(1+np.exp(-Q[ih]))
-                sum2 += w[iq,ix,ih]**2 * np.exp(Q[ih]) / (1.0 + np.exp(Q[ih]))**2
-    
-            dlnpsi1 = -(r[iq,ix] - a[iq,ix]) /sig2 + sum1/sig2
-            dlnpsi2 = -1/sig2 + sum2/sig2**2
-            locenergy += 0.5*(-dlnpsi1*dlnpsi1 - dlnpsi2 + r[iq,ix]**2)
-            
-    if(interaction==True):
-        for iq1 in range(NumberParticles):
-            for iq2 in range(iq1):
-                distance = 0.0
-                for ix in range(Dimension):
-                    distance += (r[iq1,ix] - r[iq2,ix])**2
-                    
-                locenergy += 1/sqrt(distance)
-                
-    return locenergy
-
-# Derivate of wave function ansatz as function of variational parameters
-def DerivativeWFansatz(r,a,b,w):
-    
-    sigma=1.0
-    sig2 = sigma**2
-    
-    Q = Qfac(r,b,w)
-    
-    WfDer = np.empty((3,),dtype=object)
-    WfDer = [np.copy(a),np.copy(b),np.copy(w)]
-    
-    WfDer[0] = (r-a)/sig2
-    WfDer[1] = 1 / (1 + np.exp(-Q))
-    
-    for ih in range(NumberHidden):
-        WfDer[2][:,:,ih] = w[:,:,ih] / (sig2*(1+np.exp(-Q[ih])))
-            
-    return  WfDer
-
-# Setting up the quantum force for the two-electron quantum dot, recall that it is a vector
-def QuantumForce(r,a,b,w):
-
-    sigma=1.0
-    sig2 = sigma**2
-    
-    qforce = np.zeros((NumberParticles,Dimension), np.double)
-    sum1 = np.zeros((NumberParticles,Dimension), np.double)
-    
-    Q = Qfac(r,b,w)
-    
-    for ih in range(NumberHidden):
-        sum1 += w[:,:,ih]/(1+np.exp(-Q[ih]))
-    
-    qforce = 2*(-(r-a)/sig2 + sum1/sig2)
-    
-    return qforce
-    
-def Qfac(r,b,w):
-    Q = np.zeros((NumberHidden), np.double)
-    temp = np.zeros((NumberHidden), np.double)
-    
-    for ih in range(NumberHidden):
-        temp[ih] = (r*w[:,:,ih]).sum()
-        
-    Q = b + temp
-    
-    return Q
-    
-# Computing the derivative of the energy and the energy 
-def EnergyMinimization(a,b,w):
-
-    NumberMCcycles= 10000
-    # Parameters in the Fokker-Planck simulation of the quantum force
-    D = 0.5
-    TimeStep = 0.05
-    # positions
-    PositionOld = np.zeros((NumberParticles,Dimension), np.double)
-    PositionNew = np.zeros((NumberParticles,Dimension), np.double)
-    # Quantum force
-    QuantumForceOld = np.zeros((NumberParticles,Dimension), np.double)
-    QuantumForceNew = np.zeros((NumberParticles,Dimension), np.double)
-
-    # seed for rng generator 
-    seed()
-    energy = 0.0
-    DeltaE = 0.0
-
-    EnergyDer = np.empty((3,),dtype=object)
-    DeltaPsi = np.empty((3,),dtype=object)
-    DerivativePsiE = np.empty((3,),dtype=object)
-    EnergyDer = [np.copy(a),np.copy(b),np.copy(w)]
-    DeltaPsi = [np.copy(a),np.copy(b),np.copy(w)]
-    DerivativePsiE = [np.copy(a),np.copy(b),np.copy(w)]
-    for i in range(3): EnergyDer[i].fill(0.0)
-    for i in range(3): DeltaPsi[i].fill(0.0)
-    for i in range(3): DerivativePsiE[i].fill(0.0)
-
-    
-    #Initial position
-    for i in range(NumberParticles):
-        for j in range(Dimension):
-            PositionOld[i,j] = normalvariate(0.0,1.0)*sqrt(TimeStep)
-    wfold = WaveFunction(PositionOld,a,b,w)
-    QuantumForceOld = QuantumForce(PositionOld,a,b,w)
-
-    #Loop over MC MCcycles
-    for MCcycle in range(NumberMCcycles):
-        #Trial position moving one particle at the time
-        for i in range(NumberParticles):
-            for j in range(Dimension):
-                PositionNew[i,j] = PositionOld[i,j]+normalvariate(0.0,1.0)*sqrt(TimeStep)+\
-                                       QuantumForceOld[i,j]*TimeStep*D
-            wfnew = WaveFunction(PositionNew,a,b,w)
-            QuantumForceNew = QuantumForce(PositionNew,a,b,w)
-            
-            GreensFunction = 0.0
-            for j in range(Dimension):
-                GreensFunction += 0.5*(QuantumForceOld[i,j]+QuantumForceNew[i,j])*\
-                                      (D*TimeStep*0.5*(QuantumForceOld[i,j]-QuantumForceNew[i,j])-\
-                                      PositionNew[i,j]+PositionOld[i,j])
-      
-            GreensFunction = exp(GreensFunction)
-            ProbabilityRatio = GreensFunction*wfnew**2/wfold**2
-            #Metropolis-Hastings test to see whether we accept the move
-            if random() <= ProbabilityRatio:
-                for j in range(Dimension):
-                    PositionOld[i,j] = PositionNew[i,j]
-                    QuantumForceOld[i,j] = QuantumForceNew[i,j]
-                wfold = wfnew
-        #print("wf new:        ", wfnew)
-        #print("force on 1 new:", QuantumForceNew[0,:])
-        #print("pos of 1 new:  ", PositionNew[0,:])
-        #print("force on 2 new:", QuantumForceNew[1,:])
-        #print("pos of 2 new:  ", PositionNew[1,:])
-        DeltaE = LocalEnergy(PositionOld,a,b,w)
-        DerPsi = DerivativeWFansatz(PositionOld,a,b,w)
-        
-        DeltaPsi[0] += DerPsi[0]
-        DeltaPsi[1] += DerPsi[1]
-        DeltaPsi[2] += DerPsi[2]
-        
-        energy += DeltaE
-
-        DerivativePsiE[0] += DerPsi[0]*DeltaE
-        DerivativePsiE[1] += DerPsi[1]*DeltaE
-        DerivativePsiE[2] += DerPsi[2]*DeltaE
-            
-    # We calculate mean values
-    energy /= NumberMCcycles
-    DerivativePsiE[0] /= NumberMCcycles
-    DerivativePsiE[1] /= NumberMCcycles
-    DerivativePsiE[2] /= NumberMCcycles
-    DeltaPsi[0] /= NumberMCcycles
-    DeltaPsi[1] /= NumberMCcycles
-    DeltaPsi[2] /= NumberMCcycles
-    EnergyDer[0]  = 2*(DerivativePsiE[0]-DeltaPsi[0]*energy)
-    EnergyDer[1]  = 2*(DerivativePsiE[1]-DeltaPsi[1]*energy)
-    EnergyDer[2]  = 2*(DerivativePsiE[2]-DeltaPsi[2]*energy)
-    return energy, EnergyDer
-
-
-#Here starts the main program with variable declarations
-NumberParticles = 2
-Dimension = 2
-NumberHidden = 2
-
-interaction=False
-
-# guess for parameters
-a=np.random.normal(loc=0.0, scale=0.001, size=(NumberParticles,Dimension))
-b=np.random.normal(loc=0.0, scale=0.001, size=(NumberHidden))
-w=np.random.normal(loc=0.0, scale=0.001, size=(NumberParticles,Dimension,NumberHidden))
-# Set up iteration using stochastic gradient method
-Energy = 0
-EDerivative = np.empty((3,),dtype=object)
-EDerivative = [np.copy(a),np.copy(b),np.copy(w)]
-# Learning rate eta, max iterations, need to change to adaptive learning rate
-eta = 0.001
-MaxIterations = 50
-iter = 0
-np.seterr(invalid='raise')
-Energies = np.zeros(MaxIterations)
-EnergyDerivatives1 = np.zeros(MaxIterations)
-EnergyDerivatives2 = np.zeros(MaxIterations)
-
-while iter < MaxIterations:
-    Energy, EDerivative = EnergyMinimization(a,b,w)
-    agradient = EDerivative[0]
-    bgradient = EDerivative[1]
-    wgradient = EDerivative[2]
-    a -= eta*agradient
-    b -= eta*bgradient 
-    w -= eta*wgradient 
-    Energies[iter] = Energy
-    print("Energy:",Energy)
-
-    iter += 1
-
-#nice printout with Pandas
-import pandas as pd
-from pandas import DataFrame
-pd.set_option('max_columns', 6)
-data ={'Energy':Energies}#,'A Derivative':EnergyDerivatives1,'B Derivative':EnergyDerivatives2,'Weights Derivative':EnergyDerivatives3}
-
-frame = pd.DataFrame(data)
-print(frame)
-!ec
-
-
-
-
+Thanks to Daniel Bazin (MSU), Jane Kim (MSU), Julie Butler (MSU), Dean Lee (MSU), Sean Liddick (MSU), Michelle Kuchera (Davidson College), Vilde Flugsrud (UiO), Even Nordhagen (UiO), Bendik Samseth (UiO) and Robert Solli (UiO) for many discussions and interpretations.
+!eblock
 
 
 

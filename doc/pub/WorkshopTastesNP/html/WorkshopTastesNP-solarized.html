@@ -75,83 +75,70 @@ div { text-align: justify; text-justify: inter-word; }
               ('ML in Nuclear Physics, Examples', 2, None, '___sec8'),
               ('More examples', 2, None, '___sec9'),
               ('Selected References', 2, None, '___sec10'),
-              ('What are the Machine Learning calculations here based on?',
-               2,
-               None,
-               '___sec11'),
-              ('Some members of the ML family', 2, None, '___sec12'),
-              ('A Frequentist approach to data analysis', 2, None, '___sec13'),
-              ('What are the basic ingredients?', 2, None, '___sec14'),
-              ('Neural network types', 2, None, '___sec15'),
-              ('Nuclear Physics Experiments $^{46}$Ar', 2, None, '___sec16'),
-              ('Why Machine Learning?', 2, None, '___sec17'),
+              ('Some members of the ML family', 2, None, '___sec11'),
+              ('What are the basic ingredients?', 2, None, '___sec12'),
+              ('Neural network types', 2, None, '___sec13'),
+              ('Nuclear Physics Experiments $^{46}$Ar', 2, None, '___sec14'),
+              ('Why Machine Learning?', 2, None, '___sec15'),
               ('Why Machine Learning for Experimental Analysis?',
                2,
                None,
-               '___sec18'),
-              ('More arguments', 2, None, '___sec19'),
+               '___sec16'),
+              ('More arguments', 2, None, '___sec17'),
               ('The first theoretical system: electrons in a harmonic '
                'oscillator trap in two dimensions',
                2,
                None,
-               '___sec20'),
+               '___sec18'),
+              ('Quantum Monte Carlo Motivation', 2, None, '___sec19'),
+              ('Quantum Monte Carlo Motivation', 2, None, '___sec20'),
               ('Quantum Monte Carlo Motivation', 2, None, '___sec21'),
-              ('Quantum Monte Carlo Motivation', 2, None, '___sec22'),
-              ('Quantum Monte Carlo Motivation', 2, None, '___sec23'),
-              ('Quantum Monte Carlo', 2, None, '___sec24'),
-              ('Energy derivatives', 2, None, '___sec25'),
-              ('Derivatives of the local energy', 2, None, '___sec26'),
-              ('Why Boltzmann machines?', 2, None, '___sec27'),
-              ('A standard BM setup', 2, None, '___sec28'),
-              ('The structure of the RBM network', 2, None, '___sec29'),
-              ('The network', 2, None, '___sec30'),
-              ('Goals', 2, None, '___sec31'),
-              ('Joint distribution', 2, None, '___sec32'),
-              ('Defining different types of RBMs', 2, None, '___sec33'),
-              ('Representing the wave function', 2, None, '___sec34'),
-              ('Choose the cost/loss function', 2, None, '___sec35'),
-              ('Running the codes', 2, None, '___sec36'),
+              ('Energy derivatives', 2, None, '___sec22'),
+              ('Derivatives of the local energy', 2, None, '___sec23'),
+              ('Why Boltzmann machines?', 2, None, '___sec24'),
+              ('A standard BM setup', 2, None, '___sec25'),
+              ('The structure of the RBM network', 2, None, '___sec26'),
+              ('The network', 2, None, '___sec27'),
+              ('Joint distribution', 2, None, '___sec28'),
+              ('Defining different types of RBMs', 2, None, '___sec29'),
+              ('Representing the wave function', 2, None, '___sec30'),
+              ('Choose the cost/loss function', 2, None, '___sec31'),
+              ('Running the codes', 2, None, '___sec32'),
               ('Energy as function of iterations, $N=2$ electrons',
                2,
                None,
-               '___sec37'),
+               '___sec33'),
               ('Energy as function of iterations, no Physics info $N=2$ '
                'electrons',
                2,
                None,
-               '___sec38'),
+               '___sec34'),
               ('Onebody densities $N=6$, $\\hbar\\omega=1.0$ a.u.',
                2,
                None,
-               '___sec39'),
+               '___sec35'),
               ('Onebody densities $N=6$, $\\hbar\\omega=0.1$ a.u.',
                2,
                None,
-               '___sec40'),
+               '___sec36'),
               ('Onebody densities $N=30$, $\\hbar\\omega=1.0$ a.u.',
                2,
                None,
-               '___sec41'),
+               '___sec37'),
               ('Onebody densities $N=30$, $\\hbar\\omega=0.1$ a.u.',
                2,
                None,
-               '___sec42'),
-              ('Or using Deep Learning Neural Networks', 2, None, '___sec43'),
+               '___sec38'),
+              ('Or using Deep Learning Neural Networks', 2, None, '___sec39'),
               ('Replacing the Jastrow factor with Neural Networks',
                2,
                None,
-               '___sec44'),
-              ('Conclusions and where do we stand', 2, None, '___sec45'),
-              ('Appendix: Mathematical details', 2, None, '___sec46'),
-              ('Marginal Probability Density Functions', 3, None, '___sec47'),
-              ('Conditional Probability Density Functions',
-               3,
-               None,
-               '___sec48'),
-              ('Python version for the two non-interacting particles',
+               '___sec40'),
+              ('Conclusions and where do we stand', 2, None, '___sec41'),
+              ('What are the Machine Learning calculations here based on?',
                2,
                None,
-               '___sec49')]}
+               '___sec42')]}
 end of tocinfo -->
 
 <body>
@@ -256,7 +243,7 @@ How can we avoid the dimensionality curse? Many possibilities
 </ol>
 
 Machine Learning and Quantum Computing hold also great promise in tackling the 
-ever increasing dimensionalities. Here we will focus on Machine Learning.
+ever increasing dimensionalities. The hot field is now <b>Quantum Machine Learning</b>. Here we will focus on Machine Learning.
 </div>
 
 
@@ -417,29 +404,9 @@ The large amount of degrees of freedom pertain to both theory and experiment in 
 
 
 <p>
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-
-<h2 id="___sec11">What are the Machine Learning calculations here based on? </h2>
-
-<p>
-<div class="alert alert-block alert-block alert-text-normal">
-<b></b>
-<p>
-This work is inspired by the idea of representing the wave function with
-a restricted Boltzmann machine (RBM), presented recently by <a href="http://science.sciencemag.org/content/355/6325/602" target="_blank">G. Carleo and M. Troyer, Science <b>355</b>, Issue 6325, pp. 602-606 (2017)</a>. They
-named such a wave function/network a <em>neural network quantum state</em> (NQS). In their article they apply it to the quantum mechanical
-spin lattice systems of the Ising model and Heisenberg model, with
-encouraging results. See also the recent work by <a href="https://arxiv.org/abs/2007.14282" target="_blank">Adams et al.</a>.
-
-<p>
-Thanks to Daniel Bazin (MSU), Jane Kim (MSU), Julie Butler (MSU), Dean Lee (MSU), Sean Liddick (MSU), Michelle Kuchera (Davidson College), Vilde Flugsrud (UiO), Even Nordhagen (UiO), Bendik Samseth (UiO) and Robert Solli (UiO) for many discussions and interpretations.
-</div>
-
-
-<p>
 <!-- !split  -->
 
-<h2 id="___sec12">Some members of the ML family </h2>
+<h2 id="___sec11">Some members of the ML family </h2>
 
 <p>
 <div class="alert alert-block alert-block alert-text-normal">
@@ -461,40 +428,7 @@ Thanks to Daniel Bazin (MSU), Jane Kim (MSU), Julie Butler (MSU), Dean Lee (MSU)
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec13">A Frequentist approach to data analysis  </h2>
-
-<p>
-When you hear phrases like <b>predictions and estimations</b> and
-<b>correlations and causations</b>, what do you think of?  May be you think
-of the difference between classifying new data points and generating
-new data points.
-Or perhaps you consider that correlations represent some kind of symmetric statements like
-if \( A \) is correlated with \( B \), then \( B \) is correlated with
-\( A \). Causation on the other hand is directional, that is if \( A \) causes \( B \), \( B \) does not
-necessarily cause \( A \).
-
-<p>
-These concepts are in some sense the difference between machine
-learning and statistics. In machine learning and prediction based
-tasks, we are often interested in developing algorithms that are
-capable of learning patterns from given data in an automated fashion,
-and then using these learned patterns to make predictions or
-assessments of newly given data. In many cases, our primary concern
-is the quality of the predictions or assessments, and we are less
-concerned about the underlying patterns that were learned in order
-to make these predictions.
-
-<p>
-In machine learning we normally use <a href="https://en.wikipedia.org/wiki/Frequentist_inference" target="_blank">a so-called frequentist approach</a>,
-where the aim is to make predictions and find correlations. We focus
-less on for example extracting a probability distribution function (PDF). The PDF can be
-used in turn to make estimations and find causations such as given \( A \)
-what is the likelihood of finding \( B \).
-
-<p>
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-
-<h2 id="___sec14">What are the basic ingredients? </h2>
+<h2 id="___sec12">What are the basic ingredients? </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -513,7 +447,7 @@ We seek to minimize the function \( \mathcal{C} (\mathbf{x}, f(\mathbf{\alpha}))
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec15">Neural network types </h2>
+<h2 id="___sec13">Neural network types </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -533,7 +467,7 @@ is associated with a weight variable.
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec16">Nuclear Physics Experiments $^{46}$Ar </h2>
+<h2 id="___sec14">Nuclear Physics Experiments $^{46}$Ar </h2>
 
 <p>
 Two- and three-dimensional representations of two events from the
@@ -549,7 +483,7 @@ almost free of noise. See <a href="https://arxiv.org/abs/2008.02757" target="_bl
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec17">Why Machine Learning? </h2>
+<h2 id="___sec15">Why Machine Learning? </h2>
 
 <p>
 The traditional Monte Carlo event selection process does not have a
@@ -574,7 +508,7 @@ learning set events, which is error prone and time consuming.
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec18">Why Machine Learning for Experimental Analysis? </h2>
+<h2 id="___sec16">Why Machine Learning for Experimental Analysis? </h2>
 
 <p>
 The \( \chi^2 \) approach used in the traditional analysis performed on
@@ -599,7 +533,7 @@ tools.
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec19">More arguments </h2>
+<h2 id="___sec17">More arguments </h2>
 
 <p>
 The computationally expensive fitting procedure
@@ -615,7 +549,7 @@ potentially enabling new discovery of unexpected reaction types.
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec20">The first theoretical system: electrons in a harmonic oscillator trap in two dimensions </h2>
+<h2 id="___sec18">The first theoretical system: electrons in a harmonic oscillator trap in two dimensions </h2>
 
 <p>
 The Hamiltonian of the quantum dot is given by
@@ -641,7 +575,7 @@ This system has analytical solutions in two and three dimensions (<a href="https
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec21">Quantum Monte Carlo Motivation </h2>
+<h2 id="___sec19">Quantum Monte Carlo Motivation </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -664,7 +598,7 @@ In general, the integrals involved in the calculation of various  expectation va
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec22">Quantum Monte Carlo Motivation </h2>
+<h2 id="___sec20">Quantum Monte Carlo Motivation </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b>Basic steps.</b>
 <p>
@@ -687,7 +621,7 @@ $$
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec23">Quantum Monte Carlo Motivation </h2>
+<h2 id="___sec21">Quantum Monte Carlo Motivation </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b>Define a new quantity.</b>
 <p>
@@ -707,35 +641,7 @@ with \( N \) being the number of Monte Carlo samples.
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec24">Quantum Monte Carlo </h2>
-<div class="alert alert-block alert-block alert-text-normal">
-<b></b>
-<p>
-The Algorithm for performing a variational Monte Carlo calculations runs thus as this
-
-<ul>
-   <li> Initialisation: Fix the number of Monte Carlo steps. Choose an initial \( \boldsymbol{R} \) and variational parameters \( \alpha \) and calculate \( \left|\psi_T(\boldsymbol{R},\boldsymbol{\alpha})\right|^2 \).</li> 
-   <li> Initialise the energy and the variance and start the Monte Carlo calculation by looping over trials.</li>
-
-<ul>
-      <li> Calculate  a trial position  \( \boldsymbol{R}_p=\boldsymbol{R}+r*step \) where \( r \) is a random variable \( r \in [0,1] \).</li>
-      <li> Metropolis algorithm to accept or reject this move  \( w = P(\boldsymbol{R}_p,\boldsymbol{\alpha})/P(\boldsymbol{R},\boldsymbol{\alpha}) \).</li>
-      <li> If the step is accepted, then we set \( \boldsymbol{R}=\boldsymbol{R}_p \).</li> 
-      <li> Update averages</li>
-</ul>
-
-   <li> Finish and compute final averages.</li>
-</ul>
-
-Observe that the jumping in space is governed by the variable <em>step</em>. This is often called brute-force sampling.
-Need importance sampling to get more relevant sampling.
-</div>
-
-
-<p>
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-
-<h2 id="___sec25">Energy derivatives </h2>
+<h2 id="___sec22">Energy derivatives </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -758,7 +664,7 @@ $$
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec26">Derivatives of the local energy </h2>
+<h2 id="___sec23">Derivatives of the local energy </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -777,15 +683,21 @@ $$
 \langle \frac{\bar{\Psi}_{i}}{\Psi}\rangle\langle E_L\rangle
 $$
 
-These integrals are evaluted using MC intergration (with all its possible error sources). 
-We can then use methods like stochastic gradient or other minimization methods to find the optimal variational parameters (I don't discuss this topic here, but these methods are very important in ML).
+<p>
+These integrals are evaluted using MC intergration (with all its
+possible error sources).  We can then use methods like stochastic
+gradient or other minimization methods to find the optimal variational
+parameters (I don't discuss this topic here, but these methods are
+very important in ML).
+
+
 </div>
 
 
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec27">Why Boltzmann machines? </h2>
+<h2 id="___sec24">Why Boltzmann machines? </h2>
 
 <p>
 What is known as restricted Boltzmann Machines (RMB) have received a
@@ -807,7 +719,7 @@ problems like the Ising and Potts classes of models.
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec28">A standard BM setup </h2>
+<h2 id="___sec25">A standard BM setup </h2>
 
 <p>
 <div class="alert alert-block alert-block alert-text-normal">
@@ -840,7 +752,7 @@ Here we take away all lateral connections between nodes in the visible layer as 
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec29">The structure of the RBM network </h2>
+<h2 id="___sec26">The structure of the RBM network </h2>
 
 <p>
 <br /><br /><center><p><img src="figures/RBM.png" align="bottom" width=800></p></center><br /><br />
@@ -848,7 +760,7 @@ Here we take away all lateral connections between nodes in the visible layer as 
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec30">The network </h2>
+<h2 id="___sec27">The network </h2>
 
 <p>
 <b>The network layers</b>:
@@ -860,36 +772,7 @@ Here we take away all lateral connections between nodes in the visible layer as 
 
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec31">Goals </h2>
-
-<p>
-The goal of the hidden layer is to increase the model's expressive
-power. We encode complex interactions between visible variables by
-introducing additional, hidden variables that interact with visible
-degrees of freedom in a simple manner, yet still reproduce the complex
-correlations between visible degrees in the data once marginalized
-over (integrated out).
-
-<p>
-Examples of this trick being employed in physics: 
-
-<ol>
- <li> The Hubbard-Stratonovich transformation</li>
- <li> The introduction of ghost fields in gauge theory</li>
- <li> Shadow wave functions in Quantum Monte Carlo simulations</li>
-</ol>
-
-<b>The network parameters, to be optimized/learned</b>:
-
-<ol>
- <li> \( \mathbf{a} \) represents the visible bias, a vector of same length as \( \mathbf{x} \).</li>
- <li> \( \mathbf{b} \) represents the hidden bias, a vector of same lenght as \( \mathbf{h} \).</li>
- <li> \( W \) represents the interaction weights, a matrix of size \( M\times N \).</li>
-</ol>
-
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-
-<h2 id="___sec32">Joint distribution </h2>
+<h2 id="___sec28">Joint distribution </h2>
 
 <p>
 The restricted Boltzmann machine is described by a Boltzmann distribution
@@ -913,7 +796,7 @@ It is common to ignore \( T_0 \) by setting it to one.
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec33">Defining different types of RBMs </h2>
+<h2 id="___sec29">Defining different types of RBMs </h2>
 
 <p>
 There are different variants of RBMs, and the differences lie in the types of visible and hidden units we choose as well as in the implementation of the energy function \( E(\mathbf{x},\mathbf{h}) \).
@@ -953,7 +836,7 @@ $$
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec34">Representing the wave function </h2>
+<h2 id="___sec30">Representing the wave function </h2>
 
 <p>
 The wavefunction should be a probability amplitude depending on \( \boldsymbol{x} \). The RBM model is given by the joint distribution of \( \boldsymbol{x} \) and \( \boldsymbol{h} \)
@@ -992,7 +875,7 @@ $$
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec35">Choose the cost/loss function </h2>
+<h2 id="___sec31">Choose the cost/loss function </h2>
 
 <p>
 Now we don't necessarily have training data (unless we generate it by
@@ -1006,7 +889,7 @@ procedure is
 
 $$
 \begin{align}
-	C_i = \frac{\partial \langle E_L \rangle}{\partial \theta_i}
+	\frac{\partial \langle E_L \rangle}{\partial \theta_i}
 	= 2(\langle E_L \frac{1}{\Psi}\frac{\partial \Psi}{\partial \theta_i} \rangle - \langle E_L \rangle \langle \frac{1}{\Psi}\frac{\partial \Psi}{\partial \theta_i} \rangle ),
 \label{_auto13}
 \end{align}
@@ -1023,14 +906,11 @@ $$
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec36">Running the codes </h2>
+<h2 id="___sec32">Running the codes </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
 You can find the codes for the simple two-electron case at the Github repository <a href="https://github.com/mhjensenseminars/MachineLearningTalk/tree/master/doc/Programs/MLcpp/src" target="_blank"><tt>https://github.com/mhjensenseminars/MachineLearningTalk/tree/master/doc/Programs/MLcpp/src</tt></a>.
-
-<p>
-See Python code in additional material here.
 
 <p>
 The trial wave function are based on the product of a Slater determinant with either only Hermitian polynomials or Gaussian orbitals, with and without a Pade-Jastrow factor (PJ).
@@ -1042,7 +922,7 @@ The trial wave function are based on the product of a Slater determinant with ei
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec37">Energy as function of iterations, \( N=2 \) electrons  </h2>
+<h2 id="___sec33">Energy as function of iterations, \( N=2 \) electrons  </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -1053,7 +933,7 @@ The trial wave function are based on the product of a Slater determinant with ei
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec38">Energy as function of iterations, no Physics info \( N=2 \) electrons  </h2>
+<h2 id="___sec34">Energy as function of iterations, no Physics info \( N=2 \) electrons  </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -1064,7 +944,7 @@ The trial wave function are based on the product of a Slater determinant with ei
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec39">Onebody densities \( N=6 \), \( \hbar\omega=1.0 \) a.u. </h2>
+<h2 id="___sec35">Onebody densities \( N=6 \), \( \hbar\omega=1.0 \) a.u. </h2>
 
 <p>
 <div class="alert alert-block alert-block alert-text-normal">
@@ -1077,7 +957,7 @@ The trial wave function are based on the product of a Slater determinant with ei
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec40">Onebody densities \( N=6 \), \( \hbar\omega=0.1 \) a.u. </h2>
+<h2 id="___sec36">Onebody densities \( N=6 \), \( \hbar\omega=0.1 \) a.u. </h2>
 
 <p>
 <div class="alert alert-block alert-block alert-text-normal">
@@ -1090,7 +970,7 @@ The trial wave function are based on the product of a Slater determinant with ei
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec41">Onebody densities \( N=30 \), \( \hbar\omega=1.0 \) a.u. </h2>
+<h2 id="___sec37">Onebody densities \( N=30 \), \( \hbar\omega=1.0 \) a.u. </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -1101,7 +981,7 @@ The trial wave function are based on the product of a Slater determinant with ei
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec42">Onebody densities \( N=30 \), \( \hbar\omega=0.1 \) a.u. </h2>
+<h2 id="___sec38">Onebody densities \( N=30 \), \( \hbar\omega=0.1 \) a.u. </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -1112,7 +992,7 @@ The trial wave function are based on the product of a Slater determinant with ei
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec43">Or using Deep Learning Neural Networks </h2>
+<h2 id="___sec39">Or using Deep Learning Neural Networks </h2>
 
 <p>
 <a href="https://www.sciencedirect.com/science/article/pii/S0370269320305463?via%3Dihub" target="_blank">Machine Learning and the Deuteron by Kebble and Rios</a> and 
@@ -1143,7 +1023,7 @@ neutron-neutron scattering length
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec44">Replacing the Jastrow factor with Neural Networks </h2>
+<h2 id="___sec40">Replacing the Jastrow factor with Neural Networks </h2>
 
 <p>
 An appealing feature of the ANN ansatz is that it is more general than the more conventional product of two-
@@ -1164,7 +1044,7 @@ The above function is replaced by a four-layer Neural Network.
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec45">Conclusions and where do we stand </h2>
+<h2 id="___sec41">Conclusions and where do we stand </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -1191,404 +1071,23 @@ The above function is replaced by a four-layer Neural Network.
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec46">Appendix: Mathematical details </h2>
+<h2 id="___sec42">What are the Machine Learning calculations here based on? </h2>
 
 <p>
-The original RBM had binary visible and hidden nodes. They were
-showne to be universal approximators of discrete distributions.
-It was also shown that adding hidden units yields
-strictly improved modelling power. The common choice of binary values
-are 0 and 1. However, in some physics applications, -1 and 1 might be
-a more natural choice. We will here use 0 and 1.
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+This work is inspired by the idea of representing the wave function with
+a restricted Boltzmann machine (RBM), presented recently by <a href="http://science.sciencemag.org/content/355/6325/602" target="_blank">G. Carleo and M. Troyer, Science <b>355</b>, Issue 6325, pp. 602-606 (2017)</a>. They
+named such a wave function/network a <em>neural network quantum state</em> (NQS). In their article they apply it to the quantum mechanical
+spin lattice systems of the Ising model and Heisenberg model, with
+encouraging results. See also the recent work by <a href="https://arxiv.org/abs/2007.14282" target="_blank">Adams et al.</a>.
 
 <p>
-Here we look at some of the relevant equations for a binary-binary RBM.
-
-$$
-\begin{align}
-	E_{BB}(\boldsymbol{x}, \mathbf{h}) = - \sum_i^M x_i a_i- \sum_j^N b_j h_j - \sum_{i,j}^{M,N} x_i w_{ij} h_j.
-\label{_auto17}
-\end{align}
-$$
+Thanks to Daniel Bazin (MSU), Jane Kim (MSU), Julie Butler (MSU), Dean Lee (MSU), Sean Liddick (MSU), Michelle Kuchera (Davidson College), Vilde Flugsrud (UiO), Even Nordhagen (UiO), Bendik Samseth (UiO) and Robert Solli (UiO) for many discussions and interpretations.
+</div>
 
 
-$$
-\begin{align}
-	p_{BB}(\boldsymbol{x}, \boldsymbol{h}) =& \frac{1}{Z_{BB}} e^{\sum_i^M a_i x_i + \sum_j^N b_j h_j + \sum_{ij}^{M,N} x_i w_{ij} h_j} 
-\label{_auto18}\\
-	=& \frac{1}{Z_{BB}} e^{\boldsymbol{x}^T \boldsymbol{a} + \boldsymbol{b}^T \boldsymbol{h} + \boldsymbol{x}^T \boldsymbol{W} \boldsymbol{h}}
-\label{_auto19}
-\end{align}
-$$
-
-<p>
-with the partition function
-
-$$
-\begin{align}
-	Z_{BB} = \sum_{\boldsymbol{x}, \boldsymbol{h}} e^{\boldsymbol{x}^T \boldsymbol{a} + \boldsymbol{b}^T \boldsymbol{h} + \boldsymbol{x}^T \boldsymbol{W} \boldsymbol{h}} .
-\label{_auto20}
-\end{align}
-$$
-
-<h3 id="___sec47">Marginal Probability Density Functions </h3>
-
-<p>
-In order to find the probability of any configuration of the visible units we derive the marginal probability density function.
-
-$$
-\begin{align}
-	p_{BB} (\boldsymbol{x}) =& \sum_{\boldsymbol{h}} p_{BB} (\boldsymbol{x}, \boldsymbol{h}) 
-\label{_auto21}\\
-	=& \frac{1}{Z_{BB}} \sum_{\boldsymbol{h}} e^{\boldsymbol{x}^T \boldsymbol{a} + \boldsymbol{b}^T \boldsymbol{h} + \boldsymbol{x}^T \boldsymbol{W} \boldsymbol{h}} \nonumber \\
-	=& \frac{1}{Z_{BB}} e^{\boldsymbol{x}^T \boldsymbol{a}} \sum_{\boldsymbol{h}} e^{\sum_j^N (b_j + \boldsymbol{x}^T \boldsymbol{w}_{\ast j})h_j} \nonumber \\
-	=& \frac{1}{Z_{BB}} e^{\boldsymbol{x}^T \boldsymbol{a}} \sum_{\boldsymbol{h}} \prod_j^N e^{ (b_j + \boldsymbol{x}^T \boldsymbol{w}_{\ast j})h_j} \nonumber \\
-	=& \frac{1}{Z_{BB}} e^{\boldsymbol{x}^T \boldsymbol{a}} \bigg ( \sum_{h_1} e^{(b_1 + \boldsymbol{x}^T \boldsymbol{w}_{\ast 1})h_1}
-	\times \sum_{h_2} e^{(b_2 + \boldsymbol{x}^T \boldsymbol{w}_{\ast 2})h_2} \times \nonumber \\
-	& ... \times \sum_{h_2} e^{(b_N + \boldsymbol{x}^T \boldsymbol{w}_{\ast N})h_N} \bigg ) \nonumber \\
-	=& \frac{1}{Z_{BB}} e^{\boldsymbol{x}^T \boldsymbol{a}} \prod_j^N \sum_{h_j} e^{(b_j + \boldsymbol{x}^T \boldsymbol{w}_{\ast j}) h_j} \nonumber \\
-	=& \frac{1}{Z_{BB}} e^{\boldsymbol{x}^T \boldsymbol{a}} \prod_j^N (1 + e^{b_j + \boldsymbol{x}^T \boldsymbol{w}_{\ast j}}) .
-\label{_auto22}
-\end{align}
-$$
-
-<p>
-A similar derivation yields the marginal probability of the hidden units
-
-$$
-\begin{align}
-	p_{BB} (\boldsymbol{h}) = \frac{1}{Z_{BB}} e^{\boldsymbol{b}^T \boldsymbol{h}} \prod_i^M (1 + e^{a_i + \boldsymbol{w}_{i\ast}^T \boldsymbol{h}}) .
-\label{_auto23}
-\end{align}
-$$
-
-<h3 id="___sec48">Conditional Probability Density Functions </h3>
-
-<p>
-We derive the probability of the hidden units given the visible units using Bayes' rule
-
-$$
-\begin{align}
-	p_{BB} (\boldsymbol{h}|\boldsymbol{x}) =& \frac{p_{BB} (\boldsymbol{x}, \boldsymbol{h})}{p_{BB} (\boldsymbol{x})} \nonumber \\
-	=& \frac{ \frac{1}{Z_{BB}}  e^{\boldsymbol{x}^T \boldsymbol{a} + \boldsymbol{b}^T \boldsymbol{h} + \boldsymbol{x}^T \boldsymbol{W} \boldsymbol{h}} }
-	        {\frac{1}{Z_{BB}} e^{\boldsymbol{x}^T \boldsymbol{a}} \prod_j^N (1 + e^{b_j + \boldsymbol{x}^T \boldsymbol{w}_{\ast j}})} \nonumber \\
-	=& \frac{  e^{\boldsymbol{x}^T \boldsymbol{a}} e^{ \sum_j^N (b_j + \boldsymbol{x}^T \boldsymbol{w}_{\ast j} ) h_j} }
-	        { e^{\boldsymbol{x}^T \boldsymbol{a}} \prod_j^N (1 + e^{b_j + \boldsymbol{x}^T \boldsymbol{w}_{\ast j}})} \nonumber \\
-	=& \prod_j^N \frac{ e^{(b_j + \boldsymbol{x}^T \boldsymbol{w}_{\ast j} ) h_j}  }
-	{1 + e^{b_j + \boldsymbol{x}^T \boldsymbol{w}_{\ast j}}} \nonumber \\
-	=& \prod_j^N p_{BB} (h_j| \boldsymbol{x}) .
-\label{_auto24}
-\end{align}
-$$
-
-<p>
-From this we find the probability of a hidden unit being "on" or "off":
-
-$$
-\begin{align}
-	p_{BB} (h_j=1 | \boldsymbol{x}) =&   \frac{ e^{(b_j + \boldsymbol{x}^T \boldsymbol{w}_{\ast j} ) h_j}  }
-	{1 + e^{b_j + \boldsymbol{x}^T \boldsymbol{w}_{\ast j}}} 
-\label{_auto25}\\
-	=&  \frac{ e^{(b_j + \boldsymbol{x}^T \boldsymbol{w}_{\ast j} )}  }
-	{1 + e^{b_j + \boldsymbol{x}^T \boldsymbol{w}_{\ast j}}} 
-\label{_auto26}\\
-	=&  \frac{ 1 }{1 + e^{-(b_j + \boldsymbol{x}^T \boldsymbol{w}_{\ast j})} } ,
-\label{_auto27}
-\end{align}
-$$
-
-and
-
-$$
-\begin{align}
-	p_{BB} (h_j=0 | \boldsymbol{x}) =\frac{ 1 }{1 + e^{b_j + \boldsymbol{x}^T \boldsymbol{w}_{\ast j}} } .
-\label{_auto28}
-\end{align}
-$$
-
-<p>
-Similarly we have that the conditional probability of the visible units given the hidden ones are
-
-$$
-\begin{align}
-	p_{BB} (\boldsymbol{x}|\boldsymbol{h}) =& \prod_i^M \frac{ e^{ (a_i + \boldsymbol{w}_{i\ast}^T \boldsymbol{h}) x_i} }{ 1 + e^{a_i + \boldsymbol{w}_{i\ast}^T \boldsymbol{h}} } 
-\label{_auto29}\\
-	&= \prod_i^M p_{BB} (x_i | \boldsymbol{h}) .
-\label{_auto30}
-\end{align}
-$$
-
-
-$$
-\begin{align}
-	p_{BB} (x_i=1 | \boldsymbol{h}) =& \frac{1}{1 + e^{-(a_i + \boldsymbol{w}_{i\ast}^T \boldsymbol{h} )}} 
-\label{_auto31}\\
-	p_{BB} (x_i=0 | \boldsymbol{h}) =& \frac{1}{1 + e^{a_i + \boldsymbol{w}_{i\ast}^T \boldsymbol{h} }} .
-\label{_auto32}
-\end{align}
-$$
-
-<p>
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-
-<h2 id="___sec49">Python version for the two non-interacting particles </h2>
-
-<p>
-
-<!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
-<div class="highlight" style="background: #eeeedd"><pre style="line-height: 125%"><span></span><span style="color: #228B22"># 2-electron VMC code for 2dim quantum dot with importance sampling</span>
-<span style="color: #228B22"># Using gaussian rng for new positions and Metropolis- Hastings </span>
-<span style="color: #228B22"># Added restricted boltzmann machine method for dealing with the wavefunction</span>
-<span style="color: #228B22"># RBM code based heavily off of:</span>
-<span style="color: #228B22"># https://github.com/CompPhysics/ComputationalPhysics2/tree/gh-pages/doc/Programs/BoltzmannMachines/MLcpp/src/CppCode/ob</span>
-<span style="color: #8B008B; font-weight: bold">from</span> <span style="color: #008b45; text-decoration: underline">math</span> <span style="color: #8B008B; font-weight: bold">import</span> exp, sqrt
-<span style="color: #8B008B; font-weight: bold">from</span> <span style="color: #008b45; text-decoration: underline">random</span> <span style="color: #8B008B; font-weight: bold">import</span> random, seed, normalvariate
-<span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">numpy</span> <span style="color: #8B008B; font-weight: bold">as</span> <span style="color: #008b45; text-decoration: underline">np</span>
-<span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">matplotlib.pyplot</span> <span style="color: #8B008B; font-weight: bold">as</span> <span style="color: #008b45; text-decoration: underline">plt</span>
-<span style="color: #8B008B; font-weight: bold">from</span> <span style="color: #008b45; text-decoration: underline">mpl_toolkits.mplot3d</span> <span style="color: #8B008B; font-weight: bold">import</span> Axes3D
-<span style="color: #8B008B; font-weight: bold">from</span> <span style="color: #008b45; text-decoration: underline">matplotlib</span> <span style="color: #8B008B; font-weight: bold">import</span> cm
-<span style="color: #8B008B; font-weight: bold">from</span> <span style="color: #008b45; text-decoration: underline">matplotlib.ticker</span> <span style="color: #8B008B; font-weight: bold">import</span> LinearLocator, FormatStrFormatter
-<span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">sys</span>
-
-
-
-<span style="color: #228B22"># Trial wave function for the 2-electron quantum dot in two dims</span>
-<span style="color: #8B008B; font-weight: bold">def</span> <span style="color: #008b45">WaveFunction</span>(r,a,b,w):
-    sigma=<span style="color: #B452CD">1.0</span>
-    sig2 = sigma**<span style="color: #B452CD">2</span>
-    Psi1 = <span style="color: #B452CD">0.0</span>
-    Psi2 = <span style="color: #B452CD">1.0</span>
-    Q = Qfac(r,b,w)
-    
-    <span style="color: #8B008B; font-weight: bold">for</span> iq <span style="color: #8B008B">in</span> <span style="color: #658b00">range</span>(NumberParticles):
-        <span style="color: #8B008B; font-weight: bold">for</span> ix <span style="color: #8B008B">in</span> <span style="color: #658b00">range</span>(Dimension):
-            Psi1 += (r[iq,ix]-a[iq,ix])**<span style="color: #B452CD">2</span>
-            
-    <span style="color: #8B008B; font-weight: bold">for</span> ih <span style="color: #8B008B">in</span> <span style="color: #658b00">range</span>(NumberHidden):
-        Psi2 *= (<span style="color: #B452CD">1.0</span> + np.exp(Q[ih]))
-        
-    Psi1 = np.exp(-Psi1/(<span style="color: #B452CD">2</span>*sig2))
-
-    <span style="color: #8B008B; font-weight: bold">return</span> Psi1*Psi2
-
-<span style="color: #228B22"># Local energy  for the 2-electron quantum dot in two dims, using analytical local energy</span>
-<span style="color: #8B008B; font-weight: bold">def</span> <span style="color: #008b45">LocalEnergy</span>(r,a,b,w):
-    sigma=<span style="color: #B452CD">1.0</span>
-    sig2 = sigma**<span style="color: #B452CD">2</span>
-    locenergy = <span style="color: #B452CD">0.0</span>
-    
-    Q = Qfac(r,b,w)
-
-    <span style="color: #8B008B; font-weight: bold">for</span> iq <span style="color: #8B008B">in</span> <span style="color: #658b00">range</span>(NumberParticles):
-        <span style="color: #8B008B; font-weight: bold">for</span> ix <span style="color: #8B008B">in</span> <span style="color: #658b00">range</span>(Dimension):
-            sum1 = <span style="color: #B452CD">0.0</span>
-            sum2 = <span style="color: #B452CD">0.0</span>
-            <span style="color: #8B008B; font-weight: bold">for</span> ih <span style="color: #8B008B">in</span> <span style="color: #658b00">range</span>(NumberHidden):
-                sum1 += w[iq,ix,ih]/(<span style="color: #B452CD">1</span>+np.exp(-Q[ih]))
-                sum2 += w[iq,ix,ih]**<span style="color: #B452CD">2</span> * np.exp(Q[ih]) / (<span style="color: #B452CD">1.0</span> + np.exp(Q[ih]))**<span style="color: #B452CD">2</span>
-    
-            dlnpsi1 = -(r[iq,ix] - a[iq,ix]) /sig2 + sum1/sig2
-            dlnpsi2 = -<span style="color: #B452CD">1</span>/sig2 + sum2/sig2**<span style="color: #B452CD">2</span>
-            locenergy += <span style="color: #B452CD">0.5</span>*(-dlnpsi1*dlnpsi1 - dlnpsi2 + r[iq,ix]**<span style="color: #B452CD">2</span>)
-            
-    <span style="color: #8B008B; font-weight: bold">if</span>(interaction==<span style="color: #8B008B; font-weight: bold">True</span>):
-        <span style="color: #8B008B; font-weight: bold">for</span> iq1 <span style="color: #8B008B">in</span> <span style="color: #658b00">range</span>(NumberParticles):
-            <span style="color: #8B008B; font-weight: bold">for</span> iq2 <span style="color: #8B008B">in</span> <span style="color: #658b00">range</span>(iq1):
-                distance = <span style="color: #B452CD">0.0</span>
-                <span style="color: #8B008B; font-weight: bold">for</span> ix <span style="color: #8B008B">in</span> <span style="color: #658b00">range</span>(Dimension):
-                    distance += (r[iq1,ix] - r[iq2,ix])**<span style="color: #B452CD">2</span>
-                    
-                locenergy += <span style="color: #B452CD">1</span>/sqrt(distance)
-                
-    <span style="color: #8B008B; font-weight: bold">return</span> locenergy
-
-<span style="color: #228B22"># Derivate of wave function ansatz as function of variational parameters</span>
-<span style="color: #8B008B; font-weight: bold">def</span> <span style="color: #008b45">DerivativeWFansatz</span>(r,a,b,w):
-    
-    sigma=<span style="color: #B452CD">1.0</span>
-    sig2 = sigma**<span style="color: #B452CD">2</span>
-    
-    Q = Qfac(r,b,w)
-    
-    WfDer = np.empty((<span style="color: #B452CD">3</span>,),dtype=<span style="color: #658b00">object</span>)
-    WfDer = [np.copy(a),np.copy(b),np.copy(w)]
-    
-    WfDer[<span style="color: #B452CD">0</span>] = (r-a)/sig2
-    WfDer[<span style="color: #B452CD">1</span>] = <span style="color: #B452CD">1</span> / (<span style="color: #B452CD">1</span> + np.exp(-Q))
-    
-    <span style="color: #8B008B; font-weight: bold">for</span> ih <span style="color: #8B008B">in</span> <span style="color: #658b00">range</span>(NumberHidden):
-        WfDer[<span style="color: #B452CD">2</span>][:,:,ih] = w[:,:,ih] / (sig2*(<span style="color: #B452CD">1</span>+np.exp(-Q[ih])))
-            
-    <span style="color: #8B008B; font-weight: bold">return</span>  WfDer
-
-<span style="color: #228B22"># Setting up the quantum force for the two-electron quantum dot, recall that it is a vector</span>
-<span style="color: #8B008B; font-weight: bold">def</span> <span style="color: #008b45">QuantumForce</span>(r,a,b,w):
-
-    sigma=<span style="color: #B452CD">1.0</span>
-    sig2 = sigma**<span style="color: #B452CD">2</span>
-    
-    qforce = np.zeros((NumberParticles,Dimension), np.double)
-    sum1 = np.zeros((NumberParticles,Dimension), np.double)
-    
-    Q = Qfac(r,b,w)
-    
-    <span style="color: #8B008B; font-weight: bold">for</span> ih <span style="color: #8B008B">in</span> <span style="color: #658b00">range</span>(NumberHidden):
-        sum1 += w[:,:,ih]/(<span style="color: #B452CD">1</span>+np.exp(-Q[ih]))
-    
-    qforce = <span style="color: #B452CD">2</span>*(-(r-a)/sig2 + sum1/sig2)
-    
-    <span style="color: #8B008B; font-weight: bold">return</span> qforce
-    
-<span style="color: #8B008B; font-weight: bold">def</span> <span style="color: #008b45">Qfac</span>(r,b,w):
-    Q = np.zeros((NumberHidden), np.double)
-    temp = np.zeros((NumberHidden), np.double)
-    
-    <span style="color: #8B008B; font-weight: bold">for</span> ih <span style="color: #8B008B">in</span> <span style="color: #658b00">range</span>(NumberHidden):
-        temp[ih] = (r*w[:,:,ih]).sum()
-        
-    Q = b + temp
-    
-    <span style="color: #8B008B; font-weight: bold">return</span> Q
-    
-<span style="color: #228B22"># Computing the derivative of the energy and the energy </span>
-<span style="color: #8B008B; font-weight: bold">def</span> <span style="color: #008b45">EnergyMinimization</span>(a,b,w):
-
-    NumberMCcycles= <span style="color: #B452CD">10000</span>
-    <span style="color: #228B22"># Parameters in the Fokker-Planck simulation of the quantum force</span>
-    D = <span style="color: #B452CD">0.5</span>
-    TimeStep = <span style="color: #B452CD">0.05</span>
-    <span style="color: #228B22"># positions</span>
-    PositionOld = np.zeros((NumberParticles,Dimension), np.double)
-    PositionNew = np.zeros((NumberParticles,Dimension), np.double)
-    <span style="color: #228B22"># Quantum force</span>
-    QuantumForceOld = np.zeros((NumberParticles,Dimension), np.double)
-    QuantumForceNew = np.zeros((NumberParticles,Dimension), np.double)
-
-    <span style="color: #228B22"># seed for rng generator </span>
-    seed()
-    energy = <span style="color: #B452CD">0.0</span>
-    DeltaE = <span style="color: #B452CD">0.0</span>
-
-    EnergyDer = np.empty((<span style="color: #B452CD">3</span>,),dtype=<span style="color: #658b00">object</span>)
-    DeltaPsi = np.empty((<span style="color: #B452CD">3</span>,),dtype=<span style="color: #658b00">object</span>)
-    DerivativePsiE = np.empty((<span style="color: #B452CD">3</span>,),dtype=<span style="color: #658b00">object</span>)
-    EnergyDer = [np.copy(a),np.copy(b),np.copy(w)]
-    DeltaPsi = [np.copy(a),np.copy(b),np.copy(w)]
-    DerivativePsiE = [np.copy(a),np.copy(b),np.copy(w)]
-    <span style="color: #8B008B; font-weight: bold">for</span> i <span style="color: #8B008B">in</span> <span style="color: #658b00">range</span>(<span style="color: #B452CD">3</span>): EnergyDer[i].fill(<span style="color: #B452CD">0.0</span>)
-    <span style="color: #8B008B; font-weight: bold">for</span> i <span style="color: #8B008B">in</span> <span style="color: #658b00">range</span>(<span style="color: #B452CD">3</span>): DeltaPsi[i].fill(<span style="color: #B452CD">0.0</span>)
-    <span style="color: #8B008B; font-weight: bold">for</span> i <span style="color: #8B008B">in</span> <span style="color: #658b00">range</span>(<span style="color: #B452CD">3</span>): DerivativePsiE[i].fill(<span style="color: #B452CD">0.0</span>)
-
-    
-    <span style="color: #228B22">#Initial position</span>
-    <span style="color: #8B008B; font-weight: bold">for</span> i <span style="color: #8B008B">in</span> <span style="color: #658b00">range</span>(NumberParticles):
-        <span style="color: #8B008B; font-weight: bold">for</span> j <span style="color: #8B008B">in</span> <span style="color: #658b00">range</span>(Dimension):
-            PositionOld[i,j] = normalvariate(<span style="color: #B452CD">0.0</span>,<span style="color: #B452CD">1.0</span>)*sqrt(TimeStep)
-    wfold = WaveFunction(PositionOld,a,b,w)
-    QuantumForceOld = QuantumForce(PositionOld,a,b,w)
-
-    <span style="color: #228B22">#Loop over MC MCcycles</span>
-    <span style="color: #8B008B; font-weight: bold">for</span> MCcycle <span style="color: #8B008B">in</span> <span style="color: #658b00">range</span>(NumberMCcycles):
-        <span style="color: #228B22">#Trial position moving one particle at the time</span>
-        <span style="color: #8B008B; font-weight: bold">for</span> i <span style="color: #8B008B">in</span> <span style="color: #658b00">range</span>(NumberParticles):
-            <span style="color: #8B008B; font-weight: bold">for</span> j <span style="color: #8B008B">in</span> <span style="color: #658b00">range</span>(Dimension):
-                PositionNew[i,j] = PositionOld[i,j]+normalvariate(<span style="color: #B452CD">0.0</span>,<span style="color: #B452CD">1.0</span>)*sqrt(TimeStep)+\
-                                       QuantumForceOld[i,j]*TimeStep*D
-            wfnew = WaveFunction(PositionNew,a,b,w)
-            QuantumForceNew = QuantumForce(PositionNew,a,b,w)
-            
-            GreensFunction = <span style="color: #B452CD">0.0</span>
-            <span style="color: #8B008B; font-weight: bold">for</span> j <span style="color: #8B008B">in</span> <span style="color: #658b00">range</span>(Dimension):
-                GreensFunction += <span style="color: #B452CD">0.5</span>*(QuantumForceOld[i,j]+QuantumForceNew[i,j])*\
-                                      (D*TimeStep*<span style="color: #B452CD">0.5</span>*(QuantumForceOld[i,j]-QuantumForceNew[i,j])-\
-                                      PositionNew[i,j]+PositionOld[i,j])
-      
-            GreensFunction = exp(GreensFunction)
-            ProbabilityRatio = GreensFunction*wfnew**<span style="color: #B452CD">2</span>/wfold**<span style="color: #B452CD">2</span>
-            <span style="color: #228B22">#Metropolis-Hastings test to see whether we accept the move</span>
-            <span style="color: #8B008B; font-weight: bold">if</span> random() &lt;= ProbabilityRatio:
-                <span style="color: #8B008B; font-weight: bold">for</span> j <span style="color: #8B008B">in</span> <span style="color: #658b00">range</span>(Dimension):
-                    PositionOld[i,j] = PositionNew[i,j]
-                    QuantumForceOld[i,j] = QuantumForceNew[i,j]
-                wfold = wfnew
-        <span style="color: #228B22">#print(&quot;wf new:        &quot;, wfnew)</span>
-        <span style="color: #228B22">#print(&quot;force on 1 new:&quot;, QuantumForceNew[0,:])</span>
-        <span style="color: #228B22">#print(&quot;pos of 1 new:  &quot;, PositionNew[0,:])</span>
-        <span style="color: #228B22">#print(&quot;force on 2 new:&quot;, QuantumForceNew[1,:])</span>
-        <span style="color: #228B22">#print(&quot;pos of 2 new:  &quot;, PositionNew[1,:])</span>
-        DeltaE = LocalEnergy(PositionOld,a,b,w)
-        DerPsi = DerivativeWFansatz(PositionOld,a,b,w)
-        
-        DeltaPsi[<span style="color: #B452CD">0</span>] += DerPsi[<span style="color: #B452CD">0</span>]
-        DeltaPsi[<span style="color: #B452CD">1</span>] += DerPsi[<span style="color: #B452CD">1</span>]
-        DeltaPsi[<span style="color: #B452CD">2</span>] += DerPsi[<span style="color: #B452CD">2</span>]
-        
-        energy += DeltaE
-
-        DerivativePsiE[<span style="color: #B452CD">0</span>] += DerPsi[<span style="color: #B452CD">0</span>]*DeltaE
-        DerivativePsiE[<span style="color: #B452CD">1</span>] += DerPsi[<span style="color: #B452CD">1</span>]*DeltaE
-        DerivativePsiE[<span style="color: #B452CD">2</span>] += DerPsi[<span style="color: #B452CD">2</span>]*DeltaE
-            
-    <span style="color: #228B22"># We calculate mean values</span>
-    energy /= NumberMCcycles
-    DerivativePsiE[<span style="color: #B452CD">0</span>] /= NumberMCcycles
-    DerivativePsiE[<span style="color: #B452CD">1</span>] /= NumberMCcycles
-    DerivativePsiE[<span style="color: #B452CD">2</span>] /= NumberMCcycles
-    DeltaPsi[<span style="color: #B452CD">0</span>] /= NumberMCcycles
-    DeltaPsi[<span style="color: #B452CD">1</span>] /= NumberMCcycles
-    DeltaPsi[<span style="color: #B452CD">2</span>] /= NumberMCcycles
-    EnergyDer[<span style="color: #B452CD">0</span>]  = <span style="color: #B452CD">2</span>*(DerivativePsiE[<span style="color: #B452CD">0</span>]-DeltaPsi[<span style="color: #B452CD">0</span>]*energy)
-    EnergyDer[<span style="color: #B452CD">1</span>]  = <span style="color: #B452CD">2</span>*(DerivativePsiE[<span style="color: #B452CD">1</span>]-DeltaPsi[<span style="color: #B452CD">1</span>]*energy)
-    EnergyDer[<span style="color: #B452CD">2</span>]  = <span style="color: #B452CD">2</span>*(DerivativePsiE[<span style="color: #B452CD">2</span>]-DeltaPsi[<span style="color: #B452CD">2</span>]*energy)
-    <span style="color: #8B008B; font-weight: bold">return</span> energy, EnergyDer
-
-
-<span style="color: #228B22">#Here starts the main program with variable declarations</span>
-NumberParticles = <span style="color: #B452CD">2</span>
-Dimension = <span style="color: #B452CD">2</span>
-NumberHidden = <span style="color: #B452CD">2</span>
-
-interaction=<span style="color: #8B008B; font-weight: bold">False</span>
-
-<span style="color: #228B22"># guess for parameters</span>
-a=np.random.normal(loc=<span style="color: #B452CD">0.0</span>, scale=<span style="color: #B452CD">0.001</span>, size=(NumberParticles,Dimension))
-b=np.random.normal(loc=<span style="color: #B452CD">0.0</span>, scale=<span style="color: #B452CD">0.001</span>, size=(NumberHidden))
-w=np.random.normal(loc=<span style="color: #B452CD">0.0</span>, scale=<span style="color: #B452CD">0.001</span>, size=(NumberParticles,Dimension,NumberHidden))
-<span style="color: #228B22"># Set up iteration using stochastic gradient method</span>
-Energy = <span style="color: #B452CD">0</span>
-EDerivative = np.empty((<span style="color: #B452CD">3</span>,),dtype=<span style="color: #658b00">object</span>)
-EDerivative = [np.copy(a),np.copy(b),np.copy(w)]
-<span style="color: #228B22"># Learning rate eta, max iterations, need to change to adaptive learning rate</span>
-eta = <span style="color: #B452CD">0.001</span>
-MaxIterations = <span style="color: #B452CD">50</span>
-<span style="color: #658b00">iter</span> = <span style="color: #B452CD">0</span>
-np.seterr(invalid=<span style="color: #CD5555">&#39;raise&#39;</span>)
-Energies = np.zeros(MaxIterations)
-EnergyDerivatives1 = np.zeros(MaxIterations)
-EnergyDerivatives2 = np.zeros(MaxIterations)
-
-<span style="color: #8B008B; font-weight: bold">while</span> <span style="color: #658b00">iter</span> &lt; MaxIterations:
-    Energy, EDerivative = EnergyMinimization(a,b,w)
-    agradient = EDerivative[<span style="color: #B452CD">0</span>]
-    bgradient = EDerivative[<span style="color: #B452CD">1</span>]
-    wgradient = EDerivative[<span style="color: #B452CD">2</span>]
-    a -= eta*agradient
-    b -= eta*bgradient 
-    w -= eta*wgradient 
-    Energies[<span style="color: #658b00">iter</span>] = Energy
-    <span style="color: #658b00">print</span>(<span style="color: #CD5555">&quot;Energy:&quot;</span>,Energy)
-
-    <span style="color: #658b00">iter</span> += <span style="color: #B452CD">1</span>
-
-<span style="color: #228B22">#nice printout with Pandas</span>
-<span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">pandas</span> <span style="color: #8B008B; font-weight: bold">as</span> <span style="color: #008b45; text-decoration: underline">pd</span>
-<span style="color: #8B008B; font-weight: bold">from</span> <span style="color: #008b45; text-decoration: underline">pandas</span> <span style="color: #8B008B; font-weight: bold">import</span> DataFrame
-pd.set_option(<span style="color: #CD5555">&#39;max_columns&#39;</span>, <span style="color: #B452CD">6</span>)
-data ={<span style="color: #CD5555">&#39;Energy&#39;</span>:Energies}<span style="color: #228B22">#,&#39;A Derivative&#39;:EnergyDerivatives1,&#39;B Derivative&#39;:EnergyDerivatives2,&#39;Weights Derivative&#39;:EnergyDerivatives3}</span>
-
-frame = pd.DataFrame(data)
-<span style="color: #658b00">print</span>(frame)
-</pre></div>
 <p>
 
 <!-- ------------------- end of main content --------------- -->
