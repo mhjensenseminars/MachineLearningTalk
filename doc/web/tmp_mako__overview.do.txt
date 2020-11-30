@@ -129,5 +129,18 @@ DATE: today
 
 
 
+===== Tastes of Nuclear Physics, November 30-December 4, 2020 =====
+
+
+
+ * HTML:
+   * "Plain html style": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/WorkshopTastesNP/html/WorkshopTastesNP.html"
+   * "reveal.js beige slide style": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/WorkshopTastesNP/html/WorkshopTastesNP-reveal.html"
+   * "Bootstrap style": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/WorkshopTastesNP/html/WorkshopTastesNP-bs.html"
+ * iPython notebook:
+   * "ipynb file": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/WorkshopTastesNP/ipynb/WorkshopTastesNP.ipynb"
+
+
+
 
 
