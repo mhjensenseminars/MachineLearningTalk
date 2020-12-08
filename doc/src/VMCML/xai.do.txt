@@ -877,7 +877,7 @@ Performance measures for scikit-learn standard classifiers, as well as the train
 ===== Conclusions and where do we stand =====
 !bblock
 * Lots of experimental analysis coming, see for example "Unsupervised Learning for Identifying Events in Active Target Experiments by Solli et al.":"https://arxiv.org/abs/2008.02757" as well references and examples in  "Report from the A.I. For Nuclear Physics  Workshop by Bedaque et al.":"https://arxiv.org/abs/2006.05422".
-* Extension of the work of "G. Carleo and M. Troyer, Science _355_, Issue 6325, pp. 602-606 (2017)":"http://science.sciencemag.org/content/355/6325/602" gives excellent results for two-electron systems as well as good agreement with standard VMC calculations for $N=6$ and $N=12$ electrons.
+* Extension of the work of "G. Carleo and M. Troyer, Science _355_, Issue 6325, pp. 602-606 (2017)":"http://science.sciencemag.org/content/355/6325/602" gives excellent results for two-electron systems as well as good agreement with standard VMC calculations from  $N=2$ to more than $N=100$ electrons.
 * Promising results. Next step is to use trial wave function in final Green's function Monte Carlo calculations. 
 * Minimization problem can be tricky.
 * Can we use ML to find out which correlations are relevant and thereby diminish the dimensionality problem in say CC or SRG theories? 
