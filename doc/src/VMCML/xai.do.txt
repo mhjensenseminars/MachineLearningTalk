@@ -227,6 +227,8 @@ FIGURE: [figures/qml.png, width=700 frac=0.9]
 _Highly recommended_: "Sofia Vallecorsa's lecture on Quantum Machine Learning":"https://www.youtube.com/watch?v=7WPKv1Q57os&list=PLUPPQ1TVXK7uHwCTccWMBud-zLyvAf8A2&index=5&ab_channel=ECTstar" and "slides":"https://indico.ectstar.eu/event/85/contributions/1897/".
 
 
+See also "interview with Maria Schuld":"https://physics.aps.org/articles/v13/179?fbclid=IwAR0ohcWBM28fPk5ToRyUBZsuiZvmum4Uha1SPNmtC5hwvizUxMQv80vc7Vo". 
+
 
 !split
 =====  Applications of Quantum Machine Learning =====
@@ -851,7 +853,7 @@ _Equivalently to the classical model, QBMs are suitable for discriminative as we
 !bblock
 
 |--------------------------------------------------|
-|Model | Accuracy | Recall | Precision | F$_1 |
+|Model | Accuracy | Recall | Precision | F$_1$ |
 |--------------------------------------------------|
 | Nearest Neighbours | $0.94$ |  $0.54$ | $0.72$ | $0.31$ |
 | Linear SVM | $0.90 $| $0$ | $0$ | $0$ |
@@ -882,7 +884,7 @@ Performance measures for scikit-learn standard classifiers, as well as the train
 * Can we use ML to find out which correlations are relevant and thereby diminish the dimensionality problem in say CC or SRG theories? 
 * Quantum Boltzmann Machines (QBMs) to devise better quantum gates for quantum computations and many more exciting topics
 * QBMs can be utilized to train models for data from experiments with quantum systems. They might be employed for combinatorial optimization. Classical BMs have been investigated in this context and developing and analyzing quantum algorithms for combinatorial optimization is an active area of research.
-* All in all, there are many possible applications which still have to be explored with many more exciting research avenues.
+* All in all, there are many possible applications which still have to be explored with many more exciting research avenues. See for example "Maria Schuld et al on evaluating analytic gradients on quantum hardware":"https://journals.aps.org/pra/abstract/10.1103/PhysRevA.99.032331".  
 !eblock
 
 
