@@ -4,7 +4,7 @@ DATE: today
 
 <%
 pub_url = 'http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub'
-published = ['vmcml', 'unitn', 'uniohio', 'unisurrey', 'uio2019', 'chalmers', 'uiomath', 'unipd', 'overview', 'WorkshopTastesNP', ]
+published = ['vmcml', 'unitn', 'uniohio', 'unisurrey', 'uio2019', 'chalmers', 'uiomath', 'unipd', 'overview', 'WorkshopTastesNP', 'xai', ]
 chapters = {
  'vmcml': 'From variational Monte Carlo to machine learning, talks at Michigan State University April and June 2018',
  'uniuio': 'Talk at University of Oslo, December 14, 2018',
@@ -16,6 +16,7 @@ chapters = {
  'uiomath': 'UiO, Math Dept, March 3, 2020',
  'unipd': 'Uni-Padova, October 13, 2020',
  'WorkshopTastesNP': 'Tastes of Nuclear Physics, November 30-December 4, 2020',
+ 'xai': 'XAI: Explaining what goes on inside DNN/AI, December 8, 2020',
  'overview': 'AI and ML slides',
 }
 %>

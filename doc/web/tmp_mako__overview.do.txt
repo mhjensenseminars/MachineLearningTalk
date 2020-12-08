@@ -142,5 +142,18 @@ DATE: today
 
 
 
+===== XAI: Explaining what goes on inside DNN/AI, December 8, 2020 =====
+
+
+
+ * HTML:
+   * "Plain html style": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/xai/html/xai.html"
+   * "reveal.js beige slide style": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/xai/html/xai-reveal.html"
+   * "Bootstrap style": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/xai/html/xai-bs.html"
+ * iPython notebook:
+   * "ipynb file": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/xai/ipynb/xai.ipynb"
+
+
+
 
 
