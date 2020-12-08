@@ -853,10 +853,9 @@ _Equivalently to the classical model, QBMs are suitable for discriminative as we
 !bblock
 
 |--------------------------------------------------|
-|Model | Accuracy | Recall | Precision | F$_1$ |
+|Model | Accuracy | Recall | Precision | $F_1$ |
 |--------------------------------------------------|
 | Nearest Neighbours | $0.94$ |  $0.54$ | $0.72$ | $0.31$ |
-| Linear SVM | $0.90 $| $0$ | $0$ | $0$ |
 | RBF SVM | $0.94 $| $0.42$ | $0.83$ | $0.28$  |
 | Gaussian Process | $0.94$ | $0.46$ | $0.85$ | $0.30$ |
 | Gaussian Naive Bayes  | $0.91$ | $0.42$ | $0.56$ | $0.24$ |
