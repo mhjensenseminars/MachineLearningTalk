@@ -846,7 +846,11 @@ FIGURE: [figures/energyconvergence.pdf, width=700 frac=0.9]
 !split
 ===== And then Quantum Boltzmann Machines =====
 
-Quantum Boltzmann Machines (QBMs) \cite{QBMAmin18} are a natural adaption of BMs to the quantum computing framework. Instead of an energy function with nodes being represented by binary spin values, QBMs define the underlying network using a Hermitian operator, a parameterized Hamiltonian
+Quantum Boltzmann Machines (QBMs) are a natural adaption of BMs to the
+quantum computing framework. Instead of an energy function with nodes
+being represented by binary spin values, QBMs define the underlying
+network using a Hermitian operator, a parameterized Hamiltonian
+
 !bt
 \begin{equation*}
     H_{\theta}=\sum_{i=0}^{p-1}\theta_ih_i,
@@ -863,7 +867,7 @@ _Equivalently to the classical model, QBMs are suitable for discriminative as we
 
 
 !split
-===== Selected Results from "Zoufal et al.":"https://arxiv.org/abs/2006.06004"=====
+===== Selected Results from "Zoufal et al.":"https://arxiv.org/abs/2006.06004" =====
 
 !bblock
 
