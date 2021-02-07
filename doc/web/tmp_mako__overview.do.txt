@@ -155,5 +155,18 @@ DATE: today
 
 
 
+===== NITheP Colloquium February 2, 2021 =====
+
+
+
+ * HTML:
+   * "Plain html style": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/NIThePColloquium/html/NIThePColloquium.html"
+   * "reveal.js beige slide style": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/NIThePColloquium/html/NIThePColloquium-reveal.html"
+   * "Bootstrap style": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/NIThePColloquium/html/NIThePColloquium-bs.html"
+ * iPython notebook:
+   * "ipynb file": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/NIThePColloquium/ipynb/NIThePColloquium.ipynb"
+
+
+
 
 
