@@ -7,9 +7,9 @@ Automatically generated HTML file from DocOnce source
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="DocOnce: https://github.com/doconce/doconce/" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="Machine Learning meets Nuclear Physics">
+<meta name="description" content="Machine Learning and Quantum Mechanics for Many Interacting Particles">
 
-<title>Machine Learning meets Nuclear Physics</title>
+<title>Machine Learning and Quantum Mechanics for Many Interacting Particles</title>
 
 <!-- Bootstrap style: bootstrap -->
 <link href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
@@ -99,11 +99,29 @@ Automatically generated HTML file from DocOnce source
                2,
                None,
                'quantum-monte-carlo-motivation'),
+              ('The trial wave function', 2, None, 'the-trial-wave-function'),
+              ('The correlation part of the wave function',
+               2,
+               None,
+               'the-correlation-part-of-the-wave-function'),
+              ('Resulting ansatz', 2, None, 'resulting-ansatz'),
               ('Energy derivatives', 2, None, 'energy-derivatives'),
               ('Derivatives of the local energy',
                2,
                None,
                'derivatives-of-the-local-energy'),
+              ('How do we define our cost function?',
+               2,
+               None,
+               'how-do-we-define-our-cost-function'),
+              ('Meet the variance and its derivatives',
+               2,
+               None,
+               'meet-the-variance-and-its-derivatives'),
+              ('The variance defines the cost function',
+               2,
+               None,
+               'the-variance-defines-the-cost-function'),
               ('Why Boltzmann machines?', 2, None, 'why-boltzmann-machines'),
               ('A standard BM setup', 2, None, 'a-standard-bm-setup'),
               ('The structure of the RBM network',
@@ -195,7 +213,7 @@ MathJax.Hub.Config({
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-    <a class="navbar-brand" href="NIThePColloquium-bs.html">Machine Learning meets Nuclear Physics</a>
+    <a class="navbar-brand" href="NIThePColloquium-bs.html">Machine Learning and Quantum Mechanics for Many Interacting Particles</a>
   </div>
 
   <div class="navbar-collapse collapse navbar-responsive-collapse">
@@ -224,27 +242,33 @@ MathJax.Hub.Config({
      <!-- navigation toc: --> <li><a href="._NIThePColloquium-bs021.html#quantum-monte-carlo-motivation" style="font-size: 80%;">Quantum Monte Carlo Motivation</a></li>
      <!-- navigation toc: --> <li><a href="._NIThePColloquium-bs021.html#quantum-monte-carlo-motivation" style="font-size: 80%;">Quantum Monte Carlo Motivation</a></li>
      <!-- navigation toc: --> <li><a href="._NIThePColloquium-bs021.html#quantum-monte-carlo-motivation" style="font-size: 80%;">Quantum Monte Carlo Motivation</a></li>
-     <!-- navigation toc: --> <li><a href="._NIThePColloquium-bs022.html#energy-derivatives" style="font-size: 80%;">Energy derivatives</a></li>
-     <!-- navigation toc: --> <li><a href="._NIThePColloquium-bs023.html#derivatives-of-the-local-energy" style="font-size: 80%;">Derivatives of the local energy</a></li>
-     <!-- navigation toc: --> <li><a href="._NIThePColloquium-bs024.html#why-boltzmann-machines" style="font-size: 80%;">Why Boltzmann machines?</a></li>
-     <!-- navigation toc: --> <li><a href="._NIThePColloquium-bs025.html#a-standard-bm-setup" style="font-size: 80%;">A standard BM setup</a></li>
-     <!-- navigation toc: --> <li><a href="._NIThePColloquium-bs026.html#the-structure-of-the-rbm-network" style="font-size: 80%;">The structure of the RBM network</a></li>
-     <!-- navigation toc: --> <li><a href="._NIThePColloquium-bs027.html#the-network" style="font-size: 80%;">The network</a></li>
-     <!-- navigation toc: --> <li><a href="._NIThePColloquium-bs028.html#joint-distribution" style="font-size: 80%;">Joint distribution</a></li>
-     <!-- navigation toc: --> <li><a href="._NIThePColloquium-bs029.html#defining-different-types-of-rbms" style="font-size: 80%;">Defining different types of RBMs</a></li>
-     <!-- navigation toc: --> <li><a href="._NIThePColloquium-bs030.html#representing-the-wave-function" style="font-size: 80%;">Representing the wave function</a></li>
-     <!-- navigation toc: --> <li><a href="._NIThePColloquium-bs031.html#choose-the-cost-loss-function" style="font-size: 80%;">Choose the cost/loss function</a></li>
-     <!-- navigation toc: --> <li><a href="._NIThePColloquium-bs032.html#running-the-codes" style="font-size: 80%;">Running the codes</a></li>
-     <!-- navigation toc: --> <li><a href="._NIThePColloquium-bs033.html#energy-as-function-of-iterations-n-2-electrons" style="font-size: 80%;">Energy as function of iterations, \( N=2 \) electrons</a></li>
-     <!-- navigation toc: --> <li><a href="._NIThePColloquium-bs034.html#energy-as-function-of-iterations-no-physics-info-n-2-electrons" style="font-size: 80%;">Energy as function of iterations, no Physics info \( N=2 \) electrons</a></li>
-     <!-- navigation toc: --> <li><a href="._NIThePColloquium-bs035.html#onebody-densities-n-6-hbar-omega-1-0-a-u" style="font-size: 80%;">Onebody densities \( N=6 \), \( \hbar\omega=1.0 \) a.u.</a></li>
-     <!-- navigation toc: --> <li><a href="._NIThePColloquium-bs036.html#onebody-densities-n-6-hbar-omega-0-1-a-u" style="font-size: 80%;">Onebody densities \( N=6 \), \( \hbar\omega=0.1 \) a.u.</a></li>
-     <!-- navigation toc: --> <li><a href="#onebody-densities-n-30-hbar-omega-1-0-a-u" style="font-size: 80%;">Onebody densities \( N=30 \), \( \hbar\omega=1.0 \) a.u.</a></li>
-     <!-- navigation toc: --> <li><a href="._NIThePColloquium-bs038.html#onebody-densities-n-30-hbar-omega-0-1-a-u" style="font-size: 80%;">Onebody densities \( N=30 \), \( \hbar\omega=0.1 \) a.u.</a></li>
-     <!-- navigation toc: --> <li><a href="._NIThePColloquium-bs039.html#or-using-deep-learning-neural-networks" style="font-size: 80%;">Or using Deep Learning Neural Networks</a></li>
-     <!-- navigation toc: --> <li><a href="._NIThePColloquium-bs040.html#replacing-the-jastrow-factor-with-neural-networks" style="font-size: 80%;">Replacing the Jastrow factor with Neural Networks</a></li>
-     <!-- navigation toc: --> <li><a href="._NIThePColloquium-bs041.html#conclusions-and-where-do-we-stand" style="font-size: 80%;">Conclusions and where do we stand</a></li>
-     <!-- navigation toc: --> <li><a href="._NIThePColloquium-bs042.html#what-are-the-machine-learning-calculations-here-based-on" style="font-size: 80%;">What are the Machine Learning calculations here based on?</a></li>
+     <!-- navigation toc: --> <li><a href="._NIThePColloquium-bs022.html#the-trial-wave-function" style="font-size: 80%;">The trial wave function</a></li>
+     <!-- navigation toc: --> <li><a href="._NIThePColloquium-bs023.html#the-correlation-part-of-the-wave-function" style="font-size: 80%;">The correlation part of the wave function</a></li>
+     <!-- navigation toc: --> <li><a href="._NIThePColloquium-bs024.html#resulting-ansatz" style="font-size: 80%;">Resulting ansatz</a></li>
+     <!-- navigation toc: --> <li><a href="._NIThePColloquium-bs025.html#energy-derivatives" style="font-size: 80%;">Energy derivatives</a></li>
+     <!-- navigation toc: --> <li><a href="._NIThePColloquium-bs026.html#derivatives-of-the-local-energy" style="font-size: 80%;">Derivatives of the local energy</a></li>
+     <!-- navigation toc: --> <li><a href="._NIThePColloquium-bs027.html#how-do-we-define-our-cost-function" style="font-size: 80%;">How do we define our cost function?</a></li>
+     <!-- navigation toc: --> <li><a href="._NIThePColloquium-bs028.html#meet-the-variance-and-its-derivatives" style="font-size: 80%;">Meet the variance and its derivatives</a></li>
+     <!-- navigation toc: --> <li><a href="._NIThePColloquium-bs029.html#the-variance-defines-the-cost-function" style="font-size: 80%;">The variance defines the cost function</a></li>
+     <!-- navigation toc: --> <li><a href="._NIThePColloquium-bs030.html#why-boltzmann-machines" style="font-size: 80%;">Why Boltzmann machines?</a></li>
+     <!-- navigation toc: --> <li><a href="._NIThePColloquium-bs031.html#a-standard-bm-setup" style="font-size: 80%;">A standard BM setup</a></li>
+     <!-- navigation toc: --> <li><a href="._NIThePColloquium-bs032.html#the-structure-of-the-rbm-network" style="font-size: 80%;">The structure of the RBM network</a></li>
+     <!-- navigation toc: --> <li><a href="._NIThePColloquium-bs033.html#the-network" style="font-size: 80%;">The network</a></li>
+     <!-- navigation toc: --> <li><a href="._NIThePColloquium-bs034.html#joint-distribution" style="font-size: 80%;">Joint distribution</a></li>
+     <!-- navigation toc: --> <li><a href="._NIThePColloquium-bs035.html#defining-different-types-of-rbms" style="font-size: 80%;">Defining different types of RBMs</a></li>
+     <!-- navigation toc: --> <li><a href="._NIThePColloquium-bs036.html#representing-the-wave-function" style="font-size: 80%;">Representing the wave function</a></li>
+     <!-- navigation toc: --> <li><a href="#choose-the-cost-loss-function" style="font-size: 80%;">Choose the cost/loss function</a></li>
+     <!-- navigation toc: --> <li><a href="._NIThePColloquium-bs038.html#running-the-codes" style="font-size: 80%;">Running the codes</a></li>
+     <!-- navigation toc: --> <li><a href="._NIThePColloquium-bs039.html#energy-as-function-of-iterations-n-2-electrons" style="font-size: 80%;">Energy as function of iterations, \( N=2 \) electrons</a></li>
+     <!-- navigation toc: --> <li><a href="._NIThePColloquium-bs040.html#energy-as-function-of-iterations-no-physics-info-n-2-electrons" style="font-size: 80%;">Energy as function of iterations, no Physics info \( N=2 \) electrons</a></li>
+     <!-- navigation toc: --> <li><a href="._NIThePColloquium-bs041.html#onebody-densities-n-6-hbar-omega-1-0-a-u" style="font-size: 80%;">Onebody densities \( N=6 \), \( \hbar\omega=1.0 \) a.u.</a></li>
+     <!-- navigation toc: --> <li><a href="._NIThePColloquium-bs042.html#onebody-densities-n-6-hbar-omega-0-1-a-u" style="font-size: 80%;">Onebody densities \( N=6 \), \( \hbar\omega=0.1 \) a.u.</a></li>
+     <!-- navigation toc: --> <li><a href="._NIThePColloquium-bs043.html#onebody-densities-n-30-hbar-omega-1-0-a-u" style="font-size: 80%;">Onebody densities \( N=30 \), \( \hbar\omega=1.0 \) a.u.</a></li>
+     <!-- navigation toc: --> <li><a href="._NIThePColloquium-bs044.html#onebody-densities-n-30-hbar-omega-0-1-a-u" style="font-size: 80%;">Onebody densities \( N=30 \), \( \hbar\omega=0.1 \) a.u.</a></li>
+     <!-- navigation toc: --> <li><a href="._NIThePColloquium-bs045.html#or-using-deep-learning-neural-networks" style="font-size: 80%;">Or using Deep Learning Neural Networks</a></li>
+     <!-- navigation toc: --> <li><a href="._NIThePColloquium-bs046.html#replacing-the-jastrow-factor-with-neural-networks" style="font-size: 80%;">Replacing the Jastrow factor with Neural Networks</a></li>
+     <!-- navigation toc: --> <li><a href="._NIThePColloquium-bs047.html#conclusions-and-where-do-we-stand" style="font-size: 80%;">Conclusions and where do we stand</a></li>
+     <!-- navigation toc: --> <li><a href="._NIThePColloquium-bs048.html#what-are-the-machine-learning-calculations-here-based-on" style="font-size: 80%;">What are the Machine Learning calculations here based on?</a></li>
 
         </ul>
       </li>
@@ -260,14 +284,33 @@ MathJax.Hub.Config({
 <a name="part0037"></a>
 <!-- !split -->
 
-<h2 id="onebody-densities-n-30-hbar-omega-1-0-a-u" class="anchor">Onebody densities \( N=30 \), \( \hbar\omega=1.0 \) a.u. </h2>
-<div class="panel panel-default">
-<div class="panel-body">
-<p> <!-- subsequent paragraphs come in larger fonts, so start with a paragraph -->
-<br /><br /><center><p><img src="figures/OB30hw1.png" align="bottom" width=700></p></center><br /><br />
-</div>
-</div>
+<h2 id="choose-the-cost-loss-function" class="anchor">Choose the cost/loss function </h2>
 
+<p>
+Now we don't necessarily have training data (unless we generate it by
+using some other method). However, what we do have is the variational
+principle which allows us to obtain the ground state wave function by
+minimizing the expectation value of the energy of a trial wavefunction
+(corresponding to the untrained NQS). Similarly to the traditional
+variational Monte Carlo method then, it is the local energy we wish to
+minimize. The gradient to use for the stochastic gradient descent
+procedure is
+
+$$
+\begin{align}
+	\frac{\partial \langle E_L \rangle}{\partial \theta_i}
+	= 2(\langle E_L \frac{1}{\Psi}\frac{\partial \Psi}{\partial \theta_i} \rangle - \langle E_L \rangle \langle \frac{1}{\Psi}\frac{\partial \Psi}{\partial \theta_i} \rangle ),
+\tag{15}
+\end{align}
+$$
+
+where the local energy is given by
+$$
+\begin{align}
+	E_L = \frac{1}{\Psi} \hat{\mathbf{H}} \Psi.
+\tag{16}
+\end{align}
+$$
 
 <p>
 <p>
@@ -290,6 +333,12 @@ MathJax.Hub.Config({
   <li><a href="._NIThePColloquium-bs040.html">41</a></li>
   <li><a href="._NIThePColloquium-bs041.html">42</a></li>
   <li><a href="._NIThePColloquium-bs042.html">43</a></li>
+  <li><a href="._NIThePColloquium-bs043.html">44</a></li>
+  <li><a href="._NIThePColloquium-bs044.html">45</a></li>
+  <li><a href="._NIThePColloquium-bs045.html">46</a></li>
+  <li><a href="._NIThePColloquium-bs046.html">47</a></li>
+  <li><a href="">...</a></li>
+  <li><a href="._NIThePColloquium-bs048.html">49</a></li>
   <li><a href="._NIThePColloquium-bs038.html">&raquo;</a></li>
 </ul>
 <!-- ------------------- end of main content --------------- -->
