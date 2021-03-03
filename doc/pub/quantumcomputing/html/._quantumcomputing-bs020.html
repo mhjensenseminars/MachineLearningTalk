@@ -1,0 +1,230 @@
+<!--
+Automatically generated HTML file from DocOnce source
+(https://github.com/doconce/doconce/)
+-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="DocOnce: https://github.com/doconce/doconce/" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Quantum Computing and Quantum Mechanics for Many Interacting Particles">
+
+<title>Quantum Computing and Quantum Mechanics for Many Interacting Particles</title>
+
+<!-- Bootstrap style: bootstrap -->
+<link href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+<!-- not necessary
+<link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+-->
+
+<style type="text/css">
+
+/* Add scrollbar to dropdown menus in bootstrap navigation bar */
+.dropdown-menu {
+   height: auto;
+   max-height: 400px;
+   overflow-x: hidden;
+}
+
+/* Adds an invisible element before each target to offset for the navigation
+   bar */
+.anchor::before {
+  content:"";
+  display:block;
+  height:50px;      /* fixed header height for style bootstrap */
+  margin:-50px 0 0; /* negative fixed header height */
+}
+</style>
+
+
+</head>
+
+<!-- tocinfo
+{'highest level': 2,
+ 'sections': [('What is this talk about?', 2, None, 'what-is-this-talk-about'),
+              ('Why? Basic motivation', 2, None, 'why-basic-motivation'),
+              ('Basic activities, Overview',
+               2,
+               None,
+               'basic-activities-overview'),
+              ('Interfacing with Gemini and dScience',
+               2,
+               None,
+               'interfacing-with-gemini-and-dscience'),
+              ('Quantum Engineering', 2, None, 'quantum-engineering'),
+              ('Candidate systems', 2, None, 'candidate-systems'),
+              ('Quantum algorithms for solving many-body problems, simple '
+               'model',
+               2,
+               None,
+               'quantum-algorithms-for-solving-many-body-problems-simple-model'),
+              ('More on the pairing model',
+               2,
+               None,
+               'more-on-the-pairing-model'),
+              ('Unitary Coupled Cluster Ansatz',
+               2,
+               None,
+               'unitary-coupled-cluster-ansatz'),
+              ('Technicalities', 2, None, 'technicalities'),
+              ('Mapping Pair Operators to Pauli Gates',
+               2,
+               None,
+               'mapping-pair-operators-to-pauli-gates'),
+              ('Mapping the Ansatz', 2, None, 'mapping-the-ansatz'),
+              ('Trotter approximation', 2, None, 'trotter-approximation'),
+              ('Mapping the Hamiltonian', 2, None, 'mapping-the-hamiltonian'),
+              ('More manipulations', 2, None, 'more-manipulations'),
+              ('Hamiltonian', 2, None, 'hamiltonian'),
+              ('Exact and Calculated Correlation Energies vs Pairing Strength '
+               'for $(p,n)=(4,2)$',
+               2,
+               None,
+               'exact-and-calculated-correlation-energies-vs-pairing-strength-for-p-n-4-2'),
+              ('Exact and Calculated Correlation Energies vs Pairing Strength '
+               'for $(p,n)=(5,2)$',
+               2,
+               None,
+               'exact-and-calculated-correlation-energies-vs-pairing-strength-for-p-n-5-2'),
+              ('Quantum Machine Learning', 2, None, 'quantum-machine-learning'),
+              ('More on Quantum Machine Learning',
+               2,
+               None,
+               'more-on-quantum-machine-learning'),
+              ('Present Plans', 2, None, 'present-plans'),
+              ('Conclusions and where do we stand',
+               2,
+               None,
+               'conclusions-and-where-do-we-stand')]}
+end of tocinfo -->
+
+<body>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+     equationNumbers: {  autoNumber: "none"  },
+     extensions: ["AMSmath.js", "AMSsymbols.js", "autobold.js", "color.js"]
+  }
+});
+</script>
+<script type="text/javascript" async
+ src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+    
+<!-- Bootstrap navigation bar -->
+<div class="navbar navbar-default navbar-fixed-top">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="quantumcomputing-bs.html">Quantum Computing and Quantum Mechanics for Many Interacting Particles</a>
+  </div>
+
+  <div class="navbar-collapse collapse navbar-responsive-collapse">
+    <ul class="nav navbar-nav navbar-right">
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Contents <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+     <!-- navigation toc: --> <li><a href="._quantumcomputing-bs001.html#what-is-this-talk-about" style="font-size: 80%;">What is this talk about?</a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputing-bs002.html#why-basic-motivation" style="font-size: 80%;">Why? Basic motivation</a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputing-bs003.html#basic-activities-overview" style="font-size: 80%;">Basic activities, Overview</a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputing-bs004.html#interfacing-with-gemini-and-dscience" style="font-size: 80%;">Interfacing with Gemini and dScience</a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputing-bs005.html#quantum-engineering" style="font-size: 80%;">Quantum Engineering</a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputing-bs006.html#candidate-systems" style="font-size: 80%;">Candidate systems</a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputing-bs007.html#quantum-algorithms-for-solving-many-body-problems-simple-model" style="font-size: 80%;">Quantum algorithms for solving many-body problems, simple model</a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputing-bs008.html#more-on-the-pairing-model" style="font-size: 80%;">More on the pairing model</a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputing-bs009.html#unitary-coupled-cluster-ansatz" style="font-size: 80%;">Unitary Coupled Cluster Ansatz</a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputing-bs010.html#technicalities" style="font-size: 80%;">Technicalities</a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputing-bs011.html#mapping-pair-operators-to-pauli-gates" style="font-size: 80%;">Mapping Pair Operators to Pauli Gates</a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputing-bs012.html#mapping-the-ansatz" style="font-size: 80%;">Mapping the Ansatz</a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputing-bs013.html#trotter-approximation" style="font-size: 80%;">Trotter approximation</a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputing-bs014.html#mapping-the-hamiltonian" style="font-size: 80%;">Mapping the Hamiltonian</a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputing-bs015.html#more-manipulations" style="font-size: 80%;">More manipulations</a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputing-bs016.html#hamiltonian" style="font-size: 80%;">Hamiltonian</a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputing-bs017.html#exact-and-calculated-correlation-energies-vs-pairing-strength-for-p-n-4-2" style="font-size: 80%;">Exact and Calculated Correlation Energies vs Pairing Strength for \( (p,n)=(4,2) \)</a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputing-bs018.html#exact-and-calculated-correlation-energies-vs-pairing-strength-for-p-n-5-2" style="font-size: 80%;">Exact and Calculated Correlation Energies vs Pairing Strength for \( (p,n)=(5,2) \)</a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputing-bs019.html#quantum-machine-learning" style="font-size: 80%;">Quantum Machine Learning</a></li>
+     <!-- navigation toc: --> <li><a href="#more-on-quantum-machine-learning" style="font-size: 80%;">More on Quantum Machine Learning</a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputing-bs021.html#present-plans" style="font-size: 80%;">Present Plans</a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputing-bs022.html#conclusions-and-where-do-we-stand" style="font-size: 80%;">Conclusions and where do we stand</a></li>
+
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
+</div> <!-- end of navigation bar -->
+
+<div class="container">
+
+<p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p> <!-- add vertical space -->
+
+<a name="part0020"></a>
+<!-- !split -->
+
+<h2 id="more-on-quantum-machine-learning" class="anchor">More on Quantum Machine Learning </h2>
+
+<p>
+A few examples of existing algorithms that exhibit a speed up on
+quantum computers are \( k \)-nearest neighbors, support vector machines
+and \( k \)-means clustering.
+
+<p>
+Among algorithmic approaches that are specifically designed for
+quantum computers we find so-called parameterized quantum
+circuits. These are hybrid quantum-classical methods where the
+input-output relation is being produced by a quantum computer, while a
+classical computer is responsible for updating the model parameters
+during training.
+
+<p>
+<p>
+<!-- navigation buttons at the bottom of the page -->
+<ul class="pagination">
+<li><a href="._quantumcomputing-bs019.html">&laquo;</a></li>
+  <li><a href="._quantumcomputing-bs000.html">1</a></li>
+  <li><a href="">...</a></li>
+  <li><a href="._quantumcomputing-bs012.html">13</a></li>
+  <li><a href="._quantumcomputing-bs013.html">14</a></li>
+  <li><a href="._quantumcomputing-bs014.html">15</a></li>
+  <li><a href="._quantumcomputing-bs015.html">16</a></li>
+  <li><a href="._quantumcomputing-bs016.html">17</a></li>
+  <li><a href="._quantumcomputing-bs017.html">18</a></li>
+  <li><a href="._quantumcomputing-bs018.html">19</a></li>
+  <li><a href="._quantumcomputing-bs019.html">20</a></li>
+  <li class="active"><a href="._quantumcomputing-bs020.html">21</a></li>
+  <li><a href="._quantumcomputing-bs021.html">22</a></li>
+  <li><a href="._quantumcomputing-bs022.html">23</a></li>
+  <li><a href="._quantumcomputing-bs021.html">&raquo;</a></li>
+</ul>
+<!-- ------------------- end of main content --------------- -->
+
+</div>  <!-- end container -->
+<!-- include javascript, jQuery *first* -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+
+<!-- Bootstrap footer
+<footer>
+<a href="https://..."><img width="250" align=right src="https://..."></a>
+</footer>
+-->
+
+
+<center style="font-size:80%">
+<!-- copyright only on the titlepage -->
+</center>
+
+
+</body>
+</html>
+    
+

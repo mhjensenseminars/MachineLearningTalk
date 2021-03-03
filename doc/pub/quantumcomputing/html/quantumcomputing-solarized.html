@@ -1,0 +1,629 @@
+<!--
+Automatically generated HTML file from DocOnce source
+(https://github.com/doconce/doconce/)
+-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="DocOnce: https://github.com/doconce/doconce/" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Quantum Computing and Quantum Mechanics for Many Interacting Particles">
+
+<title>Quantum Computing and Quantum Mechanics for Many Interacting Particles</title>
+
+
+<link href="https://cdn.rawgit.com/doconce/doconce/master/bundled/html_styles/style_solarized_box/css/solarized_light_code.css" rel="stylesheet" type="text/css" title="light"/>
+<script src="https://cdn.rawgit.com/doconce/doconce/master/bundled/html_styles/style_solarized_box/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<link href="https://thomasf.github.io/solarized-css/solarized-light.min.css" rel="stylesheet">
+<style type="text/css">
+h1 {color: #b58900;}  /* yellow */
+/* h1 {color: #cb4b16;}  orange */
+/* h1 {color: #d33682;}  magenta, the original choice of thomasf */
+code { padding: 0px; background-color: inherit; }
+pre {
+  border: 0pt solid #93a1a1;
+  box-shadow: none;
+}
+.alert-text-small   { font-size: 80%;  }
+.alert-text-large   { font-size: 130%; }
+.alert-text-normal  { font-size: 90%;  }
+.alert {
+  padding:8px 35px 8px 14px; margin-bottom:18px;
+  text-shadow:0 1px 0 rgba(255,255,255,0.5);
+  border:1px solid #93a1a1;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  color: #555;
+  background-color: #eee8d5;
+  background-position: 10px 5px;
+  background-repeat: no-repeat;
+  background-size: 38px;
+  padding-left: 55px;
+  width: 75%;
+ }
+.alert-block {padding-top:14px; padding-bottom:14px}
+.alert-block > p, .alert-block > ul {margin-bottom:1em}
+.alert li {margin-top: 1em}
+.alert-block p+p {margin-top:5px}
+.alert-notice { background-image: url(https://cdn.rawgit.com/doconce/doconce/master/bundled/html_images/small_yellow_notice.png); }
+.alert-summary  { background-image:url(https://cdn.rawgit.com/doconce/doconce/master/bundled/html_images/small_yellow_summary.png); }
+.alert-warning { background-image: url(https://cdn.rawgit.com/doconce/doconce/master/bundled/html_images/small_yellow_warning.png); }
+.alert-question {background-image:url(https://cdn.rawgit.com/doconce/doconce/master/bundled/html_images/small_yellow_question.png); }
+
+div { text-align: justify; text-justify: inter-word; }
+</style>
+
+
+</head>
+
+<!-- tocinfo
+{'highest level': 2,
+ 'sections': [('What is this talk about?', 2, None, 'what-is-this-talk-about'),
+              ('Why? Basic motivation', 2, None, 'why-basic-motivation'),
+              ('Basic activities, Overview',
+               2,
+               None,
+               'basic-activities-overview'),
+              ('Interfacing with Gemini and dScience',
+               2,
+               None,
+               'interfacing-with-gemini-and-dscience'),
+              ('Quantum Engineering', 2, None, 'quantum-engineering'),
+              ('Candidate systems', 2, None, 'candidate-systems'),
+              ('Quantum algorithms for solving many-body problems, simple '
+               'model',
+               2,
+               None,
+               'quantum-algorithms-for-solving-many-body-problems-simple-model'),
+              ('More on the pairing model',
+               2,
+               None,
+               'more-on-the-pairing-model'),
+              ('Unitary Coupled Cluster Ansatz',
+               2,
+               None,
+               'unitary-coupled-cluster-ansatz'),
+              ('Technicalities', 2, None, 'technicalities'),
+              ('Mapping Pair Operators to Pauli Gates',
+               2,
+               None,
+               'mapping-pair-operators-to-pauli-gates'),
+              ('Mapping the Ansatz', 2, None, 'mapping-the-ansatz'),
+              ('Trotter approximation', 2, None, 'trotter-approximation'),
+              ('Mapping the Hamiltonian', 2, None, 'mapping-the-hamiltonian'),
+              ('More manipulations', 2, None, 'more-manipulations'),
+              ('Hamiltonian', 2, None, 'hamiltonian'),
+              ('Exact and Calculated Correlation Energies vs Pairing Strength '
+               'for $(p,n)=(4,2)$',
+               2,
+               None,
+               'exact-and-calculated-correlation-energies-vs-pairing-strength-for-p-n-4-2'),
+              ('Exact and Calculated Correlation Energies vs Pairing Strength '
+               'for $(p,n)=(5,2)$',
+               2,
+               None,
+               'exact-and-calculated-correlation-energies-vs-pairing-strength-for-p-n-5-2'),
+              ('Quantum Machine Learning', 2, None, 'quantum-machine-learning'),
+              ('More on Quantum Machine Learning',
+               2,
+               None,
+               'more-on-quantum-machine-learning'),
+              ('Present Plans', 2, None, 'present-plans'),
+              ('Conclusions and where do we stand',
+               2,
+               None,
+               'conclusions-and-where-do-we-stand')]}
+end of tocinfo -->
+
+<body>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+     equationNumbers: {  autoNumber: "AMS"  },
+     extensions: ["AMSmath.js", "AMSsymbols.js", "autobold.js", "color.js"]
+  }
+});
+</script>
+<script type="text/javascript" async
+ src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+    
+<!-- ------------------- main content ---------------------- -->
+
+
+
+<center><h1>Quantum Computing and Quantum Mechanics for Many Interacting Particles</h1></center>  <!-- document title -->
+
+<p>
+<!-- author(s): Morten Hjorth-Jensen -->
+
+<center>
+<b>Morten Hjorth-Jensen</b> [1, 2]
+</center>
+
+<p>
+<!-- institution(s) -->
+
+<center>[1] <b>Department of Physics and Astronomy and FRIB/NSCL Laboratory, Michigan State University, USA</b></center>
+<center>[2] <b>Department of Physics and Center for Computing in Science Education, University of Oslo, Norway</b></center>
+<br>
+<p>
+<center><h4>Gemini Seminar, March 3, 2021. </h4></center> <!-- date -->
+<br>
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="what-is-this-talk-about">What is this talk about? </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+The main aim is to give you a short and pedestrian introduction to our
+activities and how they could overlap with the Gemini center.
+</div>
+
+
+<p>
+<div class="alert alert-block alert-block alert-text-normal">
+<b>Thanks to</b>
+<p>
+
+<ul>
+<li> MSU: <b>Ben Hall, Jane Kim, Julie Butler, Danny Jammoa</b>, Johannes Pollanen (Expt), Niyaz Beysengulov (Expt), Dean Lee, Scott Bogner, Heiko Hergert, Matt Hirn, Huey-Wen Lin, Alexei Bazavov, and Andrea Shindler</li>
+<li> UiO: <b>Stian Bilek, H&#229;kon Emil Kristiansen, &#216;yvind Sch&#248;yen Sigmundsson, Jonas Boym Flaten, Kristian Wold</b>, Lasse Vines (Expt) and Marianne Bathen (Expt)</li>
+</ul>
+</div>
+
+
+<p>
+<div class="alert alert-block alert-block alert-text-normal">
+<b>Sponsors</b>
+<p>
+This work is supported by the U.S. Department of Energy, Office of
+Science, office of Nuclear Physics under grant No. DE-SC0021152 and
+U.S. National Science Foundation Grants No. PHY-1404159 and
+PHY-2013047.
+</div>
+
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="why-basic-motivation">Why? Basic motivation </h2>
+
+<p>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+How can we avoid the dimensionality curse? Many possibilities
+
+<ol>
+<li> smarter basis functions</li>
+<li> resummation of specific correlations</li>
+<li> stochastic sampling of high-lying states (stochastic FCI, CC and SRG/IMSRG)</li>
+<li> many more</li>
+</ol>
+</div>
+
+
+<p>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+Machine Learning and Quantum Computing hold great promise in tackling the 
+ever increasing dimensionalities. A hot new field is  <b>Quantum Machine Learning</b>, see for example the recent textbook by <a href="https://www.springer.com/gp/book/9783319964232" target="_blank">Maria Schuld and Francesco Petruccione</a>. 
+
+<ol>
+<li> Master of Science  thesis of <a href="https://www.duo.uio.no/handle/10852/82489" target="_blank">Stian Bilek</a>, <b>Quantum Computing: Many-Body Methods and Machine Learning, August 2020</b></li>
+<li> Master of Science  thesis of <a href="https://www.duo.uio.no/handle/10852/81259" target="_blank">Heine &#197;b&#248;</a>, <b>Quantum Computing and Many-Particle Problems, June 2020</b></li>
+</ol>
+</div>
+
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="basic-activities-overview">Basic activities, Overview </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+
+<ul>
+<li> Quantum Engineering</li>
+<li> Quantum algorithms</li> 
+<li> Quantum Machine Learning</li>
+</ul>
+</div>
+
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="interfacing-with-gemini-and-dscience">Interfacing with Gemini and dScience </h2>
+
+<p>
+During the last two years we have started a large scientific activity
+on Quantum Computing and Machine Learning at the Center for Computing
+in Science Education (CCSE), with three PhD students hired since
+October 2019 (&#216;yvind Sigmundsson Sch&#248;yen, October 2019, Stian Bilek,
+September 2020, and Jonas Boym Flaten, December 2020) and several
+master of Science students. This activity spans from the development
+of quantum-mechanical many-particle theories for studying systems of
+interest for making quantum computers, via the development of quantum
+algorithms for solving quantum mechanical problems to exploring
+quantum machine learning algorithms.
+
+<p>
+From the fall of 2021 we expect to hire a new PhD student working on
+quantum computing via the recent EU funded project CompSci,
+administered by the CCSE. At present we have also four Master of
+Science students working on the above topics. They would be potential
+candidates for future PhD fellowships.
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="quantum-engineering">Quantum Engineering </h2>
+
+<p>
+<div class="alert alert-block alert-block alert-text-normal">
+<b>Quantum Computing requirements</b>
+<p>
+
+<ol>
+<li> be scalable</li>
+<li> have qubits that can be entangled</li>
+<li> have reliable initializations protocols to a standard state</li>
+<li> have a set of universal quantum gates to control the quantum evolution</li>
+<li> have a coherence time much longer than the gate operation time</li>
+<li> have a reliable read-out mechanism for measuring the qubit states</li>
+<li> and many more</li> 
+</ol>
+</div>
+
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="candidate-systems">Candidate systems </h2>
+
+<ol>
+<li> Superconducting Josephon junctions</li>
+<li> Single photons</li>
+<li> Trapped ions and atoms</li>
+<li> Nuclear Magnetic Resonance</li>
+<li> <b>Quantum dots, expt at MSU</b></li>
+<li> <b>Point Defects in semiconductors, expt at UiO</b></li>
+<li> more</li>
+</ol>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="quantum-algorithms-for-solving-many-body-problems-simple-model">Quantum algorithms for solving many-body problems, simple model </h2>
+
+<p>
+The pairing model consists of \( 2N \) fermions that occupy \( N \) of \( P \) energy levels. The fermions can only change energy level by pair. It's Hamiltonian is
+$$
+\begin{align}
+H=\sum_{p\sigma} \delta_pa_{p\sigma}^{\dagger}a_{p\sigma}+\sum_{pq}g_{pq}a_{p+}^{\dagger}a_{p-}^{\dagger}a_{q-}a_{q+}
+,
+\label{_auto1}
+\end{align}
+$$
+
+where \( p \) and \( q \) sum over the set  \( \{1,2,...,P\} \) and \( \sigma \) sums over the set \( \{+,-\} \). Also, \( a \) and \( a^{\dagger} \) are the fermionic creation and annihilation operators.
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="more-on-the-pairing-model">More on the pairing model </h2>
+
+<p>
+If one assumes that energy levels are never half filled (always occupied by either 0 or 2 fermions), then the pairing model is equivalent to a system of \( N \) pairs of fermions that occupy \( P \) doubly-degenerate energy levels
+$$
+\begin{align}
+H = 2\sum_{p} \delta_pA_p^{\dagger}A_p+\sum_{pq}g_{pq}A_p^{\dagger}A_q,
+\label{_auto2}
+\end{align}
+$$
+
+where \( p \) and \( q \) sum from over the set \( \{1,...,p\} \) and 
+$$
+\begin{align*}
+A_p &= a_{p-}a_{p+}
+\\
+A^{\dagger}_p &= a^{\dagger}_{p+}a^{\dagger}_{p-},
+\end{align*}
+$$
+
+are the fermionic pair creation and annihilation operators.
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="unitary-coupled-cluster-ansatz">Unitary Coupled Cluster Ansatz </h2>
+
+<p>
+The unitary coupled cluster ansatz is
+$$
+\begin{align}
+\vert\Psi\rangle=e^{T-T^{\dagger}}\vert\Phi\rangle,
+\label{_auto3}
+\end{align}
+$$
+
+and
+$$
+\begin{align}
+\vert\Psi\rangle=\exp{(T_1-T_1^{\dagger})}\vert\Phi\rangle,
+\label{_auto4}
+\end{align}
+$$
+
+where \( \vert\Phi\rangle \) is a Fock state and \( T=\sum_{k=1}^AT_k \).
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="technicalities">Technicalities </h2>
+
+<p>
+Since our Hamiltonian only has one body terms. We will truncate to \( T=T_1 \) where
+$$
+\begin{align}
+T_1=\sum_{ia}t_i^aA_a^{\dagger}A_i.
+\label{_auto5}
+\end{align}
+$$
+
+Thus, we define our ansatz as
+$$
+\begin{align}
+\vert\Psi(\theta)\rangle=\exp\left\{\sum_{ia}t_i^a\left(A_a^{\dagger}A_i-A_aA_i^{\dagger}\right)\right\}\vert\Phi\rangle.
+\label{_auto6}
+\end{align}
+$$
+
+We define the set of angles \( \theta=\{t_i^a \ | \ i < F, \ a \geq F\} \) where \( F \) is the number of particles below the Fermi level.
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="mapping-pair-operators-to-pauli-gates">Mapping Pair Operators to Pauli Gates </h2>
+
+<p>
+The Jordan-Wigner transformation from pair operators to Pauli matrices is
+$$
+\begin{align}
+A_p &= \frac{X_p+iY_p}{2} 
+\label{_auto7}\\
+A_p^{\dagger} &= \frac{X_p-iY_p}{2},
+\label{_auto8}
+\end{align}
+$$
+
+where \( P_i\equiv \left(\bigotimes_{n=1}^{i-1}I\right)\otimes P\otimes\left(\bigotimes_{n=i+1}^NI\right) \) where \( P \in \{X,Y,Z\} \) and \( N \) is the total number of particles.
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="mapping-the-ansatz">Mapping the Ansatz </h2>
+
+<p>
+Applying this transformation
+$$
+\begin{align}
+A_a^{\dagger}A_i-A_aA_i^{\dagger}
+&=\left(\frac{X_a-iY_i}{2}\right)\left(\frac{X_a+iY_i}{2}\right) 
+\label{_auto9}\\
+&-\left(\frac{X_a+iY_i}{2}\right)\left(\frac{X_a-iY_i}{2}\right)
+\label{_auto10}\\
+&=\frac{i}{2}\left(X_aY_i-Y_aX_i\right),
+\label{_auto11}
+\end{align}
+$$
+
+<p>
+The ansatz becomes
+$$
+\begin{align}
+\vert\Psi(\theta)\rangle
+=\exp\left\{\frac{i}{2}\sum_{ia}t_i^a\left(X_aY_i-Y_aX_i\right)\right\}\vert\Phi\rangle.
+\label{_auto12}
+\end{align}
+$$
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="trotter-approximation">Trotter approximation </h2>
+To first order Trotter approximation we have
+$$
+\begin{align}
+\label{ansatz}
+\vert\Psi(\theta)\rangle
+&\approx\prod_{ia}\exp\left\{\frac{i}{2}t_i^a\left(X_aY_i-Y_aX_i\right)\right\}\vert\Phi\rangle
+\\
+&\equiv
+\prod_{ia}A_{ia}\vert\Phi\rangle.
+\label{_auto13}
+\end{align}
+$$
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="mapping-the-hamiltonian">Mapping the Hamiltonian </h2>
+
+<p>
+First, we rewrite the Hamiltonian
+$$
+\begin{align}
+H
+&=2\sum_{p}\delta_pa_p^{\dagger}a_p+\sum_{pq}g_{pq}a_p^{\dagger}a_q 
+\label{_auto14}\\
+&=\sum_{p}\left(2\delta_p+g_{pq}\right)a_p^{\dagger}a_p+\sum_{p\neq q}g_{pq}a_p^{\dagger}a_q.
+\label{_auto15}
+\end{align}
+$$
+
+Applying the transformation to the first term in the Hamiltonian
+$$
+\begin{align}
+a^{\dagger}_pa_p=\left(\frac{X_p-iY_p}{2}\right)\left(\frac{X_p+iY_p}{2}\right)=\frac{I_p-Z_p}{2}.
+\label{_auto16}
+\end{align}
+$$
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="more-manipulations">More manipulations </h2>
+For the second term, first note that
+$$
+\begin{align}
+\sum_{p\neq q}a_p^{\dagger}a_q
+=\sum_{p < q}a_p^{\dagger}a_q+\sum_{q < p}a_p^{\dagger}a_q
+=\sum_{p < q}a_p^{\dagger}a_q+a_pa_q^{\dagger},
+\label{_auto17}
+\end{align}
+$$
+
+which we arrive at by swapping the indices \( p \) and \( q \) in the second sum and combining the sums. Applying the transformation
+$$
+\begin{align}
+a_p^{\dagger}a_q+a_pa_q^{\dagger}
+&=\left(\frac{X_p-iY_p}{2}\right)\left(\frac{X_q+iY_q}{2}\right) 
+\label{_auto18}\\
+&+\left(\frac{X_p+iY_p}{2}\right)\left(\frac{X_q-iY_q}{2}\right) 
+\label{_auto19}\\
+&=\frac{1}{2}\left(X_pX_q+Y_pY_q\right).
+\label{_auto20}
+\end{align}
+$$
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="hamiltonian">Hamiltonian </h2>
+Thus, the Hamiltonian can be written in terms of Pauli matrices as
+$$
+\begin{align*}
+H = \sum_p\left(2\delta_p+g_{pq}\right)\left(\frac{I_p-Z_p}{2}\right)
++\sum_{p < q}g_{pq}\frac{X_pX_q+Y_pY_q}{2}
+\end{align*}
+$$
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="exact-and-calculated-correlation-energies-vs-pairing-strength-for-p-n-4-2">Exact and Calculated Correlation Energies vs Pairing Strength for \( (p,n)=(4,2) \) </h2>
+
+<p>
+<br /><br /><center><p><img src="figures/QCpairing1.png" align="bottom" width=600></p></center><br /><br />
+
+<p>
+<b>Note</b>: \( p \) is the number of doubly-degenerate levels and \( n \) is the number of pairs of fermions.
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="exact-and-calculated-correlation-energies-vs-pairing-strength-for-p-n-5-2">Exact and Calculated Correlation Energies vs Pairing Strength for \( (p,n)=(5,2) \) </h2>
+
+<p>
+<br /><br /><center><p><img src="figures/QCpairing2.png" align="bottom" width=600></p></center><br /><br />
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="quantum-machine-learning">Quantum Machine Learning </h2>
+
+<p>
+The emergence of quantum computers has opened up even more
+possibilities within the field of machine learning. Since quantum
+mechanics is known to create patterns which are not believed to be
+efficiently produced by classical computers, it is natural to
+hypothesize that quantum computers may be able to outperform classical
+computers on certain machine learning tasks. There are several
+interesting approaches to machine learning from a quantum computing
+perspective - from running existing algorithms or parts of these more
+efficiently, to exploring completely new algorithms that are
+specifically developed for quantum computers. Recent results show that
+quantum neural networks are able to achieve a significantly better
+effective dimension than comparable classical neural networks.
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="more-on-quantum-machine-learning">More on Quantum Machine Learning </h2>
+
+<p>
+A few examples of existing algorithms that exhibit a speed up on
+quantum computers are \( k \)-nearest neighbors, support vector machines
+and \( k \)-means clustering.
+
+<p>
+Among algorithmic approaches that are specifically designed for
+quantum computers we find so-called parameterized quantum
+circuits. These are hybrid quantum-classical methods where the
+input-output relation is being produced by a quantum computer, while a
+classical computer is responsible for updating the model parameters
+during training.
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="present-plans">Present Plans </h2>
+
+<ol>
+<li> Quantum circuit optimization</li>
+<li> Quantum Boltzmann Machines</li>
+</ol>
+
+So-called Boltzmann Machines (BMs) define a machine learning method
+that aims to model probability distributions and has played a central
+role in the development of deep learning methods.
+
+<p>
+It has since been shown that BMs are
+universal approximators of discrete probability distributions, meaning that they can approximate
+any discrete distribution arbitrarily well. Our research group has
+lately conducted several investigations of BMs applied to
+quantum-mechanical problems, with several interesting results.
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="conclusions-and-where-do-we-stand">Conclusions and where do we stand </h2>
+
+<p>
+Lots of interesting research directions. 
+
+<ol>
+<li> We have used many-body methods like time-dependent full configuration  interaction theory to design quantum circuits, in close collaboration with experimentalists</li>
+<li> Successfully applied various quantum algorithms to many-body systems</li>
+<li> Quantum machine learning, just started</li>
+<li> What could be of interest to the Gemini center?</li> 
+</ol>
+
+
+<!-- ------------------- end of main content --------------- -->
+
+
+<center style="font-size:80%">
+<!-- copyright --> &copy; 1999-2021, Morten Hjorth-Jensen. Released under CC Attribution-NonCommercial 4.0 license
+</center>
+
+
+</body>
+</html>
+    
+
