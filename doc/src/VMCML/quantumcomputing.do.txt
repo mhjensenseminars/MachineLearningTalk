@@ -41,6 +41,7 @@ Machine Learning and Quantum Computing hold great promise in tackling the
 ever increasing dimensionalities. A hot new field is  _Quantum Machine Learning_, see for example the recent textbook by "Maria Schuld and Francesco Petruccione":"https://www.springer.com/gp/book/9783319964232". 
 o Master of Science  thesis of "Stian Bilek":"https://www.duo.uio.no/handle/10852/82489", _Quantum Computing: Many-Body Methods and Machine Learning, August 2020_
 o Master of Science  thesis of "Heine Åbø":"https://www.duo.uio.no/handle/10852/81259", _Quantum Computing and Many-Particle Problems, June 2020_
+o "Marianne EtzelmuellerBathen's PhD":"https://www.mn.uio.no/fysikk/english/people/aca/mariebat/", December 2020
 !eblock
 
 !split
@@ -50,6 +51,8 @@ o Master of Science  thesis of "Heine Åbø":"https://www.duo.uio.no/handle/1085
 * Quantum algorithms 
 * Quantum Machine Learning
 !eblock
+
+Slides at URL:"https://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/quantumcomputing/html/quantumcomputing-reveal.html"
 
 !split
 ===== Interfacing with Gemini and dScience =====
@@ -96,6 +99,26 @@ o Nuclear Magnetic Resonance
 o _Quantum dots, expt at MSU_
 o _Point Defects in semiconductors, expt at UiO_
 o more
+
+!split
+===== Electrons (quantum dots) on superfluid helium =====
+
+Electrons on "superfluid helium represent":"https://www.youtube.com/watch?v=EuDuM-fe-lA&ab_channel=JoshuahHeath" a promising platform for investigating
+strongly-coupled qubits.
+
+Therefore a systematic investigation of the
+controlled generation of entanglement between two trapped electrons
+under the influence of coherent microwave driving pulses, taking into
+account the effects of the Coulomb interaction between electrons, is
+of significant importance for quantum information processing using
+trapped electrons.
+
+!bblock Theory keywords
+o Time-Dependent full configuration interaction theory
+o Time-dependent Coupled-Cluster theory
+o Designing quantum circuits
+!eblock
+
 
 !split
 ===== Quantum algorithms for solving many-body problems, simple model =====
