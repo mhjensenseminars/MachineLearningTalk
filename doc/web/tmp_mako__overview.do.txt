@@ -168,5 +168,18 @@ DATE: today
 
 
 
+===== Quantum Computing and Quantum Machine Learning, March 3, 2021 =====
+
+
+
+ * HTML:
+   * "Plain html style": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/quantumcomputing/html/quantumcomputing.html"
+   * "reveal.js beige slide style": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/quantumcomputing/html/quantumcomputing-reveal.html"
+   * "Bootstrap style": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/quantumcomputing/html/quantumcomputing-bs.html"
+ * iPython notebook:
+   * "ipynb file": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/quantumcomputing/ipynb/quantumcomputing.ipynb"
+
+
+
 
 
