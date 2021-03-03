@@ -113,7 +113,7 @@ account the effects of the Coulomb interaction between electrons, is
 of significant importance for quantum information processing using
 trapped electrons.
 
-!bblock Theory keywords
+!bblock 
 o Time-Dependent full configuration interaction theory
 o Time-dependent Coupled-Cluster theory
 o Designing quantum circuits
