@@ -214,7 +214,7 @@ separation (at the order of one micron).
 !split
 =====  Setup Example =====
 
-FIGURE: [figures/setupfigure.png, width=600 frac=1.0]
+FIGURE: [figures/setupfigure.png, width=600 frac=0.7]
 
 
 
@@ -281,14 +281,24 @@ where $\vert\Phi_p\rangle = \vert\psi_{p_1\rangle\cdots \psi_{p_N}}$ and
 =====  Setup of States, One-body States =====
 
 
-FIGURE: [figures/setupfigure2.png, width=600 frac=0.6]
+FIGURE: [figures/setupfigure2.png, width=600 frac=0.7]
 
 
 !split
 =====  Setup of States, Two-body States =====
 
 
-FIGURE: [figures/setupfigure3.png, width=600 frac=0.6]
+FIGURE: [figures/setupfigure3.png, width=600 frac=0.7]
+
+!split
+===== Where we are now =====
+
+o Have time-dependent codes for two and up to six electrons with FCI
+o Beyond that time-dependent Coupled-cluster theory
+o Matrix elements (TDHF) for one, two and three dimensions for different geometries.
+o Studies of the time-evolution of entangled states (now two electrons only)
+o Use theory to find optimal experimental setup
+o Expect two-electron system realized experimentally in two years
 
 
 
