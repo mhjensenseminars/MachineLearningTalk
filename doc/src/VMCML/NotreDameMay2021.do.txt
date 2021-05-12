@@ -300,7 +300,7 @@ where $\alpha$ adjusts the strength of the interaction and $a$ removes
 It should be noted that this implies that Slater determinants built from the single-particle are eigenfunctions of the non-interacting many-body Hamiltonian
 !bt    
 \begin{equation}
-     \left( \sum_{i=1}^N -\frac{1}{2}\nabla_i + v(r_i)  \right) \vert\Phi_p\rangle = E_p \vert\Phi_p\rangle,
+     \left( \sum_{i=1}^N -\frac{1}{2}\nabla_i^2 + v(r_i)  \right) \vert\Phi_p\rangle = E_p \vert\Phi_p\rangle,
 \end{equation}
 !et    
 where $\vert\Phi_p\rangle = \vert\psi_{p_1\rangle\cdots \psi_{p_N}}$ and 
@@ -314,14 +314,14 @@ where $\vert\Phi_p\rangle = \vert\psi_{p_1\rangle\cdots \psi_{p_N}}$ and
 =====  Setup of States, One-body States =====
 
 
-FIGURE: [figures/setupfigure2.png, width=600 frac=0.85]
+FIGURE: [figures/setupfigure2.png, width=600 frac=1.0]
 
 
 !split
 =====  Setup of States, Two-body States =====
 
 
-FIGURE: [figures/setupfigure3.png, width=600 frac=0.85]
+FIGURE: [figures/setupfigure3.png, width=600 frac=1.0]
 
 !split
 ===== Where we are now =====
