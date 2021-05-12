@@ -467,26 +467,6 @@ where \( \hat{u}(i,j) \) is the electron-electron (Coulomb) interaction.
 
 
 <section>
-<h2 id="more-details">More details </h2>
-
-<p>
-Many-body methods are commonly written in second-quantized form where the Hamiltonian takes the form
-
-<p>&nbsp;<br>
-$$
-\begin{equation}
-        \hat{H} = \sum_{pq} \mel{\psi_p}{\hat{h}}{\psi_q}\hat{a}_p^\dagger \hat{a}_q + \frac{1}{4}\sum_{pqrs} \mel{\psi_p \psi_q}{\hat{u}}{\psi_r \psi_s} \hat{a}_p^\dagger \hat{a}_q^\dagger \hat{a}_s \hat{a_r},
-\tag{2}
-\end{equation}
-$$
-<p>&nbsp;<br>
-
-<p>
-where \( a_p^\dagger \) and \( a_p \) are creation and annihilation operators associated with the single-particle function \( \vert\psi_p\rangle \).
-</section>
-
-
-<section>
 <h2 id="one-dimensional-system">One-dimensional system </h2>
 
 <p>
@@ -498,7 +478,7 @@ We consider a one-dimensional model where the confining potential is parametrize
 $$
 \begin{align}
         u(x_1, x_2) = \frac{\alpha}{\sqrt{(x_1 - x_2)^2 + a^2}},
-\tag{3}
+\tag{2}
 \end{align}
 $$
 <p>&nbsp;<br>
@@ -513,7 +493,7 @@ where \( \alpha \) adjusts the strength of the interaction and \( a \) removes
 $$
 \begin{equation}
         \left( -\frac{d^2}{dx^2}+v(x) \right) \psi_p(x) = \epsilon_p \psi_p(x).
-\tag{4}
+\tag{3}
 \end{equation}
 $$
 <p>&nbsp;<br>
@@ -529,7 +509,7 @@ It should be noted that this implies that Slater determinants built from the sin
 $$
 \begin{equation}
      \left( \sum_{i=1}^N -\frac{1}{2}\nabla_i + v(r_i)  \right) \vert\Phi_p\rangle = E_p \vert\Phi_p\rangle,
-\tag{5}
+\tag{4}
 \end{equation}
 $$
 <p>&nbsp;<br>
@@ -539,7 +519,7 @@ where \( \vert\Phi_p\rangle = \vert\psi_{p_1\rangle\cdots \psi_{p_N}} \) and
 $$
 \begin{equation}
         E_p = \sum_{i=1}^N \epsilon_{p_i}.
-\tag{6}
+\tag{5}
 \end{equation}
 $$
 <p>&nbsp;<br>
@@ -550,7 +530,7 @@ $$
 <h2 id="setup-of-states-one-body-states">Setup of States, One-body States </h2>
 
 <p>
-<br /><br /><center><p><img src="figures/setupfigure2.pdf" align="bottom" width=600></p></center><br /><br />
+<br /><br /><center><p><img src="figures/setupfigure2.png" align="bottom" width=600></p></center><br /><br />
 </section>
 
 
@@ -558,7 +538,7 @@ $$
 <h2 id="setup-of-states-two-body-states">Setup of States, Two-body States </h2>
 
 <p>
-<br /><br /><center><p><img src="figures/setupfigure3.pdf" align="bottom" width=600></p></center><br /><br />
+<br /><br /><center><p><img src="figures/setupfigure3.png" align="bottom" width=600></p></center><br /><br />
 </section>
 
 
@@ -572,7 +552,7 @@ $$
 \begin{align}
 H=\sum_{p\sigma} \delta_pa_{p\sigma}^{\dagger}a_{p\sigma}+\sum_{pq}g_{pq}a_{p+}^{\dagger}a_{p-}^{\dagger}a_{q-}a_{q+}
 ,
-\tag{7}
+\tag{6}
 \end{align}
 $$
 <p>&nbsp;<br>
@@ -590,7 +570,7 @@ If one assumes that energy levels are never half filled (always occupied by eith
 $$
 \begin{align}
 H = 2\sum_{p} \delta_pA_p^{\dagger}A_p+\sum_{pq}g_{pq}A_p^{\dagger}A_q,
-\tag{8}
+\tag{7}
 \end{align}
 $$
 <p>&nbsp;<br>
@@ -619,7 +599,7 @@ The unitary coupled cluster ansatz is
 $$
 \begin{align}
 \vert\Psi\rangle=e^{T-T^{\dagger}}\vert\Phi\rangle,
-\tag{9}
+\tag{8}
 \end{align}
 $$
 <p>&nbsp;<br>
@@ -629,7 +609,7 @@ and
 $$
 \begin{align}
 \vert\Psi\rangle=\exp{(T_1-T_1^{\dagger})}\vert\Phi\rangle,
-\tag{10}
+\tag{9}
 \end{align}
 $$
 <p>&nbsp;<br>
@@ -647,7 +627,7 @@ Since our Hamiltonian only has one body terms. We will truncate to \( T=T_1 \) w
 $$
 \begin{align}
 T_1=\sum_{ia}t_i^aA_a^{\dagger}A_i.
-\tag{11}
+\tag{10}
 \end{align}
 $$
 <p>&nbsp;<br>
@@ -657,7 +637,7 @@ Thus, we define our ansatz as
 $$
 \begin{align}
 \vert\Psi(\theta)\rangle=\exp\left\{\sum_{ia}t_i^a\left(A_a^{\dagger}A_i-A_aA_i^{\dagger}\right)\right\}\vert\Phi\rangle.
-\tag{12}
+\tag{11}
 \end{align}
 $$
 <p>&nbsp;<br>
@@ -675,9 +655,9 @@ The Jordan-Wigner transformation from pair operators to Pauli matrices is
 $$
 \begin{align}
 A_p &= \frac{X_p+iY_p}{2} 
-\tag{13}\\
+\tag{12}\\
 A_p^{\dagger} &= \frac{X_p-iY_p}{2},
-\tag{14}
+\tag{13}
 \end{align}
 $$
 <p>&nbsp;<br>
@@ -696,11 +676,11 @@ $$
 \begin{align}
 A_a^{\dagger}A_i-A_aA_i^{\dagger}
 &=\left(\frac{X_a-iY_i}{2}\right)\left(\frac{X_a+iY_i}{2}\right) 
-\tag{15}\\
+\tag{14}\\
 &-\left(\frac{X_a+iY_i}{2}\right)\left(\frac{X_a-iY_i}{2}\right)
-\tag{16}\\
+\tag{15}\\
 &=\frac{i}{2}\left(X_aY_i-Y_aX_i\right),
-\tag{17}
+\tag{16}
 \end{align}
 $$
 <p>&nbsp;<br>
@@ -712,7 +692,7 @@ $$
 \begin{align}
 \vert\Psi(\theta)\rangle
 =\exp\left\{\frac{i}{2}\sum_{ia}t_i^a\left(X_aY_i-Y_aX_i\right)\right\}\vert\Phi\rangle.
-\tag{18}
+\tag{17}
 \end{align}
 $$
 <p>&nbsp;<br>
@@ -725,13 +705,13 @@ To first order Trotter approximation we have
 <p>&nbsp;<br>
 $$
 \begin{align}
-\tag{19}
+\tag{18}
 \vert\Psi(\theta)\rangle
 &\approx\prod_{ia}\exp\left\{\frac{i}{2}t_i^a\left(X_aY_i-Y_aX_i\right)\right\}\vert\Phi\rangle
 \\
 &\equiv
 \prod_{ia}A_{ia}\vert\Phi\rangle.
-\tag{20}
+\tag{19}
 \end{align}
 $$
 <p>&nbsp;<br>
@@ -748,9 +728,9 @@ $$
 \begin{align}
 H
 &=2\sum_{p}\delta_pa_p^{\dagger}a_p+\sum_{pq}g_{pq}a_p^{\dagger}a_q 
-\tag{21}\\
+\tag{20}\\
 &=\sum_{p}\left(2\delta_p+g_{pq}\right)a_p^{\dagger}a_p+\sum_{p\neq q}g_{pq}a_p^{\dagger}a_q.
-\tag{22}
+\tag{21}
 \end{align}
 $$
 <p>&nbsp;<br>
@@ -760,7 +740,7 @@ Applying the transformation to the first term in the Hamiltonian
 $$
 \begin{align}
 a^{\dagger}_pa_p=\left(\frac{X_p-iY_p}{2}\right)\left(\frac{X_p+iY_p}{2}\right)=\frac{I_p-Z_p}{2}.
-\tag{23}
+\tag{22}
 \end{align}
 $$
 <p>&nbsp;<br>
@@ -776,7 +756,7 @@ $$
 \sum_{p\neq q}a_p^{\dagger}a_q
 =\sum_{p < q}a_p^{\dagger}a_q+\sum_{q < p}a_p^{\dagger}a_q
 =\sum_{p < q}a_p^{\dagger}a_q+a_pa_q^{\dagger},
-\tag{24}
+\tag{23}
 \end{align}
 $$
 <p>&nbsp;<br>
@@ -787,11 +767,11 @@ $$
 \begin{align}
 a_p^{\dagger}a_q+a_pa_q^{\dagger}
 &=\left(\frac{X_p-iY_p}{2}\right)\left(\frac{X_q+iY_q}{2}\right) 
-\tag{25}\\
+\tag{24}\\
 &+\left(\frac{X_p+iY_p}{2}\right)\left(\frac{X_q-iY_q}{2}\right) 
-\tag{26}\\
+\tag{25}\\
 &=\frac{1}{2}\left(X_pX_q+Y_pY_q\right).
-\tag{27}
+\tag{26}
 \end{align}
 $$
 <p>&nbsp;<br>

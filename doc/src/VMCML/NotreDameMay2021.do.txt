@@ -240,19 +240,6 @@ As we are only studying a model comprised of two electrons restricted to move in
 where $\hat{u}(i,j)$ is the electron-electron (Coulomb) interaction.
 
 !split
-===== More details =====
-
-Many-body methods are commonly written in second-quantized form where the Hamiltonian takes the form 
-
-!bt
-\begin{equation}
-        \hat{H} = \sum_{pq} \mel{\psi_p}{\hat{h}}{\psi_q}\hat{a}_p^\dagger \hat{a}_q + \frac{1}{4}\sum_{pqrs} \mel{\psi_p \psi_q}{\hat{u}}{\psi_r \psi_s} \hat{a}_p^\dagger \hat{a}_q^\dagger \hat{a}_s \hat{a_r},
-\end{equation}
-!et
-
-where $a_p^\dagger$ and $a_p$ are creation and annihilation operators associated with the single-particle function $\vert\psi_p\rangle$.
-    
-!split
 ===== One-dimensional system =====
 
 We consider a one-dimensional model where the confining potential is parametrized/obtained from finite element calculations. 
@@ -294,14 +281,14 @@ where $\vert\Phi_p\rangle = \vert\psi_{p_1\rangle\cdots \psi_{p_N}}$ and
 =====  Setup of States, One-body States =====
 
 
-FIGURE: [figures/setupfigure2.pdf, width=600 frac=1.0]
+FIGURE: [figures/setupfigure2.png, width=600 frac=0.6]
 
 
 !split
 =====  Setup of States, Two-body States =====
 
 
-FIGURE: [figures/setupfigure3.pdf, width=600 frac=1.0]
+FIGURE: [figures/setupfigure3.png, width=600 frac=0.6]
 
 
 
