@@ -3,15 +3,23 @@ AUTHOR: Morten Hjorth-Jensen {copyright, 1999-present|CC BY-NC} at Department of
 DATE: Seminar at Notre Dame, May  12, 2021. 
 
 
+
 !split
 ===== What is this talk about? =====
+
 !bblock
-The main aim is to give you a short and pedestrian introduction to our
-activities.
+* Quantum Engineering
+* Quantum algorithms 
+* Quantum Machine Learning
 !eblock
 
+Slides at URL:"https://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/NotreDameMay2021/html/NotreDameMay2021-reveal.html"
+
+
+!split
+===== Many fantastic Folks involved =====
 !bblock Thanks to
-* MSU: _Ben Hall, Jane Kim, Julie Butler, Danny Jammoa_, Johannes Pollanen (Expt), Niyaz Beysengulov (Expt), Dean Lee, Scott Bogner, Heiko Hergert, Matt Hirn, Huey-Wen Lin, Alexei Bazavov, Angela Wilson, and Andrea Shindler
+* MSU: Ben Hall, Jane Kim, Julie Butler, Danny Jammoa, Johannes Pollanen (Expt), Niyaz Beysengulov (Expt), Dean Lee, Scott Bogner, Heiko Hergert, Matt Hirn, Huey-Wen Lin, Alexei Bazavov, Angela Wilson, and Andrea Shindler
 * UiO: _Stian Bilek, Håkon Emil Kristiansen, Øyvind Schøyen Sigmundsson, Jonas Boym Flaten, Kristian Wold_, Lasse Vines (Expt) and Marianne Bathen (Expt)
 !eblock
 
@@ -21,7 +29,6 @@ Science, office of Nuclear Physics under grant No. DE-SC0021152 and
 U.S. National Science Foundation Grants No. PHY-1404159 and
 PHY-2013047.
 !eblock
-
 
 
 
@@ -44,19 +51,13 @@ o Master of Science  thesis of "Heine Åbø":"https://www.duo.uio.no/handle/1085
 o "Marianne EtzelmuellerBathen's PhD":"https://www.mn.uio.no/fysikk/english/people/aca/mariebat/", December 2020
 !eblock
 
-!split
-===== Basic activities, Overview =====
-!bblock
-* Quantum Engineering
-* Quantum algorithms 
-* Quantum Machine Learning
-!eblock
 
-Slides at URL:"https://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/NotreDameMay2021/html/NotreDameMay2021-reveal.html"
+
 
 !split
 ===== Short background  =====
 
+!bblock
 During the last two years we have started a large scientific activity
 on Quantum Computing and Machine Learning at Michigan State University in collaboration with several other universities in the US and in Europ.
 
@@ -65,7 +66,7 @@ of quantum-mechanical many-particle theories for studying systems of
 interest for making quantum computers, via the development of quantum
 algorithms for solving quantum mechanical problems to exploring
 quantum machine learning algorithms.
-
+!eblock
 
 
 !split
@@ -83,13 +84,16 @@ o and many more
 
 !split
 ===== Candidate systems =====
+
+!bblock
 o Superconducting Josephon junctions
 o Single photons
-o Trapped ions and atoms
+o "Trapped ions and atoms":"https://journals.aps.org/rmp/pdf/10.1103/RevModPhys.93.025001"
 o Nuclear Magnetic Resonance
 o _Quantum dots, expt at MSU_
 o _Point Defects in semiconductors, expt at UiO_
 o more
+!eblock
 
 !split
 ===== Electrons (quantum dots) on superfluid helium =====
@@ -116,20 +120,25 @@ o Designing quantum circuits
 !split
 =====  Entanglement =====
 
-Entanglement is the fundamental characteristic that distinguishes
+!bblock
+"Entanglement":"https://link.springer.com/content/pdf/10.1007/s11232-007-0098-9.pdf" is the fundamental characteristic that distinguishes
 quantum systems composed of two or more coupled objects from their
 classical counterparts. The study of entanglement in precisely
 engineered quantum systems with countably many degrees of freedom is
 at the forefront of modern physics and is a key resource in quantum
 information science (QIS). This is particularly true in the
-development of two-qubit logic for quantum computation. In fact, the
+development of two-qubit logic for quantum computation.
+!eblock
+
+!bblock
+The
 generation of two-qubit entanglement has been demonstrated in a wide
 variety of physical systems used in present-day quantum computing,
 including superconducting circuits, tapped
 ions, semiconductor quantum dots, color-center
 defects in diamond, and neutral atoms in optical
 latticesjust to name a few.
-
+!eblock
 
 !split
 ===== More on Entanglement =====
@@ -142,16 +151,15 @@ schemes for two-qubit logic.
 !eblock
 
 !bblock
-In a superconducting circuits the
+In  superconducting circuits the
 interaction between qubits may arise from direct capacitive coupling
-between circuit element or by indirect coupling of two qubits to a
+between circuit elements or by indirect coupling of two qubits to a
 common resonator (virtually populating resonator mode) which results
 in a non-local Hamiltonian in the form of exchange
 interaction. This allow to implement various
 schemes for entanglement, such as $\sqrt{i\text{SWAP}}$, controlled-phase
 gate, resonator-induced phase
-gate, cross-resonance
-gate.
+gate, cross-resonance gate.
 !eblock
 
 !split
@@ -183,23 +191,28 @@ interaction.
 !split
 ===== Coulomb interaction =====
 
+!bblock
 Coulomb interaction governed entanglement can be realized in
 the system of electrons on the surface of superfluid helium, where
 qubit states are formed by in-plane lateral motional or out-of plane
 Rydberg states. Trapped near the surface of liquid helium these states
 have different spatial charge configurations and the wavefunctions of
-different electrons do not overlap. This results in a strong exchange
+different electrons do not overlap.
+!eblock
+
+!bblock
+This results in a strong exchange
 free Coulomb interaction which depends on the states of the
 electrons. The lack of disorder in the systems
 also leads to slow electron decoherence, which has attracted interest
 to the system as a candidate for quantum information
 processing.
-
+!eblock
 
 !split
 ===== Electrons on helium is another qubit platform =====
 
-To our knowledge two qubit gates have never been discussed in a proper manner.
+_To our knowledge two qubit gates have never been discussed in a proper manner._
 
 !bblock
 The static Coulomb interaction arises from a virtual photon exchange
@@ -211,6 +224,7 @@ The static Coulomb interaction arises from a virtual photon exchange
 !split
 ===== Surface state electrons (SSE) =====
 
+!bblock
 Surface state electrons (SSE) 'floating' above liquid helium
 originates from quantization of electron's perpendicular to the
 surface motion in a trapping potential formed by attractive force from
@@ -218,16 +232,20 @@ image charge and a large $\sim$ 1 eV barrier at the liquid-vacuum
 interface. At low temperatures the SSE are trapped in the lowest
 Rydberg state for vertical motion some 11 nm above the helium surface,
 which is perfectly clean and has a permittivity close to that of
-vacuum. The weak interaction with enviroment, which is mainly governed
+vacuum.
+!eblock
+
+!bblock
+The weak interaction with enviroment, which is mainly governed
 by interaction with quantized surface capillary waves (ripplons) and
 bulk phonons, ensures long coherence times - a vital ingredient for
 any qubit platform. SSE's in-plane motion can be further localized by
 using microdevices on the length scales approaching the interelectron
 separation (at the order of one micron).
-
+!eblock
 
 !split
-=====  Typical Setup Procedure  =====
+=====  Typical Setup   =====
 
 FIGURE: [figures/setupfigure.png, width=600 frac=0.6]
 
@@ -238,7 +256,7 @@ FIGURE: [figures/setupfigure.png, width=600 frac=0.6]
 
 As we are only studying a model comprised of two electrons restricted to move in a
     one-dimensional external potential we have employed the
-    _ab initio_ method configuration-interaction to compute the steady-state
+    configuration-interaction theory to compute the steady-state
     properties of the system.
     We have used a static, one-dimensional, grid-based basis set for the single-particle
     functions.
@@ -547,10 +565,15 @@ quantum-mechanical problems, with several interesting results.
 ===== Conclusions and where do we stand =====
 
 Lots of interesting research directions. 
-o We have used many-body methods like time-dependent full configuration  interaction theory to design quantum circuits, in close collaboration with experimentalists
+o Have time-dependent codes for two and up to six electrons with FCI
+o Beyond that time-dependent Coupled-cluster theory
+o Matrix elements (TDHF) for one, two and three dimensions for different geometries.
+o Studies of the time-evolution of entangled states (now two electrons only)
+o Use theory to find optimal experimental setup
+o Expect two-electron system realized experimentally in two years
 o Successfully applied various quantum algorithms to many-body systems
 o Quantum machine learning, just started
-o What could be of interest to the Gemini center? 
+
 
 
 
