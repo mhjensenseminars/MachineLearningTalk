@@ -104,6 +104,8 @@ account the effects of the Coulomb interaction between electrons, is
 of significant importance for quantum information processing using
 trapped electrons.
 
+!split
+===== Methods and Applications =====
 !bblock 
 o Time-Dependent full configuration interaction theory
 o Time-dependent Coupled-Cluster theory
@@ -132,10 +134,15 @@ latticesjust to name a few.
 !split
 ===== More on Entanglement =====
 
+!bblock
 Generating an entanglement between two quantum systems rely on
 exploiting interactions in a controllable way. The details in the
 interaction Hamiltonian between two systems defines the protocol
-schemes for two-qubit logic. In a superconducting circuits the
+schemes for two-qubit logic.
+!eblock
+
+!bblock
+In a superconducting circuits the
 interaction between qubits may arise from direct capacitive coupling
 between circuit element or by indirect coupling of two qubits to a
 common resonator (virtually populating resonator mode) which results
@@ -145,17 +152,22 @@ schemes for entanglement, such as $\sqrt{i\text{SWAP}}$, controlled-phase
 gate, resonator-induced phase
 gate, cross-resonance
 gate.
+!eblock
 
 !split
 ===== Entanglement gates in trapped ions and more =====
 
+!bblock
 Entanglement gates in trapped ions are
 produced by means of the Coulomb interaction, where shared motional
 modes of two or more ions, entangled to their internal states, used
 for transferring excitations between ion
 qubits. This has been experimentally
 demonstrated.
+!eblock
 
+
+!bblock
 In photonic quantum
 computing schemes two-qubit entangling operations are realized by
 nonlinear interactions between two photons scattering from quantum
@@ -165,11 +177,13 @@ semiconductor quantum dots are based on spin-spin exchange
 interactions or generated
 by coupling to a superconducting resonator via artificial spin-orbit
 interaction.
+!eblock
+
 
 !split
 ===== Coulomb interaction =====
 
-Coulomb interaction governed entanglement naturally can be realized in
+Coulomb interaction governed entanglement can be realized in
 the system of electrons on the surface of superfluid helium, where
 qubit states are formed by in-plane lateral motional or out-of plane
 Rydberg states. Trapped near the surface of liquid helium these states
@@ -185,13 +199,14 @@ processing.
 !split
 ===== Electrons on helium is another qubit platform =====
 
-Here 2 qubit gates have never been discussed in a proper manner.
+To our knowledge two qubit gates have never been discussed in a proper manner.
 
+!bblock
 The static Coulomb interaction arises from a virtual photon exchange
  process between two charge particles according to quantum
  electrodynamics. This results in a correlated motion of two charges
  generating quantum entanglement. 
-
+!eblock
 
 !split
 ===== Surface state electrons (SSE) =====
@@ -212,9 +227,9 @@ separation (at the order of one micron).
 
 
 !split
-=====  Setup Example =====
+=====  Typical Setup Procedure  =====
 
-FIGURE: [figures/setupfigure.png, width=600 frac=0.7]
+FIGURE: [figures/setupfigure.png, width=600 frac=0.6]
 
 
 
@@ -223,7 +238,7 @@ FIGURE: [figures/setupfigure.png, width=600 frac=0.7]
 
 As we are only studying a model comprised of two electrons restricted to move in a
     one-dimensional external potential we have employed the
-    \emph{ab-initio} method configuration-interaction to compute the steady-state
+    _ab initio_ method configuration-interaction to compute the steady-state
     properties of the system.
     We have used a static, one-dimensional, grid-based basis set for the single-particle
     functions.
@@ -281,14 +296,14 @@ where $\vert\Phi_p\rangle = \vert\psi_{p_1\rangle\cdots \psi_{p_N}}$ and
 =====  Setup of States, One-body States =====
 
 
-FIGURE: [figures/setupfigure2.png, width=600 frac=0.7]
+FIGURE: [figures/setupfigure2.png, width=600 frac=0.85]
 
 
 !split
 =====  Setup of States, Two-body States =====
 
 
-FIGURE: [figures/setupfigure3.png, width=600 frac=0.7]
+FIGURE: [figures/setupfigure3.png, width=600 frac=0.85]
 
 !split
 ===== Where we are now =====
