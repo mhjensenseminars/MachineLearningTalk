@@ -1,0 +1,920 @@
+<!--
+Automatically generated HTML file from DocOnce source
+(https://github.com/doconce/doconce/)
+-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="DocOnce: https://github.com/doconce/doconce/" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Quantum Computing and Quantum Mechanics for Many Interacting Particles">
+
+<title>Quantum Computing and Quantum Mechanics for Many Interacting Particles</title>
+
+
+<link href="https://cdn.rawgit.com/doconce/doconce/master/bundled/html_styles/style_solarized_box/css/solarized_light_code.css" rel="stylesheet" type="text/css" title="light"/>
+<script src="https://cdn.rawgit.com/doconce/doconce/master/bundled/html_styles/style_solarized_box/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<link href="https://thomasf.github.io/solarized-css/solarized-light.min.css" rel="stylesheet">
+<style type="text/css">
+h1 {color: #b58900;}  /* yellow */
+/* h1 {color: #cb4b16;}  orange */
+/* h1 {color: #d33682;}  magenta, the original choice of thomasf */
+code { padding: 0px; background-color: inherit; }
+pre {
+  border: 0pt solid #93a1a1;
+  box-shadow: none;
+}
+.alert-text-small   { font-size: 80%;  }
+.alert-text-large   { font-size: 130%; }
+.alert-text-normal  { font-size: 90%;  }
+.alert {
+  padding:8px 35px 8px 14px; margin-bottom:18px;
+  text-shadow:0 1px 0 rgba(255,255,255,0.5);
+  border:1px solid #93a1a1;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  color: #555;
+  background-color: #eee8d5;
+  background-position: 10px 5px;
+  background-repeat: no-repeat;
+  background-size: 38px;
+  padding-left: 55px;
+  width: 75%;
+ }
+.alert-block {padding-top:14px; padding-bottom:14px}
+.alert-block > p, .alert-block > ul {margin-bottom:1em}
+.alert li {margin-top: 1em}
+.alert-block p+p {margin-top:5px}
+.alert-notice { background-image: url(https://cdn.rawgit.com/doconce/doconce/master/bundled/html_images/small_yellow_notice.png); }
+.alert-summary  { background-image:url(https://cdn.rawgit.com/doconce/doconce/master/bundled/html_images/small_yellow_summary.png); }
+.alert-warning { background-image: url(https://cdn.rawgit.com/doconce/doconce/master/bundled/html_images/small_yellow_warning.png); }
+.alert-question {background-image:url(https://cdn.rawgit.com/doconce/doconce/master/bundled/html_images/small_yellow_question.png); }
+
+div { text-align: justify; text-justify: inter-word; }
+</style>
+
+
+</head>
+
+<!-- tocinfo
+{'highest level': 2,
+ 'sections': [('What is this talk about?', 2, None, 'what-is-this-talk-about'),
+              ('Why? Basic motivation', 2, None, 'why-basic-motivation'),
+              ('Basic activities, Overview',
+               2,
+               None,
+               'basic-activities-overview'),
+              ('Short background', 2, None, 'short-background'),
+              ('Quantum Engineering', 2, None, 'quantum-engineering'),
+              ('Candidate systems', 2, None, 'candidate-systems'),
+              ('Electrons (quantum dots) on superfluid helium',
+               2,
+               None,
+               'electrons-quantum-dots-on-superfluid-helium'),
+              ('Entanglement', 2, None, 'entanglement'),
+              ('More on Entanglement', 2, None, 'more-on-entanglement'),
+              ('Entanglement gates in trapped ions and more',
+               2,
+               None,
+               'entanglement-gates-in-trapped-ions-and-more'),
+              ('Coulomb interaction', 2, None, 'coulomb-interaction'),
+              ('Electrons on helium is another qubit platform',
+               2,
+               None,
+               'electrons-on-helium-is-another-qubit-platform'),
+              ('Surface state electrons (SSE)',
+               2,
+               None,
+               'surface-state-electrons-sse'),
+              ('Setup Example', 2, None, 'setup-example'),
+              ('Computational Methods', 2, None, 'computational-methods'),
+              ('More details', 2, None, 'more-details'),
+              ('One-dimensional system', 2, None, 'one-dimensional-system'),
+              ('Many-particle States', 2, None, 'many-particle-states'),
+              ('Setup of States, One-body States',
+               2,
+               None,
+               'setup-of-states-one-body-states'),
+              ('Setup of States, Two-body States',
+               2,
+               None,
+               'setup-of-states-two-body-states'),
+              ('Quantum algorithms for solving many-body problems, simple '
+               'model',
+               2,
+               None,
+               'quantum-algorithms-for-solving-many-body-problems-simple-model'),
+              ('More on the pairing model',
+               2,
+               None,
+               'more-on-the-pairing-model'),
+              ('Unitary Coupled Cluster Ansatz',
+               2,
+               None,
+               'unitary-coupled-cluster-ansatz'),
+              ('Technicalities', 2, None, 'technicalities'),
+              ('Mapping Pair Operators to Pauli Gates',
+               2,
+               None,
+               'mapping-pair-operators-to-pauli-gates'),
+              ('Mapping the Ansatz', 2, None, 'mapping-the-ansatz'),
+              ('Trotter approximation', 2, None, 'trotter-approximation'),
+              ('Mapping the Hamiltonian', 2, None, 'mapping-the-hamiltonian'),
+              ('More manipulations', 2, None, 'more-manipulations'),
+              ('Hamiltonian', 2, None, 'hamiltonian'),
+              ('Exact and Calculated Correlation Energies vs Pairing Strength '
+               'for $(p,n)=(4,2)$',
+               2,
+               None,
+               'exact-and-calculated-correlation-energies-vs-pairing-strength-for-p-n-4-2'),
+              ('Exact and Calculated Correlation Energies vs Pairing Strength '
+               'for $(p,n)=(5,2)$',
+               2,
+               None,
+               'exact-and-calculated-correlation-energies-vs-pairing-strength-for-p-n-5-2'),
+              ('Quantum Machine Learning', 2, None, 'quantum-machine-learning'),
+              ('More on Quantum Machine Learning',
+               2,
+               None,
+               'more-on-quantum-machine-learning'),
+              ('Present Plans', 2, None, 'present-plans'),
+              ('Conclusions and where do we stand',
+               2,
+               None,
+               'conclusions-and-where-do-we-stand')]}
+end of tocinfo -->
+
+<body>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+     equationNumbers: {  autoNumber: "AMS"  },
+     extensions: ["AMSmath.js", "AMSsymbols.js", "autobold.js", "color.js"]
+  }
+});
+</script>
+<script type="text/javascript" async
+ src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+    
+<!-- ------------------- main content ---------------------- -->
+
+
+
+<center><h1>Quantum Computing and Quantum Mechanics for Many Interacting Particles</h1></center>  <!-- document title -->
+
+<p>
+<!-- author(s): Morten Hjorth-Jensen -->
+
+<center>
+<b>Morten Hjorth-Jensen</b> [1, 2]
+</center>
+
+<p>
+<!-- institution(s) -->
+
+<center>[1] <b>Department of Physics and Astronomy and FRIB/NSCL Laboratory, Michigan State University, USA</b></center>
+<center>[2] <b>Department of Physics and Center for Computing in Science Education, University of Oslo, Norway</b></center>
+<br>
+<p>
+<center><h4>Seminar at Notre Dame, May  12, 2021. </h4></center> <!-- date -->
+<br>
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="what-is-this-talk-about">What is this talk about? </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+The main aim is to give you a short and pedestrian introduction to our
+activities.
+</div>
+
+
+<p>
+<div class="alert alert-block alert-block alert-text-normal">
+<b>Thanks to</b>
+<p>
+
+<ul>
+<li> MSU: <b>Ben Hall, Jane Kim, Julie Butler, Danny Jammoa</b>, Johannes Pollanen (Expt), Niyaz Beysengulov (Expt), Dean Lee, Scott Bogner, Heiko Hergert, Matt Hirn, Huey-Wen Lin, Alexei Bazavov, Angela Wilson, and Andrea Shindler</li>
+<li> UiO: <b>Stian Bilek, H&#229;kon Emil Kristiansen, &#216;yvind Sch&#248;yen Sigmundsson, Jonas Boym Flaten, Kristian Wold</b>, Lasse Vines (Expt) and Marianne Bathen (Expt)</li>
+</ul>
+</div>
+
+
+<p>
+<div class="alert alert-block alert-block alert-text-normal">
+<b>Sponsors</b>
+<p>
+This work is supported by the U.S. Department of Energy, Office of
+Science, office of Nuclear Physics under grant No. DE-SC0021152 and
+U.S. National Science Foundation Grants No. PHY-1404159 and
+PHY-2013047.
+</div>
+
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="why-basic-motivation">Why? Basic motivation </h2>
+
+<p>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+How can we avoid the dimensionality curse? Many possibilities
+
+<ol>
+<li> smarter basis functions</li>
+<li> resummation of specific correlations</li>
+<li> stochastic sampling of high-lying states (stochastic FCI, CC and SRG/IMSRG)</li>
+<li> many more</li>
+</ol>
+</div>
+
+
+<p>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+Machine Learning and Quantum Computing hold great promise in tackling the 
+ever increasing dimensionalities. A hot new field is  <b>Quantum Machine Learning</b>, see for example the recent textbook by <a href="https://www.springer.com/gp/book/9783319964232" target="_blank">Maria Schuld and Francesco Petruccione</a>. 
+
+<ol>
+<li> Master of Science  thesis of <a href="https://www.duo.uio.no/handle/10852/82489" target="_blank">Stian Bilek</a>, <b>Quantum Computing: Many-Body Methods and Machine Learning, August 2020</b></li>
+<li> Master of Science  thesis of <a href="https://www.duo.uio.no/handle/10852/81259" target="_blank">Heine &#197;b&#248;</a>, <b>Quantum Computing and Many-Particle Problems, June 2020</b></li>
+<li> <a href="https://www.mn.uio.no/fysikk/english/people/aca/mariebat/" target="_blank">Marianne EtzelmuellerBathen's PhD</a>, December 2020</li>
+</ol>
+</div>
+
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="basic-activities-overview">Basic activities, Overview </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+
+<ul>
+<li> Quantum Engineering</li>
+<li> Quantum algorithms</li> 
+<li> Quantum Machine Learning</li>
+</ul>
+</div>
+
+
+<p>
+Slides at <a href="https://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/NotreDameMay2021/html/NotreDameMay2021-reveal.html" target="_blank"><tt>https://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/NotreDameMay2021/html/NotreDameMay2021-reveal.html</tt></a>
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="short-background">Short background  </h2>
+
+<p>
+During the last two years we have started a large scientific activity
+on Quantum Computing and Machine Learning at Michigan State University in collaboration with several other universities in the US and in Europ.
+
+<p>
+This activity spans from the development
+of quantum-mechanical many-particle theories for studying systems of
+interest for making quantum computers, via the development of quantum
+algorithms for solving quantum mechanical problems to exploring
+quantum machine learning algorithms.
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="quantum-engineering">Quantum Engineering </h2>
+
+<p>
+<div class="alert alert-block alert-block alert-text-normal">
+<b>Quantum Computing requirements</b>
+<p>
+
+<ol>
+<li> be scalable</li>
+<li> have qubits that can be entangled</li>
+<li> have reliable initializations protocols to a standard state</li>
+<li> have a set of universal quantum gates to control the quantum evolution</li>
+<li> have a coherence time much longer than the gate operation time</li>
+<li> have a reliable read-out mechanism for measuring the qubit states</li>
+<li> and many more</li> 
+</ol>
+</div>
+
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="candidate-systems">Candidate systems </h2>
+
+<ol>
+<li> Superconducting Josephon junctions</li>
+<li> Single photons</li>
+<li> Trapped ions and atoms</li>
+<li> Nuclear Magnetic Resonance</li>
+<li> <b>Quantum dots, expt at MSU</b></li>
+<li> <b>Point Defects in semiconductors, expt at UiO</b></li>
+<li> more</li>
+</ol>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="electrons-quantum-dots-on-superfluid-helium">Electrons (quantum dots) on superfluid helium </h2>
+
+<p>
+Electrons on <a href="https://www.youtube.com/watch?v=EuDuM-fe-lA&ab_channel=JoshuahHeath" target="_blank">superfluid helium represent</a> a promising platform for investigating
+strongly-coupled qubits.
+
+<p>
+Therefore a systematic investigation of the
+controlled generation of entanglement between two trapped electrons
+under the influence of coherent microwave driving pulses, taking into
+account the effects of the Coulomb interaction between electrons, is
+of significant importance for quantum information processing using
+trapped electrons.
+
+<p>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+
+<ol>
+<li> Time-Dependent full configuration interaction theory</li>
+<li> Time-dependent Coupled-Cluster theory</li>
+<li> Designing quantum circuits</li>
+</ol>
+</div>
+
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="entanglement">Entanglement </h2>
+
+<p>
+Entanglement is the fundamental characteristic that distinguishes
+quantum systems composed of two or more coupled objects from their
+classical counterparts. The study of entanglement in precisely
+engineered quantum systems with countably many degrees of freedom is
+at the forefront of modern physics and is a key resource in quantum
+information science (QIS). This is particularly true in the
+development of two-qubit logic for quantum computation. In fact, the
+generation of two-qubit entanglement has been demonstrated in a wide
+variety of physical systems used in present-day quantum computing,
+including superconducting circuits, tapped
+ions, semiconductor quantum dots, color-center
+defects in diamond, and neutral atoms in optical
+latticesjust to name a few.
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="more-on-entanglement">More on Entanglement </h2>
+
+<p>
+Generating an entanglement between two quantum systems rely on
+exploiting interactions in a controllable way. The details in the
+interaction Hamiltonian between two systems defines the protocol
+schemes for two-qubit logic. In a superconducting circuits the
+interaction between qubits may arise from direct capacitive coupling
+between circuit element or by indirect coupling of two qubits to a
+common resonator (virtually populating resonator mode) which results
+in a non-local Hamiltonian in the form of exchange
+interaction. This allow to implement various
+schemes for entanglement, such as \( \sqrt{i\text{SWAP}} \), controlled-phase
+gate, resonator-induced phase
+gate, cross-resonance
+gate.
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="entanglement-gates-in-trapped-ions-and-more">Entanglement gates in trapped ions and more </h2>
+
+<p>
+Entanglement gates in trapped ions are
+produced by means of the Coulomb interaction, where shared motional
+modes of two or more ions, entangled to their internal states, used
+for transferring excitations between ion
+qubits. This has been experimentally
+demonstrated.
+
+<p>
+In photonic quantum
+computing schemes two-qubit entangling operations are realized by
+nonlinear interactions between two photons scattering from quantum
+dots, plasmonic nanowires, diamond vacancy centers and others embedded
+into waveguides. Two-qubit gates in
+semiconductor quantum dots are based on spin-spin exchange
+interactions or generated
+by coupling to a superconducting resonator via artificial spin-orbit
+interaction.
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="coulomb-interaction">Coulomb interaction </h2>
+
+<p>
+Coulomb interaction governed entanglement naturally can be realized in
+the system of electrons on the surface of superfluid helium, where
+qubit states are formed by in-plane lateral motional or out-of plane
+Rydberg states. Trapped near the surface of liquid helium these states
+have different spatial charge configurations and the wavefunctions of
+different electrons do not overlap. This results in a strong exchange
+free Coulomb interaction which depends on the states of the
+electrons. The lack of disorder in the systems
+also leads to slow electron decoherence, which has attracted interest
+to the system as a candidate for quantum information
+processing.
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="electrons-on-helium-is-another-qubit-platform">Electrons on helium is another qubit platform </h2>
+
+<p>
+Here 2 qubit gates have never been discussed in a proper manner.
+
+<p>
+The static Coulomb interaction arises from a virtual photon exchange
+ process between two charge particles according to quantum
+ electrodynamics. This results in a correlated motion of two charges
+ generating quantum entanglement.
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="surface-state-electrons-sse">Surface state electrons (SSE) </h2>
+
+<p>
+Surface state electrons (SSE) 'floating' above liquid helium
+originates from quantization of electron's perpendicular to the
+surface motion in a trapping potential formed by attractive force from
+image charge and a large \( \sim \) 1 eV barrier at the liquid-vacuum
+interface. At low temperatures the SSE are trapped in the lowest
+Rydberg state for vertical motion some 11 nm above the helium surface,
+which is perfectly clean and has a permittivity close to that of
+vacuum. The weak interaction with enviroment, which is mainly governed
+by interaction with quantized surface capillary waves (ripplons) and
+bulk phonons, ensures long coherence times - a vital ingredient for
+any qubit platform. SSE's in-plane motion can be further localized by
+using microdevices on the length scales approaching the interelectron
+separation (at the order of one micron).
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="setup-example">Setup Example </h2>
+
+<p>
+<br /><br /><center><p><img src="figures/setupfigure.png" align="bottom" width=600></p></center><br /><br />
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="computational-methods">Computational Methods </h2>
+
+<p>
+As we are only studying a model comprised of two electrons restricted to move in a
+    one-dimensional external potential we have employed the
+    \emph{ab-initio} method configuration-interaction to compute the steady-state
+    properties of the system.
+    We have used a static, one-dimensional, grid-based basis set for the single-particle
+    functions.
+    This allows for flexibility in the choice of the external potential, and fits the
+    interpolated potential particularly well.
+
+<p>
+    The Hamiltonian of \( N \) interacting electrons confined by some potential \( v(r) \) can be written on general form 
+$$
+\begin{equation}
+        \hat{H} = \sum_{i=1}^N \left(-\frac{1}{2}\nabla_i^2 + v(r_i) \right) + \sum_{i < j} \hat{u}(r_i, r_j),
+\label{_auto1}
+\end{equation}
+$$
+
+where \( \hat{u}(i,j) \) is the electron-electron (Coulomb) interaction.
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="more-details">More details </h2>
+
+<p>
+Many-body methods are commonly written in second-quantized form where the Hamiltonian takes the form 
+
+$$
+\begin{equation}
+        \hat{H} = \sum_{pq} \mel{\psi_p}{\hat{h}}{\psi_q}\hat{a}_p^\dagger \hat{a}_q + \frac{1}{4}\sum_{pqrs} \mel{\psi_p \psi_q}{\hat{u}}{\psi_r \psi_s} \hat{a}_p^\dagger \hat{a}_q^\dagger \hat{a}_s \hat{a_r},
+\label{_auto2}
+\end{equation}
+$$
+
+<p>
+where \( a_p^\dagger \) and \( a_p \) are creation and annihilation operators associated with the single-particle function \( \vert\psi_p\rangle \).
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="one-dimensional-system">One-dimensional system </h2>
+
+<p>
+We consider a one-dimensional model where the confining potential is parametrized/obtained from finite element calculations.
+
+<p>
+    The bare Coulomb interaction is divergent in 1D (REF) and it is customary to use a smoothed Coulomb interaction given by
+$$
+\begin{align}
+        u(x_1, x_2) = \frac{\alpha}{\sqrt{(x_1 - x_2)^2 + a^2}},
+\label{_auto3}
+\end{align}
+$$
+
+<p>
+where \( \alpha \) adjusts the strength of the interaction and \( a \) removes
+    the singularity at \( x_1 = x_2 \).
+
+<p>
+    The single-particle functions  are chosen as the eigenfunctions of the single-particle Hamiltonian
+$$
+\begin{equation}
+        \left( -\frac{d^2}{dx^2}+v(x) \right) \psi_p(x) = \epsilon_p \psi_p(x).
+\label{_auto4}
+\end{equation}
+$$
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="many-particle-states">Many-particle States </h2>
+
+<p>
+It should be noted that this implies that Slater determinants built from the single-particle are eigenfunctions of the non-interacting many-body Hamiltonian
+$$
+\begin{equation}
+     \left( \sum_{i=1}^N -\frac{1}{2}\nabla_i + v(r_i)  \right) \vert\Phi_p\rangle = E_p \vert\Phi_p\rangle,
+\label{_auto5}
+\end{equation}
+$$
+
+where \( \vert\Phi_p\rangle = \vert\psi_{p_1\rangle\cdots \psi_{p_N}} \) and 
+$$
+\begin{equation}
+        E_p = \sum_{i=1}^N \epsilon_{p_i}.
+\label{_auto6}
+\end{equation}
+$$
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="setup-of-states-one-body-states">Setup of States, One-body States </h2>
+
+<p>
+<br /><br /><center><p><img src="figures/setupfigure2.pdf" align="bottom" width=600></p></center><br /><br />
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="setup-of-states-two-body-states">Setup of States, Two-body States </h2>
+
+<p>
+<br /><br /><center><p><img src="figures/setupfigure3.pdf" align="bottom" width=600></p></center><br /><br />
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="quantum-algorithms-for-solving-many-body-problems-simple-model">Quantum algorithms for solving many-body problems, simple model </h2>
+
+<p>
+The pairing model consists of \( 2N \) fermions that occupy \( N \) of \( P \) energy levels. The fermions can only change energy level by pair. It's Hamiltonian is
+$$
+\begin{align}
+H=\sum_{p\sigma} \delta_pa_{p\sigma}^{\dagger}a_{p\sigma}+\sum_{pq}g_{pq}a_{p+}^{\dagger}a_{p-}^{\dagger}a_{q-}a_{q+}
+,
+\label{_auto7}
+\end{align}
+$$
+
+where \( p \) and \( q \) sum over the set  \( \{1,2,...,P\} \) and \( \sigma \) sums over the set \( \{+,-\} \). Also, \( a \) and \( a^{\dagger} \) are the fermionic creation and annihilation operators.
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="more-on-the-pairing-model">More on the pairing model </h2>
+
+<p>
+If one assumes that energy levels are never half filled (always occupied by either 0 or 2 fermions), then the pairing model is equivalent to a system of \( N \) pairs of fermions that occupy \( P \) doubly-degenerate energy levels
+$$
+\begin{align}
+H = 2\sum_{p} \delta_pA_p^{\dagger}A_p+\sum_{pq}g_{pq}A_p^{\dagger}A_q,
+\label{_auto8}
+\end{align}
+$$
+
+where \( p \) and \( q \) sum from over the set \( \{1,...,p\} \) and 
+$$
+\begin{align*}
+A_p &= a_{p-}a_{p+}
+\\
+A^{\dagger}_p &= a^{\dagger}_{p+}a^{\dagger}_{p-},
+\end{align*}
+$$
+
+are the fermionic pair creation and annihilation operators.
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="unitary-coupled-cluster-ansatz">Unitary Coupled Cluster Ansatz </h2>
+
+<p>
+The unitary coupled cluster ansatz is
+$$
+\begin{align}
+\vert\Psi\rangle=e^{T-T^{\dagger}}\vert\Phi\rangle,
+\label{_auto9}
+\end{align}
+$$
+
+and
+$$
+\begin{align}
+\vert\Psi\rangle=\exp{(T_1-T_1^{\dagger})}\vert\Phi\rangle,
+\label{_auto10}
+\end{align}
+$$
+
+where \( \vert\Phi\rangle \) is a Fock state and \( T=\sum_{k=1}^AT_k \).
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="technicalities">Technicalities </h2>
+
+<p>
+Since our Hamiltonian only has one body terms. We will truncate to \( T=T_1 \) where
+$$
+\begin{align}
+T_1=\sum_{ia}t_i^aA_a^{\dagger}A_i.
+\label{_auto11}
+\end{align}
+$$
+
+Thus, we define our ansatz as
+$$
+\begin{align}
+\vert\Psi(\theta)\rangle=\exp\left\{\sum_{ia}t_i^a\left(A_a^{\dagger}A_i-A_aA_i^{\dagger}\right)\right\}\vert\Phi\rangle.
+\label{_auto12}
+\end{align}
+$$
+
+We define the set of angles \( \theta=\{t_i^a \ | \ i < F, \ a \geq F\} \) where \( F \) is the number of particles below the Fermi level.
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="mapping-pair-operators-to-pauli-gates">Mapping Pair Operators to Pauli Gates </h2>
+
+<p>
+The Jordan-Wigner transformation from pair operators to Pauli matrices is
+$$
+\begin{align}
+A_p &= \frac{X_p+iY_p}{2} 
+\label{_auto13}\\
+A_p^{\dagger} &= \frac{X_p-iY_p}{2},
+\label{_auto14}
+\end{align}
+$$
+
+where \( P_i\equiv \left(\bigotimes_{n=1}^{i-1}I\right)\otimes P\otimes\left(\bigotimes_{n=i+1}^NI\right) \) where \( P \in \{X,Y,Z\} \) and \( N \) is the total number of particles.
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="mapping-the-ansatz">Mapping the Ansatz </h2>
+
+<p>
+Applying this transformation
+$$
+\begin{align}
+A_a^{\dagger}A_i-A_aA_i^{\dagger}
+&=\left(\frac{X_a-iY_i}{2}\right)\left(\frac{X_a+iY_i}{2}\right) 
+\label{_auto15}\\
+&-\left(\frac{X_a+iY_i}{2}\right)\left(\frac{X_a-iY_i}{2}\right)
+\label{_auto16}\\
+&=\frac{i}{2}\left(X_aY_i-Y_aX_i\right),
+\label{_auto17}
+\end{align}
+$$
+
+<p>
+The ansatz becomes
+$$
+\begin{align}
+\vert\Psi(\theta)\rangle
+=\exp\left\{\frac{i}{2}\sum_{ia}t_i^a\left(X_aY_i-Y_aX_i\right)\right\}\vert\Phi\rangle.
+\label{_auto18}
+\end{align}
+$$
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="trotter-approximation">Trotter approximation </h2>
+To first order Trotter approximation we have
+$$
+\begin{align}
+\label{ansatz}
+\vert\Psi(\theta)\rangle
+&\approx\prod_{ia}\exp\left\{\frac{i}{2}t_i^a\left(X_aY_i-Y_aX_i\right)\right\}\vert\Phi\rangle
+\\
+&\equiv
+\prod_{ia}A_{ia}\vert\Phi\rangle.
+\label{_auto19}
+\end{align}
+$$
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="mapping-the-hamiltonian">Mapping the Hamiltonian </h2>
+
+<p>
+First, we rewrite the Hamiltonian
+$$
+\begin{align}
+H
+&=2\sum_{p}\delta_pa_p^{\dagger}a_p+\sum_{pq}g_{pq}a_p^{\dagger}a_q 
+\label{_auto20}\\
+&=\sum_{p}\left(2\delta_p+g_{pq}\right)a_p^{\dagger}a_p+\sum_{p\neq q}g_{pq}a_p^{\dagger}a_q.
+\label{_auto21}
+\end{align}
+$$
+
+Applying the transformation to the first term in the Hamiltonian
+$$
+\begin{align}
+a^{\dagger}_pa_p=\left(\frac{X_p-iY_p}{2}\right)\left(\frac{X_p+iY_p}{2}\right)=\frac{I_p-Z_p}{2}.
+\label{_auto22}
+\end{align}
+$$
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="more-manipulations">More manipulations </h2>
+For the second term, first note that
+$$
+\begin{align}
+\sum_{p\neq q}a_p^{\dagger}a_q
+=\sum_{p < q}a_p^{\dagger}a_q+\sum_{q < p}a_p^{\dagger}a_q
+=\sum_{p < q}a_p^{\dagger}a_q+a_pa_q^{\dagger},
+\label{_auto23}
+\end{align}
+$$
+
+which we arrive at by swapping the indices \( p \) and \( q \) in the second sum and combining the sums. Applying the transformation
+$$
+\begin{align}
+a_p^{\dagger}a_q+a_pa_q^{\dagger}
+&=\left(\frac{X_p-iY_p}{2}\right)\left(\frac{X_q+iY_q}{2}\right) 
+\label{_auto24}\\
+&+\left(\frac{X_p+iY_p}{2}\right)\left(\frac{X_q-iY_q}{2}\right) 
+\label{_auto25}\\
+&=\frac{1}{2}\left(X_pX_q+Y_pY_q\right).
+\label{_auto26}
+\end{align}
+$$
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="hamiltonian">Hamiltonian </h2>
+Thus, the Hamiltonian can be written in terms of Pauli matrices as
+$$
+\begin{align*}
+H = \sum_p\left(2\delta_p+g_{pq}\right)\left(\frac{I_p-Z_p}{2}\right)
++\sum_{p < q}g_{pq}\frac{X_pX_q+Y_pY_q}{2}
+\end{align*}
+$$
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="exact-and-calculated-correlation-energies-vs-pairing-strength-for-p-n-4-2">Exact and Calculated Correlation Energies vs Pairing Strength for \( (p,n)=(4,2) \) </h2>
+
+<p>
+<br /><br /><center><p><img src="figures/QCpairing1.png" align="bottom" width=600></p></center><br /><br />
+
+<p>
+<b>Note</b>: \( p \) is the number of doubly-degenerate levels and \( n \) is the number of pairs of fermions.
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="exact-and-calculated-correlation-energies-vs-pairing-strength-for-p-n-5-2">Exact and Calculated Correlation Energies vs Pairing Strength for \( (p,n)=(5,2) \) </h2>
+
+<p>
+<br /><br /><center><p><img src="figures/QCpairing2.png" align="bottom" width=600></p></center><br /><br />
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="quantum-machine-learning">Quantum Machine Learning </h2>
+
+<p>
+The emergence of quantum computers has opened up even more
+possibilities within the field of machine learning. Since quantum
+mechanics is known to create patterns which are not believed to be
+efficiently produced by classical computers, it is natural to
+hypothesize that quantum computers may be able to outperform classical
+computers on certain machine learning tasks. There are several
+interesting approaches to machine learning from a quantum computing
+perspective - from running existing algorithms or parts of these more
+efficiently, to exploring completely new algorithms that are
+specifically developed for quantum computers. Recent results show that
+quantum neural networks are able to achieve a significantly better
+effective dimension than comparable classical neural networks.
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="more-on-quantum-machine-learning">More on Quantum Machine Learning </h2>
+
+<p>
+A few examples of existing algorithms that exhibit a speed up on
+quantum computers are \( k \)-nearest neighbors, support vector machines
+and \( k \)-means clustering.
+
+<p>
+Among algorithmic approaches that are specifically designed for
+quantum computers we find so-called parameterized quantum
+circuits. These are hybrid quantum-classical methods where the
+input-output relation is being produced by a quantum computer, while a
+classical computer is responsible for updating the model parameters
+during training.
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="present-plans">Present Plans </h2>
+
+<ol>
+<li> Quantum circuit optimization</li>
+<li> Quantum Boltzmann Machines</li>
+</ol>
+
+So-called Boltzmann Machines (BMs) define a machine learning method
+that aims to model probability distributions and has played a central
+role in the development of deep learning methods.
+
+<p>
+It has since been shown that BMs are
+universal approximators of discrete probability distributions, meaning that they can approximate
+any discrete distribution arbitrarily well. Our research group has
+lately conducted several investigations of BMs applied to
+quantum-mechanical problems, with several interesting results.
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="conclusions-and-where-do-we-stand">Conclusions and where do we stand </h2>
+
+<p>
+Lots of interesting research directions. 
+
+<ol>
+<li> We have used many-body methods like time-dependent full configuration  interaction theory to design quantum circuits, in close collaboration with experimentalists</li>
+<li> Successfully applied various quantum algorithms to many-body systems</li>
+<li> Quantum machine learning, just started</li>
+<li> What could be of interest to the Gemini center?</li> 
+</ol>
+
+
+<!-- ------------------- end of main content --------------- -->
+
+
+<center style="font-size:80%">
+<!-- copyright --> &copy; 1999-2021, Morten Hjorth-Jensen. Released under CC Attribution-NonCommercial 4.0 license
+</center>
+
+
+</body>
+</html>
+    
+
