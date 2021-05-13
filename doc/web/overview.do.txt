@@ -4,7 +4,7 @@ DATE: today
 
 <%
 pub_url = 'http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub'
-published = ['vmcml', 'unitn', 'uniohio', 'unisurrey', 'uio2019', 'chalmers', 'uiomath', 'unipd', 'overview', 'WorkshopTastesNP', 'xai', 'NIThePColloquium', 'quantumcomputing',]
+published = ['vmcml', 'unitn', 'uniohio', 'unisurrey', 'uio2019', 'chalmers', 'uiomath', 'unipd', 'overview', 'WorkshopTastesNP', 'xai', 'NIThePColloquium', 'quantumcomputing', 'NotreDameMay2021',]
 chapters = {
  'vmcml': 'From variational Monte Carlo to machine learning, talks at Michigan State University April and June 2018',
  'uniuio': 'Talk at University of Oslo, December 14, 2018',
@@ -20,6 +20,7 @@ chapters = {
  'NIThePColloquium': 'NITheP Colloquium February 2, 2021',
  'overview': 'AI and ML slides',
  'quantumcomputing': 'Quantum Computing and Quantum Machine Learning, March 3, 2021',
+ 'NotreDameMay2021': 'Quantum Computing and the Quantum Mechanical Many-Body Problem, Talk at Notre Dame University, May 12, 2021',
 }
 %>
 

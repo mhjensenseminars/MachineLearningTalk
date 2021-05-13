@@ -181,5 +181,18 @@ DATE: today
 
 
 
+===== Quantum Computing and the Quantum Mechanical Many-Body Problem, Talk at Notre Dame University, May 12, 2021 =====
+
+
+
+ * HTML:
+   * "Plain html style": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/NotreDameMay2021/html/NotreDameMay2021.html"
+   * "reveal.js beige slide style": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/NotreDameMay2021/html/NotreDameMay2021-reveal.html"
+   * "Bootstrap style": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/NotreDameMay2021/html/NotreDameMay2021-bs.html"
+ * iPython notebook:
+   * "ipynb file": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/NotreDameMay2021/ipynb/NotreDameMay2021.ipynb"
+
+
+
 
 
