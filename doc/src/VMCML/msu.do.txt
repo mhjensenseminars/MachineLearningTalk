@@ -1,0 +1,43 @@
+TITLE: Nuclear Theory at FRIB: Educational and Research opportunities
+AUTHOR: Morten Hjorth-Jensen {copyright, 1999-present|CC BY-NC} at Department of Physics and Astronomy and FRIB/NSCL Laboratory, Michigan State University, USA
+DATE: MSU-JYFL mini-workshop June 10
+
+
+
+!split
+===== Nuclear theory at FRIB =====
+!bblock
+o Approximately 60-80 researchers and staff, faculty (12), graduate students, undergraduate students and post-doctoral fellows
+o Research spans from fundamental symmetries and quantum chromodynamics, via effective field theories to nuclei and infinite matter (cold or hot and dense nuclear matter)
+o Central in establishing and running the FRIB-theory alliance
+!eblock
+
+
+!split
+===== Research topics and potential overlaps =====
+!bblock
+* Lattice quantochromodynamics
+* Effective field theories on the lattice
+* Reaction theory for low-energy nuclear physics
+* Relativistic heavy-ion physics
+* Nuclear Astrophysics
+* Few and many-body theories
+  o Full configuration interaction theory (shell model) and effective operators
+  o Coupled Cluster theory, In-medium Similarity Renormalization Group, Density Functional theory, Monte Carlo methods and more
+* Machine Learning and Bayesian Inference applied to few and many-body problems and classification of experimental events
+* Quantum computing and quantum information theories applied to nuclear physics problems
+* and more
+!eblock
+
+!split
+===== Educational overlaps and possibilities =====
+
+!bblock
+* Played a significant role in establishing and running the Nuclear TALENT initiative
+* Offers a vast spectrum of nuclear theory courses in house (from nuclear structure to LQCD)
+* Active in guiding research undergraduate students and organizing schools and workshops for students
+* Excellent opportunity for student exchanges at all levels, from undergraduates to Master of Science and PhD students.
+* Full exchange of credits for semesters abroad with established agreement (for exchange students tuition is paid at home institution)
+* Many more mobility possibilities
+!eblock
+
