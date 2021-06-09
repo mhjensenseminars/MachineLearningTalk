@@ -1,4 +1,4 @@
-TITLE: Machine learning talks
+TITLE: Talks over a wide range of topics
 AUTHOR: Morten Hjorth-Jensen  Email:hjensen@msu.edu
 DATE: today
 
@@ -191,6 +191,19 @@ DATE: today
    * "Bootstrap style": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/NotreDameMay2021/html/NotreDameMay2021-bs.html"
  * iPython notebook:
    * "ipynb file": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/NotreDameMay2021/ipynb/NotreDameMay2021.ipynb"
+
+
+
+===== Artur and his many journeys on the Fermi sea; tales from the smallest length scales to infinity, Talk at University of Barcelona, June 11, 2021 =====
+
+
+
+ * HTML:
+   * "Plain html style": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/artur/html/artur.html"
+   * "reveal.js beige slide style": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/artur/html/artur-reveal.html"
+   * "Bootstrap style": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/artur/html/artur-bs.html"
+ * iPython notebook:
+   * "ipynb file": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/artur/ipynb/artur.ipynb"
 
 
 
