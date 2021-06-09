@@ -25,43 +25,28 @@ PHY-2013047.
 ===== Why? Basic motivation =====
 
 !bblock
-How can we avoid the dimensionality curse? Many possibilities
-o smarter basis functions
-o resummation of specific correlations
-o stochastic sampling of high-lying states (stochastic FCI, CC and SRG/IMSRG)
-o many more
+
 !eblock
 
 
 
 !split
 ===== Basic activities, Overview =====
-!bblock
-* Quantum Engineering
-* Quantum algorithms 
-* Quantum Machine Learning
-!eblock
 
-Slides at URL:"https://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/quantumcomputing/html/quantumcomputing-reveal.html"
+
+Slides at URL:"https://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/artur/html/artur-reveal.html"
 
 !split
 ===== Exact and Calculated Correlation Energies vs Pairing Strength for $(p,n)=(4,2)$ =====
 
 FIGURE: [figures/QCpairing1.png, width=600 frac=0.6]
 
-_Note_: $p$ is the number of doubly-degenerate levels and $n$ is the number of pairs of fermions.
+
 
 
 
 !split
 ===== Conclusions and where do we stand =====
-
-Lots of interesting research directions. 
-o We have used many-body methods like time-dependent full configuration  interaction theory to design quantum circuits, in close collaboration with experimentalists
-o Successfully applied various quantum algorithms to many-body systems
-o Quantum machine learning, just started
-o What could be of interest to the Gemini center? 
-
 
 
 
