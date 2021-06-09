@@ -1,0 +1,69 @@
+TITLE: Artur's many journeys on the Fermi sea; tales from the smallest length scales to infinity 
+AUTHOR: Morten Hjorth-Jensen {copyright, 1999-present|CC BY-NC} at Department of Physics and Astronomy and FRIB/NSCL Laboratory, Michigan State University, USA & Department of Physics and Center for Computing in Science Education, University of Oslo, Norway
+DATE: University of Barcelona, June 11, 2021
+
+
+
+!split
+===== What is this talk about? =====
+!bblock
+
+!eblock
+
+
+!bblock Sponsors
+This work is supported by the U.S. Department of Energy, Office of
+Science, office of Nuclear Physics under grant No. DE-SC0021152 and
+U.S. National Science Foundation Grants No. PHY-1404159 and
+PHY-2013047.
+!eblock
+
+
+
+
+!split
+===== Why? Basic motivation =====
+
+!bblock
+How can we avoid the dimensionality curse? Many possibilities
+o smarter basis functions
+o resummation of specific correlations
+o stochastic sampling of high-lying states (stochastic FCI, CC and SRG/IMSRG)
+o many more
+!eblock
+
+
+
+!split
+===== Basic activities, Overview =====
+!bblock
+* Quantum Engineering
+* Quantum algorithms 
+* Quantum Machine Learning
+!eblock
+
+Slides at URL:"https://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/quantumcomputing/html/quantumcomputing-reveal.html"
+
+!split
+===== Exact and Calculated Correlation Energies vs Pairing Strength for $(p,n)=(4,2)$ =====
+
+FIGURE: [figures/QCpairing1.png, width=600 frac=0.6]
+
+_Note_: $p$ is the number of doubly-degenerate levels and $n$ is the number of pairs of fermions.
+
+
+
+!split
+===== Conclusions and where do we stand =====
+
+Lots of interesting research directions. 
+o We have used many-body methods like time-dependent full configuration  interaction theory to design quantum circuits, in close collaboration with experimentalists
+o Successfully applied various quantum algorithms to many-body systems
+o Quantum machine learning, just started
+o What could be of interest to the Gemini center? 
+
+
+
+
+
+
