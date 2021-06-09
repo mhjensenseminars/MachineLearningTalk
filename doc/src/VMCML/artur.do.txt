@@ -30,23 +30,18 @@ PHY-2013047.
 
 
 
-!split
-===== Basic activities, Overview =====
-
-
-Slides at URL:"https://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/artur/html/artur-reveal.html"
-
-!split
-===== Exact and Calculated Correlation Energies vs Pairing Strength for $(p,n)=(4,2)$ =====
-
-FIGURE: [figures/QCpairing1.png, width=600 frac=0.6]
-
-
 
 
 
 !split
-===== Conclusions and where do we stand =====
+===== Final words =====
+
+
+Add poem by Miguel Marti Pol
+
+FIGURE: [FigsTalkArtur/figureEFI.JPG, width=600 frac=0.6]
+
+
 
 
 
