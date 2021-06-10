@@ -1,0 +1,15 @@
+*** error: file has a mako construction ${\cal Y}'
+    but seemingly no definition in <%...%>'
+    (it is not a command-line given mako variable either).
+    However, if this is a variable in a Makefile or Bash script
+    run with --no_mako - and you cannot use mako and Makefile or Bash variables
+    in the same document!
+
+Translating doconce text in artur.do.txt to html
+*** error: reference to equation label "eq:boxbas" is without parentheses
+    the equation reference should be typeset as (ref{eq:boxbas})
+... sis defined in Eq. ( \ref{eq:boxbas}) or in the basis of Hartree-Fo ...
+*** error: reference to equation label "eq:w2p1h" is without parentheses
+    the equation reference should be typeset as (ref{eq:w2p1h})
+... of $W^{2p1h}$ (Eq. ( \ref{eq:w2p1h})) and
+$W^{2h1p}$ may not be ve ...
