@@ -5,18 +5,18 @@ DATE: MSU-JYFL mini-workshop June 10
 
 
 !split
-===== Nuclear theory at FRIB =====
+===== Nuclear theory at FRIB URL:"https://nscl.msu.edu/researchers/theory/index.html" =====
 !bblock
-o Approximately 60-80 researchers and staff, faculty (12), graduate students, undergraduate students and post-doctoral fellows
+o Approximately $\sim 60-70$ researchers and staff, faculty (11), graduate students and undergraduate students ($\sim 40-50$) and post-doctoral fellows and FRIB-TA fellows ($\sim 10$).
 o Research spans from fundamental symmetries and quantum chromodynamics, via effective field theories to nuclei and infinite matter (cold or hot and dense nuclear matter)
-o Central in establishing and running the FRIB-theory alliance
+o FRIB Theory Alliance (FRIB-TA URL:"https://fribtheoryalliance.org/")
 !eblock
 
 
 !split
 ===== Research topics and potential overlaps =====
 !bblock
-* Lattice quantochromodynamics
+* Lattice QCD
 * Effective field theories on the lattice
 * Reaction theory for low-energy nuclear physics
 * Relativistic heavy-ion physics
@@ -33,7 +33,7 @@ o Central in establishing and running the FRIB-theory alliance
 ===== Educational overlaps and possibilities =====
 
 !bblock
-* Played a significant role in establishing and running the Nuclear TALENT initiative
+* Played a significant role in establishing and running the Nuclear TALENT initiative URL:"https://fribtheoryalliance.org/TALENT/"
 * Offers a vast spectrum of nuclear theory courses in house (from nuclear structure to LQCD)
 * Active in guiding research undergraduate students and organizing schools and workshops for students
 * Excellent opportunity for student exchanges at all levels, from undergraduates to Master of Science and PhD students.
