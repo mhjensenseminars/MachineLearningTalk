@@ -4,23 +4,15 @@ DATE: University of Barcelona, June 11, 2021
 
 
 
+
 !split
 ===== What is this talk about? =====
 !bblock
 * A personal selection of Artur's work, with an emphasis on our understanding of correlations in many-particle systems.
-  o Here I will limit myself to fermionic systems, from Hartree-Fock theory to several post Hartree-Fock methods (CBF, Green's functions, Coupled Cluster theory, many-body perturbation theory, Monte Carlo methods, and many more.
+  o Here I will limit myself to fermionic systems, from Hartree-Fock theory to several post Hartree-Fock methods (CBF, Green's functions, Coupled Cluster theory, many-body perturbation theory, Monte Carlo methods, and many more).
   o And we will start with nuclei and end with nuclear matter and dense matter as expected in say neutron stars.
 * Hopefully, together with the other talks, this will give credit to Artur's incredibly broad scientific activity.
 !eblock
-
-
-!bblock Sponsors
-This work is supported by the U.S. Department of Energy, Office of
-Science, office of Nuclear Physics under grant No. DE-SC0021152 and
-U.S. National Science Foundation Grants No. PHY-1404159 and
-PHY-2013047.
-!eblock
-
 
 
 
@@ -28,37 +20,36 @@ PHY-2013047.
 ===== Why? Basic motivation =====
 
 !bblock
-Understanding correlations in many-particle systems 
+
+To get a proper handle on correlations in interacting many-particle  systems and relate
+these to the underlying forces, forms an essential part in basic
+physics research and has wide ranging implications for our
+understanding of how matter organizes itself and what
+phenomena emerge.
+
+Understanding correlations  provides us with a window into the fascinating microscopic world of quantum physics.
+
 !eblock
 
 !split
 ===== Correlations in nuclear systems =====
 
 !bblock
-o Herbert Müther and Artur Polls, *Two-body correlations in nuclear systems*, Progress in Particle and Nuclear Physics 45, 243 (2000)
-o Artur Polls, Herbert Müther, and Wim Dickhoff, *Short-range correlations and the one-body density matrix in finite nuclei*, Nuclear Physics A 594, 114 (1995)
-o Herbert Müther, Artur Polls and Wim Dickhoff, *Momentum and energy distributions of nucleons in finite nuclei due to short-range correlations*, Physical Review C 51, 3040 (1995)
-o Nuclear Physics A 503, 1 (1989)
-o Nuclear Physics A 539, 189 (1995)
-o Physical Review C 55, 810 (1994)
-o Nuclear Physics A 605, 458 (1996)
-o Nuclear Physics A 604, 245 (1996)
-o Physical Review C 50, 501  (1994)
+o Herbert Müther and Artur Polls, *Two-body correlations in nuclear systems*, Progress in Particle and Nuclear Physics _45_, 243 (2000)
+o Artur Polls, Herbert Müther, and Wim Dickhoff, *Short-range correlations and the one-body density matrix in finite nuclei*, Nuclear Physics _A 594_, 114 (1995)
+o Herbert Müther, Artur Polls and Wim Dickhoff, *Momentum and energy distributions of nucleons in finite nuclei due to short-range correlations*, Physical Review _C 51_, 3040 (1995)
+o Angels Ramos, Artur Polls and Wim Dickhoff, Nuclear Physics _A 503_, 1 (1989)
+o Nuclear Physics _A 539_, 189 (1995)
+o Physical Review _C 55_, 810 (1994)
+o Nuclear Physics _A 605_, 458 (1996)
+o Nuclear Physics _A 604_, 245 (1996)
+o Physical Review _C 50_, 501  (1994)
 o and obviously many many more
 !eblock
 
-!split
-===== Final words =====
-
-
-Add poem by Miguel Marti Pol
-
-FIGURE: [FigsTalkArtur/figureEFI.JPG, width=800 frac=1.0
-
-
 
 !split
-====== Natural orbits, one-body densities and correaltions =====
+===== Natural orbits, one-body densities and correlations =====
 
 In Nuclear Physics A 594, 114 (1995)
 the effects of short-range correlations derived from a realistic
@@ -83,16 +74,17 @@ The one-body density matrix of the correlated system can be expressed in terms
 of these occupation numbers $n_{\alpha}$ and the corresponding natural
 orbits $\phi^{no}_{\alpha}$ by
 !bt
-\begin{equation}
+\[
 \rho(r,r') = \sum_{\alpha} n_{\alpha} {\phi^{no}_{\alpha}}^*(r)
 \phi^{no}_{\alpha}(r')
 %\label{eq:natorb}
-\end{equation}
+\]
 !et
 
 
 !split
 ===== Additional observations, taken from NPA 594 =====
+
 As the one
 body density matrix is diagonal in the $no$ representation, this basis
 appears to contain the most suitable single-particle wave functions for the
@@ -108,27 +100,33 @@ when using the $no$ basis; for example, the depletion of the Fermi sea is
 smallest in this basis.
 
 
+!split
+===== "Single-particle Density Matrix":"https://arxiv.org/pdf/nucl-th/9503025.pdf" =====
 
-The aim of our investigation is the analysis of the single-particle
-density matrix $\rho_{mn}$, which is defined in a basis of appropriate
+The single-particle
+density matrix $\rho_{mn}$ is defined in a basis of appropriate
 single-particle states $m,n$ by
 !bt
-\begin{equation}
+\[
 \rho_{mn} = <\Psi_0^A\vert a^\dagger_m a_n\vert \Psi_0^A>
-\end{equation}
+\]
 !et
 where $\Psi_0^A$ denotes the correlated ground state of the nucleus and
 $a^\dagger_m$ ($a_n$) define the single-particle creation (annihilation)
 operators for the basis considered.
 
-Within the Green function approach\cite{wimref} this density matrix can
-be evaluated from the imaginary part of the single-particle Green function
+
+!split
+===== Green's function Approach =====
+
+Within the Green's function approach the density matrix can
+be evaluated from the imaginary part of the single-particle Green's function
 by integrating
 !bt
-\begin{equation}
+\[
 \rho_{lj}(k_1,k_2) = \int_{-\infty}^{\epsilon_F} dE\,
 \frac{1}{\pi} \mbox{Im} \left( g_{lj}(k_1,k_2;E) \right) ,
-\end{equation}
+\]
 !et
 where the energy variable $E$ corresponds to the energy difference between
 the ground state of the $A$ particle system and the various energies of all
@@ -137,322 +135,138 @@ the states in the $A-1$ system
 to high excitation energies in the remaining system) and $\epsilon_F$ is the
 Fermi energy.
 
+!split
+===== Dyson Equation =====
+
 The single-particle Green function $g_{lj}$ or propagator
 is obtained from a solution of the Dyson equation
 !bt
-\begin{equation}
+\[
   g_{lj}(k_1,k_2;E) = g^{(0)}_{lj}(k_1,k_2;E)
 + \int dk_3\int dk_4 g^{(0)}_{lj}(k_1,k_3;E) \Delta\Sigma_{lj}(k_3,k_4;E)
  g_{lj}(k_4,k_2;E) ,
-\label{eq:dyson}
-\end{equation}
+\]
 !et
 where $g^{(0)}$ refers to a Hartree-Fock propagator and $\Delta\Sigma_{lj}$
 represents contributions to the real and imaginary part of the irreducible
 self-energy, which go beyond the Hartree-Fock approximation of the nucleon
-self-energy used to derive $g^{(0)}$. The definition and evaluation of the
-Hartree-Fock contribution as well as the calculation of $\Delta\Sigma$ will
-be discussed below.
+self-energy used to derive $g^{(0)}$. 
 
 
+!split
+===== Technicalities =====
 
-Using vector bracket transformation coefficients, the $G$-matrix
-elements obtained from the Bethe-Goldstone equation can be transformed from
-the representation in coordinates of relative and center of mass momenta
-to the coordinates of single-particle momenta in the laboratory frame in which
-the 2-particle state would be described by quantum numbers such as
-!bt
-\begin{equation}
-\left| k_1 l_1 j_1 k_2 l_2 j_2 J T \right\rangle , 
-\end{equation}
-!et
-where $k_i$, $l_i$ and $j_i$ refer to momentum and angular momenta of
-particle $i$ whereas $J$ and $T$ define the total angular momentum and
-isospin of the two-particle state. It should be noted that Eq.represents an antisymmetrized 2-particle state.
-Performing an integration over one of
-the $k_i$, one obtains a 2-particle state in a mixed representation of one
-particle in a bound harmonic oscillator while the other is in a
-plane wave state
-!bt
-\begin{equation}
-\left| n_1 l_1 j_1 k_2 l_2 j_2 J T \right\rangle = \int_0^\infty dk_1 \, k_1^2
-R_{n_1, l_1}(\alpha k_1) \, \left| k_1 l_1 j_1 k_2 l_2 j_2 J T\right\rangle
-.
-\end{equation}
-!et
-Here $R_{n_1, l_1}$ stands for the radial oscillator function and the
-oscillator length $\alpha = 1.72 $ fm$^{-1}$ has been selected. This
-choice for the oscillator length corresponds to an oscillator energy of
-$\hbar \omega_{osc}$ = 14 MeV.
-
-!bt
-\begin{equation}
-\Sigma^{HF}_{l_1j_1} (k_1,k'_1) =
-\frac{1}{2(2j_1+1)} \sum_{n_2 l_2 j_2 J T} (2J+1) (2T+1)
-\left\langle k_1 l_1 j_1 n_2 l_2 j_2 J T \right| G \left|
-k'_1 l_1 j_1 n_2 l_2 j_2 J T\right\rangle .
-\end{equation}
-!et
-
-
-In order to evaluate now the single-particle Green function and densities
-we consider a
- complete basis within a spherical box of a radius $R_{\rm box}$. This box
-radius should be larger than the radius of the nucleus considered.
+To evaluate the single-particle Green function and densities
+Artur, Herbert and Wim
+considered a  complete basis within a spherical box of a radius $R_{\rm box}$. This box
+radius was made  be larger than the radius of the nucleus considered.
 The calculated observables are independent of the choice of $R_{\rm box}$,
 if it is chosen to be around 15 fm or larger. A complete and
 orthonormal set of regular basis functions within this box is given by
 
 !bt
-\begin{equation}
+\[
 \Phi_{iljm} ({\bf r}) = \left\langle {\bf r} \vert k_i l j m
 \right\rangle = N_{il} j_l(k_ir)
 {\cal Y}_{ljm} (\theta\phi ) 
-\end{equation}
+\]
 !et
+
+
+!split
+===== More Technicalities =====
 
 In this equation ${\cal Y}_{ljm}$ represent the spherical harmonics
 including the spin degrees of freedom and $j_l$ denote the spherical
 Bessel functions for the discrete momenta $k_i$ which fulfill
 
 !bt
-\begin{equation}
+\
 j_l (k_i R_{\rm box}) = 0 .
 \label{eq:bound}
-\end{equation}
-!et
-
-Using the normalization constants
-
-!bt
-\begin{equation}
-N_{il} =\cases{\frac{\sqrt{2}}{\sqrt{R_{\rm box}^3} j_{l-1}(k_i
-R_{\rm box})}, & for $l > 0$ \cr
-\frac{i \pi\sqrt{2}}{\sqrt{R_{\rm box}^3}}, & for $l=0$,\cr}
-\end{equation}
+\]
 !et
 
 
+!split
+===== Normalization constants =====
+
 !bt
-\begin{equation}
+\[
+N_{il} =\frac{\sqrt{2}}{\sqrt{R_{\rm box}^3} j_{l-1}(k_i R_{\rm box})},
+\]
+!et
+for $l > 0$  and
+
+
+!bt
+\[
+N_{il}=\frac{i \pi\sqrt{2}}{\sqrt{R_{\rm box}^3}}, 
+\]
+!et
+for $l=0$.
+
+!bt
+\[
 \int_0^{R_{\rm box}} d^3 r\, \left\langle k_{i'} l' j' m' \vert {\bf r}
 \right\rangle \left\langle {\bf r}
 \vert k_i l j m \right\rangle
 = \delta_{ii'} \delta_{ll'} \delta_{jj'} \delta_{mm'} .
-\end{equation}
+\]
 !et
 
-Note that the basis functions defined for discrete values of the momentum
+!split
+===== Basis functions =====
+
+The basis functions defined for discrete values of the momentum
 $k_i$ within the box differ from the plane wave states defined in the
 continuum with the corresponding momentum just by the normalization constant,
-which is $\sqrt{2/\pi}$ for the latter. This enables us to determine the
-matrix elements of the nucleon self-energy in the basis of Eq.
+which is $\sqrt{2/\pi}$ for the latter. 
 
-For that purpose the Hartree-Fock Hamiltonian is diagonalized
+The Hartree-Fock Hamiltonian is diagonalized
 
 !bt
-\begin{equation}
+\[
 \sum_{n=1}^{N_{\rm max}} \left\langle k_i \right| \frac{k_i^2}{2m}\delta_{in} +
 \Sigma^{HF}_{lj} \left| k_n \right\rangle \left\langle k_n \vert a
 \right\rangle_{lj} = \epsilon^{HF}_{a
 lj} \left\langle k_i \vert a\right\rangle_{lj}.
-\end{equation}
-!et
-
-Here and in the following the set of basis states in the box has been
-truncated by assuming an appropriate $N_{\rm max}$. In the basis of
-Hartree-Fock states $\left| a \right\rangle$, the Hartree-Fock propagator
-is diagonal and given by
-!bt
-\begin{equation}
-g_{lj}^{(0)} (a; E) = \frac{1}{E-\epsilon^{HF}_{a lj} \pm
-i\eta} , \label{eq:green0}
-\end{equation}
-!et
-
-where the sign in front of the infinitesimal imaginary quantity $i\eta$ is
-positive (negative) if $\epsilon^{HF}_{a lj}$ is above (below) the
-Fermi energy. Knowing the expansion coefficients of the Hartree-Fock states
-in the ``box-basis'' $\langle k_i \vert a\rangle_{lj}$ it is of course
-trivial to present $g_{lj}^{(0)}$ in the basis of
-
-
-
-!bt
-\begin{eqnarray}
-{W}^{2p1h}_{l_1j_1} (k_1,k'_1; E)
-=& \frac{-1}{2(2j_1+1)}  \sum_{n_2 l_2 j_2} \sum_{l_3 l_4 j_3 j_4}
-\sum_{J T} \int k_3^2 dk_3 \int k_4^2 dk_4  (2J+1) (2T+1) \nonumber \\
-& \times \left\langle k_1 l_1 j_1 n_2 l_2 j_2 J T \right| G \left|
-k_3 l_3 j_3 k_4 l_4 j_4 J T \right\rangle \nonumber \\
-& \times  \left\langle k_3 l_3 j_3 k_4 l_4 j_4 T \right| G \left|
-  k'_1 l_1 j_1 n_2 l_2 j_2 J T
-  \right\rangle \nonumber \\
-& \times \pi \delta\left(E +\epsilon_{n_2 l_2 j_2}
--\frac{k_3^2}{2m}-\frac{k_4^2}{2m}\right), \label{eq:w2p1h}
-\end{eqnarray}
-!et
-
-where the ``experimental'' single-particle energies $\epsilon_{n_2 l_2 j_2}$
-are used for the hole states (-47 MeV, -21.8 MeV, -15.7 MeV for $s_{1/2}$,
-$p_{3/2}$ and $p_{1/2}$ states, respectively), while the energies of the
-particle states are given in terms of the kinetic energy only.
-
-The 2h1p contribution to the imaginary part ${W}^{2h1p}_{l_1j_1}(k_1,k'_1; E)$
-can be calculated in a similar way (see also boro)
-
-Our choice to assume pure kinetic energies for the particle states in
-calculating the imaginary parts of $W^{2p1h}$ (Eq. (\ref{eq:w2p1h})) and
-$W^{2h1p}$ may not be very realistic for the excitation modes at low energy.
-Indeed a sizeable imaginary part in $W^{2h1p}$ is obtained only for
-energies $E$ below -40 MeV. As we are mainly interested, however, in the
-effects of short-range correlations, which lead to excitations of particle
-states with high momentum, the choice seems to be appropriate.
-A different approach would be required to treat the coupling
-to the very low-lying two-particle-one-hole and two-hole-one-particle
-states in an adequate way. Attempts at such a treatment can be found in
-Refs.\ \cite{brand,rijsd,skou1,skou2}.
-
-The real parts of the 2p1h and 2h1p terms in the self-energy can be
-calculated from the corresponding imaginary parts by using dispersion
-relations, mahaux. As an example we present the dispersion relation
-for the  2p1h part, which is given by
-
-!bt
-\begin{equation}
-V^{2p1h}_{l_1j_1}(k_1,k_1';E)=\frac{P}{\pi} \int_{-\infty}^{\infty} \frac
-{W^{2p1h}_{l_1j_1}(k_1,k_1';E')}{E'-E} dE', \label{eq:disper1}
-\end{equation}
+\]
 !et
 
 
-where $P$ means a principal value integral.
-Since the Hartree--Fock contribution $\Sigma^{HF}$
-has been calculated in terms of a
-nuclear matter $G$-matrix, it already contains 2p1h terms of the kind displayed
-
-Therefore one would run into problems of double counting if one
-simply adds the real part $V^{2p1h}$ to the Hartree-Fock self-energy. Notice
-that $\Sigma^{HF}$ does not contain any imaginary part because it is calculated
-with a nuclear matter $G$-matrix at a starting energy for which $G$ is real.
-In order to avoid such an over counting of the particle-particle
-ladder terms, we subtract from the real part of the self-energy a
-correction term $V_c$, which just contains this contribution calculated in
-nuclear matter
-
-Summing up the various contributions we obtain the following expression for
-the correction to the Hartree-Fock self-energy
-
-!bt
-\begin{equation}
-\Delta\Sigma =  \left( V^{2p1h} - V_c + V^{2h1p}\right)
-+ i\left( W^{2p1h} + W^{2h1p} \right) . \label{eq:defsel}
-\end{equation}
-!et
-Rather than calculating the various contributions to $\Delta\Sigma$ in the
-basis of plane wave states, one may also calculate $\Delta\Sigma$ in the
-box basis defined in Eq. (\ref{eq:boxbas}) or in the basis of Hartree-Fock
-states $a,b$, which we have obtained from the diagonalization
-
-In this basis it is easy to determine the
-so-called reducible self-energy, originating from an iteration of
-$\Delta\Sigma$, by solving
-
-!bt
-\begin{equation}
-\left\langle a \right| \Sigma^{red}_{lj}(E) \left| b \right\rangle =
-\left\langle a \right| \Delta\Sigma_{lj}(E) \left| b \right\rangle
-+ \sum_c
-\left\langle a \right| \Delta\Sigma_{lj}(E) \left| c \right\rangle
-g_{lj}^{(0)} (c ; E) \left\langle c \right| \Sigma^{red}_{lj}(E)
-\left| b\right\rangle
-\end{equation}
-!et
-
-and obtain the propagator, which corresponds to the solution of the Dyson
-equation
-!bt
-\begin{equation}
-g_{lj} (a ,b ;E ) = g_{lj}^{(0)} (a;E )
-\left\langle a \right| \Sigma^{red}_{lj}(E) \left| b \right\rangle
-g_{lj}^{(0)} (b ;E ) .
-\end{equation}
-!et
-
-Using this representation of the Green function one can calculate the
-continuum contribution to the density matrix in the ``box basis'' from
-!bt
-\begin{equation}
-\rho_{lj}^c (k_1, k_2) = \frac{1}{\pi} \int_{-\infty}^{E_{2h1p}} dE\,
-\mbox{Im} \left(
-\sum_{a, b} \left\langle k_1 \vert a \right\rangle_{lj} g_{lj}
-(a ,b ;E )
-\left\langle b \vert k_2 \right\rangle_{lj}\right) , \label{eq:skob}
-\end{equation}
-!et
-where the integration limit $E_{2h1p}$ refers to the negative threshold of
-2h1p states for the $lj$ combination considered. In our studies this energy
-is well below the corresponding Hartree-Fock energies. Therefore the
-imaginary part of $g_{lj}$ in the region of integration is different from
-zero only due to the imaginary part in $\Sigma^{red}$, which just describes
-the coupling of the quasi particle states to the 2h1p continuum.
-
-Besides this continuum contribution, the hole spectral function
-also receives contributions from the quasihole states. The
-energies and wave functions of these quasihole states can be determined
-by diagonalizing the Hartree-Fock Hamiltonian plus $\Delta\Sigma$ in the
-box basis
-
-!bt
-\begin{equation}
-\sum_{n=1}^{N_{\rm max}} \left\langle k_i \right| \frac{k_i^2}{2m}\delta_{in} +
-\Sigma^{HF}_{lj} + \Delta\Sigma_{lj} (E=\epsilon^{qh}_{\Upsilon lj})
-\left| k_n \right\rangle \left\langle k_n \vert \Upsilon \right\rangle_{lj} =
-\epsilon^{qh}_{\Upsilon lj} \left\langle k_i \vert \Upsilon \right\rangle_{lj}
-\end{equation}
-!et
-
-Since in the present work $\Delta\Sigma$ only contains a sizeable imaginary
-part for energies $E$ below $\epsilon^{qh}_{\Upsilon}$, the
-energies of the quasihole states come out real and the continuum contribution
-is separated in energy from the quasihole
-contribution. The quasihole contribution to the density matrix is
-given by
-
-!bt
-\begin{equation}
-\rho^{qh}_{\Upsilon lj} (k_1, k_2) = Z_{\Upsilon lj}
-{\left\langle k_1 \vert \Upsilon \right\rangle_{lj} }
-{\left\langle \Upsilon \vert k_2 \right\rangle_{lj} }
-\end{equation}
-!et
-
-with the spectroscopic factor for the quasihole state given by 
-
-!bt
-\begin{equation}
-Z_{\Upsilon lj} =
-\bigg( {1-{\partial \left\langle \Upsilon \right| \Delta\Sigma_{lj}(E)
-\left| \Upsilon \right\rangle \over
-\partial E} \bigg|_{\epsilon^{qh}_{\Upsilon lj}}} \bigg)^{-1} .
-\end{equation}
-!et
-
-Finally, the total single-particle density matrix is given as the sum of
-the continuum part of Eq. and the quasihole contributions
-of Eq.summed over all quasihole states with an energy
-below the Fermi energy $\epsilon_F$
+!split
+===== From the Smallest scales to Infinity  =====
 
 
-!bt
-\begin{equation}
-\rho_{lj} (k_1, k_2) = \rho_{lj}^c (k_1, k_2) + \sum_{
-\epsilon^{qh}_{\Upsilon lj}<\epsilon_F}
-\rho^{qh}_{\Upsilon lj} (k_1, k_2)\ .
-\end{equation}
-!et
-At this stage it is now of course straightforward to determine the
-natural orbits and their occupation numbers by diagonalizing this density
-matrix according to Eq
+
+!split
+===== Parlem de Tu (Miquel Martì i Pol) =====
+
+FIGURE: [FigsTalkArtur/Parlemdetu.pdf, width=800 frac=0.8]
+
+
+!split
+===== The Fluidity of Time I (1994) =====
+
+FIGURE: [FigsTalkArtur/ancienttimes.png, width=800 frac=1.5]
+
+!split
+===== The Fluidity of Time II (2019) =====
+
+
+FIGURE: [FigsTalkArtur/figureEFI.jpg, width=800 frac=1.0]
+
+
+
+
+
+!split
+===== Ciao Carissimo, sei sempre con noi, e sempre rimarrai  =====
+
+FIGURE: [FigsTalkArtur/Artur-Polls.jpeg, width=800 frac=0.8]
+
+
+
 
 

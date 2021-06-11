@@ -1,0 +1,151 @@
+
+The single-particle
+density matrix $\rho_{mn}$ is defined in a basis of appropriate
+single-particle states $m,n$ by
+!bt
+\begin{equation}
+\rho_{mn} = <\Psi_0^A\vert a^\dagger_m a_n\vert \Psi_0^A>
+\end{equation}
+!et
+where $\Psi_0^A$ denotes the correlated ground state of the nucleus and
+$a^\dagger_m$ ($a_n$) define the single-particle creation (annihilation)
+operators for the basis considered.
+
+Within the Green function approach this density matrix can
+be evaluated from the imaginary part of the single-particle Green function
+by integrating
+!bt
+\begin{equation}
+\rho_{lj}(k_1,k_2) = \int_{-\infty}^{\epsilon_F} dE\,
+\frac{1}{\pi} \mbox{Im} \left( g_{lj}(k_1,k_2;E) \right) ,
+\end{equation}
+!et
+where the energy variable $E$ corresponds to the energy difference between
+the ground state of the $A$ particle system and the various energies of all
+the states in the $A-1$ system
+(negative $E$ with large absolute value correspond
+to high excitation energies in the remaining system) and $\epsilon_F$ is the
+Fermi energy.
+
+The single-particle Green function $g_{lj}$ or propagator
+is obtained from a solution of the Dyson equation
+!bt
+\begin{equation}
+  g_{lj}(k_1,k_2;E) = g^{(0)}_{lj}(k_1,k_2;E)
++ \int dk_3\int dk_4 g^{(0)}_{lj}(k_1,k_3;E) \Delta\Sigma_{lj}(k_3,k_4;E)
+ g_{lj}(k_4,k_2;E) ,
+\label{eq:dyson}
+\end{equation}
+!et
+where $g^{(0)}$ refers to a Hartree-Fock propagator and $\Delta\Sigma_{lj}$
+represents contributions to the real and imaginary part of the irreducible
+self-energy, which go beyond the Hartree-Fock approximation of the nucleon
+self-energy used to derive $g^{(0)}$. The definition and evaluation of the
+Hartree-Fock contribution as well as the calculation of $\Delta\Sigma$ will
+be discussed below.
+
+
+
+Using vector bracket transformation coefficients, the $G$-matrix
+elements obtained from the Bethe-Goldstone equation can be transformed from
+the representation in coordinates of relative and center of mass momenta
+to the coordinates of single-particle momenta in the laboratory frame in which
+the 2-particle state would be described by quantum numbers such as
+!bt
+\begin{equation}
+\left| k_1 l_1 j_1 k_2 l_2 j_2 J T \right\rangle , 
+\end{equation}
+!et
+where $k_i$, $l_i$ and $j_i$ refer to momentum and angular momenta of
+particle $i$ whereas $J$ and $T$ define the total angular momentum and
+isospin of the two-particle state. It should be noted that Eq.represents an antisymmetrized 2-particle state.
+Performing an integration over one of
+the $k_i$, one obtains a 2-particle state in a mixed representation of one
+particle in a bound harmonic oscillator while the other is in a
+plane wave state
+!bt
+\begin{equation}
+\left| n_1 l_1 j_1 k_2 l_2 j_2 J T \right\rangle = \int_0^\infty dk_1 \, k_1^2
+R_{n_1, l_1}(\alpha k_1) \, \left| k_1 l_1 j_1 k_2 l_2 j_2 J T\right\rangle
+.
+\end{equation}
+!et
+Here $R_{n_1, l_1}$ stands for the radial oscillator function and the
+oscillator length $\alpha = 1.72 $ fm$^{-1}$ has been selected. This
+choice for the oscillator length corresponds to an oscillator energy of
+$\hbar \omega_{osc}$ = 14 MeV.
+
+!bt
+\begin{equation}
+\Sigma^{HF}_{l_1j_1} (k_1,k'_1) =
+\frac{1}{2(2j_1+1)} \sum_{n_2 l_2 j_2 J T} (2J+1) (2T+1)
+\left\langle k_1 l_1 j_1 n_2 l_2 j_2 J T \right| G \left|
+k'_1 l_1 j_1 n_2 l_2 j_2 J T\right\rangle .
+\end{equation}
+!et
+
+
+In order to evaluate now the single-particle Green function and densities
+we consider a
+ complete basis within a spherical box of a radius $R_{\rm box}$. This box
+radius should be larger than the radius of the nucleus considered.
+The calculated observables are independent of the choice of $R_{\rm box}$,
+if it is chosen to be around 15 fm or larger. A complete and
+orthonormal set of regular basis functions within this box is given by
+
+!bt
+\begin{equation}
+\Phi_{iljm} ({\bf r}) = \left\langle {\bf r} \vert k_i l j m
+\right\rangle = N_{il} j_l(k_ir)
+{\cal Y}_{ljm} (\theta\phi ) 
+\end{equation}
+!et
+
+In this equation ${\cal Y}_{ljm}$ represent the spherical harmonics
+including the spin degrees of freedom and $j_l$ denote the spherical
+Bessel functions for the discrete momenta $k_i$ which fulfill
+
+!bt
+\begin{equation}
+j_l (k_i R_{\rm box}) = 0 .
+\label{eq:bound}
+\end{equation}
+!et
+
+Using the normalization constants
+
+!bt
+\begin{equation}
+N_{il} =\cases{\frac{\sqrt{2}}{\sqrt{R_{\rm box}^3} j_{l-1}(k_i
+R_{\rm box})}, & for $l > 0$ \cr
+\frac{i \pi\sqrt{2}}{\sqrt{R_{\rm box}^3}}, & for $l=0$,\cr}
+\end{equation}
+!et
+
+
+!bt
+\begin{equation}
+\int_0^{R_{\rm box}} d^3 r\, \left\langle k_{i'} l' j' m' \vert {\bf r}
+\right\rangle \left\langle {\bf r}
+\vert k_i l j m \right\rangle
+= \delta_{ii'} \delta_{ll'} \delta_{jj'} \delta_{mm'} .
+\end{equation}
+!et
+
+Note that the basis functions defined for discrete values of the momentum
+$k_i$ within the box differ from the plane wave states defined in the
+continuum with the corresponding momentum just by the normalization constant,
+which is $\sqrt{2/\pi}$ for the latter. This enables us to determine the
+matrix elements of the nucleon self-energy in the basis of Eq.
+
+For that purpose the Hartree-Fock Hamiltonian is diagonalized
+
+!bt
+\begin{equation}
+\sum_{n=1}^{N_{\rm max}} \left\langle k_i \right| \frac{k_i^2}{2m}\delta_{in} +
+\Sigma^{HF}_{lj} \left| k_n \right\rangle \left\langle k_n \vert a
+\right\rangle_{lj} = \epsilon^{HF}_{a
+lj} \left\langle k_i \vert a\right\rangle_{lj}.
+\end{equation}
+!et
+
