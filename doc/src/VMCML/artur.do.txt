@@ -6,7 +6,7 @@ DATE: University of Barcelona, June 11, 2021
 
 
 !split
-===== What is this talk about? =====
+===== What is this Talk about? =====
 !bblock
 * A personal selection of Artur's work, with an emphasis on our understanding of correlations in many-particle systems.
   o Here I will limit myself to fermionic systems, from Hartree-Fock theory to several post Hartree-Fock methods (CBF, Green's functions, Coupled Cluster theory, many-body perturbation theory, Monte Carlo methods, and many more).
@@ -17,7 +17,7 @@ DATE: University of Barcelona, June 11, 2021
 
 
 !split
-===== Why? Basic motivation =====
+===== Why? Basic Motivation =====
 
 !bblock
 
@@ -32,7 +32,7 @@ Understanding correlations  provides us with a window into the fascinating micro
 !eblock
 
 !split
-===== Correlations in nuclear systems =====
+===== Correlations in Nuclear Systems =====
 
 !bblock
 o Herbert Müther and Artur Polls, *Two-body correlations in nuclear systems*, Progress in Particle and Nuclear Physics _45_, 243 (2000)
@@ -49,7 +49,7 @@ o and obviously many many more
 
 
 !split
-===== Natural orbits, one-body densities and correlations =====
+===== Natural Orbits, One-body Densities and Correlations =====
 
 In Nuclear Physics A 594, 114 (1995)
 the effects of short-range correlations derived from a realistic
@@ -83,7 +83,7 @@ orbits $\phi^{no}_{\alpha}$ by
 
 
 !split
-===== Additional observations, taken from NPA 594 =====
+===== Additional Observations, taken from NPA 594 =====
 
 As the one
 body density matrix is diagonal in the $no$ representation, this basis
@@ -117,7 +117,7 @@ operators for the basis considered.
 
 
 !split
-===== Green's function Approach =====
+===== Green's Function Approach =====
 
 Within the Green's function approach the density matrix can
 be evaluated from the imaginary part of the single-particle Green's function
@@ -188,7 +188,7 @@ j_l (k_i R_{\rm box}) = 0 .
 
 
 !split
-===== Normalization constants =====
+===== Normalization Constants =====
 
 !bt
 \[
@@ -215,7 +215,7 @@ for $l=0$.
 !et
 
 !split
-===== Basis functions =====
+===== Basis Functions =====
 
 The basis functions defined for discrete values of the momentum
 $k_i$ within the box differ from the plane wave states defined in the
@@ -235,24 +235,24 @@ lj} \left\langle k_i \vert a\right\rangle_{lj}.
 
 
 !split
-===== Momentum and energy distributions of nucleons in finite nuclei due to short-range correlations =====
+===== Momentum and Energy Distributions of Nucleons in Finite Nuclei due to Short-range Correlations =====
 
 "Herbert  Müther, Artur Polls, and Wim Dickhoff":"https://arxiv.org/pdf/nucl-th/9411005.pdf",  Physical Review _C 51_, 3040	(1995)
 
 
 
 !split
-===== From the Smallest scales to Infinity  =====
+===== From the Smallest Scales to Infinity  =====
 
-* Arianna Carbone, Artur Polls, Arnau Rios, *Symmetric nuclear matter with chiral three-nucleon forces in the self-consistent Green's functions approach*, Physical Review _C 88_, 044302 (2013)
-
-
-* Arianna Carbone, Arnau Rios, Artur Polls, *Correlated density-dependent chiral forces for infinite-matter calculations within the Green's function approach*, Physical Review _C 90_, 054322 (2014)
-
-* A Carbone, A Cipollone, C Barbieri, A Rios, A Polls, *Self-consistent Green's functions formalism with three-body interactions*, Physical Review _C 88_, 054326 (2013)
+* Arianna Carbone, Artur Polls, and Arnau Rios, *Symmetric nuclear matter with chiral three-nucleon forces in the self-consistent Green's functions approach*, Physical Review _C 88_, 044302 (2013)
 
 
-* "Isaac Vidaña, Artur Polls, Angels Ramos, Lars Engvik, MHJ"."https://arxiv.org/pdf/nucl-th/0004031.pdf", *Hyperon-hyperon interactions and properties of neutron star matter*, Physical Review _C 62_, 035801 (2000)
+* Arianna Carbone, Arnau Rios, and Artur Polls, *Correlated density-dependent chiral forces for infinite-matter calculations within the Green's function approach*, Physical Review _C 90_, 054322 (2014)
+
+* A Carbone, A Cipollone, C Barbieri,  A Rios, and A Polls, *Self-consistent Green's functions formalism with three-body interactions*, Physical Review _C 88_, 054326 (2013)
+
+
+* Isaac Vidaña, Artur Polls, Angels Ramos, Lars Engvik, and MHJ, , *Hyperon-hyperon interactions and properties of neutron star matter*, Physical Review _C 62_, 035801 (2000)
 
 
 * Isaac Vidana, C Providência, Artur Polls, Arnau Rios, *Density dependence of the nuclear symmetry energy: A microscopic perspective*, Physical Review _C 80_, 045806 (2009)
@@ -260,7 +260,7 @@ lj} \left\langle k_i \vert a\right\rangle_{lj}.
 
 
 !split
-===== From the Smallest scales to Infinity  =====
+===== From the Smallest Scales to Infinity  =====
 
 
 
