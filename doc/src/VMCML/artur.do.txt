@@ -181,9 +181,8 @@ including the spin degrees of freedom and $j_l$ denote the spherical
 Bessel functions for the discrete momenta $k_i$ which fulfill
 
 !bt
-\
+\[
 j_l (k_i R_{\rm box}) = 0 .
-\label{eq:bound}
 \]
 !et
 
@@ -236,12 +235,69 @@ lj} \left\langle k_i \vert a\right\rangle_{lj}.
 
 
 !split
-===== From the Smallest scales to Infinity  =====
+===== Momentum and energy distributions of nucleons in finite nuclei due to short-range correlations =====
+
+"Herbert  Müther, Artur Polls, and Wim Dickhoff":"https://arxiv.org/pdf/nucl-th/9411005.pdf",  Physical Review _C 51_, 3040	(1995)
 
 
 
 !split
-===== Parlem de Tu (Miquel Martì i Pol) =====
+===== From the Smallest scales to Infinity  =====
+
+* Arianna Carbone, Artur Polls, Arnau Rios, *Symmetric nuclear matter with chiral three-nucleon forces in the self-consistent Green's functions approach*, Physical Review _C 88_, 044302 (2013)
+
+
+* Arianna Carbone, Arnau Rios, Artur Polls, *Correlated density-dependent chiral forces for infinite-matter calculations within the Green's function approach*, Physical Review _C 90_, 054322 (2014)
+
+* A Carbone, A Cipollone, C Barbieri, A Rios, A Polls, *Self-consistent Green's functions formalism with three-body interactions*, Physical Review _C 88_, 054326 (2013)
+
+
+* "Isaac Vidaña, Artur Polls, Angels Ramos, Lars Engvik, MHJ"."https://arxiv.org/pdf/nucl-th/0004031.pdf", *Hyperon-hyperon interactions and properties of neutron star matter*, Physical Review _C 62_, 035801 (2000)
+
+
+* Isaac Vidana, C Providência, Artur Polls, Arnau Rios, *Density dependence of the nuclear symmetry energy: A microscopic perspective*, Physical Review _C 80_, 045806 (2009)
+
+
+
+!split
+===== From the Smallest scales to Infinity  =====
+
+
+
+* Hans-Joseph Schulze, Artur Polls, Angels Ramos, Isaac Vidaña, *Maximum mass of neutron stars*, Physical Review _C 73_, 058801 (2006)
+
+* I Vidaña, D Logoteta, C Providência, A Polls, I Bombaci, *Estimation of the effect of hyperonic three-body forces on the maximum mass of neutron stars*, Europhysics Letters _94_, 11002 (2011)
+
+
+* T Frick, H Müther, A Rios, A Polls, A Ramos, *Correlations in hot asymmetric nuclear matter*, Physical Review _C 71_, 014313 (2005)
+
+* A Sedrakian, J Mur-Petit, A Polls, H Müther,  *Pairing in a two-component ultracold Fermi gas: Phases with broken-space symmetries*,  Physical Review _A 72_, 013613 (2005)
+
+* and again, so many more. Please apologize me if I have omitted names of collaborators.
+
+
+
+
+!split
+===== Hyperonic Matter =====
+
+"I Vidaña, A Polls, A Ramos, L Engvik, MHJ":"https://arxiv.org/pdf/nucl-th/0004031.pdf", *Hyperon-hyperon interactions and properties of neutron star matter*, Physical Review _C 62_, 035801 (2000)
+
+
+!split
+===== New and Better Models for Nuclear Forces? =====
+
+"A Carbone, A Polls, A Rios":"https://arxiv.org/pdf/1307.1889.pdf", *Symmetric nuclear matter with chiral three-nucleon forces in the self-consistent Green's functions approach*, Physical Review _C 88_, 044302 (2013)
+
+
+"A Carbone, A Rios, A Polls":"https://arxiv.org/pdf/1408.0717.pdf", *Correlated density-dependent chiral forces for infinite-matter calculations within the Green's function approach*, Physical Review _C 90_, 054322 (2014)
+
+"A Carbone, A Cipollone, C Barbieri, A Rios, A Polls":"https://arxiv.org/pdf/1310.3688.pdf", *Self-consistent Green's functions formalism with three-body interactions*, Physical Review _C 88_, 054326 (2013)
+
+
+
+!split
+===== Parlem de Tu (poema de Miquel Martì i Pol) =====
 
 FIGURE: [FigsTalkArtur/Parlemdetu.pdf, width=800 frac=0.8]
 
@@ -262,7 +318,7 @@ FIGURE: [FigsTalkArtur/figureEFI.jpg, width=800 frac=1.0]
 
 
 !split
-===== Ciao Carissimo, sei sempre con noi, e sempre rimarrai  =====
+===== Ciao per adesso Artur, *sempre* rimarrai con noi/Hola per ara Artur, sempre quedareu amb nosaltres =====
 
 FIGURE: [FigsTalkArtur/Artur-Polls.jpeg, width=800 frac=0.8]
 

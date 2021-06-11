@@ -328,3 +328,179 @@ collected all required additional files in ipynb-artur-src.tar.gz which must be 
 Failed to remove ans_at_end environment
 Failed to remove sol_at_end environment
 output in artur.ipynb
+*** error: file has a mako construction ${\cal Y}'
+    but seemingly no definition in <%...%>'
+    (it is not a command-line given mako variable either).
+    However, if this is a variable in a Makefile or Bash script
+    run with --no_mako - and you cannot use mako and Makefile or Bash variables
+    in the same document!
+
+Translating doconce text in artur.do.txt to html
+*** warning: math block in HTML must have space around <:
+\[
+\rho_{mn} = <\Psi_0^A\vert a^\dagger_m a_n\vert \Psi_0^A>
+\]
+
+    changed to
+\[
+\rho_{mn} = < \Psi_0^A\vert a^\dagger_m a_n\vert \Psi_0^A>
+\]
+
+output in artur-reveal.html
+*** error: file has a mako construction ${\cal Y}'
+    but seemingly no definition in <%...%>'
+    (it is not a command-line given mako variable either).
+    However, if this is a variable in a Makefile or Bash script
+    run with --no_mako - and you cannot use mako and Makefile or Bash variables
+    in the same document!
+
+Translating doconce text in artur.do.txt to html
+*** warning: math block in HTML must have space around <:
+\[
+\rho_{mn} = <\Psi_0^A\vert a^\dagger_m a_n\vert \Psi_0^A>
+\]
+
+    changed to
+\[
+\rho_{mn} = < \Psi_0^A\vert a^\dagger_m a_n\vert \Psi_0^A>
+\]
+
+output in artur-solarized.html
+*** error: file has a mako construction ${\cal Y}'
+    but seemingly no definition in <%...%>'
+    (it is not a command-line given mako variable either).
+    However, if this is a variable in a Makefile or Bash script
+    run with --no_mako - and you cannot use mako and Makefile or Bash variables
+    in the same document!
+
+Translating doconce text in artur.do.txt to html
+*** warning: math block in HTML must have space around <:
+\[
+\rho_{mn} = <\Psi_0^A\vert a^\dagger_m a_n\vert \Psi_0^A>
+\]
+
+    changed to
+\[
+\rho_{mn} = < \Psi_0^A\vert a^\dagger_m a_n\vert \Psi_0^A>
+\]
+
+output in artur.html
+*** error: file has a mako construction ${\cal Y}'
+    but seemingly no definition in <%...%>'
+    (it is not a command-line given mako variable either).
+    However, if this is a variable in a Makefile or Bash script
+    run with --no_mako - and you cannot use mako and Makefile or Bash variables
+    in the same document!
+
+Translating doconce text in artur.do.txt to html
+*** warning: math block in HTML must have space around <:
+\[
+\rho_{mn} = <\Psi_0^A\vert a^\dagger_m a_n\vert \Psi_0^A>
+\]
+
+    changed to
+\[
+\rho_{mn} = < \Psi_0^A\vert a^\dagger_m a_n\vert \Psi_0^A>
+\]
+
+output in artur-bs.html
+*** error: file has a mako construction ${\cal Y}'
+    but seemingly no definition in <%...%>'
+    (it is not a command-line given mako variable either).
+    However, if this is a variable in a Makefile or Bash script
+    run with --no_mako - and you cannot use mako and Makefile or Bash variables
+    in the same document!
+
+Translating doconce text in artur.do.txt to ipynb
+collected all required additional files in ipynb-artur-src.tar.gz which must be distributed with the notebook
+Failed to remove ans_at_end environment
+Failed to remove sol_at_end environment
+output in artur.ipynb
+*** error: file has a mako construction ${\cal Y}'
+    but seemingly no definition in <%...%>'
+    (it is not a command-line given mako variable either).
+    However, if this is a variable in a Makefile or Bash script
+    run with --no_mako - and you cannot use mako and Makefile or Bash variables
+    in the same document!
+
+Translating doconce text in artur.do.txt to html
+*** warning: math block in HTML must have space around <:
+\[
+\rho_{mn} = <\Psi_0^A\vert a^\dagger_m a_n\vert \Psi_0^A>
+\]
+
+    changed to
+\[
+\rho_{mn} = < \Psi_0^A\vert a^\dagger_m a_n\vert \Psi_0^A>
+\]
+
+output in artur-reveal.html
+*** error: file has a mako construction ${\cal Y}'
+    but seemingly no definition in <%...%>'
+    (it is not a command-line given mako variable either).
+    However, if this is a variable in a Makefile or Bash script
+    run with --no_mako - and you cannot use mako and Makefile or Bash variables
+    in the same document!
+
+Translating doconce text in artur.do.txt to html
+*** warning: math block in HTML must have space around <:
+\[
+\rho_{mn} = <\Psi_0^A\vert a^\dagger_m a_n\vert \Psi_0^A>
+\]
+
+    changed to
+\[
+\rho_{mn} = < \Psi_0^A\vert a^\dagger_m a_n\vert \Psi_0^A>
+\]
+
+output in artur-solarized.html
+*** error: file has a mako construction ${\cal Y}'
+    but seemingly no definition in <%...%>'
+    (it is not a command-line given mako variable either).
+    However, if this is a variable in a Makefile or Bash script
+    run with --no_mako - and you cannot use mako and Makefile or Bash variables
+    in the same document!
+
+Translating doconce text in artur.do.txt to html
+*** warning: math block in HTML must have space around <:
+\[
+\rho_{mn} = <\Psi_0^A\vert a^\dagger_m a_n\vert \Psi_0^A>
+\]
+
+    changed to
+\[
+\rho_{mn} = < \Psi_0^A\vert a^\dagger_m a_n\vert \Psi_0^A>
+\]
+
+output in artur.html
+*** error: file has a mako construction ${\cal Y}'
+    but seemingly no definition in <%...%>'
+    (it is not a command-line given mako variable either).
+    However, if this is a variable in a Makefile or Bash script
+    run with --no_mako - and you cannot use mako and Makefile or Bash variables
+    in the same document!
+
+Translating doconce text in artur.do.txt to html
+*** warning: math block in HTML must have space around <:
+\[
+\rho_{mn} = <\Psi_0^A\vert a^\dagger_m a_n\vert \Psi_0^A>
+\]
+
+    changed to
+\[
+\rho_{mn} = < \Psi_0^A\vert a^\dagger_m a_n\vert \Psi_0^A>
+\]
+
+output in artur-bs.html
+*** error: file has a mako construction ${\cal Y}'
+    but seemingly no definition in <%...%>'
+    (it is not a command-line given mako variable either).
+    However, if this is a variable in a Makefile or Bash script
+    run with --no_mako - and you cannot use mako and Makefile or Bash variables
+    in the same document!
+
+Translating doconce text in artur.do.txt to ipynb
+collected all required additional files in ipynb-artur-src.tar.gz which must be distributed with the notebook
+Failed to remove ans_at_end environment
+Failed to remove sol_at_end environment
+output in artur.ipynb
