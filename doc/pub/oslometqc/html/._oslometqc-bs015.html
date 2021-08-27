@@ -1,0 +1,444 @@
+<!--
+Automatically generated HTML file from DocOnce source
+(https://github.com/doconce/doconce/)
+-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="DocOnce: https://github.com/doconce/doconce/" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Machine Learning, Quantum Computing and Quantum Mechanics for Many Interacting Particles">
+
+<title>Machine Learning, Quantum Computing and Quantum Mechanics for Many Interacting Particles</title>
+
+<!-- Bootstrap style: bootstrap -->
+<link href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+<!-- not necessary
+<link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+-->
+
+<style type="text/css">
+
+/* Add scrollbar to dropdown menus in bootstrap navigation bar */
+.dropdown-menu {
+   height: auto;
+   max-height: 400px;
+   overflow-x: hidden;
+}
+
+/* Adds an invisible element before each target to offset for the navigation
+   bar */
+.anchor::before {
+  content:"";
+  display:block;
+  height:50px;      /* fixed header height for style bootstrap */
+  margin:-50px 0 0; /* negative fixed header height */
+}
+</style>
+
+
+</head>
+
+<!-- tocinfo
+{'highest level': 2,
+ 'sections': [('What is this talk about?', 2, None, 'what-is-this-talk-about'),
+              ('Why? Basic motivation', 2, None, 'why-basic-motivation'),
+              ('More material', 2, None, 'more-material'),
+              ('Basic activities, Overview',
+               2,
+               None,
+               'basic-activities-overview'),
+              ('What has happened during the last two years',
+               2,
+               None,
+               'what-has-happened-during-the-last-two-years'),
+              ('Machine Learning and Quantum Mechanics',
+               2,
+               None,
+               'machine-learning-and-quantum-mechanics'),
+              ('Machine Learning and Physics',
+               2,
+               None,
+               'machine-learning-and-physics'),
+              ('Lots of room for creativity',
+               2,
+               None,
+               'lots-of-room-for-creativity'),
+              ('Types of Machine Learning',
+               2,
+               None,
+               'types-of-machine-learning'),
+              ('A simple perspective on the interface between ML and Physics',
+               2,
+               None,
+               'a-simple-perspective-on-the-interface-between-ml-and-physics'),
+              ('ML in a field like Nuclear Physics, Examples',
+               2,
+               None,
+               'ml-in-a-field-like-nuclear-physics-examples'),
+              ('More examples', 2, None, 'more-examples'),
+              ('Selected References', 2, None, 'selected-references'),
+              ('What are the basic ingredients?',
+               2,
+               None,
+               'what-are-the-basic-ingredients'),
+              ('Neural network types', 2, None, 'neural-network-types'),
+              ('Nuclear Physics Experiments Argon-46',
+               2,
+               None,
+               'nuclear-physics-experiments-argon-46'),
+              ('Why Machine Learning?', 2, None, 'why-machine-learning'),
+              ('Why Machine Learning for Experimental Analysis?',
+               2,
+               None,
+               'why-machine-learning-for-experimental-analysis'),
+              ('More arguments', 2, None, 'more-arguments'),
+              ('The first theoretical system: electrons in a harmonic '
+               'oscillator trap in two dimensions',
+               2,
+               None,
+               'the-first-theoretical-system-electrons-in-a-harmonic-oscillator-trap-in-two-dimensions'),
+              ('Quantum Monte Carlo Motivation',
+               2,
+               None,
+               'quantum-monte-carlo-motivation'),
+              ('Quantum Monte Carlo Motivation',
+               2,
+               None,
+               'quantum-monte-carlo-motivation'),
+              ('Quantum Monte Carlo Motivation',
+               2,
+               None,
+               'quantum-monte-carlo-motivation'),
+              ('The trial wave function', 2, None, 'the-trial-wave-function'),
+              ('The correlation part of the wave function',
+               2,
+               None,
+               'the-correlation-part-of-the-wave-function'),
+              ('Resulting ansatz', 2, None, 'resulting-ansatz'),
+              ('Energy derivatives', 2, None, 'energy-derivatives'),
+              ('Derivatives of the local energy',
+               2,
+               None,
+               'derivatives-of-the-local-energy'),
+              ('How do we define our cost function?',
+               2,
+               None,
+               'how-do-we-define-our-cost-function'),
+              ('Meet the variance and its derivatives',
+               2,
+               None,
+               'meet-the-variance-and-its-derivatives'),
+              ('The variance defines the cost function',
+               2,
+               None,
+               'the-variance-defines-the-cost-function'),
+              ('Why Boltzmann machines?', 2, None, 'why-boltzmann-machines'),
+              ('A standard BM setup', 2, None, 'a-standard-bm-setup'),
+              ('The structure of the RBM network',
+               2,
+               None,
+               'the-structure-of-the-rbm-network'),
+              ('The network', 2, None, 'the-network'),
+              ('Joint distribution', 2, None, 'joint-distribution'),
+              ('Defining different types of RBMs',
+               2,
+               None,
+               'defining-different-types-of-rbms'),
+              ('Representing the wave function',
+               2,
+               None,
+               'representing-the-wave-function'),
+              ('Choose the cost/loss function',
+               2,
+               None,
+               'choose-the-cost-loss-function'),
+              ('Running the codes', 2, None, 'running-the-codes'),
+              ('Energy as function of iterations, $N=2$ electrons',
+               2,
+               None,
+               'energy-as-function-of-iterations-n-2-electrons'),
+              ('Energy as function of iterations, no Physics info $N=2$ '
+               'electrons',
+               2,
+               None,
+               'energy-as-function-of-iterations-no-physics-info-n-2-electrons'),
+              ('Onebody densities $N=6$, $\\hbar\\omega=1.0$ a.u.',
+               2,
+               None,
+               'onebody-densities-n-6-hbar-omega-1-0-a-u'),
+              ('Onebody densities $N=6$, $\\hbar\\omega=0.1$ a.u.',
+               2,
+               None,
+               'onebody-densities-n-6-hbar-omega-0-1-a-u'),
+              ('Onebody densities $N=30$, $\\hbar\\omega=1.0$ a.u.',
+               2,
+               None,
+               'onebody-densities-n-30-hbar-omega-1-0-a-u'),
+              ('Onebody densities $N=30$, $\\hbar\\omega=0.1$ a.u.',
+               2,
+               None,
+               'onebody-densities-n-30-hbar-omega-0-1-a-u'),
+              ('Or using Deep Learning Neural Networks',
+               2,
+               None,
+               'or-using-deep-learning-neural-networks'),
+              ('Replacing the Jastrow factor with Neural Networks',
+               2,
+               None,
+               'replacing-the-jastrow-factor-with-neural-networks'),
+              ('Quantum Engineering', 2, None, 'quantum-engineering'),
+              ('Candidate systems', 2, None, 'candidate-systems'),
+              ('Electrons (quantum dots) on superfluid helium',
+               2,
+               None,
+               'electrons-quantum-dots-on-superfluid-helium'),
+              ('Quantum algorithms for solving many-body problems, simple '
+               'model',
+               2,
+               None,
+               'quantum-algorithms-for-solving-many-body-problems-simple-model'),
+              ('More on the pairing model',
+               2,
+               None,
+               'more-on-the-pairing-model'),
+              ('Exact and Calculated Correlation Energies vs Pairing Strength '
+               'for $(p,n)=(4,2)$',
+               2,
+               None,
+               'exact-and-calculated-correlation-energies-vs-pairing-strength-for-p-n-4-2'),
+              ('Exact and Calculated Correlation Energies vs Pairing Strength '
+               'for $(p,n)=(5,2)$',
+               2,
+               None,
+               'exact-and-calculated-correlation-energies-vs-pairing-strength-for-p-n-5-2'),
+              ('Quantum Machine Learning', 2, None, 'quantum-machine-learning'),
+              ('What kind of Machine Learning',
+               2,
+               None,
+               'what-kind-of-machine-learning'),
+              ('More on Quantum Machine Learning',
+               2,
+               None,
+               'more-on-quantum-machine-learning'),
+              ('Possible Plans', 2, None, 'possible-plans'),
+              ('Conclusions and where do we stand',
+               2,
+               None,
+               'conclusions-and-where-do-we-stand'),
+              ('Conclusions and where do we stand',
+               2,
+               None,
+               'conclusions-and-where-do-we-stand'),
+              ('What are the Machine Learning calculations here based on?',
+               2,
+               None,
+               'what-are-the-machine-learning-calculations-here-based-on'),
+              ('Additional Derivations', 2, None, 'additional-derivations'),
+              ('Unitary Coupled Cluster Ansatz',
+               2,
+               None,
+               'unitary-coupled-cluster-ansatz'),
+              ('Technicalities', 2, None, 'technicalities'),
+              ('Mapping Pair Operators to Pauli Gates',
+               2,
+               None,
+               'mapping-pair-operators-to-pauli-gates'),
+              ('Mapping the Ansatz', 2, None, 'mapping-the-ansatz'),
+              ('Trotter approximation', 2, None, 'trotter-approximation'),
+              ('Mapping the Hamiltonian', 2, None, 'mapping-the-hamiltonian'),
+              ('More manipulations', 2, None, 'more-manipulations'),
+              ('Hamiltonian', 2, None, 'hamiltonian')]}
+end of tocinfo -->
+
+<body>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+     equationNumbers: {  autoNumber: "none"  },
+     extensions: ["AMSmath.js", "AMSsymbols.js", "autobold.js", "color.js"]
+  }
+});
+</script>
+<script type="text/javascript" async
+ src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+    
+<!-- Bootstrap navigation bar -->
+<div class="navbar navbar-default navbar-fixed-top">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="oslometqc-bs.html">Machine Learning, Quantum Computing and Quantum Mechanics for Many Interacting Particles</a>
+  </div>
+
+  <div class="navbar-collapse collapse navbar-responsive-collapse">
+    <ul class="nav navbar-nav navbar-right">
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Contents <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+     <!-- navigation toc: --> <li><a href="._oslometqc-bs001.html#what-is-this-talk-about" style="font-size: 80%;">What is this talk about?</a></li>
+     <!-- navigation toc: --> <li><a href="._oslometqc-bs002.html#why-basic-motivation" style="font-size: 80%;">Why? Basic motivation</a></li>
+     <!-- navigation toc: --> <li><a href="._oslometqc-bs003.html#more-material" style="font-size: 80%;">More material</a></li>
+     <!-- navigation toc: --> <li><a href="._oslometqc-bs004.html#basic-activities-overview" style="font-size: 80%;">Basic activities, Overview</a></li>
+     <!-- navigation toc: --> <li><a href="._oslometqc-bs005.html#what-has-happened-during-the-last-two-years" style="font-size: 80%;">What has happened during the last two years</a></li>
+     <!-- navigation toc: --> <li><a href="._oslometqc-bs006.html#machine-learning-and-quantum-mechanics" style="font-size: 80%;">Machine Learning and Quantum Mechanics</a></li>
+     <!-- navigation toc: --> <li><a href="._oslometqc-bs007.html#machine-learning-and-physics" style="font-size: 80%;">Machine Learning and Physics</a></li>
+     <!-- navigation toc: --> <li><a href="._oslometqc-bs008.html#lots-of-room-for-creativity" style="font-size: 80%;">Lots of room for creativity</a></li>
+     <!-- navigation toc: --> <li><a href="._oslometqc-bs009.html#types-of-machine-learning" style="font-size: 80%;">Types of Machine Learning</a></li>
+     <!-- navigation toc: --> <li><a href="._oslometqc-bs010.html#a-simple-perspective-on-the-interface-between-ml-and-physics" style="font-size: 80%;">A simple perspective on the interface between ML and Physics</a></li>
+     <!-- navigation toc: --> <li><a href="._oslometqc-bs011.html#ml-in-a-field-like-nuclear-physics-examples" style="font-size: 80%;">ML in a field like Nuclear Physics, Examples</a></li>
+     <!-- navigation toc: --> <li><a href="._oslometqc-bs012.html#more-examples" style="font-size: 80%;">More examples</a></li>
+     <!-- navigation toc: --> <li><a href="._oslometqc-bs013.html#selected-references" style="font-size: 80%;">Selected References</a></li>
+     <!-- navigation toc: --> <li><a href="._oslometqc-bs014.html#what-are-the-basic-ingredients" style="font-size: 80%;">What are the basic ingredients?</a></li>
+     <!-- navigation toc: --> <li><a href="#neural-network-types" style="font-size: 80%;">Neural network types</a></li>
+     <!-- navigation toc: --> <li><a href="._oslometqc-bs016.html#nuclear-physics-experiments-argon-46" style="font-size: 80%;">Nuclear Physics Experiments Argon-46</a></li>
+     <!-- navigation toc: --> <li><a href="._oslometqc-bs017.html#why-machine-learning" style="font-size: 80%;">Why Machine Learning?</a></li>
+     <!-- navigation toc: --> <li><a href="._oslometqc-bs018.html#why-machine-learning-for-experimental-analysis" style="font-size: 80%;">Why Machine Learning for Experimental Analysis?</a></li>
+     <!-- navigation toc: --> <li><a href="._oslometqc-bs019.html#more-arguments" style="font-size: 80%;">More arguments</a></li>
+     <!-- navigation toc: --> <li><a href="._oslometqc-bs020.html#the-first-theoretical-system-electrons-in-a-harmonic-oscillator-trap-in-two-dimensions" style="font-size: 80%;">The first theoretical system: electrons in a harmonic oscillator trap in two dimensions</a></li>
+     <!-- navigation toc: --> <li><a href="._oslometqc-bs023.html#quantum-monte-carlo-motivation" style="font-size: 80%;">Quantum Monte Carlo Motivation</a></li>
+     <!-- navigation toc: --> <li><a href="._oslometqc-bs023.html#quantum-monte-carlo-motivation" style="font-size: 80%;">Quantum Monte Carlo Motivation</a></li>
+     <!-- navigation toc: --> <li><a href="._oslometqc-bs023.html#quantum-monte-carlo-motivation" style="font-size: 80%;">Quantum Monte Carlo Motivation</a></li>
+     <!-- navigation toc: --> <li><a href="._oslometqc-bs024.html#the-trial-wave-function" style="font-size: 80%;">The trial wave function</a></li>
+     <!-- navigation toc: --> <li><a href="._oslometqc-bs025.html#the-correlation-part-of-the-wave-function" style="font-size: 80%;">The correlation part of the wave function</a></li>
+     <!-- navigation toc: --> <li><a href="._oslometqc-bs026.html#resulting-ansatz" style="font-size: 80%;">Resulting ansatz</a></li>
+     <!-- navigation toc: --> <li><a href="._oslometqc-bs027.html#energy-derivatives" style="font-size: 80%;">Energy derivatives</a></li>
+     <!-- navigation toc: --> <li><a href="._oslometqc-bs028.html#derivatives-of-the-local-energy" style="font-size: 80%;">Derivatives of the local energy</a></li>
+     <!-- navigation toc: --> <li><a href="._oslometqc-bs029.html#how-do-we-define-our-cost-function" style="font-size: 80%;">How do we define our cost function?</a></li>
+     <!-- navigation toc: --> <li><a href="._oslometqc-bs030.html#meet-the-variance-and-its-derivatives" style="font-size: 80%;">Meet the variance and its derivatives</a></li>
+     <!-- navigation toc: --> <li><a href="._oslometqc-bs031.html#the-variance-defines-the-cost-function" style="font-size: 80%;">The variance defines the cost function</a></li>
+     <!-- navigation toc: --> <li><a href="._oslometqc-bs032.html#why-boltzmann-machines" style="font-size: 80%;">Why Boltzmann machines?</a></li>
+     <!-- navigation toc: --> <li><a href="._oslometqc-bs033.html#a-standard-bm-setup" style="font-size: 80%;">A standard BM setup</a></li>
+     <!-- navigation toc: --> <li><a href="._oslometqc-bs034.html#the-structure-of-the-rbm-network" style="font-size: 80%;">The structure of the RBM network</a></li>
+     <!-- navigation toc: --> <li><a href="._oslometqc-bs035.html#the-network" style="font-size: 80%;">The network</a></li>
+     <!-- navigation toc: --> <li><a href="._oslometqc-bs036.html#joint-distribution" style="font-size: 80%;">Joint distribution</a></li>
+     <!-- navigation toc: --> <li><a href="._oslometqc-bs037.html#defining-different-types-of-rbms" style="font-size: 80%;">Defining different types of RBMs</a></li>
+     <!-- navigation toc: --> <li><a href="._oslometqc-bs038.html#representing-the-wave-function" style="font-size: 80%;">Representing the wave function</a></li>
+     <!-- navigation toc: --> <li><a href="._oslometqc-bs039.html#choose-the-cost-loss-function" style="font-size: 80%;">Choose the cost/loss function</a></li>
+     <!-- navigation toc: --> <li><a href="._oslometqc-bs040.html#running-the-codes" style="font-size: 80%;">Running the codes</a></li>
+     <!-- navigation toc: --> <li><a href="._oslometqc-bs041.html#energy-as-function-of-iterations-n-2-electrons" style="font-size: 80%;">Energy as function of iterations, \( N=2 \) electrons</a></li>
+     <!-- navigation toc: --> <li><a href="._oslometqc-bs042.html#energy-as-function-of-iterations-no-physics-info-n-2-electrons" style="font-size: 80%;">Energy as function of iterations, no Physics info \( N=2 \) electrons</a></li>
+     <!-- navigation toc: --> <li><a href="._oslometqc-bs043.html#onebody-densities-n-6-hbar-omega-1-0-a-u" style="font-size: 80%;">Onebody densities \( N=6 \), \( \hbar\omega=1.0 \) a.u.</a></li>
+     <!-- navigation toc: --> <li><a href="._oslometqc-bs044.html#onebody-densities-n-6-hbar-omega-0-1-a-u" style="font-size: 80%;">Onebody densities \( N=6 \), \( \hbar\omega=0.1 \) a.u.</a></li>
+     <!-- navigation toc: --> <li><a href="._oslometqc-bs045.html#onebody-densities-n-30-hbar-omega-1-0-a-u" style="font-size: 80%;">Onebody densities \( N=30 \), \( \hbar\omega=1.0 \) a.u.</a></li>
+     <!-- navigation toc: --> <li><a href="._oslometqc-bs046.html#onebody-densities-n-30-hbar-omega-0-1-a-u" style="font-size: 80%;">Onebody densities \( N=30 \), \( \hbar\omega=0.1 \) a.u.</a></li>
+     <!-- navigation toc: --> <li><a href="._oslometqc-bs047.html#or-using-deep-learning-neural-networks" style="font-size: 80%;">Or using Deep Learning Neural Networks</a></li>
+     <!-- navigation toc: --> <li><a href="._oslometqc-bs048.html#replacing-the-jastrow-factor-with-neural-networks" style="font-size: 80%;">Replacing the Jastrow factor with Neural Networks</a></li>
+     <!-- navigation toc: --> <li><a href="._oslometqc-bs049.html#quantum-engineering" style="font-size: 80%;">Quantum Engineering</a></li>
+     <!-- navigation toc: --> <li><a href="._oslometqc-bs050.html#candidate-systems" style="font-size: 80%;">Candidate systems</a></li>
+     <!-- navigation toc: --> <li><a href="._oslometqc-bs051.html#electrons-quantum-dots-on-superfluid-helium" style="font-size: 80%;">Electrons (quantum dots) on superfluid helium</a></li>
+     <!-- navigation toc: --> <li><a href="._oslometqc-bs052.html#quantum-algorithms-for-solving-many-body-problems-simple-model" style="font-size: 80%;">Quantum algorithms for solving many-body problems, simple model</a></li>
+     <!-- navigation toc: --> <li><a href="._oslometqc-bs053.html#more-on-the-pairing-model" style="font-size: 80%;">More on the pairing model</a></li>
+     <!-- navigation toc: --> <li><a href="._oslometqc-bs054.html#exact-and-calculated-correlation-energies-vs-pairing-strength-for-p-n-4-2" style="font-size: 80%;">Exact and Calculated Correlation Energies vs Pairing Strength for \( (p,n)=(4,2) \)</a></li>
+     <!-- navigation toc: --> <li><a href="._oslometqc-bs055.html#exact-and-calculated-correlation-energies-vs-pairing-strength-for-p-n-5-2" style="font-size: 80%;">Exact and Calculated Correlation Energies vs Pairing Strength for \( (p,n)=(5,2) \)</a></li>
+     <!-- navigation toc: --> <li><a href="._oslometqc-bs056.html#quantum-machine-learning" style="font-size: 80%;">Quantum Machine Learning</a></li>
+     <!-- navigation toc: --> <li><a href="._oslometqc-bs057.html#what-kind-of-machine-learning" style="font-size: 80%;">What kind of Machine Learning</a></li>
+     <!-- navigation toc: --> <li><a href="._oslometqc-bs058.html#more-on-quantum-machine-learning" style="font-size: 80%;">More on Quantum Machine Learning</a></li>
+     <!-- navigation toc: --> <li><a href="._oslometqc-bs059.html#possible-plans" style="font-size: 80%;">Possible Plans</a></li>
+     <!-- navigation toc: --> <li><a href="._oslometqc-bs061.html#conclusions-and-where-do-we-stand" style="font-size: 80%;">Conclusions and where do we stand</a></li>
+     <!-- navigation toc: --> <li><a href="._oslometqc-bs061.html#conclusions-and-where-do-we-stand" style="font-size: 80%;">Conclusions and where do we stand</a></li>
+     <!-- navigation toc: --> <li><a href="._oslometqc-bs062.html#what-are-the-machine-learning-calculations-here-based-on" style="font-size: 80%;">What are the Machine Learning calculations here based on?</a></li>
+     <!-- navigation toc: --> <li><a href="._oslometqc-bs063.html#additional-derivations" style="font-size: 80%;">Additional Derivations</a></li>
+     <!-- navigation toc: --> <li><a href="._oslometqc-bs064.html#unitary-coupled-cluster-ansatz" style="font-size: 80%;">Unitary Coupled Cluster Ansatz</a></li>
+     <!-- navigation toc: --> <li><a href="._oslometqc-bs065.html#technicalities" style="font-size: 80%;">Technicalities</a></li>
+     <!-- navigation toc: --> <li><a href="._oslometqc-bs066.html#mapping-pair-operators-to-pauli-gates" style="font-size: 80%;">Mapping Pair Operators to Pauli Gates</a></li>
+     <!-- navigation toc: --> <li><a href="._oslometqc-bs067.html#mapping-the-ansatz" style="font-size: 80%;">Mapping the Ansatz</a></li>
+     <!-- navigation toc: --> <li><a href="._oslometqc-bs068.html#trotter-approximation" style="font-size: 80%;">Trotter approximation</a></li>
+     <!-- navigation toc: --> <li><a href="._oslometqc-bs069.html#mapping-the-hamiltonian" style="font-size: 80%;">Mapping the Hamiltonian</a></li>
+     <!-- navigation toc: --> <li><a href="._oslometqc-bs070.html#more-manipulations" style="font-size: 80%;">More manipulations</a></li>
+     <!-- navigation toc: --> <li><a href="._oslometqc-bs071.html#hamiltonian" style="font-size: 80%;">Hamiltonian</a></li>
+
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
+</div> <!-- end of navigation bar -->
+
+<div class="container">
+
+<p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p> <!-- add vertical space -->
+
+<a name="part0015"></a>
+<!-- !split -->
+
+<h2 id="neural-network-types" class="anchor">Neural network types </h2>
+<div class="panel panel-default">
+<div class="panel-body">
+<p> <!-- subsequent paragraphs come in larger fonts, so start with a paragraph -->
+An artificial neural network (NN), is a computational model that consists of layers of connected neurons, or <em>nodes</em>. 
+It is supposed to mimic a biological nervous system by letting each neuron interact with other neurons
+by sending signals in the form of mathematical functions between layers. 
+A wide variety of different NNs have
+been developed, but most of them consist of an input layer, an output layer and eventual layers in-between, called
+<em>hidden layers</em>. All layers can contain an arbitrary number of nodes, and each connection between two nodes
+is associated with a weight variable.
+
+<p>
+<br /><br /><center><p><img src="figures/dnn.png" align="bottom" width=500></p></center><br /><br />
+</div>
+</div>
+
+
+<p>
+<p>
+<!-- navigation buttons at the bottom of the page -->
+<ul class="pagination">
+<li><a href="._oslometqc-bs014.html">&laquo;</a></li>
+  <li><a href="._oslometqc-bs000.html">1</a></li>
+  <li><a href="">...</a></li>
+  <li><a href="._oslometqc-bs007.html">8</a></li>
+  <li><a href="._oslometqc-bs008.html">9</a></li>
+  <li><a href="._oslometqc-bs009.html">10</a></li>
+  <li><a href="._oslometqc-bs010.html">11</a></li>
+  <li><a href="._oslometqc-bs011.html">12</a></li>
+  <li><a href="._oslometqc-bs012.html">13</a></li>
+  <li><a href="._oslometqc-bs013.html">14</a></li>
+  <li><a href="._oslometqc-bs014.html">15</a></li>
+  <li class="active"><a href="._oslometqc-bs015.html">16</a></li>
+  <li><a href="._oslometqc-bs016.html">17</a></li>
+  <li><a href="._oslometqc-bs017.html">18</a></li>
+  <li><a href="._oslometqc-bs018.html">19</a></li>
+  <li><a href="._oslometqc-bs019.html">20</a></li>
+  <li><a href="._oslometqc-bs020.html">21</a></li>
+  <li><a href="._oslometqc-bs021.html">22</a></li>
+  <li><a href="._oslometqc-bs022.html">23</a></li>
+  <li><a href="._oslometqc-bs023.html">24</a></li>
+  <li><a href="._oslometqc-bs024.html">25</a></li>
+  <li><a href="">...</a></li>
+  <li><a href="._oslometqc-bs071.html">72</a></li>
+  <li><a href="._oslometqc-bs016.html">&raquo;</a></li>
+</ul>
+<!-- ------------------- end of main content --------------- -->
+
+</div>  <!-- end container -->
+<!-- include javascript, jQuery *first* -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+
+<!-- Bootstrap footer
+<footer>
+<a href="https://..."><img width="250" align=right src="https://..."></a>
+</footer>
+-->
+
+
+<center style="font-size:80%">
+<!-- copyright only on the titlepage -->
+</center>
+
+
+</body>
+</html>
+    
+
