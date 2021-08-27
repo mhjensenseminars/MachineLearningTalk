@@ -194,16 +194,16 @@ DATE: today
 
 
 
-===== Artur and his many journeys on the Fermi sea; tales from the smallest length scales to infinity, Talk at University of Barcelona, June 11, 2021 =====
+===== From Machine Learning to Quantum Computing and Quantum Machine Learning applied to Quantum Mechanical Many-Body Systems, Talk at OsloMet University, August 27, 2021 =====
 
 
 
  * HTML:
-   * "Plain html style": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/artur/html/artur.html"
-   * "reveal.js beige slide style": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/artur/html/artur-reveal.html"
-   * "Bootstrap style": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/artur/html/artur-bs.html"
+   * "Plain html style": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/oslometqc/html/oslometqc.html"
+   * "reveal.js beige slide style": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/oslometqc/html/oslometqc-reveal.html"
+   * "Bootstrap style": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/oslometqc/html/oslometqc-bs.html"
  * iPython notebook:
-   * "ipynb file": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/artur/ipynb/artur.ipynb"
+   * "ipynb file": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/oslometqc/ipynb/oslometqc.ipynb"
 
 
 
