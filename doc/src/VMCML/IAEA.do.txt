@@ -140,6 +140,7 @@ FIGURE: [figures/OB30hw01.png, width=700 frac=0.9]
 
 "Machine Learning and the Deuteron by Kebble and Rios":"https://www.sciencedirect.com/science/article/pii/S0370269320305463?via%3Dihub" and 
 "Variational Monte Carlo calculations of $A\le 4$ nuclei with an artificial neural-network correlator ansatz by Adams et al.":"https://arxiv.org/abs/2007.14282"
+"Nuclei with up to $A=6$ nucleons with artificial neural network wave functions, by Gnech et al":"https://arxiv.org/abs/2108.06836"
 
 _Adams et al_:
 
