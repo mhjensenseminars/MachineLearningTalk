@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="DocOnce: https://github.com/doconce/doconce/" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Machine Learning applied to solving Nuclear Many-body Problems">
+
+<title>Machine Learning applied to solving Nuclear Many-body Problems</title>
+
+
+
+
+
+
+
+<!-- reveal.js: https://lab.hakim.se/reveal-js/ -->
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+<link rel="stylesheet" href="reveal.js/css/reveal.css">
+<link rel="stylesheet" href="reveal.js/css/theme/beige.css" id="theme">
+<!--
+<link rel="stylesheet" href="reveal.js/css/reveal.css">
+<link rel="stylesheet" href="reveal.js/css/theme/beige.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/beigesmall.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/solarized.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/serif.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/night.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/moon.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/simple.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/sky.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/darkgray.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/default.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/cbc.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/simula.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/black.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/white.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/league.css" id="theme">
+-->
+
+<!-- For syntax highlighting -->
+<link rel="stylesheet" href="reveal.js/lib/css/zenburn.css">
+
+<!-- Printing and PDF exports -->
+<script>
+var link = document.createElement( 'link' );
+link.rel = 'stylesheet';
+link.type = 'text/css';
+link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+document.getElementsByTagName( 'head' )[0].appendChild( link );
+</script>
+
+<style type="text/css">
+    hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+    p.caption { width: 80%; font-size: 60%; font-style: italic; text-align: left; }
+    hr.figure { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+    .reveal .alert-text-small   { font-size: 80%;  }
+    .reveal .alert-text-large   { font-size: 130%; }
+    .reveal .alert-text-normal  { font-size: 90%;  }
+    .reveal .alert {
+             padding:8px 35px 8px 14px; margin-bottom:18px;
+             text-shadow:0 1px 0 rgba(255,255,255,0.5);
+             border:5px solid #bababa;
+             -webkit-border-radius: 14px; -moz-border-radius: 14px;
+             border-radius:14px;
+             background-position: 10px 10px;
+             background-repeat: no-repeat;
+             background-size: 38px;
+             padding-left: 30px; /* 55px; if icon */
+     }
+     .reveal .alert-block {padding-top:14px; padding-bottom:14px}
+     .reveal .alert-block > p, .alert-block > ul {margin-bottom:1em}
+     /*.reveal .alert li {margin-top: 1em}*/
+     .reveal .alert-block p+p {margin-top:5px}
+     /*.reveal .alert-notice { background-image: url(https://hplgit.github.io/doconce/bundled/html_images/small_gray_notice.png); }
+     .reveal .alert-summary  { background-image:url(https://hplgit.github.io/doconce/bundled/html_images/small_gray_summary.png); }
+     .reveal .alert-warning { background-image: url(https://hplgit.github.io/doconce/bundled/html_images/small_gray_warning.png); }
+     .reveal .alert-question {background-image:url(https://hplgit.github.io/doconce/bundled/html_images/small_gray_question.png); } */
+
+</style>
+
+
+
+<!-- Styles for table layout of slides -->
+<style type="text/css">
+td.padding {
+  padding-top:20px;
+  padding-bottom:20px;
+  padding-right:50px;
+  padding-left:50px;
+}
+</style>
+
+</head>
+
+<body>
+<div class="reveal">
+
+<!-- Any section element inside the <div class="slides"> container
+     is displayed as a slide -->
+
+<div class="slides">
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+     equationNumbers: {  autoNumber: "none"  },
+     extensions: ["AMSmath.js", "AMSsymbols.js", "autobold.js", "color.js"]
+  }
+});
+</script>
+<script type="text/javascript" async
+ src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+    
+
+
+
+<section>
+<!-- ------------------- main content ---------------------- -->
+
+
+
+<center><h1 style="text-align: center;">Machine Learning applied to solving Nuclear Many-body Problems</h1></center>  <!-- document title -->
+
+<p>
+<!-- author(s): Morten Hjorth-Jensen -->
+
+<center>
+<b>Morten Hjorth-Jensen</b> [1, 2]
+</center>
+
+<p>&nbsp;<br>
+<!-- institution(s) -->
+
+<center>[1] <b>Department of Physics and Astronomy and FRIB/NSCL Laboratory, Michigan State University, USA</b></center>
+<center>[2] <b>Department of Physics and Center for Computing in Science Education, University of Oslo, Norway</b></center>
+<br>
+<p>&nbsp;<br>
+<center><h4>IAEA AI Technical Meeting: Nuclear Physics Working Group, October 25-29, 2021</h4></center> <!-- date -->
+<br>
+<p>
+
+<center style="font-size:80%">
+<!-- copyright --> &copy; 1999-2021, Morten Hjorth-Jensen. Released under CC Attribution-NonCommercial 4.0 license
+</center>
+</section>
+
+
+<section>
+<h2 id="what-is-this-talk-about">What is this talk about? </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+The main aim is to give you a short introduction to  how we can use Machine Learning methods
+to solve quantum mechanical many-body problems. And why this could be of interest.
+
+<p>
+Thanks to Jane Kim (MSU), Julie Butler (MSU), Vilde Flugsrud (UiO), Even Nordhagen (UiO), Alessandro Lovato (ANL).
+</div>
+</section>
+
+
+<section>
+<h2 id="more-material">More material </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+More in depth notebooks and lecture notes are at 
+
+<ol>
+<p><li> Making a professional Monte Carlo code for quantum mechanical simulations <a href="http://compphysics.github.io/ComputationalPhysics2/doc/LectureNotes/_build/html/vmcdmc.html" target="_blank"><tt>http://compphysics.github.io/ComputationalPhysics2/doc/LectureNotes/_build/html/vmcdmc.html</tt></a></li>
+<p><li> From Variational Monte Carlo to Boltzmann Machines <a href="http://compphysics.github.io/ComputationalPhysics2/doc/LectureNotes/_build/html/boltzmannmachines.html" target="_blank"><tt>http://compphysics.github.io/ComputationalPhysics2/doc/LectureNotes/_build/html/boltzmannmachines.html</tt></a></li>
+<p><li> <a href="https://nucleartalent.github.io/MachineLearningECT/doc/web/course.html" target="_blank">Nuclear Talent course on Machine Learning in Nuclear Experiment and Theory, June 22 - July 3, 2020</a></li>
+<p><li> <a href="https://compphysics.github.io/MachineLearning/doc/web/course.html" target="_blank">Machine Learning course</a></li>
+</ol>
+<p>
+
+Feel free to try them  out and please don't hesitate to ask if something is unclear.
+
+
+</div>
+</section>
+
+
+<section>
+<h2 id="why-basic-motivation">Why? Basic motivation </h2>
+
+<p>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+How can we avoid the dimensionality curse? Many possibilities
+
+<ol>
+<p><li> smarter basis functions</li>
+<p><li> resummation of specific correlations</li>
+<p><li> stochastic sampling of high-lying states (stochastic FCI, CC and SRG/IMSRG)</li>
+<p><li> many more</li>
+</ol>
+<p>
+
+Machine Learning and Quantum Computing hold also great promise in tackling the 
+ever increasing dimensionalities. A hot new field is  <b>Quantum Machine Learning</b>, see for example the recent textbook by <a href="https://www.springer.com/gp/book/9783319964232" target="_blank">Maria Schuld and Francesco Petruccione</a>. Here we will focus on Machine Learning.
+</div>
+</section>
+
+
+<section>
+<h2 id="what-are-the-basic-ingredients">What are the basic ingredients? </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+Almost every problem in ML and data science starts with the same ingredients:
+
+<ul>
+<p><li> The dataset \( \mathbf{x} \) (could be some observable quantity of the system we are studying)</li>
+<p><li> A model which is a function of a set of parameters \( \mathbf{\alpha} \) that relates to the dataset, say a likelihood  function \( p(\mathbf{x}\vert \mathbf{\alpha}) \) or just a simple model \( f(\mathbf{\alpha}) \)</li>
+<p><li> A so-called <b>loss/cost/risk</b> function \( \mathcal{C} (\mathbf{x}, f(\mathbf{\alpha})) \) which allows us to decide how well our model represents the dataset.</li> 
+</ul>
+<p>
+
+We seek to minimize the function \( \mathcal{C} (\mathbf{x}, f(\mathbf{\alpha})) \) by finding the parameter values which minimize \( \mathcal{C} \). This leads to  various minimization algorithms. It may surprise many, but at the heart of all machine learning algortihms there is an optimization problem.
+</div>
+</section>
+
+
+<section>
+<h2 id="quantum-monte-carlo-motivation">Quantum Monte Carlo Motivation </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b>Basic steps</b>
+<p>
+Choose a trial wave function
+\( \psi_T(\boldsymbol{R}) \).
+<p>&nbsp;<br>
+$$
+   P(\boldsymbol{R},\boldsymbol{\alpha})= \frac{\left|\psi_T(\boldsymbol{R},\boldsymbol{\alpha})\right|^2}{\int \left|\psi_T(\boldsymbol{R},\boldsymbol{\alpha})\right|^2d\boldsymbol{R}}.
+$$
+<p>&nbsp;<br>
+
+This is our model, or likelihood/probability distribution function  (PDF). It depends on some variational parameters \( \boldsymbol{\alpha} \).
+The approximation to the expectation value of the Hamiltonian is now 
+<p>&nbsp;<br>
+$$
+   \langle E[\boldsymbol{\alpha}] \rangle = 
+   \frac{\int d\boldsymbol{R}\Psi^{\ast}_T(\boldsymbol{R},\boldsymbol{\alpha})H(\boldsymbol{R})\Psi_T(\boldsymbol{R},\boldsymbol{\alpha})}
+        {\int d\boldsymbol{R}\Psi^{\ast}_T(\boldsymbol{R},\boldsymbol{\alpha})\Psi_T(\boldsymbol{R},\boldsymbol{\alpha})}.
+$$
+<p>&nbsp;<br>
+</div>
+</section>
+
+
+<section>
+<h2 id="running-the-codes">Running the codes </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+You can find the codes for the simple two-electron case at <a href="http://compphysics.github.io/ComputationalPhysics2/doc/LectureNotes/_build/html/boltzmannmachines.html" target="_blank"><tt>http://compphysics.github.io/ComputationalPhysics2/doc/LectureNotes/_build/html/boltzmannmachines.html</tt></a>.
+
+<p>
+The trial wave function are based on the product of a Slater determinant with either only Hermitian polynomials or Gaussian orbitals, with and without a Pade-Jastrow factor (PJ).
+
+
+</div>
+</section>
+
+
+<section>
+<h2 id="energy-as-function-of-iterations-n-2-electrons">Energy as function of iterations, \( N=2 \) electrons  </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<br /><br /><center><p><img src="figures/figN2.png" align="bottom" width=700></p></center><br /><br />
+</div>
+</section>
+
+
+<section>
+<h2 id="onebody-densities-n-6-hbar-omega-1-0-a-u">Onebody densities \( N=6 \), \( \hbar\omega=1.0 \) a.u. </h2>
+
+<p>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<br /><br /><center><p><img src="figures/OB6hw1.png" align="bottom" width=700></p></center><br /><br />
+</div>
+</section>
+
+
+<section>
+<h2 id="onebody-densities-n-6-hbar-omega-0-1-a-u">Onebody densities \( N=6 \), \( \hbar\omega=0.1 \) a.u. </h2>
+
+<p>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<br /><br /><center><p><img src="figures/OB6hw01.png" align="bottom" width=700></p></center><br /><br />
+</div>
+</section>
+
+
+<section>
+<h2 id="onebody-densities-n-30-hbar-omega-1-0-a-u">Onebody densities \( N=30 \), \( \hbar\omega=1.0 \) a.u. </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<br /><br /><center><p><img src="figures/OB30hw1.png" align="bottom" width=700></p></center><br /><br />
+</div>
+</section>
+
+
+<section>
+<h2 id="onebody-densities-n-30-hbar-omega-0-1-a-u">Onebody densities \( N=30 \), \( \hbar\omega=0.1 \) a.u. </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<br /><br /><center><p><img src="figures/OB30hw01.png" align="bottom" width=700></p></center><br /><br />
+</div>
+</section>
+
+
+<section>
+<h2 id="or-using-deep-learning-neural-networks">Or using Deep Learning Neural Networks </h2>
+
+<p>
+<a href="https://www.sciencedirect.com/science/article/pii/S0370269320305463?via%3Dihub" target="_blank">Machine Learning and the Deuteron by Kebble and Rios</a> and 
+<a href="https://arxiv.org/abs/2007.14282" target="_blank">Variational Monte Carlo calculations of \( A\le 4 \) nuclei with an artificial neural-network correlator ansatz by Adams et al.</a>
+
+<p>
+<b>Adams et al</b>:
+
+<p>&nbsp;<br>
+$$
+\begin{align}
+H_{LO} &=-\sum_i \frac{{\vec{\nabla}_i^2}}{2m_N}
++\sum_{i < j} {\left(C_1  + C_2\, \vec{\sigma_i}\cdot\vec{\sigma_j}\right)
+e^{-r_{ij}^2\Lambda^2 / 4 }}
+\nonumber\\
+&+D_0 \sum_{i < j < k} \sum_{\text{cyc}}
+{e^{-\left(r_{ik}^2+r_{ij}^2\right)\Lambda^2/4}}\,,
+\tag{1}
+\end{align}
+$$
+<p>&nbsp;<br>
+
+<p>
+where \( m_N \) is the mass of the nucleon, \( \vec{\sigma_i} \) is the Pauli
+matrix acting on nucleon \( i \), and \( \sum_{\text{cyc}} \) stands for the
+cyclic permutation of \( i \), \( j \), and \( k \). The low-energy constants
+\( C_1 \) and \( C_2 \) are fit to the deuteron binding energy and to the
+neutron-neutron scattering length
+</section>
+
+
+<section>
+<h2 id="replacing-the-jastrow-factor-with-neural-networks">Replacing the Jastrow factor with Neural Networks </h2>
+
+<p>
+An appealing feature of the ANN ansatz is that it is more general than the more conventional product of two-
+and three-body spin-independent Jastrow functions
+<p>&nbsp;<br>
+$$
+\begin{align}
+|\Psi_V^J \rangle = \prod_{i < j < k} \Big( 1-\sum_{\text{cyc}} u(r_{ij}) u(r_{jk})\Big) \prod_{i < j} f(r_{ij}) | \Phi\rangle\,,
+\tag{2}
+\end{align}
+$$
+<p>&nbsp;<br>
+
+which is commonly used for nuclear Hamiltonians that do not contain tensor and spin-orbit terms.
+The above function is replaced by a four-layer Neural Network.
+
+<p>
+<br /><br /><center><p><img src="figures/energyconvergence.png" align="bottom" width=700></p></center><br /><br />
+</section>
+
+
+<section>
+<h2 id="conclusions-and-where-do-we-stand">Conclusions and where do we stand </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<ul>
+<p><li> Extension of the work of <a href="http://science.sciencemag.org/content/355/6325/602" target="_blank">G. Carleo and M. Troyer, Science <b>355</b>, Issue 6325, pp. 602-606 (2017)</a> gives excellent results for two-electron systems as well as good agreement with standard VMC calculations for many  electrons.</li>
+<p><li> Promising results with neural Networks as well. Next step is to use trial wave function in final Green's function Monte Carlo calculations.</li> 
+<p><li> Minimization problem can be tricky.</li>
+<p><li> Anti-symmetry dealt with multiplying the trail wave function with either a simple or an optimized Slater determinant.</li>
+<p><li> Extend to more fermions. How do we deal with the antisymmetry of the multi-fermion wave function?
+
+<ol type="a"></li>
+ <p><li> Here we also used standard Hartree-Fock theory to define an optimal Slater determinant. Takes care of the antisymmetry. What about constructing an anti-symmetrized network function?</li>
+ <p><li> Use thereafter ML to determine the correlated part of the wafe function (including a standard Jastrow factor).</li>
+</ol>
+<p><li> Can we use ML to find out which correlations are relevant and thereby diminish the dimensionality problem in say CC or SRG theories?</li> 
+<p><li> And many more exciting research avenues</li>
+</ul>
+</div>
+</section>
+
+
+
+</div> <!-- class="slides" -->
+</div> <!-- class="reveal" -->
+
+<script src="reveal.js/lib/js/head.min.js"></script>
+<script src="reveal.js/js/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+    // Display navigation controls in the bottom right corner
+    controls: true,
+
+    // Display progress bar (below the horiz. slider)
+    progress: true,
+
+    // Display the page number of the current slide
+    slideNumber: true,
+
+    // Push each slide change to the browser history
+    history: false,
+
+    // Enable keyboard shortcuts for navigation
+    keyboard: true,
+
+    // Enable the slide overview mode
+    overview: true,
+
+    // Vertical centering of slides
+    //center: true,
+    center: false,
+
+    // Enables touch navigation on devices with touch input
+    touch: true,
+
+    // Loop the presentation
+    loop: false,
+
+    // Change the presentation direction to be RTL
+    rtl: false,
+
+    // Turns fragments on and off globally
+    fragments: true,
+
+    // Flags if the presentation is running in an embedded mode,
+    // i.e. contained within a limited portion of the screen
+    embedded: false,
+
+    // Number of milliseconds between automatically proceeding to the
+    // next slide, disabled when set to 0, this value can be overwritten
+    // by using a data-autoslide attribute on your slides
+    autoSlide: 0,
+
+    // Stop auto-sliding after user input
+    autoSlideStoppable: true,
+
+    // Enable slide navigation via mouse wheel
+    mouseWheel: false,
+
+    // Hides the address bar on mobile devices
+    hideAddressBar: true,
+
+    // Opens links in an iframe preview overlay
+    previewLinks: false,
+
+    // Transition style
+    transition: 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+    // Transition speed
+    transitionSpeed: 'default', // default/fast/slow
+
+    // Transition style for full page slide backgrounds
+    backgroundTransition: 'default', // default/none/slide/concave/convex/zoom
+
+    // Number of slides away from the current that are visible
+    viewDistance: 3,
+
+    // Parallax background image
+    //parallaxBackgroundImage: '', // e.g. "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'"
+
+    // Parallax background size
+    //parallaxBackgroundSize: '' // CSS syntax, e.g. "2100px 900px"
+
+    theme: Reveal.getQueryHash().theme, // available themes are in reveal.js/css/theme
+    transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/none
+
+});
+
+Reveal.initialize({
+    dependencies: [
+        // Cross-browser shim that fully implements classList - https://github.com/eligrey/classList.js/
+        { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+
+        // Interpret Markdown in <section> elements
+        { src: 'reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        { src: 'reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+
+        // Syntax highlight for <code> elements
+        { src: 'reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+
+        // Zoom in and out with Alt+click
+        { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+
+        // Speaker notes
+        { src: 'reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+
+        // Remote control your reveal.js presentation using a touch device
+        //{ src: 'reveal.js/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } },
+
+        // MathJax
+        //{ src: 'reveal.js/plugin/math/math.js', async: true }
+    ]
+});
+
+Reveal.initialize({
+
+    // The "normal" size of the presentation, aspect ratio will be preserved
+    // when the presentation is scaled to fit different resolutions. Can be
+    // specified using percentage units.
+    width: 1170,  // original: 960,
+    height: 700,
+
+    // Factor of the display size that should remain empty around the content
+    margin: 0.1,
+
+    // Bounds for smallest/largest possible scale to apply to content
+    minScale: 0.2,
+    maxScale: 1.0
+
+});
+</script>
+
+<!-- begin footer logo
+<div style="position: absolute; bottom: 0px; left: 0; margin-left: 0px">
+<img src="somelogo.png">
+</div>
+     end footer logo -->
+
+
+
+</body>
+</html>

@@ -1,0 +1,424 @@
+<!--
+Automatically generated HTML file from DocOnce source
+(https://github.com/doconce/doconce/)
+-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="DocOnce: https://github.com/doconce/doconce/" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Machine Learning applied to solving Nuclear Many-body Problems">
+
+<title>Machine Learning applied to solving Nuclear Many-body Problems</title>
+
+
+<style type="text/css">
+/* bloodish style */
+
+body {
+  font-family: Helvetica, Verdana, Arial, Sans-serif;
+  color: #404040;
+  background: #ffffff;
+}
+h1 { font-size: 1.8em;  color: #8A0808; }
+h2 { font-size: 1.6em;  color: #8A0808; }
+h3 { font-size: 1.4em;  color: #8A0808; }
+h4 { color: #8A0808; }
+a { color: #8A0808; text-decoration:none; }
+tt { font-family: "Courier New", Courier; }
+/* pre style removed because it will interfer with pygments */
+p { text-indent: 0px; }
+hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+p.caption { width: 80%; font-style: normal; text-align: left; }
+hr.figure { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+.alert-text-small   { font-size: 80%;  }
+.alert-text-large   { font-size: 130%; }
+.alert-text-normal  { font-size: 90%;  }
+.alert {
+  padding:8px 35px 8px 14px; margin-bottom:18px;
+  text-shadow:0 1px 0 rgba(255,255,255,0.5);
+  border:1px solid #bababa;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  color: #555;
+  background-color: #f8f8f8;
+  background-position: 10px 5px;
+  background-repeat: no-repeat;
+  background-size: 38px;
+  padding-left: 55px;
+  width: 75%;
+ }
+.alert-block {padding-top:14px; padding-bottom:14px}
+.alert-block > p, .alert-block > ul {margin-bottom:1em}
+.alert li {margin-top: 1em}
+.alert-block p+p {margin-top:5px}
+.alert-notice { background-image: url(https://cdn.rawgit.com/doconce/doconce/master/bundled/html_images/small_gray_notice.png); }
+.alert-summary  { background-image:url(https://cdn.rawgit.com/doconce/doconce/master/bundled/html_images/small_gray_summary.png); }
+.alert-warning { background-image: url(https://cdn.rawgit.com/doconce/doconce/master/bundled/html_images/small_gray_warning.png); }
+.alert-question {background-image:url(https://cdn.rawgit.com/doconce/doconce/master/bundled/html_images/small_gray_question.png); }
+
+div { text-align: justify; text-justify: inter-word; }
+</style>
+
+
+</head>
+
+<!-- tocinfo
+{'highest level': 2,
+ 'sections': [('What is this talk about?', 2, None, 'what-is-this-talk-about'),
+              ('More material', 2, None, 'more-material'),
+              ('Why? Basic motivation', 2, None, 'why-basic-motivation'),
+              ('What are the basic ingredients?',
+               2,
+               None,
+               'what-are-the-basic-ingredients'),
+              ('Quantum Monte Carlo Motivation',
+               2,
+               None,
+               'quantum-monte-carlo-motivation'),
+              ('Running the codes', 2, None, 'running-the-codes'),
+              ('Energy as function of iterations, $N=2$ electrons',
+               2,
+               None,
+               'energy-as-function-of-iterations-n-2-electrons'),
+              ('Onebody densities $N=6$, $\\hbar\\omega=1.0$ a.u.',
+               2,
+               None,
+               'onebody-densities-n-6-hbar-omega-1-0-a-u'),
+              ('Onebody densities $N=6$, $\\hbar\\omega=0.1$ a.u.',
+               2,
+               None,
+               'onebody-densities-n-6-hbar-omega-0-1-a-u'),
+              ('Onebody densities $N=30$, $\\hbar\\omega=1.0$ a.u.',
+               2,
+               None,
+               'onebody-densities-n-30-hbar-omega-1-0-a-u'),
+              ('Onebody densities $N=30$, $\\hbar\\omega=0.1$ a.u.',
+               2,
+               None,
+               'onebody-densities-n-30-hbar-omega-0-1-a-u'),
+              ('Or using Deep Learning Neural Networks',
+               2,
+               None,
+               'or-using-deep-learning-neural-networks'),
+              ('Replacing the Jastrow factor with Neural Networks',
+               2,
+               None,
+               'replacing-the-jastrow-factor-with-neural-networks'),
+              ('Conclusions and where do we stand',
+               2,
+               None,
+               'conclusions-and-where-do-we-stand')]}
+end of tocinfo -->
+
+<body>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+     equationNumbers: {  autoNumber: "AMS"  },
+     extensions: ["AMSmath.js", "AMSsymbols.js", "autobold.js", "color.js"]
+  }
+});
+</script>
+<script type="text/javascript" async
+ src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+    
+<!-- ------------------- main content ---------------------- -->
+
+
+
+<center><h1>Machine Learning applied to solving Nuclear Many-body Problems</h1></center>  <!-- document title -->
+
+<p>
+<!-- author(s): Morten Hjorth-Jensen -->
+
+<center>
+<b>Morten Hjorth-Jensen</b> [1, 2]
+</center>
+
+<p>
+<!-- institution(s) -->
+
+<center>[1] <b>Department of Physics and Astronomy and FRIB/NSCL Laboratory, Michigan State University, USA</b></center>
+<center>[2] <b>Department of Physics and Center for Computing in Science Education, University of Oslo, Norway</b></center>
+<br>
+<p>
+<center><h4>IAEA AI Technical Meeting: Nuclear Physics Working Group, October 25-29, 2021</h4></center> <!-- date -->
+<br>
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="what-is-this-talk-about">What is this talk about? </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+The main aim is to give you a short introduction to  how we can use Machine Learning methods
+to solve quantum mechanical many-body problems. And why this could be of interest.
+
+<p>
+Thanks to Jane Kim (MSU), Julie Butler (MSU), Vilde Flugsrud (UiO), Even Nordhagen (UiO), Alessandro Lovato (ANL).
+</div>
+
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="more-material">More material </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+More in depth notebooks and lecture notes are at 
+
+<ol>
+<li> Making a professional Monte Carlo code for quantum mechanical simulations <a href="http://compphysics.github.io/ComputationalPhysics2/doc/LectureNotes/_build/html/vmcdmc.html" target="_blank"><tt>http://compphysics.github.io/ComputationalPhysics2/doc/LectureNotes/_build/html/vmcdmc.html</tt></a></li>
+<li> From Variational Monte Carlo to Boltzmann Machines <a href="http://compphysics.github.io/ComputationalPhysics2/doc/LectureNotes/_build/html/boltzmannmachines.html" target="_blank"><tt>http://compphysics.github.io/ComputationalPhysics2/doc/LectureNotes/_build/html/boltzmannmachines.html</tt></a></li>
+<li> <a href="https://nucleartalent.github.io/MachineLearningECT/doc/web/course.html" target="_blank">Nuclear Talent course on Machine Learning in Nuclear Experiment and Theory, June 22 - July 3, 2020</a></li>
+<li> <a href="https://compphysics.github.io/MachineLearning/doc/web/course.html" target="_blank">Machine Learning course</a></li>
+</ol>
+
+Feel free to try them  out and please don't hesitate to ask if something is unclear.
+
+
+</div>
+
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="why-basic-motivation">Why? Basic motivation </h2>
+
+<p>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+How can we avoid the dimensionality curse? Many possibilities
+
+<ol>
+<li> smarter basis functions</li>
+<li> resummation of specific correlations</li>
+<li> stochastic sampling of high-lying states (stochastic FCI, CC and SRG/IMSRG)</li>
+<li> many more</li>
+</ol>
+
+Machine Learning and Quantum Computing hold also great promise in tackling the 
+ever increasing dimensionalities. A hot new field is  <b>Quantum Machine Learning</b>, see for example the recent textbook by <a href="https://www.springer.com/gp/book/9783319964232" target="_blank">Maria Schuld and Francesco Petruccione</a>. Here we will focus on Machine Learning.
+</div>
+
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="what-are-the-basic-ingredients">What are the basic ingredients? </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+Almost every problem in ML and data science starts with the same ingredients:
+
+<ul>
+<li> The dataset \( \mathbf{x} \) (could be some observable quantity of the system we are studying)</li>
+<li> A model which is a function of a set of parameters \( \mathbf{\alpha} \) that relates to the dataset, say a likelihood  function \( p(\mathbf{x}\vert \mathbf{\alpha}) \) or just a simple model \( f(\mathbf{\alpha}) \)</li>
+<li> A so-called <b>loss/cost/risk</b> function \( \mathcal{C} (\mathbf{x}, f(\mathbf{\alpha})) \) which allows us to decide how well our model represents the dataset.</li> 
+</ul>
+
+We seek to minimize the function \( \mathcal{C} (\mathbf{x}, f(\mathbf{\alpha})) \) by finding the parameter values which minimize \( \mathcal{C} \). This leads to  various minimization algorithms. It may surprise many, but at the heart of all machine learning algortihms there is an optimization problem.
+</div>
+
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="quantum-monte-carlo-motivation">Quantum Monte Carlo Motivation </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b>Basic steps</b>
+<p>
+Choose a trial wave function
+\( \psi_T(\boldsymbol{R}) \).
+$$
+   P(\boldsymbol{R},\boldsymbol{\alpha})= \frac{\left|\psi_T(\boldsymbol{R},\boldsymbol{\alpha})\right|^2}{\int \left|\psi_T(\boldsymbol{R},\boldsymbol{\alpha})\right|^2d\boldsymbol{R}}.
+$$
+
+This is our model, or likelihood/probability distribution function  (PDF). It depends on some variational parameters \( \boldsymbol{\alpha} \).
+The approximation to the expectation value of the Hamiltonian is now 
+$$
+   \langle E[\boldsymbol{\alpha}] \rangle = 
+   \frac{\int d\boldsymbol{R}\Psi^{\ast}_T(\boldsymbol{R},\boldsymbol{\alpha})H(\boldsymbol{R})\Psi_T(\boldsymbol{R},\boldsymbol{\alpha})}
+        {\int d\boldsymbol{R}\Psi^{\ast}_T(\boldsymbol{R},\boldsymbol{\alpha})\Psi_T(\boldsymbol{R},\boldsymbol{\alpha})}.
+$$
+</div>
+
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="running-the-codes">Running the codes </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+
+<p>
+You can find the codes for the simple two-electron case at <a href="http://compphysics.github.io/ComputationalPhysics2/doc/LectureNotes/_build/html/boltzmannmachines.html" target="_blank"><tt>http://compphysics.github.io/ComputationalPhysics2/doc/LectureNotes/_build/html/boltzmannmachines.html</tt></a>.
+
+<p>
+The trial wave function are based on the product of a Slater determinant with either only Hermitian polynomials or Gaussian orbitals, with and without a Pade-Jastrow factor (PJ).
+
+
+</div>
+
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="energy-as-function-of-iterations-n-2-electrons">Energy as function of iterations, \( N=2 \) electrons  </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<br /><br /><center><p><img src="figures/figN2.png" align="bottom" width=700></p></center><br /><br />
+</div>
+
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="onebody-densities-n-6-hbar-omega-1-0-a-u">Onebody densities \( N=6 \), \( \hbar\omega=1.0 \) a.u. </h2>
+
+<p>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<br /><br /><center><p><img src="figures/OB6hw1.png" align="bottom" width=700></p></center><br /><br />
+</div>
+
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="onebody-densities-n-6-hbar-omega-0-1-a-u">Onebody densities \( N=6 \), \( \hbar\omega=0.1 \) a.u. </h2>
+
+<p>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<br /><br /><center><p><img src="figures/OB6hw01.png" align="bottom" width=700></p></center><br /><br />
+</div>
+
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="onebody-densities-n-30-hbar-omega-1-0-a-u">Onebody densities \( N=30 \), \( \hbar\omega=1.0 \) a.u. </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<br /><br /><center><p><img src="figures/OB30hw1.png" align="bottom" width=700></p></center><br /><br />
+</div>
+
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="onebody-densities-n-30-hbar-omega-0-1-a-u">Onebody densities \( N=30 \), \( \hbar\omega=0.1 \) a.u. </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<br /><br /><center><p><img src="figures/OB30hw01.png" align="bottom" width=700></p></center><br /><br />
+</div>
+
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="or-using-deep-learning-neural-networks">Or using Deep Learning Neural Networks </h2>
+
+<p>
+<a href="https://www.sciencedirect.com/science/article/pii/S0370269320305463?via%3Dihub" target="_blank">Machine Learning and the Deuteron by Kebble and Rios</a> and 
+<a href="https://arxiv.org/abs/2007.14282" target="_blank">Variational Monte Carlo calculations of \( A\le 4 \) nuclei with an artificial neural-network correlator ansatz by Adams et al.</a>
+
+<p>
+<b>Adams et al</b>:
+
+$$
+\begin{align}
+H_{LO} &=-\sum_i \frac{{\vec{\nabla}_i^2}}{2m_N}
++\sum_{i < j} {\left(C_1  + C_2\, \vec{\sigma_i}\cdot\vec{\sigma_j}\right)
+e^{-r_{ij}^2\Lambda^2 / 4 }}
+\nonumber\\
+&+D_0 \sum_{i < j < k} \sum_{\text{cyc}}
+{e^{-\left(r_{ik}^2+r_{ij}^2\right)\Lambda^2/4}}\,,
+\label{_auto1}
+\end{align}
+$$
+
+<p>
+where \( m_N \) is the mass of the nucleon, \( \vec{\sigma_i} \) is the Pauli
+matrix acting on nucleon \( i \), and \( \sum_{\text{cyc}} \) stands for the
+cyclic permutation of \( i \), \( j \), and \( k \). The low-energy constants
+\( C_1 \) and \( C_2 \) are fit to the deuteron binding energy and to the
+neutron-neutron scattering length
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="replacing-the-jastrow-factor-with-neural-networks">Replacing the Jastrow factor with Neural Networks </h2>
+
+<p>
+An appealing feature of the ANN ansatz is that it is more general than the more conventional product of two-
+and three-body spin-independent Jastrow functions
+$$
+\begin{align}
+|\Psi_V^J \rangle = \prod_{i < j < k} \Big( 1-\sum_{\text{cyc}} u(r_{ij}) u(r_{jk})\Big) \prod_{i < j} f(r_{ij}) | \Phi\rangle\,,
+\label{_auto2}
+\end{align}
+$$
+
+which is commonly used for nuclear Hamiltonians that do not contain tensor and spin-orbit terms.
+The above function is replaced by a four-layer Neural Network.
+
+<p>
+<br /><br /><center><p><img src="figures/energyconvergence.png" align="bottom" width=700></p></center><br /><br />
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="conclusions-and-where-do-we-stand">Conclusions and where do we stand </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+
+<ul>
+<li> Extension of the work of <a href="http://science.sciencemag.org/content/355/6325/602" target="_blank">G. Carleo and M. Troyer, Science <b>355</b>, Issue 6325, pp. 602-606 (2017)</a> gives excellent results for two-electron systems as well as good agreement with standard VMC calculations for many  electrons.</li>
+<li> Promising results with neural Networks as well. Next step is to use trial wave function in final Green's function Monte Carlo calculations.</li> 
+<li> Minimization problem can be tricky.</li>
+<li> Anti-symmetry dealt with multiplying the trail wave function with either a simple or an optimized Slater determinant.</li>
+<li> Extend to more fermions. How do we deal with the antisymmetry of the multi-fermion wave function?
+
+<ol type="a"></li>
+ <li> Here we also used standard Hartree-Fock theory to define an optimal Slater determinant. Takes care of the antisymmetry. What about constructing an anti-symmetrized network function?</li>
+ <li> Use thereafter ML to determine the correlated part of the wafe function (including a standard Jastrow factor).</li>
+</ol>
+
+<li> Can we use ML to find out which correlations are relevant and thereby diminish the dimensionality problem in say CC or SRG theories?</li> 
+<li> And many more exciting research avenues</li>
+</ul>
+</div>
+
+
+<!-- ------------------- end of main content --------------- -->
+
+
+<center style="font-size:80%">
+<!-- copyright --> &copy; 1999-2021, Morten Hjorth-Jensen. Released under CC Attribution-NonCommercial 4.0 license
+</center>
+
+
+</body>
+</html>
+    
+
