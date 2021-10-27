@@ -207,5 +207,18 @@ DATE: today
 
 
 
+===== IAEA AI Technical Meeting: Nuclear Physics Working Group, October 25-29, 2021 =====
+
+
+
+ * HTML:
+   * "Plain html style": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/IAEA/html/IAEA.html"
+   * "reveal.js beige slide style": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/IAEA/html/IAEA-reveal.html"
+   * "Bootstrap style": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/IAEA/html/IAEA-bs.html"
+ * iPython notebook:
+   * "ipynb file": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/IAEA/ipynb/IAEA.ipynb"
+
+
+
 
 
