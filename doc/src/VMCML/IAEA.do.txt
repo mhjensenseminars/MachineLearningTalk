@@ -91,7 +91,7 @@ The approximation to the expectation value of the Hamiltonian is now
 You can find the codes for the simple two-electron case at URL:"http://compphysics.github.io/ComputationalPhysics2/doc/LectureNotes/_build/html/boltzmannmachines.html". 
 
 
-The trial wave function are based on the product of a Slater determinant with either only Hermitian polynomials or Gaussian orbitals, with and without a Pade-Jastrow factor (PJ).
+The trial wave function is based on the product of a Slater determinant with either only Hermitian polynomials or Gaussian orbitals, with and without a Pade-Jastrow factor (PJ).
 
 
 !eblock
