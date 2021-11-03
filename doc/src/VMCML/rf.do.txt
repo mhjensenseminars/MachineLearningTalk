@@ -1,0 +1,161 @@
+TITLE: Machine Learning, Quantum Computing and more at UiO
+AUTHOR: Morten Hjorth-Jensen {copyright, 1999-present|CC BY-NC} at Department of Physics and Astronomy and National Superconducting Cyclotron Laboratory, Michigan State University, USA & Department of Physics and Center for Computing in Science Education, University of Oslo, Norway
+DATE: today 
+
+
+!split
+===== What is this talk about? =====
+!bblock
+The main aim is to give you a short introduction to  what is happening at UiO in the rapidly evolving fields of machine learning/AI, quantum computing and more, with an emphasis on education and research and job possibilities!
+!eblock
+
+!split
+===== A new world =====
+!bblock
+Machine learning (ML) is an extremely rich field, in spite of its young age. The
+increases we have seen during the last three decades in computational
+capabilities have been followed by developments of methods and
+techniques for analyzing and handling large date sets, relying heavily
+on statistics, computer science and mathematics.  The field is rather
+new and developing rapidly. 
+
+Popular software packages written in Python for ML are
+
+* "Scikit-learn":"http://scikit-learn.org/stable/", 
+* "Tensorflow":"https://www.tensorflow.org/",
+* "PyTorch":"http://pytorch.org/" and 
+* "Keras":"https://keras.io/".
+These are all freely available at their respective GitHub sites. They 
+encompass communities of developers in the thousands or more. And the number
+of code developers and contributors keeps increasing.
+
+!eblock
+
+!split
+===== Lots of room for creativity =====
+!bblock
+Not all the
+algorithms and methods can be given a rigorous mathematical
+justification, opening up thereby for experimenting
+and trial and error and thereby exciting new developments. 
+!eblock
+
+!bblock
+A solid command of linear algebra, multivariate theory, 
+probability theory, statistical data analysis,
+understanding errors and Monte Carlo methods is important in order to understand many of the 
+various algorithms and methods. 
+!eblock
+
+_Job market, a personal statement_: "A familiarity with ML is almost becoming a prerequisite for many of the most exciting employment opportunities":"https://www.analyticsindiamag.com/top-countries-hiring-most-number-of-artificial-intelligence-machine-learning-experts/". And add quantum computing and there you are!
+
+
+!split
+===== Knowledge of Statistical analysis and optimization of data =====
+Some key elements that enter much of the discussion on ML:
+o Basic concepts, expectation values, variance, covariance, correlation functions and errors;
+o Simpler models, binomial distribution, the Poisson distribution, simple and multivariate normal distributions;
+o Central elements of Bayesian statistics and modeling;
+o Central elements from linear algebra
+o Gradient methods for data optimization
+o Monte Carlo methods, Markov chains, Metropolis-Hastings algorithm;
+o Estimation of errors using cross-validation, blocking, bootstrapping and jackknife methods;
+o Practical optimization using Singular-value decomposition and least squares for parameterizing data.
+o Principal Component Analysis.
+
+
+!split
+===== What are the basic ingredients? =====
+!bblock
+Almost every problem in ML and data science starts with the same ingredients:
+* The dataset $\mathbf{x}$ (could be some observable quantity of the system we are studying)
+* A model which is a function of a set of parameters $\mathbf{\alpha}$ that relates to the dataset, say a likelihood  function $p(\mathbf{x}\vert \mathbf{\alpha})$ or just a simple model $f(\mathbf{\alpha})$
+* A so-called _cost_ function $\mathcal{C} (\mathbf{x}, f(\mathbf{\alpha}))$ which allows us to decide how well our model represents the dataset. 
+
+We seek to minimize the function $\mathcal{C} (\mathbf{x}, f(\mathbf{\alpha}))$ by finding the parameter values which minimize $\mathcal{C}$. This leads to  various minimization algorithms. 
+!eblock
+
+!split
+===== What is Machine Learning? =====
+!bblock
+Machine learning is the science of giving computers the ability to
+learn without being explicitly programmed.  The idea is that there
+exist generic algorithms which can be used to find patterns in a broad
+class of data sets without having to write code specifically for each
+problem. The algorithm will build its own logic based on the data.
+
+Machine learning is a subfield of computer science, and is closely
+related to computational statistics.  It evolved from the study of
+pattern recognition in artificial intelligence (AI) research, and has
+made contributions to AI tasks like computer vision, natural language
+processing and speech recognition. It has also, especially in later
+years, found applications in a wide variety of other areas, including
+bioinformatics, economy, physics, finance and marketing.
+
+!eblock
+
+!split
+===== Types of Machine Learning =====
+
+!bblock
+The approaches to machine learning are many, but are often split into two main categories. 
+In *supervised learning* we know the answer to a problem,
+and let the computer deduce the logic behind it. On the other hand, *unsupervised learning*
+is a method for finding patterns and relationship in data sets without any prior knowledge of the system.
+Some authours also operate with a third category, namely *reinforcement learning*. This is a paradigm 
+of learning inspired by behavioural psychology, where learning is achieved by trial-and-error, 
+solely from rewards and punishment.
+
+Another way to categorize machine learning tasks is to consider the desired output of a system.
+Some of the most common tasks are:
+
+  * Classification: Outputs are divided into two or more classes. The goal is to   produce a model that assigns inputs into one of these classes. An example is to identify  digits based on pictures of hand-written ones. Classification is typically supervised learning.
+
+  * Regression: Finding a functional relationship between an input data set and a reference data set.   The goal is to construct a function that maps input data to continuous output values.
+
+  * Clustering: Data are divided into groups with certain common traits, without knowing the different groups beforehand.  It is thus a form of unsupervised learning.
+!eblock
+
+
+!split
+===== Courses on Data science and Machine Learning  at UiO =====
+
+
+o "STK2100 Machine learning and statistical methods for prediction and classification":"http://www.uio.no/studier/emner/matnat/math/STK2100/index-eng.html". 
+o "IN3050 Introduction to Artificial Intelligence and Machine Learning":"https://www.uio.no/studier/emner/matnat/ifi/IN3050/index-eng.html". Introductory course in machine learning and AI with an algorithmic approach.
+o "FYS-STK3155/4155 Applied Data Analysis and Machine Learning":"https://www.uio.no/studier/emner/matnat/fys/FYS-STK4155/index-eng.html"
+o "STK-INF3000/4000 Selected Topics in Data Science":"http://www.uio.no/studier/emner/matnat/math/STK-INF3000/index-eng.html". The course provides insight into selected contemporary relevant topics within Data Science. 
+o "IN4080 Natural Language Processing":"https://www.uio.no/studier/emner/matnat/ifi/IN4080/index.html". Probabilistic and machine learning techniques applied to natural language processing. 
+o "STK-IN4300 – Statistical learning methods in Data Science":"https://www.uio.no/studier/emner/matnat/math/STK-IN4300/index-eng.html". An advanced introduction to statistical and machine learning. For students with a good mathematics and statistics background.
+o "INF4490 Biologically Inspired Computing":"http://www.uio.no/studier/emner/matnat/ifi/INF4490/". An introduction to self-adapting methods also called artificial intelligence or machine learning. 
+o "IN-STK5000  Adaptive Methods for Data-Based Decision Making":"https://www.uio.no/studier/emner/matnat/ifi/IN-STK5000/index-eng.html". Methods for adaptive collection and processing of data based on machine learning techniques. 
+o "IN5400/INF5860 – Machine Learning for Image Analysis":"https://www.uio.no/studier/emner/matnat/ifi/IN5400/". An introduction to deep learning with particular emphasis on applications within Image analysis, but useful for other application areas too.
+o "TEK5040 – Deep learning":"https://www.uio.no/studier/emner/matnat/its/TEK5040/". The course addresses advanced algorithms and architectures for deep learning with neural networks. The course provides an introduction to how deep-learning techniques can be used in the construction of key parts of advanced autonomous systems that exist in physical environments and cyber environments.
+
+!split
+===== Additional courses of interest =====
+
+o "STK4051 Computational Statistics":"https://www.uio.no/studier/emner/matnat/math/STK4051/index-eng.html"
+o "STK4021 Applied Bayesian Analysis and Numerical Methods":"https://www.uio.no/studier/emner/matnat/math/STK4021/index-eng.html"
+
+!split
+===== Quantum Computing Courses and more =====
+
+o "MAT3420 Quantum Computing":"https://www.uio.no/studier/emner/matnat/math/MAT3420/index-eng.html"
+o "Computational Physics and Center for Computing of Science Education":"https://github.com/CompPhysics/QuantumComputingMachineLearning"
+o New courses at Oslo Met and exciting "workshop coming":"https://uni.oslomet.no/ai-lab/events-and-workshops/"
+o Experimental activity being started at Center for Material Science
+
+!split
+===== New Bachelor of Science program in Computational Science and Data Science =====
+
+See URL:"https://github.com/mhjensen/CSDSProgramsUiO"
+
+!split
+=====  Master of Science Programs in Computational Science and Data Science =====
+
+o "Master of Science in Computational Science":"https://www.uio.no/english/studies/programmes/computational-science-master/"
+o "Master of Science in Data  Science":"https://www.uio.no/english/studies/programmes/datascience-master/"
+
+Well linked with PhD possibilities at "new dScience center":"https://www.uio.no/dscience/english/".
+

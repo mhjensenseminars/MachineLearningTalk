@@ -1,0 +1,420 @@
+<!--
+HTML file automatically generated from DocOnce source
+(https://github.com/doconce/doconce/)
+doconce format html rf.do.txt --pygments_html_style=default --html_style=bloodish --html_links_in_new_window --html_output=rf --no_mako
+-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="DocOnce: https://github.com/doconce/doconce/" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Machine Learning, Quantum Computing and more at UiO">
+<title>Machine Learning, Quantum Computing and more at UiO</title>
+<style type="text/css">
+/* bloodish style */
+body {
+  font-family: Helvetica, Verdana, Arial, Sans-serif;
+  color: #404040;
+  background: #ffffff;
+}
+h1 { font-size: 1.8em; color: #8A0808; }
+h2 { font-size: 1.6em; color: #8A0808; }
+h3 { font-size: 1.4em; color: #8A0808; }
+h4 { font-size: 1.2em; color: #8A0808; }
+a { color: #8A0808; text-decoration:none; }
+tt { font-family: "Courier New", Courier; }
+p { text-indent: 0px; }
+hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+p.caption { width: 80%; font-style: normal; text-align: left; }
+hr.figure { border: 0; width: 80%; border-bottom: 1px solid #aaa; }div.highlight {
+    border: 1px solid #cfcfcf;
+    border-radius: 2px;
+    line-height: 1.21429em;
+}
+div.cell {
+    width: 100%;
+    padding: 5px 5px 5px 0;
+    margin: 0;
+    outline: none;
+}
+div.input {
+    page-break-inside: avoid;
+    box-orient: horizontal;
+    box-align: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+}
+div.inner_cell {
+    box-orient: vertical;
+    box-align: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    box-flex: 1;
+    flex: 1;
+}
+div.input_area {
+    border: 1px solid #cfcfcf;
+    border-radius: 4px;
+    background: #f7f7f7;
+    line-height: 1.21429em;
+}
+div.input_area > div.highlight {
+    margin: .4em;
+    border: none;
+    padding: 0;
+    background-color: transparent;
+}
+div.output_wrapper {
+    position: relative;
+    box-orient: vertical;
+    box-align: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+.output {
+    box-orient: vertical;
+    box-align: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+div.output_area {
+    padding: 0;
+    page-break-inside: avoid;
+    box-orient: horizontal;
+    box-align: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+}
+div.output_subarea {
+    padding: .4em .4em 0 .4em;
+    box-flex: 1;
+    flex: 1;
+}
+div.output_text {
+    text-align: left;
+    color: #000;
+    line-height: 1.21429em;
+}
+.alert-text-small   { font-size: 80%;  }
+.alert-text-large   { font-size: 130%; }
+.alert-text-normal  { font-size: 90%;  }
+.alert {
+  padding:8px 35px 8px 14px; margin-bottom:18px;
+  text-shadow:0 1px 0 rgba(255,255,255,0.5);
+  border:1px solid #bababa;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  color: #555;
+  background-color: #f8f8f8;
+  background-position: 10px 5px;
+  background-repeat: no-repeat;
+  background-size: 38px;
+  padding-left: 55px;
+  width: 75%;
+ }
+.alert-block {padding-top:14px; padding-bottom:14px}
+.alert-block > p, .alert-block > ul {margin-bottom:1em}
+.alert li {margin-top: 1em}
+.alert-block p+p {margin-top:5px}
+.alert-notice { background-image: url(https://cdn.rawgit.com/doconce/doconce/master/bundled/html_images/small_gray_notice.png); }
+.alert-summary  { background-image:url(https://cdn.rawgit.com/doconce/doconce/master/bundled/html_images/small_gray_summary.png); }
+.alert-warning { background-image: url(https://cdn.rawgit.com/doconce/doconce/master/bundled/html_images/small_gray_warning.png); }
+.alert-question {background-image:url(https://cdn.rawgit.com/doconce/doconce/master/bundled/html_images/small_gray_question.png); }
+div { text-align: justify; text-justify: inter-word; }
+.tab {
+  padding-left: 1.5em;
+}
+div.toc p,a {
+  line-height: 1.3;
+  margin-top: 1.1;
+  margin-bottom: 1.1;
+}
+</style>
+</head>
+
+<!-- tocinfo
+{'highest level': 2,
+ 'sections': [('What is this talk about?', 2, None, 'what-is-this-talk-about'),
+              ('A new world', 2, None, 'a-new-world'),
+              ('Lots of room for creativity',
+               2,
+               None,
+               'lots-of-room-for-creativity'),
+              ('Knowledge of Statistical analysis and optimization of data',
+               2,
+               None,
+               'knowledge-of-statistical-analysis-and-optimization-of-data'),
+              ('What are the basic ingredients?',
+               2,
+               None,
+               'what-are-the-basic-ingredients'),
+              ('What is Machine Learning?',
+               2,
+               None,
+               'what-is-machine-learning'),
+              ('Types of Machine Learning',
+               2,
+               None,
+               'types-of-machine-learning'),
+              ('Courses on Data science and Machine Learning  at UiO',
+               2,
+               None,
+               'courses-on-data-science-and-machine-learning-at-uio'),
+              ('Additional courses of interest',
+               2,
+               None,
+               'additional-courses-of-interest'),
+              ('Quantum Computing Courses and more',
+               2,
+               None,
+               'quantum-computing-courses-and-more'),
+              ('New Bachelor of Science program in Computational Science and '
+               'Data Science',
+               2,
+               None,
+               'new-bachelor-of-science-program-in-computational-science-and-data-science'),
+              ('Master of Science Programs in Computational Science and Data '
+               'Science',
+               2,
+               None,
+               'master-of-science-programs-in-computational-science-and-data-science')]}
+end of tocinfo -->
+
+<body>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+     equationNumbers: {  autoNumber: "AMS"  },
+     extensions: ["AMSmath.js", "AMSsymbols.js", "autobold.js", "color.js"]
+  }
+});
+</script>
+<script type="text/javascript" async
+ src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<!-- ------------------- main content ---------------------- -->
+<center>
+<h1>Machine Learning, Quantum Computing and more at UiO</h1>
+</center>  <!-- document title -->
+
+<!-- author(s): Morten Hjorth-Jensen -->
+<center>
+<b>Morten Hjorth-Jensen</b> [1, 2]
+</center>
+<!-- institution(s) -->
+<center>
+[1] <b>Department of Physics and Astronomy and National Superconducting Cyclotron Laboratory, Michigan State University, USA</b>
+</center>
+<center>
+[2] <b>Department of Physics and Center for Computing in Science Education, University of Oslo, Norway</b>
+</center>
+<br>
+<center>
+<h4>Nov 3, 2021 </h4>
+</center> <!-- date -->
+<br>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="what-is-this-talk-about">What is this talk about? </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p>The main aim is to give you a short introduction to  what is happening at UiO in the rapidly evolving fields of machine learning/AI, quantum computing and more, with an emphasis on education and research and job possibilities!</p>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="a-new-world">A new world </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p>Machine learning (ML) is an extremely rich field, in spite of its young age. The
+increases we have seen during the last three decades in computational
+capabilities have been followed by developments of methods and
+techniques for analyzing and handling large date sets, relying heavily
+on statistics, computer science and mathematics.  The field is rather
+new and developing rapidly. 
+</p>
+
+<p>Popular software packages written in Python for ML are</p>
+
+<ul>
+<li> <a href="http://scikit-learn.org/stable/" target="_blank">Scikit-learn</a>,</li> 
+<li> <a href="https://www.tensorflow.org/" target="_blank">Tensorflow</a>,</li>
+<li> <a href="http://pytorch.org/" target="_blank">PyTorch</a> and</li> 
+<li> <a href="https://keras.io/" target="_blank">Keras</a>.</li>
+</ul>
+<p>These are all freely available at their respective GitHub sites. They 
+encompass communities of developers in the thousands or more. And the number
+of code developers and contributors keeps increasing.
+</p>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="lots-of-room-for-creativity">Lots of room for creativity </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p>Not all the
+algorithms and methods can be given a rigorous mathematical
+justification, opening up thereby for experimenting
+and trial and error and thereby exciting new developments. 
+</p>
+</div>
+
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p>A solid command of linear algebra, multivariate theory, 
+probability theory, statistical data analysis,
+understanding errors and Monte Carlo methods is important in order to understand many of the 
+various algorithms and methods. 
+</p>
+</div>
+
+
+<p><b>Job market, a personal statement</b>: <a href="https://www.analyticsindiamag.com/top-countries-hiring-most-number-of-artificial-intelligence-machine-learning-experts/" target="_blank">A familiarity with ML is almost becoming a prerequisite for many of the most exciting employment opportunities</a>. And add quantum computing and there you are!</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="knowledge-of-statistical-analysis-and-optimization-of-data">Knowledge of Statistical analysis and optimization of data </h2>
+<p>Some key elements that enter much of the discussion on ML:</p>
+<ol>
+<li> Basic concepts, expectation values, variance, covariance, correlation functions and errors;</li>
+<li> Simpler models, binomial distribution, the Poisson distribution, simple and multivariate normal distributions;</li>
+<li> Central elements of Bayesian statistics and modeling;</li>
+<li> Central elements from linear algebra</li>
+<li> Gradient methods for data optimization</li>
+<li> Monte Carlo methods, Markov chains, Metropolis-Hastings algorithm;</li>
+<li> Estimation of errors using cross-validation, blocking, bootstrapping and jackknife methods;</li>
+<li> Practical optimization using Singular-value decomposition and least squares for parameterizing data.</li>
+<li> Principal Component Analysis.</li>
+</ol>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="what-are-the-basic-ingredients">What are the basic ingredients? </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p>Almost every problem in ML and data science starts with the same ingredients:</p>
+<ul>
+<li> The dataset \( \mathbf{x} \) (could be some observable quantity of the system we are studying)</li>
+<li> A model which is a function of a set of parameters \( \mathbf{\alpha} \) that relates to the dataset, say a likelihood  function \( p(\mathbf{x}\vert \mathbf{\alpha}) \) or just a simple model \( f(\mathbf{\alpha}) \)</li>
+<li> A so-called <b>cost</b> function \( \mathcal{C} (\mathbf{x}, f(\mathbf{\alpha})) \) which allows us to decide how well our model represents the dataset.</li> 
+</ul>
+<p>We seek to minimize the function \( \mathcal{C} (\mathbf{x}, f(\mathbf{\alpha})) \) by finding the parameter values which minimize \( \mathcal{C} \). This leads to  various minimization algorithms. </p>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="what-is-machine-learning">What is Machine Learning? </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p>Machine learning is the science of giving computers the ability to
+learn without being explicitly programmed.  The idea is that there
+exist generic algorithms which can be used to find patterns in a broad
+class of data sets without having to write code specifically for each
+problem. The algorithm will build its own logic based on the data.
+</p>
+
+<p>Machine learning is a subfield of computer science, and is closely
+related to computational statistics.  It evolved from the study of
+pattern recognition in artificial intelligence (AI) research, and has
+made contributions to AI tasks like computer vision, natural language
+processing and speech recognition. It has also, especially in later
+years, found applications in a wide variety of other areas, including
+bioinformatics, economy, physics, finance and marketing.
+</p>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="types-of-machine-learning">Types of Machine Learning </h2>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p>The approaches to machine learning are many, but are often split into two main categories. 
+In <em>supervised learning</em> we know the answer to a problem,
+and let the computer deduce the logic behind it. On the other hand, <em>unsupervised learning</em>
+is a method for finding patterns and relationship in data sets without any prior knowledge of the system.
+Some authours also operate with a third category, namely <em>reinforcement learning</em>. This is a paradigm 
+of learning inspired by behavioural psychology, where learning is achieved by trial-and-error, 
+solely from rewards and punishment.
+</p>
+
+<p>Another way to categorize machine learning tasks is to consider the desired output of a system.
+Some of the most common tasks are:
+</p>
+
+<ul>
+  <li> Classification: Outputs are divided into two or more classes. The goal is to   produce a model that assigns inputs into one of these classes. An example is to identify  digits based on pictures of hand-written ones. Classification is typically supervised learning.</li>
+  <li> Regression: Finding a functional relationship between an input data set and a reference data set.   The goal is to construct a function that maps input data to continuous output values.</li>
+  <li> Clustering: Data are divided into groups with certain common traits, without knowing the different groups beforehand.  It is thus a form of unsupervised learning.</li>
+</ul>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="courses-on-data-science-and-machine-learning-at-uio">Courses on Data science and Machine Learning  at UiO </h2>
+
+<ol>
+<li> <a href="http://www.uio.no/studier/emner/matnat/math/STK2100/index-eng.html" target="_blank">STK2100 Machine learning and statistical methods for prediction and classification</a>.</li> 
+<li> <a href="https://www.uio.no/studier/emner/matnat/ifi/IN3050/index-eng.html" target="_blank">IN3050 Introduction to Artificial Intelligence and Machine Learning</a>. Introductory course in machine learning and AI with an algorithmic approach.</li>
+<li> <a href="https://www.uio.no/studier/emner/matnat/fys/FYS-STK4155/index-eng.html" target="_blank">FYS-STK3155/4155 Applied Data Analysis and Machine Learning</a></li>
+<li> <a href="http://www.uio.no/studier/emner/matnat/math/STK-INF3000/index-eng.html" target="_blank">STK-INF3000/4000 Selected Topics in Data Science</a>. The course provides insight into selected contemporary relevant topics within Data Science.</li> 
+<li> <a href="https://www.uio.no/studier/emner/matnat/ifi/IN4080/index.html" target="_blank">IN4080 Natural Language Processing</a>. Probabilistic and machine learning techniques applied to natural language processing.</li> 
+<li> <a href="https://www.uio.no/studier/emner/matnat/math/STK-IN4300/index-eng.html" target="_blank">STK-IN4300 &#8211; Statistical learning methods in Data Science</a>. An advanced introduction to statistical and machine learning. For students with a good mathematics and statistics background.</li>
+<li> <a href="http://www.uio.no/studier/emner/matnat/ifi/INF4490/" target="_blank">INF4490 Biologically Inspired Computing</a>. An introduction to self-adapting methods also called artificial intelligence or machine learning.</li> 
+<li> <a href="https://www.uio.no/studier/emner/matnat/ifi/IN-STK5000/index-eng.html" target="_blank">IN-STK5000  Adaptive Methods for Data-Based Decision Making</a>. Methods for adaptive collection and processing of data based on machine learning techniques.</li> 
+<li> <a href="https://www.uio.no/studier/emner/matnat/ifi/IN5400/" target="_blank">IN5400/INF5860 &#8211; Machine Learning for Image Analysis</a>. An introduction to deep learning with particular emphasis on applications within Image analysis, but useful for other application areas too.</li>
+<li> <a href="https://www.uio.no/studier/emner/matnat/its/TEK5040/" target="_blank">TEK5040 &#8211; Deep learning</a>. The course addresses advanced algorithms and architectures for deep learning with neural networks. The course provides an introduction to how deep-learning techniques can be used in the construction of key parts of advanced autonomous systems that exist in physical environments and cyber environments.</li>
+</ol>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="additional-courses-of-interest">Additional courses of interest </h2>
+
+<ol>
+<li> <a href="https://www.uio.no/studier/emner/matnat/math/STK4051/index-eng.html" target="_blank">STK4051 Computational Statistics</a></li>
+<li> <a href="https://www.uio.no/studier/emner/matnat/math/STK4021/index-eng.html" target="_blank">STK4021 Applied Bayesian Analysis and Numerical Methods</a></li>
+</ol>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="quantum-computing-courses-and-more">Quantum Computing Courses and more </h2>
+
+<ol>
+<li> <a href="https://www.uio.no/studier/emner/matnat/math/MAT3420/index-eng.html" target="_blank">MAT3420 Quantum Computing</a></li>
+<li> <a href="https://github.com/CompPhysics/QuantumComputingMachineLearning" target="_blank">Computational Physics and Center for Computing of Science Education</a></li>
+<li> New courses at Oslo Met and exciting <a href="https://uni.oslomet.no/ai-lab/events-and-workshops/" target="_blank">workshop coming</a></li>
+<li> Experimental activity being started at Center for Material Science</li>
+</ol>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="new-bachelor-of-science-program-in-computational-science-and-data-science">New Bachelor of Science program in Computational Science and Data Science </h2>
+
+<p>See <a href="https://github.com/mhjensen/CSDSProgramsUiO" target="_blank"><tt>https://github.com/mhjensen/CSDSProgramsUiO</tt></a></p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="master-of-science-programs-in-computational-science-and-data-science">Master of Science Programs in Computational Science and Data Science </h2>
+
+<ol>
+<li> <a href="https://www.uio.no/english/studies/programmes/computational-science-master/" target="_blank">Master of Science in Computational Science</a></li>
+<li> <a href="https://www.uio.no/english/studies/programmes/datascience-master/" target="_blank">Master of Science in Data  Science</a></li>
+</ol>
+<p>Well linked with PhD possibilities at <a href="https://www.uio.no/dscience/english/" target="_blank">new dScience center</a>.</p>
+<!-- ------------------- end of main content --------------- -->
+<center style="font-size:80%">
+<!-- copyright --> &copy; 1999-2021, Morten Hjorth-Jensen. Released under CC Attribution-NonCommercial 4.0 license
+</center>
+</body>
+</html>
+
