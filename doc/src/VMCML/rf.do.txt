@@ -159,3 +159,32 @@ o "Master of Science in Data  Science":"https://www.uio.no/english/studies/progr
 
 Well linked with PhD possibilities at "new dScience center":"https://www.uio.no/dscience/english/".
 
+
+
+
+!split
+===== Selected References =====
+!bblock
+
+* "Deiana et al Applications and Techniques for Fast Machine Learning in Science":"https://arxiv.org/abs/2110.13041"
+* Machine Learning and Quantum Computing is a very interesting avenue to explore. See for example talk of "Sofia Vallecorsa":"https://www.youtube.com/watch?v=7WPKv1Q57os&list=PLUPPQ1TVXK7uHwCTccWMBud-zLyvAf8A2&index=5&ab_channel=ECTstar".
+* "Mehta et al.":"https://arxiv.org/abs/1803.08823" and "Physics Reports (2019)":"https://www.sciencedirect.com/science/article/pii/S0370157319300766?via%3Dihub".
+* "Machine Learning and the Physical Sciences by Carleo et al":"https://link.aps.org/doi/10.1103/RevModPhys.91.045002"
+* "Ab initio solution of the many-electron Schrödinger equation with deep neural networks by Pfau et al.":"https://journals.aps.org/prresearch/abstract/10.1103/PhysRevResearch.2.033429".
+!eblock
+
+
+
+
+!bblock
+Machine Learning and Quantum Computing hold great promise in tackling the 
+ever increasing dimensionalities. A hot new field is  _Quantum Machine Learning_, see for example the recent textbook by "Maria Schuld and Francesco Petruccione":"https://www.springer.com/gp/book/9783319964232". 
+o Master of Science  thesis of "Stian Bilek":"https://www.duo.uio.no/handle/10852/82489", _Quantum Computing: Many-Body Methods and Machine Learning, August 2020_
+o Master of Science  thesis of "Heine Åbø":"https://www.duo.uio.no/handle/10852/81259", _Quantum Computing and Many-Particle Problems, June 2020_
+o "Marianne EtzelmuellerBathen's PhD":"https://www.mn.uio.no/fysikk/english/people/aca/mariebat/", December 2020
+!eblock
+
+
+
+
+
