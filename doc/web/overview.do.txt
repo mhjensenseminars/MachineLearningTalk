@@ -4,7 +4,7 @@ DATE: today
 
 <%
 pub_url = 'http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub'
-published = ['vmcml', 'unitn', 'uniohio', 'unisurrey', 'uio2019', 'chalmers', 'uiomath', 'unipd', 'overview', 'WorkshopTastesNP', 'xai', 'NIThePColloquium', 'quantumcomputing', 'NotreDameMay2021', 'oslometqc', 'IAEA',]
+published = ['vmcml', 'unitn', 'uniohio', 'unisurrey', 'uio2019', 'chalmers', 'uiomath', 'unipd', 'overview', 'WorkshopTastesNP', 'xai', 'NIThePColloquium', 'quantumcomputing', 'NotreDameMay2021', 'oslometqc', 'IAEA', 'rf',]
 chapters = {
  'vmcml': 'From variational Monte Carlo to machine learning, talks at Michigan State University April and June 2018',
  'uniuio': 'Talk at University of Oslo, December 14, 2018',
@@ -23,6 +23,7 @@ chapters = {
  'NotreDameMay2021': 'Quantum Computing and the Quantum Mechanical Many-Body Problem, Talk at Notre Dame University, May 12, 2021',
  'oslometqc': 'From Machine Learning to Quantum Computing and Quantum Machine Learning applied to Quantum Mechanical Many-Body Systems, Talk at OsloMet University, August 27, 2021',
   'IAEA': 'IAEA AI Technical Meeting: Nuclear Physics Working Group, October 25-29, 2021',
+  'rf': 'Talk at RF-kjelleren, University of Oslo,, November 3, 2021',  
 }
 %>
 
