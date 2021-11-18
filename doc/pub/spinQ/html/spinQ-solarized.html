@@ -1,0 +1,368 @@
+<!--
+HTML file automatically generated from DocOnce source
+(https://github.com/doconce/doconce/)
+doconce format html spinQ.do.txt --pygments_html_style=perldoc --html_style=solarized3 --html_links_in_new_window --html_output=spinQ-solarized --no_mako
+-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="DocOnce: https://github.com/doconce/doconce/" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Norway Goes Quantum, Exciting Avenues in Research and Education in Quantum Information Technologies">
+<title>Norway Goes Quantum, Exciting Avenues in Research and Education in Quantum Information Technologies</title>
+<link href="https://cdn.rawgit.com/doconce/doconce/master/bundled/html_styles/style_solarized_box/css/solarized_light_code.css" rel="stylesheet" type="text/css" title="light"/>
+<script src="https://cdn.rawgit.com/doconce/doconce/master/bundled/html_styles/style_solarized_box/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<link href="https://thomasf.github.io/solarized-css/solarized-light.min.css" rel="stylesheet">
+<style type="text/css">
+h1 {color: #b58900;}  /* yellow */
+/* h1 {color: #cb4b16;}  orange */
+/* h1 {color: #d33682;}  magenta, the original choice of thomasf */
+code { padding: 0px; background-color: inherit; }
+pre {
+  border: 0pt solid #93a1a1;
+  box-shadow: none;
+}
+.alert-text-small   { font-size: 80%;  }
+.alert-text-large   { font-size: 130%; }
+.alert-text-normal  { font-size: 90%;  }
+.alert {
+  padding:8px 35px 8px 14px; margin-bottom:18px;
+  text-shadow:0 1px 0 rgba(255,255,255,0.5);
+  border:1px solid #93a1a1;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  color: #555;
+  background-color: #eee8d5;
+  background-position: 10px 5px;
+  background-repeat: no-repeat;
+  background-size: 38px;
+  padding-left: 55px;
+  width: 75%;
+ }
+.alert-block {padding-top:14px; padding-bottom:14px}
+.alert-block > p, .alert-block > ul {margin-bottom:1em}
+.alert li {margin-top: 1em}
+.alert-block p+p {margin-top:5px}
+.alert-notice { background-image: url(https://cdn.rawgit.com/doconce/doconce/master/bundled/html_images/small_yellow_notice.png); }
+.alert-summary  { background-image:url(https://cdn.rawgit.com/doconce/doconce/master/bundled/html_images/small_yellow_summary.png); }
+.alert-warning { background-image: url(https://cdn.rawgit.com/doconce/doconce/master/bundled/html_images/small_yellow_warning.png); }
+.alert-question {background-image:url(https://cdn.rawgit.com/doconce/doconce/master/bundled/html_images/small_yellow_question.png); }
+div { text-align: justify; text-justify: inter-word; }
+.tab {
+  padding-left: 1.5em;
+}
+div.toc p,a {
+  line-height: 1.3;
+  margin-top: 1.1;
+  margin-bottom: 1.1;
+}
+</style>
+</head>
+
+<!-- tocinfo
+{'highest level': 2,
+ 'sections': [('Congratulations', 2, None, 'congratulations'),
+              ('What is this talk about?', 2, None, 'what-is-this-talk-about'),
+              ('Why? Basic motivation', 2, None, 'why-basic-motivation'),
+              ('Basic activities, Overview',
+               2,
+               None,
+               'basic-activities-overview'),
+              ('What has happened during the last two years at CCSE@UiO?',
+               2,
+               None,
+               'what-has-happened-during-the-last-two-years-at-ccse-uio'),
+              ('More activities', 2, None, 'more-activities'),
+              ('Quantum Engineering', 2, None, 'quantum-engineering'),
+              ('Candidate systems', 2, None, 'candidate-systems'),
+              ('Electrons (quantum dots) on superfluid helium',
+               2,
+               None,
+               'electrons-quantum-dots-on-superfluid-helium'),
+              ('Education', 2, None, 'education'),
+              ('Courses, Prototype', 2, None, 'courses-prototype'),
+              ('Important Issues to think of',
+               2,
+               None,
+               'important-issues-to-think-of'),
+              ('Observations', 2, None, 'observations'),
+              ('Future Needs/Problems (US observations mostly but transfer '
+               'most likely to Europe as well)',
+               2,
+               None,
+               'future-needs-problems-us-observations-mostly-but-transfer-most-likely-to-europe-as-well')]}
+end of tocinfo -->
+
+<body>
+<!-- ------------------- main content ---------------------- -->
+<center>
+<h1>Norway Goes Quantum, Exciting Avenues in Research and Education in Quantum Information Technologies</h1>
+</center>  <!-- document title -->
+
+<!-- author(s): Morten Hjorth-Jensen -->
+<center>
+<b>Morten Hjorth-Jensen</b> [1, 2]
+</center>
+<!-- institution(s) -->
+<center>
+[1] <b>Department of Physics and Astronomy and FRIB Laboratory, Michigan State University, USA</b>
+</center>
+<center>
+[2] <b>Department of Physics and Center for Computing in Science Education, University of Oslo, Norway</b>
+</center>
+<br>
+<center>
+<h4>Norway Goes Quantum workshop, OsloMet, November 18, 2021. </h4>
+</center> <!-- date -->
+<br>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="congratulations">Congratulations </h2>
+
+<p>First of all, a great <b>thank you</b> to OsloMet for the inauguration of the first quantum computer in Norway!</p>
+
+<b>And just few days ago IBM announced that they expect to achieve a 1121-qubit quantum processor, and  thereby quantum advantage by 2023!</b>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="what-is-this-talk-about">What is this talk about? </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+
+<p>The main aim is to give you a short introduction to our
+activities and how to build larger Quantum Information Systems (QIS)
+(and QT/QC (Quantum Technologies/Quantum Computing) )
+collaborations and activities.
+</p>
+</div>
+
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b>Thanks to</b>
+<p>
+<ul>
+<li> MSU: <b>Ben Hall, Jane Kim, Julie Butler, Danny Jammoa, Nicholas Cariello</b>, Johannes Pollanen (Expt), <b>Niyaz Beysengulov (Expt)</b>, Dean Lee, Scott Bogner, Heiko Hergert, Matt Hirn, Huey-Wen Lin, Alexei Bazavov, Andrea Shindler and Angela Wilson</li>
+<li> UiO: <b>Stian Bilek, Heine &#197;b&#248; (now OsloMet), H&#229;kon Emil Kristiansen, &#216;yvind Sch&#248;yen Sigmundsson, Jonas Boym Flaten,</li>
+</ul>
+<p>Kristian Wold (now OsloMet)</b>, Lasse Vines (Expt) Andrej Kuznetsov (Expt), <b>David Rivas Gongora (Expt) and Marianne Bathen (Expt, now PD at ETH)</b></p>
+</div>
+
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b>Sponsors</b>
+<p>
+<p>This work is supported by the U.S. Department of Energy, Office of
+Science, office of Nuclear Physics under grant No. DE-SC0021152 and
+U.S. National Science Foundation Grants No. PHY-1404159 and
+PHY-2013047 and the Norwegian ministry of Education and  Research for PhD fellowships.
+</p>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="why-basic-motivation">Why? Basic motivation </h2>
+<p>Overarching keyword: <b>dimension reduction</b></p>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p>How can we avoid the dimensionality curse? In quantum mechanical studies there are Many possibilities</p>
+<ol>
+<li> smarter basis functions</li>
+<li> resummation of specific correlations</li>
+<li> stochastic sampling</li>
+<li> many more</li>
+</ol>
+</div>
+
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p>Machine Learning and Quantum Computing hold great promise in tackling the 
+ever increasing dimensionalities. A hot new field is  <b>Quantum Machine Learning</b>, see for example the recent textbook by <a href="https://www.springer.com/gp/book/9783319964232" target="_blank">Maria Schuld and Francesco Petruccione</a>. 
+</p>
+<ol>
+<li> Master of Science  thesis of <a href="https://www.duo.uio.no/handle/10852/82489" target="_blank">Stian Bilek</a>, <b>Quantum Computing: Many-Body Methods and Machine Learning, August 2020</b></li>
+<li> Master of Science  thesis of <a href="https://www.duo.uio.no/handle/10852/81259" target="_blank">Heine &#197;b&#248;</a>, <b>Quantum Computing and Many-Particle Problems, June 2020</b>, now at OsloMet</li>
+<li> Master of Science  thesis of Kristian Wold, Parameterized Quantum Circuits for Machine Learning, September 2021, now at OsloMet</li>
+<li> <a href="https://www.mn.uio.no/fysikk/english/people/aca/mariebat/" target="_blank">Marianne Etzelmueller Bathen's PhD</a>, December 2020</li>
+</ol>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="basic-activities-overview">Basic activities, Overview </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<ul>
+<li> Machine Learning applied to Quantum Mechanical systems</li>
+<li> Quantum Engineering</li>
+<li> Quantum algorithms</li> 
+<li> Quantum Machine Learning</li>
+</ul>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="what-has-happened-during-the-last-two-years-at-ccse-uio">What has happened during the last two years at CCSE@UiO? </h2>
+
+<p>During the last two years we have started a large scientific activity
+on Quantum Computing and Machine Learning at the Center for Computing
+in Science Education (CCSE), with three PhD students hired since
+October 2019  and several master of Science students. This activity spans from the development
+of quantum-mechanical many-particle theories for studying systems of
+interest for making quantum computers, via the development of machine learning and quantum
+algorithms for solving quantum mechanical problems to exploring
+quantum machine learning algorithms.
+</p>
+
+<p>In 2022/2023 we expect to hire a post-doctoral fellow working on
+quantum computing (many-body theories) at the center for Materials Science and Nanotechnology at the University of Oslo.
+</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="more-activities">More activities </h2>
+
+<ol>
+<li> <a href="https://www.mn.uio.no/fysikk/english/research/groups/semiconductors/index.html" target="_blank">Center of Materials Science UiO, Lasse Vines (Expt) Andrej Kuznetsov(Expt), David Rivas Gongora (Expt) and Marianne Bathen (Expt, now PD at ETH)</a></li>
+<li> <a href="https://www.quantumcomputing.no/" target="_blank">Gemini center on Quantum Computing (SINTEF-UiO-NTNU)</a></li>
+</ol>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="quantum-engineering">Quantum Engineering </h2>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b>Quantum Computing requirements</b>
+<p>
+<ol>
+<li> be scalable</li>
+<li> have qubits that can be entangled</li>
+<li> have reliable initializations protocols to a standard state</li>
+<li> have a set of universal quantum gates to control the quantum evolution</li>
+<li> have a coherence time much longer than the gate operation time</li>
+<li> have a reliable read-out mechanism for measuring the qubit states</li>
+<li> and many more</li> 
+</ol>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="candidate-systems">Candidate systems </h2>
+<ol>
+<li> Superconducting Josephon junctions</li>
+<li> Single photons</li>
+<li> <a href="https://www.insidequantumtechnology.com/news-archive/ionq-is-first-quantum-startup-to-go-public-will-it-be-first-to-deliver-profits/" target="_blank">Trapped ions and atoms</a></li>
+<li> Nuclear Magnetic Resonance</li>
+<li> <b>Quantum dots, expt at MSU</b></li>
+<li> <b>Point Defects in semiconductors, experiments at UiO, center for Materials Science</b></li>
+<li> more</li>
+</ol>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="electrons-quantum-dots-on-superfluid-helium">Electrons (quantum dots) on superfluid helium </h2>
+
+<p>Electrons on <a href="https://www.youtube.com/watch?v=EuDuM-fe-lA&ab_channel=JoshuahHeath" target="_blank">superfluid helium represent</a> a promising platform for investigating
+strongly-coupled qubits.
+</p>
+
+<p>Therefore a systematic investigation of the
+controlled generation of entanglement between two trapped electrons
+under the influence of coherent microwave driving pulses, taking into
+account the effects of the Coulomb interaction between electrons, is
+of significant importance for quantum information processing using
+trapped electrons.
+</p>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<ol>
+<li> Time-Dependent full configuration interaction theory</li>
+<li> Time-dependent Coupled-Cluster theory</li>
+<li> Designing quantum circuits</li>
+</ol>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="education">Education </h2>
+
+<ol>
+<li> Build up a series of courses in QIS, inspiration <a href="https://qusteam.org/" target="_blank">QuSTEAM (Quantum Information Science, Technology, Engineering, Arts and Mathematics) initiative from USA</a></li>
+<li> Bachelor program in Computational Science and Data Science
+<ol type="a"></li>
+ <li> study direction/option in <b>quantum technologies</b></li>
+ <li> study direction/option in <b>Artificial Intelligence and Machine Learning</b></li>
+ <li> Plans at UiO for such a program, but also a more dedicated one on Computational Physics</li>
+</ol>
+<li> Master of Science program in Computational and Data Science
+<ol type="a"></li>
+ <li> UiO has already MSc programs in CS and DS</li>
+</ol>
+<li> PhD program in CS and DS
+<ol type="a"></li>
+ <li> with directions in <b>quantum technologies</b></li>
+ <li> with directions in <b>Artificial Intelligence and Machine Learning</b></li>
+</ol>
+</ol>
+<p>Coordination across university boundaries?</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="courses-prototype">Courses, Prototype </h2>
+
+<p>The <a href="https://www.mn.uio.no/ccse/english/" target="_blank">Center for Computing in Science Education at UiO</a> could be the entity which provides the pedagogical resourses. It has research experience
+on how do we design curricula so that students develop deep knowledge that is connected and useful.
+</p>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b>Topics  in a Bachelor of Science/Master of Science</b>
+<p>
+<ol>
+<li> Information Systems</li> 
+<li> From Classical Information theory to Quantum Information theory</li>
+<li> Classical vs. Quantum Logic</li>
+<li> Classical and Quantum Laboratory</li> 
+<li> Discipline-Based Quantum Mechanics</li> 
+<li> Quantum Software</li>
+<li> Quantum Hardware</li>
+<li> more</li>
+</ol>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="important-issues-to-think-of">Important Issues to think of </h2>
+<ol>
+<li> Lots of conceptual learning: superposition, entanglement, QIS applications, etc.</li>
+<li> Coding is indispensable. That is why this should be a part of a CS/DS program</li>
+<li> Teamwork, project management, and communication are important and highly valued</li>
+<li> Engagement with industry: guest lectures, virtual tours, co-ops, and/or internships.</li>
+<li> Diversity needs to be a priority</li>
+<li> Mentorship should begin the moment students enroll.</li>
+</ol>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="observations">Observations </h2>
+
+<ol>
+<li> Students do not really know what QIS is. This may be important when advertising</li>
+<li> There is conflation of &#8220;Quantum Information Science&#8221; with &#8220;Quantum computing&#8221;.</li>
+<li> Students perceive that a graduate degree is necessary to work in QIS. A BSc will help.</li>
+</ol>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="future-needs-problems-us-observations-mostly-but-transfer-most-likely-to-europe-as-well">Future Needs/Problems (US observations mostly but transfer most likely to Europe as well) </h2>
+
+<ol>
+<li> There are already (USA) great needs for specialized people (Ph. D. s, postdocs), but also needs of  people with a broad overview of what is possible in QIS.</li>
+<li> There are not enough potential employees in QIS (USA). It is a supply gap, not a skills gap.</li>
+<li> A BSc with specialization  is a good place to start</li>
+<li> It is tremendously important to get everyone speaking the same language. Facility with the vernacular of quantum mechanics is a big plus.</li>
+<li> There is a huge list of areas where technical expertise may be important. But employers are often more concerned with attributes like project management, working well in a team, interest in the field, and adaptability than in specific technical skills.</li>
+</ol>
+<!-- ------------------- end of main content --------------- -->
+<center style="font-size:80%">
+<!-- copyright --> &copy; 1999-2021, Morten Hjorth-Jensen. Released under CC Attribution-NonCommercial 4.0 license
+</center>
+</body>
+</html>
+

@@ -1,0 +1,197 @@
+TITLE: Norway Goes Quantum, Exciting Avenues in Research and Education in Quantum Information Technologies
+AUTHOR: Morten Hjorth-Jensen {copyright, 1999-present|CC BY-NC} at Department of Physics and Astronomy and FRIB Laboratory, Michigan State University, USA & Department of Physics and Center for Computing in Science Education, University of Oslo, Norway
+DATE: Norway Goes Quantum workshop, OsloMet, November 18, 2021. 
+
+
+!split
+=====   Congratulations =====
+
+First of all, a great _thank you_ to OsloMet for the inauguration of the first quantum computer in Norway!
+
+_And just few days ago IBM announced that they expect to achieve a 1121-qubit quantum processor, and  thereby quantum advantage by 2023!_
+
+
+!split
+===== What is this talk about? =====
+!bblock
+
+The main aim is to give you a short introduction to our
+activities and how to build larger Quantum Information Systems (QIS)
+(and QT/QC (Quantum Technologies/Quantum Computing) )
+collaborations and activities.
+
+!eblock
+
+!bblock Thanks to
+* MSU: _Ben Hall, Jane Kim, Julie Butler, Danny Jammoa, Nicholas Cariello_, Johannes Pollanen (Expt), _Niyaz Beysengulov (Expt)_, Dean Lee, Scott Bogner, Heiko Hergert, Matt Hirn, Huey-Wen Lin, Alexei Bazavov, Andrea Shindler and Angela Wilson
+* UiO: _Stian Bilek, Heine Åbø (now OsloMet), Håkon Emil Kristiansen, Øyvind Schøyen Sigmundsson, Jonas Boym Flaten,
+Kristian Wold (now OsloMet)_, Lasse Vines (Expt) Andrej Kuznetsov (Expt), _David Rivas Gongora (Expt) and Marianne Bathen (Expt, now PD at ETH)_
+!eblock
+
+!bblock Sponsors
+This work is supported by the U.S. Department of Energy, Office of
+Science, office of Nuclear Physics under grant No. DE-SC0021152 and
+U.S. National Science Foundation Grants No. PHY-1404159 and
+PHY-2013047 and the Norwegian ministry of Education and  Research for PhD fellowships.
+!eblock
+
+
+
+
+!split
+===== Why? Basic motivation =====
+Overarching keyword: _dimension reduction_
+!bblock
+How can we avoid the dimensionality curse? In quantum mechanical studies there are Many possibilities
+o smarter basis functions
+o resummation of specific correlations
+o stochastic sampling
+o many more
+!eblock
+
+!bblock
+Machine Learning and Quantum Computing hold great promise in tackling the 
+ever increasing dimensionalities. A hot new field is  _Quantum Machine Learning_, see for example the recent textbook by "Maria Schuld and Francesco Petruccione":"https://www.springer.com/gp/book/9783319964232". 
+o Master of Science  thesis of "Stian Bilek":"https://www.duo.uio.no/handle/10852/82489", _Quantum Computing: Many-Body Methods and Machine Learning, August 2020_
+o Master of Science  thesis of "Heine Åbø":"https://www.duo.uio.no/handle/10852/81259", _Quantum Computing and Many-Particle Problems, June 2020_, now at OsloMet
+o Master of Science  thesis of Kristian Wold, Parameterized Quantum Circuits for Machine Learning, September 2021, now at OsloMet
+o "Marianne Etzelmueller Bathen's PhD":"https://www.mn.uio.no/fysikk/english/people/aca/mariebat/", December 2020
+!eblock
+
+
+!split
+===== Basic activities, Overview =====
+!bblock
+* Machine Learning applied to Quantum Mechanical systems
+* Quantum Engineering
+* Quantum algorithms 
+* Quantum Machine Learning
+!eblock
+
+!split
+===== What has happened during the last two years at CCSE@UiO? =====
+
+During the last two years we have started a large scientific activity
+on Quantum Computing and Machine Learning at the Center for Computing
+in Science Education (CCSE), with three PhD students hired since
+October 2019  and several master of Science students. This activity spans from the development
+of quantum-mechanical many-particle theories for studying systems of
+interest for making quantum computers, via the development of machine learning and quantum
+algorithms for solving quantum mechanical problems to exploring
+quantum machine learning algorithms.
+
+
+In 2022/2023 we expect to hire a post-doctoral fellow working on
+quantum computing (many-body theories) at the center for Materials Science and Nanotechnology at the University of Oslo.
+
+!split
+===== More activities =====
+
+o "Center of Materials Science UiO, Lasse Vines (Expt) Andrej Kuznetsov(Expt), David Rivas Gongora (Expt) and Marianne Bathen (Expt, now PD at ETH)":"https://www.mn.uio.no/fysikk/english/research/groups/semiconductors/index.html"
+o "Gemini center on Quantum Computing (SINTEF-UiO-NTNU)":"https://www.quantumcomputing.no/"
+
+!split
+===== Quantum Engineering =====
+
+!bblock Quantum Computing requirements
+o be scalable
+o have qubits that can be entangled
+o have reliable initializations protocols to a standard state
+o have a set of universal quantum gates to control the quantum evolution
+o have a coherence time much longer than the gate operation time
+o have a reliable read-out mechanism for measuring the qubit states
+o and many more 
+!eblock
+
+!split
+===== Candidate systems =====
+o Superconducting Josephon junctions
+o Single photons
+o "Trapped ions and atoms":"https://www.insidequantumtechnology.com/news-archive/ionq-is-first-quantum-startup-to-go-public-will-it-be-first-to-deliver-profits/"
+o Nuclear Magnetic Resonance
+o _Quantum dots, expt at MSU_
+o _Point Defects in semiconductors, experiments at UiO, center for Materials Science_
+o more
+
+!split
+===== Electrons (quantum dots) on superfluid helium =====
+
+Electrons on "superfluid helium represent":"https://www.youtube.com/watch?v=EuDuM-fe-lA&ab_channel=JoshuahHeath" a promising platform for investigating
+strongly-coupled qubits.
+
+Therefore a systematic investigation of the
+controlled generation of entanglement between two trapped electrons
+under the influence of coherent microwave driving pulses, taking into
+account the effects of the Coulomb interaction between electrons, is
+of significant importance for quantum information processing using
+trapped electrons.
+
+!bblock 
+o Time-Dependent full configuration interaction theory
+o Time-dependent Coupled-Cluster theory
+o Designing quantum circuits
+!eblock
+
+
+!split
+=====  Education =====
+
+o Build up a series of courses in QIS, inspiration "QuSTEAM (Quantum Information Science, Technology, Engineering, Arts and Mathematics) initiative from USA":"https://qusteam.org/"
+o Bachelor program in Computational Science and Data Science
+  o study direction/option in _quantum technologies_
+  o study direction/option in _Artificial Intelligence and Machine Learning_
+  o Plans at UiO for such a program, but also a more dedicated one on Computational Physics
+o Master of Science program in Computational and Data Science
+  o UiO has already MSc programs in CS and DS
+o PhD program in CS and DS
+  o with directions in _quantum technologies_
+  o with directions in _Artificial Intelligence and Machine Learning_
+
+
+Coordination across university boundaries?
+
+!split
+===== Courses, Prototype =====
+
+The "Center for Computing in Science Education at UiO":"https://www.mn.uio.no/ccse/english/" could be the entity which provides the pedagogical resourses. It has research experience
+on how do we design curricula so that students develop deep knowledge that is connected and useful.
+
+!bblock Topics  in a Bachelor of Science/Master of Science
+o Information Systems 
+o From Classical Information theory to Quantum Information theory
+o Classical vs. Quantum Logic
+o Classical and Quantum Laboratory 
+o Discipline-Based Quantum Mechanics 
+o Quantum Software
+o Quantum Hardware
+o more
+!eblock
+
+!split
+===== Important Issues to think of =====
+o Lots of conceptual learning: superposition, entanglement, QIS applications, etc.
+o Coding is indispensable. That is why this should be a part of a CS/DS program
+o Teamwork, project management, and communication are important and highly valued
+o Engagement with industry: guest lectures, virtual tours, co-ops, and/or internships.
+o Diversity needs to be a priority
+o Mentorship should begin the moment students enroll.
+
+!split
+===== Observations =====
+
+o Students do not really know what QIS is. This may be important when advertising
+o There is conflation of “Quantum Information Science” with “Quantum computing”.
+o Students perceive that a graduate degree is necessary to work in QIS. A BSc will help.
+
+!split
+===== Future Needs/Problems (US observations mostly but transfer most likely to Europe as well) =====
+
+o There are already (USA) great needs for specialized people (Ph. D. s, postdocs), but also needs of  people with a broad overview of what is possible in QIS.
+o There are not enough potential employees in QIS (USA). It is a supply gap, not a skills gap.
+o A BSc with specialization  is a good place to start
+o It is tremendously important to get everyone speaking the same language. Facility with the vernacular of quantum mechanics is a big plus.
+o There is a huge list of areas where technical expertise may be important. But employers are often more concerned with attributes like project management, working well in a team, interest in the field, and adaptability than in specific technical skills.
+
+
+
+
