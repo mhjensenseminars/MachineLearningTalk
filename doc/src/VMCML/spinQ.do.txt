@@ -1,6 +1,6 @@
-TITLE: Norway Goes Quantum, Exciting Avenues in Research and Education in Quantum Information Technologies
+TITLE: Exciting Avenues in Research and Education in Quantum Information Systems
 AUTHOR: Morten Hjorth-Jensen {copyright, 1999-present|CC BY-NC} at Department of Physics and Astronomy and FRIB Laboratory, Michigan State University, USA & Department of Physics and Center for Computing in Science Education, University of Oslo, Norway
-DATE: Norway Goes Quantum workshop, OsloMet, November 18, 2021. 
+DATE: Norway Goes Quantum Workshop, OsloMet, November 18, 2021. 
 
 
 !split
