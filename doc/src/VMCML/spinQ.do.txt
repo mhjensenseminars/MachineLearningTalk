@@ -6,10 +6,17 @@ DATE: Norway Goes Quantum workshop, OsloMet, November 18, 2021.
 !split
 =====   Congratulations =====
 
+!bblock
 First of all, a great _thank you_ to OsloMet for the inauguration of the first quantum computer in Norway!
+!eblock
 
+!bblock
 _And just few days ago IBM announced that they expect to achieve a 1121-qubit quantum processor, and  thereby quantum advantage by 2023!_
+!eblock
 
+!bblock
+Slides at URL:"https://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/spinQ/html/spinQ-reveal.html"
+!eblock
 
 !split
 ===== What is this talk about? =====
