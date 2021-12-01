@@ -1,0 +1,354 @@
+<!--
+HTML file automatically generated from DocOnce source
+(https://github.com/doconce/doconce/)
+doconce format html UniMilano.do.txt --html_style=bootstrap --pygments_html_style=default --html_admon=bootstrap_panel --html_output=UniMilano-bs --no_mako
+-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="DocOnce: https://github.com/doconce/doconce/" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Artificial Intelligence and Machine Learning in Nuclear Physics">
+<title>Artificial Intelligence and Machine Learning in Nuclear Physics</title>
+<!-- Bootstrap style: bootstrap -->
+<!-- doconce format html UniMilano.do.txt --html_style=bootstrap --pygments_html_style=default --html_admon=bootstrap_panel --html_output=UniMilano-bs --no_mako -->
+<link href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+<!-- not necessary
+<link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+-->
+<style type="text/css">
+/* Add scrollbar to dropdown menus in bootstrap navigation bar */
+.dropdown-menu {
+   height: auto;
+   max-height: 400px;
+   overflow-x: hidden;
+}
+/* Adds an invisible element before each target to offset for the navigation
+   bar */
+.anchor::before {
+  content:"";
+  display:block;
+  height:50px;      /* fixed header height for style bootstrap */
+  margin:-50px 0 0; /* negative fixed header height */
+}
+</style>
+</head>
+
+<!-- tocinfo
+{'highest level': 2,
+ 'sections': [('What is this talk about?', 2, None, 'what-is-this-talk-about'),
+              ('More material', 2, None, 'more-material'),
+              ('Why? Basic motivation', 2, None, 'why-basic-motivation'),
+              ('Overview', 2, None, 'overview'),
+              ('Machine Learning and Physics',
+               2,
+               None,
+               'machine-learning-and-physics'),
+              ('Lots of room for creativity',
+               2,
+               None,
+               'lots-of-room-for-creativity'),
+              ('Types of Machine Learning',
+               2,
+               None,
+               'types-of-machine-learning'),
+              ('A simple perspective on the interface between ML and Physics',
+               2,
+               None,
+               'a-simple-perspective-on-the-interface-between-ml-and-physics'),
+              ('ML in Nuclear Physics, Examples',
+               2,
+               None,
+               'ml-in-nuclear-physics-examples'),
+              ('More examples', 2, None, 'more-examples'),
+              ('Selected References', 2, None, 'selected-references'),
+              ('What are the basic ingredients?',
+               2,
+               None,
+               'what-are-the-basic-ingredients'),
+              ('Neural network types', 2, None, 'neural-network-types'),
+              ('Nuclear Physics Experiments Argon-46',
+               2,
+               None,
+               'nuclear-physics-experiments-argon-46'),
+              ('Why Machine Learning?', 2, None, 'why-machine-learning'),
+              ('Why Machine Learning for Experimental Analysis?',
+               2,
+               None,
+               'why-machine-learning-for-experimental-analysis'),
+              ('More arguments', 2, None, 'more-arguments'),
+              ('The first theoretical system: electrons in a harmonic '
+               'oscillator trap in two dimensions',
+               2,
+               None,
+               'the-first-theoretical-system-electrons-in-a-harmonic-oscillator-trap-in-two-dimensions'),
+              ('Quantum Monte Carlo Motivation',
+               2,
+               None,
+               'quantum-monte-carlo-motivation'),
+              ('Quantum Monte Carlo Motivation',
+               2,
+               None,
+               'quantum-monte-carlo-motivation'),
+              ('Quantum Monte Carlo Motivation',
+               2,
+               None,
+               'quantum-monte-carlo-motivation'),
+              ('The trial wave function', 2, None, 'the-trial-wave-function'),
+              ('The correlation part of the wave function',
+               2,
+               None,
+               'the-correlation-part-of-the-wave-function'),
+              ('Resulting ansatz', 2, None, 'resulting-ansatz'),
+              ('Energy derivatives', 2, None, 'energy-derivatives'),
+              ('Derivatives of the local energy',
+               2,
+               None,
+               'derivatives-of-the-local-energy'),
+              ('How do we define our cost function?',
+               2,
+               None,
+               'how-do-we-define-our-cost-function'),
+              ('Meet the variance and its derivatives',
+               2,
+               None,
+               'meet-the-variance-and-its-derivatives'),
+              ('The variance defines the cost function',
+               2,
+               None,
+               'the-variance-defines-the-cost-function'),
+              ('Why Boltzmann machines?', 2, None, 'why-boltzmann-machines'),
+              ('A standard BM setup', 2, None, 'a-standard-bm-setup'),
+              ('The structure of the RBM network',
+               2,
+               None,
+               'the-structure-of-the-rbm-network'),
+              ('The network', 2, None, 'the-network'),
+              ('Joint distribution', 2, None, 'joint-distribution'),
+              ('Defining different types of RBMs',
+               2,
+               None,
+               'defining-different-types-of-rbms'),
+              ('Representing the wave function',
+               2,
+               None,
+               'representing-the-wave-function'),
+              ('Choose the cost/loss function',
+               2,
+               None,
+               'choose-the-cost-loss-function'),
+              ('Running the codes', 2, None, 'running-the-codes'),
+              ('Energy as function of iterations, $N=2$ electrons',
+               2,
+               None,
+               'energy-as-function-of-iterations-n-2-electrons'),
+              ('Energy as function of iterations, no Physics info $N=2$ '
+               'electrons',
+               2,
+               None,
+               'energy-as-function-of-iterations-no-physics-info-n-2-electrons'),
+              ('Onebody densities $N=6$, $\\hbar\\omega=1.0$ a.u.',
+               2,
+               None,
+               'onebody-densities-n-6-hbar-omega-1-0-a-u'),
+              ('Onebody densities $N=6$, $\\hbar\\omega=0.1$ a.u.',
+               2,
+               None,
+               'onebody-densities-n-6-hbar-omega-0-1-a-u'),
+              ('Onebody densities $N=30$, $\\hbar\\omega=1.0$ a.u.',
+               2,
+               None,
+               'onebody-densities-n-30-hbar-omega-1-0-a-u'),
+              ('Onebody densities $N=30$, $\\hbar\\omega=0.1$ a.u.',
+               2,
+               None,
+               'onebody-densities-n-30-hbar-omega-0-1-a-u'),
+              ('Or using Deep Learning Neural Networks',
+               2,
+               None,
+               'or-using-deep-learning-neural-networks'),
+              ('Replacing the Jastrow factor with Neural Networks',
+               2,
+               None,
+               'replacing-the-jastrow-factor-with-neural-networks'),
+              ('Conclusions and where do we stand',
+               2,
+               None,
+               'conclusions-and-where-do-we-stand'),
+              ('What are the Machine Learning calculations here based on?',
+               2,
+               None,
+               'what-are-the-machine-learning-calculations-here-based-on')]}
+end of tocinfo -->
+
+<body>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+     equationNumbers: {  autoNumber: "none"  },
+     extensions: ["AMSmath.js", "AMSsymbols.js", "autobold.js", "color.js"]
+  }
+});
+</script>
+<script type="text/javascript" async
+ src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<!-- Bootstrap navigation bar -->
+<div class="navbar navbar-default navbar-fixed-top">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="UniMilano-bs.html">Artificial Intelligence and Machine Learning in Nuclear Physics</a>
+  </div>
+  <div class="navbar-collapse collapse navbar-responsive-collapse">
+    <ul class="nav navbar-nav navbar-right">
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Contents <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+     <!-- navigation toc: --> <li><a href="._UniMilano-bs001.html#what-is-this-talk-about" style="font-size: 80%;">What is this talk about?</a></li>
+     <!-- navigation toc: --> <li><a href="._UniMilano-bs002.html#more-material" style="font-size: 80%;">More material</a></li>
+     <!-- navigation toc: --> <li><a href="._UniMilano-bs003.html#why-basic-motivation" style="font-size: 80%;">Why? Basic motivation</a></li>
+     <!-- navigation toc: --> <li><a href="._UniMilano-bs004.html#overview" style="font-size: 80%;">Overview</a></li>
+     <!-- navigation toc: --> <li><a href="._UniMilano-bs005.html#machine-learning-and-physics" style="font-size: 80%;">Machine Learning and Physics</a></li>
+     <!-- navigation toc: --> <li><a href="._UniMilano-bs006.html#lots-of-room-for-creativity" style="font-size: 80%;">Lots of room for creativity</a></li>
+     <!-- navigation toc: --> <li><a href="._UniMilano-bs007.html#types-of-machine-learning" style="font-size: 80%;">Types of Machine Learning</a></li>
+     <!-- navigation toc: --> <li><a href="._UniMilano-bs008.html#a-simple-perspective-on-the-interface-between-ml-and-physics" style="font-size: 80%;">A simple perspective on the interface between ML and Physics</a></li>
+     <!-- navigation toc: --> <li><a href="._UniMilano-bs009.html#ml-in-nuclear-physics-examples" style="font-size: 80%;">ML in Nuclear Physics, Examples</a></li>
+     <!-- navigation toc: --> <li><a href="._UniMilano-bs010.html#more-examples" style="font-size: 80%;">More examples</a></li>
+     <!-- navigation toc: --> <li><a href="._UniMilano-bs011.html#selected-references" style="font-size: 80%;">Selected References</a></li>
+     <!-- navigation toc: --> <li><a href="._UniMilano-bs012.html#what-are-the-basic-ingredients" style="font-size: 80%;">What are the basic ingredients?</a></li>
+     <!-- navigation toc: --> <li><a href="._UniMilano-bs013.html#neural-network-types" style="font-size: 80%;">Neural network types</a></li>
+     <!-- navigation toc: --> <li><a href="._UniMilano-bs014.html#nuclear-physics-experiments-argon-46" style="font-size: 80%;">Nuclear Physics Experiments Argon-46</a></li>
+     <!-- navigation toc: --> <li><a href="._UniMilano-bs015.html#why-machine-learning" style="font-size: 80%;">Why Machine Learning?</a></li>
+     <!-- navigation toc: --> <li><a href="._UniMilano-bs016.html#why-machine-learning-for-experimental-analysis" style="font-size: 80%;">Why Machine Learning for Experimental Analysis?</a></li>
+     <!-- navigation toc: --> <li><a href="._UniMilano-bs017.html#more-arguments" style="font-size: 80%;">More arguments</a></li>
+     <!-- navigation toc: --> <li><a href="._UniMilano-bs018.html#the-first-theoretical-system-electrons-in-a-harmonic-oscillator-trap-in-two-dimensions" style="font-size: 80%;">The first theoretical system: electrons in a harmonic oscillator trap in two dimensions</a></li>
+     <!-- navigation toc: --> <li><a href="._UniMilano-bs021.html#quantum-monte-carlo-motivation" style="font-size: 80%;">Quantum Monte Carlo Motivation</a></li>
+     <!-- navigation toc: --> <li><a href="._UniMilano-bs021.html#quantum-monte-carlo-motivation" style="font-size: 80%;">Quantum Monte Carlo Motivation</a></li>
+     <!-- navigation toc: --> <li><a href="._UniMilano-bs021.html#quantum-monte-carlo-motivation" style="font-size: 80%;">Quantum Monte Carlo Motivation</a></li>
+     <!-- navigation toc: --> <li><a href="._UniMilano-bs022.html#the-trial-wave-function" style="font-size: 80%;">The trial wave function</a></li>
+     <!-- navigation toc: --> <li><a href="._UniMilano-bs023.html#the-correlation-part-of-the-wave-function" style="font-size: 80%;">The correlation part of the wave function</a></li>
+     <!-- navigation toc: --> <li><a href="._UniMilano-bs024.html#resulting-ansatz" style="font-size: 80%;">Resulting ansatz</a></li>
+     <!-- navigation toc: --> <li><a href="._UniMilano-bs025.html#energy-derivatives" style="font-size: 80%;">Energy derivatives</a></li>
+     <!-- navigation toc: --> <li><a href="._UniMilano-bs026.html#derivatives-of-the-local-energy" style="font-size: 80%;">Derivatives of the local energy</a></li>
+     <!-- navigation toc: --> <li><a href="._UniMilano-bs027.html#how-do-we-define-our-cost-function" style="font-size: 80%;">How do we define our cost function?</a></li>
+     <!-- navigation toc: --> <li><a href="._UniMilano-bs028.html#meet-the-variance-and-its-derivatives" style="font-size: 80%;">Meet the variance and its derivatives</a></li>
+     <!-- navigation toc: --> <li><a href="._UniMilano-bs029.html#the-variance-defines-the-cost-function" style="font-size: 80%;">The variance defines the cost function</a></li>
+     <!-- navigation toc: --> <li><a href="._UniMilano-bs030.html#why-boltzmann-machines" style="font-size: 80%;">Why Boltzmann machines?</a></li>
+     <!-- navigation toc: --> <li><a href="._UniMilano-bs031.html#a-standard-bm-setup" style="font-size: 80%;">A standard BM setup</a></li>
+     <!-- navigation toc: --> <li><a href="._UniMilano-bs032.html#the-structure-of-the-rbm-network" style="font-size: 80%;">The structure of the RBM network</a></li>
+     <!-- navigation toc: --> <li><a href="._UniMilano-bs033.html#the-network" style="font-size: 80%;">The network</a></li>
+     <!-- navigation toc: --> <li><a href="._UniMilano-bs034.html#joint-distribution" style="font-size: 80%;">Joint distribution</a></li>
+     <!-- navigation toc: --> <li><a href="._UniMilano-bs035.html#defining-different-types-of-rbms" style="font-size: 80%;">Defining different types of RBMs</a></li>
+     <!-- navigation toc: --> <li><a href="#representing-the-wave-function" style="font-size: 80%;">Representing the wave function</a></li>
+     <!-- navigation toc: --> <li><a href="._UniMilano-bs037.html#choose-the-cost-loss-function" style="font-size: 80%;">Choose the cost/loss function</a></li>
+     <!-- navigation toc: --> <li><a href="._UniMilano-bs038.html#running-the-codes" style="font-size: 80%;">Running the codes</a></li>
+     <!-- navigation toc: --> <li><a href="._UniMilano-bs039.html#energy-as-function-of-iterations-n-2-electrons" style="font-size: 80%;">Energy as function of iterations, \( N=2 \) electrons</a></li>
+     <!-- navigation toc: --> <li><a href="._UniMilano-bs040.html#energy-as-function-of-iterations-no-physics-info-n-2-electrons" style="font-size: 80%;">Energy as function of iterations, no Physics info \( N=2 \) electrons</a></li>
+     <!-- navigation toc: --> <li><a href="._UniMilano-bs041.html#onebody-densities-n-6-hbar-omega-1-0-a-u" style="font-size: 80%;">Onebody densities \( N=6 \), \( \hbar\omega=1.0 \) a.u.</a></li>
+     <!-- navigation toc: --> <li><a href="._UniMilano-bs042.html#onebody-densities-n-6-hbar-omega-0-1-a-u" style="font-size: 80%;">Onebody densities \( N=6 \), \( \hbar\omega=0.1 \) a.u.</a></li>
+     <!-- navigation toc: --> <li><a href="._UniMilano-bs043.html#onebody-densities-n-30-hbar-omega-1-0-a-u" style="font-size: 80%;">Onebody densities \( N=30 \), \( \hbar\omega=1.0 \) a.u.</a></li>
+     <!-- navigation toc: --> <li><a href="._UniMilano-bs044.html#onebody-densities-n-30-hbar-omega-0-1-a-u" style="font-size: 80%;">Onebody densities \( N=30 \), \( \hbar\omega=0.1 \) a.u.</a></li>
+     <!-- navigation toc: --> <li><a href="._UniMilano-bs045.html#or-using-deep-learning-neural-networks" style="font-size: 80%;">Or using Deep Learning Neural Networks</a></li>
+     <!-- navigation toc: --> <li><a href="._UniMilano-bs046.html#replacing-the-jastrow-factor-with-neural-networks" style="font-size: 80%;">Replacing the Jastrow factor with Neural Networks</a></li>
+     <!-- navigation toc: --> <li><a href="._UniMilano-bs047.html#conclusions-and-where-do-we-stand" style="font-size: 80%;">Conclusions and where do we stand</a></li>
+     <!-- navigation toc: --> <li><a href="._UniMilano-bs048.html#what-are-the-machine-learning-calculations-here-based-on" style="font-size: 80%;">What are the Machine Learning calculations here based on?</a></li>
+
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
+</div> <!-- end of navigation bar -->
+<div class="container">
+<p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p> <!-- add vertical space -->
+<a name="part0036"></a>
+<!-- !split -->
+<h2 id="representing-the-wave-function" class="anchor">Representing the wave function </h2>
+
+<p>The wavefunction should be a probability amplitude depending on \( \boldsymbol{x} \). The RBM model is given by the joint distribution of \( \boldsymbol{x} \) and \( \boldsymbol{h} \)</p>
+$$
+\begin{align}
+	F_{rbm}(\mathbf{x},\mathbf{h}) = \frac{1}{Z} e^{-\frac{1}{T_0}E(\mathbf{x},\mathbf{h})}.
+\tag{7}
+\end{align}
+$$
+
+<p>To find the marginal distribution of \( \boldsymbol{x} \) we set:</p>
+$$
+\begin{align}
+	F_{rbm}(\mathbf{x}) &= \sum_\mathbf{h} F_{rbm}(\mathbf{x}, \mathbf{h}) 
+\tag{8}\\
+				&= \frac{1}{Z}\sum_\mathbf{h} e^{-E(\mathbf{x}, \mathbf{h})}.
+\tag{9}
+\end{align}
+$$
+
+<p>Now this is what we use to represent the wave function, calling it a neural-network quantum state (NQS)</p>
+$$
+\begin{align}
+	\Psi (\mathbf{x}) &= F_{rbm}(\mathbf{x}) 
+\tag{10}\\
+	&= \frac{1}{Z}\sum_{\boldsymbol{h}} e^{-E(\mathbf{x}, \mathbf{h})} 
+\tag{11}\\
+	&= \frac{1}{Z} \sum_{\{h_j\}} e^{-\sum_i^M \frac{(x_i - a_i)^2}{2\sigma^2} + \sum_j^N b_j h_j + \sum_{i,j}^{M,N} \frac{x_i w_{ij} h_j}{\sigma^2}} 
+\tag{12}\\
+	&= \frac{1}{Z} e^{-\sum_i^M \frac{(x_i - a_i)^2}{2\sigma^2}} \prod_j^N (1 + e^{b_j + \sum_i^M \frac{x_i w_{ij}}{\sigma^2}}). 
+\tag{13}\\
+\tag{14}
+\end{align}
+$$
+
+
+<p>
+<!-- navigation buttons at the bottom of the page -->
+<ul class="pagination">
+<li><a href="._UniMilano-bs035.html">&laquo;</a></li>
+  <li><a href="._UniMilano-bs000.html">1</a></li>
+  <li><a href="">...</a></li>
+  <li><a href="._UniMilano-bs028.html">29</a></li>
+  <li><a href="._UniMilano-bs029.html">30</a></li>
+  <li><a href="._UniMilano-bs030.html">31</a></li>
+  <li><a href="._UniMilano-bs031.html">32</a></li>
+  <li><a href="._UniMilano-bs032.html">33</a></li>
+  <li><a href="._UniMilano-bs033.html">34</a></li>
+  <li><a href="._UniMilano-bs034.html">35</a></li>
+  <li><a href="._UniMilano-bs035.html">36</a></li>
+  <li class="active"><a href="._UniMilano-bs036.html">37</a></li>
+  <li><a href="._UniMilano-bs037.html">38</a></li>
+  <li><a href="._UniMilano-bs038.html">39</a></li>
+  <li><a href="._UniMilano-bs039.html">40</a></li>
+  <li><a href="._UniMilano-bs040.html">41</a></li>
+  <li><a href="._UniMilano-bs041.html">42</a></li>
+  <li><a href="._UniMilano-bs042.html">43</a></li>
+  <li><a href="._UniMilano-bs043.html">44</a></li>
+  <li><a href="._UniMilano-bs044.html">45</a></li>
+  <li><a href="._UniMilano-bs045.html">46</a></li>
+  <li><a href="">...</a></li>
+  <li><a href="._UniMilano-bs048.html">49</a></li>
+  <li><a href="._UniMilano-bs037.html">&raquo;</a></li>
+</ul>
+<!-- ------------------- end of main content --------------- -->
+</div>  <!-- end container -->
+<!-- include javascript, jQuery *first* -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<!-- Bootstrap footer
+<footer>
+<a href="https://..."><img width="250" align=right src="https://..."></a>
+</footer>
+-->
+<center style="font-size:80%">
+<!-- copyright only on the titlepage -->
+</center>
+</body>
+</html>
+
