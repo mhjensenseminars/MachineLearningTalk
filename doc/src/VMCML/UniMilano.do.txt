@@ -137,6 +137,12 @@ FIGURE: [figures/ML-NP.pdf, width=700 frac=0.9]
 
 
 !split
+===== ML in Materials Science =====
+
+FIGURE: [figures/fig2.png, width=700 frac=0.9]
+
+
+!split
 ===== ML in Nuclear Physics, Examples =====
 
 The large amount of degrees of freedom pertain to both theory and experiment in nuclear physics. With increasingly complicated experiments that produce large amounts data, automated classification of events becomes increasingly important. Here, deep learning methods offer a plethora of interesting research avenues. 
@@ -173,6 +179,8 @@ The large amount of degrees of freedom pertain to both theory and experiment in 
 * "Variational Monte Carlo calculations of $A\le 4$ nuclei with an artificial neural-network correlator ansatz by Adams et al.":"https://arxiv.org/abs/2007.14282"
 * "Unsupervised Learning for Identifying Events in Active Target Experiments by Solli et al.":"https://arxiv.org/abs/2006.05422"
 * "Report from the A.I. For Nuclear Physics  Workshop by Bedaque et al.":"https://arxiv.org/abs/2006.05422"
+* "Fast ML by Deiana et al.":"https://arxiv.org/abs/2110.13041"
+* "Particle Data Group summary on ML methods":"https://pdg.lbl.gov/2021/reviews/rpp2021-rev-machine-learning.pdf"
 !eblock
 
 
