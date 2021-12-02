@@ -11,7 +11,7 @@ to solve quantum mechanical many-body problems and how we can use such technique
 
 The hope is that after this talk you have gotten the basic ideas to get you started. Peeping into URL:"https://github.com/mhjensenseminars/MachineLearningTalk", you'll find a Jupyter notebook, slides, codes etc that will allow you to reproduce the simulations discussed here, and perhaps run your own very first calculations.
 
-These slides are at URL:"https://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/UniMIColloquium/html/UniMIColloquium-reveal.html".
+These slides are at URL:"https://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/UniMilano/html/UniMilano-reveal.html".
 
 !eblock
 
