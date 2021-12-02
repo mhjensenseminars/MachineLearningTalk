@@ -171,7 +171,7 @@ The large amount of degrees of freedom pertain to both theory and experiment in 
 * "Ab initio solution of the many-electron Schrödinger equation with deep neural networks by Pfau et al.":"https://journals.aps.org/prresearch/abstract/10.1103/PhysRevResearch.2.033429".
 * "Machine Learning and the Deuteron by Kebble and Rios":"https://www.sciencedirect.com/science/article/pii/S0370269320305463?via%3Dihub"
 * "Variational Monte Carlo calculations of $A\le 4$ nuclei with an artificial neural-network correlator ansatz by Adams et al.":"https://arxiv.org/abs/2007.14282"
-* "Unsupervised Learning for Identifying Events in Active Target Experiments by Solli et al.":"https://arxiv.org/abs/2008.02757"
+* "Unsupervised Learning for Identifying Events in Active Target Experiments by Solli et al.":"https://arxiv.org/abs/2006.05422"
 * "Report from the A.I. For Nuclear Physics  Workshop by Bedaque et al.":"https://arxiv.org/abs/2006.05422"
 !eblock
 
@@ -207,7 +207,7 @@ FIGURE: [figures/dnn.png, width=500 frac=0.6]
 
 
 !split
-===== Nuclear Physics Experiments Argon-46 =====
+===== "Nuclear Physics Experiments Argon-46, Solli {\em et al.}":"https://www.sciencedirect.com/science/article/abs/pii/S0168900221004460?via%3Dihub" =====
 
 Two- and three-dimensional representations of two events from the
 Argon-46 experiment. Each row is one event in two projections,
@@ -770,7 +770,7 @@ FIGURE: [figures/OB30hw01.png, width=700 frac=0.9]
 ===== Or using Deep Learning Neural Networks =====
 
 "Machine Learning and the Deuteron by Kebble and Rios":"https://www.sciencedirect.com/science/article/pii/S0370269320305463?via%3Dihub" and 
-"Variational Monte Carlo calculations of $A\le 4$ nuclei with an artificial neural-network correlator ansatz by Adams et al.":"https://arxiv.org/abs/2007.14282"
+"Variational Monte Carlo calculations of $A\le 4$ nuclei with an artificial neural-network correlator ansatz by Adams et al.":"https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.127.022502"
 
 _Adams et al_:
 
