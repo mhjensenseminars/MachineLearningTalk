@@ -130,6 +130,12 @@ FIGURE: [figures/mlimage.png, width=700 frac=0.9]
 
 
 !split
+===== ML in Nuclear  Physics =====
+
+FIGURE: [figures/ML-NP.pdf, width=700 frac=0.9]
+
+
+!split
 ===== ML in Nuclear Physics, Examples =====
 
 The large amount of degrees of freedom pertain to both theory and experiment in nuclear physics. With increasingly complicated experiments that produce large amounts data, automated classification of events becomes increasingly important. Here, deep learning methods offer a plethora of interesting research avenues. 
