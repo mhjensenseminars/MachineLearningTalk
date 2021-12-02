@@ -20,11 +20,12 @@ These slides are at URL:"https://mhjensenseminars.github.io/MachineLearningTalk/
 ===== More material =====
 !bblock
 More in depth notebooks and lecture notes are at 
-o Making a professional Monte Carlo code for quantum mechanical simulations URL:"https://github.com/CompPhysics/ComputationalPhysics2/blob/gh-pages/doc/pub/notebook1/ipynb/notebook1.ipynb"
-o From Variational Monte Carlo to Boltzmann Machines URL:"https://github.com/CompPhysics/ComputationalPhysics2/blob/gh-pages/doc/pub/notebook2/ipynb/notebook2.ipynb"
+o From Variational Monte Carlo to Neural Networks URL:"http://compphysics.github.io/ComputationalPhysics2/doc/LectureNotes/_build/html/intro.html"
 o "Nuclear Talent course on Machine Learning in Nuclear Experiment and Theory, June 22 - July 3, 2020":"https://nucleartalent.github.io/MachineLearningECT/doc/web/course.html"
 o "Machine Learning course":"https://compphysics.github.io/MachineLearning/doc/web/course.html"
 o "Two weeks ML course, with teaching material":"https://github.com/CompPhysics/MLErasmus"
+o Artificial Intelligence and Machine Learning in Nuclear Physics, Amber Boehnlein {\em et al.}, Reviews Modern of Physics, submitted (on arXiv Monday)
+
 
 Feel free to try them  out and please don't hesitate to ask if something is unclear.
 
@@ -52,7 +53,7 @@ ever increasing dimensionalities. A hot new field is  _Quantum Machine Learning_
 !bblock
 * Short intro to Machine Learning
 * Variational Monte Carlo (Markov Chain Monte Carlo or just MC2) and many-body problems, solving quantum mechanical problems in a stochastic way. It  will serve as  our motivation for switching to Machine Learning. 
-* From Variational Monte Carlo to Boltzmann Machines and Deep  Learning
+* From Variational Monte Carlo to Deep  Learning
 * Machine Learning and Experiment
 !eblock
 
