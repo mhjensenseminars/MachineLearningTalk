@@ -246,5 +246,18 @@ DATE: today
 
 
 
+===== Artificial Intelligence and Machine Learning in Nuclear Physics, Physics Colloquia 2021/2022, Università di Milano, December 3, 2021 =====
+
+
+
+ * HTML:
+   * "Plain html style": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/UniMilano/html/UniMilano.html"
+   * "reveal.js beige slide style": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/UniMilano/html/UniMilano-reveal.html"
+   * "Bootstrap style": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/UniMilano/html/UniMilano-bs.html"
+ * iPython notebook:
+   * "ipynb file": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/UniMilano/ipynb/UniMilano.ipynb"
+
+
+
 
 

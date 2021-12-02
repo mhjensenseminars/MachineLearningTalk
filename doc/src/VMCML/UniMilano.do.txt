@@ -1,6 +1,6 @@
 TITLE: Artificial Intelligence and Machine Learning in Nuclear Physics
 AUTHOR: Morten Hjorth-Jensen {copyright, 1999-present|CC BY-NC} at Department of Physics and Astronomy and FRIB/NSCL Laboratory, Michigan State University, USA & Department of Physics and Center for Computing in Science Education, University of Oslo, Norway
-DATE: Università di Milano, December 3, 2021
+DATE: Physics Colloquia 2021/2022, Università di Milano, December 3, 2021
 
 
 !split
