@@ -6,12 +6,14 @@ DATE: Physics Colloquia 2021/2022, Università di Milano, December 3, 2021
 !split
 ===== What is this talk about? =====
 !bblock
-The main aim is to give you a short and pedestrian introduction to  how we can use Machine Learning methods
+The main emphasis is to give you a short and pedestrian introduction to  how we can use Machine Learning methods
 to solve quantum mechanical many-body problems and how we can use such techniques in analysis of  experiments. And why this could be of interest. 
 
 The hope is that after this talk you have gotten the basic ideas to get you started. Peeping into URL:"https://github.com/mhjensenseminars/MachineLearningTalk", you'll find a Jupyter notebook, slides, codes etc that will allow you to reproduce the simulations discussed here, and perhaps run your own very first calculations.
 
 These slides are at URL:"https://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/UniMilano/html/UniMilano-reveal.html".
+
+_See also Artificial Intelligence and Machine Learning in Nuclear Physics_, Amber Boehnlein et al., Reviews Modern of Physics, submitted (on arXiv Monday)
 
 !eblock
 
@@ -19,23 +21,20 @@ These slides are at URL:"https://mhjensenseminars.github.io/MachineLearningTalk/
 !split
 ===== More material =====
 !bblock
-More in depth notebooks and lecture notes are at 
+More in depth notebooks, lecture notes and more at are at 
 o From Variational Monte Carlo to Neural Networks URL:"http://compphysics.github.io/ComputationalPhysics2/doc/LectureNotes/_build/html/intro.html"
 o "Nuclear Talent course on Machine Learning in Nuclear Experiment and Theory, June 22 - July 3, 2020":"https://nucleartalent.github.io/MachineLearningECT/doc/web/course.html"
-o "Machine Learning course":"https://compphysics.github.io/MachineLearning/doc/web/course.html"
-o "Two weeks ML course, with teaching material":"https://github.com/CompPhysics/MLErasmus"
-o Artificial Intelligence and Machine Learning in Nuclear Physics, Amber Boehnlein {\em et al.}, Reviews Modern of Physics, submitted (on arXiv Monday)
-
-
-Feel free to try them  out and please don't hesitate to ask if something is unclear.
-
+o Machine Learning course URL:"https://github.com/CompPhysics/MachineLearning"
+o Two weeks ML course, with teaching material URL:"https://github.com/CompPhysics/MLErasmus"
 
 !eblock
 
+Feel free to try them  out and please don't hesitate to ask if something is unclear.
 
 !split
 ===== Why? Basic motivation =====
 
+_Overarching view: dimension reduction_
 !bblock
 How can we avoid the dimensionality curse? Many possibilities
 o smarter basis functions
@@ -179,7 +178,7 @@ The large amount of degrees of freedom pertain to both theory and experiment in 
 * "Variational Monte Carlo calculations of $A\le 4$ nuclei with an artificial neural-network correlator ansatz by Adams et al.":"https://arxiv.org/abs/2007.14282"
 * "Unsupervised Learning for Identifying Events in Active Target Experiments by Solli et al.":"https://arxiv.org/abs/2006.05422"
 * "Report from the A.I. For Nuclear Physics  Workshop by Bedaque et al.":"https://arxiv.org/abs/2006.05422"
-* "Fast ML by Deiana et al.":"https://arxiv.org/abs/2110.13041"
+* "Applications and Techniques for Fast Machine Learning in Science":"https://arxiv.org/abs/2110.13041"
 * "Particle Data Group summary on ML methods":"https://pdg.lbl.gov/2021/reviews/rpp2021-rev-machine-learning.pdf"
 !eblock
 
@@ -215,7 +214,7 @@ FIGURE: [figures/dnn.png, width=500 frac=0.6]
 
 
 !split
-===== "Nuclear Physics Experiments Argon-46, Solli {\em et al.}":"https://www.sciencedirect.com/science/article/abs/pii/S0168900221004460?via%3Dihub" =====
+===== "Nuclear Physics Experiments Argon-46, Solli et al.":"https://www.sciencedirect.com/science/article/abs/pii/S0168900221004460?via%3Dihub" =====
 
 Two- and three-dimensional representations of two events from the
 Argon-46 experiment. Each row is one event in two projections,
@@ -827,7 +826,7 @@ FIGURE: [figures/energyconvergence.pdf, width=700 frac=0.9]
 * Extend to more fermions. How do we deal with the antisymmetry of the multi-fermion wave function?
   o Here we also used standard Hartree-Fock theory to define an optimal Slater determinant. Takes care of the antisymmetry. What about constructing an anti-symmetrized network function?
   o Use thereafter ML to determine the correlated part of the wafe function (including a standard Jastrow factor).
-* Can we use ML to find out which correlations are relevant and thereby diminish the dimensionality problem in say CC or SRG theories? 
+* Can we use ML to find out which correlations are relevant and thereby diminish the dimensionality problem in standard many-body  theories? 
 * And many more exciting research avenues
 !eblock
 
@@ -848,7 +847,7 @@ named such a wave function/network a *neural network quantum state* (NQS). In th
 spin lattice systems of the Ising model and Heisenberg model, with
 encouraging results. See also the recent work by "Adams et al.":"https://arxiv.org/abs/2007.14282".
 
-Thanks to Daniel Bazin (MSU), Jane Kim (MSU), Julie Butler (MSU), Dean Lee (MSU), Sean Liddick (MSU), Michelle Kuchera (Davidson College), Vilde Flugsrud (UiO), Even Nordhagen (UiO), Bendik Samseth (UiO) and Robert Solli (UiO) for many discussions and interpretations.
+Thanks to Daniel Bazin (MSU), Jane Kim (MSU), Julie Butler (MSU), Dean Lee (MSU), Sean Liddick (MSU), Michelle Kuchera (Davidson College), Vilde Flugsrud (UiO),Witek Nazarewicz (MSU),  Even Nordhagen (UiO), Bendik Samseth (UiO) and Robert Solli (UiO) for many discussions and interpretations.
 !eblock
 
 
