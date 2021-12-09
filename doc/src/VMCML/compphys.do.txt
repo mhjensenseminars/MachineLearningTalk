@@ -1,0 +1,197 @@
+TITLE: Nye kurs of nytt studieprogram
+AUTHOR: Morten Hjorth-Jensen {copyright, 1999-present|CC BY-NC} at Department of Physics and Astronomy and FRIB Laboratory, Michigan State University, USA & Department of Physics and Center for Computing in Science Education, University of Oslo, Norway
+DATE: Today
+
+
+!split
+===== Kurs, to nye og et nedlagt =====
+
+!bblock  "FYS4480/9480 Quantum mechanics for many-particle systems":"https://github.com/mhjensen/CPMLS/blob/gh-pages/doc/src/Courses/fys4480.md"
+
+Siden vi la det ned (2018) har vi hatt ca 10 studenter som har tatt
+dette som spesialpensum. Kurset er sentralt for studenter som jobber
+med kvantemekaniske problemstillinger i atom og molekylfysikk,
+kondenserte fasers fysikk, kjernefysikk og kvantekjemi (kjemisk
+institutt). Master og PhD variant.  KJM5560 har ikke vært en god nok
+erstatning for fysikkstudenter og undervises også sporadisk.
+
+_Forslag: kurset gjenopprettes som et regulært kurs fom h-2022_
+
+!eblock
+
+
+!bblock "FYS4446/9446 Quantum computing and quantum machine learning":"https://github.com/mhjensen/CPMLS/blob/gh-pages/doc/src/Courses/fys4446.md"
+
+Nytt kurs. Vi har flere studenter som følger dette temaet som
+spesialpensum, siden 2020 har vi 7-8 studenter som jobber med
+tematikken.  Dette er også tenkt som et samarbeid med OsloMet hvor
+tanken er å bruke deres to kvantedatamaskiner i hands-on
+eksperimenteringer.  Ukentlig undervisning fom h-2021.
+
+_Forslag: kurset opprettes som et sjølstudiumskurs med ukentlige samlinger fom v-2023_
+
+!eblock
+
+
+!bblock "FYS4447/9447 Advanced machine learning and data analysis for the physical sciences":"https://github.com/mhjensen/CPMLS/blob/gh-pages/doc/src/Courses/fys4447.md"
+
+Siden 2019 har vi hatt ca 20 studenter som har hatt spesialpensum i
+dette temaet. Strategisk viktig emne og vil kunne være et sentralt
+emne utover fys-stk3155/4155 i Maskinlæring for master og PhD
+studenter i fysiske fag. _Åtte studenter som har dette som spesialpensum v-2022_.
+Undervises ukentlig fom h-2021. Vil være sentralt for
+CompSci PhD-programmet og fysisk institutt. 
+
+_Forslag: kurset opprettes som et sjølstudiums kurs med ukentlige samlinger fom v-2023_
+
+!eblock
+
+
+
+
+
+!split
+===== "Nytt Bachelor program":"https://github.com/mhjensen/CPMLS/blob/gh-pages/doc/src/Courses/CompPhysicsQT.pdf" =====
+
+Overordna: FI må tenke igjennom hvordan vi vil posisjonere oss fremover, særlig med tanke på
+
+o utviklinga som skjer i quantum information systems og quantum technologies QIS/QT, og
+o kunstig intelligens og maskinlæring (AI/ML)
+
+Her meiner vi  et nytt bachelorprogram er sentralt.
+
+Om vi ikke lager et slikt program (med liknende profil), vil andre gjøre det. 
+
+
+!split
+===== Eksempler på forskning med AI/ML og QIS/QT i fysikk =====
+
+o "Artificial Intelligence and Machine Learning in Nuclear Physics":"https://arxiv.org/abs/2112.02309"
+o "Applications and Techniques for Fast Machine Learning in Science":"https://arxiv.org/abs/2110.13041"
+o "Opportunities in Machine Learning for Particle Accelerators":"https://arxiv.org/abs/1811.03172"
+o "From DFT to machine learning: recent approaches to materials science;a review":"https://doi.org/10.1088/2515-7639/ab084b"
+o "Sofia Vallecorsa, CERN, quantum machine learning and AI/ML":"https://www.youtube.com/watch?v=7WPKv1Q57os&list=PLUPPQ1TVXK7uHwCTccWMBud-zLyvAf8A2&index=5&ab_channel=ECTstar".
+
+
+!split
+===== Kommentarer til innspillet =====
+
+!bblock Fra Heidi Sandaker, HEP
+
+Jeg syns dette er et kjempebra tiltak og vi er veldig interessert i kvantedeteksjon og ML!
+
+Om dette bør være et eget Bachelor studie, kanskje tiden er moden for det nå?
+
+Jeg skulle gjerne hatt disse fagene inn for alle fysikk studenter også, selvfølgelig får man mer dybde med et eget program. 
+
+Jeg ser egenglig ingen hindringer … helt klart bør vi få inn fag på disse områdene, kanskje en større diskusjon om hvor vi vil med fysikkprogrammet bør på bordet. 
+
+Vennlig hilsen, 
+
+Heidi 
+
+!eblock
+
+
+!split
+===== Flere kommentarer =====
+
+!bblock Fra Anders Kvellestad, HEP/Teori
+
+Jeg tror den mest fruktbare kommentaren jeg kan gi er et spørsmål som kanskje kan hjelpe dere å gjøre identiteten til den nye studieretningen enda tydeligere: Dersom jeg ser for meg "meg selv" som fersk student i dag, så ville jeg vært en ~20-åring som 
+
+o  er fascinert av "fysikk for fysikkens skyld", naturen og "de store spørsmålene", ikke teknologiutvikling (enn hvor viktig det er!);
+
+o liker å jobbe med datamaskiner; og
+
+o har hørt mye om maskinlæring og kunstig intelligens og gjerne vil lære mer om dette.
+
+(Og jeg tror en slik studentprofil kan være ganske vanlig.)
+
+!eblock
+
+!split
+===== Inputs from OsloMet =====
+
+!bblock Fra Andre Brodtkorb, OsloMet
+
+Hi Morten,
+ 
+I briefly skimmed through the bachelor program that you sent, and this is definitely relevant to collaborate on.
+ 
+As Gustavo mentioned, _I’m coordinating and working on a new bachelor program here at OsloMet_. I therefore had a talk with Knut Mørken earlier this year about ways of collaborating in that context. I think it would be great to follow up on this for both of us (OsloMet and UiO). 
+ 
+-André:)
+
+!eblock
+
+!split
+=====  Mulige løp og nytt "Bachelor program":"https://github.com/mhjensen/CPMLS/blob/gh-pages/doc/src/Courses/CompPhysicsQT.pdf" =====
+
+o Build up a series of courses in QIS, inspiration "QuSTEAM (Quantum Information Science, Technology, Engineering, Arts and Mathematics) initiative from USA":"https://qusteam.org/"
+o "Bachelor program in Computational Science and Data Science":"https://github.com/mhjensen/CPMLS/blob/gh-pages/doc/src/Courses/CSDSProgramsUiO.pdf"
+o "We should consider a  more dedicated one on Computational Physics, AI/ML and Quantum Technologies":"https://github.com/mhjensen/CPMLS/blob/gh-pages/doc/src/Courses/CompPhysicsQT.pdf"
+  o study direction/option in _quantum technologies_
+  o study direction/option in _Artificial Intelligence and Machine Learning_
+o Master of Science program in Computational and Data Science
+  o UiO has already MSc programs in CS and DS. CS program dominated by AI/ML projects
+o PhD program in CS (CompSci) and DS
+  o with directions in _quantum technologies_
+  o with directions in _Artificial Intelligence and Machine Learning_
+
+
+Coordination across university boundaries?  Collaboration with OsloMet and Simula research lab, SINTEF and UMB. IBM, Accenture, DNB and many other companies in the private sector are very interested.
+
+!split
+===== QuSTEAM Model =====
+
+FIGURE: [figures/qusteam.png, width=800 frac=1.0]
+
+
+!split
+===== Courses =====
+
+The "Center for Computing in Science Education at UiO":"https://www.mn.uio.no/ccse/english/" should be the entity which provides the pedagogical resourses. It has research experience
+on how do we design curricula so that students develop deep knowledge that is connected and useful.
+
+!bblock Topics  in a Bachelor of Science/Master of Science
+o Information Systems 
+o From Classical Information theory to Quantum Information theory
+o Classical vs. Quantum Logic
+o Classical and Quantum Laboratory 
+o Discipline-Based Quantum Mechanics 
+o Quantum Software
+o Quantum Hardware
+o more
+!eblock
+
+!split
+===== Important Issues to think of =====
+o Lots of conceptual learning: superposition, entanglement, QIS applications, AI, machine learning
+o Coding is indispensable. That is why this should be a part of a CS/DS program/Computational Physics
+o Teamwork, project management, and communication are important and highly valued
+o Engagement with industry: guest lectures, virtual tours, co-ops, and/or internships.
+o Mentorship should begin the moment students enroll.
+
+!split
+===== Observations =====
+
+o Students do not really know what QIS is. This may be important when advertising
+o There is conflation of “Quantum Information Science” with “Quantum computing”.
+o Students perceive that a graduate degree is necessary to work in QIS. A BSc will help.
+o Students perceive AI/ML as central topics in modern science
+
+!split
+===== Future Needs/Problems =====
+
+o There are already (USA) great needs for specialized people (Ph. D. s, postdocs), but also needs of  people with a broad overview of what is possible in QIS and AI/ML.
+o There are not enough potential employees in QIS and AI/ML. It is a supply gap, not a skills gap.
+o A BSc with specialization  is a good place to start
+o It is tremendously important to get everyone speaking the same language. Facility with the vernacular of quantum mechanics and AI/ML is a big plus.
+
+
+
+
+
+
+

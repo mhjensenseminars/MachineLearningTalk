@@ -1,0 +1,556 @@
+<!--
+HTML file automatically generated from DocOnce source
+(https://github.com/doconce/doconce/)
+doconce format html compphys-reveal.html compphys-reveal reveal --html_slide_theme=beige
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="DocOnce: https://github.com/doconce/doconce/" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Nye kurs of nytt studieprogram">
+<title>Nye kurs of nytt studieprogram</title>
+
+<!-- reveal.js: https://lab.hakim.se/reveal-js/ -->
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+<link rel="stylesheet" href="reveal.js/css/reveal.css">
+<link rel="stylesheet" href="reveal.js/css/theme/beige.css" id="theme">
+<!--
+<link rel="stylesheet" href="reveal.js/css/reveal.css">
+<link rel="stylesheet" href="reveal.js/css/theme/beige.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/beigesmall.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/solarized.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/serif.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/night.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/moon.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/simple.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/sky.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/darkgray.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/default.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/cbc.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/simula.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/black.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/white.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/league.css" id="theme">
+-->
+
+<!-- For syntax highlighting -->
+<link rel="stylesheet" href="reveal.js/lib/css/zenburn.css">
+
+<!-- Printing and PDF exports -->
+<script>
+var link = document.createElement( 'link' );
+link.rel = 'stylesheet';
+link.type = 'text/css';
+link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+document.getElementsByTagName( 'head' )[0].appendChild( link );
+</script>
+
+<style type="text/css">
+hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+p.caption { width: 80%; font-size: 60%; font-style: italic; text-align: left; }
+hr.figure { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+.reveal .alert-text-small   { font-size: 80%;  }
+.reveal .alert-text-large   { font-size: 130%; }
+.reveal .alert-text-normal  { font-size: 90%;  }
+.reveal .alert {
+  padding:8px 35px 8px 14px; margin-bottom:18px;
+  text-shadow:0 1px 0 rgba(255,255,255,0.5);
+  border:5px solid #bababa;
+  -webkit-border-radius: 14px; -moz-border-radius: 14px;
+  border-radius:14px;
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  background-size: 38px;
+  padding-left: 30px; /* 55px; if icon */
+}
+.reveal .alert-block {padding-top:14px; padding-bottom:14px}
+.reveal .alert-block > p, .alert-block > ul {margin-bottom:1em}
+/*.reveal .alert li {margin-top: 1em}*/
+.reveal .alert-block p+p {margin-top:5px}
+/*.reveal .alert-notice { background-image: url(https://hplgit.github.io/doconce/bundled/html_images/small_gray_notice.png); }
+.reveal .alert-summary  { background-image:url(https://hplgit.github.io/doconce/bundled/html_images/small_gray_summary.png); }
+.reveal .alert-warning { background-image: url(https://hplgit.github.io/doconce/bundled/html_images/small_gray_warning.png); }
+.reveal .alert-question {background-image:url(https://hplgit.github.io/doconce/bundled/html_images/small_gray_question.png); } */
+/* Override reveal.js table border */
+.reveal table td {
+  border: 0;
+}
+
+<style type="text/css">
+/* Override h1, h2, ... styles */
+h1 { font-size: 2.8em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.4em; }
+h4 { font-size: 1.3em; }
+h1, h2, h3, h4 { font-weight: bold; line-height: 1.2; }
+body { overflow: auto; } /* vertical scrolling */
+hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+p.caption { width: 80%; font-size: 60%; font-style: italic; text-align: left; }
+hr.figure { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+.slide .alert-text-small   { font-size: 80%;  }
+.slide .alert-text-large   { font-size: 130%; }
+.slide .alert-text-normal  { font-size: 90%;  }
+.slide .alert {
+  padding:8px 35px 8px 14px; margin-bottom:18px;
+  text-shadow:0 1px 0 rgba(255,255,255,0.5);
+  border:5px solid #bababa;
+    -webkit-border-radius:14px; -moz-border-radius:14px;
+  border-radius:14px
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  background-size: 38px;
+  padding-left: 30px; /* 55px; if icon */
+}
+.slide .alert-block {padding-top:14px; padding-bottom:14px}
+.slide .alert-block > p, .alert-block > ul {margin-bottom:0}
+/*.slide .alert li {margin-top: 1em}*/
+.deck .alert-block p+p {margin-top:5px}
+/*.slide .alert-notice { background-image: url(https://hplgit.github.io/doconce/
+bundled/html_images//small_gray_notice.png); }
+.slide .alert-summary  { background-image:url(https://hplgit.github.io/doconce/
+bundled/html_images//small_gray_summary.png); }
+.slide .alert-warning { background-image: url(https://hplgit.github.io/doconce/
+bundled/html_images//small_gray_warning.png); }
+.slide .alert-question {background-image:url(https://hplgit.github.io/doconce/
+bundled/html_images/small_gray_question.png); } */
+.dotable table, .dotable th, .dotable tr, .dotable tr td {
+  border: 2px solid black;
+  border-collapse: collapse;
+  padding: 2px;
+}
+</style>
+
+
+<!-- Styles for table layout of slides -->
+<style type="text/css">
+td.padding {
+  padding-top:20px;
+  padding-bottom:20px;
+  padding-right:50px;
+  padding-left:50px;
+}
+</style>
+
+</head>
+
+
+<body>
+<div class="reveal">
+<div class="slides">
+
+
+
+
+<section>
+<!-- ------------------- main content ---------------------- -->
+<center>
+<h1 style="text-align: center;">Nye kurs of nytt studieprogram</h1>
+</center>  <!-- document title -->
+
+<!-- author(s): Morten Hjorth-Jensen -->
+<center>
+<b>Morten Hjorth-Jensen</b> [1, 2]
+</center>
+<!-- institution(s) -->
+<center>
+[1] <b>Department of Physics and Astronomy and FRIB Laboratory, Michigan State University, USA</b>
+</center>
+<center>
+[2] <b>Department of Physics and Center for Computing in Science Education, University of Oslo, Norway</b>
+</center>
+<br>
+<center>
+<h4>Dec 9, 2021</h4>
+</center> <!-- date -->
+<br>
+
+
+<center style="font-size:80%">
+<!-- copyright --> &copy; 1999-2021, Morten Hjorth-Jensen. Released under CC Attribution-NonCommercial 4.0 license
+</center>
+</section>
+
+<section>
+<h2 id="kurs-to-nye-og-et-nedlagt">Kurs, to nye og et nedlagt </h2>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b><a href="https://github.com/mhjensen/CPMLS/blob/gh-pages/doc/src/Courses/fys4480.md" target="_blank">FYS4480/9480 Quantum mechanics for many-particle systems</a></b>
+<p>
+
+<p>Siden vi la det ned (2018) har vi hatt ca 10 studenter som har tatt
+dette som spesialpensum. Kurset er sentralt for studenter som jobber
+med kvantemekaniske problemstillinger i atom og molekylfysikk,
+kondenserte fasers fysikk, kjernefysikk og kvantekjemi (kjemisk
+institutt). Master og PhD variant.  KJM5560 har ikke v&#230;rt en god nok
+erstatning for fysikkstudenter og undervises ogs&#229; sporadisk.
+</p>
+
+<b>Forslag: kurset gjenopprettes som et regul&#230;rt kurs fom h-2022</b>
+</div>
+
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b><a href="https://github.com/mhjensen/CPMLS/blob/gh-pages/doc/src/Courses/fys4446.md" target="_blank">FYS4446/9446 Quantum computing and quantum machine learning</a></b>
+<p>
+
+<p>Nytt kurs. Vi har flere studenter som f&#248;lger dette temaet som
+spesialpensum, siden 2020 har vi 7-8 studenter som jobber med
+tematikken.  Dette er ogs&#229; tenkt som et samarbeid med OsloMet hvor
+tanken er &#229; bruke deres to kvantedatamaskiner i hands-on
+eksperimenteringer.  Ukentlig undervisning fom h-2021.
+</p>
+
+<b>Forslag: kurset opprettes som et sj&#248;lstudiumskurs med ukentlige samlinger fom v-2023</b>
+</div>
+
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b><a href="https://github.com/mhjensen/CPMLS/blob/gh-pages/doc/src/Courses/fys4447.md" target="_blank">FYS4447/9447 Advanced machine learning and data analysis for the physical sciences</a></b>
+<p>
+
+<p>Siden 2019 har vi hatt ca 20 studenter som har hatt spesialpensum i
+dette temaet. Strategisk viktig emne og vil kunne v&#230;re et sentralt
+emne utover fys-stk3155/4155 i Maskinl&#230;ring for master og PhD
+studenter i fysiske fag. <b>&#197;tte studenter som har dette som spesialpensum v-2022</b>.
+Undervises ukentlig fom h-2021. Vil v&#230;re sentralt for
+CompSci PhD-programmet og fysisk institutt. 
+</p>
+
+<b>Forslag: kurset opprettes som et sj&#248;lstudiums kurs med ukentlige samlinger fom v-2023</b>
+</div>
+</section>
+
+<section>
+<h2 id="nytt-bachelor-program-https-github-com-mhjensen-cpmls-blob-gh-pages-doc-src-courses-compphysicsqt-pdf"><a href="https://github.com/mhjensen/CPMLS/blob/gh-pages/doc/src/Courses/CompPhysicsQT.pdf" target="_blank">Nytt Bachelor program</a> </h2>
+
+<p>Overordna: FI m&#229; tenke igjennom hvordan vi vil posisjonere oss fremover, s&#230;rlig med tanke p&#229;</p>
+
+<ol>
+<p><li> utviklinga som skjer i quantum information systems og quantum technologies QIS/QT, og</li>
+<p><li> kunstig intelligens og maskinl&#230;ring (AI/ML)</li>
+</ol>
+<p>
+<p>Her meiner vi  et nytt bachelorprogram er sentralt.</p>
+
+<p>Om vi ikke lager et slikt program (med liknende profil), vil andre gj&#248;re det. </p>
+</section>
+
+<section>
+<h2 id="eksempler-p&#229;-forskning-med-ai-ml-og-qis-qt-i-fysikk">Eksempler p&#229; forskning med AI/ML og QIS/QT i fysikk </h2>
+
+<ol>
+<p><li> <a href="https://arxiv.org/abs/2112.02309" target="_blank">Artificial Intelligence and Machine Learning in Nuclear Physics</a></li>
+<p><li> <a href="https://arxiv.org/abs/2110.13041" target="_blank">Applications and Techniques for Fast Machine Learning in Science</a></li>
+<p><li> <a href="https://arxiv.org/abs/1811.03172" target="_blank">Opportunities in Machine Learning for Particle Accelerators</a></li>
+<p><li> <a href="https://doi.org/10.1088/2515-7639/ab084b" target="_blank">From DFT to machine learning: recent approaches to materials science;a review</a></li>
+<p><li> <a href="https://www.youtube.com/watch?v=7WPKv1Q57os&list=PLUPPQ1TVXK7uHwCTccWMBud-zLyvAf8A2&index=5&ab_channel=ECTstar" target="_blank">Sofia Vallecorsa, CERN, quantum machine learning and AI/ML</a>.</li>
+</ol>
+</section>
+
+<section>
+<h2 id="kommentarer-til-innspillet">Kommentarer til innspillet </h2>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b>Fra Heidi Sandaker, HEP</b>
+<p>
+
+<p>Jeg syns dette er et kjempebra tiltak og vi er veldig interessert i kvantedeteksjon og ML!</p>
+
+<p>Om dette b&#248;r v&#230;re et eget Bachelor studie, kanskje tiden er moden for det n&#229;?</p>
+
+<p>Jeg skulle gjerne hatt disse fagene inn for alle fysikk studenter ogs&#229;, selvf&#248;lgelig f&#229;r man mer dybde med et eget program. </p>
+
+<p>Jeg ser egenglig ingen hindringer &#8230; helt klart b&#248;r vi f&#229; inn fag p&#229; disse omr&#229;dene, kanskje en st&#248;rre diskusjon om hvor vi vil med fysikkprogrammet b&#248;r p&#229; bordet. </p>
+
+<p>Vennlig hilsen, </p>
+
+<p>Heidi </p>
+</div>
+</section>
+
+<section>
+<h2 id="flere-kommentarer">Flere kommentarer </h2>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b>Fra Anders Kvellestad, HEP/Teori</b>
+<p>
+
+<p>Jeg tror den mest fruktbare kommentaren jeg kan gi er et sp&#248;rsm&#229;l som kanskje kan hjelpe dere &#229; gj&#248;re identiteten til den nye studieretningen enda tydeligere: Dersom jeg ser for meg "meg selv" som fersk student i dag, s&#229; ville jeg v&#230;rt en ~20-&#229;ring som </p>
+
+<ol>
+<p><li> er fascinert av "fysikk for fysikkens skyld", naturen og "de store sp&#248;rsm&#229;lene", ikke teknologiutvikling (enn hvor viktig det er!);</li>
+</ol>
+<p>
+<p><li> liker &#229; jobbe med datamaskiner; og
+</li>
+<p><li> har h&#248;rt mye om maskinl&#230;ring og kunstig intelligens og gjerne vil l&#230;re mer om dette.
+
+<p>(Og jeg tror en slik studentprofil kan v&#230;re ganske vanlig.)</p>
+</div>
+</section>
+
+<section>
+<h2 id="inputs-from-oslomet">Inputs from OsloMet </h2>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b>Fra Andre Brodtkorb, OsloMet</b>
+<p>
+
+<p>Hi Morten,</p>
+
+<p>I briefly skimmed through the bachelor program that you sent, and this is definitely relevant to collaborate on.</p>
+
+<p>As Gustavo mentioned, <b>I&#8217;m coordinating and working on a new bachelor program here at OsloMet</b>. I therefore had a talk with Knut M&#248;rken earlier this year about ways of collaborating in that context. I think it would be great to follow up on this for both of us (OsloMet and UiO). </p>
+
+<p>-Andr&#233;:)</p>
+</div>
+</section>
+
+<section>
+<h2 id="mulige-l&#248;p-og-nytt-bachelor-program-https-github-com-mhjensen-cpmls-blob-gh-pages-doc-src-courses-compphysicsqt-pdf">Mulige l&#248;p og nytt <a href="https://github.com/mhjensen/CPMLS/blob/gh-pages/doc/src/Courses/CompPhysicsQT.pdf" target="_blank">Bachelor program</a> </h2>
+</li>
+<ol>
+<p><li> Build up a series of courses in QIS, inspiration <a href="https://qusteam.org/" target="_blank">QuSTEAM (Quantum Information Science, Technology, Engineering, Arts and Mathematics) initiative from USA</a></li>
+<p><li> <a href="https://github.com/mhjensen/CPMLS/blob/gh-pages/doc/src/Courses/CSDSProgramsUiO.pdf" target="_blank">Bachelor program in Computational Science and Data Science</a></li>
+<p><li> <a href="https://github.com/mhjensen/CPMLS/blob/gh-pages/doc/src/Courses/CompPhysicsQT.pdf" target="_blank">We should consider a  more dedicated one on Computational Physics, AI/ML and Quantum Technologies</a>
+<ol type="a"></li>
+ <p><li> study direction/option in <b>quantum technologies</b></li>
+ <p><li> study direction/option in <b>Artificial Intelligence and Machine Learning</b></li>
+</ol>
+<p>
+<p><li> Master of Science program in Computational and Data Science
+<ol type="a"></li>
+ <p><li> UiO has already MSc programs in CS and DS. CS program dominated by AI/ML projects</li>
+</ol>
+<p>
+<p><li> PhD program in CS (CompSci) and DS
+<ol type="a"></li>
+ <p><li> with directions in <b>quantum technologies</b></li>
+ <p><li> with directions in <b>Artificial Intelligence and Machine Learning</b></li>
+</ol>
+<p>
+</ol>
+<p>
+<p>Coordination across university boundaries?  Collaboration with OsloMet and Simula research lab, SINTEF and UMB. IBM, Accenture, DNB and many other companies in the private sector are very interested.</p>
+</section>
+
+<section>
+<h2 id="qusteam-model">QuSTEAM Model </h2>
+
+<br/><br/>
+<center>
+<p><img src="figures/qusteam.png" width="800" align="bottom"></p>
+</center>
+<br/><br/>
+</section>
+
+<section>
+<h2 id="courses">Courses </h2>
+
+<p>The <a href="https://www.mn.uio.no/ccse/english/" target="_blank">Center for Computing in Science Education at UiO</a> should be the entity which provides the pedagogical resourses. It has research experience
+on how do we design curricula so that students develop deep knowledge that is connected and useful.
+</p>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b>Topics  in a Bachelor of Science/Master of Science</b>
+<p>
+<ol>
+<p><li> Information Systems</li> 
+<p><li> From Classical Information theory to Quantum Information theory</li>
+<p><li> Classical vs. Quantum Logic</li>
+<p><li> Classical and Quantum Laboratory</li> 
+<p><li> Discipline-Based Quantum Mechanics</li> 
+<p><li> Quantum Software</li>
+<p><li> Quantum Hardware</li>
+<p><li> more</li>
+</ol>
+</div>
+</section>
+
+<section>
+<h2 id="important-issues-to-think-of">Important Issues to think of </h2>
+<ol>
+<p><li> Lots of conceptual learning: superposition, entanglement, QIS applications, AI, machine learning</li>
+<p><li> Coding is indispensable. That is why this should be a part of a CS/DS program/Computational Physics</li>
+<p><li> Teamwork, project management, and communication are important and highly valued</li>
+<p><li> Engagement with industry: guest lectures, virtual tours, co-ops, and/or internships.</li>
+<p><li> Mentorship should begin the moment students enroll.</li>
+</ol>
+</section>
+
+<section>
+<h2 id="observations">Observations </h2>
+
+<ol>
+<p><li> Students do not really know what QIS is. This may be important when advertising</li>
+<p><li> There is conflation of &#8220;Quantum Information Science&#8221; with &#8220;Quantum computing&#8221;.</li>
+<p><li> Students perceive that a graduate degree is necessary to work in QIS. A BSc will help.</li>
+<p><li> Students perceive AI/ML as central topics in modern science</li>
+</ol>
+</section>
+
+<section>
+<h2 id="future-needs-problems">Future Needs/Problems </h2>
+
+<ol>
+<p><li> There are already (USA) great needs for specialized people (Ph. D. s, postdocs), but also needs of  people with a broad overview of what is possible in QIS and AI/ML.</li>
+<p><li> There are not enough potential employees in QIS and AI/ML. It is a supply gap, not a skills gap.</li>
+<p><li> A BSc with specialization  is a good place to start</li>
+<p><li> It is tremendously important to get everyone speaking the same language. Facility with the vernacular of quantum mechanics and AI/ML is a big plus.</li>
+</ol>
+</section>
+
+
+
+</div> <!-- class="slides" -->
+</div> <!-- class="reveal" -->
+
+<script src="reveal.js/lib/js/head.min.js"></script>
+<script src="reveal.js/js/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+  // Display navigation controls in the bottom right corner
+  controls: true,
+
+  // Display progress bar (below the horiz. slider)
+  progress: true,
+
+  // Display the page number of the current slide
+  slideNumber: true,
+
+  // Push each slide change to the browser history
+  history: false,
+
+  // Enable keyboard shortcuts for navigation
+  keyboard: true,
+
+  // Enable the slide overview mode
+  overview: true,
+
+  // Vertical centering of slides
+  //center: true,
+  center: false,
+
+  // Enables touch navigation on devices with touch input
+  touch: true,
+
+  // Loop the presentation
+  loop: false,
+
+  // Change the presentation direction to be RTL
+  rtl: false,
+
+  // Turns fragments on and off globally
+  fragments: true,
+
+  // Flags if the presentation is running in an embedded mode,
+  // i.e. contained within a limited portion of the screen
+  embedded: false,
+
+  // Number of milliseconds between automatically proceeding to the
+  // next slide, disabled when set to 0, this value can be overwritten
+  // by using a data-autoslide attribute on your slides
+  autoSlide: 0,
+
+  // Stop auto-sliding after user input
+  autoSlideStoppable: true,
+
+  // Enable slide navigation via mouse wheel
+  mouseWheel: false,
+
+  // Hides the address bar on mobile devices
+  hideAddressBar: true,
+
+  // Opens links in an iframe preview overlay
+  previewLinks: false,
+
+  // Transition style
+  transition: 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+  // Transition speed
+  transitionSpeed: 'default', // default/fast/slow
+
+  // Transition style for full page slide backgrounds
+  backgroundTransition: 'default', // default/none/slide/concave/convex/zoom
+
+  // Number of slides away from the current that are visible
+  viewDistance: 3,
+
+  // Parallax background image
+    //parallaxBackgroundImage: '', // e.g. "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'"
+
+  // Parallax background size
+  //parallaxBackgroundSize: '' // CSS syntax, e.g. "2100px 900px"
+
+  theme: Reveal.getQueryHash().theme, // available themes are in reveal.js/css/theme
+    transition: Reveal.getQueryHash().transition || 'none', // default/cube/page/concave/zoom/linear/none
+
+});
+
+Reveal.initialize({
+  dependencies: [
+      // Cross-browser shim that fully implements classList - https://github.com/eligrey/classList.js/
+      { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+
+      // Interpret Markdown in <section> elements
+      { src: 'reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: 'reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+
+      // Syntax highlight for <code> elements
+      { src: 'reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+
+      // Zoom in and out with Alt+click
+      { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+
+      // Speaker notes
+      { src: 'reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+
+      // Remote control your reveal.js presentation using a touch device
+      //{ src: 'reveal.js/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } },
+
+      // MathJax
+      //{ src: 'reveal.js/plugin/math/math.js', async: true }
+  ]
+});
+
+Reveal.initialize({
+
+  // The "normal" size of the presentation, aspect ratio will be preserved
+  // when the presentation is scaled to fit different resolutions. Can be
+  // specified using percentage units.
+  width: 1170,  // original: 960,
+  height: 700,
+
+  // Factor of the display size that should remain empty around the content
+  margin: 0.1,
+
+  // Bounds for smallest/largest possible scale to apply to content
+  minScale: 0.2,
+  maxScale: 1.0
+
+});
+</script>
+
+<!-- begin footer logo
+<div style="position: absolute; bottom: 0px; left: 0; margin-left: 0px">
+<img src="somelogo.png">
+</div>
+   end footer logo -->
+
+
+
+
+</body>
+</html>
