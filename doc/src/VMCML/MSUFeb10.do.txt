@@ -332,6 +332,9 @@ The above function is replaced by a four-layer Neural Network.
 FIGURE: [figures/energyconvergence.pdf, width=700 frac=0.9]
 
 
+add Gneich results
+
+
 !split
 ===== Extrapolations and model interpretability  =====
 
@@ -344,8 +347,12 @@ al. Information 10, 150 (2019); on text classification algorithms
 !split
 ===== Bayesian statistics =====
 
-Add formula
+Add formula and discussion
 
+!split
+===== Folding and unfolding of detector response =====
+
+Run Jupyter-notebook
 
 !split
 ===== Quantified limits of the nuclear landscape =====
