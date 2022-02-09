@@ -18,7 +18,7 @@ These slides are at URL:"https://mhjensenseminars.github.io/MachineLearningTalk/
 
 * _See also list of existing/ongoing ML projects at FRIB at URL:"https://mhjensen.github.io/MLFRIB/MLFRIB.pdf"_ 
 
-* _And the BAND collaboration at URL:"https://bandframework.github.io/"
+* _And the BAND collaboration at URL:"https://bandframework.github.io/"_
 
 !eblock
 
