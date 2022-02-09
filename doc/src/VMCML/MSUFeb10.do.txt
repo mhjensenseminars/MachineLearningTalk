@@ -251,7 +251,7 @@ We seek to minimize the function $\mathcal{C} (\mathbf{x}, f(\mathbf{\alpha}))$ 
 
 
 !split
-===== "Unsupervised learning in nuclear physics, Argon-46 by Solli, Bazin, Kuchera, MHJ, Schwartz.":"https://www.sciencedirect.com/science/article/abs/pii/S0168900221004460?via%3Dihub" =====
+===== "Unsupervised learning in nuclear physics, Argon-46 by Solli, Bazin, Kuchera, MHJ, Strauss.":"https://www.sciencedirect.com/science/article/abs/pii/S0168900221004460?via%3Dihub" =====
 
 Two- and three-dimensional representations of two events from the
 Argon-46 experiment. Each row is one event in two projections,
