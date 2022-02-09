@@ -144,6 +144,10 @@ div.toc p,a {
                2,
                None,
                'extrapolations-and-model-interpretability'),
+              ('Physics based statistical learning and data analysis',
+               2,
+               None,
+               'physics-based-statistical-learning-and-data-analysis'),
               ("Statistics and Bayes' theorem",
                2,
                None,
@@ -403,6 +407,7 @@ Some of the most common tasks are:
 <li> Ensemble Methods, Random forests, bagging and voting methods, gradient boosting approaches</li> 
 <li> Linear and logistic regression, Kernel methods, support vector machines and more</li>
 <li> Reinforcement Learning</li> 
+<li> and more</li>
 </ol>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 <h2 id="examples-of-machine-learning-methods-and-applications-in-nuclear-physics">Examples of Machine Learning methods and applications in nuclear physics </h2>
@@ -414,9 +419,7 @@ Some of the most common tasks are:
 <li> <b>Machine  learning  for  data  mining:</b> Oftentimes,  it  is necessary to be able to accurately calculate observables that have not been measured, to supplement the existing databases.</li>
 <li> <b>Nuclear  density  functional   theory:</b> Energy density functional calibration   involving Bayesian optimization  and NN  ML. A promising avenue for ML applications is the emulation of DFT results.</li>
 <li> <b>Nuclear properties with ML:</b> Improving predictive power of nuclear models by emulating model residuals.</li>
-</ul>
-<p><b>Effective field theory and A-body systems:</b> Truncation errors and low-energy coupling constant calibration, nucleon-nucleon scattering calculations, variational calculations with ANN for light nuclei, NN extrapolation of nuclear structure observables</p>
-<ul>
+<li> <b>Effective field theory and A-body systems:</b> Truncation errors and low-energy coupling constant calibration, nucleon-nucleon scattering calculations, variational calculations with ANN for light nuclei, NN extrapolation of nuclear structure observables</li>
 <li> <b>Nuclear  shell  model  UQ:</b> ML methods  have  been  used  to  provide  UQ  of  configuration  interaction  calculations.</li>
 </ul>
 </div>
@@ -447,7 +450,6 @@ Some of the most common tasks are:
 <ul>
 <li> Reconstruction of particle trajectories or classification of events are typical examples where ML methods are being used. However, since these data can often be extremely noisy, the precision necessary for discovery in physics requires algorithmic improvements. Research along such directions, interfacing nuclear physics with AI/ML is expected to play a significant role in physics discoveries related to new facilities.  The treatment of corrupted data in imaging and image processing is also a relevant topic.</li> 
 <li> Design of detectors represents an important area of applications for ML/AI methods in nuclear physics.</li>
-<li> Many of the above classification problems have also have direct application in theoretical nuclear physics (including Lattice QCD calculations).</li>
 </ul>
 </div>
 
@@ -460,7 +462,7 @@ Some of the most common tasks are:
 <p>
 <ul>
 <li> An important application of AI/ML methods is to improve the estimation of bias or uncertainty due to the introduction of or lack of physical constraints in various theoretical models.</li>
-<li> In theory, we expect to use AI/ML algorithms and methods to improve our knowledged about  correlations of physical model parameters in data for quantum many-body systems. Deep learning methods like Boltzmann machines and various types of Recurrent Neural networks show great promise in circumventing the exploding dimensionalities encountered in quantum mechanical many-body studies.</li> 
+<li> In theory, we expect to use AI/ML algorithms and methods to improve our knowledged abou  correlations of physical model parameters in data for quantum many-body systems. Deep learning methods show great promise in circumventing the exploding dimensionalities encountered in quantum mechanical many-body studies.</li> 
 <li> Merging a frequentist approach (the standard path in ML theory) with a Bayesian approach, has the potential to infer better probabilitity distributions and error estimates. As an example, methods for fast Monte-Carlo- based Bayesian computation of nuclear density functionals show great promise in providing a better understanding</li> 
 <li> Machine Learning and Quantum Computing is a very interesting avenue to explore. See for example talk of <a href="https://www.youtube.com/watch?v=7WPKv1Q57os&list=PLUPPQ1TVXK7uHwCTccWMBud-zLyvAf8A2&index=5&ab_channel=ECTstar" target="_blank">Sofia Vallecorsa</a>.</li>
 </ul>
@@ -475,12 +477,8 @@ Some of the most common tasks are:
 <ul>
 <li> <a href="https://arxiv.org/abs/1803.08823" target="_blank">Mehta et al.</a> and <a href="https://www.sciencedirect.com/science/article/pii/S0370157319300766?via%3Dihub" target="_blank">Physics Reports (2019)</a>.</li>
 <li> <a href="https://link.aps.org/doi/10.1103/RevModPhys.91.045002" target="_blank">Machine Learning and the Physical Sciences by Carleo et al</a></li>
-<li> <a href="https://journals.aps.org/prresearch/abstract/10.1103/PhysRevResearch.2.033429" target="_blank">Ab initio solution of the many-electron Schr&#246;dinger equation with deep neural networks by Pfau et al.</a>.</li>
-<li> <a href="https://www.sciencedirect.com/science/article/pii/S0370269320305463?via%3Dihub" target="_blank">Machine Learning and the Deuteron by Kebble and Rios</a></li>
-<li> <a href="https://arxiv.org/abs/2007.14282" target="_blank">Variational Monte Carlo calculations of \( A\le 4 \) nuclei with an artificial neural-network correlator ansatz by Adams et al.</a></li>
-<li> <a href="https://arxiv.org/abs/2006.05422" target="_blank">Unsupervised Learning for Identifying Events in Active Target Experiments by Solli et al.</a></li>
+<li> <a href="https://journals.aps.org/prresearch/abstract/10.1103/PhysRevResearch.2.033429" target="_blank">Ab initio solution of the many-electron Schr&#246;dinger equation with deep neural networks by Pfau et al.</a></li>
 <li> <a href="https://arxiv.org/abs/2006.05422" target="_blank">Report from the A.I. For Nuclear Physics  Workshop by Bedaque et al.</a></li>
-<li> <a href="https://arxiv.org/abs/2110.13041" target="_blank">Applications and Techniques for Fast Machine Learning in Science</a></li>
 <li> <a href="https://pdg.lbl.gov/2021/reviews/rpp2021-rev-machine-learning.pdf" target="_blank">Particle Data Group summary on ML methods</a></li>
 </ul>
 </div>
@@ -612,7 +610,10 @@ if \( A \) is correlated with \( B \), then \( B \) is correlated with
 necessarily cause \( A \).
 </p>
 
-<p>These concepts are in some sense the difference between <b>old-fashioned</b> machine
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="physics-based-statistical-learning-and-data-analysis">Physics based statistical learning and data analysis </h2>
+
+<p>The above concepts are in some sense the difference between <b>old-fashioned</b> machine
 learning and statistics and Bayesian learning. In machine learning and prediction based
 tasks, we are often interested in developing algorithms that are
 capable of learning patterns from given data in an automated fashion,
