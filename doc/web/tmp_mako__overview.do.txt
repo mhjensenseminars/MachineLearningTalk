@@ -220,20 +220,7 @@ DATE: today
 
 
 
-===== Talk at RF-kjelleren, University of Oslo, November 3, 2021 =====
-
-
-
- * HTML:
-   * "Plain html style": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/rf/html/rf.html"
-   * "reveal.js beige slide style": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/rf/html/rf-reveal.html"
-   * "Bootstrap style": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/rf/html/rf-bs.html"
- * iPython notebook:
-   * "ipynb file": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/rf/ipynb/rf.ipynb"
-
-
-
-===== Norway Goes Quantum, Exciting Avenues in Research and Education in Quantum Information Technologies, OsloMet, November 18, 2021 =====
+===== Exciting Avenues in Research and Education in Quantum Information Technologies, OsloMet, November 18, 2021 =====
 
 
 
