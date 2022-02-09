@@ -68,6 +68,7 @@ o and computing architectures, platforms, and technologies for deploying these a
 
 !split
 ===== Machine learning & low-energy nuclear theory: Why? =====
+
 o ML tools can help us to speed up the scientific process cycle and hence facilitate discoveries
 o Enabling fast emulation for big simulations
 o Revealing the information content of measured observables w.r.t. theory
@@ -85,30 +86,28 @@ o Theoretical models are often applied to entirely new nuclear systems and condi
 !split
 =====  The plethora  of machine learning algorithms/methods =====
 
-o Deep learning: Neural Networks, Convolutional NN, Recurrent NN, autoencoders, GANS etc
-o Bayesian statistics and Bayesian Machine Learning, Bayesian experimental design, Gaussian processes and much more
+o Deep learning: Neural Networks (NN), Convolutional NN, Recurrent NN, Boltzmann machines, autoencoders and variational autoencoders  and generative adversarial networks 
+o Bayesian statistics and Bayesian Machine Learning, Bayesian experimental design, Bayesian Regression models, Bayesian neural networks, Gaussian processes and much more
 o Dimensionality reduction (Principal component analysis), Clustering Methods and more
 o Ensemble Methods, Random forests, bagging and voting methods, gradient boosting approaches 
 o Linear and logistic regression, Kernel methods, support vector machines and more
+o Reinforcement Learning 
+
+!split
+===== More on Machine Learning methods and applications in nuclear physics =====
+
+!bblock
+_Machine  learning  for  data  mining:_ Oftentimes,  it  is necessary to be able to accurately calculate observables that have not been measured, to supplement the existing databases.
+_Nuclear  density  functional   theory:_ Energy density functional calibration   involving Bayesian optimization  and NN  ML. A promising avenue for ML applications is the emulation of DFT results.
+_Nuclear properties with ML:_ Improving predictive power of nuclear models by emulating model residuals.
+_Effective field theory and A-body systems:_ Truncation errors and low-energy coupling constant calibration, nucleon-nucleon scattering calculations, variational calculations with ANN for light nuclei, NN extrapolation of nuclear structure observables
+_Nuclear  shell  model  UQ:_ ML methods  have  been  used  to  provide  UQ  of  configuration  interaction  calculations.
+_Low-energy nuclear reactions UQ:_ Bayesian optimization studies of the nucleon-nucleus optical potential, R-matrix analyses,  and  statistical spatial networks to study patterns in nuclear reaction networks.
+_Neutron star properties and nuclear matter equation of state:_ constraining the equation of state by properties on neutron stars and selected properties of finite nuclei
+_Experimental design:_ Bayesian ML provides a framework  to  maximize  the  success  of  on  experiment  based on  the  best  information  available  on existing  data, experimental conditions, and theoretical models.
+!eblock
 
 
-
-Machine  learning  for  data  mining.–Oftentimes,  it  is necessary to be able to accurately calculate observables that have not been measured, to supplement the existing databases.
-Nuclear  density  functional   theory. –Energy density functional calibration   involving BO  and  ANN  ML. A promising avenue for ML applications is the emulation of DFT results.
-Nuclear properties with ML.–Improving predictive power of nuclear models by emulating model residuals.
-Effective field theory and A-body systems.–Truncation errors and low-energy coupling constant calibration, nucleon-nucleon scattering calculations, variational calculations with ANN for light nuclei, NN extrapolation of nuclear structure observables
-Nuclear  shell  model  UQ.–ML methods  have  been  used  to  provide  UQ  of  configuration  interaction  calculations.
-Low-energy nuclear reactions UQ. –BO studies of the nucleon-nucleus optical potential, R-matrix analyses,  and  statistical spatial networks to study patterns in nuclear reaction networks.
-Neutron star properties and nuclear matter equation of state.--constraining the equation of state by properties on neutron stars and selected properties of finite nuclei
-Experimental design.–Bayesian ML provides a framework  to  maximize  the  success  of  on  experiment  based on  the  best  information  available  on existing  data, experimental conditions, and theoretical models.
-
-
-
-Need for Machine Learning and Uncertainty Quantification in nuclear physics theory.
-Good progress but much remains to be done.
-
-To solve many complex problems in the field and facilitate discoveries, multidisciplinary efforts efforts are required involving scientists in  nuclear physics, statistics, computational science, and applied math. 
-The community needs to invest in relevant educational efforts.
 
 
 
@@ -345,113 +344,6 @@ In general, the integrals involved in the calculation of various  expectation va
 !eblock
 
 
-!split
-===== Quantum Monte Carlo Motivation =====
-!bblock Basic steps
-Choose a trial wave function
-$\psi_T(\bm{R})$.
-!bt
-\[
-   P(\bm{R},\bm{\alpha})= \frac{\left|\psi_T(\bm{R},\bm{\alpha})\right|^2}{\int \left|\psi_T(\bm{R},\bm{\alpha})\right|^2d\bm{R}}.
-\]
-!et
-This is our model, or likelihood/probability distribution function  (PDF). It depends on some variational parameters $\bm{\alpha}$.
-The approximation to the expectation value of the Hamiltonian is now 
-!bt
-\[
-   \langle E[\bm{\alpha}] \rangle = 
-   \frac{\int d\bm{R}\Psi^{\ast}_T(\bm{R},\bm{\alpha})H(\bm{R})\Psi_T(\bm{R},\bm{\alpha})}
-        {\int d\bm{R}\Psi^{\ast}_T(\bm{R},\bm{\alpha})\Psi_T(\bm{R},\bm{\alpha})}.
-\]
-!et
-!eblock
-
-
-!split
-===== Quantum Monte Carlo Motivation =====
-!bblock Define a new quantity
-!bt
-\[
-   E_L(\bm{R},\bm{\alpha})=\frac{1}{\psi_T(\bm{R},\bm{\alpha})}H\psi_T(\bm{R},\bm{\alpha}),
-\]
-!et
-called the local energy, which, together with our trial PDF yields
-!bt
-\[
-  \langle E[\bm{\alpha}] \rangle=\int P(\bm{R})E_L(\bm{R},\bm{\alpha}) d\bm{R}\approx \frac{1}{N}\sum_{i=1}^NE_L(\bm{R_i},\bm{\alpha})
-\]
-!et
-with $N$ being the number of Monte Carlo samples.
-!eblock
-
-!split
-===== The trial wave function =====
-!bblock
-We want to perform  a Variational Monte Carlo calculation of the ground state of two electrons in a quantum dot well with different oscillator energies, assuming total spin $S=0$.
-Our trial wave function has the following form
-!bt
-\begin{equation}
-   \psi_{T}(\bm{r}_1,\bm{r}_2) = 
-   C\exp{\left(-\alpha_1\omega(r_1^2+r_2^2)/2\right)}
-   \exp{\left(\frac{r_{12}}{(1+\alpha_2 r_{12})}\right)}, 
-label{eq:trial}
-\end{equation}
-!et
-where the variables $\alpha_1$ and $\alpha_2$ represent our variational parameters.
-
-Why does the trial function look like this? How did we get there? _This is one of our main motivations_ for switching to
-Machine Learning.
-
-!eblock
-
-
-!split
-===== Energy derivatives =====
-!bblock
-To find the derivatives of the local energy expectation value as function of the variational parameters, we can use the chain rule and the hermiticity of the Hamiltonian.  
-
-Let us define (with the notation $\langle E[\bm{\alpha}]\rangle =\langle  E_L\rangle$)
-!bt
-\[
-\bar{E}_{\alpha_i}=\frac{d\langle  E_L\rangle}{d\alpha_i},
-\]
-!et
-as the derivative of the energy with respect to the variational parameter $\alpha_i$
-We define also the derivative of the trial function (skipping the subindex $T$) as 
-!bt
-\[
-\bar{\Psi}_{i}=\frac{d\Psi}{d\alpha_i}.
-\]
-!et  
-!eblock
-
-
-!split
-===== Derivatives of the local energy ===== 
-!bblock
-The elements of the gradient of the local energy are then (using the chain rule and the hermiticity of the Hamiltonian)
-!bt
-\[
-\bar{E}_{i}= 2\left( \langle \frac{\bar{\Psi}_{i}}{\Psi}E_L\rangle -\langle \frac{\bar{\Psi}_{i}}{\Psi}\rangle\langle E_L \rangle\right).
-\]
-!et
-From a computational point of view it means that you need to compute the expectation values of 
-!bt
-\[
-\langle \frac{\bar{\Psi}_{i}}{\Psi}E_L\rangle,
-\]
-!et
-and
-!bt
-\[
-\langle \frac{\bar{\Psi}_{i}}{\Psi}\rangle\langle E_L\rangle
-\]
-!et
-These integrals are evaluted using MC intergration (with all its possible error sources). 
-We can then use methods like stochastic gradient or other minimization methods to find the optimal variational parameters (I don't discuss this topic here, but these methods are very important in ML). 
-!eblock
-
-
 
 !split
 ===== Running the codes =====
@@ -525,26 +417,11 @@ FIGURE: [figures/energyconvergence.pdf, width=700 frac=0.9]
 * And many more exciting research avenues
 !eblock
 
+Need for Machine Learning and Uncertainty Quantification in nuclear physics theory.
+Good progress but much remains to be done.
 
-
-
-
-
-
-
-!split
-===== What are the Machine Learning calculations here based on? =====
-
-!bblock
-This work is inspired by the idea of representing the wave function with
-a restricted Boltzmann machine (RBM), presented recently by "G. Carleo and M. Troyer, Science _355_, Issue 6325, pp. 602-606 (2017)":"http://science.sciencemag.org/content/355/6325/602". They
-named such a wave function/network a *neural network quantum state* (NQS). In their article they apply it to the quantum mechanical
-spin lattice systems of the Ising model and Heisenberg model, with
-encouraging results. See also the recent work by "Adams et al.":"https://arxiv.org/abs/2007.14282".
-
-Thanks to Daniel Bazin (MSU), Jane Kim (MSU), Julie Butler (MSU), Dean Lee (MSU), Sean Liddick (MSU), Michelle Kuchera (Davidson College), Vilde Flugsrud (UiO),Witek Nazarewicz (MSU),  Even Nordhagen (UiO), Bendik Samseth (UiO) and Robert Solli (UiO) for many discussions and interpretations.
-!eblock
-
+To solve many complex problems in the field and facilitate discoveries, multidisciplinary efforts efforts are required involving scientists in  nuclear physics, statistics, computational science, and applied math. 
+The community needs to invest in relevant educational efforts.
 
 
 
