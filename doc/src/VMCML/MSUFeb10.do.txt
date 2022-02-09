@@ -6,8 +6,8 @@ DATE: Research Discussion, FRIB, Michigan State University, February 10, 2022
 !split
 ===== What is this talk about? =====
 !bblock
-The main emphasis is to give you a short and pedestrian introduction to the whys and hows we can use Machine Learning methods
-to solve quantum mechanical many-body problems and how we can use such techniques in analysis of  experiments. And why this could (or should) be of interest. 
+The main emphasis is to give you a short and pedestrian introduction to the whys and hows we can use (with several examples) machine learning methods
+in nuclear physics. And why this could (or should) be of interest. 
 !eblock
 
 
@@ -16,26 +16,26 @@ These slides are at URL:"https://mhjensenseminars.github.io/MachineLearningTalk/
 
 _Talk based Artificial Intelligence and Machine Learning in Nuclear Physics_, Amber Boehnlein et al., "arXiv:2112.02309":"https://arxiv.org/abs/2112.02309" and Reviews Modern of Physics, submitted.  *MSU co-authors are Deal Lee, Witek Nazarewicz, Peter Ostroumov, and MHJ*
 
-_See also list of existing/ongoing ML projects at FRIB at URL:"https://mhjensen.github.io/MLFRIB/mlfrib.pdf"_ 
+_See also list of existing/ongoing ML projects at FRIB at URL:"https://mhjensen.github.io/MLFRIB/MLFRIB.pdf"_ 
 
 !eblock
 
 !split
 ===== A simple perspective on the interface between ML and Physics =====
 
-FIGURE: [figures/mlimage.png, width=700 frac=0.9]
+FIGURE: [figures/mlimage.png, width=700 frac=1.0]
 
 
 !split
 ===== ML in Nuclear  Physics =====
 
-FIGURE: [figures/ML-NP.pdf, width=700 frac=0.9]
+FIGURE: [figures/ML-NP.pdf, width=700 frac=1.0]
 
 
 !split
 ===== ML in Materials Science and nanotechnologies, predicting candidates for quantum technologies (add figure) =====
 
-FIGURE: [figures/fig2.png, width=700 frac=0.9]
+FIGURE: [figures/fig2.png, width=700 frac=1.0]
 
 
 !split
@@ -332,16 +332,17 @@ The above function is replaced by a four-layer Neural Network.
 FIGURE: [figures/energyconvergence.pdf, width=700 frac=0.9]
 
 
-add Gneich results
+!split
+=====  "Gnech et al, Variational Monte Carlo calculations of $A\le 6$ nuclei arXiv:108.06836":"https://arxiv.org/pdf/2108.06836.pdf" =====
 
+FIGURE: [figures/pointnucleondensity.pdf, width=700 frac=0.9]
 
 !split
 ===== Extrapolations and model interpretability  =====
 
 Disadvantage of deep learning methods is their “black box” nature: the
 computationally-advanced methods by which these methods come up with
-the convolved output is not readily understandable. Kowsari et
-al. Information 10, 150 (2019); on text classification algorithms
+the convolved output is not readily understandable. 
 
 
 !split
@@ -351,7 +352,7 @@ Add formula and discussion
 
 !split
 ===== Folding and unfolding of detector response =====
-
+To wrap up.
 Run Jupyter-notebook
 
 !split
