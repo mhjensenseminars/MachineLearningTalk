@@ -4,7 +4,7 @@ DATE: today
 
 <%
 pub_url = 'http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub'
-published = ['vmcml', 'unitn', 'uniohio', 'unisurrey', 'uio2019', 'chalmers', 'uiomath', 'unipd', 'overview', 'WorkshopTastesNP', 'xai', 'NIThePColloquium', 'quantumcomputing', 'NotreDameMay2021', 'oslometqc', 'IAEA', 'rf', 'spinQ', 'UniMilano',]
+published = ['vmcml', 'unitn', 'uniohio', 'unisurrey', 'uio2019', 'chalmers', 'uiomath', 'unipd', 'overview', 'WorkshopTastesNP', 'xai', 'NIThePColloquium', 'quantumcomputing', 'NotreDameMay2021', 'oslometqc', 'IAEA', 'rf', 'spinQ', 'UniMilano', 'MSUFeb10', ]
 chapters = {
  'vmcml': 'From variational Monte Carlo to machine learning, talks at Michigan State University April and June 2018',
  'uniuio': 'Talk at University of Oslo, December 14, 2018',
@@ -26,6 +26,7 @@ chapters = {
   'rf': 'Talk at RF-kjelleren, University of Oslo, November 3, 2021',
   'spinQ': 'Norway Goes Quantum, Exciting Avenues in Research and Education in Quantum Information Technologies, OsloMet, November 18, 2021',
   'UniMilano': 'Artificial Intelligence and Machine Learning in Nuclear Physics, Physics Colloquia 2021/2022, Università di Milano, December 3, 2021',
+  'MSUFeb10': 'Artificial Intelligence and Machine Learning in Nuclear Physics, Research Discussion, FRIB/NSCL, MSU, February 10, 2022',  
 }
 %>
 
