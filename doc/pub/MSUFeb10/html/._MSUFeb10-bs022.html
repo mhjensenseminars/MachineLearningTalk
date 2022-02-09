@@ -42,7 +42,6 @@ doconce format html MSUFeb10.do.txt --html_style=bootstrap --pygments_html_style
                None,
                'a-simple-perspective-on-the-interface-between-ml-and-physics'),
               ('ML in Nuclear  Physics', 2, None, 'ml-in-nuclear-physics'),
-              ('ML in Materials Science', 2, None, 'ml-in-materials-science'),
               ('AI/ML and some statements you may have heard (and what do they '
                'mean?)',
                2,
@@ -99,14 +98,13 @@ doconce format html MSUFeb10.do.txt --html_style=bootstrap --pygments_html_style
                2,
                None,
                'quantum-monte-carlo-and-deep-learning'),
-              ('Deep learning neural networks',
+              ('Deep learning neural networks, "Variational Monte Carlo '
+               'calculations of $A\\le 4$ nuclei with an artificial '
+               'neural-network correlator ansatz by Adams et '
+               'al.":"https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.127.022502"',
                2,
                None,
-               'deep-learning-neural-networks'),
-              ('Replacing the Jastrow factor with neural networks',
-               2,
-               None,
-               'replacing-the-jastrow-factor-with-neural-networks'),
+               'deep-learning-neural-networks-variational-monte-carlo-calculations-of-a-le-4-nuclei-with-an-artificial-neural-network-correlator-ansatz-by-adams-et-al-https-journals-aps-org-prl-abstract-10-1103-physrevlett-127-022502'),
               ('"Gnech et al, Variational Monte Carlo calculations of $A\\le '
                '6$ nuclei '
                'arXiv:108.06836":"https://arxiv.org/pdf/2108.06836.pdf"',
@@ -121,17 +119,7 @@ doconce format html MSUFeb10.do.txt --html_style=bootstrap --pygments_html_style
                2,
                None,
                'physics-based-statistical-learning-and-data-analysis'),
-              ("Statistics and Bayes' theorem",
-               2,
-               None,
-               'statistics-and-bayes-theorem'),
-              ('Marginal Probability', 2, None, 'marginal-probability'),
-              ('Conditional  Probability', 2, None, 'conditional-probability'),
               ("Bayes' Theorem", 2, None, 'bayes-theorem'),
-              ("Interpretations of Bayes' Theorem",
-               2,
-               None,
-               'interpretations-of-bayes-theorem'),
               ('Folding and unfolding of detector response',
                2,
                None,
@@ -186,37 +174,31 @@ MathJax.Hub.Config({
      <!-- navigation toc: --> <li><a href="._MSUFeb10-bs001.html#what-is-this-talk-about" style="font-size: 80%;">What is this talk about?</a></li>
      <!-- navigation toc: --> <li><a href="._MSUFeb10-bs002.html#a-simple-perspective-on-the-interface-between-ml-and-physics" style="font-size: 80%;">A simple perspective on the interface between ML and Physics</a></li>
      <!-- navigation toc: --> <li><a href="._MSUFeb10-bs003.html#ml-in-nuclear-physics" style="font-size: 80%;">ML in Nuclear  Physics</a></li>
-     <!-- navigation toc: --> <li><a href="._MSUFeb10-bs004.html#ml-in-materials-science" style="font-size: 80%;">ML in Materials Science</a></li>
-     <!-- navigation toc: --> <li><a href="._MSUFeb10-bs005.html#ai-ml-and-some-statements-you-may-have-heard-and-what-do-they-mean" style="font-size: 80%;">AI/ML and some statements you may have heard (and what do they mean?)</a></li>
-     <!-- navigation toc: --> <li><a href="._MSUFeb10-bs006.html#scientific-machine-learning" style="font-size: 80%;">Scientific Machine Learning</a></li>
-     <!-- navigation toc: --> <li><a href="._MSUFeb10-bs007.html#machine-learning-and-physics" style="font-size: 80%;">Machine Learning and Physics</a></li>
-     <!-- navigation toc: --> <li><a href="._MSUFeb10-bs008.html#lots-of-room-for-creativity" style="font-size: 80%;">Lots of room for creativity</a></li>
-     <!-- navigation toc: --> <li><a href="._MSUFeb10-bs009.html#types-of-machine-learning" style="font-size: 80%;">Types of machine learning</a></li>
-     <!-- navigation toc: --> <li><a href="._MSUFeb10-bs010.html#machine-learning-low-energy-nuclear-theory-why" style="font-size: 80%;">Machine learning & low-energy nuclear theory: Why?</a></li>
-     <!-- navigation toc: --> <li><a href="._MSUFeb10-bs011.html#the-plethora-of-machine-learning-algorithms-methods" style="font-size: 80%;">The plethora  of machine learning algorithms/methods</a></li>
-     <!-- navigation toc: --> <li><a href="._MSUFeb10-bs012.html#examples-of-machine-learning-methods-and-applications-in-nuclear-physics" style="font-size: 80%;">Examples of Machine Learning methods and applications in nuclear physics</a></li>
-     <!-- navigation toc: --> <li><a href="._MSUFeb10-bs013.html#examples-of-machine-learning-methods-and-applications-in-nuclear-physics-continues" style="font-size: 80%;">Examples of Machine Learning methods and applications in nuclear physics, continues</a></li>
-     <!-- navigation toc: --> <li><a href="._MSUFeb10-bs014.html#more-examples" style="font-size: 80%;">More examples</a></li>
-     <!-- navigation toc: --> <li><a href="._MSUFeb10-bs015.html#and-more" style="font-size: 80%;">And more</a></li>
-     <!-- navigation toc: --> <li><a href="._MSUFeb10-bs016.html#selected-references" style="font-size: 80%;">Selected references</a></li>
-     <!-- navigation toc: --> <li><a href="._MSUFeb10-bs017.html#what-are-the-basic-ingredients" style="font-size: 80%;">What are the basic ingredients?</a></li>
-     <!-- navigation toc: --> <li><a href="._MSUFeb10-bs018.html#unsupervised-learning-in-nuclear-physics-argon-46-by-solli-bazin-kuchera-mhj-strauss-https-www-sciencedirect-com-science-article-abs-pii-s0168900221004460-via-3dihub" style="font-size: 80%;">"Unsupervised learning in nuclear physics, Argon-46 by Solli, Bazin, Kuchera, MHJ, Strauss.":"https://www.sciencedirect.com/science/article/abs/pii/S0168900221004460?via%3Dihub"</a></li>
-     <!-- navigation toc: --> <li><a href="._MSUFeb10-bs019.html#quantum-monte-carlo-and-deep-learning" style="font-size: 80%;">Quantum Monte Carlo and deep learning</a></li>
-     <!-- navigation toc: --> <li><a href="._MSUFeb10-bs020.html#deep-learning-neural-networks" style="font-size: 80%;">Deep learning neural networks</a></li>
-     <!-- navigation toc: --> <li><a href="._MSUFeb10-bs021.html#replacing-the-jastrow-factor-with-neural-networks" style="font-size: 80%;">Replacing the Jastrow factor with neural networks</a></li>
-     <!-- navigation toc: --> <li><a href="#gnech-et-al-variational-monte-carlo-calculations-of-a-le-6-nuclei-arxiv-108-06836-https-arxiv-org-pdf-2108-06836-pdf" style="font-size: 80%;">"Gnech et al, Variational Monte Carlo calculations of \( A\le 6 \) nuclei arXiv:108.06836":"https://arxiv.org/pdf/2108.06836.pdf"</a></li>
-     <!-- navigation toc: --> <li><a href="._MSUFeb10-bs023.html#extrapolations-and-model-interpretability" style="font-size: 80%;">Extrapolations and model interpretability</a></li>
-     <!-- navigation toc: --> <li><a href="._MSUFeb10-bs024.html#physics-based-statistical-learning-and-data-analysis" style="font-size: 80%;">Physics based statistical learning and data analysis</a></li>
-     <!-- navigation toc: --> <li><a href="._MSUFeb10-bs025.html#statistics-and-bayes-theorem" style="font-size: 80%;">Statistics and Bayes' theorem</a></li>
-     <!-- navigation toc: --> <li><a href="._MSUFeb10-bs026.html#marginal-probability" style="font-size: 80%;">Marginal Probability</a></li>
-     <!-- navigation toc: --> <li><a href="._MSUFeb10-bs027.html#conditional-probability" style="font-size: 80%;">Conditional  Probability</a></li>
-     <!-- navigation toc: --> <li><a href="._MSUFeb10-bs028.html#bayes-theorem" style="font-size: 80%;">Bayes' Theorem</a></li>
-     <!-- navigation toc: --> <li><a href="._MSUFeb10-bs029.html#interpretations-of-bayes-theorem" style="font-size: 80%;">Interpretations of Bayes' Theorem</a></li>
-     <!-- navigation toc: --> <li><a href="._MSUFeb10-bs030.html#folding-and-unfolding-of-detector-response" style="font-size: 80%;">Folding and unfolding of detector response</a></li>
-     <!-- navigation toc: --> <li><a href="._MSUFeb10-bs031.html#quantified-limits-of-the-nuclear-landscape" style="font-size: 80%;">Quantified limits of the nuclear landscape</a></li>
-     <!-- navigation toc: --> <li><a href="._MSUFeb10-bs032.html#constraining-the-equation-of-state-for-dense-nuclear-matter" style="font-size: 80%;">Constraining the equation of state for dense nuclear matter</a></li>
-     <!-- navigation toc: --> <li><a href="._MSUFeb10-bs033.html#experimental-design" style="font-size: 80%;">Experimental design</a></li>
-     <!-- navigation toc: --> <li><a href="._MSUFeb10-bs034.html#observations-or-conclusions-if-you-prefer" style="font-size: 80%;">Observations (or conclusions if you prefer)</a></li>
+     <!-- navigation toc: --> <li><a href="._MSUFeb10-bs004.html#ai-ml-and-some-statements-you-may-have-heard-and-what-do-they-mean" style="font-size: 80%;">AI/ML and some statements you may have heard (and what do they mean?)</a></li>
+     <!-- navigation toc: --> <li><a href="._MSUFeb10-bs005.html#scientific-machine-learning" style="font-size: 80%;">Scientific Machine Learning</a></li>
+     <!-- navigation toc: --> <li><a href="._MSUFeb10-bs006.html#machine-learning-and-physics" style="font-size: 80%;">Machine Learning and Physics</a></li>
+     <!-- navigation toc: --> <li><a href="._MSUFeb10-bs007.html#lots-of-room-for-creativity" style="font-size: 80%;">Lots of room for creativity</a></li>
+     <!-- navigation toc: --> <li><a href="._MSUFeb10-bs008.html#types-of-machine-learning" style="font-size: 80%;">Types of machine learning</a></li>
+     <!-- navigation toc: --> <li><a href="._MSUFeb10-bs009.html#machine-learning-low-energy-nuclear-theory-why" style="font-size: 80%;">Machine learning & low-energy nuclear theory: Why?</a></li>
+     <!-- navigation toc: --> <li><a href="._MSUFeb10-bs010.html#the-plethora-of-machine-learning-algorithms-methods" style="font-size: 80%;">The plethora  of machine learning algorithms/methods</a></li>
+     <!-- navigation toc: --> <li><a href="._MSUFeb10-bs011.html#examples-of-machine-learning-methods-and-applications-in-nuclear-physics" style="font-size: 80%;">Examples of Machine Learning methods and applications in nuclear physics</a></li>
+     <!-- navigation toc: --> <li><a href="._MSUFeb10-bs012.html#examples-of-machine-learning-methods-and-applications-in-nuclear-physics-continues" style="font-size: 80%;">Examples of Machine Learning methods and applications in nuclear physics, continues</a></li>
+     <!-- navigation toc: --> <li><a href="._MSUFeb10-bs013.html#more-examples" style="font-size: 80%;">More examples</a></li>
+     <!-- navigation toc: --> <li><a href="._MSUFeb10-bs014.html#and-more" style="font-size: 80%;">And more</a></li>
+     <!-- navigation toc: --> <li><a href="._MSUFeb10-bs015.html#selected-references" style="font-size: 80%;">Selected references</a></li>
+     <!-- navigation toc: --> <li><a href="._MSUFeb10-bs016.html#what-are-the-basic-ingredients" style="font-size: 80%;">What are the basic ingredients?</a></li>
+     <!-- navigation toc: --> <li><a href="._MSUFeb10-bs017.html#unsupervised-learning-in-nuclear-physics-argon-46-by-solli-bazin-kuchera-mhj-strauss-https-www-sciencedirect-com-science-article-abs-pii-s0168900221004460-via-3dihub" style="font-size: 80%;">"Unsupervised learning in nuclear physics, Argon-46 by Solli, Bazin, Kuchera, MHJ, Strauss.":"https://www.sciencedirect.com/science/article/abs/pii/S0168900221004460?via%3Dihub"</a></li>
+     <!-- navigation toc: --> <li><a href="._MSUFeb10-bs018.html#quantum-monte-carlo-and-deep-learning" style="font-size: 80%;">Quantum Monte Carlo and deep learning</a></li>
+     <!-- navigation toc: --> <li><a href="._MSUFeb10-bs019.html#deep-learning-neural-networks-variational-monte-carlo-calculations-of-a-le-4-nuclei-with-an-artificial-neural-network-correlator-ansatz-by-adams-et-al-https-journals-aps-org-prl-abstract-10-1103-physrevlett-127-022502" style="font-size: 80%;">Deep learning neural networks, "Variational Monte Carlo calculations of \( A\le 4 \) nuclei with an artificial neural-network correlator ansatz by Adams et al.":"https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.127.022502"</a></li>
+     <!-- navigation toc: --> <li><a href="._MSUFeb10-bs020.html#gnech-et-al-variational-monte-carlo-calculations-of-a-le-6-nuclei-arxiv-108-06836-https-arxiv-org-pdf-2108-06836-pdf" style="font-size: 80%;">"Gnech et al, Variational Monte Carlo calculations of \( A\le 6 \) nuclei arXiv:108.06836":"https://arxiv.org/pdf/2108.06836.pdf"</a></li>
+     <!-- navigation toc: --> <li><a href="._MSUFeb10-bs021.html#extrapolations-and-model-interpretability" style="font-size: 80%;">Extrapolations and model interpretability</a></li>
+     <!-- navigation toc: --> <li><a href="#physics-based-statistical-learning-and-data-analysis" style="font-size: 80%;">Physics based statistical learning and data analysis</a></li>
+     <!-- navigation toc: --> <li><a href="._MSUFeb10-bs023.html#bayes-theorem" style="font-size: 80%;">Bayes' Theorem</a></li>
+     <!-- navigation toc: --> <li><a href="._MSUFeb10-bs024.html#folding-and-unfolding-of-detector-response" style="font-size: 80%;">Folding and unfolding of detector response</a></li>
+     <!-- navigation toc: --> <li><a href="._MSUFeb10-bs025.html#quantified-limits-of-the-nuclear-landscape" style="font-size: 80%;">Quantified limits of the nuclear landscape</a></li>
+     <!-- navigation toc: --> <li><a href="._MSUFeb10-bs026.html#constraining-the-equation-of-state-for-dense-nuclear-matter" style="font-size: 80%;">Constraining the equation of state for dense nuclear matter</a></li>
+     <!-- navigation toc: --> <li><a href="._MSUFeb10-bs027.html#experimental-design" style="font-size: 80%;">Experimental design</a></li>
+     <!-- navigation toc: --> <li><a href="._MSUFeb10-bs028.html#observations-or-conclusions-if-you-prefer" style="font-size: 80%;">Observations (or conclusions if you prefer)</a></li>
 
         </ul>
       </li>
@@ -228,13 +210,20 @@ MathJax.Hub.Config({
 <p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p> <!-- add vertical space -->
 <a name="part0022"></a>
 <!-- !split -->
-<h2 id="gnech-et-al-variational-monte-carlo-calculations-of-a-le-6-nuclei-arxiv-108-06836-https-arxiv-org-pdf-2108-06836-pdf" class="anchor"><a href="https://arxiv.org/pdf/2108.06836.pdf" target="_self">Gnech et al, Variational Monte Carlo calculations of \( A\le 6 \) nuclei arXiv:108.06836</a> </h2>
+<h2 id="physics-based-statistical-learning-and-data-analysis" class="anchor">Physics based statistical learning and data analysis </h2>
 
-<br/><br/>
-<center>
-<p><img src="figures/pointnucleondensity.png" width="700" align="bottom"></p>
-</center>
-<br/><br/>
+<p>The above concepts are in some sense the difference between <b>old-fashioned</b> machine
+learning and statistics and Bayesian learning. In machine learning and prediction based
+tasks, we are often interested in developing algorithms that are
+capable of learning patterns from given data in an automated fashion,
+and then using these learned patterns to make predictions or
+assessments of newly given data. In many cases, our primary concern
+is the quality of the predictions or assessments, and we are less
+concerned about the underlying patterns that were learned in order
+to make these predictions.
+</p>
+
+<p>Physics based statistical learning points however to approaches that give us both predictions and correlations as well as being able to produce error estimates and understand causations.  This leads us to the very interesting field of Bayesian statistics.</p>
 
 <p>
 <!-- navigation buttons at the bottom of the page -->
@@ -257,11 +246,6 @@ MathJax.Hub.Config({
   <li><a href="._MSUFeb10-bs026.html">27</a></li>
   <li><a href="._MSUFeb10-bs027.html">28</a></li>
   <li><a href="._MSUFeb10-bs028.html">29</a></li>
-  <li><a href="._MSUFeb10-bs029.html">30</a></li>
-  <li><a href="._MSUFeb10-bs030.html">31</a></li>
-  <li><a href="._MSUFeb10-bs031.html">32</a></li>
-  <li><a href="">...</a></li>
-  <li><a href="._MSUFeb10-bs034.html">35</a></li>
   <li><a href="._MSUFeb10-bs023.html">&raquo;</a></li>
 </ul>
 <!-- ------------------- end of main content --------------- -->

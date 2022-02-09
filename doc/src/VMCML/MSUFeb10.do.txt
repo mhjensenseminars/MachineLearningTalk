@@ -34,10 +34,6 @@ FIGURE: [figures/mlimage.png, width=700 frac=1.0]
 FIGURE: [figures/ML-NP.pdf, width=700 frac=1.0]
 
 
-!split
-===== ML in Materials Science =====
-
-FIGURE: [figures/fig2.png, width=700 frac=1.0]
 
 
 !split
@@ -214,7 +210,7 @@ The large amount of degrees of freedom pertain to both theory and experiment in 
 !bblock
 * An important application of AI/ML methods is to improve the estimation of bias or uncertainty due to the introduction of or lack of physical constraints in various theoretical models.
 
-* In theory, we expect to use AI/ML algorithms and methods to improve our knowledged abou  correlations of physical model parameters in data for quantum many-body systems. Deep learning methods show great promise in circumventing the exploding dimensionalities encountered in quantum mechanical many-body studies. 
+* In theory, we expect to use AI/ML algorithms and methods to improve our knowledge about  correlations of physical model parameters in data for quantum many-body systems. Deep learning methods show great promise in circumventing the exploding dimensionalities encountered in quantum mechanical many-body studies. 
 
 * Merging a frequentist approach (the standard path in ML theory) with a Bayesian approach, has the potential to infer better probabilitity distributions and error estimates. As an example, methods for fast Monte-Carlo- based Bayesian computation of nuclear density functionals show great promise in providing a better understanding 
 
@@ -288,33 +284,8 @@ In general, the integrals involved in the calculation of various  expectation va
 
 
 !split
-===== Deep learning neural networks =====
+===== Deep learning neural networks, "Variational Monte Carlo calculations of $A\le 4$ nuclei with an artificial neural-network correlator ansatz by Adams et al.":"https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.127.022502" =====
 
-"Machine Learning and the Deuteron by Kebble and Rios":"https://www.sciencedirect.com/science/article/pii/S0370269320305463?via%3Dihub" and 
-"Variational Monte Carlo calculations of $A\le 4$ nuclei with an artificial neural-network correlator ansatz by Adams et al.":"https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.127.022502"
-
-_Adams et al_:
-
-!bt
-\begin{align}
-H_{LO} &=-\sum_i \frac{{\vec{\nabla}_i^2}}{2m_N}
-+\sum_{i<j} {\left(C_1  + C_2\, \vec{\sigma_i}\cdot\vec{\sigma_j}\right)
-e^{-r_{ij}^2\Lambda^2 / 4 }}
-\nonumber\\
-&+D_0 \sum_{i<j<k} \sum_{\text{cyc}}
-{e^{-\left(r_{ik}^2+r_{ij}^2\right)\Lambda^2/4}}\,,
-\end{align}
-!et
-
-where $m_N$ is the mass of the nucleon, $\vec{\sigma_i}$ is the Pauli
-matrix acting on nucleon $i$, and $\sum_{\text{cyc}}$ stands for the
-cyclic permutation of $i$, $j$, and $k$. The low-energy constants
-$C_1$ and $C_2$ are fit to the deuteron binding energy and to the
-neutron-neutron scattering length
-
-
-!split
-=====  Replacing the Jastrow factor with neural networks =====
 
 An appealing feature of the neural network ansatz is that it is more general than the more conventional product of two-
 and three-body spin-independent Jastrow functions
@@ -364,75 +335,22 @@ to make these predictions.
 Physics based statistical learning points however to approaches that give us both predictions and correlations as well as being able to produce error estimates and understand causations.  This leads us to the very interesting field of Bayesian statistics.
 
 
-!split
-===== Statistics and Bayes' theorem =====
-
-A central theorem in statistics is Bayes' theorem. This theorem plays a similar role as the good old Pythagoras' theorem in geometry.
-Bayes' theorem is extremely simple to derive. 
-
-!bblock The product rule (aka joint probability) is given by
-!bt
-\[
-p(X \cup Y)= p(X,Y)= p(X\vert Y)p(Y)=p(Y\vert X)p(X),
-\]
-!et
-where we read $p(X\vert Y)$ as the likelihood of obtaining $X$ given $Y$.
-!eblock
-
-If we have independent events then $p(X,Y)=p(X)p(Y)$.
-
-
-!split
-===== Marginal Probability =====
-
-The marginal probability is defined in terms of only one of the set of variables $X,Y$. For a discrete probability we have
-!bblock 
-!bt
-\[
-p(X)=\sum_{i=0}^{n-1}p(X,Y=y_i)=\sum_{i=0}^{n-1}p(X\vert Y=y_i)p(Y=y_i)=\sum_{i=0}^{n-1}p(X\vert y_i)p(y_i).
-\]
-!et
-!eblock
-
-
-!split
-===== Conditional  Probability =====
-
-The conditional  probability, if $p(Y) > 0$, is 
-!bblock 
-!bt
-\[
-p(X\vert Y)= \frac{p(X,Y)}{p(Y)}=\frac{p(X,Y)}{\sum_{i=0}^{n-1}p(Y\vert X=x_i)p(x_i)}.
-\]
-!et
-!eblock
-
 
 !split
 ===== Bayes' Theorem =====
 
-If we combine the conditional probability with the marginal probability and the standard product rule, we have
+Bayes' theorem
 !bt
 \[
-p(X\vert Y)= \frac{p(X,Y)}{p(Y)},
+p(X\vert Y)= \frac{p(X,Y)}{\sum_{i=0}^{n-1}p(Y\vert X=x_i)p(x_i)}=\frac{p(Y\vert X)p(X)}{\sum_{i=0}^{n-1}p(Y\vert X=x_i)p(x_i)}.
 \]
 !et
-which we can rewrite as
 
-!bt
-\[
-p(X\vert Y)= \frac{p(X,Y)}{\sum_{i=0}^{n-1}p(Y\vert X=x_i)p(x_i)}=\frac{p(Y\vert X)p(X)}{\sum_{i=0}^{n-1}p(Y\vert X=x_i)p(x_i)},
-\]
-!et
-which is Bayes' theorem. It allows us to evaluate the uncertainty in $X$ after we have observed $Y$. We can easily interchange $X$ with $Y$.  
-
-!split
-===== Interpretations of Bayes' Theorem =====
 
 The quantity $p(Y\vert X)$ on the right-hand side of the theorem is
 evaluated for the observed data $Y$ and can be viewed as a function of
 the parameter space represented by $X$. This function is not
-necesseraly normalized and is normally called the likelihood function.
+necessarily normalized and is normally called the likelihood function.
 
 The function $p(X)$ on the right hand side is called the prior while the function on the left hand side is the called the posterior probability. The denominator on the right hand side serves as a normalization factor for the posterior distribution.
 
@@ -477,9 +395,9 @@ FIGURE: [figures/utility.png, width=700 frac=1.0]
 * Need for AI/Machine Learning in nuclear physics, lots of ongoing activities
 * To solve many complex problems in the field and facilitate discoveries, multidisciplinary efforts efforts are required involving scientists in  nuclear physics, statistics, computational science, and applied math.
 * How do we develop insights, competences, knowledge in statistical learning that can advance our field?
-  - For example: Can we use ML to find out which correlations are relevant and thereby diminish the dimensionality problem in standard many-body  theories?
-  - Can we use AI/ML in detector analysis, accelerator design, analysis of experimental data and more?
-  - What are our ambitions? 
+  * For example: Can we use ML to find out which correlations are relevant and thereby diminish the dimensionality problem in standard many-body  theories?
+  * Can we use AI/ML in detector analysis, accelerator design, analysis of experimental data and more?
+  * What are our ambitions? 
 * The community needs to invest in relevant educational efforts and training of nuclear physicists with knowledge in AI/ML
 * Most likely tons of things we have forgotten
 !eblock
