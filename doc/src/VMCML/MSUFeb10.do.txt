@@ -333,6 +333,50 @@ FIGURE: [figures/energyconvergence.pdf, width=700 frac=0.9]
 
 
 !split
+===== Extrapolations and model interpretability  =====
+
+Disadvantage of deep learning methods is their “black box” nature: the
+computationally-advanced methods by which these methods come up with
+the convolved output is not readily understandable. Kowsari et
+al. Information 10, 150 (2019); on text classification algorithms
+
+
+!split
+===== Bayesian statistics =====
+
+Add formula
+
+
+!split
+===== Quantified limits of the nuclear landscape =====
+
+Neufcourt et al., Phys. Rev. C 101, 044307 (2020)
+Predictions made with 11 global mass model and Bayesian model averaging
+
+FIGURE: [figures/landscape-BMA.jpg, width=700 frac=0.9]
+
+!split
+===== Constraining the equation of state for dense nuclear matter =====
+
+G. Raaijmakers et al., Constraining the Dense Matter Equation of State with Joint Analysis of NICER and LIGO/Virgo Measurements, AJ Letters, 893, L21 (2020)
+
+FIGURE: [figures/nstareos.png, width=700 frac=0.9]
+
+!split
+===== Experimental design =====
+
+Beam time and compute cycles are expensive!
+
+* Bayesian experimental design provides a framework in which experiments can be designed using the best experimental and theoretical information available 
+* The utility function is designed to encode the goals of the experiment and the constraints inherent in carrying it out. 
+* Once the utility function and the possible designs have been specified, the optimal design is simply the scenario that  maximizes the expected utility function over the domain of possible designs.
+
+
+FIGURE: [figures/utility.png, width=700 frac=0.9]
+
+
+
+!split
 ===== Conclusions and where do we stand =====
 !bblock
 * Lots of experimental analysis coming, see for example "Unsupervised Learning for Identifying Events in Active Target Experiments by Solli et al.":"https://arxiv.org/abs/2008.02757" as well references and examples in  "Report from the A.I. For Nuclear Physics  Workshop by Bedaque et al.":"https://arxiv.org/abs/2006.05422".
