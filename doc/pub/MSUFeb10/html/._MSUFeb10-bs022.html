@@ -110,6 +110,20 @@ doconce format html MSUFeb10.do.txt --html_style=bootstrap --pygments_html_style
                2,
                None,
                'replacing-the-jastrow-factor-with-neural-networks'),
+              ('Extrapolations and model interpretability',
+               2,
+               None,
+               'extrapolations-and-model-interpretability'),
+              ('Bayesian statistics', 2, None, 'bayesian-statistics'),
+              ('Quantified limits of the nuclear landscape',
+               2,
+               None,
+               'quantified-limits-of-the-nuclear-landscape'),
+              ('Constraining the equation of state for dense nuclear matter',
+               2,
+               None,
+               'constraining-the-equation-of-state-for-dense-nuclear-matter'),
+              ('Experimental design', 2, None, 'experimental-design'),
               ('Conclusions and where do we stand',
                2,
                None,
@@ -169,7 +183,12 @@ MathJax.Hub.Config({
      <!-- navigation toc: --> <li><a href="._MSUFeb10-bs019.html#quantum-monte-carlo-and-deep-learning" style="font-size: 80%;">Quantum Monte Carlo and deep learning</a></li>
      <!-- navigation toc: --> <li><a href="._MSUFeb10-bs020.html#deep-learning-neural-networks" style="font-size: 80%;">Deep learning neural networks</a></li>
      <!-- navigation toc: --> <li><a href="._MSUFeb10-bs021.html#replacing-the-jastrow-factor-with-neural-networks" style="font-size: 80%;">Replacing the Jastrow factor with neural networks</a></li>
-     <!-- navigation toc: --> <li><a href="#conclusions-and-where-do-we-stand" style="font-size: 80%;">Conclusions and where do we stand</a></li>
+     <!-- navigation toc: --> <li><a href="#extrapolations-and-model-interpretability" style="font-size: 80%;">Extrapolations and model interpretability</a></li>
+     <!-- navigation toc: --> <li><a href="._MSUFeb10-bs023.html#bayesian-statistics" style="font-size: 80%;">Bayesian statistics</a></li>
+     <!-- navigation toc: --> <li><a href="._MSUFeb10-bs024.html#quantified-limits-of-the-nuclear-landscape" style="font-size: 80%;">Quantified limits of the nuclear landscape</a></li>
+     <!-- navigation toc: --> <li><a href="._MSUFeb10-bs025.html#constraining-the-equation-of-state-for-dense-nuclear-matter" style="font-size: 80%;">Constraining the equation of state for dense nuclear matter</a></li>
+     <!-- navigation toc: --> <li><a href="._MSUFeb10-bs026.html#experimental-design" style="font-size: 80%;">Experimental design</a></li>
+     <!-- navigation toc: --> <li><a href="._MSUFeb10-bs027.html#conclusions-and-where-do-we-stand" style="font-size: 80%;">Conclusions and where do we stand</a></li>
 
         </ul>
       </li>
@@ -181,34 +200,12 @@ MathJax.Hub.Config({
 <p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p> <!-- add vertical space -->
 <a name="part0022"></a>
 <!-- !split -->
-<h2 id="conclusions-and-where-do-we-stand" class="anchor">Conclusions and where do we stand </h2>
-<div class="panel panel-default">
-<div class="panel-body">
-<!-- subsequent paragraphs come in larger fonts, so start with a paragraph -->
-<ul>
-<li> Lots of experimental analysis coming, see for example <a href="https://arxiv.org/abs/2008.02757" target="_self">Unsupervised Learning for Identifying Events in Active Target Experiments by Solli et al.</a> as well references and examples in  <a href="https://arxiv.org/abs/2006.05422" target="_self">Report from the A.I. For Nuclear Physics  Workshop by Bedaque et al.</a>.</li>
-<li> Extension of the work of <a href="http://science.sciencemag.org/content/355/6325/602" target="_self">G. Carleo and M. Troyer, Science <b>355</b>, Issue 6325, pp. 602-606 (2017)</a> gives excellent results for two-electron systems as well as good agreement with standard VMC calculations for many  electrons.</li>
-<li> Promising results with neural Networks as well. Next step is to use trial wave function in final Green's function Monte Carlo calculations.</li> 
-<li> Minimization problem can be tricky.</li>
-<li> Anti-symmetry dealt with multiplying the trail wave function with either a simple or an optimized Slater determinant.</li>
-<li> Extend to more fermions. How do we deal with the antisymmetry of the multi-fermion wave function?
-<ol type="a"></li>
- <li> Here we also used standard Hartree-Fock theory to define an optimal Slater determinant. Takes care of the antisymmetry. What about constructing an anti-symmetrized network function?</li>
- <li> Use thereafter ML to determine the correlated part of the wafe function (including a standard Jastrow factor).</li>
-</ol>
-<li> Can we use ML to find out which correlations are relevant and thereby diminish the dimensionality problem in standard many-body  theories?</li> 
-<li> And many more exciting research avenues</li>
-</ul>
-</div>
-</div>
+<h2 id="extrapolations-and-model-interpretability" class="anchor">Extrapolations and model interpretability  </h2>
 
-
-<p>Need for Machine Learning and Uncertainty Quantification in nuclear physics theory.
-Good progress but much remains to be done.
-</p>
-
-<p>To solve many complex problems in the field and facilitate discoveries, multidisciplinary efforts efforts are required involving scientists in  nuclear physics, statistics, computational science, and applied math. 
-The community needs to invest in relevant educational efforts.
+<p>Disadvantage of deep learning methods is their &#8220;black box&#8221; nature: the
+computationally-advanced methods by which these methods come up with
+the convolved output is not readily understandable. Kowsari et
+al. Information 10, 150 (2019); on text classification algorithms
 </p>
 
 <p>
@@ -226,6 +223,12 @@ The community needs to invest in relevant educational efforts.
   <li><a href="._MSUFeb10-bs020.html">21</a></li>
   <li><a href="._MSUFeb10-bs021.html">22</a></li>
   <li class="active"><a href="._MSUFeb10-bs022.html">23</a></li>
+  <li><a href="._MSUFeb10-bs023.html">24</a></li>
+  <li><a href="._MSUFeb10-bs024.html">25</a></li>
+  <li><a href="._MSUFeb10-bs025.html">26</a></li>
+  <li><a href="._MSUFeb10-bs026.html">27</a></li>
+  <li><a href="._MSUFeb10-bs027.html">28</a></li>
+  <li><a href="._MSUFeb10-bs023.html">&raquo;</a></li>
 </ul>
 <!-- ------------------- end of main content --------------- -->
 </div>  <!-- end container -->
