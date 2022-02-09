@@ -1,5 +1,5 @@
 TITLE: Artificial Intelligence and Machine Learning in Nuclear Physics
-AUTHOR: Morten Hjorth-Jensen, Dean Lee and Witek Nazarewiczat Department of Physics and Astronomy and FRIB/NSCL Laboratory, Michigan State University
+AUTHOR: Morten Hjorth-Jensen, Dean Lee and Witek Nazarewicz at Department of Physics and Astronomy and FRIB/NSCL Laboratory, Michigan State University
 DATE: Research Discussion, FRIB, Michigan State University, February 10, 2022
 
 
@@ -8,11 +8,13 @@ DATE: Research Discussion, FRIB, Michigan State University, February 10, 2022
 !bblock
 The main emphasis is to give you a short and pedestrian introduction to the whys and hows we can use Machine Learning methods
 to solve quantum mechanical many-body problems and how we can use such techniques in analysis of  experiments. And why this could (or should) be of interest. 
+!eblock
 
 
+!bblock
 These slides are at URL:"https://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/".
 
-_See also Artificial Intelligence and Machine Learning in Nuclear Physics_, Amber Boehnlein et al., "arXiv:2112.02309":"https://arxiv.org/abs/2112.02309" and Reviews Modern of Physics, submitted
+_See also Artificial Intelligence and Machine Learning in Nuclear Physics_, Amber Boehnlein et al., "arXiv:2112.02309":"https://arxiv.org/abs/2112.02309" and Reviews Modern of Physics, submitted.  MSU co-authors are Deal Lee, Witek Nazarewicz, Peter Ostroumov, and MHJ
 
 !eblock
 
@@ -29,7 +31,7 @@ FIGURE: [figures/ML-NP.pdf, width=700 frac=0.9]
 
 
 !split
-===== ML in Materials Science and nanotechnologies, predicting candidates for quantum technologies =====
+===== ML in Materials Science and nanotechnologies, predicting candidates for quantum technologies (add figure) =====
 
 FIGURE: [figures/fig2.png, width=700 frac=0.9]
 
@@ -42,10 +44,27 @@ o Russell and Norvig in their popular textbook: _relevant to any intellectual ta
 o Woody Bledsoe puts it more bluntly: _in the long run, AI is the only science_ (quoted in McCorduck, "Machines who think":"https://www.pamelamccorduck.com/machines-who-think")
 
 
-If you wish to have a critical read on AI/ML from a societal point of view, see Kate Crawford's recent text Atlas of AI":"https://www.katecrawford.net/"
+If you wish to have a critical read on AI/ML from a societal point of view, see "Kate Crawford's recent text Atlas of AI":"https://www.katecrawford.net/"
 
 _Here: with AI/ML we intend a collection of machine learning methods with an emphasis on statistical learning and data analysis_
 
+
+!split
+===== Scientific Machine Learning =====
+
+An important and emerging field is what has been dubbed as scientific ML, see the article by Deiana et al "Applications and Techniques for Fast Machine Learning in Science, arXiv:2110.13041":"https://arxiv.org/abs/2110.13041"
+
+!bblock
+The authors discuss applications and techniques for fast machine
+learning (ML) in science -- the concept of integrating power ML
+methods into the real-time experimental data processing loop to
+accelerate scientific discovery. The report covers three main areas
+
+o applications for fast ML across a number of scientific domains;
+o techniques for training and implementing performant and resource-efficient ML algorithms;
+o and computing architectures, platforms, and technologies for deploying these algorithms.
+
+!eblock
 
 !split
 ===== Machine learning & low-energy nuclear theory: Why? =====
@@ -66,13 +85,11 @@ o Theoretical models are often applied to entirely new nuclear systems and condi
 !split
 =====  The plethora  of machine learning algorithms/methods =====
 
-o Deep learning and Neural Networks
-o Bayesian, convolutional, feedforward, recurrent, Boltzmann machines 
-o Bayesian Machine Learning
-o Bayesian optimization, Bayesian model averaging & mixing, Bayesian experimental design
-o Dimensionality reduction and Clustering Methods
+o Deep learning: Neural Networks, Convolutional NN, Recurrent NN, autoencoders, GANS etc
+o Bayesian statistics and Bayesian Machine Learning, Bayesian experimental design, Gaussian processes and much more
+o Dimensionality reduction (Principal component analysis), Clustering Methods and more
 o Ensemble Methods, Random forests, bagging and voting methods, gradient boosting approaches 
-o Kernel methods, linear regression, support vector machines
+o Linear and logistic regression, Kernel methods, support vector machines and more
 
 
 
@@ -84,31 +101,6 @@ Nuclear  shell  model  UQ.–ML methods  have  been  used  to  provide  UQ  of  
 Low-energy nuclear reactions UQ. –BO studies of the nucleon-nucleus optical potential, R-matrix analyses,  and  statistical spatial networks to study patterns in nuclear reaction networks.
 Neutron star properties and nuclear matter equation of state.--constraining the equation of state by properties on neutron stars and selected properties of finite nuclei
 Experimental design.–Bayesian ML provides a framework  to  maximize  the  success  of  on  experiment  based on  the  best  information  available  on existing  data, experimental conditions, and theoretical models.
-
-!split
-===== Why? Basic motivation =====
-
-_Overarching view: dimension reduction_
-!bblock
-How can we avoid the dimensionality curse? Many possibilities
-o smarter basis functions
-o resummation of specific correlations
-o stochastic sampling of high-lying states (stochastic FCI, CC and SRG/IMSRG)
-o many more
-
-
-Machine Learning and Quantum Computing hold also great promise in tackling the 
-ever increasing dimensionalities. A hot new field is  _Quantum Machine Learning_, see for example the recent textbook by "Maria Schuld and Francesco Petruccione":"https://www.springer.com/gp/book/9783319964232". Here we will focus on Machine Learning.
-!eblock
-
-!split
-===== Overview =====
-!bblock
-* Short intro to Machine Learning
-* Variational Monte Carlo (Markov Chain Monte Carlo or just MC2) and many-body problems, solving quantum mechanical problems in a stochastic way. It  will serve as  our motivation for switching to Machine Learning. 
-* From Variational Monte Carlo to Deep  Learning
-* Machine Learning and Experiment
-!eblock
 
 
 
