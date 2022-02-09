@@ -69,15 +69,12 @@ div.toc p,a {
                None,
                'a-simple-perspective-on-the-interface-between-ml-and-physics'),
               ('ML in Nuclear  Physics', 2, None, 'ml-in-nuclear-physics'),
-              ('ML in Materials Science and nanotechnologies, predicting '
-               'candidates for quantum technologies (add figure)',
+              ('ML in Materials Science', 2, None, 'ml-in-materials-science'),
+              ('AI/ML and some statements you may have heard (and what do they '
+               'mean?)',
                2,
                None,
-               'ml-in-materials-science-and-nanotechnologies-predicting-candidates-for-quantum-technologies-add-figure'),
-              ('AI/ML and some statements you may hear more and more',
-               2,
-               None,
-               'ai-ml-and-some-statements-you-may-hear-more-and-more'),
+               'ai-ml-and-some-statements-you-may-have-heard-and-what-do-they-mean'),
               ('Scientific Machine Learning',
                2,
                None,
@@ -119,7 +116,7 @@ div.toc p,a {
                2,
                None,
                'what-are-the-basic-ingredients'),
-              ('"UNsupervised learning in nuclear physics, Argon-46 by Solli, '
+              ('"Unsupervised learning in nuclear physics, Argon-46 by Solli, '
                'Bazin, Kuchera, MHJ, '
                'Schwartz.":"https://www.sciencedirect.com/science/article/abs/pii/S0168900221004460?via%3Dihub"',
                2,
@@ -137,11 +134,31 @@ div.toc p,a {
                2,
                None,
                'replacing-the-jastrow-factor-with-neural-networks'),
+              ('"Gnech et al, Variational Monte Carlo calculations of $A\\le '
+               '6$ nuclei '
+               'arXiv:108.06836":"https://arxiv.org/pdf/2108.06836.pdf"',
+               2,
+               None,
+               'gnech-et-al-variational-monte-carlo-calculations-of-a-le-6-nuclei-arxiv-108-06836-https-arxiv-org-pdf-2108-06836-pdf'),
               ('Extrapolations and model interpretability',
                2,
                None,
                'extrapolations-and-model-interpretability'),
-              ('Bayesian statistics', 2, None, 'bayesian-statistics'),
+              ("Statistics and Bayes' theorem",
+               2,
+               None,
+               'statistics-and-bayes-theorem'),
+              ('Marginal Probability', 2, None, 'marginal-probability'),
+              ('Conditional  Probability', 2, None, 'conditional-probability'),
+              ("Bayes' Theorem", 2, None, 'bayes-theorem'),
+              ("Interpretations of Bayes' Theorem",
+               2,
+               None,
+               'interpretations-of-bayes-theorem'),
+              ('Folding and unfolding of detector response',
+               2,
+               None,
+               'folding-and-unfolding-of-detector-response'),
               ('Quantified limits of the nuclear landscape',
                2,
                None,
@@ -198,8 +215,8 @@ MathJax.Hub.Config({
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
-<p>The main emphasis is to give you a short and pedestrian introduction to the whys and hows we can use Machine Learning methods
-to solve quantum mechanical many-body problems and how we can use such techniques in analysis of  experiments. And why this could (or should) be of interest. 
+<p>The main emphasis is to give you a short and pedestrian introduction to the whys and hows we can use (with several examples) machine learning methods
+in nuclear physics. And why this could (or should) be of interest. 
 </p>
 </div>
 
@@ -209,9 +226,11 @@ to solve quantum mechanical many-body problems and how we can use such technique
 <p>
 <p>These slides are at <a href="https://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/" target="_blank"><tt>https://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/</tt></a> Scroll down the page.</p>
 
-<p><b>Talk based Artificial Intelligence and Machine Learning in Nuclear Physics</b>, Amber Boehnlein et al., <a href="https://arxiv.org/abs/2112.02309" target="_blank">arXiv:2112.02309</a> and Reviews Modern of Physics, submitted.  <em>MSU co-authors are Deal Lee, Witek Nazarewicz, Peter Ostroumov, and MHJ</em></p>
-
-<b>See also list of existing/ongoing ML projects at FRIB at <a href="https://mhjensen.github.io/MLFRIB/mlfrib.pdf" target="_blank"><tt>https://mhjensen.github.io/MLFRIB/mlfrib.pdf</tt></a></b>
+<ul>
+<li> <b>Talk based Artificial Intelligence and Machine Learning in Nuclear Physics</b>, Amber Boehnlein et al., <a href="https://arxiv.org/abs/2112.02309" target="_blank">arXiv:2112.02309</a> and Reviews Modern of Physics, submitted.  <em>MSU co-authors are Deal Lee, Witek Nazarewicz, Peter Ostroumov, and MHJ</em></li>
+<li> <b>See also list of existing/ongoing ML projects at FRIB at <a href="https://mhjensen.github.io/MLFRIB/MLFRIB.pdf" target="_blank"><tt>https://mhjensen.github.io/MLFRIB/MLFRIB.pdf</tt></a></b></li> 
+<li> _And the BAND collaboration at <a href="https://bandframework.github.io/" target="_blank"><tt>https://bandframework.github.io/</tt></a></li>
+</ul>
 </div>
 
 
@@ -234,7 +253,7 @@ to solve quantum mechanical many-body problems and how we can use such technique
 <br/><br/>
 
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
-<h2 id="ml-in-materials-science-and-nanotechnologies-predicting-candidates-for-quantum-technologies-add-figure">ML in Materials Science and nanotechnologies, predicting candidates for quantum technologies (add figure) </h2>
+<h2 id="ml-in-materials-science">ML in Materials Science </h2>
 
 <br/><br/>
 <center>
@@ -243,7 +262,7 @@ to solve quantum mechanical many-body problems and how we can use such technique
 <br/><br/>
 
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
-<h2 id="ai-ml-and-some-statements-you-may-hear-more-and-more">AI/ML and some statements you may hear more and more </h2>
+<h2 id="ai-ml-and-some-statements-you-may-have-heard-and-what-do-they-mean">AI/ML and some statements you may have heard (and what do they mean?)  </h2>
 
 <ol>
 <li> Fei-Fei Li on ImageNet: <b>map out the entire world of objects</b> (<a href="https://cacm.acm.org/news/219702-the-data-that-transformed-ai-research-and-possibly-the-world/fulltext" target="_blank">The data that transformed AI research</a>)</li>
@@ -483,14 +502,14 @@ Some of the most common tasks are:
 
 
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
-<h2 id="unsupervised-learning-in-nuclear-physics-argon-46-by-solli-bazin-kuchera-mhj-schwartz-https-www-sciencedirect-com-science-article-abs-pii-s0168900221004460-via-3dihub"><a href="https://www.sciencedirect.com/science/article/abs/pii/S0168900221004460?via%3Dihub" target="_blank">UNsupervised learning in nuclear physics, Argon-46 by Solli, Bazin, Kuchera, MHJ, Schwartz.</a> </h2>
+<h2 id="unsupervised-learning-in-nuclear-physics-argon-46-by-solli-bazin-kuchera-mhj-schwartz-https-www-sciencedirect-com-science-article-abs-pii-s0168900221004460-via-3dihub"><a href="https://www.sciencedirect.com/science/article/abs/pii/S0168900221004460?via%3Dihub" target="_blank">Unsupervised learning in nuclear physics, Argon-46 by Solli, Bazin, Kuchera, MHJ, Schwartz.</a> </h2>
 
 <p>Two- and three-dimensional representations of two events from the
 Argon-46 experiment. Each row is one event in two projections,
 where the color intensity of each point indicates higher charge values
 recorded by the detector. The bottom row illustrates a carbon event with
 a large fraction of noise, while the top row shows a proton event
-almost free of noise. See <a href="https://arxiv.org/abs/2008.02757" target="_blank">Unsupervised Learning for Identifying Events in Active Target Experiments by Solli et al.</a> for more detials.
+almost free of noise. 
 </p>
 
 <br/><br/>
@@ -572,18 +591,116 @@ The above function is replaced by a four-layer Neural Network.
 <br/><br/>
 
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
-<h2 id="extrapolations-and-model-interpretability">Extrapolations and model interpretability  </h2>
+<h2 id="gnech-et-al-variational-monte-carlo-calculations-of-a-le-6-nuclei-arxiv-108-06836-https-arxiv-org-pdf-2108-06836-pdf"><a href="https://arxiv.org/pdf/2108.06836.pdf" target="_blank">Gnech et al, Variational Monte Carlo calculations of \( A\le 6 \) nuclei arXiv:108.06836</a> </h2>
 
-<p>Disadvantage of deep learning methods is their &#8220;black box&#8221; nature: the
-computationally-advanced methods by which these methods come up with
-the convolved output is not readily understandable. Kowsari et
-al. Information 10, 150 (2019); on text classification algorithms
-</p>
+<br/><br/>
+<center>
+<p><img src="figures/pointnucleondensity.png" width="700" align="bottom"></p>
+</center>
+<br/><br/>
 
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
-<h2 id="bayesian-statistics">Bayesian statistics </h2>
+<h2 id="extrapolations-and-model-interpretability">Extrapolations and model interpretability  </h2>
 
-<p>Add formula</p>
+<p>When you hear phrases like <b>predictions and estimations</b> and
+<b>correlations and causations</b>, what do you think of?  May be you think
+of the difference between classifying new data points and generating
+new data points.
+Or perhaps you consider that correlations represent some kind of symmetric statements like
+if \( A \) is correlated with \( B \), then \( B \) is correlated with
+\( A \). Causation on the other hand is directional, that is if \( A \) causes \( B \), \( B \) does not
+necessarily cause \( A \).
+</p>
+
+<p>These concepts are in some sense the difference between <b>old-fashioned</b> machine
+learning and statistics and Bayesian learning. In machine learning and prediction based
+tasks, we are often interested in developing algorithms that are
+capable of learning patterns from given data in an automated fashion,
+and then using these learned patterns to make predictions or
+assessments of newly given data. In many cases, our primary concern
+is the quality of the predictions or assessments, and we are less
+concerned about the underlying patterns that were learned in order
+to make these predictions.
+</p>
+
+<p>Physics based statistical learning points however to approaches that give us both predictions and correlations as well as being able to produce error estimates and understand causations.  This leads us to the very interesting field of Bayesian statistics.</p>
+<h2 id="statistics-and-bayes-theorem">Statistics and Bayes' theorem </h2>
+
+<p>A central theorem in statistics is Bayes' theorem. This theorem plays a similar role as the good old Pythagoras' theorem in geometry.
+Bayes' theorem is extremely simple to derive. 
+</p>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b>The product rule (aka joint probability) is given by</b>
+<p>
+$$
+p(X \cup Y)= p(X,Y)= p(X\vert Y)p(Y)=p(Y\vert X)p(X),
+$$
+
+<p>where we read \( p(X\vert Y) \) as the likelihood of obtaining \( X \) given \( Y \).</p>
+</div>
+
+
+<p>If we have independent events then \( p(X,Y)=p(X)p(Y) \).</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="marginal-probability">Marginal Probability </h2>
+
+<p>The marginal probability is defined in terms of only one of the set of variables \( X,Y \). For a discrete probability we have</p>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+$$
+p(X)=\sum_{i=0}^{n-1}p(X,Y=y_i)=\sum_{i=0}^{n-1}p(X\vert Y=y_i)p(Y=y_i)=\sum_{i=0}^{n-1}p(X\vert y_i)p(y_i).
+$$
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="conditional-probability">Conditional  Probability </h2>
+
+<p>The conditional  probability, if \( p(Y) > 0 \), is </p>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+$$
+p(X\vert Y)= \frac{p(X,Y)}{p(Y)}=\frac{p(X,Y)}{\sum_{i=0}^{n-1}p(Y\vert X=x_i)p(x_i)}.
+$$
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="bayes-theorem">Bayes' Theorem </h2>
+
+<p>If we combine the conditional probability with the marginal probability and the standard product rule, we have</p>
+$$
+p(X\vert Y)= \frac{p(X,Y)}{p(Y)},
+$$
+
+<p>which we can rewrite as</p>
+
+$$
+p(X\vert Y)= \frac{p(X,Y)}{\sum_{i=0}^{n-1}p(Y\vert X=x_i)p(x_i)}=\frac{p(Y\vert X)p(X)}{\sum_{i=0}^{n-1}p(Y\vert X=x_i)p(x_i)},
+$$
+
+<p>which is Bayes' theorem. It allows us to evaluate the uncertainty in \( X \) after we have observed \( Y \). We can easily interchange \( X \) with \( Y \).  </p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="interpretations-of-bayes-theorem">Interpretations of Bayes' Theorem </h2>
+
+<p>The quantity \( p(Y\vert X) \) on the right-hand side of the theorem is
+evaluated for the observed data \( Y \) and can be viewed as a function of
+the parameter space represented by \( X \). This function is not
+necesseraly normalized and is normally called the likelihood function.
+</p>
+
+<p>The function \( p(X) \) on the right hand side is called the prior while the function on the left hand side is the called the posterior probability. The denominator on the right hand side serves as a normalization factor for the posterior distribution.</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="folding-and-unfolding-of-detector-response">Folding and unfolding of detector response </h2>
+<p>To wrap up.
+Run Jupyter-notebook
+</p>
 
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 <h2 id="quantified-limits-of-the-nuclear-landscape">Quantified limits of the nuclear landscape </h2>

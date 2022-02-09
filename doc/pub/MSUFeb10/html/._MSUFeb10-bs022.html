@@ -42,15 +42,12 @@ doconce format html MSUFeb10.do.txt --html_style=bootstrap --pygments_html_style
                None,
                'a-simple-perspective-on-the-interface-between-ml-and-physics'),
               ('ML in Nuclear  Physics', 2, None, 'ml-in-nuclear-physics'),
-              ('ML in Materials Science and nanotechnologies, predicting '
-               'candidates for quantum technologies (add figure)',
+              ('ML in Materials Science', 2, None, 'ml-in-materials-science'),
+              ('AI/ML and some statements you may have heard (and what do they '
+               'mean?)',
                2,
                None,
-               'ml-in-materials-science-and-nanotechnologies-predicting-candidates-for-quantum-technologies-add-figure'),
-              ('AI/ML and some statements you may hear more and more',
-               2,
-               None,
-               'ai-ml-and-some-statements-you-may-hear-more-and-more'),
+               'ai-ml-and-some-statements-you-may-have-heard-and-what-do-they-mean'),
               ('Scientific Machine Learning',
                2,
                None,
@@ -92,7 +89,7 @@ doconce format html MSUFeb10.do.txt --html_style=bootstrap --pygments_html_style
                2,
                None,
                'what-are-the-basic-ingredients'),
-              ('"UNsupervised learning in nuclear physics, Argon-46 by Solli, '
+              ('"Unsupervised learning in nuclear physics, Argon-46 by Solli, '
                'Bazin, Kuchera, MHJ, '
                'Schwartz.":"https://www.sciencedirect.com/science/article/abs/pii/S0168900221004460?via%3Dihub"',
                2,
@@ -110,11 +107,31 @@ doconce format html MSUFeb10.do.txt --html_style=bootstrap --pygments_html_style
                2,
                None,
                'replacing-the-jastrow-factor-with-neural-networks'),
+              ('"Gnech et al, Variational Monte Carlo calculations of $A\\le '
+               '6$ nuclei '
+               'arXiv:108.06836":"https://arxiv.org/pdf/2108.06836.pdf"',
+               2,
+               None,
+               'gnech-et-al-variational-monte-carlo-calculations-of-a-le-6-nuclei-arxiv-108-06836-https-arxiv-org-pdf-2108-06836-pdf'),
               ('Extrapolations and model interpretability',
                2,
                None,
                'extrapolations-and-model-interpretability'),
-              ('Bayesian statistics', 2, None, 'bayesian-statistics'),
+              ("Statistics and Bayes' theorem",
+               2,
+               None,
+               'statistics-and-bayes-theorem'),
+              ('Marginal Probability', 2, None, 'marginal-probability'),
+              ('Conditional  Probability', 2, None, 'conditional-probability'),
+              ("Bayes' Theorem", 2, None, 'bayes-theorem'),
+              ("Interpretations of Bayes' Theorem",
+               2,
+               None,
+               'interpretations-of-bayes-theorem'),
+              ('Folding and unfolding of detector response',
+               2,
+               None,
+               'folding-and-unfolding-of-detector-response'),
               ('Quantified limits of the nuclear landscape',
                2,
                None,
@@ -165,8 +182,8 @@ MathJax.Hub.Config({
      <!-- navigation toc: --> <li><a href="._MSUFeb10-bs001.html#what-is-this-talk-about" style="font-size: 80%;">What is this talk about?</a></li>
      <!-- navigation toc: --> <li><a href="._MSUFeb10-bs002.html#a-simple-perspective-on-the-interface-between-ml-and-physics" style="font-size: 80%;">A simple perspective on the interface between ML and Physics</a></li>
      <!-- navigation toc: --> <li><a href="._MSUFeb10-bs003.html#ml-in-nuclear-physics" style="font-size: 80%;">ML in Nuclear  Physics</a></li>
-     <!-- navigation toc: --> <li><a href="._MSUFeb10-bs004.html#ml-in-materials-science-and-nanotechnologies-predicting-candidates-for-quantum-technologies-add-figure" style="font-size: 80%;">ML in Materials Science and nanotechnologies, predicting candidates for quantum technologies (add figure)</a></li>
-     <!-- navigation toc: --> <li><a href="._MSUFeb10-bs005.html#ai-ml-and-some-statements-you-may-hear-more-and-more" style="font-size: 80%;">AI/ML and some statements you may hear more and more</a></li>
+     <!-- navigation toc: --> <li><a href="._MSUFeb10-bs004.html#ml-in-materials-science" style="font-size: 80%;">ML in Materials Science</a></li>
+     <!-- navigation toc: --> <li><a href="._MSUFeb10-bs005.html#ai-ml-and-some-statements-you-may-have-heard-and-what-do-they-mean" style="font-size: 80%;">AI/ML and some statements you may have heard (and what do they mean?)</a></li>
      <!-- navigation toc: --> <li><a href="._MSUFeb10-bs006.html#scientific-machine-learning" style="font-size: 80%;">Scientific Machine Learning</a></li>
      <!-- navigation toc: --> <li><a href="._MSUFeb10-bs007.html#machine-learning-and-physics" style="font-size: 80%;">Machine Learning and Physics</a></li>
      <!-- navigation toc: --> <li><a href="._MSUFeb10-bs008.html#lots-of-room-for-creativity" style="font-size: 80%;">Lots of room for creativity</a></li>
@@ -179,16 +196,22 @@ MathJax.Hub.Config({
      <!-- navigation toc: --> <li><a href="._MSUFeb10-bs015.html#and-more" style="font-size: 80%;">And more</a></li>
      <!-- navigation toc: --> <li><a href="._MSUFeb10-bs016.html#selected-references" style="font-size: 80%;">Selected references</a></li>
      <!-- navigation toc: --> <li><a href="._MSUFeb10-bs017.html#what-are-the-basic-ingredients" style="font-size: 80%;">What are the basic ingredients?</a></li>
-     <!-- navigation toc: --> <li><a href="._MSUFeb10-bs018.html#unsupervised-learning-in-nuclear-physics-argon-46-by-solli-bazin-kuchera-mhj-schwartz-https-www-sciencedirect-com-science-article-abs-pii-s0168900221004460-via-3dihub" style="font-size: 80%;">"UNsupervised learning in nuclear physics, Argon-46 by Solli, Bazin, Kuchera, MHJ, Schwartz.":"https://www.sciencedirect.com/science/article/abs/pii/S0168900221004460?via%3Dihub"</a></li>
+     <!-- navigation toc: --> <li><a href="._MSUFeb10-bs018.html#unsupervised-learning-in-nuclear-physics-argon-46-by-solli-bazin-kuchera-mhj-schwartz-https-www-sciencedirect-com-science-article-abs-pii-s0168900221004460-via-3dihub" style="font-size: 80%;">"Unsupervised learning in nuclear physics, Argon-46 by Solli, Bazin, Kuchera, MHJ, Schwartz.":"https://www.sciencedirect.com/science/article/abs/pii/S0168900221004460?via%3Dihub"</a></li>
      <!-- navigation toc: --> <li><a href="._MSUFeb10-bs019.html#quantum-monte-carlo-and-deep-learning" style="font-size: 80%;">Quantum Monte Carlo and deep learning</a></li>
      <!-- navigation toc: --> <li><a href="._MSUFeb10-bs020.html#deep-learning-neural-networks" style="font-size: 80%;">Deep learning neural networks</a></li>
      <!-- navigation toc: --> <li><a href="._MSUFeb10-bs021.html#replacing-the-jastrow-factor-with-neural-networks" style="font-size: 80%;">Replacing the Jastrow factor with neural networks</a></li>
-     <!-- navigation toc: --> <li><a href="#extrapolations-and-model-interpretability" style="font-size: 80%;">Extrapolations and model interpretability</a></li>
-     <!-- navigation toc: --> <li><a href="._MSUFeb10-bs023.html#bayesian-statistics" style="font-size: 80%;">Bayesian statistics</a></li>
-     <!-- navigation toc: --> <li><a href="._MSUFeb10-bs024.html#quantified-limits-of-the-nuclear-landscape" style="font-size: 80%;">Quantified limits of the nuclear landscape</a></li>
-     <!-- navigation toc: --> <li><a href="._MSUFeb10-bs025.html#constraining-the-equation-of-state-for-dense-nuclear-matter" style="font-size: 80%;">Constraining the equation of state for dense nuclear matter</a></li>
-     <!-- navigation toc: --> <li><a href="._MSUFeb10-bs026.html#experimental-design" style="font-size: 80%;">Experimental design</a></li>
-     <!-- navigation toc: --> <li><a href="._MSUFeb10-bs027.html#conclusions-and-where-do-we-stand" style="font-size: 80%;">Conclusions and where do we stand</a></li>
+     <!-- navigation toc: --> <li><a href="#gnech-et-al-variational-monte-carlo-calculations-of-a-le-6-nuclei-arxiv-108-06836-https-arxiv-org-pdf-2108-06836-pdf" style="font-size: 80%;">"Gnech et al, Variational Monte Carlo calculations of \( A\le 6 \) nuclei arXiv:108.06836":"https://arxiv.org/pdf/2108.06836.pdf"</a></li>
+     <!-- navigation toc: --> <li><a href="._MSUFeb10-bs023.html#extrapolations-and-model-interpretability" style="font-size: 80%;">Extrapolations and model interpretability</a></li>
+     <!-- navigation toc: --> <li><a href="._MSUFeb10-bs023.html#statistics-and-bayes-theorem" style="font-size: 80%;">Statistics and Bayes' theorem</a></li>
+     <!-- navigation toc: --> <li><a href="._MSUFeb10-bs024.html#marginal-probability" style="font-size: 80%;">Marginal Probability</a></li>
+     <!-- navigation toc: --> <li><a href="._MSUFeb10-bs025.html#conditional-probability" style="font-size: 80%;">Conditional  Probability</a></li>
+     <!-- navigation toc: --> <li><a href="._MSUFeb10-bs026.html#bayes-theorem" style="font-size: 80%;">Bayes' Theorem</a></li>
+     <!-- navigation toc: --> <li><a href="._MSUFeb10-bs027.html#interpretations-of-bayes-theorem" style="font-size: 80%;">Interpretations of Bayes' Theorem</a></li>
+     <!-- navigation toc: --> <li><a href="._MSUFeb10-bs028.html#folding-and-unfolding-of-detector-response" style="font-size: 80%;">Folding and unfolding of detector response</a></li>
+     <!-- navigation toc: --> <li><a href="._MSUFeb10-bs029.html#quantified-limits-of-the-nuclear-landscape" style="font-size: 80%;">Quantified limits of the nuclear landscape</a></li>
+     <!-- navigation toc: --> <li><a href="._MSUFeb10-bs030.html#constraining-the-equation-of-state-for-dense-nuclear-matter" style="font-size: 80%;">Constraining the equation of state for dense nuclear matter</a></li>
+     <!-- navigation toc: --> <li><a href="._MSUFeb10-bs031.html#experimental-design" style="font-size: 80%;">Experimental design</a></li>
+     <!-- navigation toc: --> <li><a href="._MSUFeb10-bs032.html#conclusions-and-where-do-we-stand" style="font-size: 80%;">Conclusions and where do we stand</a></li>
 
         </ul>
       </li>
@@ -200,13 +223,13 @@ MathJax.Hub.Config({
 <p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p> <!-- add vertical space -->
 <a name="part0022"></a>
 <!-- !split -->
-<h2 id="extrapolations-and-model-interpretability" class="anchor">Extrapolations and model interpretability  </h2>
+<h2 id="gnech-et-al-variational-monte-carlo-calculations-of-a-le-6-nuclei-arxiv-108-06836-https-arxiv-org-pdf-2108-06836-pdf" class="anchor"><a href="https://arxiv.org/pdf/2108.06836.pdf" target="_self">Gnech et al, Variational Monte Carlo calculations of \( A\le 6 \) nuclei arXiv:108.06836</a> </h2>
 
-<p>Disadvantage of deep learning methods is their &#8220;black box&#8221; nature: the
-computationally-advanced methods by which these methods come up with
-the convolved output is not readily understandable. Kowsari et
-al. Information 10, 150 (2019); on text classification algorithms
-</p>
+<br/><br/>
+<center>
+<p><img src="figures/pointnucleondensity.png" width="700" align="bottom"></p>
+</center>
+<br/><br/>
 
 <p>
 <!-- navigation buttons at the bottom of the page -->
@@ -228,6 +251,12 @@ al. Information 10, 150 (2019); on text classification algorithms
   <li><a href="._MSUFeb10-bs025.html">26</a></li>
   <li><a href="._MSUFeb10-bs026.html">27</a></li>
   <li><a href="._MSUFeb10-bs027.html">28</a></li>
+  <li><a href="._MSUFeb10-bs028.html">29</a></li>
+  <li><a href="._MSUFeb10-bs029.html">30</a></li>
+  <li><a href="._MSUFeb10-bs030.html">31</a></li>
+  <li><a href="._MSUFeb10-bs031.html">32</a></li>
+  <li><a href="">...</a></li>
+  <li><a href="._MSUFeb10-bs032.html">33</a></li>
   <li><a href="._MSUFeb10-bs023.html">&raquo;</a></li>
 </ul>
 <!-- ------------------- end of main content --------------- -->

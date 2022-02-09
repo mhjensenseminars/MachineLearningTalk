@@ -14,9 +14,11 @@ in nuclear physics. And why this could (or should) be of interest.
 !bblock
 These slides are at URL:"https://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/" Scroll down the page.
 
-_Talk based Artificial Intelligence and Machine Learning in Nuclear Physics_, Amber Boehnlein et al., "arXiv:2112.02309":"https://arxiv.org/abs/2112.02309" and Reviews Modern of Physics, submitted.  *MSU co-authors are Deal Lee, Witek Nazarewicz, Peter Ostroumov, and MHJ*
+* _Talk based Artificial Intelligence and Machine Learning in Nuclear Physics_, Amber Boehnlein et al., "arXiv:2112.02309":"https://arxiv.org/abs/2112.02309" and Reviews Modern of Physics, submitted.  *MSU co-authors are Deal Lee, Witek Nazarewicz, Peter Ostroumov, and MHJ*
 
-_See also list of existing/ongoing ML projects at FRIB at URL:"https://mhjensen.github.io/MLFRIB/MLFRIB.pdf"_ 
+* _See also list of existing/ongoing ML projects at FRIB at URL:"https://mhjensen.github.io/MLFRIB/MLFRIB.pdf"_ 
+
+* _And the BAND collaboration at URL:"https://bandframework.github.io/"
 
 !eblock
 
@@ -33,13 +35,13 @@ FIGURE: [figures/ML-NP.pdf, width=700 frac=1.0]
 
 
 !split
-===== ML in Materials Science and nanotechnologies, predicting candidates for quantum technologies (add figure) =====
+===== ML in Materials Science =====
 
 FIGURE: [figures/fig2.png, width=700 frac=1.0]
 
 
 !split
-=====  AI/ML and some statements you may hear more and more =====
+=====  AI/ML and some statements you may have heard (and what do they mean?)  =====
 
 o Fei-Fei Li on ImageNet: _map out the entire world of objects_ ("The data that transformed AI research":"https://cacm.acm.org/news/219702-the-data-that-transformed-ai-research-and-possibly-the-world/fulltext")
 o Russell and Norvig in their popular textbook: _relevant to any intellectual task; it is truly a universal field_ ("Artificial Intelligence, A modern approach":"http://aima.cs.berkeley.edu/")
@@ -254,14 +256,14 @@ We seek to minimize the function $\mathcal{C} (\mathbf{x}, f(\mathbf{\alpha}))$ 
 
 
 !split
-===== "UNsupervised learning in nuclear physics, Argon-46 by Solli, Bazin, Kuchera, MHJ, Schwartz.":"https://www.sciencedirect.com/science/article/abs/pii/S0168900221004460?via%3Dihub" =====
+===== "Unsupervised learning in nuclear physics, Argon-46 by Solli, Bazin, Kuchera, MHJ, Schwartz.":"https://www.sciencedirect.com/science/article/abs/pii/S0168900221004460?via%3Dihub" =====
 
 Two- and three-dimensional representations of two events from the
 Argon-46 experiment. Each row is one event in two projections,
 where the color intensity of each point indicates higher charge values
 recorded by the detector. The bottom row illustrates a carbon event with
 a large fraction of noise, while the top row shows a proton event
-almost free of noise. See "Unsupervised Learning for Identifying Events in Active Target Experiments by Solli et al.":"https://arxiv.org/abs/2008.02757" for more detials.
+almost free of noise. 
 
 FIGURE: [figures/examples_raw.png, width=500 frac=0.6]
 
@@ -335,20 +337,106 @@ FIGURE: [figures/energyconvergence.pdf, width=700 frac=0.9]
 !split
 =====  "Gnech et al, Variational Monte Carlo calculations of $A\le 6$ nuclei arXiv:108.06836":"https://arxiv.org/pdf/2108.06836.pdf" =====
 
-FIGURE: [figures/pointnucleondensity.pdf, width=700 frac=0.9]
+FIGURE: [figures/pointnucleondensity.png, width=700 frac=0.9]
+
 
 !split
 ===== Extrapolations and model interpretability  =====
 
-Disadvantage of deep learning methods is their “black box” nature: the
-computationally-advanced methods by which these methods come up with
-the convolved output is not readily understandable. 
+When you hear phrases like _predictions and estimations_ and
+_correlations and causations_, what do you think of?  May be you think
+of the difference between classifying new data points and generating
+new data points.
+Or perhaps you consider that correlations represent some kind of symmetric statements like
+if $A$ is correlated with $B$, then $B$ is correlated with
+$A$. Causation on the other hand is directional, that is if $A$ causes $B$, $B$ does not
+necessarily cause $A$.
+
+These concepts are in some sense the difference between _old-fashioned_ machine
+learning and statistics and Bayesian learning. In machine learning and prediction based
+tasks, we are often interested in developing algorithms that are
+capable of learning patterns from given data in an automated fashion,
+and then using these learned patterns to make predictions or
+assessments of newly given data. In many cases, our primary concern
+is the quality of the predictions or assessments, and we are less
+concerned about the underlying patterns that were learned in order
+to make these predictions.
+
+Physics based statistical learning points however to approaches that give us both predictions and correlations as well as being able to produce error estimates and understand causations.  This leads us to the very interesting field of Bayesian statistics.
+
+
+
+===== Statistics and Bayes' theorem =====
+
+A central theorem in statistics is Bayes' theorem. This theorem plays a similar role as the good old Pythagoras' theorem in geometry.
+Bayes' theorem is extremely simple to derive. 
+
+!bblock The product rule (aka joint probability) is given by
+!bt
+\[
+p(X \cup Y)= p(X,Y)= p(X\vert Y)p(Y)=p(Y\vert X)p(X),
+\]
+!et
+where we read $p(X\vert Y)$ as the likelihood of obtaining $X$ given $Y$.
+!eblock
+
+If we have independent events then $p(X,Y)=p(X)p(Y)$.
 
 
 !split
-===== Bayesian statistics =====
+===== Marginal Probability =====
 
-Add formula and discussion
+The marginal probability is defined in terms of only one of the set of variables $X,Y$. For a discrete probability we have
+!bblock 
+!bt
+\[
+p(X)=\sum_{i=0}^{n-1}p(X,Y=y_i)=\sum_{i=0}^{n-1}p(X\vert Y=y_i)p(Y=y_i)=\sum_{i=0}^{n-1}p(X\vert y_i)p(y_i).
+\]
+!et
+!eblock
+
+
+!split
+===== Conditional  Probability =====
+
+The conditional  probability, if $p(Y) > 0$, is 
+!bblock 
+!bt
+\[
+p(X\vert Y)= \frac{p(X,Y)}{p(Y)}=\frac{p(X,Y)}{\sum_{i=0}^{n-1}p(Y\vert X=x_i)p(x_i)}.
+\]
+!et
+!eblock
+
+
+!split
+===== Bayes' Theorem =====
+
+If we combine the conditional probability with the marginal probability and the standard product rule, we have
+!bt
+\[
+p(X\vert Y)= \frac{p(X,Y)}{p(Y)},
+\]
+!et
+which we can rewrite as
+
+!bt
+\[
+p(X\vert Y)= \frac{p(X,Y)}{\sum_{i=0}^{n-1}p(Y\vert X=x_i)p(x_i)}=\frac{p(Y\vert X)p(X)}{\sum_{i=0}^{n-1}p(Y\vert X=x_i)p(x_i)},
+\]
+!et
+which is Bayes' theorem. It allows us to evaluate the uncertainty in $X$ after we have observed $Y$. We can easily interchange $X$ with $Y$.  
+
+!split
+===== Interpretations of Bayes' Theorem =====
+
+The quantity $p(Y\vert X)$ on the right-hand side of the theorem is
+evaluated for the observed data $Y$ and can be viewed as a function of
+the parameter space represented by $X$. This function is not
+necesseraly normalized and is normally called the likelihood function.
+
+The function $p(X)$ on the right hand side is called the prior while the function on the left hand side is the called the posterior probability. The denominator on the right hand side serves as a normalization factor for the posterior distribution.
+
 
 !split
 ===== Folding and unfolding of detector response =====
@@ -404,19 +492,6 @@ Good progress but much remains to be done.
 
 To solve many complex problems in the field and facilitate discoveries, multidisciplinary efforts efforts are required involving scientists in  nuclear physics, statistics, computational science, and applied math. 
 The community needs to invest in relevant educational efforts.
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
