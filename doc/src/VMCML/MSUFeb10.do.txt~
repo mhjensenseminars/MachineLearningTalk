@@ -1,6 +1,6 @@
 TITLE: Artificial Intelligence and Machine Learning in Nuclear Physics
 AUTHOR: Morten Hjorth-Jensen {copyright, 1999-present|CC BY-NC} at Department of Physics and Astronomy and FRIB/NSCL Laboratory, Michigan State University, USA & Department of Physics and Center for Computing in Science Education, University of Oslo, Norway
-DATE: Research Discussion, FRIB, Michigan State University, February 10, 2022
+DATE: Physics Colloquia 2021/2022, Università di Milano, December 3, 2021
 
 
 !split
@@ -11,9 +11,9 @@ to solve quantum mechanical many-body problems and how we can use such technique
 
 The hope is that after this talk you have gotten the basic ideas to get you started. Peeping into URL:"https://github.com/mhjensenseminars/MachineLearningTalk", you'll find a Jupyter notebook, slides, codes etc that will allow you to reproduce the simulations discussed here, and perhaps run your own very first calculations.
 
-These slides are at URL:"https://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/".
+These slides are at URL:"https://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/UniMilano/html/UniMilano-reveal.html".
 
-_See also Artificial Intelligence and Machine Learning in Nuclear Physics_, Amber Boehnlein et al., Reviews Modern of Physics,
+_See also Artificial Intelligence and Machine Learning in Nuclear Physics_, Amber Boehnlein et al., Reviews Modern of Physics, submitted (on arXiv Monday)
 
 !eblock
 
