@@ -11,14 +11,14 @@ in nuclear physics. And why this could (or should) be of interest.
 !eblock
 
 
-!bblock
+!bblock Additional info
 These slides are at URL:"https://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/" Scroll down the page.
 
-* _Talk based Artificial Intelligence and Machine Learning in Nuclear Physics_, Amber Boehnlein et al., "arXiv:2112.02309":"https://arxiv.org/abs/2112.02309" and Reviews Modern of Physics, submitted.  *MSU co-authors are Deal Lee, Witek Nazarewicz, Peter Ostroumov, and MHJ*
+* Talk based on _Artificial Intelligence and Machine Learning in Nuclear Physics_, Amber Boehnlein et al., "arXiv:2112.02309":"https://arxiv.org/abs/2112.02309" and Reviews Modern of Physics, submitted.  *MSU co-authors are Deal Lee, Witek Nazarewicz, Peter Ostroumov, and MHJ*
 
-* _See also list of existing/ongoing ML projects at FRIB at URL:"https://mhjensen.github.io/MLFRIB/MLFRIB.pdf"_ 
+* See also list of existing/ongoing ML projects at FRIB at URL:"https://mhjensen.github.io/MLFRIB/MLFRIB.pdf"
 
-* _And the BAND collaboration at URL:"https://bandframework.github.io/"_
+* And the BAND collaboration at URL:"https://bandframework.github.io/"
 
 !eblock
 
@@ -364,7 +364,7 @@ to make these predictions.
 Physics based statistical learning points however to approaches that give us both predictions and correlations as well as being able to produce error estimates and understand causations.  This leads us to the very interesting field of Bayesian statistics.
 
 
-
+!split
 ===== Statistics and Bayes' theorem =====
 
 A central theorem in statistics is Bayes' theorem. This theorem plays a similar role as the good old Pythagoras' theorem in geometry.
@@ -448,14 +448,14 @@ Run Jupyter-notebook
 Neufcourt et al., Phys. Rev. C 101, 044307 (2020)
 Predictions made with 11 global mass model and Bayesian model averaging
 
-FIGURE: [figures/landscape-BMA.jpg, width=700 frac=0.9]
+FIGURE: [figures/landscape-BMA.jpg, width=700 frac=1.0]
 
 !split
 ===== Constraining the equation of state for dense nuclear matter =====
 
 G. Raaijmakers et al., Constraining the Dense Matter Equation of State with Joint Analysis of NICER and LIGO/Virgo Measurements, AJ Letters, 893, L21 (2020)
 
-FIGURE: [figures/nstareos.png, width=700 frac=0.9]
+FIGURE: [figures/nstareos.png, width=700 frac=1.0]
 
 !split
 ===== Experimental design =====
@@ -467,7 +467,7 @@ Beam time and compute cycles are expensive!
 * Once the utility function and the possible designs have been specified, the optimal design is simply the scenario that  maximizes the expected utility function over the domain of possible designs.
 
 
-FIGURE: [figures/utility.png, width=700 frac=0.9]
+FIGURE: [figures/utility.png, width=700 frac=1.0]
 
 
 
