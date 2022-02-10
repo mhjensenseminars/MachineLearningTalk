@@ -404,25 +404,28 @@ FIGURE: [figures/utility.png, width=700 frac=1.0]
 !eblock
 
 
-!bblock Possible start to raise awareness about ML in our field
+!split
+===== Possible start to raise awareness about ML in our field =====
+!bblock 
 * Make an ML challenge in nuclear physics a la "Learning to discover: the Higgs boson machine learning challenge":"https://home.cern/news/news/computing/higgs-boson-machine-learning-challenge". Alternatively go to kaggle.com at URL:"https://www.kaggle.com/c/higgs-boson"
-* HEP@CERN and HEP in general  has made significant impacts in the field of machine learning and AI. Something to learn from
+* HEP@CERN and HEP in general have made significant impacts in the field of machine learning and AI. Something to learn from
 !eblock
 
 
 !split
-===== Educational initiatives since 2019, FRIB?NSCL (MSU) playing a central role (please feel free to suggest new schools) =====
+===== Educational initiatives since 2019, FRIB/NSCL (MSU) playing a central role =====
+
+_Please feel free to propose new schools and/or update the list here._
 
 !bblock AI/ML courses
 o The FRIB-TA Summer School: Machine Learning Applied to Nuclear Physics, FRIB/NSCL (MSU)from May 20 to 23, 2019; organizers and teachers: Matthew Hirn (MSU), Morten Hjorth-Jensen (MSU) and Michelle Kuchera (Davidson)
-o Nuclear TALENT course Learning from Data: Bayesian Methods and Machine Learning, in York, UK, June 10-28, 2019; Teachers and organizers Christian Forssén, Chalmers University of Technology, Sweden, Dick Furnstahl, Ohio State University, USA,
-Daniel Phillips, Ohio University, USA
+o Nuclear TALENT course Learning from Data: Bayesian Methods and Machine Learning, in York, UK, June 10-28, 2019; Teachers and organizers Christian Forssén, Chalmers University of Technology, Sweden, Dick Furnstahl, Ohio State University, USA, Daniel Phillips, Ohio University, USA
 o Nuclear TALENT School on Machine learning from 22 June 2020 to 03 July 2020. Teachers and organizers: Daniel Bazin (MSU), Morten Hjorth-Jensen (MSU), Michelle Kuchera (Davidson), Sean Liddick (MSU), Raghuram Ramanujan (Davidson)
 o Nuclear TALENT School on Machine learning from 19 July 2021 to  30 July 2021. Teachers and organizers: Daniel Bazin (MSU), Morten Hjorth-Jensen (MSU), Michelle Kuchera (Davidson), Sean Liddick (MSU), Raghuram Ramanujan (Davidson)
 o Intensive course on Machine Learning at FRIB/MSU, summer 2019; teacher Morten Hjorth-Jensen, MSU
 o Four two-week intensive course on Machine Learning for Nuclear Physics held at Ganil, France, 2019, 2020, 2021 and 2022. Teacher and organizer Morten Hjorth-Jensen (MSU)
-o AI4NP Winter School, 11-15 Jan 2021, (Virtual). Organizers
-Amber Boehnlein (JLAB), Paulo Bedaque (University of Maryland), Tanja Horn (Catholic University of America)
+o AI4NP Winter School, 11-15 Jan 2021, (Virtual). Organizers Amber Boehnlein (JLAB), Paulo Bedaque (University of Maryland), Tanja Horn (Catholic University of America)
+o 2022? 
 !eblock
 
 
