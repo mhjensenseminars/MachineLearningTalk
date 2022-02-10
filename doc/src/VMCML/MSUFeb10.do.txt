@@ -357,8 +357,7 @@ The function $p(X)$ on the right hand side is called the prior while the functio
 
 !split
 ===== Folding and unfolding of detector response =====
-To wrap up.
-Run Jupyter-notebook
+
 
 !split
 ===== Quantified limits of the nuclear landscape =====
