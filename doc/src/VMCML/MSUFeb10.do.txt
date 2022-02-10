@@ -25,13 +25,13 @@ These slides are at URL:"https://mhjensenseminars.github.io/MachineLearningTalk/
 !split
 ===== A simple perspective on the interface between ML and Physics =====
 
-FIGURE: [figures/mlimage.png, width=700 frac=1.0]
+FIGURE: [figures/mlimage.png, width=800 frac=1.0]
 
 
 !split
 ===== ML in Nuclear  Physics =====
 
-FIGURE: [figures/ML-NP.pdf, width=700 frac=1.0]
+FIGURE: [figures/ML-NP.pdf, width=900 frac=1.0]
 
 
 
@@ -225,7 +225,7 @@ The large amount of degrees of freedom pertain to both theory and experiment in 
 * "Mehta et al.":"https://arxiv.org/abs/1803.08823" and "Physics Reports (2019)":"https://www.sciencedirect.com/science/article/pii/S0370157319300766?via%3Dihub".
 * "Machine Learning and the Physical Sciences by Carleo et al":"https://link.aps.org/doi/10.1103/RevModPhys.91.045002"
 * "Ab initio solution of the many-electron Schrödinger equation with deep neural networks by Pfau et al.":"https://journals.aps.org/prresearch/abstract/10.1103/PhysRevResearch.2.033429"
-* "Report from the A.I. For Nuclear Physics  Workshop by Bedaque et al., Eur J. Phys. A 57, (2021":"https://link.springer.com/article/10.1140/epja/s10050-020-00290-x"
+* "Report from the A.I. For Nuclear Physics  Workshop by Bedaque et al., Eur J. Phys. A 57, (2021)":"https://link.springer.com/article/10.1140/epja/s10050-020-00290-x"
 * "Particle Data Group summary on ML methods":"https://pdg.lbl.gov/2021/reviews/rpp2021-rev-machine-learning.pdf"
 !eblock
 
