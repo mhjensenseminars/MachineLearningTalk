@@ -12,7 +12,7 @@ in nuclear physics. And why this could (or should) be of interest.
 
 
 !bblock Additional info
-These slides are at URL:"https://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/" Scroll down the page.
+These slides are at URL:"https://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/". Scroll down the page.
 
 * Talk based on _Artificial Intelligence and Machine Learning in Nuclear Physics_, Amber Boehnlein et al., "arXiv:2112.02309":"https://arxiv.org/abs/2112.02309" and Reviews Modern of Physics, submitted.  *MSU co-authors are Dean Lee, Witek Nazarewicz, Peter Ostroumov, and MHJ*
 
@@ -225,7 +225,7 @@ The large amount of degrees of freedom pertain to both theory and experiment in 
 * "Mehta et al.":"https://arxiv.org/abs/1803.08823" and "Physics Reports (2019)":"https://www.sciencedirect.com/science/article/pii/S0370157319300766?via%3Dihub".
 * "Machine Learning and the Physical Sciences by Carleo et al":"https://link.aps.org/doi/10.1103/RevModPhys.91.045002"
 * "Ab initio solution of the many-electron Schrödinger equation with deep neural networks by Pfau et al.":"https://journals.aps.org/prresearch/abstract/10.1103/PhysRevResearch.2.033429"
-* "Report from the A.I. For Nuclear Physics  Workshop by Bedaque et al.":"https://arxiv.org/abs/2006.05422"
+* "Report from the A.I. For Nuclear Physics  Workshop by Bedaque et al., Eur J. Phys. A 57, (2021":"https://link.springer.com/article/10.1140/epja/s10050-020-00290-x"
 * "Particle Data Group summary on ML methods":"https://pdg.lbl.gov/2021/reviews/rpp2021-rev-machine-learning.pdf"
 !eblock
 
@@ -301,7 +301,7 @@ FIGURE: [figures/energyconvergence.pdf, width=700 frac=0.9]
 
 
 !split
-=====  "Gnech et al, Variational Monte Carlo calculations of $A\le 6$ nuclei arXiv:108.06836":"https://arxiv.org/pdf/2108.06836.pdf" =====
+=====  "Gnech et al, Variational Monte Carlo calculations of $A\le 6$ nuclei Few Body Systems 63, (2022)":"https://link.springer.com/article/10.1007/s00601-021-01706-0" =====
 
 FIGURE: [figures/pointnucleondensity.png, width=700 frac=0.9]
 
@@ -363,17 +363,17 @@ Run Jupyter-notebook
 !split
 ===== Quantified limits of the nuclear landscape =====
 
-Neufcourt et al., Phys. Rev. C 101, 044307 (2020)
-Predictions made with 11 global mass model and Bayesian model averaging
+"Neufcourt et al., Phys. Rev. C 101, 044307 (2020)":"https://journals.aps.org/prc/abstract/10.1103/PhysRevC.101.044307"
+Predictions made with eleven global mass model and Bayesian model averaging
 
-FIGURE: [figures/landscape-BMA.jpg, width=700 frac=1.0]
+FIGURE: [figures/landscape-BMA.jpg, width=800 frac=1.0]
 
 !split
 ===== Constraining the equation of state for dense nuclear matter =====
 
-G. Raaijmakers et al., Constraining the Dense Matter Equation of State with Joint Analysis of NICER and LIGO/Virgo Measurements, AJ Letters, 893, L21 (2020)
+"G. Raaijmakers et al., Constraining the Dense Matter Equation of State with Joint Analysis of NICER and LIGO/Virgo Measurements, AJ Letters, 893, L21 (2020)":"https://iopscience.iop.org/article/10.3847/2041-8213/ab822f"
 
-FIGURE: [figures/nstareos.png, width=700 frac=1.0]
+FIGURE: [figures/nstareos.png, width=800 frac=1.0]
 
 !split
 ===== Experimental design =====
@@ -408,6 +408,21 @@ FIGURE: [figures/utility.png, width=700 frac=1.0]
 * HEP@CERN and HEP in general  has made significant impacts in the field of machine learning and AI. Something to learn from
 !eblock
 
+
+!split
+===== Educational initiatives since 2019, FRIB?NSCL (MSU) playing a central role (please feel free to suggest new schools) =====
+
+!bblock AI/ML courses
+o The FRIB-TA Summer School: Machine Learning Applied to Nuclear Physics, FRIB/NSCL (MSU)from May 20 to 23, 2019; organizers and teachers: Matthew Hirn (MSU), Morten Hjorth-Jensen (MSU) and Michelle Kuchera (Davidson)
+o Nuclear TALENT course Learning from Data: Bayesian Methods and Machine Learning, in York, UK, June 10-28, 2019; Teachers and organizers Christian Forssén, Chalmers University of Technology, Sweden, Dick Furnstahl, Ohio State University, USA,
+Daniel Phillips, Ohio University, USA
+o Nuclear TALENT School on Machine learning from 22 June 2020 to 03 July 2020. Teachers and organizers: Daniel Bazin (MSU), Morten Hjorth-Jensen (MSU), Michelle Kuchera (Davidson), Sean Liddick (MSU), Raghuram Ramanujan (Davidson)
+o Nuclear TALENT School on Machine learning from 19 July 2021 to  30 July 2021. Teachers and organizers: Daniel Bazin (MSU), Morten Hjorth-Jensen (MSU), Michelle Kuchera (Davidson), Sean Liddick (MSU), Raghuram Ramanujan (Davidson)
+o Intensive course on Machine Learning at FRIB/MSU, summer 2019; teacher Morten Hjorth-Jensen, MSU
+o Four two-week intensive course on Machine Learning for Nuclear Physics held at Ganil, France, 2019, 2020, 2021 and 2022. Teacher and organizer Morten Hjorth-Jensen (MSU)
+o AI4NP Winter School, 11-15 Jan 2021, (Virtual). Organizers
+Amber Boehnlein (JLAB), Paulo Bedaque (University of Maryland), Tanja Horn (Catholic University of America)
+!eblock
 
 
 
