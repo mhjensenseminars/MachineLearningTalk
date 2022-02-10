@@ -356,7 +356,9 @@ The function $p(X)$ on the right hand side is called the prior while the functio
 
 
 !split
-===== Folding and unfolding of detector response =====
+===== Folding and unfolding and response functions =====
+
+See notebook details
 
 
 !split
