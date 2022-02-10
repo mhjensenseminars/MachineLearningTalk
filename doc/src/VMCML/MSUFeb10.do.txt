@@ -358,7 +358,10 @@ The function $p(X)$ on the right hand side is called the prior while the functio
 !split
 ===== Folding and unfolding and response functions =====
 
+A good read on folding/unfolding is "An Unfolding Method for High Energy Physics Experiments by Volker Blobel":"https://arxiv.org/abs/hep-ex/0208022"
+
 See notebook details and "examples of simple data reconstructed with Gaussian processes":"https://github.com/adambozson/gp-unfold/blob/master/Falling%20exponential.ipynb".
+
 
 
 !split
