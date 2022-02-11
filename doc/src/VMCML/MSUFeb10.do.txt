@@ -425,8 +425,8 @@ _Please feel free to propose new schools and/or update the list here._
 o The FRIB-TA Summer School: Machine Learning Applied to Nuclear Physics, FRIB/NSCL (MSU)from May 20 to 23, 2019; organizers and teachers: Matthew Hirn (MSU), Morten Hjorth-Jensen (MSU) and Michelle Kuchera (Davidson)
 o Nuclear TALENT course Learning from Data: Bayesian Methods and Machine Learning, in York, UK, June 10-28, 2019; Teachers and organizers Christian Forssén, Chalmers University of Technology, Sweden, Dick Furnstahl, Ohio State University, USA, Daniel Phillips, Ohio University, USA
 o Nuclear TALENT School on Machine learning from 22 June 2020 to 03 July 2020. Teachers and organizers: Daniel Bazin (MSU), Morten Hjorth-Jensen (MSU), Michelle Kuchera (Davidson), Sean Liddick (MSU), Raghuram Ramanujan (Davidson)
-o Nuclear TALENT School on Machine learning from 19 July 2021 to  30 July 2021. Teachers and organizers: Daniel Bazin (MSU), Morten Hjorth-Jensen (MSU), Michelle Kuchera (Davidson), Sean Liddick (MSU), Raghuram Ramanujan (Davidson)
-o Intensive course on Machine Learning at FRIB/MSU, summer 2019; teacher Morten Hjorth-Jensen, MSU
+o Nuclear TALENT School on Machine learning from 19 July 2021 to  30 July 2021. Teachers and organizers: Daniel Bazin (MSU), Morten Hjorth-Jensen (MSU), Michelle Kuchera (Davidson), Sean Liddick (MSU), Raghuram Ramanujan (Davidson), 
+o Intensive course on Machine Learning at FRIB/MSU, summer 2020; teacher Morten Hjorth-Jensen, MSU
 o Four two-week intensive course on Machine Learning for Nuclear Physics held at Ganil, France, 2019, 2020, 2021 and 2022. Teacher and organizer Morten Hjorth-Jensen (MSU)
 o AI4NP Winter School, 11-15 Jan 2021, (Virtual). Organizers Amber Boehnlein (JLAB), Paulo Bedaque (University of Maryland), Tanja Horn (Catholic University of America)
 o 2022? 
