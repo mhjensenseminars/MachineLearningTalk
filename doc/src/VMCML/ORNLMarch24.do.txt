@@ -20,6 +20,11 @@ These slides are at URL:"https://mhjensenseminars.github.io/MachineLearningTalk/
 !eblock
 
 !split
+===== Many folks to thank =====
+
+Thanks to Jane Kim (MSU), Julie Butler (MSU), Dean Lee (MSU), Witek Nazarewicz (MSU), Vilde Flugsrud (UiO), Even Nordhagen (UiO), Corey Adams (ANL), Bryce Fore (ANL), and Alessandro Lovato (ANL).
+
+!split
 ===== A simple perspective on the interface between ML and Physics =====
 
 FIGURE: [figures/mlimage.png, width=800 frac=1.0]
