@@ -1,6 +1,6 @@
 TITLE: Artificial Intelligence and Machine Learning in Nuclear Physics
-AUTHOR: Morten Hjorth-Jensen, Dean Lee and Witek Nazarewicz at Department of Physics and Astronomy and FRIB/NSCL Laboratory, Michigan State University
-DATE: Research Discussion, FRIB, Michigan State University, February 10, 2022
+AUTHOR: Morten Hjorth-Jensen at Department of Physics and Astronomy and FRIB/NSCL Laboratory, Michigan State University
+DATE: Oak Ridge National Laboratory, March 24, 2022
 
 
 !split
@@ -14,10 +14,7 @@ in nuclear physics. And why this could (or should) be of interest.
 !bblock Additional info
 These slides are at URL:"https://mhjensenseminars.github.io/MachineLearningTalk/doc/web/overview.html". Scroll down the page.
 
-* Talk based on _Artificial Intelligence and Machine Learning in Nuclear Physics_, Amber Boehnlein et al., "arXiv:2112.02309":"https://arxiv.org/abs/2112.02309" and Reviews Modern of Physics, submitted.  *MSU co-authors are Dean Lee, Witek Nazarewicz, Peter Ostroumov, and MHJ*
-
-* See also list of existing/ongoing ML projects at FRIB at URL:"https://mhjensen.github.io/MLFRIB/MLFRIB.pdf"
-
+* Talk based on _Artificial Intelligence and Machine Learning in Nuclear Physics_, Amber Boehnlein et al., "arXiv:2112.02309":"https://arxiv.org/abs/2112.02309" and Reviews Modern of Physics, submitted. 
 * And the BAND collaboration at URL:"https://bandframework.github.io/"
 
 !eblock
