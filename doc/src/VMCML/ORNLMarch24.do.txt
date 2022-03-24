@@ -287,8 +287,7 @@ In general, the integrals involved in the calculation of various  expectation va
 ===== Monte Carlo methods and Neural Networks =====
 
 "Machine Learning and the Deuteron by Kebble and Rios":"https://www.sciencedirect.com/science/article/pii/S0370269320305463?via%3Dihub" and
-"Variational Monte Carlo calculations of $A\le 4$ nuclei with an artificial neural-network correlator ansatz by Adams et al.":"https://journals.aps.org/prl/ab\
-stract/10.1103/PhysRevLett.127.022502"
+"Variational Monte Carlo calculations of $A\le 4$ nuclei with an artificial neural-network correlator ansatz by Adams et al.":"https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.127.022502"
 
 _Adams et al_:
 
