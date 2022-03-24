@@ -503,11 +503,6 @@ almost free of noise.
 </section>
 
 <section>
-<h2 id="add-more-info-here">Add more info here </h2>
-<p>figure with confusion matrix</p>
-</section>
-
-<section>
 <h2 id="quantum-monte-carlo-and-deep-learning">Quantum Monte Carlo and deep learning </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
@@ -533,6 +528,38 @@ $$
 </section>
 
 <section>
+<h2 id="monte-carlo-methods-and-neural-networks">Monte Carlo methods and Neural Networks </h2>
+
+<p><a href="https://www.sciencedirect.com/science/article/pii/S0370269320305463?via%3Dihub" target="_blank">Machine Learning and the Deuteron by Kebble and Rios</a> and
+"Variational Monte Carlo calculations of \( A\le 4 \) nuclei with an artificial neural-network correlator ansatz by Adams et al.":"https://journals.aps.org/prl/ab\
+stract/10.1103/PhysRevLett.127.022502"
+</p>
+
+<b>Adams et al</b>:
+
+<p>&nbsp;<br>
+$$
+\begin{align}
+H_{LO} &=-\sum_i \frac{{\vec{\nabla}_i^2}}{2m_N}
++\sum_{i < j} {\left(C_1  + C_2\, \vec{\sigma_i}\cdot\vec{\sigma_j}\right)
+e^{-r_{ij}^2\Lambda^2 / 4 }}
+\nonumber\\
+&+D_0 \sum_{i < j < k} \sum_{\text{cyc}}
+{e^{-\left(r_{ik}^2+r_{ij}^2\right)\Lambda^2/4}}\,,
+\tag{1}
+\end{align}
+$$
+<p>&nbsp;<br>
+
+<p>where \( m_N \) is the mass of the nucleon, \( \vec{\sigma_i} \) is the Pauli
+matrix acting on nucleon \( i \), and \( \sum_{\text{cyc}} \) stands for the
+cyclic permutation of \( i \), \( j \), and \( k \). The low-energy constants
+\( C_1 \) and \( C_2 \) are fit to the deuteron binding energy and to the
+neutron-neutron scattering length
+</p>
+</section>
+
+<section>
 <h2 id="deep-learning-neural-networks-variational-monte-carlo-calculations-of-a-le-4-nuclei-with-an-artificial-neural-network-correlator-ansatz-by-adams-et-al-https-journals-aps-org-prl-abstract-10-1103-physrevlett-127-022502">Deep learning neural networks, <a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.127.022502" target="_blank">Variational Monte Carlo calculations of \( A\le 4 \) nuclei with an artificial neural-network correlator ansatz by Adams et al.</a> </h2>
 
 <p>An appealing feature of the neural network ansatz is that it is more general than the more conventional product of two-
@@ -542,7 +569,7 @@ and three-body spin-independent Jastrow functions
 $$
 \begin{align}
 |\Psi_V^J \rangle = \prod_{i < j < k} \Big( 1-\sum_{\text{cyc}} u(r_{ij}) u(r_{jk})\Big) \prod_{i < j} f(r_{ij}) | \Phi\rangle\,,
-\tag{1}
+\tag{2}
 \end{align}
 $$
 <p>&nbsp;<br>
@@ -566,6 +593,74 @@ The above function is replaced by a four-layer Neural Network.
 <p><img src="figures/pointnucleondensity.png" width="700" align="bottom"></p>
 </center>
 <br/><br/>
+</section>
+
+<section>
+<h2 id="the-electron-gas-in-three-dimensions-with-n-14-electrons">The electron gas in three dimensions with \( N=14 \) electrons </h2>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<br/><br/>
+<center>
+<p><img src="figures/elgas.png" width="700" align="bottom"></p>
+</center>
+<br/><br/>
+</div>
+</section>
+
+<section>
+<h2 id="neutron-matter-with-n-14-neutron">Neutron matter with \( N=14 \) neutron </h2>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<br/><br/>
+<center>
+<p><img src="figures/nmatter.png" width="700" align="bottom"></p>
+</center>
+<br/><br/>
+</div>
+</section>
+
+<section>
+<h2 id="onebody-densities-n-6-hbar-omega-0-1-a-u">Onebody densities \( N=6 \), \( \hbar\omega=0.1 \) a.u. </h2>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<br/><br/>
+<center>
+<p><img src="figures/OB6hw01.png" width="700" align="bottom"></p>
+</center>
+<br/><br/>
+</div>
+</section>
+
+<section>
+<h2 id="onebody-densities-n-30-hbar-omega-1-0-a-u">Onebody densities \( N=30 \), \( \hbar\omega=1.0 \) a.u. </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<br/><br/>
+<center>
+<p><img src="figures/OB30hw1.png" width="700" align="bottom"></p>
+</center>
+<br/><br/>
+</div>
+</section>
+
+<section>
+<h2 id="onebody-densities-n-30-hbar-omega-0-1-a-u">Onebody densities \( N=30 \), \( \hbar\omega=0.1 \) a.u. </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<br/><br/>
+<center>
+<p><img src="figures/OB30hw01.png" width="700" align="bottom"></p>
+</center>
+<br/><br/>
+</div>
 </section>
 
 <section>

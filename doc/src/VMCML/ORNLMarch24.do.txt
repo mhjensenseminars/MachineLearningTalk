@@ -263,9 +263,6 @@ FIGURE: [figures/examples_raw.png, width=500 frac=0.6]
 
 
 
-!split
-===== Add more info here =====
-figure with confusion matrix
 
 !split
 ===== Quantum Monte Carlo and deep learning =====
@@ -286,6 +283,32 @@ is an upper bound to the ground state energy $E_0$ of the hamiltonian $H$, that 
 !et
 In general, the integrals involved in the calculation of various  expectation values  are multi-dimensional ones. Traditional integration methods such as the Gauss-Legendre will not be adequate for say the  computation of the energy of a many-body system.  _Basic philosophy: Let a neural network find the optimal wave function_
 !eblock
+
+!split
+===== Monte Carlo methods and Neural Networks =====
+
+"Machine Learning and the Deuteron by Kebble and Rios":"https://www.sciencedirect.com/science/article/pii/S0370269320305463?via%3Dihub" and
+"Variational Monte Carlo calculations of $A\le 4$ nuclei with an artificial neural-network correlator ansatz by Adams et al.":"https://journals.aps.org/prl/ab\
+stract/10.1103/PhysRevLett.127.022502"
+
+_Adams et al_:
+
+!bt
+\begin{align}
+H_{LO} &=-\sum_i \frac{{\vec{\nabla}_i^2}}{2m_N}
++\sum_{i<j} {\left(C_1  + C_2\, \vec{\sigma_i}\cdot\vec{\sigma_j}\right)
+e^{-r_{ij}^2\Lambda^2 / 4 }}
+\nonumber\\
+&+D_0 \sum_{i<j<k} \sum_{\text{cyc}}
+{e^{-\left(r_{ik}^2+r_{ij}^2\right)\Lambda^2/4}}\,,
+\end{align}
+!et
+
+where $m_N$ is the mass of the nucleon, $\vec{\sigma_i}$ is the Pauli
+matrix acting on nucleon $i$, and $\sum_{\text{cyc}}$ stands for the
+cyclic permutation of $i$, $j$, and $k$. The low-energy constants
+$C_1$ and $C_2$ are fit to the deuteron binding energy and to the
+neutron-neutron scattering length
 
 
 
@@ -310,6 +333,45 @@ FIGURE: [figures/energyconvergence.pdf, width=700 frac=0.9]
 =====  "Gnech et al, Variational Monte Carlo calculations of $A\le 6$ nuclei Few Body Systems 63, (2022)":"https://link.springer.com/article/10.1007/s00601-021-01706-0" =====
 
 FIGURE: [figures/pointnucleondensity.png, width=700 frac=0.9]
+
+
+!split
+===== The electron gas in three dimensions with $N=14$ electrons =====
+
+!bblock
+FIGURE: [figures/elgas.pdf, width=700 frac=0.9]
+!eblock
+
+
+!split
+===== Neutron matter with $N=14$ neutron =====
+
+!bblock
+FIGURE: [figures/nmatter.png, width=700 frac=0.9]
+!eblock
+
+
+!split
+===== Onebody densities $N=6$, $\hbar\omega=0.1$ a.u. =====
+
+!bblock
+FIGURE: [figures/OB6hw01.png, width=700 frac=0.9]
+!eblock
+
+
+!split
+===== Onebody densities $N=30$, $\hbar\omega=1.0$ a.u. =====
+!bblock
+FIGURE: [figures/OB30hw1.png, width=700 frac=0.9]
+!eblock
+
+
+!split
+===== Onebody densities $N=30$, $\hbar\omega=0.1$ a.u. =====
+!bblock
+FIGURE: [figures/OB30hw01.png, width=700 frac=0.9]
+!eblock
+
 
 
 !split
