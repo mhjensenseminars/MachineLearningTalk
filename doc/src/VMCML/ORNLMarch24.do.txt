@@ -15,7 +15,7 @@ in nuclear physics. And why this could (or should) be of interest.
 These slides are at URL:"https://mhjensenseminars.github.io/MachineLearningTalk/doc/web/overview.html". Scroll down the page.
 
 * Talk based on _Artificial Intelligence and Machine Learning in Nuclear Physics_, Amber Boehnlein et al., "arXiv:2112.02309":"https://arxiv.org/abs/2112.02309" and Reviews Modern of Physics, submitted. 
-* And the BAND collaboration at URL:"https://bandframework.github.io/"
+
 
 !eblock
 
@@ -136,7 +136,7 @@ Some of the most common tasks are:
 
 
 !split
-===== Machine learning & low-energy nuclear theory: Why? =====
+===== Machine learning and nuclear theory: Why? =====
 
 o ML tools can help us to speed up the scientific process cycle and hence facilitate discoveries
 o Enabling fast emulation for big simulations
@@ -228,6 +228,7 @@ The large amount of degrees of freedom pertain to both theory and experiment in 
 * "Ab initio solution of the many-electron Schrödinger equation with deep neural networks by Pfau et al.":"https://journals.aps.org/prresearch/abstract/10.1103/PhysRevResearch.2.033429"
 * "Report from the A.I. For Nuclear Physics  Workshop by Bedaque et al., Eur J. Phys. A 57, (2021)":"https://link.springer.com/article/10.1140/epja/s10050-020-00290-x"
 * "Particle Data Group summary on ML methods":"https://pdg.lbl.gov/2021/reviews/rpp2021-rev-machine-learning.pdf"
+* And the BAND collaboration at URL:"https://bandframework.github.io/"
 !eblock
 
 
