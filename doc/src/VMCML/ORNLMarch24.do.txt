@@ -134,8 +134,6 @@ Some of the most common tasks are:
   * Clustering: Data are divided into groups with certain common traits, without knowing the different groups beforehand.  It is thus a form of unsupervised learning.
 !eblock
 
-!split
-===== Reorder slides here =====
 
 !split
 ===== Machine learning & low-energy nuclear theory: Why? =====
