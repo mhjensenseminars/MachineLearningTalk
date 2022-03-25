@@ -272,5 +272,18 @@ DATE: today
 
 
 
+===== Artificial Intelligence and Machine Learning in Nuclear Physics, University of Tennessee, Knoxville, Tennessee, March 28, 2022 =====
+
+
+
+ * HTML:
+   * "Plain html style": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/UTKMarch28/html/UTKMarch28.html"
+   * "reveal.js beige slide style": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/UTKMarch28/html/UTKMarch28-reveal.html"
+   * "Bootstrap style": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/UTKMarch28/html/UTKMarch28-bs.html"
+ * iPython notebook:
+   * "ipynb file": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/UTKMarch28/ipynb/UTKMarch28.ipynb"
+
+
+
 
 
