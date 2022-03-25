@@ -337,7 +337,7 @@ FIGURE: [figures/pointnucleondensity.png, width=700 frac=0.9]
 ===== The electron gas in three dimensions with $N=14$ electrons =====
 Jane Kim, Bryce Fore, Alessandro Lovato and MHJ, in preparation
 !bblock
-FIGURE: [figures/elgas.pdf, width=700 frac=0.9]
+FIGURE: [figures/elgasnew.pdf, width=700 frac=0.9]
 !eblock
 
 
