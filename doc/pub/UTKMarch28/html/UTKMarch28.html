@@ -199,7 +199,6 @@ div.toc p,a {
                2,
                None,
                'unsupervised-learning-in-nuclear-physics-argon-46-by-solli-bazin-kuchera-mhj-strauss-https-www-sciencedirect-com-science-article-abs-pii-s0168900221004460-via-3dihub'),
-              ('Confusion matrix', 2, None, 'confusion-matrix'),
               ('Quantum Monte Carlo and deep learning',
                2,
                None,
@@ -221,19 +220,24 @@ div.toc p,a {
                2,
                None,
                'gnech-et-al-variational-monte-carlo-calculations-of-a-le-6-nuclei-few-body-systems-63-2022-https-link-springer-com-article-10-1007-s00601-021-01706-0'),
-              ('The electron gas in three dimensions with $N=14$ electrons',
+              ('The electron gas in three dimensions with $N=14$ electrons '
+               '(Wigner-Seitz radius $r_s=2$ Ry)',
                2,
                None,
-               'the-electron-gas-in-three-dimensions-with-n-14-electrons'),
+               'the-electron-gas-in-three-dimensions-with-n-14-electrons-wigner-seitz-radius-r-s-2-ry'),
               ('Neutron matter with $N=14$ neutron',
                2,
                None,
                'neutron-matter-with-n-14-neutron'),
-              ('Quantum dots, Onebody densities $N=6$, $\\hbar\\omega=0.1$ '
-               'a.u.',
+              ('Electrons in a harmonic oscillator trap in two dimensions',
                2,
                None,
-               'quantum-dots-onebody-densities-n-6-hbar-omega-0-1-a-u'),
+               'electrons-in-a-harmonic-oscillator-trap-in-two-dimensions'),
+              ('Quantum dots and Boltzmann machines, onebody densities $N=6$, '
+               '$\\hbar\\omega=0.1$ a.u.',
+               2,
+               None,
+               'quantum-dots-and-boltzmann-machines-onebody-densities-n-6-hbar-omega-0-1-a-u'),
               ('Onebody densities $N=30$, $\\hbar\\omega=1.0$ a.u.',
                2,
                None,
@@ -276,7 +280,63 @@ div.toc p,a {
                'central role',
                2,
                None,
-               'educational-initiatives-since-2019-frib-nscl-msu-playing-a-central-role')]}
+               'educational-initiatives-since-2019-frib-nscl-msu-playing-a-central-role'),
+              ('Additional material', 2, None, 'additional-material'),
+              ('Addendum: Quantum Monte Carlo Motivation',
+               2,
+               None,
+               'addendum-quantum-monte-carlo-motivation'),
+              ('Quantum Monte Carlo Motivation',
+               2,
+               None,
+               'quantum-monte-carlo-motivation'),
+              ('Quantum Monte Carlo Motivation',
+               2,
+               None,
+               'quantum-monte-carlo-motivation'),
+              ('The trial wave function', 2, None, 'the-trial-wave-function'),
+              ('The correlation part of the wave function',
+               2,
+               None,
+               'the-correlation-part-of-the-wave-function'),
+              ('Resulting ansatz', 2, None, 'resulting-ansatz'),
+              ('Energy derivatives', 2, None, 'energy-derivatives'),
+              ('Derivatives of the local energy',
+               2,
+               None,
+               'derivatives-of-the-local-energy'),
+              ('How do we define our cost function?',
+               2,
+               None,
+               'how-do-we-define-our-cost-function'),
+              ('Meet the variance and its derivatives',
+               2,
+               None,
+               'meet-the-variance-and-its-derivatives'),
+              ('The variance defines the cost function',
+               2,
+               None,
+               'the-variance-defines-the-cost-function'),
+              ('Why Boltzmann machines?', 2, None, 'why-boltzmann-machines'),
+              ('A standard BM setup', 2, None, 'a-standard-bm-setup'),
+              ('The structure of the RBM network',
+               2,
+               None,
+               'the-structure-of-the-rbm-network'),
+              ('The network', 2, None, 'the-network'),
+              ('Joint distribution', 2, None, 'joint-distribution'),
+              ('Defining different types of RBMs',
+               2,
+               None,
+               'defining-different-types-of-rbms'),
+              ('Representing the wave function',
+               2,
+               None,
+               'representing-the-wave-function'),
+              ('Choose the cost/loss function',
+               2,
+               None,
+               'choose-the-cost-loss-function')]}
 end of tocinfo -->
 
 <body>
@@ -340,7 +400,7 @@ in nuclear physics. And why this could (or should) be of interest.
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 <h2 id="many-folks-to-thank">Many folks to thank </h2>
 
-<p>Thanks to Jane Kim (MSU), Julie Butler (MSU), Dean Lee (MSU), Witek Nazarewicz (MSU), Vilde Flugsrud (UiO), Even Nordhagen (UiO), Corey Adams (ANL), Bryce Fore (ANL), and Alessandro Lovato (ANL).</p>
+<p>Thanks to Jane Kim (MSU), Julie Butler (MSU), Daniel Bazin (MSU), Dean Lee (MSU), Witek Nazarewicz (MSU), Michelle Kuchera (Davidson College), Vilde Flugsrud (UiO), Even Nordhagen (UiO), Robert Solli (UiO, Expert Analytics), Corey Adams (ANL), Bryce Fore (ANL), and Alessandro Lovato (ANL). Excuses to those I have omitted.</p>
 
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 <h2 id="a-simple-perspective-on-the-interface-between-ml-and-physics">A simple perspective on the interface between ML and Physics </h2>
@@ -613,9 +673,6 @@ almost free of noise.
 <br/><br/>
 
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
-<h2 id="confusion-matrix">Confusion matrix </h2>
-
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
 <h2 id="quantum-monte-carlo-and-deep-learning">Quantum Monte Carlo and deep learning </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
@@ -697,7 +754,7 @@ The above function is replaced by a four-layer Neural Network.
 <br/><br/>
 
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
-<h2 id="the-electron-gas-in-three-dimensions-with-n-14-electrons">The electron gas in three dimensions with \( N=14 \) electrons </h2>
+<h2 id="the-electron-gas-in-three-dimensions-with-n-14-electrons-wigner-seitz-radius-r-s-2-ry">The electron gas in three dimensions with \( N=14 \) electrons (Wigner-Seitz radius \( r_s=2 \) Ry) </h2>
 <p>Jane Kim, Bryce Fore, Alessandro Lovato and MHJ, in preparation</p>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
@@ -725,7 +782,31 @@ The above function is replaced by a four-layer Neural Network.
 
 
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
-<h2 id="quantum-dots-onebody-densities-n-6-hbar-omega-0-1-a-u">Quantum dots, Onebody densities \( N=6 \), \( \hbar\omega=0.1 \) a.u. </h2>
+<h2 id="electrons-in-a-harmonic-oscillator-trap-in-two-dimensions">Electrons in a harmonic oscillator trap in two dimensions </h2>
+
+<p>The Hamiltonian of the quantum dot is given by</p>
+$$ \hat{H} = \hat{H}_0 + \hat{V}, 
+$$
+
+<p>where \( \hat{H}_0 \) is the many-body HO Hamiltonian, and \( \hat{V} \) is the
+inter-electron Coulomb interactions. In dimensionless units,
+</p>
+$$ \hat{V}= \sum_{i < j}^N \frac{1}{r_{ij}},
+$$
+
+<p>with \( r_{ij}=\sqrt{\mathbf{r}_i^2 - \mathbf{r}_j^2} \).</p>
+
+<p>This leads to the  separable Hamiltonian, with the relative motion part given by (\( r_{ij}=r \))</p>
+$$ 
+\hat{H}_r=-\nabla^2_r + \frac{1}{4}\omega^2r^2+ \frac{1}{r},
+$$
+
+<p>plus a standard Harmonic Oscillator problem  for the center-of-mass motion.
+This system has analytical solutions in two and three dimensions (<a href="https://journals.aps.org/pra/abstract/10.1103/PhysRevA.48.3561" target="_blank">M. Taut 1993 and 1994</a>). 
+</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="quantum-dots-and-boltzmann-machines-onebody-densities-n-6-hbar-omega-0-1-a-u">Quantum dots and Boltzmann machines, onebody densities \( N=6 \), \( \hbar\omega=0.1 \) a.u. </h2>
 
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
@@ -907,6 +988,445 @@ necessarily normalized and is normally called the likelihood function.
 <li> 2022?</li> 
 </ol>
 </div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="additional-material">Additional material </h2>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="addendum-quantum-monte-carlo-motivation">Addendum: Quantum Monte Carlo Motivation </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p>Given a hamiltonian \( H \) and a trial wave function \( \Psi_T \), the variational principle states that the expectation value of \( \langle H \rangle \), defined through </p>
+$$
+   \langle E \rangle =
+   \frac{\int d\boldsymbol{R}\Psi^{\ast}_T(\boldsymbol{R})H(\boldsymbol{R})\Psi_T(\boldsymbol{R})}
+        {\int d\boldsymbol{R}\Psi^{\ast}_T(\boldsymbol{R})\Psi_T(\boldsymbol{R})},
+$$
+
+<p>is an upper bound to the ground state energy \( E_0 \) of the hamiltonian \( H \), that is </p>
+$$
+    E_0 \le \langle E \rangle.
+$$
+
+<p>In general, the integrals involved in the calculation of various  expectation values  are multi-dimensional ones. Traditional integration methods such as the Gauss-Legendre will not be adequate for say the  computation of the energy of a many-body system.</p>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="quantum-monte-carlo-motivation">Quantum Monte Carlo Motivation </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b>Basic steps</b>
+<p>
+<p>Choose a trial wave function
+\( \psi_T(\boldsymbol{R}) \).
+</p>
+$$
+   P(\boldsymbol{R},\boldsymbol{\alpha})= \frac{\left|\psi_T(\boldsymbol{R},\boldsymbol{\alpha})\right|^2}{\int \left|\psi_T(\boldsymbol{R},\boldsymbol{\alpha})\right|^2d\boldsymbol{R}}.
+$$
+
+<p>This is our model, or likelihood/probability distribution function  (PDF). It depends on some variational parameters \( \boldsymbol{\alpha} \).
+The approximation to the expectation value of the Hamiltonian is now 
+</p>
+$$
+   \langle E[\boldsymbol{\alpha}] \rangle = 
+   \frac{\int d\boldsymbol{R}\Psi^{\ast}_T(\boldsymbol{R},\boldsymbol{\alpha})H(\boldsymbol{R})\Psi_T(\boldsymbol{R},\boldsymbol{\alpha})}
+        {\int d\boldsymbol{R}\Psi^{\ast}_T(\boldsymbol{R},\boldsymbol{\alpha})\Psi_T(\boldsymbol{R},\boldsymbol{\alpha})}.
+$$
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="quantum-monte-carlo-motivation">Quantum Monte Carlo Motivation </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b>Define a new quantity</b>
+<p>
+$$
+   E_L(\boldsymbol{R},\boldsymbol{\alpha})=\frac{1}{\psi_T(\boldsymbol{R},\boldsymbol{\alpha})}H\psi_T(\boldsymbol{R},\boldsymbol{\alpha}),
+$$
+
+<p>called the local energy, which, together with our trial PDF yields</p>
+$$
+  \langle E[\boldsymbol{\alpha}] \rangle=\int P(\boldsymbol{R})E_L(\boldsymbol{R},\boldsymbol{\alpha}) d\boldsymbol{R}\approx \frac{1}{N}\sum_{i=1}^NE_L(\boldsymbol{R_i},\boldsymbol{\alpha})
+$$
+
+<p>with \( N \) being the number of Monte Carlo samples.</p>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="the-trial-wave-function">The trial wave function </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p>We want to perform  a Variational Monte Carlo calculation of the ground state of two electrons in a quantum dot well with different oscillator energies, assuming total spin \( S=0 \).
+Our trial wave function has the following form
+</p>
+$$
+\begin{equation}
+   \psi_{T}(\boldsymbol{r}_1,\boldsymbol{r}_2) = 
+   C\exp{\left(-\alpha_1\omega(r_1^2+r_2^2)/2\right)}
+   \exp{\left(\frac{r_{12}}{(1+\alpha_2 r_{12})}\right)}, 
+\label{eq:trial}
+\end{equation}
+$$
+
+<p>where the variables \( \alpha_1 \) and \( \alpha_2 \) represent our variational parameters.</p>
+
+<p>Why does the trial function look like this? How did we get there? <b>This is one of our main motivations</b> for switching to
+Machine Learning.
+</p>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="the-correlation-part-of-the-wave-function">The correlation part of the wave function </h2>
+
+<p>To find an ansatz for the correlated part of the wave function, it is useful to rewrite the two-particle
+local energy in terms of the relative and center-of-mass motion.
+Let us denote the distance between the two electrons as
+\( r_{12} \). We omit the center-of-mass motion since we are only interested in the case when
+\( r_{12} \rightarrow 0 \). The contribution from the center-of-mass (CoM) variable \( \boldsymbol{R}_{\mathrm{CoM}} \)
+gives only a finite contribution.
+We focus only on the terms that are relevant for \( r_{12} \) and for three dimensions. The relevant local energy operator becomes then (with \( l=0 \))
+</p>
+$$
+\lim_{r_{12} \rightarrow 0}E_L(R)=
+    \frac{1}{{\cal R}_T(r_{12})}\left(-2\frac{d^2}{dr_{ij}^2}-\frac{4}{r_{ij}}\frac{d}{dr_{ij}}+
+\frac{2}{r_{ij}}\right){\cal R}_T(r_{12}).
+$$
+
+<p>In order to avoid divergencies when \( r_{12}\rightarrow 0 \) we obtain  the so-called <b>cusp</b> condition</p>
+$$
+\frac{d {\cal R}_T(r_{12})}{dr_{12}} = \frac{1}{2}
+{\cal R}_T(r_{12})\qquad r_{12}\to 0
+$$
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="resulting-ansatz">Resulting ansatz </h2>
+<p>The above  results in</p>
+$$
+{\cal R}_T  \propto \exp{(r_{ij}/2)}, 
+$$
+
+<p>for anti-parallel spins and </p>
+$$
+{\cal R}_T  \propto \exp{(r_{ij}/4)}, 
+$$
+
+<p>for anti-parallel spins. 
+This is the so-called cusp condition for the relative motion, resulting in a minimal requirement
+for the correlation part of the wave fuction.
+For general systems containing more than say two electrons, we have this
+condition for each electron pair \( ij \).
+</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="energy-derivatives">Energy derivatives </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p>To find the derivatives of the local energy expectation value as function of the variational parameters, we can use the chain rule and the hermiticity of the Hamiltonian.  </p>
+
+<p>Let us define (with the notation \( \langle E[\boldsymbol{\alpha}]\rangle =\langle  E_L\rangle \))</p>
+$$
+\bar{E}_{\alpha_i}=\frac{d\langle  E_L\rangle}{d\alpha_i},
+$$
+
+<p>as the derivative of the energy with respect to the variational parameter \( \alpha_i \)
+We define also the derivative of the trial function (skipping the subindex \( T \)) as 
+</p>
+$$
+\bar{\Psi}_{i}=\frac{d\Psi}{d\alpha_i}.
+$$
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="derivatives-of-the-local-energy">Derivatives of the local energy </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p>The elements of the gradient of the local energy are then (using the chain rule and the hermiticity of the Hamiltonian)</p>
+$$
+\bar{E}_{i}= 2\left( \langle \frac{\bar{\Psi}_{i}}{\Psi}E_L\rangle -\langle \frac{\bar{\Psi}_{i}}{\Psi}\rangle\langle E_L \rangle\right).
+$$
+
+<p>From a computational point of view it means that you need to compute the expectation values of </p>
+$$
+\langle \frac{\bar{\Psi}_{i}}{\Psi}E_L\rangle,
+$$
+
+<p>and</p>
+$$
+\langle \frac{\bar{\Psi}_{i}}{\Psi}\rangle\langle E_L\rangle
+$$
+
+<p>These integrals are evaluted using MC intergration (with all its possible error sources). 
+We can then use methods like stochastic gradient or other minimization methods to find the optimal variational parameters (I don't discuss this topic here, but these methods are very important in ML). 
+</p>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="how-do-we-define-our-cost-function">How do we define our cost function? </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p>We have a model, our likelihood function. </p>
+
+<p>How should we define the cost function?</p>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="meet-the-variance-and-its-derivatives">Meet the variance and its derivatives  </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b>Why the variance?</b>
+<p>
+<p>Suppose the trial function (our model) is the exact wave function. The action of the hamiltionan
+on the wave function
+</p>
+$$
+   H\Psi = \mathrm{constant}\times \Psi,
+$$
+
+<p>The integral which defines various 
+expectation values involving moments of the hamiltonian becomes then
+</p>
+$$
+   \langle E^n \rangle =   \langle H^n \rangle =
+   \frac{\int d\boldsymbol{R}\Psi^{\ast}(\boldsymbol{R})H^n(\boldsymbol{R})\Psi(\boldsymbol{R})}
+        {\int d\boldsymbol{R}\Psi^{\ast}(\boldsymbol{R})\Psi(\boldsymbol{R})}=
+\mathrm{constant}\times\frac{\int d\boldsymbol{R}\Psi^{\ast}(\boldsymbol{R})\Psi(\boldsymbol{R})}
+        {\int d\boldsymbol{R}\Psi^{\ast}(\boldsymbol{R})\Psi(\boldsymbol{R})}=\mathrm{constant}.
+$$
+
+<b>This gives an important information: If I want the variance, the exact wave function leads to zero variance!</b>
+<p>The variance is defined as </p>
+$$
+\sigma_E = \langle E^2\rangle - \langle E\rangle^2.
+$$
+
+<p>Variation is then performed by minimizing both the energy and the variance.</p>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="the-variance-defines-the-cost-function">The variance defines the cost function  </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p>We can then take the derivatives of </p>
+$$
+\sigma_E = \langle E^2\rangle - \langle E\rangle^2,
+$$
+
+<p>with respect to the variational parameters. The derivatives of the variance can then be used to defined the
+so-called Hessian matrix, which in turn allows us to use minimization methods like Newton's method or 
+standard gradient methods. 
+</p>
+
+<p>This leads to however a more complicated expression, with obvious errors when evaluating integrals by Monte Carlo integration. Less used, see however <a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.94.150201" target="_blank">Filippi and Umrigar</a>. The expression becomes complicated</p>
+$$
+\begin{align}
+\bar{E}_{ij} &= 2\left[ \langle (\frac{\bar{\Psi}_{ij}}{\Psi}+\frac{\bar{\Psi}_{j}}{\Psi}\frac{\bar{\Psi}_{i}}{\Psi})(E_L-\langle E\rangle)\rangle -\langle \frac{\bar{\Psi}_{i}}{\Psi}\rangle\bar{E}_j-\langle \frac{\bar{\Psi}_{j}}{\Psi}\rangle\bar{E}_i\right] 
+\label{_auto3}\\ \nonumber
+&+\langle \frac{\bar{\Psi}_{i}}{\Psi}E_L{_j}\rangle +\langle \frac{\bar{\Psi}_{j}}{\Psi}E_L{_i}\rangle -\langle \frac{\bar{\Psi}_{i}}{\Psi}\rangle\langle E_L{_j}\rangle \langle \frac{\bar{\Psi}_{j}}{\Psi}\rangle\langle E_L{_i}\rangle.  
+\end{align}
+$$
+
+<p>Evaluating the cost function means having to evaluate the above second derivative of the energy. </p>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="why-boltzmann-machines">Why Boltzmann machines? </h2>
+
+<p>What is known as restricted Boltzmann Machines (RMB) have received a
+lot of attention lately.  One of the major reasons is that they can be
+stacked layer-wise to build deep neural networks that capture
+complicated statistics.
+</p>
+
+<p>The original RBMs had just one visible layer and a hidden layer, but
+recently so-called Gaussian-binary RBMs have gained quite some
+popularity in imaging since they are capable of modeling continuous
+data that are common to natural images.
+</p>
+
+<p>Furthermore, they have been used to solve complicated quantum
+mechanical many-particle problems or classical statistical physics
+problems like the Ising and Potts classes of models.
+</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="a-standard-bm-setup">A standard BM setup </h2>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p>A standard BM network is divided into a set of observable and visible units \( \hat{x} \) and a set of unknown hidden units/nodes \( \hat{h} \).</p>
+</div>
+
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p>Additionally there can be bias nodes for the hidden and visible layers. These biases are normally set to \( 1 \).</p>
+</div>
+
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p>BMs are stackable, meaning we can train a BM which serves as input to another BM. We can construct deep networks for learning complex PDFs. The layers can be trained one after another, a feature which makes them popular in deep learning</p>
+</div>
+
+
+<p>However, they are often hard to train. This leads to the introduction of so-called restricted BMs, or RBMS.
+Here we take away all lateral connections between nodes in the visible layer as well as connections between nodes in the hidden layer. The network is illustrated in the figure below.
+</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="the-structure-of-the-rbm-network">The structure of the RBM network </h2>
+
+<br/><br/>
+<center>
+<p><img src="figures/RBM.png" width="800" align="bottom"></p>
+</center>
+<br/><br/>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="the-network">The network </h2>
+
+<b>The network layers</b>:
+<ol>
+ <li> A function \( \mathbf{x} \) that represents the visible layer, a vector of \( M \) elements (nodes). This layer represents both what the RBM might be given as training input, and what we want it to be able to reconstruct. This might for example be the pixels of an image, the spin values of the Ising model, or coefficients representing speech.</li>
+ <li> The function \( \mathbf{h} \) represents the hidden, or latent, layer. A vector of \( N \) elements (nodes). Also called "feature detectors".</li>
+</ol>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="joint-distribution">Joint distribution </h2>
+
+<p>The restricted Boltzmann machine is described by a Boltzmann distribution</p>
+$$
+\begin{align}
+	P_{rbm}(\mathbf{x},\mathbf{h}) = \frac{1}{Z} e^{-\frac{1}{T_0}E(\mathbf{x},\mathbf{h})},
+\label{_auto4}
+\end{align}
+$$
+
+<p>where \( Z \) is the normalization constant or partition function, defined as </p>
+$$
+\begin{align}
+	Z = \int \int e^{-\frac{1}{T_0}E(\mathbf{x},\mathbf{h})} d\mathbf{x} d\mathbf{h}.
+\label{_auto5}
+\end{align}
+$$
+
+<p>It is common to ignore \( T_0 \) by setting it to one. </p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="defining-different-types-of-rbms">Defining different types of RBMs </h2>
+
+<p>There are different variants of RBMs, and the differences lie in the types of visible and hidden units we choose as well as in the implementation of the energy function \( E(\mathbf{x},\mathbf{h}) \). </p>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b>Binary-Binary RBM:</b>
+<p>
+
+<p>RBMs were first developed using binary units in both the visible and hidden layer. The corresponding energy function is defined as follows:</p>
+$$
+\begin{align}
+	E(\mathbf{x}, \mathbf{h}) = - \sum_i^M x_i a_i- \sum_j^N b_j h_j - \sum_{i,j}^{M,N} x_i w_{ij} h_j,
+\label{_auto6}
+\end{align}
+$$
+
+<p>where the binary values taken on by the nodes are most commonly 0 and 1.</p>
+</div>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b>Gaussian-Binary RBM:</b>
+<p>
+
+<p>Another variant is the RBM where the visible units are Gaussian while the hidden units remain binary:</p>
+$$
+\begin{align}
+	E(\mathbf{x}, \mathbf{h}) = \sum_i^M \frac{(x_i - a_i)^2}{2\sigma_i^2} - \sum_j^N b_j h_j - \sum_{i,j}^{M,N} \frac{x_i w_{ij} h_j}{\sigma_i^2}. 
+\label{_auto7}
+\end{align}
+$$
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="representing-the-wave-function">Representing the wave function </h2>
+
+<p>The wavefunction should be a probability amplitude depending on \( \boldsymbol{x} \). The RBM model is given by the joint distribution of \( \boldsymbol{x} \) and \( \boldsymbol{h} \)</p>
+$$
+\begin{align}
+	F_{rbm}(\mathbf{x},\mathbf{h}) = \frac{1}{Z} e^{-\frac{1}{T_0}E(\mathbf{x},\mathbf{h})}.
+\label{_auto8}
+\end{align}
+$$
+
+<p>To find the marginal distribution of \( \boldsymbol{x} \) we set:</p>
+$$
+\begin{align}
+	F_{rbm}(\mathbf{x}) &= \sum_\mathbf{h} F_{rbm}(\mathbf{x}, \mathbf{h}) 
+\label{_auto9}\\
+				&= \frac{1}{Z}\sum_\mathbf{h} e^{-E(\mathbf{x}, \mathbf{h})}.
+\label{_auto10}
+\end{align}
+$$
+
+<p>Now this is what we use to represent the wave function, calling it a neural-network quantum state (NQS)</p>
+$$
+\begin{align}
+	\Psi (\mathbf{x}) &= F_{rbm}(\mathbf{x}) 
+\label{_auto11}\\
+	&= \frac{1}{Z}\sum_{\boldsymbol{h}} e^{-E(\mathbf{x}, \mathbf{h})} 
+\label{_auto12}\\
+	&= \frac{1}{Z} \sum_{\{h_j\}} e^{-\sum_i^M \frac{(x_i - a_i)^2}{2\sigma^2} + \sum_j^N b_j h_j + \sum_{i,j}^{M,N} \frac{x_i w_{ij} h_j}{\sigma^2}} 
+\label{_auto13}\\
+	&= \frac{1}{Z} e^{-\sum_i^M \frac{(x_i - a_i)^2}{2\sigma^2}} \prod_j^N (1 + e^{b_j + \sum_i^M \frac{x_i w_{ij}}{\sigma^2}}). 
+\label{_auto14}\\
+\label{_auto15}
+\end{align}
+$$
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="choose-the-cost-loss-function">Choose the cost/loss function </h2>
+
+<p>Now we don't necessarily have training data (unless we generate it by
+using some other method). However, what we do have is the variational
+principle which allows us to obtain the ground state wave function by
+minimizing the expectation value of the energy of a trial wavefunction
+(corresponding to the untrained NQS). Similarly to the traditional
+variational Monte Carlo method then, it is the local energy we wish to
+minimize. The gradient to use for the stochastic gradient descent
+procedure is
+</p>
+
+$$
+\begin{align}
+	\frac{\partial \langle E_L \rangle}{\partial \theta_i}
+	= 2(\langle E_L \frac{1}{\Psi}\frac{\partial \Psi}{\partial \theta_i} \rangle - \langle E_L \rangle \langle \frac{1}{\Psi}\frac{\partial \Psi}{\partial \theta_i} \rangle ),
+\label{_auto16}
+\end{align}
+$$
+
+<p>where the local energy is given by</p>
+$$
+\begin{align}
+	E_L = \frac{1}{\Psi} \hat{\mathbf{H}} \Psi.
+\label{_auto17}
+\end{align}
+$$
 
 
 <!-- ------------------- end of main content --------------- -->
