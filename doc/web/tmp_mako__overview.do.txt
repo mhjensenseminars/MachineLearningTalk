@@ -285,5 +285,18 @@ DATE: today
 
 
 
+===== Education and Research in Quantum Information Systems and more, Gemini center, SINTEF, Oslo, Norway, April 6, 2022 =====
+
+
+
+ * HTML:
+   * "Plain html style": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/gemini/html/gemini.html"
+   * "reveal.js beige slide style": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/gemini/html/gemini-reveal.html"
+   * "Bootstrap style": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/gemini/html/gemini-bs.html"
+ * iPython notebook:
+   * "ipynb file": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/gemini/ipynb/gemini.ipynb"
+
+
+
 
 

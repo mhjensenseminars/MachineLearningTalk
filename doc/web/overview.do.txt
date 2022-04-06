@@ -4,7 +4,7 @@ DATE: today
 
 <%
 pub_url = 'http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub'
-published = ['vmcml', 'unitn', 'uniohio', 'unisurrey', 'uio2019', 'chalmers', 'uiomath', 'unipd', 'overview', 'WorkshopTastesNP', 'xai', 'NIThePColloquium', 'quantumcomputing', 'NotreDameMay2021', 'oslometqc', 'IAEA', 'spinQ', 'UniMilano', 'MSUFeb10', 'ORNLMarch24', 'UTKMarch28', ]
+published = ['vmcml', 'unitn', 'uniohio', 'unisurrey', 'uio2019', 'chalmers', 'uiomath', 'unipd', 'overview', 'WorkshopTastesNP', 'xai', 'NIThePColloquium', 'quantumcomputing', 'NotreDameMay2021', 'oslometqc', 'IAEA', 'spinQ', 'UniMilano', 'MSUFeb10', 'ORNLMarch24', 'UTKMarch28', 'gemini', ]
 chapters = {
  'vmcml': 'From variational Monte Carlo to machine learning, talks at Michigan State University April and June 2018',
  'uniuio': 'Talk at University of Oslo, December 14, 2018',
@@ -28,6 +28,7 @@ chapters = {
   'MSUFeb10': 'Artificial Intelligence and Machine Learning in Nuclear Physics, Research Discussion, FRIB/NSCL, MSU, February 10, 2022',
   'ORNLMarch24': 'Artificial Intelligence and Machine Learning in Nuclear Physics, Oak Ridge National Laboratory, Tennessee, March 24, 2022',
   'UTKMarch28': 'Artificial Intelligence and Machine Learning in Nuclear Physics, University of Tennessee, Knoxville, Tennessee, March 28, 2022',
+  'gemini': 'Education and Research in Quantum Information Systems and more, Gemini center, SINTEF, Oslo, Norway, April 6, 2022',  
 }
 %>
 
