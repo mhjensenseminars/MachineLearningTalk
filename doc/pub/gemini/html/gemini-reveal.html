@@ -1,0 +1,969 @@
+<!--
+HTML file automatically generated from DocOnce source
+(https://github.com/doconce/doconce/)
+doconce format html gemini-reveal.html gemini-reveal reveal --html_slide_theme=beige
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="DocOnce: https://github.com/doconce/doconce/" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Education and Research in Quantum Information Systems and more">
+<title>Education and Research in Quantum Information Systems and more</title>
+
+<!-- reveal.js: https://lab.hakim.se/reveal-js/ -->
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+<link rel="stylesheet" href="reveal.js/css/reveal.css">
+<link rel="stylesheet" href="reveal.js/css/theme/beige.css" id="theme">
+<!--
+<link rel="stylesheet" href="reveal.js/css/reveal.css">
+<link rel="stylesheet" href="reveal.js/css/theme/beige.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/beigesmall.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/solarized.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/serif.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/night.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/moon.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/simple.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/sky.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/darkgray.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/default.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/cbc.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/simula.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/black.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/white.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/league.css" id="theme">
+-->
+
+<!-- For syntax highlighting -->
+<link rel="stylesheet" href="reveal.js/lib/css/zenburn.css">
+
+<!-- Printing and PDF exports -->
+<script>
+var link = document.createElement( 'link' );
+link.rel = 'stylesheet';
+link.type = 'text/css';
+link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+document.getElementsByTagName( 'head' )[0].appendChild( link );
+</script>
+
+<style type="text/css">
+hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+p.caption { width: 80%; font-size: 60%; font-style: italic; text-align: left; }
+hr.figure { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+.reveal .alert-text-small   { font-size: 80%;  }
+.reveal .alert-text-large   { font-size: 130%; }
+.reveal .alert-text-normal  { font-size: 90%;  }
+.reveal .alert {
+  padding:8px 35px 8px 14px; margin-bottom:18px;
+  text-shadow:0 1px 0 rgba(255,255,255,0.5);
+  border:5px solid #bababa;
+  -webkit-border-radius: 14px; -moz-border-radius: 14px;
+  border-radius:14px;
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  background-size: 38px;
+  padding-left: 30px; /* 55px; if icon */
+}
+.reveal .alert-block {padding-top:14px; padding-bottom:14px}
+.reveal .alert-block > p, .alert-block > ul {margin-bottom:1em}
+/*.reveal .alert li {margin-top: 1em}*/
+.reveal .alert-block p+p {margin-top:5px}
+/*.reveal .alert-notice { background-image: url(https://hplgit.github.io/doconce/bundled/html_images/small_gray_notice.png); }
+.reveal .alert-summary  { background-image:url(https://hplgit.github.io/doconce/bundled/html_images/small_gray_summary.png); }
+.reveal .alert-warning { background-image: url(https://hplgit.github.io/doconce/bundled/html_images/small_gray_warning.png); }
+.reveal .alert-question {background-image:url(https://hplgit.github.io/doconce/bundled/html_images/small_gray_question.png); } */
+/* Override reveal.js table border */
+.reveal table td {
+  border: 0;
+}
+
+<style type="text/css">
+/* Override h1, h2, ... styles */
+h1 { font-size: 2.8em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.4em; }
+h4 { font-size: 1.3em; }
+h1, h2, h3, h4 { font-weight: bold; line-height: 1.2; }
+body { overflow: auto; } /* vertical scrolling */
+hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+p.caption { width: 80%; font-size: 60%; font-style: italic; text-align: left; }
+hr.figure { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+.slide .alert-text-small   { font-size: 80%;  }
+.slide .alert-text-large   { font-size: 130%; }
+.slide .alert-text-normal  { font-size: 90%;  }
+.slide .alert {
+  padding:8px 35px 8px 14px; margin-bottom:18px;
+  text-shadow:0 1px 0 rgba(255,255,255,0.5);
+  border:5px solid #bababa;
+    -webkit-border-radius:14px; -moz-border-radius:14px;
+  border-radius:14px
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  background-size: 38px;
+  padding-left: 30px; /* 55px; if icon */
+}
+.slide .alert-block {padding-top:14px; padding-bottom:14px}
+.slide .alert-block > p, .alert-block > ul {margin-bottom:0}
+/*.slide .alert li {margin-top: 1em}*/
+.deck .alert-block p+p {margin-top:5px}
+/*.slide .alert-notice { background-image: url(https://hplgit.github.io/doconce/
+bundled/html_images//small_gray_notice.png); }
+.slide .alert-summary  { background-image:url(https://hplgit.github.io/doconce/
+bundled/html_images//small_gray_summary.png); }
+.slide .alert-warning { background-image: url(https://hplgit.github.io/doconce/
+bundled/html_images//small_gray_warning.png); }
+.slide .alert-question {background-image:url(https://hplgit.github.io/doconce/
+bundled/html_images/small_gray_question.png); } */
+.dotable table, .dotable th, .dotable tr, .dotable tr td {
+  border: 2px solid black;
+  border-collapse: collapse;
+  padding: 2px;
+}
+</style>
+
+
+<!-- Styles for table layout of slides -->
+<style type="text/css">
+td.padding {
+  padding-top:20px;
+  padding-bottom:20px;
+  padding-right:50px;
+  padding-left:50px;
+}
+</style>
+
+</head>
+
+
+<body>
+<div class="reveal">
+<div class="slides">
+
+
+
+
+<section>
+<!-- ------------------- main content ---------------------- -->
+<center>
+<h1 style="text-align: center;">Education and Research in Quantum Information Systems and more</h1>
+</center>  <!-- document title -->
+
+<!-- author(s): Morten Hjorth-Jensen -->
+<center>
+<b>Morten Hjorth-Jensen</b> [1, 2]
+</center>
+<!-- institution(s) -->
+<center>
+[1] <b>Department of Physics and Astronomy and Facility for Rare Isotope Beams, Michigan State University, USA</b>
+</center>
+<center>
+[2] <b>Department of Physics and Center for Computing in Science Education, University of Oslo, Norway</b>
+</center>
+<br>
+
+<center>
+<h4>April 7, 2022. Gemini center, Oslo, Norway</h4>
+</center> <!-- date -->
+<br>
+</section>
+
+<section>
+<h2 id="plans-for-a-bachelor-of-science-program-in-computational-physics-and-quantum-technologies">Plans for a Bachelor of Science program in Computational Physics and Quantum Technologies </h2>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p>There is a proposal  a new Bachelor of Science program at the
+Department of Physics of the University of Oslo. This program is
+called <b>Computational Physics and Quantum Technologies</b>.
+</p>
+
+<p>Tentative start fall semester 2024. The program will be administrated by the Department of Physics@UiO. </p>
+</div>
+</section>
+
+<section>
+<h2 id="strategic-importance">Strategic importance </h2>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p>Computational physics, computational science and data science play a
+central role in scientific investigations and are central to
+innovation in most domains of our lives. These fields underpin the
+majority of today's technological, economic and societal feats. We
+have entered an era in which huge amounts of data offer enormous
+opportunities, but only to those who are able to harness them. The 3rd
+industrial revolution will alter significantly the demands on the
+workforce. In particular, the developments taking place in quantum
+technologies and quantum information systems (QIS) together with
+artificial intelligence (AI) and machine learning (ML) are expected to
+play a significant role in technology developments and innovations,
+and for fundamental discoveries in physics.
+</p>
+</div>
+</section>
+
+<section>
+<h2 id="ai-and-machine-learning">AI and machine learning  </h2>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p>Artificial
+intelligence is built upon integrated machine learning algorithms,
+which in turn are fundamentally rooted in optimization and statistical
+learning.
+</p>
+</div>
+</section>
+
+<section>
+<h2 id="ai-and-ml-in-physics">AI and ML in Physics </h2>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p>Artificial intelligence (AI) and Machine learning (ML)  techniques
+have in the last years gained considerable traction in
+scientific discovery. In particular, applications and techniques for
+so-called <b>fast ML</b>, that is high-performance ML methods applied
+to real time experimental data processing, hold great promise for
+enhancing scientific discoveries in many different disciplines.
+These developments cover a broad mix of rapidly
+evolving fields, from the development of ML techniques to computer and
+hardware architectures.
+</p>
+</div>
+</section>
+
+<section>
+<h2 id="physics-based-machine-learning">Physics based Machine Learning </h2>
+
+<p>An important and emerging field is what has been dubbed as scientific ML, see the article by Deiana et al <a href="https://arxiv.org/abs/2110.13041" target="_blank">Applications and Techniques for Fast Machine Learning in Science, arXiv:2110.13041</a></p>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p>The authors discuss applications and techniques for fast machine
+learning (ML) in science &ndash; the concept of integrating power ML
+methods into the real-time experimental data processing loop to
+accelerate scientific discovery. The report covers three main areas
+</p>
+
+<ol>
+<p><li> applications for fast ML across a number of scientific domains;</li>
+<p><li> techniques for training and implementing performant and resource-efficient ML algorithms;</li>
+<p><li> and computing architectures, platforms, and technologies for deploying these algorithms.</li>
+</ol>
+</div>
+</section>
+
+<section>
+<h2 id="many-new-research-directions">Many new research directions </h2>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p>For our research in for example particle and
+nuclear physics, fields which cover a huge range of energy and length scales,
+spanning from our smallest constituents to the physics of dense
+astronomical objects like supernovae and neutron stars, AI and ML
+techniques offer possibilities for new discoveries and deeper insights
+about the physics of atomic nuclei, elementary particles and dense
+matter. Similarly, ML algorithms are widely applied in condensed
+matter physics, materials science and nanotechnology, in molecular dynamics simulations of complex
+systems in neuroscience and in many other fields in natural science.
+</p>
+</div>
+
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b>Examples of applications in subatomic physics</b>
+<p>
+<ul>
+<p><li> <b>Artificial Intelligence and Machine Learning in Nuclear Physics</b>, Amber Boehnlein et al., <a href="https://arxiv.org/abs/2112.02309" target="_blank">arXiv:2112.02309</a> and Reviews of Modern Physics, 2022, in press</li>
+<p><li> <b>Predicting Solid State Material Platforms for Quantum Technologies</b>, Hebnes et al,. <a href="https://arxiv.org/abs/2203.16203" target="_blank">arXiv:2203.16203</a></li>
+<p><li> <a href="https://arxiv.org/abs/1803.08823" target="_blank">Mehta et al.</a> and <a href="https://www.sciencedirect.com/science/article/pii/S0370157319300766?via%3Dihub" target="_blank">Physics Reports (2019)</a>.</li>
+<p><li> <a href="https://link.aps.org/doi/10.1103/RevModPhys.91.045002" target="_blank">Machine Learning and the Physical Sciences by Carleo et al</a></li>
+<p><li> <a href="https://pdg.lbl.gov/2021/reviews/rpp2021-rev-machine-learning.pdf" target="_blank">Particle Data Group summary on ML methods</a></li>
+</ul>
+</div>
+</section>
+
+<section>
+<h2 id="quantum-information-technologies-qit">Quantum Information Technologies (QIT) </h2>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p>Recent developments in quantum information systems
+and technologies offer the possibility to address some of the most
+challenging large-scale problems, whether they are represented by
+complicated interacting quantum mechanical systems or classical
+systems.  Originally proposed by Feynman, the efficient simulation of
+for example quantum systems by other, more controllable quantum
+systems formed the basis for modern constructions of quantum
+computations.  Many algorithmic and theoretical advances have followed
+since the initial work in this area and with recent developments in
+quantum computing hardware there is an additional drive to identify
+early practical problems on which these devices might demonstrate an
+advantage.
+</p>
+</div>
+</section>
+
+<section>
+<h2 id="more-on-qit">More on QIT </h2>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p>In addition to theoretical activities conducted at the
+Department of Physics (mainly at the Center for Computing in Science
+Education (CCSE) and the condensed matter group and other groups), there is a growing
+interest to study candidate systems for making quantum hardware. In
+particular, so-called point defects in semiconductors are pursued by
+experimenters at the center for Materials Science.  With this broad
+list of activities at the department of physics, there is a huge
+potential to prepare the ground for educating physicists with the
+theoretical and experimental background needed for the 21st
+century. There is also a great interest in candidates with such a
+background, knowledge, skills and competences in industry and the
+public sector.
+</p>
+</div>
+</section>
+
+<section>
+<h2 id="why-such-a-program">Why such a program? </h2>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p>Establishing such an educational program will be
+unique in Norway and has the potential to attract excellent students.
+The popularity of the Computational Science and in particular the Computational Physics and Computational Materials Science study direction are clear indicattors that these are fields with the potential to attract new students.
+</p>
+</div>
+
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p>Furthermore,
+Oslo Metropolitan university  has recently acquired two quantum quantum computers, see <a href="https://kommunikasjon.ntb.no/pressemelding/oslomet-avduker-norges-forste-kvantedatamaskin?publisherId=15678779&releaseId=17917781" target="_blank"><tt>https://kommunikasjon.ntb.no/pressemelding/oslomet-avduker-norges-forste-kvantedatamaskin?publisherId=15678779&releaseId=17917781</tt></a> and is now establishing research and educational initiatives in quantum information systems. There are thus several interesting avenues for joint collaborations in quantum information systems and quantum technologies as well as developing joint educational programs.
+</p>
+</div>
+</section>
+
+<section>
+<h2 id="more-on-motivation">More on motivation </h2>
+
+<p>Computational physics plays a central role in the above mentioned
+developments.  Computations are simply indispensable.  At the
+department of physics of the university of Oslo this is reflected in
+the extremely popular study direction Computational Physics of the
+master of science (MSc) program Computational Science. This program
+has over the last two decades recruited many excellent students,
+resulting in highly attractive candidates in academia and in industry
+and the public sector. A large fraction of these students have
+specialized either in artificial intelligence and machine learning
+and/or in quantum information systems.  The large majority of the
+these students have job offers at least one year before completing
+their MSc theses. The program has also become one of the most
+selective master programs at the University of Oslo, requiring a grade
+average of 4.7 for entry in 2021. Furthermore, with recent advances in
+quantum technologies, there is a strong potential for new developments
+in the fields of nanotechnology and materials science, with the
+possibilities to develop new experimental activities.
+</p>
+</section>
+
+<section>
+<h2 id="building-educational-programs">Building educational programs </h2>
+
+<ol>
+<p><li> Build up a series of courses in QIS, inspiration <a href="https://qusteam.org/" target="_blank">QuSTEAM (Quantum Information Science, Technology, Engineering, Arts and Mathematics) initiative from USA</a></li>
+<p><li> Bachelor program in Computational Physics and Quantum technologies
+<ol type="a"></li>
+ <p><li> study direction/option in <b>quantum technologies</b></li>
+ <p><li> study direction/option in <b>Artificial Intelligence and Machine Learning</b></li>
+ <p><li> Study direction/option in  Computational Physics</li>
+</ol>
+<p>
+<p><li> Master of Science program in Computational and Data Science
+<ol type="a"></li>
+ <p><li> UiO has already MSc programs in CS and DS, many students do QC and ML and QML</li>
+</ol>
+<p>
+<p><li> PhD program in CS and DS
+<ol type="a"></li>
+ <p><li> with directions in <b>quantum technologies</b></li>
+ <p><li> with directions in <b>Artificial Intelligence and Machine Learning</b></li>
+</ol>
+<p>
+</ol>
+<p>
+<p>Coordination across university boundaries?  Collaboration  with industry and research labs?</p>
+</section>
+
+<section>
+<h2 id="courses-prototype">Courses, Prototype </h2>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b>Topics  in a Bachelor of Science/Master of Science</b>
+<p>
+<ol>
+<p><li> Information Systems</li> 
+<p><li> From Classical Information theory to Quantum Information theory</li>
+<p><li> Classical vs. Quantum Logic</li>
+<p><li> Classical and Quantum Laboratory</li> 
+<p><li> Discipline-Based Quantum Mechanics</li> 
+<p><li> Quantum Software</li>
+<p><li> Quantum Hardware</li>
+<p><li> more</li>
+</ol>
+</div>
+</section>
+
+<section>
+<h2 id="observations">Observations </h2>
+
+<ol>
+<p><li> Students do not really know what QIS is. This may be important when advertising</li>
+<p><li> There is conflation of &#8220;Quantum Information Science&#8221; with &#8220;Quantum computing&#8221;.</li>
+<p><li> Students perceive that a graduate degree is necessary to work in QIS. A BSc will help.</li>
+</ol>
+</section>
+
+<section>
+<h2 id="future-needs-problems">Future Needs/Problems  </h2>
+
+<ol>
+<p><li> There are already (USA) great needs for specialized people (Ph. D. s, postdocs), but also needs of  people with a broad overview of what is possible in QIS.</li>
+<p><li> There are not enough potential employees in QIS (USA). It is a supply gap, not a skills gap.</li>
+<p><li> A BSc with specialization  is a good place to start</li>
+<p><li> It is tremendously important to get everyone speaking the same language. Facility with the vernacular of quantum mechanics is a big plus.</li>
+<p><li> There is a huge list of areas where technical expertise may be important. But employers are often more concerned with attributes like project management, working well in a team, interest in the field, and adaptability than in specific technical skills.</li>
+</ol>
+</section>
+
+<section>
+<h2 id="using-recent-advances-in-pedagogical-research-and-defining-potentially-new-research-directions-in-education-rsearch">Using recent advances in pedagogical research and defining potentially new research directions in education rsearch </h2>
+
+<p>The reason why we believe the CCSE should be involved in planning this BSc program is that it has the necessary expertise to address several issues, such as</p>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<ol>
+<p><li> Lots of conceptual learning: superposition, entanglement, QIS and QT, etc.</li> 
+<p><li> Connecting statistics and mathematics with ML methods</li>
+<p><li> Linking ML algorithms with quantum ML.</li>
+<p><li> Coding is indispensable. This is a central reason why the CCSE should be involved.</li>
+<p><li> Experience with teamwork, project management, and communication are important and highly valued.</li>
+<p><li> Experience with engagement with industry, public sector and priority to diversity through the Computational Science program and other activities at the CCSE.</li>
+<p><li> Mentorship should begin the moment students enroll. The experiences with the Computational Science program developed at the CCSE will be of great value, as the activities of the KURT center.</li>
+</ol>
+</div>
+</section>
+
+<section>
+<h2 id="societal-needs">Societal needs </h2>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p>The program aims at addressing future societal needs, such as the  needs for specialized candidates (Master of Science, PhDs, postdocs), but also the needs of  people with a broad overview of what is possible in  QIS and QT. There are  not enough potential employees in AI, ML, QIS and QT. There is  a clear supply gap.</p>
+</div>
+
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p>A BSc degree  with specialization  is thus a good place to start. Linking this with the Physics MSc  program and the Computational Science program and the study directions Computational physics and Computational materials science, will offer our various research fields top candidates as well as pointing to new research directions. </p>
+</div>
+
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p>And what about AI/ML and quantum technologies towards high-school?</p>
+</div>
+</section>
+
+<section>
+<h2 id="rationale">Rationale  </h2>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p>The rationale behind proposing a new bachelor of science (BSc) program in computational physics and quantum technologies (QT) is:</p>
+<ol>
+<p><li> To attract at an earlier stage new students with an explicit interest in QIS, QT and AI and ML in physics.</li> 
+<p><li> To enhance the recruitment to fields in physics which are in high demand for students and candidates with an expertise in computations, QIS, QT, AI and ML. We expect high demands from both the private sector and the public sector for candidates with these competences, insights and skills.</li>
+<p><li> Candidates with such a background will be of great importance for new scientific discoveries and technological innovations. At the department of physics of the university of Oslo there are several research directions whose scientific activities will benefit at large from candidates with such a background, spanning from fast ML for new discoveries to the development of QTs.</li>   
+</ol>
+</div>
+</section>
+
+<section>
+<h2 id="structure-of-program-and-courses">Structure of Program and Courses </h2>
+
+<p>In developing such a program 
+the Center for Computing in Science Education (CCSE) at the university of Oslo (UiO) could be the entity which provides the pedagogical research resources. It has the needed research experience
+on how to design curricula so that students develop deep knowledge that is connected and useful.
+</p>
+
+<p>The figure here, inspired by the QuSTEAM project in the USA <a href="https://qusteam.org" target="_blank"><tt>https://qusteam.org</tt></a>
+shows how one can link educational developments by involving various stakeholders from academia, industry research  laboratories. 
+</p>
+
+<br/><br/>
+<center>
+<p><img src="qusteam.png" width="700" align="bottom"></p>
+</center>
+<br/><br/>
+</section>
+
+<section>
+<h2 id="paths-in-the-bsc-program">Paths in the BSc program </h2>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p>The program could offer  three possible directions</p>
+<ol>
+<p><li> Quantum information systems and quantum technologies</li>
+<p><li> Artificial intelligence and machine learning in physics</li>
+<p><li> Computational Physics</li>
+</ol>
+<p>
+<p>The students specialize in these directions in their last year of the BSc program.</p>
+</div>
+</section>
+
+<section>
+<h2 id="structure-and-courses">Structure and courses  </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p>There are several existing courses which can be included in this program. There are also courses which need to be established. At the CCSE we have the research and educational expertise to establish two to three new courses in these directions. Most likely there are potential teachers from other groups.</p>
+
+<p>A separate application for establishing these courses follows. The additional courses we propose are (these are suggestions and codes are tentative) listed here. Note that we propose these courses as cloned courses. We may consider extensions of these codes in order to offer PhD variants as well.</p>
+
+<p>The list here is tentative. Two of the courses, FYS4446 and FYS4447 have been taught as special topics since 2018 and we have already a large body of material.
+This list is a mere suggestion.
+</p>
+
+<ol>
+<p><li> Classical and quantum laboratory, needs to be established, perhaps by researchers at the Center of Materials Science (LENS group), FYS2440</li>
+<p><li> Quantum computing and software, needs to be established. This can be organized together with OsloMet and Simula Research lab.</li>
+<p><li> Quantum hardware, needs to be established, this can be organized together with OsloMet and Simula Research lab.</li> 
+<p><li> Quantum computing and quantum machine learning, FYS3446/FYS4446 (cloned course, already developed by CCSE)</li>
+<p><li> Advanced machine learning and data analysis for the physical sciences, FYS3447/FYS4447 (already developed by CCSE)</li>
+</ol>
+<p>
+<p>The last three courses are elective ones for the last semester of study. Some of these courses can also be split into modules a 5 ECTS or 7.5 ECTS.
+There are obviously other course alternatives. 
+The first year is identical with the BSc program <b>Physics and Astronomy</b>.
+</p>
+</div>
+</section>
+
+<section>
+<h2 id="structure-and-courses">Structure and courses </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p>The table here is an example of a suggested path for a Master of Science project,
+with course work the first year and thesis work the last year.
+</p>
+
+<table class="dotable" border="1">
+<thead>
+<tr><th align="left">            </th> <th align="left">10 ECTS </th> <th align="left">10 ECTS </th> <th align="left">      10 ECTS       </th> </tr>
+</thead>
+<tbody>
+<tr><td align="left">   6th semester    </td> <td align="left">   Elective    </td> <td align="left">   Elective    </td> <td align="left">   Elective                </td> </tr>
+<tr><td align="left">   5th semester    </td> <td align="left">   FYS2160     </td> <td align="left">   FYS3110     </td> <td align="left">   Elective/FYS-STK3155    </td> </tr>
+<tr><td align="left">   4th semester    </td> <td align="left">   FYS2130     </td> <td align="left">   FYS2140     </td> <td align="left">   STK2100/FYS2440         </td> </tr>
+<tr><td align="left">   3rd semester    </td> <td align="left">   MAT1120     </td> <td align="left">   FYS1120     </td> <td align="left">   FYS3150                 </td> </tr>
+<tr><td align="left">   2nd semester    </td> <td align="left">   MAT1110     </td> <td align="left">   FYS12XX     </td> <td align="left">   FYS13XX                 </td> </tr>
+<tr><td align="left">   1st semester    </td> <td align="left">   MAT1100     </td> <td align="left">   IN1900      </td> <td align="left">   FYS11XX                 </td> </tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<section>
+<h2 id="description-of-study-directions">Description of Study directions </h2>
+
+<p>The basic structure of the study directions could be</p>
+
+<ul>
+<p><li> Description of study directions with potential projects</li>
+<p><li> Admission criteria</li>
+<p><li> Learning outcomes</li>
+<p><li> Program structure</li>
+<p><li> Semester abroad</li>
+<p><li> Career prospects</li>
+<p><li> Teaching and examinations</li>
+</ul>
+<p>
+<p>What follows are text proposals for these items.</p>
+</section>
+
+<section>
+<h2 id="description-of-learning-outcomes">Description of learning outcomes </h2>
+
+<p>The power of the scientific method lies in identifying a given problem
+as a special case of an abstract class of problems, identifying
+general solution methods for this class of problems, and applying a
+general method to the specific problem (applying means, in the case of
+computing, calculations by pen and paper, symbolic computing, or
+numerical computing by ready-made and/or self-written software). This
+generic view on problems and methods is particularly important for
+understanding how to apply available, generic software to solve a
+particular problem.
+</p>
+
+<p>Computing competence represents a central element
+in scientific problem solving, from basic education and research to
+essentially almost all advanced problems in modern
+societies. Computing competence is simply central to further
+progress. It enlarges the body of tools available to students and
+scientists beyond classical tools and allows for a more generic
+handling of problems. Focusing on algorithmic aspects results in
+deeper insights about scientific problems.
+</p>
+
+<p>The learning outcomes are subdivided in three general categories, knowledge, skills and general competence.</p>
+</section>
+
+<section>
+<h2 id="study-abroad-and-international-collaborators">Study abroad and international collaborators </h2>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+
+<p>Students at the University of Oslo may choose to take parts of
+their degrees at a university abroad.
+</p>
+
+<p>Students in this program have a number of interesting international
+exchange possibilities. The involved researchers have extensive
+collaborations with other researchers worldwide. These exchange
+possibility range from top universities in the USA, Asia and Europe as
+well as leading National Laboratories in the USA.
+</p>
+</div>
+</section>
+
+<section>
+<h2 id="career-prospects">Career prospects </h2>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p>Candidates who are capable of modeling and understanding complicated
+systems in natural science, are in short supply in society.  The
+computational methods and approaches to scientific problems students learn
+when working on their thesis projects are very similar to the methods
+they will use in later stages of their careers.  To handle large
+numerical projects demands structured thinking and good analytical
+skills and a thorough understanding of the problems to be solved. This
+knowledge makes the students unique on the job market.
+</p>
+
+<p>Career opportunities are many, from research institutes, universities
+and university colleges and a multitude of companies. Examples
+include IBM, Hydro, Statoil, and Telenor.  The program gives an
+excellent background for further studies.
+</p>
+
+<p>The program has also a strong international element which allows students to
+gain important experience from international collaborations in
+science, with the opportunity to spend parts of the time spent on
+thesis work at research institutions abroad.
+</p>
+</div>
+</section>
+
+<section>
+<h2 id="research-activities-overview">Research activities, Overview </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<ul>
+<p><li> Machine Learning applied to Quantum Mechanical systems</li>
+<p><li> Quantum Engineering</li>
+<p><li> Quantum algorithms</li> 
+<p><li> Quantum Machine Learning</li>
+</ul>
+</div>
+</section>
+
+<section>
+<h2 id="what-has-happened-during-the-last-two-years-at-ccse-uio">What has happened during the last two years at CCSE@UiO? </h2>
+
+<p>During the last two years we have started a large scientific activity
+on Quantum Computing and Machine Learning at the Center for Computing
+in Science Education (CCSE), with three PhD students hired since
+October 2019  and several master of Science students. This activity spans from the development
+of quantum-mechanical many-particle theories for studying systems of
+interest for making quantum computers, via the development of machine learning and quantum
+algorithms for solving quantum mechanical problems to exploring
+quantum machine learning algorithms.
+</p>
+
+<p>In 2022/2023 we expect to hire a post-doctoral fellow working on
+quantum computing (many-body theories) at the center for Materials Science and Nanotechnology at the University of Oslo. We also expect to hire a new PhD student, see <a href="https://www.mn.uio.no/compsci/english/phd_programme/projects/physics/machine-learning.html" target="_blank"><tt>https://www.mn.uio.no/compsci/english/phd_programme/projects/physics/machine-learning.html</tt></a>
+</p>
+</section>
+
+<section>
+<h2 id="more-activities">More activities </h2>
+
+<ol>
+<p><li> <a href="https://www.mn.uio.no/fysikk/english/research/groups/semiconductors/index.html" target="_blank">Center of Materials Science UiO, Lasse Vines (Expt) Andrej Kuznetsov(Expt), David Rivas Gongora (Expt) and Marianne Bathen (Expt, now PD at ETH)</a></li>
+<p><li> <a href="https://www.quantumcomputing.no/" target="_blank">Gemini center on Quantum Computing (SINTEF-UiO-NTNU)</a></li>
+</ol>
+</section>
+
+<section>
+<h2 id="quantum-engineering">Quantum Engineering </h2>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b>Quantum Computing requirements</b>
+<p>
+<ol>
+<p><li> be scalable</li>
+<p><li> have qubits that can be entangled</li>
+<p><li> have reliable initializations protocols to a standard state</li>
+<p><li> have a set of universal quantum gates to control the quantum evolution</li>
+<p><li> have a coherence time much longer than the gate operation time</li>
+<p><li> have a reliable read-out mechanism for measuring the qubit states</li>
+<p><li> and many more</li> 
+</ol>
+</div>
+</section>
+
+<section>
+<h2 id="candidate-systems">Candidate systems </h2>
+<ol>
+<p><li> Superconducting Josephon junctions</li>
+<p><li> Single photons</li>
+<p><li> <a href="https://www.insidequantumtechnology.com/news-archive/ionq-is-first-quantum-startup-to-go-public-will-it-be-first-to-deliver-profits/" target="_blank">Trapped ions and atoms</a></li>
+<p><li> Nuclear Magnetic Resonance</li>
+<p><li> <b>Quantum dots, expt at MSU</b></li>
+<p><li> <b>Point Defects in semiconductors, experiments at UiO, center for Materials Science</b></li>
+<p><li> more</li>
+</ol>
+</section>
+
+<section>
+<h2 id="electrons-quantum-dots-on-superfluid-helium">Electrons (quantum dots) on superfluid helium </h2>
+
+<p>Electrons on <a href="https://www.youtube.com/watch?v=EuDuM-fe-lA&ab_channel=JoshuahHeath" target="_blank">superfluid helium represent</a> a promising platform for investigating
+strongly-coupled qubits.
+</p>
+
+<p>Therefore a systematic investigation of the
+controlled generation of entanglement between two trapped electrons
+under the influence of coherent microwave driving pulses, taking into
+account the effects of the Coulomb interaction between electrons, is
+of significant importance for quantum information processing using
+trapped electrons.
+</p>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<ol>
+<p><li> Time-Dependent full configuration interaction theory</li>
+<p><li> Time-dependent Coupled-Cluster theory</li>
+<p><li> Designing quantum circuits</li>
+</ol>
+</div>
+</section>
+
+<section>
+<h2 id="lots-of-people-to-thank">Lots of people to thank </h2>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b>Thanks to</b>
+<p>
+<ul>
+<p><li> MSU: <b>Ben Hall, Jane Kim, Julie Butler, Danny Jammoa, Nicholas Cariello, Paul-Aymeric McRae</b>, Johannes Pollanen (Expt), <b>Niyaz Beysengulov (Expt)</b>, Dean Lee, Scott Bogner, Heiko Hergert, Matt Hirn, Huey-Wen Lin, Alexei Bazavov, Andrea Shindler and Angela Wilson</li>
+<p><li> UiO: <b>Stian Bilek, Heine &#197;b&#248; (now OsloMet), H&#229;kon Emil Kristiansen, &#216;yvind Sch&#248;yen Sigmundsson, Jonas Boym Flaten, Kristian Wold (now OsloMet)</b>, Lasse Vines (Expt) Andrej Kuznetsov (Expt), <b>David Rivas Gongora (Expt) and Marianne Bathen (Expt, now PD at ETH)</b></li>
+</ul>
+</div>
+
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b>Sponsors</b>
+<p>
+<p>This work is supported by the U.S. Department of Energy, Office of
+Science, office of Nuclear Physics under grant No. DE-SC0021152 and
+U.S. National Science Foundation Grants No. PHY-1404159 and
+PHY-2013047 and the Norwegian ministry of Education and  Research for PhD fellowships.
+</p>
+</div>
+</section>
+
+
+
+</div> <!-- class="slides" -->
+</div> <!-- class="reveal" -->
+
+<script src="reveal.js/lib/js/head.min.js"></script>
+<script src="reveal.js/js/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+  // Display navigation controls in the bottom right corner
+  controls: true,
+
+  // Display progress bar (below the horiz. slider)
+  progress: true,
+
+  // Display the page number of the current slide
+  slideNumber: true,
+
+  // Push each slide change to the browser history
+  history: false,
+
+  // Enable keyboard shortcuts for navigation
+  keyboard: true,
+
+  // Enable the slide overview mode
+  overview: true,
+
+  // Vertical centering of slides
+  //center: true,
+  center: false,
+
+  // Enables touch navigation on devices with touch input
+  touch: true,
+
+  // Loop the presentation
+  loop: false,
+
+  // Change the presentation direction to be RTL
+  rtl: false,
+
+  // Turns fragments on and off globally
+  fragments: true,
+
+  // Flags if the presentation is running in an embedded mode,
+  // i.e. contained within a limited portion of the screen
+  embedded: false,
+
+  // Number of milliseconds between automatically proceeding to the
+  // next slide, disabled when set to 0, this value can be overwritten
+  // by using a data-autoslide attribute on your slides
+  autoSlide: 0,
+
+  // Stop auto-sliding after user input
+  autoSlideStoppable: true,
+
+  // Enable slide navigation via mouse wheel
+  mouseWheel: false,
+
+  // Hides the address bar on mobile devices
+  hideAddressBar: true,
+
+  // Opens links in an iframe preview overlay
+  previewLinks: false,
+
+  // Transition style
+  transition: 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+  // Transition speed
+  transitionSpeed: 'default', // default/fast/slow
+
+  // Transition style for full page slide backgrounds
+  backgroundTransition: 'default', // default/none/slide/concave/convex/zoom
+
+  // Number of slides away from the current that are visible
+  viewDistance: 3,
+
+  // Parallax background image
+    //parallaxBackgroundImage: '', // e.g. "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'"
+
+  // Parallax background size
+  //parallaxBackgroundSize: '' // CSS syntax, e.g. "2100px 900px"
+
+  theme: Reveal.getQueryHash().theme, // available themes are in reveal.js/css/theme
+    transition: Reveal.getQueryHash().transition || 'none', // default/cube/page/concave/zoom/linear/none
+
+});
+
+Reveal.initialize({
+  dependencies: [
+      // Cross-browser shim that fully implements classList - https://github.com/eligrey/classList.js/
+      { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+
+      // Interpret Markdown in <section> elements
+      { src: 'reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: 'reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+
+      // Syntax highlight for <code> elements
+      { src: 'reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+
+      // Zoom in and out with Alt+click
+      { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+
+      // Speaker notes
+      { src: 'reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+
+      // Remote control your reveal.js presentation using a touch device
+      //{ src: 'reveal.js/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } },
+
+      // MathJax
+      //{ src: 'reveal.js/plugin/math/math.js', async: true }
+  ]
+});
+
+Reveal.initialize({
+
+  // The "normal" size of the presentation, aspect ratio will be preserved
+  // when the presentation is scaled to fit different resolutions. Can be
+  // specified using percentage units.
+  width: 1170,  // original: 960,
+  height: 700,
+
+  // Factor of the display size that should remain empty around the content
+  margin: 0.1,
+
+  // Bounds for smallest/largest possible scale to apply to content
+  minScale: 0.2,
+  maxScale: 1.0
+
+});
+</script>
+
+<!-- begin footer logo
+<div style="position: absolute; bottom: 0px; left: 0; margin-left: 0px">
+<img src="somelogo.png">
+</div>
+   end footer logo -->
+
+
+
+
+</body>
+</html>
