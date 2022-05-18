@@ -219,11 +219,6 @@ using microdevices on the length scales approaching the interelectron
 separation (at the order of one micron).
 !eblock
 
-!split
-=====  Typical Setup   =====
-
-FIGURE: [figures/setupfigure.png, width=600 frac=0.6]
-
 
 
 !split
@@ -285,18 +280,6 @@ where $\vert\Phi_p\rangle = \vert\psi_{p_1\rangle\cdots \psi_{p_N}}$ and
 \end{equation}
 !et    
 
-!split
-=====  Setup of States, One-body States =====
-
-
-FIGURE: [figures/setupfigure2.png, width=600 frac=1.0]
-
-
-!split
-=====  Setup of States, Two-body States =====
-
-
-FIGURE: [figures/setupfigure3.png, width=600 frac=1.0]
 
 !split
 ===== Where we are now =====
