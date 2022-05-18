@@ -1,0 +1,626 @@
+<!--
+HTML file automatically generated from DocOnce source
+(https://github.com/doconce/doconce/)
+doconce format html quteMay2022.do.txt --pygments_html_style=default --html_style=bloodish --html_links_in_new_window --html_output=quteMay2022 --no_mako
+-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="DocOnce: https://github.com/doconce/doconce/" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Quantum Computing and Quantum Mechanics for Many Interacting Particles">
+<title>Quantum Computing and Quantum Mechanics for Many Interacting Particles</title>
+<style type="text/css">
+/* bloodish style */
+body {
+  font-family: Helvetica, Verdana, Arial, Sans-serif;
+  color: #404040;
+  background: #ffffff;
+}
+h1 { font-size: 1.8em; color: #8A0808; }
+h2 { font-size: 1.6em; color: #8A0808; }
+h3 { font-size: 1.4em; color: #8A0808; }
+h4 { font-size: 1.2em; color: #8A0808; }
+a { color: #8A0808; text-decoration:none; }
+tt { font-family: "Courier New", Courier; }
+p { text-indent: 0px; }
+hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+p.caption { width: 80%; font-style: normal; text-align: left; }
+hr.figure { border: 0; width: 80%; border-bottom: 1px solid #aaa; }div.highlight {
+    border: 1px solid #cfcfcf;
+    border-radius: 2px;
+    line-height: 1.21429em;
+}
+div.cell {
+    width: 100%;
+    padding: 5px 5px 5px 0;
+    margin: 0;
+    outline: none;
+}
+div.input {
+    page-break-inside: avoid;
+    box-orient: horizontal;
+    box-align: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+}
+div.inner_cell {
+    box-orient: vertical;
+    box-align: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    box-flex: 1;
+    flex: 1;
+}
+div.input_area {
+    border: 1px solid #cfcfcf;
+    border-radius: 4px;
+    background: #f7f7f7;
+    line-height: 1.21429em;
+}
+div.input_area > div.highlight {
+    margin: .4em;
+    border: none;
+    padding: 0;
+    background-color: transparent;
+}
+div.output_wrapper {
+    position: relative;
+    box-orient: vertical;
+    box-align: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+.output {
+    box-orient: vertical;
+    box-align: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+div.output_area {
+    padding: 0;
+    page-break-inside: avoid;
+    box-orient: horizontal;
+    box-align: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+}
+div.output_subarea {
+    padding: .4em .4em 0 .4em;
+    box-flex: 1;
+    flex: 1;
+}
+div.output_text {
+    text-align: left;
+    color: #000;
+    line-height: 1.21429em;
+}
+.alert-text-small   { font-size: 80%;  }
+.alert-text-large   { font-size: 130%; }
+.alert-text-normal  { font-size: 90%;  }
+.alert {
+  padding:8px 35px 8px 14px; margin-bottom:18px;
+  text-shadow:0 1px 0 rgba(255,255,255,0.5);
+  border:1px solid #bababa;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  color: #555;
+  background-color: #f8f8f8;
+  background-position: 10px 5px;
+  background-repeat: no-repeat;
+  background-size: 38px;
+  padding-left: 55px;
+  width: 75%;
+ }
+.alert-block {padding-top:14px; padding-bottom:14px}
+.alert-block > p, .alert-block > ul {margin-bottom:1em}
+.alert li {margin-top: 1em}
+.alert-block p+p {margin-top:5px}
+.alert-notice { background-image: url(https://cdn.rawgit.com/doconce/doconce/master/bundled/html_images/small_gray_notice.png); }
+.alert-summary  { background-image:url(https://cdn.rawgit.com/doconce/doconce/master/bundled/html_images/small_gray_summary.png); }
+.alert-warning { background-image: url(https://cdn.rawgit.com/doconce/doconce/master/bundled/html_images/small_gray_warning.png); }
+.alert-question {background-image:url(https://cdn.rawgit.com/doconce/doconce/master/bundled/html_images/small_gray_question.png); }
+div { text-align: justify; text-justify: inter-word; }
+.tab {
+  padding-left: 1.5em;
+}
+div.toc p,a {
+  line-height: 1.3;
+  margin-top: 1.1;
+  margin-bottom: 1.1;
+}
+</style>
+</head>
+
+<!-- tocinfo
+{'highest level': 2,
+ 'sections': [('Some of our main interest and expertise',
+               2,
+               None,
+               'some-of-our-main-interest-and-expertise'),
+              ('Why? Basic motivation', 2, None, 'why-basic-motivation'),
+              ('Short background', 2, None, 'short-background'),
+              ('Quantum Engineering', 2, None, 'quantum-engineering'),
+              ('Candidate systems', 2, None, 'candidate-systems'),
+              ('Electrons (quantum dots) on superfluid helium',
+               2,
+               None,
+               'electrons-quantum-dots-on-superfluid-helium'),
+              ('Methods and Applications', 2, None, 'methods-and-applications'),
+              ('Entanglement', 2, None, 'entanglement'),
+              ('More on Entanglement', 2, None, 'more-on-entanglement'),
+              ('Entanglement gates in trapped ions and more',
+               2,
+               None,
+               'entanglement-gates-in-trapped-ions-and-more'),
+              ('Coulomb interaction', 2, None, 'coulomb-interaction'),
+              ('Electrons on helium is another qubit platform',
+               2,
+               None,
+               'electrons-on-helium-is-another-qubit-platform'),
+              ('Surface state electrons (SSE)',
+               2,
+               None,
+               'surface-state-electrons-sse'),
+              ('Typical Setup', 2, None, 'typical-setup'),
+              ('Computational Methods', 2, None, 'computational-methods'),
+              ('One-dimensional system', 2, None, 'one-dimensional-system'),
+              ('Many-particle States', 2, None, 'many-particle-states'),
+              ('Setup of States, One-body States',
+               2,
+               None,
+               'setup-of-states-one-body-states'),
+              ('Setup of States, Two-body States',
+               2,
+               None,
+               'setup-of-states-two-body-states'),
+              ('Where we are now', 2, None, 'where-we-are-now'),
+              ('Plans', 2, None, 'plans')]}
+end of tocinfo -->
+
+<body>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+     equationNumbers: {  autoNumber: "AMS"  },
+     extensions: ["AMSmath.js", "AMSsymbols.js", "autobold.js", "color.js"]
+  }
+});
+</script>
+<script type="text/javascript" async
+ src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<!-- ------------------- main content ---------------------- -->
+<center>
+<h1>Quantum Computing and Quantum Mechanics for Many Interacting Particles</h1>
+</center>  <!-- document title -->
+
+<!-- author(s): Stian D. Bilek, Jonas Boym Flaten, Morten Hjorth-Jensen and &#216;yvind Sigmundson Sch&#248;yen -->
+<center>
+<b>Stian D. Bilek, Jonas Boym Flaten, Morten Hjorth-Jensen and &#216;yvind Sigmundson Sch&#248;yen</b> 
+</center>
+<!-- institution -->
+<center>
+<b>Department of Physics and Center for Computing in Science Education, University of Oslo, Norway</b>
+</center>
+<br>
+<center>
+<h4>May  18, 2022. </h4>
+</center> <!-- date -->
+<br>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="some-of-our-main-interest-and-expertise">Some of our main interest and expertise </h2>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<ul>
+<li> Many-body methods (post-HF and post-DFT) like FCI, Monte Carlo, Many-body perturbation theory, Coupled-Cluster theory,  Similarity Renormalization group theory and Green's function theory</li>
+<li> Various dimensionality reduction methods</li>
+<li> Quantum Engineering</li>
+<li> Quantum algorithms</li> 
+<li> Quantum Machine Learning</li>
+</ul>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="why-basic-motivation">Why? Basic motivation </h2>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p>How can we avoid the dimensionality curse? Many possibilities</p>
+<ol>
+<li> smarter basis functions</li>
+<li> resummation of specific correlations</li>
+<li> stochastic sampling of high-lying states (stochastic FCI, CC and SRG/IMSRG)</li>
+<li> many more</li>
+</ol>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="short-background">Short background  </h2>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p>During the last two years we have started a large scientific activity
+on Quantum Computing and Machine Learning at Michigan State University.
+</p>
+
+<p>This activity spans from the development
+of quantum-mechanical many-particle theories for studying systems of
+interest for making quantum computers, via the development of quantum
+algorithms for solving quantum mechanical problems to exploring
+quantum machine learning algorithms.
+</p>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="quantum-engineering">Quantum Engineering </h2>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b>Quantum Computing requirements</b>
+<p>
+<ol>
+<li> be scalable</li>
+<li> have qubits that can be entangled</li>
+<li> have reliable initializations protocols to a standard state</li>
+<li> have a set of universal quantum gates to control the quantum evolution</li>
+<li> have a coherence time much longer than the gate operation time</li>
+<li> have a reliable read-out mechanism for measuring the qubit states</li>
+<li> and many more</li> 
+</ol>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="candidate-systems">Candidate systems </h2>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<ol>
+<li> Superconducting Josephon junctions</li>
+<li> Single photons</li>
+<li> <a href="https://journals.aps.org/rmp/pdf/10.1103/RevModPhys.93.025001" target="_blank">Trapped ions and atoms</a></li>
+<li> Nuclear Magnetic Resonance</li>
+<li> <b>Quantum dots, expt at MSU</b></li>
+<li> <b>Point Defects in semiconductors, expt at UiO</b></li>
+<li> more</li>
+</ol>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="electrons-quantum-dots-on-superfluid-helium">Electrons (quantum dots) on superfluid helium </h2>
+
+<p>Electrons on <a href="https://www.youtube.com/watch?v=EuDuM-fe-lA&ab_channel=JoshuahHeath" target="_blank">superfluid helium represent</a> a promising platform for investigating
+strongly-coupled qubits.
+</p>
+
+<p>Therefore a systematic investigation of the
+controlled generation of entanglement between two trapped electrons
+under the influence of coherent microwave driving pulses, taking into
+account the effects of the Coulomb interaction between electrons, is
+of significant importance for quantum information processing using
+trapped electrons.
+</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="methods-and-applications">Methods and Applications </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<ol>
+<li> Time-Dependent full configuration interaction theory</li>
+<li> Time-dependent Coupled-Cluster theory</li>
+<li> Designing quantum operations and quantum simulators</li>
+</ol>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="entanglement">Entanglement </h2>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p><a href="https://link.springer.com/content/pdf/10.1007/s11232-007-0098-9.pdf" target="_blank">Entanglement</a> is the fundamental characteristic that distinguishes
+quantum systems composed of two or more coupled objects from their
+classical counterparts. The study of entanglement in precisely
+engineered quantum systems with countably many degrees of freedom is
+at the forefront of modern physics and is a key resource in quantum
+information science (QIS). This is particularly true in the
+development of two-qubit logic for quantum computation.
+</p>
+</div>
+
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p>The
+generation of two-qubit entanglement has been demonstrated in a wide
+variety of physical systems used in present-day quantum computing,
+including superconducting circuits, tapped
+ions, semiconductor quantum dots, color-center
+defects in diamond, and neutral atoms in optical
+latticesjust to name a few.
+</p>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="more-on-entanglement">More on Entanglement </h2>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p>Generating an entanglement between two quantum systems rely on
+exploiting interactions in a controllable way. The details in the
+interaction Hamiltonian between two systems defines the protocol
+schemes for two-qubit logic.
+</p>
+</div>
+
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p>In  superconducting circuits the
+interaction between qubits may arise from direct capacitive coupling
+between circuit elements or by indirect coupling of two qubits to a
+common resonator (virtually populating resonator mode) which results
+in a non-local Hamiltonian in the form of exchange
+interaction. This allow to implement various
+schemes for entanglement, such as \( \sqrt{i\text{SWAP}} \), controlled-phase
+gate, resonator-induced phase
+gate, cross-resonance gate.
+</p>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="entanglement-gates-in-trapped-ions-and-more">Entanglement gates in trapped ions and more </h2>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p>Entanglement gates in trapped ions are
+produced by means of the Coulomb interaction, where shared motional
+modes of two or more ions, entangled to their internal states, used
+for transferring excitations between ion
+qubits. This has been experimentally
+demonstrated.
+</p>
+</div>
+
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p>In photonic quantum
+computing schemes two-qubit entangling operations are realized by
+nonlinear interactions between two photons scattering from quantum
+dots, plasmonic nanowires, diamond vacancy centers and others embedded
+into waveguides. Two-qubit gates in
+semiconductor quantum dots are based on spin-spin exchange
+interactions or generated
+by coupling to a superconducting resonator via artificial spin-orbit
+interaction.
+</p>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="coulomb-interaction">Coulomb interaction </h2>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p>Coulomb interaction governed entanglement can be realized in
+the system of electrons on the surface of superfluid helium, where
+qubit states are formed by in-plane lateral motional or out-of plane
+Rydberg states. Trapped near the surface of liquid helium these states
+have different spatial charge configurations and the wavefunctions of
+different electrons do not overlap.
+</p>
+</div>
+
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p>This results in a strong exchange
+free Coulomb interaction which depends on the states of the
+electrons. The lack of disorder in the systems
+also leads to slow electron decoherence, which has attracted interest
+to the system as a candidate for quantum information
+processing.
+</p>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="electrons-on-helium-is-another-qubit-platform">Electrons on helium is another qubit platform </h2>
+
+<b>To our knowledge two qubit gates have never been discussed in a proper manner.</b>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p>The static Coulomb interaction arises from a virtual photon exchange
+ process between two charge particles according to quantum
+ electrodynamics. This results in a correlated motion of two charges
+ generating quantum entanglement. 
+</p>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="surface-state-electrons-sse">Surface state electrons (SSE) </h2>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p>Surface state electrons (SSE) 'floating' above liquid helium
+originates from quantization of electron's perpendicular to the
+surface motion in a trapping potential formed by attractive force from
+image charge and a large \( \sim \) 1 eV barrier at the liquid-vacuum
+interface. At low temperatures the SSE are trapped in the lowest
+Rydberg state for vertical motion some 11 nm above the helium surface,
+which is perfectly clean and has a permittivity close to that of
+vacuum.
+</p>
+</div>
+
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p>The weak interaction with enviroment, which is mainly governed
+by interaction with quantized surface capillary waves (ripplons) and
+bulk phonons, ensures long coherence times - a vital ingredient for
+any qubit platform. SSE's in-plane motion can be further localized by
+using microdevices on the length scales approaching the interelectron
+separation (at the order of one micron).
+</p>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="typical-setup">Typical Setup   </h2>
+
+<br/><br/>
+<center>
+<p><img src="figures/setupfigure.png" width="600" align="bottom"></p>
+</center>
+<br/><br/>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="computational-methods">Computational Methods </h2>
+
+<p>As we are only studying a model comprised of two electrons restricted to move in a
+    one-dimensional external potential we have employed the
+    configuration-interaction theory to compute the steady-state
+    properties of the system.
+    We have used a static, one-dimensional, grid-based basis set for the single-particle
+    functions.
+    This allows for flexibility in the choice of the external potential, and fits the
+    interpolated potential particularly well.
+</p>
+
+<p>    The Hamiltonian of \( N \) interacting electrons confined by some potential \( v(r) \) can be written on general form </p>
+$$
+\begin{equation}
+        \hat{H} = \sum_{i=1}^N \left(-\frac{1}{2}\nabla_i^2 + v(r_i) \right) + \sum_{i < j} \hat{u}(r_i, r_j),
+\label{_auto1}
+\end{equation}
+$$
+
+<p>where \( \hat{u}(i,j) \) is the electron-electron (Coulomb) interaction.</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="one-dimensional-system">One-dimensional system </h2>
+
+<p>We consider a one-dimensional model where the confining potential is parametrized/obtained from finite element calculations. </p>
+
+<p>    The bare Coulomb interaction is divergent in 1D (REF) and it is customary to use a smoothed Coulomb interaction given by</p>
+$$
+\begin{align}
+        u(x_1, x_2) = \frac{\alpha}{\sqrt{(x_1 - x_2)^2 + a^2}},
+\label{_auto2}
+\end{align}
+$$
+
+<p>where \( \alpha \) adjusts the strength of the interaction and \( a \) removes
+    the singularity at \( x_1 = x_2 \).
+</p>
+
+<p>    The single-particle functions  are chosen as the eigenfunctions of the single-particle Hamiltonian</p>
+$$
+\begin{equation}
+        \left( -\frac{d^2}{dx^2}+v(x) \right) \psi_p(x) = \epsilon_p \psi_p(x).
+\label{_auto3}
+\end{equation}
+$$
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="many-particle-states">Many-particle States </h2>
+
+<p>It should be noted that this implies that Slater determinants built from the single-particle are eigenfunctions of the non-interacting many-body Hamiltonian</p>
+$$
+\begin{equation}
+     \left( \sum_{i=1}^N -\frac{1}{2}\nabla_i^2 + v(r_i)  \right) \vert\Phi_p\rangle = E_p \vert\Phi_p\rangle,
+\label{_auto4}
+\end{equation}
+$$
+
+<p>where \( \vert\Phi_p\rangle = \vert\psi_{p_1\rangle\cdots \psi_{p_N}} \) and </p>
+$$
+\begin{equation}
+        E_p = \sum_{i=1}^N \epsilon_{p_i}.
+\label{_auto5}
+\end{equation}
+$$
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="setup-of-states-one-body-states">Setup of States, One-body States </h2>
+
+<br/><br/>
+<center>
+<p><img src="figures/setupfigure2.png" width="600" align="bottom"></p>
+</center>
+<br/><br/>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="setup-of-states-two-body-states">Setup of States, Two-body States </h2>
+
+<br/><br/>
+<center>
+<p><img src="figures/setupfigure3.png" width="600" align="bottom"></p>
+</center>
+<br/><br/>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="where-we-are-now">Where we are now </h2>
+
+<ol>
+<li> Time-dependent studies of two electrons in two wells in one dimensions</li>
+<li> Studies of the time-evolution of entangled states (now two electrons only)</li>
+<li> Use theory to find optimal experimental setup</li>
+<li> Expect two-electron system realized experimentally in \( 1-2 \) years</li>
+</ol>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="plans">Plans </h2>
+
+<ol>
+<li> Add two and three-dimensions</li>
+<li> Develop time-dependent FCI code, useful up to approximately 10-30 particles with <b>effective</b> (and effective Hilbert space) Hamiltonians in two and three dimensions</li>
+<li> Particles can be valence particles  or valence holes defined for an effective Hilbert space</li>
+<li> Develop codes for studies of entanglement as function of time</li>
+<li> Study the feasibility of various setups for quantum simulations</li>
+<li> For larger many-body systems, study for example time-dependent CC theory</li>
+</ol>
+<!-- ------------------- end of main content --------------- -->
+</body>
+</html>
+
