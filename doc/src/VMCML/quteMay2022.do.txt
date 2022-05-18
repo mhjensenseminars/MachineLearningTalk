@@ -5,7 +5,7 @@ DATE: May  18, 2022.
 
 
 !split
-===== Some of our main interest and expertise =====
+===== Some of our main interests and expertise =====
 
 !bblock
 * Many-body methods (post-HF and post-DFT) like FCI, Monte Carlo, Many-body perturbation theory, Coupled-Cluster theory,  Similarity Renormalization group theory and Green's function theory
@@ -34,7 +34,7 @@ o many more
 
 !bblock
 During the last two years we have started a large scientific activity
-on Quantum Computing and Machine Learning at Michigan State University.
+on Quantum Computing and Machine Learning at University of Oslo and Michigan State University.
 
 This activity spans from the development
 of quantum-mechanical many-particle theories for studying systems of
@@ -298,3 +298,4 @@ o Particles can be valence particles  or valence holes defined for an effective 
 o Develop codes for studies of entanglement as function of time
 o Study the feasibility of various setups for quantum simulations
 o For larger many-body systems, study for example time-dependent CC theory
+o More plans
