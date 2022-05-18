@@ -298,5 +298,18 @@ DATE: today
 
 
 
+===== QUTE workshop May 18, 2022, University of Oslo =====
+
+
+
+ * HTML:
+   * "Plain html style": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/quteMay2022/html/quteMay2022.html"
+   * "reveal.js beige slide style": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/quteMay2022/html/quteMay2022-reveal.html"
+   * "Bootstrap style": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/quteMay2022/html/quteMay2022-bs.html"
+ * iPython notebook:
+   * "ipynb file": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/quteMay2022/ipynb/quteMay2022.ipynb"
+
+
+
 
 
