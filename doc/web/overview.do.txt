@@ -4,7 +4,7 @@ DATE: today
 
 <%
 pub_url = 'http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub'
-published = ['vmcml', 'unitn', 'uniohio', 'unisurrey', 'uio2019', 'chalmers', 'uiomath', 'unipd', 'overview', 'WorkshopTastesNP', 'xai', 'NIThePColloquium', 'quantumcomputing', 'NotreDameMay2021', 'oslometqc', 'IAEA', 'spinQ', 'UniMilano', 'MSUFeb10', 'ORNLMarch24', 'UTKMarch28', 'gemini', 'quteMay2022',]
+published = ['vmcml', 'unitn', 'uniohio', 'unisurrey', 'uio2019', 'chalmers', 'uiomath', 'unipd', 'overview', 'WorkshopTastesNP', 'xai', 'NIThePColloquium', 'quantumcomputing', 'NotreDameMay2021', 'oslometqc', 'IAEA', 'spinQ', 'UniMilano', 'MSUFeb10', 'ORNLMarch24', 'UTKMarch28', 'gemini', 'quteMay2022', 'KTHMat23',]
 chapters = {
  'vmcml': 'From variational Monte Carlo to machine learning, talks at Michigan State University April and June 2018',
  'uniuio': 'Talk at University of Oslo, December 14, 2018',
@@ -30,6 +30,7 @@ chapters = {
   'UTKMarch28': 'Artificial Intelligence and Machine Learning in Nuclear Physics, University of Tennessee, Knoxville, Tennessee, March 28, 2022',
   'gemini': 'Education and Research in Quantum Information Systems and more, Gemini center, SINTEF, Oslo, Norway, April 6, 2022',
   'quteMay2022': 'QUTE workshop May 18, 2022, University of Oslo',
+  'KTHMat23': 'Frontiers in Nuclear Structure, KTH, Stockholm, May 23-25, 2022',  
 }
 %>
 
