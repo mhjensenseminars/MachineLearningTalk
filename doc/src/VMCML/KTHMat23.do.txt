@@ -335,7 +335,7 @@ FIGURE: [figures/pointnucleondensity.png, width=700 frac=0.9]
 ===== The electron gas in three dimensions with $N=14$ electrons (Wigner-Seitz radius $r_s=2$ Ry) =====
 Jane Kim, Bryce Fore, Alessandro Lovato and MHJ, in preparation
 !bblock
-FIGURE: [figures/elgasnew.pdf, width=700 frac=0.9]
+FIGURE: [figures/spNN_bf.png, width=700 frac=0.9]
 !eblock
 
 
@@ -528,6 +528,24 @@ o 2022?
 
 !split
 ===== Additional material =====
+
+
+!split
+===== The electron gas in three dimensions with $N=14$ electrons (Wigner-Seitz radius $r_s=2$ Ry) =====
+Jane Kim, Bryce Fore, Alessandro Lovato and MHJ, in preparation
+!bblock
+FIGURE: [figures/deepset_pm.png, width=700 frac=0.9]
+!eblock
+
+
+!split
+===== The electron gas in three dimensions with $N=14$ electrons (Wigner-Seitz radius $r_s=2$ Ry) =====
+Jane Kim, Bryce Fore, Alessandro Lovato and MHJ, in preparation
+!bblock
+FIGURE: [figures/PW_vs_spNN.png, width=700 frac=0.9]
+!eblock
+
+
 
 
 
