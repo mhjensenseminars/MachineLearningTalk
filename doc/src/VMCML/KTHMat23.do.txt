@@ -343,7 +343,7 @@ FIGURE: [figures/spNN_bf.png, width=700 frac=0.9]
 ===== Neutron matter with $N=14$ neutron =====
 Jane Kim, Bryce Fore, Alessandro Lovato and MHJ, in preparation
 !bblock
-FIGURE: [figures/nmatter.png, width=700 frac=0.9]
+FIGURE: [figures/half_density.png, width=700 frac=0.9]
 !eblock
 
 !split
