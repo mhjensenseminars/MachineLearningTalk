@@ -14,8 +14,8 @@ in physics. And why this could (or should) be of interest.  I will also try to l
 !bblock Additional info
 These slides are at URL:"https://mhjensenseminars.github.io/MachineLearningTalk/doc/web/overview.html". Scroll down the page.
 
-* Parts of the talk based on _Artificial Intelligence and Machine Learning in Nuclear Physics_, Amber Boehnlein et al., "arXiv:2112.02309":"https://arxiv.org/abs/2112.02309" and Reviews Modern of Physics , 2022.
-* See also "Predicting solid state material platforms for quantum technologies Oliver Lerstøl Hebnes et al.":"https://www.nature.com/articles/s41524-022-00888-3"
+* Parts of the talk based on "Artificial Intelligence and Machine Learning in Nuclear Physics, Amber Boehnlein et al., Reviews Modern of Physics 94, (2022)":"https://journals.aps.org/rmp/abstract/10.1103/RevModPhys.94.031003"
+* See also "Predicting solid state material platforms for quantum technologies Oliver Lerstøl Hebnes et al, Nature Materials Communications, (2002).":"https://www.nature.com/articles/s41524-022-00888-3"
 
 !eblock
 
@@ -67,7 +67,7 @@ quantum computing (many-body theories) at the center for Materials Science and N
 o "Center of Materials Science UiO, Lasse Vines (Expt) Andrej Kuznetsov(Expt), David Rivas Gongora (Expt) and Marianne Bathen (Expt, now PD at ETH)":"https://www.mn.uio.no/fysikk/english/research/groups/semiconductors/index.html"
 o "Gemini center on Quantum Computing (SINTEF-UiO-NTNU)":"https://www.quantumcomputing.no/"
 o Analysis of expirements in subatomic physics
-o Quantum information theoyr at the Department of Mathematics
+o Quantum information theory at the Department of Mathematics
 o OsloMet and Simula Research lab
 o Machine learning and computational neuroscience
 o and probably many I have forgotten....please excuse me
