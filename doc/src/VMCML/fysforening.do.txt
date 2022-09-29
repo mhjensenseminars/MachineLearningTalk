@@ -15,7 +15,7 @@ in physics. And why this could (or should) be of interest.  I will also try to l
 These slides are at URL:"https://mhjensenseminars.github.io/MachineLearningTalk/doc/web/overview.html". Scroll down the page.
 
 * Parts of the talk based on _Artificial Intelligence and Machine Learning in Nuclear Physics_, Amber Boehnlein et al., "arXiv:2112.02309":"https://arxiv.org/abs/2112.02309" and Reviews Modern of Physics , 2022.
-
+* See also "Predicting solid state material platforms for quantum technologies Oliver Lerstøl Hebnes et al.":"https://www.nature.com/articles/s41524-022-00888-3"
 
 !eblock
 
@@ -25,7 +25,7 @@ These slides are at URL:"https://mhjensenseminars.github.io/MachineLearningTalk/
 
 !bblock Thanks to
 * MSU: _Ben Hall, Jane Kim, Julie Butler, Danny Jammoa, Nicholas Cariello_, Johannes Pollanen (Expt), _Niyaz Beysengulov (Expt)_, Dean Lee, Scott Bogner, Heiko Hergert, Matt Hirn, Huey-Wen Lin, Alexei Bazavov, Andrea Shindler and Angela Wilson
-* UiO: _Stian Bilek, Heine Åbø (now OsloMet), Håkon Emil Kristiansen, Øyvind Schøyen Sigmundsson, Jonas Boym Flaten, Linus Ekstrøm, Oskar Leinoen, Kristian Wold (now OsloMet)_, Lasse Vines (Expt) Andrej Kuznetsov (Expt), _David Rivas Gongora (Expt) and Marianne Bathen (Expt, now PD at ETH)_
+* UiO: _Stian Bilek, Heine Åbø (OsloMet), Håkon Emil Kristiansen, Øyvind Schøyen Sigmundsson, Jonas Boym Flaten, Linus Ekstrøm, Oskar Leinoen, Kristian Wold (OsloMet)_, Lasse Vines (Expt) Andrej Kuznetsov (Expt), _David Rivas Gongora (Expt) and Marianne Bathen (Expt, now PD at ETH)_
 !eblock
 
 !bblock Sponsors
@@ -410,25 +410,6 @@ Predictions made with eleven global mass model and Bayesian model averaging
 
 FIGURE: [figures/landscape.jpg, width=800 frac=1.0]
 
-!split
-===== Constraining the equation of state for dense nuclear matter =====
-
-"G. Raaijmakers et al., Constraining the Dense Matter Equation of State with Joint Analysis of NICER and LIGO/Virgo Measurements, AJ Letters, 893, L21 (2020)":"https://iopscience.iop.org/article/10.3847/2041-8213/ab822f"
-
-FIGURE: [figures/nstareos.png, width=800 frac=1.0]
-
-!split
-===== Experimental design =====
-
-Beam time and compute cycles are expensive!
-
-* Bayesian experimental design provides a framework in which experiments can be designed using the best experimental and theoretical information available 
-* The utility function is designed to encode the goals of the experiment and the constraints inherent in carrying it out. 
-* Once the utility function and the possible designs have been specified, the optimal design is simply the scenario that  maximizes the expected utility function over the domain of possible designs.
-
-
-FIGURE: [figures/utility.png, width=700 frac=1.0]
-
 
 !split
 ===== Quantum Technologies =====
@@ -482,18 +463,15 @@ o Designing quantum circuits
 =====  Education =====
 
 o Build up a series of courses in QIS, inspiration "QuSTEAM (Quantum Information Science, Technology, Engineering, Arts and Mathematics) initiative from USA":"https://qusteam.org/"
-o Bachelor program in Computational Science and Data Science
+o Bachelor program in Computational Physics and Quantum Technologies
   o study direction/option in _quantum technologies_
   o study direction/option in _Artificial Intelligence and Machine Learning_
-  o Plans at UiO for such a program, but also a more dedicated one on Computational Physics
 o Master of Science program in Computational and Data Science
   o UiO has already MSc programs in CS and DS
 o PhD program in CS and DS
   o with directions in _quantum technologies_
   o with directions in _Artificial Intelligence and Machine Learning_
 
-
-Coordination across university boundaries?
 
 !split
 ===== QuSTEAM Model =====
@@ -503,9 +481,6 @@ FIGURE: [figures/qusteam.png, width=800 frac=1.0]
 
 !split
 ===== Courses, Prototype =====
-
-The "Center for Computing in Science Education at UiO":"https://www.mn.uio.no/ccse/english/" could be the entity which provides the pedagogical resourses. It has research experience
-on how do we design curricula so that students develop deep knowledge that is connected and useful.
 
 !bblock Topics  in a Bachelor of Science/Master of Science
 o Information Systems 
@@ -530,7 +505,7 @@ o Mentorship should begin the moment students enroll.
 !split
 ===== Observations =====
 
-o Students do not really know what QIS is. This may be important when advertising
+o Students do not really know what QIS is. 
 o There is conflation of “Quantum Information Science” with “Quantum computing”.
 o Students perceive that a graduate degree is necessary to work in QIS. A BSc will help.
 
