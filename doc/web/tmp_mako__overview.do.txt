@@ -324,5 +324,18 @@ DATE: today
 
 
 
+===== UiO, Fysisk institutt, fysikkforeningen, September 29, 2022 =====
+
+
+
+ * HTML:
+   * "Plain html style": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/fysforening/html/fysforening.html"
+   * "reveal.js beige slide style": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/fysforening/html/fysforening-reveal.html"
+   * "Bootstrap style": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/fysforening/html/fysforening-bs.html"
+ * iPython notebook:
+   * "ipynb file": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/fysforening/ipynb/fysforening.ipynb"
+
+
+
 
 
