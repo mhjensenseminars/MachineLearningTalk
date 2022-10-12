@@ -354,10 +354,10 @@ FIGURE: [figures/pointnucleondensity.png, width=700 frac=0.9]
 
 
 !split
-===== The electron gas in three dimensions with $N=14$ electrons (Wigner-Seitz radius $r_s=2$ Ry) =====
+===== The electron gas in three dimensions with $N=14$ electrons (Wigner-Seitz radius $r_s=4$ Ry) =====
 Jane Kim, Bryce Fore, Alessandro Lovato and MHJ, in preparation and "Nordhagen, Kim, Fore, Lovato and MHJ, ArXiv 2210.00365":"https://arxiv.org/abs/2210.00365"
 !bblock
-FIGURE: [figures/spNN_bf.png, width=700 frac=0.9]
+FIGURE: [figslides/periodic_input_rs4.00.pdf, width=700 frac=0.9]
 !eblock
 
 
@@ -365,7 +365,15 @@ FIGURE: [figures/spNN_bf.png, width=700 frac=0.9]
 ===== Neutron matter with $N=14$ neutron =====
 Jane Kim, Bryce Fore, Alessandro Lovato and MHJ, in preparation
 !bblock
-FIGURE: [figures/half_density.png, width=700 frac=0.9]
+FIGURE: [figslides/16.png, width=700 frac=0.9]
+!eblock
+
+
+!split
+===== Neutron matter with $N=14$ neutron =====
+Jane Kim, Bryce Fore, Alessandro Lovato and MHJ, in preparation
+!bblock
+FIGURE: [figslides/16_going_up.png, width=700 frac=0.9]
 !eblock
 
 
@@ -1062,6 +1070,86 @@ FIGURE: [figures/OB30hw1.png, width=700 frac=0.9]
 FIGURE: [figures/OB30hw01.png, width=700 frac=0.9]
 !eblock
 
+
+!split
+===== Neutron matter with $N=14$ neutron =====
+Jane Kim, Bryce Fore, Alessandro Lovato and MHJ, in preparation
+!bblock
+FIGURE: [figslides/04.png, width=700 frac=0.9]
+!eblock
+
+
+!split
+===== Neutron matter with $N=14$ neutron =====
+Jane Kim, Bryce Fore, Alessandro Lovato and MHJ, in preparation
+!bblock
+FIGURE: [figslides/08.png, width=700 frac=0.9]
+!eblock
+
+!split
+===== Neutron matter with $N=14$ neutron =====
+Jane Kim, Bryce Fore, Alessandro Lovato and MHJ, in preparation
+!bblock
+FIGURE: [figslides/12.png, width=700 frac=0.9]
+!eblock
+
+
+!split
+===== The electron gas in three dimensions with $N=14$ electrons (Various Wigner-Seitz  Radii) =====
+Jane Kim, Bryce Fore, Alessandro Lovato and MHJ, in preparation and "Nordhagen, Kim, Fore, Lovato and MHJ, ArXiv 2210.00365":"https://arxiv.org/abs/2210.00365"
+!bblock
+FIGURE: [figslides/periodic_input_rs0.25.pdf, width=700 frac=0.9]
+!eblock
+
+!split
+===== The electron gas in three dimensions with $N=14$ electrons (Various Wigner-Seitz  Radii) =====
+Jane Kim, Bryce Fore, Alessandro Lovato and MHJ, in preparation and "Nordhagen, Kim, Fore, Lovato and MHJ, ArXiv 2210.00365":"https://arxiv.org/abs/2210.00365"
+!bblock
+FIGURE: [figslides/periodic_input_rs0.50.pdf, width=700 frac=0.9]
+!eblock
+
+!split
+===== The electron gas in three dimensions with $N=14$ electrons (Various Wigner-Seitz  Radii) =====
+Jane Kim, Bryce Fore, Alessandro Lovato and MHJ, in preparation and "Nordhagen, Kim, Fore, Lovato and MHJ, ArXiv 2210.00365":"https://arxiv.org/abs/2210.00365"
+!bblock
+FIGURE: [figslides/periodic_input_rs0.75.pdf, width=700 frac=0.9]
+!eblock
+
+
+!split
+===== The electron gas in three dimensions with $N=14$ electrons (Various Wigner-Seitz  Radii) =====
+Jane Kim, Bryce Fore, Alessandro Lovato and MHJ, in preparation and "Nordhagen, Kim, Fore, Lovato and MHJ, ArXiv 2210.00365":"https://arxiv.org/abs/2210.00365"
+!bblock
+FIGURE: [figslides/periodic_input_rs1.00.pdf, width=700 frac=0.9]
+!eblock
+
+!split
+===== The electron gas in three dimensions with $N=14$ electrons (Various Wigner-Seitz  Radii) =====
+Jane Kim, Bryce Fore, Alessandro Lovato and MHJ, in preparation and "Nordhagen, Kim, Fore, Lovato and MHJ, ArXiv 2210.00365":"https://arxiv.org/abs/2210.00365"
+!bblock
+FIGURE: [figslides/periodic_input_rs1.50.pdf, width=700 frac=0.9]
+!eblock
+
+!split
+===== The electron gas in three dimensions with $N=14$ electrons (Various Wigner-Seitz  Radii) =====
+Jane Kim, Bryce Fore, Alessandro Lovato and MHJ, in preparation and "Nordhagen, Kim, Fore, Lovato and MHJ, ArXiv 2210.00365":"https://arxiv.org/abs/2210.00365"
+!bblock
+FIGURE: [figslides/periodic_input_rs2.00.pdf, width=700 frac=0.9]
+!eblock
+
+!split
+===== The electron gas in three dimensions with $N=14$ electrons (Various Wigner-Seitz  Radii) =====
+Jane Kim, Bryce Fore, Alessandro Lovato and MHJ, in preparation and "Nordhagen, Kim, Fore, Lovato and MHJ, ArXiv 2210.00365":"https://arxiv.org/abs/2210.00365"
+!bblock
+FIGURE: [figslides/periodic_input_rs3.00.pdf, width=700 frac=0.9]
+!eblock
+
+!split
+===== The electron gas in three dimensions with $N=14$ electrons (Various Wigner-Seitz  Radii) =====
+Jane Kim, Bryce Fore, Alessandro Lovato and MHJ, in preparation and "Nordhagen, Kim, Fore, Lovato and MHJ, ArXiv 2210.00365":"https://arxiv.org/abs/2210.00365"
+!bblock
+FIGURE: [figslides/periodic_input_rs5.00.pdf, width=700 frac=0.9]
+!eblock
 
 
 
