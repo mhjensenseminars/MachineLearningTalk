@@ -108,16 +108,6 @@ div.toc p,a {
               ('More examples', 2, None, 'more-examples'),
               ('And more', 2, None, 'and-more'),
               ('Selected references', 2, None, 'selected-references'),
-              ('What are the basic ingredients?',
-               2,
-               None,
-               'what-are-the-basic-ingredients'),
-              ('"Unsupervised learning in nuclear physics, Argon-46 by Solli, '
-               'Bazin, Kuchera, MHJ, '
-               'Strauss.":"https://www.sciencedirect.com/science/article/abs/pii/S0168900221004460?via%3Dihub"',
-               2,
-               None,
-               'unsupervised-learning-in-nuclear-physics-argon-46-by-solli-bazin-kuchera-mhj-strauss-https-www-sciencedirect-com-science-article-abs-pii-s0168900221004460-via-3dihub'),
               ('Quantum Monte Carlo and deep learning',
                2,
                None,
@@ -308,7 +298,13 @@ div.toc p,a {
                '(Various Wigner-Seitz  Radii)',
                2,
                None,
-               'the-electron-gas-in-three-dimensions-with-n-14-electrons-various-wigner-seitz-radii')]}
+               'the-electron-gas-in-three-dimensions-with-n-14-electrons-various-wigner-seitz-radii'),
+              ('"Unsupervised learning in nuclear physics, Argon-46 by Solli, '
+               'Bazin, Kuchera, MHJ, '
+               'Strauss.":"https://www.sciencedirect.com/science/article/abs/pii/S0168900221004460?via%3Dihub"',
+               2,
+               None,
+               'unsupervised-learning-in-nuclear-physics-argon-46-by-solli-bazin-kuchera-mhj-strauss-https-www-sciencedirect-com-science-article-abs-pii-s0168900221004460-via-3dihub')]}
 end of tocinfo -->
 
 <body>
@@ -588,7 +584,7 @@ Some of the most common tasks are:
 <ul>
 <li> An important application of AI/ML methods is to improve the estimation of bias or uncertainty due to the introduction of or lack of physical constraints in various theoretical models.</li>
 <li> In theory, we expect to use AI/ML algorithms and methods to improve our knowledge about  correlations of physical model parameters in data for quantum many-body systems. Deep learning methods show great promise in circumventing the exploding dimensionalities encountered in quantum mechanical many-body studies.</li> 
-<li> Merging a frequentist approach (the standard path in ML theory) with a Bayesian approach, has the potential to infer better probabilitity distributions and error estimates. As an example, methods for fast Monte-Carlo- based Bayesian computation of nuclear density functionals show great promise in providing a better understanding</li> 
+<li> Merging a frequentist approach (the standard path in ML theory) with a Bayesian approach, has the potential to infer better probabilitity distributions and error estimates. As an example, methods for fast Monte-Carlo- based Bayesian computation of nuclear density functionals show great promise.</li>
 <li> Machine Learning and Quantum Computing is a very interesting avenue to explore. See for example talk of <a href="https://www.youtube.com/watch?v=7WPKv1Q57os&list=PLUPPQ1TVXK7uHwCTccWMBud-zLyvAf8A2&index=5&ab_channel=ECTstar" target="_blank">Sofia Vallecorsa</a>.</li>
 </ul>
 </div>
@@ -609,38 +605,6 @@ Some of the most common tasks are:
 </ul>
 </div>
 
-
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-<h2 id="what-are-the-basic-ingredients">What are the basic ingredients? </h2>
-<div class="alert alert-block alert-block alert-text-normal">
-<b></b>
-<p>
-<p>Almost every problem in ML and data science starts with the same ingredients:</p>
-<ul>
-<li> The dataset \( \mathbf{x} \) (could be some observable quantity of the system we are studying)</li>
-<li> A model which is a function of a set of parameters \( \mathbf{\alpha} \) that relates to the dataset, say a likelihood  function \( p(\mathbf{x}\vert \mathbf{\alpha}) \) or just a simple model \( f(\mathbf{\alpha}) \)</li>
-<li> A so-called <b>loss/cost/risk</b> function \( \mathcal{C} (\mathbf{x}, f(\mathbf{\alpha})) \) which allows us to decide how well our model represents the dataset.</li> 
-</ul>
-<p>We seek to minimize the function \( \mathcal{C} (\mathbf{x}, f(\mathbf{\alpha})) \) by finding the parameter values which minimize \( \mathcal{C} \). This leads to  various minimization algorithms. It may surprise many, but at the heart of all machine learning algortihms there is an optimization problem. </p>
-</div>
-
-
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-<h2 id="unsupervised-learning-in-nuclear-physics-argon-46-by-solli-bazin-kuchera-mhj-strauss-https-www-sciencedirect-com-science-article-abs-pii-s0168900221004460-via-3dihub"><a href="https://www.sciencedirect.com/science/article/abs/pii/S0168900221004460?via%3Dihub" target="_blank">Unsupervised learning in nuclear physics, Argon-46 by Solli, Bazin, Kuchera, MHJ, Strauss.</a> </h2>
-
-<p>Two- and three-dimensional representations of two events from the
-Argon-46 experiment. Each row is one event in two projections,
-where the color intensity of each point indicates higher charge values
-recorded by the detector. The bottom row illustrates a carbon event with
-a large fraction of noise, while the top row shows a proton event
-almost free of noise. 
-</p>
-
-<br/><br/>
-<center>
-<p><img src="figures/examples_raw.png" width="500" align="bottom"></p>
-</center>
-<br/><br/>
 
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 <h2 id="quantum-monte-carlo-and-deep-learning">Quantum Monte Carlo and deep learning </h2>
@@ -818,7 +782,7 @@ that the nucleus is bound with respect to proton and neutron decay.
 strongly-coupled qubits.
 </p>
 
-<p>Therefore a systematic investigation of the
+<p>Therefore, a systematic investigation of the
 controlled generation of entanglement between two trapped electrons
 under the influence of coherent microwave driving pulses, taking into
 account the effects of the Coulomb interaction between electrons, is
@@ -878,16 +842,11 @@ trapped electrons.
  <li> study direction/option in <b>Artificial Intelligence and Machine Learning</b></li>
  <li> and more</li>
 </ol>
-<li> Master of Science program in Computational and Data Science
+<li> Master of Science/PhD programs in Computational and Data Science
 <ol type="a"></li>
  <li> UiO has already MSc programs in CS and DS</li>
  <li> MSU has own graduate programs plus dual degree programs in CS and DS</li>
  <li> Many other universities are developing or have similar programs</li>
-</ol>
-<li> PhD program in CS and DS?
-<ol type="a"></li>
- <li> with directions in <b>quantum technologies</b></li>
- <li> with directions in <b>Artificial Intelligence and Machine Learning</b></li>
 </ol>
 </ol>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
@@ -1625,6 +1584,23 @@ Jane Kim, Bryce Fore, Alessandro Lovato and MHJ, in preparation and <a href="htt
 <br/><br/>
 </div>
 
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="unsupervised-learning-in-nuclear-physics-argon-46-by-solli-bazin-kuchera-mhj-strauss-https-www-sciencedirect-com-science-article-abs-pii-s0168900221004460-via-3dihub"><a href="https://www.sciencedirect.com/science/article/abs/pii/S0168900221004460?via%3Dihub" target="_blank">Unsupervised learning in nuclear physics, Argon-46 by Solli, Bazin, Kuchera, MHJ, Strauss.</a> </h2>
+
+<p>Two- and three-dimensional representations of two events from the
+Argon-46 experiment. Each row is one event in two projections,
+where the color intensity of each point indicates higher charge values
+recorded by the detector. The bottom row illustrates a carbon event with
+a large fraction of noise, while the top row shows a proton event
+almost free of noise. 
+</p>
+
+<br/><br/>
+<center>
+<p><img src="figures/examples_raw.png" width="500" align="bottom"></p>
+</center>
+<br/><br/>
 
 <!-- ------------------- end of main content --------------- -->
 </body>
