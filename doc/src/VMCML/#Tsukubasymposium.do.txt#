@@ -300,7 +300,7 @@ is an upper bound to the ground state energy $E_0$ of the hamiltonian $H$, that 
     E_0 \le \langle E \rangle.
 \]
 !et
-In general, the integrals involved in the calculation of various  expectation values  are multi-dimensional ones. Traditional integration methods such as the Gauss-Legendre will not be adequate for say the  computation of the energy of a many-body system.  _Basic philosophy: Let a neural network find the optimal wave function_
+In general, the integrals involved in the calculation of various  expectation values  are multi-dimensional ones. Traditional integration methods such as Gaussian quadrature will not be adequate for say the  computation of the energy of a many-body system.  _Basic philosophy: Let a neural network find the optimal wave function_
 !eblock
 
 !split
@@ -357,7 +357,7 @@ FIGURE: [figures/pointnucleondensity.png, width=700 frac=0.9]
 
 !split
 ===== Neutron matter with $N=14$ neutron =====
-Jane Kim, Bryce Fore, Alessandro Lovato and MHJ, in preparation
+Bryce Fore, Jane Kim, Alessandro Lovato and MHJ, in preparation
 !bblock
 FIGURE: [figslides/16.png, width=700 frac=0.9]
 !eblock
@@ -365,7 +365,7 @@ FIGURE: [figslides/16.png, width=700 frac=0.9]
 
 !split
 ===== Neutron matter with $N=14$ neutron =====
-Jane Kim, Bryce Fore, Alessandro Lovato and MHJ, in preparation
+Bryce Fore, Jane Kim, Alessandro Lovato and MHJ, in preparation
 !bblock
 FIGURE: [figslides/16_going_up.png, width=700 frac=0.9]
 !eblock
@@ -440,10 +440,11 @@ See notebook details and "examples of simple data reconstructed with Gaussian pr
 ===== Quantified limits of the nuclear landscape =====
 
 "Neufcourt et al., Phys. Rev. C 101, 044307 (2020)":"https://journals.aps.org/prc/abstract/10.1103/PhysRevC.101.044307"
-Predictions made with eleven global mass model and Bayesian model averaging
+Predictions made with eleven global mass model and Bayesian model averaging. Plot shows the probability of existence  
+that the nucleus is bound with respect to proton and neutron decay.
+
 
 FIGURE: [figures/landscape.jpg, width=800 frac=1.0]
-
 
 !split
 ===== Experimental design =====
@@ -512,14 +513,18 @@ o Designing quantum circuits
 !split
 =====  Education =====
 
+o Incorporate elements of statistical data analysis and Machine Learning in undergraduate programs
+o Develop courses on Machine Learning and statistical data analysis
 o Build up a series of courses in QIS, inspiration "QuSTEAM (Quantum Information Science, Technology, Engineering, Arts and Mathematics) initiative from USA":"https://qusteam.org/"
-o Modifying contents of present Physics programs or new program in Computational Physics and Quantum Technologies
+o Modifying contents of present Physics programs or new programs on  Computational Physics and Quantum Technologies
   o study direction/option in _quantum technologies_
   o study direction/option in _Artificial Intelligence and Machine Learning_
+  o and more
 o Master of Science program in Computational and Data Science
   o UiO has already MSc programs in CS and DS
-  o MSU has own graduate programs plus dual degree programs
-o PhD program in CS and DS
+  o MSU has own graduate programs plus dual degree programs in CS and DS
+  o Many other universities are developing or have similar programs
+o PhD program in CS and DS?
   o with directions in _quantum technologies_
   o with directions in _Artificial Intelligence and Machine Learning_
 
@@ -531,9 +536,10 @@ FIGURE: [figures/qusteam.png, width=800 frac=1.0]
 
 
 !split
-===== Courses, Prototype =====
+===== Possible courses  =====
 
 !bblock Topics  in a Bachelor of Science/Master of Science
+o General university course on quantum mech and quantum technologies
 o Information Systems 
 o From Classical Information theory to Quantum Information theory
 o Classical vs. Quantum Logic
@@ -546,25 +552,24 @@ o more
 
 !split
 ===== Important Issues to think of =====
+
 o Lots of conceptual learning: superposition, entanglement, QIS applications, etc.
 o Coding is indispensable. That is why this should be a part of a CS/DS program
 o Teamwork, project management, and communication are important and highly valued
 o Engagement with industry: guest lectures, virtual tours, co-ops, and/or internships.
-o Diversity needs to be a priority
-o Mentorship should begin the moment students enroll.
 
 !split
 ===== Observations =====
 
-o Students do not really know what QIS is. 
-o There is conflation of “Quantum Information Science” with “Quantum computing”.
+o Students do not really know what QIS is.
+o ML/AI seen as black boxes/magic!
 o Students perceive that a graduate degree is necessary to work in QIS. A BSc will help.
 
 !split
-===== Future Needs/Problems (US observations mostly but transfer most likely to other countries as well) =====
+===== Future Needs/Problems =====
 
-o There are already (USA) great needs for specialized people (Ph. D. s, postdocs), but also needs of  people with a broad overview of what is possible in QIS.
-o There are not enough potential employees in QIS (USA). It is a supply gap, not a skills gap.
+o There are already  great needs for specialized people (Ph. D. s, postdocs), but also needs of  people with a broad overview of what is possible in ML/AI and/or QIS.
+o There are not enough potential employees in AI/ML and QIS . It is a supply gap, not a skills gap.
 o A BSc with specialization  is a good place to start
 o It is tremendously important to get everyone speaking the same language. Facility with the vernacular of quantum mechanics is a big plus.
 o There is a huge list of areas where technical expertise may be important. But employers are often more concerned with attributes like project management, working well in a team, interest in the field, and adaptability than in specific technical skills.
@@ -576,14 +581,15 @@ o There is a huge list of areas where technical expertise may be important. But 
 !split
 ===== Observations (or conclusions if you prefer) =====
 !bblock
-* Need for AI/Machine Learning in nuclear physics, lots of ongoing activities
-* To solve many complex problems in the field and facilitate discoveries, multidisciplinary efforts efforts are required involving scientists in  nuclear physics, statistics, computational science, and applied math.
+* Need for AI/Machine Learning in physics, lots of ongoing activities
+* To solve many complex problems in the field and facilitate discoveries, multidisciplinary efforts efforts are required involving scientists in  physics, statistics, computational science, and applied math.
 * There is a need for  focused AI/ML learning efforts that will benefit accelerator science and experimental and theoretical programs
 * How do we develop insights, competences, knowledge in statistical learning that can advance our field?
   * For example: Can we use ML to find out which correlations are relevant and thereby diminish the dimensionality problem in standard many-body  theories?
   * Can we use AI/ML in detector analysis, accelerator design, analysis of experimental data and more?
   * Can we use AL/ML to carry out reliable extrapolations by using current experimental knowledge and current theoretical models?
-* The community needs to invest in relevant educational efforts and training of nuclear physicists with knowledge in AI/ML
+* The community needs to invest in relevant educational efforts and training of physicists with knowledge in AI/ML
+* Quantum technologies require directed focus on educational efforts
 * Most likely tons of things we have forgotten
 !eblock
 
