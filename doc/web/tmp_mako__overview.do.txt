@@ -337,5 +337,18 @@ DATE: today
 
 
 
+===== The 30th Anniversary Symposium of the Center for Computational Sciences at the University of Tsukuba, Japan, October 13-14, 2022 =====
+
+
+
+ * HTML:
+   * "Plain html style": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/Tsukubasymposium/html/Tsukubasymposium.html"
+   * "reveal.js beige slide style": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/Tsukubasymposium/html/Tsukubasymposium-reveal.html"
+   * "Bootstrap style": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/Tsukubasymposium/html/Tsukubasymposium-bs.html"
+ * iPython notebook:
+   * "ipynb file": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/Tsukubasymposium/ipynb/Tsukubasymposium.ipynb"
+
+
+
 
 
