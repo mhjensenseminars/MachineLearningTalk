@@ -302,12 +302,6 @@ FIGURE: [figslides/16.png, width=700 frac=0.9]
 !eblock
 
 
-!split
-===== Neutron matter with $N=14$ neutron =====
-Bryce Fore, Jane Kim, Alessandro Lovato and MHJ, in preparation
-!bblock
-FIGURE: [figslides/16_going_up.png, width=700 frac=0.9]
-!eblock
 
 !split
 ===== The electron gas in three dimensions with $N=14$ electrons (Wigner-Seitz radius $r_s=4$ Ry) =====
@@ -1018,6 +1012,12 @@ Jane Kim, Bryce Fore, Alessandro Lovato and MHJ, in preparation and "Nordhagen, 
 FIGURE: [figslides/periodic_input_rs5.00.png, width=700 frac=0.9]
 !eblock
 
+!split
+===== Neutron matter with $N=14$ neutron =====
+Bryce Fore, Jane Kim, Alessandro Lovato and MHJ, in preparation
+!bblock
+FIGURE: [figslides/16_going_up.png, width=700 frac=0.9]
+!eblock
 
 
 !split
