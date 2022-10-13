@@ -83,10 +83,6 @@ div.toc p,a {
                2,
                None,
                'scientific-machine-learning'),
-              ('Machine Learning and Physics',
-               2,
-               None,
-               'machine-learning-and-physics'),
               ('Lots of room for creativity',
                2,
                None,
@@ -95,24 +91,20 @@ div.toc p,a {
                2,
                None,
                'types-of-machine-learning'),
-              ('Machine learning and nuclear theory: Why?',
+              ('Machine learning and theory (physics): Why?',
                2,
                None,
-               'machine-learning-and-nuclear-theory-why'),
-              ('The plethora  of machine learning algorithms/methods',
-               2,
-               None,
-               'the-plethora-of-machine-learning-algorithms-methods'),
+               'machine-learning-and-theory-physics-why'),
               ('Examples of Machine Learning methods and applications in '
-               'nuclear physics',
+               'physics',
                2,
                None,
-               'examples-of-machine-learning-methods-and-applications-in-nuclear-physics'),
+               'examples-of-machine-learning-methods-and-applications-in-physics'),
               ('Examples of Machine Learning methods and applications in '
-               'nuclear physics, continues',
+               'physics, continues',
                2,
                None,
-               'examples-of-machine-learning-methods-and-applications-in-nuclear-physics-continues'),
+               'examples-of-machine-learning-methods-and-applications-in-physics-continues'),
               ('More examples', 2, None, 'more-examples'),
               ('And more', 2, None, 'and-more'),
               ('Selected references', 2, None, 'selected-references'),
@@ -160,24 +152,10 @@ div.toc p,a {
                2,
                None,
                'the-electron-gas-in-three-dimensions-with-n-14-electrons-wigner-seitz-radius-r-s-4-ry'),
-              ('Extrapolations and model interpretability',
-               2,
-               None,
-               'extrapolations-and-model-interpretability'),
-              ('Physics based statistical learning and data analysis',
-               2,
-               None,
-               'physics-based-statistical-learning-and-data-analysis'),
-              ("Bayes' Theorem", 2, None, 'bayes-theorem'),
-              ('Folding and unfolding and response functions',
-               2,
-               None,
-               'folding-and-unfolding-and-response-functions'),
               ('Quantified limits of the nuclear landscape',
                2,
                None,
                'quantified-limits-of-the-nuclear-landscape'),
-              ('Experimental design', 2, None, 'experimental-design'),
               ('Quantum Technologies', 2, None, 'quantum-technologies'),
               ('Quantum Engineering', 2, None, 'quantum-engineering'),
               ('Candidate systems', 2, None, 'candidate-systems'),
@@ -386,7 +364,7 @@ in physics. And why this could (or should) be of interest.  I will also try to l
 <div class="alert alert-block alert-block alert-text-normal">
 <b>Additional info</b>
 <p>
-<p>These slides are at <a href="https://mhjensenseminars.github.io/MachineLearningTalk/doc/web/overview.html" target="_blank"><tt>https://mhjensenseminars.github.io/MachineLearningTalk/doc/web/overview.html</tt></a>. Scroll down the page.</p>
+<p>These slides are at URL:"". </p>
 
 <ul>
 <li> Parts of the talk based on <a href="https://journals.aps.org/rmp/abstract/10.1103/RevModPhys.94.031003" target="_blank">Artificial Intelligence and Machine Learning in Nuclear Physics, Amber Boehnlein et al., Reviews Modern of Physics 94, (2022)</a></li>
@@ -487,34 +465,6 @@ accelerate scientific discovery. The report covers three main areas
 
 
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
-<h2 id="machine-learning-and-physics">Machine Learning and Physics </h2>
-<div class="alert alert-block alert-block alert-text-normal">
-<b></b>
-<p>
-<p>Machine learning  is an extremely rich field, in spite of its young age. The
-increases we have seen during the last three decades in computational
-capabilities have been followed by developments of methods and
-techniques for analyzing and handling large date sets, relying heavily
-on statistics, computer science and mathematics.  The field is rather
-new and developing rapidly. 
-</p>
-
-<p>Popular software packages written in Python for ML are</p>
-
-<ul>
-<li> <a href="http://scikit-learn.org/stable/" target="_blank">Scikit-learn</a>,</li> 
-<li> <a href="https://www.tensorflow.org/" target="_blank">Tensorflow</a>,</li>
-<li> <a href="http://pytorch.org/" target="_blank">PyTorch</a></li>
-<li> <a href="https://keras.io/" target="_blank">Keras</a>,</li>
-</ul>
-<p>and more. These are all freely available at their respective GitHub sites. They 
-encompass communities of developers in the thousands or more. And the number
-of code developers and contributors keeps increasing.
-</p>
-</div>
-
-
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
 <h2 id="lots-of-room-for-creativity">Lots of room for creativity </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
@@ -568,7 +518,7 @@ Some of the most common tasks are:
 
 
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
-<h2 id="machine-learning-and-nuclear-theory-why">Machine learning and nuclear theory: Why? </h2>
+<h2 id="machine-learning-and-theory-physics-why">Machine learning and theory (physics): Why? </h2>
 
 <ol>
 <li> ML tools can help us to speed up the scientific process cycle and hence facilitate discoveries</li>
@@ -582,38 +532,26 @@ Some of the most common tasks are:
 <li> ML tools can help us to provide predictive capability</li>
 <li> Theoretical results often involve ultraviolet  and infrared extrapolations due to Hilbert-space truncations</li> 
 <li> Uncertainty quantification essential</li>
-<li> Theoretical models are often applied to entirely new nuclear systems and conditions that are not accessible to experiment</li>
+<li> Theoretical models are often applied to entirely new systems and conditions that are not accessible to experiment</li>
 </ol>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
-<h2 id="the-plethora-of-machine-learning-algorithms-methods">The plethora  of machine learning algorithms/methods </h2>
-
-<ol>
-<li> Deep learning: Neural Networks (NN), Convolutional NN, Recurrent NN, Boltzmann machines, autoencoders and variational autoencoders  and generative adversarial networks</li> 
-<li> Bayesian statistics and Bayesian Machine Learning, Bayesian experimental design, Bayesian Regression models, Bayesian neural networks, Gaussian processes and much more</li>
-<li> Dimensionality reduction (Principal component analysis), Clustering Methods and more</li>
-<li> Ensemble Methods, Random forests, bagging and voting methods, gradient boosting approaches</li> 
-<li> Linear and logistic regression, Kernel methods, support vector machines and more</li>
-<li> Reinforcement Learning</li> 
-<li> and more</li>
-</ol>
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-<h2 id="examples-of-machine-learning-methods-and-applications-in-nuclear-physics">Examples of Machine Learning methods and applications in nuclear physics </h2>
+<h2 id="examples-of-machine-learning-methods-and-applications-in-physics">Examples of Machine Learning methods and applications in physics </h2>
 
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
 <ul>
 <li> <b>Machine  learning  for  data  mining:</b> Oftentimes,  it  is necessary to be able to accurately calculate observables that have not been measured, to supplement the existing databases.</li>
-<li> <b>Nuclear  density  functional   theory:</b> Energy density functional calibration   involving Bayesian optimization  and NN  ML. A promising avenue for ML applications is the emulation of DFT results.</li>
-<li> <b>Nuclear properties with ML:</b> Improving predictive power of nuclear models by emulating model residuals.</li>
-<li> <b>Effective field theory and A-body systems:</b> Truncation errors and low-energy coupling constant calibration, nucleon-nucleon scattering calculations, variational calculations with ANN for light nuclei, NN extrapolation of nuclear structure observables</li>
+<li> <b>Density  functional   theory:</b> Energy density functional calibration   involving Bayesian optimization  and deep learning  ML. A promising avenue for ML applications is the emulation of DFT results.</li>
+<li> <b>Nuclear physics properties with ML:</b> Improving predictive power of nuclear models by emulating model residuals.</li>
+<li> <b>Effective field theory and nuclear many-body systems:</b> Truncation errors and low-energy coupling constant calibration, nucleon-nucleon scattering calculations, variational calculations with ANN for light nuclei, NN extrapolation of nuclear structure observables</li>
 <li> <b>Nuclear  shell  model  UQ:</b> ML methods  have  been  used  to  provide  UQ  of  configuration  interaction  calculations.</li>
 </ul>
 </div>
 
 
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
-<h2 id="examples-of-machine-learning-methods-and-applications-in-nuclear-physics-continues">Examples of Machine Learning methods and applications in nuclear physics, continues </h2>
+<h2 id="examples-of-machine-learning-methods-and-applications-in-physics-continues">Examples of Machine Learning methods and applications in physics, continues </h2>
 
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
@@ -629,7 +567,7 @@ Some of the most common tasks are:
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 <h2 id="more-examples">More examples </h2>
 
-<p>The large amount of degrees of freedom pertain to both theory and experiment in nuclear physics. With increasingly complicated experiments that produce large amounts data, automated classification of events becomes increasingly important. Here, deep learning methods offer a plethora of interesting research avenues. </p>
+<p>The large amount of degrees of freedom pertain to both theory and experiment in physics. With increasingly complicated experiments that produce large amounts data, automated classification of events becomes increasingly important. Here, deep learning methods offer a plethora of interesting research avenues. </p>
 
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
@@ -828,58 +766,6 @@ The above function is replaced by a four-layer Neural Network.
 
 
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
-<h2 id="extrapolations-and-model-interpretability">Extrapolations and model interpretability  </h2>
-
-<p>When you hear phrases like <b>predictions and estimations</b> and
-<b>correlations and causations</b>, what do you think of?  May be you think
-of the difference between classifying new data points and generating
-new data points.
-Or perhaps you consider that correlations represent some kind of symmetric statements like
-if \( A \) is correlated with \( B \), then \( B \) is correlated with
-\( A \). Causation on the other hand is directional, that is if \( A \) causes \( B \), \( B \) does not
-necessarily cause \( A \).
-</p>
-
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-<h2 id="physics-based-statistical-learning-and-data-analysis">Physics based statistical learning and data analysis </h2>
-
-<p>The above concepts are in some sense the difference between <b>old-fashioned</b> machine
-learning and statistics and Bayesian learning. In machine learning and prediction based
-tasks, we are often interested in developing algorithms that are
-capable of learning patterns from given data in an automated fashion,
-and then using these learned patterns to make predictions or
-assessments of newly given data. In many cases, our primary concern
-is the quality of the predictions or assessments, and we are less
-concerned about the underlying patterns that were learned in order
-to make these predictions.
-</p>
-
-<p>Physics based statistical learning points however to approaches that give us both predictions and correlations as well as being able to produce error estimates and understand causations.  This leads us to the very interesting field of Bayesian statistics.</p>
-
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-<h2 id="bayes-theorem">Bayes' Theorem </h2>
-
-<p>Bayes' theorem</p>
-$$
-p(X\vert Y)= \frac{p(X,Y)}{\sum_{i=0}^{n-1}p(Y\vert X=x_i)p(x_i)}=\frac{p(Y\vert X)p(X)}{\sum_{i=0}^{n-1}p(Y\vert X=x_i)p(x_i)}.
-$$
-
-<p>The quantity \( p(Y\vert X) \) on the right-hand side of the theorem is
-evaluated for the observed data \( Y \) and can be viewed as a function of
-the parameter space represented by \( X \). This function is not
-necessarily normalized and is normally called the likelihood function.
-</p>
-
-<p>The function \( p(X) \) on the right hand side is called the prior while the function on the left hand side is the called the posterior probability. The denominator on the right hand side serves as a normalization factor for the posterior distribution.</p>
-
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-<h2 id="folding-and-unfolding-and-response-functions">Folding and unfolding and response functions </h2>
-
-<p>A good read on folding/unfolding is <a href="https://arxiv.org/abs/hep-ex/0208022" target="_blank">An Unfolding Method for High Energy Physics Experiments by Volker Blobel</a></p>
-
-<p>See notebook details and <a href="https://github.com/adambozson/gp-unfold/blob/master/Falling%20exponential.ipynb" target="_blank">examples of simple data reconstructed with Gaussian processes</a>.</p>
-
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
 <h2 id="quantified-limits-of-the-nuclear-landscape">Quantified limits of the nuclear landscape </h2>
 
 <a href="https://journals.aps.org/prc/abstract/10.1103/PhysRevC.101.044307" target="_blank">Neufcourt et al., Phys. Rev. C 101, 044307 (2020)</a>
@@ -890,22 +776,6 @@ that the nucleus is bound with respect to proton and neutron decay.
 <br/><br/>
 <center>
 <p><img src="figures/landscape.jpg" width="800" align="bottom"></p>
-</center>
-<br/><br/>
-
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-<h2 id="experimental-design">Experimental design </h2>
-
-<p>Beam time and compute cycles are expensive!</p>
-
-<ul>
-<li> Bayesian experimental design provides a framework in which experiments can be designed using the best experimental and theoretical information available</li> 
-<li> The utility function is designed to encode the goals of the experiment and the constraints inherent in carrying it out.</li> 
-<li> Once the utility function and the possible designs have been specified, the optimal design is simply the scenario that  maximizes the expected utility function over the domain of possible designs.</li>
-</ul>
-<br/><br/>
-<center>
-<p><img src="figures/utility.png" width="700" align="bottom"></p>
 </center>
 <br/><br/>
 
