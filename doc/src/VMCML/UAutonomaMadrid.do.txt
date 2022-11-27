@@ -1,5 +1,5 @@
 TITLE: Artificial Intelligence and Machine Learning in Physics
-AUTHOR: Morten Hjorth-Jensen at Department of Physics and Astronomy and FRIB/NSCL Laboratory, Michigan State University, East Lansing, USA & Department of Physics and Center for Computing in Science Education, University of Oslo, Oslo, Norway
+AUTHOR: Morten Hjorth-Jensen at Department of Physics and Astronomy and Facility for Rare Isotope Beams, Michigan State University, East Lansing, USA & Department of Physics and Center for Computing in Science Education, University of Oslo, Oslo, Norway
 DATE: Universidad Autonoma de Madrid, November 28, 2022
 
 
