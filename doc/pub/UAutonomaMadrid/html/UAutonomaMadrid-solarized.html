@@ -8,8 +8,8 @@ doconce format html UAutonomaMadrid.do.txt --pygments_html_style=perldoc --html_
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="DocOnce: https://github.com/doconce/doconce/" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="Artificial Intelligence and Machine Learning in Nuclear Physics">
-<title>Artificial Intelligence and Machine Learning in Nuclear Physics</title>
+<meta name="description" content="Artificial Intelligence and Machine Learning in Physics">
+<title>Artificial Intelligence and Machine Learning in Physics</title>
 <link href="https://cdn.rawgit.com/doconce/doconce/master/bundled/html_styles/style_solarized_box/css/solarized_light_code.css" rel="stylesheet" type="text/css" title="light"/>
 <script src="https://cdn.rawgit.com/doconce/doconce/master/bundled/html_styles/style_solarized_box/js/highlight.pack.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
@@ -219,7 +219,7 @@ MathJax.Hub.Config({
 
 <!-- ------------------- main content ---------------------- -->
 <center>
-<h1>Artificial Intelligence and Machine Learning in Nuclear Physics</h1>
+<h1>Artificial Intelligence and Machine Learning in Physics</h1>
 </center>  <!-- document title -->
 
 <!-- author(s): Morten Hjorth-Jensen -->
@@ -241,19 +241,18 @@ MathJax.Hub.Config({
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
-<p>The main emphasis is to give you a short and pedestrian introduction to the whys and hows we can use (with several examples) machine learning methods
-in nuclear physics. And why this could (or should) be of interest. 
-</p>
+<p>The main emphasis is to give you a short and pedestrian introduction to the whys and hows we can use (with several examples) machine learning methods  in physics. And why this could (or should) be of interest.  I will also try to link to educational activities if time.</p>
 </div>
 
 
 <div class="alert alert-block alert-block alert-text-normal">
 <b>Additional info</b>
 <p>
-<p>These slides are at <a href="https://mhjensenseminars.github.io/MachineLearningTalk/doc/web/overview.html" target="_blank"><tt>https://mhjensenseminars.github.io/MachineLearningTalk/doc/web/overview.html</tt></a>. Scroll down the page.</p>
+<p>These slides are at <a href="https://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/UA/html/UAutonomaMadrid-reveal.html" target="_blank"><tt>https://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/UA/html/UAutonomaMadrid-reveal.html</tt></a> </p>
 
 <ul>
-<li> Talk based on <b>Artificial Intelligence and Machine Learning in Nuclear Physics</b>, Amber Boehnlein et al., <a href="https://arxiv.org/abs/2112.02309" target="_blank">arXiv:2112.02309</a> and Reviews Modern of Physics, submitted.</li> 
+<li> Parts of the talk based on <a href="https://journals.aps.org/rmp/abstract/10.1103/RevModPhys.94.031003" target="_blank">Machine Learning in Nuclear Physics, Amber Boehnlein et al., Reviews Modern of Physics 94, (2022)</a></li>
+<li> See also <a href="https://www.nature.com/articles/s41524-022-00888-3" target="_blank">Predicting solid state material platforms for quantum technologies Oliver L. Hebnes et al, Nature Materials Communications, (2002).</a></li>
 </ul>
 </div>
 
@@ -261,7 +260,26 @@ in nuclear physics. And why this could (or should) be of interest.
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 <h2 id="many-folks-to-thank">Many folks to thank </h2>
 
-<p>Thanks to Jane Kim (MSU), Julie Butler (MSU), Dean Lee (MSU), Witek Nazarewicz (MSU), Vilde Flugsrud (UiO), Even Nordhagen (UiO), Corey Adams (ANL), Bryce Fore (ANL), and Alessandro Lovato (ANL).</p>
+<div class="alert alert-block alert-block alert-text-normal">
+<b>Thanks to</b>
+<p>
+<ul>
+<li> MSU: <b>Ben Hall, Jane Kim, Julie Butler, Danny Jammoa, Nicholas Cariello</b>, Johannes Pollanen (Expt), <b>Niyaz Beysengulov (Expt)</b>, Dean Lee, Scott Bogner, Heiko Hergert, Matt Hirn, Huey-Wen Lin, Alexei Bazavov, Andrea Shindler and Angela Wilson</li>
+<li> UiO: <b>Stian Bilek, Heine &#197;b&#248; (OsloMet), H&#229;kon Emil Kristiansen, &#216;yvind Sch&#248;yen Sigmundsson, Jonas Boym Flaten, Linus Ekstr&#248;m, Oskar Leinoen, Kristian Wold (OsloMet)</b>, Lasse Vines (Expt) Andrej Kuznetsov (Expt), <b>David Rivas Gongora (Expt) and Marianne Bathen (Expt, now PD at ETH)</b></li>
+</ul>
+</div>
+
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b>Sponsors</b>
+<p>
+<p>This work is supported by the U.S. Department of Energy, Office of
+Science, office of Nuclear Physics under grant No. DE-SC0021152 and
+U.S. National Science Foundation Grants No. PHY-1404159 and
+PHY-2013047 and the Norwegian ministry of Education and  Research for PhD fellowships.
+</p>
+</div>
+
 
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 <h2 id="a-simple-perspective-on-the-interface-between-ml-and-physics">A simple perspective on the interface between ML and Physics </h2>
@@ -275,20 +293,24 @@ in nuclear physics. And why this could (or should) be of interest.
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 <h2 id="ml-in-nuclear-physics">ML in Nuclear  Physics </h2>
 
-<br/><br/>
+<center>  <!-- FIGURE -->
+<hr class="figure">
 <center>
+<p class="caption">Figure 1:  u </p>
+</center>
 <p><img src="figures/ML-NP.png" width="900" align="bottom"></p>
 </center>
-<br/><br/>
 
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 <h2 id="ai-ml-and-some-statements-you-may-have-heard-and-what-do-they-mean">AI/ML and some statements you may have heard (and what do they mean?)  </h2>
 
 <ol>
 <li> Fei-Fei Li on ImageNet: <b>map out the entire world of objects</b> (<a href="https://cacm.acm.org/news/219702-the-data-that-transformed-ai-research-and-possibly-the-world/fulltext" target="_blank">The data that transformed AI research</a>)</li>
-<li> Russell and Norvig in their popular textbook: <b>relevant to any intellectual task; it is truly a universal field</b> (<a href="http://aima.cs.berkeley.edu/" target="_blank">Artificial Intelligence, A modern approach</a>)</li>
+<li> Russell and Norvig in their popular textbook: t_relevant to any intellectual task; it is truly a universal field_ (<a href="http://aima.cs.berkeley.edu/" target="_blank">Artificial Intelligence, A modern approach</a>)</li>
 <li> Woody Bledsoe puts it more bluntly: <b>in the long run, AI is the only science</b> (quoted in Pamilla McCorduck, <a href="https://www.pamelamccorduck.com/machines-who-think" target="_blank">Machines who think</a>)</li>
 </ol>
+<p>onomaMadrid</p>
+
 <p>If you wish to have a critical read on AI/ML from a societal point of view, see <a href="https://www.katecrawford.net/" target="_blank">Kate Crawford's recent text Atlas of AI</a></p>
 
 <b>Here: with AI/ML we intend a collection of machine learning methods with an emphasis on statistical learning and data analysis</b>

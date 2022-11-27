@@ -1,28 +1,41 @@
-TITLE: Artificial Intelligence and Machine Learning in Nuclear Physics
+TITLE: Artificial Intelligence and Machine Learning in Physics
 AUTHOR: Morten Hjorth-Jensen at Department of Physics and Astronomy and FRIB/NSCL Laboratory, Michigan State University
 DATE: Universidad Autonoma de Madrid, November 28, 2022
+
 
 
 !split
 ===== What is this talk about? =====
 !bblock
-The main emphasis is to give you a short and pedestrian introduction to the whys and hows we can use (with several examples) machine learning methods
-in nuclear physics. And why this could (or should) be of interest. 
+The main emphasis is to give you a short and pedestrian introduction to the whys and hows we can use (with several examples) machine learning methods  in physics. And why this could (or should) be of interest.  I will also try to link to educational activities if time.
 !eblock
-
 
 !bblock Additional info
-These slides are at URL:"https://mhjensenseminars.github.io/MachineLearningTalk/doc/web/overview.html". Scroll down the page.
+These slides are at URL:"https://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/UA/html/UAutonomaMadrid-reveal.html" 
 
-* Talk based on _Artificial Intelligence and Machine Learning in Nuclear Physics_, Amber Boehnlein et al., "arXiv:2112.02309":"https://arxiv.org/abs/2112.02309" and Reviews Modern of Physics, submitted. 
-
+* Parts of the talk based on "Machine Learning in Nuclear Physics, Amber Boehnlein et al., Reviews Modern of Physics 94, (2022)":"https://journals.aps.org/rmp/abstract/10.1103/RevModPhys.94.031003"
+* See also "Predicting solid state material platforms for quantum technologies Oliver L. Hebnes et al, Nature Materials Communications, (2002).":"https://www.nature.com/articles/s41524-022-00888-3"
 
 !eblock
+
 
 !split
 ===== Many folks to thank =====
 
-Thanks to Jane Kim (MSU), Julie Butler (MSU), Dean Lee (MSU), Witek Nazarewicz (MSU), Vilde Flugsrud (UiO), Even Nordhagen (UiO), Corey Adams (ANL), Bryce Fore (ANL), and Alessandro Lovato (ANL).
+
+!bblock Thanks to
+* MSU: _Ben Hall, Jane Kim, Julie Butler, Danny Jammoa, Nicholas Cariello_, Johannes Pollanen (Expt), _Niyaz Beysengulov (Expt)_, Dean Lee, Scott Bogner, Heiko Hergert, Matt Hirn, Huey-Wen Lin, Alexei Bazavov, Andrea Shindler and Angela Wilson
+* UiO: _Stian Bilek, Heine Åbø (OsloMet), Håkon Emil Kristiansen, Øyvind Schøyen Sigmundsson, Jonas Boym Flaten, Linus Ekstrøm, Oskar Leinoen, Kristian Wold (OsloMet)_, Lasse Vines (Expt) Andrej Kuznetsov (Expt), _David Rivas Gongora (Expt) and Marianne Bathen (Expt, now PD at ETH)_
+!eblock
+
+!bblock Sponsors
+This work is supported by the U.S. Department of Energy, Office of
+Science, office of Nuclear Physics under grant No. DE-SC0021152 and
+U.S. National Science Foundation Grants No. PHY-1404159 and
+PHY-2013047 and the Norwegian ministry of Education and  Research for PhD fellowships.
+!eblock
+
+
 
 !split
 ===== A simple perspective on the interface between ML and Physics =====
@@ -33,7 +46,7 @@ FIGURE: [figures/mlimage.png, width=800 frac=1.0]
 !split
 ===== ML in Nuclear  Physics =====
 
-FIGURE: [figures/ML-NP.pdf, width=900 frac=1.0]
+FIGURE: [figures/ML-NP.pdf, width=900 frac=1.0]u
 
 
 
@@ -42,9 +55,9 @@ FIGURE: [figures/ML-NP.pdf, width=900 frac=1.0]
 =====  AI/ML and some statements you may have heard (and what do they mean?)  =====
 
 o Fei-Fei Li on ImageNet: _map out the entire world of objects_ ("The data that transformed AI research":"https://cacm.acm.org/news/219702-the-data-that-transformed-ai-research-and-possibly-the-world/fulltext")
-o Russell and Norvig in their popular textbook: _relevant to any intellectual task; it is truly a universal field_ ("Artificial Intelligence, A modern approach":"http://aima.cs.berkeley.edu/")
+o Russell and Norvig in their popular textbook: t_relevant to any intellectual task; it is truly a universal field_ ("Artificial Intelligence, A modern approach":"http://aima.cs.berkeley.edu/")
 o Woody Bledsoe puts it more bluntly: _in the long run, AI is the only science_ (quoted in Pamilla McCorduck, "Machines who think":"https://www.pamelamccorduck.com/machines-who-think")
-
+onomaMadrid
 
 If you wish to have a critical read on AI/ML from a societal point of view, see "Kate Crawford's recent text Atlas of AI":"https://www.katecrawford.net/"
 
@@ -497,6 +510,10 @@ o Four two-week intensive course on Machine Learning for Nuclear Physics held at
 o AI4NP Winter School, 11-15 Jan 2021, (Virtual). Organizers Amber Boehnlein (JLAB), Paulo Bedaque (University of Maryland), Tanja Horn (Catholic University of America)
 o 2022? 
 !eblock
+
+
+
+
 
 
 
