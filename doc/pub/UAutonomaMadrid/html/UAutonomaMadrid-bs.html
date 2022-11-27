@@ -52,6 +52,10 @@ doconce format html UAutonomaMadrid.do.txt --html_style=bootstrap --pygments_htm
                2,
                None,
                'scientific-machine-learning'),
+              ('Physics driven Machine Learning',
+               2,
+               None,
+               'physics-driven-machine-learning'),
               ('Machine Learning and Physics',
                2,
                None,
@@ -337,6 +341,7 @@ MathJax.Hub.Config({
      <!-- navigation toc: --> <li><a href="#ml-in-nuclear-physics" style="font-size: 80%;">ML in Nuclear  Physics</a></li>
      <!-- navigation toc: --> <li><a href="#ai-ml-and-some-statements-you-may-have-heard-and-what-do-they-mean" style="font-size: 80%;">AI/ML and some statements you may have heard (and what do they mean?)</a></li>
      <!-- navigation toc: --> <li><a href="#scientific-machine-learning" style="font-size: 80%;">Scientific Machine Learning</a></li>
+     <!-- navigation toc: --> <li><a href="#physics-driven-machine-learning" style="font-size: 80%;">Physics driven Machine Learning</a></li>
      <!-- navigation toc: --> <li><a href="#machine-learning-and-physics" style="font-size: 80%;">Machine Learning and Physics</a></li>
      <!-- navigation toc: --> <li><a href="#lots-of-room-for-creativity" style="font-size: 80%;">Lots of room for creativity</a></li>
      <!-- navigation toc: --> <li><a href="#types-of-machine-learning" style="font-size: 80%;">Types of machine learning</a></li>
@@ -541,6 +546,19 @@ accelerate scientific discovery. The report covers three main areas
 <li> techniques for training and implementing performant and resource-efficient ML algorithms;</li>
 <li> and computing architectures, platforms, and technologies for deploying these algorithms.</li>
 </ol>
+</div>
+</div>
+
+
+<!-- !split -->
+<h2 id="physics-driven-machine-learning" class="anchor">Physics driven Machine Learning </h2>
+
+<p>Another hot topic is what has loosely been dubbed <b>Physics-driven deep learning</b>. See the recent work on <a href="https://www.nature.com/articles/s42256-021-00302-5" target="_self">Learning nonlinear operators via DeepONet based on the universal approximation theorem of operators</a>.</p>
+
+<div class="panel panel-default">
+<div class="panel-body">
+<!-- subsequent paragraphs come in larger fonts, so start with a paragraph -->
+<p>A less known but powerful result is that a NN with a single hidden layer can accurately approximate any nonlinear continuous operator. This universal approximation theorem of operators is suggestive of the structure and potential of deep neural networks (DNNs) in learning continuous operators or complex systems from streams of scattered data. Here, we thus extend this theorem to DNNs. We design a new network with small generalization error, the deep operator network (DeepONet), which consists of a DNN for encoding the discrete input function space (branch net) and another DNN for encoding the domain of the output functions (trunk net). We demonstrate that DeepONet can learn various explicit operators, such as integrals and fractional Laplacians, as well as implicit operators that represent deterministic and stochastic differential equations. </p>
 </div>
 </div>
 
