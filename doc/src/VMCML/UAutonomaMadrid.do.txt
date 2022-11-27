@@ -57,7 +57,6 @@ FIGURE: [figures/ML-NP.pdf, width=900 frac=1.0]u
 o Fei-Fei Li on ImageNet: _map out the entire world of objects_ ("The data that transformed AI research":"https://cacm.acm.org/news/219702-the-data-that-transformed-ai-research-and-possibly-the-world/fulltext")
 o Russell and Norvig in their popular textbook: t_relevant to any intellectual task; it is truly a universal field_ ("Artificial Intelligence, A modern approach":"http://aima.cs.berkeley.edu/")
 o Woody Bledsoe puts it more bluntly: _in the long run, AI is the only science_ (quoted in Pamilla McCorduck, "Machines who think":"https://www.pamelamccorduck.com/machines-who-think")
-onomaMadrid
 
 If you wish to have a critical read on AI/ML from a societal point of view, see "Kate Crawford's recent text Atlas of AI":"https://www.katecrawford.net/"
 
@@ -84,7 +83,7 @@ o and computing architectures, platforms, and technologies for deploying these a
 !split
 ===== Physics driven Machine Learning =====
 
-Another hot topic is what has loosely been dubbed _Physics-driven deep learning_. See the recent work on "Learning nonlinear operators via DeepONet based on the universal approximation theorem of operators":"https://www.nature.com/articles/s42256-021-00302-5".
+Another hot topic is what has loosely been dubbed _Physics-driven deep learning_. See the recent work on "Learning nonlinear operators via DeepONet based on the universal approximation theorem of operators, Nature Machine Learning, vol 3, 218 (2021)":"https://www.nature.com/articles/s42256-021-00302-5".
 
 !bblock From their abstract
 A less known but powerful result is that a NN with a single hidden layer can accurately approximate any nonlinear continuous operator. This universal approximation theorem of operators is suggestive of the structure and potential of deep neural networks (DNNs) in learning continuous operators or complex systems from streams of scattered data. Here, we thus extend this theorem to DNNs. We design a new network with small generalization error, the deep operator network (DeepONet), which consists of a DNN for encoding the discrete input function space (branch net) and another DNN for encoding the domain of the output functions (trunk net). We demonstrate that DeepONet can learn various explicit operators, such as integrals and fractional Laplacians, as well as implicit operators that represent deterministic and stochastic differential equations. 
@@ -244,7 +243,7 @@ The large amount of degrees of freedom pertain to both theory and experiment in 
 ===== Selected references =====
 !bblock
 * "Mehta et al.":"https://arxiv.org/abs/1803.08823" and "Physics Reports (2019)":"https://www.sciencedirect.com/science/article/pii/S0370157319300766?via%3Dihub".
-* "Machine Learning and the Physical Sciences by Carleo et al":"https://link.aps.org/doi/10.1103/RevModPhys.91.045002"
+* "Machine Learning and the Physical Sciences by Carleo et al, Rev Mod Phys 91, 045002":"https://link.aps.org/doi/10.1103/RevModPhys.91.045002"
 * "Ab initio solution of the many-electron Schrödinger equation with deep neural networks by Pfau et al.":"https://journals.aps.org/prresearch/abstract/10.1103/PhysRevResearch.2.033429"
 * "Report from the A.I. For Nuclear Physics  Workshop by Bedaque et al., Eur J. Phys. A 57, (2021)":"https://link.springer.com/article/10.1140/epja/s10050-020-00290-x"
 * "Particle Data Group summary on ML methods":"https://pdg.lbl.gov/2021/reviews/rpp2021-rev-machine-learning.pdf"
