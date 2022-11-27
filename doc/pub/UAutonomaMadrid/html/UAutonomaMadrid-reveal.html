@@ -506,10 +506,10 @@ Some of the most common tasks are:
 <ul>
 <p><li> The dataset \( \mathbf{x} \) (could be some observable quantity of the system we are studying)</li>
 <p><li> A model which is a function of a set of parameters \( \mathbf{\alpha} \) that relates to the dataset, say a likelihood  function \( p(\mathbf{x}\vert \mathbf{\alpha}) \) or just a simple model \( f(\mathbf{\alpha}) \)</li>
-<p><li> A so-called <b>loss/cost/risk</b> function \( \mathcal{C} (\mathbf{x}, f(\mathbf{\alpha})) \) which allows us to decide how well our model represents the dataset.</li> 
+<p><li> A so-called <b>loss/cost/risk</b> function \( C (\mathbf{x}, f(\mathbf{\alpha})) \) which allows us to decide how well our model represents the dataset.</li> 
 </ul>
 <p>
-<p>We seek to minimize the function \( \mathcal{C} (\mathbf{x}, f(\mathbf{\alpha})) \) by finding the parameter values which minimize \( \mathcal{C} \). This leads to  various minimization algorithms. It may surprise many, but at the heart of all machine learning algortihms there is an optimization problem. </p>
+<p>We seek to minimize the function \( C (\mathbf{x}, f(\mathbf{\alpha})) \) by finding the parameter values which minimize \( \mathcal{C} \). This leads to  various minimization algorithms. It may surprise many, but at the heart of all machine learning algortihms there is an optimization problem. </p>
 </div>
 </section>
 
@@ -1011,16 +1011,16 @@ We focus only on the terms that are relevant for \( r_{12} \) and for three dime
 <p>&nbsp;<br>
 $$
 \lim_{r_{12} \rightarrow 0}E_L(R)=
-    \frac{1}{{\cal R}_T(r_{12})}\left(-2\frac{d^2}{dr_{ij}^2}-\frac{4}{r_{ij}}\frac{d}{dr_{ij}}+
-\frac{2}{r_{ij}}\right){\cal R}_T(r_{12}).
+    \frac{1}{R_T(r_{12})}\left(-2\frac{d^2}{dr_{ij}^2}-\frac{4}{r_{ij}}\frac{d}{dr_{ij}}+
+\frac{2}{r_{ij}}\right)R_T(r_{12}).
 $$
 <p>&nbsp;<br>
 
 <p>In order to avoid divergencies when \( r_{12}\rightarrow 0 \) we obtain  the so-called <b>cusp</b> condition</p>
 <p>&nbsp;<br>
 $$
-\frac{d {\cal R}_T(r_{12})}{dr_{12}} = \frac{1}{2}
-{\cal R}_T(r_{12})\qquad r_{12}\to 0
+\frac{d R_T(r_{12})}{dr_{12}} = \frac{1}{2}
+R_T(r_{12})\qquad r_{12}\to 0
 $$
 <p>&nbsp;<br>
 </section>
@@ -1030,14 +1030,14 @@ $$
 <p>The above  results in</p>
 <p>&nbsp;<br>
 $$
-{\cal R}_T  \propto \exp{(r_{ij}/2)}, 
+R_T  \propto \exp{(r_{ij}/2)}, 
 $$
 <p>&nbsp;<br>
 
 <p>for anti-parallel spins and </p>
 <p>&nbsp;<br>
 $$
-{\cal R}_T  \propto \exp{(r_{ij}/4)}, 
+R_T  \propto \exp{(r_{ij}/4)}, 
 $$
 <p>&nbsp;<br>
 
@@ -1509,11 +1509,11 @@ This system has analytical solutions in two and three dimensions (<a href="https
 </center>
 <br/><br/>
 </div>
+</section>
 
-<p>!Split
+<section>
 <h2 id="the-electron-gas-in-three-dimensions-with-n-14-electrons-various-wigner-seitz-radii">The electron gas in three dimensions with \( N=14 \) electrons (Various Wigner-Seitz  Radii) </h2>
-Jane Kim, Bryce Fore, Alessandro Lovato and MHJ, in preparation and <a href="https://arxiv.org/abs/2210.00365" target="_blank">Nordhagen, Kim, Fore, Lovato and MHJ, ArXiv 2210.00365</a>
-</p>
+<p>Jane Kim, Bryce Fore, Alessandro Lovato and MHJ, in preparation and <a href="https://arxiv.org/abs/2210.00365" target="_blank">Nordhagen, Kim, Fore, Lovato and MHJ, ArXiv 2210.00365</a></p>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>

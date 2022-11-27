@@ -261,9 +261,9 @@ The large amount of degrees of freedom pertain to both theory and experiment in 
 Almost every problem in ML and data science starts with the same ingredients:
 * The dataset $\mathbf{x}$ (could be some observable quantity of the system we are studying)
 * A model which is a function of a set of parameters $\mathbf{\alpha}$ that relates to the dataset, say a likelihood  function $p(\mathbf{x}\vert \mathbf{\alpha})$ or just a simple model $f(\mathbf{\alpha})$
-* A so-called _loss/cost/risk_ function $\mathcal{C} (\mathbf{x}, f(\mathbf{\alpha}))$ which allows us to decide how well our model represents the dataset. 
+* A so-called _loss/cost/risk_ function $C (\mathbf{x}, f(\mathbf{\alpha}))$ which allows us to decide how well our model represents the dataset. 
 
-We seek to minimize the function $\mathcal{C} (\mathbf{x}, f(\mathbf{\alpha}))$ by finding the parameter values which minimize $\mathcal{C}$. This leads to  various minimization algorithms. It may surprise many, but at the heart of all machine learning algortihms there is an optimization problem. 
+We seek to minimize the function $C (\mathbf{x}, f(\mathbf{\alpha}))$ by finding the parameter values which minimize $\mathcal{C}$. This leads to  various minimization algorithms. It may surprise many, but at the heart of all machine learning algortihms there is an optimization problem. 
 !eblock
 
 
@@ -667,15 +667,15 @@ We focus only on the terms that are relevant for $r_{12}$ and for three dimensio
 !bt
 \[
 \lim_{r_{12} \rightarrow 0}E_L(R)=
-    \frac{1}{{\cal R}_T(r_{12})}\left(-2\frac{d^2}{dr_{ij}^2}-\frac{4}{r_{ij}}\frac{d}{dr_{ij}}+
-\frac{2}{r_{ij}}\right){\cal R}_T(r_{12}).
+    \frac{1}{R_T(r_{12})}\left(-2\frac{d^2}{dr_{ij}^2}-\frac{4}{r_{ij}}\frac{d}{dr_{ij}}+
+\frac{2}{r_{ij}}\right)R_T(r_{12}).
 \]
 !et
 In order to avoid divergencies when $r_{12}\rightarrow 0$ we obtain  the so-called _cusp_ condition
 !bt
 \[
-\frac{d {\cal R}_T(r_{12})}{dr_{12}} = \frac{1}{2}
-{\cal R}_T(r_{12})\qquad r_{12}\to 0
+\frac{d R_T(r_{12})}{dr_{12}} = \frac{1}{2}
+R_T(r_{12})\qquad r_{12}\to 0
 \]
 !et
 
@@ -684,13 +684,13 @@ In order to avoid divergencies when $r_{12}\rightarrow 0$ we obtain  the so-call
 The above  results in
 !bt
 \[
-{\cal R}_T  \propto \exp{(r_{ij}/2)}, 
+R_T  \propto \exp{(r_{ij}/2)}, 
 \]
 !et 
 for anti-parallel spins and 
 !bt
 \[
-{\cal R}_T  \propto \exp{(r_{ij}/4)}, 
+R_T  \propto \exp{(r_{ij}/4)}, 
 \]
 !et
 for anti-parallel spins. 
@@ -1049,7 +1049,7 @@ FIGURE: [figslides/12.png, width=700 frac=0.9]
 !eblock
 
 
-!Split
+!split
 ===== The electron gas in three dimensions with $N=14$ electrons (Various Wigner-Seitz  Radii) =====
 Jane Kim, Bryce Fore, Alessandro Lovato and MHJ, in preparation and "Nordhagen, Kim, Fore, Lovato and MHJ, ArXiv 2210.00365":"https://arxiv.org/abs/2210.00365"
 !bblock
