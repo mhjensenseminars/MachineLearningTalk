@@ -350,5 +350,18 @@ DATE: today
 
 
 
+===== Talk at Universidad Autonoma de Madrid, November 28, 2022 =====
+
+
+
+ * HTML:
+   * "Plain html style": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/UAutonomaMadrid/html/UAutonomaMadrid.html"
+   * "reveal.js beige slide style": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/UAutonomaMadrid/html/UAutonomaMadrid-reveal.html"
+   * "Bootstrap style": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/UAutonomaMadrid/html/UAutonomaMadrid-bs.html"
+ * iPython notebook:
+   * "ipynb file": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/UAutonomaMadrid/ipynb/UAutonomaMadrid.ipynb"
+
+
+
 
 
