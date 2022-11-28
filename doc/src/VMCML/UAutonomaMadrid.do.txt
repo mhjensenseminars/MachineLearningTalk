@@ -14,7 +14,7 @@ The main emphasis is to give you a short and pedestrian introduction to the whys
 These slides are at URL:"https://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/UA/html/UAutonomaMadrid-reveal.html" 
 
 * Parts of the talk based on "Machine Learning in Nuclear Physics, Amber Boehnlein et al., Reviews Modern of Physics 94, (2022)":"https://journals.aps.org/rmp/abstract/10.1103/RevModPhys.94.031003"
-* See also "Predicting solid state material platforms for quantum technologies Oliver L. Hebnes et al, Nature Materials Communications, (2002).":"https://www.nature.com/articles/s41524-022-00888-3"
+* See also "Predicting solid state material platforms for quantum technologies Oliver L. Hebnes et al, Nature Materials Communications, (2022).":"https://www.nature.com/articles/s41524-022-00888-3"
 
 !eblock
 
@@ -26,7 +26,7 @@ These slides are at URL:"https://mhjensenseminars.github.io/MachineLearningTalk/
 !bblock Thanks to
 * MSU: _Ben Hall, Jane Kim, Julie Butler, Danny Jammoa, Nicholas Cariello_, Johannes Pollanen (Expt), _Niyaz Beysengulov (Expt)_, Dean Lee, Scott Bogner, Heiko Hergert, Matt Hirn, Huey-Wen Lin, Alexei Bazavov, Andrea Shindler and Angela Wilson
 * UiO: _Stian Bilek, Robert Solli, Heine Åbø (OsloMet), Håkon Emil Kristiansen, Øyvind Schøyen Sigmundsson, Jonas Boym Flaten, Linus Ekstrøm, Oskar Leinoen, Kristian Wold (OsloMet)_, Lasse Vines (Expt) Andrej Kuznetsov (Expt), _David Rivas Gongora (Expt) and Marianne Bathen (Expt, now PD at ETH)_
-* ANL: _Bryce Fore, Alessandro Lovato
+* ANL: _Bryce Fore_, Alessandro Lovato
 * Trento: _Mauro Rigo_ and Francesco Pederiva
 !eblock
 
@@ -54,7 +54,7 @@ FIGURE: [figures/ML-NP.pdf, width=900 frac=1.0]u
 
 
 !split
-=====  AI/ML and some statements you may have heard (and what do they mean?)  =====
+=====  AI/ML and some statements you may have heard  =====
 
 o Fei-Fei Li on ImageNet: _map out the entire world of objects_ ("The data that transformed AI research":"https://cacm.acm.org/news/219702-the-data-that-transformed-ai-research-and-possibly-the-world/fulltext")
 o Russell and Norvig in their popular textbook: t_relevant to any intellectual task; it is truly a universal field_ ("Artificial Intelligence, A modern approach":"http://aima.cs.berkeley.edu/")
@@ -88,7 +88,7 @@ o and computing architectures, platforms, and technologies for deploying these a
 Another hot topic is what has loosely been dubbed _Physics-driven deep learning_. See the recent work on "Learning nonlinear operators via DeepONet based on the universal approximation theorem of operators, Nature Machine Learning, vol 3, 218 (2021)":"https://www.nature.com/articles/s42256-021-00302-5".
 
 !bblock From their abstract
-A less known but powerful result is that a NN with a single hidden layer can accurately approximate any nonlinear continuous operator. This universal approximation theorem of operators is suggestive of the structure and potential of deep neural networks (DNNs) in learning continuous operators or complex systems from streams of scattered data. Here, we thus extend this theorem to DNNs. We design a new network with small generalization error, the deep operator network (DeepONet), which consists of a DNN for encoding the discrete input function space (branch net) and another DNN for encoding the domain of the output functions (trunk net). We demonstrate that DeepONet can learn various explicit operators, such as integrals and fractional Laplacians, as well as implicit operators that represent deterministic and stochastic differential equations. 
+A less known but powerful result is that an NN with a single hidden layer can accurately approximate any nonlinear continuous operator. This universal approximation theorem of operators is suggestive of the structure and potential of deep neural networks (DNNs) in learning continuous operators or complex systems from streams of scattered data. Here, we thus extend this theorem to DNNs. We design a new network with small generalization error, the deep operator network (DeepONet), which consists of a DNN for encoding the discrete input function space (branch net) and another DNN for encoding the domain of the output functions (trunk net). We demonstrate that DeepONet can learn various explicit operators, such as integrals and fractional Laplacians, as well as implicit operators that represent deterministic and stochastic differential equations. 
 !eblock
 
 
@@ -156,22 +156,6 @@ Some of the most common tasks are:
 !eblock
 
 
-!split
-===== Machine learning and nuclear theory: Why? =====
-
-o ML tools can help us to speed up the scientific process cycle and hence facilitate discoveries
-o Enabling fast emulation for big simulations
-o Revealing the information content of measured observables w.r.t. theory
-o Identifying crucial experimental data for better constraining theory
-o Providing meaningful input to applications and planned measurements
-o ML tools can help us to reveal the structure of our models
-o Parameter estimation with heterogeneous/multi-scale datasets
-o Model reduction
-o ML tools can help us to provide predictive capability
-o Theoretical results often involve ultraviolet  and infrared extrapolations due to Hilbert-space truncations 
-o Uncertainty quantification essential
-o Theoretical models are often applied to entirely new nuclear systems and conditions that are not accessible to experiment
-
 
 !split
 =====  The plethora  of machine learning algorithms/methods =====
@@ -183,6 +167,7 @@ o Ensemble Methods, Random forests, bagging and voting methods, gradient boostin
 o Linear and logistic regression, Kernel methods, support vector machines and more
 o Reinforcement Learning 
 o and more
+
 !split
 ===== Examples of Machine Learning methods and applications in nuclear physics =====
 
@@ -198,26 +183,17 @@ o and more
 
 
 
-!split
-===== Examples of Machine Learning methods and applications in nuclear physics, continues =====
-
-!bblock
-* _Low-energy nuclear reactions UQ:_ Bayesian optimization studies of the nucleon-nucleus optical potential, R-matrix analyses,  and  statistical spatial networks to study patterns in nuclear reaction networks.
-* _Neutron star properties and nuclear matter equation of state:_ constraining the equation of state by properties on neutron stars and selected properties of finite nuclei
-* _Experimental design:_ Bayesian ML provides a framework  to  maximize  the  success  of  on  experiment  based on  the  best  information  available  on existing  data, experimental conditions, and theoretical models.
-!eblock
-
 
 
 
 
 
 !split
-===== More examples =====
+===== Examples of applications of ML in physics =====
 
 
 The large amount of degrees of freedom pertain to both theory and
-experiment in nuclear physics. With increasingly complicated
+experiment in physics. With increasingly complicated
 experiments that produce large amounts data, automated classification
 of events becomes increasingly important. Here, deep learning methods
 offer a plethora of interesting research avenues.
@@ -225,7 +201,7 @@ offer a plethora of interesting research avenues.
 !bblock
 * Reconstruction of particle trajectories or classification of events are typical examples where ML methods are being used. However, since these data can often be extremely noisy, the precision necessary for discovery in physics requires algorithmic improvements. Research along such directions, interfacing nuclear physics with AI/ML is expected to play a significant role in physics discoveries related to new facilities.  The treatment of corrupted data in imaging and image processing is also a relevant topic. 
 
-* Design of detectors represents an important area of applications for ML/AI methods in nuclear physics.
+* Design of detectors represents an important area of applications for ML/AI methods in subatomic physics.
 
 !eblock
 
@@ -238,9 +214,9 @@ offer a plethora of interesting research avenues.
 
 * In theory, we expect to use AI/ML algorithms and methods to improve our knowledge about  correlations of physical model parameters in data for quantum many-body systems. Deep learning methods show great promise in circumventing the exploding dimensionalities encountered in quantum mechanical many-body studies. 
 
-* Merging a frequentist approach (the standard path in ML theory) with a Bayesian approach, has the potential to infer better probabilitity distributions and error estimates. As an example, methods for fast Monte-Carlo- based Bayesian computation of nuclear density functionals show great promise in providing a better understanding 
+* Merging a frequentist approach (the standard path in ML theory) with a Bayesian approach, has the potential to infer better probabilitity distributions and error estimates. As an example, methods for fast Monte-Carlo- based Bayesian computation of nuclear density functionals show great promise in providing a better understanding of nuclear data and constraining density functionals.
 
-* Machine Learning and Quantum Computing is a very interesting avenue to explore. See for example talk of "Sofia Vallecorsa":"https://www.youtube.com/watch?v=7WPKv1Q57os&list=PLUPPQ1TVXK7uHwCTccWMBud-zLyvAf8A2&index=5&ab_channel=ECTstar".
+* Machine Learning and Quantum Computing is a very interesting avenue to explore. See for example a recent talk by "Sofia Vallecorsa":"https://www.youtube.com/watch?v=7WPKv1Q57os&list=PLUPPQ1TVXK7uHwCTccWMBud-zLyvAf8A2&index=5&ab_channel=ECTstar".
 !eblock
 
 
@@ -250,7 +226,7 @@ offer a plethora of interesting research avenues.
 !bblock
 * "Mehta et al.":"https://arxiv.org/abs/1803.08823" and "Physics Reports (2019)":"https://www.sciencedirect.com/science/article/pii/S0370157319300766?via%3Dihub".
 * "Machine Learning and the Physical Sciences by Carleo et al, Rev Mod Phys 91, 045002":"https://link.aps.org/doi/10.1103/RevModPhys.91.045002"
-* "Ab initio solution of the many-electron Schrödinger equation with deep neural networks by Pfau et al., Physics Review Research 2, 033429":"https://journals.aps.org/prresearch/abstract/10.1103/PhysRevResearch.2.033429"
+* "Ab initio solution of the many-electron Schrödinger equation with deep neural networks by Pfau et al., Physical Review Research 2, 033429":"https://journals.aps.org/prresearch/abstract/10.1103/PhysRevResearch.2.033429"
 * "Report from the A.I. For Nuclear Physics  Workshop by Bedaque et al., Eur J. Phys. A 57, (2021)":"https://link.springer.com/article/10.1140/epja/s10050-020-00290-x"
 * "Particle Data Group summary on ML methods":"https://pdg.lbl.gov/2021/reviews/rpp2021-rev-machine-learning.pdf"
 !eblock
@@ -273,7 +249,7 @@ We seek to minimize the function $C (\mathbf{x}, f(\mathbf{\alpha}))$ by finding
 
 
 !split
-===== "Unsupervised learning in nuclear physics, Argon-46 by Solli, Bazin, Kuchera, MHJ, Strauss.":"https://www.sciencedirect.com/science/article/abs/pii/S0168900221004460?via%3Dihub" =====
+===== "Unsupervised learning in nuclear physics, Argon-46 by Solli, Bazin, Kuchera, MHJ, Strauss, NIMA 1010, 165461 (2020)":"https://www.sciencedirect.com/science/article/abs/pii/S0168900221004460?via%3Dihub" =====
 
 Two- and three-dimensional representations of two events from the
 Argon-46 experiment. Each row is one event in two projections,
@@ -311,7 +287,7 @@ In general, the integrals involved in the calculation of various  expectation va
 ===== Monte Carlo methods and Neural Networks =====
 
 "Machine Learning and the Deuteron by Kebble and Rios":"https://www.sciencedirect.com/science/article/pii/S0370269320305463?via%3Dihub" and
-"Variational Monte Carlo calculations of $A\le 4$ nuclei with an artificial neural-network correlator ansatz by Adams et al.":"https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.127.022502"
+"Variational Monte Carlo calculations of $A\le 4$ nuclei with an artificial neural-network correlator ansatz by Adams et al. PRL 127, 022502":"https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.127.022502"
 
 _Adams et al_:
 
@@ -574,6 +550,31 @@ o 2022?
 !split
 ===== Additional material =====
 
+!split
+===== Machine learning and nuclear theory: Why? =====
+
+o ML tools can help us to speed up the scientific process cycle and hence facilitate discoveries
+o Enabling fast emulation for big simulations
+o Revealing the information content of measured observables w.r.t. theory
+o Identifying crucial experimental data for better constraining theory
+o Providing meaningful input to applications and planned measurements
+o ML tools can help us to reveal the structure of our models
+o Parameter estimation with heterogeneous/multi-scale datasets
+o Model reduction
+o ML tools can help us to provide predictive capability
+o Theoretical results often involve ultraviolet  and infrared extrapolations due to Hilbert-space truncations 
+o Uncertainty quantification essential
+o Theoretical models are often applied to entirely new nuclear systems and conditions that are not accessible to experiment
+
+
+!split
+===== Examples of Machine Learning methods and applications in nuclear physics, continues =====
+
+!bblock
+* _Low-energy nuclear reactions UQ:_ Bayesian optimization studies of the nucleon-nucleus optical potential, R-matrix analyses,  and  statistical spatial networks to study patterns in nuclear reaction networks.
+* _Neutron star properties and nuclear matter equation of state:_ constraining the equation of state by properties on neutron stars and selected properties of finite nuclei
+* _Experimental design:_ Bayesian ML provides a framework  to  maximize  the  success  of  on  experiment  based on  the  best  information  available  on existing  data, experimental conditions, and theoretical models.
+!eblock
 
 
 
