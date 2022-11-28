@@ -423,53 +423,58 @@ MathJax.Hub.Config({
 </div> <!-- end of navigation bar -->
 <div class="container">
 <p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p> <!-- add vertical space -->
-<a name="part0000"></a>
-<!-- ------------------- main content ---------------------- -->
-<div class="jumbotron">
-<center>
-<h1>Artificial Intelligence and Machine Learning in Physics</h1>
-</center>  <!-- document title -->
+<a name="part0043"></a>
+<!-- !split -->
+<h2 id="quantum-monte-carlo-motivation" class="anchor">Quantum Monte Carlo Motivation </h2>
+<div class="panel panel-default">
+<div class="panel-body">
+<!-- subsequent paragraphs come in larger fonts, so start with a paragraph -->
+<p>Choose a trial wave function
+\( \psi_T(\boldsymbol{R}) \).
+</p>
+$$
+   P(\boldsymbol{R},\boldsymbol{\alpha})= \frac{\left|\psi_T(\boldsymbol{R},\boldsymbol{\alpha})\right|^2}{\int \left|\psi_T(\boldsymbol{R},\boldsymbol{\alpha})\right|^2d\boldsymbol{R}}.
+$$
 
-<!-- author(s): Morten Hjorth-Jensen -->
-<center>
-<b>Morten Hjorth-Jensen</b> [1, 2]
-</center>
-<!-- institution(s) -->
-<center>
-[1] <b>Department of Physics and Astronomy and Facility for Rare Isotope Beams, Michigan State University, East Lansing, USA</b>
-</center>
-<center>
-[2] <b>Department of Physics and Center for Computing in Science Education, University of Oslo, Oslo, Norway</b>
-</center>
-<br>
-<center>
-<h4>Universidad Autonoma de Madrid, November 28, 2022</h4>
-</center> <!-- date -->
-<br>
+<p>This is our model, or likelihood/probability distribution function  (PDF). It depends on some variational parameters \( \boldsymbol{\alpha} \).
+The approximation to the expectation value of the Hamiltonian is now 
+</p>
+$$
+   \langle E[\boldsymbol{\alpha}] \rangle = 
+   \frac{\int d\boldsymbol{R}\Psi^{\ast}_T(\boldsymbol{R},\boldsymbol{\alpha})H(\boldsymbol{R})\Psi_T(\boldsymbol{R},\boldsymbol{\alpha})}
+        {\int d\boldsymbol{R}\Psi^{\ast}_T(\boldsymbol{R},\boldsymbol{\alpha})\Psi_T(\boldsymbol{R},\boldsymbol{\alpha})}.
+$$
+</div>
+</div>
 
-
-
-<p><a href="._UAutonomaMadrid-bs001.html" class="btn btn-primary btn-lg">Read &raquo;</a></p>
-
-
-</div> <!-- end jumbotron -->
 
 <p>
 <!-- navigation buttons at the bottom of the page -->
 <ul class="pagination">
-  <li class="active"><a href="._UAutonomaMadrid-bs000.html">1</a></li>
-  <li><a href="._UAutonomaMadrid-bs001.html">2</a></li>
-  <li><a href="._UAutonomaMadrid-bs002.html">3</a></li>
-  <li><a href="._UAutonomaMadrid-bs003.html">4</a></li>
-  <li><a href="._UAutonomaMadrid-bs004.html">5</a></li>
-  <li><a href="._UAutonomaMadrid-bs005.html">6</a></li>
-  <li><a href="._UAutonomaMadrid-bs006.html">7</a></li>
-  <li><a href="._UAutonomaMadrid-bs007.html">8</a></li>
-  <li><a href="._UAutonomaMadrid-bs008.html">9</a></li>
-  <li><a href="._UAutonomaMadrid-bs009.html">10</a></li>
+<li><a href="._UAutonomaMadrid-bs042.html">&laquo;</a></li>
+  <li><a href="._UAutonomaMadrid-bs000.html">1</a></li>
+  <li><a href="">...</a></li>
+  <li><a href="._UAutonomaMadrid-bs035.html">36</a></li>
+  <li><a href="._UAutonomaMadrid-bs036.html">37</a></li>
+  <li><a href="._UAutonomaMadrid-bs037.html">38</a></li>
+  <li><a href="._UAutonomaMadrid-bs038.html">39</a></li>
+  <li><a href="._UAutonomaMadrid-bs039.html">40</a></li>
+  <li><a href="._UAutonomaMadrid-bs040.html">41</a></li>
+  <li><a href="._UAutonomaMadrid-bs041.html">42</a></li>
+  <li><a href="._UAutonomaMadrid-bs042.html">43</a></li>
+  <li class="active"><a href="._UAutonomaMadrid-bs043.html">44</a></li>
+  <li><a href="._UAutonomaMadrid-bs044.html">45</a></li>
+  <li><a href="._UAutonomaMadrid-bs045.html">46</a></li>
+  <li><a href="._UAutonomaMadrid-bs046.html">47</a></li>
+  <li><a href="._UAutonomaMadrid-bs047.html">48</a></li>
+  <li><a href="._UAutonomaMadrid-bs048.html">49</a></li>
+  <li><a href="._UAutonomaMadrid-bs049.html">50</a></li>
+  <li><a href="._UAutonomaMadrid-bs050.html">51</a></li>
+  <li><a href="._UAutonomaMadrid-bs051.html">52</a></li>
+  <li><a href="._UAutonomaMadrid-bs052.html">53</a></li>
   <li><a href="">...</a></li>
   <li><a href="._UAutonomaMadrid-bs077.html">78</a></li>
-  <li><a href="._UAutonomaMadrid-bs001.html">&raquo;</a></li>
+  <li><a href="._UAutonomaMadrid-bs044.html">&raquo;</a></li>
 </ul>
 <!-- ------------------- end of main content --------------- -->
 </div>  <!-- end container -->

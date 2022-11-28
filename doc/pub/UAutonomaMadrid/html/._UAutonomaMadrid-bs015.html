@@ -351,7 +351,7 @@ MathJax.Hub.Config({
      <!-- navigation toc: --> <li><a href="._UAutonomaMadrid-bs012.html#examples-of-applications-of-ml-in-physics" style="font-size: 80%;">Examples of applications of ML in physics</a></li>
      <!-- navigation toc: --> <li><a href="._UAutonomaMadrid-bs013.html#and-more" style="font-size: 80%;">And more</a></li>
      <!-- navigation toc: --> <li><a href="._UAutonomaMadrid-bs014.html#selected-references" style="font-size: 80%;">Selected references</a></li>
-     <!-- navigation toc: --> <li><a href="._UAutonomaMadrid-bs015.html#what-are-the-basic-ingredients" style="font-size: 80%;">What are the basic ingredients?</a></li>
+     <!-- navigation toc: --> <li><a href="#what-are-the-basic-ingredients" style="font-size: 80%;">What are the basic ingredients?</a></li>
      <!-- navigation toc: --> <li><a href="._UAutonomaMadrid-bs016.html#unsupervised-learning-in-nuclear-physics-argon-46-by-solli-bazin-kuchera-mhj-strauss-nima-1010-165461-2020-https-www-sciencedirect-com-science-article-abs-pii-s0168900221004460-via-3dihub" style="font-size: 80%;">"Unsupervised learning in nuclear physics, Argon-46 by Solli, Bazin, Kuchera, MHJ, Strauss, NIMA 1010, 165461 (2020)":"https://www.sciencedirect.com/science/article/abs/pii/S0168900221004460?via%3Dihub"</a></li>
      <!-- navigation toc: --> <li><a href="._UAutonomaMadrid-bs017.html#quantum-monte-carlo-and-deep-learning" style="font-size: 80%;">Quantum Monte Carlo and deep learning</a></li>
      <!-- navigation toc: --> <li><a href="._UAutonomaMadrid-bs018.html#monte-carlo-methods-and-neural-networks" style="font-size: 80%;">Monte Carlo methods and Neural Networks</a></li>
@@ -423,53 +423,50 @@ MathJax.Hub.Config({
 </div> <!-- end of navigation bar -->
 <div class="container">
 <p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p> <!-- add vertical space -->
-<a name="part0000"></a>
-<!-- ------------------- main content ---------------------- -->
-<div class="jumbotron">
-<center>
-<h1>Artificial Intelligence and Machine Learning in Physics</h1>
-</center>  <!-- document title -->
+<a name="part0015"></a>
+<!-- !split -->
+<h2 id="what-are-the-basic-ingredients" class="anchor">What are the basic ingredients? </h2>
+<div class="panel panel-default">
+<div class="panel-body">
+<!-- subsequent paragraphs come in larger fonts, so start with a paragraph -->
+<p>Almost every problem in ML and data science starts with the same ingredients:</p>
+<ul>
+<li> The dataset \( \mathbf{x} \) (could be some observable quantity of the system we are studying)</li>
+<li> A model which is a function of a set of parameters \( \mathbf{\alpha} \) that relates to the dataset, say a likelihood  function \( p(\mathbf{x}\vert \mathbf{\alpha}) \) or just a simple model \( f(\mathbf{\alpha}) \)</li>
+<li> A so-called <b>loss/cost/risk</b> function \( C (\mathbf{x}, f(\mathbf{\alpha})) \) which allows us to decide how well our model represents the dataset.</li> 
+</ul>
+<p>We seek to minimize the function \( C (\mathbf{x}, f(\mathbf{\alpha})) \) by finding the parameter values which minimize \( \mathcal{C} \). This leads to  various minimization algorithms. It may surprise many, but at the heart of all machine learning algortihms there is an optimization problem. </p>
+</div>
+</div>
 
-<!-- author(s): Morten Hjorth-Jensen -->
-<center>
-<b>Morten Hjorth-Jensen</b> [1, 2]
-</center>
-<!-- institution(s) -->
-<center>
-[1] <b>Department of Physics and Astronomy and Facility for Rare Isotope Beams, Michigan State University, East Lansing, USA</b>
-</center>
-<center>
-[2] <b>Department of Physics and Center for Computing in Science Education, University of Oslo, Oslo, Norway</b>
-</center>
-<br>
-<center>
-<h4>Universidad Autonoma de Madrid, November 28, 2022</h4>
-</center> <!-- date -->
-<br>
-
-
-
-<p><a href="._UAutonomaMadrid-bs001.html" class="btn btn-primary btn-lg">Read &raquo;</a></p>
-
-
-</div> <!-- end jumbotron -->
 
 <p>
 <!-- navigation buttons at the bottom of the page -->
 <ul class="pagination">
-  <li class="active"><a href="._UAutonomaMadrid-bs000.html">1</a></li>
-  <li><a href="._UAutonomaMadrid-bs001.html">2</a></li>
-  <li><a href="._UAutonomaMadrid-bs002.html">3</a></li>
-  <li><a href="._UAutonomaMadrid-bs003.html">4</a></li>
-  <li><a href="._UAutonomaMadrid-bs004.html">5</a></li>
-  <li><a href="._UAutonomaMadrid-bs005.html">6</a></li>
-  <li><a href="._UAutonomaMadrid-bs006.html">7</a></li>
+<li><a href="._UAutonomaMadrid-bs014.html">&laquo;</a></li>
+  <li><a href="._UAutonomaMadrid-bs000.html">1</a></li>
+  <li><a href="">...</a></li>
   <li><a href="._UAutonomaMadrid-bs007.html">8</a></li>
   <li><a href="._UAutonomaMadrid-bs008.html">9</a></li>
   <li><a href="._UAutonomaMadrid-bs009.html">10</a></li>
+  <li><a href="._UAutonomaMadrid-bs010.html">11</a></li>
+  <li><a href="._UAutonomaMadrid-bs011.html">12</a></li>
+  <li><a href="._UAutonomaMadrid-bs012.html">13</a></li>
+  <li><a href="._UAutonomaMadrid-bs013.html">14</a></li>
+  <li><a href="._UAutonomaMadrid-bs014.html">15</a></li>
+  <li class="active"><a href="._UAutonomaMadrid-bs015.html">16</a></li>
+  <li><a href="._UAutonomaMadrid-bs016.html">17</a></li>
+  <li><a href="._UAutonomaMadrid-bs017.html">18</a></li>
+  <li><a href="._UAutonomaMadrid-bs018.html">19</a></li>
+  <li><a href="._UAutonomaMadrid-bs019.html">20</a></li>
+  <li><a href="._UAutonomaMadrid-bs020.html">21</a></li>
+  <li><a href="._UAutonomaMadrid-bs021.html">22</a></li>
+  <li><a href="._UAutonomaMadrid-bs022.html">23</a></li>
+  <li><a href="._UAutonomaMadrid-bs023.html">24</a></li>
+  <li><a href="._UAutonomaMadrid-bs024.html">25</a></li>
   <li><a href="">...</a></li>
   <li><a href="._UAutonomaMadrid-bs077.html">78</a></li>
-  <li><a href="._UAutonomaMadrid-bs001.html">&raquo;</a></li>
+  <li><a href="._UAutonomaMadrid-bs016.html">&raquo;</a></li>
 </ul>
 <!-- ------------------- end of main content --------------- -->
 </div>  <!-- end container -->
