@@ -20,7 +20,7 @@ These slides are at URL:"https://mhjensenseminars.github.io/MachineLearningTalk/
 
 
 !split
-===== Many folks to thank =====
+===== Many to thank =====
 
 
 !bblock Thanks to
@@ -167,20 +167,6 @@ o Ensemble Methods, Random forests, bagging and voting methods, gradient boostin
 o Linear and logistic regression, Kernel methods, support vector machines and more
 o Reinforcement Learning 
 o and more
-
-!split
-===== Examples of Machine Learning methods and applications in nuclear physics =====
-
-!bblock
-* _Machine  learning  for  data  mining:_ Oftentimes,  it  is necessary to be able to accurately calculate observables that have not been measured, to supplement the existing databases.
-* _Nuclear  density  functional   theory:_ Energy density functional calibration   involving Bayesian optimization  and NN  ML. A promising avenue for ML applications is the emulation of DFT results.
-* _Nuclear properties with ML:_ Improving predictive power of nuclear models by emulating model residuals.
-* _Effective field theory and A-body systems:_ Truncation errors and low-energy coupling constant calibration, nucleon-nucleon scattering calculations, variational calculations with ANN for light nuclei, NN extrapolation of nuclear structure observables
-* _Nuclear  shell  model  UQ:_ ML methods  have  been  used  to  provide  UQ  of  configuration  interaction  calculations.
-!eblock
-
-
-
 
 
 
@@ -549,6 +535,23 @@ o 2022?
 
 !split
 ===== Additional material =====
+
+!split
+===== Examples of Machine Learning methods and applications in nuclear physics =====
+
+!bblock
+* _Machine  learning  for  data  mining:_ Oftentimes,  it  is necessary to be able to accurately calculate observables that have not been measured, to supplement the existing databases.
+* _Nuclear  density  functional   theory:_ Energy density functional calibration   involving Bayesian optimization  and NN  ML. A promising avenue for ML applications is the emulation of DFT results.
+* _Nuclear properties with ML:_ Improving predictive power of nuclear models by emulating model residuals.
+* _Effective field theory and A-body systems:_ Truncation errors and low-energy coupling constant calibration, nucleon-nucleon scattering calculations, variational calculations with ANN for light nuclei, NN extrapolation of nuclear structure observables
+* _Nuclear  shell  model  UQ:_ ML methods  have  been  used  to  provide  UQ  of  configuration  interaction  calculations.
+!eblock
+
+
+
+
+
+
 
 !split
 ===== Machine learning and nuclear theory: Why? =====
