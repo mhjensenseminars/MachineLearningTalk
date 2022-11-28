@@ -408,17 +408,6 @@ FIGURE: [figures/landscape.jpg, width=800 frac=1.0]
 
 FIGURE: [figures/nstareos.png, width=800 frac=1.0]
 
-!split
-===== Experimental design =====
-
-Beam time and compute cycles are expensive!
-
-* Bayesian experimental design provides a framework in which experiments can be designed using the best experimental and theoretical information available 
-* The utility function is designed to encode the goals of the experiment and the constraints inherent in carrying it out. 
-* Once the utility function and the possible designs have been specified, the optimal design is simply the scenario that  maximizes the expected utility function over the domain of possible designs.
-
-
-FIGURE: [figures/utility.png, width=700 frac=1.0]
 
 !split
 ===== Observations (or conclusions if you prefer) =====
@@ -1129,6 +1118,17 @@ A good read on folding/unfolding is "An Unfolding Method for High Energy Physics
 See notebook details and "examples of simple data reconstructed with Gaussian processes":"https://github.com/adambozson/gp-unfold/blob/master/Falling%20exponential.ipynb".
 
 
+!split
+===== Experimental design =====
+
+Beam time and compute cycles are expensive!
+
+* Bayesian experimental design provides a framework in which experiments can be designed using the best experimental and theoretical information available 
+* The utility function is designed to encode the goals of the experiment and the constraints inherent in carrying it out. 
+* Once the utility function and the possible designs have been specified, the optimal design is simply the scenario that  maximizes the expected utility function over the domain of possible designs.
+
+
+FIGURE: [figures/utility.png, width=700 frac=1.0]
 
 
 

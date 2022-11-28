@@ -161,7 +161,6 @@ div.toc p,a {
                2,
                None,
                'constraining-the-equation-of-state-for-dense-nuclear-matter'),
-              ('Experimental design', 2, None, 'experimental-design'),
               ('Observations (or conclusions if you prefer)',
                2,
                None,
@@ -329,7 +328,8 @@ div.toc p,a {
               ('Folding and unfolding and response functions',
                2,
                None,
-               'folding-and-unfolding-and-response-functions')]}
+               'folding-and-unfolding-and-response-functions'),
+              ('Experimental design', 2, None, 'experimental-design')]}
 end of tocinfo -->
 
 <body>
@@ -835,22 +835,6 @@ that the nucleus is bound with respect to proton and neutron decay.
 <br/><br/>
 <center>
 <p><img src="figures/nstareos.png" width="800" align="bottom"></p>
-</center>
-<br/><br/>
-
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-<h2 id="experimental-design">Experimental design </h2>
-
-<p>Beam time and compute cycles are expensive!</p>
-
-<ul>
-<li> Bayesian experimental design provides a framework in which experiments can be designed using the best experimental and theoretical information available</li> 
-<li> The utility function is designed to encode the goals of the experiment and the constraints inherent in carrying it out.</li> 
-<li> Once the utility function and the possible designs have been specified, the optimal design is simply the scenario that  maximizes the expected utility function over the domain of possible designs.</li>
-</ul>
-<br/><br/>
-<center>
-<p><img src="figures/utility.png" width="700" align="bottom"></p>
 </center>
 <br/><br/>
 
@@ -1709,6 +1693,22 @@ This system has analytical solutions in two and three dimensions (<a href="https
 <p>A good read on folding/unfolding is <a href="https://arxiv.org/abs/hep-ex/0208022" target="_blank">An Unfolding Method for High Energy Physics Experiments by Volker Blobel</a></p>
 
 <p>See notebook details and <a href="https://github.com/adambozson/gp-unfold/blob/master/Falling%20exponential.ipynb" target="_blank">examples of simple data reconstructed with Gaussian processes</a>.</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="experimental-design">Experimental design </h2>
+
+<p>Beam time and compute cycles are expensive!</p>
+
+<ul>
+<li> Bayesian experimental design provides a framework in which experiments can be designed using the best experimental and theoretical information available</li> 
+<li> The utility function is designed to encode the goals of the experiment and the constraints inherent in carrying it out.</li> 
+<li> Once the utility function and the possible designs have been specified, the optimal design is simply the scenario that  maximizes the expected utility function over the domain of possible designs.</li>
+</ul>
+<br/><br/>
+<center>
+<p><img src="figures/utility.png" width="700" align="bottom"></p>
+</center>
+<br/><br/>
 
 <!-- ------------------- end of main content --------------- -->
 </body>
