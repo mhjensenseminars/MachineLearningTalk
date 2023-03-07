@@ -363,5 +363,18 @@ DATE: today
 
 
 
+===== Popmath seminar March 7, 2023 =====
+
+
+
+ * HTML:
+   * "Plain html style": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/mathforening/html/mathforening.html"
+   * "reveal.js beige slide style": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/mathforening/html/mathforening-reveal.html"
+   * "Bootstrap style": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/mathforening/html/mathforening-bs.html"
+ * iPython notebook:
+   * "ipynb file": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/mathforening/ipynb/mathforening.ipynb"
+
+
+
 
 
