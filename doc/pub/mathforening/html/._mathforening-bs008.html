@@ -1,0 +1,215 @@
+<!--
+HTML file automatically generated from DocOnce source
+(https://github.com/doconce/doconce/)
+doconce format html mathforening.do.txt --html_style=bootstrap --pygments_html_style=default --html_admon=bootstrap_panel --html_output=mathforening-bs --no_mako
+-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="DocOnce: https://github.com/doconce/doconce/" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Mathematics of Machine Learning">
+<title>Mathematics of Machine Learning</title>
+<!-- Bootstrap style: bootstrap -->
+<!-- doconce format html mathforening.do.txt --html_style=bootstrap --pygments_html_style=default --html_admon=bootstrap_panel --html_output=mathforening-bs --no_mako -->
+<link href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+<!-- not necessary
+<link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+-->
+<style type="text/css">
+/* Add scrollbar to dropdown menus in bootstrap navigation bar */
+.dropdown-menu {
+   height: auto;
+   max-height: 400px;
+   overflow-x: hidden;
+}
+/* Adds an invisible element before each target to offset for the navigation
+   bar */
+.anchor::before {
+  content:"";
+  display:block;
+  height:50px;      /* fixed header height for style bootstrap */
+  margin:-50px 0 0; /* negative fixed header height */
+}
+</style>
+</head>
+
+<!-- tocinfo
+{'highest level': 2,
+ 'sections': [('What is this talk about?', 2, None, 'what-is-this-talk-about'),
+              ('Many folks to thank', 2, None, 'many-folks-to-thank'),
+              ('A simple perspective on the interface between ML and Physics',
+               2,
+               None,
+               'a-simple-perspective-on-the-interface-between-ml-and-physics'),
+              ('AI/ML and some statements you may have heard (and what do they '
+               'mean?)',
+               2,
+               None,
+               'ai-ml-and-some-statements-you-may-have-heard-and-what-do-they-mean'),
+              ('Scientific Machine Learning',
+               2,
+               None,
+               'scientific-machine-learning'),
+              ('Machine Learning software',
+               2,
+               None,
+               'machine-learning-software'),
+              ('Lots of room for creativity',
+               2,
+               None,
+               'lots-of-room-for-creativity'),
+              ('Types of machine learning',
+               2,
+               None,
+               'types-of-machine-learning'),
+              ('Examples', 2, None, 'examples'),
+              ('And more', 2, None, 'and-more'),
+              ('Selected references', 2, None, 'selected-references'),
+              ('What are the basic ingredients?',
+               2,
+               None,
+               'what-are-the-basic-ingredients'),
+              ('Quantum Monte Carlo and deep learning',
+               2,
+               None,
+               'quantum-monte-carlo-and-deep-learning'),
+              ('The electron gas in three dimensions with $N=14$ electrons',
+               2,
+               None,
+               'the-electron-gas-in-three-dimensions-with-n-14-electrons'),
+              ('Extrapolations and model interpretability',
+               2,
+               None,
+               'extrapolations-and-model-interpretability'),
+              ('Statistical learning and data analysis',
+               2,
+               None,
+               'statistical-learning-and-data-analysis'),
+              ("Bayes' Theorem", 2, None, 'bayes-theorem')]}
+end of tocinfo -->
+
+<body>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+     equationNumbers: {  autoNumber: "none"  },
+     extensions: ["AMSmath.js", "AMSsymbols.js", "autobold.js", "color.js"]
+  }
+});
+</script>
+<script type="text/javascript" async
+ src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<!-- Bootstrap navigation bar -->
+<div class="navbar navbar-default navbar-fixed-top">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="athforening-bs.html">Mathematics of Machine Learning</a>
+  </div>
+  <div class="navbar-collapse collapse navbar-responsive-collapse">
+    <ul class="nav navbar-nav navbar-right">
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Contents <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+     <!-- navigation toc: --> <li><a href="._mathforening-bs001.html#what-is-this-talk-about" style="font-size: 80%;">What is this talk about?</a></li>
+     <!-- navigation toc: --> <li><a href="._mathforening-bs002.html#many-folks-to-thank" style="font-size: 80%;">Many folks to thank</a></li>
+     <!-- navigation toc: --> <li><a href="._mathforening-bs003.html#a-simple-perspective-on-the-interface-between-ml-and-physics" style="font-size: 80%;">A simple perspective on the interface between ML and Physics</a></li>
+     <!-- navigation toc: --> <li><a href="._mathforening-bs004.html#ai-ml-and-some-statements-you-may-have-heard-and-what-do-they-mean" style="font-size: 80%;">AI/ML and some statements you may have heard (and what do they mean?)</a></li>
+     <!-- navigation toc: --> <li><a href="._mathforening-bs005.html#scientific-machine-learning" style="font-size: 80%;">Scientific Machine Learning</a></li>
+     <!-- navigation toc: --> <li><a href="._mathforening-bs006.html#machine-learning-software" style="font-size: 80%;">Machine Learning software</a></li>
+     <!-- navigation toc: --> <li><a href="._mathforening-bs007.html#lots-of-room-for-creativity" style="font-size: 80%;">Lots of room for creativity</a></li>
+     <!-- navigation toc: --> <li><a href="#types-of-machine-learning" style="font-size: 80%;">Types of machine learning</a></li>
+     <!-- navigation toc: --> <li><a href="._mathforening-bs009.html#examples" style="font-size: 80%;">Examples</a></li>
+     <!-- navigation toc: --> <li><a href="._mathforening-bs010.html#and-more" style="font-size: 80%;">And more</a></li>
+     <!-- navigation toc: --> <li><a href="._mathforening-bs011.html#selected-references" style="font-size: 80%;">Selected references</a></li>
+     <!-- navigation toc: --> <li><a href="._mathforening-bs012.html#what-are-the-basic-ingredients" style="font-size: 80%;">What are the basic ingredients?</a></li>
+     <!-- navigation toc: --> <li><a href="._mathforening-bs013.html#quantum-monte-carlo-and-deep-learning" style="font-size: 80%;">Quantum Monte Carlo and deep learning</a></li>
+     <!-- navigation toc: --> <li><a href="._mathforening-bs014.html#the-electron-gas-in-three-dimensions-with-n-14-electrons" style="font-size: 80%;">The electron gas in three dimensions with \( N=14 \) electrons</a></li>
+     <!-- navigation toc: --> <li><a href="._mathforening-bs015.html#extrapolations-and-model-interpretability" style="font-size: 80%;">Extrapolations and model interpretability</a></li>
+     <!-- navigation toc: --> <li><a href="._mathforening-bs016.html#statistical-learning-and-data-analysis" style="font-size: 80%;">Statistical learning and data analysis</a></li>
+     <!-- navigation toc: --> <li><a href="._mathforening-bs017.html#bayes-theorem" style="font-size: 80%;">Bayes' Theorem</a></li>
+
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
+</div> <!-- end of navigation bar -->
+<div class="container">
+<p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p> <!-- add vertical space -->
+<a name="part0008"></a>
+<!-- !split -->
+<h2 id="types-of-machine-learning" class="anchor">Types of machine learning </h2>
+
+<div class="panel panel-default">
+<div class="panel-body">
+<!-- subsequent paragraphs come in larger fonts, so start with a paragraph -->
+<p>The approaches to machine learning are many, but are often split into two main categories. 
+In <em>supervised learning</em> we know the answer to a problem,
+and let the computer deduce the logic behind it. On the other hand, <em>unsupervised learning</em>
+is a method for finding patterns and relationship in data sets without any prior knowledge of the system.
+Some authours also operate with a third category, namely <em>reinforcement learning</em>. This is a paradigm 
+of learning inspired by behavioural psychology, where learning is achieved by trial-and-error, 
+solely from rewards and punishment.
+</p>
+
+<p>Another way to categorize machine learning tasks is to consider the desired output of a system.
+Some of the most common tasks are:
+</p>
+
+<ul>
+  <li> Classification: Outputs are divided into two or more classes. The goal is to   produce a model that assigns inputs into one of these classes. An example is to identify  digits based on pictures of hand-written ones. Classification is typically supervised learning.</li>
+  <li> Regression: Finding a functional relationship between an input data set and a reference data set.   The goal is to construct a function that maps input data to continuous output values.</li>
+  <li> Clustering: Data are divided into groups with certain common traits, without knowing the different groups beforehand.  It is thus a form of unsupervised learning.</li>
+</ul>
+</div>
+</div>
+
+
+<p>
+<!-- navigation buttons at the bottom of the page -->
+<ul class="pagination">
+<li><a href="._mathforening-bs007.html">&laquo;</a></li>
+  <li><a href="._mathforening-bs000.html">1</a></li>
+  <li><a href="._mathforening-bs001.html">2</a></li>
+  <li><a href="._mathforening-bs002.html">3</a></li>
+  <li><a href="._mathforening-bs003.html">4</a></li>
+  <li><a href="._mathforening-bs004.html">5</a></li>
+  <li><a href="._mathforening-bs005.html">6</a></li>
+  <li><a href="._mathforening-bs006.html">7</a></li>
+  <li><a href="._mathforening-bs007.html">8</a></li>
+  <li class="active"><a href="._mathforening-bs008.html">9</a></li>
+  <li><a href="._mathforening-bs009.html">10</a></li>
+  <li><a href="._mathforening-bs010.html">11</a></li>
+  <li><a href="._mathforening-bs011.html">12</a></li>
+  <li><a href="._mathforening-bs012.html">13</a></li>
+  <li><a href="._mathforening-bs013.html">14</a></li>
+  <li><a href="._mathforening-bs014.html">15</a></li>
+  <li><a href="._mathforening-bs015.html">16</a></li>
+  <li><a href="._mathforening-bs016.html">17</a></li>
+  <li><a href="._mathforening-bs017.html">18</a></li>
+  <li><a href="._mathforening-bs009.html">&raquo;</a></li>
+</ul>
+<!-- ------------------- end of main content --------------- -->
+</div>  <!-- end container -->
+<!-- include javascript, jQuery *first* -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<!-- Bootstrap footer
+<footer>
+<a href="https://..."><img width="250" align=right src="https://..."></a>
+</footer>
+-->
+</body>
+</html>
+
