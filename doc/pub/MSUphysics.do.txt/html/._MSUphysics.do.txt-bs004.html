@@ -1,0 +1,258 @@
+<!--
+HTML file automatically generated from DocOnce source
+(https://github.com/doconce/doconce/)
+doconce format html MSUphysics.do.txt --html_style=bootstrap --pygments_html_style=default --html_admon=bootstrap_panel --html_output=MSUphysics.do.txt-bs --no_mako
+-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="DocOnce: https://github.com/doconce/doconce/" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Machine Learning, artificial intelligence and quantum technologies/Science; research, education and exciting possibilities in the future job market">
+<title>Machine Learning, artificial intelligence and quantum technologies/Science; research, education and exciting possibilities in the future job market</title>
+<!-- Bootstrap style: bootstrap -->
+<!-- doconce format html MSUphysics.do.txt --html_style=bootstrap --pygments_html_style=default --html_admon=bootstrap_panel --html_output=MSUphysics.do.txt-bs --no_mako -->
+<link href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+<!-- not necessary
+<link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+-->
+<style type="text/css">
+/* Add scrollbar to dropdown menus in bootstrap navigation bar */
+.dropdown-menu {
+   height: auto;
+   max-height: 400px;
+   overflow-x: hidden;
+}
+/* Adds an invisible element before each target to offset for the navigation
+   bar */
+.anchor::before {
+  content:"";
+  display:block;
+  height:50px;      /* fixed header height for style bootstrap */
+  margin:-50px 0 0; /* negative fixed header height */
+}
+</style>
+</head>
+
+<!-- tocinfo
+{'highest level': 2,
+ 'sections': [('What is this talk about?', 2, None, 'what-is-this-talk-about'),
+              ('A simple perspective on the interface between ML and Physics',
+               2,
+               None,
+               'a-simple-perspective-on-the-interface-between-ml-and-physics'),
+              ('AI/ML and some statements you may have heard (and what do they '
+               'mean?)',
+               2,
+               None,
+               'ai-ml-and-some-statements-you-may-have-heard-and-what-do-they-mean'),
+              ('Scientific Machine Learning',
+               2,
+               None,
+               'scientific-machine-learning'),
+              ('Machine Learning software',
+               2,
+               None,
+               'machine-learning-software'),
+              ('Lots of room for creativity',
+               2,
+               None,
+               'lots-of-room-for-creativity'),
+              ('Types of machine learning',
+               2,
+               None,
+               'types-of-machine-learning'),
+              ('Examples', 2, None, 'examples'),
+              ('And more', 2, None, 'and-more'),
+              ('Selected references', 2, None, 'selected-references'),
+              ('What are the basic ingredients?',
+               2,
+               None,
+               'what-are-the-basic-ingredients'),
+              ('Quantum Monte Carlo and deep learning',
+               2,
+               None,
+               'quantum-monte-carlo-and-deep-learning'),
+              ('Monte Carlo methods and Neural Networks',
+               2,
+               None,
+               'monte-carlo-methods-and-neural-networks'),
+              ('Deep learning neural networks, "Variational Monte Carlo '
+               'calculations of $A\\le 4$ nuclei with an artificial '
+               'neural-network correlator ansatz by Adams et '
+               'al.":"https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.127.022502"',
+               2,
+               None,
+               'deep-learning-neural-networks-variational-monte-carlo-calculations-of-a-le-4-nuclei-with-an-artificial-neural-network-correlator-ansatz-by-adams-et-al-https-journals-aps-org-prl-abstract-10-1103-physrevlett-127-022502'),
+              ('The electron gas in three dimensions with $N=14$ electrons',
+               2,
+               None,
+               'the-electron-gas-in-three-dimensions-with-n-14-electrons'),
+              ('Extrapolations and model interpretability',
+               2,
+               None,
+               'extrapolations-and-model-interpretability'),
+              ('Physics based statistical learning and data analysis',
+               2,
+               None,
+               'physics-based-statistical-learning-and-data-analysis'),
+              ("Bayes' Theorem", 2, None, 'bayes-theorem'),
+              ('Folding and unfolding and response functions',
+               2,
+               None,
+               'folding-and-unfolding-and-response-functions'),
+              ('Quantified limits of the nuclear landscape',
+               2,
+               None,
+               'quantified-limits-of-the-nuclear-landscape'),
+              ('Quantum Technologies', 2, None, 'quantum-technologies'),
+              ('Quantum Engineering', 2, None, 'quantum-engineering'),
+              ('Candidate systems', 2, None, 'candidate-systems'),
+              ('Electrons (quantum dots) on superfluid helium',
+               2,
+               None,
+               'electrons-quantum-dots-on-superfluid-helium'),
+              ('Education at undergraduate level and more',
+               2,
+               None,
+               'education-at-undergraduate-level-and-more'),
+              ('QuSTEAM Model', 2, None, 'qusteam-model'),
+              ('Courses, Prototype', 2, None, 'courses-prototype'),
+              ('Important Issues to think of',
+               2,
+               None,
+               'important-issues-to-think-of'),
+              ('Observations', 2, None, 'observations'),
+              ('Future Needs/Problems', 2, None, 'future-needs-problems')]}
+end of tocinfo -->
+
+<body>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+     equationNumbers: {  autoNumber: "none"  },
+     extensions: ["AMSmath.js", "AMSsymbols.js", "autobold.js", "color.js"]
+  }
+});
+</script>
+<script type="text/javascript" async
+ src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<!-- Bootstrap navigation bar -->
+<div class="navbar navbar-default navbar-fixed-top">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="MSUphysics.do.txt-bs.html">Machine Learning, artificial intelligence and quantum technologies/Science; research, education and exciting possibilities in the future job market</a>
+  </div>
+  <div class="navbar-collapse collapse navbar-responsive-collapse">
+    <ul class="nav navbar-nav navbar-right">
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Contents <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+     <!-- navigation toc: --> <li><a href="._MSUphysics.do.txt-bs001.html#what-is-this-talk-about" style="font-size: 80%;">What is this talk about?</a></li>
+     <!-- navigation toc: --> <li><a href="._MSUphysics.do.txt-bs002.html#a-simple-perspective-on-the-interface-between-ml-and-physics" style="font-size: 80%;">A simple perspective on the interface between ML and Physics</a></li>
+     <!-- navigation toc: --> <li><a href="._MSUphysics.do.txt-bs003.html#ai-ml-and-some-statements-you-may-have-heard-and-what-do-they-mean" style="font-size: 80%;">AI/ML and some statements you may have heard (and what do they mean?)</a></li>
+     <!-- navigation toc: --> <li><a href="#scientific-machine-learning" style="font-size: 80%;">Scientific Machine Learning</a></li>
+     <!-- navigation toc: --> <li><a href="._MSUphysics.do.txt-bs005.html#machine-learning-software" style="font-size: 80%;">Machine Learning software</a></li>
+     <!-- navigation toc: --> <li><a href="._MSUphysics.do.txt-bs006.html#lots-of-room-for-creativity" style="font-size: 80%;">Lots of room for creativity</a></li>
+     <!-- navigation toc: --> <li><a href="._MSUphysics.do.txt-bs007.html#types-of-machine-learning" style="font-size: 80%;">Types of machine learning</a></li>
+     <!-- navigation toc: --> <li><a href="._MSUphysics.do.txt-bs008.html#examples" style="font-size: 80%;">Examples</a></li>
+     <!-- navigation toc: --> <li><a href="._MSUphysics.do.txt-bs009.html#and-more" style="font-size: 80%;">And more</a></li>
+     <!-- navigation toc: --> <li><a href="._MSUphysics.do.txt-bs010.html#selected-references" style="font-size: 80%;">Selected references</a></li>
+     <!-- navigation toc: --> <li><a href="._MSUphysics.do.txt-bs011.html#what-are-the-basic-ingredients" style="font-size: 80%;">What are the basic ingredients?</a></li>
+     <!-- navigation toc: --> <li><a href="._MSUphysics.do.txt-bs012.html#quantum-monte-carlo-and-deep-learning" style="font-size: 80%;">Quantum Monte Carlo and deep learning</a></li>
+     <!-- navigation toc: --> <li><a href="._MSUphysics.do.txt-bs013.html#monte-carlo-methods-and-neural-networks" style="font-size: 80%;">Monte Carlo methods and Neural Networks</a></li>
+     <!-- navigation toc: --> <li><a href="._MSUphysics.do.txt-bs014.html#deep-learning-neural-networks-variational-monte-carlo-calculations-of-a-le-4-nuclei-with-an-artificial-neural-network-correlator-ansatz-by-adams-et-al-https-journals-aps-org-prl-abstract-10-1103-physrevlett-127-022502" style="font-size: 80%;">Deep learning neural networks, "Variational Monte Carlo calculations of \( A\le 4 \) nuclei with an artificial neural-network correlator ansatz by Adams et al.":"https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.127.022502"</a></li>
+     <!-- navigation toc: --> <li><a href="._MSUphysics.do.txt-bs015.html#the-electron-gas-in-three-dimensions-with-n-14-electrons" style="font-size: 80%;">The electron gas in three dimensions with \( N=14 \) electrons</a></li>
+     <!-- navigation toc: --> <li><a href="._MSUphysics.do.txt-bs016.html#extrapolations-and-model-interpretability" style="font-size: 80%;">Extrapolations and model interpretability</a></li>
+     <!-- navigation toc: --> <li><a href="._MSUphysics.do.txt-bs017.html#physics-based-statistical-learning-and-data-analysis" style="font-size: 80%;">Physics based statistical learning and data analysis</a></li>
+     <!-- navigation toc: --> <li><a href="._MSUphysics.do.txt-bs018.html#bayes-theorem" style="font-size: 80%;">Bayes' Theorem</a></li>
+     <!-- navigation toc: --> <li><a href="._MSUphysics.do.txt-bs019.html#folding-and-unfolding-and-response-functions" style="font-size: 80%;">Folding and unfolding and response functions</a></li>
+     <!-- navigation toc: --> <li><a href="._MSUphysics.do.txt-bs020.html#quantified-limits-of-the-nuclear-landscape" style="font-size: 80%;">Quantified limits of the nuclear landscape</a></li>
+     <!-- navigation toc: --> <li><a href="._MSUphysics.do.txt-bs021.html#quantum-technologies" style="font-size: 80%;">Quantum Technologies</a></li>
+     <!-- navigation toc: --> <li><a href="._MSUphysics.do.txt-bs022.html#quantum-engineering" style="font-size: 80%;">Quantum Engineering</a></li>
+     <!-- navigation toc: --> <li><a href="._MSUphysics.do.txt-bs023.html#candidate-systems" style="font-size: 80%;">Candidate systems</a></li>
+     <!-- navigation toc: --> <li><a href="._MSUphysics.do.txt-bs024.html#electrons-quantum-dots-on-superfluid-helium" style="font-size: 80%;">Electrons (quantum dots) on superfluid helium</a></li>
+     <!-- navigation toc: --> <li><a href="._MSUphysics.do.txt-bs025.html#education-at-undergraduate-level-and-more" style="font-size: 80%;">Education at undergraduate level and more</a></li>
+     <!-- navigation toc: --> <li><a href="._MSUphysics.do.txt-bs026.html#qusteam-model" style="font-size: 80%;">QuSTEAM Model</a></li>
+     <!-- navigation toc: --> <li><a href="._MSUphysics.do.txt-bs027.html#courses-prototype" style="font-size: 80%;">Courses, Prototype</a></li>
+     <!-- navigation toc: --> <li><a href="._MSUphysics.do.txt-bs028.html#important-issues-to-think-of" style="font-size: 80%;">Important Issues to think of</a></li>
+     <!-- navigation toc: --> <li><a href="._MSUphysics.do.txt-bs029.html#observations" style="font-size: 80%;">Observations</a></li>
+     <!-- navigation toc: --> <li><a href="._MSUphysics.do.txt-bs030.html#future-needs-problems" style="font-size: 80%;">Future Needs/Problems</a></li>
+
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
+</div> <!-- end of navigation bar -->
+<div class="container">
+<p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p> <!-- add vertical space -->
+<a name="part0004"></a>
+<!-- !split -->
+<h2 id="scientific-machine-learning" class="anchor">Scientific Machine Learning </h2>
+
+<p>An important and emerging field is what has been dubbed as scientific ML, see the article by Deiana et al <a href="https://arxiv.org/abs/2110.13041" target="_self">Applications and Techniques for Fast Machine Learning in Science, arXiv:2110.13041</a></p>
+
+<div class="panel panel-default">
+<div class="panel-body">
+<!-- subsequent paragraphs come in larger fonts, so start with a paragraph -->
+<p>The authors discuss applications and techniques for fast machine
+learning (ML) in science &ndash; the concept of integrating power ML
+methods into the real-time experimental data processing loop to
+accelerate scientific discovery. The report covers three main areas
+</p>
+
+<ol>
+<li> applications for fast ML across a number of scientific domains;</li>
+<li> techniques for training and implementing performant and resource-efficient ML algorithms;</li>
+<li> and computing architectures, platforms, and technologies for deploying these algorithms.</li>
+</ol>
+</div>
+</div>
+
+
+<p>
+<!-- navigation buttons at the bottom of the page -->
+<ul class="pagination">
+<li><a href="._MSUphysics.do.txt-bs003.html">&laquo;</a></li>
+  <li><a href="._MSUphysics.do.txt-bs000.html">1</a></li>
+  <li><a href="._MSUphysics.do.txt-bs001.html">2</a></li>
+  <li><a href="._MSUphysics.do.txt-bs002.html">3</a></li>
+  <li><a href="._MSUphysics.do.txt-bs003.html">4</a></li>
+  <li class="active"><a href="._MSUphysics.do.txt-bs004.html">5</a></li>
+  <li><a href="._MSUphysics.do.txt-bs005.html">6</a></li>
+  <li><a href="._MSUphysics.do.txt-bs006.html">7</a></li>
+  <li><a href="._MSUphysics.do.txt-bs007.html">8</a></li>
+  <li><a href="._MSUphysics.do.txt-bs008.html">9</a></li>
+  <li><a href="._MSUphysics.do.txt-bs009.html">10</a></li>
+  <li><a href="._MSUphysics.do.txt-bs010.html">11</a></li>
+  <li><a href="._MSUphysics.do.txt-bs011.html">12</a></li>
+  <li><a href="._MSUphysics.do.txt-bs012.html">13</a></li>
+  <li><a href="._MSUphysics.do.txt-bs013.html">14</a></li>
+  <li><a href="">...</a></li>
+  <li><a href="._MSUphysics.do.txt-bs030.html">31</a></li>
+  <li><a href="._MSUphysics.do.txt-bs005.html">&raquo;</a></li>
+</ul>
+<!-- ------------------- end of main content --------------- -->
+</div>  <!-- end container -->
+<!-- include javascript, jQuery *first* -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<!-- Bootstrap footer
+<footer>
+<a href="https://..."><img width="250" align=right src="https://..."></a>
+</footer>
+-->
+</body>
+</html>
+
