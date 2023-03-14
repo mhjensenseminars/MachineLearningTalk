@@ -1,0 +1,757 @@
+<!--
+HTML file automatically generated from DocOnce source
+(https://github.com/doconce/doconce/)
+doconce format html MSUphysics.do.txt --pygments_html_style=default --html_style=bloodish --html_links_in_new_window --html_output=MSUphysics --no_mako
+-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="DocOnce: https://github.com/doconce/doconce/" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Machine Learning, artificial intelligence and quantum technologies/Science; research, education and exciting possibilities in the future job market">
+<title>Machine Learning, artificial intelligence and quantum technologies/Science; research, education and exciting possibilities in the future job market</title>
+<style type="text/css">
+/* bloodish style */
+body {
+  font-family: Helvetica, Verdana, Arial, Sans-serif;
+  color: #404040;
+  background: #ffffff;
+}
+h1 { font-size: 1.8em; color: #8A0808; }
+h2 { font-size: 1.6em; color: #8A0808; }
+h3 { font-size: 1.4em; color: #8A0808; }
+h4 { font-size: 1.2em; color: #8A0808; }
+a { color: #8A0808; text-decoration:none; }
+tt { font-family: "Courier New", Courier; }
+p { text-indent: 0px; }
+hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+p.caption { width: 80%; font-style: normal; text-align: left; }
+hr.figure { border: 0; width: 80%; border-bottom: 1px solid #aaa; }div.highlight {
+    border: 1px solid #cfcfcf;
+    border-radius: 2px;
+    line-height: 1.21429em;
+}
+div.cell {
+    width: 100%;
+    padding: 5px 5px 5px 0;
+    margin: 0;
+    outline: none;
+}
+div.input {
+    page-break-inside: avoid;
+    box-orient: horizontal;
+    box-align: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+}
+div.inner_cell {
+    box-orient: vertical;
+    box-align: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    box-flex: 1;
+    flex: 1;
+}
+div.input_area {
+    border: 1px solid #cfcfcf;
+    border-radius: 4px;
+    background: #f7f7f7;
+    line-height: 1.21429em;
+}
+div.input_area > div.highlight {
+    margin: .4em;
+    border: none;
+    padding: 0;
+    background-color: transparent;
+}
+div.output_wrapper {
+    position: relative;
+    box-orient: vertical;
+    box-align: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+.output {
+    box-orient: vertical;
+    box-align: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+div.output_area {
+    padding: 0;
+    page-break-inside: avoid;
+    box-orient: horizontal;
+    box-align: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+}
+div.output_subarea {
+    padding: .4em .4em 0 .4em;
+    box-flex: 1;
+    flex: 1;
+}
+div.output_text {
+    text-align: left;
+    color: #000;
+    line-height: 1.21429em;
+}
+.alert-text-small   { font-size: 80%;  }
+.alert-text-large   { font-size: 130%; }
+.alert-text-normal  { font-size: 90%;  }
+.alert {
+  padding:8px 35px 8px 14px; margin-bottom:18px;
+  text-shadow:0 1px 0 rgba(255,255,255,0.5);
+  border:1px solid #bababa;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  color: #555;
+  background-color: #f8f8f8;
+  background-position: 10px 5px;
+  background-repeat: no-repeat;
+  background-size: 38px;
+  padding-left: 55px;
+  width: 75%;
+ }
+.alert-block {padding-top:14px; padding-bottom:14px}
+.alert-block > p, .alert-block > ul {margin-bottom:1em}
+.alert li {margin-top: 1em}
+.alert-block p+p {margin-top:5px}
+.alert-notice { background-image: url(https://cdn.rawgit.com/doconce/doconce/master/bundled/html_images/small_gray_notice.png); }
+.alert-summary  { background-image:url(https://cdn.rawgit.com/doconce/doconce/master/bundled/html_images/small_gray_summary.png); }
+.alert-warning { background-image: url(https://cdn.rawgit.com/doconce/doconce/master/bundled/html_images/small_gray_warning.png); }
+.alert-question {background-image:url(https://cdn.rawgit.com/doconce/doconce/master/bundled/html_images/small_gray_question.png); }
+div { text-align: justify; text-justify: inter-word; }
+.tab {
+  padding-left: 1.5em;
+}
+div.toc p,a {
+  line-height: 1.3;
+  margin-top: 1.1;
+  margin-bottom: 1.1;
+}
+</style>
+</head>
+
+<!-- tocinfo
+{'highest level': 2,
+ 'sections': [('What is this talk about?', 2, None, 'what-is-this-talk-about'),
+              ('A simple perspective on the interface between ML and Physics',
+               2,
+               None,
+               'a-simple-perspective-on-the-interface-between-ml-and-physics'),
+              ('AI/ML and some statements you may have heard (and what do they '
+               'mean?)',
+               2,
+               None,
+               'ai-ml-and-some-statements-you-may-have-heard-and-what-do-they-mean'),
+              ('Scientific Machine Learning',
+               2,
+               None,
+               'scientific-machine-learning'),
+              ('Machine Learning software',
+               2,
+               None,
+               'machine-learning-software'),
+              ('Lots of room for creativity',
+               2,
+               None,
+               'lots-of-room-for-creativity'),
+              ('Types of machine learning',
+               2,
+               None,
+               'types-of-machine-learning'),
+              ('Examples', 2, None, 'examples'),
+              ('And more', 2, None, 'and-more'),
+              ('Selected references', 2, None, 'selected-references'),
+              ('What are the basic ingredients?',
+               2,
+               None,
+               'what-are-the-basic-ingredients'),
+              ('Quantum Monte Carlo and deep learning',
+               2,
+               None,
+               'quantum-monte-carlo-and-deep-learning'),
+              ('Monte Carlo methods and Neural Networks',
+               2,
+               None,
+               'monte-carlo-methods-and-neural-networks'),
+              ('Deep learning neural networks, "Variational Monte Carlo '
+               'calculations of $A\\le 4$ nuclei with an artificial '
+               'neural-network correlator ansatz by Adams et '
+               'al.":"https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.127.022502"',
+               2,
+               None,
+               'deep-learning-neural-networks-variational-monte-carlo-calculations-of-a-le-4-nuclei-with-an-artificial-neural-network-correlator-ansatz-by-adams-et-al-https-journals-aps-org-prl-abstract-10-1103-physrevlett-127-022502'),
+              ('The electron gas in three dimensions with $N=14$ electrons',
+               2,
+               None,
+               'the-electron-gas-in-three-dimensions-with-n-14-electrons'),
+              ('Extrapolations and model interpretability',
+               2,
+               None,
+               'extrapolations-and-model-interpretability'),
+              ('Physics based statistical learning and data analysis',
+               2,
+               None,
+               'physics-based-statistical-learning-and-data-analysis'),
+              ("Bayes' Theorem", 2, None, 'bayes-theorem'),
+              ('Folding and unfolding and response functions',
+               2,
+               None,
+               'folding-and-unfolding-and-response-functions'),
+              ('Quantified limits of the nuclear landscape',
+               2,
+               None,
+               'quantified-limits-of-the-nuclear-landscape'),
+              ('Quantum Technologies', 2, None, 'quantum-technologies'),
+              ('Quantum Engineering', 2, None, 'quantum-engineering'),
+              ('Candidate systems', 2, None, 'candidate-systems'),
+              ('Electrons (quantum dots) on superfluid helium',
+               2,
+               None,
+               'electrons-quantum-dots-on-superfluid-helium'),
+              ('Education at undergraduate level and more',
+               2,
+               None,
+               'education-at-undergraduate-level-and-more'),
+              ('QuSTEAM Model', 2, None, 'qusteam-model'),
+              ('Courses, Prototype', 2, None, 'courses-prototype'),
+              ('Important Issues to think of',
+               2,
+               None,
+               'important-issues-to-think-of'),
+              ('Observations', 2, None, 'observations'),
+              ('Future Needs/Problems', 2, None, 'future-needs-problems')]}
+end of tocinfo -->
+
+<body>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+     equationNumbers: {  autoNumber: "AMS"  },
+     extensions: ["AMSmath.js", "AMSsymbols.js", "autobold.js", "color.js"]
+  }
+});
+</script>
+<script type="text/javascript" async
+ src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<!-- ------------------- main content ---------------------- -->
+<center>
+<h1>Machine Learning, artificial intelligence and quantum technologies/Science; research, education and exciting possibilities in the future job market</h1>
+</center>  <!-- document title -->
+
+<!-- author(s): Morten Hjorth-Jensen -->
+<center>
+<b>Morten Hjorth-Jensen</b> 
+</center>
+<!-- institution -->
+<center>
+<b>Department of Physics and Astronomy and FRIB/NSCL Laboratory, Michigan State University and Department of Physics and Center for Computing in Science Education, University of Oslo, Norway</b>
+</center>
+<br>
+<center>
+<h4></h4>
+</center> <!-- date -->
+<br>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="what-is-this-talk-about">What is this talk about? </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p>The main emphasis is to give you a short and pedestrian introduction to the whys and hows we can use (with several examples) machine learning methods and quantum technologies 
+in physics. And why this could (or should) be of interest.  I will also try to link to potential job possibilities and educational activities.
+</p>
+</div>
+
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b>Additional info</b>
+<p>
+
+<ul>
+<li> Parts of the talk based on <a href="https://journals.aps.org/rmp/abstract/10.1103/RevModPhys.94.031003" target="_blank">Artificial Intelligence and Machine Learning in Nuclear Physics, Amber Boehnlein et al., Reviews Modern of Physics 94, (2022)</a></li>
+<li> See also <a href="https://www.nature.com/articles/s41524-022-00888-3" target="_blank">Predicting solid state material platforms for quantum technologies Oliver Lerst&#248;l Hebnes et al, Nature Materials Communications, (2002).</a></li>
+</ul>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="a-simple-perspective-on-the-interface-between-ml-and-physics">A simple perspective on the interface between ML and Physics </h2>
+
+<br/><br/>
+<center>
+<p><img src="figures/mlimage.png" width="800" align="bottom"></p>
+</center>
+<br/><br/>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="ai-ml-and-some-statements-you-may-have-heard-and-what-do-they-mean">AI/ML and some statements you may have heard (and what do they mean?)  </h2>
+
+<ol>
+<li> Fei-Fei Li on ImageNet: <b>map out the entire world of objects</b> (<a href="https://cacm.acm.org/news/219702-the-data-that-transformed-ai-research-and-possibly-the-world/fulltext" target="_blank">The data that transformed AI research</a>)</li>
+<li> Russell and Norvig in their popular textbook: <b>relevant to any intellectual task; it is truly a universal field</b> (<a href="http://aima.cs.berkeley.edu/" target="_blank">Artificial Intelligence, A modern approach</a>)</li>
+<li> Woody Bledsoe puts it more bluntly: <b>in the long run, AI is the only science</b> (quoted in Pamilla McCorduck, <a href="https://www.pamelamccorduck.com/machines-who-think" target="_blank">Machines who think</a>)</li>
+</ol>
+<p>If you wish to have a critical read on AI/ML from a societal point of view, see <a href="https://www.katecrawford.net/" target="_blank">Kate Crawford's recent text Atlas of AI</a></p>
+
+<b>Here: with AI/ML we intend a collection of machine learning methods with an emphasis on statistical learning and data analysis</b>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="scientific-machine-learning">Scientific Machine Learning </h2>
+
+<p>An important and emerging field is what has been dubbed as scientific ML, see the article by Deiana et al <a href="https://arxiv.org/abs/2110.13041" target="_blank">Applications and Techniques for Fast Machine Learning in Science, arXiv:2110.13041</a></p>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p>The authors discuss applications and techniques for fast machine
+learning (ML) in science &ndash; the concept of integrating power ML
+methods into the real-time experimental data processing loop to
+accelerate scientific discovery. The report covers three main areas
+</p>
+
+<ol>
+<li> applications for fast ML across a number of scientific domains;</li>
+<li> techniques for training and implementing performant and resource-efficient ML algorithms;</li>
+<li> and computing architectures, platforms, and technologies for deploying these algorithms.</li>
+</ol>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="machine-learning-software">Machine Learning software  </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p>Machine learning  is an extremely rich field, in spite of its young age. The
+increases we have seen during the last three decades in computational
+capabilities have been followed by developments of methods and
+techniques for analyzing and handling large date sets, relying heavily
+on statistics, computer science and mathematics.  The field is rather
+new and developing rapidly. 
+</p>
+
+<p>Popular software packages written in Python for ML are</p>
+
+<ul>
+<li> <a href="http://scikit-learn.org/stable/" target="_blank">Scikit-learn</a>,</li> 
+<li> <a href="https://www.tensorflow.org/" target="_blank">Tensorflow</a>,</li>
+<li> <a href="http://pytorch.org/" target="_blank">PyTorch</a></li>
+<li> <a href="https://keras.io/" target="_blank">Keras</a>,</li>
+</ul>
+<p>and more. These are all freely available at their respective GitHub sites. They 
+encompass communities of developers in the thousands or more. And the number
+of code developers and contributors keeps increasing.
+</p>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="lots-of-room-for-creativity">Lots of room for creativity </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p>Not all the
+algorithms and methods can be given a rigorous mathematical
+justification, opening up thereby for experimenting
+and trial and error and thereby exciting new developments. 
+</p>
+</div>
+
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p>A solid command of linear algebra, multivariate theory, 
+probability theory, statistical data analysis, optimization algorithms, 
+understanding errors and Monte Carlo methods is important in order to understand many of the 
+various algorithms and methods. 
+</p>
+</div>
+
+
+<p><b>Job market, a personal statement</b>: <a href="https://www.analyticsindiamag.com/top-countries-hiring-most-number-of-artificial-intelligence-machine-learning-experts/" target="_blank">A familiarity with ML is almost becoming a prerequisite for many of the most exciting employment opportunities</a>. And add quantum computing and there you are!</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="types-of-machine-learning">Types of machine learning </h2>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p>The approaches to machine learning are many, but are often split into two main categories. 
+In <em>supervised learning</em> we know the answer to a problem,
+and let the computer deduce the logic behind it. On the other hand, <em>unsupervised learning</em>
+is a method for finding patterns and relationship in data sets without any prior knowledge of the system.
+Some authours also operate with a third category, namely <em>reinforcement learning</em>. This is a paradigm 
+of learning inspired by behavioural psychology, where learning is achieved by trial-and-error, 
+solely from rewards and punishment.
+</p>
+
+<p>Another way to categorize machine learning tasks is to consider the desired output of a system.
+Some of the most common tasks are:
+</p>
+
+<ul>
+  <li> Classification: Outputs are divided into two or more classes. The goal is to   produce a model that assigns inputs into one of these classes. An example is to identify  digits based on pictures of hand-written ones. Classification is typically supervised learning.</li>
+  <li> Regression: Finding a functional relationship between an input data set and a reference data set.   The goal is to construct a function that maps input data to continuous output values.</li>
+  <li> Clustering: Data are divided into groups with certain common traits, without knowing the different groups beforehand.  It is thus a form of unsupervised learning.</li>
+</ul>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="examples">Examples </h2>
+
+<p>The large amount of degrees of freedom pertain to both theory and experiment in the physical sciences. With increasingly complicated experiments that produce large amounts data, automated classification of events becomes increasingly important. Here, deep learning methods offer a plethora of interesting research avenues. </p>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<ul>
+<li> Reconstruction of particle trajectories or classification of events are typical examples where ML methods are being used. However, since these data can often be extremely noisy, the precision necessary for discovery in physics requires algorithmic improvements. Research along such directions, interfacing nuclear and particle physics with AI/ML is expected to play a significant role in physics discoveries related to new facilities.  The treatment of corrupted data in imaging and image processing is also a relevant topic.</li> 
+<li> Design of detectors represents an important area of applications for ML/AI methods in nuclear physics.</li>
+</ul>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="and-more">And more   </h2>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<ul>
+<li> An important application of AI/ML methods is to improve the estimation of bias or uncertainty due to the introduction of or lack of physical constraints in various theoretical models.</li>
+<li> In theory, we expect to use AI/ML algorithms and methods to improve our knowledge about  correlations of physical model parameters in data for quantum many-body systems. Deep learning methods show great promise in circumventing the exploding dimensionalities encountered in quantum mechanical many-body studies.</li> 
+<li> Merging a frequentist approach (the standard path in ML theory) with a Bayesian approach, has the potential to infer better probabilitity distributions and error estimates. As an example, methods for fast Monte-Carlo- based Bayesian computation of nuclear density functionals show great promise in providing a better understanding</li> 
+<li> Machine Learning and Quantum Computing is a very interesting avenue to explore. See for example talk of <a href="https://www.youtube.com/watch?v=7WPKv1Q57os&list=PLUPPQ1TVXK7uHwCTccWMBud-zLyvAf8A2&index=5&ab_channel=ECTstar" target="_blank">Sofia Vallecorsa</a>.</li>
+</ul>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="selected-references">Selected references </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<ul>
+<li> <a href="https://arxiv.org/abs/1803.08823" target="_blank">Mehta et al.</a> and <a href="https://www.sciencedirect.com/science/article/pii/S0370157319300766?via%3Dihub" target="_blank">Physics Reports (2019)</a>.</li>
+<li> <a href="https://link.aps.org/doi/10.1103/RevModPhys.91.045002" target="_blank">Machine Learning and the Physical Sciences by Carleo et al</a></li>
+<li> <a href="https://www.deeplearningbook.org/" target="_blank">Goodfellow, Bengio and Courville, Deep Learning</a></li>
+<li> <a href="https://databookuw.com/" target="_blank">My favorite book, Brunton and Kutz</a></li>
+<li> <a href="https://mml-book.github.io/book/mml-book.pdf" target="_blank">Mathematics for Machine Learning Book by A. Aldo Faisal, Cheng Soon Ong, and Marc Peter Deisenroth</a></li>
+</ul>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="what-are-the-basic-ingredients">What are the basic ingredients? </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p>Almost every problem in ML and data science starts with the same ingredients:</p>
+<ul>
+<li> The dataset \( \mathbf{x} \) (could be some observable quantity of the system we are studying)</li>
+<li> A model which is a function of a set of parameters \( \mathbf{\alpha} \) that relates to the dataset, say a likelihood  function \( p(\mathbf{x}\vert \mathbf{\alpha}) \) or just a simple model \( f(\mathbf{\alpha}) \)</li>
+<li> A so-called <b>loss/cost/risk</b> function \( \mathcal{C} (\mathbf{x}, f(\mathbf{\alpha})) \) which allows us to decide how well our model represents the dataset.</li> 
+</ul>
+<p>We seek to minimize the function \( \mathcal{C} (\mathbf{x}, f(\mathbf{\alpha})) \) by finding the parameter values which minimize \( \mathcal{C} \). This leads to  various minimization algorithms. It may surprise many, but at the heart of all machine learning algortihms there is an optimization problem. </p>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="quantum-monte-carlo-and-deep-learning">Quantum Monte Carlo and deep learning </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p>Given a hamiltonian \( H \) and a trial wave function \( \Psi_T \), the variational principle states that the expectation value of \( \langle H \rangle \), defined through </p>
+$$
+   \langle E \rangle =
+   \frac{\int d\boldsymbol{R}\Psi^{\ast}_T(\boldsymbol{R})H(\boldsymbol{R})\Psi_T(\boldsymbol{R})}
+        {\int d\boldsymbol{R}\Psi^{\ast}_T(\boldsymbol{R})\Psi_T(\boldsymbol{R})},
+$$
+
+<p>is an upper bound to the ground state energy \( E_0 \) of the hamiltonian \( H \), that is </p>
+$$
+    E_0 \le \langle E \rangle.
+$$
+
+<p>In general, the integrals involved in the calculation of various  expectation values  are multi-dimensional ones. Traditional integration methods such as the Gauss-Legendre will not be adequate for say the  computation of the energy of a many-body system.  <b>Basic philosophy: Let a neural network find the optimal wave function</b></p>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="monte-carlo-methods-and-neural-networks">Monte Carlo methods and Neural Networks </h2>
+
+<p><a href="https://www.sciencedirect.com/science/article/pii/S0370269320305463?via%3Dihub" target="_blank">Machine Learning and the Deuteron by Kebble and Rios</a> and
+<a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.127.022502" target="_blank">Variational Monte Carlo calculations of \( A\le 4 \) nuclei with an artificial neural-network correlator ansatz by Adams et al.</a>
+</p>
+
+<b>Adams et al</b>:
+
+$$
+\begin{align}
+H_{LO} &=-\sum_i \frac{{\vec{\nabla}_i^2}}{2m_N}
++\sum_{i < j} {\left(C_1  + C_2\, \vec{\sigma_i}\cdot\vec{\sigma_j}\right)
+e^{-r_{ij}^2\Lambda^2 / 4 }}
+\nonumber\\
+&+D_0 \sum_{i < j < k} \sum_{\text{cyc}}
+{e^{-\left(r_{ik}^2+r_{ij}^2\right)\Lambda^2/4}}\,,
+\label{_auto1}
+\end{align}
+$$
+
+<p>where \( m_N \) is the mass of the nucleon, \( \vec{\sigma_i} \) is the Pauli
+matrix acting on nucleon \( i \), and \( \sum_{\text{cyc}} \) stands for the
+cyclic permutation of \( i \), \( j \), and \( k \). The low-energy constants
+\( C_1 \) and \( C_2 \) are fit to the deuteron binding energy and to the
+neutron-neutron scattering length
+</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="deep-learning-neural-networks-variational-monte-carlo-calculations-of-a-le-4-nuclei-with-an-artificial-neural-network-correlator-ansatz-by-adams-et-al-https-journals-aps-org-prl-abstract-10-1103-physrevlett-127-022502">Deep learning neural networks, <a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.127.022502" target="_blank">Variational Monte Carlo calculations of \( A\le 4 \) nuclei with an artificial neural-network correlator ansatz by Adams et al.</a> </h2>
+
+<p>An appealing feature of the neural network ansatz is that it is more general than the more conventional product of two-
+and three-body spin-independent Jastrow functions
+</p>
+$$
+\begin{align}
+|\Psi_V^J \rangle = \prod_{i < j < k} \Big( 1-\sum_{\text{cyc}} u(r_{ij}) u(r_{jk})\Big) \prod_{i < j} f(r_{ij}) | \Phi\rangle\,,
+\label{_auto2}
+\end{align}
+$$
+
+<p>which is commonly used for nuclear Hamiltonians that do not contain tensor and spin-orbit terms.
+The above function is replaced by a four-layer Neural Network. 
+</p>
+
+<br/><br/>
+<center>
+<p><img src="figures/energyconvergence.png" width="700" align="bottom"></p>
+</center>
+<br/><br/>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="the-electron-gas-in-three-dimensions-with-n-14-electrons">The electron gas in three dimensions with \( N=14 \) electrons </h2>
+<p>Jane Kim, Bryce Fore, Alessandro Lovato and MHJ, in preparation</p>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<br/><br/>
+<center>
+<p><img src="figures/elgasnew.png" width="700" align="bottom"></p>
+</center>
+<br/><br/>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="extrapolations-and-model-interpretability">Extrapolations and model interpretability  </h2>
+
+<p>When you hear phrases like <b>predictions and estimations</b> and
+<b>correlations and causations</b>, what do you think of?  May be you think
+of the difference between classifying new data points and generating
+new data points.
+Or perhaps you consider that correlations represent some kind of symmetric statements like
+if \( A \) is correlated with \( B \), then \( B \) is correlated with
+\( A \). Causation on the other hand is directional, that is if \( A \) causes \( B \), \( B \) does not
+necessarily cause \( A \).
+</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="physics-based-statistical-learning-and-data-analysis">Physics based statistical learning and data analysis </h2>
+
+<p>The above concepts are in some sense the difference between <b>old-fashioned</b> machine
+learning and statistics and Bayesian learning. In machine learning and prediction based
+tasks, we are often interested in developing algorithms that are
+capable of learning patterns from given data in an automated fashion,
+and then using these learned patterns to make predictions or
+assessments of newly given data. In many cases, our primary concern
+is the quality of the predictions or assessments, and we are less
+concerned about the underlying patterns that were learned in order
+to make these predictions.
+</p>
+
+<p>Physics based statistical learning points however to approaches that give us both predictions and correlations as well as being able to produce error estimates and understand causations.  This leads us to the very interesting field of Bayesian statistics.</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="bayes-theorem">Bayes' Theorem </h2>
+
+<p>Bayes' theorem</p>
+$$
+p(X\vert Y)= \frac{p(X,Y)}{\sum_{i=0}^{n-1}p(Y\vert X=x_i)p(x_i)}=\frac{p(Y\vert X)p(X)}{\sum_{i=0}^{n-1}p(Y\vert X=x_i)p(x_i)}.
+$$
+
+<p>The quantity \( p(Y\vert X) \) on the right-hand side of the theorem is
+evaluated for the observed data \( Y \) and can be viewed as a function of
+the parameter space represented by \( X \). This function is not
+necessarily normalized and is normally called the likelihood function.
+</p>
+
+<p>The function \( p(X) \) on the right hand side is called the prior while the function on the left hand side is the called the posterior probability. The denominator on the right hand side serves as a normalization factor for the posterior distribution.</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="folding-and-unfolding-and-response-functions">Folding and unfolding and response functions </h2>
+
+<p>A good read on folding/unfolding is <a href="https://arxiv.org/abs/hep-ex/0208022" target="_blank">An Unfolding Method for High Energy Physics Experiments by Volker Blobel</a></p>
+
+<p>See notebook details and <a href="https://github.com/adambozson/gp-unfold/blob/master/Falling%20exponential.ipynb" target="_blank">examples of simple data reconstructed with Gaussian processes</a>.</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="quantified-limits-of-the-nuclear-landscape">Quantified limits of the nuclear landscape </h2>
+
+<a href="https://journals.aps.org/prc/abstract/10.1103/PhysRevC.101.044307" target="_blank">Neufcourt et al., Phys. Rev. C 101, 044307 (2020)</a>
+<p>Predictions made with eleven global mass model and Bayesian model averaging</p>
+
+<br/><br/>
+<center>
+<p><img src="figures/landscape.jpg" width="800" align="bottom"></p>
+</center>
+<br/><br/>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="quantum-technologies">Quantum Technologies </h2>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="quantum-engineering">Quantum Engineering </h2>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b>Quantum Computing requirements</b>
+<p>
+<ol>
+<li> be scalable</li>
+<li> have qubits that can be entangled</li>
+<li> have reliable initializations protocols to a standard state</li>
+<li> have a set of universal quantum gates to control the quantum evolution</li>
+<li> have a coherence time much longer than the gate operation time</li>
+<li> have a reliable read-out mechanism for measuring the qubit states</li>
+<li> and many more</li> 
+</ol>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="candidate-systems">Candidate systems </h2>
+<ol>
+<li> Superconducting Josephon junctions</li>
+<li> Single photons</li>
+<li> <a href="https://www.insidequantumtechnology.com/news-archive/ionq-is-first-quantum-startup-to-go-public-will-it-be-first-to-deliver-profits/" target="_blank">Trapped ions and atoms</a></li>
+<li> Nuclear Magnetic Resonance</li>
+<li> <b>Quantum dots, expt at MSU</b></li>
+<li> _Point Defects in semiconductors</li>
+<li> more</li>
+</ol>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="electrons-quantum-dots-on-superfluid-helium">Electrons (quantum dots) on superfluid helium </h2>
+
+<p>Electrons on <a href="https://www.youtube.com/watch?v=EuDuM-fe-lA&ab_channel=JoshuahHeath" target="_blank">superfluid helium represent</a> a promising platform for investigating
+strongly-coupled qubits.
+</p>
+
+<p>Therefore a systematic investigation of the
+controlled generation of entanglement between two trapped electrons
+under the influence of coherent microwave driving pulses, taking into
+account the effects of the Coulomb interaction between electrons, is
+of significant importance for quantum information processing using
+trapped electrons.
+</p>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<ol>
+<li> Time-Dependent full configuration interaction theory</li>
+<li> Time-dependent Coupled-Cluster theory</li>
+<li> Designing quantum circuits</li>
+</ol>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="education-at-undergraduate-level-and-more">Education at undergraduate level and more </h2>
+
+<ol>
+<li> Build up a series of courses in QIS, inspiration <a href="https://qusteam.org/" target="_blank">QuSTEAM (Quantum Information Science, Technology, Engineering, Arts and Mathematics) initiative</a></li>
+<li> Minor in Computational Physics and Quantum Science/Technologies?
+<ol type="a"></li>
+ <li> study direction/option in <b>quantum technologies/science</b></li>
+ <li> study direction/option in <b>Artificial Intelligence and Machine Learning</b></li>
+</ol>
+<li> PhD and/or Master program
+<ol type="a"></li>
+ <li> with directions in <b>quantum technologies</b></li>
+ <li> with directions in <b>Artificial Intelligence and Machine Learning</b></li>
+</ol>
+</ol>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="qusteam-model">QuSTEAM Model </h2>
+
+<br/><br/>
+<center>
+<p><img src="figures/qusteam.png" width="800" align="bottom"></p>
+</center>
+<br/><br/>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="courses-prototype">Courses, Prototype </h2>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b>Topics  in a Bachelor of Science/Master of Science</b>
+<p>
+<ol>
+<li> Information Systems</li> 
+<li> From Classical Information theory to Quantum Information theory</li>
+<li> Classical vs. Quantum Logic</li>
+<li> Classical and Quantum Laboratory</li> 
+<li> Discipline-Based Quantum Mechanics</li> 
+<li> Quantum Software</li>
+<li> Quantum Hardware</li>
+<li> more</li>
+</ol>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="important-issues-to-think-of">Important Issues to think of </h2>
+<ol>
+<li> Lots of conceptual learning: superposition, entanglement, QIS applications, etc.</li>
+<li> Coding is indispensable.</li> 
+<li> Teamwork, project management, and communication are important and highly valued</li>
+<li> Engagement with industry: guest lectures, virtual tours, co-ops, and/or internships.</li>
+<li> Diversity needs to be a priority</li>
+<li> Mentorship should begin the moment students enroll.</li>
+</ol>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="observations">Observations </h2>
+
+<ol>
+<li> Students (not only students)  do not really know what QIS is.</li> 
+<li> There is conflation of &#8220;Quantum Information Science&#8221; with &#8220;Quantum computing&#8221;.</li>
+<li> Students perceive that a graduate degree is necessary to work in QIS. A BSc will help.</li>
+</ol>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="future-needs-problems">Future Needs/Problems </h2>
+
+<ol>
+<li> There are already (USA) great needs for specialized people (Ph. D. s, postdocs), but also needs of  people with a broad overview of what is possible in QIS.</li>
+<li> There are not enough potential employees in QIS (USA). It is a supply gap, not a skills gap.</li>
+<li> A BSc with specialization  is a good place to start</li>
+<li> It is tremendously important to get everyone speaking the same language. Facility with the vernacular of quantum mechanics is a big plus.</li>
+<li> There is a huge list of areas where technical expertise may be important. But employers are often more concerned with attributes like project management, working well in a team, interest in the field, and adaptability than in specific technical skills.</li>
+</ol>
+<!-- ------------------- end of main content --------------- -->
+</body>
+</html>
+
