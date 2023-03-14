@@ -376,5 +376,18 @@ DATE: today
 
 
 
+===== Physics Society MSU, March 13, 2023 =====
+
+
+
+ * HTML:
+   * "Plain html style": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/MSUphysics/html/MSUphysics.html"
+   * "reveal.js beige slide style": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/MSUphysics/html/MSUphysics-reveal.html"
+   * "Bootstrap style": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/MSUphysics/html/MSUphysics-bs.html"
+ * iPython notebook:
+   * "ipynb file": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/MSUphysics/ipynb/MSUphysics.ipynb"
+
+
+
 
 
