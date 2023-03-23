@@ -1,0 +1,483 @@
+<!--
+HTML file automatically generated from DocOnce source
+(https://github.com/doconce/doconce/)
+doconce format html NPtastes11.do.txt --html_style=bootstrap --pygments_html_style=default --html_admon=bootstrap_panel --html_output=NPtastes11-bs --no_mako
+-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="DocOnce: https://github.com/doconce/doconce/" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Machine Learning in Physics">
+<title>Machine Learning in Physics</title>
+<!-- Bootstrap style: bootstrap -->
+<!-- doconce format html NPtastes11.do.txt --html_style=bootstrap --pygments_html_style=default --html_admon=bootstrap_panel --html_output=NPtastes11-bs --no_mako -->
+<link href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+<!-- not necessary
+<link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+-->
+<style type="text/css">
+/* Add scrollbar to dropdown menus in bootstrap navigation bar */
+.dropdown-menu {
+   height: auto;
+   max-height: 400px;
+   overflow-x: hidden;
+}
+/* Adds an invisible element before each target to offset for the navigation
+   bar */
+.anchor::before {
+  content:"";
+  display:block;
+  height:50px;      /* fixed header height for style bootstrap */
+  margin:-50px 0 0; /* negative fixed header height */
+}
+</style>
+</head>
+
+<!-- tocinfo
+{'highest level': 2,
+ 'sections': [('What is this talk about?', 2, None, 'what-is-this-talk-about'),
+              ('Many to thank', 2, None, 'many-to-thank'),
+              ('A simple perspective on the interface between ML and Physics',
+               2,
+               None,
+               'a-simple-perspective-on-the-interface-between-ml-and-physics'),
+              ('ML in Nuclear  Physics', 2, None, 'ml-in-nuclear-physics'),
+              ('AI/ML and some statements you may have heard',
+               2,
+               None,
+               'ai-ml-and-some-statements-you-may-have-heard'),
+              ('Scientific Machine Learning',
+               2,
+               None,
+               'scientific-machine-learning'),
+              ('Physics driven Machine Learning',
+               2,
+               None,
+               'physics-driven-machine-learning'),
+              ('Machine Learning and Physics',
+               2,
+               None,
+               'machine-learning-and-physics'),
+              ('Lots of room for creativity',
+               2,
+               None,
+               'lots-of-room-for-creativity'),
+              ('Types of machine learning',
+               2,
+               None,
+               'types-of-machine-learning'),
+              ('The plethora  of machine learning algorithms/methods',
+               2,
+               None,
+               'the-plethora-of-machine-learning-algorithms-methods'),
+              ('Examples of applications of ML in physics',
+               2,
+               None,
+               'examples-of-applications-of-ml-in-physics'),
+              ('And more', 2, None, 'and-more'),
+              ('Selected references', 2, None, 'selected-references'),
+              ('What are the basic ingredients?',
+               2,
+               None,
+               'what-are-the-basic-ingredients'),
+              ('"Unsupervised learning in nuclear physics, Argon-46 by Solli, '
+               'Bazin, Kuchera, MHJ, Strauss, NIMA 1010, 165461 '
+               '(2020)":"https://www.sciencedirect.com/science/article/abs/pii/S0168900221004460?via%3Dihub"',
+               2,
+               None,
+               'unsupervised-learning-in-nuclear-physics-argon-46-by-solli-bazin-kuchera-mhj-strauss-nima-1010-165461-2020-https-www-sciencedirect-com-science-article-abs-pii-s0168900221004460-via-3dihub'),
+              ('Quantum Monte Carlo and deep learning',
+               2,
+               None,
+               'quantum-monte-carlo-and-deep-learning'),
+              ('Monte Carlo methods and Neural Networks',
+               2,
+               None,
+               'monte-carlo-methods-and-neural-networks'),
+              ('Deep learning neural networks, "Variational Monte Carlo '
+               'calculations of $A\\le 4$ nuclei with an artificial '
+               'neural-network correlator ansatz by Adams et '
+               'al.":"https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.127.022502"',
+               2,
+               None,
+               'deep-learning-neural-networks-variational-monte-carlo-calculations-of-a-le-4-nuclei-with-an-artificial-neural-network-correlator-ansatz-by-adams-et-al-https-journals-aps-org-prl-abstract-10-1103-physrevlett-127-022502'),
+              ('"Gnech et al, Variational Monte Carlo calculations of $A\\le '
+               '6$ nuclei Few Body Systems 63, '
+               '(2022)":"https://link.springer.com/article/10.1007/s00601-021-01706-0"',
+               2,
+               None,
+               'gnech-et-al-variational-monte-carlo-calculations-of-a-le-6-nuclei-few-body-systems-63-2022-https-link-springer-com-article-10-1007-s00601-021-01706-0'),
+              ('Neutron matter with $N=14$ neutron',
+               2,
+               None,
+               'neutron-matter-with-n-14-neutron'),
+              ('The electron gas in three dimensions with $N=14$ electrons '
+               '(Wigner-Seitz radius $r_s=4$ Ry)',
+               2,
+               None,
+               'the-electron-gas-in-three-dimensions-with-n-14-electrons-wigner-seitz-radius-r-s-4-ry'),
+              ('Extrapolations and model interpretability',
+               2,
+               None,
+               'extrapolations-and-model-interpretability'),
+              ('Physics based statistical learning and data analysis',
+               2,
+               None,
+               'physics-based-statistical-learning-and-data-analysis'),
+              ("Bayes' Theorem", 2, None, 'bayes-theorem'),
+              ('Quantified limits of the nuclear landscape',
+               2,
+               None,
+               'quantified-limits-of-the-nuclear-landscape'),
+              ('Constraining the equation of state for dense nuclear matter',
+               2,
+               None,
+               'constraining-the-equation-of-state-for-dense-nuclear-matter'),
+              ('Observations (or conclusions if you prefer)',
+               2,
+               None,
+               'observations-or-conclusions-if-you-prefer'),
+              ('Possible start to raise awareness about ML in your own field',
+               2,
+               None,
+               'possible-start-to-raise-awareness-about-ml-in-your-own-field'),
+              ('Education', 2, None, 'education'),
+              ('QuSTEAM Model', 2, None, 'qusteam-model'),
+              ('Possible courses', 2, None, 'possible-courses'),
+              ('Important Issues to think of',
+               2,
+               None,
+               'important-issues-to-think-of'),
+              ('Observations', 2, None, 'observations'),
+              ('Future Needs/Problems', 2, None, 'future-needs-problems'),
+              ('Additional material', 2, None, 'additional-material'),
+              ('Examples of Machine Learning methods and applications in '
+               'nuclear physics',
+               2,
+               None,
+               'examples-of-machine-learning-methods-and-applications-in-nuclear-physics'),
+              ('Machine learning and nuclear theory: Why?',
+               2,
+               None,
+               'machine-learning-and-nuclear-theory-why'),
+              ('Examples of Machine Learning methods and applications in '
+               'nuclear physics, continues',
+               2,
+               None,
+               'examples-of-machine-learning-methods-and-applications-in-nuclear-physics-continues'),
+              ('Addendum: Quantum Monte Carlo Motivation',
+               2,
+               None,
+               'addendum-quantum-monte-carlo-motivation'),
+              ('Quantum Monte Carlo Motivation',
+               2,
+               None,
+               'quantum-monte-carlo-motivation'),
+              ('Quantum Monte Carlo Motivation',
+               2,
+               None,
+               'quantum-monte-carlo-motivation'),
+              ('The trial wave function', 2, None, 'the-trial-wave-function'),
+              ('The correlation part of the wave function',
+               2,
+               None,
+               'the-correlation-part-of-the-wave-function'),
+              ('Resulting ansatz', 2, None, 'resulting-ansatz'),
+              ('Energy derivatives', 2, None, 'energy-derivatives'),
+              ('Derivatives of the local energy',
+               2,
+               None,
+               'derivatives-of-the-local-energy'),
+              ('How do we define our cost function?',
+               2,
+               None,
+               'how-do-we-define-our-cost-function'),
+              ('Meet the variance and its derivatives',
+               2,
+               None,
+               'meet-the-variance-and-its-derivatives'),
+              ('The variance defines the cost function',
+               2,
+               None,
+               'the-variance-defines-the-cost-function'),
+              ('Why Boltzmann machines?', 2, None, 'why-boltzmann-machines'),
+              ('A standard BM setup', 2, None, 'a-standard-bm-setup'),
+              ('The structure of the RBM network',
+               2,
+               None,
+               'the-structure-of-the-rbm-network'),
+              ('The network', 2, None, 'the-network'),
+              ('Joint distribution', 2, None, 'joint-distribution'),
+              ('Defining different types of RBMs',
+               2,
+               None,
+               'defining-different-types-of-rbms'),
+              ('Representing the wave function',
+               2,
+               None,
+               'representing-the-wave-function'),
+              ('Choose the cost/loss function',
+               2,
+               None,
+               'choose-the-cost-loss-function'),
+              ('Electrons in a harmonic oscillator trap in two dimensions',
+               2,
+               None,
+               'electrons-in-a-harmonic-oscillator-trap-in-two-dimensions'),
+              ('Quantum dots and Boltzmann machines, onebody densities $N=6$, '
+               '$\\hbar\\omega=0.1$ a.u.',
+               2,
+               None,
+               'quantum-dots-and-boltzmann-machines-onebody-densities-n-6-hbar-omega-0-1-a-u'),
+              ('Onebody densities $N=30$, $\\hbar\\omega=1.0$ a.u.',
+               2,
+               None,
+               'onebody-densities-n-30-hbar-omega-1-0-a-u'),
+              ('Onebody densities $N=30$, $\\hbar\\omega=0.1$ a.u.',
+               2,
+               None,
+               'onebody-densities-n-30-hbar-omega-0-1-a-u'),
+              ('Neutron matter with $N=14$ neutron',
+               2,
+               None,
+               'neutron-matter-with-n-14-neutron'),
+              ('Neutron matter with $N=14$ neutron',
+               2,
+               None,
+               'neutron-matter-with-n-14-neutron'),
+              ('Neutron matter with $N=14$ neutron',
+               2,
+               None,
+               'neutron-matter-with-n-14-neutron'),
+              ('The electron gas in three dimensions with $N=14$ electrons '
+               '(Various Wigner-Seitz  Radii)',
+               2,
+               None,
+               'the-electron-gas-in-three-dimensions-with-n-14-electrons-various-wigner-seitz-radii'),
+              ('The electron gas in three dimensions with $N=14$ electrons '
+               '(Various Wigner-Seitz  Radii)',
+               2,
+               None,
+               'the-electron-gas-in-three-dimensions-with-n-14-electrons-various-wigner-seitz-radii'),
+              ('The electron gas in three dimensions with $N=14$ electrons '
+               '(Various Wigner-Seitz  Radii)',
+               2,
+               None,
+               'the-electron-gas-in-three-dimensions-with-n-14-electrons-various-wigner-seitz-radii'),
+              ('The electron gas in three dimensions with $N=14$ electrons '
+               '(Various Wigner-Seitz  Radii)',
+               2,
+               None,
+               'the-electron-gas-in-three-dimensions-with-n-14-electrons-various-wigner-seitz-radii'),
+              ('The electron gas in three dimensions with $N=14$ electrons '
+               '(Various Wigner-Seitz  Radii)',
+               2,
+               None,
+               'the-electron-gas-in-three-dimensions-with-n-14-electrons-various-wigner-seitz-radii'),
+              ('The electron gas in three dimensions with $N=14$ electrons '
+               '(Various Wigner-Seitz  Radii)',
+               2,
+               None,
+               'the-electron-gas-in-three-dimensions-with-n-14-electrons-various-wigner-seitz-radii'),
+              ('The electron gas in three dimensions with $N=14$ electrons '
+               '(Various Wigner-Seitz  Radii)',
+               2,
+               None,
+               'the-electron-gas-in-three-dimensions-with-n-14-electrons-various-wigner-seitz-radii'),
+              ('The electron gas in three dimensions with $N=14$ electrons '
+               '(Various Wigner-Seitz  Radii)',
+               2,
+               None,
+               'the-electron-gas-in-three-dimensions-with-n-14-electrons-various-wigner-seitz-radii'),
+              ('Neutron matter with $N=14$ neutron',
+               2,
+               None,
+               'neutron-matter-with-n-14-neutron'),
+              ('Folding and unfolding and response functions',
+               2,
+               None,
+               'folding-and-unfolding-and-response-functions'),
+              ('Experimental design', 2, None, 'experimental-design')]}
+end of tocinfo -->
+
+<body>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+     equationNumbers: {  autoNumber: "none"  },
+     extensions: ["AMSmath.js", "AMSsymbols.js", "autobold.js", "color.js"]
+  }
+});
+</script>
+<script type="text/javascript" async
+ src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<!-- Bootstrap navigation bar -->
+<div class="navbar navbar-default navbar-fixed-top">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="NPtastes11-bs.html">Machine Learning in Physics</a>
+  </div>
+  <div class="navbar-collapse collapse navbar-responsive-collapse">
+    <ul class="nav navbar-nav navbar-right">
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Contents <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+     <!-- navigation toc: --> <li><a href="._NPtastes11-bs001.html#what-is-this-talk-about" style="font-size: 80%;">What is this talk about?</a></li>
+     <!-- navigation toc: --> <li><a href="._NPtastes11-bs002.html#many-to-thank" style="font-size: 80%;">Many to thank</a></li>
+     <!-- navigation toc: --> <li><a href="._NPtastes11-bs003.html#a-simple-perspective-on-the-interface-between-ml-and-physics" style="font-size: 80%;">A simple perspective on the interface between ML and Physics</a></li>
+     <!-- navigation toc: --> <li><a href="._NPtastes11-bs004.html#ml-in-nuclear-physics" style="font-size: 80%;">ML in Nuclear  Physics</a></li>
+     <!-- navigation toc: --> <li><a href="._NPtastes11-bs005.html#ai-ml-and-some-statements-you-may-have-heard" style="font-size: 80%;">AI/ML and some statements you may have heard</a></li>
+     <!-- navigation toc: --> <li><a href="._NPtastes11-bs006.html#scientific-machine-learning" style="font-size: 80%;">Scientific Machine Learning</a></li>
+     <!-- navigation toc: --> <li><a href="._NPtastes11-bs007.html#physics-driven-machine-learning" style="font-size: 80%;">Physics driven Machine Learning</a></li>
+     <!-- navigation toc: --> <li><a href="._NPtastes11-bs008.html#machine-learning-and-physics" style="font-size: 80%;">Machine Learning and Physics</a></li>
+     <!-- navigation toc: --> <li><a href="._NPtastes11-bs009.html#lots-of-room-for-creativity" style="font-size: 80%;">Lots of room for creativity</a></li>
+     <!-- navigation toc: --> <li><a href="._NPtastes11-bs010.html#types-of-machine-learning" style="font-size: 80%;">Types of machine learning</a></li>
+     <!-- navigation toc: --> <li><a href="._NPtastes11-bs011.html#the-plethora-of-machine-learning-algorithms-methods" style="font-size: 80%;">The plethora  of machine learning algorithms/methods</a></li>
+     <!-- navigation toc: --> <li><a href="#examples-of-applications-of-ml-in-physics" style="font-size: 80%;">Examples of applications of ML in physics</a></li>
+     <!-- navigation toc: --> <li><a href="._NPtastes11-bs013.html#and-more" style="font-size: 80%;">And more</a></li>
+     <!-- navigation toc: --> <li><a href="._NPtastes11-bs014.html#selected-references" style="font-size: 80%;">Selected references</a></li>
+     <!-- navigation toc: --> <li><a href="._NPtastes11-bs015.html#what-are-the-basic-ingredients" style="font-size: 80%;">What are the basic ingredients?</a></li>
+     <!-- navigation toc: --> <li><a href="._NPtastes11-bs016.html#unsupervised-learning-in-nuclear-physics-argon-46-by-solli-bazin-kuchera-mhj-strauss-nima-1010-165461-2020-https-www-sciencedirect-com-science-article-abs-pii-s0168900221004460-via-3dihub" style="font-size: 80%;">"Unsupervised learning in nuclear physics, Argon-46 by Solli, Bazin, Kuchera, MHJ, Strauss, NIMA 1010, 165461 (2020)":"https://www.sciencedirect.com/science/article/abs/pii/S0168900221004460?via%3Dihub"</a></li>
+     <!-- navigation toc: --> <li><a href="._NPtastes11-bs017.html#quantum-monte-carlo-and-deep-learning" style="font-size: 80%;">Quantum Monte Carlo and deep learning</a></li>
+     <!-- navigation toc: --> <li><a href="._NPtastes11-bs018.html#monte-carlo-methods-and-neural-networks" style="font-size: 80%;">Monte Carlo methods and Neural Networks</a></li>
+     <!-- navigation toc: --> <li><a href="._NPtastes11-bs019.html#deep-learning-neural-networks-variational-monte-carlo-calculations-of-a-le-4-nuclei-with-an-artificial-neural-network-correlator-ansatz-by-adams-et-al-https-journals-aps-org-prl-abstract-10-1103-physrevlett-127-022502" style="font-size: 80%;">Deep learning neural networks, "Variational Monte Carlo calculations of \( A\le 4 \) nuclei with an artificial neural-network correlator ansatz by Adams et al.":"https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.127.022502"</a></li>
+     <!-- navigation toc: --> <li><a href="._NPtastes11-bs020.html#gnech-et-al-variational-monte-carlo-calculations-of-a-le-6-nuclei-few-body-systems-63-2022-https-link-springer-com-article-10-1007-s00601-021-01706-0" style="font-size: 80%;">"Gnech et al, Variational Monte Carlo calculations of \( A\le 6 \) nuclei Few Body Systems 63, (2022)":"https://link.springer.com/article/10.1007/s00601-021-01706-0"</a></li>
+     <!-- navigation toc: --> <li><a href="._NPtastes11-bs074.html#neutron-matter-with-n-14-neutron" style="font-size: 80%;">Neutron matter with \( N=14 \) neutron</a></li>
+     <!-- navigation toc: --> <li><a href="._NPtastes11-bs022.html#the-electron-gas-in-three-dimensions-with-n-14-electrons-wigner-seitz-radius-r-s-4-ry" style="font-size: 80%;">The electron gas in three dimensions with \( N=14 \) electrons (Wigner-Seitz radius \( r_s=4 \) Ry)</a></li>
+     <!-- navigation toc: --> <li><a href="._NPtastes11-bs023.html#extrapolations-and-model-interpretability" style="font-size: 80%;">Extrapolations and model interpretability</a></li>
+     <!-- navigation toc: --> <li><a href="._NPtastes11-bs024.html#physics-based-statistical-learning-and-data-analysis" style="font-size: 80%;">Physics based statistical learning and data analysis</a></li>
+     <!-- navigation toc: --> <li><a href="._NPtastes11-bs025.html#bayes-theorem" style="font-size: 80%;">Bayes' Theorem</a></li>
+     <!-- navigation toc: --> <li><a href="._NPtastes11-bs026.html#quantified-limits-of-the-nuclear-landscape" style="font-size: 80%;">Quantified limits of the nuclear landscape</a></li>
+     <!-- navigation toc: --> <li><a href="._NPtastes11-bs027.html#constraining-the-equation-of-state-for-dense-nuclear-matter" style="font-size: 80%;">Constraining the equation of state for dense nuclear matter</a></li>
+     <!-- navigation toc: --> <li><a href="._NPtastes11-bs028.html#observations-or-conclusions-if-you-prefer" style="font-size: 80%;">Observations (or conclusions if you prefer)</a></li>
+     <!-- navigation toc: --> <li><a href="._NPtastes11-bs029.html#possible-start-to-raise-awareness-about-ml-in-your-own-field" style="font-size: 80%;">Possible start to raise awareness about ML in your own field</a></li>
+     <!-- navigation toc: --> <li><a href="._NPtastes11-bs030.html#education" style="font-size: 80%;">Education</a></li>
+     <!-- navigation toc: --> <li><a href="._NPtastes11-bs031.html#qusteam-model" style="font-size: 80%;">QuSTEAM Model</a></li>
+     <!-- navigation toc: --> <li><a href="._NPtastes11-bs032.html#possible-courses" style="font-size: 80%;">Possible courses</a></li>
+     <!-- navigation toc: --> <li><a href="._NPtastes11-bs033.html#important-issues-to-think-of" style="font-size: 80%;">Important Issues to think of</a></li>
+     <!-- navigation toc: --> <li><a href="._NPtastes11-bs034.html#observations" style="font-size: 80%;">Observations</a></li>
+     <!-- navigation toc: --> <li><a href="._NPtastes11-bs035.html#future-needs-problems" style="font-size: 80%;">Future Needs/Problems</a></li>
+     <!-- navigation toc: --> <li><a href="._NPtastes11-bs036.html#additional-material" style="font-size: 80%;">Additional material</a></li>
+     <!-- navigation toc: --> <li><a href="._NPtastes11-bs037.html#examples-of-machine-learning-methods-and-applications-in-nuclear-physics" style="font-size: 80%;">Examples of Machine Learning methods and applications in nuclear physics</a></li>
+     <!-- navigation toc: --> <li><a href="._NPtastes11-bs038.html#machine-learning-and-nuclear-theory-why" style="font-size: 80%;">Machine learning and nuclear theory: Why?</a></li>
+     <!-- navigation toc: --> <li><a href="._NPtastes11-bs039.html#examples-of-machine-learning-methods-and-applications-in-nuclear-physics-continues" style="font-size: 80%;">Examples of Machine Learning methods and applications in nuclear physics, continues</a></li>
+     <!-- navigation toc: --> <li><a href="._NPtastes11-bs040.html#addendum-quantum-monte-carlo-motivation" style="font-size: 80%;">Addendum: Quantum Monte Carlo Motivation</a></li>
+     <!-- navigation toc: --> <li><a href="._NPtastes11-bs042.html#quantum-monte-carlo-motivation" style="font-size: 80%;">Quantum Monte Carlo Motivation</a></li>
+     <!-- navigation toc: --> <li><a href="._NPtastes11-bs042.html#quantum-monte-carlo-motivation" style="font-size: 80%;">Quantum Monte Carlo Motivation</a></li>
+     <!-- navigation toc: --> <li><a href="._NPtastes11-bs043.html#the-trial-wave-function" style="font-size: 80%;">The trial wave function</a></li>
+     <!-- navigation toc: --> <li><a href="._NPtastes11-bs044.html#the-correlation-part-of-the-wave-function" style="font-size: 80%;">The correlation part of the wave function</a></li>
+     <!-- navigation toc: --> <li><a href="._NPtastes11-bs045.html#resulting-ansatz" style="font-size: 80%;">Resulting ansatz</a></li>
+     <!-- navigation toc: --> <li><a href="._NPtastes11-bs046.html#energy-derivatives" style="font-size: 80%;">Energy derivatives</a></li>
+     <!-- navigation toc: --> <li><a href="._NPtastes11-bs047.html#derivatives-of-the-local-energy" style="font-size: 80%;">Derivatives of the local energy</a></li>
+     <!-- navigation toc: --> <li><a href="._NPtastes11-bs048.html#how-do-we-define-our-cost-function" style="font-size: 80%;">How do we define our cost function?</a></li>
+     <!-- navigation toc: --> <li><a href="._NPtastes11-bs049.html#meet-the-variance-and-its-derivatives" style="font-size: 80%;">Meet the variance and its derivatives</a></li>
+     <!-- navigation toc: --> <li><a href="._NPtastes11-bs050.html#the-variance-defines-the-cost-function" style="font-size: 80%;">The variance defines the cost function</a></li>
+     <!-- navigation toc: --> <li><a href="._NPtastes11-bs051.html#why-boltzmann-machines" style="font-size: 80%;">Why Boltzmann machines?</a></li>
+     <!-- navigation toc: --> <li><a href="._NPtastes11-bs052.html#a-standard-bm-setup" style="font-size: 80%;">A standard BM setup</a></li>
+     <!-- navigation toc: --> <li><a href="._NPtastes11-bs053.html#the-structure-of-the-rbm-network" style="font-size: 80%;">The structure of the RBM network</a></li>
+     <!-- navigation toc: --> <li><a href="._NPtastes11-bs054.html#the-network" style="font-size: 80%;">The network</a></li>
+     <!-- navigation toc: --> <li><a href="._NPtastes11-bs055.html#joint-distribution" style="font-size: 80%;">Joint distribution</a></li>
+     <!-- navigation toc: --> <li><a href="._NPtastes11-bs056.html#defining-different-types-of-rbms" style="font-size: 80%;">Defining different types of RBMs</a></li>
+     <!-- navigation toc: --> <li><a href="._NPtastes11-bs057.html#representing-the-wave-function" style="font-size: 80%;">Representing the wave function</a></li>
+     <!-- navigation toc: --> <li><a href="._NPtastes11-bs058.html#choose-the-cost-loss-function" style="font-size: 80%;">Choose the cost/loss function</a></li>
+     <!-- navigation toc: --> <li><a href="._NPtastes11-bs059.html#electrons-in-a-harmonic-oscillator-trap-in-two-dimensions" style="font-size: 80%;">Electrons in a harmonic oscillator trap in two dimensions</a></li>
+     <!-- navigation toc: --> <li><a href="._NPtastes11-bs060.html#quantum-dots-and-boltzmann-machines-onebody-densities-n-6-hbar-omega-0-1-a-u" style="font-size: 80%;">Quantum dots and Boltzmann machines, onebody densities \( N=6 \), \( \hbar\omega=0.1 \) a.u.</a></li>
+     <!-- navigation toc: --> <li><a href="._NPtastes11-bs061.html#onebody-densities-n-30-hbar-omega-1-0-a-u" style="font-size: 80%;">Onebody densities \( N=30 \), \( \hbar\omega=1.0 \) a.u.</a></li>
+     <!-- navigation toc: --> <li><a href="._NPtastes11-bs062.html#onebody-densities-n-30-hbar-omega-0-1-a-u" style="font-size: 80%;">Onebody densities \( N=30 \), \( \hbar\omega=0.1 \) a.u.</a></li>
+     <!-- navigation toc: --> <li><a href="._NPtastes11-bs074.html#neutron-matter-with-n-14-neutron" style="font-size: 80%;">Neutron matter with \( N=14 \) neutron</a></li>
+     <!-- navigation toc: --> <li><a href="._NPtastes11-bs074.html#neutron-matter-with-n-14-neutron" style="font-size: 80%;">Neutron matter with \( N=14 \) neutron</a></li>
+     <!-- navigation toc: --> <li><a href="._NPtastes11-bs074.html#neutron-matter-with-n-14-neutron" style="font-size: 80%;">Neutron matter with \( N=14 \) neutron</a></li>
+     <!-- navigation toc: --> <li><a href="._NPtastes11-bs073.html#the-electron-gas-in-three-dimensions-with-n-14-electrons-various-wigner-seitz-radii" style="font-size: 80%;">The electron gas in three dimensions with \( N=14 \) electrons (Various Wigner-Seitz  Radii)</a></li>
+     <!-- navigation toc: --> <li><a href="._NPtastes11-bs073.html#the-electron-gas-in-three-dimensions-with-n-14-electrons-various-wigner-seitz-radii" style="font-size: 80%;">The electron gas in three dimensions with \( N=14 \) electrons (Various Wigner-Seitz  Radii)</a></li>
+     <!-- navigation toc: --> <li><a href="._NPtastes11-bs073.html#the-electron-gas-in-three-dimensions-with-n-14-electrons-various-wigner-seitz-radii" style="font-size: 80%;">The electron gas in three dimensions with \( N=14 \) electrons (Various Wigner-Seitz  Radii)</a></li>
+     <!-- navigation toc: --> <li><a href="._NPtastes11-bs073.html#the-electron-gas-in-three-dimensions-with-n-14-electrons-various-wigner-seitz-radii" style="font-size: 80%;">The electron gas in three dimensions with \( N=14 \) electrons (Various Wigner-Seitz  Radii)</a></li>
+     <!-- navigation toc: --> <li><a href="._NPtastes11-bs073.html#the-electron-gas-in-three-dimensions-with-n-14-electrons-various-wigner-seitz-radii" style="font-size: 80%;">The electron gas in three dimensions with \( N=14 \) electrons (Various Wigner-Seitz  Radii)</a></li>
+     <!-- navigation toc: --> <li><a href="._NPtastes11-bs073.html#the-electron-gas-in-three-dimensions-with-n-14-electrons-various-wigner-seitz-radii" style="font-size: 80%;">The electron gas in three dimensions with \( N=14 \) electrons (Various Wigner-Seitz  Radii)</a></li>
+     <!-- navigation toc: --> <li><a href="._NPtastes11-bs073.html#the-electron-gas-in-three-dimensions-with-n-14-electrons-various-wigner-seitz-radii" style="font-size: 80%;">The electron gas in three dimensions with \( N=14 \) electrons (Various Wigner-Seitz  Radii)</a></li>
+     <!-- navigation toc: --> <li><a href="._NPtastes11-bs073.html#the-electron-gas-in-three-dimensions-with-n-14-electrons-various-wigner-seitz-radii" style="font-size: 80%;">The electron gas in three dimensions with \( N=14 \) electrons (Various Wigner-Seitz  Radii)</a></li>
+     <!-- navigation toc: --> <li><a href="._NPtastes11-bs074.html#neutron-matter-with-n-14-neutron" style="font-size: 80%;">Neutron matter with \( N=14 \) neutron</a></li>
+     <!-- navigation toc: --> <li><a href="._NPtastes11-bs075.html#folding-and-unfolding-and-response-functions" style="font-size: 80%;">Folding and unfolding and response functions</a></li>
+     <!-- navigation toc: --> <li><a href="._NPtastes11-bs076.html#experimental-design" style="font-size: 80%;">Experimental design</a></li>
+
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
+</div> <!-- end of navigation bar -->
+<div class="container">
+<p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p> <!-- add vertical space -->
+<a name="part0012"></a>
+<!-- !split -->
+<h2 id="examples-of-applications-of-ml-in-physics" class="anchor">Examples of applications of ML in physics </h2>
+
+<p>The large amount of degrees of freedom pertain to both theory and
+experiment in physics. With increasingly complicated
+experiments that produce large amounts data, automated classification
+of events becomes increasingly important. Here, deep learning methods
+offer a plethora of interesting research avenues.
+</p>
+
+<div class="panel panel-default">
+<div class="panel-body">
+<!-- subsequent paragraphs come in larger fonts, so start with a paragraph -->
+<ul>
+<li> Reconstruction of particle trajectories or classification of events are typical examples where ML methods are being used. However, since these data can often be extremely noisy, the precision necessary for discovery in physics requires algorithmic improvements. Research along such directions, interfacing nuclear physics with AI/ML is expected to play a significant role in physics discoveries related to new facilities.  The treatment of corrupted data in imaging and image processing is also a relevant topic.</li> 
+<li> Design of detectors represents an important area of applications for ML/AI methods in subatomic physics.</li>
+</ul>
+</div>
+</div>
+
+
+<p>
+<!-- navigation buttons at the bottom of the page -->
+<ul class="pagination">
+<li><a href="._NPtastes11-bs011.html">&laquo;</a></li>
+  <li><a href="._NPtastes11-bs000.html">1</a></li>
+  <li><a href="">...</a></li>
+  <li><a href="._NPtastes11-bs004.html">5</a></li>
+  <li><a href="._NPtastes11-bs005.html">6</a></li>
+  <li><a href="._NPtastes11-bs006.html">7</a></li>
+  <li><a href="._NPtastes11-bs007.html">8</a></li>
+  <li><a href="._NPtastes11-bs008.html">9</a></li>
+  <li><a href="._NPtastes11-bs009.html">10</a></li>
+  <li><a href="._NPtastes11-bs010.html">11</a></li>
+  <li><a href="._NPtastes11-bs011.html">12</a></li>
+  <li class="active"><a href="._NPtastes11-bs012.html">13</a></li>
+  <li><a href="._NPtastes11-bs013.html">14</a></li>
+  <li><a href="._NPtastes11-bs014.html">15</a></li>
+  <li><a href="._NPtastes11-bs015.html">16</a></li>
+  <li><a href="._NPtastes11-bs016.html">17</a></li>
+  <li><a href="._NPtastes11-bs017.html">18</a></li>
+  <li><a href="._NPtastes11-bs018.html">19</a></li>
+  <li><a href="._NPtastes11-bs019.html">20</a></li>
+  <li><a href="._NPtastes11-bs020.html">21</a></li>
+  <li><a href="._NPtastes11-bs021.html">22</a></li>
+  <li><a href="">...</a></li>
+  <li><a href="._NPtastes11-bs076.html">77</a></li>
+  <li><a href="._NPtastes11-bs013.html">&raquo;</a></li>
+</ul>
+<!-- ------------------- end of main content --------------- -->
+</div>  <!-- end container -->
+<!-- include javascript, jQuery *first* -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<!-- Bootstrap footer
+<footer>
+<a href="https://..."><img width="250" align=right src="https://..."></a>
+</footer>
+-->
+</body>
+</html>
+
