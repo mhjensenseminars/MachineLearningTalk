@@ -51,7 +51,7 @@ _Use the massive parallelization which quantum computing offers for solving comp
 !split
 ===== Literature and more reading  =====
 
-!bblock
+
 o These slides at URL:"https://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/quantumcomputingMSU/html/quantumcomputingMSU-reveal.html"
 o "Justyna P. Zwolak and Jacob M. Taylor, Rev. Mod. Phys. 95, 011006, Advances in automation of quantum dot devices control":"https://journals.aps.org/rmp/abstract/10.1103/RevModPhys.95.011006"
 o "Pollanen and many other, Accelerating Progress Towards Practical Quantum Advantage: The Quantum Technology Demonstration Project Roadmap":"https://arxiv.org/pdf/2210.14757.pdf"
@@ -59,7 +59,7 @@ o "Osada et al, introduction to quantum technologies, Springer, 2022":"https://l
 o "Lectures on Quantum Computing, MHJ":"https://github.com/CompPhysics/QuantumComputingMachineLearning"
 o "Original inspiration a series of articles of Loss and DiVincenzo from the nineties, Quantum Computation with Quantum Dots":"https://journals.aps.org/pra/pdf/10.1103/PhysRevA.57.120"
 o "Simulating the Lipkin model, Ryan Larose and Elena Litvinova et al":"https://journals.aps.org/prc/abstract/10.1103/PhysRevC.106.024319"
-!eblock
+
 
 
 !split
@@ -72,7 +72,7 @@ o have reliable initializations protocols to a standard state
 o have a set of universal quantum gates to control the quantum evolution
 o have a coherence time much longer than the gate operation time
 o have a reliable read-out mechanism for measuring the qubit states
-o and many more 
+o ...more
 !eblock
 
 !split
@@ -85,7 +85,7 @@ o "Trapped ions and atoms":"https://journals.aps.org/rmp/pdf/10.1103/RevModPhys.
 o Nuclear Magnetic Resonance
 o _Quantum dots, expt at MSU_
 o Point Defects in semiconductors
-o and more
+o ...more
 !eblock
 
 !split
@@ -640,14 +640,14 @@ separation (at the order of one micron).
 !split
 ===== To read more =====
 
-See "our own" Mark Dykman's RMP article Mesoscopic physics of nanomechanical systems
+See Mark Dykman et al and their  RMP article on mesoscopic physics of nanomechanical systems,
 Rev. Mod. Phys. 94, 045005 at URL:"https://journals.aps.org/rmp/abstract/10.1103/RevModPhys.94.045005".
 
 
 !split
 ===== Experimental set up =====
 
-FIGURE: [qcfigures/figure1.pdf, width=700 frac=0.9]
+FIGURE: [qcfigures/figure1.png, width=700 frac=0.9]
 
 o (a) Schematic of the microdevice, where two electrons are trapped in a double-well potential created by electrodes 1-7. The read-out is provided by two superconducting resonators dispersively coupled to  electron's in-plane motional states.
 o (b) Coupling constants from each individual electrode beneath the helium layer.
@@ -710,14 +710,6 @@ The single-particle functions  are chosen as the eigenfunctions of the single-pa
 ===== Details 1 =====
 
 By entirely factoring out the spin component of the problem (as the singlet and triplet states will be degenerate), we can treat the two electrons as distinguishable particles, with one electron located in the left well and the other electron situated in the right well.
-The one-body Hamiltonian for each electron can then be written
-!bt
-\begin{align}
-\hat{h}^A= -\frac{1}{2} \dv[2]{}{x}+ v^A(x),
-\end{align}
-!et
-with $A \in \{L, R\}$, and the two-body Hamiltonian is the regularized Coulomb interaction
-
 After dividing the Hamiltonian into two distinguishable subsystems $L$
 and $R$, we establish
 two DVR (Discrete Variable Representation) basis sets, one for each well.
@@ -753,7 +745,7 @@ under the constraint that the Hartree orbitals are orthonormal.
 !split
 ===== Measuring the degree of entanglement =====
 
-Given that we are dealing with a bipartite quantum system, a natural measure for characterizing entanglement is the von Neumann entropy. It is defined as follows:
+Given that we are dealing with a bipartite quantum system, a natural measure for characterizing entanglement is the von Neumann entropy discussed above. We defined it as
 !bt
 \[
 S= -\mathrm{tr}(\hat{\rho}\log_2(\hat{\rho})),
@@ -767,7 +759,7 @@ where $\hat{\rho}$ is the density operator/matrix.
 As the Hamiltonian eigenstates are pure states, we can evaluate their
 entanglement by bypassing the construction of the density operator
 and use the Schmidt decomposition instead. Specifically, for a given
-two-body wave function $\\vert \Psi\rangle$ expressed in terms of the
+two-body wave function $\vert \Psi\rangle$ expressed in terms of the
 Hartree product states, we can write
 
 !bt
@@ -808,7 +800,7 @@ are entangled.  In order to determine which states are mixed,
 we can use three additional quantities.
 
 o The first quantity are the two-body energies $E_K$. We search for configurations where two or more energies are nearly degenerate, as this indicates a mixing of states. o The second quantity we use are the coefficients $C_{kl}$ themselves. In the Hartree basis, these coefficients give a good indication of which states are entangled.
-o And the third is the particle density. For the state $\ket{\Psi}$ above, we can compute the particle density, which collapses to the electron density in the case of indistinguishable particles.
+o And the third is the particle density. For the state $\vert \Psi\rangle$ above, we can compute the particle density, which collapses to the electron density in the case of indistinguishable particles.
 
 
 !split
@@ -825,7 +817,7 @@ o Configurations II and III correspond to avoided level crossings between two ($
 !split
 ===== Basis of left well =====
 
-FIGURE: [qcfigures/figure3_L.pdf, width=700 frac=0.9]
+FIGURE: [qcfigures/figure3_L.png, width=700 frac=0.9]
 
 The energy basis of the left well in configuration I.  Note that the
 scale differs between the left y-axis, corresponding to the
@@ -837,7 +829,7 @@ which shows the energy of the potential.
 !split
 ===== Basis of left well =====
 
-FIGURE: [qcfigures/figure2.pdf, width=700 frac=0.9]
+FIGURE: [qcfigures/figure2.png, width=700 frac=0.9]
 
 figures we have plotted the transition energy from
 the ground state to the labeled excited state as a function of the voltage
@@ -848,7 +840,7 @@ transition energies, whereas the right figure shows the interacting case.
 !split
 ===== Densities, potential wells overlaps =====
 
-FIGURE: [qcfigures/figure3_Ib_full.pdf, width=700 frac=0.9]
+FIGURE: [qcfigures/figure3_Ib_full.png, width=700 frac=0.9]
 
 These figures depict the potential wells, the one-body
 densities, and the active single-particle states in the Schmidt basis for configuration I.
@@ -856,7 +848,7 @@ densities, and the active single-particle states in the Schmidt basis for config
 !split
 ===== Basis of left well =====
 
-FIGURE: [qcfigures/figure3_II_IIIb.pdf, width=700 frac=0.9]
+FIGURE: [qcfigures/figure3_II_IIIb.png, width=700 frac=0.9]
 
 These figures depict the potential wells, the one-body
 densities, and the active single-particle states in the Schmidt basis for configurations II and III,
@@ -865,9 +857,10 @@ i.e., in the avoided crossing regimes.
 !split
 ===== Basis of left well =====
 
-FIGURE: [qcfigures/figure4.pdf, width=700 frac=0.9]
+FIGURE: [qcfigures/figure4.png, width=700 frac=0.9]
 
-Numerical results for the von Neumann entropy of the five lowest excited states as a function of the voltage parameter $\lambda$. The entropies $S_1$ and $S_2$ of the $\ket*{\Phi_1}$ respectively $\ket*{\Phi_2}$ states are nearly identical. Note that the peaks in entropy corresponds to the avoided crossings
+Numerical results for the von Neumann entropy of the five lowest excited states as a function of the voltage parameter $\lambda$. The entropies
+$S_1$ and $S_2$ of the $\vert\Phi_1\rangle$ respectively $\vert\Phi_2\rangle$ states are nearly identical. Note that the peaks in entropy corresponds to the avoided crossings
 
 !split
 ===== Where we are now =====
