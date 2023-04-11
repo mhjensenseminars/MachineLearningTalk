@@ -651,7 +651,7 @@ FIGURE: [qcfigures/figure1.pdf, width=700 frac=0.9]
 
 o (a) Schematic of the microdevice, where two electrons are trapped in a double-well potential created by electrodes 1-7. The read-out is provided by two superconducting resonators dispersively coupled to  electron's in-plane motional states.
 o (b) Coupling constants from each individual electrode beneath the helium layer.
-o (c) The electron's energy in a  double-well electrostatic potential (solid line). Dashed and dot-dashed lines represent the harmonic approximations of left and right wells respectively.
+o (c+d) The electron's energy in a  double-well electrostatic potential (solid line). Dashed and dot-dashed lines represent the harmonic approximations of left and right wells respectively.
 
 !split
 ===== Building the solutions =====
@@ -819,12 +819,55 @@ landscape with seven electrodes we search for well configurations
 corresponding to three different types of interaction between two
 electrons.
 
-o In _configuration I_ we address both qubits independently and perform single-qubit state rotations.
+o In _configuration I_ we address both qubits independently and can thereby perform single-qubit state rotations.
 o Configurations II and III correspond to avoided level crossings between two ($E_{01}, E_{10}$) and three ($E_{11}, E_{20}, E_{02}$) energy levels respectively, where the electrons' motion becomes correlated, that is their are entangled. 
 
+!split
+===== Basis of left well =====
+
+FIGURE: [qcfigures/figure3_L.pdf, width=700 frac=0.9]
+
+The energy basis of the left well in configuration I.  Note that the
+scale differs between the left y-axis, corresponding to the
+frequencies of the single-particle eigenstates, and the right y-axis,
+which shows the energy of the potential.
 
 
 
+!split
+===== Basis of left well =====
+
+FIGURE: [qcfigures/figure2.pdf, width=700 frac=0.9]
+
+figures we have plotted the transition energy from
+the ground state to the labeled excited state as a function of the voltage
+parameter $\lambda$.
+The left figure  shows the transition energies for the non-interacting case, i.e., the single-particle
+transition energies, whereas the right figure shows the interacting case.
+
+!split
+===== Densities, potential wells overlaps =====
+
+FIGURE: [qcfigures/figure3_Ib_full.pdf, width=700 frac=0.9]
+
+These figures depict the potential wells, the one-body
+densities, and the active single-particle states in the Schmidt basis for configuration I.
+
+!split
+===== Basis of left well =====
+
+FIGURE: [qcfigures/figure3_II_IIIb.pdf, width=700 frac=0.9]
+
+These figures depict the potential wells, the one-body
+densities, and the active single-particle states in the Schmidt basis for configurations II and III,
+i.e., in the avoided crossing regimes.
+
+!split
+===== Basis of left well =====
+
+FIGURE: [qcfigures/figure4.pdf, width=700 frac=0.9]
+
+Numerical results for the von Neumann entropy of the five lowest excited states as a function of the voltage parameter $\lambda$. The entropies $S_1$ and $S_2$ of the $\ket*{\Phi_1}$ respectively $\ket*{\Phi_2}$ states are nearly identical. Note that the peaks in entropy corresponds to the avoided crossings
 
 !split
 ===== Where we are now =====
