@@ -716,7 +716,7 @@ two _sinc_-DVR (Discrete Variable Representation) basis sets, one for each well.
 ===== Details 2 =====
 
 We solve the full two-body problem using exact diagonalization.
-The wave function ansatz is then given by
+The wave function ansatz is then given by a product of Hartree single-particle states
 !bt
 \begin{align}
 \vert\Phi_I\rangle &= \sum_{k = 0}^{N^L} \sum_{l = 0}^{N^R} C_{kl, I}
@@ -726,8 +726,8 @@ The wave function ansatz is then given by
 where no symmetry is assumed for the wavefunction as the
 particles are distinguishable, and the index
 $I = (i, j) = iN^R + j$ is a compound index denoting the
-excited two-body state we are looking at. This leads however to a large basis set.
-Instead of using the above basis set we switch to a Hartree basis.
+excited two-body state we are looking at.
+
 
 !split
 ===== Hartree method =====

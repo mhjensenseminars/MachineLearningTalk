@@ -1,0 +1,349 @@
+<!--
+HTML file automatically generated from DocOnce source
+(https://github.com/doconce/doconce/)
+doconce format html quantumcomputingMSU.do.txt --html_style=bootstrap --pygments_html_style=default --html_admon=bootstrap_panel --html_output=quantumcomputingMSU-bs --no_mako
+-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="DocOnce: https://github.com/doconce/doconce/" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Coulomb interaction driven entanglement of electrons on helium, theory and experiment">
+<title>Coulomb interaction driven entanglement of electrons on helium, theory and experiment</title>
+<!-- Bootstrap style: bootstrap -->
+<!-- doconce format html quantumcomputingMSU.do.txt --html_style=bootstrap --pygments_html_style=default --html_admon=bootstrap_panel --html_output=quantumcomputingMSU-bs --no_mako -->
+<link href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+<!-- not necessary
+<link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+-->
+<style type="text/css">
+/* Add scrollbar to dropdown menus in bootstrap navigation bar */
+.dropdown-menu {
+   height: auto;
+   max-height: 400px;
+   overflow-x: hidden;
+}
+/* Adds an invisible element before each target to offset for the navigation
+   bar */
+.anchor::before {
+  content:"";
+  display:block;
+  height:50px;      /* fixed header height for style bootstrap */
+  margin:-50px 0 0; /* negative fixed header height */
+}
+</style>
+</head>
+
+<!-- tocinfo
+{'highest level': 2,
+ 'sections': [('What is this talk about?', 2, None, 'what-is-this-talk-about'),
+              ('Many people to thank', 2, None, 'many-people-to-thank'),
+              ('Why? Basic motivation', 2, None, 'why-basic-motivation'),
+              ('Literature and more reading',
+               2,
+               None,
+               'literature-and-more-reading'),
+              ('Quantum Engineering', 2, None, 'quantum-engineering'),
+              ('Candidate systems', 2, None, 'candidate-systems'),
+              ('Electrons (quantum dots) on superfluid helium',
+               2,
+               None,
+               'electrons-quantum-dots-on-superfluid-helium'),
+              ('Methods and Applications', 2, None, 'methods-and-applications'),
+              ('Entanglement', 2, None, 'entanglement'),
+              ('More on Entanglement', 2, None, 'more-on-entanglement'),
+              ('Entanglement gates in trapped ions and more',
+               2,
+               None,
+               'entanglement-gates-in-trapped-ions-and-more'),
+              ('A warm-up problem, avoided level crossing and some math',
+               2,
+               None,
+               'a-warm-up-problem-avoided-level-crossing-and-some-math'),
+              ('Avoided level crossings', 2, None, 'avoided-level-crossings'),
+              ('Reminder on density matrices',
+               3,
+               None,
+               'reminder-on-density-matrices'),
+              ('Two-qubit system and definition of density matrices',
+               3,
+               None,
+               'two-qubit-system-and-definition-of-density-matrices'),
+              ('Shannon information entropy',
+               3,
+               None,
+               'shannon-information-entropy'),
+              ('Von Neumann entropy', 3, None, 'von-neumann-entropy'),
+              ('Quantum dots and the Coulomb interaction',
+               2,
+               None,
+               'quantum-dots-and-the-coulomb-interaction'),
+              ('Electrons on helium is another qubit platform',
+               2,
+               None,
+               'electrons-on-helium-is-another-qubit-platform'),
+              ('Surface state electrons (SSE)',
+               2,
+               None,
+               'surface-state-electrons-sse'),
+              ('To read more', 2, None, 'to-read-more'),
+              ('Experimental set up', 2, None, 'experimental-set-up'),
+              ('Building the solutions', 2, None, 'building-the-solutions'),
+              ('Computational Methods', 2, None, 'computational-methods'),
+              ('One-dimensional system', 2, None, 'one-dimensional-system'),
+              ('Details 1', 2, None, 'details-1'),
+              ('Details 2', 2, None, 'details-2'),
+              ('Hartree method', 2, None, 'hartree-method'),
+              ('Measuring the degree of entanglement',
+               2,
+               None,
+               'measuring-the-degree-of-entanglement'),
+              ('More entropy and Schmidt decomposition',
+               2,
+               None,
+               'more-entropy-and-schmidt-decomposition'),
+              ('Final Von Neumann entropy',
+               2,
+               None,
+               'final-von-neumann-entropy'),
+              ('Analysis', 2, None, 'analysis'),
+              ('Results', 2, None, 'results'),
+              ('Interpretations', 2, None, 'interpretations'),
+              ('Basis of left well', 2, None, 'basis-of-left-well'),
+              ('Basis of left well', 2, None, 'basis-of-left-well'),
+              ('Densities, potential wells overlaps',
+               2,
+               None,
+               'densities-potential-wells-overlaps'),
+              ('Schmidt basis for configurations II and III',
+               2,
+               None,
+               'schmidt-basis-for-configurations-ii-and-iii'),
+              ('Von Neumann entropy', 2, None, 'von-neumann-entropy'),
+              ('Where we are now', 2, None, 'where-we-are-now'),
+              ('Plans', 2, None, 'plans'),
+              ('Additional material', 2, None, 'additional-material'),
+              ('How to simulate quantum mechanical systems: VQE and efficient '
+               'computations of gradients',
+               2,
+               None,
+               'how-to-simulate-quantum-mechanical-systems-vqe-and-efficient-computations-of-gradients'),
+              ('Setting up the matrix', 2, None, 'setting-up-the-matrix'),
+              ('Implementing the VQE', 2, None, 'implementing-the-vqe'),
+              ('Gradient descent and calculations of gradients',
+               2,
+               None,
+               'gradient-descent-and-calculations-of-gradients'),
+              ('A smarter way of doing this',
+               2,
+               None,
+               'a-smarter-way-of-doing-this')]}
+end of tocinfo -->
+
+<body>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+     equationNumbers: {  autoNumber: "none"  },
+     extensions: ["AMSmath.js", "AMSsymbols.js", "autobold.js", "color.js"]
+  }
+});
+</script>
+<script type="text/javascript" async
+ src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<!-- Bootstrap navigation bar -->
+<div class="navbar navbar-default navbar-fixed-top">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="quantumcomputingMSU-bs.html">Coulomb interaction driven entanglement of electrons on helium, theory and experiment</a>
+  </div>
+  <div class="navbar-collapse collapse navbar-responsive-collapse">
+    <ul class="nav navbar-nav navbar-right">
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Contents <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs001.html#what-is-this-talk-about" style="font-size: 80%;"><b>What is this talk about?</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs002.html#many-people-to-thank" style="font-size: 80%;"><b>Many people to thank</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs003.html#why-basic-motivation" style="font-size: 80%;"><b>Why? Basic motivation</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs004.html#literature-and-more-reading" style="font-size: 80%;"><b>Literature and more reading</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs005.html#quantum-engineering" style="font-size: 80%;"><b>Quantum Engineering</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs006.html#candidate-systems" style="font-size: 80%;"><b>Candidate systems</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs007.html#electrons-quantum-dots-on-superfluid-helium" style="font-size: 80%;"><b>Electrons (quantum dots) on superfluid helium</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs008.html#methods-and-applications" style="font-size: 80%;"><b>Methods and Applications</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs009.html#entanglement" style="font-size: 80%;"><b>Entanglement</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs010.html#more-on-entanglement" style="font-size: 80%;"><b>More on Entanglement</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs011.html#entanglement-gates-in-trapped-ions-and-more" style="font-size: 80%;"><b>Entanglement gates in trapped ions and more</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs012.html#a-warm-up-problem-avoided-level-crossing-and-some-math" style="font-size: 80%;"><b>A warm-up problem, avoided level crossing and some math</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs012.html#avoided-level-crossings" style="font-size: 80%;"><b>Avoided level crossings</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs012.html#reminder-on-density-matrices" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Reminder on density matrices</a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs012.html#two-qubit-system-and-definition-of-density-matrices" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Two-qubit system and definition of density matrices</a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs012.html#shannon-information-entropy" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Shannon information entropy</a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs034.html#von-neumann-entropy" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Von Neumann entropy</a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs013.html#quantum-dots-and-the-coulomb-interaction" style="font-size: 80%;"><b>Quantum dots and the Coulomb interaction</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs014.html#electrons-on-helium-is-another-qubit-platform" style="font-size: 80%;"><b>Electrons on helium is another qubit platform</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs015.html#surface-state-electrons-sse" style="font-size: 80%;"><b>Surface state electrons (SSE)</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs016.html#to-read-more" style="font-size: 80%;"><b>To read more</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs017.html#experimental-set-up" style="font-size: 80%;"><b>Experimental set up</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs018.html#building-the-solutions" style="font-size: 80%;"><b>Building the solutions</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs019.html#computational-methods" style="font-size: 80%;"><b>Computational Methods</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs020.html#one-dimensional-system" style="font-size: 80%;"><b>One-dimensional system</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs021.html#details-1" style="font-size: 80%;"><b>Details 1</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs022.html#details-2" style="font-size: 80%;"><b>Details 2</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs023.html#hartree-method" style="font-size: 80%;"><b>Hartree method</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs024.html#measuring-the-degree-of-entanglement" style="font-size: 80%;"><b>Measuring the degree of entanglement</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs025.html#more-entropy-and-schmidt-decomposition" style="font-size: 80%;"><b>More entropy and Schmidt decomposition</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs026.html#final-von-neumann-entropy" style="font-size: 80%;"><b>Final Von Neumann entropy</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs027.html#analysis" style="font-size: 80%;"><b>Analysis</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs028.html#results" style="font-size: 80%;"><b>Results</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs029.html#interpretations" style="font-size: 80%;"><b>Interpretations</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs031.html#basis-of-left-well" style="font-size: 80%;"><b>Basis of left well</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs031.html#basis-of-left-well" style="font-size: 80%;"><b>Basis of left well</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs032.html#densities-potential-wells-overlaps" style="font-size: 80%;"><b>Densities, potential wells overlaps</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs033.html#schmidt-basis-for-configurations-ii-and-iii" style="font-size: 80%;"><b>Schmidt basis for configurations II and III</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs034.html#von-neumann-entropy" style="font-size: 80%;"><b>Von Neumann entropy</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs035.html#where-we-are-now" style="font-size: 80%;"><b>Where we are now</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs036.html#plans" style="font-size: 80%;"><b>Plans</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs037.html#additional-material" style="font-size: 80%;"><b>Additional material</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs038.html#how-to-simulate-quantum-mechanical-systems-vqe-and-efficient-computations-of-gradients" style="font-size: 80%;"><b>How to simulate quantum mechanical systems: VQE and efficient computations of gradients</b></a></li>
+     <!-- navigation toc: --> <li><a href="#setting-up-the-matrix" style="font-size: 80%;"><b>Setting up the matrix</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs040.html#implementing-the-vqe" style="font-size: 80%;"><b>Implementing the VQE</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs041.html#gradient-descent-and-calculations-of-gradients" style="font-size: 80%;"><b>Gradient descent and calculations of gradients</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs042.html#a-smarter-way-of-doing-this" style="font-size: 80%;"><b>A smarter way of doing this</b></a></li>
+
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
+</div> <!-- end of navigation bar -->
+<div class="container">
+<p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p> <!-- add vertical space -->
+<a name="part0039"></a>
+<!-- !split -->
+<h2 id="setting-up-the-matrix" class="anchor">Setting up the matrix </h2>
+
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #f8f8f8">
+  <pre style="line-height: 125%;"><span style="color: #008000; font-weight: bold">from</span>  <span style="color: #0000FF; font-weight: bold">matplotlib</span> <span style="color: #008000; font-weight: bold">import</span> pyplot <span style="color: #008000; font-weight: bold">as</span> plt
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">numpy</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">np</span>
+dim <span style="color: #666666">=</span> <span style="color: #666666">2</span>
+Hamiltonian <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros((dim,dim))
+e0 <span style="color: #666666">=</span> <span style="color: #666666">0.0</span>
+e1 <span style="color: #666666">=</span> <span style="color: #666666">4.0</span>
+Xnondiag <span style="color: #666666">=</span> <span style="color: #666666">0.20</span>
+Xdiag <span style="color: #666666">=</span> <span style="color: #666666">3.0</span>
+Eigenvalue <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros(dim)
+<span style="color: #408080; font-style: italic"># setting up the Hamiltonian</span>
+Hamiltonian[<span style="color: #666666">0</span>,<span style="color: #666666">0</span>] <span style="color: #666666">=</span> Xdiag<span style="color: #666666">+</span>e0
+Hamiltonian[<span style="color: #666666">0</span>,<span style="color: #666666">1</span>] <span style="color: #666666">=</span> Xnondiag
+Hamiltonian[<span style="color: #666666">1</span>,<span style="color: #666666">0</span>] <span style="color: #666666">=</span> Hamiltonian[<span style="color: #666666">0</span>,<span style="color: #666666">1</span>]
+Hamiltonian[<span style="color: #666666">1</span>,<span style="color: #666666">1</span>] <span style="color: #666666">=</span> e1<span style="color: #666666">-</span>Xdiag
+<span style="color: #408080; font-style: italic"># diagonalize and obtain eigenvalues, not necessarily sorted</span>
+EigValues, EigVectors <span style="color: #666666">=</span> np<span style="color: #666666">.</span>linalg<span style="color: #666666">.</span>eig(Hamiltonian)
+permute <span style="color: #666666">=</span> EigValues<span style="color: #666666">.</span>argsort()
+EigValues <span style="color: #666666">=</span> EigValues[permute]
+<span style="color: #408080; font-style: italic"># print only the lowest eigenvalue</span>
+<span style="color: #008000">print</span>(EigValues[<span style="color: #666666">0</span>])
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p>Now rewrite it in terms of the identity matrix and the Pauli matrix X and Z</p>
+
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #f8f8f8">
+  <pre style="line-height: 125%;"><span style="color: #408080; font-style: italic"># Now rewrite it in terms of the identity matrix and the Pauli matrix X and Z</span>
+X <span style="color: #666666">=</span> np<span style="color: #666666">.</span>array([[<span style="color: #666666">0</span>,<span style="color: #666666">1</span>],[<span style="color: #666666">1</span>,<span style="color: #666666">0</span>]])
+Y <span style="color: #666666">=</span> np<span style="color: #666666">.</span>array([[<span style="color: #666666">0</span>,<span style="color: #666666">-1</span>j],[<span style="color: #666666">1</span>j,<span style="color: #666666">0</span>]])
+Z <span style="color: #666666">=</span> np<span style="color: #666666">.</span>array([[<span style="color: #666666">1</span>,<span style="color: #666666">0</span>],[<span style="color: #666666">0</span>,<span style="color: #666666">-1</span>]])
+<span style="color: #408080; font-style: italic"># identity matrix</span>
+I <span style="color: #666666">=</span> np<span style="color: #666666">.</span>array([[<span style="color: #666666">1</span>,<span style="color: #666666">0</span>],[<span style="color: #666666">0</span>,<span style="color: #666666">1</span>]])
+
+epsilon <span style="color: #666666">=</span> (e0<span style="color: #666666">+</span>e1)<span style="color: #666666">*0.5</span>; omega <span style="color: #666666">=</span> (e0<span style="color: #666666">-</span>e1)<span style="color: #666666">*0.5</span>
+c <span style="color: #666666">=</span> <span style="color: #666666">0.0</span>; omega_z<span style="color: #666666">=</span>Xdiag; omega_x <span style="color: #666666">=</span> Xnondiag
+Hamiltonian <span style="color: #666666">=</span> (epsilon<span style="color: #666666">+</span>c)<span style="color: #666666">*</span>I<span style="color: #666666">+</span>(omega_z<span style="color: #666666">+</span>omega)<span style="color: #666666">*</span>Z<span style="color: #666666">+</span>omega_x<span style="color: #666666">*</span>X
+EigValues, EigVectors <span style="color: #666666">=</span> np<span style="color: #666666">.</span>linalg<span style="color: #666666">.</span>eig(Hamiltonian)
+permute <span style="color: #666666">=</span> EigValues<span style="color: #666666">.</span>argsort()
+EigValues <span style="color: #666666">=</span> EigValues[permute]
+<span style="color: #408080; font-style: italic"># print only the lowest eigenvalue</span>
+<span style="color: #008000">print</span>(EigValues[<span style="color: #666666">0</span>])
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<p>
+<!-- navigation buttons at the bottom of the page -->
+<ul class="pagination">
+<li><a href="._quantumcomputingMSU-bs038.html">&laquo;</a></li>
+  <li><a href="._quantumcomputingMSU-bs000.html">1</a></li>
+  <li><a href="">...</a></li>
+  <li><a href="._quantumcomputingMSU-bs031.html">32</a></li>
+  <li><a href="._quantumcomputingMSU-bs032.html">33</a></li>
+  <li><a href="._quantumcomputingMSU-bs033.html">34</a></li>
+  <li><a href="._quantumcomputingMSU-bs034.html">35</a></li>
+  <li><a href="._quantumcomputingMSU-bs035.html">36</a></li>
+  <li><a href="._quantumcomputingMSU-bs036.html">37</a></li>
+  <li><a href="._quantumcomputingMSU-bs037.html">38</a></li>
+  <li><a href="._quantumcomputingMSU-bs038.html">39</a></li>
+  <li class="active"><a href="._quantumcomputingMSU-bs039.html">40</a></li>
+  <li><a href="._quantumcomputingMSU-bs040.html">41</a></li>
+  <li><a href="._quantumcomputingMSU-bs041.html">42</a></li>
+  <li><a href="._quantumcomputingMSU-bs042.html">43</a></li>
+  <li><a href="._quantumcomputingMSU-bs040.html">&raquo;</a></li>
+</ul>
+<!-- ------------------- end of main content --------------- -->
+</div>  <!-- end container -->
+<!-- include javascript, jQuery *first* -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<!-- Bootstrap footer
+<footer>
+<a href="https://..."><img width="250" align=right src="https://..."></a>
+</footer>
+-->
+</body>
+</html>
+
