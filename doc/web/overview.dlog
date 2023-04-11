@@ -150,3 +150,10 @@ output in overview.html
 running mako on overview.do.txt to make tmp_mako__overview.do.txt
 Translating doconce text in tmp_mako__overview.do.txt to html
 output in overview.html
+running mako on overview.do.txt to make tmp_mako__overview.do.txt
+*** mako error: mako terminated with exception <class 'KeyError'>
+running mako on overview.do.txt to make tmp_mako__overview.do.txt
+*** mako error: mako terminated with exception <class 'KeyError'>
+running mako on overview.do.txt to make tmp_mako__overview.do.txt
+Translating doconce text in tmp_mako__overview.do.txt to html
+output in overview.html

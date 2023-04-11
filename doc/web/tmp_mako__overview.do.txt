@@ -363,7 +363,7 @@ DATE: today
 
 
 
-===== Popmath seminar March 7, 2023 =====
+===== Popmath seminar March 7, University of Oslo, 2023 =====
 
 
 
@@ -386,6 +386,19 @@ DATE: today
    * "Bootstrap style": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/MSUphysics/html/MSUphysics-bs.html"
  * iPython notebook:
    * "ipynb file": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/MSUphysics/ipynb/MSUphysics.ipynb"
+
+
+
+===== FRIB-theory seminar, MSU, April 11, 2023 =====
+
+
+
+ * HTML:
+   * "Plain html style": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/quantumcomputingMSU/html/quantumcomputingMSU.html"
+   * "reveal.js beige slide style": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/quantumcomputingMSU/html/quantumcomputingMSU-reveal.html"
+   * "Bootstrap style": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/quantumcomputingMSU/html/quantumcomputingMSU-bs.html"
+ * iPython notebook:
+   * "ipynb file": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/quantumcomputingMSU/ipynb/quantumcomputingMSU.ipynb"
 
 
 
