@@ -846,7 +846,7 @@ These figures depict the potential wells, the one-body
 densities, and the active single-particle states in the Schmidt basis for configuration I.
 
 !split
-===== Basis of left well =====
+===== Schmidt basis for configurations II and III =====
 
 FIGURE: [qcfigures/figure3_II_IIIb.png, width=700 frac=0.9]
 
@@ -855,7 +855,7 @@ densities, and the active single-particle states in the Schmidt basis for config
 i.e., in the avoided crossing regimes.
 
 !split
-===== Basis of left well =====
+===== Von Neumann entropy =====
 
 FIGURE: [qcfigures/figure4.png, width=700 frac=0.9]
 
