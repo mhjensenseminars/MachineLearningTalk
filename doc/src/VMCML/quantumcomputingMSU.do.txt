@@ -719,7 +719,7 @@ and $R$, we establish
 two DVR (Discrete Variable Representation) basis sets, one for each well.
 
 !split
-===== Details 3 =====
+===== Details 2 =====
 
 We solve the full two-body problem using exact diagonalization.
 The wave function ansatz is then given by
@@ -785,7 +785,6 @@ either $N^L$ or $N^R$ depending on the definition of the singular value decompos
 representing the occupation of the pair $\vert\psi^L_p \psi^R_p\rangle$.
 
 
-
 !split
 ===== Final Von Neumann entropy =====
 
@@ -814,12 +813,10 @@ o And the third is the particle density. For the state $\ket{\Psi}$ above, we ca
 Given a large degree of tuning of the electrostatic potential
 landscape with seven electrodes we search for well configurations
 corresponding to three different types of interaction between two
-electrons. In configuration I we address both qubits
-independently and perform single-qubit state rotations. Configurations
-II and III corresponds to avoided level crossings between two
-($E_{01}, E_{10}$) and three ($E_{11}, E_{20}, E_{02}$) energy levels
-respectively, where the electrons' motion becomes correlated,
-e.g. entangled. 
+electrons.
+
+o In _configuration I_ we address both qubits independently and perform single-qubit state rotations.
+o Configurations II and III correspond to avoided level crossings between two ($E_{01}, E_{10}$) and three ($E_{11}, E_{20}, E_{02}$) energy levels respectively, where the electrons' motion becomes correlated, that is their are entangled. 
 
 
 
@@ -840,7 +837,7 @@ o Add two and three-dimensions in order to simulate in  a more realistic way suc
 o Develop time-dependent FCI code, useful up to approximately 10 particles with _effective_ (and effective Hilbert space) Hamiltonians in two and three dimensions
 o Particles can be valence particles  or valence holes defined for an effective Hilbert space
 o Develop codes for studies of entanglement as function of time
-o Study the feasibility of various setups for quantum simulations
+o Study the feasibility of various setups for quantum simulations of specific Hamiltonians such as the Lipkin model
 o For larger many-body systems, study for example time-dependent CC theory
 
 !split
