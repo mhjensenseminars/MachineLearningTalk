@@ -48,17 +48,15 @@ o many more
 
 
 !split
-===== Short background  =====
+===== Literature and more reading  =====
 
 !bblock
-During the last two years we have started a large scientific activity
-on Quantum Computing and Machine Learning at University of Oslo and Michigan State University.
-
-This activity spans from the development
-of quantum-mechanical many-particle theories for studying systems of
-interest for making quantum computers, via the development of quantum
-algorithms for solving quantum mechanical problems to exploring
-quantum machine learning algorithms.
+o These slides at URL:"https://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/quantumcomputingMSU/html/quantumcomputingMSU-reveal.html"
+o "Justyna P. Zwolak and Jacob M. Taylor, Rev. Mod. Phys. 95, 011006, Advances in automation of quantum dot devices control":"https://journals.aps.org/rmp/abstract/10.1103/RevModPhys.95.011006"
+o "Pollanen and many other, Accelerating Progress Towards Practical Quantum Advantage: The Quantum Technology Demonstration Project Roadmap":"https://arxiv.org/pdf/2210.14757.pdf"
+o "Osada et al, introduction to quantum technologies, Springer, 2022":"https://link.springer.com/book/10.1007/978-981-19-4641-7"
+o "Lectures on Quantum Computing, MHJ":"https://github.com/CompPhysics/QuantumComputingMachineLearning"
+o "Original inspiration a series of articles of Loss and DiVincenzo from the nineties, Quantum Computation with Quantum Dots":"https://journals.aps.org/pra/pdf/10.1103/PhysRevA.57.120"
 !eblock
 
 
