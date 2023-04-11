@@ -488,8 +488,8 @@ S=-\mathrm{Tr}[\rho\log_2{\rho}].
 !et
 
 
-A pure state has entropy equal zero while entangled
-state have an entropy larger than zero. The von-Neumann entropy is
+A pure state has entropy equal zero while an entangled
+state has entropy larger than zero. The von-Neumann entropy is
 defined as
 
 !bt
@@ -508,8 +508,7 @@ entropy increases till we reach the level crossing point where we see
 an additional and sudden increase in entropy. Similar behaviors are
 observed for the other states. The most important result from this
 example is that entanglement is driven by the Hamiltonian itself and
-the strength of the interaction matrix elements and the
-non-interacting energies.
+the strength of the interaction matrix elements.
 
 !bc pycod
 %matplotlib inline
@@ -639,9 +638,8 @@ separation (at the order of one micron).
 
 !split
 ===== To read more =====
-
-See Mark Dykman et al and their  RMP article on mesoscopic physics of nanomechanical systems,
-Rev. Mod. Phys. 94, 045005 at URL:"https://journals.aps.org/rmp/abstract/10.1103/RevModPhys.94.045005".
+See Mark Dykman et al and their Spin dynamics in quantum dots on liquid helium,
+PRB _107_. 035437 (2023) at URL:"https://link.aps.org/doi/10.1103/PhysRevB.107.035437".
 
 
 !split
@@ -712,7 +710,7 @@ The single-particle functions  are chosen as the eigenfunctions of the single-pa
 By entirely factoring out the spin component of the problem (as the singlet and triplet states will be degenerate), we can treat the two electrons as distinguishable particles, with one electron located in the left well and the other electron situated in the right well.
 After dividing the Hamiltonian into two distinguishable subsystems $L$
 and $R$, we establish
-two DVR (Discrete Variable Representation) basis sets, one for each well.
+two _sinc_-DVR (Discrete Variable Representation) basis sets, one for each well.
 
 !split
 ===== Details 2 =====
