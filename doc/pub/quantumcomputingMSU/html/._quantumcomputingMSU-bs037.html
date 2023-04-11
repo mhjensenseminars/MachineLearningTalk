@@ -108,6 +108,7 @@ doconce format html quantumcomputingMSU.do.txt --html_style=bootstrap --pygments
                'final-von-neumann-entropy'),
               ('Analysis', 2, None, 'analysis'),
               ('Results', 2, None, 'results'),
+              ('Interpretations', 2, None, 'interpretations'),
               ('Basis of left well', 2, None, 'basis-of-left-well'),
               ('Basis of left well', 2, None, 'basis-of-left-well'),
               ('Densities, potential wells overlaps',
@@ -187,7 +188,7 @@ MathJax.Hub.Config({
      <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs012.html#reminder-on-density-matrices" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Reminder on density matrices</a></li>
      <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs012.html#two-qubit-system-and-definition-of-density-matrices" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Two-qubit system and definition of density matrices</a></li>
      <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs012.html#shannon-information-entropy" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Shannon information entropy</a></li>
-     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs033.html#von-neumann-entropy" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Von Neumann entropy</a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs034.html#von-neumann-entropy" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Von Neumann entropy</a></li>
      <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs013.html#quantum-dots-and-the-coulomb-interaction" style="font-size: 80%;"><b>Quantum dots and the Coulomb interaction</b></a></li>
      <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs014.html#electrons-on-helium-is-another-qubit-platform" style="font-size: 80%;"><b>Electrons on helium is another qubit platform</b></a></li>
      <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs015.html#surface-state-electrons-sse" style="font-size: 80%;"><b>Surface state electrons (SSE)</b></a></li>
@@ -204,19 +205,20 @@ MathJax.Hub.Config({
      <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs026.html#final-von-neumann-entropy" style="font-size: 80%;"><b>Final Von Neumann entropy</b></a></li>
      <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs027.html#analysis" style="font-size: 80%;"><b>Analysis</b></a></li>
      <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs028.html#results" style="font-size: 80%;"><b>Results</b></a></li>
-     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs030.html#basis-of-left-well" style="font-size: 80%;"><b>Basis of left well</b></a></li>
-     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs030.html#basis-of-left-well" style="font-size: 80%;"><b>Basis of left well</b></a></li>
-     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs031.html#densities-potential-wells-overlaps" style="font-size: 80%;"><b>Densities, potential wells overlaps</b></a></li>
-     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs032.html#schmidt-basis-for-configurations-ii-and-iii" style="font-size: 80%;"><b>Schmidt basis for configurations II and III</b></a></li>
-     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs033.html#von-neumann-entropy" style="font-size: 80%;"><b>Von Neumann entropy</b></a></li>
-     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs034.html#where-we-are-now" style="font-size: 80%;"><b>Where we are now</b></a></li>
-     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs035.html#plans" style="font-size: 80%;"><b>Plans</b></a></li>
-     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs036.html#additional-material" style="font-size: 80%;"><b>Additional material</b></a></li>
-     <!-- navigation toc: --> <li><a href="#how-to-simulate-quantum-mechanical-systems-vqe-and-efficient-computations-of-gradients" style="font-size: 80%;"><b>How to simulate quantum mechanical systems: VQE and efficient computations of gradients</b></a></li>
-     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs038.html#setting-up-the-matrix" style="font-size: 80%;"><b>Setting up the matrix</b></a></li>
-     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs039.html#implementing-the-vqe" style="font-size: 80%;"><b>Implementing the VQE</b></a></li>
-     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs040.html#gradient-descent-and-calculations-of-gradients" style="font-size: 80%;"><b>Gradient descent and calculations of gradients</b></a></li>
-     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs041.html#a-smarter-way-of-doing-this" style="font-size: 80%;"><b>A smarter way of doing this</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs029.html#interpretations" style="font-size: 80%;"><b>Interpretations</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs031.html#basis-of-left-well" style="font-size: 80%;"><b>Basis of left well</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs031.html#basis-of-left-well" style="font-size: 80%;"><b>Basis of left well</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs032.html#densities-potential-wells-overlaps" style="font-size: 80%;"><b>Densities, potential wells overlaps</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs033.html#schmidt-basis-for-configurations-ii-and-iii" style="font-size: 80%;"><b>Schmidt basis for configurations II and III</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs034.html#von-neumann-entropy" style="font-size: 80%;"><b>Von Neumann entropy</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs035.html#where-we-are-now" style="font-size: 80%;"><b>Where we are now</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs036.html#plans" style="font-size: 80%;"><b>Plans</b></a></li>
+     <!-- navigation toc: --> <li><a href="#additional-material" style="font-size: 80%;"><b>Additional material</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs038.html#how-to-simulate-quantum-mechanical-systems-vqe-and-efficient-computations-of-gradients" style="font-size: 80%;"><b>How to simulate quantum mechanical systems: VQE and efficient computations of gradients</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs039.html#setting-up-the-matrix" style="font-size: 80%;"><b>Setting up the matrix</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs040.html#implementing-the-vqe" style="font-size: 80%;"><b>Implementing the VQE</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs041.html#gradient-descent-and-calculations-of-gradients" style="font-size: 80%;"><b>Gradient descent and calculations of gradients</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs042.html#a-smarter-way-of-doing-this" style="font-size: 80%;"><b>A smarter way of doing this</b></a></li>
 
         </ul>
       </li>
@@ -228,91 +230,7 @@ MathJax.Hub.Config({
 <p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p> <!-- add vertical space -->
 <a name="part0037"></a>
 <!-- !split -->
-<h2 id="how-to-simulate-quantum-mechanical-systems-vqe-and-efficient-computations-of-gradients" class="anchor">How to simulate quantum mechanical systems: VQE and efficient computations of gradients  </h2>
-
-<p>We start with a reminder on the VQE method with applications to the one-qubit system.
-We discussed this to some detail during the week of March 27-31. Here we revisit the one-qubit system and develop a VQE code for studying this system using gradient descent as a method to optimie the variational ansatz.
-</p>
-
-<p>We start with a simple \( 2\times 2 \) Hamiltonian matrix expressed in
-terms of Pauli \( X \) and \( Z \) matrices, as discussed in the project text.
-</p>
-
-<p>We define a  symmetric matrix  \( H\in {\mathbb{R}}^{2\times 2} \)</p>
-$$
-H = \begin{bmatrix} H_{11} & H_{12} \\ H_{21} & H_{22}
-\end{bmatrix},
-$$
-
-<p>We  let \( H = H_0 + H_I \), where</p>
-$$
-H_0= \begin{bmatrix} E_1 & 0 \\ 0 & E_2\end{bmatrix},
-$$
-
-<p>is a diagonal matrix. Similarly,</p>
-$$
-H_I= \begin{bmatrix} V_{11} & V_{12} \\ V_{21} & V_{22}\end{bmatrix},
-$$
-
-<p>where \( V_{ij} \) represent various interaction matrix elements.
-We can view \( H_0 \) as the non-interacting solution
-</p>
-$$
-\begin{equation}
-       H_0\vert 0 \rangle =E_1\vert 0 \rangle,
-\tag{9}
-\end{equation}
-$$
-
-<p>and</p>
-$$
-\begin{equation}
-       H_0\vert 1\rangle =E_2\vert 1\rangle,
-\tag{10}
-\end{equation}
-$$
-
-<p>where we have defined the orthogonal computational one-qubit basis states \( \vert 0\rangle \) and \( \vert 1\rangle \).</p>
-
-<p>We rewrite \( H \) (and \( H_0 \) and \( H_I \))  via Pauli matrices</p>
-$$
-H_0 = \mathcal{E} I + \Omega \sigma_z, \quad \mathcal{E} = \frac{E_1
-  + E_2}{2}, \; \Omega = \frac{E_1-E_2}{2},
-$$
-
-<p>and</p>
-$$
-H_I = c \boldsymbol{I} +\omega_z\sigma_z + \omega_x\sigma_x,
-$$
-
-<p>with \( c = (V_{11}+V_{22})/2 \), \( \omega_z = (V_{11}-V_{22})/2 \) and \( \omega_x = V_{12}=V_{21} \).
-We let our Hamiltonian depend linearly on a strength parameter \( \lambda \)
-</p>
-
-$$
-H=H_0+\lambda H_\mathrm{I},
-$$
-
-<p>with \( \lambda \in [0,1] \), where the limits \( \lambda=0 \) and \( \lambda=1 \)
-represent the non-interacting (or unperturbed) and fully interacting
-system, respectively.  The model is an eigenvalue problem with only
-two available states.
-</p>
-
-<p>Here we set the parameters \( E_1=0 \),
-\( E_2=4 \), \( V_{11}=-V_{22}=3 \) and \( V_{12}=V_{21}=0.2 \).
-</p>
-
-<p>The non-interacting solutions represent our computational basis.
-Pertinent to our choice of parameters, is that at \( \lambda\geq 2/3 \),
-the lowest eigenstate is dominated by \( \vert 1\rangle \) while the upper
-is \( \vert 0 \rangle \). At \( \lambda=1 \) the \( \vert 0 \rangle \) mixing of
-the lowest eigenvalue is \( 1\% \) while for \( \lambda\leq 2/3 \) we have a
-\( \vert 0 \rangle \) component of more than \( 90\% \).  The character of the
-eigenvectors has therefore been interchanged when passing \( z=2/3 \). The
-value of the parameter \( V_{12} \) represents the strength of the coupling
-between the two states.
-</p>
+<h2 id="additional-material" class="anchor">Additional material </h2>
 
 <p>
 <!-- navigation buttons at the bottom of the page -->
@@ -333,6 +251,7 @@ between the two states.
   <li><a href="._quantumcomputingMSU-bs039.html">40</a></li>
   <li><a href="._quantumcomputingMSU-bs040.html">41</a></li>
   <li><a href="._quantumcomputingMSU-bs041.html">42</a></li>
+  <li><a href="._quantumcomputingMSU-bs042.html">43</a></li>
   <li><a href="._quantumcomputingMSU-bs038.html">&raquo;</a></li>
 </ul>
 <!-- ------------------- end of main content --------------- -->

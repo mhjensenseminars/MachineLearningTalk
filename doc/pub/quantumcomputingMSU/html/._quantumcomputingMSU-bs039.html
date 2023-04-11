@@ -108,6 +108,7 @@ doconce format html quantumcomputingMSU.do.txt --html_style=bootstrap --pygments
                'final-von-neumann-entropy'),
               ('Analysis', 2, None, 'analysis'),
               ('Results', 2, None, 'results'),
+              ('Interpretations', 2, None, 'interpretations'),
               ('Basis of left well', 2, None, 'basis-of-left-well'),
               ('Basis of left well', 2, None, 'basis-of-left-well'),
               ('Densities, potential wells overlaps',
@@ -187,7 +188,7 @@ MathJax.Hub.Config({
      <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs012.html#reminder-on-density-matrices" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Reminder on density matrices</a></li>
      <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs012.html#two-qubit-system-and-definition-of-density-matrices" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Two-qubit system and definition of density matrices</a></li>
      <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs012.html#shannon-information-entropy" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Shannon information entropy</a></li>
-     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs033.html#von-neumann-entropy" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Von Neumann entropy</a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs034.html#von-neumann-entropy" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Von Neumann entropy</a></li>
      <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs013.html#quantum-dots-and-the-coulomb-interaction" style="font-size: 80%;"><b>Quantum dots and the Coulomb interaction</b></a></li>
      <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs014.html#electrons-on-helium-is-another-qubit-platform" style="font-size: 80%;"><b>Electrons on helium is another qubit platform</b></a></li>
      <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs015.html#surface-state-electrons-sse" style="font-size: 80%;"><b>Surface state electrons (SSE)</b></a></li>
@@ -204,19 +205,20 @@ MathJax.Hub.Config({
      <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs026.html#final-von-neumann-entropy" style="font-size: 80%;"><b>Final Von Neumann entropy</b></a></li>
      <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs027.html#analysis" style="font-size: 80%;"><b>Analysis</b></a></li>
      <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs028.html#results" style="font-size: 80%;"><b>Results</b></a></li>
-     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs030.html#basis-of-left-well" style="font-size: 80%;"><b>Basis of left well</b></a></li>
-     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs030.html#basis-of-left-well" style="font-size: 80%;"><b>Basis of left well</b></a></li>
-     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs031.html#densities-potential-wells-overlaps" style="font-size: 80%;"><b>Densities, potential wells overlaps</b></a></li>
-     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs032.html#schmidt-basis-for-configurations-ii-and-iii" style="font-size: 80%;"><b>Schmidt basis for configurations II and III</b></a></li>
-     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs033.html#von-neumann-entropy" style="font-size: 80%;"><b>Von Neumann entropy</b></a></li>
-     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs034.html#where-we-are-now" style="font-size: 80%;"><b>Where we are now</b></a></li>
-     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs035.html#plans" style="font-size: 80%;"><b>Plans</b></a></li>
-     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs036.html#additional-material" style="font-size: 80%;"><b>Additional material</b></a></li>
-     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs037.html#how-to-simulate-quantum-mechanical-systems-vqe-and-efficient-computations-of-gradients" style="font-size: 80%;"><b>How to simulate quantum mechanical systems: VQE and efficient computations of gradients</b></a></li>
-     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs038.html#setting-up-the-matrix" style="font-size: 80%;"><b>Setting up the matrix</b></a></li>
-     <!-- navigation toc: --> <li><a href="#implementing-the-vqe" style="font-size: 80%;"><b>Implementing the VQE</b></a></li>
-     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs040.html#gradient-descent-and-calculations-of-gradients" style="font-size: 80%;"><b>Gradient descent and calculations of gradients</b></a></li>
-     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs041.html#a-smarter-way-of-doing-this" style="font-size: 80%;"><b>A smarter way of doing this</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs029.html#interpretations" style="font-size: 80%;"><b>Interpretations</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs031.html#basis-of-left-well" style="font-size: 80%;"><b>Basis of left well</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs031.html#basis-of-left-well" style="font-size: 80%;"><b>Basis of left well</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs032.html#densities-potential-wells-overlaps" style="font-size: 80%;"><b>Densities, potential wells overlaps</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs033.html#schmidt-basis-for-configurations-ii-and-iii" style="font-size: 80%;"><b>Schmidt basis for configurations II and III</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs034.html#von-neumann-entropy" style="font-size: 80%;"><b>Von Neumann entropy</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs035.html#where-we-are-now" style="font-size: 80%;"><b>Where we are now</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs036.html#plans" style="font-size: 80%;"><b>Plans</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs037.html#additional-material" style="font-size: 80%;"><b>Additional material</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs038.html#how-to-simulate-quantum-mechanical-systems-vqe-and-efficient-computations-of-gradients" style="font-size: 80%;"><b>How to simulate quantum mechanical systems: VQE and efficient computations of gradients</b></a></li>
+     <!-- navigation toc: --> <li><a href="#setting-up-the-matrix" style="font-size: 80%;"><b>Setting up the matrix</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs040.html#implementing-the-vqe" style="font-size: 80%;"><b>Implementing the VQE</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs041.html#gradient-descent-and-calculations-of-gradients" style="font-size: 80%;"><b>Gradient descent and calculations of gradients</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs042.html#a-smarter-way-of-doing-this" style="font-size: 80%;"><b>A smarter way of doing this</b></a></li>
 
         </ul>
       </li>
@@ -228,47 +230,7 @@ MathJax.Hub.Config({
 <p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p> <!-- add vertical space -->
 <a name="part0039"></a>
 <!-- !split -->
-<h2 id="implementing-the-vqe" class="anchor">Implementing the VQE </h2>
-
-<p>For a one-qubit system we can reach every point on the Bloch sphere
-(as discussed earlier) with a rotation about the \( x \)-axis and the
-\( y \)-axis.
-</p>
-
-<p>We can express this mathematically through the following operations (see whiteboard for the drawing), giving us a new state \( \vert \psi\rangle \)</p>
-$$
-\vert\psi\rangle = R_y(\phi)R_x(\theta)\vert 0 \rangle.
-$$
-
-<p>We can produce multiple ansatzes for the new state in terms of the
-angles \( \theta \) and \( \phi \).  With these ansatzes we can in turn
-calculate the expectation value of the above Hamiltonian, now
-rewritten in terms of various Pauli matrices (and thereby gates), that is compute
-</p>
-
-$$
-\langle \psi \vert (c+\mathcal{E})\boldsymbol{I} + (\Omega+\omega_z)\boldsymbol{\sigma}_z + \omega_x\boldsymbol{\sigma}_x\vert \psi \rangle.
-$$
-
-<p>We can now set up a series of ansatzes for \( \vert \psi \rangle \) as
-function of the angles \( \theta \) and \( \phi \) and find thereafter the
-variational minimum using for example a gradient descent method.
-</p>
-
-<p>To do so, we need to remind ourselves about the mathematical expressions for
-the rotational matrices/operators.
-</p>
-
-$$
-R_x(\theta)=\cos{\frac{\theta}{2}}\boldsymbol{I}-\imath \sin{\frac{\theta}{2}}\boldsymbol{\sigma}_x,
-$$
-
-<p>and</p>
-
-$$
-R_y(\phi)=\cos{\frac{\phi}{2}}\boldsymbol{I}-\imath \sin{\frac{\phi}{2}}\boldsymbol{\sigma}_y.
-$$
-
+<h2 id="setting-up-the-matrix" class="anchor">Setting up the matrix </h2>
 
 
 <!-- code=python (!bc pycod) typeset with pygments style "default" -->
@@ -277,21 +239,26 @@ $$
     <div class="inner_cell">
       <div class="input_area">
         <div class="highlight" style="background: #f8f8f8">
-  <pre style="line-height: 125%;"><span style="color: #408080; font-style: italic"># define the rotation matrices</span>
-<span style="color: #408080; font-style: italic"># Define angles theta and phi</span>
-theta <span style="color: #666666">=</span> <span style="color: #666666">0.5*</span>np<span style="color: #666666">.</span>pi; phi <span style="color: #666666">=</span> <span style="color: #666666">0.2*</span>np<span style="color: #666666">.</span>pi
-Rx <span style="color: #666666">=</span> np<span style="color: #666666">.</span>cos(theta<span style="color: #666666">*0.5</span>)<span style="color: #666666">*</span>I<span style="color: #666666">-1</span>j<span style="color: #666666">*</span>np<span style="color: #666666">.</span>sin(theta<span style="color: #666666">*0.5</span>)<span style="color: #666666">*</span>X
-Ry <span style="color: #666666">=</span> np<span style="color: #666666">.</span>cos(phi<span style="color: #666666">*0.5</span>)<span style="color: #666666">*</span>I<span style="color: #666666">-1</span>j<span style="color: #666666">*</span>np<span style="color: #666666">.</span>sin(phi<span style="color: #666666">*0.5</span>)<span style="color: #666666">*</span>Y
-<span style="color: #408080; font-style: italic">#define basis states</span>
-basis0 <span style="color: #666666">=</span> np<span style="color: #666666">.</span>array([<span style="color: #666666">1</span>,<span style="color: #666666">0</span>])
-basis1 <span style="color: #666666">=</span> np<span style="color: #666666">.</span>array([<span style="color: #666666">0</span>,<span style="color: #666666">1</span>])
-
-NewBasis <span style="color: #666666">=</span> Ry <span style="color: #666666">@</span> Rx <span style="color: #666666">@</span> basis0
-<span style="color: #008000">print</span>(NewBasis)
-<span style="color: #408080; font-style: italic"># Compute the expectation value</span>
-<span style="color: #408080; font-style: italic">#Note hermitian conjugation</span>
-Energy <span style="color: #666666">=</span> NewBasis<span style="color: #666666">.</span>conj()<span style="color: #666666">.</span>T <span style="color: #666666">@</span> Hamiltonian <span style="color: #666666">@</span> NewBasis
-<span style="color: #008000">print</span>(Energy)
+  <pre style="line-height: 125%;"><span style="color: #008000; font-weight: bold">from</span>  <span style="color: #0000FF; font-weight: bold">matplotlib</span> <span style="color: #008000; font-weight: bold">import</span> pyplot <span style="color: #008000; font-weight: bold">as</span> plt
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">numpy</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">np</span>
+dim <span style="color: #666666">=</span> <span style="color: #666666">2</span>
+Hamiltonian <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros((dim,dim))
+e0 <span style="color: #666666">=</span> <span style="color: #666666">0.0</span>
+e1 <span style="color: #666666">=</span> <span style="color: #666666">4.0</span>
+Xnondiag <span style="color: #666666">=</span> <span style="color: #666666">0.20</span>
+Xdiag <span style="color: #666666">=</span> <span style="color: #666666">3.0</span>
+Eigenvalue <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros(dim)
+<span style="color: #408080; font-style: italic"># setting up the Hamiltonian</span>
+Hamiltonian[<span style="color: #666666">0</span>,<span style="color: #666666">0</span>] <span style="color: #666666">=</span> Xdiag<span style="color: #666666">+</span>e0
+Hamiltonian[<span style="color: #666666">0</span>,<span style="color: #666666">1</span>] <span style="color: #666666">=</span> Xnondiag
+Hamiltonian[<span style="color: #666666">1</span>,<span style="color: #666666">0</span>] <span style="color: #666666">=</span> Hamiltonian[<span style="color: #666666">0</span>,<span style="color: #666666">1</span>]
+Hamiltonian[<span style="color: #666666">1</span>,<span style="color: #666666">1</span>] <span style="color: #666666">=</span> e1<span style="color: #666666">-</span>Xdiag
+<span style="color: #408080; font-style: italic"># diagonalize and obtain eigenvalues, not necessarily sorted</span>
+EigValues, EigVectors <span style="color: #666666">=</span> np<span style="color: #666666">.</span>linalg<span style="color: #666666">.</span>eig(Hamiltonian)
+permute <span style="color: #666666">=</span> EigValues<span style="color: #666666">.</span>argsort()
+EigValues <span style="color: #666666">=</span> EigValues[permute]
+<span style="color: #408080; font-style: italic"># print only the lowest eigenvalue</span>
+<span style="color: #008000">print</span>(EigValues[<span style="color: #666666">0</span>])
 </pre>
 </div>
       </div>
@@ -307,7 +274,8 @@ Energy <span style="color: #666666">=</span> NewBasis<span style="color: #666666
   </div>
 </div>
 
-<p>Not an impressive results. We set up now a loop over many angles \( \theta \) and \( \phi \) and compute the energies</p>
+<p>Now rewrite it in terms of the identity matrix and the Pauli matrix X and Z</p>
+
 
 <!-- code=python (!bc pycod) typeset with pygments style "default" -->
 <div class="cell border-box-sizing code_cell rendered">
@@ -315,23 +283,21 @@ Energy <span style="color: #666666">=</span> NewBasis<span style="color: #666666
     <div class="inner_cell">
       <div class="input_area">
         <div class="highlight" style="background: #f8f8f8">
-  <pre style="line-height: 125%;"><span style="color: #408080; font-style: italic"># define a number of angles</span>
-n <span style="color: #666666">=</span> <span style="color: #666666">20</span>
-angle <span style="color: #666666">=</span> np<span style="color: #666666">.</span>arange(<span style="color: #666666">0</span>,<span style="color: #666666">180</span>,<span style="color: #666666">10</span>)
-n <span style="color: #666666">=</span> np<span style="color: #666666">.</span>size(angle)
-ExpectationValues <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros((n,n))
-<span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span> (n):
-    theta <span style="color: #666666">=</span> np<span style="color: #666666">.</span>pi<span style="color: #666666">*</span>angle[i]<span style="color: #666666">/180.0</span>
-    Rx <span style="color: #666666">=</span> np<span style="color: #666666">.</span>cos(theta<span style="color: #666666">*0.5</span>)<span style="color: #666666">*</span>I<span style="color: #666666">-1</span>j<span style="color: #666666">*</span>np<span style="color: #666666">.</span>sin(theta<span style="color: #666666">*0.5</span>)<span style="color: #666666">*</span>X
-    <span style="color: #008000; font-weight: bold">for</span> j <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span> (n):
-        phi <span style="color: #666666">=</span> np<span style="color: #666666">.</span>pi<span style="color: #666666">*</span>angle[j]<span style="color: #666666">/180.0</span>
-        Ry <span style="color: #666666">=</span> np<span style="color: #666666">.</span>cos(phi<span style="color: #666666">*0.5</span>)<span style="color: #666666">*</span>I<span style="color: #666666">-1</span>j<span style="color: #666666">*</span>np<span style="color: #666666">.</span>sin(phi<span style="color: #666666">*0.5</span>)<span style="color: #666666">*</span>Y
-        NewBasis <span style="color: #666666">=</span> Ry <span style="color: #666666">@</span> Rx <span style="color: #666666">@</span> basis0
-        Energy <span style="color: #666666">=</span> NewBasis<span style="color: #666666">.</span>conj()<span style="color: #666666">.</span>T <span style="color: #666666">@</span> Hamiltonian <span style="color: #666666">@</span> NewBasis
-        Edifference<span style="color: #666666">=</span><span style="color: #008000">abs</span>(np<span style="color: #666666">.</span>real(EigValues[<span style="color: #666666">0</span>]<span style="color: #666666">-</span>Energy))
-        ExpectationValues[i,j]<span style="color: #666666">=</span>Edifference
+  <pre style="line-height: 125%;"><span style="color: #408080; font-style: italic"># Now rewrite it in terms of the identity matrix and the Pauli matrix X and Z</span>
+X <span style="color: #666666">=</span> np<span style="color: #666666">.</span>array([[<span style="color: #666666">0</span>,<span style="color: #666666">1</span>],[<span style="color: #666666">1</span>,<span style="color: #666666">0</span>]])
+Y <span style="color: #666666">=</span> np<span style="color: #666666">.</span>array([[<span style="color: #666666">0</span>,<span style="color: #666666">-1</span>j],[<span style="color: #666666">1</span>j,<span style="color: #666666">0</span>]])
+Z <span style="color: #666666">=</span> np<span style="color: #666666">.</span>array([[<span style="color: #666666">1</span>,<span style="color: #666666">0</span>],[<span style="color: #666666">0</span>,<span style="color: #666666">-1</span>]])
+<span style="color: #408080; font-style: italic"># identity matrix</span>
+I <span style="color: #666666">=</span> np<span style="color: #666666">.</span>array([[<span style="color: #666666">1</span>,<span style="color: #666666">0</span>],[<span style="color: #666666">0</span>,<span style="color: #666666">1</span>]])
 
-<span style="color: #008000">print</span>(np<span style="color: #666666">.</span>min(ExpectationValues))
+epsilon <span style="color: #666666">=</span> (e0<span style="color: #666666">+</span>e1)<span style="color: #666666">*0.5</span>; omega <span style="color: #666666">=</span> (e0<span style="color: #666666">-</span>e1)<span style="color: #666666">*0.5</span>
+c <span style="color: #666666">=</span> <span style="color: #666666">0.0</span>; omega_z<span style="color: #666666">=</span>Xdiag; omega_x <span style="color: #666666">=</span> Xnondiag
+Hamiltonian <span style="color: #666666">=</span> (epsilon<span style="color: #666666">+</span>c)<span style="color: #666666">*</span>I<span style="color: #666666">+</span>(omega_z<span style="color: #666666">+</span>omega)<span style="color: #666666">*</span>Z<span style="color: #666666">+</span>omega_x<span style="color: #666666">*</span>X
+EigValues, EigVectors <span style="color: #666666">=</span> np<span style="color: #666666">.</span>linalg<span style="color: #666666">.</span>eig(Hamiltonian)
+permute <span style="color: #666666">=</span> EigValues<span style="color: #666666">.</span>argsort()
+EigValues <span style="color: #666666">=</span> EigValues[permute]
+<span style="color: #408080; font-style: italic"># print only the lowest eigenvalue</span>
+<span style="color: #008000">print</span>(EigValues[<span style="color: #666666">0</span>])
 </pre>
 </div>
       </div>
@@ -347,16 +313,6 @@ ExpectationValues <span style="color: #666666">=</span> np<span style="color: #6
   </div>
 </div>
 
-<p>Clearly, this is not the very best way of proceeding. Rather, here we
-could try to find the optimal values for the parameters \( \theta \) and
-\( \phi \) through computation of their respective gradients and thereby
-find the minimum as function of the optimal angles \( \hat{\theta} \) and
-\( \hat{\phi} \).
-</p>
-
-<p>Let us now implement a classical gradient descent algorithm to the computation of the energies. 
-We will follow closely  <a href="https://journals.aps.org/pra/abstract/10.1103/PhysRevA.99.032331" target="_self"><tt>https://journals.aps.org/pra/abstract/10.1103/PhysRevA.99.032331</tt></a> in order to calculate gradients of the Hamiltonian.
-</p>
 
 <p>
 <!-- navigation buttons at the bottom of the page -->
@@ -375,6 +331,7 @@ We will follow closely  <a href="https://journals.aps.org/pra/abstract/10.1103/P
   <li class="active"><a href="._quantumcomputingMSU-bs039.html">40</a></li>
   <li><a href="._quantumcomputingMSU-bs040.html">41</a></li>
   <li><a href="._quantumcomputingMSU-bs041.html">42</a></li>
+  <li><a href="._quantumcomputingMSU-bs042.html">43</a></li>
   <li><a href="._quantumcomputingMSU-bs040.html">&raquo;</a></li>
 </ul>
 <!-- ------------------- end of main content --------------- -->

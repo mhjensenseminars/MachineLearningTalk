@@ -212,6 +212,7 @@ div.toc p,a {
                'final-von-neumann-entropy'),
               ('Analysis', 2, None, 'analysis'),
               ('Results', 2, None, 'results'),
+              ('Interpretations', 2, None, 'interpretations'),
               ('Basis of left well', 2, None, 'basis-of-left-well'),
               ('Basis of left well', 2, None, 'basis-of-left-well'),
               ('Densities, potential wells overlaps',
@@ -1093,7 +1094,8 @@ $$
 <p>where no symmetry is assumed for the wavefunction as the
 particles are distinguishable, and the index
 \( I = (i, j) = iN^R + j \) is a compound index denoting the
-excited two-body state we are looking at.
+excited two-body state we are looking at. This leads however to a large basis set.
+Instead of using the above basis set we switch to a Hartree basis.
 </p>
 
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
@@ -1174,7 +1176,7 @@ we can use three additional quantities.
 
 <ol>
 <li> The first quantity are the two-body energies \( E_K \). We search for configurations where two or more energies are nearly degenerate, as this indicates a mixing of states. o The second quantity we use are the coefficients \( C_{kl} \) themselves. In the Hartree basis, these coefficients give a good indication of which states are entangled.</li>
-<li> And the third is the particle density. For the state \( \vert \Psi\rangle \) above, we can compute the particle density, which collapses to the electron density in the case of indistinguishable particles.</li>
+<li> And the third is the particle density. For the state \( \vert \Psi\rangle \) above, we can compute the particle density. The particle density can be used as a tool to qualitatively visualize the entanglement of a state.</li>
 </ol>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 <h2 id="results">Results </h2>
@@ -1187,8 +1189,22 @@ electrons.
 
 <ol>
 <li> In <b>configuration I</b> we address both qubits independently and can thereby perform single-qubit state rotations.</li>
-<li> Configurations II and III correspond to avoided level crossings between two (\( E_{01}, E_{10} \)) and three (\( E_{11}, E_{20}, E_{02} \)) energy levels respectively, where the electrons' motion becomes correlated, that is their are entangled.</li> 
+<li> Configurations II and III correspond to avoided level crossings between two (\( E_{01}, E_{10} \)) and three (\( E_{11}, E_{20}, E_{02} \)) energy levels respectively, where the electrons' motion becomes correlated, that is they are entangled.</li> 
 </ol>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="interpretations">Interpretations </h2>
+
+<p>When moving from configuration I into the avoided crossing of
+configuration II infinitely slow adiabatically, the probability of a
+transition from the \( \vert 01\rangle \) to the \( \vert 10\rangle \) state
+is zero according to the adiabatic theorem.
+</p>
+
+<p>An infinitely fast shift in configuration will instead cause the transition probability to be 1.
+Changing configuration with a finite speed will thus result in a transition probability between one and zero,
+and hence an entangled state. In our system we have that logical states \( \vert 01\rangle \) to the \( \vert 10\rangle \) correspond to the two first excited states.
+</p>
+
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 <h2 id="basis-of-left-well">Basis of left well </h2>
 
@@ -1213,7 +1229,7 @@ which shows the energy of the potential.
 </center>
 <br/><br/>
 
-<p>figures we have plotted the transition energy from
+<p>Here we have plotted the transition energy from
 the ground state to the labeled excited state as a function of the voltage
 parameter \( \lambda \).
 The left figure  shows the transition energies for the non-interacting case, i.e., the single-particle
@@ -1230,7 +1246,7 @@ transition energies, whereas the right figure shows the interacting case.
 <br/><br/>
 
 <p>These figures depict the potential wells, the one-body
-densities, and the active single-particle states in the Schmidt basis for configuration I.
+densities, and the active single-particle states in the Schmidt basis for configuration I. <b>No avoid crossing</b>.
 </p>
 
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
@@ -1257,14 +1273,14 @@ i.e., in the avoided crossing regimes.
 <br/><br/>
 
 <p>Numerical results for the von Neumann entropy of the five lowest excited states as a function of the voltage parameter \( \lambda \). The entropies
-\( S_1 \) and \( S_2 \) of the \( \vert\Phi_1\rangle \) respectively \( \vert\Phi_2\rangle \) states are nearly identical. Note that the peaks in entropy corresponds to the avoided crossings
+\( S_1 \) and \( S_2 \) of the \( \vert\Phi_1\rangle \) respectively \( \vert\Phi_2\rangle \) states are nearly identical. Note that the peaks in entropy corresponds to the avoided crossings.
 </p>
 
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 <h2 id="where-we-are-now">Where we are now </h2>
 
 <ol>
-<li> Adding Time-dependent studies of two electrons in two wells in one dimensions</li>
+<li> Adding Time-dependent studies of two electrons in two wells in one and two dimensions</li>
 <li> Studies of the time-evolution of entangled states (now two electrons only)</li>
 <li> Use theory to find optimal experimental setup</li>
 <li> Expect two-electron system realized experimentally in approx \( 1 \) year, great potential for studies of quantum simulations</li>
