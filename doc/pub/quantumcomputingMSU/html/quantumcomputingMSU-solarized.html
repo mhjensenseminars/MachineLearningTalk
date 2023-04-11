@@ -119,21 +119,22 @@ div.toc p,a {
               ('Computational Methods', 2, None, 'computational-methods'),
               ('One-dimensional system', 2, None, 'one-dimensional-system'),
               ('Details 1', 2, None, 'details-1'),
-              ('Details 2', 2, None, 'details-2'),
               ('Details 3', 2, None, 'details-3'),
               ('Hartree method', 2, None, 'hartree-method'),
               ('Measuring the degree of entanglement',
                2,
                None,
                'measuring-the-degree-of-entanglement'),
-              ('More entropy', 2, None, 'more-entropy'),
-              ('Schmidt decomposition', 2, None, 'schmidt-decomposition'),
+              ('More entropy and Schmidt decomposition',
+               2,
+               None,
+               'more-entropy-and-schmidt-decomposition'),
               ('Final Von Neumann entropy',
                2,
                None,
                'final-von-neumann-entropy'),
               ('Analysis', 2, None, 'analysis'),
-              ('Results 1', 2, None, 'results-1'),
+              ('Results', 2, None, 'results'),
               ('Where we are now', 2, None, 'where-we-are-now'),
               ('Plans', 2, None, 'plans'),
               ('Additional material', 2, None, 'additional-material'),
@@ -237,10 +238,11 @@ experimentally.
 <li> smarter basis functions</li>
 <li> resummation of specific correlations</li>
 <li> stochastic sampling of high-lying states (stochastic FCI, CC and SRG/IMSRG)</li>
-<li> many more</li>
+<li> and more</li>
 </ol>
 </div>
 
+<b>Use the massive parallelization which quantum computing offers for solving complicated many-body problems</b>
 
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 <h2 id="literature-and-more-reading">Literature and more reading  </h2>
@@ -319,7 +321,7 @@ trapped electrons.
 <ol>
 <li> Time-Dependent full configuration interaction theory</li>
 <li> Time-dependent Coupled-Cluster theory</li>
-<li> Designing quantum operations and quantum simulators</li>
+<li> Designing quantum operations and quantum simulations</li>
 </ol>
 </div>
 
@@ -378,9 +380,9 @@ between circuit elements or by indirect coupling of two qubits to a
 common resonator (virtually populating resonator mode) which results
 in a non-local Hamiltonian in the form of exchange
 interaction. This allow to implement various
-schemes for entanglement, such as \( \sqrt{i\text{SWAP}} \), controlled-phase
+schemes for entanglement, such as controlled-phase
 gate, resonator-induced phase
-gate, cross-resonance gate.
+gate, cross-resonance gates etc.
 </p>
 </div>
 
@@ -587,7 +589,7 @@ $$
 \boldsymbol{A}=\sum_i\lambda_i\vert i \rangle\langle i\vert,
 $$
 
-<p>with the ONB \( \vert i\rangle \) being eigenvectors of \( \boldsymbol{A} \) and \( \lambda_i \) being the eigenvectors. Similarly, a operator which is a function of \( \boldsymbol{A} \) is given by</p>
+<p>with the ONB \( \vert i\rangle \) being eigenvectors of \( \boldsymbol{A} \) and \( \lambda_i \) being the eigenvalues. Similarly, a operator which is a function of \( \boldsymbol{A} \) is given by</p>
 $$
 f(\boldsymbol{A})=\sum_if(\boldsymbol{A})\vert i \rangle\langle i\vert.
 $$
@@ -933,7 +935,7 @@ also fits the interpolated potential very effectively.
 
 <p>As we are only studying a model comprised of two electrons restricted
 to move in a one-dimensional external potential we have employed
-the configuration-interaction theory to compute the steady-state
+full configuration interaction (shell-model in NP) theory to compute the steady-state
 properties of the system.  We have used a static, one-dimensional,
 grid-based basis set for the single-particle functions.  This
 allows for flexibility in the choice of the external potential,
@@ -987,14 +989,11 @@ $$
 \end{align}
 $$
 
-<p>with \( A \in \qty{L, R} \), and the two-body Hamiltonian is the regularized Coulomb interaction</p>
-
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-<h2 id="details-2">Details 2 </h2>
+<p>with \( A \in \{L, R\} \), and the two-body Hamiltonian is the regularized Coulomb interaction</p>
 
 <p>After dividing the Hamiltonian into two distinguishable subsystems \( L \)
 and \( R \), we establish
-two \( \sinc \)-DVR (Discrete Variable Representation) basis sets, one for each well.
+two DVR (Discrete Variable Representation) basis sets, one for each well.
 </p>
 
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
@@ -1006,7 +1005,7 @@ The wave function ansatz is then given by
 $$
 \begin{align}
 \vert\Phi_I\rangle &= \sum_{k = 0}^{N^L} \sum_{l = 0}^{N^R} C_{kl, I}
-\vert {\phi^{L}_k \phi^{R}_l\rangle,
+\vert \phi^{L}_k \phi^{R}_l\rangle,
 \label{_auto7}
 \end{align}
 $$
@@ -1042,12 +1041,12 @@ $$
 <p>where \( \hat{\rho} \) is the density operator/matrix.</p>
 
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
-<h2 id="more-entropy">More entropy </h2>
+<h2 id="more-entropy-and-schmidt-decomposition">More entropy and Schmidt decomposition </h2>
 
 <p>As the Hamiltonian eigenstates are pure states, we can evaluate their
 entanglement by bypassing the construction of the density operator
 and use the Schmidt decomposition instead. Specifically, for a given
-two-body wave function \( \ket*{\Psi} \) expressed in terms of the
+two-body wave function \( \\vert \Psi\rangle \) expressed in terms of the
 Hartree product states, we can write
 </p>
 
@@ -1059,11 +1058,8 @@ $$
 
 <p>where \( C_{kl} = \sum_{p = 0}^{\tilde{N}} U_{kp}\sigma_{p} V^{*}_{lp} \) is the singular value
 decomposition of the two-body coefficients.
+We have
 </p>
-
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-<h2 id="schmidt-decomposition">Schmidt decomposition </h2>
-
 $$
 \begin{gather*}
 \vert\psi^L_p\rangle\equiv \sum_{k = 0}^{N^L} U_{kp} \vert\phi^L_k\rangle,
@@ -1073,7 +1069,7 @@ $$
 
 <p>are the Schmidt states, \( \tilde{N} \) is
 either \( N^L \) or \( N^R \) depending on the definition of the singular value decomposition, and \( \sigma_p \) are the singular values with \( \sigma_p^2 \)
-representing the occupation of the pair \( \ket*{\psi^L_p \psi^R_p} \).
+representing the occupation of the pair \( \vert\psi^L_p \psi^R_p\rangle \).
 </p>
 
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
@@ -1101,13 +1097,24 @@ we can use three additional quantities.
 <li> And the third is the particle density. For the state \( \ket{\Psi} \) above, we can compute the particle density, which collapses to the electron density in the case of indistinguishable particles.</li>
 </ol>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
-<h2 id="results-1">Results 1 </h2>
+<h2 id="results">Results </h2>
+
+<p>Given a large degree of tuning of the electrostatic potential
+landscape with seven electrodes we search for well configurations
+corresponding to three different types of interaction between two
+electrons. In configuration I we address both qubits
+independently and perform single-qubit state rotations. Configurations
+II and III corresponds to avoided level crossings between two
+(\( E_{01}, E_{10} \)) and three (\( E_{11}, E_{20}, E_{02} \)) energy levels
+respectively, where the electrons' motion becomes correlated,
+e.g. entangled. 
+</p>
 
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 <h2 id="where-we-are-now">Where we are now </h2>
 
 <ol>
-<li> Time-dependent studies of two electrons in two wells in one dimensions</li>
+<li> Adding Time-dependent studies of two electrons in two wells in one dimensions</li>
 <li> Studies of the time-evolution of entangled states (now two electrons only)</li>
 <li> Use theory to find optimal experimental setup</li>
 <li> Expect two-electron system realized experimentally in approx \( 1 \) year, great potential for studies of quantum simulations</li>
@@ -1116,13 +1123,12 @@ we can use three additional quantities.
 <h2 id="plans">Plans </h2>
 
 <ol>
-<li> Add two and three-dimensions</li>
-<li> Develop time-dependent FCI code, useful up to approximately 10-30 particles with <b>effective</b> (and effective Hilbert space) Hamiltonians in two and three dimensions</li>
+<li> Add two and three-dimensions in order to simulate in  a more realistic way such many-body systems.</li>
+<li> Develop time-dependent FCI code, useful up to approximately 10 particles with <b>effective</b> (and effective Hilbert space) Hamiltonians in two and three dimensions</li>
 <li> Particles can be valence particles  or valence holes defined for an effective Hilbert space</li>
 <li> Develop codes for studies of entanglement as function of time</li>
 <li> Study the feasibility of various setups for quantum simulations</li>
 <li> For larger many-body systems, study for example time-dependent CC theory</li>
-<li> More plans</li>
 </ol>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 <h2 id="additional-material">Additional material </h2>

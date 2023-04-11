@@ -92,21 +92,22 @@ doconce format html quantumcomputingMSU.do.txt --html_style=bootstrap --pygments
               ('Computational Methods', 2, None, 'computational-methods'),
               ('One-dimensional system', 2, None, 'one-dimensional-system'),
               ('Details 1', 2, None, 'details-1'),
-              ('Details 2', 2, None, 'details-2'),
               ('Details 3', 2, None, 'details-3'),
               ('Hartree method', 2, None, 'hartree-method'),
               ('Measuring the degree of entanglement',
                2,
                None,
                'measuring-the-degree-of-entanglement'),
-              ('More entropy', 2, None, 'more-entropy'),
-              ('Schmidt decomposition', 2, None, 'schmidt-decomposition'),
+              ('More entropy and Schmidt decomposition',
+               2,
+               None,
+               'more-entropy-and-schmidt-decomposition'),
               ('Final Von Neumann entropy',
                2,
                None,
                'final-von-neumann-entropy'),
               ('Analysis', 2, None, 'analysis'),
-              ('Results 1', 2, None, 'results-1'),
+              ('Results', 2, None, 'results'),
               ('Where we are now', 2, None, 'where-we-are-now'),
               ('Plans', 2, None, 'plans'),
               ('Additional material', 2, None, 'additional-material'),
@@ -185,23 +186,21 @@ MathJax.Hub.Config({
      <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs019.html#computational-methods" style="font-size: 80%;"><b>Computational Methods</b></a></li>
      <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs020.html#one-dimensional-system" style="font-size: 80%;"><b>One-dimensional system</b></a></li>
      <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs021.html#details-1" style="font-size: 80%;"><b>Details 1</b></a></li>
-     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs022.html#details-2" style="font-size: 80%;"><b>Details 2</b></a></li>
-     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs023.html#details-3" style="font-size: 80%;"><b>Details 3</b></a></li>
-     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs024.html#hartree-method" style="font-size: 80%;"><b>Hartree method</b></a></li>
-     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs025.html#measuring-the-degree-of-entanglement" style="font-size: 80%;"><b>Measuring the degree of entanglement</b></a></li>
-     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs026.html#more-entropy" style="font-size: 80%;"><b>More entropy</b></a></li>
-     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs027.html#schmidt-decomposition" style="font-size: 80%;"><b>Schmidt decomposition</b></a></li>
-     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs028.html#final-von-neumann-entropy" style="font-size: 80%;"><b>Final Von Neumann entropy</b></a></li>
-     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs029.html#analysis" style="font-size: 80%;"><b>Analysis</b></a></li>
-     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs030.html#results-1" style="font-size: 80%;"><b>Results 1</b></a></li>
-     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs031.html#where-we-are-now" style="font-size: 80%;"><b>Where we are now</b></a></li>
-     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs032.html#plans" style="font-size: 80%;"><b>Plans</b></a></li>
-     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs033.html#additional-material" style="font-size: 80%;"><b>Additional material</b></a></li>
-     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs034.html#how-to-simulate-quantum-mechanical-systems-vqe-and-efficient-computations-of-gradients" style="font-size: 80%;"><b>How to simulate quantum mechanical systems: VQE and efficient computations of gradients</b></a></li>
-     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs035.html#setting-up-the-matrix" style="font-size: 80%;"><b>Setting up the matrix</b></a></li>
-     <!-- navigation toc: --> <li><a href="#implementing-the-vqe" style="font-size: 80%;"><b>Implementing the VQE</b></a></li>
-     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs037.html#gradient-descent-and-calculations-of-gradients" style="font-size: 80%;"><b>Gradient descent and calculations of gradients</b></a></li>
-     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs038.html#a-smarter-way-of-doing-this" style="font-size: 80%;"><b>A smarter way of doing this</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs022.html#details-3" style="font-size: 80%;"><b>Details 3</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs023.html#hartree-method" style="font-size: 80%;"><b>Hartree method</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs024.html#measuring-the-degree-of-entanglement" style="font-size: 80%;"><b>Measuring the degree of entanglement</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs025.html#more-entropy-and-schmidt-decomposition" style="font-size: 80%;"><b>More entropy and Schmidt decomposition</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs026.html#final-von-neumann-entropy" style="font-size: 80%;"><b>Final Von Neumann entropy</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs027.html#analysis" style="font-size: 80%;"><b>Analysis</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs028.html#results" style="font-size: 80%;"><b>Results</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs029.html#where-we-are-now" style="font-size: 80%;"><b>Where we are now</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs030.html#plans" style="font-size: 80%;"><b>Plans</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs031.html#additional-material" style="font-size: 80%;"><b>Additional material</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs032.html#how-to-simulate-quantum-mechanical-systems-vqe-and-efficient-computations-of-gradients" style="font-size: 80%;"><b>How to simulate quantum mechanical systems: VQE and efficient computations of gradients</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs033.html#setting-up-the-matrix" style="font-size: 80%;"><b>Setting up the matrix</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs034.html#implementing-the-vqe" style="font-size: 80%;"><b>Implementing the VQE</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs035.html#gradient-descent-and-calculations-of-gradients" style="font-size: 80%;"><b>Gradient descent and calculations of gradients</b></a></li>
+     <!-- navigation toc: --> <li><a href="#a-smarter-way-of-doing-this" style="font-size: 80%;"><b>A smarter way of doing this</b></a></li>
 
         </ul>
       </li>
@@ -213,134 +212,81 @@ MathJax.Hub.Config({
 <p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p> <!-- add vertical space -->
 <a name="part0036"></a>
 <!-- !split -->
-<h2 id="implementing-the-vqe" class="anchor">Implementing the VQE </h2>
+<h2 id="a-smarter-way-of-doing-this" class="anchor">A smarter way of doing this </h2>
 
-<p>For a one-qubit system we can reach every point on the Bloch sphere
-(as discussed earlier) with a rotation about the \( x \)-axis and the
-\( y \)-axis.
+<p>The above approach means that we are setting up several matrix-matrix
+amd matrix-vector multiplications. Although straight forward it is not
+the most efficient way of doing this, in particular in case the
+matrices become large (and sparse). But there are some more important
+issues.
 </p>
 
-<p>We can express this mathematically through the following operations (see whiteboard for the drawing), giving us a new state \( \vert \psi\rangle \)</p>
-$$
-\vert\psi\rangle = R_y(\phi)R_x(\theta)\vert 0 \rangle.
-$$
-
-<p>We can produce multiple ansatzes for the new state in terms of the
-angles \( \theta \) and \( \phi \).  With these ansatzes we can in turn
-calculate the expectation value of the above Hamiltonian, now
-rewritten in terms of various Pauli matrices (and thereby gates), that is compute
+<p>In a physical realization of these systems we cannot just multiply the
+state with the Hamiltonian. When performing a measurement we can only
+measure in one particular direction. For the computational basis
+states which we have, \( \vert 0\rangle \) and \( \vert 1\rangle \), we have
+to measure along the bases of the Pauli matrices and reconstruct the
+eigenvalues from these measurements.
 </p>
 
-$$
-\langle \psi \vert (c+\mathcal{E})\boldsymbol{I} + (\Omega+\omega_z)\boldsymbol{\sigma}_z + \omega_x\boldsymbol{\sigma}_x\vert \psi \rangle.
-$$
-
-<p>We can now set up a series of ansatzes for \( \vert \psi \rangle \) as
-function of the angles \( \theta \) and \( \phi \) and find thereafter the
-variational minimum using for example a gradient descent method.
-</p>
-
-<p>To do so, we need to remind ourselves about the mathematical expressions for
-the rotational matrices/operators.
-</p>
+<p>From our earlier discussions we know that the Pauli \( Z \) matrix has the above basis states as eigen states through</p>
 
 $$
-R_x(\theta)=\cos{\frac{\theta}{2}}\boldsymbol{I}-\imath \sin{\frac{\theta}{2}}\boldsymbol{\sigma}_x,
+\boldsymbol{\sigma}_z\vert 0 \rangle = \boldsymbol{Z}\vert 0 \rangle=+1\vert 0 \rangle,
 $$
 
 <p>and</p>
-
 $$
-R_y(\phi)=\cos{\frac{\phi}{2}}\boldsymbol{I}-\imath \sin{\frac{\phi}{2}}\boldsymbol{\sigma}_y.
+\boldsymbol{\sigma}_z\vert 1 \rangle = \boldsymbol{Z}\vert 1 \rangle=-1\vert 1 \rangle,
 $$
 
+<p>with eigenvalue \( -1 \).</p>
 
+<p>For the Pauli \( X \) matrix on the other hand we have</p>
+$$
+\boldsymbol{\sigma}_x\vert 0 \rangle = \boldsymbol{X}\vert 0 \rangle=+1\vert 1 \rangle,
+$$
 
-<!-- code=python (!bc pycod) typeset with pygments style "default" -->
-<div class="cell border-box-sizing code_cell rendered">
-  <div class="input">
-    <div class="inner_cell">
-      <div class="input_area">
-        <div class="highlight" style="background: #f8f8f8">
-  <pre style="line-height: 125%;"><span style="color: #408080; font-style: italic"># define the rotation matrices</span>
-<span style="color: #408080; font-style: italic"># Define angles theta and phi</span>
-theta <span style="color: #666666">=</span> <span style="color: #666666">0.5*</span>np<span style="color: #666666">.</span>pi; phi <span style="color: #666666">=</span> <span style="color: #666666">0.2*</span>np<span style="color: #666666">.</span>pi
-Rx <span style="color: #666666">=</span> np<span style="color: #666666">.</span>cos(theta<span style="color: #666666">*0.5</span>)<span style="color: #666666">*</span>I<span style="color: #666666">-1</span>j<span style="color: #666666">*</span>np<span style="color: #666666">.</span>sin(theta<span style="color: #666666">*0.5</span>)<span style="color: #666666">*</span>X
-Ry <span style="color: #666666">=</span> np<span style="color: #666666">.</span>cos(phi<span style="color: #666666">*0.5</span>)<span style="color: #666666">*</span>I<span style="color: #666666">-1</span>j<span style="color: #666666">*</span>np<span style="color: #666666">.</span>sin(phi<span style="color: #666666">*0.5</span>)<span style="color: #666666">*</span>Y
-<span style="color: #408080; font-style: italic">#define basis states</span>
-basis0 <span style="color: #666666">=</span> np<span style="color: #666666">.</span>array([<span style="color: #666666">1</span>,<span style="color: #666666">0</span>])
-basis1 <span style="color: #666666">=</span> np<span style="color: #666666">.</span>array([<span style="color: #666666">0</span>,<span style="color: #666666">1</span>])
+<p>and</p>
+$$
+\boldsymbol{\sigma}_x\vert 1 \rangle = \boldsymbol{X}\vert 1 \rangle=-1\vert 0 \rangle,
+$$
 
-NewBasis <span style="color: #666666">=</span> Ry <span style="color: #666666">@</span> Rx <span style="color: #666666">@</span> basis0
-<span style="color: #008000">print</span>(NewBasis)
-<span style="color: #408080; font-style: italic"># Compute the expectation value</span>
-<span style="color: #408080; font-style: italic">#Note hermitian conjugation</span>
-Energy <span style="color: #666666">=</span> NewBasis<span style="color: #666666">.</span>conj()<span style="color: #666666">.</span>T <span style="color: #666666">@</span> Hamiltonian <span style="color: #666666">@</span> NewBasis
-<span style="color: #008000">print</span>(Energy)
-</pre>
-</div>
-      </div>
-    </div>
-  </div>
-  <div class="output_wrapper">
-    <div class="output">
-      <div class="output_area">
-        <div class="output_subarea output_stream output_stdout output_text">          
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<p>Not an impressive results. We set up now a loop over many angles \( \theta \) and \( \phi \) and compute the energies</p>
-
-<!-- code=python (!bc pycod) typeset with pygments style "default" -->
-<div class="cell border-box-sizing code_cell rendered">
-  <div class="input">
-    <div class="inner_cell">
-      <div class="input_area">
-        <div class="highlight" style="background: #f8f8f8">
-  <pre style="line-height: 125%;"><span style="color: #408080; font-style: italic"># define a number of angles</span>
-n <span style="color: #666666">=</span> <span style="color: #666666">20</span>
-angle <span style="color: #666666">=</span> np<span style="color: #666666">.</span>arange(<span style="color: #666666">0</span>,<span style="color: #666666">180</span>,<span style="color: #666666">10</span>)
-n <span style="color: #666666">=</span> np<span style="color: #666666">.</span>size(angle)
-ExpectationValues <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros((n,n))
-<span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span> (n):
-    theta <span style="color: #666666">=</span> np<span style="color: #666666">.</span>pi<span style="color: #666666">*</span>angle[i]<span style="color: #666666">/180.0</span>
-    Rx <span style="color: #666666">=</span> np<span style="color: #666666">.</span>cos(theta<span style="color: #666666">*0.5</span>)<span style="color: #666666">*</span>I<span style="color: #666666">-1</span>j<span style="color: #666666">*</span>np<span style="color: #666666">.</span>sin(theta<span style="color: #666666">*0.5</span>)<span style="color: #666666">*</span>X
-    <span style="color: #008000; font-weight: bold">for</span> j <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span> (n):
-        phi <span style="color: #666666">=</span> np<span style="color: #666666">.</span>pi<span style="color: #666666">*</span>angle[j]<span style="color: #666666">/180.0</span>
-        Ry <span style="color: #666666">=</span> np<span style="color: #666666">.</span>cos(phi<span style="color: #666666">*0.5</span>)<span style="color: #666666">*</span>I<span style="color: #666666">-1</span>j<span style="color: #666666">*</span>np<span style="color: #666666">.</span>sin(phi<span style="color: #666666">*0.5</span>)<span style="color: #666666">*</span>Y
-        NewBasis <span style="color: #666666">=</span> Ry <span style="color: #666666">@</span> Rx <span style="color: #666666">@</span> basis0
-        Energy <span style="color: #666666">=</span> NewBasis<span style="color: #666666">.</span>conj()<span style="color: #666666">.</span>T <span style="color: #666666">@</span> Hamiltonian <span style="color: #666666">@</span> NewBasis
-        Edifference<span style="color: #666666">=</span><span style="color: #008000">abs</span>(np<span style="color: #666666">.</span>real(EigValues[<span style="color: #666666">0</span>]<span style="color: #666666">-</span>Energy))
-        ExpectationValues[i,j]<span style="color: #666666">=</span>Edifference
-
-<span style="color: #008000">print</span>(np<span style="color: #666666">.</span>min(ExpectationValues))
-</pre>
-</div>
-      </div>
-    </div>
-  </div>
-  <div class="output_wrapper">
-    <div class="output">
-      <div class="output_area">
-        <div class="output_subarea output_stream output_stdout output_text">          
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<p>Clearly, this is not the very best way of proceeding. Rather, here we
-could try to find the optimal values for the parameters \( \theta \) and
-\( \phi \) through computation of their respective gradients and thereby
-find the minimum as function of the optimal angles \( \hat{\theta} \) and
-\( \hat{\phi} \).
+<p>with eigenvalues \( 1 \) in both cases. The latter two equations tell us
+that the computational basis we have chosen, and in which we will
+prepare our states, is not an eigenbasis of the \( \sigma_x \) matrix.
 </p>
 
-<p>Let us now implement a classical gradient descent algorithm to the computation of the energies. 
-We will follow closely  <a href="https://journals.aps.org/pra/abstract/10.1103/PhysRevA.99.032331" target="_self"><tt>https://journals.aps.org/pra/abstract/10.1103/PhysRevA.99.032331</tt></a> in order to calculate gradients of the Hamiltonian.
+<p>We will thus try to rewrite the Pauli \( X \) matrix in terms of a Pauli \( Z \) matrix. Fortunately this can be done using the Hadamard matrix twice, that is</p>
+
+$$
+\boldsymbol{X}=\boldsymbol{\sigma}_x=\boldsymbol{H}\boldsymbol{Z}\boldsymbol{H}.
+$$
+
+<p>The Pauli \( Y \) matrix can be written as</p>
+
+$$
+\boldsymbol{Y}=\boldsymbol{\sigma}_y=\boldsymbol{H}\boldsymbol{S}^{\dagger}\boldsymbol{Z}\boldsymbol{H}\boldsymbol{S},
+$$
+
+<p>where \( S \) is the phase matrix</p>
+$$
+S = \begin{bmatrix} 1 & 0 \\ 0 & \imath \end{bmatrix}.
+$$
+
+<p>We will denote the Pauli matrices by \( X \), \( Y \) and \( Z \) and we can write the expectation value of the Hamiltonian as</p>
+$$
+\langle \psi \vert (c+\mathcal{E})\boldsymbol{I} + (\Omega+\omega_z)\boldsymbol{Z} + \omega_x\boldsymbol{H}\boldsymbol{Z}\boldsymbol{H}\vert \psi \rangle,
+$$
+
+<p>which we can rewrite as</p>
+$$
+(c+\mathcal{E})\langle \psi \vert \boldsymbol{I}\vert \psi \rangle+(\Omega+\omega_z)\langle \psi \vert \boldsymbol{Z}\vert \psi \rangle+\omega_x\langle \psi \boldsymbol{H}\vert \boldsymbol{Z}\vert\boldsymbol{H}\psi \rangle.
+$$
+
+<p>The first and second term are to easy to perform a measurement on since we we just need to compute
+\( \langle \psi\vert \boldsymbol{I}\vert \psi\rangle \) and \( \langle \psi\vert \boldsymbol{Z}\vert \psi\rangle \).
+For the final term we need just to add the action of the Hadamard matrix and we are done.
 </p>
 
 <p>
@@ -358,9 +304,6 @@ We will follow closely  <a href="https://journals.aps.org/pra/abstract/10.1103/P
   <li><a href="._quantumcomputingMSU-bs034.html">35</a></li>
   <li><a href="._quantumcomputingMSU-bs035.html">36</a></li>
   <li class="active"><a href="._quantumcomputingMSU-bs036.html">37</a></li>
-  <li><a href="._quantumcomputingMSU-bs037.html">38</a></li>
-  <li><a href="._quantumcomputingMSU-bs038.html">39</a></li>
-  <li><a href="._quantumcomputingMSU-bs037.html">&raquo;</a></li>
 </ul>
 <!-- ------------------- end of main content --------------- -->
 </div>  <!-- end container -->
