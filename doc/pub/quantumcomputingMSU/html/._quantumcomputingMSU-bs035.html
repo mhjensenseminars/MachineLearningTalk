@@ -180,7 +180,7 @@ MathJax.Hub.Config({
      <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs014.html#electrons-on-helium-is-another-qubit-platform" style="font-size: 80%;"><b>Electrons on helium is another qubit platform</b></a></li>
      <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs015.html#surface-state-electrons-sse" style="font-size: 80%;"><b>Surface state electrons (SSE)</b></a></li>
      <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs016.html#to-read-more" style="font-size: 80%;"><b>To read more</b></a></li>
-     <!-- navigation toc: --> <li><a href="#experimental-set-up" style="font-size: 80%;"><b>Experimental set up</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs017.html#experimental-set-up" style="font-size: 80%;"><b>Experimental set up</b></a></li>
      <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs018.html#building-the-solutions" style="font-size: 80%;"><b>Building the solutions</b></a></li>
      <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs019.html#computational-methods" style="font-size: 80%;"><b>Computational Methods</b></a></li>
      <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs020.html#one-dimensional-system" style="font-size: 80%;"><b>One-dimensional system</b></a></li>
@@ -198,7 +198,7 @@ MathJax.Hub.Config({
      <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs032.html#plans" style="font-size: 80%;"><b>Plans</b></a></li>
      <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs033.html#additional-material" style="font-size: 80%;"><b>Additional material</b></a></li>
      <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs034.html#how-to-simulate-quantum-mechanical-systems-vqe-and-efficient-computations-of-gradients" style="font-size: 80%;"><b>How to simulate quantum mechanical systems: VQE and efficient computations of gradients</b></a></li>
-     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs035.html#setting-up-the-matrix" style="font-size: 80%;"><b>Setting up the matrix</b></a></li>
+     <!-- navigation toc: --> <li><a href="#setting-up-the-matrix" style="font-size: 80%;"><b>Setting up the matrix</b></a></li>
      <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs036.html#implementing-the-vqe" style="font-size: 80%;"><b>Implementing the VQE</b></a></li>
      <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs037.html#gradient-descent-and-calculations-of-gradients" style="font-size: 80%;"><b>Gradient descent and calculations of gradients</b></a></li>
      <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs038.html#a-smarter-way-of-doing-this" style="font-size: 80%;"><b>A smarter way of doing this</b></a></li>
@@ -211,37 +211,111 @@ MathJax.Hub.Config({
 </div> <!-- end of navigation bar -->
 <div class="container">
 <p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p> <!-- add vertical space -->
-<a name="part0017"></a>
+<a name="part0035"></a>
 <!-- !split -->
-<h2 id="experimental-set-up" class="anchor">Experimental set up </h2>
+<h2 id="setting-up-the-matrix" class="anchor">Setting up the matrix </h2>
+
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #f8f8f8">
+  <pre style="line-height: 125%;"><span style="color: #008000; font-weight: bold">from</span>  <span style="color: #0000FF; font-weight: bold">matplotlib</span> <span style="color: #008000; font-weight: bold">import</span> pyplot <span style="color: #008000; font-weight: bold">as</span> plt
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">numpy</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">np</span>
+dim <span style="color: #666666">=</span> <span style="color: #666666">2</span>
+Hamiltonian <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros((dim,dim))
+e0 <span style="color: #666666">=</span> <span style="color: #666666">0.0</span>
+e1 <span style="color: #666666">=</span> <span style="color: #666666">4.0</span>
+Xnondiag <span style="color: #666666">=</span> <span style="color: #666666">0.20</span>
+Xdiag <span style="color: #666666">=</span> <span style="color: #666666">3.0</span>
+Eigenvalue <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros(dim)
+<span style="color: #408080; font-style: italic"># setting up the Hamiltonian</span>
+Hamiltonian[<span style="color: #666666">0</span>,<span style="color: #666666">0</span>] <span style="color: #666666">=</span> Xdiag<span style="color: #666666">+</span>e0
+Hamiltonian[<span style="color: #666666">0</span>,<span style="color: #666666">1</span>] <span style="color: #666666">=</span> Xnondiag
+Hamiltonian[<span style="color: #666666">1</span>,<span style="color: #666666">0</span>] <span style="color: #666666">=</span> Hamiltonian[<span style="color: #666666">0</span>,<span style="color: #666666">1</span>]
+Hamiltonian[<span style="color: #666666">1</span>,<span style="color: #666666">1</span>] <span style="color: #666666">=</span> e1<span style="color: #666666">-</span>Xdiag
+<span style="color: #408080; font-style: italic"># diagonalize and obtain eigenvalues, not necessarily sorted</span>
+EigValues, EigVectors <span style="color: #666666">=</span> np<span style="color: #666666">.</span>linalg<span style="color: #666666">.</span>eig(Hamiltonian)
+permute <span style="color: #666666">=</span> EigValues<span style="color: #666666">.</span>argsort()
+EigValues <span style="color: #666666">=</span> EigValues[permute]
+<span style="color: #408080; font-style: italic"># print only the lowest eigenvalue</span>
+<span style="color: #008000">print</span>(EigValues[<span style="color: #666666">0</span>])
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p>Now rewrite it in terms of the identity matrix and the Pauli matrix X and Z</p>
+
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #f8f8f8">
+  <pre style="line-height: 125%;"><span style="color: #408080; font-style: italic"># Now rewrite it in terms of the identity matrix and the Pauli matrix X and Z</span>
+X <span style="color: #666666">=</span> np<span style="color: #666666">.</span>array([[<span style="color: #666666">0</span>,<span style="color: #666666">1</span>],[<span style="color: #666666">1</span>,<span style="color: #666666">0</span>]])
+Y <span style="color: #666666">=</span> np<span style="color: #666666">.</span>array([[<span style="color: #666666">0</span>,<span style="color: #666666">-1</span>j],[<span style="color: #666666">1</span>j,<span style="color: #666666">0</span>]])
+Z <span style="color: #666666">=</span> np<span style="color: #666666">.</span>array([[<span style="color: #666666">1</span>,<span style="color: #666666">0</span>],[<span style="color: #666666">0</span>,<span style="color: #666666">-1</span>]])
+<span style="color: #408080; font-style: italic"># identity matrix</span>
+I <span style="color: #666666">=</span> np<span style="color: #666666">.</span>array([[<span style="color: #666666">1</span>,<span style="color: #666666">0</span>],[<span style="color: #666666">0</span>,<span style="color: #666666">1</span>]])
+
+epsilon <span style="color: #666666">=</span> (e0<span style="color: #666666">+</span>e1)<span style="color: #666666">*0.5</span>; omega <span style="color: #666666">=</span> (e0<span style="color: #666666">-</span>e1)<span style="color: #666666">*0.5</span>
+c <span style="color: #666666">=</span> <span style="color: #666666">0.0</span>; omega_z<span style="color: #666666">=</span>Xdiag; omega_x <span style="color: #666666">=</span> Xnondiag
+Hamiltonian <span style="color: #666666">=</span> (epsilon<span style="color: #666666">+</span>c)<span style="color: #666666">*</span>I<span style="color: #666666">+</span>(omega_z<span style="color: #666666">+</span>omega)<span style="color: #666666">*</span>Z<span style="color: #666666">+</span>omega_x<span style="color: #666666">*</span>X
+EigValues, EigVectors <span style="color: #666666">=</span> np<span style="color: #666666">.</span>linalg<span style="color: #666666">.</span>eig(Hamiltonian)
+permute <span style="color: #666666">=</span> EigValues<span style="color: #666666">.</span>argsort()
+EigValues <span style="color: #666666">=</span> EigValues[permute]
+<span style="color: #408080; font-style: italic"># print only the lowest eigenvalue</span>
+<span style="color: #008000">print</span>(EigValues[<span style="color: #666666">0</span>])
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 <p>
 <!-- navigation buttons at the bottom of the page -->
 <ul class="pagination">
-<li><a href="._quantumcomputingMSU-bs016.html">&laquo;</a></li>
+<li><a href="._quantumcomputingMSU-bs034.html">&laquo;</a></li>
   <li><a href="._quantumcomputingMSU-bs000.html">1</a></li>
   <li><a href="">...</a></li>
-  <li><a href="._quantumcomputingMSU-bs009.html">10</a></li>
-  <li><a href="._quantumcomputingMSU-bs010.html">11</a></li>
-  <li><a href="._quantumcomputingMSU-bs011.html">12</a></li>
-  <li><a href="._quantumcomputingMSU-bs012.html">13</a></li>
-  <li><a href="._quantumcomputingMSU-bs013.html">14</a></li>
-  <li><a href="._quantumcomputingMSU-bs014.html">15</a></li>
-  <li><a href="._quantumcomputingMSU-bs015.html">16</a></li>
-  <li><a href="._quantumcomputingMSU-bs016.html">17</a></li>
-  <li class="active"><a href="._quantumcomputingMSU-bs017.html">18</a></li>
-  <li><a href="._quantumcomputingMSU-bs018.html">19</a></li>
-  <li><a href="._quantumcomputingMSU-bs019.html">20</a></li>
-  <li><a href="._quantumcomputingMSU-bs020.html">21</a></li>
-  <li><a href="._quantumcomputingMSU-bs021.html">22</a></li>
-  <li><a href="._quantumcomputingMSU-bs022.html">23</a></li>
-  <li><a href="._quantumcomputingMSU-bs023.html">24</a></li>
-  <li><a href="._quantumcomputingMSU-bs024.html">25</a></li>
-  <li><a href="._quantumcomputingMSU-bs025.html">26</a></li>
-  <li><a href="._quantumcomputingMSU-bs026.html">27</a></li>
-  <li><a href="">...</a></li>
+  <li><a href="._quantumcomputingMSU-bs027.html">28</a></li>
+  <li><a href="._quantumcomputingMSU-bs028.html">29</a></li>
+  <li><a href="._quantumcomputingMSU-bs029.html">30</a></li>
+  <li><a href="._quantumcomputingMSU-bs030.html">31</a></li>
+  <li><a href="._quantumcomputingMSU-bs031.html">32</a></li>
+  <li><a href="._quantumcomputingMSU-bs032.html">33</a></li>
+  <li><a href="._quantumcomputingMSU-bs033.html">34</a></li>
+  <li><a href="._quantumcomputingMSU-bs034.html">35</a></li>
+  <li class="active"><a href="._quantumcomputingMSU-bs035.html">36</a></li>
+  <li><a href="._quantumcomputingMSU-bs036.html">37</a></li>
+  <li><a href="._quantumcomputingMSU-bs037.html">38</a></li>
   <li><a href="._quantumcomputingMSU-bs038.html">39</a></li>
-  <li><a href="._quantumcomputingMSU-bs018.html">&raquo;</a></li>
+  <li><a href="._quantumcomputingMSU-bs036.html">&raquo;</a></li>
 </ul>
 <!-- ------------------- end of main content --------------- -->
 </div>  <!-- end container -->

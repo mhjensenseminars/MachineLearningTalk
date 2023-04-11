@@ -56,7 +56,28 @@ doconce format html quantumcomputingMSU.do.txt --html_style=bootstrap --pygments
                2,
                None,
                'entanglement-gates-in-trapped-ions-and-more'),
-              ('Coulomb interaction', 2, None, 'coulomb-interaction'),
+              ('A warm-up problem, avoided level crossing and some math',
+               2,
+               None,
+               'a-warm-up-problem-avoided-level-crossing-and-some-math'),
+              ('Avoided level crossings', 2, None, 'avoided-level-crossings'),
+              ('Reminder on density matrices',
+               3,
+               None,
+               'reminder-on-density-matrices'),
+              ('Two-qubit system and definition of density matrices',
+               3,
+               None,
+               'two-qubit-system-and-definition-of-density-matrices'),
+              ('Shannon information entropy',
+               3,
+               None,
+               'shannon-information-entropy'),
+              ('Von Neumann entropy', 3, None, 'von-neumann-entropy'),
+              ('Quantum dots and the Coulomb interaction',
+               2,
+               None,
+               'quantum-dots-and-the-coulomb-interaction'),
               ('Electrons on helium is another qubit platform',
                2,
                None,
@@ -65,11 +86,45 @@ doconce format html quantumcomputingMSU.do.txt --html_style=bootstrap --pygments
                2,
                None,
                'surface-state-electrons-sse'),
+              ('To read more', 2, None, 'to-read-more'),
+              ('Experimental set up', 2, None, 'experimental-set-up'),
+              ('Building the solutions', 2, None, 'building-the-solutions'),
               ('Computational Methods', 2, None, 'computational-methods'),
               ('One-dimensional system', 2, None, 'one-dimensional-system'),
-              ('Many-particle States', 2, None, 'many-particle-states'),
+              ('Details 1', 2, None, 'details-1'),
+              ('Details 2', 2, None, 'details-2'),
+              ('Details 3', 2, None, 'details-3'),
+              ('Hartree method', 2, None, 'hartree-method'),
+              ('Measuring the degree of entanglement',
+               2,
+               None,
+               'measuring-the-degree-of-entanglement'),
+              ('More entropy', 2, None, 'more-entropy'),
+              ('Schmidt decomposition', 2, None, 'schmidt-decomposition'),
+              ('Final Von Neumann entropy',
+               2,
+               None,
+               'final-von-neumann-entropy'),
+              ('Analysis', 2, None, 'analysis'),
+              ('Results 1', 2, None, 'results-1'),
               ('Where we are now', 2, None, 'where-we-are-now'),
-              ('Plans', 2, None, 'plans')]}
+              ('Plans', 2, None, 'plans'),
+              ('Additional material', 2, None, 'additional-material'),
+              ('How to simulate quantum mechanical systems: VQE and efficient '
+               'computations of gradients',
+               2,
+               None,
+               'how-to-simulate-quantum-mechanical-systems-vqe-and-efficient-computations-of-gradients'),
+              ('Setting up the matrix', 2, None, 'setting-up-the-matrix'),
+              ('Implementing the VQE', 2, None, 'implementing-the-vqe'),
+              ('Gradient descent and calculations of gradients',
+               2,
+               None,
+               'gradient-descent-and-calculations-of-gradients'),
+              ('A smarter way of doing this',
+               2,
+               None,
+               'a-smarter-way-of-doing-this')]}
 end of tocinfo -->
 
 <body>
@@ -104,25 +159,49 @@ MathJax.Hub.Config({
       <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Contents <b class="caret"></b></a>
         <ul class="dropdown-menu">
-     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs001.html#what-is-this-talk-about" style="font-size: 80%;">What is this talk about?</a></li>
-     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs002.html#many-people-to-thank" style="font-size: 80%;">Many people to thank</a></li>
-     <!-- navigation toc: --> <li><a href="#why-basic-motivation" style="font-size: 80%;">Why? Basic motivation</a></li>
-     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs004.html#literature-and-more-reading" style="font-size: 80%;">Literature and more reading</a></li>
-     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs005.html#quantum-engineering" style="font-size: 80%;">Quantum Engineering</a></li>
-     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs006.html#candidate-systems" style="font-size: 80%;">Candidate systems</a></li>
-     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs007.html#electrons-quantum-dots-on-superfluid-helium" style="font-size: 80%;">Electrons (quantum dots) on superfluid helium</a></li>
-     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs008.html#methods-and-applications" style="font-size: 80%;">Methods and Applications</a></li>
-     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs009.html#entanglement" style="font-size: 80%;">Entanglement</a></li>
-     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs010.html#more-on-entanglement" style="font-size: 80%;">More on Entanglement</a></li>
-     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs011.html#entanglement-gates-in-trapped-ions-and-more" style="font-size: 80%;">Entanglement gates in trapped ions and more</a></li>
-     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs012.html#coulomb-interaction" style="font-size: 80%;">Coulomb interaction</a></li>
-     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs013.html#electrons-on-helium-is-another-qubit-platform" style="font-size: 80%;">Electrons on helium is another qubit platform</a></li>
-     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs014.html#surface-state-electrons-sse" style="font-size: 80%;">Surface state electrons (SSE)</a></li>
-     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs015.html#computational-methods" style="font-size: 80%;">Computational Methods</a></li>
-     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs016.html#one-dimensional-system" style="font-size: 80%;">One-dimensional system</a></li>
-     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs017.html#many-particle-states" style="font-size: 80%;">Many-particle States</a></li>
-     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs018.html#where-we-are-now" style="font-size: 80%;">Where we are now</a></li>
-     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs019.html#plans" style="font-size: 80%;">Plans</a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs001.html#what-is-this-talk-about" style="font-size: 80%;"><b>What is this talk about?</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs002.html#many-people-to-thank" style="font-size: 80%;"><b>Many people to thank</b></a></li>
+     <!-- navigation toc: --> <li><a href="#why-basic-motivation" style="font-size: 80%;"><b>Why? Basic motivation</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs004.html#literature-and-more-reading" style="font-size: 80%;"><b>Literature and more reading</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs005.html#quantum-engineering" style="font-size: 80%;"><b>Quantum Engineering</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs006.html#candidate-systems" style="font-size: 80%;"><b>Candidate systems</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs007.html#electrons-quantum-dots-on-superfluid-helium" style="font-size: 80%;"><b>Electrons (quantum dots) on superfluid helium</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs008.html#methods-and-applications" style="font-size: 80%;"><b>Methods and Applications</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs009.html#entanglement" style="font-size: 80%;"><b>Entanglement</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs010.html#more-on-entanglement" style="font-size: 80%;"><b>More on Entanglement</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs011.html#entanglement-gates-in-trapped-ions-and-more" style="font-size: 80%;"><b>Entanglement gates in trapped ions and more</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs012.html#a-warm-up-problem-avoided-level-crossing-and-some-math" style="font-size: 80%;"><b>A warm-up problem, avoided level crossing and some math</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs012.html#avoided-level-crossings" style="font-size: 80%;"><b>Avoided level crossings</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs012.html#reminder-on-density-matrices" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Reminder on density matrices</a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs012.html#two-qubit-system-and-definition-of-density-matrices" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Two-qubit system and definition of density matrices</a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs012.html#shannon-information-entropy" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Shannon information entropy</a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs012.html#von-neumann-entropy" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Von Neumann entropy</a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs013.html#quantum-dots-and-the-coulomb-interaction" style="font-size: 80%;"><b>Quantum dots and the Coulomb interaction</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs014.html#electrons-on-helium-is-another-qubit-platform" style="font-size: 80%;"><b>Electrons on helium is another qubit platform</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs015.html#surface-state-electrons-sse" style="font-size: 80%;"><b>Surface state electrons (SSE)</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs016.html#to-read-more" style="font-size: 80%;"><b>To read more</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs017.html#experimental-set-up" style="font-size: 80%;"><b>Experimental set up</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs018.html#building-the-solutions" style="font-size: 80%;"><b>Building the solutions</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs019.html#computational-methods" style="font-size: 80%;"><b>Computational Methods</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs020.html#one-dimensional-system" style="font-size: 80%;"><b>One-dimensional system</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs021.html#details-1" style="font-size: 80%;"><b>Details 1</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs022.html#details-2" style="font-size: 80%;"><b>Details 2</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs023.html#details-3" style="font-size: 80%;"><b>Details 3</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs024.html#hartree-method" style="font-size: 80%;"><b>Hartree method</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs025.html#measuring-the-degree-of-entanglement" style="font-size: 80%;"><b>Measuring the degree of entanglement</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs026.html#more-entropy" style="font-size: 80%;"><b>More entropy</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs027.html#schmidt-decomposition" style="font-size: 80%;"><b>Schmidt decomposition</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs028.html#final-von-neumann-entropy" style="font-size: 80%;"><b>Final Von Neumann entropy</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs029.html#analysis" style="font-size: 80%;"><b>Analysis</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs030.html#results-1" style="font-size: 80%;"><b>Results 1</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs031.html#where-we-are-now" style="font-size: 80%;"><b>Where we are now</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs032.html#plans" style="font-size: 80%;"><b>Plans</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs033.html#additional-material" style="font-size: 80%;"><b>Additional material</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs034.html#how-to-simulate-quantum-mechanical-systems-vqe-and-efficient-computations-of-gradients" style="font-size: 80%;"><b>How to simulate quantum mechanical systems: VQE and efficient computations of gradients</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs035.html#setting-up-the-matrix" style="font-size: 80%;"><b>Setting up the matrix</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs036.html#implementing-the-vqe" style="font-size: 80%;"><b>Implementing the VQE</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs037.html#gradient-descent-and-calculations-of-gradients" style="font-size: 80%;"><b>Gradient descent and calculations of gradients</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs038.html#a-smarter-way-of-doing-this" style="font-size: 80%;"><b>A smarter way of doing this</b></a></li>
 
         </ul>
       </li>
@@ -168,7 +247,7 @@ MathJax.Hub.Config({
   <li><a href="._quantumcomputingMSU-bs011.html">12</a></li>
   <li><a href="._quantumcomputingMSU-bs012.html">13</a></li>
   <li><a href="">...</a></li>
-  <li><a href="._quantumcomputingMSU-bs019.html">20</a></li>
+  <li><a href="._quantumcomputingMSU-bs038.html">39</a></li>
   <li><a href="._quantumcomputingMSU-bs004.html">&raquo;</a></li>
 </ul>
 <!-- ------------------- end of main content --------------- -->

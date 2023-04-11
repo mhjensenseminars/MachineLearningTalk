@@ -180,7 +180,7 @@ MathJax.Hub.Config({
      <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs014.html#electrons-on-helium-is-another-qubit-platform" style="font-size: 80%;"><b>Electrons on helium is another qubit platform</b></a></li>
      <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs015.html#surface-state-electrons-sse" style="font-size: 80%;"><b>Surface state electrons (SSE)</b></a></li>
      <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs016.html#to-read-more" style="font-size: 80%;"><b>To read more</b></a></li>
-     <!-- navigation toc: --> <li><a href="#experimental-set-up" style="font-size: 80%;"><b>Experimental set up</b></a></li>
+     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs017.html#experimental-set-up" style="font-size: 80%;"><b>Experimental set up</b></a></li>
      <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs018.html#building-the-solutions" style="font-size: 80%;"><b>Building the solutions</b></a></li>
      <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs019.html#computational-methods" style="font-size: 80%;"><b>Computational Methods</b></a></li>
      <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs020.html#one-dimensional-system" style="font-size: 80%;"><b>One-dimensional system</b></a></li>
@@ -197,7 +197,7 @@ MathJax.Hub.Config({
      <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs031.html#where-we-are-now" style="font-size: 80%;"><b>Where we are now</b></a></li>
      <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs032.html#plans" style="font-size: 80%;"><b>Plans</b></a></li>
      <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs033.html#additional-material" style="font-size: 80%;"><b>Additional material</b></a></li>
-     <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs034.html#how-to-simulate-quantum-mechanical-systems-vqe-and-efficient-computations-of-gradients" style="font-size: 80%;"><b>How to simulate quantum mechanical systems: VQE and efficient computations of gradients</b></a></li>
+     <!-- navigation toc: --> <li><a href="#how-to-simulate-quantum-mechanical-systems-vqe-and-efficient-computations-of-gradients" style="font-size: 80%;"><b>How to simulate quantum mechanical systems: VQE and efficient computations of gradients</b></a></li>
      <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs035.html#setting-up-the-matrix" style="font-size: 80%;"><b>Setting up the matrix</b></a></li>
      <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs036.html#implementing-the-vqe" style="font-size: 80%;"><b>Implementing the VQE</b></a></li>
      <!-- navigation toc: --> <li><a href="._quantumcomputingMSU-bs037.html#gradient-descent-and-calculations-of-gradients" style="font-size: 80%;"><b>Gradient descent and calculations of gradients</b></a></li>
@@ -211,37 +211,114 @@ MathJax.Hub.Config({
 </div> <!-- end of navigation bar -->
 <div class="container">
 <p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p> <!-- add vertical space -->
-<a name="part0017"></a>
+<a name="part0034"></a>
 <!-- !split -->
-<h2 id="experimental-set-up" class="anchor">Experimental set up </h2>
+<h2 id="how-to-simulate-quantum-mechanical-systems-vqe-and-efficient-computations-of-gradients" class="anchor">How to simulate quantum mechanical systems: VQE and efficient computations of gradients  </h2>
+
+<p>We start with a reminder on the VQE method with applications to the one-qubit system.
+We discussed this to some detail during the week of March 27-31. Here we revisit the one-qubit system and develop a VQE code for studying this system using gradient descent as a method to optimie the variational ansatz.
+</p>
+
+<p>We start with a simple \( 2\times 2 \) Hamiltonian matrix expressed in
+terms of Pauli \( X \) and \( Z \) matrices, as discussed in the project text.
+</p>
+
+<p>We define a  symmetric matrix  \( H\in {\mathbb{R}}^{2\times 2} \)</p>
+$$
+H = \begin{bmatrix} H_{11} & H_{12} \\ H_{21} & H_{22}
+\end{bmatrix},
+$$
+
+<p>We  let \( H = H_0 + H_I \), where</p>
+$$
+H_0= \begin{bmatrix} E_1 & 0 \\ 0 & E_2\end{bmatrix},
+$$
+
+<p>is a diagonal matrix. Similarly,</p>
+$$
+H_I= \begin{bmatrix} V_{11} & V_{12} \\ V_{21} & V_{22}\end{bmatrix},
+$$
+
+<p>where \( V_{ij} \) represent various interaction matrix elements.
+We can view \( H_0 \) as the non-interacting solution
+</p>
+$$
+\begin{equation}
+       H_0\vert 0 \rangle =E_1\vert 0 \rangle,
+\tag{10}
+\end{equation}
+$$
+
+<p>and</p>
+$$
+\begin{equation}
+       H_0\vert 1\rangle =E_2\vert 1\rangle,
+\tag{11}
+\end{equation}
+$$
+
+<p>where we have defined the orthogonal computational one-qubit basis states \( \vert 0\rangle \) and \( \vert 1\rangle \).</p>
+
+<p>We rewrite \( H \) (and \( H_0 \) and \( H_I \))  via Pauli matrices</p>
+$$
+H_0 = \mathcal{E} I + \Omega \sigma_z, \quad \mathcal{E} = \frac{E_1
+  + E_2}{2}, \; \Omega = \frac{E_1-E_2}{2},
+$$
+
+<p>and</p>
+$$
+H_I = c \boldsymbol{I} +\omega_z\sigma_z + \omega_x\sigma_x,
+$$
+
+<p>with \( c = (V_{11}+V_{22})/2 \), \( \omega_z = (V_{11}-V_{22})/2 \) and \( \omega_x = V_{12}=V_{21} \).
+We let our Hamiltonian depend linearly on a strength parameter \( \lambda \)
+</p>
+
+$$
+H=H_0+\lambda H_\mathrm{I},
+$$
+
+<p>with \( \lambda \in [0,1] \), where the limits \( \lambda=0 \) and \( \lambda=1 \)
+represent the non-interacting (or unperturbed) and fully interacting
+system, respectively.  The model is an eigenvalue problem with only
+two available states.
+</p>
+
+<p>Here we set the parameters \( E_1=0 \),
+\( E_2=4 \), \( V_{11}=-V_{22}=3 \) and \( V_{12}=V_{21}=0.2 \).
+</p>
+
+<p>The non-interacting solutions represent our computational basis.
+Pertinent to our choice of parameters, is that at \( \lambda\geq 2/3 \),
+the lowest eigenstate is dominated by \( \vert 1\rangle \) while the upper
+is \( \vert 0 \rangle \). At \( \lambda=1 \) the \( \vert 0 \rangle \) mixing of
+the lowest eigenvalue is \( 1\% \) while for \( \lambda\leq 2/3 \) we have a
+\( \vert 0 \rangle \) component of more than \( 90\% \).  The character of the
+eigenvectors has therefore been interchanged when passing \( z=2/3 \). The
+value of the parameter \( V_{12} \) represents the strength of the coupling
+between the two states.
+</p>
 
 <p>
 <!-- navigation buttons at the bottom of the page -->
 <ul class="pagination">
-<li><a href="._quantumcomputingMSU-bs016.html">&laquo;</a></li>
+<li><a href="._quantumcomputingMSU-bs033.html">&laquo;</a></li>
   <li><a href="._quantumcomputingMSU-bs000.html">1</a></li>
   <li><a href="">...</a></li>
-  <li><a href="._quantumcomputingMSU-bs009.html">10</a></li>
-  <li><a href="._quantumcomputingMSU-bs010.html">11</a></li>
-  <li><a href="._quantumcomputingMSU-bs011.html">12</a></li>
-  <li><a href="._quantumcomputingMSU-bs012.html">13</a></li>
-  <li><a href="._quantumcomputingMSU-bs013.html">14</a></li>
-  <li><a href="._quantumcomputingMSU-bs014.html">15</a></li>
-  <li><a href="._quantumcomputingMSU-bs015.html">16</a></li>
-  <li><a href="._quantumcomputingMSU-bs016.html">17</a></li>
-  <li class="active"><a href="._quantumcomputingMSU-bs017.html">18</a></li>
-  <li><a href="._quantumcomputingMSU-bs018.html">19</a></li>
-  <li><a href="._quantumcomputingMSU-bs019.html">20</a></li>
-  <li><a href="._quantumcomputingMSU-bs020.html">21</a></li>
-  <li><a href="._quantumcomputingMSU-bs021.html">22</a></li>
-  <li><a href="._quantumcomputingMSU-bs022.html">23</a></li>
-  <li><a href="._quantumcomputingMSU-bs023.html">24</a></li>
-  <li><a href="._quantumcomputingMSU-bs024.html">25</a></li>
-  <li><a href="._quantumcomputingMSU-bs025.html">26</a></li>
   <li><a href="._quantumcomputingMSU-bs026.html">27</a></li>
-  <li><a href="">...</a></li>
+  <li><a href="._quantumcomputingMSU-bs027.html">28</a></li>
+  <li><a href="._quantumcomputingMSU-bs028.html">29</a></li>
+  <li><a href="._quantumcomputingMSU-bs029.html">30</a></li>
+  <li><a href="._quantumcomputingMSU-bs030.html">31</a></li>
+  <li><a href="._quantumcomputingMSU-bs031.html">32</a></li>
+  <li><a href="._quantumcomputingMSU-bs032.html">33</a></li>
+  <li><a href="._quantumcomputingMSU-bs033.html">34</a></li>
+  <li class="active"><a href="._quantumcomputingMSU-bs034.html">35</a></li>
+  <li><a href="._quantumcomputingMSU-bs035.html">36</a></li>
+  <li><a href="._quantumcomputingMSU-bs036.html">37</a></li>
+  <li><a href="._quantumcomputingMSU-bs037.html">38</a></li>
   <li><a href="._quantumcomputingMSU-bs038.html">39</a></li>
-  <li><a href="._quantumcomputingMSU-bs018.html">&raquo;</a></li>
+  <li><a href="._quantumcomputingMSU-bs035.html">&raquo;</a></li>
 </ul>
 <!-- ------------------- end of main content --------------- -->
 </div>  <!-- end container -->
