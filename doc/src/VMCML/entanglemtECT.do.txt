@@ -7,6 +7,14 @@ DATE:
 !split
 ===== Overview and Motivation =====
 
+_How to use many-body theory to design quantum circuits (Quantum engineering)_
+o Many-body theory like FCI with
+  * Adaptive basis sets
+  * Time dependence
+  * Optimization of experimental parameter 
+  * Feeback from experiment
+
+
 !split
 ===== What is this talk about? =====
 
@@ -34,20 +42,6 @@ Niyaz Beysengulov and Johannes Pollanen (experiment, Physics); Zachary Stewart, 
 Øyvind Sigmundson Schøyen, Stian Dysthe Bilek, and Håkon Emil Kristiansen (Physics and quantum chemistry). In addition collaboration on point defects with Marianne Bathen and Lasse Vines.
 !eblock
 
-
-
-
-!split
-===== Why? Basic motivation =====
-
-!bblock
-How can we avoid the dimensionality curse? Many possibilities
-o smarter basis functions
-o resummation of specific correlations
-o stochastic sampling of high-lying states (stochastic FCI, CC and SRG/IMSRG)
-o and more
-!eblock
-_Use the massive parallelization which quantum computing offers for solving complicated many-body problems_
 
 
 
@@ -110,7 +104,7 @@ trapped electrons.
 !bblock 
 o Time-Dependent full configuration interaction theory
 o Time-dependent Coupled-Cluster theory
-o Designing quantum operations and quantum simulations
+o Designing quantum operations and quantum simulations and finding optimal experimental parameters
 !eblock
 
 
