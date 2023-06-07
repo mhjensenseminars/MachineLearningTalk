@@ -208,45 +208,6 @@ and the state $\vert 1\rangle$. When we say coherent we mean that the quantumnes
 In quantum technology, different quantum systems are coupled to enable various quantum state transfers and manipulations. Experimentally, avoided crossing of the energy levels, is one of the first feature to look for since it manifests the signature of preservation of quantumness and clean coupling between states in the experimental setup.
 !eblock
 
-!split
-===== Reminder on density matrices =====
-
-We have the spectral decomposition of a given operator $\bm{A}$ given by
-
-!bt
-\[
-\bm{A}=\sum_i\lambda_i\vert i \rangle\langle i\vert,
-\]
-!et
-with the ONB $\vert i\rangle$ being eigenvectors of $\bm{A}$ and $\lambda_i$ being the eigenvalues. Similarly, a operator which is a function of $\bm{A}$ is given by
-!bt
-\[
-f(\bm{A})=\sum_if(\bm{A})\vert i \rangle\langle i\vert.
-\]
-!et
-The trace of a product of matrices is cyclic, that is
-!bt
-\[
-\mathrm{tr}[\bm{ABC}])=\mathrm{tr}[\bm{BCA}])=\mathrm{tr}[\bm{CBA}]),
-\]
-!et
-and we have also 
-!bt
-\[
-\mathrm{tr}[\bm{A}\vert \psi\rangle\langle\psi\vert])=\langle\psi\vert\bm{A}\vert\psi\rangle.
-\]
-!et
-
-Using the spectral decomposition we defined also the density matrix as
-!bt
-\[
-\rho = \sum_i p_i\vert i \rangle\langle i\vert,
-\]
-!et
-where the probability $p_i$ are the eigenvalues of the density matrix/operator linked with the ONB $\vert i \rangle$.
-
-The trace of the density matrix $\mathrm{tr}\rho=1$ and is invariant under unitary transformations.
-
 
 !split
 ===== Two-qubit system and definition of density matrices  =====
