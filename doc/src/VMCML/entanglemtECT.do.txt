@@ -13,7 +13,13 @@ o Many-body theory like FCI with
   * Time dependence
   * Optimization of experimental parameter 
   * Feeback from experiment
+o Finding optimal parameters for fine tuning entanglement
+o Do tomogrophy and extract density matrix and compare with experiment.
+o Numerical experiments to mimick real systems, quantum twins!
 
+
+!split
+refs, Shuster on neon, Oyvind 2d and 3d, basis, dvr basis, framheve mangelegeme teori
 
 !split
 ===== What is this talk about? =====
@@ -31,6 +37,7 @@ for simulating nuclear physics Hamiltonians, theoretically and
 experimentally.
  
 
+Add figures!
 
 !split
 ===== Many people to thank =====
@@ -662,6 +669,10 @@ also fits the interpolated potential very effectively.
 
 
 !split
+===== Calculational details =====
+
+
+!split
 ===== Computational Methods =====
 
 As we are only studying a model comprised of two electrons restricted
@@ -786,6 +797,10 @@ Using the singular values, we can compute the von Neumann entropy of $\vert\Psi\
 S = -\sum_{p = 0}^{\tilde{N}}\sigma_p^2 \log_2(\sigma_p^2).
 \end{align*}
 !et
+
+
+!split
+===== Results and discussions =====
 
 !split
 ===== Analysis =====
