@@ -643,12 +643,31 @@ where $\hat{\rho}$ is the density operator/matrix.
 
 !split
 ===== Results and discussions =====
+By adjusting the potential we can change the anharmonicities and detuning of the wells.
+o What values of these give interesting interactions?
+o Inspiration from superconducting qubits, Zhao et al. [ref in footnote?]
+
+!split
+We search for well configurations corresponding to three different types of interaction between the two electrons.
+
+o In _configuration I_ we address both qubits independently and can thereby perform single-qubit state rotations and measurements.
+o Configurations II and III correspond to avoided level crossings between two ($E_{01}, E_{10}$) and three ($E_{11}, E_{20}, E_{02}$) energy levels respectively, where the electrons' motion becomes correlated, that is they are entangled. 
+
+Both anharmonicity and detuning changes with the shape of our well.
+We create a voltage parameterization
+!bt
+\begin{equation}
+V(\lambda) = (1-\lambda)V_\mathrm{I} + \lambda V_\mathrm{III}
+\end{equation}
+!et
+
+!split
 
 
 !split
 ===== Entanglement and more  =====
 
-FIGURE: [qcfigures/figure2.pdf, width=700 frac=0.9]
+FIGURE: [qcfigures/crossings-entropies-anharmonicities-1.png, width=700 frac=0.9]
 
 
 !split
@@ -662,17 +681,12 @@ o (c) In this figure we have plotted the anharmonicites for the left well ($\alp
 !split
 ===== Particle densities and coefficients =====
 
-FIGURE: [qcfigures/figure3.pdf, width=700 frac=0.9]
+FIGURE: [qcfigures/configuration_I-1.png, width=700 frac=0.9]
 
 !split
 ===== Potential wells, the one-body densities, and single-particle states =====
 
-FIGURE: [qcfigures/figure4.pdf, width=700 frac=0.9]
-
-!split
-===== Probability distributions of the first four Hartree states in the left- and the right well =====
-
-FIGURE: [qcfigures/figure5.pdf, width=700 frac=0.9]
+FIGURE: [qcfigures/configuration_II_and_III-1.png, width=700 frac=0.9]
 
 !split
 ===== Where we are now =====
