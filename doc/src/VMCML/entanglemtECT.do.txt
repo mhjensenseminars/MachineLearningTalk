@@ -420,7 +420,7 @@ Energy states:
 ===== Results and discussions =====
 By adjusting the potential we can change the anharmonicities and detuning of the wells.
 o What values of these give interesting interactions?
-o Inspiration from superconducting qubits, Zhao et al.
+o Inspiration from superconducting qubits, see High-Contrast $ZZ$ Interaction Using Superconducting Qubits with Opposite-Sign Anharmonicity, "Zhao et al Phys. Rev. Lett. 125, 200503":"https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.125.200503"
 
 !split
 We search for well configurations corresponding to three different types of interaction between the two electrons.
@@ -458,7 +458,7 @@ FIGURE: [qcfigures/configuration_I-1.png, width=700 frac=0.9]
 !split
 ===== Potential wells, the one-body densities, and single-particle states =====
 
-FIGURE: [qcfigures/configuration_II_and_III-1.png, width=700 frac=1.1]
+FIGURE: [qcfigures/configuration_II_and_III-1.png, width=700 frac=1.2]
 
 !split
 ===== Where we are now =====
