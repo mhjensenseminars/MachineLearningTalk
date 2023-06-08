@@ -100,31 +100,23 @@ doconce format html entanglemtECT.do.txt --html_style=bootstrap --pygments_html_
                2,
                None,
                'measuring-the-degree-of-entanglement'),
-              ('More entropy and Schmidt decomposition',
-               2,
-               None,
-               'more-entropy-and-schmidt-decomposition'),
-              ('Final Von Neumann entropy',
-               2,
-               None,
-               'final-von-neumann-entropy'),
               ('Results and discussions', 2, None, 'results-and-discussions'),
-              ('Analysis', 2, None, 'analysis'),
-              ('Basis of left well', 2, None, 'basis-of-left-well'),
-              ('Results', 2, None, 'results'),
-              ('Energy levels as a function of voltage parameter',
+              ('Entanglement and more', 2, None, 'entanglement-and-more'),
+              ('Legende to figure', 2, None, 'legende-to-figure'),
+              ('Particle densities and coefficients',
                2,
                None,
-               'energy-levels-as-a-function-of-voltage-parameter'),
-              ('Config I densities and coefficients',
+               'particle-densities-and-coefficients'),
+              ('Potential wells, the one-body densities, and single-particle '
+               'states',
                2,
                None,
-               'config-i-densities-and-coefficients'),
-              ('Schmidt basis for configurations II and III',
+               'potential-wells-the-one-body-densities-and-single-particle-states'),
+              ('Probability distributions of the first four Hartree states in '
+               'the left- and the right well',
                2,
                None,
-               'schmidt-basis-for-configurations-ii-and-iii'),
-              ('Von Neumann entropy', 2, None, 'von-neumann-entropy'),
+               'probability-distributions-of-the-first-four-hartree-states-in-the-left-and-the-right-well'),
               ('Where we are now', 2, None, 'where-we-are-now'),
               ('Plans', 2, None, 'plans')]}
 end of tocinfo -->
@@ -179,7 +171,7 @@ MathJax.Hub.Config({
      <!-- navigation toc: --> <li><a href="._entanglemtECT-bs016.html#hamiltonian" style="font-size: 80%;">Hamiltonian</a></li>
      <!-- navigation toc: --> <li><a href="._entanglemtECT-bs017.html#eigenstates" style="font-size: 80%;">Eigenstates</a></li>
      <!-- navigation toc: --> <li><a href="._entanglemtECT-bs018.html#shannon-information-entropy" style="font-size: 80%;">Shannon information entropy</a></li>
-     <!-- navigation toc: --> <li><a href="._entanglemtECT-bs042.html#von-neumann-entropy" style="font-size: 80%;">Von Neumann entropy</a></li>
+     <!-- navigation toc: --> <li><a href="._entanglemtECT-bs019.html#von-neumann-entropy" style="font-size: 80%;">Von Neumann entropy</a></li>
      <!-- navigation toc: --> <li><a href="._entanglemtECT-bs020.html#simple-code-example" style="font-size: 80%;">Simple code example</a></li>
      <!-- navigation toc: --> <li><a href="._entanglemtECT-bs021.html#short-discussion" style="font-size: 80%;">Short discussion</a></li>
      <!-- navigation toc: --> <li><a href="._entanglemtECT-bs022.html#quantum-dots-and-the-coulomb-interaction" style="font-size: 80%;">Quantum dots and the Coulomb interaction</a></li>
@@ -192,18 +184,14 @@ MathJax.Hub.Config({
      <!-- navigation toc: --> <li><a href="._entanglemtECT-bs029.html#details-2" style="font-size: 80%;">Details 2</a></li>
      <!-- navigation toc: --> <li><a href="._entanglemtECT-bs030.html#hartree-method" style="font-size: 80%;">Hartree method</a></li>
      <!-- navigation toc: --> <li><a href="._entanglemtECT-bs031.html#measuring-the-degree-of-entanglement" style="font-size: 80%;">Measuring the degree of entanglement</a></li>
-     <!-- navigation toc: --> <li><a href="._entanglemtECT-bs032.html#more-entropy-and-schmidt-decomposition" style="font-size: 80%;">More entropy and Schmidt decomposition</a></li>
-     <!-- navigation toc: --> <li><a href="._entanglemtECT-bs033.html#final-von-neumann-entropy" style="font-size: 80%;">Final Von Neumann entropy</a></li>
-     <!-- navigation toc: --> <li><a href="._entanglemtECT-bs034.html#results-and-discussions" style="font-size: 80%;">Results and discussions</a></li>
-     <!-- navigation toc: --> <li><a href="._entanglemtECT-bs035.html#analysis" style="font-size: 80%;">Analysis</a></li>
-     <!-- navigation toc: --> <li><a href="._entanglemtECT-bs036.html#basis-of-left-well" style="font-size: 80%;">Basis of left well</a></li>
-     <!-- navigation toc: --> <li><a href="._entanglemtECT-bs037.html#results" style="font-size: 80%;">Results</a></li>
-     <!-- navigation toc: --> <li><a href="._entanglemtECT-bs039.html#energy-levels-as-a-function-of-voltage-parameter" style="font-size: 80%;">Energy levels as a function of voltage parameter</a></li>
-     <!-- navigation toc: --> <li><a href="._entanglemtECT-bs040.html#config-i-densities-and-coefficients" style="font-size: 80%;">Config I densities and coefficients</a></li>
-     <!-- navigation toc: --> <li><a href="._entanglemtECT-bs041.html#schmidt-basis-for-configurations-ii-and-iii" style="font-size: 80%;">Schmidt basis for configurations II and III</a></li>
-     <!-- navigation toc: --> <li><a href="._entanglemtECT-bs042.html#von-neumann-entropy" style="font-size: 80%;">Von Neumann entropy</a></li>
-     <!-- navigation toc: --> <li><a href="._entanglemtECT-bs043.html#where-we-are-now" style="font-size: 80%;">Where we are now</a></li>
-     <!-- navigation toc: --> <li><a href="._entanglemtECT-bs044.html#plans" style="font-size: 80%;">Plans</a></li>
+     <!-- navigation toc: --> <li><a href="._entanglemtECT-bs032.html#results-and-discussions" style="font-size: 80%;">Results and discussions</a></li>
+     <!-- navigation toc: --> <li><a href="._entanglemtECT-bs033.html#entanglement-and-more" style="font-size: 80%;">Entanglement and more</a></li>
+     <!-- navigation toc: --> <li><a href="._entanglemtECT-bs034.html#legende-to-figure" style="font-size: 80%;">Legende to figure</a></li>
+     <!-- navigation toc: --> <li><a href="._entanglemtECT-bs035.html#particle-densities-and-coefficients" style="font-size: 80%;">Particle densities and coefficients</a></li>
+     <!-- navigation toc: --> <li><a href="._entanglemtECT-bs036.html#potential-wells-the-one-body-densities-and-single-particle-states" style="font-size: 80%;">Potential wells, the one-body densities, and single-particle states</a></li>
+     <!-- navigation toc: --> <li><a href="._entanglemtECT-bs036.html#probability-distributions-of-the-first-four-hartree-states-in-the-left-and-the-right-well" style="font-size: 80%;">Probability distributions of the first four Hartree states in the left- and the right well</a></li>
+     <!-- navigation toc: --> <li><a href="._entanglemtECT-bs037.html#where-we-are-now" style="font-size: 80%;">Where we are now</a></li>
+     <!-- navigation toc: --> <li><a href="._entanglemtECT-bs038.html#plans" style="font-size: 80%;">Plans</a></li>
 
         </ul>
       </li>
@@ -256,7 +244,7 @@ MathJax.Hub.Config({
   <li><a href="._entanglemtECT-bs031.html">32</a></li>
   <li><a href="._entanglemtECT-bs032.html">33</a></li>
   <li><a href="">...</a></li>
-  <li><a href="._entanglemtECT-bs044.html">45</a></li>
+  <li><a href="._entanglemtECT-bs038.html">39</a></li>
   <li><a href="._entanglemtECT-bs024.html">&raquo;</a></li>
 </ul>
 <!-- ------------------- end of main content --------------- -->

@@ -210,7 +210,7 @@ MathJax.Hub.Config({
 </ul>
 <p>
 <p><li> Finding optimal parameters for tuning of entanglement</li>
-<p><li> Numerical experiments to mimick real systems, using many-body methods to develop <b>quantum twins</b> (<a href="https://iopscience.iop.org/article/10.1088/1367-2630/12/7/075008" target="_blank">inspired by for example work by Herschel Rabitz on Control of quantum phenomena, see New Journal of Physics 12 (2010) 075008</a>)!</li>
+<p><li> Numerical experiments to mimick real systems, using many-body methods to develop <b>quantum twins</b> (<a href="https://iopscience.iop.org/article/10.1088/1367-2630/12/7/075008" target="_blank">inspiration from  work by Herschel Rabitz et al on Control of quantum phenomena, see New Journal of Physics 12 (2010) 075008</a>)!</li>
 </ol>
 </section>
 
@@ -320,15 +320,14 @@ systems will be discussed.
 <section>
 <h2 id="electrons-quantum-dots-on-superfluid-helium">Electrons (quantum dots) on superfluid helium </h2>
 
-<p>Electrons on <a href="https://www.youtube.com/watch?v=EuDuM-fe-lA&ab_channel=JoshuahHeath" target="_blank">superfluid helium represent</a> a promising platform for investigating
+<p>Electrons on <b>superfluid helium represent</b>, see <a href="https://www.youtube.com/watch?v=EuDuM-fe-lA&ab_channel=JoshuahHeath" target="_blank"><tt>https://www.youtube.com/watch?v=EuDuM-fe-lA&ab_channel=JoshuahHeath</tt></a> a promising platform for investigating
 strongly-coupled qubits.
 </p>
 
-<p>Therefore a systematic investigation of the
+<p>A systematic investigation of the
 controlled generation of entanglement between two trapped electrons
 under the influence of coherent microwave driving pulses, taking into
-account the effects of the Coulomb interaction between electrons, is
-of significant importance for quantum information processing using
+account the effects of the Coulomb interaction between electrons, may be of great interest for quantum information processing using
 trapped electrons.
 </p>
 </section>
@@ -824,12 +823,10 @@ vacuum.
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
-<p>The weak interaction with enviroment, which is mainly governed
+<p>The weak interaction with rthe enviroment, which is mainly governed
 by interaction with quantized surface capillary waves (ripplons) and
 bulk phonons, ensures long coherence times - a vital ingredient for
-any qubit platform. SSE's in-plane motion can be further localized by
-using microdevices on the length scales approaching the interelectron
-separation (at the order of one micron).
+any qubit platform. 
 </p>
 </div>
 </section>
@@ -961,181 +958,54 @@ $$
 </section>
 
 <section>
-<h2 id="more-entropy-and-schmidt-decomposition">More entropy and Schmidt decomposition </h2>
-
-<p>As the Hamiltonian eigenstates are pure states, we can evaluate their
-entanglement by bypassing the construction of the density operator
-and use the Schmidt decomposition instead. Specifically, for a given
-two-body wave function \( \vert \Psi\rangle \) expressed in terms of the
-Hartree product states, we can write
-</p>
-
-<p>&nbsp;<br>
-$$
-\begin{align*}
-\vert\Psi\rangle &= \sum_{k = 0}^{N^L} \sum_{l = 0}^{N^R} C_{kl}\vert\phi^L_k \phi^R_l\rangle=\sum_{p = 0}^{\tilde{N}}\sigma_{p}\vert\psi^L_p \psi^R_p\rangle,
-\end{align*}
-$$
-<p>&nbsp;<br>
-
-<p>where \( C_{kl} = \sum_{p = 0}^{\tilde{N}} U_{kp}\sigma_{p} V^{*}_{lp} \) is the singular value
-decomposition of the two-body coefficients.
-We have
-</p>
-<p>&nbsp;<br>
-$$
-\begin{gather*}
-\vert\psi^L_p\rangle\equiv \sum_{k = 0}^{N^L} U_{kp} \vert\phi^L_k\rangle,
-\qquad \vert\psi^R_p\rangle\equiv \sum_{l = 0}^{N^R} V^{*}_{lp} \vert\phi^R_l\rangle,
-\end{gather*}
-$$
-<p>&nbsp;<br>
-
-<p>are the Schmidt states, \( \tilde{N} \) is
-either \( N^L \) or \( N^R \) depending on the definition of the singular value decomposition, and \( \sigma_p \) are the singular values with \( \sigma_p^2 \)
-representing the occupation of the pair \( \vert\psi^L_p \psi^R_p\rangle \).
-</p>
-</section>
-
-<section>
-<h2 id="final-von-neumann-entropy">Final Von Neumann entropy </h2>
-
-<p>Using the singular values, we can compute the von Neumann entropy of \( \vert\Psi\rangle \) as follows:</p>
-<p>&nbsp;<br>
-$$
-\begin{align*}
-S = -\sum_{p = 0}^{\tilde{N}}\sigma_p^2 \log_2(\sigma_p^2).
-\end{align*}
-$$
-<p>&nbsp;<br>
-</section>
-
-<section>
 <h2 id="results-and-discussions">Results and discussions </h2>
 </section>
 
 <section>
-<h2 id="analysis">Analysis </h2>
-
-<p>While the von Neumann entropy provides an objective measure of
-entanglement, it does not give information about which states
-are entangled.  In order to determine which states are mixed,
-we can use three additional quantities.
-</p>
-
-<ol>
-<p><li> The first quantity are the two-body energies \( E_K \). We search for configurations where two or more energies are nearly degenerate, as this indicates a mixing of states. o The second quantity we use are the coefficients \( C_{kl} \) themselves. In the Hartree basis, these coefficients give a good indication of which states are entangled.</li>
-<p><li> And the third is the particle density. For the state \( \vert \Psi\rangle \) above, we can compute the particle density. The particle density can be used as a tool to qualitatively visualize the entanglement of a state.</li>
-</ol>
-</section>
-
-<section>
-<h2 id="basis-of-left-well">Basis of left well </h2>
+<h2 id="entanglement-and-more">Entanglement and more  </h2>
 
 <br/><br/>
 <center>
-<p><img src="qcfigures/figure3_L.png" width="700" align="bottom"></p>
-</center>
-<br/><br/>
-
-<p>The energy basis of the left well in configuration I.  Note that the
-scale differs between the left y-axis, corresponding to the
-frequencies of the single-particle eigenstates, and the right y-axis,
-which shows the energy of the potential.
-</p>
-</section>
-
-<section>
-<h2 id="results">Results </h2>
-
-<p>By adjusting the potential we can change the anharmonicities and detuning of the wells.</p>
-<ol>
-<p><li> What values of these give interesting interactions?</li>
-<p><li> Inspiration from superconducting qubits, Zhao et al. [ref in footnote?]</li>
-</ol>
-</section>
-
-<section>
-
-<p>We search for well configurations corresponding to three different types of interaction between the two electrons.</p>
-
-<ol>
-<p><li> In <b>configuration I</b> we address both qubits independently and can thereby perform single-qubit state rotations and measurements.</li>
-<p><li> Configurations II and III correspond to avoided level crossings between two (\( E_{01}, E_{10} \)) and three (\( E_{11}, E_{20}, E_{02} \)) energy levels respectively, where the electrons' motion becomes correlated, that is they are entangled.</li> 
-</ol>
-</section>
-
-<section>
-<h2 id="energy-levels-as-a-function-of-voltage-parameter">Energy levels as a function of voltage parameter </h2>
-
-<center>  <!-- FIGURE -->
-<hr class="figure">
-<center>
-<p class="caption">Figure 1:  UPDATE FIGURE </p>
-</center>
 <p><img src="qcfigures/figure2.png" width="700" align="bottom"></p>
 </center>
-
-<p>Here we have plotted the transition energy from
-the ground state to the labeled excited state as a function of the voltage
-parameter \( \lambda \), which determines the voltages according to
-</p>
-
-<p>&nbsp;<br>
-$$
-\begin{equation}
-V(\lambda) = (1-\lambda)V_\mathrm{I} + \lambda V_\mathrm{III}
-\tag{5}
-\end{equation}
-$$
-<p>&nbsp;<br>
+<br/><br/>
 </section>
 
 <section>
-<h2 id="config-i-densities-and-coefficients">Config I densities and coefficients </h2>
+<h2 id="legende-to-figure">Legende to figure </h2>
 
-<center>  <!-- FIGURE -->
-<hr class="figure">
+<ol>
+<p><li> (a) In this figure we have plotted the transition energy from the ground state to the labeled excited state as a function of the voltage parameter \( \lambda \). The labeled states are the computational basis states when \( \lambda = 0 \).</li>
+<p><li> (b) The von Neumann entropy of the five lowest excited states of the two-body Hamiltonian as a function of the configuration parameter \( \lambda \). The ground state has zero entropy, or close to zero entropy. We have included the points for the double and triple degeneracy points. \( \lambda_{II} \) and \( \lambda_{III} \) in the figure. The von Neumann entropy is calculated using the binary logarithm.</li>
+<p><li> (c) In this figure we have plotted the anharmonicites for the left well (\( \alpha^L \)) and the right well (\( \alpha^R \)) as a function of the well parameterization \( \lambda \). We have also included the detuning \( \Delta \omega = \omega^R - \omega^L \) between the two wells. We have marked configuration II at \( \lambda_{II} \approx 0.554 \) and configuration III at \( \lambda_{III} = 1 \).}</li>
+</ol>
+</section>
+
+<section>
+<h2 id="particle-densities-and-coefficients">Particle densities and coefficients </h2>
+
+<br/><br/>
 <center>
-<p class="caption">Figure 2:  UPDATE FIGURE </p>
+<p><img src="qcfigures/figure3.png" width="700" align="bottom"></p>
 </center>
-<p><img src="qcfigures/figure3_Ib_full.png" width="700" align="bottom"></p>
-</center>
-
-<p>These figures depict the potential wells, the one-body
-densities, and the active single-particle states in the Hartree basis for configuration I. <b>No avoid crossing</b>.
-</p>
+<br/><br/>
 </section>
 
 <section>
-<h2 id="schmidt-basis-for-configurations-ii-and-iii">Schmidt basis for configurations II and III </h2>
-
-<center>  <!-- FIGURE -->
-<hr class="figure">
-<center>
-<p class="caption">Figure 3:  UPDATE FIGURE </p>
-</center>
-<p><img src="qcfigures/figure3_II_IIIb.png" width="700" align="bottom"></p>
-</center>
-
-<p>These figures depict the potential wells, the one-body
-densities, and the active single-particle states in the Hartree basis for configurations II and III,
-i.e., in the avoided crossing regimes.
-</p>
-</section>
-
-<section>
-<h2 id="von-neumann-entropy">Von Neumann entropy </h2>
+<h2 id="potential-wells-the-one-body-densities-and-single-particle-states">Potential wells, the one-body densities, and single-particle states </h2>
 
 <br/><br/>
 <center>
 <p><img src="qcfigures/figure4.png" width="700" align="bottom"></p>
 </center>
 <br/><br/>
+<h2 id="probability-distributions-of-the-first-four-hartree-states-in-the-left-and-the-right-well">Probability distributions of the first four Hartree states in the left- and the right well </h2>
 
-<p>Numerical results for the von Neumann entropy of the five lowest excited states as a function of the voltage parameter \( \lambda \). The entropies
-\( S_1 \) and \( S_2 \) of the \( \vert\Phi_1\rangle \) respectively \( \vert\Phi_2\rangle \) states are nearly identical. Note that the peaks in entropy corresponds to the avoided crossings.
-</p>
+<br/><br/>
+<center>
+<p><img src="qcfigures/figure5.png" width="700" align="bottom"></p>
+</center>
+<br/><br/>
 </section>
 
 <section>
