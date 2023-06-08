@@ -503,103 +503,125 @@ any qubit platform.
 
 
 !split
-===== Building the solutions =====
+===== Calculational details =====
 
-To investigate our model, which consists of two electrons confined to
-a one-dimensional external potential, we utilized the method of
-exact diagonalization to solve the two-body Schrödinger equation.
-We build a two-particle wave function from a set of
-single-particle functions.  The representation of the one-body
-Hamiltonian's eigenstates on a discrete grid offers us the
-flexibility to select the external potential of our choice, and it
-also fits the interpolated potential very effectively.
+Hamiltonian:
+!bt
+\begin{align}
+\hat{H} &= \frac{\hat{p}_1}{2} + \sum_{i = 1}^7 V_i\alpha_i[\hat{x}_1] + \frac{\hat{p}_2}{2} + \sum_{i = 1}^7 V_i\alpha_i[\hat{x}_2] + \frac{\kappa}{\sqrt{(\hat{x}_1-\hat{x}_2)^2 + a^2}
+&= h[\hat{p}_1,\hat{x}_1] + h[\hat{p}_2,\hat{x}_2] + u[\hat{x}_1,\hat{x}_2]
+\end{align}
+!et
+
+FIGURE: [qcfigures/well_basis.png, width=700 frac=0.9]
 
 
 !split
 ===== Calculational details =====
 
-
-As we are only studying a model comprised of two electrons restricted
-to move in a one-dimensional external potential we have employed
-full configuration interaction (shell-model in NP) theory to compute the steady-state
-properties of the system.  We have used a static, one-dimensional,
-grid-based basis set for the single-particle functions.  This
-allows for flexibility in the choice of the external potential,
-and fits the interpolated potential particularly well.
-
-The Hamiltonian of $N$ interacting electrons confined by some potential $v(r)$ can be written on general form 
-!bt
-\begin{equation}
-\hat{H} = \sum_{i=1}^N \left(-\frac{1}{2}\nabla_i^2 + v(r_i) \right) + \sum_{i < j} \hat{u}(r_i, r_j),
-\end{equation}
-!et
-where $\hat{u}(i,j)$ is the electron-electron (Coulomb) interaction.
-
-!split
-===== One-dimensional system =====
-
-We consider a one-dimensional model where the confining potential is parametrized/obtained from finite element calculations. 
-The bare Coulomb interaction is divergent in 1D (REF) and it is customary to use a smoothed Coulomb interaction given by
-!bt    
-\begin{align}
-u(x_1, x_2) = \frac{\alpha}{\sqrt{(x_1 - x_2)^2 + a^2}},
-\end{align}
-!et
-where $\alpha$ adjusts the strength of the interaction and $a$ removes the singularity at $x_1 = x_2$.
-
-The single-particle functions  are chosen as the eigenfunctions of the single-particle Hamiltonian
-!bt
-\begin{equation}
-\left( -\frac{d^2}{dx^2}+v(x) \right) \psi_p(x) = \epsilon_p \psi_p(x).
-\end{equation}
-!et
-
-
-
-!split
-===== Details 1 =====
-
-By entirely factoring out the spin component of the problem (as the singlet and triplet states will be degenerate), we can treat the two electrons as distinguishable particles, with one electron located in the left well and the other electron situated in the right well.
-
-!split
-===== Details 2 =====
-
-We solve the full two-body problem using exact diagonalization.
-The wave function ansatz is then given by a product of Hartree single-particle states
+Hamiltonian:
 !bt
 \begin{align}
-\vert\Phi_I\rangle &= \sum_{k = 0}^{N^L} \sum_{l = 0}^{N^R} C_{kl, I}
-\vert \phi^{L}_k \phi^{R}_l\rangle,
+\hat{H} &= \frac{\hat{p}_1}{2} + \sum_{i = 1}^7 V_i\alpha_i[\hat{x}_1] + \frac{\hat{p}_2}{2} + \sum_{i = 1}^7 V_i\alpha_i[\hat{x}_2] + \frac{\kappa}{\sqrt{(\hat{x}_1-\hat{x}_2)^2 + a^2}
+&= h[\hat{p}_1,\hat{x}_1] + h[\hat{p}_2,\hat{x}_2] + u[\hat{x}_1,\hat{x}_2]
 \end{align}
 !et
-where no symmetry is assumed for the wavefunction as the
-particles are distinguishable, and the index
-$I = (i, j) = iN^R + j$ is a compound index denoting the
-excited two-body state we are looking at.
+
+Energy states:
+!bt
+\begin{equation}
+\vert\Phi_k\rangle = \sum_{i < j} C_{ij, k}\frac{\vert \phi_i \phi_j\rangle - \vert \phi_j \phi_i\rangle}{\sqrt{2}},
+\end{equation}
+!et
+(Slater basis)
 
 
 !split
-===== Hartree method =====
+===== Calculational details =====
 
-In the Hartree-method for two distinguishable particles
-we approximate the ground state $\vert\Phi_0\rangle$ of the
-full Hamiltonian $\hat{H}$ as 
-the product state
+Hamiltonian:
 !bt
-\vert\Phi_0\rangle \approx \vert\Psi\rangle= \vert\phi^L_0 \phi^R_0\rangle,
+\begin{align}
+\hat{H} &= \frac{\hat{p}_1}{2} + v^L[\hat{x}_1] + \frac{\hat{p}_2}{2} + v^R[\hat{x}_2] + \frac{\kappa}{\sqrt{(\hat{x}_1-\hat{x}_2)^2 + a^2}
+&= h^L[\hat{p}_1,\hat{x}_1] + h^R[\hat{p}_2,\hat{x}_2] + u[\hat{x}_1,\hat{x}_2]
+\end{align}
 !et
-under the constraint that the Hartree orbitals are orthonormal.
+
+Energy states:
+!bt
+\begin{equation}
+\vert\Phi_k\rangle = \sum_{i} \sum_{j} C_{ij, k}\vert \phi^L_i \phi^R_j\rangle,
+\end{equation}
+!et
+(product basis)
+
 
 !split
-===== Measuring the degree of entanglement =====
+===== Calculational details =====
 
-Given that we are dealing with a bipartite quantum system, a natural measure for characterizing entanglement is the von Neumann entropy discussed above. We defined it as
+Energy states:
 !bt
-\[
-S= -\mathrm{tr}(\hat{\rho}\log_2(\hat{\rho})),
-\]
+\begin{equation}
+\vert\Phi_k\rangle = \sum_{i} \sum_{j} C_{ij, k}\vert \phi^L_i \phi^R_j\rangle,
+\end{equation}
 !et
-where $\hat{\rho}$ is the density operator/matrix.
+(product basis)
+
+FIGURE: [qcfigures/Hartree_states.png, width=700 frac=0.9]
+
+
+!split
+===== Calculational details =====
+
+Hamiltonian:
+!bt
+\begin{align}
+\hat{H} &= \frac{\hat{p}_1}{2} + v^L[\hat{x}_1] + \frac{\hat{p}_2}{2} + v^R[\hat{x}_2] + \frac{\kappa}{\sqrt{(\hat{x}_1-\hat{x}_2)^2 + a^2}
+&= h^L[\hat{p}_1,\hat{x}_1] + h^R[\hat{p}_2,\hat{x}_2] + u[\hat{x}_1,\hat{x}_2]
+\end{align}
+!et
+
+Energy states:
+!bt
+\begin{equation}
+\vert\Phi_k\rangle = \sum_{i} \sum_{j} C_{ij, k}\vert \phi^L_i \phi^R_j\rangle,
+\end{equation}
+!et
+(Hartree basis)
+
+
+!split
+===== Calculational details =====
+
+Hamiltonian:
+!bt
+\begin{align}
+\hat{H} &= \frac{\hat{p}_1}{2} + \sum_{i = 1}^7 V_i\alpha_i[\hat{x}_1] + \frac{\hat{p}_2}{2} + \sum_{i = 1}^7 V_i\alpha_i[\hat{x}_2] + \frac{\kappa}{\sqrt{(\hat{x}_1-\hat{x}_2)^2 + a^2}
+&= h[\hat{p}_1,\hat{x}_1] + h[\hat{p}_2,\hat{x}_2] + u[\hat{x}_1,\hat{x}_2]
+\end{align}
+!et
+
+Energy states:
+!bt
+\begin{equation}
+\vert\Phi_k\rangle = \sum_{i = 0}^{N^L} \sum_{j = 0}^{N^R} C_{ij, k}\vert \phi^L_i \phi^R_j\rangle,
+\end{equation}
+!et
+(truncated Hartree basis)
+
+
+!split
+===== Calculational details =====
+
+Energy states:
+!bt
+\begin{equation}
+\vert\Phi_k\rangle = \sum_{i = 0}^{N^L} \sum_{j = 0}^{N^R} C_{ij, k}\vert \phi^L_i \phi^R_j\rangle,
+\end{equation}
+!et
+(truncated Hartree basis)
+
+FIGURE: [qcfigures/Hartree_coefs.png, width=700 frac=0.9]
 
 
 !split
