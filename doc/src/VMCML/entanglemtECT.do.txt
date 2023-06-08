@@ -275,15 +275,29 @@ FIGURE: [qcfigures/well_basis.png, width=700 frac=0.9]
 Hamiltonian:
 !bt
 \begin{align}
-\hat{H} &= \frac{\hat{p}_1}{2} + \sum_{i = 1}^7 V_i\alpha_i[\hat{x}_1] + \frac{\hat{p}_2}{2} + \sum_{i = 1}^7 V_i\alpha_i[\hat{x}_2] + \frac{\kappa}{\sqrt{(\hat{x}_1-\hat{x}_2)^2 + a^2}
+\hat{H} &= \frac{\hat{p}_1}{2} + \sum_{i = 1}^7 v[\hat{x}_1] + \frac{\hat{p}_2}{2} + v[\hat{x}_2] + \frac{\kappa}{\sqrt{(\hat{x}_1-\hat{x}_2)^2 + a^2}
 &= h[\hat{p}_1,\hat{x}_1] + h[\hat{p}_2,\hat{x}_2] + u[\hat{x}_1,\hat{x}_2]
+\end{align}
+!et
+
+FIGURE: [qcfigures/wells.png, width=700 frac=0.9]
+
+
+!split
+===== Calculational details =====
+
+Hamiltonian:
+!bt
+\begin{align}
+\hat{H} &= \frac{\hat{p}_1}{2} + \sum_{i = 1}^7 v[\hat{x}_1] + \frac{\hat{p}_2}{2} + \sum_{i = 1}^7 v[\hat{x}_2] + \frac{\kappa}{\sqrt{(\hat{x}_1-\hat{x}_2)^2 + a^2} \\
+&\equiv h[\hat{p}_1,\hat{x}_1] + h[\hat{p}_2,\hat{x}_2] + u[\hat{x}_1,\hat{x}_2]
 \end{align}
 !et
 
 Energy states:
 !bt
 \begin{equation}
-\vert\Phi_k\rangle = \sum_{i < j} C_{ij, k}\frac{\vert \phi_i \phi_j\rangle - \vert \phi_j \phi_i\rangle}{\sqrt{2}},
+\vert\Phi_k\rangle = \sum_{i < j} C_{ij, k}\frac{\vert \varphi_i \varphi_j\rangle - \vert \varphi_j \varphi_i\rangle}{\sqrt{2}},
 \end{equation}
 !et
 (Slater basis)
@@ -295,15 +309,15 @@ Energy states:
 Hamiltonian:
 !bt
 \begin{align}
-\hat{H} &= \frac{\hat{p}_1}{2} + v^L[\hat{x}_1] + \frac{\hat{p}_2}{2} + v^R[\hat{x}_2] + \frac{\kappa}{\sqrt{(\hat{x}_1-\hat{x}_2)^2 + a^2}
-&= h^L[\hat{p}_1,\hat{x}_1] + h^R[\hat{p}_2,\hat{x}_2] + u[\hat{x}_1,\hat{x}_2]
+\hat{H} &= \frac{\hat{p}_1}{2} + v^L[\hat{x}_1] + \frac{\hat{p}_2}{2} + v^R[\hat{x}_2] + \frac{\kappa}{\sqrt{(\hat{x}_1-\hat{x}_2)^2 + a^2} \\
+&\equiv h^L[\hat{p}_1,\hat{x}_1] + h^R[\hat{p}_2,\hat{x}_2] + u[\hat{x}_1,\hat{x}_2]
 \end{align}
 !et
 
 Energy states:
 !bt
 \begin{equation}
-\vert\Phi_k\rangle = \sum_{i} \sum_{j} C_{ij, k}\vert \phi^L_i \phi^R_j\rangle,
+\vert\Phi_k\rangle = \sum_{i} \sum_{j} C_{ij, k}\vert \varphi^L_i \varphi^R_j\rangle,
 \end{equation}
 !et
 (product basis)
@@ -315,7 +329,7 @@ Energy states:
 Energy states:
 !bt
 \begin{equation}
-\vert\Phi_k\rangle = \sum_{i} \sum_{j} C_{ij, k}\vert \phi^L_i \phi^R_j\rangle,
+\vert\Phi_k\rangle = \sum_{i} \sum_{j} C_{ij, k}\vert \varphi^L_i \varphi^R_j\rangle,
 \end{equation}
 !et
 (product basis)
@@ -329,15 +343,15 @@ FIGURE: [qcfigures/Hartree_states.png, width=700 frac=0.9]
 Hamiltonian:
 !bt
 \begin{align}
-\hat{H} &= \frac{\hat{p}_1}{2} + v^L[\hat{x}_1] + \frac{\hat{p}_2}{2} + v^R[\hat{x}_2] + \frac{\kappa}{\sqrt{(\hat{x}_1-\hat{x}_2)^2 + a^2}
-&= h^L[\hat{p}_1,\hat{x}_1] + h^R[\hat{p}_2,\hat{x}_2] + u[\hat{x}_1,\hat{x}_2]
+\hat{H} &= \frac{\hat{p}_1}{2} + v^L[\hat{x}_1] + \frac{\hat{p}_2}{2} + v^R[\hat{x}_2] + \frac{\kappa}{\sqrt{(\hat{x}_1-\hat{x}_2)^2 + a^2} \\
+&\equiv h^L[\hat{p}_1,\hat{x}_1] + h^R[\hat{p}_2,\hat{x}_2] + u[\hat{x}_1,\hat{x}_2]
 \end{align}
 !et
 
 Energy states:
 !bt
 \begin{equation}
-\vert\Phi_k\rangle = \sum_{i} \sum_{j} C_{ij, k}\vert \phi^L_i \phi^R_j\rangle,
+\vert\Phi_k\rangle = \sum_{i} \sum_{j} C_{ij, k}\vert \varphi^L_i \varphi^R_j\rangle,
 \end{equation}
 !et
 (Hartree basis)
@@ -349,18 +363,18 @@ Energy states:
 Hamiltonian:
 !bt
 \begin{align}
-\hat{H} &= \frac{\hat{p}_1}{2} + \sum_{i = 1}^7 V_i\alpha_i[\hat{x}_1] + \frac{\hat{p}_2}{2} + \sum_{i = 1}^7 V_i\alpha_i[\hat{x}_2] + \frac{\kappa}{\sqrt{(\hat{x}_1-\hat{x}_2)^2 + a^2}
-&= h[\hat{p}_1,\hat{x}_1] + h[\hat{p}_2,\hat{x}_2] + u[\hat{x}_1,\hat{x}_2]
+\hat{H} &= \frac{\hat{p}_1}{2} + v^L[\hat{x}_1] + \frac{\hat{p}_2}{2} + v^R[\hat{x}_2] + \frac{\kappa}{\sqrt{(\hat{x}_1-\hat{x}_2)^2 + a^2} \\
+&\equiv h^L[\hat{p}_1,\hat{x}_1] + h^R[\hat{p}_2,\hat{x}_2] + u[\hat{x}_1,\hat{x}_2]
 \end{align}
 !et
 
 Energy states:
 !bt
 \begin{equation}
-\vert\Phi_k\rangle = \sum_{i = 0}^{N^L} \sum_{j = 0}^{N^R} C_{ij, k}\vert \phi^L_i \phi^R_j\rangle,
+\vert\Phi_k\rangle = \sum_{i = 0}^{N^L} \sum_{j = 0}^{N^R} C_{ij, k}\vert \varphi^L_i \varphi^R_j\rangle,
 \end{equation}
 !et
-(truncated Hartree basis)
+(Hartree basis)
 
 
 !split
@@ -369,12 +383,32 @@ Energy states:
 Energy states:
 !bt
 \begin{equation}
-\vert\Phi_k\rangle = \sum_{i = 0}^{N^L} \sum_{j = 0}^{N^R} C_{ij, k}\vert \phi^L_i \phi^R_j\rangle,
+\vert\Phi_k\rangle = \sum_{i = 0}^{N^L} \sum_{j = 0}^{N^R} C_{ij, k}\vert \varphi^L_i \varphi^R_j\rangle,
 \end{equation}
 !et
-(truncated Hartree basis)
+(Hartree basis)
 
 FIGURE: [qcfigures/Hartree_coefs.png, width=700 frac=0.9]
+
+
+!split
+===== Calculational details =====
+
+Hamiltonian:
+!bt
+\begin{align}
+\hat{H} &= \frac{\hat{p}_1}{2} + v^L[\hat{x}_1] + \frac{\hat{p}_2}{2} + v^R[\hat{x}_2] + \frac{\kappa}{\sqrt{(\hat{x}_1-\hat{x}_2)^2 + a^2} \\
+&\equiv h^L[\hat{p}_1,\hat{x}_1] + h^R[\hat{p}_2,\hat{x}_2] + u[\hat{x}_1,\hat{x}_2]
+\end{align}
+!et
+
+Energy states:
+!bt
+\begin{equation}
+\vert\Phi_k\rangle = \sum_{i = 0}^{N^L} \sum_{j = 0}^{N^R} C_{ij, k}\vert \varphi^L_i \varphi^R_j\rangle,
+\end{equation}
+!et
+(Hartree basis)
 
 
 !split
