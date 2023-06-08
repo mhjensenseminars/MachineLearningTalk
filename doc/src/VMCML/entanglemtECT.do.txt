@@ -453,7 +453,7 @@ FIGURE: [qcfigures/configuration_I-1.png, width=700 frac=0.9]
 !split
 ===== Potential wells, the one-body densities, and single-particle states =====
 
-FIGURE: [qcfigures/configuration_II_and_III-1.png, width=700 frac=0.9]
+FIGURE: [qcfigures/configuration_II_and_III-1.png, width=700 frac=1.1]
 
 !split
 ===== Where we are now =====
