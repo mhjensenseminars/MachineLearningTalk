@@ -402,5 +402,18 @@ DATE: today
 
 
 
+===== ECT June 5-9, 2023 =====
+
+
+
+ * HTML:
+   * "Plain html style": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/entanglemtECT/html/entanglemtECT.html"
+   * "reveal.js beige slide style": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/entanglemtECT/html/entanglemtECT-reveal.html"
+   * "Bootstrap style": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/entanglemtECT/html/entanglemtECT-bs.html"
+ * iPython notebook:
+   * "ipynb file": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/entanglemtECT/ipynb/entanglemtECT.ipynb"
+
+
+
 
 
