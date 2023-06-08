@@ -648,7 +648,7 @@ where $\hat{\rho}$ is the density operator/matrix.
 !split
 ===== Entanglement and more  =====
 
-FIGURE: [qcfigures/figure2.png, width=700 frac=0.9]
+FIGURE: [qcfigures/figure2.pdf, width=700 frac=0.9]
 
 
 !split
@@ -662,17 +662,17 @@ o (c) In this figure we have plotted the anharmonicites for the left well ($\alp
 !split
 ===== Particle densities and coefficients =====
 
-FIGURE: [qcfigures/figure3.png, width=700 frac=0.9]
+FIGURE: [qcfigures/figure3.pdf, width=700 frac=0.9]
 
 !split
 ===== Potential wells, the one-body densities, and single-particle states =====
 
-FIGURE: [qcfigures/figure4.png, width=700 frac=0.9]
+FIGURE: [qcfigures/figure4.pdf, width=700 frac=0.9]
 
 
 ===== Probability distributions of the first four Hartree states in the left- and the right well =====
 
-FIGURE: [qcfigures/figure5.png, width=700 frac=0.9]
+FIGURE: [qcfigures/figure5.pdf, width=700 frac=0.9]
 
 !split
 ===== Where we are now =====
