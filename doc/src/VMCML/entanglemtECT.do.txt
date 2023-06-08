@@ -63,17 +63,16 @@ o (c+d) The electron's energy in a  double-well electrostatic potential (solid l
 !split
 ===== More on experimental setup I =====
 
-FIGURE: [qcfigures/Elhelium1.png, width=700 frac=1.1]
-
+FIGURE: [qcfigures/Elhelium1.png, width=700 frac=1.3]
 !split
 ===== More on experimental setup II =====
 
-FIGURE: [qcfigures/Elhelium2.png, width=700 frac=1.1]
+FIGURE: [qcfigures/Elhelium2.png, width=700 frac=1.3]
 
 !split
 ===== More on experimental setup III =====
 
-FIGURE: [qcfigures/Elhelium3.png, width=700 frac=1.1]
+FIGURE: [qcfigures/Elhelium3.png, width=700 frac=1.3]
 
 !split
 ===== Literature and more reading  =====
