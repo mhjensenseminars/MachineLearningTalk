@@ -60,6 +60,20 @@ o (b) Coupling constants from each individual electrode beneath the helium layer
 o (c+d) The electron's energy in a  double-well electrostatic potential (solid line). Dashed and dot-dashed lines represent the harmonic approximations of left and right wells respectively.
 
 
+!split
+===== More on experimental setup I =====
+
+FIGURE: [qcfigures/Elhelium1.png, width=700 frac=0.9]
+
+!split
+===== More on experimental setup II =====
+
+FIGURE: [qcfigures/Elhelium2.png, width=700 frac=0.9]
+
+!split
+===== More on experimental setup III =====
+
+FIGURE: [qcfigures/Elhelium3.png, width=700 frac=0.9]
 
 !split
 ===== Literature and more reading  =====
