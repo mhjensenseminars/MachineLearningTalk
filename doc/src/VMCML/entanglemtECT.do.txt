@@ -44,38 +44,6 @@ systems will be discussed.
  
 
 !split
-===== To read more =====
-
-o See "Single electrons on solid neon as a solid-state qubit platform, David Schuster et al, Nature _605_, 46–50 (2022)":"https://www.nature.com/articles/s41586-022-04539-x"
-o See Mark Dykman et al, Spin dynamics in quantum dots on liquid helium, PRB _107_. 035437 (2023) at URL:"https://link.aps.org/doi/10.1103/PhysRevB.107.035437".
-
-
-!split
-===== Experimental set up =====
-
-FIGURE: [qcfigures/figure1.png, width=700 frac=0.9]
-
-o (a) Schematic of the microdevice, where two electrons are trapped in a double-well potential created by electrodes 1-7. The read-out is provided by two superconducting resonators dispersively coupled to  electron's in-plane motional states.
-o (b) Coupling constants from each individual electrode beneath the helium layer.
-o (c+d) The electron's energy in a  double-well electrostatic potential (solid line). Dashed and dot-dashed lines represent the harmonic approximations of left and right wells respectively.
-
-
-!split
-===== More on experimental setup I =====
-
-FIGURE: [qcfigures/Elhelium1.png, width=700 frac=1.3]
-
-!split
-===== More on experimental setup II =====
-
-FIGURE: [qcfigures/Elhelium2.png, width=700 frac=1.3]
-
-!split
-===== More on experimental setup III =====
-
-FIGURE: [qcfigures/Elhelium3.png, width=700 frac=1.3]
-
-!split
 ===== Literature and more reading  =====
 
 
@@ -123,6 +91,43 @@ controlled generation of entanglement between two trapped electrons
 under the influence of coherent microwave driving pulses, taking into
 account the effects of the Coulomb interaction between electrons, may be of great interest for quantum information processing using
 trapped electrons.
+
+
+
+!split
+===== To read more =====
+
+o See "Single electrons on solid neon as a solid-state qubit platform, David Schuster et al, Nature _605_, 46–50 (2022)":"https://www.nature.com/articles/s41586-022-04539-x"
+o See Mark Dykman et al, Spin dynamics in quantum dots on liquid helium, PRB _107_. 035437 (2023) at URL:"https://link.aps.org/doi/10.1103/PhysRevB.107.035437".
+
+
+
+!split
+===== Experimental setup I =====
+
+FIGURE: [qcfigures/Elhelium1.png, width=700 frac=1.3]
+
+!split
+===== More on experimental setup II =====
+
+FIGURE: [qcfigures/Elhelium2.png, width=700 frac=1.3]
+
+!split
+===== More on experimental setup III =====
+
+FIGURE: [qcfigures/Elhelium3.png, width=700 frac=1.3]
+
+!split
+===== Experimental set up =====
+
+FIGURE: [qcfigures/figure1.png, width=700 frac=0.9]
+
+o (a) Schematic of the microdevice, where two electrons are trapped in a double-well potential created by electrodes 1-7. The read-out is provided by two superconducting resonators dispersively coupled to  electron's in-plane motional states.
+o (b) Coupling constants from each individual electrode beneath the helium layer.
+o (c+d) The electron's energy in a  double-well electrostatic potential (solid line). Dashed and dot-dashed lines represent the harmonic approximations of left and right wells respectively.
+
+
+
 
 
 
