@@ -37,8 +37,10 @@ doconce format html entanglemtECT.do.txt --html_style=bootstrap --pygments_html_
 <!-- tocinfo
 {'highest level': 2,
  'sections': [('Overview and Motivation', 2, None, 'overview-and-motivation'),
-              ('What is this talk about?', 2, None, 'what-is-this-talk-about'),
               ('Many people to thank', 2, None, 'many-people-to-thank'),
+              ('What is this talk about?', 2, None, 'what-is-this-talk-about'),
+              ('To read more', 2, None, 'to-read-more'),
+              ('Experimental set up', 2, None, 'experimental-set-up'),
               ('Literature and more reading',
                2,
                None,
@@ -49,7 +51,6 @@ doconce format html entanglemtECT.do.txt --html_style=bootstrap --pygments_html_
                2,
                None,
                'electrons-quantum-dots-on-superfluid-helium'),
-              ('Methods and Applications', 2, None, 'methods-and-applications'),
               ('Entanglement', 2, None, 'entanglement'),
               ('More on Entanglement', 2, None, 'more-on-entanglement'),
               ('Entanglement gates in trapped ions and more',
@@ -60,20 +61,23 @@ doconce format html entanglemtECT.do.txt --html_style=bootstrap --pygments_html_
                2,
                None,
                'a-warm-up-problem-avoided-level-crossing-and-some-math'),
-              ('Avoided level crossings', 2, None, 'avoided-level-crossings'),
               ('Reminder on density matrices',
-               3,
+               2,
                None,
                'reminder-on-density-matrices'),
               ('Two-qubit system and definition of density matrices',
-               3,
+               2,
                None,
                'two-qubit-system-and-definition-of-density-matrices'),
+              ('Hamiltonian', 2, None, 'hamiltonian'),
+              ('Eigenstates', 2, None, 'eigenstates'),
               ('Shannon information entropy',
-               3,
+               2,
                None,
                'shannon-information-entropy'),
-              ('Von Neumann entropy', 3, None, 'von-neumann-entropy'),
+              ('Von Neumann entropy', 2, None, 'von-neumann-entropy'),
+              ('Simple code example', 2, None, 'simple-code-example'),
+              ('Short discussion', 2, None, 'short-discussion'),
               ('Quantum dots and the Coulomb interaction',
                2,
                None,
@@ -86,10 +90,8 @@ doconce format html entanglemtECT.do.txt --html_style=bootstrap --pygments_html_
                2,
                None,
                'surface-state-electrons-sse'),
-              ('To read more', 2, None, 'to-read-more'),
-              ('Experimental set up', 2, None, 'experimental-set-up'),
               ('Building the solutions', 2, None, 'building-the-solutions'),
-              ('Computational Methods', 2, None, 'computational-methods'),
+              ('Calculational details', 2, None, 'calculational-details'),
               ('One-dimensional system', 2, None, 'one-dimensional-system'),
               ('Details 1', 2, None, 'details-1'),
               ('Details 2', 2, None, 'details-2'),
@@ -106,38 +108,25 @@ doconce format html entanglemtECT.do.txt --html_style=bootstrap --pygments_html_
                2,
                None,
                'final-von-neumann-entropy'),
+              ('Results and discussions', 2, None, 'results-and-discussions'),
               ('Analysis', 2, None, 'analysis'),
+              ('Basis of left well', 2, None, 'basis-of-left-well'),
               ('Results', 2, None, 'results'),
-              ('Interpretations', 2, None, 'interpretations'),
-              ('Basis of left well', 2, None, 'basis-of-left-well'),
-              ('Basis of left well', 2, None, 'basis-of-left-well'),
-              ('Densities, potential wells overlaps',
+              ('Energy levels as a function of voltage parameter',
                2,
                None,
-               'densities-potential-wells-overlaps'),
+               'energy-levels-as-a-function-of-voltage-parameter'),
+              ('Config I densities and coefficients',
+               2,
+               None,
+               'config-i-densities-and-coefficients'),
               ('Schmidt basis for configurations II and III',
                2,
                None,
                'schmidt-basis-for-configurations-ii-and-iii'),
               ('Von Neumann entropy', 2, None, 'von-neumann-entropy'),
               ('Where we are now', 2, None, 'where-we-are-now'),
-              ('Plans', 2, None, 'plans'),
-              ('Additional material', 2, None, 'additional-material'),
-              ('How to simulate quantum mechanical systems: VQE and efficient '
-               'computations of gradients',
-               2,
-               None,
-               'how-to-simulate-quantum-mechanical-systems-vqe-and-efficient-computations-of-gradients'),
-              ('Setting up the matrix', 2, None, 'setting-up-the-matrix'),
-              ('Implementing the VQE', 2, None, 'implementing-the-vqe'),
-              ('Gradient descent and calculations of gradients',
-               2,
-               None,
-               'gradient-descent-and-calculations-of-gradients'),
-              ('A smarter way of doing this',
-               2,
-               None,
-               'a-smarter-way-of-doing-this')]}
+              ('Plans', 2, None, 'plans')]}
 end of tocinfo -->
 
 <body>
@@ -172,53 +161,49 @@ MathJax.Hub.Config({
       <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Contents <b class="caret"></b></a>
         <ul class="dropdown-menu">
-     <!-- navigation toc: --> <li><a href="._entanglemtECT-bs001.html#overview-and-motivation" style="font-size: 80%;"><b>Overview and Motivation</b></a></li>
-     <!-- navigation toc: --> <li><a href="._entanglemtECT-bs002.html#what-is-this-talk-about" style="font-size: 80%;"><b>What is this talk about?</b></a></li>
-     <!-- navigation toc: --> <li><a href="._entanglemtECT-bs003.html#many-people-to-thank" style="font-size: 80%;"><b>Many people to thank</b></a></li>
-     <!-- navigation toc: --> <li><a href="._entanglemtECT-bs004.html#literature-and-more-reading" style="font-size: 80%;"><b>Literature and more reading</b></a></li>
-     <!-- navigation toc: --> <li><a href="._entanglemtECT-bs005.html#quantum-engineering" style="font-size: 80%;"><b>Quantum Engineering</b></a></li>
-     <!-- navigation toc: --> <li><a href="._entanglemtECT-bs006.html#candidate-systems" style="font-size: 80%;"><b>Candidate systems</b></a></li>
-     <!-- navigation toc: --> <li><a href="._entanglemtECT-bs007.html#electrons-quantum-dots-on-superfluid-helium" style="font-size: 80%;"><b>Electrons (quantum dots) on superfluid helium</b></a></li>
-     <!-- navigation toc: --> <li><a href="._entanglemtECT-bs008.html#methods-and-applications" style="font-size: 80%;"><b>Methods and Applications</b></a></li>
-     <!-- navigation toc: --> <li><a href="._entanglemtECT-bs009.html#entanglement" style="font-size: 80%;"><b>Entanglement</b></a></li>
-     <!-- navigation toc: --> <li><a href="._entanglemtECT-bs010.html#more-on-entanglement" style="font-size: 80%;"><b>More on Entanglement</b></a></li>
-     <!-- navigation toc: --> <li><a href="._entanglemtECT-bs011.html#entanglement-gates-in-trapped-ions-and-more" style="font-size: 80%;"><b>Entanglement gates in trapped ions and more</b></a></li>
-     <!-- navigation toc: --> <li><a href="._entanglemtECT-bs012.html#a-warm-up-problem-avoided-level-crossing-and-some-math" style="font-size: 80%;"><b>A warm-up problem, avoided level crossing and some math</b></a></li>
-     <!-- navigation toc: --> <li><a href="._entanglemtECT-bs012.html#avoided-level-crossings" style="font-size: 80%;"><b>Avoided level crossings</b></a></li>
-     <!-- navigation toc: --> <li><a href="._entanglemtECT-bs012.html#reminder-on-density-matrices" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Reminder on density matrices</a></li>
-     <!-- navigation toc: --> <li><a href="._entanglemtECT-bs012.html#two-qubit-system-and-definition-of-density-matrices" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Two-qubit system and definition of density matrices</a></li>
-     <!-- navigation toc: --> <li><a href="._entanglemtECT-bs012.html#shannon-information-entropy" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Shannon information entropy</a></li>
-     <!-- navigation toc: --> <li><a href="._entanglemtECT-bs034.html#von-neumann-entropy" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Von Neumann entropy</a></li>
-     <!-- navigation toc: --> <li><a href="._entanglemtECT-bs013.html#quantum-dots-and-the-coulomb-interaction" style="font-size: 80%;"><b>Quantum dots and the Coulomb interaction</b></a></li>
-     <!-- navigation toc: --> <li><a href="._entanglemtECT-bs014.html#electrons-on-helium-is-another-qubit-platform" style="font-size: 80%;"><b>Electrons on helium is another qubit platform</b></a></li>
-     <!-- navigation toc: --> <li><a href="._entanglemtECT-bs015.html#surface-state-electrons-sse" style="font-size: 80%;"><b>Surface state electrons (SSE)</b></a></li>
-     <!-- navigation toc: --> <li><a href="._entanglemtECT-bs016.html#to-read-more" style="font-size: 80%;"><b>To read more</b></a></li>
-     <!-- navigation toc: --> <li><a href="._entanglemtECT-bs017.html#experimental-set-up" style="font-size: 80%;"><b>Experimental set up</b></a></li>
-     <!-- navigation toc: --> <li><a href="._entanglemtECT-bs018.html#building-the-solutions" style="font-size: 80%;"><b>Building the solutions</b></a></li>
-     <!-- navigation toc: --> <li><a href="._entanglemtECT-bs019.html#computational-methods" style="font-size: 80%;"><b>Computational Methods</b></a></li>
-     <!-- navigation toc: --> <li><a href="#one-dimensional-system" style="font-size: 80%;"><b>One-dimensional system</b></a></li>
-     <!-- navigation toc: --> <li><a href="._entanglemtECT-bs021.html#details-1" style="font-size: 80%;"><b>Details 1</b></a></li>
-     <!-- navigation toc: --> <li><a href="._entanglemtECT-bs022.html#details-2" style="font-size: 80%;"><b>Details 2</b></a></li>
-     <!-- navigation toc: --> <li><a href="._entanglemtECT-bs023.html#hartree-method" style="font-size: 80%;"><b>Hartree method</b></a></li>
-     <!-- navigation toc: --> <li><a href="._entanglemtECT-bs024.html#measuring-the-degree-of-entanglement" style="font-size: 80%;"><b>Measuring the degree of entanglement</b></a></li>
-     <!-- navigation toc: --> <li><a href="._entanglemtECT-bs025.html#more-entropy-and-schmidt-decomposition" style="font-size: 80%;"><b>More entropy and Schmidt decomposition</b></a></li>
-     <!-- navigation toc: --> <li><a href="._entanglemtECT-bs026.html#final-von-neumann-entropy" style="font-size: 80%;"><b>Final Von Neumann entropy</b></a></li>
-     <!-- navigation toc: --> <li><a href="._entanglemtECT-bs027.html#analysis" style="font-size: 80%;"><b>Analysis</b></a></li>
-     <!-- navigation toc: --> <li><a href="._entanglemtECT-bs028.html#results" style="font-size: 80%;"><b>Results</b></a></li>
-     <!-- navigation toc: --> <li><a href="._entanglemtECT-bs029.html#interpretations" style="font-size: 80%;"><b>Interpretations</b></a></li>
-     <!-- navigation toc: --> <li><a href="._entanglemtECT-bs031.html#basis-of-left-well" style="font-size: 80%;"><b>Basis of left well</b></a></li>
-     <!-- navigation toc: --> <li><a href="._entanglemtECT-bs031.html#basis-of-left-well" style="font-size: 80%;"><b>Basis of left well</b></a></li>
-     <!-- navigation toc: --> <li><a href="._entanglemtECT-bs032.html#densities-potential-wells-overlaps" style="font-size: 80%;"><b>Densities, potential wells overlaps</b></a></li>
-     <!-- navigation toc: --> <li><a href="._entanglemtECT-bs033.html#schmidt-basis-for-configurations-ii-and-iii" style="font-size: 80%;"><b>Schmidt basis for configurations II and III</b></a></li>
-     <!-- navigation toc: --> <li><a href="._entanglemtECT-bs034.html#von-neumann-entropy" style="font-size: 80%;"><b>Von Neumann entropy</b></a></li>
-     <!-- navigation toc: --> <li><a href="._entanglemtECT-bs035.html#where-we-are-now" style="font-size: 80%;"><b>Where we are now</b></a></li>
-     <!-- navigation toc: --> <li><a href="._entanglemtECT-bs036.html#plans" style="font-size: 80%;"><b>Plans</b></a></li>
-     <!-- navigation toc: --> <li><a href="._entanglemtECT-bs037.html#additional-material" style="font-size: 80%;"><b>Additional material</b></a></li>
-     <!-- navigation toc: --> <li><a href="._entanglemtECT-bs038.html#how-to-simulate-quantum-mechanical-systems-vqe-and-efficient-computations-of-gradients" style="font-size: 80%;"><b>How to simulate quantum mechanical systems: VQE and efficient computations of gradients</b></a></li>
-     <!-- navigation toc: --> <li><a href="._entanglemtECT-bs039.html#setting-up-the-matrix" style="font-size: 80%;"><b>Setting up the matrix</b></a></li>
-     <!-- navigation toc: --> <li><a href="._entanglemtECT-bs040.html#implementing-the-vqe" style="font-size: 80%;"><b>Implementing the VQE</b></a></li>
-     <!-- navigation toc: --> <li><a href="._entanglemtECT-bs041.html#gradient-descent-and-calculations-of-gradients" style="font-size: 80%;"><b>Gradient descent and calculations of gradients</b></a></li>
-     <!-- navigation toc: --> <li><a href="._entanglemtECT-bs042.html#a-smarter-way-of-doing-this" style="font-size: 80%;"><b>A smarter way of doing this</b></a></li>
+     <!-- navigation toc: --> <li><a href="._entanglemtECT-bs001.html#overview-and-motivation" style="font-size: 80%;">Overview and Motivation</a></li>
+     <!-- navigation toc: --> <li><a href="._entanglemtECT-bs002.html#many-people-to-thank" style="font-size: 80%;">Many people to thank</a></li>
+     <!-- navigation toc: --> <li><a href="._entanglemtECT-bs003.html#what-is-this-talk-about" style="font-size: 80%;">What is this talk about?</a></li>
+     <!-- navigation toc: --> <li><a href="._entanglemtECT-bs004.html#to-read-more" style="font-size: 80%;">To read more</a></li>
+     <!-- navigation toc: --> <li><a href="._entanglemtECT-bs005.html#experimental-set-up" style="font-size: 80%;">Experimental set up</a></li>
+     <!-- navigation toc: --> <li><a href="._entanglemtECT-bs006.html#literature-and-more-reading" style="font-size: 80%;">Literature and more reading</a></li>
+     <!-- navigation toc: --> <li><a href="._entanglemtECT-bs007.html#quantum-engineering" style="font-size: 80%;">Quantum Engineering</a></li>
+     <!-- navigation toc: --> <li><a href="._entanglemtECT-bs008.html#candidate-systems" style="font-size: 80%;">Candidate systems</a></li>
+     <!-- navigation toc: --> <li><a href="._entanglemtECT-bs009.html#electrons-quantum-dots-on-superfluid-helium" style="font-size: 80%;">Electrons (quantum dots) on superfluid helium</a></li>
+     <!-- navigation toc: --> <li><a href="._entanglemtECT-bs010.html#entanglement" style="font-size: 80%;">Entanglement</a></li>
+     <!-- navigation toc: --> <li><a href="._entanglemtECT-bs011.html#more-on-entanglement" style="font-size: 80%;">More on Entanglement</a></li>
+     <!-- navigation toc: --> <li><a href="._entanglemtECT-bs012.html#entanglement-gates-in-trapped-ions-and-more" style="font-size: 80%;">Entanglement gates in trapped ions and more</a></li>
+     <!-- navigation toc: --> <li><a href="._entanglemtECT-bs013.html#a-warm-up-problem-avoided-level-crossing-and-some-math" style="font-size: 80%;">A warm-up problem, avoided level crossing and some math</a></li>
+     <!-- navigation toc: --> <li><a href="._entanglemtECT-bs014.html#reminder-on-density-matrices" style="font-size: 80%;">Reminder on density matrices</a></li>
+     <!-- navigation toc: --> <li><a href="._entanglemtECT-bs015.html#two-qubit-system-and-definition-of-density-matrices" style="font-size: 80%;">Two-qubit system and definition of density matrices</a></li>
+     <!-- navigation toc: --> <li><a href="._entanglemtECT-bs016.html#hamiltonian" style="font-size: 80%;">Hamiltonian</a></li>
+     <!-- navigation toc: --> <li><a href="._entanglemtECT-bs017.html#eigenstates" style="font-size: 80%;">Eigenstates</a></li>
+     <!-- navigation toc: --> <li><a href="._entanglemtECT-bs018.html#shannon-information-entropy" style="font-size: 80%;">Shannon information entropy</a></li>
+     <!-- navigation toc: --> <li><a href="._entanglemtECT-bs042.html#von-neumann-entropy" style="font-size: 80%;">Von Neumann entropy</a></li>
+     <!-- navigation toc: --> <li><a href="#simple-code-example" style="font-size: 80%;">Simple code example</a></li>
+     <!-- navigation toc: --> <li><a href="._entanglemtECT-bs021.html#short-discussion" style="font-size: 80%;">Short discussion</a></li>
+     <!-- navigation toc: --> <li><a href="._entanglemtECT-bs022.html#quantum-dots-and-the-coulomb-interaction" style="font-size: 80%;">Quantum dots and the Coulomb interaction</a></li>
+     <!-- navigation toc: --> <li><a href="._entanglemtECT-bs023.html#electrons-on-helium-is-another-qubit-platform" style="font-size: 80%;">Electrons on helium is another qubit platform</a></li>
+     <!-- navigation toc: --> <li><a href="._entanglemtECT-bs024.html#surface-state-electrons-sse" style="font-size: 80%;">Surface state electrons (SSE)</a></li>
+     <!-- navigation toc: --> <li><a href="._entanglemtECT-bs025.html#building-the-solutions" style="font-size: 80%;">Building the solutions</a></li>
+     <!-- navigation toc: --> <li><a href="._entanglemtECT-bs026.html#calculational-details" style="font-size: 80%;">Calculational details</a></li>
+     <!-- navigation toc: --> <li><a href="._entanglemtECT-bs027.html#one-dimensional-system" style="font-size: 80%;">One-dimensional system</a></li>
+     <!-- navigation toc: --> <li><a href="._entanglemtECT-bs028.html#details-1" style="font-size: 80%;">Details 1</a></li>
+     <!-- navigation toc: --> <li><a href="._entanglemtECT-bs029.html#details-2" style="font-size: 80%;">Details 2</a></li>
+     <!-- navigation toc: --> <li><a href="._entanglemtECT-bs030.html#hartree-method" style="font-size: 80%;">Hartree method</a></li>
+     <!-- navigation toc: --> <li><a href="._entanglemtECT-bs031.html#measuring-the-degree-of-entanglement" style="font-size: 80%;">Measuring the degree of entanglement</a></li>
+     <!-- navigation toc: --> <li><a href="._entanglemtECT-bs032.html#more-entropy-and-schmidt-decomposition" style="font-size: 80%;">More entropy and Schmidt decomposition</a></li>
+     <!-- navigation toc: --> <li><a href="._entanglemtECT-bs033.html#final-von-neumann-entropy" style="font-size: 80%;">Final Von Neumann entropy</a></li>
+     <!-- navigation toc: --> <li><a href="._entanglemtECT-bs034.html#results-and-discussions" style="font-size: 80%;">Results and discussions</a></li>
+     <!-- navigation toc: --> <li><a href="._entanglemtECT-bs035.html#analysis" style="font-size: 80%;">Analysis</a></li>
+     <!-- navigation toc: --> <li><a href="._entanglemtECT-bs036.html#basis-of-left-well" style="font-size: 80%;">Basis of left well</a></li>
+     <!-- navigation toc: --> <li><a href="._entanglemtECT-bs037.html#results" style="font-size: 80%;">Results</a></li>
+     <!-- navigation toc: --> <li><a href="._entanglemtECT-bs039.html#energy-levels-as-a-function-of-voltage-parameter" style="font-size: 80%;">Energy levels as a function of voltage parameter</a></li>
+     <!-- navigation toc: --> <li><a href="._entanglemtECT-bs040.html#config-i-densities-and-coefficients" style="font-size: 80%;">Config I densities and coefficients</a></li>
+     <!-- navigation toc: --> <li><a href="._entanglemtECT-bs041.html#schmidt-basis-for-configurations-ii-and-iii" style="font-size: 80%;">Schmidt basis for configurations II and III</a></li>
+     <!-- navigation toc: --> <li><a href="._entanglemtECT-bs042.html#von-neumann-entropy" style="font-size: 80%;">Von Neumann entropy</a></li>
+     <!-- navigation toc: --> <li><a href="._entanglemtECT-bs043.html#where-we-are-now" style="font-size: 80%;">Where we are now</a></li>
+     <!-- navigation toc: --> <li><a href="._entanglemtECT-bs044.html#plans" style="font-size: 80%;">Plans</a></li>
 
         </ul>
       </li>
@@ -230,27 +215,90 @@ MathJax.Hub.Config({
 <p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p> <!-- add vertical space -->
 <a name="part0020"></a>
 <!-- !split -->
-<h2 id="one-dimensional-system" class="anchor">One-dimensional system </h2>
+<h2 id="simple-code-example" class="anchor">Simple code example </h2>
 
-<p>We consider a one-dimensional model where the confining potential is parametrized/obtained from finite element calculations. 
-The bare Coulomb interaction is divergent in 1D (REF) and it is customary to use a smoothed Coulomb interaction given by
-</p>
-$$
-\begin{align}
-u(x_1, x_2) = \frac{\alpha}{\sqrt{(x_1 - x_2)^2 + a^2}},
-\tag{6}
-\end{align}
-$$
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #f8f8f8">
+  <pre style="line-height: 125%;"><span style="color: #666666">%</span>matplotlib inline
+<span style="color: #008000; font-weight: bold">from</span>  <span style="color: #0000FF; font-weight: bold">matplotlib</span> <span style="color: #008000; font-weight: bold">import</span> pyplot <span style="color: #008000; font-weight: bold">as</span> plt
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">numpy</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">np</span>
+<span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">scipy.linalg</span> <span style="color: #008000; font-weight: bold">import</span> logm, expm
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">log2M</span>(a): <span style="color: #408080; font-style: italic"># base 2 matrix logarithm</span>
+    <span style="color: #008000; font-weight: bold">return</span> logm(a)<span style="color: #666666">/</span>np<span style="color: #666666">.</span>log(<span style="color: #666666">2.0</span>)
 
-<p>where \( \alpha \) adjusts the strength of the interaction and \( a \) removes the singularity at \( x_1 = x_2 \).</p>
+dim <span style="color: #666666">=</span> <span style="color: #666666">4</span>
+Hamiltonian <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros((dim,dim))
+<span style="color: #408080; font-style: italic">#number of lambda values</span>
+n <span style="color: #666666">=</span> <span style="color: #666666">40</span>
+lmbd <span style="color: #666666">=</span> np<span style="color: #666666">.</span>linspace(<span style="color: #666666">0.0</span>,<span style="color: #666666">1.0</span>,n)
+Hx <span style="color: #666666">=</span> <span style="color: #666666">2.0</span>
+Hz <span style="color: #666666">=</span> <span style="color: #666666">3.0</span>
+<span style="color: #408080; font-style: italic"># Non-diagonal part as sigma_x tensor product with sigma_x</span>
+sx <span style="color: #666666">=</span> np<span style="color: #666666">.</span>matrix([[<span style="color: #666666">0</span>,<span style="color: #666666">1</span>],[<span style="color: #666666">1</span>,<span style="color: #666666">0</span>]])
+sx2 <span style="color: #666666">=</span> Hx<span style="color: #666666">*</span>np<span style="color: #666666">.</span>kron(sx, sx)
+<span style="color: #408080; font-style: italic"># Diagonal part as sigma_z tensor product with sigma_z</span>
+sz <span style="color: #666666">=</span> np<span style="color: #666666">.</span>matrix([[<span style="color: #666666">1</span>,<span style="color: #666666">0</span>],[<span style="color: #666666">0</span>,<span style="color: #666666">-1</span>]])
+sz2 <span style="color: #666666">=</span> Hz<span style="color: #666666">*</span>np<span style="color: #666666">.</span>kron(sz, sz)
+noninteracting <span style="color: #666666">=</span> [<span style="color: #666666">0.0</span>, <span style="color: #666666">2.5</span>, <span style="color: #666666">6.5</span>, <span style="color: #666666">7.0</span>]
+D <span style="color: #666666">=</span> np<span style="color: #666666">.</span>diag(noninteracting)
+Eigenvalue <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros((dim,n))
+Entropy <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros(n)
 
-<p>The single-particle functions  are chosen as the eigenfunctions of the single-particle Hamiltonian</p>
-$$
-\begin{equation}
-\left( -\frac{d^2}{dx^2}+v(x) \right) \psi_p(x) = \epsilon_p \psi_p(x).
-\tag{7}
-\end{equation}
-$$
+<span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(n): 
+    Hamiltonian <span style="color: #666666">=</span> lmbd[i]<span style="color: #666666">*</span>(sx2<span style="color: #666666">+</span>sz2)<span style="color: #666666">+</span>D
+    <span style="color: #408080; font-style: italic"># diagonalize and obtain eigenvalues, not necessarily sorted</span>
+    EigValues, EigVectors <span style="color: #666666">=</span> np<span style="color: #666666">.</span>linalg<span style="color: #666666">.</span>eig(Hamiltonian)
+    <span style="color: #408080; font-style: italic"># sort eigenvectors and eigenvalues</span>
+    permute <span style="color: #666666">=</span> EigValues<span style="color: #666666">.</span>argsort()
+    EigValues <span style="color: #666666">=</span> EigValues[permute]
+    EigVectors <span style="color: #666666">=</span> EigVectors[:,permute]
+    <span style="color: #408080; font-style: italic"># Compute density matrix for selected system state, here ground state</span>
+    DensityMatrix <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros((dim,dim))
+    DensityMatrix <span style="color: #666666">=</span> np<span style="color: #666666">.</span>outer(EigVectors[:,<span style="color: #666666">0</span>],EigVectors[:,<span style="color: #666666">0</span>])
+    <span style="color: #408080; font-style: italic"># Project down on substates and find density matrix for subsystem</span>
+    d <span style="color: #666666">=</span> np<span style="color: #666666">.</span>matrix([[<span style="color: #666666">1</span>,<span style="color: #666666">0</span>],[<span style="color: #666666">0</span>,<span style="color: #666666">1</span>]])
+    v1 <span style="color: #666666">=</span> [<span style="color: #666666">1.0</span>,<span style="color: #666666">0.0</span>]
+    proj1 <span style="color: #666666">=</span> np<span style="color: #666666">.</span>kron(v1,d)
+    x1 <span style="color: #666666">=</span> proj1 <span style="color: #666666">@</span> DensityMatrix <span style="color: #666666">@</span> proj1<span style="color: #666666">.</span>T
+    v2 <span style="color: #666666">=</span> [<span style="color: #666666">0.0</span>,<span style="color: #666666">1.0</span>]
+    proj2 <span style="color: #666666">=</span> np<span style="color: #666666">.</span>kron(v2,d)
+    x2 <span style="color: #666666">=</span> proj2 <span style="color: #666666">@</span> DensityMatrix <span style="color: #666666">@</span> proj2<span style="color: #666666">.</span>T
+    <span style="color: #408080; font-style: italic"># Total density matrix for subsystem</span>
+    total <span style="color: #666666">=</span> x1<span style="color: #666666">+</span>x2
+    <span style="color: #408080; font-style: italic"># von Neumann Entropy for subsystem </span>
+    Entropy[i] <span style="color: #666666">=</span> <span style="color: #666666">-</span>np<span style="color: #666666">.</span>matrix<span style="color: #666666">.</span>trace(total <span style="color: #666666">@</span> log2M(total))
+    <span style="color: #408080; font-style: italic"># Plotting eigenvalues and entropy as functions of interaction strengths</span>
+    Eigenvalue[<span style="color: #666666">0</span>,i] <span style="color: #666666">=</span> EigValues[<span style="color: #666666">0</span>]
+    Eigenvalue[<span style="color: #666666">1</span>,i] <span style="color: #666666">=</span> EigValues[<span style="color: #666666">1</span>]
+    Eigenvalue[<span style="color: #666666">2</span>,i] <span style="color: #666666">=</span> EigValues[<span style="color: #666666">2</span>]
+    Eigenvalue[<span style="color: #666666">3</span>,i] <span style="color: #666666">=</span> EigValues[<span style="color: #666666">3</span>]
+plt<span style="color: #666666">.</span>plot(lmbd, Eigenvalue[<span style="color: #666666">0</span>,:] ,<span style="color: #BA2121">&#39;b-&#39;</span>,lmbd, Eigenvalue[<span style="color: #666666">1</span>,:],<span style="color: #BA2121">&#39;g-&#39;</span>,)
+plt<span style="color: #666666">.</span>plot(lmbd, Eigenvalue[<span style="color: #666666">2</span>,:] ,<span style="color: #BA2121">&#39;r-&#39;</span>,lmbd, Eigenvalue[<span style="color: #666666">3</span>,:],<span style="color: #BA2121">&#39;y-&#39;</span>,)
+plt<span style="color: #666666">.</span>xlabel(<span style="color: #BA2121">&#39;$\lambda$&#39;</span>)
+plt<span style="color: #666666">.</span>ylabel(<span style="color: #BA2121">&#39;Eigenvalues&#39;</span>)
+plt<span style="color: #666666">.</span>show()
+plt<span style="color: #666666">.</span>plot(lmbd, Entropy)
+plt<span style="color: #666666">.</span>xlabel(<span style="color: #BA2121">&#39;$\lambda$&#39;</span>)
+plt<span style="color: #666666">.</span>ylabel(<span style="color: #BA2121">&#39;Entropy&#39;</span>)          
+plt<span style="color: #666666">.</span>show
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 <p>
@@ -278,7 +326,7 @@ $$
   <li><a href="._entanglemtECT-bs028.html">29</a></li>
   <li><a href="._entanglemtECT-bs029.html">30</a></li>
   <li><a href="">...</a></li>
-  <li><a href="._entanglemtECT-bs042.html">43</a></li>
+  <li><a href="._entanglemtECT-bs044.html">45</a></li>
   <li><a href="._entanglemtECT-bs021.html">&raquo;</a></li>
 </ul>
 <!-- ------------------- end of main content --------------- -->

@@ -64,8 +64,10 @@ div.toc p,a {
 <!-- tocinfo
 {'highest level': 2,
  'sections': [('Overview and Motivation', 2, None, 'overview-and-motivation'),
-              ('What is this talk about?', 2, None, 'what-is-this-talk-about'),
               ('Many people to thank', 2, None, 'many-people-to-thank'),
+              ('What is this talk about?', 2, None, 'what-is-this-talk-about'),
+              ('To read more', 2, None, 'to-read-more'),
+              ('Experimental set up', 2, None, 'experimental-set-up'),
               ('Literature and more reading',
                2,
                None,
@@ -76,7 +78,6 @@ div.toc p,a {
                2,
                None,
                'electrons-quantum-dots-on-superfluid-helium'),
-              ('Methods and Applications', 2, None, 'methods-and-applications'),
               ('Entanglement', 2, None, 'entanglement'),
               ('More on Entanglement', 2, None, 'more-on-entanglement'),
               ('Entanglement gates in trapped ions and more',
@@ -87,20 +88,23 @@ div.toc p,a {
                2,
                None,
                'a-warm-up-problem-avoided-level-crossing-and-some-math'),
-              ('Avoided level crossings', 2, None, 'avoided-level-crossings'),
               ('Reminder on density matrices',
-               3,
+               2,
                None,
                'reminder-on-density-matrices'),
               ('Two-qubit system and definition of density matrices',
-               3,
+               2,
                None,
                'two-qubit-system-and-definition-of-density-matrices'),
+              ('Hamiltonian', 2, None, 'hamiltonian'),
+              ('Eigenstates', 2, None, 'eigenstates'),
               ('Shannon information entropy',
-               3,
+               2,
                None,
                'shannon-information-entropy'),
-              ('Von Neumann entropy', 3, None, 'von-neumann-entropy'),
+              ('Von Neumann entropy', 2, None, 'von-neumann-entropy'),
+              ('Simple code example', 2, None, 'simple-code-example'),
+              ('Short discussion', 2, None, 'short-discussion'),
               ('Quantum dots and the Coulomb interaction',
                2,
                None,
@@ -113,10 +117,8 @@ div.toc p,a {
                2,
                None,
                'surface-state-electrons-sse'),
-              ('To read more', 2, None, 'to-read-more'),
-              ('Experimental set up', 2, None, 'experimental-set-up'),
               ('Building the solutions', 2, None, 'building-the-solutions'),
-              ('Computational Methods', 2, None, 'computational-methods'),
+              ('Calculational details', 2, None, 'calculational-details'),
               ('One-dimensional system', 2, None, 'one-dimensional-system'),
               ('Details 1', 2, None, 'details-1'),
               ('Details 2', 2, None, 'details-2'),
@@ -133,38 +135,25 @@ div.toc p,a {
                2,
                None,
                'final-von-neumann-entropy'),
+              ('Results and discussions', 2, None, 'results-and-discussions'),
               ('Analysis', 2, None, 'analysis'),
+              ('Basis of left well', 2, None, 'basis-of-left-well'),
               ('Results', 2, None, 'results'),
-              ('Interpretations', 2, None, 'interpretations'),
-              ('Basis of left well', 2, None, 'basis-of-left-well'),
-              ('Basis of left well', 2, None, 'basis-of-left-well'),
-              ('Densities, potential wells overlaps',
+              ('Energy levels as a function of voltage parameter',
                2,
                None,
-               'densities-potential-wells-overlaps'),
+               'energy-levels-as-a-function-of-voltage-parameter'),
+              ('Config I densities and coefficients',
+               2,
+               None,
+               'config-i-densities-and-coefficients'),
               ('Schmidt basis for configurations II and III',
                2,
                None,
                'schmidt-basis-for-configurations-ii-and-iii'),
               ('Von Neumann entropy', 2, None, 'von-neumann-entropy'),
               ('Where we are now', 2, None, 'where-we-are-now'),
-              ('Plans', 2, None, 'plans'),
-              ('Additional material', 2, None, 'additional-material'),
-              ('How to simulate quantum mechanical systems: VQE and efficient '
-               'computations of gradients',
-               2,
-               None,
-               'how-to-simulate-quantum-mechanical-systems-vqe-and-efficient-computations-of-gradients'),
-              ('Setting up the matrix', 2, None, 'setting-up-the-matrix'),
-              ('Implementing the VQE', 2, None, 'implementing-the-vqe'),
-              ('Gradient descent and calculations of gradients',
-               2,
-               None,
-               'gradient-descent-and-calculations-of-gradients'),
-              ('A smarter way of doing this',
-               2,
-               None,
-               'a-smarter-way-of-doing-this')]}
+              ('Plans', 2, None, 'plans')]}
 end of tocinfo -->
 
 <body>
@@ -213,31 +202,16 @@ MathJax.Hub.Config({
 
 <b>How to use many-body theory to design quantum circuits (Quantum engineering)</b>
 <ol>
-<li> Many-body theory like FCI with</li>
+<li> Many-body methods like F(ull)C(onfiguration)I(nteraction) theory  with</li>
 <ul>
-  <li> Adaptive basis sets</li>
+  <li> Adaptive basis sets (see for example <a href="https://arxiv.org/abs/2111.09638" target="_blank">Sigmundson et al arXiv:2111.09638</a>)</li>
   <li> Time dependence</li>
   <li> Optimization of experimental parameter</li> 
-  <li> Feeback from experiment</li>
+  <li> Feedback from experiment</li>
 </ul>
+<li> Finding optimal parameters for tuning of entanglement</li>
+<li> Numerical experiments to mimick real systems, using many-body methods to develop <b>quantum twins</b> (<a href="https://iopscience.iop.org/article/10.1088/1367-2630/12/7/075008" target="_blank">inspired by for example work by Herschel Rabitz on Control of quantum phenomena, see New Journal of Physics 12 (2010) 075008</a>)!</li>
 </ol>
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-<h2 id="what-is-this-talk-about">What is this talk about? </h2>
-
-<p>Here we describe a method for generating motional entanglement between
-two electrons trapped above the surface of superfluid helium. In this
-proposed scheme these electronic charge qubits are laterally confined
-via electrostatic gates to create an anharmonic trapping
-potential. When the system is cooled to sufficiently low temperature
-these in-plane charge qubit states are quantized and circuit quantum
-electrodynamic methods can be used to control and readout single qubit
-operations. Perspectives for quantum simulations with quantum dots
-systems will be discussed as well as how to set up explicit circuits
-for simulating nuclear physics Hamiltonians, theoretically and
-experimentally.
-</p>
-
-
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 <h2 id="many-people-to-thank">Many people to thank </h2>
 
@@ -255,22 +229,55 @@ experimentally.
 
 
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="what-is-this-talk-about">What is this talk about? </h2>
+
+<p>Here we describe a method for generating motional entanglement between
+two electrons trapped above the surface of superfluid helium. In this
+proposed scheme these electronic charge qubits are laterally confined
+via electrostatic gates to create an anharmonic trapping
+potential. When the system is cooled to sufficiently low temperature
+these in-plane charge qubit states are quantized and circuit quantum
+electrodynamic methods can be used to control and readout single qubit
+operations. Perspectives for quantum simulations with quantum dots
+systems will be discussed.
+</p>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="to-read-more">To read more </h2>
+
+<ol>
+<li> See <a href="https://www.nature.com/articles/s41586-022-04539-x" target="_blank">Single electrons on solid neon as a solid-state qubit platform, David Schuster et al, Nature <b>605</b>, 46&#8211;50 (2022)</a></li>
+<li> See Mark Dykman et al, Spin dynamics in quantum dots on liquid helium, PRB <b>107</b>. 035437 (2023) at <a href="https://link.aps.org/doi/10.1103/PhysRevB.107.035437" target="_blank"><tt>https://link.aps.org/doi/10.1103/PhysRevB.107.035437</tt></a>.</li>
+</ol>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="experimental-set-up">Experimental set up </h2>
+
+<br/><br/>
+<center>
+<p><img src="qcfigures/figure1.png" width="700" align="bottom"></p>
+</center>
+<br/><br/>
+
+<ol>
+<li> (a) Schematic of the microdevice, where two electrons are trapped in a double-well potential created by electrodes 1-7. The read-out is provided by two superconducting resonators dispersively coupled to  electron's in-plane motional states.</li>
+<li> (b) Coupling constants from each individual electrode beneath the helium layer.</li>
+<li> (c+d) The electron's energy in a  double-well electrostatic potential (solid line). Dashed and dot-dashed lines represent the harmonic approximations of left and right wells respectively.</li>
+</ol>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
 <h2 id="literature-and-more-reading">Literature and more reading  </h2>
 
 <ol>
-<li> These slides at <a href="https://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/quantumcomputingMSU/html/quantumcomputingMSU-reveal.html" target="_blank"><tt>https://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/quantumcomputingMSU/html/quantumcomputingMSU-reveal.html</tt></a></li>
 <li> <a href="https://journals.aps.org/rmp/abstract/10.1103/RevModPhys.95.011006" target="_blank">Justyna P. Zwolak and Jacob M. Taylor, Rev. Mod. Phys. 95, 011006, Advances in automation of quantum dot devices control</a></li>
 <li> <a href="https://arxiv.org/pdf/2210.14757.pdf" target="_blank">Pollanen and many other, Accelerating Progress Towards Practical Quantum Advantage: The Quantum Technology Demonstration Project Roadmap</a></li>
 <li> <a href="https://link.springer.com/book/10.1007/978-981-19-4641-7" target="_blank">Osada et al, introduction to quantum technologies, Springer, 2022</a></li>
-<li> <a href="https://github.com/CompPhysics/QuantumComputingMachineLearning" target="_blank">Lectures on Quantum Computing, MHJ</a></li>
 <li> <a href="https://journals.aps.org/pra/pdf/10.1103/PhysRevA.57.120" target="_blank">Original inspiration a series of articles of Loss and DiVincenzo from the nineties, Quantum Computation with Quantum Dots</a></li>
-<li> <a href="https://journals.aps.org/prc/abstract/10.1103/PhysRevC.106.024319" target="_blank">Simulating the Lipkin model, Ryan Larose and Elena Litvinova et al</a></li>
 </ol>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 <h2 id="quantum-engineering">Quantum Engineering </h2>
 
 <div class="alert alert-block alert-block alert-text-normal">
-<b>Quantum Computing requirements</b>
+<b>Quantum computing requirements</b>
 <p>
 <ol>
 <li> be scalable</li>
@@ -295,7 +302,7 @@ experimentally.
 <li> Single photons</li>
 <li> <a href="https://journals.aps.org/rmp/pdf/10.1103/RevModPhys.93.025001" target="_blank">Trapped ions and atoms</a></li>
 <li> Nuclear Magnetic Resonance</li>
-<li> <b>Quantum dots, expt at MSU</b></li>
+<li> <b>Quantum dots, experiments at MSU</b></li>
 <li> Point Defects in semiconductors</li>
 <li> ...more</li>
 </ol>
@@ -316,19 +323,6 @@ account the effects of the Coulomb interaction between electrons, is
 of significant importance for quantum information processing using
 trapped electrons.
 </p>
-
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-<h2 id="methods-and-applications">Methods and Applications </h2>
-<div class="alert alert-block alert-block alert-text-normal">
-<b></b>
-<p>
-<ol>
-<li> Time-Dependent full configuration interaction theory</li>
-<li> Time-dependent Coupled-Cluster theory</li>
-<li> Designing quantum operations and quantum simulations and finding optimal experimental parameters</li>
-</ol>
-</div>
-
 
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 <h2 id="entanglement">Entanglement </h2>
@@ -426,155 +420,6 @@ interaction.
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 <h2 id="a-warm-up-problem-avoided-level-crossing-and-some-math">A warm-up problem, avoided level crossing and some math </h2>
 
-<p>In order to study entanglement and why it is so important for quantum
-computing, we need to introduce some basic measures and useful
-quantities.  For these endeavors, we  will use our two-qubit system from
-the second lecture in order to introduce, through examples, density
-matrices and entropy. These two quantities, together with
-technicalities like the Schmidt decomposition define important quantities in analyzing quantum computing examples.
-</p>
-
-<p>We will study two simple Hamiltonian systems, one which we can use for a single qubit systems and one which has as basis functions a two-qubit system. These two simple Hamiltonians exhibit also something which is called level crossing, a feature which we will use in later studies of entanglement.</p>
-
-<p>We study first a simple two-level system. Thereafter we
-extend our model to a four-level system which can be
-interpreted as composed of two separate (not necesseraly identical)
-subsystems.
-</p>
-
-<p>We let our hamiltonian depend linearly on a strength parameter \( z \)</p>
-
-$$
-       H=H_0+\lambda H_\mathrm{I},
-$$
-
-<p>with \( \lambda \in [0,1] \), where the limits \( \lambda=0 \) and \( \lambda=1 \)
-represent the non-interacting (or unperturbed) and fully interacting
-system, respectively.  The model is an eigenvalue problem with only
-two available states, which we label \( \vert 0\rangle \) and \( \vert
-1\rangle \), respectively. Below we will let state \( \vert 0 \rangle \)
-represent the lowest state (often referred to as model-space state)
-with its pertinent eigenvalue and eigenvector whereas state \( \vert 1\rangle \) represents the eigenvalue of
-the excluded space.  The non-interacting solutions to our problem are
-</p>
-
-$$
-\begin{equation}
-       H_0\vert 0 \rangle =\epsilon_0\vert 0 \rangle,
-\label{_auto1}
-\end{equation}
-$$
-
-<p>and</p>
-$$
-\begin{equation}
-       H_0\vert 1\rangle =\epsilon_1\vert 1\rangle,
-\label{_auto2}
-\end{equation}
-$$
-
-<p>with \( \epsilon_0 < \epsilon_1 \). We label the off-diagonal matrix
-elements \( X \), while \( X_0=\langle 0 \vert H_I\vert 0 \rangle \) and
-\( X_1=\langle 1 \vert H_1\vert 1 \rangle \).  The exact eigenvalue
-problem
-</p>
-
-$$
-\label{eq:twolevelH}
-\begin{equation}
-\left(\begin{array}{cc}\epsilon_0+\lambda X_0 &\lambda X \\
-\lambda X &\epsilon_1+\lambda X_1 \end{array}\right)
-\end{equation}
-$$
-
-<p>yields</p>
-$$
-\begin{eqnarray}
-\label{eq:exact}
-     E(\lambda)=&\frac{1}{2}\left\{\epsilon_0 +\epsilon_1 +\lambda X_0
-     +\lambda X_1 \pm \left(
-     \epsilon_1 -\epsilon_0 +\lambda X_1-\lambda X_0\right) \right. \\ \nonumber
-     & \left. \times\sqrt{1+\frac{4\lambda^2X^2}{\left(
-     \epsilon_1 -\epsilon_0 +\lambda X_1-\lambda X_0\right)^2}}
-     \right\}.
-\end{eqnarray}
-$$
-
-<p>In the results below we set the parameters \( \epsilon_0=0 \),
-\( \epsilon_1=4 \), \( X_0=-X_1=3 \) and \( X=0.2 \).  This eigenvalue problem can
-easily be rewritten in terms of the standard Pauli matrices.  The
-non-interacting solutions represent our computational basis.
-Pertinent to our choice of parameters, is that at \( \lambda\geq 2/3 \),
-the lowest eigenstate is dominated by \( \vert 1\rangle \) while the upper
-is \( \vert 0 \rangle \). At \( \lambda=1 \) the \( \vert 0 \rangle \) mixing of
-the lowest eigenvalue is \( 1\% \) while for \( \lambda\leq 2/3 \) we have a
-\( \vert 0 \rangle \) component of more than \( 90\% \).  The character of the
-eigenvectors has therefore been interchanged when passing \( z=2/3 \). The
-value of the parameter \( X \) represents the strength of the coupling
-between the model space and the excluded space.  The following code
-computes and plots the eigenvalues.
-</p>
-
-
-<!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
-<div class="cell border-box-sizing code_cell rendered">
-  <div class="input">
-    <div class="inner_cell">
-      <div class="input_area">
-        <div class="highlight" style="background: #eeeedd">
-  <pre style="line-height: 125%;">%matplotlib inline
-
-<span style="color: #8B008B; font-weight: bold">from</span>  <span style="color: #008b45; text-decoration: underline">matplotlib</span> <span style="color: #8B008B; font-weight: bold">import</span> pyplot <span style="color: #8B008B; font-weight: bold">as</span> plt
-<span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">numpy</span> <span style="color: #8B008B; font-weight: bold">as</span> <span style="color: #008b45; text-decoration: underline">np</span>
-dim = <span style="color: #B452CD">2</span>
-<span style="color: #228B22">#Setting up a tridiagonal matrix and finding eigenvectors and eigenvalues</span>
-Hamiltonian = np.zeros((dim,dim))
-<span style="color: #228B22">#number of lambda values</span>
-n = <span style="color: #B452CD">100</span>
-lmbd = np.linspace(<span style="color: #B452CD">0.</span>,<span style="color: #B452CD">1.0</span>,n)
-e0 = <span style="color: #B452CD">0.0</span>
-e1 = <span style="color: #B452CD">4.0</span>
-X = <span style="color: #B452CD">0.20</span>
-Xp = <span style="color: #B452CD">3.0</span>
-Eigenvalue = np.zeros((dim,n))
-<span style="color: #8B008B; font-weight: bold">for</span> i <span style="color: #8B008B">in</span> <span style="color: #658b00">range</span>(n): 
-    Hamiltonian[<span style="color: #B452CD">0</span>,<span style="color: #B452CD">0</span>] = lmbd[i]*Xp+e0
-    Hamiltonian[<span style="color: #B452CD">0</span>,<span style="color: #B452CD">1</span>] = lmbd[i]*X
-    Hamiltonian[<span style="color: #B452CD">1</span>,<span style="color: #B452CD">0</span>] = Hamiltonian[<span style="color: #B452CD">0</span>,<span style="color: #B452CD">1</span>]
-    Hamiltonian[<span style="color: #B452CD">1</span>,<span style="color: #B452CD">1</span>] = e1+lmbd[i]*(-Xp)
-    <span style="color: #228B22"># diagonalize and obtain eigenvalues, not necessarily sorted</span>
-    EigValues, EigVectors = np.linalg.eig(Hamiltonian)
-    <span style="color: #228B22"># sort eigenvectors and eigenvalues</span>
-    permute = EigValues.argsort()
-    EigValues = EigValues[permute]
-    EigVectors = EigVectors[:,permute]
-    Eigenvalue[<span style="color: #B452CD">0</span>,i] = EigValues[<span style="color: #B452CD">0</span>]
-    Eigenvalue[<span style="color: #B452CD">1</span>,i] = EigValues[<span style="color: #B452CD">1</span>]
-plt.plot(lmbd, Eigenvalue[<span style="color: #B452CD">0</span>,:] ,<span style="color: #CD5555">&#39;b-&#39;</span>,lmbd, Eigenvalue[<span style="color: #B452CD">1</span>,:],<span style="color: #CD5555">&#39;g-&#39;</span>,)
-plt.xlabel(<span style="color: #CD5555">&#39;$\lambda$&#39;</span>)
-plt.ylabel(<span style="color: #CD5555">&#39;Eigenvalues&#39;</span>)
-plt.show()
-</pre>
-</div>
-      </div>
-    </div>
-  </div>
-  <div class="output_wrapper">
-    <div class="output">
-      <div class="output_area">
-        <div class="output_subarea output_stream output_stdout output_text">          
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<p>This model exhibits a simple level crossing where the
-composition of the final interacting states change character as we
-gradually switch on the interaction.
-</p>
-<h2 id="avoided-level-crossings">Avoided level crossings </h2>
-
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -585,7 +430,9 @@ and the state \( \vert 1\rangle \). When we say coherent we mean that the quantu
 <p>In quantum technology, different quantum systems are coupled to enable various quantum state transfers and manipulations. Experimentally, avoided crossing of the energy levels, is one of the first feature to look for since it manifests the signature of preservation of quantumness and clean coupling between states in the experimental setup.</p>
 </div>
 
-<h3 id="reminder-on-density-matrices">Reminder on density matrices </h3>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="reminder-on-density-matrices">Reminder on density matrices </h2>
 
 <p>We have the spectral decomposition of a given operator \( \boldsymbol{A} \) given by</p>
 
@@ -616,7 +463,9 @@ $$
 <p>where the probability \( p_i \) are the eigenvalues of the density matrix/operator linked with the ONB \( \vert i \rangle \).</p>
 
 <p>The trace of the density matrix \( \mathrm{tr}\rho=1 \) and is invariant under unitary transformations.</p>
-<h3 id="two-qubit-system-and-definition-of-density-matrices">Two-qubit system and definition of density matrices  </h3>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="two-qubit-system-and-definition-of-density-matrices">Two-qubit system and definition of density matrices  </h2>
 
 <p>This system can be thought of as composed of two subsystems
 \( A \) and \( B \). Each subsystem has computational basis states
@@ -649,6 +498,10 @@ $$
 \vert 11\rangle = \vert 1\rangle_{\mathrm{A}}\otimes \vert 1\rangle_{\mathrm{B}}=\begin{bmatrix} 0 & 0 & 0 &1\end{bmatrix}^T.
 $$
 
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="hamiltonian">Hamiltonian </h2>
+
 <p>These computational basis states define also the eigenstates of the non-interacting  Hamiltonian</p>
 $$
 H_0\vert 00 \rangle = \epsilon_{00}\vert 00 \rangle,
@@ -679,6 +532,10 @@ $$
 		       0 & H_x & \epsilon_{01}-H_z & 0 \\
 		       H_x & 0 & 0 & \epsilon_{11} +H_z \end{bmatrix}.
 $$
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="eigenstates">Eigenstates </h2>
 
 <p>The four eigenstates of the above Hamiltonian matrix can in turn be used to
 define density matrices. As an example, the density matrix of the
@@ -711,7 +568,9 @@ $$
 so-called von Neumann entropy, which is one of the possible measures
 of entanglement.
 </p>
-<h3 id="shannon-information-entropy">Shannon information entropy </h3>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="shannon-information-entropy">Shannon information entropy </h2>
 
 <p>We define a set of random variables \( X=\{x_0,x_1,\dots,x_{n-1}\} \) with probability for an outcome \( x\in X \) given by \( p_X(x) \), the
 information entropy is defined as
@@ -721,7 +580,9 @@ S=-\sum_{x\in X}p_X(x)\log_2{p_X(x)}.
 $$
 
 <p>This is the standard entropy definition, normally called the Shannon entropy</p>
-<h3 id="von-neumann-entropy">Von Neumann entropy </h3>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="von-neumann-entropy">Von Neumann entropy </h2>
 <p>The quantum mechanical variant is the Von Neumann entropy</p>
 $$
 S=-\mathrm{Tr}[\rho\log_2{\rho}].
@@ -736,19 +597,9 @@ $$
 S(A,B)=-\mathrm{Tr}\left(\rho_{A,B}\log_2 (\rho_{A,B})\right).
 $$
 
-<p>The example here shows the above von Neumann entropy based on the
-density matrix for the lowest many-body state. We see clearly a jump
-in the entropy around the point where we have a level crossing. At
-interaction strenght \( \lambda=0 \) we have many-body states purely
-defined by their computational basis states. As we switch on the
-interaction strength, we obtain an increased degree of mixing and the
-entropy increases till we reach the level crossing point where we see
-an additional and sudden increase in entropy. Similar behaviors are
-observed for the other states. The most important result from this
-example is that entanglement is driven by the Hamiltonian itself and
-the strength of the interaction matrix elements.
-</p>
 
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="simple-code-example">Simple code example </h2>
 
 <!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
 <div class="cell border-box-sizing code_cell rendered">
@@ -835,6 +686,22 @@ plt.show
 
 
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="short-discussion">Short discussion </h2>
+
+<p>The example here shows the above von Neumann entropy based on the
+density matrix for the lowest many-body state. We see clearly a jump
+in the entropy around the point where we have a level crossing. At
+interaction strenght \( \lambda=0 \) we have many-body states purely
+defined by their computational basis states. As we switch on the
+interaction strength, we obtain an increased degree of mixing and the
+entropy increases till we reach the level crossing point where we see
+an additional and sudden increase in entropy. Similar behaviors are
+observed for the other states. The most important result from this
+example is that entanglement is driven by the Hamiltonian itself and
+the strength of the interaction matrix elements.
+</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
 <h2 id="quantum-dots-and-the-coulomb-interaction">Quantum dots and the Coulomb interaction </h2>
 
 <div class="alert alert-block alert-block alert-text-normal">
@@ -911,26 +778,6 @@ separation (at the order of one micron).
 
 
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
-<h2 id="to-read-more">To read more </h2>
-<p>See Mark Dykman et al and their Spin dynamics in quantum dots on liquid helium,
-PRB <b>107</b>. 035437 (2023) at <a href="https://link.aps.org/doi/10.1103/PhysRevB.107.035437" target="_blank"><tt>https://link.aps.org/doi/10.1103/PhysRevB.107.035437</tt></a>.
-</p>
-
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-<h2 id="experimental-set-up">Experimental set up </h2>
-
-<br/><br/>
-<center>
-<p><img src="qcfigures/figure1.png" width="700" align="bottom"></p>
-</center>
-<br/><br/>
-
-<ol>
-<li> (a) Schematic of the microdevice, where two electrons are trapped in a double-well potential created by electrodes 1-7. The read-out is provided by two superconducting resonators dispersively coupled to  electron's in-plane motional states.</li>
-<li> (b) Coupling constants from each individual electrode beneath the helium layer.</li>
-<li> (c+d) The electron's energy in a  double-well electrostatic potential (solid line). Dashed and dot-dashed lines represent the harmonic approximations of left and right wells respectively.</li>
-</ol>
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
 <h2 id="building-the-solutions">Building the solutions </h2>
 
 <p>To investigate our model, which consists of two electrons confined to
@@ -944,7 +791,7 @@ also fits the interpolated potential very effectively.
 </p>
 
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
-<h2 id="computational-methods">Computational Methods </h2>
+<h2 id="calculational-details">Calculational details </h2>
 
 <p>As we are only studying a model comprised of two electrons restricted
 to move in a one-dimensional external potential we have employed
@@ -959,7 +806,7 @@ and fits the interpolated potential particularly well.
 $$
 \begin{equation}
 \hat{H} = \sum_{i=1}^N \left(-\frac{1}{2}\nabla_i^2 + v(r_i) \right) + \sum_{i < j} \hat{u}(r_i, r_j),
-\label{_auto3}
+\label{_auto1}
 \end{equation}
 $$
 
@@ -974,7 +821,7 @@ The bare Coulomb interaction is divergent in 1D (REF) and it is customary to use
 $$
 \begin{align}
 u(x_1, x_2) = \frac{\alpha}{\sqrt{(x_1 - x_2)^2 + a^2}},
-\label{_auto4}
+\label{_auto2}
 \end{align}
 $$
 
@@ -984,7 +831,7 @@ $$
 $$
 \begin{equation}
 \left( -\frac{d^2}{dx^2}+v(x) \right) \psi_p(x) = \epsilon_p \psi_p(x).
-\label{_auto5}
+\label{_auto3}
 \end{equation}
 $$
 
@@ -992,11 +839,7 @@ $$
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 <h2 id="details-1">Details 1 </h2>
 
-<p>By entirely factoring out the spin component of the problem (as the singlet and triplet states will be degenerate), we can treat the two electrons as distinguishable particles, with one electron located in the left well and the other electron situated in the right well.
-After dividing the Hamiltonian into two distinguishable subsystems \( L \)
-and \( R \), we establish
-two <b>sinc</b>-DVR (Discrete Variable Representation) basis sets, one for each well.
-</p>
+<p>By entirely factoring out the spin component of the problem (as the singlet and triplet states will be degenerate), we can treat the two electrons as distinguishable particles, with one electron located in the left well and the other electron situated in the right well.</p>
 
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 <h2 id="details-2">Details 2 </h2>
@@ -1008,7 +851,7 @@ $$
 \begin{align}
 \vert\Phi_I\rangle &= \sum_{k = 0}^{N^L} \sum_{l = 0}^{N^R} C_{kl, I}
 \vert \phi^{L}_k \phi^{R}_l\rangle,
-\label{_auto6}
+\label{_auto4}
 \end{align}
 $$
 
@@ -1086,6 +929,9 @@ $$
 
 
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="results-and-discussions">Results and discussions </h2>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
 <h2 id="analysis">Analysis </h2>
 
 <p>While the von Neumann entropy provides an objective measure of
@@ -1098,33 +944,6 @@ we can use three additional quantities.
 <li> The first quantity are the two-body energies \( E_K \). We search for configurations where two or more energies are nearly degenerate, as this indicates a mixing of states. o The second quantity we use are the coefficients \( C_{kl} \) themselves. In the Hartree basis, these coefficients give a good indication of which states are entangled.</li>
 <li> And the third is the particle density. For the state \( \vert \Psi\rangle \) above, we can compute the particle density. The particle density can be used as a tool to qualitatively visualize the entanglement of a state.</li>
 </ol>
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-<h2 id="results">Results </h2>
-
-<p>Given a large degree of tuning of the electrostatic potential
-landscape with seven electrodes we search for well configurations
-corresponding to three different types of interaction between two
-electrons.
-</p>
-
-<ol>
-<li> In <b>configuration I</b> we address both qubits independently and can thereby perform single-qubit state rotations.</li>
-<li> Configurations II and III correspond to avoided level crossings between two (\( E_{01}, E_{10} \)) and three (\( E_{11}, E_{20}, E_{02} \)) energy levels respectively, where the electrons' motion becomes correlated, that is they are entangled.</li> 
-</ol>
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-<h2 id="interpretations">Interpretations </h2>
-
-<p>When moving from configuration I into the avoided crossing of
-configuration II infinitely slow adiabatically, the probability of a
-transition from the \( \vert 01\rangle \) to the \( \vert 10\rangle \) state
-is zero according to the adiabatic theorem.
-</p>
-
-<p>An infinitely fast shift in configuration will instead cause the transition probability to be 1.
-Changing configuration with a finite speed will thus result in a transition probability between one and zero,
-and hence an entangled state. In our system we have that logical states \( \vert 01\rangle \) to the \( \vert 10\rangle \) correspond to the two first excited states.
-</p>
-
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 <h2 id="basis-of-left-well">Basis of left well </h2>
 
@@ -1141,45 +960,73 @@ which shows the energy of the potential.
 </p>
 
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
-<h2 id="basis-of-left-well">Basis of left well </h2>
+<h2 id="results">Results </h2>
 
-<br/><br/>
+<p>By adjusting the potential we can change the anharmonicities and detuning of the wells.</p>
+<ol>
+<li> What values of these give interesting interactions?</li>
+<li> Inspiration from superconducting qubits, Zhao et al. [ref in footnote?]</li>
+</ol>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<p>We search for well configurations corresponding to three different types of interaction between the two electrons.</p>
+
+<ol>
+<li> In <b>configuration I</b> we address both qubits independently and can thereby perform single-qubit state rotations and measurements.</li>
+<li> Configurations II and III correspond to avoided level crossings between two (\( E_{01}, E_{10} \)) and three (\( E_{11}, E_{20}, E_{02} \)) energy levels respectively, where the electrons' motion becomes correlated, that is they are entangled.</li> 
+</ol>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="energy-levels-as-a-function-of-voltage-parameter">Energy levels as a function of voltage parameter </h2>
+
+<center>  <!-- FIGURE -->
+<hr class="figure">
 <center>
+<p class="caption">Figure 1:  UPDATE FIGURE </p>
+</center>
 <p><img src="qcfigures/figure2.png" width="700" align="bottom"></p>
 </center>
-<br/><br/>
 
 <p>Here we have plotted the transition energy from
 the ground state to the labeled excited state as a function of the voltage
-parameter \( \lambda \).
-The left figure  shows the transition energies for the non-interacting case, i.e., the single-particle
-transition energies, whereas the right figure shows the interacting case.
+parameter \( \lambda \), which determines the voltages according to
 </p>
 
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-<h2 id="densities-potential-wells-overlaps">Densities, potential wells overlaps </h2>
+$$
+\begin{equation}
+V(\lambda) = (1-\lambda)V_\mathrm{I} + \lambda V_\mathrm{III}
+\label{_auto5}
+\end{equation}
+$$
 
-<br/><br/>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="config-i-densities-and-coefficients">Config I densities and coefficients </h2>
+
+<center>  <!-- FIGURE -->
+<hr class="figure">
 <center>
+<p class="caption">Figure 2:  UPDATE FIGURE </p>
+</center>
 <p><img src="qcfigures/figure3_Ib_full.png" width="700" align="bottom"></p>
 </center>
-<br/><br/>
 
 <p>These figures depict the potential wells, the one-body
-densities, and the active single-particle states in the Schmidt basis for configuration I. <b>No avoid crossing</b>.
+densities, and the active single-particle states in the Hartree basis for configuration I. <b>No avoid crossing</b>.
 </p>
 
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 <h2 id="schmidt-basis-for-configurations-ii-and-iii">Schmidt basis for configurations II and III </h2>
 
-<br/><br/>
+<center>  <!-- FIGURE -->
+<hr class="figure">
 <center>
+<p class="caption">Figure 3:  UPDATE FIGURE </p>
+</center>
 <p><img src="qcfigures/figure3_II_IIIb.png" width="700" align="bottom"></p>
 </center>
-<br/><br/>
 
 <p>These figures depict the potential wells, the one-body
-densities, and the active single-particle states in the Schmidt basis for configurations II and III,
+densities, and the active single-particle states in the Hartree basis for configurations II and III,
 i.e., in the avoided crossing regimes.
 </p>
 
@@ -1200,7 +1047,7 @@ i.e., in the avoided crossing regimes.
 <h2 id="where-we-are-now">Where we are now </h2>
 
 <ol>
-<li> Adding Time-dependent studies of two electrons in two wells in one and two dimensions</li>
+<li> Adding time-dependent studies of two electrons in two wells in one and two dimensions</li>
 <li> Studies of the time-evolution of entangled states (now two electrons only)</li>
 <li> Use theory to find optimal experimental setup</li>
 <li> Expect two-electron system realized experimentally in approx \( 1 \) year, great potential for studies of quantum simulations</li>
@@ -1211,446 +1058,11 @@ i.e., in the avoided crossing regimes.
 <ol>
 <li> Add two and three-dimensions in order to simulate in  a more realistic way such many-body systems.</li>
 <li> Develop time-dependent FCI code, useful up to approximately 10 particles with <b>effective</b> (and effective Hilbert space) Hamiltonians in two and three dimensions</li>
-<li> Particles can be valence particles  or valence holes defined for an effective Hilbert space</li>
 <li> Develop codes for studies of entanglement as function of time</li>
+<li> Do tomogrophy and extract density matrix and compare with experiment.</li>
 <li> Study the feasibility of various setups for quantum simulations of specific Hamiltonians such as the Lipkin model</li>
 <li> For larger many-body systems, study for example time-dependent CC theory</li>
 </ol>
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-<h2 id="additional-material">Additional material </h2>
-
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-<h2 id="how-to-simulate-quantum-mechanical-systems-vqe-and-efficient-computations-of-gradients">How to simulate quantum mechanical systems: VQE and efficient computations of gradients  </h2>
-
-<p>We start with a reminder on the VQE method with applications to the one-qubit system.
-We discussed this to some detail during the week of March 27-31. Here we revisit the one-qubit system and develop a VQE code for studying this system using gradient descent as a method to optimie the variational ansatz.
-</p>
-
-<p>We start with a simple \( 2\times 2 \) Hamiltonian matrix expressed in
-terms of Pauli \( X \) and \( Z \) matrices, as discussed in the project text.
-</p>
-
-<p>We define a  symmetric matrix  \( H\in {\mathbb{R}}^{2\times 2} \)</p>
-$$
-H = \begin{bmatrix} H_{11} & H_{12} \\ H_{21} & H_{22}
-\end{bmatrix},
-$$
-
-<p>We  let \( H = H_0 + H_I \), where</p>
-$$
-H_0= \begin{bmatrix} E_1 & 0 \\ 0 & E_2\end{bmatrix},
-$$
-
-<p>is a diagonal matrix. Similarly,</p>
-$$
-H_I= \begin{bmatrix} V_{11} & V_{12} \\ V_{21} & V_{22}\end{bmatrix},
-$$
-
-<p>where \( V_{ij} \) represent various interaction matrix elements.
-We can view \( H_0 \) as the non-interacting solution
-</p>
-$$
-\begin{equation}
-       H_0\vert 0 \rangle =E_1\vert 0 \rangle,
-\label{_auto7}
-\end{equation}
-$$
-
-<p>and</p>
-$$
-\begin{equation}
-       H_0\vert 1\rangle =E_2\vert 1\rangle,
-\label{_auto8}
-\end{equation}
-$$
-
-<p>where we have defined the orthogonal computational one-qubit basis states \( \vert 0\rangle \) and \( \vert 1\rangle \).</p>
-
-<p>We rewrite \( H \) (and \( H_0 \) and \( H_I \))  via Pauli matrices</p>
-$$
-H_0 = \mathcal{E} I + \Omega \sigma_z, \quad \mathcal{E} = \frac{E_1
-  + E_2}{2}, \; \Omega = \frac{E_1-E_2}{2},
-$$
-
-<p>and</p>
-$$
-H_I = c \boldsymbol{I} +\omega_z\sigma_z + \omega_x\sigma_x,
-$$
-
-<p>with \( c = (V_{11}+V_{22})/2 \), \( \omega_z = (V_{11}-V_{22})/2 \) and \( \omega_x = V_{12}=V_{21} \).
-We let our Hamiltonian depend linearly on a strength parameter \( \lambda \)
-</p>
-
-$$
-H=H_0+\lambda H_\mathrm{I},
-$$
-
-<p>with \( \lambda \in [0,1] \), where the limits \( \lambda=0 \) and \( \lambda=1 \)
-represent the non-interacting (or unperturbed) and fully interacting
-system, respectively.  The model is an eigenvalue problem with only
-two available states.
-</p>
-
-<p>Here we set the parameters \( E_1=0 \),
-\( E_2=4 \), \( V_{11}=-V_{22}=3 \) and \( V_{12}=V_{21}=0.2 \).
-</p>
-
-<p>The non-interacting solutions represent our computational basis.
-Pertinent to our choice of parameters, is that at \( \lambda\geq 2/3 \),
-the lowest eigenstate is dominated by \( \vert 1\rangle \) while the upper
-is \( \vert 0 \rangle \). At \( \lambda=1 \) the \( \vert 0 \rangle \) mixing of
-the lowest eigenvalue is \( 1\% \) while for \( \lambda\leq 2/3 \) we have a
-\( \vert 0 \rangle \) component of more than \( 90\% \).  The character of the
-eigenvectors has therefore been interchanged when passing \( z=2/3 \). The
-value of the parameter \( V_{12} \) represents the strength of the coupling
-between the two states.
-</p>
-
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-<h2 id="setting-up-the-matrix">Setting up the matrix </h2>
-
-
-<!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
-<div class="cell border-box-sizing code_cell rendered">
-  <div class="input">
-    <div class="inner_cell">
-      <div class="input_area">
-        <div class="highlight" style="background: #eeeedd">
-  <pre style="line-height: 125%;"><span style="color: #8B008B; font-weight: bold">from</span>  <span style="color: #008b45; text-decoration: underline">matplotlib</span> <span style="color: #8B008B; font-weight: bold">import</span> pyplot <span style="color: #8B008B; font-weight: bold">as</span> plt
-<span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">numpy</span> <span style="color: #8B008B; font-weight: bold">as</span> <span style="color: #008b45; text-decoration: underline">np</span>
-dim = <span style="color: #B452CD">2</span>
-Hamiltonian = np.zeros((dim,dim))
-e0 = <span style="color: #B452CD">0.0</span>
-e1 = <span style="color: #B452CD">4.0</span>
-Xnondiag = <span style="color: #B452CD">0.20</span>
-Xdiag = <span style="color: #B452CD">3.0</span>
-Eigenvalue = np.zeros(dim)
-<span style="color: #228B22"># setting up the Hamiltonian</span>
-Hamiltonian[<span style="color: #B452CD">0</span>,<span style="color: #B452CD">0</span>] = Xdiag+e0
-Hamiltonian[<span style="color: #B452CD">0</span>,<span style="color: #B452CD">1</span>] = Xnondiag
-Hamiltonian[<span style="color: #B452CD">1</span>,<span style="color: #B452CD">0</span>] = Hamiltonian[<span style="color: #B452CD">0</span>,<span style="color: #B452CD">1</span>]
-Hamiltonian[<span style="color: #B452CD">1</span>,<span style="color: #B452CD">1</span>] = e1-Xdiag
-<span style="color: #228B22"># diagonalize and obtain eigenvalues, not necessarily sorted</span>
-EigValues, EigVectors = np.linalg.eig(Hamiltonian)
-permute = EigValues.argsort()
-EigValues = EigValues[permute]
-<span style="color: #228B22"># print only the lowest eigenvalue</span>
-<span style="color: #658b00">print</span>(EigValues[<span style="color: #B452CD">0</span>])
-</pre>
-</div>
-      </div>
-    </div>
-  </div>
-  <div class="output_wrapper">
-    <div class="output">
-      <div class="output_area">
-        <div class="output_subarea output_stream output_stdout output_text">          
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<p>Now rewrite it in terms of the identity matrix and the Pauli matrix X and Z</p>
-
-
-<!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
-<div class="cell border-box-sizing code_cell rendered">
-  <div class="input">
-    <div class="inner_cell">
-      <div class="input_area">
-        <div class="highlight" style="background: #eeeedd">
-  <pre style="line-height: 125%;"><span style="color: #228B22"># Now rewrite it in terms of the identity matrix and the Pauli matrix X and Z</span>
-X = np.array([[<span style="color: #B452CD">0</span>,<span style="color: #B452CD">1</span>],[<span style="color: #B452CD">1</span>,<span style="color: #B452CD">0</span>]])
-Y = np.array([[<span style="color: #B452CD">0</span>,-<span style="color: #B452CD">1</span>j],[<span style="color: #B452CD">1</span>j,<span style="color: #B452CD">0</span>]])
-Z = np.array([[<span style="color: #B452CD">1</span>,<span style="color: #B452CD">0</span>],[<span style="color: #B452CD">0</span>,-<span style="color: #B452CD">1</span>]])
-<span style="color: #228B22"># identity matrix</span>
-I = np.array([[<span style="color: #B452CD">1</span>,<span style="color: #B452CD">0</span>],[<span style="color: #B452CD">0</span>,<span style="color: #B452CD">1</span>]])
-
-epsilon = (e0+e1)*<span style="color: #B452CD">0.5</span>; omega = (e0-e1)*<span style="color: #B452CD">0.5</span>
-c = <span style="color: #B452CD">0.0</span>; omega_z=Xdiag; omega_x = Xnondiag
-Hamiltonian = (epsilon+c)*I+(omega_z+omega)*Z+omega_x*X
-EigValues, EigVectors = np.linalg.eig(Hamiltonian)
-permute = EigValues.argsort()
-EigValues = EigValues[permute]
-<span style="color: #228B22"># print only the lowest eigenvalue</span>
-<span style="color: #658b00">print</span>(EigValues[<span style="color: #B452CD">0</span>])
-</pre>
-</div>
-      </div>
-    </div>
-  </div>
-  <div class="output_wrapper">
-    <div class="output">
-      <div class="output_area">
-        <div class="output_subarea output_stream output_stdout output_text">          
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-<h2 id="implementing-the-vqe">Implementing the VQE </h2>
-
-<p>For a one-qubit system we can reach every point on the Bloch sphere
-(as discussed earlier) with a rotation about the \( x \)-axis and the
-\( y \)-axis.
-</p>
-
-<p>We can express this mathematically through the following operations (see whiteboard for the drawing), giving us a new state \( \vert \psi\rangle \)</p>
-$$
-\vert\psi\rangle = R_y(\phi)R_x(\theta)\vert 0 \rangle.
-$$
-
-<p>We can produce multiple ansatzes for the new state in terms of the
-angles \( \theta \) and \( \phi \).  With these ansatzes we can in turn
-calculate the expectation value of the above Hamiltonian, now
-rewritten in terms of various Pauli matrices (and thereby gates), that is compute
-</p>
-
-$$
-\langle \psi \vert (c+\mathcal{E})\boldsymbol{I} + (\Omega+\omega_z)\boldsymbol{\sigma}_z + \omega_x\boldsymbol{\sigma}_x\vert \psi \rangle.
-$$
-
-<p>We can now set up a series of ansatzes for \( \vert \psi \rangle \) as
-function of the angles \( \theta \) and \( \phi \) and find thereafter the
-variational minimum using for example a gradient descent method.
-</p>
-
-<p>To do so, we need to remind ourselves about the mathematical expressions for
-the rotational matrices/operators.
-</p>
-
-$$
-R_x(\theta)=\cos{\frac{\theta}{2}}\boldsymbol{I}-\imath \sin{\frac{\theta}{2}}\boldsymbol{\sigma}_x,
-$$
-
-<p>and</p>
-
-$$
-R_y(\phi)=\cos{\frac{\phi}{2}}\boldsymbol{I}-\imath \sin{\frac{\phi}{2}}\boldsymbol{\sigma}_y.
-$$
-
-
-
-<!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
-<div class="cell border-box-sizing code_cell rendered">
-  <div class="input">
-    <div class="inner_cell">
-      <div class="input_area">
-        <div class="highlight" style="background: #eeeedd">
-  <pre style="line-height: 125%;"><span style="color: #228B22"># define the rotation matrices</span>
-<span style="color: #228B22"># Define angles theta and phi</span>
-theta = <span style="color: #B452CD">0.5</span>*np.pi; phi = <span style="color: #B452CD">0.2</span>*np.pi
-Rx = np.cos(theta*<span style="color: #B452CD">0.5</span>)*I-<span style="color: #B452CD">1</span>j*np.sin(theta*<span style="color: #B452CD">0.5</span>)*X
-Ry = np.cos(phi*<span style="color: #B452CD">0.5</span>)*I-<span style="color: #B452CD">1</span>j*np.sin(phi*<span style="color: #B452CD">0.5</span>)*Y
-<span style="color: #228B22">#define basis states</span>
-basis0 = np.array([<span style="color: #B452CD">1</span>,<span style="color: #B452CD">0</span>])
-basis1 = np.array([<span style="color: #B452CD">0</span>,<span style="color: #B452CD">1</span>])
-
-NewBasis = Ry @ Rx @ basis0
-<span style="color: #658b00">print</span>(NewBasis)
-<span style="color: #228B22"># Compute the expectation value</span>
-<span style="color: #228B22">#Note hermitian conjugation</span>
-Energy = NewBasis.conj().T @ Hamiltonian @ NewBasis
-<span style="color: #658b00">print</span>(Energy)
-</pre>
-</div>
-      </div>
-    </div>
-  </div>
-  <div class="output_wrapper">
-    <div class="output">
-      <div class="output_area">
-        <div class="output_subarea output_stream output_stdout output_text">          
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<p>Not an impressive results. We set up now a loop over many angles \( \theta \) and \( \phi \) and compute the energies</p>
-
-<!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
-<div class="cell border-box-sizing code_cell rendered">
-  <div class="input">
-    <div class="inner_cell">
-      <div class="input_area">
-        <div class="highlight" style="background: #eeeedd">
-  <pre style="line-height: 125%;"><span style="color: #228B22"># define a number of angles</span>
-n = <span style="color: #B452CD">20</span>
-angle = np.arange(<span style="color: #B452CD">0</span>,<span style="color: #B452CD">180</span>,<span style="color: #B452CD">10</span>)
-n = np.size(angle)
-ExpectationValues = np.zeros((n,n))
-<span style="color: #8B008B; font-weight: bold">for</span> i <span style="color: #8B008B">in</span> <span style="color: #658b00">range</span> (n):
-    theta = np.pi*angle[i]/<span style="color: #B452CD">180.0</span>
-    Rx = np.cos(theta*<span style="color: #B452CD">0.5</span>)*I-<span style="color: #B452CD">1</span>j*np.sin(theta*<span style="color: #B452CD">0.5</span>)*X
-    <span style="color: #8B008B; font-weight: bold">for</span> j <span style="color: #8B008B">in</span> <span style="color: #658b00">range</span> (n):
-        phi = np.pi*angle[j]/<span style="color: #B452CD">180.0</span>
-        Ry = np.cos(phi*<span style="color: #B452CD">0.5</span>)*I-<span style="color: #B452CD">1</span>j*np.sin(phi*<span style="color: #B452CD">0.5</span>)*Y
-        NewBasis = Ry @ Rx @ basis0
-        Energy = NewBasis.conj().T @ Hamiltonian @ NewBasis
-        Edifference=<span style="color: #658b00">abs</span>(np.real(EigValues[<span style="color: #B452CD">0</span>]-Energy))
-        ExpectationValues[i,j]=Edifference
-
-<span style="color: #658b00">print</span>(np.min(ExpectationValues))
-</pre>
-</div>
-      </div>
-    </div>
-  </div>
-  <div class="output_wrapper">
-    <div class="output">
-      <div class="output_area">
-        <div class="output_subarea output_stream output_stdout output_text">          
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<p>Clearly, this is not the very best way of proceeding. Rather, here we
-could try to find the optimal values for the parameters \( \theta \) and
-\( \phi \) through computation of their respective gradients and thereby
-find the minimum as function of the optimal angles \( \hat{\theta} \) and
-\( \hat{\phi} \).
-</p>
-
-<p>Let us now implement a classical gradient descent algorithm to the computation of the energies. 
-We will follow closely  <a href="https://journals.aps.org/pra/abstract/10.1103/PhysRevA.99.032331" target="_blank"><tt>https://journals.aps.org/pra/abstract/10.1103/PhysRevA.99.032331</tt></a> in order to calculate gradients of the Hamiltonian.
-</p>
-
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-<h2 id="gradient-descent-and-calculations-of-gradients">Gradient descent and calculations of gradients </h2>
-
-<p>In order to optimize the VQE ansatz, we need to compute derivatives
-with respect to the variational parameters.  Here we develop first a
-simpler approach tailored to the one-qubit case. For this particular
-case, we have defined an ansatz in terms of the Pauli rotation
-matrices. These define an arbitrary one-qubit state on the Bloch
-sphere through the expression
-</p>
-
-$$
-\vert\psi\rangle = \vert \psi(\theta,\phi)\rangle =R_y(\phi)R_x(\theta)\vert 0 \rangle.
-$$
-
-<p>Each of these rotation matrices can be written in a more general form as</p>
-$$
-R_{i}(\gamma)=\exp{-(\imath\frac{\gamma}{2}\sigma_i)}=\cos{(\frac{\gamma}{2})}\boldsymbol{I}-\imath\sin{(\frac{\gamma}{2})}\boldsymbol{\sigma}_i,
-$$
-
-<p>where \( \sigma_i \) is one of the Pauli matrices \( \sigma_{x,y,z} \). </p>
-
-<p>It is easy to see that the derivative with respect to \( \gamma \) is</p>
-$$
-\frac{\partial R_{i}(\gamma)}{\partial \gamma}=-\frac{\gamma}{2}\boldsymbol{\sigma}_i R_{i}(\gamma).
-$$
-
-<p>We can now calculate the derivative of the expectation value of the
-Hamiltonian in terms of the angles \( \theta \) and \( \phi \). We have two
-derivatives 
-</p>
-$$
-\frac{\partial}{\partial \theta}\left[\langle \psi(\theta,\phi) \vert \boldsymbol{H}\vert \psi(\theta,\phi)\rangle\right]=\frac{\partial}{\partial \theta}\left[\langle\boldsymbol{H}(\theta,\phi)\rangle\right]=\langle \psi(\theta,\phi) \vert \boldsymbol{H}(-\frac{\imath}{2}\boldsymbol{\sigma}_x\vert \psi(\theta,\phi)\rangle+\hspace{0.1cm}\mathrm{h.c},
-$$
-
-<p>and</p>
-$$
-\frac{\partial }{\partial \phi}\left[\langle \psi(\theta,\phi) \vert \boldsymbol{H}\vert \psi(\theta,\phi)\rangle\right]=\frac{\partial}{\partial \phy}\left[\langle\boldsymbol{H}(\theta,\phi)\rangle\right]=\langle \psi(\theta,\phi) \vert \boldsymbol{H}(-\frac{\imath}{2}\boldsymbol{\sigma}_y\vert \psi(\theta,\phi)\rangle+\hspace{0.1cm}\mathrm{h.c}. 
-$$
-
-<p>This means that we have to calculate two additional expectation values
-in addition to the expectation value of the Hamiltonian itself.  In
-our first attempt, we will compute these expectation values in a brute
-force way, performing the various matrix-matrix and matrix-vector
-multiplications. As the reader quickly will see, this approach becomes
-unpractical if we venture beyond some few qubits.  We will try to
-rewrite the above derivatives in a smarter way, see <a href="https://journals.aps.org/pra/abstract/10.1103/PhysRevA.99.032331" target="_blank">the article by
-Maria Schuld et
-al</a>.
-</p>
-
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-<h2 id="a-smarter-way-of-doing-this">A smarter way of doing this </h2>
-
-<p>The above approach means that we are setting up several matrix-matrix
-amd matrix-vector multiplications. Although straight forward it is not
-the most efficient way of doing this, in particular in case the
-matrices become large (and sparse). But there are some more important
-issues.
-</p>
-
-<p>In a physical realization of these systems we cannot just multiply the
-state with the Hamiltonian. When performing a measurement we can only
-measure in one particular direction. For the computational basis
-states which we have, \( \vert 0\rangle \) and \( \vert 1\rangle \), we have
-to measure along the bases of the Pauli matrices and reconstruct the
-eigenvalues from these measurements.
-</p>
-
-<p>From our earlier discussions we know that the Pauli \( Z \) matrix has the above basis states as eigen states through</p>
-
-$$
-\boldsymbol{\sigma}_z\vert 0 \rangle = \boldsymbol{Z}\vert 0 \rangle=+1\vert 0 \rangle,
-$$
-
-<p>and</p>
-$$
-\boldsymbol{\sigma}_z\vert 1 \rangle = \boldsymbol{Z}\vert 1 \rangle=-1\vert 1 \rangle,
-$$
-
-<p>with eigenvalue \( -1 \).</p>
-
-<p>For the Pauli \( X \) matrix on the other hand we have</p>
-$$
-\boldsymbol{\sigma}_x\vert 0 \rangle = \boldsymbol{X}\vert 0 \rangle=+1\vert 1 \rangle,
-$$
-
-<p>and</p>
-$$
-\boldsymbol{\sigma}_x\vert 1 \rangle = \boldsymbol{X}\vert 1 \rangle=-1\vert 0 \rangle,
-$$
-
-<p>with eigenvalues \( 1 \) in both cases. The latter two equations tell us
-that the computational basis we have chosen, and in which we will
-prepare our states, is not an eigenbasis of the \( \sigma_x \) matrix.
-</p>
-
-<p>We will thus try to rewrite the Pauli \( X \) matrix in terms of a Pauli \( Z \) matrix. Fortunately this can be done using the Hadamard matrix twice, that is</p>
-
-$$
-\boldsymbol{X}=\boldsymbol{\sigma}_x=\boldsymbol{H}\boldsymbol{Z}\boldsymbol{H}.
-$$
-
-<p>The Pauli \( Y \) matrix can be written as</p>
-
-$$
-\boldsymbol{Y}=\boldsymbol{\sigma}_y=\boldsymbol{H}\boldsymbol{S}^{\dagger}\boldsymbol{Z}\boldsymbol{H}\boldsymbol{S},
-$$
-
-<p>where \( S \) is the phase matrix</p>
-$$
-S = \begin{bmatrix} 1 & 0 \\ 0 & \imath \end{bmatrix}.
-$$
-
-<p>We will denote the Pauli matrices by \( X \), \( Y \) and \( Z \) and we can write the expectation value of the Hamiltonian as</p>
-$$
-\langle \psi \vert (c+\mathcal{E})\boldsymbol{I} + (\Omega+\omega_z)\boldsymbol{Z} + \omega_x\boldsymbol{H}\boldsymbol{Z}\boldsymbol{H}\vert \psi \rangle,
-$$
-
-<p>which we can rewrite as</p>
-$$
-(c+\mathcal{E})\langle \psi \vert \boldsymbol{I}\vert \psi \rangle+(\Omega+\omega_z)\langle \psi \vert \boldsymbol{Z}\vert \psi \rangle+\omega_x\langle \psi \boldsymbol{H}\vert \boldsymbol{Z}\vert\boldsymbol{H}\psi \rangle.
-$$
-
-<p>The first and second term are to easy to perform a measurement on since we we just need to compute
-\( \langle \psi\vert \boldsymbol{I}\vert \psi\rangle \) and \( \langle \psi\vert \boldsymbol{Z}\vert \psi\rangle \).
-For the final term we need just to add the action of the Hadamard matrix and we are done.
-</p>
-
 <!-- ------------------- end of main content --------------- -->
 </body>
 </html>
