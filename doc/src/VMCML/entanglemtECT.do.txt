@@ -669,7 +669,7 @@ FIGURE: [qcfigures/figure3.pdf, width=700 frac=0.9]
 
 FIGURE: [qcfigures/figure4.pdf, width=700 frac=0.9]
 
-
+!split
 ===== Probability distributions of the first four Hartree states in the left- and the right well =====
 
 FIGURE: [qcfigures/figure5.pdf, width=700 frac=0.9]
