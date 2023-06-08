@@ -115,7 +115,7 @@ o ...more
 !split
 ===== Electrons (quantum dots) on superfluid helium =====
 
-Electrons on _superfluid helium represent_, see URL:"https://www.youtube.com/watch?v=EuDuM-fe-lA&ab_channel=JoshuahHeath" a promising platform for investigating
+Electrons on _superfluid helium represent_ (see URL:"https://www.youtube.com/watch?v=EuDuM-fe-lA&ab_channel=JoshuahHeath") a promising platform for investigating
 strongly-coupled qubits.
 
 A systematic investigation of the
@@ -261,7 +261,7 @@ any qubit platform.
 Hamiltonian:
 !bt
 \begin{align}
-\hat{H} &= \frac{\hat{p}_1}{2} + \sum_{i = 1}^7 V_i\alpha_i[\hat{x}_1] + \frac{\hat{p}_2}{2} + \sum_{i = 1}^7 V_i\alpha_i[\hat{x}_2] + \frac{\kappa}{\sqrt{(\hat{x}_1-\hat{x}_2)^2 + a^2}
+\hat{H} &=\frac{\hat{p}_1}{2} + \sum_{i = 1}^7 V_i\alpha_i[\hat{x}_1] + \frac{\hat{p}_2}{2} + \sum_{i = 1}^7 V_i\alpha_i[\hat{x}_2] + \frac{\kappa}{\sqrt{(\hat{x}_1-\hat{x}_2)^2 + a^2}}\\
 &= h[\hat{p}_1,\hat{x}_1] + h[\hat{p}_2,\hat{x}_2] + u[\hat{x}_1,\hat{x}_2]
 \end{align}
 !et
@@ -289,7 +289,7 @@ FIGURE: [qcfigures/wells.png, width=700 frac=0.9]
 Hamiltonian:
 !bt
 \begin{align}
-\hat{H} &= \frac{\hat{p}_1}{2} + v[\hat{x}_1] + \frac{\hat{p}_2}{2} + v[\hat{x}_2] + \frac{\kappa}{\sqrt{(\hat{x}_1-\hat{x}_2)^2 + a^2} \\
+\hat{H} &= \frac{\hat{p}_1}{2} + v[\hat{x}_1] + \frac{\hat{p}_2}{2} + v[\hat{x}_2] + \frac{\kappa}{\sqrt{(\hat{x}_1-\hat{x}_2)^2 + a^2}} \\
 &\equiv h[\hat{p}_1,\hat{x}_1] + h[\hat{p}_2,\hat{x}_2] + u[\hat{x}_1,\hat{x}_2]
 \end{align}
 !et

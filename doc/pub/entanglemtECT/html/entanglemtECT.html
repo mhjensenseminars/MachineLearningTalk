@@ -393,7 +393,7 @@ systems will be discussed.
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 <h2 id="electrons-quantum-dots-on-superfluid-helium">Electrons (quantum dots) on superfluid helium </h2>
 
-<p>Electrons on <b>superfluid helium represent</b>, see <a href="https://www.youtube.com/watch?v=EuDuM-fe-lA&ab_channel=JoshuahHeath" target="_blank"><tt>https://www.youtube.com/watch?v=EuDuM-fe-lA&ab_channel=JoshuahHeath</tt></a> a promising platform for investigating
+<p>Electrons on <b>superfluid helium represent</b> (see <a href="https://www.youtube.com/watch?v=EuDuM-fe-lA&ab_channel=JoshuahHeath" target="_blank"><tt>https://www.youtube.com/watch?v=EuDuM-fe-lA&ab_channel=JoshuahHeath</tt></a>) a promising platform for investigating
 strongly-coupled qubits.
 </p>
 
@@ -577,9 +577,10 @@ any qubit platform.
 <p>Hamiltonian:</p>
 $$
 \begin{align}
-\hat{H} &= \frac{\hat{p}_1}{2} + \sum_{i = 1}^7 V_i\alpha_i[\hat{x}_1] + \frac{\hat{p}_2}{2} + \sum_{i = 1}^7 V_i\alpha_i[\hat{x}_2] + \frac{\kappa}{\sqrt{(\hat{x}_1-\hat{x}_2)^2 + a^2}
+\hat{H} &=\frac{\hat{p}_1}{2} + \sum_{i = 1}^7 V_i\alpha_i[\hat{x}_1] + \frac{\hat{p}_2}{2} + \sum_{i = 1}^7 V_i\alpha_i[\hat{x}_2] + \frac{\kappa}{\sqrt{(\hat{x}_1-\hat{x}_2)^2 + a^2}}
+\label{_auto1}\\
 &= h[\hat{p}_1,\hat{x}_1] + h[\hat{p}_2,\hat{x}_2] + u[\hat{x}_1,\hat{x}_2]
-\label{_auto1}
+\label{_auto2}
 \end{align}
 $$
 
@@ -597,9 +598,9 @@ $$
 $$
 \begin{align}
 \hat{H} &= \frac{\hat{p}_1}{2} + v[\hat{x}_1] + \frac{\hat{p}_2}{2} + v[\hat{x}_2] + \frac{\kappa}{\sqrt{(\hat{x}_1-\hat{x}_2)^2 + a^2}}
-\label{_auto2}\\
+\label{_auto3}\\
 &= h[\hat{p}_1,\hat{x}_1] + h[\hat{p}_2,\hat{x}_2] + u[\hat{x}_1,\hat{x}_2]
-\label{_auto3}
+\label{_auto4}
 \end{align}
 $$
 
@@ -616,10 +617,10 @@ $$
 <p>Hamiltonian:</p>
 $$
 \begin{align}
-\hat{H} &= \frac{\hat{p}_1}{2} + v[\hat{x}_1] + \frac{\hat{p}_2}{2} + v[\hat{x}_2] + \frac{\kappa}{\sqrt{(\hat{x}_1-\hat{x}_2)^2 + a^2} 
-\label{_auto4}\\
+\hat{H} &= \frac{\hat{p}_1}{2} + v[\hat{x}_1] + \frac{\hat{p}_2}{2} + v[\hat{x}_2] + \frac{\kappa}{\sqrt{(\hat{x}_1-\hat{x}_2)^2 + a^2}} 
+\label{_auto5}\\
 &\equiv h[\hat{p}_1,\hat{x}_1] + h[\hat{p}_2,\hat{x}_2] + u[\hat{x}_1,\hat{x}_2]
-\label{_auto5}
+\label{_auto6}
 \end{align}
 $$
 
@@ -627,7 +628,7 @@ $$
 $$
 \begin{equation}
 \vert\Phi_k\rangle = \sum_{i < j} C_{ij, k}\frac{\vert \varphi_i \varphi_j\rangle - \vert \varphi_j \varphi_i\rangle}{\sqrt{2}},
-\label{_auto6}
+\label{_auto7}
 \end{equation}
 $$
 
@@ -640,9 +641,9 @@ $$
 $$
 \begin{align}
 \hat{H} &= \frac{\hat{p}_1}{2} + v^L[\hat{x}_1] + \frac{\hat{p}_2}{2} + v^R[\hat{x}_2] + \frac{\kappa}{\sqrt{(\hat{x}_1-\hat{x}_2)^2 + a^2}} 
-\label{_auto7}\\
+\label{_auto8}\\
 &\equiv h^L[\hat{p}_1,\hat{x}_1] + h^R[\hat{p}_2,\hat{x}_2] + u[\hat{x}_1,\hat{x}_2]
-\label{_auto8}
+\label{_auto9}
 \end{align}
 $$
 
@@ -650,7 +651,7 @@ $$
 $$
 \begin{equation}
 \vert\Phi_k\rangle = \sum_{i} \sum_{j} C_{ij, k}\vert \varphi^L_i \varphi^R_j\rangle,
-\label{_auto9}
+\label{_auto10}
 \end{equation}
 $$
 
@@ -663,7 +664,7 @@ $$
 $$
 \begin{equation}
 \vert\Phi_k\rangle = \sum_{i} \sum_{j} C_{ij, k}\vert \varphi^L_i \varphi^R_j\rangle,
-\label{_auto10}
+\label{_auto11}
 \end{equation}
 $$
 
@@ -682,9 +683,9 @@ $$
 $$
 \begin{align}
 \hat{H} &= \frac{\hat{p}_1}{2} + v^L[\hat{x}_1] + \frac{\hat{p}_2}{2} + v^R[\hat{x}_2] + \frac{\kappa}{\sqrt{(\hat{x}_1-\hat{x}_2)^2 + a^2}} 
-\label{_auto11}\\
+\label{_auto12}\\
 &\equiv h^L[\hat{p}_1,\hat{x}_1] + h^R[\hat{p}_2,\hat{x}_2] + u[\hat{x}_1,\hat{x}_2]
-\label{_auto12}
+\label{_auto13}
 \end{align}
 $$
 
@@ -692,7 +693,7 @@ $$
 $$
 \begin{equation}
 \vert\Phi_k\rangle = \sum_{i} \sum_{j} C_{ij, k}\vert \varphi^L_i \varphi^R_j\rangle,
-\label{_auto13}
+\label{_auto14}
 \end{equation}
 $$
 
@@ -705,9 +706,9 @@ $$
 $$
 \begin{align}
 \hat{H} &= \frac{\hat{p}_1}{2} + v^L[\hat{x}_1] + \frac{\hat{p}_2}{2} + v^R[\hat{x}_2] + \frac{\kappa}{\sqrt{(\hat{x}_1-\hat{x}_2)^2 + a^2}} 
-\label{_auto14}\\
+\label{_auto15}\\
 &\equiv h^L[\hat{p}_1,\hat{x}_1] + h^R[\hat{p}_2,\hat{x}_2] + u[\hat{x}_1,\hat{x}_2]
-\label{_auto15}
+\label{_auto16}
 \end{align}
 $$
 
@@ -715,7 +716,7 @@ $$
 $$
 \begin{equation}
 \vert\Phi_k\rangle = \sum_{i = 0}^{N^L} \sum_{j = 0}^{N^R} C_{ij, k}\vert \varphi^L_i \varphi^R_j\rangle,
-\label{_auto16}
+\label{_auto17}
 \end{equation}
 $$
 
@@ -728,7 +729,7 @@ $$
 $$
 \begin{equation}
 \vert\Phi_k\rangle = \sum_{i = 0}^{N^L} \sum_{j = 0}^{N^R} C_{ij, k}\vert \varphi^L_i \varphi^R_j\rangle,
-\label{_auto17}
+\label{_auto18}
 \end{equation}
 $$
 
@@ -747,9 +748,9 @@ $$
 $$
 \begin{align}
 \hat{H} &= \frac{\hat{p}_1}{2} + v^L[\hat{x}_1] + \frac{\hat{p}_2}{2} + v^R[\hat{x}_2] + \frac{\kappa}{\sqrt{(\hat{x}_1-\hat{x}_2)^2 + a^2}} 
-\label{_auto18}\\
+\label{_auto19}\\
 &\equiv h^L[\hat{p}_1,\hat{x}_1] + h^R[\hat{p}_2,\hat{x}_2] + u[\hat{x}_1,\hat{x}_2]
-\label{_auto19}
+\label{_auto20}
 \end{align}
 $$
 
@@ -757,7 +758,7 @@ $$
 $$
 \begin{equation}
 \vert\Phi_k\rangle = \sum_{i = 0}^{N^L} \sum_{j = 0}^{N^R} C_{ij, k}\vert \varphi^L_i \varphi^R_j\rangle,
-\label{_auto20}
+\label{_auto21}
 \end{equation}
 $$
 
@@ -783,7 +784,7 @@ We create a voltage parameterization
 $$
 \begin{equation}
 V(\lambda) = (1-\lambda)V_\mathrm{I} + \lambda V_\mathrm{III}
-\label{_auto21}
+\label{_auto22}
 \end{equation}
 $$
 
