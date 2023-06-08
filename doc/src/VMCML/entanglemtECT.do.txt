@@ -628,7 +628,7 @@ FIGURE: [qcfigures/Hartree_coefs.png, width=700 frac=0.9]
 ===== Results and discussions =====
 By adjusting the potential we can change the anharmonicities and detuning of the wells.
 o What values of these give interesting interactions?
-o Inspiration from superconducting qubits, Zhao et al. [ref in footnote?]
+o Inspiration from superconducting qubits, Zhao et al.
 
 !split
 We search for well configurations corresponding to three different types of interaction between the two electrons.
@@ -654,7 +654,7 @@ FIGURE: [qcfigures/crossings-entropies-anharmonicities-1.png, width=700 frac=0.9
 
 
 !split
-===== Legende to figure =====
+===== Legend to figure =====
 
 o (a) In this figure we have plotted the transition energy from the ground state to the labeled excited state as a function of the voltage parameter $\lambda$. The labeled states are the computational basis states when $\lambda = 0$.
 o (b) The von Neumann entropy of the five lowest excited states of the two-body Hamiltonian as a function of the configuration parameter $\lambda$. The ground state has zero entropy, or close to zero entropy. We have included the points for the double and triple degeneracy points. $\lambda_{II}$ and $\lambda_{III}$ in the figure. The von Neumann entropy is calculated using the binary logarithm.
