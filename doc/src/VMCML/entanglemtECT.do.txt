@@ -275,7 +275,7 @@ FIGURE: [qcfigures/well_basis.png, width=700 frac=0.9]
 Hamiltonian:
 !bt
 \begin{align}
-\hat{H} &= \frac{\hat{p}_1}{2} + v[\hat{x}_1] + \frac{\hat{p}_2}{2} + v[\hat{x}_2] + \frac{\kappa}{\sqrt{(\hat{x}_1-\hat{x}_2)^2 + a^2}
+\hat{H} &= \frac{\hat{p}_1}{2} + v[\hat{x}_1] + \frac{\hat{p}_2}{2} + v[\hat{x}_2] + \frac{\kappa}{\sqrt{(\hat{x}_1-\hat{x}_2)^2 + a^2}}\\
 &= h[\hat{p}_1,\hat{x}_1] + h[\hat{p}_2,\hat{x}_2] + u[\hat{x}_1,\hat{x}_2]
 \end{align}
 !et
@@ -309,7 +309,7 @@ Energy states:
 Hamiltonian:
 !bt
 \begin{align}
-\hat{H} &= \frac{\hat{p}_1}{2} + v^L[\hat{x}_1] + \frac{\hat{p}_2}{2} + v^R[\hat{x}_2] + \frac{\kappa}{\sqrt{(\hat{x}_1-\hat{x}_2)^2 + a^2} \\
+\hat{H} &= \frac{\hat{p}_1}{2} + v^L[\hat{x}_1] + \frac{\hat{p}_2}{2} + v^R[\hat{x}_2] + \frac{\kappa}{\sqrt{(\hat{x}_1-\hat{x}_2)^2 + a^2}} \\
 &\equiv h^L[\hat{p}_1,\hat{x}_1] + h^R[\hat{p}_2,\hat{x}_2] + u[\hat{x}_1,\hat{x}_2]
 \end{align}
 !et
@@ -343,7 +343,7 @@ FIGURE: [qcfigures/Hartree_states.png, width=700 frac=0.9]
 Hamiltonian:
 !bt
 \begin{align}
-\hat{H} &= \frac{\hat{p}_1}{2} + v^L[\hat{x}_1] + \frac{\hat{p}_2}{2} + v^R[\hat{x}_2] + \frac{\kappa}{\sqrt{(\hat{x}_1-\hat{x}_2)^2 + a^2} \\
+\hat{H} &= \frac{\hat{p}_1}{2} + v^L[\hat{x}_1] + \frac{\hat{p}_2}{2} + v^R[\hat{x}_2] + \frac{\kappa}{\sqrt{(\hat{x}_1-\hat{x}_2)^2 + a^2}} \\
 &\equiv h^L[\hat{p}_1,\hat{x}_1] + h^R[\hat{p}_2,\hat{x}_2] + u[\hat{x}_1,\hat{x}_2]
 \end{align}
 !et
@@ -363,7 +363,7 @@ Energy states:
 Hamiltonian:
 !bt
 \begin{align}
-\hat{H} &= \frac{\hat{p}_1}{2} + v^L[\hat{x}_1] + \frac{\hat{p}_2}{2} + v^R[\hat{x}_2] + \frac{\kappa}{\sqrt{(\hat{x}_1-\hat{x}_2)^2 + a^2} \\
+\hat{H} &= \frac{\hat{p}_1}{2} + v^L[\hat{x}_1] + \frac{\hat{p}_2}{2} + v^R[\hat{x}_2] + \frac{\kappa}{\sqrt{(\hat{x}_1-\hat{x}_2)^2 + a^2}} \\
 &\equiv h^L[\hat{p}_1,\hat{x}_1] + h^R[\hat{p}_2,\hat{x}_2] + u[\hat{x}_1,\hat{x}_2]
 \end{align}
 !et
@@ -397,7 +397,7 @@ FIGURE: [qcfigures/Hartree_coefs.png, width=700 frac=0.9]
 Hamiltonian:
 !bt
 \begin{align}
-\hat{H} &= \frac{\hat{p}_1}{2} + v^L[\hat{x}_1] + \frac{\hat{p}_2}{2} + v^R[\hat{x}_2] + \frac{\kappa}{\sqrt{(\hat{x}_1-\hat{x}_2)^2 + a^2} \\
+\hat{H} &= \frac{\hat{p}_1}{2} + v^L[\hat{x}_1] + \frac{\hat{p}_2}{2} + v^R[\hat{x}_2] + \frac{\kappa}{\sqrt{(\hat{x}_1-\hat{x}_2)^2 + a^2}} \\
 &\equiv h^L[\hat{p}_1,\hat{x}_1] + h^R[\hat{p}_2,\hat{x}_2] + u[\hat{x}_1,\hat{x}_2]
 \end{align}
 !et
@@ -430,9 +430,6 @@ We create a voltage parameterization
 V(\lambda) = (1-\lambda)V_\mathrm{I} + \lambda V_\mathrm{III}
 \end{equation}
 !et
-
-!split
-
 
 !split
 ===== Entanglement and more  =====
