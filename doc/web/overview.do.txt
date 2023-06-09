@@ -37,7 +37,7 @@ chapters = {
   'mathforening': 'Popmath seminar March 7, University of Oslo, 2023',
   'MSUphysics': 'Physics Society MSU, March 13, 2023',
   'quantumcomputingMSU': 'FRIB-theory seminar, MSU, April 11, 2023',
-  'entanglemtECT': 'ECT June 5-9, 2023',  
+  'entanglemtECT': 'Workshop at the ECT* June 5-9, 2023',  
 }
 %>
 
