@@ -1,4 +1,4 @@
-TITLE: Artificial Intelligence and Machine Learning in Nuclear Physics
+TITLE: Machine Learning and Nuclear Physics, Challenges and Opportunities
 AUTHOR: Morten Hjorth-Jensen at Department of Physics and Astronomy and FRIB, Michigan State University, USA
 DATE: TRIUMF Science week, July 31-August 4, 2023
 
@@ -20,9 +20,9 @@ These slides are at URL:"https://mhjensenseminars.github.io/MachineLearningTalk/
 !eblock
 
 !split
-===== Many folks to thank =====
+===== Thanks to many =====
 
-Thanks to Jane Kim (MSU), Julie Butler (MSU), Patrick Cook (MSU), Danny Jammooa (MSU), Daniel Bazin (MSU), Dean Lee (MSU), Witek Nazarewicz (MSU), Michelle Kuchera (Davidson College), Even Nordhagen (UiO), Robert Solli (UiO, Expert Analytics), Bryce Fore (ANL), Alessandro Lovato (ANL), Stefano Gandolfi (LANL), and Giuseppe Carleo (EPFL). Excuses to those I have omitted.
+Jane Kim (MSU), Julie Butler (MSU), Patrick Cook (MSU), Danny Jammooa (MSU), Daniel Bazin (MSU), Dean Lee (MSU), Witek Nazarewicz (MSU), Michelle Kuchera (Davidson College), Even Nordhagen (UiO), Robert Solli (UiO, Expert Analytics), Bryce Fore (ANL), Alessandro Lovato (ANL), Stefano Gandolfi (LANL), and Giuseppe Carleo (EPFL). Excuses to those I have omitted.
 
 !split
 ===== A simple perspective on the interface between ML and Physics =====
@@ -229,6 +229,7 @@ The large amount of degrees of freedom pertain to both theory and experiment in 
 * "Dilute neutron star matter from neural-network quantum states by Fore et al, Physical Review Research 5, 033062 (2023)":"https://journals.aps.org/prresearch/pdf/10.1103/PhysRevResearch.5.033062"
 * "Neural-network quantum states for ultra-cold Fermi gases, Jane Kim et al, Nature Physics Communcication, submitted":"https://doi.org/10.48550/arXiv.2305.08831"
 * "Message-Passing Neural Quantum States for the Homogeneous Electron Gas, Gabriel Pescia, Jane Kim et al. arXiv.2305.07240,":"https://doi.org/10.48550/arXiv.2305.07240"
+* "Efficient solutions of fermionic systems using artificial neural networks, Nordhagen et al, Frontiers in Physics 11, 2023":"https://doi.org/10.3389/fphy.2023.1061580"
 * "Report from the A.I. For Nuclear Physics  Workshop by Bedaque et al., Eur J. Phys. A 57, (2021)":"https://link.springer.com/article/10.1140/epja/s10050-020-00290-x"
 * "Particle Data Group summary on ML methods":"https://pdg.lbl.gov/2021/reviews/rpp2021-rev-machine-learning.pdf"
 * And the BAND collaboration at URL:"https://bandframework.github.io/"
@@ -330,27 +331,20 @@ FIGURE: [figures/energyconvergence.pdf, width=700 frac=0.9]
 
 !split
 ===== "Dilute neutron star matter from neural-network quantum states by Fore et al, Physical Review Research 5, 033062 (2023)":"https://journals.aps.org/prresearch/pdf/10.1103/PhysRevResearch.5.033062" =====
-
+Density $\rho=0.04$fm$^{-3}$.
 !bblock
 FIGURE: [figures/nmatter.png, width=700 frac=0.9]
 !eblock
 
 
 
-!split
-
-
-!bblock
-FIGURE: [figures/elgasnew.pdf, width=700 frac=0.9]
-!eblock
-
 
 
 !split
-===== The electron gas in three dimensions with $N=14$ electrons (Wigner-Seitz radius $r_s=2$ Ry) =====
-
+===== The electron gas in three dimensions with $N=14$ electrons (Wigner-Seitz radius $r_s=2$ a.u.) =====
+"Message-Passing Neural Quantum States for the Homogeneous Electron Gas, Gabriel Pescia, Jane Kim et al. arXiv.2305.07240,":"https://doi.org/10.48550/arXiv.2305.07240"
 !bblock
-FIGURE: [figures/elgasnew.pdf, width=700 frac=0.9]
+FIGURE: [figures/elgasnew.png, width=700 frac=0.9]
 !eblock
 
 
@@ -405,55 +399,6 @@ FIGURE: [figures/OB30hw01.png, width=700 frac=0.9]
 
 
 !split
-===== Extrapolations and model interpretability  =====
-
-When you hear phrases like _predictions and estimations_ and
-_correlations and causations_, what do you think of?  May be you think
-of the difference between classifying new data points and generating
-new data points.
-Or perhaps you consider that correlations represent some kind of symmetric statements like
-if $A$ is correlated with $B$, then $B$ is correlated with
-$A$. Causation on the other hand is directional, that is if $A$ causes $B$, $B$ does not
-necessarily cause $A$.
-
-
-!split
-===== Physics based statistical learning and data analysis =====
-
-The above concepts are in some sense the difference between _old-fashioned_ machine
-learning and statistics and Bayesian learning. In machine learning and prediction based
-tasks, we are often interested in developing algorithms that are
-capable of learning patterns from given data in an automated fashion,
-and then using these learned patterns to make predictions or
-assessments of newly given data. In many cases, our primary concern
-is the quality of the predictions or assessments, and we are less
-concerned about the underlying patterns that were learned in order
-to make these predictions.
-
-Physics based statistical learning points however to approaches that give us both predictions and correlations as well as being able to produce error estimates and understand causations.  This leads us to the very interesting field of Bayesian statistics.
-
-
-
-!split
-===== Bayes' Theorem =====
-
-Bayes' theorem
-!bt
-\[
-p(X\vert Y)= \frac{p(X,Y)}{\sum_{i=0}^{n-1}p(Y\vert X=x_i)p(x_i)}=\frac{p(Y\vert X)p(X)}{\sum_{i=0}^{n-1}p(Y\vert X=x_i)p(x_i)}.
-\]
-!et
-
-
-The quantity $p(Y\vert X)$ on the right-hand side of the theorem is
-evaluated for the observed data $Y$ and can be viewed as a function of
-the parameter space represented by $X$. This function is not
-necessarily normalized and is normally called the likelihood function.
-
-The function $p(X)$ on the right hand side is called the prior while the function on the left hand side is the called the posterior probability. The denominator on the right hand side serves as a normalization factor for the posterior distribution.
-
-
-!split
 ===== Folding and unfolding and response functions =====
 
 A good read on folding/unfolding is "An Unfolding Method for High Energy Physics Experiments by Volker Blobel":"https://arxiv.org/abs/hep-ex/0208022"
@@ -469,25 +414,6 @@ See notebook details and "examples of simple data reconstructed with Gaussian pr
 Predictions made with eleven global mass model and Bayesian model averaging
 
 FIGURE: [figures/landscape.jpg, width=800 frac=1.0]
-
-!split
-===== Constraining the equation of state for dense nuclear matter =====
-
-"G. Raaijmakers et al., Constraining the Dense Matter Equation of State with Joint Analysis of NICER and LIGO/Virgo Measurements, AJ Letters, 893, L21 (2020)":"https://iopscience.iop.org/article/10.3847/2041-8213/ab822f"
-
-FIGURE: [figures/nstareos.png, width=800 frac=1.0]
-
-!split
-===== Experimental design =====
-
-Beam time and compute cycles are expensive!
-
-* Bayesian experimental design provides a framework in which experiments can be designed using the best experimental and theoretical information available 
-* The utility function is designed to encode the goals of the experiment and the constraints inherent in carrying it out. 
-* Once the utility function and the possible designs have been specified, the optimal design is simply the scenario that  maximizes the expected utility function over the domain of possible designs.
-
-
-FIGURE: [figures/utility.png, width=700 frac=1.0]
 
 
 
@@ -511,23 +437,6 @@ FIGURE: [figures/utility.png, width=700 frac=1.0]
 !bblock 
 * Make an ML challenge in nuclear physics a la "Learning to discover: the Higgs boson machine learning challenge":"https://home.cern/news/news/computing/higgs-boson-machine-learning-challenge". Alternatively go to kaggle.com at URL:"https://www.kaggle.com/c/higgs-boson"
 * HEP@CERN and HEP in general have made significant impacts in the field of machine learning and AI. Something to learn from
-!eblock
-
-
-!split
-===== Educational initiatives since 2019, FRIB/NSCL (MSU) playing a central role =====
-
-_Please feel free to propose new schools and/or update the list here._
-
-!bblock AI/ML courses
-o The FRIB-TA Summer School: Machine Learning Applied to Nuclear Physics, FRIB/NSCL (MSU)from May 20 to 23, 2019; organizers and teachers: Matthew Hirn (MSU), Morten Hjorth-Jensen (MSU) and Michelle Kuchera (Davidson)
-o Nuclear TALENT course Learning from Data: Bayesian Methods and Machine Learning, in York, UK, June 10-28, 2019; Teachers and organizers Christian Forssén, Chalmers University of Technology, Sweden, Dick Furnstahl, Ohio State University, USA, Daniel Phillips, Ohio University, USA
-o Nuclear TALENT School on Machine learning from 22 June 2020 to 03 July 2020. Teachers and organizers: Daniel Bazin (MSU), Morten Hjorth-Jensen (MSU), Michelle Kuchera (Davidson), Sean Liddick (MSU), Raghuram Ramanujan (Davidson)
-o Nuclear TALENT School on Machine learning from 19 July 2021 to  30 July 2021. Teachers and organizers: Daniel Bazin (MSU), Morten Hjorth-Jensen (MSU), Michelle Kuchera (Davidson), Sean Liddick (MSU), Raghuram Ramanujan (Davidson)
-o Intensive course on Machine Learning at FRIB/MSU, summer 2019; teacher Morten Hjorth-Jensen, MSU
-o Four two-week intensive course on Machine Learning for Nuclear Physics held at Ganil, France, 2019, 2020, 2021 and 2022. Teacher and organizer Morten Hjorth-Jensen (MSU)
-o AI4NP Winter School, 11-15 Jan 2021, (Virtual). Organizers Amber Boehnlein (JLAB), Paulo Bedaque (University of Maryland), Tanja Horn (Catholic University of America)
-o 2022? 
 !eblock
 
 
