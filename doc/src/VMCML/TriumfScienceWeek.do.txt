@@ -14,7 +14,7 @@ in nuclear physics. And why this could (or should) be of interest.
 !bblock Additional info
 These slides are at URL:"https://mhjensenseminars.github.io/MachineLearningTalk/doc/web/overview.html". Scroll down the page.
 
-* Talk based on _Artificial Intelligence and Machine Learning in Nuclear Physics_, Amber Boehnlein et al., "https://journals.aps.org/rmp/abstract/10.1103/RevModPhys.94.031003" Reviews Modern of Physics  _94_, 031003 (2023). 
+* Parts of this talk are based on _Artificial Intelligence and Machine Learning in Nuclear Physics_, Amber Boehnlein et al., "https://journals.aps.org/rmp/abstract/10.1103/RevModPhys.94.031003" Reviews Modern of Physics  _94_, 031003 (2023). 
 
 
 !eblock
@@ -225,7 +225,10 @@ The large amount of degrees of freedom pertain to both theory and experiment in 
 !bblock
 * "Mehta et al.":"https://arxiv.org/abs/1803.08823" and "Physics Reports (2019)":"https://www.sciencedirect.com/science/article/pii/S0370157319300766?via%3Dihub".
 * "Machine Learning and the Physical Sciences by Carleo et al":"https://link.aps.org/doi/10.1103/RevModPhys.91.045002"
-* "Ab initio solution of the many-electron Schrödinger equation with deep neural networks by Pfau et al.":"https://journals.aps.org/prresearch/abstract/10.1103/PhysRevResearch.2.033429"
+* "Artificial Intelligence and Machine Learning in Nuclear Physics, Amber Boehnlein et al., Reviews Modern of Physics 94, 031003 (2023)":"https://journals.aps.org/rmp/abstract/10.1103/RevModPhys.94.031003" 
+* "Dilute neutron star matter from neural-network quantum states by Fore et al, Physical Review Research 5, 033062 (2023)":"https://journals.aps.org/prresearch/pdf/10.1103/PhysRevResearch.5.033062"
+* "Neural-network quantum states for ultra-cold Fermi gases, Jane Kim et al, Nature Physics Communcication, submitted":"https://doi.org/10.48550/arXiv.2305.08831"
+* "Message-Passing Neural Quantum States for the Homogeneous Electron Gas, Gabriel Pescia, Jane Kim et al. arXiv.2305.07240,":"https://doi.org/10.48550/arXiv.2305.07240"
 * "Report from the A.I. For Nuclear Physics  Workshop by Bedaque et al., Eur J. Phys. A 57, (2021)":"https://link.springer.com/article/10.1140/epja/s10050-020-00290-x"
 * "Particle Data Group summary on ML methods":"https://pdg.lbl.gov/2021/reviews/rpp2021-rev-machine-learning.pdf"
 * And the BAND collaboration at URL:"https://bandframework.github.io/"
@@ -326,25 +329,31 @@ FIGURE: [figures/energyconvergence.pdf, width=700 frac=0.9]
 
 
 !split
-=====  "Gnech et al, Variational Monte Carlo calculations of $A\le 6$ nuclei Few Body Systems 63, (2022)":"https://link.springer.com/article/10.1007/s00601-021-01706-0" =====
+===== "Dilute neutron star matter from neural-network quantum states by Fore et al, Physical Review Research 5, 033062 (2023)":"https://journals.aps.org/prresearch/pdf/10.1103/PhysRevResearch.5.033062" =====
 
-FIGURE: [figures/pointnucleondensity.png, width=700 frac=0.9]
+!bblock
+FIGURE: [figures/nmatter.png, width=700 frac=0.9]
+!eblock
+
 
 
 !split
-===== The electron gas in three dimensions with $N=14$ electrons (Wigner-Seitz radius $r_s=2$ Ry) =====
-Jane Kim, Bryce Fore, Alessandro Lovato and MHJ, in preparation
+
+
 !bblock
 FIGURE: [figures/elgasnew.pdf, width=700 frac=0.9]
 !eblock
 
 
+
 !split
-===== Neutron matter with $N=14$ neutron =====
-Jane Kim, Bryce Fore, Alessandro Lovato and MHJ, in preparation
+===== The electron gas in three dimensions with $N=14$ electrons (Wigner-Seitz radius $r_s=2$ Ry) =====
+
 !bblock
-FIGURE: [figures/nmatter.png, width=700 frac=0.9]
+FIGURE: [figures/elgasnew.pdf, width=700 frac=0.9]
 !eblock
+
+
 
 !split
 ===== Electrons in a harmonic oscillator trap in two dimensions =====
