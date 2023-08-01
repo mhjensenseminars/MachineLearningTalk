@@ -1,0 +1,938 @@
+TITLE: Artificial Intelligence and Machine Learning in Nuclear Physics
+AUTHOR: Morten Hjorth-Jensen at Department of Physics and Astronomy and FRIB/NSCL Laboratory, Michigan State University
+DATE: University of Tennessee, Knoxville, March 28, 2022
+
+
+!split
+===== What is this talk about? =====
+!bblock
+The main emphasis is to give you a short and pedestrian introduction to the whys and hows we can use (with several examples) machine learning methods
+in nuclear physics. And why this could (or should) be of interest. 
+!eblock
+
+
+!bblock Additional info
+These slides are at URL:"https://mhjensenseminars.github.io/MachineLearningTalk/doc/web/overview.html". Scroll down the page.
+
+* Talk based on _Artificial Intelligence and Machine Learning in Nuclear Physics_, Amber Boehnlein et al., "arXiv:2112.02309":"https://arxiv.org/abs/2112.02309" and Reviews Modern of Physics, submitted. 
+
+
+!eblock
+
+!split
+===== Many folks to thank =====
+
+Thanks to Jane Kim (MSU), Julie Butler (MSU), Daniel Bazin (MSU), Dean Lee (MSU), Witek Nazarewicz (MSU), Michelle Kuchera (Davidson College), Vilde Flugsrud (UiO), Even Nordhagen (UiO), Robert Solli (UiO, Expert Analytics), Corey Adams (ANL), Bryce Fore (ANL), and Alessandro Lovato (ANL). Excuses to those I have omitted.
+
+!split
+===== A simple perspective on the interface between ML and Physics =====
+
+FIGURE: [figures/mlimage.png, width=800 frac=1.0]
+
+
+!split
+===== ML in Nuclear  Physics =====
+
+FIGURE: [figures/ML-NP.pdf, width=900 frac=1.0]
+
+
+
+
+!split
+=====  AI/ML and some statements you may have heard (and what do they mean?)  =====
+
+o Fei-Fei Li on ImageNet: _map out the entire world of objects_ ("The data that transformed AI research":"https://cacm.acm.org/news/219702-the-data-that-transformed-ai-research-and-possibly-the-world/fulltext")
+o Russell and Norvig in their popular textbook: _relevant to any intellectual task; it is truly a universal field_ ("Artificial Intelligence, A modern approach":"http://aima.cs.berkeley.edu/")
+o Woody Bledsoe puts it more bluntly: _in the long run, AI is the only science_ (quoted in Pamilla McCorduck, "Machines who think":"https://www.pamelamccorduck.com/machines-who-think")
+
+
+If you wish to have a critical read on AI/ML from a societal point of view, see "Kate Crawford's recent text Atlas of AI":"https://www.katecrawford.net/"
+
+_Here: with AI/ML we intend a collection of machine learning methods with an emphasis on statistical learning and data analysis_
+
+
+!split
+===== Scientific Machine Learning =====
+
+An important and emerging field is what has been dubbed as scientific ML, see the article by Deiana et al "Applications and Techniques for Fast Machine Learning in Science, arXiv:2110.13041":"https://arxiv.org/abs/2110.13041"
+
+!bblock
+The authors discuss applications and techniques for fast machine
+learning (ML) in science -- the concept of integrating power ML
+methods into the real-time experimental data processing loop to
+accelerate scientific discovery. The report covers three main areas
+
+o applications for fast ML across a number of scientific domains;
+o techniques for training and implementing performant and resource-efficient ML algorithms;
+o and computing architectures, platforms, and technologies for deploying these algorithms.
+
+!eblock
+
+
+
+
+!split
+===== Machine Learning and Physics =====
+!bblock
+Machine learning  is an extremely rich field, in spite of its young age. The
+increases we have seen during the last three decades in computational
+capabilities have been followed by developments of methods and
+techniques for analyzing and handling large date sets, relying heavily
+on statistics, computer science and mathematics.  The field is rather
+new and developing rapidly. 
+
+Popular software packages written in Python for ML are
+
+* "Scikit-learn":"http://scikit-learn.org/stable/", 
+* "Tensorflow":"https://www.tensorflow.org/",
+* "PyTorch":"http://pytorch.org/"
+* "Keras":"https://keras.io/",
+and more. These are all freely available at their respective GitHub sites. They 
+encompass communities of developers in the thousands or more. And the number
+of code developers and contributors keeps increasing.
+!eblock
+
+!split
+===== Lots of room for creativity =====
+!bblock
+Not all the
+algorithms and methods can be given a rigorous mathematical
+justification, opening up thereby for experimenting
+and trial and error and thereby exciting new developments. 
+!eblock
+
+!bblock
+A solid command of linear algebra, multivariate theory, 
+probability theory, statistical data analysis, optimization algorithms, 
+understanding errors and Monte Carlo methods is important in order to understand many of the 
+various algorithms and methods. 
+!eblock
+
+_Job market, a personal statement_: "A familiarity with ML is almost becoming a prerequisite for many of the most exciting employment opportunities":"https://www.analyticsindiamag.com/top-countries-hiring-most-number-of-artificial-intelligence-machine-learning-experts/". And add quantum computing and there you are!
+
+
+
+!split
+===== Types of machine learning =====
+
+!bblock
+The approaches to machine learning are many, but are often split into two main categories. 
+In *supervised learning* we know the answer to a problem,
+and let the computer deduce the logic behind it. On the other hand, *unsupervised learning*
+is a method for finding patterns and relationship in data sets without any prior knowledge of the system.
+Some authours also operate with a third category, namely *reinforcement learning*. This is a paradigm 
+of learning inspired by behavioural psychology, where learning is achieved by trial-and-error, 
+solely from rewards and punishment.
+
+Another way to categorize machine learning tasks is to consider the desired output of a system.
+Some of the most common tasks are:
+
+  * Classification: Outputs are divided into two or more classes. The goal is to   produce a model that assigns inputs into one of these classes. An example is to identify  digits based on pictures of hand-written ones. Classification is typically supervised learning.
+
+  * Regression: Finding a functional relationship between an input data set and a reference data set.   The goal is to construct a function that maps input data to continuous output values.
+
+  * Clustering: Data are divided into groups with certain common traits, without knowing the different groups beforehand.  It is thus a form of unsupervised learning.
+!eblock
+
+
+!split
+===== Machine learning and nuclear theory: Why? =====
+
+o ML tools can help us to speed up the scientific process cycle and hence facilitate discoveries
+o Enabling fast emulation for big simulations
+o Revealing the information content of measured observables w.r.t. theory
+o Identifying crucial experimental data for better constraining theory
+o Providing meaningful input to applications and planned measurements
+o ML tools can help us to reveal the structure of our models
+o Parameter estimation with heterogeneous/multi-scale datasets
+o Model reduction
+o ML tools can help us to provide predictive capability
+o Theoretical results often involve ultraviolet  and infrared extrapolations due to Hilbert-space truncations 
+o Uncertainty quantification essential
+o Theoretical models are often applied to entirely new nuclear systems and conditions that are not accessible to experiment
+
+
+!split
+=====  The plethora  of machine learning algorithms/methods =====
+
+o Deep learning: Neural Networks (NN), Convolutional NN, Recurrent NN, Boltzmann machines, autoencoders and variational autoencoders  and generative adversarial networks 
+o Bayesian statistics and Bayesian Machine Learning, Bayesian experimental design, Bayesian Regression models, Bayesian neural networks, Gaussian processes and much more
+o Dimensionality reduction (Principal component analysis), Clustering Methods and more
+o Ensemble Methods, Random forests, bagging and voting methods, gradient boosting approaches 
+o Linear and logistic regression, Kernel methods, support vector machines and more
+o Reinforcement Learning 
+o and more
+!split
+===== Examples of Machine Learning methods and applications in nuclear physics =====
+
+!bblock
+* _Machine  learning  for  data  mining:_ Oftentimes,  it  is necessary to be able to accurately calculate observables that have not been measured, to supplement the existing databases.
+* _Nuclear  density  functional   theory:_ Energy density functional calibration   involving Bayesian optimization  and NN  ML. A promising avenue for ML applications is the emulation of DFT results.
+* _Nuclear properties with ML:_ Improving predictive power of nuclear models by emulating model residuals.
+* _Effective field theory and A-body systems:_ Truncation errors and low-energy coupling constant calibration, nucleon-nucleon scattering calculations, variational calculations with ANN for light nuclei, NN extrapolation of nuclear structure observables
+* _Nuclear  shell  model  UQ:_ ML methods  have  been  used  to  provide  UQ  of  configuration  interaction  calculations.
+!eblock
+
+
+
+
+
+!split
+===== Examples of Machine Learning methods and applications in nuclear physics, continues =====
+
+!bblock
+* _Low-energy nuclear reactions UQ:_ Bayesian optimization studies of the nucleon-nucleus optical potential, R-matrix analyses,  and  statistical spatial networks to study patterns in nuclear reaction networks.
+* _Neutron star properties and nuclear matter equation of state:_ constraining the equation of state by properties on neutron stars and selected properties of finite nuclei
+* _Experimental design:_ Bayesian ML provides a framework  to  maximize  the  success  of  on  experiment  based on  the  best  information  available  on existing  data, experimental conditions, and theoretical models.
+!eblock
+
+
+
+
+
+
+!split
+===== More examples =====
+
+
+The large amount of degrees of freedom pertain to both theory and experiment in nuclear physics. With increasingly complicated experiments that produce large amounts data, automated classification of events becomes increasingly important. Here, deep learning methods offer a plethora of interesting research avenues. 
+
+!bblock
+* Reconstruction of particle trajectories or classification of events are typical examples where ML methods are being used. However, since these data can often be extremely noisy, the precision necessary for discovery in physics requires algorithmic improvements. Research along such directions, interfacing nuclear physics with AI/ML is expected to play a significant role in physics discoveries related to new facilities.  The treatment of corrupted data in imaging and image processing is also a relevant topic. 
+
+* Design of detectors represents an important area of applications for ML/AI methods in nuclear physics.
+
+!eblock
+
+
+!split
+===== And more   =====
+
+!bblock
+* An important application of AI/ML methods is to improve the estimation of bias or uncertainty due to the introduction of or lack of physical constraints in various theoretical models.
+
+* In theory, we expect to use AI/ML algorithms and methods to improve our knowledge about  correlations of physical model parameters in data for quantum many-body systems. Deep learning methods show great promise in circumventing the exploding dimensionalities encountered in quantum mechanical many-body studies. 
+
+* Merging a frequentist approach (the standard path in ML theory) with a Bayesian approach, has the potential to infer better probabilitity distributions and error estimates. As an example, methods for fast Monte-Carlo- based Bayesian computation of nuclear density functionals show great promise in providing a better understanding 
+
+* Machine Learning and Quantum Computing is a very interesting avenue to explore. See for example talk of "Sofia Vallecorsa":"https://www.youtube.com/watch?v=7WPKv1Q57os&list=PLUPPQ1TVXK7uHwCTccWMBud-zLyvAf8A2&index=5&ab_channel=ECTstar".
+!eblock
+
+
+
+!split
+===== Selected references =====
+!bblock
+* "Mehta et al.":"https://arxiv.org/abs/1803.08823" and "Physics Reports (2019)":"https://www.sciencedirect.com/science/article/pii/S0370157319300766?via%3Dihub".
+* "Machine Learning and the Physical Sciences by Carleo et al":"https://link.aps.org/doi/10.1103/RevModPhys.91.045002"
+* "Ab initio solution of the many-electron Schrödinger equation with deep neural networks by Pfau et al.":"https://journals.aps.org/prresearch/abstract/10.1103/PhysRevResearch.2.033429"
+* "Report from the A.I. For Nuclear Physics  Workshop by Bedaque et al., Eur J. Phys. A 57, (2021)":"https://link.springer.com/article/10.1140/epja/s10050-020-00290-x"
+* "Particle Data Group summary on ML methods":"https://pdg.lbl.gov/2021/reviews/rpp2021-rev-machine-learning.pdf"
+* And the BAND collaboration at URL:"https://bandframework.github.io/"
+!eblock
+
+
+
+
+
+!split
+===== What are the basic ingredients? =====
+!bblock
+Almost every problem in ML and data science starts with the same ingredients:
+* The dataset $\mathbf{x}$ (could be some observable quantity of the system we are studying)
+* A model which is a function of a set of parameters $\mathbf{\alpha}$ that relates to the dataset, say a likelihood  function $p(\mathbf{x}\vert \mathbf{\alpha})$ or just a simple model $f(\mathbf{\alpha})$
+* A so-called _loss/cost/risk_ function $\mathcal{C} (\mathbf{x}, f(\mathbf{\alpha}))$ which allows us to decide how well our model represents the dataset. 
+
+We seek to minimize the function $\mathcal{C} (\mathbf{x}, f(\mathbf{\alpha}))$ by finding the parameter values which minimize $\mathcal{C}$. This leads to  various minimization algorithms. It may surprise many, but at the heart of all machine learning algortihms there is an optimization problem. 
+!eblock
+
+
+
+!split
+===== "Unsupervised learning in nuclear physics, Argon-46 by Solli, Bazin, Kuchera, MHJ, Strauss.":"https://www.sciencedirect.com/science/article/abs/pii/S0168900221004460?via%3Dihub" =====
+
+Two- and three-dimensional representations of two events from the
+Argon-46 experiment. Each row is one event in two projections,
+where the color intensity of each point indicates higher charge values
+recorded by the detector. The bottom row illustrates a carbon event with
+a large fraction of noise, while the top row shows a proton event
+almost free of noise. 
+
+FIGURE: [figures/examples_raw.png, width=500 frac=0.6]
+
+
+!split
+===== Quantum Monte Carlo and deep learning =====
+!bblock
+Given a hamiltonian $H$ and a trial wave function $\Psi_T$, the variational principle states that the expectation value of $\langle H \rangle$, defined through 
+!bt
+\[
+   \langle E \rangle =
+   \frac{\int d\bm{R}\Psi^{\ast}_T(\bm{R})H(\bm{R})\Psi_T(\bm{R})}
+        {\int d\bm{R}\Psi^{\ast}_T(\bm{R})\Psi_T(\bm{R})},
+\]
+!et
+is an upper bound to the ground state energy $E_0$ of the hamiltonian $H$, that is 
+!bt
+\[
+    E_0 \le \langle E \rangle.
+\]
+!et
+In general, the integrals involved in the calculation of various  expectation values  are multi-dimensional ones. Traditional integration methods such as the Gauss-Legendre will not be adequate for say the  computation of the energy of a many-body system.  _Basic philosophy: Let a neural network find the optimal wave function_
+!eblock
+
+!split
+===== Monte Carlo methods and Neural Networks =====
+
+"Machine Learning and the Deuteron by Kebble and Rios":"https://www.sciencedirect.com/science/article/pii/S0370269320305463?via%3Dihub" and
+"Variational Monte Carlo calculations of $A\le 4$ nuclei with an artificial neural-network correlator ansatz by Adams et al.":"https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.127.022502"
+
+_Adams et al_:
+
+!bt
+\begin{align}
+H_{LO} &=-\sum_i \frac{{\vec{\nabla}_i^2}}{2m_N}
++\sum_{i<j} {\left(C_1  + C_2\, \vec{\sigma_i}\cdot\vec{\sigma_j}\right)
+e^{-r_{ij}^2\Lambda^2 / 4 }}
+\nonumber\\
+&+D_0 \sum_{i<j<k} \sum_{\text{cyc}}
+{e^{-\left(r_{ik}^2+r_{ij}^2\right)\Lambda^2/4}}\,,
+\end{align}
+!et
+
+where $m_N$ is the mass of the nucleon, $\vec{\sigma_i}$ is the Pauli
+matrix acting on nucleon $i$, and $\sum_{\text{cyc}}$ stands for the
+cyclic permutation of $i$, $j$, and $k$. The low-energy constants
+$C_1$ and $C_2$ are fit to the deuteron binding energy and to the
+neutron-neutron scattering length
+
+
+
+!split
+===== Deep learning neural networks, "Variational Monte Carlo calculations of $A\le 4$ nuclei with an artificial neural-network correlator ansatz by Adams et al.":"https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.127.022502" =====
+
+
+An appealing feature of the neural network ansatz is that it is more general than the more conventional product of two-
+and three-body spin-independent Jastrow functions
+!bt
+\begin{align}
+|\Psi_V^J \rangle = \prod_{i<j<k} \Big( 1-\sum_{\text{cyc}} u(r_{ij}) u(r_{jk})\Big) \prod_{i<j} f(r_{ij}) | \Phi\rangle\,,
+\end{align}
+!et
+which is commonly used for nuclear Hamiltonians that do not contain tensor and spin-orbit terms.
+The above function is replaced by a four-layer Neural Network. 
+
+FIGURE: [figures/energyconvergence.pdf, width=700 frac=0.9]
+
+
+!split
+=====  "Gnech et al, Variational Monte Carlo calculations of $A\le 6$ nuclei Few Body Systems 63, (2022)":"https://link.springer.com/article/10.1007/s00601-021-01706-0" =====
+
+FIGURE: [figures/pointnucleondensity.png, width=700 frac=0.9]
+
+
+!split
+===== The electron gas in three dimensions with $N=14$ electrons (Wigner-Seitz radius $r_s=2$ Ry) =====
+Jane Kim, Bryce Fore, Alessandro Lovato and MHJ, in preparation
+!bblock
+FIGURE: [figures/elgasnew.pdf, width=700 frac=0.9]
+!eblock
+
+
+!split
+===== Neutron matter with $N=14$ neutron =====
+Jane Kim, Bryce Fore, Alessandro Lovato and MHJ, in preparation
+!bblock
+FIGURE: [figures/nmatter.png, width=700 frac=0.9]
+!eblock
+
+!split
+===== Electrons in a harmonic oscillator trap in two dimensions =====
+
+The Hamiltonian of the quantum dot is given by
+!bt
+\[ \hat{H} = \hat{H}_0 + \hat{V}, 
+\]
+!et
+where $\hat{H}_0$ is the many-body HO Hamiltonian, and $\hat{V}$ is the
+inter-electron Coulomb interactions. In dimensionless units,
+!bt
+\[ \hat{V}= \sum_{i < j}^N \frac{1}{r_{ij}},
+\]
+!et
+with $r_{ij}=\sqrt{\mathbf{r}_i^2 - \mathbf{r}_j^2}$.
+
+This leads to the  separable Hamiltonian, with the relative motion part given by ($r_{ij}=r$)
+!bt
+\[ 
+\hat{H}_r=-\nabla^2_r + \frac{1}{4}\omega^2r^2+ \frac{1}{r},
+\]
+!et
+plus a standard Harmonic Oscillator problem  for the center-of-mass motion.
+This system has analytical solutions in two and three dimensions ("M. Taut 1993 and 1994":"https://journals.aps.org/pra/abstract/10.1103/PhysRevA.48.3561"). 
+
+
+!split
+===== Quantum dots and Boltzmann machines, onebody densities $N=6$, $\hbar\omega=0.1$ a.u. =====
+
+!bblock
+FIGURE: [figures/OB6hw01.png, width=700 frac=0.9]
+!eblock
+
+
+!split
+===== Onebody densities $N=30$, $\hbar\omega=1.0$ a.u. =====
+!bblock
+FIGURE: [figures/OB30hw1.png, width=700 frac=0.9]
+!eblock
+
+
+!split
+===== Onebody densities $N=30$, $\hbar\omega=0.1$ a.u. =====
+!bblock
+FIGURE: [figures/OB30hw01.png, width=700 frac=0.9]
+!eblock
+
+
+
+!split
+===== Extrapolations and model interpretability  =====
+
+When you hear phrases like _predictions and estimations_ and
+_correlations and causations_, what do you think of?  May be you think
+of the difference between classifying new data points and generating
+new data points.
+Or perhaps you consider that correlations represent some kind of symmetric statements like
+if $A$ is correlated with $B$, then $B$ is correlated with
+$A$. Causation on the other hand is directional, that is if $A$ causes $B$, $B$ does not
+necessarily cause $A$.
+
+
+!split
+===== Physics based statistical learning and data analysis =====
+
+The above concepts are in some sense the difference between _old-fashioned_ machine
+learning and statistics and Bayesian learning. In machine learning and prediction based
+tasks, we are often interested in developing algorithms that are
+capable of learning patterns from given data in an automated fashion,
+and then using these learned patterns to make predictions or
+assessments of newly given data. In many cases, our primary concern
+is the quality of the predictions or assessments, and we are less
+concerned about the underlying patterns that were learned in order
+to make these predictions.
+
+Physics based statistical learning points however to approaches that give us both predictions and correlations as well as being able to produce error estimates and understand causations.  This leads us to the very interesting field of Bayesian statistics.
+
+
+
+!split
+===== Bayes' Theorem =====
+
+Bayes' theorem
+!bt
+\[
+p(X\vert Y)= \frac{p(X,Y)}{\sum_{i=0}^{n-1}p(Y\vert X=x_i)p(x_i)}=\frac{p(Y\vert X)p(X)}{\sum_{i=0}^{n-1}p(Y\vert X=x_i)p(x_i)}.
+\]
+!et
+
+
+The quantity $p(Y\vert X)$ on the right-hand side of the theorem is
+evaluated for the observed data $Y$ and can be viewed as a function of
+the parameter space represented by $X$. This function is not
+necessarily normalized and is normally called the likelihood function.
+
+The function $p(X)$ on the right hand side is called the prior while the function on the left hand side is the called the posterior probability. The denominator on the right hand side serves as a normalization factor for the posterior distribution.
+
+
+!split
+===== Folding and unfolding and response functions =====
+
+A good read on folding/unfolding is "An Unfolding Method for High Energy Physics Experiments by Volker Blobel":"https://arxiv.org/abs/hep-ex/0208022"
+
+See notebook details and "examples of simple data reconstructed with Gaussian processes":"https://github.com/adambozson/gp-unfold/blob/master/Falling%20exponential.ipynb".
+
+
+
+!split
+===== Quantified limits of the nuclear landscape =====
+
+"Neufcourt et al., Phys. Rev. C 101, 044307 (2020)":"https://journals.aps.org/prc/abstract/10.1103/PhysRevC.101.044307"
+Predictions made with eleven global mass model and Bayesian model averaging
+
+FIGURE: [figures/landscape.jpg, width=800 frac=1.0]
+
+!split
+===== Constraining the equation of state for dense nuclear matter =====
+
+"G. Raaijmakers et al., Constraining the Dense Matter Equation of State with Joint Analysis of NICER and LIGO/Virgo Measurements, AJ Letters, 893, L21 (2020)":"https://iopscience.iop.org/article/10.3847/2041-8213/ab822f"
+
+FIGURE: [figures/nstareos.png, width=800 frac=1.0]
+
+!split
+===== Experimental design =====
+
+Beam time and compute cycles are expensive!
+
+* Bayesian experimental design provides a framework in which experiments can be designed using the best experimental and theoretical information available 
+* The utility function is designed to encode the goals of the experiment and the constraints inherent in carrying it out. 
+* Once the utility function and the possible designs have been specified, the optimal design is simply the scenario that  maximizes the expected utility function over the domain of possible designs.
+
+
+FIGURE: [figures/utility.png, width=700 frac=1.0]
+
+
+
+!split
+===== Observations (or conclusions if you prefer) =====
+!bblock
+* Need for AI/Machine Learning in nuclear physics, lots of ongoing activities
+* To solve many complex problems in the field and facilitate discoveries, multidisciplinary efforts efforts are required involving scientists in  nuclear physics, statistics, computational science, and applied math.
+* There is a need for  focused AI/ML learning efforts that will benefit accelerator science and experimental and theoretical programs
+* How do we develop insights, competences, knowledge in statistical learning that can advance our field?
+  * For example: Can we use ML to find out which correlations are relevant and thereby diminish the dimensionality problem in standard many-body  theories?
+  * Can we use AI/ML in detector analysis, accelerator design, analysis of experimental data and more?
+  * Can we use AL/ML to carry out reliable extrapolations by using current experimental knowledge and current theoretical models?
+* The community needs to invest in relevant educational efforts and training of nuclear physicists with knowledge in AI/ML
+* Most likely tons of things we have forgotten
+!eblock
+
+
+!split
+===== Possible start to raise awareness about ML in our field =====
+!bblock 
+* Make an ML challenge in nuclear physics a la "Learning to discover: the Higgs boson machine learning challenge":"https://home.cern/news/news/computing/higgs-boson-machine-learning-challenge". Alternatively go to kaggle.com at URL:"https://www.kaggle.com/c/higgs-boson"
+* HEP@CERN and HEP in general have made significant impacts in the field of machine learning and AI. Something to learn from
+!eblock
+
+
+!split
+===== Educational initiatives since 2019, FRIB/NSCL (MSU) playing a central role =====
+
+_Please feel free to propose new schools and/or update the list here._
+
+!bblock AI/ML courses
+o The FRIB-TA Summer School: Machine Learning Applied to Nuclear Physics, FRIB/NSCL (MSU)from May 20 to 23, 2019; organizers and teachers: Matthew Hirn (MSU), Morten Hjorth-Jensen (MSU) and Michelle Kuchera (Davidson)
+o Nuclear TALENT course Learning from Data: Bayesian Methods and Machine Learning, in York, UK, June 10-28, 2019; Teachers and organizers Christian Forssén, Chalmers University of Technology, Sweden, Dick Furnstahl, Ohio State University, USA, Daniel Phillips, Ohio University, USA
+o Nuclear TALENT School on Machine learning from 22 June 2020 to 03 July 2020. Teachers and organizers: Daniel Bazin (MSU), Morten Hjorth-Jensen (MSU), Michelle Kuchera (Davidson), Sean Liddick (MSU), Raghuram Ramanujan (Davidson)
+o Nuclear TALENT School on Machine learning from 19 July 2021 to  30 July 2021. Teachers and organizers: Daniel Bazin (MSU), Morten Hjorth-Jensen (MSU), Michelle Kuchera (Davidson), Sean Liddick (MSU), Raghuram Ramanujan (Davidson)
+o Intensive course on Machine Learning at FRIB/MSU, summer 2019; teacher Morten Hjorth-Jensen, MSU
+o Four two-week intensive course on Machine Learning for Nuclear Physics held at Ganil, France, 2019, 2020, 2021 and 2022. Teacher and organizer Morten Hjorth-Jensen (MSU)
+o AI4NP Winter School, 11-15 Jan 2021, (Virtual). Organizers Amber Boehnlein (JLAB), Paulo Bedaque (University of Maryland), Tanja Horn (Catholic University of America)
+o 2022? 
+!eblock
+
+
+
+
+
+
+!split
+===== Additional material =====
+
+
+
+
+!split
+===== Addendum: Quantum Monte Carlo Motivation =====
+!bblock
+Given a hamiltonian $H$ and a trial wave function $\Psi_T$, the variational principle states that the expectation value of $\langle H \rangle$, defined through 
+!bt
+\[
+   \langle E \rangle =
+   \frac{\int d\bm{R}\Psi^{\ast}_T(\bm{R})H(\bm{R})\Psi_T(\bm{R})}
+        {\int d\bm{R}\Psi^{\ast}_T(\bm{R})\Psi_T(\bm{R})},
+\]
+!et
+is an upper bound to the ground state energy $E_0$ of the hamiltonian $H$, that is 
+!bt
+\[
+    E_0 \le \langle E \rangle.
+\]
+!et
+In general, the integrals involved in the calculation of various  expectation values  are multi-dimensional ones. Traditional integration methods such as the Gauss-Legendre will not be adequate for say the  computation of the energy of a many-body system.
+!eblock
+
+
+!split
+===== Quantum Monte Carlo Motivation =====
+!bblock Basic steps
+Choose a trial wave function
+$\psi_T(\bm{R})$.
+!bt
+\[
+   P(\bm{R},\bm{\alpha})= \frac{\left|\psi_T(\bm{R},\bm{\alpha})\right|^2}{\int \left|\psi_T(\bm{R},\bm{\alpha})\right|^2d\bm{R}}.
+\]
+!et
+This is our model, or likelihood/probability distribution function  (PDF). It depends on some variational parameters $\bm{\alpha}$.
+The approximation to the expectation value of the Hamiltonian is now 
+!bt
+\[
+   \langle E[\bm{\alpha}] \rangle = 
+   \frac{\int d\bm{R}\Psi^{\ast}_T(\bm{R},\bm{\alpha})H(\bm{R})\Psi_T(\bm{R},\bm{\alpha})}
+        {\int d\bm{R}\Psi^{\ast}_T(\bm{R},\bm{\alpha})\Psi_T(\bm{R},\bm{\alpha})}.
+\]
+!et
+!eblock
+
+
+!split
+===== Quantum Monte Carlo Motivation =====
+!bblock Define a new quantity
+!bt
+\[
+   E_L(\bm{R},\bm{\alpha})=\frac{1}{\psi_T(\bm{R},\bm{\alpha})}H\psi_T(\bm{R},\bm{\alpha}),
+\]
+!et
+called the local energy, which, together with our trial PDF yields
+!bt
+\[
+  \langle E[\bm{\alpha}] \rangle=\int P(\bm{R})E_L(\bm{R},\bm{\alpha}) d\bm{R}\approx \frac{1}{N}\sum_{i=1}^NE_L(\bm{R_i},\bm{\alpha})
+\]
+!et
+with $N$ being the number of Monte Carlo samples.
+!eblock
+
+!split
+===== The trial wave function =====
+!bblock
+We want to perform  a Variational Monte Carlo calculation of the ground state of two electrons in a quantum dot well with different oscillator energies, assuming total spin $S=0$.
+Our trial wave function has the following form
+!bt
+\begin{equation}
+   \psi_{T}(\bm{r}_1,\bm{r}_2) = 
+   C\exp{\left(-\alpha_1\omega(r_1^2+r_2^2)/2\right)}
+   \exp{\left(\frac{r_{12}}{(1+\alpha_2 r_{12})}\right)}, 
+label{eq:trial}
+\end{equation}
+!et
+where the variables $\alpha_1$ and $\alpha_2$ represent our variational parameters.
+
+Why does the trial function look like this? How did we get there? _This is one of our main motivations_ for switching to
+Machine Learning.
+
+!eblock
+
+!split
+===== The correlation part of the wave function =====
+
+To find an ansatz for the correlated part of the wave function, it is useful to rewrite the two-particle
+local energy in terms of the relative and center-of-mass motion.
+Let us denote the distance between the two electrons as
+$r_{12}$. We omit the center-of-mass motion since we are only interested in the case when
+$r_{12} \rightarrow 0$. The contribution from the center-of-mass (CoM) variable $\bm{R}_{\mathrm{CoM}}$
+gives only a finite contribution.
+We focus only on the terms that are relevant for $r_{12}$ and for three dimensions. The relevant local energy operator becomes then (with $l=0$)
+!bt
+\[
+\lim_{r_{12} \rightarrow 0}E_L(R)=
+    \frac{1}{{\cal R}_T(r_{12})}\left(-2\frac{d^2}{dr_{ij}^2}-\frac{4}{r_{ij}}\frac{d}{dr_{ij}}+
+\frac{2}{r_{ij}}\right){\cal R}_T(r_{12}).
+\]
+!et
+In order to avoid divergencies when $r_{12}\rightarrow 0$ we obtain  the so-called _cusp_ condition
+!bt
+\[
+\frac{d {\cal R}_T(r_{12})}{dr_{12}} = \frac{1}{2}
+{\cal R}_T(r_{12})\qquad r_{12}\to 0
+\]
+!et
+
+!split
+===== Resulting ansatz =====
+The above  results in
+!bt
+\[
+{\cal R}_T  \propto \exp{(r_{ij}/2)}, 
+\]
+!et 
+for anti-parallel spins and 
+!bt
+\[
+{\cal R}_T  \propto \exp{(r_{ij}/4)}, 
+\]
+!et
+for anti-parallel spins. 
+This is the so-called cusp condition for the relative motion, resulting in a minimal requirement
+for the correlation part of the wave fuction.
+For general systems containing more than say two electrons, we have this
+condition for each electron pair $ij$.
+
+
+
+
+
+!split
+===== Energy derivatives =====
+!bblock
+To find the derivatives of the local energy expectation value as function of the variational parameters, we can use the chain rule and the hermiticity of the Hamiltonian.  
+
+Let us define (with the notation $\langle E[\bm{\alpha}]\rangle =\langle  E_L\rangle$)
+!bt
+\[
+\bar{E}_{\alpha_i}=\frac{d\langle  E_L\rangle}{d\alpha_i},
+\]
+!et
+as the derivative of the energy with respect to the variational parameter $\alpha_i$
+We define also the derivative of the trial function (skipping the subindex $T$) as 
+!bt
+\[
+\bar{\Psi}_{i}=\frac{d\Psi}{d\alpha_i}.
+\]
+!et  
+!eblock
+
+
+!split
+===== Derivatives of the local energy ===== 
+!bblock
+The elements of the gradient of the local energy are then (using the chain rule and the hermiticity of the Hamiltonian)
+!bt
+\[
+\bar{E}_{i}= 2\left( \langle \frac{\bar{\Psi}_{i}}{\Psi}E_L\rangle -\langle \frac{\bar{\Psi}_{i}}{\Psi}\rangle\langle E_L \rangle\right).
+\]
+!et
+From a computational point of view it means that you need to compute the expectation values of 
+!bt
+\[
+\langle \frac{\bar{\Psi}_{i}}{\Psi}E_L\rangle,
+\]
+!et
+and
+!bt
+\[
+\langle \frac{\bar{\Psi}_{i}}{\Psi}\rangle\langle E_L\rangle
+\]
+!et
+These integrals are evaluted using MC intergration (with all its possible error sources). 
+We can then use methods like stochastic gradient or other minimization methods to find the optimal variational parameters (I don't discuss this topic here, but these methods are very important in ML). 
+!eblock
+
+!split
+===== How do we define our cost function? =====
+!bblock
+We have a model, our likelihood function. 
+
+How should we define the cost function?
+
+!eblock
+
+!split
+===== Meet the variance and its derivatives  =====
+!bblock Why the variance?
+Suppose the trial function (our model) is the exact wave function. The action of the hamiltionan
+on the wave function
+!bt
+\[
+   H\Psi = \mathrm{constant}\times \Psi,
+\]
+!et
+The integral which defines various 
+expectation values involving moments of the hamiltonian becomes then
+!bt
+\[
+   \langle E^n \rangle =   \langle H^n \rangle =
+   \frac{\int d\bm{R}\Psi^{\ast}(\bm{R})H^n(\bm{R})\Psi(\bm{R})}
+        {\int d\bm{R}\Psi^{\ast}(\bm{R})\Psi(\bm{R})}=
+\mathrm{constant}\times\frac{\int d\bm{R}\Psi^{\ast}(\bm{R})\Psi(\bm{R})}
+        {\int d\bm{R}\Psi^{\ast}(\bm{R})\Psi(\bm{R})}=\mathrm{constant}.
+\]
+!et
+_This gives an important information: If I want the variance, the exact wave function leads to zero variance!_
+The variance is defined as 
+!bt
+\[
+\sigma_E = \langle E^2\rangle - \langle E\rangle^2.
+\]
+!et
+Variation is then performed by minimizing both the energy and the variance.
+
+!eblock
+
+
+!split
+===== The variance defines the cost function  =====
+!bblock 
+We can then take the derivatives of 
+!bt
+\[
+\sigma_E = \langle E^2\rangle - \langle E\rangle^2,
+\]
+!et
+with respect to the variational parameters. The derivatives of the variance can then be used to defined the
+so-called Hessian matrix, which in turn allows us to use minimization methods like Newton's method or 
+standard gradient methods. 
+
+This leads to however a more complicated expression, with obvious errors when evaluating integrals by Monte Carlo integration. Less used, see however "Filippi and Umrigar":"https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.94.150201". The expression becomes complicated
+!bt
+\begin{align}
+\bar{E}_{ij} &= 2\left[ \langle (\frac{\bar{\Psi}_{ij}}{\Psi}+\frac{\bar{\Psi}_{j}}{\Psi}\frac{\bar{\Psi}_{i}}{\Psi})(E_L-\langle E\rangle)\rangle -\langle \frac{\bar{\Psi}_{i}}{\Psi}\rangle\bar{E}_j-\langle \frac{\bar{\Psi}_{j}}{\Psi}\rangle\bar{E}_i\right] \\ \nonumber
+&+\langle \frac{\bar{\Psi}_{i}}{\Psi}E_L{_j}\rangle +\langle \frac{\bar{\Psi}_{j}}{\Psi}E_L{_i}\rangle -\langle \frac{\bar{\Psi}_{i}}{\Psi}\rangle\langle E_L{_j}\rangle \langle \frac{\bar{\Psi}_{j}}{\Psi}\rangle\langle E_L{_i}\rangle.  
+\end{align}
+!et
+
+Evaluating the cost function means having to evaluate the above second derivative of the energy. 
+
+!eblock
+
+
+
+
+
+!split
+===== Why Boltzmann machines? =====
+
+What is known as restricted Boltzmann Machines (RMB) have received a
+lot of attention lately.  One of the major reasons is that they can be
+stacked layer-wise to build deep neural networks that capture
+complicated statistics.
+
+The original RBMs had just one visible layer and a hidden layer, but
+recently so-called Gaussian-binary RBMs have gained quite some
+popularity in imaging since they are capable of modeling continuous
+data that are common to natural images.
+
+Furthermore, they have been used to solve complicated quantum
+mechanical many-particle problems or classical statistical physics
+problems like the Ising and Potts classes of models.
+
+
+
+
+!split
+===== A standard BM setup =====
+
+!bblock
+A standard BM network is divided into a set of observable and visible units $\hat{x}$ and a set of unknown hidden units/nodes $\hat{h}$.
+!eblock
+
+!bblock
+Additionally there can be bias nodes for the hidden and visible layers. These biases are normally set to $1$.
+!eblock
+
+!bblock
+BMs are stackable, meaning we can train a BM which serves as input to another BM. We can construct deep networks for learning complex PDFs. The layers can be trained one after another, a feature which makes them popular in deep learning
+!eblock
+
+However, they are often hard to train. This leads to the introduction of so-called restricted BMs, or RBMS.
+Here we take away all lateral connections between nodes in the visible layer as well as connections between nodes in the hidden layer. The network is illustrated in the figure below.
+
+
+
+!split
+===== The structure of the RBM network =====
+
+FIGURE: [figures/RBM.pdf, width=800 frac=1.0]
+
+
+
+!split
+===== The network =====
+
+_The network layers_:
+  o A function $\mathbf{x}$ that represents the visible layer, a vector of $M$ elements (nodes). This layer represents both what the RBM might be given as training input, and what we want it to be able to reconstruct. This might for example be the pixels of an image, the spin values of the Ising model, or coefficients representing speech.
+  o The function $\mathbf{h}$ represents the hidden, or latent, layer. A vector of $N$ elements (nodes). Also called "feature detectors".
+
+
+!split
+===== Joint distribution =====
+
+The restricted Boltzmann machine is described by a Boltzmann distribution
+!bt
+\begin{align}
+	P_{rbm}(\mathbf{x},\mathbf{h}) = \frac{1}{Z} e^{-\frac{1}{T_0}E(\mathbf{x},\mathbf{h})},
+\end{align}
+!et
+where $Z$ is the normalization constant or partition function, defined as 
+!bt
+\begin{align}
+	Z = \int \int e^{-\frac{1}{T_0}E(\mathbf{x},\mathbf{h})} d\mathbf{x} d\mathbf{h}.
+\end{align}
+!et
+It is common to ignore $T_0$ by setting it to one. 
+
+
+
+
+
+!split
+===== Defining different types of RBMs =====
+
+There are different variants of RBMs, and the differences lie in the types of visible and hidden units we choose as well as in the implementation of the energy function $E(\mathbf{x},\mathbf{h})$. 
+
+!bblock Binary-Binary RBM:
+
+RBMs were first developed using binary units in both the visible and hidden layer. The corresponding energy function is defined as follows:
+!bt
+\begin{align}
+	E(\mathbf{x}, \mathbf{h}) = - \sum_i^M x_i a_i- \sum_j^N b_j h_j - \sum_{i,j}^{M,N} x_i w_{ij} h_j,
+\end{align}
+!et
+where the binary values taken on by the nodes are most commonly 0 and 1.
+!eblock
+!bblock Gaussian-Binary RBM:
+
+Another variant is the RBM where the visible units are Gaussian while the hidden units remain binary:
+!bt
+\begin{align}
+	E(\mathbf{x}, \mathbf{h}) = \sum_i^M \frac{(x_i - a_i)^2}{2\sigma_i^2} - \sum_j^N b_j h_j - \sum_{i,j}^{M,N} \frac{x_i w_{ij} h_j}{\sigma_i^2}. 
+\end{align}
+!et
+!eblock
+
+
+
+
+
+
+!split
+===== Representing the wave function =====
+
+The wavefunction should be a probability amplitude depending on $\bm{x}$. The RBM model is given by the joint distribution of $\bm{x}$ and $\bm{h}$
+!bt
+\begin{align}
+	F_{rbm}(\mathbf{x},\mathbf{h}) = \frac{1}{Z} e^{-\frac{1}{T_0}E(\mathbf{x},\mathbf{h})}.
+\end{align}
+!et
+To find the marginal distribution of $\bm{x}$ we set:
+!bt
+\begin{align}
+	F_{rbm}(\mathbf{x}) &= \sum_\mathbf{h} F_{rbm}(\mathbf{x}, \mathbf{h}) \\
+				&= \frac{1}{Z}\sum_\mathbf{h} e^{-E(\mathbf{x}, \mathbf{h})}.
+\end{align}
+!et
+Now this is what we use to represent the wave function, calling it a neural-network quantum state (NQS)
+!bt
+\begin{align}
+	\Psi (\mathbf{x}) &= F_{rbm}(\mathbf{x}) \\
+	&= \frac{1}{Z}\sum_{\bm{h}} e^{-E(\mathbf{x}, \mathbf{h})} \\
+	&= \frac{1}{Z} \sum_{\{h_j\}} e^{-\sum_i^M \frac{(x_i - a_i)^2}{2\sigma^2} + \sum_j^N b_j h_j + \sum_{i,j}^{M,N} \frac{x_i w_{ij} h_j}{\sigma^2}} \\
+	&= \frac{1}{Z} e^{-\sum_i^M \frac{(x_i - a_i)^2}{2\sigma^2}} \prod_j^N (1 + e^{b_j + \sum_i^M \frac{x_i w_{ij}}{\sigma^2}}). \\
+\end{align}
+!et
+
+!split
+===== Choose the cost/loss function =====
+
+Now we don't necessarily have training data (unless we generate it by
+using some other method). However, what we do have is the variational
+principle which allows us to obtain the ground state wave function by
+minimizing the expectation value of the energy of a trial wavefunction
+(corresponding to the untrained NQS). Similarly to the traditional
+variational Monte Carlo method then, it is the local energy we wish to
+minimize. The gradient to use for the stochastic gradient descent
+procedure is
+
+!bt
+\begin{align}
+	\frac{\partial \langle E_L \rangle}{\partial \theta_i}
+	= 2(\langle E_L \frac{1}{\Psi}\frac{\partial \Psi}{\partial \theta_i} \rangle - \langle E_L \rangle \langle \frac{1}{\Psi}\frac{\partial \Psi}{\partial \theta_i} \rangle ),
+\end{align}
+!et
+where the local energy is given by
+!bt
+\begin{align}
+	E_L = \frac{1}{\Psi} \hat{\mathbf{H}} \Psi.
+\end{align}
+!et
+
+
