@@ -64,10 +64,11 @@ doconce format html TriumfScienceWeek.do.txt --html_style=bootstrap --pygments_h
                2,
                None,
                'types-of-machine-learning'),
-              ('Machine learning and nuclear theory: Why?',
+              ('Main categories', 2, None, 'main-categories'),
+              ('Machine learning and nuclear theory (my bias): Why?',
                2,
                None,
-               'machine-learning-and-nuclear-theory-why'),
+               'machine-learning-and-nuclear-theory-my-bias-why'),
               ('The plethora  of machine learning algorithms/methods',
                2,
                None,
@@ -89,12 +90,10 @@ doconce format html TriumfScienceWeek.do.txt --html_style=bootstrap --pygments_h
                2,
                None,
                'what-are-the-basic-ingredients'),
-              ('"Unsupervised learning in nuclear physics, Argon-46 by Solli, '
-               'Bazin, Kuchera, MHJ, '
-               'Strauss.":"https://www.sciencedirect.com/science/article/abs/pii/S0168900221004460?via%3Dihub"',
+              ('Argon-46 by Solli et al., NIMA 1010, 165461 (2021)',
                2,
                None,
-               'unsupervised-learning-in-nuclear-physics-argon-46-by-solli-bazin-kuchera-mhj-strauss-https-www-sciencedirect-com-science-article-abs-pii-s0168900221004460-via-3dihub'),
+               'argon-46-by-solli-et-al-nima-1010-165461-2021'),
               ('Quantum Monte Carlo and deep learning',
                2,
                None,
@@ -110,21 +109,27 @@ doconce format html TriumfScienceWeek.do.txt --html_style=bootstrap --pygments_h
                2,
                None,
                'deep-learning-neural-networks-variational-monte-carlo-calculations-of-a-le-4-nuclei-with-an-artificial-neural-network-correlator-ansatz-by-adams-et-al-https-journals-aps-org-prl-abstract-10-1103-physrevlett-127-022502'),
+              ('Explicit results', 2, None, 'explicit-results'),
               ('"Dilute neutron star matter from neural-network quantum states '
                'by Fore et al, Physical Review Research 5, 033062 '
-               '(2023)":"https://journals.aps.org/prresearch/pdf/10.1103/PhysRevResearch.5.033062"',
+               '(2023)":"https://journals.aps.org/prresearch/pdf/10.1103/PhysRevResearch.5.033062" '
+               'at density $\\rho=0.04$ fm$^{-3}$',
                2,
                None,
-               'dilute-neutron-star-matter-from-neural-network-quantum-states-by-fore-et-al-physical-review-research-5-033062-2023-https-journals-aps-org-prresearch-pdf-10-1103-physrevresearch-5-033062'),
+               'dilute-neutron-star-matter-from-neural-network-quantum-states-by-fore-et-al-physical-review-research-5-033062-2023-https-journals-aps-org-prresearch-pdf-10-1103-physrevresearch-5-033062-at-density-rho-0-04-fm-3'),
               ('The electron gas in three dimensions with $N=14$ electrons '
-               '(Wigner-Seitz radius $r_s=2$ a.u.)',
+               '(Wigner-Seitz radius $r_s=2$ a.u.), "Gabriel Pescia, Jane Kim '
+               'et al. '
+               'arXiv.2305.07240,":"https://doi.org/10.48550/arXiv.2305.07240"',
                2,
                None,
-               'the-electron-gas-in-three-dimensions-with-n-14-electrons-wigner-seitz-radius-r-s-2-a-u'),
-              ('Electrons in a harmonic oscillator trap in two dimensions',
+               'the-electron-gas-in-three-dimensions-with-n-14-electrons-wigner-seitz-radius-r-s-2-a-u-gabriel-pescia-jane-kim-et-al-arxiv-2305-07240-https-doi-org-10-48550-arxiv-2305-07240'),
+              ('"Efficient solutions of fermionic systems using artificial '
+               'neural networks, Nordhagen et al, Frontiers in Physics 11, '
+               '2023":"https://doi.org/10.3389/fphy.2023.1061580"',
                2,
                None,
-               'electrons-in-a-harmonic-oscillator-trap-in-two-dimensions'),
+               'efficient-solutions-of-fermionic-systems-using-artificial-neural-networks-nordhagen-et-al-frontiers-in-physics-11-2023-https-doi-org-10-3389-fphy-2023-1061580'),
               ('Quantum dots and Boltzmann machines, onebody densities $N=6$, '
                '$\\hbar\\omega=0.1$ a.u.',
                2,
@@ -146,10 +151,14 @@ doconce format html TriumfScienceWeek.do.txt --html_style=bootstrap --pygments_h
                2,
                None,
                'quantified-limits-of-the-nuclear-landscape'),
-              ('Observations (or conclusions if you prefer)',
+              ('Observations and perspectives',
                2,
                None,
-               'observations-or-conclusions-if-you-prefer'),
+               'observations-and-perspectives'),
+              ('How can we use ML in Nuclear Science?',
+               2,
+               None,
+               'how-can-we-use-ml-in-nuclear-science'),
               ('Possible start to raise awareness about ML in our field',
                2,
                None,
@@ -253,48 +262,51 @@ MathJax.Hub.Config({
      <!-- navigation toc: --> <li><a href="._TriumfScienceWeek-bs007.html#machine-learning-and-physics" style="font-size: 80%;">Machine Learning and Physics</a></li>
      <!-- navigation toc: --> <li><a href="._TriumfScienceWeek-bs008.html#lots-of-room-for-creativity" style="font-size: 80%;">Lots of room for creativity</a></li>
      <!-- navigation toc: --> <li><a href="._TriumfScienceWeek-bs009.html#types-of-machine-learning" style="font-size: 80%;">Types of machine learning</a></li>
-     <!-- navigation toc: --> <li><a href="._TriumfScienceWeek-bs010.html#machine-learning-and-nuclear-theory-why" style="font-size: 80%;">Machine learning and nuclear theory: Why?</a></li>
-     <!-- navigation toc: --> <li><a href="._TriumfScienceWeek-bs011.html#the-plethora-of-machine-learning-algorithms-methods" style="font-size: 80%;">The plethora  of machine learning algorithms/methods</a></li>
-     <!-- navigation toc: --> <li><a href="._TriumfScienceWeek-bs012.html#examples-of-machine-learning-methods-and-applications-in-nuclear-physics" style="font-size: 80%;">Examples of Machine Learning methods and applications in nuclear physics</a></li>
-     <!-- navigation toc: --> <li><a href="._TriumfScienceWeek-bs013.html#examples-of-machine-learning-methods-and-applications-in-nuclear-physics-continues" style="font-size: 80%;">Examples of Machine Learning methods and applications in nuclear physics, continues</a></li>
-     <!-- navigation toc: --> <li><a href="._TriumfScienceWeek-bs014.html#more-examples" style="font-size: 80%;">More examples</a></li>
-     <!-- navigation toc: --> <li><a href="._TriumfScienceWeek-bs015.html#and-more" style="font-size: 80%;">And more</a></li>
-     <!-- navigation toc: --> <li><a href="._TriumfScienceWeek-bs016.html#selected-references" style="font-size: 80%;">Selected references</a></li>
-     <!-- navigation toc: --> <li><a href="._TriumfScienceWeek-bs017.html#what-are-the-basic-ingredients" style="font-size: 80%;">What are the basic ingredients?</a></li>
-     <!-- navigation toc: --> <li><a href="._TriumfScienceWeek-bs018.html#unsupervised-learning-in-nuclear-physics-argon-46-by-solli-bazin-kuchera-mhj-strauss-https-www-sciencedirect-com-science-article-abs-pii-s0168900221004460-via-3dihub" style="font-size: 80%;">"Unsupervised learning in nuclear physics, Argon-46 by Solli, Bazin, Kuchera, MHJ, Strauss.":"https://www.sciencedirect.com/science/article/abs/pii/S0168900221004460?via%3Dihub"</a></li>
-     <!-- navigation toc: --> <li><a href="._TriumfScienceWeek-bs019.html#quantum-monte-carlo-and-deep-learning" style="font-size: 80%;">Quantum Monte Carlo and deep learning</a></li>
-     <!-- navigation toc: --> <li><a href="._TriumfScienceWeek-bs020.html#monte-carlo-methods-and-neural-networks" style="font-size: 80%;">Monte Carlo methods and Neural Networks</a></li>
-     <!-- navigation toc: --> <li><a href="._TriumfScienceWeek-bs021.html#deep-learning-neural-networks-variational-monte-carlo-calculations-of-a-le-4-nuclei-with-an-artificial-neural-network-correlator-ansatz-by-adams-et-al-https-journals-aps-org-prl-abstract-10-1103-physrevlett-127-022502" style="font-size: 80%;">Deep learning neural networks, "Variational Monte Carlo calculations of \( A\le 4 \) nuclei with an artificial neural-network correlator ansatz by Adams et al.":"https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.127.022502"</a></li>
-     <!-- navigation toc: --> <li><a href="._TriumfScienceWeek-bs022.html#dilute-neutron-star-matter-from-neural-network-quantum-states-by-fore-et-al-physical-review-research-5-033062-2023-https-journals-aps-org-prresearch-pdf-10-1103-physrevresearch-5-033062" style="font-size: 80%;">"Dilute neutron star matter from neural-network quantum states by Fore et al, Physical Review Research 5, 033062 (2023)":"https://journals.aps.org/prresearch/pdf/10.1103/PhysRevResearch.5.033062"</a></li>
-     <!-- navigation toc: --> <li><a href="._TriumfScienceWeek-bs023.html#the-electron-gas-in-three-dimensions-with-n-14-electrons-wigner-seitz-radius-r-s-2-a-u" style="font-size: 80%;">The electron gas in three dimensions with \( N=14 \) electrons (Wigner-Seitz radius \( r_s=2 \) a.u.)</a></li>
-     <!-- navigation toc: --> <li><a href="._TriumfScienceWeek-bs024.html#electrons-in-a-harmonic-oscillator-trap-in-two-dimensions" style="font-size: 80%;">Electrons in a harmonic oscillator trap in two dimensions</a></li>
-     <!-- navigation toc: --> <li><a href="._TriumfScienceWeek-bs025.html#quantum-dots-and-boltzmann-machines-onebody-densities-n-6-hbar-omega-0-1-a-u" style="font-size: 80%;">Quantum dots and Boltzmann machines, onebody densities \( N=6 \), \( \hbar\omega=0.1 \) a.u.</a></li>
-     <!-- navigation toc: --> <li><a href="._TriumfScienceWeek-bs026.html#onebody-densities-n-30-hbar-omega-1-0-a-u" style="font-size: 80%;">Onebody densities \( N=30 \), \( \hbar\omega=1.0 \) a.u.</a></li>
-     <!-- navigation toc: --> <li><a href="._TriumfScienceWeek-bs027.html#onebody-densities-n-30-hbar-omega-0-1-a-u" style="font-size: 80%;">Onebody densities \( N=30 \), \( \hbar\omega=0.1 \) a.u.</a></li>
-     <!-- navigation toc: --> <li><a href="._TriumfScienceWeek-bs028.html#folding-and-unfolding-and-response-functions" style="font-size: 80%;">Folding and unfolding and response functions</a></li>
-     <!-- navigation toc: --> <li><a href="._TriumfScienceWeek-bs029.html#quantified-limits-of-the-nuclear-landscape" style="font-size: 80%;">Quantified limits of the nuclear landscape</a></li>
-     <!-- navigation toc: --> <li><a href="._TriumfScienceWeek-bs030.html#observations-or-conclusions-if-you-prefer" style="font-size: 80%;">Observations (or conclusions if you prefer)</a></li>
-     <!-- navigation toc: --> <li><a href="._TriumfScienceWeek-bs031.html#possible-start-to-raise-awareness-about-ml-in-our-field" style="font-size: 80%;">Possible start to raise awareness about ML in our field</a></li>
-     <!-- navigation toc: --> <li><a href="._TriumfScienceWeek-bs032.html#additional-material" style="font-size: 80%;">Additional material</a></li>
-     <!-- navigation toc: --> <li><a href="._TriumfScienceWeek-bs033.html#addendum-quantum-monte-carlo-motivation" style="font-size: 80%;">Addendum: Quantum Monte Carlo Motivation</a></li>
-     <!-- navigation toc: --> <li><a href="._TriumfScienceWeek-bs035.html#quantum-monte-carlo-motivation" style="font-size: 80%;">Quantum Monte Carlo Motivation</a></li>
-     <!-- navigation toc: --> <li><a href="._TriumfScienceWeek-bs035.html#quantum-monte-carlo-motivation" style="font-size: 80%;">Quantum Monte Carlo Motivation</a></li>
-     <!-- navigation toc: --> <li><a href="._TriumfScienceWeek-bs036.html#the-trial-wave-function" style="font-size: 80%;">The trial wave function</a></li>
-     <!-- navigation toc: --> <li><a href="._TriumfScienceWeek-bs037.html#the-correlation-part-of-the-wave-function" style="font-size: 80%;">The correlation part of the wave function</a></li>
-     <!-- navigation toc: --> <li><a href="._TriumfScienceWeek-bs038.html#resulting-ansatz" style="font-size: 80%;">Resulting ansatz</a></li>
-     <!-- navigation toc: --> <li><a href="._TriumfScienceWeek-bs039.html#energy-derivatives" style="font-size: 80%;">Energy derivatives</a></li>
-     <!-- navigation toc: --> <li><a href="._TriumfScienceWeek-bs040.html#derivatives-of-the-local-energy" style="font-size: 80%;">Derivatives of the local energy</a></li>
-     <!-- navigation toc: --> <li><a href="._TriumfScienceWeek-bs041.html#how-do-we-define-our-cost-function" style="font-size: 80%;">How do we define our cost function?</a></li>
-     <!-- navigation toc: --> <li><a href="._TriumfScienceWeek-bs042.html#meet-the-variance-and-its-derivatives" style="font-size: 80%;">Meet the variance and its derivatives</a></li>
-     <!-- navigation toc: --> <li><a href="._TriumfScienceWeek-bs043.html#the-variance-defines-the-cost-function" style="font-size: 80%;">The variance defines the cost function</a></li>
-     <!-- navigation toc: --> <li><a href="._TriumfScienceWeek-bs044.html#why-boltzmann-machines" style="font-size: 80%;">Why Boltzmann machines?</a></li>
-     <!-- navigation toc: --> <li><a href="._TriumfScienceWeek-bs045.html#a-standard-bm-setup" style="font-size: 80%;">A standard BM setup</a></li>
-     <!-- navigation toc: --> <li><a href="._TriumfScienceWeek-bs046.html#the-structure-of-the-rbm-network" style="font-size: 80%;">The structure of the RBM network</a></li>
-     <!-- navigation toc: --> <li><a href="._TriumfScienceWeek-bs047.html#the-network" style="font-size: 80%;">The network</a></li>
-     <!-- navigation toc: --> <li><a href="._TriumfScienceWeek-bs048.html#joint-distribution" style="font-size: 80%;">Joint distribution</a></li>
-     <!-- navigation toc: --> <li><a href="._TriumfScienceWeek-bs049.html#defining-different-types-of-rbms" style="font-size: 80%;">Defining different types of RBMs</a></li>
-     <!-- navigation toc: --> <li><a href="#representing-the-wave-function" style="font-size: 80%;">Representing the wave function</a></li>
-     <!-- navigation toc: --> <li><a href="._TriumfScienceWeek-bs051.html#choose-the-cost-loss-function" style="font-size: 80%;">Choose the cost/loss function</a></li>
+     <!-- navigation toc: --> <li><a href="._TriumfScienceWeek-bs010.html#main-categories" style="font-size: 80%;">Main categories</a></li>
+     <!-- navigation toc: --> <li><a href="._TriumfScienceWeek-bs011.html#machine-learning-and-nuclear-theory-my-bias-why" style="font-size: 80%;">Machine learning and nuclear theory (my bias): Why?</a></li>
+     <!-- navigation toc: --> <li><a href="._TriumfScienceWeek-bs012.html#the-plethora-of-machine-learning-algorithms-methods" style="font-size: 80%;">The plethora  of machine learning algorithms/methods</a></li>
+     <!-- navigation toc: --> <li><a href="._TriumfScienceWeek-bs013.html#examples-of-machine-learning-methods-and-applications-in-nuclear-physics" style="font-size: 80%;">Examples of Machine Learning methods and applications in nuclear physics</a></li>
+     <!-- navigation toc: --> <li><a href="._TriumfScienceWeek-bs014.html#examples-of-machine-learning-methods-and-applications-in-nuclear-physics-continues" style="font-size: 80%;">Examples of Machine Learning methods and applications in nuclear physics, continues</a></li>
+     <!-- navigation toc: --> <li><a href="._TriumfScienceWeek-bs015.html#more-examples" style="font-size: 80%;">More examples</a></li>
+     <!-- navigation toc: --> <li><a href="._TriumfScienceWeek-bs016.html#and-more" style="font-size: 80%;">And more</a></li>
+     <!-- navigation toc: --> <li><a href="._TriumfScienceWeek-bs017.html#selected-references" style="font-size: 80%;">Selected references</a></li>
+     <!-- navigation toc: --> <li><a href="._TriumfScienceWeek-bs018.html#what-are-the-basic-ingredients" style="font-size: 80%;">What are the basic ingredients?</a></li>
+     <!-- navigation toc: --> <li><a href="._TriumfScienceWeek-bs019.html#argon-46-by-solli-et-al-nima-1010-165461-2021" style="font-size: 80%;">Argon-46 by Solli et al., NIMA 1010, 165461 (2021)</a></li>
+     <!-- navigation toc: --> <li><a href="._TriumfScienceWeek-bs020.html#quantum-monte-carlo-and-deep-learning" style="font-size: 80%;">Quantum Monte Carlo and deep learning</a></li>
+     <!-- navigation toc: --> <li><a href="._TriumfScienceWeek-bs021.html#monte-carlo-methods-and-neural-networks" style="font-size: 80%;">Monte Carlo methods and Neural Networks</a></li>
+     <!-- navigation toc: --> <li><a href="._TriumfScienceWeek-bs022.html#deep-learning-neural-networks-variational-monte-carlo-calculations-of-a-le-4-nuclei-with-an-artificial-neural-network-correlator-ansatz-by-adams-et-al-https-journals-aps-org-prl-abstract-10-1103-physrevlett-127-022502" style="font-size: 80%;">Deep learning neural networks, "Variational Monte Carlo calculations of \( A\le 4 \) nuclei with an artificial neural-network correlator ansatz by Adams et al.":"https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.127.022502"</a></li>
+     <!-- navigation toc: --> <li><a href="._TriumfScienceWeek-bs023.html#explicit-results" style="font-size: 80%;">Explicit results</a></li>
+     <!-- navigation toc: --> <li><a href="._TriumfScienceWeek-bs024.html#dilute-neutron-star-matter-from-neural-network-quantum-states-by-fore-et-al-physical-review-research-5-033062-2023-https-journals-aps-org-prresearch-pdf-10-1103-physrevresearch-5-033062-at-density-rho-0-04-fm-3" style="font-size: 80%;">"Dilute neutron star matter from neural-network quantum states by Fore et al, Physical Review Research 5, 033062 (2023)":"https://journals.aps.org/prresearch/pdf/10.1103/PhysRevResearch.5.033062" at density \( \rho=0.04 \) fm$^{-3}$</a></li>
+     <!-- navigation toc: --> <li><a href="._TriumfScienceWeek-bs025.html#the-electron-gas-in-three-dimensions-with-n-14-electrons-wigner-seitz-radius-r-s-2-a-u-gabriel-pescia-jane-kim-et-al-arxiv-2305-07240-https-doi-org-10-48550-arxiv-2305-07240" style="font-size: 80%;">The electron gas in three dimensions with \( N=14 \) electrons (Wigner-Seitz radius \( r_s=2 \) a.u.), "Gabriel Pescia, Jane Kim et al. arXiv.2305.07240,":"https://doi.org/10.48550/arXiv.2305.07240"</a></li>
+     <!-- navigation toc: --> <li><a href="._TriumfScienceWeek-bs026.html#efficient-solutions-of-fermionic-systems-using-artificial-neural-networks-nordhagen-et-al-frontiers-in-physics-11-2023-https-doi-org-10-3389-fphy-2023-1061580" style="font-size: 80%;">"Efficient solutions of fermionic systems using artificial neural networks, Nordhagen et al, Frontiers in Physics 11, 2023":"https://doi.org/10.3389/fphy.2023.1061580"</a></li>
+     <!-- navigation toc: --> <li><a href="._TriumfScienceWeek-bs027.html#quantum-dots-and-boltzmann-machines-onebody-densities-n-6-hbar-omega-0-1-a-u" style="font-size: 80%;">Quantum dots and Boltzmann machines, onebody densities \( N=6 \), \( \hbar\omega=0.1 \) a.u.</a></li>
+     <!-- navigation toc: --> <li><a href="._TriumfScienceWeek-bs028.html#onebody-densities-n-30-hbar-omega-1-0-a-u" style="font-size: 80%;">Onebody densities \( N=30 \), \( \hbar\omega=1.0 \) a.u.</a></li>
+     <!-- navigation toc: --> <li><a href="._TriumfScienceWeek-bs029.html#onebody-densities-n-30-hbar-omega-0-1-a-u" style="font-size: 80%;">Onebody densities \( N=30 \), \( \hbar\omega=0.1 \) a.u.</a></li>
+     <!-- navigation toc: --> <li><a href="._TriumfScienceWeek-bs030.html#folding-and-unfolding-and-response-functions" style="font-size: 80%;">Folding and unfolding and response functions</a></li>
+     <!-- navigation toc: --> <li><a href="._TriumfScienceWeek-bs031.html#quantified-limits-of-the-nuclear-landscape" style="font-size: 80%;">Quantified limits of the nuclear landscape</a></li>
+     <!-- navigation toc: --> <li><a href="._TriumfScienceWeek-bs032.html#observations-and-perspectives" style="font-size: 80%;">Observations and perspectives</a></li>
+     <!-- navigation toc: --> <li><a href="._TriumfScienceWeek-bs033.html#how-can-we-use-ml-in-nuclear-science" style="font-size: 80%;">How can we use ML in Nuclear Science?</a></li>
+     <!-- navigation toc: --> <li><a href="._TriumfScienceWeek-bs034.html#possible-start-to-raise-awareness-about-ml-in-our-field" style="font-size: 80%;">Possible start to raise awareness about ML in our field</a></li>
+     <!-- navigation toc: --> <li><a href="._TriumfScienceWeek-bs035.html#additional-material" style="font-size: 80%;">Additional material</a></li>
+     <!-- navigation toc: --> <li><a href="._TriumfScienceWeek-bs036.html#addendum-quantum-monte-carlo-motivation" style="font-size: 80%;">Addendum: Quantum Monte Carlo Motivation</a></li>
+     <!-- navigation toc: --> <li><a href="._TriumfScienceWeek-bs038.html#quantum-monte-carlo-motivation" style="font-size: 80%;">Quantum Monte Carlo Motivation</a></li>
+     <!-- navigation toc: --> <li><a href="._TriumfScienceWeek-bs038.html#quantum-monte-carlo-motivation" style="font-size: 80%;">Quantum Monte Carlo Motivation</a></li>
+     <!-- navigation toc: --> <li><a href="._TriumfScienceWeek-bs039.html#the-trial-wave-function" style="font-size: 80%;">The trial wave function</a></li>
+     <!-- navigation toc: --> <li><a href="._TriumfScienceWeek-bs040.html#the-correlation-part-of-the-wave-function" style="font-size: 80%;">The correlation part of the wave function</a></li>
+     <!-- navigation toc: --> <li><a href="._TriumfScienceWeek-bs041.html#resulting-ansatz" style="font-size: 80%;">Resulting ansatz</a></li>
+     <!-- navigation toc: --> <li><a href="._TriumfScienceWeek-bs042.html#energy-derivatives" style="font-size: 80%;">Energy derivatives</a></li>
+     <!-- navigation toc: --> <li><a href="._TriumfScienceWeek-bs043.html#derivatives-of-the-local-energy" style="font-size: 80%;">Derivatives of the local energy</a></li>
+     <!-- navigation toc: --> <li><a href="._TriumfScienceWeek-bs044.html#how-do-we-define-our-cost-function" style="font-size: 80%;">How do we define our cost function?</a></li>
+     <!-- navigation toc: --> <li><a href="._TriumfScienceWeek-bs045.html#meet-the-variance-and-its-derivatives" style="font-size: 80%;">Meet the variance and its derivatives</a></li>
+     <!-- navigation toc: --> <li><a href="._TriumfScienceWeek-bs046.html#the-variance-defines-the-cost-function" style="font-size: 80%;">The variance defines the cost function</a></li>
+     <!-- navigation toc: --> <li><a href="._TriumfScienceWeek-bs047.html#why-boltzmann-machines" style="font-size: 80%;">Why Boltzmann machines?</a></li>
+     <!-- navigation toc: --> <li><a href="._TriumfScienceWeek-bs048.html#a-standard-bm-setup" style="font-size: 80%;">A standard BM setup</a></li>
+     <!-- navigation toc: --> <li><a href="._TriumfScienceWeek-bs049.html#the-structure-of-the-rbm-network" style="font-size: 80%;">The structure of the RBM network</a></li>
+     <!-- navigation toc: --> <li><a href="#the-network" style="font-size: 80%;">The network</a></li>
+     <!-- navigation toc: --> <li><a href="._TriumfScienceWeek-bs051.html#joint-distribution" style="font-size: 80%;">Joint distribution</a></li>
+     <!-- navigation toc: --> <li><a href="._TriumfScienceWeek-bs052.html#defining-different-types-of-rbms" style="font-size: 80%;">Defining different types of RBMs</a></li>
+     <!-- navigation toc: --> <li><a href="._TriumfScienceWeek-bs053.html#representing-the-wave-function" style="font-size: 80%;">Representing the wave function</a></li>
+     <!-- navigation toc: --> <li><a href="._TriumfScienceWeek-bs054.html#choose-the-cost-loss-function" style="font-size: 80%;">Choose the cost/loss function</a></li>
 
         </ul>
       </li>
@@ -306,42 +318,13 @@ MathJax.Hub.Config({
 <p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p> <!-- add vertical space -->
 <a name="part0050"></a>
 <!-- !split -->
-<h2 id="representing-the-wave-function" class="anchor">Representing the wave function </h2>
+<h2 id="the-network" class="anchor">The network </h2>
 
-<p>The wavefunction should be a probability amplitude depending on \( \boldsymbol{x} \). The RBM model is given by the joint distribution of \( \boldsymbol{x} \) and \( \boldsymbol{h} \)</p>
-$$
-\begin{align}
-	F_{rbm}(\mathbf{x},\mathbf{h}) = \frac{1}{Z} e^{-\frac{1}{T_0}E(\mathbf{x},\mathbf{h})}.
-\tag{9}
-\end{align}
-$$
-
-<p>To find the marginal distribution of \( \boldsymbol{x} \) we set:</p>
-$$
-\begin{align}
-	F_{rbm}(\mathbf{x}) &= \sum_\mathbf{h} F_{rbm}(\mathbf{x}, \mathbf{h}) 
-\tag{10}\\
-				&= \frac{1}{Z}\sum_\mathbf{h} e^{-E(\mathbf{x}, \mathbf{h})}.
-\tag{11}
-\end{align}
-$$
-
-<p>Now this is what we use to represent the wave function, calling it a neural-network quantum state (NQS)</p>
-$$
-\begin{align}
-	\Psi (\mathbf{x}) &= F_{rbm}(\mathbf{x}) 
-\tag{12}\\
-	&= \frac{1}{Z}\sum_{\boldsymbol{h}} e^{-E(\mathbf{x}, \mathbf{h})} 
-\tag{13}\\
-	&= \frac{1}{Z} \sum_{\{h_j\}} e^{-\sum_i^M \frac{(x_i - a_i)^2}{2\sigma^2} + \sum_j^N b_j h_j + \sum_{i,j}^{M,N} \frac{x_i w_{ij} h_j}{\sigma^2}} 
-\tag{14}\\
-	&= \frac{1}{Z} e^{-\sum_i^M \frac{(x_i - a_i)^2}{2\sigma^2}} \prod_j^N (1 + e^{b_j + \sum_i^M \frac{x_i w_{ij}}{\sigma^2}}). 
-\tag{15}\\
-\tag{16}
-\end{align}
-$$
-
-
+<b>The network layers</b>:
+<ol>
+ <li> A function \( \mathbf{x} \) that represents the visible layer, a vector of \( M \) elements (nodes). This layer represents both what the RBM might be given as training input, and what we want it to be able to reconstruct. This might for example be the pixels of an image, the spin values of the Ising model, or coefficients representing speech.</li>
+ <li> The function \( \mathbf{h} \) represents the hidden, or latent, layer. A vector of \( N \) elements (nodes). Also called "feature detectors".</li>
+</ol>
 <p>
 <!-- navigation buttons at the bottom of the page -->
 <ul class="pagination">
@@ -358,6 +341,9 @@ $$
   <li><a href="._TriumfScienceWeek-bs049.html">50</a></li>
   <li class="active"><a href="._TriumfScienceWeek-bs050.html">51</a></li>
   <li><a href="._TriumfScienceWeek-bs051.html">52</a></li>
+  <li><a href="._TriumfScienceWeek-bs052.html">53</a></li>
+  <li><a href="._TriumfScienceWeek-bs053.html">54</a></li>
+  <li><a href="._TriumfScienceWeek-bs054.html">55</a></li>
   <li><a href="._TriumfScienceWeek-bs051.html">&raquo;</a></li>
 </ul>
 <!-- ------------------- end of main content --------------- -->

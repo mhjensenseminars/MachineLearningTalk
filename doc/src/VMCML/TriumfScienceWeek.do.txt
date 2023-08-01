@@ -1,3 +1,4 @@
+
 TITLE: Machine Learning and Nuclear Physics, Challenges and Opportunities
 AUTHOR: Morten Hjorth-Jensen at Department of Physics and Astronomy and FRIB, Michigan State University, USA
 DATE: TRIUMF Science week, July 31-August 4, 2023
@@ -14,7 +15,7 @@ in nuclear physics. And why this could (or should) be of interest.
 !bblock Additional info
 These slides are at URL:"https://mhjensenseminars.github.io/MachineLearningTalk/doc/web/overview.html". Scroll down the page.
 
-* Parts of this talk are based on _Artificial Intelligence and Machine Learning in Nuclear Physics_, Amber Boehnlein et al., "https://journals.aps.org/rmp/abstract/10.1103/RevModPhys.94.031003" Reviews Modern of Physics  _94_, 031003 (2023). 
+* Parts of this talk are based on "Artificial Intelligence and Machine Learning in Nuclear Physics, Amber Boehnlein et al., Reviews Modern of Physics 94, 031003 (2022)":"https://journals.aps.org/rmp/abstract/10.1103/RevModPhys.94.031003" 
 
 
 !eblock
@@ -123,7 +124,11 @@ is a method for finding patterns and relationship in data sets without any prior
 Some authours also operate with a third category, namely *reinforcement learning*. This is a paradigm 
 of learning inspired by behavioural psychology, where learning is achieved by trial-and-error, 
 solely from rewards and punishment.
+!eblock
 
+!split
+===== Main categories =====
+!bblock
 Another way to categorize machine learning tasks is to consider the desired output of a system.
 Some of the most common tasks are:
 
@@ -136,7 +141,7 @@ Some of the most common tasks are:
 
 
 !split
-===== Machine learning and nuclear theory: Why? =====
+===== Machine learning and nuclear theory (my bias): Why? =====
 
 o ML tools can help us to speed up the scientific process cycle and hence facilitate discoveries
 o Enabling fast emulation for big simulations
@@ -161,13 +166,13 @@ o Dimensionality reduction (Principal component analysis), Clustering Methods an
 o Ensemble Methods, Random forests, bagging and voting methods, gradient boosting approaches 
 o Linear and logistic regression, Kernel methods, support vector machines and more
 o Reinforcement Learning 
-o and more
+o Generative models and more
 !split
 ===== Examples of Machine Learning methods and applications in nuclear physics =====
 
 !bblock
 * _Machine  learning  for  data  mining:_ Oftentimes,  it  is necessary to be able to accurately calculate observables that have not been measured, to supplement the existing databases.
-* _Nuclear  density  functional   theory:_ Energy density functional calibration   involving Bayesian optimization  and NN  ML. A promising avenue for ML applications is the emulation of DFT results.
+* _Nuclear  density  functional   theory:_ Energy density functional calibration   involving Bayesian optimization  and ML.
 * _Nuclear properties with ML:_ Improving predictive power of nuclear models by emulating model residuals.
 * _Effective field theory and A-body systems:_ Truncation errors and low-energy coupling constant calibration, nucleon-nucleon scattering calculations, variational calculations with ANN for light nuclei, NN extrapolation of nuclear structure observables
 * _Nuclear  shell  model  UQ:_ ML methods  have  been  used  to  provide  UQ  of  configuration  interaction  calculations.
@@ -215,7 +220,7 @@ The large amount of degrees of freedom pertain to both theory and experiment in 
 
 * Merging a frequentist approach (the standard path in ML theory) with a Bayesian approach, has the potential to infer better probabilitity distributions and error estimates. As an example, methods for fast Monte-Carlo- based Bayesian computation of nuclear density functionals show great promise in providing a better understanding 
 
-* Machine Learning and Quantum Computing is a very interesting avenue to explore. See for example talk of "Sofia Vallecorsa":"https://www.youtube.com/watch?v=7WPKv1Q57os&list=PLUPPQ1TVXK7uHwCTccWMBud-zLyvAf8A2&index=5&ab_channel=ECTstar".
+* Machine Learning and Quantum Computing is a very interesting avenue to explore. 
 !eblock
 
 
@@ -225,14 +230,13 @@ The large amount of degrees of freedom pertain to both theory and experiment in 
 !bblock
 * "Mehta et al.":"https://arxiv.org/abs/1803.08823" and "Physics Reports (2019)":"https://www.sciencedirect.com/science/article/pii/S0370157319300766?via%3Dihub".
 * "Machine Learning and the Physical Sciences by Carleo et al":"https://link.aps.org/doi/10.1103/RevModPhys.91.045002"
-* "Artificial Intelligence and Machine Learning in Nuclear Physics, Amber Boehnlein et al., Reviews Modern of Physics 94, 031003 (2023)":"https://journals.aps.org/rmp/abstract/10.1103/RevModPhys.94.031003" 
+* "Artificial Intelligence and Machine Learning in Nuclear Physics, Amber Boehnlein et al., Reviews Modern of Physics 94, 031003 (2022)":"https://journals.aps.org/rmp/abstract/10.1103/RevModPhys.94.031003" 
 * "Dilute neutron star matter from neural-network quantum states by Fore et al, Physical Review Research 5, 033062 (2023)":"https://journals.aps.org/prresearch/pdf/10.1103/PhysRevResearch.5.033062"
 * "Neural-network quantum states for ultra-cold Fermi gases, Jane Kim et al, Nature Physics Communcication, submitted":"https://doi.org/10.48550/arXiv.2305.08831"
 * "Message-Passing Neural Quantum States for the Homogeneous Electron Gas, Gabriel Pescia, Jane Kim et al. arXiv.2305.07240,":"https://doi.org/10.48550/arXiv.2305.07240"
 * "Efficient solutions of fermionic systems using artificial neural networks, Nordhagen et al, Frontiers in Physics 11, 2023":"https://doi.org/10.3389/fphy.2023.1061580"
 * "Report from the A.I. For Nuclear Physics  Workshop by Bedaque et al., Eur J. Phys. A 57, (2021)":"https://link.springer.com/article/10.1140/epja/s10050-020-00290-x"
 * "Particle Data Group summary on ML methods":"https://pdg.lbl.gov/2021/reviews/rpp2021-rev-machine-learning.pdf"
-* And the BAND collaboration at URL:"https://bandframework.github.io/"
 !eblock
 
 
@@ -253,14 +257,17 @@ We seek to minimize the function $\mathcal{C} (\mathbf{x}, f(\mathbf{\alpha}))$ 
 
 
 !split
-===== "Unsupervised learning in nuclear physics, Argon-46 by Solli, Bazin, Kuchera, MHJ, Strauss.":"https://www.sciencedirect.com/science/article/abs/pii/S0168900221004460?via%3Dihub" =====
+===== Argon-46 by Solli et al., NIMA 1010, 165461 (2021) =====
 
-Two- and three-dimensional representations of two events from the
+!bblock
+Representations of two events from the
 Argon-46 experiment. Each row is one event in two projections,
 where the color intensity of each point indicates higher charge values
 recorded by the detector. The bottom row illustrates a carbon event with
 a large fraction of noise, while the top row shows a proton event
 almost free of noise. 
+!eblock
+
 
 FIGURE: [figures/examples_raw.png, width=500 frac=0.6]
 
@@ -326,12 +333,14 @@ and three-body spin-independent Jastrow functions
 which is commonly used for nuclear Hamiltonians that do not contain tensor and spin-orbit terms.
 The above function is replaced by a four-layer Neural Network. 
 
+!split
+===== Explicit results =====
 FIGURE: [figures/energyconvergence.pdf, width=700 frac=0.9]
 
 
 !split
-===== "Dilute neutron star matter from neural-network quantum states by Fore et al, Physical Review Research 5, 033062 (2023)":"https://journals.aps.org/prresearch/pdf/10.1103/PhysRevResearch.5.033062" =====
-Density $\rho=0.04$fm$^{-3}$.
+===== "Dilute neutron star matter from neural-network quantum states by Fore et al, Physical Review Research 5, 033062 (2023)":"https://journals.aps.org/prresearch/pdf/10.1103/PhysRevResearch.5.033062" at density $\rho=0.04$ fm$^{-3}$ =====
+
 !bblock
 FIGURE: [figures/nmatter.png, width=700 frac=0.9]
 !eblock
@@ -341,8 +350,8 @@ FIGURE: [figures/nmatter.png, width=700 frac=0.9]
 
 
 !split
-===== The electron gas in three dimensions with $N=14$ electrons (Wigner-Seitz radius $r_s=2$ a.u.) =====
-"Message-Passing Neural Quantum States for the Homogeneous Electron Gas, Gabriel Pescia, Jane Kim et al. arXiv.2305.07240,":"https://doi.org/10.48550/arXiv.2305.07240"
+===== The electron gas in three dimensions with $N=14$ electrons (Wigner-Seitz radius $r_s=2$ a.u.), "Gabriel Pescia, Jane Kim et al. arXiv.2305.07240,":"https://doi.org/10.48550/arXiv.2305.07240" =====
+
 !bblock
 FIGURE: [figures/elgasnew.png, width=700 frac=0.9]
 !eblock
@@ -350,7 +359,7 @@ FIGURE: [figures/elgasnew.png, width=700 frac=0.9]
 
 
 !split
-===== Electrons in a harmonic oscillator trap in two dimensions =====
+===== "Efficient solutions of fermionic systems using artificial neural networks, Nordhagen et al, Frontiers in Physics 11, 2023":"https://doi.org/10.3389/fphy.2023.1061580" =====
 
 The Hamiltonian of the quantum dot is given by
 !bt
@@ -418,15 +427,21 @@ FIGURE: [figures/landscape.jpg, width=800 frac=1.0]
 
 
 !split
-===== Observations (or conclusions if you prefer) =====
+===== Observations and perspectives =====
 !bblock
 * Need for AI/Machine Learning in nuclear physics, lots of ongoing activities
 * To solve many complex problems in the field and facilitate discoveries, multidisciplinary efforts efforts are required involving scientists in  nuclear physics, statistics, computational science, and applied math.
 * There is a need for  focused AI/ML learning efforts that will benefit accelerator science and experimental and theoretical programs
+!eblock
+
+!split
+===== How can we use ML in Nuclear Science? =====
+!bblock
 * How do we develop insights, competences, knowledge in statistical learning that can advance our field?
   * For example: Can we use ML to find out which correlations are relevant and thereby diminish the dimensionality problem in standard many-body  theories?
   * Can we use AI/ML in detector analysis, accelerator design, analysis of experimental data and more?
   * Can we use AL/ML to carry out reliable extrapolations by using current experimental knowledge and current theoretical models?
+  * Future research may have a strong focus on generative models
 * The community needs to invest in relevant educational efforts and training of nuclear physicists with knowledge in AI/ML
 * Most likely tons of things we have forgotten
 !eblock
