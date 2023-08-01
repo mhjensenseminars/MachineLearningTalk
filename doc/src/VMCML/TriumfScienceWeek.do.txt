@@ -1,6 +1,6 @@
 TITLE: Artificial Intelligence and Machine Learning in Nuclear Physics
-AUTHOR: Morten Hjorth-Jensen at Department of Physics and Astronomy and FRIB/NSCL Laboratory, Michigan State University
-DATE: University of Tennessee, Knoxville, March 28, 2022
+AUTHOR: Morten Hjorth-Jensen at Department of Physics and Astronomy and FRIB, Michigan State University, USA
+DATE: TRIUMF Science week, July 31-August 4, 2023
 
 
 !split
@@ -14,7 +14,7 @@ in nuclear physics. And why this could (or should) be of interest.
 !bblock Additional info
 These slides are at URL:"https://mhjensenseminars.github.io/MachineLearningTalk/doc/web/overview.html". Scroll down the page.
 
-* Talk based on _Artificial Intelligence and Machine Learning in Nuclear Physics_, Amber Boehnlein et al., "arXiv:2112.02309":"https://arxiv.org/abs/2112.02309" and Reviews Modern of Physics, submitted. 
+* Talk based on _Artificial Intelligence and Machine Learning in Nuclear Physics_, Amber Boehnlein et al., "https://journals.aps.org/rmp/abstract/10.1103/RevModPhys.94.031003" Reviews Modern of Physics  _94_, 031003 (2023). 
 
 
 !eblock
@@ -22,7 +22,7 @@ These slides are at URL:"https://mhjensenseminars.github.io/MachineLearningTalk/
 !split
 ===== Many folks to thank =====
 
-Thanks to Jane Kim (MSU), Julie Butler (MSU), Daniel Bazin (MSU), Dean Lee (MSU), Witek Nazarewicz (MSU), Michelle Kuchera (Davidson College), Vilde Flugsrud (UiO), Even Nordhagen (UiO), Robert Solli (UiO, Expert Analytics), Corey Adams (ANL), Bryce Fore (ANL), and Alessandro Lovato (ANL). Excuses to those I have omitted.
+Thanks to Jane Kim (MSU), Julie Butler (MSU), Patrick Cook (MSU), Danny Jammooa (MSU), Daniel Bazin (MSU), Dean Lee (MSU), Witek Nazarewicz (MSU), Michelle Kuchera (Davidson College), Even Nordhagen (UiO), Robert Solli (UiO, Expert Analytics), Bryce Fore (ANL), Alessandro Lovato (ANL), Stefano Gandolfi (LANL), and Giuseppe Carleo (EPFL). Excuses to those I have omitted.
 
 !split
 ===== A simple perspective on the interface between ML and Physics =====
