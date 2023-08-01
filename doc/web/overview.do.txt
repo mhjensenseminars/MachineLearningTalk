@@ -4,7 +4,7 @@ DATE: today
 
 <%
 pub_url = 'http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub'
-published = ['vmcml', 'unitn', 'uniohio', 'unisurrey', 'uio2019', 'chalmers', 'uiomath', 'unipd', 'overview', 'WorkshopTastesNP', 'xai', 'NIThePColloquium', 'quantumcomputing', 'NotreDameMay2021', 'oslometqc', 'IAEA', 'spinQ', 'UniMilano', 'MSUFeb10', 'ORNLMarch24', 'UTKMarch28', 'gemini', 'quteMay2022', 'KTHMat23', 'fysforening', 'Tsukubasymposium', 'UAutonomaMadrid', 'mathforening', 'MSUphysics', 'quantumcomputingMSU', 'entanglemtECT', ]
+published = ['vmcml', 'unitn', 'uniohio', 'unisurrey', 'uio2019', 'chalmers', 'uiomath', 'unipd', 'overview', 'WorkshopTastesNP', 'xai', 'NIThePColloquium', 'quantumcomputing', 'NotreDameMay2021', 'oslometqc', 'IAEA', 'spinQ', 'UniMilano', 'MSUFeb10', 'ORNLMarch24', 'UTKMarch28', 'gemini', 'quteMay2022', 'KTHMat23', 'fysforening', 'Tsukubasymposium', 'UAutonomaMadrid', 'mathforening', 'MSUphysics', 'quantumcomputingMSU', 'entanglemtECT', 'TriumScienceWeek',]
 chapters = {
  'vmcml': 'From variational Monte Carlo to machine learning, talks at Michigan State University April and June 2018',
  'uniuio': 'Talk at University of Oslo, December 14, 2018',
@@ -37,7 +37,8 @@ chapters = {
   'mathforening': 'Popmath seminar March 7, University of Oslo, 2023',
   'MSUphysics': 'Physics Society MSU, March 13, 2023',
   'quantumcomputingMSU': 'FRIB-theory seminar, MSU, April 11, 2023',
-  'entanglemtECT': 'Workshop at the ECT* June 5-9, 2023',  
+  'entanglemtECT': 'Workshop at the ECT* June 5-9, 2023',
+  'TriumScienceWeek': 'Triumf Science week July 31-August 4, 2023',    
 }
 %>
 

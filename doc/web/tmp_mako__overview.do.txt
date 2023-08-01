@@ -415,5 +415,18 @@ DATE: today
 
 
 
+===== Triumf Science week July 31-August 4, 2023 =====
+
+
+
+ * HTML:
+   * "Plain html style": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/TriumScienceWeek/html/TriumScienceWeek.html"
+   * "reveal.js beige slide style": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/TriumScienceWeek/html/TriumScienceWeek-reveal.html"
+   * "Bootstrap style": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/TriumScienceWeek/html/TriumScienceWeek-bs.html"
+ * iPython notebook:
+   * "ipynb file": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/TriumScienceWeek/ipynb/TriumScienceWeek.ipynb"
+
+
+
 
 
