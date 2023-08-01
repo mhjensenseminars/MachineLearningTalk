@@ -88,5 +88,3 @@ cp ${ipynb_tarfile} $dest/$name/ipynb
 
 
 
-
-
