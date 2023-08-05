@@ -18,7 +18,7 @@ o Numerical experiments to mimick real systems, using many-body methods to devel
 
 
 !split
-===== Many people to thank =====
+===== Collaborators and people to thank =====
 
 !bblock MSU
 Niyaz Beysengulov and Johannes Pollanen (experiment, Physics); Zachary Stewart, Jared Weidman, and Angela Wilson (quantum chemistry)
@@ -120,7 +120,7 @@ FIGURE: [qcfigures/Elhelium3.png, width=700 frac=1.3]
 !split
 ===== Experimental set up =====
 
-FIGURE: [qcfigures/figure1.png, width=700 frac=0.9]
+FIGURE: [qcfigures/figure1.png, width=600 frac=0.9]
 
 o (a) Schematic of the microdevice, where two electrons are trapped in a double-well potential created by electrodes 1-7. The read-out is provided by two superconducting resonators dispersively coupled to  electron's in-plane motional states.
 o (b) Coupling constants from each individual electrode beneath the helium layer.
@@ -271,7 +271,7 @@ Hamiltonian:
 \end{align}
 !et
 
-FIGURE: [qcfigures/well_basis.png, width=700 frac=0.9]
+FIGURE: [qcfigures/well_basis.png, width=600 frac=0.8]
 
 
 !split
@@ -285,7 +285,7 @@ Hamiltonian:
 \end{align}
 !et
 
-FIGURE: [qcfigures/wells.png, width=700 frac=0.9]
+FIGURE: [qcfigures/wells.png, width=600 frac=0.8]
 
 
 !split
@@ -425,7 +425,7 @@ o Inspiration from superconducting qubits, see High-Contrast $ZZ$ Interaction Us
 !split
 We search for well configurations corresponding to three different types of interaction between the two electrons.
 
-o In _configuration I_ we address both qubits independently and can thereby perform single-qubit state rotations and measurements.
+o In configuration I we address both qubits independently and can thereby perform single-qubit state rotations and measurements.
 o Configurations II and III correspond to avoided level crossings between two ($E_{01}, E_{10}$) and three ($E_{11}, E_{20}, E_{02}$) energy levels respectively, where the electrons' motion becomes correlated, that is they are entangled. 
 
 Both anharmonicity and detuning changes with the shape of our well.
@@ -439,7 +439,7 @@ V(\lambda) = (1-\lambda)V_\mathrm{I} + \lambda V_\mathrm{III}
 !split
 ===== Entanglement and more  =====
 
-FIGURE: [qcfigures/crossings-entropies-anharmonicities-1.png, width=700 frac=0.9]
+FIGURE: [qcfigures/crossings-entropies-anharmonicities-1.png, width=800 frac=0.8]
 
 
 !split
@@ -447,18 +447,18 @@ FIGURE: [qcfigures/crossings-entropies-anharmonicities-1.png, width=700 frac=0.9
 
 o (a) In this figure we have plotted the transition energy from the ground state to the labeled excited state as a function of the voltage parameter $\lambda$. The labeled states are the computational basis states when $\lambda = 0$.
 o (b) The von Neumann entropy of the five lowest excited states of the two-body Hamiltonian as a function of the configuration parameter $\lambda$. The ground state has zero entropy, or close to zero entropy. We have included the points for the double and triple degeneracy points. $\lambda_{II}$ and $\lambda_{III}$ in the figure. The von Neumann entropy is calculated using the binary logarithm.
-o (c) In this figure we have plotted the anharmonicites for the left well ($\alpha^L$) and the right well ($\alpha^R$) as a function of the well parameterization $\lambda$. We have also included the detuning $\Delta \omega = \omega^R - \omega^L$ between the two wells. We have marked configuration II at $\lambda_{II} \approx 0.554$ and configuration III at $\lambda_{III} = 1$.}
+o (c) In this figure we have plotted the anharmonicites for the left well ($\alpha^L$) and the right well ($\alpha^R$) as a function of the well parameterization $\lambda$. We have also included the detuning $\Delta \omega = \omega^R - \omega^L$ between the two wells. We have marked configuration II at $\lambda_{II} \approx 0.554$ and configuration III at $\lambda_{III} = 1$.
 
 
 !split
 ===== Particle densities and coefficients =====
 
-FIGURE: [qcfigures/configuration_I-1.png, width=700 frac=0.9]
+FIGURE: [qcfigures/configuration_I-1.png, width=600 frac=0.8]
 
 !split
 ===== Potential wells, the one-body densities, and single-particle states =====
 
-FIGURE: [qcfigures/configuration_II_and_III-1.png, width=700 frac=1.2]
+FIGURE: [qcfigures/configuration_II_and_III-1.png, width=600 frac=1.0]
 
 !split
 ===== Where we are now =====
