@@ -1,0 +1,284 @@
+TITLE: Machine Learning, artificial intelligence and quantum science at the university of Oslo; research and education
+AUTHOR: Morten Hjorth-Jensen at Department of Physics and Astronomy and FRIB/NSCL Laboratory, Michigan State University and Department of Physics and Center for Computing in Science Education, University of Oslo, Norway
+DATE: 
+
+
+!split
+===== Basic activities, Overview of our main activities =====
+!bblock
+* Machine Learning applied to classical and quantum mechanical systems and analysis of physics experiments
+* Quantum Engineering
+* Quantum algorithms 
+* Quantum Machine Learning
+!eblock
+
+!split
+===== What has happened during the last two years at CCSE@UiO? =====
+
+During the last five  years we have started a large scientific activity
+on Quantum Computing and Machine Learning at the Center for Computing
+in Science Education (CCSE), with four PhD students hired since
+October 2019  and several master of Science students (six second year students). This activity spans from the development
+of quantum-mechanical many-particle theories for studying systems of
+interest for making quantum computers, via the development of machine learning and quantum
+algorithms for solving classical and quantum mechanical problems to exploring
+quantum machine learning algorithms.
+
+
+!split
+===== More activities =====
+
+o "Center of Materials Science UiO, Lasse Vines (Expt) Andrej Kuznetsov(Expt), David Rivas Gongora (Expt) and Marianne Bathen":"https://www.mn.uio.no/fysikk/english/research/groups/semiconductors/index.html"
+o "Gemini center on Quantum Computing (SINTEF-UiO-NTNU)":"https://www.quantumcomputing.no/"
+o Analysis of experiments in subatomic physics
+o OsloMet and Simula Research lab
+o Machine learning and computational neuroscience
+o and probably many I have forgotten....please excuse me
+
+!split
+===== A simple perspective on the interface between ML and Physics =====
+
+FIGURE: [figures/mlimage.png, width=800 frac=1.0]
+
+
+!split
+===== Selected references =====
+!bblock
+* "Mehta et al.":"https://arxiv.org/abs/1803.08823" and "Physics Reports (2019)":"https://www.sciencedirect.com/science/article/pii/S0370157319300766?via%3Dihub".
+* "Machine Learning and the Physical Sciences by Carleo et al":"https://link.aps.org/doi/10.1103/RevModPhys.91.045002"
+* "Artificial Intelligence and Machine Learning in Nuclear Physics, Amber Boehnlein et al., Reviews Modern of Physics 94, 031003 (2022)":"https://journals.aps.org/rmp/abstract/10.1103/RevModPhys.94.031003" 
+* "Dilute neutron star matter from neural-network quantum states by Fore et al, Physical Review Research 5, 033062 (2023)":"https://journals.aps.org/prresearch/pdf/10.1103/PhysRevResearch.5.033062"
+* "Neural-network quantum states for ultra-cold Fermi gases, Jane Kim et al, Nature Physics, in press":"https://doi.org/10.48550/arXiv.2305.08831"
+* "Message-Passing Neural Quantum States for the Homogeneous Electron Gas, Gabriel Pescia, Jane Kim et al. arXiv.2305.07240,":"https://doi.org/10.48550/arXiv.2305.07240"
+* "Efficient solutions of fermionic systems using artificial neural networks, Nordhagen et al, Frontiers in Physics 11, 2023":"https://doi.org/10.3389/fphy.2023.1061580"
+!eblock
+
+
+
+
+
+
+!split
+===== Argon-46 by Solli et al., NIMA 1010, 165461 (2021) =====
+
+!bblock
+Representations of two events from the
+Argon-46 experiment. Each row is one event in two projections,
+where the color intensity of each point indicates higher charge values
+recorded by the detector. The bottom row illustrates a carbon event with
+a large fraction of noise, while the top row shows a proton event
+almost free of noise. 
+!eblock
+
+
+FIGURE: [figures/examples_raw.png, width=500 frac=0.6]
+
+
+!split
+===== Quantum Monte Carlo and deep learning =====
+!bblock
+Given a hamiltonian $H$ and a trial wave function $\Psi_T$, the variational principle states that the expectation value of $\langle H \rangle$, defined through 
+!bt
+\[
+   \langle E \rangle =
+   \frac{\int d\bm{R}\Psi^{\ast}_T(\bm{R})H(\bm{R})\Psi_T(\bm{R})}
+        {\int d\bm{R}\Psi^{\ast}_T(\bm{R})\Psi_T(\bm{R})},
+\]
+!et
+is an upper bound to the ground state energy $E_0$ of the hamiltonian $H$, that is 
+!bt
+\[
+    E_0 \le \langle E \rangle.
+\]
+!et
+In general, the integrals involved in the calculation of various  expectation values  are multi-dimensional ones. Traditional integration methods such as the Gauss-Legendre will not be adequate for say the  computation of the energy of a many-body system.  _Basic philosophy: Let a neural network find the optimal wave function_
+!eblock
+
+
+
+!split
+===== "Dilute neutron star matter from neural-network quantum states by Fore et al, Physical Review Research 5, 033062 (2023)":"https://journals.aps.org/prresearch/pdf/10.1103/PhysRevResearch.5.033062" at density $\rho=0.04$ fm$^{-3}$ =====
+
+!bblock
+FIGURE: [figures/nmatter.png, width=700 frac=0.9]
+!eblock
+
+
+
+!split
+===== The electron gas in three dimensions with $N=14$ electrons (Wigner-Seitz radius $r_s=2$ a.u.), "Gabriel Pescia, Jane Kim et al. arXiv.2305.07240,":"https://doi.org/10.48550/arXiv.2305.07240" =====
+
+!bblock
+FIGURE: [figures/elgasnew.png, width=700 frac=0.9]
+!eblock
+
+
+!split
+===== Quantum Science and Technologies =====
+
+
+
+!split
+===== References, Quantum Computing =====
+!bblock
+Machine Learning and Quantum Computing hold great promise in tackling the 
+ever increasing dimensionalities. A hot new field is  _Quantum Machine Learning_, see for example the recent textbook by "Maria Schuld and Francesco Petruccione":"https://www.springer.com/gp/book/9783319964232". 
+o Master of Science  thesis of "Stian Bilek":"https://www.duo.uio.no/handle/10852/82489", _Quantum Computing: Many-Body Methods and Machine Learning, August 2020, PhD student at UiO_
+o Master of Science  thesis of "Heine Åbø":"https://www.duo.uio.no/handle/10852/81259", _Quantum Computing and Many-Particle Problems, June 2020_, now at OsloMet
+o Master of Science  thesis of Kristian Wold, Parameterized Quantum Circuits for Machine Learning, September 2021, now at OsloMet
+o "Marianne Etzelmueller Bathen's PhD":"https://www.mn.uio.no/fysikk/english/people/aca/mariebat/", December 2020
+!eblock
+
+
+
+
+
+
+
+!split
+===== Quantum Engineering =====
+
+!bblock Quantum Computing requirements
+o be scalable
+o have qubits that can be entangled
+o have reliable initializations protocols to a standard state
+o have a set of universal quantum gates to control the quantum evolution
+o have a coherence time much longer than the gate operation time
+o have a reliable read-out mechanism for measuring the qubit states
+o and many more 
+!eblock
+
+!split
+===== Candidate systems =====
+o Superconducting Josephon junctions
+o Single photons
+o "Trapped ions and atoms":"https://www.insidequantumtechnology.com/news-archive/ionq-is-first-quantum-startup-to-go-public-will-it-be-first-to-deliver-profits/"
+o Nuclear Magnetic Resonance
+o _Quantum dots, expt at MSU_
+o _Point Defects in semiconductors, experiments at UiO, center for Materials Science_
+o more
+
+===== Overview and Motivation =====
+
+_How to use many-body theory to design quantum circuits (Quantum engineering)_
+o Many-body methods like F(ull)C(onfiguration)I(nteraction) theory  with
+  * Adaptive basis sets (see for example "Sigmundson et al arXiv:2111.09638":"https://arxiv.org/abs/2111.09638")
+  * Time dependence
+  * Optimization of experimental parameters
+  * Feedback from experiment
+o Finding optimal parameters for tuning of entanglement
+o Numerical experiments to mimick real systems, using many-body methods to develop _quantum twins_ ("inspiration from  work by Herschel Rabitz et al on Control of quantum phenomena, see New Journal of Physics 12 (2010) 075008":"https://iopscience.iop.org/article/10.1088/1367-2630/12/7/075008")!
+
+!split
+===== Recent work =====
+
+We have developed theoretical tools  for generating motional entanglement between
+two (and more) electrons trapped above the surface of superfluid helium. In this
+proposed scheme these electronic charge qubits are laterally confined
+via electrostatic gates to create an anharmonic trapping
+potential. When the system is cooled to sufficiently low temperature
+these in-plane charge qubit states are quantized and circuit quantum
+electrodynamic methods can be used to control and readout single qubit
+operations. We work now on Perspectives for quantum simulations with quantum dots
+systems.
+ 
+
+!split
+===== Electrons (quantum dots) on superfluid helium =====
+
+Electrons on "superfluid helium represent":"https://www.youtube.com/watch?v=EuDuM-fe-lA&ab_channel=JoshuahHeath" a promising platform for investigating
+strongly-coupled qubits.
+
+Therefore a systematic investigation of the
+controlled generation of entanglement between two trapped electrons
+under the influence of coherent microwave driving pulses, taking into
+account the effects of the Coulomb interaction between electrons, is
+of significant importance for quantum information processing using
+trapped electrons.
+
+!bblock 
+o Time-Dependent full configuration interaction theory
+o Time-dependent Coupled-Cluster theory
+o Designing quantum circuits
+!eblock
+
+
+!split
+===== Experimental setup I =====
+
+FIGURE: [qcfigures/Elhelium1.png, width=700 frac=1.3]
+
+!split
+===== More on experimental setup II =====
+
+FIGURE: [qcfigures/Elhelium2.png, width=700 frac=1.3]
+
+!split
+===== More on experimental setup III =====
+
+FIGURE: [qcfigures/Elhelium3.png, width=700 frac=1.3]
+
+!split
+===== Experimental set up =====
+
+FIGURE: [qcfigures/figure1.png, width=600 frac=0.9]
+
+o (a) Schematic of the microdevice, where two electrons are trapped in a double-well potential created by electrodes 1-7. The read-out is provided by two superconducting resonators dispersively coupled to  electron's in-plane motional states.
+o (b) Coupling constants from each individual electrode beneath the helium layer.
+o (c+d) The electron's energy in a  double-well electrostatic potential (solid line). Dashed and dot-dashed lines represent the harmonic approximations of left and right wells respectively.
+
+
+!split
+===== Where we are now =====
+
+o Adding time-dependent studies of two electrons in two wells in one and two dimensions
+o Studies of the time-evolution of entangled states (now two electrons only)
+o Use theory to find optimal experimental setup
+o Expect two-electron system realized experimentally in approx $1$ year, great potential for studies of quantum simulations
+
+!split
+===== Plans =====
+
+o Add two and three-dimensions in order to simulate in  a more realistic way such many-body systems.
+o Develop time-dependent FCI code, useful up to approximately 10 particles with _effective_ (and effective Hilbert space) Hamiltonians in two and three dimensions
+o Develop codes for studies of entanglement as function of time
+o Do tomography and extract density matrices and compare with experiment.
+o Study the feasibility of various setups for quantum simulations of specific Hamiltonians such as the Lipkin model
+o For larger many-body systems, study for example time-dependent CC theory
+
+
+
+!split
+===== Courses in Machine Learning, Computational Physics, Quantum Mechanics and Quantum Computing at UiO =====
+
+!bblock Theory path
+o FYS4150 Computational Physics I, Fall semester, 10 ECTS
+o FYS-STK4155 Applied Data Analysis and Machine Learning, 10 ECTS
+o FYS4110 Modern Quantum Mechanics, Fall semester, 10 ECTS
+o FYS4480 Many-body Physics, Fall semester, 10 ECTS
+o FYS5419 Quantum Computing and Quantum Machine Learning, Spring semester, 10 ECTS
+o FYS5429 Advanced Machine Learning for the Physical Sciences, Spring Semester, 10 ECTS
+o FYS4411 Computational Physics II, Quantum Mechanics, Spring semester, 10 ECTS
+o MAT3420 Quantum Computing, Spring semester, 10 ECTS
+o MAT4430 Quantum Information Theory, Spring semester, 10 ECTS
+!eblock
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
