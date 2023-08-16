@@ -1,0 +1,637 @@
+<!--
+HTML file automatically generated from DocOnce source
+(https://github.com/doconce/doconce/)
+doconce format html Masterthesisprojects-reveal.html Masterthesisprojects-reveal reveal --html_slide_theme=beige
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="DocOnce: https://github.com/doconce/doconce/" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Machine Learning, artificial intelligence and quantum science at the university of Oslo; research and education">
+<title>Machine Learning, artificial intelligence and quantum science at the university of Oslo; research and education</title>
+
+<!-- reveal.js: https://lab.hakim.se/reveal-js/ -->
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+<link rel="stylesheet" href="reveal.js/css/reveal.css">
+<link rel="stylesheet" href="reveal.js/css/theme/beige.css" id="theme">
+<!--
+<link rel="stylesheet" href="reveal.js/css/reveal.css">
+<link rel="stylesheet" href="reveal.js/css/theme/beige.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/beigesmall.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/solarized.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/serif.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/night.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/moon.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/simple.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/sky.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/darkgray.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/default.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/cbc.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/simula.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/black.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/white.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/league.css" id="theme">
+-->
+
+<!-- For syntax highlighting -->
+<link rel="stylesheet" href="reveal.js/lib/css/zenburn.css">
+
+<!-- Printing and PDF exports -->
+<script>
+var link = document.createElement( 'link' );
+link.rel = 'stylesheet';
+link.type = 'text/css';
+link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+document.getElementsByTagName( 'head' )[0].appendChild( link );
+</script>
+
+<style type="text/css">
+hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+p.caption { width: 80%; font-size: 60%; font-style: italic; text-align: left; }
+hr.figure { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+.reveal .alert-text-small   { font-size: 80%;  }
+.reveal .alert-text-large   { font-size: 130%; }
+.reveal .alert-text-normal  { font-size: 90%;  }
+.reveal .alert {
+  padding:8px 35px 8px 14px; margin-bottom:18px;
+  text-shadow:0 1px 0 rgba(255,255,255,0.5);
+  border:5px solid #bababa;
+  -webkit-border-radius: 14px; -moz-border-radius: 14px;
+  border-radius:14px;
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  background-size: 38px;
+  padding-left: 30px; /* 55px; if icon */
+}
+.reveal .alert-block {padding-top:14px; padding-bottom:14px}
+.reveal .alert-block > p, .alert-block > ul {margin-bottom:1em}
+/*.reveal .alert li {margin-top: 1em}*/
+.reveal .alert-block p+p {margin-top:5px}
+/*.reveal .alert-notice { background-image: url(https://hplgit.github.io/doconce/bundled/html_images/small_gray_notice.png); }
+.reveal .alert-summary  { background-image:url(https://hplgit.github.io/doconce/bundled/html_images/small_gray_summary.png); }
+.reveal .alert-warning { background-image: url(https://hplgit.github.io/doconce/bundled/html_images/small_gray_warning.png); }
+.reveal .alert-question {background-image:url(https://hplgit.github.io/doconce/bundled/html_images/small_gray_question.png); } */
+/* Override reveal.js table border */
+.reveal table td {
+  border: 0;
+}
+
+<style type="text/css">
+/* Override h1, h2, ... styles */
+h1 { font-size: 2.8em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.4em; }
+h4 { font-size: 1.3em; }
+h1, h2, h3, h4 { font-weight: bold; line-height: 1.2; }
+body { overflow: auto; } /* vertical scrolling */
+hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+p.caption { width: 80%; font-size: 60%; font-style: italic; text-align: left; }
+hr.figure { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+.slide .alert-text-small   { font-size: 80%;  }
+.slide .alert-text-large   { font-size: 130%; }
+.slide .alert-text-normal  { font-size: 90%;  }
+.slide .alert {
+  padding:8px 35px 8px 14px; margin-bottom:18px;
+  text-shadow:0 1px 0 rgba(255,255,255,0.5);
+  border:5px solid #bababa;
+    -webkit-border-radius:14px; -moz-border-radius:14px;
+  border-radius:14px
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  background-size: 38px;
+  padding-left: 30px; /* 55px; if icon */
+}
+.slide .alert-block {padding-top:14px; padding-bottom:14px}
+.slide .alert-block > p, .alert-block > ul {margin-bottom:0}
+/*.slide .alert li {margin-top: 1em}*/
+.deck .alert-block p+p {margin-top:5px}
+/*.slide .alert-notice { background-image: url(https://hplgit.github.io/doconce/
+bundled/html_images//small_gray_notice.png); }
+.slide .alert-summary  { background-image:url(https://hplgit.github.io/doconce/
+bundled/html_images//small_gray_summary.png); }
+.slide .alert-warning { background-image: url(https://hplgit.github.io/doconce/
+bundled/html_images//small_gray_warning.png); }
+.slide .alert-question {background-image:url(https://hplgit.github.io/doconce/
+bundled/html_images/small_gray_question.png); } */
+.dotable table, .dotable th, .dotable tr, .dotable tr td {
+  border: 2px solid black;
+  border-collapse: collapse;
+  padding: 2px;
+}
+</style>
+
+
+<!-- Styles for table layout of slides -->
+<style type="text/css">
+td.padding {
+  padding-top:20px;
+  padding-bottom:20px;
+  padding-right:50px;
+  padding-left:50px;
+}
+</style>
+
+</head>
+
+
+<body>
+<div class="reveal">
+<div class="slides">
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+     equationNumbers: {  autoNumber: "none"  },
+     extensions: ["AMSmath.js", "AMSsymbols.js", "autobold.js", "color.js"]
+  }
+});
+</script>
+<script type="text/javascript" async
+ src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+
+<section>
+<!-- ------------------- main content ---------------------- -->
+<center>
+<h1 style="text-align: center;">Machine Learning, artificial intelligence and quantum science at the university of Oslo; research and education</h1>
+</center>  <!-- document title -->
+
+<!-- author(s): Morten Hjorth-Jensen -->
+<center>
+<b>Morten Hjorth-Jensen</b> 
+</center>
+<!-- institution -->
+<center>
+<b>Department of Physics and Astronomy and FRIB/NSCL Laboratory, Michigan State University and Department of Physics and Center for Computing in Science Education, University of Oslo, Norway</b>
+</center>
+<br>
+<center>
+<h4>August 2023</h4>
+</center> <!-- date -->
+<br>
+</section>
+
+<section>
+<h2 id="basic-activities-overview-of-our-main-activities">Basic activities, Overview of our main activities </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<ul>
+<p><li> Machine Learning applied to classical and quantum mechanical systems and analysis of physics experiments</li>
+<p><li> Quantum Engineering</li>
+<p><li> Quantum algorithms</li> 
+<p><li> Quantum Machine Learning</li>
+</ul>
+</div>
+</section>
+
+<section>
+<h2 id="quantum-science-at-ccse-uio">Quantum Science at  CCSE@UiO </h2>
+
+<p>During the last five to six years  years we have started a large scientific activity
+on Quantum Computing and Machine Learning at the Center for Computing
+in Science Education (CCSE), with four PhD students hired since
+October 2019  and several master of Science students (six second year students as of now). This activity spans from the development
+of quantum-mechanical many-particle theories for studying systems of
+interest for making quantum computers, via the development of machine learning and quantum
+algorithms for solving classical and quantum mechanical problems to exploring
+quantum machine learning algorithms.
+</p>
+</section>
+
+<section>
+<h2 id="more-activities">More activities </h2>
+
+<ol>
+<p><li> <a href="https://www.mn.uio.no/fysikk/english/research/groups/semiconductors/index.html" target="_blank">Center of Materials Science UiO, Lasse Vines (Expt) Andrej Kuznetsov(Expt), David Rivas Gongora (Expt) and Marianne Bathen</a></li>
+<p><li> <a href="https://www.quantumcomputing.no/" target="_blank">Gemini center on Quantum Computing (SINTEF-UiO-NTNU)</a></li>
+<p><li> Analysis of experiments in subatomic physics</li>
+<p><li> OsloMet and Simula Research lab</li>
+<p><li> Machine learning and computational neuroscience</li>
+<p><li> and probably many I have forgotten....please excuse me</li>
+</ol>
+</section>
+
+<section>
+<h2 id="a-simple-perspective-on-the-interface-between-ml-and-physics">A simple perspective on the interface between ML and Physics </h2>
+
+<br/><br/>
+<center>
+<p><img src="figures/mlimage.png" width="800" align="bottom"></p>
+</center>
+<br/><br/>
+</section>
+
+<section>
+<h2 id="selected-references">Selected references </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<ul>
+<p><li> <a href="https://arxiv.org/abs/1803.08823" target="_blank">Mehta et al.</a> and <a href="https://www.sciencedirect.com/science/article/pii/S0370157319300766?via%3Dihub" target="_blank">Physics Reports (2019)</a>.</li>
+<p><li> <a href="https://link.aps.org/doi/10.1103/RevModPhys.91.045002" target="_blank">Machine Learning and the Physical Sciences by Carleo et al</a></li>
+<p><li> <a href="https://journals.aps.org/rmp/abstract/10.1103/RevModPhys.94.031003" target="_blank">Artificial Intelligence and Machine Learning in Nuclear Physics, Amber Boehnlein et al., Reviews Modern of Physics 94, 031003 (2022)</a></li> 
+<p><li> <a href="https://journals.aps.org/prresearch/pdf/10.1103/PhysRevResearch.5.033062" target="_blank">Dilute neutron star matter from neural-network quantum states by Fore et al, Physical Review Research 5, 033062 (2023)</a></li>
+<p><li> <a href="https://doi.org/10.48550/arXiv.2305.08831" target="_blank">Neural-network quantum states for ultra-cold Fermi gases, Jane Kim et al, Nature Physics, in press</a></li>
+<p><li> <a href="https://doi.org/10.48550/arXiv.2305.07240" target="_blank">Message-Passing Neural Quantum States for the Homogeneous Electron Gas, Gabriel Pescia, Jane Kim et al. arXiv.2305.07240,</a></li>
+<p><li> <a href="https://doi.org/10.3389/fphy.2023.1061580" target="_blank">Efficient solutions of fermionic systems using artificial neural networks, Nordhagen et al, Frontiers in Physics 11, 2023</a></li>
+</ul>
+</div>
+</section>
+
+<section>
+<h2 id="argon-46-by-solli-et-al-nima-1010-165461-2021">Argon-46 by Solli et al., NIMA 1010, 165461 (2021) </h2>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p>Representations of two events from the
+Argon-46 experiment. Each row is one event in two projections,
+where the color intensity of each point indicates higher charge values
+recorded by the detector. The bottom row illustrates a carbon event with
+a large fraction of noise, while the top row shows a proton event
+almost free of noise. 
+</p>
+</div>
+
+
+<br/><br/>
+<center>
+<p><img src="figures/examples_raw.png" width="500" align="bottom"></p>
+</center>
+<br/><br/>
+</section>
+
+<section>
+<h2 id="quantum-monte-carlo-and-deep-learning">Quantum Monte Carlo and deep learning </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p>Given a hamiltonian \( H \) and a trial wave function \( \Psi_T \), the variational principle states that the expectation value of \( \langle H \rangle \), defined through </p>
+<p>&nbsp;<br>
+$$
+   \langle E \rangle =
+   \frac{\int d\boldsymbol{R}\Psi^{\ast}_T(\boldsymbol{R})H(\boldsymbol{R})\Psi_T(\boldsymbol{R})}
+        {\int d\boldsymbol{R}\Psi^{\ast}_T(\boldsymbol{R})\Psi_T(\boldsymbol{R})},
+$$
+<p>&nbsp;<br>
+
+<p>is an upper bound to the ground state energy \( E_0 \) of the hamiltonian \( H \), that is </p>
+<p>&nbsp;<br>
+$$
+    E_0 \le \langle E \rangle.
+$$
+<p>&nbsp;<br>
+
+<p>In general, the integrals involved in the calculation of various  expectation values  are multi-dimensional ones. Traditional integration methods such as the Gauss-Legendre will not be adequate for say the  computation of the energy of a many-body system.  <b>Basic philosophy: Let a neural network find the optimal wave function</b></p>
+</div>
+</section>
+
+<section>
+<h2 id="dilute-neutron-star-matter-from-neural-network-quantum-states-by-fore-et-al-physical-review-research-5-033062-2023-https-journals-aps-org-prresearch-pdf-10-1103-physrevresearch-5-033062-at-density-rho-0-04-fm-3"><a href="https://journals.aps.org/prresearch/pdf/10.1103/PhysRevResearch.5.033062" target="_blank">Dilute neutron star matter from neural-network quantum states by Fore et al, Physical Review Research 5, 033062 (2023)</a> at density \( \rho=0.04 \) fm$^{-3}$ </h2>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<br/><br/>
+<center>
+<p><img src="figures/nmatter.png" width="700" align="bottom"></p>
+</center>
+<br/><br/>
+</div>
+</section>
+
+<section>
+<h2 id="the-electron-gas-in-three-dimensions-with-n-14-electrons-wigner-seitz-radius-r-s-2-a-u-gabriel-pescia-jane-kim-et-al-arxiv-2305-07240-https-doi-org-10-48550-arxiv-2305-07240">The electron gas in three dimensions with \( N=14 \) electrons (Wigner-Seitz radius \( r_s=2 \) a.u.), <a href="https://doi.org/10.48550/arXiv.2305.07240" target="_blank">Gabriel Pescia, Jane Kim et al. arXiv.2305.07240,</a> </h2>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<br/><br/>
+<center>
+<p><img src="figures/elgasnew.png" width="700" align="bottom"></p>
+</center>
+<br/><br/>
+</div>
+</section>
+
+<section>
+<h2 id="quantum-science-and-technologies">Quantum Science and Technologies </h2>
+</section>
+
+<section>
+<h2 id="references-quantum-computing">References, Quantum Computing </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p>Machine Learning and Quantum Computing hold great promise in tackling the 
+ever increasing dimensionalities. A hot new field is  <b>Quantum Machine Learning</b>, see for example the recent textbook by <a href="https://www.springer.com/gp/book/9783319964232" target="_blank">Maria Schuld and Francesco Petruccione</a>. 
+</p>
+<ol>
+<p><li> Master of Science  thesis of <a href="https://www.duo.uio.no/handle/10852/82489" target="_blank">Stian Bilek</a>, <b>Quantum Computing: Many-Body Methods and Machine Learning, August 2020, PhD student at UiO</b></li>
+<p><li> Master of Science  thesis of <a href="https://www.duo.uio.no/handle/10852/81259" target="_blank">Heine &#197;b&#248;</a>, <b>Quantum Computing and Many-Particle Problems, June 2020</b>, now at OsloMet</li>
+<p><li> Master of Science  thesis of Kristian Wold, Parameterized Quantum Circuits for Machine Learning, September 2021, now at OsloMet</li>
+<p><li> <a href="https://www.mn.uio.no/fysikk/english/people/aca/mariebat/" target="_blank">Marianne Etzelmueller Bathen's PhD</a>, December 2020</li>
+</ol>
+</div>
+</section>
+
+<section>
+<h2 id="quantum-engineering">Quantum Engineering </h2>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b>Quantum Computing requirements</b>
+<p>
+<ol>
+<p><li> be scalable</li>
+<p><li> have qubits that can be entangled</li>
+<p><li> have reliable initializations protocols to a standard state</li>
+<p><li> have a set of universal quantum gates to control the quantum evolution</li>
+<p><li> have a coherence time much longer than the gate operation time</li>
+<p><li> have a reliable read-out mechanism for measuring the qubit states</li>
+<p><li> and many more</li> 
+</ol>
+</div>
+</section>
+
+<section>
+<h2 id="candidate-systems">Candidate systems </h2>
+<ol>
+<p><li> Superconducting Josephon junctions</li>
+<p><li> Single photons</li>
+<p><li> <a href="https://www.insidequantumtechnology.com/news-archive/ionq-is-first-quantum-startup-to-go-public-will-it-be-first-to-deliver-profits/" target="_blank">Trapped ions and atoms</a></li>
+<p><li> Nuclear Magnetic Resonance</li>
+<p><li> <b>Quantum dots, expt at MSU</b></li>
+<p><li> <b>Point Defects in semiconductors, experiments at UiO, center for Materials Science</b></li>
+<p><li> more</li>
+</ol>
+</section>
+
+<section>
+<h2 id="overview-and-motivation">Overview and Motivation </h2>
+
+<b>How to use many-body theory to design quantum circuits (Quantum engineering)</b>
+<ol>
+<p><li> Many-body methods like F(ull)C(onfiguration)I(nteraction) theory  with</li>
+<ul>
+
+<p><li> Adaptive basis sets (see for example <a href="https://arxiv.org/abs/2111.09638" target="_blank">Sigmundson et al arXiv:2111.09638</a>)</li>
+
+<p><li> Time dependence</li>
+
+<p><li> Optimization of experimental parameters</li>
+
+<p><li> Feedback from experiment</li>
+</ul>
+<p>
+<p><li> Finding optimal parameters for tuning of entanglement</li>
+<p><li> Numerical experiments to mimick real systems, using many-body methods to develop <b>quantum twins</b> (<a href="https://iopscience.iop.org/article/10.1088/1367-2630/12/7/075008" target="_blank">inspiration from  work by Herschel Rabitz et al on Control of quantum phenomena, see New Journal of Physics 12 (2010) 075008</a>)!</li>
+</ol>
+</section>
+
+<section>
+<h2 id="recent-work">Recent work </h2>
+
+<p>We have developed theoretical tools  for generating motional entanglement between
+two (and more) electrons trapped above the surface of superfluid helium. In this
+proposed scheme these electronic charge qubits are laterally confined
+via electrostatic gates to create an anharmonic trapping
+potential. When the system is cooled to sufficiently low temperature
+these in-plane charge qubit states are quantized and circuit quantum
+electrodynamic methods can be used to control and readout single qubit
+operations. We work now on Perspectives for quantum simulations with quantum dots
+systems.
+</p>
+</section>
+
+<section>
+<h2 id="electrons-quantum-dots-on-superfluid-helium">Electrons (quantum dots) on superfluid helium </h2>
+
+<p>Electrons on <a href="https://www.youtube.com/watch?v=EuDuM-fe-lA&ab_channel=JoshuahHeath" target="_blank">superfluid helium represent</a> a promising platform for investigating
+strongly-coupled qubits.
+</p>
+
+<p>Therefore a systematic investigation of the
+controlled generation of entanglement between two trapped electrons
+under the influence of coherent microwave driving pulses, taking into
+account the effects of the Coulomb interaction between electrons, is
+of significant importance for quantum information processing using
+trapped electrons.
+</p>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<ol>
+<p><li> Time-Dependent full configuration interaction theory</li>
+<p><li> Time-dependent Coupled-Cluster theory</li>
+<p><li> Designing quantum circuits</li>
+</ol>
+</div>
+</section>
+
+<section>
+<h2 id="where-we-are-now">Where we are now </h2>
+
+<ol>
+<p><li> Adding time-dependent studies of two electrons in two wells in one and two dimensions</li>
+<p><li> Studies of the time-evolution of entangled states (now two electrons only)</li>
+<p><li> Use theory to find optimal experimental setup</li>
+<p><li> Expect two-electron system realized experimentally in approx \( 1 \) year, great potential for studies of quantum simulations</li>
+</ol>
+</section>
+
+<section>
+<h2 id="plans">Plans </h2>
+
+<ol>
+<p><li> Add two and three-dimensions in order to simulate in  a more realistic way such many-body systems.</li>
+<p><li> Develop time-dependent FCI code, useful up to approximately 10 particles with <b>effective</b> (and effective Hilbert space) Hamiltonians in two and three dimensions</li>
+<p><li> Develop codes for studies of entanglement as function of time</li>
+<p><li> Do tomography and extract density matrices and compare with experiment.</li>
+<p><li> Study the feasibility of various setups for quantum simulations of specific Hamiltonians such as the Lipkin model</li>
+<p><li> For larger many-body systems, study for example time-dependent CC theory</li>
+</ol>
+</section>
+
+<section>
+<h2 id="courses-theory-path">Courses, theory path </h2>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<ol>
+<p><li> FYS4150 Computational Physics I, Fall semester, 10 ECTS</li>
+<p><li> FYS-STK4155 Applied Data Analysis and Machine Learning, 10 ECTS</li>
+<p><li> FYS4110 Modern Quantum Mechanics, Fall semester, 10 ECTS</li>
+<p><li> FYS4480 Many-body Physics, Fall semester, 10 ECTS</li>
+<p><li> FYS5419 Quantum Computing and Quantum Machine Learning, Spring semester, 10 ECTS</li>
+<p><li> FYS5429 Advanced Machine Learning for the Physical Sciences, Spring Semester, 10 ECTS</li>
+<p><li> FYS4411 Computational Physics II, Quantum Mechanics, Spring semester, 10 ECTS</li>
+<p><li> MAT3420 Quantum Computing, Spring semester, 10 ECTS</li>
+<p><li> MAT4430 Quantum Information Theory, Spring semester, 10 ECTS</li>
+</ol>
+</div>
+</section>
+
+
+
+</div> <!-- class="slides" -->
+</div> <!-- class="reveal" -->
+
+<script src="reveal.js/lib/js/head.min.js"></script>
+<script src="reveal.js/js/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+  // Display navigation controls in the bottom right corner
+  controls: true,
+
+  // Display progress bar (below the horiz. slider)
+  progress: true,
+
+  // Display the page number of the current slide
+  slideNumber: true,
+
+  // Push each slide change to the browser history
+  history: false,
+
+  // Enable keyboard shortcuts for navigation
+  keyboard: true,
+
+  // Enable the slide overview mode
+  overview: true,
+
+  // Vertical centering of slides
+  //center: true,
+  center: false,
+
+  // Enables touch navigation on devices with touch input
+  touch: true,
+
+  // Loop the presentation
+  loop: false,
+
+  // Change the presentation direction to be RTL
+  rtl: false,
+
+  // Turns fragments on and off globally
+  fragments: true,
+
+  // Flags if the presentation is running in an embedded mode,
+  // i.e. contained within a limited portion of the screen
+  embedded: false,
+
+  // Number of milliseconds between automatically proceeding to the
+  // next slide, disabled when set to 0, this value can be overwritten
+  // by using a data-autoslide attribute on your slides
+  autoSlide: 0,
+
+  // Stop auto-sliding after user input
+  autoSlideStoppable: true,
+
+  // Enable slide navigation via mouse wheel
+  mouseWheel: false,
+
+  // Hides the address bar on mobile devices
+  hideAddressBar: true,
+
+  // Opens links in an iframe preview overlay
+  previewLinks: false,
+
+  // Transition style
+  transition: 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+  // Transition speed
+  transitionSpeed: 'default', // default/fast/slow
+
+  // Transition style for full page slide backgrounds
+  backgroundTransition: 'default', // default/none/slide/concave/convex/zoom
+
+  // Number of slides away from the current that are visible
+  viewDistance: 3,
+
+  // Parallax background image
+    //parallaxBackgroundImage: '', // e.g. "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'"
+
+  // Parallax background size
+  //parallaxBackgroundSize: '' // CSS syntax, e.g. "2100px 900px"
+
+  theme: Reveal.getQueryHash().theme, // available themes are in reveal.js/css/theme
+    transition: Reveal.getQueryHash().transition || 'none', // default/cube/page/concave/zoom/linear/none
+
+});
+
+Reveal.initialize({
+  dependencies: [
+      // Cross-browser shim that fully implements classList - https://github.com/eligrey/classList.js/
+      { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+
+      // Interpret Markdown in <section> elements
+      { src: 'reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: 'reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+
+      // Syntax highlight for <code> elements
+      { src: 'reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+
+      // Zoom in and out with Alt+click
+      { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+
+      // Speaker notes
+      { src: 'reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+
+      // Remote control your reveal.js presentation using a touch device
+      //{ src: 'reveal.js/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } },
+
+      // MathJax
+      //{ src: 'reveal.js/plugin/math/math.js', async: true }
+  ]
+});
+
+Reveal.initialize({
+
+  // The "normal" size of the presentation, aspect ratio will be preserved
+  // when the presentation is scaled to fit different resolutions. Can be
+  // specified using percentage units.
+  width: 1170,  // original: 960,
+  height: 700,
+
+  // Factor of the display size that should remain empty around the content
+  margin: 0.1,
+
+  // Bounds for smallest/largest possible scale to apply to content
+  minScale: 0.2,
+  maxScale: 1.0
+
+});
+</script>
+
+<!-- begin footer logo
+<div style="position: absolute; bottom: 0px; left: 0; margin-left: 0px">
+<img src="somelogo.png">
+</div>
+   end footer logo -->
+
+
+
+
+</body>
+</html>

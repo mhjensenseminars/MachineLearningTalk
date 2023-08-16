@@ -1,1 +1,91 @@
 *** doconce file not found
+*** error: more than one subsection in a slide (insert missing !split):
+% !split
+\subsection{Candidate systems}
+\begin{enumerate}
+\item Superconducting Josephon junctions
+
+\item Single photons
+
+\item \href{{https://www.insidequantumtechnology.com/news-archive/ionq-is-first-quantum-startup-to-go-public-will-it-be-first-to-deliver-profits/}}{Trapped ions and atoms}
+
+\item Nuclear Magnetic Resonance
+
+\item \textbf{Quantum dots, expt at MSU}
+
+\item \textbf{Point Defects in semiconductors, experiments at UiO, center for Materials Science}
+
+\item more
+\end{enumerate}
+
+\noindent
+\subsection{Overview and Motivation}
+
+\textbf{How to use many-body theory to design quantum circuits (Quantum engineering)}
+\begin{enumerate}
+\item Many-body methods like F(ull)C(onfiguration)I(nteraction) theory  with
+\begin{itemize}
+
+  \item Adaptive basis sets (see for example \href{{https://arxiv.org/abs/2111.09638}}{Sigmundson et al arXiv:2111.09638})
+
+  \item Time dependence
+
+  \item Optimization of experimental parameters
+
+  \item Feedback from experiment
+
+\end{itemize}
+
+\noindent
+\item Finding optimal parameters for tuning of entanglement
+
+\item Numerical experiments to mimick real systems, using many-body methods to develop \textbf{quantum twins} (\href{{https://iopscience.iop.org/article/10.1088/1367-2630/12/7/075008}}{inspiration from  work by Herschel Rabitz et al on Control of quantum phenomena, see New Journal of Physics 12 (2010) 075008})!
+\end{enumerate}
+
+\noindent
+
+*** error: more than one subsection in a slide (insert missing !split):
+% !split
+\subsection{Candidate systems}
+\begin{enumerate}
+\item Superconducting Josephon junctions
+
+\item Single photons
+
+\item \href{{https://www.insidequantumtechnology.com/news-archive/ionq-is-first-quantum-startup-to-go-public-will-it-be-first-to-deliver-profits/}}{Trapped ions and atoms}
+
+\item Nuclear Magnetic Resonance
+
+\item \textbf{Quantum dots, expt at MSU}
+
+\item \textbf{Point Defects in semiconductors, experiments at UiO, center for Materials Science}
+
+\item more
+\end{enumerate}
+
+\noindent
+\subsection{Overview and Motivation}
+
+\textbf{How to use many-body theory to design quantum circuits (Quantum engineering)}
+\begin{enumerate}
+\item Many-body methods like F(ull)C(onfiguration)I(nteraction) theory  with
+\begin{itemize}
+
+  \item Adaptive basis sets (see for example \href{{https://arxiv.org/abs/2111.09638}}{Sigmundson et al arXiv:2111.09638})
+
+  \item Time dependence
+
+  \item Optimization of experimental parameters
+
+  \item Feedback from experiment
+
+\end{itemize}
+
+\noindent
+\item Finding optimal parameters for tuning of entanglement
+
+\item Numerical experiments to mimick real systems, using many-body methods to develop \textbf{quantum twins} (\href{{https://iopscience.iop.org/article/10.1088/1367-2630/12/7/075008}}{inspiration from  work by Herschel Rabitz et al on Control of quantum phenomena, see New Journal of Physics 12 (2010) 075008})!
+\end{enumerate}
+
+\noindent
+
