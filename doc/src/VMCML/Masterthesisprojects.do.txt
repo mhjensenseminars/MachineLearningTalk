@@ -24,16 +24,22 @@ interest for making quantum computers, via the development of machine learning a
 algorithms for solving classical and quantum mechanical problems to exploring
 quantum machine learning algorithms.
 
-
 !split
-===== More activities =====
+===== People as of August 2023 =====
 
-o "Center of Materials Science UiO, Lasse Vines (Expt) Andrej Kuznetsov(Expt), David Rivas Gongora (Expt) and Marianne Bathen":"https://www.mn.uio.no/fysikk/english/research/groups/semiconductors/index.html"
-o "Gemini center on Quantum Computing (SINTEF-UiO-NTNU)":"https://www.quantumcomputing.no/"
-o Analysis of experiments in subatomic physics
-o OsloMet and Simula Research lab
-o Machine learning and computational neuroscience
-o and probably many I have forgotten....please excuse me
+o Stian Bilek Dysthe (PhD)
+o Jonas Boym Flaten (PhD)
+o Keran Chen (MSc)
+o Daniel Haass Beccatini Lima (MSc)
+o Morten Hjorth-Jensen (Prof)
+o Håkon Kvernmoen (MSc)
+o Oskar Leinonen (PhD)
+o Christopher Lindelv (PD)
+o Simen Løken (MSc)
+o Henrik Modahl Breitenstein (MSc)
+o Øyvind Schøyen Sigmundson (PhD)
+
+
 
 !split
 ===== A simple perspective on the interface between ML and Physics =====
