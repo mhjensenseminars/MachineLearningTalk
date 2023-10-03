@@ -28,17 +28,18 @@ Jane Kim (MSU), Julie Butler (MSU), Patrick Cook (MSU), Danny Jammooa (MSU), Dan
 
 !split
 ===== The first postdocs, 1994-1996 =====
-o Alexandar Belic
-o Mathias Lutz
-o Dennis Bonatsos
+o "Alexandar Belic":"http://www.scl.rs/scl-members/members/28-scl-members/members/413-aleksandar-belic-cv"
+o "Mathias Lutz":"https://www.physik.tu-darmstadt.de/der_fachbereich/lehrende_physik/professor_innen_details_26176.en.jsp"
+o "Dennis Bonatsos":"http://www.inp.demokritos.gr/staff-members/dennis-bonatsos/"
 o Hilmar Forkel
-o Dima Fedorov
-o Antje H\"oring
+o "Dima Fedorov":"https://pure.au.dk/portal/en/persons/dmitri-fedorov(9a03b124-d457-419c-b2e6-ca4e686b3b96).html"
+o "Antje H\"oring":"https://www.crab.org/research-statisticians.html"
 o Gianluca Lazzari
-o Fabio DeBlasio
-o Jochen Rau
-o MHJ
-o Two brazilians associate professors, Marta Barroso and Carlo Aguiar
+o "Fabio DeBlasio":"https://en.unimib.it/fabio-vittorio-de-blasio"
+o "Jochen Rau":"https://www.q-info.org/about-me/"
+o MHJ and two brazilians associate professors, Marta Barroso and Carlo Aguiar
+
+
 !split
 ===== Education =====
 
