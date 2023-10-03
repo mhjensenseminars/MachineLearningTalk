@@ -1,5 +1,4 @@
-TITLE: Thirty Years of Education and Research on Nuclear Many-
-Body Physics at the ECT*; from traditional methods to quantum computing and machine learning
+TITLE: Thirty Years of Education and Research on Nuclear Many-Body Physics at the ECT*; from traditional methods to quantum computing and machine learning
 AUTHOR: Morten Hjorth-Jensen at Department of Physics and Astronomy and FRIB, Michigan State University, USA, and Department of Physics and Center for Computing in Science Education, University of Oslo, Norway
 DATE: 30th anniversary ECT*, October 4, 2023
 
@@ -8,14 +7,15 @@ DATE: 30th anniversary ECT*, October 4, 2023
 ===== What is this talk about? =====
 !bblock
 The main emphasis is to give you a short and pedestrian introduction to the whys and hows we can use (with several examples) machine learning methods
-in nuclear physics. And why this could (or should) be of interest. 
+in nuclear physics. And why this could (or should) be of interest. And how this can be linked with standard many-body theories. And perhaps some quantum computing.
 !eblock
 
+!bblock
+I will also try to highlight educational initiatives and strategies where the ECT* has played and will play an important role in educating the next generation of nuclear scientists
+!eblock
 
 !bblock Additional info
-These slides are at URL:"https://mhjensenseminars.github.io/MachineLearningTalk/doc/web/overview.html". Scroll down the page.
-
-* Parts of this talk are based on "Artificial Intelligence and Machine Learning in Nuclear Physics, Amber Boehnlein et al., Reviews Modern of Physics 94, 031003 (2022)":"https://journals.aps.org/rmp/abstract/10.1103/RevModPhys.94.031003" 
+Parts of this talk are based on "Artificial Intelligence and Machine Learning in Nuclear Physics, Amber Boehnlein et al., Reviews Modern of Physics 94, 031003 (2022)":"https://journals.aps.org/rmp/abstract/10.1103/RevModPhys.94.031003" 
 
 
 !eblock
@@ -27,38 +27,87 @@ Jane Kim (MSU), Julie Butler (MSU), Patrick Cook (MSU), Danny Jammooa (MSU), Dan
 
 
 !split
-===== The first postdocs, 1994-1996 =====
-o "Alexandar Belic":"http://www.scl.rs/scl-members/members/28-scl-members/members/413-aleksandar-belic-cv"
-o "Mathias Lutz":"https://www.physik.tu-darmstadt.de/der_fachbereich/lehrende_physik/professor_innen_details_26176.en.jsp"
-o "Dennis Bonatsos":"http://www.inp.demokritos.gr/staff-members/dennis-bonatsos/"
-o Hilmar Forkel
-o "Dima Fedorov":"https://pure.au.dk/portal/en/persons/dmitri-fedorov(9a03b124-d457-419c-b2e6-ca4e686b3b96).html"
-o "Antje H\"oring":"https://www.crab.org/research-statisticians.html"
-o Gianluca Lazzari
-o "Fabio DeBlasio":"https://en.unimib.it/fabio-vittorio-de-blasio"
-o "Jochen Rau":"https://www.q-info.org/about-me/"
-o MHJ and two brazilians associate professors, Marta Barroso and Carlo Aguiar
+===== The first postdocs and long-term visitors, 1994-1996 =====
+
+* Two Brazilians professors on a sabbatical, Marta Barroso and Carlos Aguiar, later Ed Tomosiak from Canada
+* "Alexandar Belic":"http://www.scl.rs/scl-members/members/28-scl-members/members/413-aleksandar-belic-cv"; "Dennis Bonatsos":"http://www.inp.demokritos.gr/staff-members/dennis-bonatsos/"
+* "Fabio DeBlasio":"https://en.unimib.it/fabio-vittorio-de-blasio"; "Dima Fedorov":"https://pure.au.dk/portal/en/persons/dmitri-fedorov(9a03b124-d457-419c-b2e6-ca4e686b3b96).html"
+* Hilmar Forkel; "Antje H\"oring":"https://www.crab.org/research-statisticians.html"
+*  Gianluca Lazzari; "Mathias Lutz":"https://www.physik.tu-darmstadt.de/der_fachbereich/lehrende_physik/professor_innen_details_26176.en.jsp"
+* Jochen Rau":"https://www.q-info.org/about-me/"; MHJ
+
+!split
+===== Villa Tambosi, summer 1995, Tempus Fugit =====
+
+
+FIGURE: [Photos/mhj1995.jpeg, width=900 frac=1.0]
+
 
 
 !split
-===== Education =====
+===== One of the first many-body workshops, June-July 1997 =====
+
+
+FIGURE: [Photos/manybody1997.jpeg, width=900 frac=1.0]
+
+
+!split
+===== Educational mission and strategic commitments =====
+
+* First doctoral training program summer 2002 under the Marie Curie program, Hot and dense QCD
+* First Nuclear Talent course summer 2012, focus on computational many-body methods, nuclear shell-model and Monte Carlo methods
+
+!split
+===== The Nuclear TALENT initiative =====
+
+"Training in Advanced Low Energy Nuclear Theory":"http://www.nucleartalent.org",  
+aims at providing an advanced and comprehensive training to graduate students
+and young researchers in low-energy nuclear theory. The initiative
+is a multinational network between several Asian, European and Northern
+American institutions and aims at developing a broad curriculum that
+will provide the platform for a cutting-edge theory for understanding
+nuclei and nuclear reactions.
+
+These objectives are met by
+offering series of lectures, commissioned from experienced teachers
+in nuclear theory. The educational material generated under this
+program will be collected in the form of WEB-based courses,
+textbooks, and a variety of modern educational resources. No such
+all-encompassing material is available at present; its development
+will allow dispersed university groups to profit from the best
+expertise available.
+
+
+!split
+===== The first Nuclear Talent course at the ECT*, summer 2012 =====
+
+FIGURE: [Photos/talent2012.pdf, width=900 frac=1.0]
+
+!split
+===== The second Nuclear Talent course at the ECT*, summer 2014 =====
 
 
 FIGURE: [Photos/talent2014a.jpg, width=900 frac=1.0]
 
-
 !split
-===== Education =====
-
+===== The second Nuclear Talent course at the ECT*, summer 2014 =====
 
 FIGURE: [Photos/talent2014b.jpg, width=900 frac=1.0]
 
 
 !split
-===== Education =====
+===== Nuclear Talent course summer 2017 =====
 
 
 FIGURE: [Photos/talent2017.jpg, width=900 frac=1.0]
+
+
+!split
+===== Nuclear Talent course summer 2018 in China =====
+
+
+FIGURE: [Photos/talent2018.jpeg, width=900 frac=1.0]
+
 
 
 
