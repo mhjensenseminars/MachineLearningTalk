@@ -42,10 +42,10 @@ doconce format html ThirtyyearsECT.do.txt --html_style=bootstrap --pygments_html
                2,
                None,
                'the-first-postdocs-and-long-term-visitors-1994-1996'),
-              ('One of the first many-body workshops, June-July 1997',
+              ('One of the first many-body workshops, summer 1997',
                2,
                None,
-               'one-of-the-first-many-body-workshops-june-july-1997'),
+               'one-of-the-first-many-body-workshops-summer-1997'),
               ('Educational mission and strategic initiatives',
                2,
                None,
@@ -94,14 +94,6 @@ doconce format html ThirtyyearsECT.do.txt --html_style=bootstrap --pygments_html
                2,
                None,
                'scientific-machine-learning'),
-              ('Machine Learning and Physics',
-               2,
-               None,
-               'machine-learning-and-physics'),
-              ('Lots of room for creativity',
-               2,
-               None,
-               'lots-of-room-for-creativity'),
               ('Types of machine learning',
                2,
                None,
@@ -185,15 +177,6 @@ doconce format html ThirtyyearsECT.do.txt --html_style=bootstrap --pygments_html
                2,
                None,
                'onebody-densities-n-30-hbar-omega-0-1-a-u'),
-              ('Extrapolations and model interpretability',
-               2,
-               None,
-               'extrapolations-and-model-interpretability'),
-              ('Physics based statistical learning and data analysis',
-               2,
-               None,
-               'physics-based-statistical-learning-and-data-analysis'),
-              ("Bayes' Theorem", 2, None, 'bayes-theorem'),
               ('Quantified limits of the nuclear landscape',
                2,
                None,
@@ -285,7 +268,42 @@ doconce format html ThirtyyearsECT.do.txt --html_style=bootstrap --pygments_html
                None,
                'potential-wells-the-one-body-densities-and-single-particle-states'),
               ('Where we are now', 2, None, 'where-we-are-now'),
-              ('Plans', 2, None, 'plans')]}
+              ('Plans', 2, None, 'plans'),
+              ('Addendum: Quantum Monte Carlo Motivation',
+               2,
+               None,
+               'addendum-quantum-monte-carlo-motivation'),
+              ('Quantum Monte Carlo Motivation',
+               2,
+               None,
+               'quantum-monte-carlo-motivation'),
+              ('Quantum Monte Carlo Motivation',
+               2,
+               None,
+               'quantum-monte-carlo-motivation'),
+              ('The trial wave function', 2, None, 'the-trial-wave-function'),
+              ('The correlation part of the wave function',
+               2,
+               None,
+               'the-correlation-part-of-the-wave-function'),
+              ('Resulting ansatz', 2, None, 'resulting-ansatz'),
+              ('Energy derivatives', 2, None, 'energy-derivatives'),
+              ('Derivatives of the local energy',
+               2,
+               None,
+               'derivatives-of-the-local-energy'),
+              ('How do we define our cost function?',
+               2,
+               None,
+               'how-do-we-define-our-cost-function'),
+              ('Meet the variance and its derivatives',
+               2,
+               None,
+               'meet-the-variance-and-its-derivatives'),
+              ('The variance defines the cost function',
+               2,
+               None,
+               'the-variance-defines-the-cost-function')]}
 end of tocinfo -->
 
 <body>
@@ -323,7 +341,7 @@ MathJax.Hub.Config({
      <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs001.html#what-is-this-talk-about" style="font-size: 80%;">What is this talk about?</a></li>
      <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs002.html#thanks-to-many" style="font-size: 80%;">Thanks to many</a></li>
      <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs003.html#the-first-postdocs-and-long-term-visitors-1994-1996" style="font-size: 80%;">The first postdocs and long-term visitors, 1994-1996</a></li>
-     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs004.html#one-of-the-first-many-body-workshops-june-july-1997" style="font-size: 80%;">One of the first many-body workshops, June-July 1997</a></li>
+     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs004.html#one-of-the-first-many-body-workshops-summer-1997" style="font-size: 80%;">One of the first many-body workshops, summer 1997</a></li>
      <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs005.html#educational-mission-and-strategic-initiatives" style="font-size: 80%;">Educational mission and strategic initiatives</a></li>
      <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs006.html#the-nuclear-talent-initiative" style="font-size: 80%;">The Nuclear TALENT initiative</a></li>
      <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs007.html#the-first-ever-nuclear-talent-course-ect-summer-2012" style="font-size: 80%;">The first ever Nuclear Talent course, ECT*, summer 2012</a></li>
@@ -337,72 +355,78 @@ MathJax.Hub.Config({
      <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs015.html#ml-in-nuclear-physics" style="font-size: 80%;">ML in Nuclear  Physics</a></li>
      <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs016.html#ai-ml-and-some-statements-you-may-have-heard-and-what-do-they-mean" style="font-size: 80%;">AI/ML and some statements you may have heard (and what do they mean?)</a></li>
      <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs017.html#scientific-machine-learning" style="font-size: 80%;">Scientific Machine Learning</a></li>
-     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs018.html#machine-learning-and-physics" style="font-size: 80%;">Machine Learning and Physics</a></li>
-     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs019.html#lots-of-room-for-creativity" style="font-size: 80%;">Lots of room for creativity</a></li>
-     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs020.html#types-of-machine-learning" style="font-size: 80%;">Types of machine learning</a></li>
-     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs021.html#main-categories" style="font-size: 80%;">Main categories</a></li>
-     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs022.html#machine-learning-and-nuclear-theory-my-bias-why" style="font-size: 80%;">Machine learning and nuclear theory (my bias): Why?</a></li>
-     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs023.html#the-plethora-of-machine-learning-algorithms-methods" style="font-size: 80%;">The plethora  of machine learning algorithms/methods</a></li>
-     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs024.html#examples-of-machine-learning-methods-and-applications-in-nuclear-physics" style="font-size: 80%;">Examples of Machine Learning methods and applications in nuclear physics</a></li>
-     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs025.html#examples-of-machine-learning-methods-and-applications-in-nuclear-physics-continues" style="font-size: 80%;">Examples of Machine Learning methods and applications in nuclear physics, continues</a></li>
-     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs026.html#more-examples" style="font-size: 80%;">More examples</a></li>
-     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs027.html#and-more" style="font-size: 80%;">And more</a></li>
-     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs028.html#selected-references" style="font-size: 80%;">Selected references</a></li>
-     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs029.html#what-are-the-basic-ingredients" style="font-size: 80%;">What are the basic ingredients?</a></li>
-     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs030.html#argon-46-by-solli-et-al-nima-1010-165461-2021" style="font-size: 80%;">Argon-46 by Solli et al., NIMA 1010, 165461 (2021)</a></li>
-     <!-- navigation toc: --> <li><a href="#quantum-monte-carlo-and-deep-learning" style="font-size: 80%;">Quantum Monte Carlo and deep learning</a></li>
-     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs032.html#monte-carlo-methods-and-neural-networks" style="font-size: 80%;">Monte Carlo methods and Neural Networks</a></li>
-     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs033.html#deep-learning-neural-networks-variational-monte-carlo-calculations-of-a-le-4-nuclei-with-an-artificial-neural-network-correlator-ansatz-by-adams-et-al-https-journals-aps-org-prl-abstract-10-1103-physrevlett-127-022502" style="font-size: 80%;">Deep learning neural networks, "Variational Monte Carlo calculations of \( A\le 4 \) nuclei with an artificial neural-network correlator ansatz by Adams et al.":"https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.127.022502"</a></li>
-     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs034.html#explicit-results" style="font-size: 80%;">Explicit results</a></li>
-     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs035.html#dilute-neutron-star-matter-from-neural-network-quantum-states-by-fore-et-al-physical-review-research-5-033062-2023-https-journals-aps-org-prresearch-pdf-10-1103-physrevresearch-5-033062-at-density-rho-0-04-fm-3" style="font-size: 80%;">"Dilute neutron star matter from neural-network quantum states by Fore et al, Physical Review Research 5, 033062 (2023)":"https://journals.aps.org/prresearch/pdf/10.1103/PhysRevResearch.5.033062" at density \( \rho=0.04 \) fm$^{-3}$</a></li>
-     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs036.html#the-electron-gas-in-three-dimensions-with-n-14-electrons-wigner-seitz-radius-r-s-2-a-u-gabriel-pescia-jane-kim-et-al-arxiv-2305-07240-https-doi-org-10-48550-arxiv-2305-07240" style="font-size: 80%;">The electron gas in three dimensions with \( N=14 \) electrons (Wigner-Seitz radius \( r_s=2 \) a.u.), "Gabriel Pescia, Jane Kim et al. arXiv.2305.07240,":"https://doi.org/10.48550/arXiv.2305.07240"</a></li>
-     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs037.html#efficient-solutions-of-fermionic-systems-using-artificial-neural-networks-nordhagen-et-al-frontiers-in-physics-11-2023-https-doi-org-10-3389-fphy-2023-1061580" style="font-size: 80%;">"Efficient solutions of fermionic systems using artificial neural networks, Nordhagen et al, Frontiers in Physics 11, 2023":"https://doi.org/10.3389/fphy.2023.1061580"</a></li>
-     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs038.html#quantum-dots-and-boltzmann-machines-onebody-densities-n-6-hbar-omega-0-1-a-u" style="font-size: 80%;">Quantum dots and Boltzmann machines, onebody densities \( N=6 \), \( \hbar\omega=0.1 \) a.u.</a></li>
-     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs039.html#onebody-densities-n-30-hbar-omega-1-0-a-u" style="font-size: 80%;">Onebody densities \( N=30 \), \( \hbar\omega=1.0 \) a.u.</a></li>
-     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs040.html#onebody-densities-n-30-hbar-omega-0-1-a-u" style="font-size: 80%;">Onebody densities \( N=30 \), \( \hbar\omega=0.1 \) a.u.</a></li>
-     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs041.html#extrapolations-and-model-interpretability" style="font-size: 80%;">Extrapolations and model interpretability</a></li>
-     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs042.html#physics-based-statistical-learning-and-data-analysis" style="font-size: 80%;">Physics based statistical learning and data analysis</a></li>
-     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs043.html#bayes-theorem" style="font-size: 80%;">Bayes' Theorem</a></li>
-     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs044.html#quantified-limits-of-the-nuclear-landscape" style="font-size: 80%;">Quantified limits of the nuclear landscape</a></li>
-     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs045.html#constraining-the-equation-of-state-for-dense-nuclear-matter" style="font-size: 80%;">Constraining the equation of state for dense nuclear matter</a></li>
-     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs046.html#experimental-design" style="font-size: 80%;">Experimental design</a></li>
-     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs047.html#observations-and-perspectives" style="font-size: 80%;">Observations and perspectives</a></li>
-     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs048.html#how-can-we-use-ml-in-nuclear-science" style="font-size: 80%;">How can we use ML in Nuclear Science?</a></li>
-     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs049.html#possible-start-to-raise-awareness-about-ml-in-our-field" style="font-size: 80%;">Possible start to raise awareness about ML in our field</a></li>
-     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs050.html#villa-tambosi-summer-1995-tempus-fugit-sadly" style="font-size: 80%;">Villa Tambosi, summer 1995, Tempus Fugit (sadly)</a></li>
-     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs051.html#quantum-computing-overview-and-motivation" style="font-size: 80%;">Quantum computing, Overview and Motivation</a></li>
-     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs052.html#what-is-this-about" style="font-size: 80%;">What is this about?</a></li>
-     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs053.html#literature-and-more-reading" style="font-size: 80%;">Literature and more reading</a></li>
-     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs054.html#quantum-engineering" style="font-size: 80%;">Quantum Engineering</a></li>
-     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs055.html#candidate-systems" style="font-size: 80%;">Candidate systems</a></li>
-     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs056.html#electrons-quantum-dots-on-superfluid-helium" style="font-size: 80%;">Electrons (quantum dots) on superfluid helium</a></li>
-     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs057.html#to-read-more" style="font-size: 80%;">To read more</a></li>
-     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs058.html#experimental-setup-i" style="font-size: 80%;">Experimental setup I</a></li>
-     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs059.html#more-on-experimental-setup-ii" style="font-size: 80%;">More on experimental setup II</a></li>
-     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs060.html#more-on-experimental-setup-iii" style="font-size: 80%;">More on experimental setup III</a></li>
-     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs061.html#experimental-set-up" style="font-size: 80%;">Experimental set up</a></li>
-     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs062.html#entanglement" style="font-size: 80%;">Entanglement</a></li>
-     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs063.html#more-on-entanglement" style="font-size: 80%;">More on Entanglement</a></li>
-     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs064.html#entanglement-gates-in-trapped-ions-and-more" style="font-size: 80%;">Entanglement gates in trapped ions and more</a></li>
-     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs065.html#quantum-dots-and-the-coulomb-interaction" style="font-size: 80%;">Quantum dots and the Coulomb interaction</a></li>
-     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs066.html#electrons-on-helium-is-another-qubit-platform" style="font-size: 80%;">Electrons on helium is another qubit platform</a></li>
-     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs067.html#surface-state-electrons-sse" style="font-size: 80%;">Surface state electrons (SSE)</a></li>
-     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs076.html#calculational-details" style="font-size: 80%;">Calculational details</a></li>
-     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs076.html#calculational-details" style="font-size: 80%;">Calculational details</a></li>
-     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs076.html#calculational-details" style="font-size: 80%;">Calculational details</a></li>
-     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs076.html#calculational-details" style="font-size: 80%;">Calculational details</a></li>
-     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs076.html#calculational-details" style="font-size: 80%;">Calculational details</a></li>
-     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs076.html#calculational-details" style="font-size: 80%;">Calculational details</a></li>
-     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs076.html#calculational-details" style="font-size: 80%;">Calculational details</a></li>
-     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs076.html#calculational-details" style="font-size: 80%;">Calculational details</a></li>
-     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs076.html#calculational-details" style="font-size: 80%;">Calculational details</a></li>
-     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs077.html#results-and-discussions" style="font-size: 80%;">Results and discussions</a></li>
-     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs079.html#entanglement-and-more" style="font-size: 80%;">Entanglement and more</a></li>
-     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs080.html#legend-to-figure" style="font-size: 80%;">Legend to figure</a></li>
-     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs081.html#particle-densities-and-coefficients" style="font-size: 80%;">Particle densities and coefficients</a></li>
-     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs082.html#potential-wells-the-one-body-densities-and-single-particle-states" style="font-size: 80%;">Potential wells, the one-body densities, and single-particle states</a></li>
-     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs083.html#where-we-are-now" style="font-size: 80%;">Where we are now</a></li>
-     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs084.html#plans" style="font-size: 80%;">Plans</a></li>
+     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs018.html#types-of-machine-learning" style="font-size: 80%;">Types of machine learning</a></li>
+     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs019.html#main-categories" style="font-size: 80%;">Main categories</a></li>
+     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs020.html#machine-learning-and-nuclear-theory-my-bias-why" style="font-size: 80%;">Machine learning and nuclear theory (my bias): Why?</a></li>
+     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs021.html#the-plethora-of-machine-learning-algorithms-methods" style="font-size: 80%;">The plethora  of machine learning algorithms/methods</a></li>
+     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs022.html#examples-of-machine-learning-methods-and-applications-in-nuclear-physics" style="font-size: 80%;">Examples of Machine Learning methods and applications in nuclear physics</a></li>
+     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs023.html#examples-of-machine-learning-methods-and-applications-in-nuclear-physics-continues" style="font-size: 80%;">Examples of Machine Learning methods and applications in nuclear physics, continues</a></li>
+     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs024.html#more-examples" style="font-size: 80%;">More examples</a></li>
+     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs025.html#and-more" style="font-size: 80%;">And more</a></li>
+     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs026.html#selected-references" style="font-size: 80%;">Selected references</a></li>
+     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs027.html#what-are-the-basic-ingredients" style="font-size: 80%;">What are the basic ingredients?</a></li>
+     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs028.html#argon-46-by-solli-et-al-nima-1010-165461-2021" style="font-size: 80%;">Argon-46 by Solli et al., NIMA 1010, 165461 (2021)</a></li>
+     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs029.html#quantum-monte-carlo-and-deep-learning" style="font-size: 80%;">Quantum Monte Carlo and deep learning</a></li>
+     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs030.html#monte-carlo-methods-and-neural-networks" style="font-size: 80%;">Monte Carlo methods and Neural Networks</a></li>
+     <!-- navigation toc: --> <li><a href="#deep-learning-neural-networks-variational-monte-carlo-calculations-of-a-le-4-nuclei-with-an-artificial-neural-network-correlator-ansatz-by-adams-et-al-https-journals-aps-org-prl-abstract-10-1103-physrevlett-127-022502" style="font-size: 80%;">Deep learning neural networks, "Variational Monte Carlo calculations of \( A\le 4 \) nuclei with an artificial neural-network correlator ansatz by Adams et al.":"https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.127.022502"</a></li>
+     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs032.html#explicit-results" style="font-size: 80%;">Explicit results</a></li>
+     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs033.html#dilute-neutron-star-matter-from-neural-network-quantum-states-by-fore-et-al-physical-review-research-5-033062-2023-https-journals-aps-org-prresearch-pdf-10-1103-physrevresearch-5-033062-at-density-rho-0-04-fm-3" style="font-size: 80%;">"Dilute neutron star matter from neural-network quantum states by Fore et al, Physical Review Research 5, 033062 (2023)":"https://journals.aps.org/prresearch/pdf/10.1103/PhysRevResearch.5.033062" at density \( \rho=0.04 \) fm$^{-3}$</a></li>
+     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs034.html#the-electron-gas-in-three-dimensions-with-n-14-electrons-wigner-seitz-radius-r-s-2-a-u-gabriel-pescia-jane-kim-et-al-arxiv-2305-07240-https-doi-org-10-48550-arxiv-2305-07240" style="font-size: 80%;">The electron gas in three dimensions with \( N=14 \) electrons (Wigner-Seitz radius \( r_s=2 \) a.u.), "Gabriel Pescia, Jane Kim et al. arXiv.2305.07240,":"https://doi.org/10.48550/arXiv.2305.07240"</a></li>
+     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs035.html#efficient-solutions-of-fermionic-systems-using-artificial-neural-networks-nordhagen-et-al-frontiers-in-physics-11-2023-https-doi-org-10-3389-fphy-2023-1061580" style="font-size: 80%;">"Efficient solutions of fermionic systems using artificial neural networks, Nordhagen et al, Frontiers in Physics 11, 2023":"https://doi.org/10.3389/fphy.2023.1061580"</a></li>
+     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs036.html#quantum-dots-and-boltzmann-machines-onebody-densities-n-6-hbar-omega-0-1-a-u" style="font-size: 80%;">Quantum dots and Boltzmann machines, onebody densities \( N=6 \), \( \hbar\omega=0.1 \) a.u.</a></li>
+     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs037.html#onebody-densities-n-30-hbar-omega-1-0-a-u" style="font-size: 80%;">Onebody densities \( N=30 \), \( \hbar\omega=1.0 \) a.u.</a></li>
+     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs038.html#onebody-densities-n-30-hbar-omega-0-1-a-u" style="font-size: 80%;">Onebody densities \( N=30 \), \( \hbar\omega=0.1 \) a.u.</a></li>
+     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs039.html#quantified-limits-of-the-nuclear-landscape" style="font-size: 80%;">Quantified limits of the nuclear landscape</a></li>
+     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs040.html#constraining-the-equation-of-state-for-dense-nuclear-matter" style="font-size: 80%;">Constraining the equation of state for dense nuclear matter</a></li>
+     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs041.html#experimental-design" style="font-size: 80%;">Experimental design</a></li>
+     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs042.html#observations-and-perspectives" style="font-size: 80%;">Observations and perspectives</a></li>
+     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs043.html#how-can-we-use-ml-in-nuclear-science" style="font-size: 80%;">How can we use ML in Nuclear Science?</a></li>
+     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs044.html#possible-start-to-raise-awareness-about-ml-in-our-field" style="font-size: 80%;">Possible start to raise awareness about ML in our field</a></li>
+     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs045.html#villa-tambosi-summer-1995-tempus-fugit-sadly" style="font-size: 80%;">Villa Tambosi, summer 1995, Tempus Fugit (sadly)</a></li>
+     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs046.html#quantum-computing-overview-and-motivation" style="font-size: 80%;">Quantum computing, Overview and Motivation</a></li>
+     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs047.html#what-is-this-about" style="font-size: 80%;">What is this about?</a></li>
+     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs048.html#literature-and-more-reading" style="font-size: 80%;">Literature and more reading</a></li>
+     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs049.html#quantum-engineering" style="font-size: 80%;">Quantum Engineering</a></li>
+     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs050.html#candidate-systems" style="font-size: 80%;">Candidate systems</a></li>
+     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs051.html#electrons-quantum-dots-on-superfluid-helium" style="font-size: 80%;">Electrons (quantum dots) on superfluid helium</a></li>
+     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs052.html#to-read-more" style="font-size: 80%;">To read more</a></li>
+     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs053.html#experimental-setup-i" style="font-size: 80%;">Experimental setup I</a></li>
+     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs054.html#more-on-experimental-setup-ii" style="font-size: 80%;">More on experimental setup II</a></li>
+     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs055.html#more-on-experimental-setup-iii" style="font-size: 80%;">More on experimental setup III</a></li>
+     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs056.html#experimental-set-up" style="font-size: 80%;">Experimental set up</a></li>
+     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs057.html#entanglement" style="font-size: 80%;">Entanglement</a></li>
+     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs058.html#more-on-entanglement" style="font-size: 80%;">More on Entanglement</a></li>
+     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs059.html#entanglement-gates-in-trapped-ions-and-more" style="font-size: 80%;">Entanglement gates in trapped ions and more</a></li>
+     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs060.html#quantum-dots-and-the-coulomb-interaction" style="font-size: 80%;">Quantum dots and the Coulomb interaction</a></li>
+     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs061.html#electrons-on-helium-is-another-qubit-platform" style="font-size: 80%;">Electrons on helium is another qubit platform</a></li>
+     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs062.html#surface-state-electrons-sse" style="font-size: 80%;">Surface state electrons (SSE)</a></li>
+     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs071.html#calculational-details" style="font-size: 80%;">Calculational details</a></li>
+     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs071.html#calculational-details" style="font-size: 80%;">Calculational details</a></li>
+     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs071.html#calculational-details" style="font-size: 80%;">Calculational details</a></li>
+     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs071.html#calculational-details" style="font-size: 80%;">Calculational details</a></li>
+     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs071.html#calculational-details" style="font-size: 80%;">Calculational details</a></li>
+     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs071.html#calculational-details" style="font-size: 80%;">Calculational details</a></li>
+     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs071.html#calculational-details" style="font-size: 80%;">Calculational details</a></li>
+     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs071.html#calculational-details" style="font-size: 80%;">Calculational details</a></li>
+     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs071.html#calculational-details" style="font-size: 80%;">Calculational details</a></li>
+     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs072.html#results-and-discussions" style="font-size: 80%;">Results and discussions</a></li>
+     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs074.html#entanglement-and-more" style="font-size: 80%;">Entanglement and more</a></li>
+     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs075.html#legend-to-figure" style="font-size: 80%;">Legend to figure</a></li>
+     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs076.html#particle-densities-and-coefficients" style="font-size: 80%;">Particle densities and coefficients</a></li>
+     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs077.html#potential-wells-the-one-body-densities-and-single-particle-states" style="font-size: 80%;">Potential wells, the one-body densities, and single-particle states</a></li>
+     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs078.html#where-we-are-now" style="font-size: 80%;">Where we are now</a></li>
+     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs079.html#plans" style="font-size: 80%;">Plans</a></li>
+     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs080.html#addendum-quantum-monte-carlo-motivation" style="font-size: 80%;">Addendum: Quantum Monte Carlo Motivation</a></li>
+     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs082.html#quantum-monte-carlo-motivation" style="font-size: 80%;">Quantum Monte Carlo Motivation</a></li>
+     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs082.html#quantum-monte-carlo-motivation" style="font-size: 80%;">Quantum Monte Carlo Motivation</a></li>
+     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs083.html#the-trial-wave-function" style="font-size: 80%;">The trial wave function</a></li>
+     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs084.html#the-correlation-part-of-the-wave-function" style="font-size: 80%;">The correlation part of the wave function</a></li>
+     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs085.html#resulting-ansatz" style="font-size: 80%;">Resulting ansatz</a></li>
+     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs086.html#energy-derivatives" style="font-size: 80%;">Energy derivatives</a></li>
+     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs087.html#derivatives-of-the-local-energy" style="font-size: 80%;">Derivatives of the local energy</a></li>
+     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs088.html#how-do-we-define-our-cost-function" style="font-size: 80%;">How do we define our cost function?</a></li>
+     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs089.html#meet-the-variance-and-its-derivatives" style="font-size: 80%;">Meet the variance and its derivatives</a></li>
+     <!-- navigation toc: --> <li><a href="._ThirtyyearsECT-bs090.html#the-variance-defines-the-cost-function" style="font-size: 80%;">The variance defines the cost function</a></li>
 
         </ul>
       </li>
@@ -414,26 +438,21 @@ MathJax.Hub.Config({
 <p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p> <!-- add vertical space -->
 <a name="part0031"></a>
 <!-- !split -->
-<h2 id="quantum-monte-carlo-and-deep-learning" class="anchor">Quantum Monte Carlo and deep learning </h2>
-<div class="panel panel-default">
-<div class="panel-body">
-<!-- subsequent paragraphs come in larger fonts, so start with a paragraph -->
-<p>Given a hamiltonian \( H \) and a trial wave function \( \Psi_T \), the variational principle states that the expectation value of \( \langle H \rangle \), defined through </p>
+<h2 id="deep-learning-neural-networks-variational-monte-carlo-calculations-of-a-le-4-nuclei-with-an-artificial-neural-network-correlator-ansatz-by-adams-et-al-https-journals-aps-org-prl-abstract-10-1103-physrevlett-127-022502" class="anchor">Deep learning neural networks, <a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.127.022502" target="_self">Variational Monte Carlo calculations of \( A\le 4 \) nuclei with an artificial neural-network correlator ansatz by Adams et al.</a> </h2>
+
+<p>An appealing feature of the neural network ansatz is that it is more general than the more conventional product of two-
+and three-body spin-independent Jastrow functions
+</p>
 $$
-   \langle E \rangle =
-   \frac{\int d\boldsymbol{R}\Psi^{\ast}_T(\boldsymbol{R})H(\boldsymbol{R})\Psi_T(\boldsymbol{R})}
-        {\int d\boldsymbol{R}\Psi^{\ast}_T(\boldsymbol{R})\Psi_T(\boldsymbol{R})},
+\begin{align}
+|\Psi_V^J \rangle = \prod_{i < j < k} \Big( 1-\sum_{\text{cyc}} u(r_{ij}) u(r_{jk})\Big) \prod_{i < j} f(r_{ij}) | \Phi\rangle\,,
+\tag{2}
+\end{align}
 $$
 
-<p>is an upper bound to the ground state energy \( E_0 \) of the hamiltonian \( H \), that is </p>
-$$
-    E_0 \le \langle E \rangle.
-$$
-
-<p>In general, the integrals involved in the calculation of various  expectation values  are multi-dimensional ones. Traditional integration methods such as the Gauss-Legendre will not be adequate for say the  computation of the energy of a many-body system.  <b>Basic philosophy: Let a neural network find the optimal wave function</b></p>
-</div>
-</div>
-
+<p>which is commonly used for nuclear Hamiltonians that do not contain tensor and spin-orbit terms.
+The above function is replaced by a four-layer Neural Network. 
+</p>
 
 <p>
 <!-- navigation buttons at the bottom of the page -->
@@ -460,7 +479,7 @@ $$
   <li><a href="._ThirtyyearsECT-bs039.html">40</a></li>
   <li><a href="._ThirtyyearsECT-bs040.html">41</a></li>
   <li><a href="">...</a></li>
-  <li><a href="._ThirtyyearsECT-bs084.html">85</a></li>
+  <li><a href="._ThirtyyearsECT-bs090.html">91</a></li>
   <li><a href="._ThirtyyearsECT-bs032.html">&raquo;</a></li>
 </ul>
 <!-- ------------------- end of main content --------------- -->

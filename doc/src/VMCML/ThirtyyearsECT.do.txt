@@ -32,17 +32,17 @@ Jonas Flaten, Oskar, Leinonen, Øyvind Sigmundson Schøyen, Stian Dysthe Bilek, 
 !split
 ===== The first postdocs and long-term visitors, 1994-1996 =====
 
-* Two Brazilians professors on sabbatical leave, Marta Barroso and Carlos Aguiar; Ed Tomosiak from Canada
+* Two Brazilians professors on sabbatical leave, "Marta F.~Barroso":"https://www.if.ufrj.br/en/docentes/marta-feijo-barroso/" and "Carlos Aguiar":"https://www.if.ufrj.br/~carlos/carlos.html"; "Edward Tomusiak from Canada":"https://artsandscience.usask.ca/profile/ETomusiak"
 * "Alexandar Belic":"http://www.scl.rs/scl-members/members/28-scl-members/members/413-aleksandar-belic-cv"; "Dennis Bonatsos":"http://www.inp.demokritos.gr/staff-members/dennis-bonatsos/"
 * "Fabio Vittorio De Blasio":"https://en.unimib.it/fabio-vittorio-de-blasio"; "Dima Fedorov":"https://pure.au.dk/portal/en/persons/dmitri-fedorov(9a03b124-d457-419c-b2e6-ca4e686b3b96).html"
 * Hilmar Forkel; "Antje Hoering":"https://www.crab.org/research-statisticians.html"
 * Gianluca Lazzari; "Mathias Lutz":"https://www.physik.tu-darmstadt.de/der_fachbereich/lehrende_physik/professor_innen_details_26176.en.jsp"
-* Jochen Rau":"https://www.q-info.org/about-me/"; MHJ
+* "Jochen Rau":"https://www.q-info.org/about-me/"; MHJ
 
 
 
 !split
-===== One of the first many-body workshops, June-July 1997 =====
+===== One of the first many-body workshops, summer 1997 =====
 
 
 FIGURE: [Photos/manybody1997.jpeg, width=900 frac=1.0]
@@ -51,7 +51,7 @@ FIGURE: [Photos/manybody1997.jpeg, width=900 frac=1.0]
 !split
 ===== Educational mission and strategic initiatives =====
 
-* First doctoral training program summer 2002 under the Marie Curie program, Hot and dense QCD
+* "First doctoral training program summer 2002 under the Marie Curie program, Hot and dense QCD":"https://www.ectstar.eu/wp-content/uploads/2020/07/annualrep2002.pdf"
 * First Nuclear Talent course summer 2012, focus on computational many-body methods, nuclear shell-model and Monte Carlo methods
 
 !split
@@ -79,7 +79,7 @@ The ECT* and the INT have played central roles here.
 !split
 ===== The first ever Nuclear Talent course, ECT*, summer 2012 =====
 
-FIGURE: [Photos/talent2012.pdf, width=900 frac=0.8]
+FIGURE: [Photos/talent2012.pdf, width=900 frac=0.6]
 
 !split
 ===== The second Nuclear Talent course at the ECT*, summer 2014 =====
@@ -110,10 +110,11 @@ FIGURE: [Photos/talent2018.jpeg, width=900 frac=1.0]
 ===== Talent courses since 2019, ECT* playing a central role =====
 
 
-!bblock AI/ML courses
+!bblock 
+o "Nuclear TALENT course From Quarks and Gluons to Nuclear Forces and Structure, ECT*, 15 July 2019 — 02 August 2019":"https://www.ectstar.eu/talents/talent-2019/"
 o Nuclear TALENT course Learning from Data: Bayesian Methods and Machine Learning, in York, UK, June 10-28, 2019; Teachers and organizers Christian Forssén, Chalmers University of Technology, Sweden, Dick Furnstahl, Ohio State University, USA, Daniel Phillips, Ohio University, USA
-o Nuclear TALENT School on Machine learning from 22 June 2020 to 03 July 2020. Teachers and organizers: Daniel Bazin (MSU), Morten Hjorth-Jensen (MSU/Oslo), Michelle Kuchera (Davidson), Sean Liddick (MSU), Raghuram Ramanujan (Davidson)
-o Nuclear TALENT School on Machine learning from 19 July 2021 to  30 July 2021. Teachers and organizers: Daniel Bazin (MSU), Morten Hjorth-Jensen (MSU/Oslo), Michelle Kuchera (Davidson), Sean Liddick (MSU), Raghuram Ramanujan (Davidson)
+o "Nuclear TALENT School on Machine learning from 22 June 2020 to 03 July 2020, ECT* (online)":"https://www.ectstar.eu/talents/talent-school-special-edition-2020/". Teachers and organizers: Daniel Bazin (MSU), Morten Hjorth-Jensen (MSU/Oslo), Michelle Kuchera (Davidson), Sean Liddick (MSU), Raghuram Ramanujan (Davidson)
+o Nuclear TALENT School on Machine learning from 19 July 2021 to  30 July 2021, ECT* (online). Teachers and organizers: Daniel Bazin (MSU), Morten Hjorth-Jensen (MSU/Oslo), Michelle Kuchera (Davidson), Sean Liddick (MSU), Raghuram Ramanujan (Davidson)
 !eblock
 
 
@@ -123,7 +124,7 @@ o Nuclear TALENT School on Machine learning from 19 July 2021 to  30 July 2021. 
 The ECT* should continue to play a key role in educating the next generation of nuclear scientists.
 
 o Through the organization of DTPs and possibly nuclear Talent courses
-o Be at the forefront in introducing new theoretical developments to nuclear physics (now quantum computing and AI/Machine learning)
+o Be at the forefront in introducing new theoretical developments to nuclear physics (now for example quantum computing and AI/Machine learning)
 o Foster and care for PDs and their careers, develop career plans with European universities and national laboratories, for example larger training networks with selected laboratories and universities. 
 o Similarly, in collaboration with European universities (note the European perspective), develop training networks in nuclear theory at the PhD level and possibly also master level. This has to be done in collaboration with universities.
 o Develop regional, national, European and international initiatives that encompass the above
@@ -175,46 +176,6 @@ o and computing architectures, platforms, and technologies for deploying these a
 !eblock
 
 
-
-
-!split
-===== Machine Learning and Physics =====
-!bblock
-Machine learning  is an extremely rich field, in spite of its young age. The
-increases we have seen during the last three decades in computational
-capabilities have been followed by developments of methods and
-techniques for analyzing and handling large date sets, relying heavily
-on statistics, computer science and mathematics.  The field is rather
-new and developing rapidly. 
-
-Popular software packages written in Python for ML are
-
-* "Scikit-learn":"http://scikit-learn.org/stable/", 
-* "Tensorflow":"https://www.tensorflow.org/",
-* "PyTorch":"http://pytorch.org/"
-* "Keras":"https://keras.io/",
-and more. These are all freely available at their respective GitHub sites. They 
-encompass communities of developers in the thousands or more. And the number
-of code developers and contributors keeps increasing.
-!eblock
-
-!split
-===== Lots of room for creativity =====
-!bblock
-Not all the
-algorithms and methods can be given a rigorous mathematical
-justification, opening up thereby for experimenting
-and trial and error and thereby exciting new developments. 
-!eblock
-
-!bblock
-A solid command of linear algebra, multivariate theory, 
-probability theory, statistical data analysis, optimization algorithms, 
-understanding errors and Monte Carlo methods is important in order to understand many of the 
-various algorithms and methods. 
-!eblock
-
-_Job market, a personal statement_: "A familiarity with ML is almost becoming a prerequisite for many of the most exciting employment opportunities":"https://www.analyticsindiamag.com/top-countries-hiring-most-number-of-artificial-intelligence-machine-learning-experts/". And add quantum computing and there you are!
 
 
 
@@ -510,54 +471,6 @@ FIGURE: [figures/OB30hw1.png, width=700 frac=0.9]
 FIGURE: [figures/OB30hw01.png, width=700 frac=0.9]
 !eblock
 
-!split
-===== Extrapolations and model interpretability  =====
-
-When you hear phrases like _predictions and estimations_ and
-_correlations and causations_, what do you think of?  May be you think
-of the difference between classifying new data points and generating
-new data points.
-Or perhaps you consider that correlations represent some kind of symmetric statements like
-if $A$ is correlated with $B$, then $B$ is correlated with
-$A$. Causation on the other hand is directional, that is if $A$ causes $B$, $B$ does not
-necessarily cause $A$.
-
-
-!split
-===== Physics based statistical learning and data analysis =====
-
-The above concepts are in some sense the difference between _old-fashioned_ machine
-learning and statistics and Bayesian learning. In machine learning and prediction based
-tasks, we are often interested in developing algorithms that are
-capable of learning patterns from given data in an automated fashion,
-and then using these learned patterns to make predictions or
-assessments of newly given data. In many cases, our primary concern
-is the quality of the predictions or assessments, and we are less
-concerned about the underlying patterns that were learned in order
-to make these predictions.
-
-Physics based statistical learning points however to approaches that give us both predictions and correlations as well as being able to produce error estimates and understand causations.  This leads us to the very interesting field of Bayesian statistics.
-
-
-
-!split
-===== Bayes' Theorem =====
-
-Bayes' theorem
-!bt
-\[
-p(X\vert Y)= \frac{p(X,Y)}{\sum_{i=0}^{n-1}p(Y\vert X=x_i)p(x_i)}=\frac{p(Y\vert X)p(X)}{\sum_{i=0}^{n-1}p(Y\vert X=x_i)p(x_i)}.
-\]
-!et
-
-
-The quantity $p(Y\vert X)$ on the right-hand side of the theorem is
-evaluated for the observed data $Y$ and can be viewed as a function of
-the parameter space represented by $X$. This function is not
-necessarily normalized and is normally called the likelihood function.
-
-The function $p(X)$ on the right hand side is called the prior while the function on the left hand side is the called the posterior probability. The denominator on the right hand side serves as a normalization factor for the posterior distribution.
-
 
 
 !split
@@ -583,9 +496,6 @@ Beam time and compute cycles are expensive!
 * Bayesian experimental design provides a framework in which experiments can be designed using the best experimental and theoretical information available 
 * The utility function is designed to encode the goals of the experiment and the constraints inherent in carrying it out. 
 * Once the utility function and the possible designs have been specified, the optimal design is simply the scenario that  maximizes the expected utility function over the domain of possible designs.
-
-
-FIGURE: [figures/utility.pdf, width=700 frac=1.0]
 
 
 
@@ -1094,6 +1004,252 @@ o Develop codes for studies of entanglement as function of time
 o Do tomogrophy and extract density matrix and compare with experiment.
 o Study the feasibility of various setups for quantum simulations of specific Hamiltonians such as the Lipkin model
 o For larger many-body systems, study for example time-dependent CC theory
+
+
+
+
+!split
+===== Addendum: Quantum Monte Carlo Motivation =====
+!bblock
+Given a hamiltonian $H$ and a trial wave function $\Psi_T$, the variational principle states that the expectation value of $\langle H \rangle$, defined through 
+!bt
+\[
+   \langle E \rangle =
+   \frac{\int d\bm{R}\Psi^{\ast}_T(\bm{R})H(\bm{R})\Psi_T(\bm{R})}
+        {\int d\bm{R}\Psi^{\ast}_T(\bm{R})\Psi_T(\bm{R})},
+\]
+!et
+is an upper bound to the ground state energy $E_0$ of the hamiltonian $H$, that is 
+!bt
+\[
+    E_0 \le \langle E \rangle.
+\]
+!et
+In general, the integrals involved in the calculation of various  expectation values  are multi-dimensional ones. Traditional integration methods such as the Gauss-Legendre will not be adequate for say the  computation of the energy of a many-body system.
+!eblock
+
+
+!split
+===== Quantum Monte Carlo Motivation =====
+!bblock Basic steps
+Choose a trial wave function
+$\psi_T(\bm{R})$.
+!bt
+\[
+   P(\bm{R},\bm{\alpha})= \frac{\left|\psi_T(\bm{R},\bm{\alpha})\right|^2}{\int \left|\psi_T(\bm{R},\bm{\alpha})\right|^2d\bm{R}}.
+\]
+!et
+This is our model, or likelihood/probability distribution function  (PDF). It depends on some variational parameters $\bm{\alpha}$.
+The approximation to the expectation value of the Hamiltonian is now 
+!bt
+\[
+   \langle E[\bm{\alpha}] \rangle = 
+   \frac{\int d\bm{R}\Psi^{\ast}_T(\bm{R},\bm{\alpha})H(\bm{R})\Psi_T(\bm{R},\bm{\alpha})}
+        {\int d\bm{R}\Psi^{\ast}_T(\bm{R},\bm{\alpha})\Psi_T(\bm{R},\bm{\alpha})}.
+\]
+!et
+!eblock
+
+
+!split
+===== Quantum Monte Carlo Motivation =====
+!bblock Define a new quantity
+!bt
+\[
+   E_L(\bm{R},\bm{\alpha})=\frac{1}{\psi_T(\bm{R},\bm{\alpha})}H\psi_T(\bm{R},\bm{\alpha}),
+\]
+!et
+called the local energy, which, together with our trial PDF yields
+!bt
+\[
+  \langle E[\bm{\alpha}] \rangle=\int P(\bm{R})E_L(\bm{R},\bm{\alpha}) d\bm{R}\approx \frac{1}{N}\sum_{i=1}^NE_L(\bm{R_i},\bm{\alpha})
+\]
+!et
+with $N$ being the number of Monte Carlo samples.
+!eblock
+
+!split
+===== The trial wave function =====
+!bblock
+We want to perform  a Variational Monte Carlo calculation of the ground state of two electrons in a quantum dot well with different oscillator energies, assuming total spin $S=0$.
+Our trial wave function has the following form
+!bt
+\begin{equation}
+   \psi_{T}(\bm{r}_1,\bm{r}_2) = 
+   C\exp{\left(-\alpha_1\omega(r_1^2+r_2^2)/2\right)}
+   \exp{\left(\frac{r_{12}}{(1+\alpha_2 r_{12})}\right)}, 
+label{eq:trial}
+\end{equation}
+!et
+where the variables $\alpha_1$ and $\alpha_2$ represent our variational parameters.
+
+Why does the trial function look like this? How did we get there? _This is one of our main motivations_ for switching to
+Machine Learning.
+
+!eblock
+
+!split
+===== The correlation part of the wave function =====
+
+To find an ansatz for the correlated part of the wave function, it is useful to rewrite the two-particle
+local energy in terms of the relative and center-of-mass motion.
+Let us denote the distance between the two electrons as
+$r_{12}$. We omit the center-of-mass motion since we are only interested in the case when
+$r_{12} \rightarrow 0$. The contribution from the center-of-mass (CoM) variable $\bm{R}_{\mathrm{CoM}}$
+gives only a finite contribution.
+We focus only on the terms that are relevant for $r_{12}$ and for three dimensions. The relevant local energy operator becomes then (with $l=0$)
+!bt
+\[
+\lim_{r_{12} \rightarrow 0}E_L(R)=
+    \frac{1}{{\cal R}_T(r_{12})}\left(-2\frac{d^2}{dr_{ij}^2}-\frac{4}{r_{ij}}\frac{d}{dr_{ij}}+
+\frac{2}{r_{ij}}\right){\cal R}_T(r_{12}).
+\]
+!et
+In order to avoid divergencies when $r_{12}\rightarrow 0$ we obtain  the so-called _cusp_ condition
+!bt
+\[
+\frac{d {\cal R}_T(r_{12})}{dr_{12}} = \frac{1}{2}
+{\cal R}_T(r_{12})\qquad r_{12}\to 0
+\]
+!et
+
+!split
+===== Resulting ansatz =====
+The above  results in
+!bt
+\[
+{\cal R}_T  \propto \exp{(r_{ij}/2)}, 
+\]
+!et 
+for anti-parallel spins and 
+!bt
+\[
+{\cal R}_T  \propto \exp{(r_{ij}/4)}, 
+\]
+!et
+for anti-parallel spins. 
+This is the so-called cusp condition for the relative motion, resulting in a minimal requirement
+for the correlation part of the wave fuction.
+For general systems containing more than say two electrons, we have this
+condition for each electron pair $ij$.
+
+
+
+
+
+!split
+===== Energy derivatives =====
+!bblock
+To find the derivatives of the local energy expectation value as function of the variational parameters, we can use the chain rule and the hermiticity of the Hamiltonian.  
+
+Let us define (with the notation $\langle E[\bm{\alpha}]\rangle =\langle  E_L\rangle$)
+!bt
+\[
+\bar{E}_{\alpha_i}=\frac{d\langle  E_L\rangle}{d\alpha_i},
+\]
+!et
+as the derivative of the energy with respect to the variational parameter $\alpha_i$
+We define also the derivative of the trial function (skipping the subindex $T$) as 
+!bt
+\[
+\bar{\Psi}_{i}=\frac{d\Psi}{d\alpha_i}.
+\]
+!et  
+!eblock
+
+
+!split
+===== Derivatives of the local energy ===== 
+!bblock
+The elements of the gradient of the local energy are then (using the chain rule and the hermiticity of the Hamiltonian)
+!bt
+\[
+\bar{E}_{i}= 2\left( \langle \frac{\bar{\Psi}_{i}}{\Psi}E_L\rangle -\langle \frac{\bar{\Psi}_{i}}{\Psi}\rangle\langle E_L \rangle\right).
+\]
+!et
+From a computational point of view it means that you need to compute the expectation values of 
+!bt
+\[
+\langle \frac{\bar{\Psi}_{i}}{\Psi}E_L\rangle,
+\]
+!et
+and
+!bt
+\[
+\langle \frac{\bar{\Psi}_{i}}{\Psi}\rangle\langle E_L\rangle
+\]
+!et
+These integrals are evaluted using MC intergration (with all its possible error sources). 
+We can then use methods like stochastic gradient or other minimization methods to find the optimal variational parameters (I don't discuss this topic here, but these methods are very important in ML). 
+!eblock
+
+!split
+===== How do we define our cost function? =====
+!bblock
+We have a model, our likelihood function. 
+
+How should we define the cost function?
+
+!eblock
+
+!split
+===== Meet the variance and its derivatives  =====
+!bblock Why the variance?
+Suppose the trial function (our model) is the exact wave function. The action of the hamiltionan
+on the wave function
+!bt
+\[
+   H\Psi = \mathrm{constant}\times \Psi,
+\]
+!et
+The integral which defines various 
+expectation values involving moments of the hamiltonian becomes then
+!bt
+\[
+   \langle E^n \rangle =   \langle H^n \rangle =
+   \frac{\int d\bm{R}\Psi^{\ast}(\bm{R})H^n(\bm{R})\Psi(\bm{R})}
+        {\int d\bm{R}\Psi^{\ast}(\bm{R})\Psi(\bm{R})}=
+\mathrm{constant}\times\frac{\int d\bm{R}\Psi^{\ast}(\bm{R})\Psi(\bm{R})}
+        {\int d\bm{R}\Psi^{\ast}(\bm{R})\Psi(\bm{R})}=\mathrm{constant}.
+\]
+!et
+_This gives an important information: If I want the variance, the exact wave function leads to zero variance!_
+The variance is defined as 
+!bt
+\[
+\sigma_E = \langle E^2\rangle - \langle E\rangle^2.
+\]
+!et
+Variation is then performed by minimizing both the energy and the variance.
+
+!eblock
+
+
+!split
+===== The variance defines the cost function  =====
+!bblock 
+We can then take the derivatives of 
+!bt
+\[
+\sigma_E = \langle E^2\rangle - \langle E\rangle^2,
+\]
+!et
+with respect to the variational parameters. The derivatives of the variance can then be used to defined the
+so-called Hessian matrix, which in turn allows us to use minimization methods like Newton's method or 
+standard gradient methods. 
+
+This leads to however a more complicated expression, with obvious errors when evaluating integrals by Monte Carlo integration. Less used, see however "Filippi and Umrigar":"https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.94.150201". The expression becomes complicated
+!bt
+\begin{align}
+\bar{E}_{ij} &= 2\left[ \langle (\frac{\bar{\Psi}_{ij}}{\Psi}+\frac{\bar{\Psi}_{j}}{\Psi}\frac{\bar{\Psi}_{i}}{\Psi})(E_L-\langle E\rangle)\rangle -\langle \frac{\bar{\Psi}_{i}}{\Psi}\rangle\bar{E}_j-\langle \frac{\bar{\Psi}_{j}}{\Psi}\rangle\bar{E}_i\right] \\ \nonumber
+&+\langle \frac{\bar{\Psi}_{i}}{\Psi}E_L{_j}\rangle +\langle \frac{\bar{\Psi}_{j}}{\Psi}E_L{_i}\rangle -\langle \frac{\bar{\Psi}_{i}}{\Psi}\rangle\langle E_L{_j}\rangle \langle \frac{\bar{\Psi}_{j}}{\Psi}\rangle\langle E_L{_i}\rangle.  
+\end{align}
+!et
+
+Evaluating the cost function means having to evaluate the above second derivative of the energy. 
+
+!eblock
+
 
 
 
