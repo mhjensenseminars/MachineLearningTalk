@@ -116,7 +116,7 @@ o "Nuclear TALENT School on Machine learning from 22 June 2020 to 03 July 2020, 
 o Nuclear TALENT School on Machine learning from 19 July 2021 to  30 July 2021, ECT* (online). 
 !eblock
 
-Many lectures from DTPs and Talent courses were collected in a Lecture Notes in Physics volume, see URL:"https://link.springer.com/book/10.1007/978-3-319-53336-0"
+Many lectures from DTPs and Talent courses were collected in a Lecture Notes in Physics (volume 936, see URL:"https://link.springer.com/book/10.1007/978-3-319-53336-0")
 
 !split
 ===== Educational strategies =====
@@ -126,7 +126,7 @@ The ECT* should continue to play a key role in educating the next generation of 
 o Through the organization of DTPs and possibly nuclear Talent courses
 o Be at the forefront in introducing new theoretical developments to nuclear physics (now for example quantum computing and AI/Machine learning)
 o Foster and care for PDs and their careers, develop career plans with European universities and national laboratories, for example larger training networks with selected laboratories and universities. 
-o Similarly, in collaboration with European universities (note the European perspective), develop training networks in nuclear theory at the PhD level and possibly also master level. This has to be done in collaboration with universities.
+o Similarly, in collaboration with universities, develop training networks in nuclear theory at the PhD level and possibly also master level. This has probably to be done in collaboration with universities.
 o Develop regional, national, European and international initiatives that encompass the above
 
 
