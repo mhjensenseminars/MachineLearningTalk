@@ -116,6 +116,7 @@ o "Nuclear TALENT School on Machine learning from 22 June 2020 to 03 July 2020, 
 o Nuclear TALENT School on Machine learning from 19 July 2021 to  30 July 2021, ECT* (online). 
 !eblock
 
+Many lectures from DTPs and Talent courses were collected in a Lecture Notes in Physics volume, see URL:"https://link.springer.com/book/10.1007/978-3-319-53336-0"
 
 !split
 ===== Educational strategies =====
