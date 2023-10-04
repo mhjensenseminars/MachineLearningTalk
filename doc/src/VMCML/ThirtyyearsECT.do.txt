@@ -129,6 +129,14 @@ o Foster and care for PDs and their careers, develop career plans with European 
 o Similarly, in collaboration with European universities (note the European perspective), develop training networks in nuclear theory at the PhD level and possibly also master level. This has to be done in collaboration with universities.
 o Develop regional, national, European and international initiatives that encompass the above
 
+
+!split
+===== And new initiatives =====
+
+Introducing the Lattice Virtual Academy (LaVA) by Claudio Bonanno et al, see for example URL:"https://indico.fnal.gov/event/57249/contributions/271752/attachments/169437/227392/talk_LaVA_Bonanno.pdf".
+
+Under development within STRONG-2020 EU-funded project and technical and financial support by FBK/ECT and by INFN.
+
 !split
 ===== Machine learning. A simple perspective on the interface between ML and Physics =====
 
