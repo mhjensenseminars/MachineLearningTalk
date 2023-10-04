@@ -39,12 +39,6 @@ Jonas Flaten, Oskar, Leinonen, Øyvind Sigmundson Schøyen, Stian Dysthe Bilek, 
 * Gianluca Lazzari; "Mathias Lutz":"https://www.physik.tu-darmstadt.de/der_fachbereich/lehrende_physik/professor_innen_details_26176.en.jsp"
 * Jochen Rau":"https://www.q-info.org/about-me/"; MHJ
 
-!split
-===== Villa Tambosi, summer 1995, Tempus Fugit (sadly) =====
-
-
-FIGURE: [Photos/mhj1995.jpeg, width=900 frac=1.0]
-
 
 
 !split
@@ -85,7 +79,7 @@ The ECT* and the INT have played central roles here.
 !split
 ===== The first ever Nuclear Talent course, ECT*, summer 2012 =====
 
-FIGURE: [Photos/talent2012.pdf, width=900 frac=1.0]
+FIGURE: [Photos/talent2012.pdf, width=900 frac=0.8]
 
 !split
 ===== The second Nuclear Talent course at the ECT*, summer 2014 =====
@@ -111,6 +105,16 @@ FIGURE: [Photos/talent2017.jpg, width=900 frac=1.0]
 
 
 FIGURE: [Photos/talent2018.jpeg, width=900 frac=1.0]
+
+!split
+===== Talent courses since 2019, ECT* playing a central role =====
+
+
+!bblock AI/ML courses
+o Nuclear TALENT course Learning from Data: Bayesian Methods and Machine Learning, in York, UK, June 10-28, 2019; Teachers and organizers Christian Forssén, Chalmers University of Technology, Sweden, Dick Furnstahl, Ohio State University, USA, Daniel Phillips, Ohio University, USA
+o Nuclear TALENT School on Machine learning from 22 June 2020 to 03 July 2020. Teachers and organizers: Daniel Bazin (MSU), Morten Hjorth-Jensen (MSU/Oslo), Michelle Kuchera (Davidson), Sean Liddick (MSU), Raghuram Ramanujan (Davidson)
+o Nuclear TALENT School on Machine learning from 19 July 2021 to  30 July 2021. Teachers and organizers: Daniel Bazin (MSU), Morten Hjorth-Jensen (MSU/Oslo), Michelle Kuchera (Davidson), Sean Liddick (MSU), Raghuram Ramanujan (Davidson)
+!eblock
 
 
 !split
@@ -506,14 +510,53 @@ FIGURE: [figures/OB30hw1.png, width=700 frac=0.9]
 FIGURE: [figures/OB30hw01.png, width=700 frac=0.9]
 !eblock
 
+!split
+===== Extrapolations and model interpretability  =====
+
+When you hear phrases like _predictions and estimations_ and
+_correlations and causations_, what do you think of?  May be you think
+of the difference between classifying new data points and generating
+new data points.
+Or perhaps you consider that correlations represent some kind of symmetric statements like
+if $A$ is correlated with $B$, then $B$ is correlated with
+$A$. Causation on the other hand is directional, that is if $A$ causes $B$, $B$ does not
+necessarily cause $A$.
 
 
 !split
-===== Folding and unfolding and response functions =====
+===== Physics based statistical learning and data analysis =====
 
-A good read on folding/unfolding is "An Unfolding Method for High Energy Physics Experiments by Volker Blobel":"https://arxiv.org/abs/hep-ex/0208022"
+The above concepts are in some sense the difference between _old-fashioned_ machine
+learning and statistics and Bayesian learning. In machine learning and prediction based
+tasks, we are often interested in developing algorithms that are
+capable of learning patterns from given data in an automated fashion,
+and then using these learned patterns to make predictions or
+assessments of newly given data. In many cases, our primary concern
+is the quality of the predictions or assessments, and we are less
+concerned about the underlying patterns that were learned in order
+to make these predictions.
 
-See notebook details and "examples of simple data reconstructed with Gaussian processes":"https://github.com/adambozson/gp-unfold/blob/master/Falling%20exponential.ipynb".
+Physics based statistical learning points however to approaches that give us both predictions and correlations as well as being able to produce error estimates and understand causations.  This leads us to the very interesting field of Bayesian statistics.
+
+
+
+!split
+===== Bayes' Theorem =====
+
+Bayes' theorem
+!bt
+\[
+p(X\vert Y)= \frac{p(X,Y)}{\sum_{i=0}^{n-1}p(Y\vert X=x_i)p(x_i)}=\frac{p(Y\vert X)p(X)}{\sum_{i=0}^{n-1}p(Y\vert X=x_i)p(x_i)}.
+\]
+!et
+
+
+The quantity $p(Y\vert X)$ on the right-hand side of the theorem is
+evaluated for the observed data $Y$ and can be viewed as a function of
+the parameter space represented by $X$. This function is not
+necessarily normalized and is normally called the likelihood function.
+
+The function $p(X)$ on the right hand side is called the prior while the function on the left hand side is the called the posterior probability. The denominator on the right hand side serves as a normalization factor for the posterior distribution.
 
 
 
@@ -524,6 +567,27 @@ See notebook details and "examples of simple data reconstructed with Gaussian pr
 Predictions made with eleven global mass model and Bayesian model averaging
 
 FIGURE: [figures/landscape.jpg, width=800 frac=1.0]
+
+!split
+===== Constraining the equation of state for dense nuclear matter =====
+
+"G. Raaijmakers et al., Constraining the Dense Matter Equation of State with Joint Analysis of NICER and LIGO/Virgo Measurements, AJ Letters, 893, L21 (2020)":"https://iopscience.iop.org/article/10.3847/2041-8213/ab822f"
+
+FIGURE: [figures/nstareos.png, width=800 frac=1.0]
+
+!split
+===== Experimental design =====
+
+Beam time and compute cycles are expensive!
+
+* Bayesian experimental design provides a framework in which experiments can be designed using the best experimental and theoretical information available 
+* The utility function is designed to encode the goals of the experiment and the constraints inherent in carrying it out. 
+* Once the utility function and the possible designs have been specified, the optimal design is simply the scenario that  maximizes the expected utility function over the domain of possible designs.
+
+
+FIGURE: [figures/utility.pdf, width=700 frac=1.0]
+
+
 
 
 
@@ -555,6 +619,12 @@ FIGURE: [figures/landscape.jpg, width=800 frac=1.0]
 * HEP@CERN and HEP in general have made significant impacts in the field of machine learning and AI. Something to learn from
 !eblock
 
+
+!split
+===== Villa Tambosi, summer 1995, Tempus Fugit (sadly) =====
+
+
+FIGURE: [Photos/mhj1995.jpeg, width=900 frac=1.0]
 
 
 
@@ -1024,4 +1094,7 @@ o Develop codes for studies of entanglement as function of time
 o Do tomogrophy and extract density matrix and compare with experiment.
 o Study the feasibility of various setups for quantum simulations of specific Hamiltonians such as the Lipkin model
 o For larger many-body systems, study for example time-dependent CC theory
+
+
+
 

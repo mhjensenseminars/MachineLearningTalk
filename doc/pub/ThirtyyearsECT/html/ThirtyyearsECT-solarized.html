@@ -69,10 +69,6 @@ div.toc p,a {
                2,
                None,
                'the-first-postdocs-and-long-term-visitors-1994-1996'),
-              ('Villa Tambosi, summer 1995, Tempus Fugit (sadly)',
-               2,
-               None,
-               'villa-tambosi-summer-1995-tempus-fugit-sadly'),
               ('One of the first many-body workshops, June-July 1997',
                2,
                None,
@@ -105,6 +101,10 @@ div.toc p,a {
                2,
                None,
                'nuclear-talent-course-summer-2018-in-china'),
+              ('Talent courses since 2019, ECT* playing a central role',
+               2,
+               None,
+               'talent-courses-since-2019-ect-playing-a-central-role'),
               ('Educational strategies', 2, None, 'educational-strategies'),
               ('Machine learning. A simple perspective on the interface '
                'between ML and Physics',
@@ -212,14 +212,24 @@ div.toc p,a {
                2,
                None,
                'onebody-densities-n-30-hbar-omega-0-1-a-u'),
-              ('Folding and unfolding and response functions',
+              ('Extrapolations and model interpretability',
                2,
                None,
-               'folding-and-unfolding-and-response-functions'),
+               'extrapolations-and-model-interpretability'),
+              ('Physics based statistical learning and data analysis',
+               2,
+               None,
+               'physics-based-statistical-learning-and-data-analysis'),
+              ("Bayes' Theorem", 2, None, 'bayes-theorem'),
               ('Quantified limits of the nuclear landscape',
                2,
                None,
                'quantified-limits-of-the-nuclear-landscape'),
+              ('Constraining the equation of state for dense nuclear matter',
+               2,
+               None,
+               'constraining-the-equation-of-state-for-dense-nuclear-matter'),
+              ('Experimental design', 2, None, 'experimental-design'),
               ('Observations and perspectives',
                2,
                None,
@@ -232,6 +242,10 @@ div.toc p,a {
                2,
                None,
                'possible-start-to-raise-awareness-about-ml-in-our-field'),
+              ('Villa Tambosi, summer 1995, Tempus Fugit (sadly)',
+               2,
+               None,
+               'villa-tambosi-summer-1995-tempus-fugit-sadly'),
               ('Quantum computing, Overview and Motivation',
                2,
                None,
@@ -382,15 +396,6 @@ Jonas Flaten, Oskar, Leinonen, &#216;yvind Sigmundson Sch&#248;yen, Stian Dysthe
 <li> Jochen Rau":"https://www.q-info.org/about-me/"; MHJ</li>
 </ul>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
-<h2 id="villa-tambosi-summer-1995-tempus-fugit-sadly">Villa Tambosi, summer 1995, Tempus Fugit (sadly) </h2>
-
-<br/><br/>
-<center>
-<p><img src="Photos/mhj1995.jpeg" width="900" align="bottom"></p>
-</center>
-<br/><br/>
-
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
 <h2 id="one-of-the-first-many-body-workshops-june-july-1997">One of the first many-body workshops, June-July 1997 </h2>
 
 <br/><br/>
@@ -474,6 +479,20 @@ expertise available.
 <p><img src="Photos/talent2018.jpeg" width="900" align="bottom"></p>
 </center>
 <br/><br/>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="talent-courses-since-2019-ect-playing-a-central-role">Talent courses since 2019, ECT* playing a central role </h2>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b>AI/ML courses</b>
+<p>
+<ol>
+<li> Nuclear TALENT course Learning from Data: Bayesian Methods and Machine Learning, in York, UK, June 10-28, 2019; Teachers and organizers Christian Forss&#233;n, Chalmers University of Technology, Sweden, Dick Furnstahl, Ohio State University, USA, Daniel Phillips, Ohio University, USA</li>
+<li> Nuclear TALENT School on Machine learning from 22 June 2020 to 03 July 2020. Teachers and organizers: Daniel Bazin (MSU), Morten Hjorth-Jensen (MSU/Oslo), Michelle Kuchera (Davidson), Sean Liddick (MSU), Raghuram Ramanujan (Davidson)</li>
+<li> Nuclear TALENT School on Machine learning from 19 July 2021 to  30 July 2021. Teachers and organizers: Daniel Bazin (MSU), Morten Hjorth-Jensen (MSU/Oslo), Michelle Kuchera (Davidson), Sean Liddick (MSU), Raghuram Ramanujan (Davidson)</li>
+</ol>
+</div>
+
 
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 <h2 id="educational-strategies">Educational strategies </h2>
@@ -939,11 +958,49 @@ This system has analytical solutions in two and three dimensions (<a href="https
 
 
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
-<h2 id="folding-and-unfolding-and-response-functions">Folding and unfolding and response functions </h2>
+<h2 id="extrapolations-and-model-interpretability">Extrapolations and model interpretability  </h2>
 
-<p>A good read on folding/unfolding is <a href="https://arxiv.org/abs/hep-ex/0208022" target="_blank">An Unfolding Method for High Energy Physics Experiments by Volker Blobel</a></p>
+<p>When you hear phrases like <b>predictions and estimations</b> and
+<b>correlations and causations</b>, what do you think of?  May be you think
+of the difference between classifying new data points and generating
+new data points.
+Or perhaps you consider that correlations represent some kind of symmetric statements like
+if \( A \) is correlated with \( B \), then \( B \) is correlated with
+\( A \). Causation on the other hand is directional, that is if \( A \) causes \( B \), \( B \) does not
+necessarily cause \( A \).
+</p>
 
-<p>See notebook details and <a href="https://github.com/adambozson/gp-unfold/blob/master/Falling%20exponential.ipynb" target="_blank">examples of simple data reconstructed with Gaussian processes</a>.</p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="physics-based-statistical-learning-and-data-analysis">Physics based statistical learning and data analysis </h2>
+
+<p>The above concepts are in some sense the difference between <b>old-fashioned</b> machine
+learning and statistics and Bayesian learning. In machine learning and prediction based
+tasks, we are often interested in developing algorithms that are
+capable of learning patterns from given data in an automated fashion,
+and then using these learned patterns to make predictions or
+assessments of newly given data. In many cases, our primary concern
+is the quality of the predictions or assessments, and we are less
+concerned about the underlying patterns that were learned in order
+to make these predictions.
+</p>
+
+<p>Physics based statistical learning points however to approaches that give us both predictions and correlations as well as being able to produce error estimates and understand causations.  This leads us to the very interesting field of Bayesian statistics.</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="bayes-theorem">Bayes' Theorem </h2>
+
+<p>Bayes' theorem</p>
+$$
+p(X\vert Y)= \frac{p(X,Y)}{\sum_{i=0}^{n-1}p(Y\vert X=x_i)p(x_i)}=\frac{p(Y\vert X)p(X)}{\sum_{i=0}^{n-1}p(Y\vert X=x_i)p(x_i)}.
+$$
+
+<p>The quantity \( p(Y\vert X) \) on the right-hand side of the theorem is
+evaluated for the observed data \( Y \) and can be viewed as a function of
+the parameter space represented by \( X \). This function is not
+necessarily normalized and is normally called the likelihood function.
+</p>
+
+<p>The function \( p(X) \) on the right hand side is called the prior while the function on the left hand side is the called the posterior probability. The denominator on the right hand side serves as a normalization factor for the posterior distribution.</p>
 
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 <h2 id="quantified-limits-of-the-nuclear-landscape">Quantified limits of the nuclear landscape </h2>
@@ -954,6 +1011,33 @@ This system has analytical solutions in two and three dimensions (<a href="https
 <br/><br/>
 <center>
 <p><img src="figures/landscape.jpg" width="800" align="bottom"></p>
+</center>
+<br/><br/>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="constraining-the-equation-of-state-for-dense-nuclear-matter">Constraining the equation of state for dense nuclear matter </h2>
+
+<a href="https://iopscience.iop.org/article/10.3847/2041-8213/ab822f" target="_blank">G. Raaijmakers et al., Constraining the Dense Matter Equation of State with Joint Analysis of NICER and LIGO/Virgo Measurements, AJ Letters, 893, L21 (2020)</a>
+
+<br/><br/>
+<center>
+<p><img src="figures/nstareos.png" width="800" align="bottom"></p>
+</center>
+<br/><br/>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="experimental-design">Experimental design </h2>
+
+<p>Beam time and compute cycles are expensive!</p>
+
+<ul>
+<li> Bayesian experimental design provides a framework in which experiments can be designed using the best experimental and theoretical information available</li> 
+<li> The utility function is designed to encode the goals of the experiment and the constraints inherent in carrying it out.</li> 
+<li> Once the utility function and the possible designs have been specified, the optimal design is simply the scenario that  maximizes the expected utility function over the domain of possible designs.</li>
+</ul>
+<br/><br/>
+<center>
+<p><img src="figures/utility.png" width="700" align="bottom"></p>
 </center>
 <br/><br/>
 
@@ -1000,6 +1084,15 @@ This system has analytical solutions in two and three dimensions (<a href="https
 </ul>
 </div>
 
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="villa-tambosi-summer-1995-tempus-fugit-sadly">Villa Tambosi, summer 1995, Tempus Fugit (sadly) </h2>
+
+<br/><br/>
+<center>
+<p><img src="Photos/mhj1995.jpeg" width="900" align="bottom"></p>
+</center>
+<br/><br/>
 
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 <h2 id="quantum-computing-overview-and-motivation">Quantum computing, Overview and Motivation </h2>
