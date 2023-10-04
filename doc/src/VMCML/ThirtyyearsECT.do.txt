@@ -57,7 +57,7 @@ FIGURE: [Photos/manybody1997.jpeg, width=900 frac=1.0]
 !split
 ===== The Nuclear TALENT initiative =====
 
-"Training in Advanced Low Energy Nuclear Theory":"http://www.nucleartalent.org",  
+"Training in Advanced Low Energy Nuclear Theory":"https://fribtheoryalliance.org/TALENT/",  
 aims at providing an advanced and comprehensive training to graduate students
 and young researchers in low-energy nuclear theory. The initiative
 is a multinational network between several Asian, European and Northern
