@@ -321,23 +321,6 @@ o Theoretical models are often applied to entirely new nuclear systems and condi
 
 
 !split
-===== Examples of applications of ML in physics =====
-
-
-The large amount of degrees of freedom pertain to both theory and
-experiment in physics. With increasingly complicated
-experiments that produce large amounts data, automated classification
-of events becomes increasingly important. 
-
-!bblock
-* Reconstruction of particle trajectories or classification of events are typical examples where ML methods are being used. However, since these data can often be extremely noisy, the precision necessary for discovery in physics requires algorithmic improvements. Research along such directions, interfacing nuclear physics with AI/ML is expected to play a significant role in physics discoveries related to new facilities.  The treatment of corrupted data in imaging and image processing is also a relevant topic. 
-
-* Design of detectors represents an important area of applications for ML/AI methods in subatomic physics.
-
-!eblock
-
-
-!split
 ===== Scientific Machine Learning =====
 
 An important and emerging field is what has been dubbed as scientific ML, see the article by Deiana et al "Applications and Techniques for Fast Machine Learning in Science, Big Data _5_, 787421 (2022):https://doi.org/10.3389/fdata.2022.787421"
