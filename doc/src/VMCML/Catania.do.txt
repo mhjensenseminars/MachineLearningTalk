@@ -169,10 +169,10 @@ Optimizing wrt to th eunknown paramters $\theta_j$ we get
 \bm{X}^T\bm{y} = \bm{X}^T\bm{X}\bm{\theta},  
 \]
 !et
-and if the matrix $\bm{X}^T\bm{X}$ is invertible we have the solution
+and if the matrix $\bm{X}^T\bm{X}$ is invertible we have the optimal values
 !bt
 \[
-\bm{\theta} =\left(\bm{X}^T\bm{X}\right)^{-1}\bm{X}^T\bm{y}.
+\hat{\bm{\theta}} =\left(\bm{X}^T\bm{X}\right)^{-1}\bm{X}^T\bm{y}.
 \]
 !et
 
@@ -556,16 +556,35 @@ and three-body spin-independent Jastrow functions
 which is commonly used for nuclear Hamiltonians that do not contain tensor and spin-orbit terms.
 The above function is replaced by a four-layer Neural Network. 
 
-!split
-===== Explicit results =====
-FIGURE: [figures/energyconvergence.pdf, width=700 frac=0.9]
-
 
 !split
 ===== "Dilute neutron star matter from neural-network quantum states by Fore et al, Physical Review Research 5, 033062 (2023)":"https://journals.aps.org/prresearch/pdf/10.1103/PhysRevResearch.5.033062" at density $\rho=0.04$ fm$^{-3}$ =====
 
 !bblock
 FIGURE: [figures/nmatter.png, width=700 frac=0.9]
+!eblock
+
+
+!split
+
+===== Pairing and Spin-singlet and triplet two-body distribution functions at $\rho=0.01$ fm$^{-3}$ =====
+!bblock
+FIGURE: [figures/01_tbd.pdf, width=700 frac=0.9]
+!eblock
+
+
+!split
+===== Pairing and Spin-singlet and triplet two-body distribution functions at $\rho=0.04$ fm$^{-3}$ =====
+
+!bblock
+FIGURE: [figures/04_tbd.pdf, width=700 frac=0.9]
+!eblock
+
+
+!split
+===== Pairing and Spin-singlet and triplet two-body distribution functions at $\rho=0.08$ fm$^{-3}$ =====
+!bblock
+FIGURE: [figures/08_tbd.pdf, width=700 frac=0.9]
 !eblock
 
 
@@ -791,59 +810,6 @@ o Nuclear TALENT School on Machine learning from 19 July 2021 to  30 July 2021.
 o Intensive course on Machine Learning at FRIB/MSU, summer 2019
 o Intensive courses on Machine Learning for Nuclear Physics held at Ganil, France, 2019-2024. 
 o and probably many more
-!eblock
-
-
-
-
-
-
-
-
-!split
-===== Additional material =====
-
-!split
-===== Examples of Machine Learning methods and applications in nuclear physics =====
-
-!bblock
-* _Machine  learning  for  data  mining:_ Oftentimes,  it  is necessary to be able to accurately calculate observables that have not been measured, to supplement the existing databases.
-* _Nuclear  density  functional   theory:_ Energy density functional calibration   involving Bayesian optimization  and NN  ML. A promising avenue for ML applications is the emulation of DFT results.
-* _Nuclear properties with ML:_ Improving predictive power of nuclear models by emulating model residuals.
-* _Effective field theory and A-body systems:_ Truncation errors and low-energy coupling constant calibration, nucleon-nucleon scattering calculations, variational calculations with ANN for light nuclei, NN extrapolation of nuclear structure observables
-* _Nuclear  shell  model  UQ:_ ML methods  have  been  used  to  provide  UQ  of  configuration  interaction  calculations.
-!eblock
-
-
-
-
-
-
-
-!split
-===== Machine learning and nuclear theory: Why? =====
-
-o ML tools can help us to speed up the scientific process cycle and hence facilitate discoveries
-o Enabling fast emulation for big simulations
-o Revealing the information content of measured observables w.r.t. theory
-o Identifying crucial experimental data for better constraining theory
-o Providing meaningful input to applications and planned measurements
-o ML tools can help us to reveal the structure of our models
-o Parameter estimation with heterogeneous/multi-scale datasets
-o Model reduction
-o ML tools can help us to provide predictive capability
-o Theoretical results often involve ultraviolet  and infrared extrapolations due to Hilbert-space truncations 
-o Uncertainty quantification essential
-o Theoretical models are often applied to entirely new nuclear systems and conditions that are not accessible to experiment
-
-
-!split
-===== Examples of Machine Learning methods and applications in nuclear physics, continues =====
-
-!bblock
-* _Low-energy nuclear reactions UQ:_ Bayesian optimization studies of the nucleon-nucleus optical potential, R-matrix analyses,  and  statistical spatial networks to study patterns in nuclear reaction networks.
-* _Neutron star properties and nuclear matter equation of state:_ constraining the equation of state by properties on neutron stars and selected properties of finite nuclei
-* _Experimental design:_ Bayesian ML provides a framework  to  maximize  the  success  of  on  experiment  based on  the  best  information  available  on existing  data, experimental conditions, and theoretical models.
 !eblock
 
 

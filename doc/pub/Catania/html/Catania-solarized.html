@@ -173,7 +173,6 @@ div.toc p,a {
                2,
                None,
                'deep-learning-neural-networks-variational-monte-carlo-calculations-of-a-le-4-nuclei-with-an-artificial-neural-network-correlator-ansatz-by-adams-et-al-https-journals-aps-org-prl-abstract-10-1103-physrevlett-127-022502'),
-              ('Explicit results', 2, None, 'explicit-results'),
               ('"Dilute neutron star matter from neural-network quantum states '
                'by Fore et al, Physical Review Research 5, 033062 '
                '(2023)":"https://journals.aps.org/prresearch/pdf/10.1103/PhysRevResearch.5.033062" '
@@ -181,6 +180,21 @@ div.toc p,a {
                2,
                None,
                'dilute-neutron-star-matter-from-neural-network-quantum-states-by-fore-et-al-physical-review-research-5-033062-2023-https-journals-aps-org-prresearch-pdf-10-1103-physrevresearch-5-033062-at-density-rho-0-04-fm-3'),
+              ('Pairing and Spin-singlet and triplet two-body distribution '
+               'functions at $\\rho=0.01$ fm$^{-3}$',
+               2,
+               None,
+               'pairing-and-spin-singlet-and-triplet-two-body-distribution-functions-at-rho-0-01-fm-3'),
+              ('Pairing and Spin-singlet and triplet two-body distribution '
+               'functions at $\\rho=0.04$ fm$^{-3}$',
+               2,
+               None,
+               'pairing-and-spin-singlet-and-triplet-two-body-distribution-functions-at-rho-0-04-fm-3'),
+              ('Pairing and Spin-singlet and triplet two-body distribution '
+               'functions at $\\rho=0.08$ fm$^{-3}$',
+               2,
+               None,
+               'pairing-and-spin-singlet-and-triplet-two-body-distribution-functions-at-rho-0-08-fm-3'),
               ('The electron gas in three dimensions with $N=14$ electrons '
                '(Wigner-Seitz radius $r_s=2$ a.u.), "Gabriel Pescia, Jane Kim '
                'et al. '
@@ -247,22 +261,7 @@ div.toc p,a {
               ('Educational initiatives since 2019 in nuclear physics',
                2,
                None,
-               'educational-initiatives-since-2019-in-nuclear-physics'),
-              ('Additional material', 2, None, 'additional-material'),
-              ('Examples of Machine Learning methods and applications in '
-               'nuclear physics',
-               2,
-               None,
-               'examples-of-machine-learning-methods-and-applications-in-nuclear-physics'),
-              ('Machine learning and nuclear theory: Why?',
-               2,
-               None,
-               'machine-learning-and-nuclear-theory-why'),
-              ('Examples of Machine Learning methods and applications in '
-               'nuclear physics, continues',
-               2,
-               None,
-               'examples-of-machine-learning-methods-and-applications-in-nuclear-physics-continues')]}
+               'educational-initiatives-since-2019-in-nuclear-physics')]}
 end of tocinfo -->
 
 <body>
@@ -480,9 +479,9 @@ $$
 \boldsymbol{X}^T\boldsymbol{y} = \boldsymbol{X}^T\boldsymbol{X}\boldsymbol{\theta},  
 $$
 
-<p>and if the matrix \( \boldsymbol{X}^T\boldsymbol{X} \) is invertible we have the solution</p>
+<p>and if the matrix \( \boldsymbol{X}^T\boldsymbol{X} \) is invertible we have the optimal values</p>
 $$
-\boldsymbol{\theta} =\left(\boldsymbol{X}^T\boldsymbol{X}\right)^{-1}\boldsymbol{X}^T\boldsymbol{y}.
+\hat{\boldsymbol{\theta}} =\left(\boldsymbol{X}^T\boldsymbol{X}\right)^{-1}\boldsymbol{X}^T\boldsymbol{y}.
 $$
 
 
@@ -882,14 +881,6 @@ The above function is replaced by a four-layer Neural Network.
 </p>
 
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
-<h2 id="explicit-results">Explicit results </h2>
-<br/><br/>
-<center>
-<p><img src="figures/energyconvergence.png" width="700" align="bottom"></p>
-</center>
-<br/><br/>
-
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
 <h2 id="dilute-neutron-star-matter-from-neural-network-quantum-states-by-fore-et-al-physical-review-research-5-033062-2023-https-journals-aps-org-prresearch-pdf-10-1103-physrevresearch-5-033062-at-density-rho-0-04-fm-3"><a href="https://journals.aps.org/prresearch/pdf/10.1103/PhysRevResearch.5.033062" target="_blank">Dilute neutron star matter from neural-network quantum states by Fore et al, Physical Review Research 5, 033062 (2023)</a> at density \( \rho=0.04 \) fm$^{-3}$ </h2>
 
 <div class="alert alert-block alert-block alert-text-normal">
@@ -898,6 +889,46 @@ The above function is replaced by a four-layer Neural Network.
 <br/><br/>
 <center>
 <p><img src="figures/nmatter.png" width="700" align="bottom"></p>
+</center>
+<br/><br/>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="pairing-and-spin-singlet-and-triplet-two-body-distribution-functions-at-rho-0-01-fm-3">Pairing and Spin-singlet and triplet two-body distribution functions at \( \rho=0.01 \) fm$^{-3}$ </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<br/><br/>
+<center>
+<p><img src="figures/01_tbd.png" width="700" align="bottom"></p>
+</center>
+<br/><br/>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="pairing-and-spin-singlet-and-triplet-two-body-distribution-functions-at-rho-0-04-fm-3">Pairing and Spin-singlet and triplet two-body distribution functions at \( \rho=0.04 \) fm$^{-3}$ </h2>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<br/><br/>
+<center>
+<p><img src="figures/04_tbd.png" width="700" align="bottom"></p>
+</center>
+<br/><br/>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="pairing-and-spin-singlet-and-triplet-two-body-distribution-functions-at-rho-0-08-fm-3">Pairing and Spin-singlet and triplet two-body distribution functions at \( \rho=0.08 \) fm$^{-3}$ </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<br/><br/>
+<center>
+<p><img src="figures/08_tbd.png" width="700" align="bottom"></p>
 </center>
 <br/><br/>
 </div>
@@ -1162,56 +1193,6 @@ necessarily normalized and is normally called the likelihood function.
 <li> Intensive courses on Machine Learning for Nuclear Physics held at Ganil, France, 2019-2024.</li> 
 <li> and probably many more</li>
 </ol>
-</div>
-
-
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-<h2 id="additional-material">Additional material </h2>
-
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-<h2 id="examples-of-machine-learning-methods-and-applications-in-nuclear-physics">Examples of Machine Learning methods and applications in nuclear physics </h2>
-
-<div class="alert alert-block alert-block alert-text-normal">
-<b></b>
-<p>
-<ul>
-<li> <b>Machine  learning  for  data  mining:</b> Oftentimes,  it  is necessary to be able to accurately calculate observables that have not been measured, to supplement the existing databases.</li>
-<li> <b>Nuclear  density  functional   theory:</b> Energy density functional calibration   involving Bayesian optimization  and NN  ML. A promising avenue for ML applications is the emulation of DFT results.</li>
-<li> <b>Nuclear properties with ML:</b> Improving predictive power of nuclear models by emulating model residuals.</li>
-<li> <b>Effective field theory and A-body systems:</b> Truncation errors and low-energy coupling constant calibration, nucleon-nucleon scattering calculations, variational calculations with ANN for light nuclei, NN extrapolation of nuclear structure observables</li>
-<li> <b>Nuclear  shell  model  UQ:</b> ML methods  have  been  used  to  provide  UQ  of  configuration  interaction  calculations.</li>
-</ul>
-</div>
-
-
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-<h2 id="machine-learning-and-nuclear-theory-why">Machine learning and nuclear theory: Why? </h2>
-
-<ol>
-<li> ML tools can help us to speed up the scientific process cycle and hence facilitate discoveries</li>
-<li> Enabling fast emulation for big simulations</li>
-<li> Revealing the information content of measured observables w.r.t. theory</li>
-<li> Identifying crucial experimental data for better constraining theory</li>
-<li> Providing meaningful input to applications and planned measurements</li>
-<li> ML tools can help us to reveal the structure of our models</li>
-<li> Parameter estimation with heterogeneous/multi-scale datasets</li>
-<li> Model reduction</li>
-<li> ML tools can help us to provide predictive capability</li>
-<li> Theoretical results often involve ultraviolet  and infrared extrapolations due to Hilbert-space truncations</li> 
-<li> Uncertainty quantification essential</li>
-<li> Theoretical models are often applied to entirely new nuclear systems and conditions that are not accessible to experiment</li>
-</ol>
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-<h2 id="examples-of-machine-learning-methods-and-applications-in-nuclear-physics-continues">Examples of Machine Learning methods and applications in nuclear physics, continues </h2>
-
-<div class="alert alert-block alert-block alert-text-normal">
-<b></b>
-<p>
-<ul>
-<li> <b>Low-energy nuclear reactions UQ:</b> Bayesian optimization studies of the nucleon-nucleus optical potential, R-matrix analyses,  and  statistical spatial networks to study patterns in nuclear reaction networks.</li>
-<li> <b>Neutron star properties and nuclear matter equation of state:</b> constraining the equation of state by properties on neutron stars and selected properties of finite nuclei</li>
-<li> <b>Experimental design:</b> Bayesian ML provides a framework  to  maximize  the  success  of  on  experiment  based on  the  best  information  available  on existing  data, experimental conditions, and theoretical models.</li>
-</ul>
 </div>
 
 
