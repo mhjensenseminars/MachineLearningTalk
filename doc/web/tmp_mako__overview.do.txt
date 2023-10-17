@@ -441,5 +441,18 @@ DATE: today
 
 
 
+===== Workshop to honor Marcello Baldo, 2023 =====
+
+
+
+ * HTML:
+   * "Plain html style": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/Catania/html/Catania.html"
+   * "reveal.js beige slide style": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/Catania/html/Catania-reveal.html"
+   * "Bootstrap style": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/Catania/html/Catania-bs.html"
+ * iPython notebook:
+   * "ipynb file": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/Catania/ipynb/Catania.ipynb"
+
+
+
 
 
