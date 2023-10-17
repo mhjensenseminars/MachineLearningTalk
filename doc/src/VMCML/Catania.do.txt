@@ -513,6 +513,21 @@ These integrals are evaluted using MC intergration (with all its possible error 
 !eblock
 
 
+!split
+===== Why Feed Forward Neural Networks?  =====
+
+According to the *Universal approximation theorem*, a feed-forward
+neural network with just a single hidden layer containing a finite
+number of neurons can approximate a continuous multidimensional
+function to arbitrary accuracy, assuming the activation function for
+the hidden layer is a _non-constant, bounded and
+monotonically-increasing continuous function_.
+
+
+!split
+=====  Illustration of a single perceptron model and a multi-perceptron model =====
+
+FIGURE: [figures/nns.png, width=600 frac=0.8]  In a) we show a single perceptron model while in b) we dispay a network with two  hidden layers, an input layer and an output layer.
 
 
 !split
@@ -705,18 +720,16 @@ Predictions made with eleven global mass model and Bayesian model averaging
 FIGURE: [figures/landscape.jpg, width=800 frac=1.0]
 
 !split
-===== "G. Raaijmakers et al., Constraining the Dense Matter Equation of State with Joint Analysis of NICER and LIGO/Virgo Measurements, AJ Letters, 893, L21 (2020)":"https://iopscience.iop.org/article/10.3847/2041-8213/ab822f" =====
-
-
-FIGURE: [figures/nstareos.png, width=800 frac=1.0]
-
-
-!split
 ===== Observations (or conclusions if you prefer) =====
 !bblock
 * Need for AI/Machine Learning in physics, lots of ongoing activities
 * To solve many complex problems and facilitate discoveries, multidisciplinary efforts efforts are required involving scientists in  physics, statistics, computational science, applied math and other fields.
 * There is a need for  focused AI/ML learning efforts that will benefit accelerator science and experimental and theoretical programs
+!eblock
+
+!split
+===== More observations  =====
+!bblock
 * How do we develop insights, competences, knowledge in statistical learning that can advance a given field?
   * For example: Can we use ML to find out which correlations are relevant and thereby diminish the dimensionality problem in standard many-body  theories?
   * Can we use AI/ML in detector analysis, accelerator design, analysis of experimental data and more?
@@ -725,7 +738,6 @@ FIGURE: [figures/nstareos.png, width=800 frac=1.0]
 * Quantum computing and quantum machine learning not discussed here
 * Most likely tons of things I have forgotten
 !eblock
-
 
 
 !split
@@ -795,22 +807,6 @@ o It is tremendously important to get everyone speaking the same language. Facil
 o There is a huge list of areas where technical expertise may be important. But employers are often more concerned with attributes like project management, working well in a team, interest in the field, and adaptability than in specific technical skills.
 
 
-
-
-!split
-===== Educational initiatives since 2019 in nuclear physics =====
-
-_Please feel free to propose new schools and/or update the list here._
-
-!bblock AI/ML courses
-o The FRIB-TA Summer School: Machine Learning Applied to Nuclear Physics, FRIB/NSCL (MSU)from May 20 to 23, 2019
-o Nuclear TALENT course Learning from Data: Bayesian Methods and Machine Learning, in York, UK, June 10-28, 2019
-o Nuclear TALENT School on Machine learning from 22 June 2020 to 03 July 2020.
-o Nuclear TALENT School on Machine learning from 19 July 2021 to  30 July 2021. 
-o Intensive course on Machine Learning at FRIB/MSU, summer 2019
-o Intensive courses on Machine Learning for Nuclear Physics held at Ganil, France, 2019-2024. 
-o and probably many more
-!eblock
 
 
 
