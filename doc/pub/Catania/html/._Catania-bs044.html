@@ -131,15 +131,14 @@ doconce format html Catania.do.txt --html_style=bootstrap --pygments_html_style=
                2,
                None,
                'derivatives-of-the-local-energy'),
-              ('Why Feed Forward Neural Networks?',
+              ('Why Feed Forward Neural Networks (FFNN)?',
                2,
                None,
-               'why-feed-forward-neural-networks'),
-              ('Illustration of a single perceptron model and a '
-               'multi-perceptron model',
+               'why-feed-forward-neural-networks-ffnn'),
+              ('Illustration of a single perceptron model and an FFNN',
                2,
                None,
-               'illustration-of-a-single-perceptron-model-and-a-multi-perceptron-model'),
+               'illustration-of-a-single-perceptron-model-and-an-ffnn'),
               ('Monte Carlo methods and Neural Networks',
                2,
                None,
@@ -186,6 +185,14 @@ doconce format html Catania.do.txt --html_style=bootstrap --pygments_html_style=
                2,
                None,
                'efficient-solutions-of-fermionic-systems-using-artificial-neural-networks-nordhagen-et-al-frontiers-in-physics-11-2023-https-doi-org-10-3389-fphy-2023-1061580'),
+              ('Why Boltzmann machines?', 2, None, 'why-boltzmann-machines'),
+              ('The structure of the RBM network',
+               2,
+               None,
+               'the-structure-of-the-rbm-network'),
+              ('The network', 2, None, 'the-network'),
+              ('Goals', 2, None, 'goals'),
+              ('Joint distribution', 2, None, 'joint-distribution'),
               ('Quantum dots and Boltzmann machines, onebody densities $N=6$, '
                '$\\hbar\\omega=0.1$ a.u.',
                2,
@@ -295,8 +302,8 @@ MathJax.Hub.Config({
      <!-- navigation toc: --> <li><a href="._Catania-bs029.html#quantum-monte-carlo-motivation" style="font-size: 80%;">Quantum Monte Carlo Motivation</a></li>
      <!-- navigation toc: --> <li><a href="._Catania-bs030.html#energy-derivatives" style="font-size: 80%;">Energy derivatives</a></li>
      <!-- navigation toc: --> <li><a href="._Catania-bs031.html#derivatives-of-the-local-energy" style="font-size: 80%;">Derivatives of the local energy</a></li>
-     <!-- navigation toc: --> <li><a href="._Catania-bs032.html#why-feed-forward-neural-networks" style="font-size: 80%;">Why Feed Forward Neural Networks?</a></li>
-     <!-- navigation toc: --> <li><a href="._Catania-bs033.html#illustration-of-a-single-perceptron-model-and-a-multi-perceptron-model" style="font-size: 80%;">Illustration of a single perceptron model and a multi-perceptron model</a></li>
+     <!-- navigation toc: --> <li><a href="._Catania-bs032.html#why-feed-forward-neural-networks-ffnn" style="font-size: 80%;">Why Feed Forward Neural Networks (FFNN)?</a></li>
+     <!-- navigation toc: --> <li><a href="._Catania-bs033.html#illustration-of-a-single-perceptron-model-and-an-ffnn" style="font-size: 80%;">Illustration of a single perceptron model and an FFNN</a></li>
      <!-- navigation toc: --> <li><a href="._Catania-bs034.html#monte-carlo-methods-and-neural-networks" style="font-size: 80%;">Monte Carlo methods and Neural Networks</a></li>
      <!-- navigation toc: --> <li><a href="._Catania-bs035.html#deep-learning-neural-networks-variational-monte-carlo-calculations-of-a-le-4-nuclei-with-an-artificial-neural-network-correlator-ansatz-by-adams-et-al-https-journals-aps-org-prl-abstract-10-1103-physrevlett-127-022502" style="font-size: 80%;">Deep learning neural networks, "Variational Monte Carlo calculations of \( A\le 4 \) nuclei with an artificial neural-network correlator ansatz by Adams et al.":"https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.127.022502"</a></li>
      <!-- navigation toc: --> <li><a href="._Catania-bs036.html#dilute-neutron-star-matter-from-neural-network-quantum-states-by-fore-et-al-physical-review-research-5-033062-2023-https-journals-aps-org-prresearch-pdf-10-1103-physrevresearch-5-033062-at-density-rho-0-04-fm-3" style="font-size: 80%;">"Dilute neutron star matter from neural-network quantum states by Fore et al, Physical Review Research 5, 033062 (2023)":"https://journals.aps.org/prresearch/pdf/10.1103/PhysRevResearch.5.033062" at density \( \rho=0.04 \) fm$^{-3}$</a></li>
@@ -305,21 +312,26 @@ MathJax.Hub.Config({
      <!-- navigation toc: --> <li><a href="._Catania-bs039.html#pairing-and-spin-singlet-and-triplet-two-body-distribution-functions-at-rho-0-08-fm-3" style="font-size: 80%;">Pairing and Spin-singlet and triplet two-body distribution functions at \( \rho=0.08 \) fm$^{-3}$</a></li>
      <!-- navigation toc: --> <li><a href="._Catania-bs040.html#the-electron-gas-in-three-dimensions-with-n-14-electrons-wigner-seitz-radius-r-s-2-a-u-gabriel-pescia-jane-kim-et-al-arxiv-2305-07240-https-doi-org-10-48550-arxiv-2305-07240" style="font-size: 80%;">The electron gas in three dimensions with \( N=14 \) electrons (Wigner-Seitz radius \( r_s=2 \) a.u.), "Gabriel Pescia, Jane Kim et al. arXiv.2305.07240,":"https://doi.org/10.48550/arXiv.2305.07240"</a></li>
      <!-- navigation toc: --> <li><a href="._Catania-bs041.html#efficient-solutions-of-fermionic-systems-using-artificial-neural-networks-nordhagen-et-al-frontiers-in-physics-11-2023-https-doi-org-10-3389-fphy-2023-1061580" style="font-size: 80%;">"Efficient solutions of fermionic systems using artificial neural networks, Nordhagen et al, Frontiers in Physics 11, 2023":"https://doi.org/10.3389/fphy.2023.1061580"</a></li>
-     <!-- navigation toc: --> <li><a href="._Catania-bs042.html#quantum-dots-and-boltzmann-machines-onebody-densities-n-6-hbar-omega-0-1-a-u" style="font-size: 80%;">Quantum dots and Boltzmann machines, onebody densities \( N=6 \), \( \hbar\omega=0.1 \) a.u.</a></li>
-     <!-- navigation toc: --> <li><a href="._Catania-bs043.html#onebody-densities-n-30-hbar-omega-1-0-a-u" style="font-size: 80%;">Onebody densities \( N=30 \), \( \hbar\omega=1.0 \) a.u.</a></li>
-     <!-- navigation toc: --> <li><a href="#onebody-densities-n-30-hbar-omega-0-1-a-u" style="font-size: 80%;">Onebody densities \( N=30 \), \( \hbar\omega=0.1 \) a.u.</a></li>
-     <!-- navigation toc: --> <li><a href="._Catania-bs045.html#extrapolations-and-model-interpretability" style="font-size: 80%;">Extrapolations and model interpretability</a></li>
-     <!-- navigation toc: --> <li><a href="._Catania-bs046.html#physics-based-statistical-learning-and-data-analysis" style="font-size: 80%;">Physics based statistical learning and data analysis</a></li>
-     <!-- navigation toc: --> <li><a href="._Catania-bs047.html#bayes-theorem" style="font-size: 80%;">Bayes' Theorem</a></li>
-     <!-- navigation toc: --> <li><a href="._Catania-bs048.html#quantified-limits-of-the-nuclear-landscape-https-journals-aps-org-prc-abstract-10-1103-physrevc-101-044307" style="font-size: 80%;">"Quantified limits of the nuclear landscape":"https://journals.aps.org/prc/abstract/10.1103/PhysRevC.101.044307"</a></li>
-     <!-- navigation toc: --> <li><a href="._Catania-bs049.html#observations-or-conclusions-if-you-prefer" style="font-size: 80%;">Observations (or conclusions if you prefer)</a></li>
-     <!-- navigation toc: --> <li><a href="._Catania-bs050.html#more-observations" style="font-size: 80%;">More observations</a></li>
-     <!-- navigation toc: --> <li><a href="._Catania-bs051.html#possible-start-to-raise-awareness-about-ml-in-your-own-field" style="font-size: 80%;">Possible start to raise awareness about ML in your own field</a></li>
-     <!-- navigation toc: --> <li><a href="._Catania-bs052.html#education" style="font-size: 80%;">Education</a></li>
-     <!-- navigation toc: --> <li><a href="._Catania-bs053.html#possible-courses" style="font-size: 80%;">Possible courses</a></li>
-     <!-- navigation toc: --> <li><a href="._Catania-bs054.html#important-issues-to-think-of" style="font-size: 80%;">Important Issues to think of</a></li>
-     <!-- navigation toc: --> <li><a href="._Catania-bs055.html#observations" style="font-size: 80%;">Observations</a></li>
-     <!-- navigation toc: --> <li><a href="._Catania-bs056.html#future-needs-problems" style="font-size: 80%;">Future Needs/Problems</a></li>
+     <!-- navigation toc: --> <li><a href="._Catania-bs042.html#why-boltzmann-machines" style="font-size: 80%;">Why Boltzmann machines?</a></li>
+     <!-- navigation toc: --> <li><a href="._Catania-bs043.html#the-structure-of-the-rbm-network" style="font-size: 80%;">The structure of the RBM network</a></li>
+     <!-- navigation toc: --> <li><a href="#the-network" style="font-size: 80%;">The network</a></li>
+     <!-- navigation toc: --> <li><a href="._Catania-bs045.html#goals" style="font-size: 80%;">Goals</a></li>
+     <!-- navigation toc: --> <li><a href="._Catania-bs046.html#joint-distribution" style="font-size: 80%;">Joint distribution</a></li>
+     <!-- navigation toc: --> <li><a href="._Catania-bs047.html#quantum-dots-and-boltzmann-machines-onebody-densities-n-6-hbar-omega-0-1-a-u" style="font-size: 80%;">Quantum dots and Boltzmann machines, onebody densities \( N=6 \), \( \hbar\omega=0.1 \) a.u.</a></li>
+     <!-- navigation toc: --> <li><a href="._Catania-bs048.html#onebody-densities-n-30-hbar-omega-1-0-a-u" style="font-size: 80%;">Onebody densities \( N=30 \), \( \hbar\omega=1.0 \) a.u.</a></li>
+     <!-- navigation toc: --> <li><a href="._Catania-bs049.html#onebody-densities-n-30-hbar-omega-0-1-a-u" style="font-size: 80%;">Onebody densities \( N=30 \), \( \hbar\omega=0.1 \) a.u.</a></li>
+     <!-- navigation toc: --> <li><a href="._Catania-bs050.html#extrapolations-and-model-interpretability" style="font-size: 80%;">Extrapolations and model interpretability</a></li>
+     <!-- navigation toc: --> <li><a href="._Catania-bs051.html#physics-based-statistical-learning-and-data-analysis" style="font-size: 80%;">Physics based statistical learning and data analysis</a></li>
+     <!-- navigation toc: --> <li><a href="._Catania-bs052.html#bayes-theorem" style="font-size: 80%;">Bayes' Theorem</a></li>
+     <!-- navigation toc: --> <li><a href="._Catania-bs053.html#quantified-limits-of-the-nuclear-landscape-https-journals-aps-org-prc-abstract-10-1103-physrevc-101-044307" style="font-size: 80%;">"Quantified limits of the nuclear landscape":"https://journals.aps.org/prc/abstract/10.1103/PhysRevC.101.044307"</a></li>
+     <!-- navigation toc: --> <li><a href="._Catania-bs054.html#observations-or-conclusions-if-you-prefer" style="font-size: 80%;">Observations (or conclusions if you prefer)</a></li>
+     <!-- navigation toc: --> <li><a href="._Catania-bs055.html#more-observations" style="font-size: 80%;">More observations</a></li>
+     <!-- navigation toc: --> <li><a href="._Catania-bs056.html#possible-start-to-raise-awareness-about-ml-in-your-own-field" style="font-size: 80%;">Possible start to raise awareness about ML in your own field</a></li>
+     <!-- navigation toc: --> <li><a href="._Catania-bs057.html#education" style="font-size: 80%;">Education</a></li>
+     <!-- navigation toc: --> <li><a href="._Catania-bs058.html#possible-courses" style="font-size: 80%;">Possible courses</a></li>
+     <!-- navigation toc: --> <li><a href="._Catania-bs059.html#important-issues-to-think-of" style="font-size: 80%;">Important Issues to think of</a></li>
+     <!-- navigation toc: --> <li><a href="._Catania-bs060.html#observations" style="font-size: 80%;">Observations</a></li>
+     <!-- navigation toc: --> <li><a href="._Catania-bs061.html#future-needs-problems" style="font-size: 80%;">Future Needs/Problems</a></li>
 
         </ul>
       </li>
@@ -331,19 +343,13 @@ MathJax.Hub.Config({
 <p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p> <!-- add vertical space -->
 <a name="part0044"></a>
 <!-- !split -->
-<h2 id="onebody-densities-n-30-hbar-omega-0-1-a-u" class="anchor">Onebody densities \( N=30 \), \( \hbar\omega=0.1 \) a.u. </h2>
-<div class="panel panel-default">
-<div class="panel-body">
-<!-- subsequent paragraphs come in larger fonts, so start with a paragraph -->
-<br/><br/>
-<center>
-<p><img src="figures/OB30hw01.png" width="700" align="bottom"></p>
-</center>
-<br/><br/>
-</div>
-</div>
+<h2 id="the-network" class="anchor">The network </h2>
 
-
+<b>The network layers</b>:
+<ol>
+ <li> A function \( \mathbf{x} \) that represents the visible layer, a vector of \( M \) elements (nodes). This layer represents both what the RBM might be given as training input, and what we want it to be able to reconstruct. This might for example be the pixels of an image, the spin values of the Ising model, or coefficients representing speech.</li>
+ <li> The function \( \mathbf{h} \) represents the hidden, or latent, layer. A vector of \( N \) elements (nodes). Also called "feature detectors".</li>
+</ol>
 <p>
 <!-- navigation buttons at the bottom of the page -->
 <ul class="pagination">
@@ -369,7 +375,7 @@ MathJax.Hub.Config({
   <li><a href="._Catania-bs052.html">53</a></li>
   <li><a href="._Catania-bs053.html">54</a></li>
   <li><a href="">...</a></li>
-  <li><a href="._Catania-bs056.html">57</a></li>
+  <li><a href="._Catania-bs061.html">62</a></li>
   <li><a href="._Catania-bs045.html">&raquo;</a></li>
 </ul>
 <!-- ------------------- end of main content --------------- -->

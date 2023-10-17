@@ -770,7 +770,7 @@ $$
 </section>
 
 <section>
-<h2 id="why-feed-forward-neural-networks">Why Feed Forward Neural Networks?  </h2>
+<h2 id="why-feed-forward-neural-networks-ffnn">Why Feed Forward Neural Networks (FFNN)?  </h2>
 
 <p>According to the <em>Universal approximation theorem</em>, a feed-forward
 neural network with just a single hidden layer containing a finite
@@ -782,7 +782,7 @@ monotonically-increasing continuous function</b>.
 </section>
 
 <section>
-<h2 id="illustration-of-a-single-perceptron-model-and-a-multi-perceptron-model">Illustration of a single perceptron model and a multi-perceptron model </h2>
+<h2 id="illustration-of-a-single-perceptron-model-and-an-ffnn">Illustration of a single perceptron model and an FFNN </h2>
 
 <center>  <!-- FIGURE -->
 <hr class="figure">
@@ -939,6 +939,92 @@ $$
 <p>&nbsp;<br>
 
 <p>Analytical solutions in two and three dimensions (<a href="https://journals.aps.org/pra/abstract/10.1103/PhysRevA.48.3561" target="_blank">M. Taut 1993 and 1994</a>). </p>
+</section>
+
+<section>
+<h2 id="why-boltzmann-machines">Why Boltzmann machines? </h2>
+
+<p>What is known as restricted Boltzmann Machines (RMB) have received a
+lot of attention lately.  One of the major reasons is that they can be
+stacked layer-wise to build deep neural networks that capture
+complicated statistics.
+</p>
+
+<p>The original RBMs had just one visible layer and a hidden layer, but
+recently so-called Gaussian-binary RBMs have gained quite some
+popularity in imaging since they are capable of modeling continuous
+data that are common to natural images.
+</p>
+
+<p>Furthermore, they have been used to solve complicated quantum
+mechanical many-particle problems or classical statistical physics
+problems like the Ising and Potts classes of models.
+</p>
+</section>
+
+<section>
+<h2 id="the-structure-of-the-rbm-network">The structure of the RBM network </h2>
+
+<br/><br/>
+<center>
+<p><img src="figures/RBM.png" width="800" align="bottom"></p>
+</center>
+<br/><br/>
+</section>
+
+<section>
+<h2 id="the-network">The network </h2>
+
+<b>The network layers</b>:
+<ol>
+ <p><li> A function \( \mathbf{x} \) that represents the visible layer, a vector of \( M \) elements (nodes). This layer represents both what the RBM might be given as training input, and what we want it to be able to reconstruct. This might for example be the pixels of an image, the spin values of the Ising model, or coefficients representing speech.</li>
+ <p><li> The function \( \mathbf{h} \) represents the hidden, or latent, layer. A vector of \( N \) elements (nodes). Also called "feature detectors".</li>
+</ol>
+</section>
+
+<section>
+<h2 id="goals">Goals </h2>
+
+<p>The goal of the hidden layer is to increase the model's expressive
+power. We encode complex interactions between visible variables by
+introducing additional, hidden variables that interact with visible
+degrees of freedom in a simple manner, yet still reproduce the complex
+correlations between visible degrees in the data once marginalized
+over (integrated out).
+</p>
+
+<b>The network parameters, to be optimized/learned</b>:
+<ol>
+ <p><li> \( \mathbf{a} \) represents the visible bias, a vector of same length as \( \mathbf{x} \).</li>
+ <p><li> \( \mathbf{b} \) represents the hidden bias, a vector of same lenght as \( \mathbf{h} \).</li>
+ <p><li> \( W \) represents the interaction weights, a matrix of size \( M\times N \).</li>
+</ol>
+</section>
+
+<section>
+<h2 id="joint-distribution">Joint distribution </h2>
+
+<p>The restricted Boltzmann machine is described by a Boltzmann distribution</p>
+<p>&nbsp;<br>
+$$
+\begin{align}
+	P_{rbm}(\mathbf{x},\mathbf{h}) = \frac{1}{Z} e^{-\frac{1}{T_0}E(\mathbf{x},\mathbf{h})},
+\tag{3}
+\end{align}
+$$
+<p>&nbsp;<br>
+
+<p>where \( Z \) is the normalization constant or partition function, defined as </p>
+<p>&nbsp;<br>
+$$
+\begin{align}
+	Z = \int \int e^{-\frac{1}{T_0}E(\mathbf{x},\mathbf{h})} d\mathbf{x} d\mathbf{h}.
+\tag{4}
+\end{align}
+$$
+<p>&nbsp;<br>
+
+<p>It is common to ignore \( T_0 \) by setting it to one. </p>
 </section>
 
 <section>

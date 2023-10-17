@@ -497,7 +497,7 @@ These integrals are evaluted using MC intergration (with all its possible error 
 
 
 !split
-===== Why Feed Forward Neural Networks?  =====
+===== Why Feed Forward Neural Networks (FFNN)?  =====
 
 According to the *Universal approximation theorem*, a feed-forward
 neural network with just a single hidden layer containing a finite
@@ -508,9 +508,9 @@ monotonically-increasing continuous function_.
 
 
 !split
-=====  Illustration of a single perceptron model and a multi-perceptron model =====
+=====  Illustration of a single perceptron model and an FFNN =====
 
-FIGURE: [figures/nns.png, width=600 frac=0.8]  In a) we show a single perceptron model while in b) we dispay a network with two  hidden layers, an input layer and an output layer.
+FIGURE: [figures/nns.png, width=600 frac=0.7]  In a) we show a single perceptron model while in b) we dispay a network with two  hidden layers, an input layer and an output layer.
 
 
 !split
@@ -621,6 +621,78 @@ Separable Hamiltonian with the relative motion part ($r_{ij}=r$)
 \]
 !et
 Analytical solutions in two and three dimensions ("M. Taut 1993 and 1994":"https://journals.aps.org/pra/abstract/10.1103/PhysRevA.48.3561"). 
+
+
+!split
+===== Why Boltzmann machines? =====
+
+What is known as restricted Boltzmann Machines (RMB) have received a
+lot of attention lately.  One of the major reasons is that they can be
+stacked layer-wise to build deep neural networks that capture
+complicated statistics.
+
+The original RBMs had just one visible layer and a hidden layer, but
+recently so-called Gaussian-binary RBMs have gained quite some
+popularity in imaging since they are capable of modeling continuous
+data that are common to natural images.
+
+Furthermore, they have been used to solve complicated quantum
+mechanical many-particle problems or classical statistical physics
+problems like the Ising and Potts classes of models.
+
+
+
+
+
+!split
+===== The structure of the RBM network =====
+
+FIGURE: [figures/RBM.pdf, width=800 frac=1.0]
+
+
+
+!split
+===== The network =====
+
+_The network layers_:
+  o A function $\mathbf{x}$ that represents the visible layer, a vector of $M$ elements (nodes). This layer represents both what the RBM might be given as training input, and what we want it to be able to reconstruct. This might for example be the pixels of an image, the spin values of the Ising model, or coefficients representing speech.
+  o The function $\mathbf{h}$ represents the hidden, or latent, layer. A vector of $N$ elements (nodes). Also called "feature detectors".
+
+!split
+===== Goals =====
+
+The goal of the hidden layer is to increase the model's expressive
+power. We encode complex interactions between visible variables by
+introducing additional, hidden variables that interact with visible
+degrees of freedom in a simple manner, yet still reproduce the complex
+correlations between visible degrees in the data once marginalized
+over (integrated out).
+
+_The network parameters, to be optimized/learned_:
+  o $\mathbf{a}$ represents the visible bias, a vector of same length as $\mathbf{x}$.
+  o $\mathbf{b}$ represents the hidden bias, a vector of same lenght as $\mathbf{h}$.
+  o $W$ represents the interaction weights, a matrix of size $M\times N$.
+
+
+
+
+!split
+===== Joint distribution =====
+
+The restricted Boltzmann machine is described by a Boltzmann distribution
+!bt
+\begin{align}
+	P_{rbm}(\mathbf{x},\mathbf{h}) = \frac{1}{Z} e^{-\frac{1}{T_0}E(\mathbf{x},\mathbf{h})},
+\end{align}
+!et
+where $Z$ is the normalization constant or partition function, defined as 
+!bt
+\begin{align}
+	Z = \int \int e^{-\frac{1}{T_0}E(\mathbf{x},\mathbf{h})} d\mathbf{x} d\mathbf{h}.
+\end{align}
+!et
+It is common to ignore $T_0$ by setting it to one. 
+
 
 
 !split
@@ -788,6 +860,11 @@ o There are not enough potential employees in AI/ML and QIT . It is a supply gap
 o A BSc with specialization  is a good place to start
 o It is tremendously important to get everyone speaking the same language. Facility with the vernacular of quantum mechanics is a big plus.
 o There is a huge list of areas where technical expertise may be important. But employers are often more concerned with attributes like project management, working well in a team, interest in the field, and adaptability than in specific technical skills.
+
+
+
+
+
 
 
 
