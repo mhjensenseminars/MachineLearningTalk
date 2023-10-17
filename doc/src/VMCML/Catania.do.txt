@@ -1,6 +1,6 @@
-TITLE: 
+TITLE: Artificial intelligence and machine learning in physics 
 AUTHOR: Morten Hjorth-Jensen at Department of Physics and Astronomy and FRIB, Michigan State University, USA, and Department of Physics and Center for Computing in Science Education, University of Oslo, Norway
-DATE: Department of Physics and Astronomy colloquium, University of Catania and 
+DATE: Department of Physics and Astronomy colloquium, University of Catania and celebrating MARCELLO BALDO'S 80th birthday
 
 
 !split
@@ -265,657 +265,7 @@ In general, the integrals involved in the calculation of various  expectation va
 !eblock
 
 !split
-===== Monte Carlo methods and Neural Networks =====
-
-"Machine Learning and the Deuteron by Kebble and Rios":"https://www.sciencedirect.com/science/article/pii/S0370269320305463?via%3Dihub" and
-"Variational Monte Carlo calculations of $A\le 4$ nuclei with an artificial neural-network correlator ansatz by Adams et al.":"https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.127.022502"
-
-_Adams et al_:
-
-!bt
-\begin{align}
-H_{LO} &=-\sum_i \frac{{\vec{\nabla}_i^2}}{2m_N}
-+\sum_{i<j} {\left(C_1  + C_2\, \vec{\sigma_i}\cdot\vec{\sigma_j}\right)
-e^{-r_{ij}^2\Lambda^2 / 4 }}
-\nonumber\\
-&+D_0 \sum_{i<j<k} \sum_{\text{cyc}}
-{e^{-\left(r_{ik}^2+r_{ij}^2\right)\Lambda^2/4}}\,,
-\end{align}
-!et
-
-where $m_N$ is the mass of the nucleon, $\vec{\sigma_i}$ is the Pauli
-matrix acting on nucleon $i$, and $\sum_{\text{cyc}}$ stands for the
-cyclic permutation of $i$, $j$, and $k$. The low-energy constants
-$C_1$ and $C_2$ are fit to the deuteron binding energy and to the
-neutron-neutron scattering length
-
-
-
-!split
-===== Deep learning neural networks, "Variational Monte Carlo calculations of $A\le 4$ nuclei with an artificial neural-network correlator ansatz by Adams et al.":"https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.127.022502" =====
-
-
-An appealing feature of the neural network ansatz is that it is more general than the more conventional product of two-
-and three-body spin-independent Jastrow functions
-!bt
-\begin{align}
-|\Psi_V^J \rangle = \prod_{i<j<k} \Big( 1-\sum_{\text{cyc}} u(r_{ij}) u(r_{jk})\Big) \prod_{i<j} f(r_{ij}) | \Phi\rangle\,,
-\end{align}
-!et
-which is commonly used for nuclear Hamiltonians that do not contain tensor and spin-orbit terms.
-The above function is replaced by a four-layer Neural Network. 
-
-!split
-===== Explicit results =====
-FIGURE: [figures/energyconvergence.pdf, width=700 frac=0.9]
-
-
-!split
-===== "Dilute neutron star matter from neural-network quantum states by Fore et al, Physical Review Research 5, 033062 (2023)":"https://journals.aps.org/prresearch/pdf/10.1103/PhysRevResearch.5.033062" at density $\rho=0.04$ fm$^{-3}$ =====
-
-!bblock
-FIGURE: [figures/nmatter.png, width=700 frac=0.9]
-!eblock
-
-
-
-
-
-!split
-===== The electron gas in three dimensions with $N=14$ electrons (Wigner-Seitz radius $r_s=2$ a.u.), "Gabriel Pescia, Jane Kim et al. arXiv.2305.07240,":"https://doi.org/10.48550/arXiv.2305.07240" =====
-
-!bblock
-FIGURE: [figures/elgasnew.png, width=700 frac=0.9]
-!eblock
-
-
-
-!split
-===== "Efficient solutions of fermionic systems using artificial neural networks, Nordhagen et al, Frontiers in Physics 11, 2023":"https://doi.org/10.3389/fphy.2023.1061580" =====
-
-The Hamiltonian of the quantum dot is given by
-!bt
-\[ \hat{H} = \hat{H}_0 + \hat{V}, 
-\]
-!et
-where $\hat{H}_0$ is the many-body HO Hamiltonian, and $\hat{V}$ is the
-inter-electron Coulomb interactions. In dimensionless units,
-!bt
-\[ \hat{V}= \sum_{i < j}^N \frac{1}{r_{ij}},
-\]
-!et
-with $r_{ij}=\sqrt{\mathbf{r}_i^2 - \mathbf{r}_j^2}$.
-
-This leads to the  separable Hamiltonian, with the relative motion part given by ($r_{ij}=r$)
-!bt
-\[ 
-\hat{H}_r=-\nabla^2_r + \frac{1}{4}\omega^2r^2+ \frac{1}{r},
-\]
-!et
-plus a standard Harmonic Oscillator problem  for the center-of-mass motion.
-This system has analytical solutions in two and three dimensions ("M. Taut 1993 and 1994":"https://journals.aps.org/pra/abstract/10.1103/PhysRevA.48.3561"). 
-
-
-!split
-===== Quantum dots and Boltzmann machines, onebody densities $N=6$, $\hbar\omega=0.1$ a.u. =====
-
-!bblock
-FIGURE: [figures/OB6hw01.png, width=700 frac=0.9]
-!eblock
-
-
-!split
-===== Onebody densities $N=30$, $\hbar\omega=1.0$ a.u. =====
-!bblock
-FIGURE: [figures/OB30hw1.png, width=700 frac=0.9]
-!eblock
-
-
-!split
-===== Onebody densities $N=30$, $\hbar\omega=0.1$ a.u. =====
-!bblock
-FIGURE: [figures/OB30hw01.png, width=700 frac=0.9]
-!eblock
-
-
-
-!split
-===== Quantified limits of the nuclear landscape =====
-
-"Neufcourt et al., Phys. Rev. C 101, 044307 (2020)":"https://journals.aps.org/prc/abstract/10.1103/PhysRevC.101.044307"
-Predictions made with eleven global mass model and Bayesian model averaging
-
-FIGURE: [figures/landscape.jpg, width=800 frac=1.0]
-
-!split
-===== Constraining the equation of state for dense nuclear matter =====
-
-"G. Raaijmakers et al., Constraining the Dense Matter Equation of State with Joint Analysis of NICER and LIGO/Virgo Measurements, AJ Letters, 893, L21 (2020)":"https://iopscience.iop.org/article/10.3847/2041-8213/ab822f"
-
-FIGURE: [figures/nstareos.png, width=800 frac=1.0]
-
-!split
-===== Experimental design =====
-
-Beam time and compute cycles are expensive!
-
-* Bayesian experimental design provides a framework in which experiments can be designed using the best experimental and theoretical information available 
-* The utility function is designed to encode the goals of the experiment and the constraints inherent in carrying it out. 
-* Once the utility function and the possible designs have been specified, the optimal design is simply the scenario that  maximizes the expected utility function over the domain of possible designs.
-
-
-
-
-
-!split
-===== Observations and perspectives =====
-!bblock
-* Need for AI/Machine Learning in nuclear physics, lots of ongoing activities
-* To solve many complex problems in the field and facilitate discoveries, multidisciplinary efforts efforts are required involving scientists in  nuclear physics, statistics, computational science, and applied math.
-* There is a need for  focused AI/ML learning efforts that will benefit accelerator science and experimental and theoretical programs
-!eblock
-
-!split
-===== How can we use ML in Nuclear Science? =====
-!bblock
-* How do we develop insights, competences, knowledge in statistical learning that can advance our field?
-  * For example: Can we use ML to find out which correlations are relevant and thereby diminish the dimensionality problem in standard many-body  theories?
-  * Can we use AI/ML in detector analysis, accelerator design, analysis of experimental data and more?
-  * Can we use AL/ML to carry out reliable extrapolations by using current experimental knowledge and current theoretical models?
-  * Future research may have a strong focus on generative models
-* The community needs to invest in relevant educational efforts and training of nuclear physicists with knowledge in AI/ML
-* Most likely tons of things we have forgotten
-!eblock
-
-
-!split
-===== Possible start to raise awareness about ML in our field =====
-!bblock 
-* Make an ML challenge in nuclear physics a la "Learning to discover: the Higgs boson machine learning challenge":"https://home.cern/news/news/computing/higgs-boson-machine-learning-challenge". Alternatively go to kaggle.com at URL:"https://www.kaggle.com/c/higgs-boson"
-* HEP@CERN and HEP in general have made significant impacts in the field of machine learning and AI. Something to learn from
-!eblock
-
-
-!split
-===== Villa Tambosi, summer 1995, Tempus Fugit (sadly) =====
-
-
-FIGURE: [Photos/mhj1995.jpeg, width=900 frac=0.8]
-
-
-
-
-
-
-!split
-===== Quantum computing, Overview and Motivation =====
-
-_How to use many-body theory to design quantum circuits (Quantum engineering)_
-o Many-body methods like F(ull)C(onfiguration)I(nteraction) theory  with
-  * Adaptive basis sets (see for example "Sigmundson et al arXiv:2111.09638":"https://arxiv.org/abs/2111.09638")
-  * Time dependence
-  * Optimization of experimental parameter 
-  * Feedback from experiment
-o Finding optimal parameters for tuning of entanglement
-o Numerical experiments to mimick real systems, using many-body methods to develop _quantum twins_ ("inspiration from  work by Herschel Rabitz et al on Control of quantum phenomena, see New Journal of Physics 12 (2010) 075008":"https://iopscience.iop.org/article/10.1088/1367-2630/12/7/075008")!
-
-
-
-
-!split
-===== What is this about? =====
-
-Here we describe a method for generating motional entanglement between
-two electrons trapped above the surface of superfluid helium. In this
-proposed scheme these electronic charge qubits are laterally confined
-via electrostatic gates to create an anharmonic trapping
-potential. When the system is cooled to sufficiently low temperature
-these in-plane charge qubit states are quantized and circuit quantum
-electrodynamic methods can be used to control and readout single qubit
-operations. Perspectives for quantum simulations with quantum dots
-systems will be discussed.
- 
-
-!split
-===== Literature and more reading  =====
-
-
-o "Justyna P. Zwolak and Jacob M. Taylor, Rev. Mod. Phys. 95, 011006, Advances in automation of quantum dot devices control":"https://journals.aps.org/rmp/abstract/10.1103/RevModPhys.95.011006"
-o "Pollanen and many other, Accelerating Progress Towards Practical Quantum Advantage: The Quantum Technology Demonstration Project Roadmap":"https://arxiv.org/pdf/2210.14757.pdf"
-o "Osada et al, introduction to quantum technologies, Springer, 2022":"https://link.springer.com/book/10.1007/978-981-19-4641-7"
-o "Original inspiration a series of articles of Loss and DiVincenzo from the nineties, Quantum Computation with Quantum Dots":"https://journals.aps.org/pra/pdf/10.1103/PhysRevA.57.120"
-
-
-
-!split
-===== Quantum Engineering =====
-
-!bblock Quantum computing requirements
-o be scalable
-o have qubits that can be entangled
-o have reliable initializations protocols to a standard state
-o have a set of universal quantum gates to control the quantum evolution
-o have a coherence time much longer than the gate operation time
-o have a reliable read-out mechanism for measuring the qubit states
-o ...more
-!eblock
-
-!split
-===== Candidate systems =====
-
-!bblock
-o Superconducting Josephon junctions
-o Single photons
-o "Trapped ions and atoms":"https://journals.aps.org/rmp/pdf/10.1103/RevModPhys.93.025001"
-o Nuclear Magnetic Resonance
-o _Quantum dots, experiments at MSU_
-o Point Defects in semiconductors
-o ...more
-!eblock
-
-!split
-===== Electrons (quantum dots) on superfluid helium =====
-
-Electrons on _superfluid helium represent_ (see URL:"https://www.youtube.com/watch?v=EuDuM-fe-lA&ab_channel=JoshuahHeath") a promising platform for investigating
-strongly-coupled qubits.
-
-A systematic investigation of the
-controlled generation of entanglement between two trapped electrons
-under the influence of coherent microwave driving pulses, taking into
-account the effects of the Coulomb interaction between electrons, may be of great interest for quantum information processing using
-trapped electrons.
-
-
-
-!split
-===== To read more =====
-
-o See "Single electrons on solid neon as a solid-state qubit platform, David Schuster et al, Nature _605_, 46–50 (2022)":"https://www.nature.com/articles/s41586-022-04539-x"
-o See Mark Dykman et al, Spin dynamics in quantum dots on liquid helium, PRB _107_. 035437 (2023) at URL:"https://link.aps.org/doi/10.1103/PhysRevB.107.035437".
-
-
-
-!split
-===== Experimental setup I =====
-
-FIGURE: [qcfigures/Elhelium1.png, width=700 frac=1.3]
-
-!split
-===== More on experimental setup II =====
-
-FIGURE: [qcfigures/Elhelium2.png, width=700 frac=1.3]
-
-!split
-===== More on experimental setup III =====
-
-FIGURE: [qcfigures/Elhelium3.png, width=700 frac=1.3]
-
-!split
-===== Experimental set up =====
-
-FIGURE: [qcfigures/figure1.png, width=600 frac=0.7]
-
-o (a) Schematic of the microdevice, where two electrons are trapped in a double-well potential created by electrodes 1-7. The read-out is provided by two superconducting resonators dispersively coupled to  electron's in-plane motional states.
-o (b) Coupling constants from each individual electrode beneath the helium layer.
-o (c+d) The electron's energy in a  double-well electrostatic potential (solid line). Dashed and dot-dashed lines represent the harmonic approximations of left and right wells respectively.
-
-
-
-
-
-
-!split
-=====  Entanglement =====
-
-!bblock
-"Entanglement":"https://link.springer.com/content/pdf/10.1007/s11232-007-0098-9.pdf" is the fundamental characteristic that distinguishes
-quantum systems composed of two or more coupled objects from their
-classical counterparts. The study of entanglement in precisely
-engineered quantum systems with countably many degrees of freedom is
-at the forefront of modern physics and is a key resource in quantum
-information science (QIS). This is particularly true in the
-development of two-qubit logic for quantum computation.
-!eblock
-
-!bblock
-The
-generation of two-qubit entanglement has been demonstrated in a wide
-variety of physical systems used in present-day quantum computing,
-including superconducting circuits, trapped
-ions, semiconductor quantum dots, color-center
-defects in diamond, and neutral atoms in optical
-lattices, just to name a few.
-!eblock
-
-!split
-===== More on Entanglement =====
-
-!bblock
-Generating an entanglement between two quantum systems rely on
-exploiting interactions in a controllable way. The details in the
-interaction Hamiltonian between two systems defines the protocol
-schemes for two-qubit logic.
-!eblock
-
-!bblock
-In  superconducting circuits the
-interaction between qubits may arise from direct capacitive coupling
-between circuit elements or by indirect coupling of two qubits to a
-common resonator (virtually populating resonator mode) which results
-in a non-local Hamiltonian in the form of exchange
-interaction. This allow to implement various
-schemes for entanglement, such as controlled-phase
-gate, resonator-induced phase
-gate, cross-resonance gates etc.
-!eblock
-
-!split
-===== Entanglement gates in trapped ions and more =====
-
-!bblock
-Entanglement gates in trapped ions are
-produced by means of the Coulomb interaction, where shared motional
-modes of two or more ions, entangled to their internal states, used
-for transferring excitations between ion
-qubits. This has been experimentally
-demonstrated.
-!eblock
-
-
-!bblock
-In photonic quantum
-computing schemes two-qubit entangling operations are realized by
-nonlinear interactions between two photons scattering from quantum
-dots, plasmonic nanowires, diamond vacancy centers and others embedded
-into waveguides. Two-qubit gates in
-semiconductor quantum dots are based on spin-spin exchange
-interactions or generated
-by coupling to a superconducting resonator via artificial spin-orbit
-interaction.
-!eblock
-
-
-
-
-
-!split
-===== Quantum dots and the Coulomb interaction =====
-
-!bblock
-Coulomb interaction governed entanglement can be realized in
-the system of electrons on the surface of superfluid helium, where
-qubit states are formed by in-plane lateral motional or out-of plane
-Rydberg states. Trapped near the surface of liquid helium these states
-have different spatial charge configurations and the wavefunctions of
-different electrons do not overlap.
-!eblock
-
-!bblock
-This results in a strong exchange
-free Coulomb interaction which depends on the states of the
-electrons. The lack of disorder in the systems
-also leads to slow electron decoherence, which has attracted interest
-to the system as a candidate for quantum information
-processing.
-!eblock
-
-!split
-===== Electrons on helium is another qubit platform =====
-
-_To our knowledge two qubit gates have never been discussed in a proper manner for these systems._
-
-!bblock
-The static Coulomb interaction arises from a virtual photon exchange
- process between two charge particles according to quantum
- electrodynamics. This results in a correlated motion of two charges
- generating quantum entanglement. 
-!eblock
-
-!split
-===== Surface state electrons (SSE) =====
-
-!bblock
-Surface state electrons (SSE) 'floating' above liquid helium
-originates from quantization of electron's perpendicular to the
-surface motion in a trapping potential formed by attractive force from
-image charge and a large $\sim$ 1 eV barrier at the liquid-vacuum
-interface. At low temperatures the SSE are trapped in the lowest
-Rydberg state for vertical motion some 11 nm above the helium surface,
-which is perfectly clean and has a permittivity close to that of
-vacuum.
-!eblock
-
-!bblock
-The weak interaction with rthe enviroment, which is mainly governed
-by interaction with quantized surface capillary waves (ripplons) and
-bulk phonons, ensures long coherence times - a vital ingredient for
-any qubit platform. 
-!eblock
-
-
-!split
-===== Calculational details =====
-
-Hamiltonian:
-!bt
-\begin{align}
-\hat{H} &=\frac{\hat{p}_1^2}{2} + \sum_{i = 1}^7 V_i\alpha_i[\hat{x}_1] + \frac{\hat{p}_2^2}{2} + \sum_{i = 1}^7 V_i\alpha_i[\hat{x}_2] + \frac{\kappa}{\sqrt{(\hat{x}_1-\hat{x}_2)^2 + a^2}}\\
-&= h[\hat{p}_1,\hat{x}_1] + h[\hat{p}_2,\hat{x}_2] + u[\hat{x}_1,\hat{x}_2]
-\end{align}
-!et
-
-FIGURE: [qcfigures/well_basis.png, width=600 frac=0.8]
-
-
-!split
-===== Calculational details =====
-
-Hamiltonian:
-!bt
-\begin{align}
-\hat{H} &= \frac{\hat{p}_1^2}{2} + v[\hat{x}_1] + \frac{\hat{p}_2^2}{2} + v[\hat{x}_2] + \frac{\kappa}{\sqrt{(\hat{x}_1-\hat{x}_2)^2 + a^2}}\\
-&= h[\hat{p}_1,\hat{x}_1] + h[\hat{p}_2,\hat{x}_2] + u[\hat{x}_1,\hat{x}_2]
-\end{align}
-!et
-
-FIGURE: [qcfigures/wells.png, width=600 frac=0.8]
-
-
-!split
-===== Calculational details =====
-
-Hamiltonian:
-!bt
-\begin{align}
-\hat{H} &= \frac{\hat{p}_1^2}{2} + v[\hat{x}_1] + \frac{\hat{p}_2^2}{2} + v[\hat{x}_2] + \frac{\kappa}{\sqrt{(\hat{x}_1-\hat{x}_2)^2 + a^2}} \\
-&\equiv h[\hat{p}_1,\hat{x}_1] + h[\hat{p}_2,\hat{x}_2] + u[\hat{x}_1,\hat{x}_2]
-\end{align}
-!et
-
-Energy states:
-!bt
-\begin{equation}
-\vert\Phi_k\rangle = \sum_{i < j} C_{ij, k}\frac{\vert \varphi_i \varphi_j\rangle - \vert \varphi_j \varphi_i\rangle}{\sqrt{2}},
-\end{equation}
-!et
-(Slater basis)
-
-
-!split
-===== Calculational details =====
-
-Hamiltonian:
-!bt
-\begin{align}
-\hat{H} &= \frac{\hat{p}_1^2}{2} + v^L[\hat{x}_1] + \frac{\hat{p}_2^2}{2} + v^R[\hat{x}_2] + \frac{\kappa}{\sqrt{(\hat{x}_1-\hat{x}_2)^2 + a^2}} \\
-&\equiv h^L[\hat{p}_1,\hat{x}_1] + h^R[\hat{p}_2,\hat{x}_2] + u[\hat{x}_1,\hat{x}_2]
-\end{align}
-!et
-
-Energy states:
-!bt
-\begin{equation}
-\vert\Phi_k\rangle = \sum_{i} \sum_{j} C_{ij, k}\vert \varphi^L_i \varphi^R_j\rangle,
-\end{equation}
-!et
-(product basis)
-
-
-!split
-===== Calculational details =====
-
-Energy states:
-!bt
-\begin{equation}
-\vert\Phi_k\rangle = \sum_{i} \sum_{j} C_{ij, k}\vert \varphi^L_i \varphi^R_j\rangle,
-\end{equation}
-!et
-(product basis)
-
-FIGURE: [qcfigures/Hartree_states.png, width=700 frac=0.9]
-
-
-!split
-===== Calculational details =====
-
-Hamiltonian:
-!bt
-\begin{align}
-\hat{H} &= \frac{\hat{p}_1^2}{2} + v^L[\hat{x}_1] + \frac{\hat{p}_2^2}{2} + v^R[\hat{x}_2] + \frac{\kappa}{\sqrt{(\hat{x}_1-\hat{x}_2)^2 + a^2}} \\
-&\equiv h^L[\hat{p}_1,\hat{x}_1] + h^R[\hat{p}_2,\hat{x}_2] + u[\hat{x}_1,\hat{x}_2]
-\end{align}
-!et
-
-Energy states:
-!bt
-\begin{equation}
-\vert\Phi_k\rangle = \sum_{i} \sum_{j} C_{ij, k}\vert \varphi^L_i \varphi^R_j\rangle,
-\end{equation}
-!et
-(Hartree basis)
-
-
-!split
-===== Calculational details =====
-
-Hamiltonian:
-!bt
-\begin{align}
-\hat{H} &= \frac{\hat{p}_1^2}{2} + v^L[\hat{x}_1] + \frac{\hat{p}_2^2}{2} + v^R[\hat{x}_2] + \frac{\kappa}{\sqrt{(\hat{x}_1-\hat{x}_2)^2 + a^2}} \\
-&\equiv h^L[\hat{p}_1,\hat{x}_1] + h^R[\hat{p}_2,\hat{x}_2] + u[\hat{x}_1,\hat{x}_2]
-\end{align}
-!et
-
-Energy states:
-!bt
-\begin{equation}
-\vert\Phi_k\rangle = \sum_{i = 0}^{N^L} \sum_{j = 0}^{N^R} C_{ij, k}\vert \varphi^L_i \varphi^R_j\rangle,
-\end{equation}
-!et
-(Hartree basis)
-
-
-!split
-===== Calculational details =====
-
-Energy states:
-!bt
-\begin{equation}
-\vert\Phi_k\rangle = \sum_{i = 0}^{N^L} \sum_{j = 0}^{N^R} C_{ij, k}\vert \varphi^L_i \varphi^R_j\rangle,
-\end{equation}
-!et
-(Hartree basis)
-
-FIGURE: [qcfigures/Hartree_coefs.png, width=700 frac=0.7]
-
-
-!split
-===== Calculational details =====
-
-Hamiltonian:
-!bt
-\begin{align}
-\hat{H} &= \frac{\hat{p}_1^2}{2} + v^L[\hat{x}_1] + \frac{\hat{p}_2^2}{2} + v^R[\hat{x}_2] + \frac{\kappa}{\sqrt{(\hat{x}_1-\hat{x}_2)^2 + a^2}} \\
-&\equiv h^L[\hat{p}_1,\hat{x}_1] + h^R[\hat{p}_2,\hat{x}_2] + u[\hat{x}_1,\hat{x}_2]
-\end{align}
-!et
-
-Energy states:
-!bt
-\begin{equation}
-\vert\Phi_k\rangle = \sum_{i = 0}^{N^L} \sum_{j = 0}^{N^R} C_{ij, k}\vert \varphi^L_i \varphi^R_j\rangle,
-\end{equation}
-!et
-(Hartree basis)
-
-
-!split
-===== Results and discussions =====
-By adjusting the potential we can change the anharmonicities and detuning of the wells.
-o What values of these give interesting interactions?
-o Inspiration from superconducting qubits, see High-Contrast $ZZ$ Interaction Using Superconducting Qubits with Opposite-Sign Anharmonicity, "Zhao et al Phys. Rev. Lett. 125, 200503":"https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.125.200503"
-
-!split
-We search for well configurations corresponding to three different types of interaction between the two electrons.
-
-o In configuration I we address both qubits independently and can thereby perform single-qubit state rotations and measurements.
-o Configurations II and III correspond to avoided level crossings between two ($E_{01}, E_{10}$) and three ($E_{11}, E_{20}, E_{02}$) energy levels respectively, where the electrons' motion becomes correlated, that is they are entangled. 
-
-Both anharmonicity and detuning changes with the shape of our well.
-We create a voltage parameterization
-!bt
-\begin{equation}
-V(\lambda) = (1-\lambda)V_\mathrm{I} + \lambda V_\mathrm{III}
-\end{equation}
-!et
-
-!split
-===== Entanglement and more  =====
-
-FIGURE: [qcfigures/crossings-entropies-anharmonicities-1.png, width=800 frac=0.7]
-
-
-!split
-===== Legend to figure =====
-
-o (a) In this figure we have plotted the transition energy from the ground state to the labeled excited state as a function of the voltage parameter $\lambda$. The labeled states are the computational basis states when $\lambda = 0$.
-o (b) The von Neumann entropy of the five lowest excited states of the two-body Hamiltonian as a function of the configuration parameter $\lambda$. The ground state has zero entropy, or close to zero entropy. We have included the points for the double and triple degeneracy points. $\lambda_{II}$ and $\lambda_{III}$ in the figure. The von Neumann entropy is calculated using the binary logarithm.
-o (c) In this figure we have plotted the anharmonicites for the left well ($\alpha^L$) and the right well ($\alpha^R$) as a function of the well parameterization $\lambda$. We have also included the detuning $\Delta \omega = \omega^R - \omega^L$ between the two wells. We have marked configuration II at $\lambda_{II} \approx 0.554$ and configuration III at $\lambda_{III} = 1$.
-
-
-!split
-===== Particle densities and coefficients =====
-
-FIGURE: [qcfigures/configuration_I-1.png, width=600 frac=0.7]
-
-!split
-===== Potential wells, the one-body densities, and single-particle states =====
-
-FIGURE: [qcfigures/configuration_II_and_III-1.png, width=600 frac=0.7]
-
-!split
-===== Where we are now =====
-
-o Adding time-dependent studies of two electrons in two wells in one and two dimensions
-o Studies of the time-evolution of entangled states (now two electrons only)
-o Use theory to find optimal experimental setup
-o Expect two-electron system realized experimentally in approx $1$ year, great potential for studies of quantum simulations
-
-!split
-===== Plans =====
-
-o Add two and three-dimensions in order to simulate in  a more realistic way such many-body systems.
-o Develop time-dependent FCI code, useful up to approximately 10 particles with _effective_ (and effective Hilbert space) Hamiltonians in two and three dimensions
-o Develop codes for studies of entanglement as function of time
-o Do tomogrophy and extract density matrix and compare with experiment.
-o Study the feasibility of various setups for quantum simulations of specific Hamiltonians such as the Lipkin model
-o For larger many-body systems, study for example time-dependent CC theory
-
-
-
-
-!split
-===== Addendum: Quantum Monte Carlo Motivation =====
+===== Quantum Monte Carlo Motivation =====
 !bblock
 Given a hamiltonian $H$ and a trial wave function $\Psi_T$, the variational principle states that the expectation value of $\langle H \rangle$, defined through 
 !bt
@@ -1086,15 +436,15 @@ and
 \]
 !et
 These integrals are evaluted using MC intergration (with all its possible error sources). 
-We can then use methods like stochastic gradient or other minimization methods to find the optimal variational parameters (I don't discuss this topic here, but these methods are very important in ML). 
+We can then use methods like stochastic gradient or other minimization methods to find the optimal variational parameters.
 !eblock
 
 !split
-===== How do we define our cost function? =====
+===== How do we define our objective/cost function? =====
 !bblock
 We have a model, our likelihood function. 
 
-How should we define the cost function?
+How should we define the objective/cost function?
 
 !eblock
 
@@ -1157,6 +507,182 @@ Evaluating the cost function means having to evaluate the above second derivativ
 !eblock
 
 
+
+
+
+
+
+
+!split
+===== Monte Carlo methods and Neural Networks =====
+
+"Machine Learning and the Deuteron by Kebble and Rios":"https://www.sciencedirect.com/science/article/pii/S0370269320305463?via%3Dihub" and
+"Variational Monte Carlo calculations of $A\le 4$ nuclei with an artificial neural-network correlator ansatz by Adams et al.":"https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.127.022502"
+
+_Adams et al_:
+
+!bt
+\begin{align}
+H_{LO} &=-\sum_i \frac{{\vec{\nabla}_i^2}}{2m_N}
++\sum_{i<j} {\left(C_1  + C_2\, \vec{\sigma_i}\cdot\vec{\sigma_j}\right)
+e^{-r_{ij}^2\Lambda^2 / 4 }}
+\nonumber\\
+&+D_0 \sum_{i<j<k} \sum_{\text{cyc}}
+{e^{-\left(r_{ik}^2+r_{ij}^2\right)\Lambda^2/4}}\,,
+\end{align}
+!et
+
+where $m_N$ is the mass of the nucleon, $\vec{\sigma_i}$ is the Pauli
+matrix acting on nucleon $i$, and $\sum_{\text{cyc}}$ stands for the
+cyclic permutation of $i$, $j$, and $k$. The low-energy constants
+$C_1$ and $C_2$ are fit to the deuteron binding energy and to the
+neutron-neutron scattering length
+
+
+
+!split
+===== Deep learning neural networks, "Variational Monte Carlo calculations of $A\le 4$ nuclei with an artificial neural-network correlator ansatz by Adams et al.":"https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.127.022502" =====
+
+
+An appealing feature of the neural network ansatz is that it is more general than the more conventional product of two-
+and three-body spin-independent Jastrow functions
+!bt
+\begin{align}
+|\Psi_V^J \rangle = \prod_{i<j<k} \Big( 1-\sum_{\text{cyc}} u(r_{ij}) u(r_{jk})\Big) \prod_{i<j} f(r_{ij}) | \Phi\rangle\,,
+\end{align}
+!et
+which is commonly used for nuclear Hamiltonians that do not contain tensor and spin-orbit terms.
+The above function is replaced by a four-layer Neural Network. 
+
+!split
+===== Explicit results =====
+FIGURE: [figures/energyconvergence.pdf, width=700 frac=0.9]
+
+
+!split
+===== "Dilute neutron star matter from neural-network quantum states by Fore et al, Physical Review Research 5, 033062 (2023)":"https://journals.aps.org/prresearch/pdf/10.1103/PhysRevResearch.5.033062" at density $\rho=0.04$ fm$^{-3}$ =====
+
+!bblock
+FIGURE: [figures/nmatter.png, width=700 frac=0.9]
+!eblock
+
+
+
+
+
+!split
+===== The electron gas in three dimensions with $N=14$ electrons (Wigner-Seitz radius $r_s=2$ a.u.), "Gabriel Pescia, Jane Kim et al. arXiv.2305.07240,":"https://doi.org/10.48550/arXiv.2305.07240" =====
+
+!bblock
+FIGURE: [figures/elgasnew.png, width=700 frac=0.9]
+!eblock
+
+
+
+!split
+===== "Efficient solutions of fermionic systems using artificial neural networks, Nordhagen et al, Frontiers in Physics 11, 2023":"https://doi.org/10.3389/fphy.2023.1061580" =====
+
+The Hamiltonian of the quantum dot is given by
+!bt
+\[ \hat{H} = \hat{H}_0 + \hat{V}, 
+\]
+!et
+where $\hat{H}_0$ is the many-body HO Hamiltonian, and $\hat{V}$ is the
+inter-electron Coulomb interactions. In dimensionless units,
+!bt
+\[ \hat{V}= \sum_{i < j}^N \frac{1}{r_{ij}},
+\]
+!et
+with $r_{ij}=\sqrt{\mathbf{r}_i^2 - \mathbf{r}_j^2}$.
+
+This leads to the  separable Hamiltonian, with the relative motion part given by ($r_{ij}=r$)
+!bt
+\[ 
+\hat{H}_r=-\nabla^2_r + \frac{1}{4}\omega^2r^2+ \frac{1}{r},
+\]
+!et
+plus a standard Harmonic Oscillator problem  for the center-of-mass motion.
+This system has analytical solutions in two and three dimensions ("M. Taut 1993 and 1994":"https://journals.aps.org/pra/abstract/10.1103/PhysRevA.48.3561"). 
+
+
+!split
+===== Quantum dots and Boltzmann machines, onebody densities $N=6$, $\hbar\omega=0.1$ a.u. =====
+
+!bblock
+FIGURE: [figures/OB6hw01.png, width=700 frac=0.9]
+!eblock
+
+
+!split
+===== Onebody densities $N=30$, $\hbar\omega=1.0$ a.u. =====
+!bblock
+FIGURE: [figures/OB30hw1.png, width=700 frac=0.9]
+!eblock
+
+
+!split
+===== Onebody densities $N=30$, $\hbar\omega=0.1$ a.u. =====
+!bblock
+FIGURE: [figures/OB30hw01.png, width=700 frac=0.9]
+!eblock
+
+
+
+!split
+===== Quantified limits of the nuclear landscape =====
+
+"Neufcourt et al., Phys. Rev. C 101, 044307 (2020)":"https://journals.aps.org/prc/abstract/10.1103/PhysRevC.101.044307"
+Predictions made with eleven global mass model and Bayesian model averaging
+
+FIGURE: [figures/landscape.jpg, width=800 frac=1.0]
+
+!split
+===== Constraining the equation of state for dense nuclear matter =====
+
+"G. Raaijmakers et al., Constraining the Dense Matter Equation of State with Joint Analysis of NICER and LIGO/Virgo Measurements, AJ Letters, 893, L21 (2020)":"https://iopscience.iop.org/article/10.3847/2041-8213/ab822f"
+
+FIGURE: [figures/nstareos.png, width=800 frac=1.0]
+
+!split
+===== Experimental design =====
+
+Beam time and compute cycles are expensive!
+
+* Bayesian experimental design provides a framework in which experiments can be designed using the best experimental and theoretical information available 
+* The utility function is designed to encode the goals of the experiment and the constraints inherent in carrying it out. 
+* Once the utility function and the possible designs have been specified, the optimal design is simply the scenario that  maximizes the expected utility function over the domain of possible designs.
+
+
+
+
+
+!split
+===== Observations and perspectives =====
+!bblock
+* Need for AI/Machine Learning in nuclear physics, lots of ongoing activities
+* To solve many complex problems in the field and facilitate discoveries, multidisciplinary efforts efforts are required involving scientists in  nuclear physics, statistics, computational science, and applied math.
+* There is a need for  focused AI/ML learning efforts that will benefit accelerator science and experimental and theoretical programs
+!eblock
+
+!split
+===== How can we use ML in Nuclear Science? =====
+!bblock
+* How do we develop insights, competences, knowledge in statistical learning that can advance our field?
+  * For example: Can we use ML to find out which correlations are relevant and thereby diminish the dimensionality problem in standard many-body  theories?
+  * Can we use AI/ML in detector analysis, accelerator design, analysis of experimental data and more?
+  * Can we use AL/ML to carry out reliable extrapolations by using current experimental knowledge and current theoretical models?
+  * Future research may have a strong focus on generative models
+* The community needs to invest in relevant educational efforts and training of nuclear physicists with knowledge in AI/ML
+* Most likely tons of things we have forgotten
+!eblock
+
+
+!split
+===== Possible start to raise awareness about ML in our field =====
+!bblock 
+* Make an ML challenge in nuclear physics a la "Learning to discover: the Higgs boson machine learning challenge":"https://home.cern/news/news/computing/higgs-boson-machine-learning-challenge". Alternatively go to kaggle.com at URL:"https://www.kaggle.com/c/higgs-boson"
+* HEP@CERN and HEP in general have made significant impacts in the field of machine learning and AI. Something to learn from
+!eblock
 
 
 
