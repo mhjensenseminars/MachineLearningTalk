@@ -441,7 +441,20 @@ DATE: today
 
 
 
-===== Workshop to honor Marcello Baldo, 2023 =====
+===== Thirty years of the ECT, September 2023, Trento =====
+
+
+
+ * HTML:
+   * "Plain html style": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/ThirtyyearsECT/html/ThirtyyearsECT.html"
+   * "reveal.js beige slide style": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/ThirtyyearsECT/html/ThirtyyearsECT-reveal.html"
+   * "Bootstrap style": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/ThirtyyearsECT/html/ThirtyyearsECT-bs.html"
+ * iPython notebook:
+   * "ipynb file": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/ThirtyyearsECT/ipynb/ThirtyyearsECT.ipynb"
+
+
+
+===== Workshop to honor Marcello Baldo, October 16-17, Catania, 2023 =====
 
 
 
