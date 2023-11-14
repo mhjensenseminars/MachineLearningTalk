@@ -1,0 +1,80 @@
+TITLE: Quantum computing, Machine Learning and Quantum Machine Learning at UiO
+AUTHOR: Morten Hjorth-Jensen at Department of Physics and Astronomy and FRIB, Michigan State University, USA, and Department of Physics and Center for Computing in Science Education, University of Oslo, Norway
+DATE: today
+
+
+!split
+===== People  =====
+
+!bblock UiO
+o Morten Hjorth-Jensen, theory, Lasse Vines, Marianne Bathen Etzelmueller and David Gongarra, experiment
+o Four theory PhD students (2019-2025), one PD shared with Lasse Vines
+o Nine  master of science students  (theory), many-body physics, quantum computing, quantum machine learning and machine learning
+!eblock
+
+!bblock MSU
+o Dean Lee, Scott Bogner, Angela Wilson and Heiko Hergert, theory and Johannes Pollanen and Niyaz Beysengulov, experiment
+o Four PhD students working on quantum computing and machine learning (theory)
+!eblock
+
+Since 2020 we have graduated three PhD students working on quantum computing and machine learning (MSU) and ten master of science students working on quantum computing and machine learning (all UiO).
+
+
+!split
+===== Educational strategies =====
+
+o _New study direction on Quantum technology_ in Bachelor program Physis and Astronomy, starts Fall 2024. Three new courses:
+  * FYS1400 Introduction to Quantum Technologies
+  * FYS3405 Quantum Materials
+  * FYS 3415 Quantum Computing
+o Developed Master of Science program on Computational Science, many students here work on quantum computing and machine learning
+o Developed courses on machine learning, from basic to advanced ones, FYS-STK3155/4155 and FYS5429
+o Developed courses quantum computing and quantum machine learning, FYS5419
+o Since 2019 organized and taught more than twenty  international schools and intensive courses on quantum computing and machine learning
+
+!split
+===== Machine learning =====
+
+o Solving complicated quantum mechanical many-body systems with deep learning, see references at the end
+o Developing new machine learning algorithms 
+o Analyzing experimental data from nuclear physics experiments, NIMA URL:"https://www.sciencedirect.com/science/article/abs/pii/S0168900221004460?via%3Dihub"
+o Predicting solid state material platforms for quantum technologies, Nature Computational Materials URL:"https://www.nature.com/articles/s41524-022-00888-3" 
+!split
+===== Quantum computing and quantum machine learning, main activities =====
+
+_How to use many-body theory to design quantum circuits (Quantum engineering)_
+o Many-body methods like F(ull)C(onfiguration)I(nteraction) theory  with
+  * Adaptive basis sets 
+  * Time dependence
+  * Optimization of experimental parameter 
+  * Feedback from experiment
+o Finding optimal parameters for tuning of entanglement 
+o Numerical experiments to mimick real systems
+o Constructing quantum circuits to simulate specific systems
+o Quantum machine learning to optmiize quantum circuits
+
+
+
+!split
+===== Candidate systems at UiO and MSU =====
+
+!bblock
+o _Quantum dots, experiments at MSU and UiO_
+o _Point Defects in semiconductors, experiments at UiO_
+o Recent article Coulomb interaction-driven entanglement of electrons on helium, see URL:"https://arxiv.org/abs/2310.04927", and submitted to Physical Review Research
+!eblock
+
+
+!split
+===== Selected references =====
+!bblock
+* "Artificial Intelligence and Machine Learning in Nuclear Physics, Amber Boehnlein et al., Reviews Modern of Physics 94, 031003 (2022)":"https://journals.aps.org/rmp/abstract/10.1103/RevModPhys.94.031003" 
+* "Dilute neutron star matter from neural-network quantum states by Fore et al, Physical Review Research 5, 033062 (2023)":"https://journals.aps.org/prresearch/pdf/10.1103/PhysRevResearch.5.033062"
+* "Neural-network quantum states for ultra-cold Fermi gases, Jane Kim et al, Nature Physics Communcication, in press":"https://doi.org/10.48550/arXiv.2305.08831"
+* "Message-Passing Neural Quantum States for the Homogeneous Electron Gas, Gabriel Pescia, Jane Kim et al. arXiv.2305.07240,":"https://doi.org/10.48550/arXiv.2305.07240"
+* "Efficient solutions of fermionic systems using artificial neural networks, Nordhagen et al, Frontiers in Physics 11, 2023":"https://doi.org/10.3389/fphy.2023.1061580"
+* "Unsupervised learning for identifying events in active target experiments, R. Solli et al, Nuclear Instruments and Methods Physics A":"https://www.sciencedirect.com/science/article/abs/pii/S0168900221004460?via%3Dihub"
+* "Coulomb interaction-driven entanglement of electrons on helium":"https://arxiv.org/abs/2310.04927", and submitted to Physical Review Research
+* "Predicting solid state material platforms for quantum technologies, Hebnes et al, Nature Computational Materials, 2022":"https://www.nature.com/articles/s41524-022-00888-3" 
+!eblock
+
