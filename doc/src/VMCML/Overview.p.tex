@@ -1,0 +1,424 @@
+%%
+%% Automatically generated file from DocOnce source
+%% (https://github.com/doconce/doconce/)
+%% doconce format latex Overview.do.txt --latex_title_layout=beamer --latex_table_format=footnotesize --no_mako
+%%
+% #ifdef PTEX2TEX_EXPLANATION
+%%
+%% The file follows the ptex2tex extended LaTeX format, see
+%% ptex2tex: https://code.google.com/p/ptex2tex/
+%%
+%% Run
+%%      ptex2tex myfile
+%% or
+%%      doconce ptex2tex myfile
+%%
+%% to turn myfile.p.tex into an ordinary LaTeX file myfile.tex.
+%% (The ptex2tex program: https://code.google.com/p/ptex2tex)
+%% Many preprocess options can be added to ptex2tex or doconce ptex2tex
+%%
+%%      ptex2tex -DMINTED myfile
+%%      doconce ptex2tex myfile envir=minted
+%%
+%% ptex2tex will typeset code environments according to a global or local
+%% .ptex2tex.cfg configure file. doconce ptex2tex will typeset code
+%% according to options on the command line (just type doconce ptex2tex to
+%% see examples). If doconce ptex2tex has envir=minted, it enables the
+%% minted style without needing -DMINTED.
+% #endif
+
+% #define PREAMBLE
+
+% #ifdef PREAMBLE
+%-------------------- begin preamble ----------------------
+
+\documentclass[%
+oneside,                 % oneside: electronic viewing, twoside: printing
+final,                   % draft: marks overfull hboxes, figures with paths
+10pt]{article}
+
+\listfiles               %  print all files needed to compile this document
+
+\usepackage{relsize,makeidx,color,setspace,amsmath,amsfonts,amssymb}
+\usepackage[table]{xcolor}
+\usepackage{bm,ltablex,microtype}
+
+\usepackage[pdftex]{graphicx}
+
+\usepackage[T1]{fontenc}
+%\usepackage[latin1]{inputenc}
+\usepackage{ucs}
+\usepackage[utf8x]{inputenc}
+
+\usepackage{lmodern}         % Latin Modern fonts derived from Computer Modern
+
+% Hyperlinks in PDF:
+\definecolor{linkcolor}{rgb}{0,0,0.4}
+\usepackage{hyperref}
+\hypersetup{
+    breaklinks=true,
+    colorlinks=true,
+    linkcolor=linkcolor,
+    urlcolor=linkcolor,
+    citecolor=black,
+    filecolor=black,
+    %filecolor=blue,
+    pdfmenubar=true,
+    pdftoolbar=true,
+    bookmarksdepth=3   % Uncomment (and tweak) for PDF bookmarks with more levels than the TOC
+    }
+%\hyperbaseurl{}   % hyperlinks are relative to this root
+
+\setcounter{tocdepth}{2}  % levels in table of contents
+
+\usepackage[framemethod=TikZ]{mdframed}
+
+% --- begin definitions of admonition environments ---
+
+% Admonition style "mdfbox" is an oval colored box based on mdframed
+% "notice" admon
+\colorlet{mdfbox_notice_background}{gray!5}
+\newmdenv[
+  skipabove=15pt,
+  skipbelow=15pt,
+  outerlinewidth=0,
+  backgroundcolor=mdfbox_notice_background,
+  linecolor=black,
+  linewidth=2pt,       % frame thickness
+  frametitlebackgroundcolor=mdfbox_notice_background,
+  frametitlerule=true,
+  frametitlefont=\normalfont\bfseries,
+  shadow=false,        % frame shadow?
+  shadowsize=11pt,
+  leftmargin=0,
+  rightmargin=0,
+  roundcorner=5,
+  needspace=0pt,
+]{notice_mdfboxmdframed}
+
+\newenvironment{notice_mdfboxadmon}[1][]{
+\begin{notice_mdfboxmdframed}[frametitle=#1]
+}
+{
+\end{notice_mdfboxmdframed}
+}
+
+% Admonition style "mdfbox" is an oval colored box based on mdframed
+% "summary" admon
+\colorlet{mdfbox_summary_background}{gray!5}
+\newmdenv[
+  skipabove=15pt,
+  skipbelow=15pt,
+  outerlinewidth=0,
+  backgroundcolor=mdfbox_summary_background,
+  linecolor=black,
+  linewidth=2pt,       % frame thickness
+  frametitlebackgroundcolor=mdfbox_summary_background,
+  frametitlerule=true,
+  frametitlefont=\normalfont\bfseries,
+  shadow=false,        % frame shadow?
+  shadowsize=11pt,
+  leftmargin=0,
+  rightmargin=0,
+  roundcorner=5,
+  needspace=0pt,
+]{summary_mdfboxmdframed}
+
+\newenvironment{summary_mdfboxadmon}[1][]{
+\begin{summary_mdfboxmdframed}[frametitle=#1]
+}
+{
+\end{summary_mdfboxmdframed}
+}
+
+% Admonition style "mdfbox" is an oval colored box based on mdframed
+% "warning" admon
+\colorlet{mdfbox_warning_background}{gray!5}
+\newmdenv[
+  skipabove=15pt,
+  skipbelow=15pt,
+  outerlinewidth=0,
+  backgroundcolor=mdfbox_warning_background,
+  linecolor=black,
+  linewidth=2pt,       % frame thickness
+  frametitlebackgroundcolor=mdfbox_warning_background,
+  frametitlerule=true,
+  frametitlefont=\normalfont\bfseries,
+  shadow=false,        % frame shadow?
+  shadowsize=11pt,
+  leftmargin=0,
+  rightmargin=0,
+  roundcorner=5,
+  needspace=0pt,
+]{warning_mdfboxmdframed}
+
+\newenvironment{warning_mdfboxadmon}[1][]{
+\begin{warning_mdfboxmdframed}[frametitle=#1]
+}
+{
+\end{warning_mdfboxmdframed}
+}
+
+% Admonition style "mdfbox" is an oval colored box based on mdframed
+% "question" admon
+\colorlet{mdfbox_question_background}{gray!5}
+\newmdenv[
+  skipabove=15pt,
+  skipbelow=15pt,
+  outerlinewidth=0,
+  backgroundcolor=mdfbox_question_background,
+  linecolor=black,
+  linewidth=2pt,       % frame thickness
+  frametitlebackgroundcolor=mdfbox_question_background,
+  frametitlerule=true,
+  frametitlefont=\normalfont\bfseries,
+  shadow=false,        % frame shadow?
+  shadowsize=11pt,
+  leftmargin=0,
+  rightmargin=0,
+  roundcorner=5,
+  needspace=0pt,
+]{question_mdfboxmdframed}
+
+\newenvironment{question_mdfboxadmon}[1][]{
+\begin{question_mdfboxmdframed}[frametitle=#1]
+}
+{
+\end{question_mdfboxmdframed}
+}
+
+% Admonition style "mdfbox" is an oval colored box based on mdframed
+% "block" admon
+\colorlet{mdfbox_block_background}{gray!5}
+\newmdenv[
+  skipabove=15pt,
+  skipbelow=15pt,
+  outerlinewidth=0,
+  backgroundcolor=mdfbox_block_background,
+  linecolor=black,
+  linewidth=2pt,       % frame thickness
+  frametitlebackgroundcolor=mdfbox_block_background,
+  frametitlerule=true,
+  frametitlefont=\normalfont\bfseries,
+  shadow=false,        % frame shadow?
+  shadowsize=11pt,
+  leftmargin=0,
+  rightmargin=0,
+  roundcorner=5,
+  needspace=0pt,
+]{block_mdfboxmdframed}
+
+\newenvironment{block_mdfboxadmon}[1][]{
+\begin{block_mdfboxmdframed}[frametitle=#1]
+}
+{
+\end{block_mdfboxmdframed}
+}
+
+% --- end of definitions of admonition environments ---
+
+% prevent orhpans and widows
+\clubpenalty = 10000
+\widowpenalty = 10000
+
+% --- end of standard preamble for documents ---
+
+
+% insert custom LaTeX commands...
+
+\raggedbottom
+\makeindex
+
+%-------------------- end preamble ----------------------
+
+\begin{document}
+
+% matching end for #ifdef PREAMBLE
+% #endif
+
+\newcommand{\exercisesection}[1]{\subsection*{#1}}
+
+
+% ------------------- main content ----------------------
+
+
+
+% ----------------- title -------------------------
+
+\title{Quantum computing, Machine Learning and Quantum Machine Learning at UiO}
+
+% ----------------- author(s) -------------------------
+
+\author{Morten Hjorth-Jensen, Department of Physics, UiO\inst{}}
+\institute{}
+% ----------------- end author(s) -------------------------
+% at Department of Physics and Astronomy and FRIB, Michigan State University, USA, and Department of Physics and Center for Computing in Science Education,
+% University of Oslo, Norway
+
+\date{Nov 14, 2023
+% <optional titlepage figure>
+% <optional copyright>
+}
+
+% !split
+\subsection{People}
+
+\begin{block}{UiO }
+\begin{enumerate}
+\item Morten Hjorth-Jensen, theory, Lasse Vines, Marianne Bathen Etzelmueller and David Gongarra, experiment
+
+\item Four theory PhD students (2019-2025), one PD shared with Lasse Vines' QuTE project.
+
+\item Nine  master of science students  (theory), many-body physics, quantum computing, quantum machine learning and machine learning
+\end{enumerate}
+
+\noindent
+\end{block}
+\begin{block}{MSU }
+\begin{enumerate}
+\item Dean Lee, Scott Bogner, Angela Wilson and Heiko Hergert, theory and Johannes Pollanen and Niyaz Beysengulov, experiment
+
+\item Four PhD students working on quantum computing and machine learning (theory)
+\end{enumerate}
+
+\noindent
+\end{block}
+Since 2020, final thesis of three PhD students (MSU) and ten master of science students (UiO).
+
+% !split
+\subsection{Educational strategies}
+
+\begin{enumerate}
+\item \textbf{New study direction on Quantum technology} in Bachelor program Physis and Astronomy, starts Fall 2024. Three new courses:
+\begin{itemize}
+
+  \item FYS1400 Introduction to Quantum Technologies
+
+  \item FYS3405/4405 Quantum Materials
+
+  \item FYS3415/4415 Quantum Computing
+
+\end{itemize}
+
+\noindent
+\item \textbf{Developed Master of Science program on Computational Science}, started fall  2018 and many students here work on quantum computing and machine learning
+
+\item Developed courses on machine learning, from basic to advanced ones, FYS-STK3155/4155 and FYS5429/9429
+
+\item Developed advanced course on quantum computing and quantum machine learning, FYS5419/9419
+
+\item Since 2019 organized and taught more than twenty  international schools and intensive courses on quantum computing and machine learning
+\end{enumerate}
+
+\noindent
+% !split
+\subsection{Machine learning research}
+
+\begin{enumerate}
+\item Solving complicated quantum mechanical many-body systems with deep learning, see references at the end
+
+\item Developing new machine learning algorithms \textbf{with applications to quantum computing as well}
+
+\item Analyzing experimental data from nuclear physics experiments, NIMA \href{{https://www.sciencedirect.com/science/article/abs/pii/S0168900221004460?via%3Dihub}}{\nolinkurl{https://www.sciencedirect.com/science/article/abs/pii/S0168900221004460?via\%3Dihub}}
+
+\item Predicting solid state material platforms for quantum technologies, Nature Computational Materials \href{{https://www.nature.com/articles/s41524-022-00888-3}}{\nolinkurl{https://www.nature.com/articles/s41524-022-00888-3}} 
+\end{enumerate}
+
+\noindent
+% !split
+\subsection{Quantum computing and quantum machine learning, main activities}
+
+\textbf{How to use many-body theory to design quantum circuits (Quantum engineering)}
+\begin{enumerate}
+\item Many-body methods like F(ull)C(onfiguration)I(nteraction) theory  with
+\begin{itemize}
+
+  \item Adaptive basis sets 
+
+  \item Time dependence
+
+  \item Optimization of experimental parameters 
+
+  \item Feedback from experiment
+
+\end{itemize}
+
+\noindent
+\item Finding optimal parameters for tuning of entanglement 
+
+\item Numerical experiments to mimick real systems, quantum twins
+
+\item Constructing quantum circuits to simulate specific systems
+
+\item Quantum machine learning to optimize quantum circuits
+\end{enumerate}
+
+\noindent
+% !split
+\subsection{Candidate systems at UiO and MSU}
+
+\begin{block}{}
+\begin{enumerate}
+\item \textbf{Quantum dots, experiments at MSU and UiO}
+
+\item \textbf{Point Defects in semiconductors, experiments at UiO}
+
+\item Recent article Coulomb interaction-driven entanglement of electrons on helium, see \href{{https://arxiv.org/abs/2310.04927}}{\nolinkurl{https://arxiv.org/abs/2310.04927}}, and submitted to Physical Review Research
+\end{enumerate}
+
+\noindent
+\end{block}
+
+% !split
+\subsection{Selected references}
+\begin{block}{}
+\begin{itemize}
+\item \href{{https://journals.aps.org/rmp/abstract/10.1103/RevModPhys.94.031003}}{Artificial Intelligence and Machine Learning in Nuclear Physics, Amber Boehnlein et al., Reviews Modern of Physics 94, 031003 (2022)} 
+
+\item \href{{https://journals.aps.org/prresearch/pdf/10.1103/PhysRevResearch.5.033062}}{Dilute neutron star matter from neural-network quantum states by Fore et al, Physical Review Research 5, 033062 (2023)}
+
+\item \href{{https://doi.org/10.48550/arXiv.2305.08831}}{Neural-network quantum states for ultra-cold Fermi gases, Jane Kim et al, Nature Physics Communcication, in press}
+
+\item \href{{https://doi.org/10.48550/arXiv.2305.07240}}{Message-Passing Neural Quantum States for the Homogeneous Electron Gas, Gabriel Pescia, Jane Kim et al.~arXiv.2305.07240,}
+
+\item \href{{https://doi.org/10.3389/fphy.2023.1061580}}{Efficient solutions of fermionic systems using artificial neural networks, Nordhagen et al, Frontiers in Physics 11, 2023}
+\end{itemize}
+
+\noindent
+\end{block}
+
+% !split
+\subsection{More selected references}
+\begin{block}{}
+\begin{itemize}
+\item \href{{https://www.sciencedirect.com/science/article/abs/pii/S0168900221004460?via%3Dihub}}{Unsupervised learning for identifying events in active target experiments, R. Solli et al, Nuclear Instruments and Methods Physics A}
+
+\item \href{{https://arxiv.org/abs/2310.04927}}{Coulomb interaction-driven entanglement of electrons on helium}, and submitted to Physical Review Research
+
+\item \href{{https://www.nature.com/articles/s41524-022-00888-3}}{Predicting solid state material platforms for quantum technologies, Hebnes et al, Nature Computational Materials, 2022} 
+\end{itemize}
+
+\noindent
+\end{block}
+
+% !split
+\subsection{Machine Learning and Quantum Computing grants}
+
+\begin{enumerate}
+\item 2021-2025 9M NOK from RCN, Norway, \href{{https://www.mn.uio.no/smn/english/research/projects/physics/325573-qute/index.html}}{QUantum emitters in semiconductors for future TEchnologies}, co-PI
+
+\item 2023-2025 1M USD from Department of Energy, USA, \href{{https://frib.msu.edu/news/2023/machine-learning.html#:~:text=For%20the%20grant%20supporting%20theoretical,in%20the%20cores%20of%20atoms}}{STREAMLINE Collaboration: Machine Learning for Nuclear Many-Body Systems}, co-PI.
+
+\item 2023-2026 450 kUSD from Department of Energy, USA, \href{{https://frib.msu.edu/news/2023/quantum-computing.html}}{Effective Field Theory and Renormalization Group Studies of Quantum Algorithms}, co-PI.
+
+\item 2020-2023 750 kUSD from the Department of Energy, USA, From Quarks to Stars; A Quantum Computing Approach to the Nuclear Many-Body Problem. PI.
+\end{enumerate}
+
+\noindent
+
+% ------------------- end of main content ---------------
+
+% #ifdef PREAMBLE
+\end{document}
+% #endif
+
