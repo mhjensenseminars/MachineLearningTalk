@@ -467,5 +467,18 @@ DATE: today
 
 
 
+===== Physics Department Colloquium NTNU, March 1, 2024 =====
+
+
+
+ * HTML:
+   * "Plain html style": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/NTNU/html/NTNU.html"
+   * "reveal.js beige slide style": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/NTNU/html/NTNU-reveal.html"
+   * "Bootstrap style": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/NTNU/html/NTNU-bs.html"
+ * iPython notebook:
+   * "ipynb file": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/NTNU/ipynb/NTNU.ipynb"
+
+
+
 
 

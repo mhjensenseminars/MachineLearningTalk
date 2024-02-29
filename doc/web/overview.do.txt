@@ -4,7 +4,7 @@ DATE: today
 
 <%
 pub_url = 'http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub'
-published = ['vmcml', 'unitn', 'uniohio', 'unisurrey', 'uio2019', 'chalmers', 'uiomath', 'unipd', 'overview', 'WorkshopTastesNP', 'xai', 'NIThePColloquium', 'quantumcomputing', 'NotreDameMay2021', 'oslometqc', 'IAEA', 'spinQ', 'UniMilano', 'MSUFeb10', 'ORNLMarch24', 'UTKMarch28', 'gemini', 'quteMay2022', 'KTHMat23', 'fysforening', 'Tsukubasymposium', 'UAutonomaMadrid', 'mathforening', 'MSUphysics', 'quantumcomputingMSU', 'entanglemtECT', 'TriumScienceWeek', 'Masterthesisprojects', 'ThirtyyearsECT', 'Catania',]
+published = ['vmcml', 'unitn', 'uniohio', 'unisurrey', 'uio2019', 'chalmers', 'uiomath', 'unipd', 'overview', 'WorkshopTastesNP', 'xai', 'NIThePColloquium', 'quantumcomputing', 'NotreDameMay2021', 'oslometqc', 'IAEA', 'spinQ', 'UniMilano', 'MSUFeb10', 'ORNLMarch24', 'UTKMarch28', 'gemini', 'quteMay2022', 'KTHMat23', 'fysforening', 'Tsukubasymposium', 'UAutonomaMadrid', 'mathforening', 'MSUphysics', 'quantumcomputingMSU', 'entanglemtECT', 'TriumScienceWeek', 'Masterthesisprojects', 'ThirtyyearsECT', 'Catania','NTNU',]
 chapters = {
  'vmcml': 'From variational Monte Carlo to machine learning, talks at Michigan State University April and June 2018',
  'uniuio': 'Talk at University of Oslo, December 14, 2018',
@@ -41,7 +41,8 @@ chapters = {
   'TriumScienceWeek': 'Triumf Science week July 31-August 4, 2023',
   'Masterthesisprojects': 'Master thesis projects, August 2023',
   'ThirtyyearsECT': 'Thirty years of the ECT, September 2023, Trento',    
-  'Catania': 'Workshop to honor Marcello Baldo, October 16-17, Catania, 2023',  
+  'Catania': 'Workshop to honor Marcello Baldo, October 16-17, Catania, 2023',
+  'NTNU': 'Physics Department Colloquium NTNU, March 1, 2024',    
 }
 %>
 
