@@ -1,4 +1,4 @@
-TITLE: Artificial intelligence and machine learning in physics 
+vTITLE: Artificial intelligence and machine learning in physics 
 AUTHOR: Morten Hjorth-Jensen at Department of Physics and Astronomy and FRIB, Michigan State University, USA, and Department of Physics and Center for Computing in Science Education, University of Oslo, Norway
 DATE: Department of Physics, NTNU, March 1, 2024
 
@@ -83,18 +83,117 @@ o Reinforcement Learning; Transfer Learning and more
 
 
 !split
-===== What are the basic ingredients? =====
+===== What Is Generative Modeling? =====
+
+
+Generative modeling can be broadly defined as follows:
+
+Generative modeling is a branch of machine learning that involves
+training a model to produce new data that is similar to a given
+dataset.
+
+What does this mean in practice? Suppose we have a dataset containing
+photos of horses. We can train a generative model on this dataset to
+capture the rules that govern the complex relationships between pixels
+in images of horses. Then we can sample from this model to create
+novel, realistic images of horses that did not exist in the original
+dataset. 
+
+!split
+===== Example of generative modeling, "taken from Generative Deeep Learning by David Foster":"https://www.oreilly.com/library/view/generative-deep-learning/9781098134174/ch01.html"  =====
+
+FIGURE: [figures/generativelearning.png, width=900 frac=1.0]
+
+!split
+===== Generative Modeling =====
+
+
+In order to build a generative model, we require a dataset consisting
+of many examples of the entity we are trying to generate. This is
+known as the training data, and one such data point is called an
+observation.
+
+Each observation consists of many features. For an image generation
+problem, the features are usually the individual pixel values; for a
+text generation problem, the features could be individual words or
+groups of letters. It is our goal to build a model that can generate
+new sets of features that look as if they have been created using the
+same rules as the original data. Conceptually, for image generation
+this is an incredibly difficult task, considering the vast number of
+ways that individual pixel values can be assigned and the relatively
+tiny number of such arrangements that constitute an image of the
+entity we are trying to generate.
+
+
+!split
+===== Generative Versus Discriminative Modeling =====
+
+In order to truly understand what generative modeling aims to achieve
+and why this is important, it is useful to compare it to its
+counterpart, discriminative modeling. If you have studied machine
+learning, most problems you will have faced will have most likely been
+discriminative in nature. 
+
+
+!split
+===== Example of discriminative modeling, "taken from Generative Deeep Learning by David Foster":"https://www.oreilly.com/library/view/generative-deep-learning/9781098134174/ch01.html"  =====
+
+
+FIGURE: [figures/standarddeeplearning.png, width=900 frac=1.0]
+
+
+!split
+===== Discriminative Modeling =====
+
+When performing discriminative modeling, each observation in the
+training data has a label. For a binary classification problem such as
+our data could be labeled as ones and zeros. Our model then learns how to
+discriminate between these two groups and outputs the probability that
+a new observation has label 1 or 0
+
+In contrast, generative modeling doesn’t require the dataset to be
+labeled because it concerns itself with generating entirely new
+data (for example an image), rather than trying to predict a label for say  a given image.
+
+
+
+
+
+
+
+!split
+===== Taxonomy of generative deep learning, "taken from Generative Deep Learning by David Foster":"https://www.oreilly.com/library/view/generative-deep-learning/9781098134174/ch01.html"  =====
+
+FIGURE: [figures/generativemodels.png, width=900 frac=1.0]
+
+
+!split
+===== Good books with hands-on material and codes =====
+!bblock
+* "Sebastian Rashcka et al, Machine learning with Sickit-Learn and PyTorch":"https://sebastianraschka.com/blog/2022/ml-pytorch-book.html"
+* "David Foster, Generative Deep Learning with TensorFlow":"https://www.oreilly.com/library/view/generative-deep-learning/9781098134174/ch01.html"
+* "Bali and Gavras, Generative AI with Python and TensorFlow 2":"https://github.com/PacktPublishing/Hands-On-Generative-AI-with-Python-and-TensorFlow-2"
+!eblock
+
+All three books have GitHub addresses from where  one can download all codes. We will borrow most of the material from these three texts as well as 
+from Goodfellow, Bengio and Courville's text "Deep Learning":"https://www.deeplearningbook.org/"
+
+
+
+
+!split
+===== What are the basic Machine Learning ingredients? =====
 !bblock
 Almost every problem in ML and data science starts with the same ingredients:
-* The dataset $\mathbf{x}$ (could be some observable quantity of the system we are studying)
-* A model which is a function of a set of parameters $\mathbf{\alpha}$ that relates to the dataset, say a likelihood  function $p(\mathbf{x}\vert \mathbf{\alpha})$ or just a simple model $f(\mathbf{\alpha})$
-* A so-called _loss/cost/risk_ function $\mathcal{C} (\mathbf{x}, f(\mathbf{\alpha}))$ which allows us to decide how well our model represents the dataset. 
+* The dataset $\bm{x}$ (could be some observable quantity of the system we are studying)
+* A model which is a function of a set of parameters $\bm{\alpha}$ that relates to the dataset, say a likelihood  function $p(\bm{x}\vert \bm{\alpha})$ or just a simple model $f(\bm{\alpha})$
+* A so-called _loss/cost/risk_ function $\mathcal{C} (\bm{x}, f(\bm{\alpha}))$ which allows us to decide how well our model represents the dataset. 
 
-We seek to minimize the function $\mathcal{C} (\mathbf{x}, f(\mathbf{\alpha}))$ by finding the parameter values which minimize $\mathcal{C}$. This leads to  various minimization algorithms. It may surprise many, but at the heart of all machine learning algortihms there is an optimization problem. 
+We seek to minimize the function $\mathcal{C} (\bm{x}, f(\bm{\alpha}))$ by finding the parameter values which minimize $\mathcal{C}$. This leads to  various minimization algorithms. It may surprise many, but at the heart of all machine learning algortihms there is an optimization problem. 
 !eblock
 
 !split
-===== Low-level machine lerning, the family of ordinary least squares methods  =====
+===== Low-level machine learning, the family of ordinary least squares methods  =====
 
 Our data which we want to apply a machine learning method on, consist
 of a set of inputs $\bm{x}^T=[x_0,x_1,x_2,\dots,x_{n-1}]$ and the
@@ -130,13 +229,13 @@ with an approximating function $\bm{\tilde{y}}$
 The  simplest approach is the mean squared error
 !bt
 \[
-C(\bm{\beta})=\frac{1}{n}\sum_{i=0}^{n-1}\left(y_i-\tilde{y}_i\right)^2=\frac{1}{n}\left\{\left(\bm{y}-\bm{\tilde{y}}\right)^T\left(\bm{y}-\bm{\tilde{y}}\right)\right\},
+C(\bm{\Theta})=\frac{1}{n}\sum_{i=0}^{n-1}\left(y_i-\tilde{y}_i\right)^2=\frac{1}{n}\left\{\left(\bm{y}-\bm{\tilde{y}}\right)^T\left(\bm{y}-\bm{\tilde{y}}\right)\right\},
 \]
 !et
 or using the matrix $\bm{X}$ and in a more compact matrix-vector notation as
 !bt
 \[
-C(\bm{\beta})=\frac{1}{n}\left\{\left(\bm{y}-\bm{X}\bm{\theta}\right)^T\left(\bm{y}-\bm{X}\bm{\theta}\right)\right\}.
+C(\bm{\Theta})=\frac{1}{n}\left\{\left(\bm{y}-\bm{X}\bm{\theta}\right)^T\left(\bm{y}-\bm{X}\bm{\theta}\right)\right\}.
 \]
 !et
 This function represents one of many possible ways to define the so-called cost function.
@@ -145,7 +244,7 @@ This function represents one of many possible ways to define the so-called cost 
 !split
 ===== Training solution  =====
 
-Optimizing wrt to th eunknown paramters $\theta_j$ we get 
+Optimizing with respect to the unknown parameters $\theta_j$ we get 
 !bt
 \[
 \bm{X}^T\bm{y} = \bm{X}^T\bm{X}\bm{\theta},  
@@ -158,6 +257,7 @@ and if the matrix $\bm{X}^T\bm{X}$ is invertible we have the optimal values
 \]
 !et
 
+We say we 'learn' the unknown parameters $\bm{\theta}$ from the last equation.
 
 
 
@@ -228,6 +328,9 @@ Here we have defined the norm-1 as
 \vert\vert \bm{x}\vert\vert_1 = \sum_i \vert x_i\vert. 
 \]
 !et
+
+
+
 
 
 !split
@@ -605,8 +708,10 @@ Separable Hamiltonian with the relative motion part ($r_{ij}=r$)
 Analytical solutions in two and three dimensions ("M. Taut 1993 and 1994":"https://journals.aps.org/pra/abstract/10.1103/PhysRevA.48.3561"). 
 
 
+
+
 !split
-===== Why Boltzmann machines? =====
+===== Generative models: Why Boltzmann machines? =====
 
 What is known as restricted Boltzmann Machines (RMB) have received a
 lot of attention lately.  One of the major reasons is that they can be
@@ -637,8 +742,8 @@ FIGURE: [figures/RBM.pdf, width=800 frac=1.0]
 ===== The network =====
 
 _The network layers_:
-  o A function $\mathbf{x}$ that represents the visible layer, a vector of $M$ elements (nodes). This layer represents both what the RBM might be given as training input, and what we want it to be able to reconstruct. This might for example be the pixels of an image, the spin values of the Ising model, or coefficients representing speech.
-  o The function $\mathbf{h}$ represents the hidden, or latent, layer. A vector of $N$ elements (nodes). Also called "feature detectors".
+  o A function $\bm{x}$ that represents the visible layer, a vector of $M$ elements (nodes). This layer represents both what the RBM might be given as training input, and what we want it to be able to reconstruct. This might for example be the pixels of an image, the spin values of the Ising model, or coefficients representing speech.
+  o The function $\bm{h}$ represents the hidden, or latent, layer. A vector of $N$ elements (nodes). Also called "feature detectors".
 
 !split
 ===== Goals =====
@@ -651,29 +756,122 @@ correlations between visible degrees in the data once marginalized
 over (integrated out).
 
 _The network parameters, to be optimized/learned_:
-  o $\mathbf{a}$ represents the visible bias, a vector of same length as $\mathbf{x}$.
-  o $\mathbf{b}$ represents the hidden bias, a vector of same lenght as $\mathbf{h}$.
+  o $\bm{a}$ represents the visible bias, a vector of same length as $\bm{x}$.
+  o $\bm{b}$ represents the hidden bias, a vector of same lenght as $\bm{h}$.
   o $W$ represents the interaction weights, a matrix of size $M\times N$.
-
-
 
 
 !split
 ===== Joint distribution =====
-
-The restricted Boltzmann machine is described by a Boltzmann distribution
+The restricted Boltzmann machine is described by a Bolztmann distribution
 !bt
-\begin{align}
-	P_{rbm}(\mathbf{x},\mathbf{h}) = \frac{1}{Z} e^{-\frac{1}{T_0}E(\mathbf{x},\mathbf{h})},
-\end{align}
+\[
+	P_{\mathrm{rbm}}(\bm{x},\bm{h}) = \frac{1}{Z} \exp{-E(\bm{x},\bm{h})},
+\]
 !et
 where $Z$ is the normalization constant or partition function, defined as 
 !bt
-\begin{align}
-	Z = \int \int e^{-\frac{1}{T_0}E(\mathbf{x},\mathbf{h})} d\mathbf{x} d\mathbf{h}.
-\end{align}
+\[
+	Z = \int \int \exp{-E(\bm{x},\bm{h})} d\bm{x} d\bm{h}.
+\]
 !et
-It is common to ignore $T_0$ by setting it to one. 
+Note the absence of the inverse temperature in these equations.
+
+!split
+===== Network Elements, the energy function  =====
+
+The function $E(\bm{x},\bm{h})$ gives the _energy_ of a
+configuration (pair of vectors) $(\bm{x}, \bm{h})$. The lower
+the energy of a configuration, the higher the probability of it. This
+function also depends on the parameters $\bm{a}$, $\bm{b}$ and
+$W$. Thus, when we adjust them during the learning procedure, we are
+adjusting the energy function to best fit our problem.
+
+
+!split
+===== Defining different types of RBMs (Energy based models) =====
+
+There are different variants of RBMs, and the differences lie in the types of visible and hidden units we choose as well as in the implementation of the energy function $E(\bm{x},\bm{h})$. The connection between the nodes in the two layers is given by the weights $w_{ij}$. 
+
+!bblock Binary-Binary RBM:
+
+RBMs were first developed using binary units in both the visible and hidden layer. The corresponding energy function is defined as follows:
+!bt
+\[
+	E(\bm{x}, \bm{h}) = - \sum_i^M x_i a_i- \sum_j^N b_j h_j - \sum_{i,j}^{M,N} x_i w_{ij} h_j,
+\]
+!et
+where the binary values taken on by the nodes are most commonly 0 and 1.
+!eblock
+
+
+!split
+===== Gaussian binary =====
+
+
+!bblock Gaussian-Binary RBM:
+
+Another varient is the RBM where the visible units are Gaussian while the hidden units remain binary:
+!bt
+\[
+	E(\bm{x}, \bm{h}) = \sum_i^M \frac{(x_i - a_i)^2}{2\sigma_i^2} - \sum_j^N b_j h_j - \sum_{i,j}^{M,N} \frac{x_i w_{ij} h_j}{\sigma_i^2}. 
+\]
+!et
+!eblock
+
+!split
+===== Representing the wave function =====
+
+The wavefunction should be a probability amplitude depending on
+ $\bm{x}$. The RBM model is given by the joint distribution of
+ $\bm{x}$ and $\bm{h}$
+
+!bt
+\[
+        P_{\mathrm{rbm}}(\bm{x},\bm{h}) = \frac{1}{Z} \exp{-E(\bm{x},\bm{h})}.
+\]
+!et
+
+To find the marginal distribution of $\bm{x}$ we set:
+
+!bt
+\[
+        P_{\mathrm{rbm}}(\bm{x}) =\frac{1}{Z}\sum_{\bm{h}} \exp{-E(\bm{x}, \bm{h})}.
+\]
+!et
+
+Now this is what we use to represent the wave function, calling it a neural-network quantum state (NQS)
+!bt
+\[
+        \vert\Psi (\bm{X})\vert^2 = P_{\mathrm{rbm}}(\bm{x}).
+\]
+!et
+
+!split
+===== Define the cost function =====
+
+Now we don't necessarily have training data (unless we generate it by
+using some other method). However, what we do have is the variational
+principle which allows us to obtain the ground state wave function by
+minimizing the expectation value of the energy of a trial wavefunction
+(corresponding to the untrained NQS). Similarly to the traditional
+variational Monte Carlo method then, it is the local energy we wish to
+minimize. The gradient to use for the stochastic gradient descent
+procedure is
+
+!bt
+\[
+	C_i = \frac{\partial \langle E_L \rangle}{\partial \theta_i}
+	= 2(\langle E_L \frac{1}{\Psi}\frac{\partial \Psi}{\partial \theta_i} \rangle - \langle E_L \rangle \langle \frac{1}{\Psi}\frac{\partial \Psi}{\partial \theta_i} \rangle ),
+\]
+!et
+where the local energy is given by
+!bt
+\[
+	E_L = \frac{1}{\Psi} \hat{\bm{H}} \Psi.
+\]
+!et
+
 
 
 
@@ -785,7 +983,11 @@ FIGURE: [figures/landscape.jpg, width=800 frac=1.0]
 !eblock
 
 
+!split
+===== Possible questions for discussions =====
 
+o How do we incorporate these topics in our education?
+o More difficult: what are the consequences for universities and our educational mission?
 
 !split
 =====  Education =====
@@ -805,7 +1007,7 @@ o Master of Science/PhD programs in Computational and Data Science
 
 
 !split
-===== Possible courses  =====
+===== Possible courses quantum courses  =====
 
 !bblock Topics  in a Bachelor of Science/Master of Science
 o General university course on quantum mech and quantum technologies
@@ -842,8 +1044,6 @@ o There are not enough potential employees in AI/ML and QIT . It is a supply gap
 o A BSc with specialization  is a good place to start
 o It is tremendously important to get everyone speaking the same language. Facility with the vernacular of quantum mechanics is a big plus.
 o There is a huge list of areas where technical expertise may be important. But employers are often more concerned with attributes like project management, working well in a team, interest in the field, and adaptability than in specific technical skills.
-
-
 
 
 
