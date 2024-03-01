@@ -1,4 +1,4 @@
-vTITLE: Artificial intelligence and machine learning in physics 
+TITLE: Artificial intelligence and machine learning in physics 
 AUTHOR: Morten Hjorth-Jensen at Department of Physics and Astronomy and FRIB, Michigan State University, USA, and Department of Physics and Center for Computing in Science Education, University of Oslo, Norway
 DATE: Department of Physics, NTNU, March 1, 2024
 
@@ -11,7 +11,7 @@ in physics. And why this could (or should) be of interest.
 !eblock
 
 !bblock
-These slides at URL:"https://mhjensenseminars.github.io/MachineLearningTalk/doc/web/overview.html"
+These slides and more at URL:"http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/NTNU/ipynb/NTNU.ipynb"
 !eblock
 
 !split
@@ -26,7 +26,7 @@ Jonas Flaten, Oskar, Leinonen, Øyvind Sigmundson Schøyen, Stian Dysthe Bilek, 
 
 o National Science Foundation, US (various grants)
 o Department of Energy, US (various grants)
-o Research Council of Norway (various grants)
+o Research Council of Norway (various grants) and my employers University of Oslo and Michigan State University
 
 !split
 =====  AI/ML and some statements you may have heard (and what do they mean?)  =====
@@ -51,7 +51,7 @@ In *supervised learning* we know the answer to a problem,
 and let the computer deduce the logic behind it. On the other hand, *unsupervised learning*
 is a method for finding patterns and relationship in data sets without any prior knowledge of the system.
 
-An emerging  third category is  *reinforcement learning*. This is a paradigm 
+An important  third category is  *reinforcement learning*. This is a paradigm 
 of learning inspired by behavioural psychology, where learning is achieved by trial-and-error, 
 solely from rewards and punishment.
 !eblock
@@ -74,7 +74,7 @@ Some of the most common tasks are:
 !split
 =====  The plethora  of machine learning algorithms/methods =====
 
-o Deep learning: Neural Networks (NN), Convolutional NN, Recurrent NN, Boltzmann machines, autoencoders and variational autoencoders  and generative adversarial networks, generative models 
+o Deep learning: Neural Networks (NN), Convolutional NN, Recurrent NN, Boltzmann machines, autoencoders and variational autoencoders  and generative adversarial networks, stable diffusion and many more generative models
 o Bayesian statistics and Bayesian Machine Learning, Bayesian experimental design, Bayesian Regression models, Bayesian neural networks, Gaussian processes and much more
 o Dimensionality reduction (Principal component analysis), Clustering Methods and more
 o Ensemble Methods, Random forests, bagging and voting methods, gradient boosting approaches 
@@ -593,9 +593,218 @@ monotonically-increasing continuous function_.
 
 
 !split
+===== Universal approximation theorem =====
+
+The universal approximation theorem plays a central role in deep
+learning.  "Cybenko (1989)":"https://link.springer.com/article/10.1007/BF02551274" showed
+the following:
+
+!bblock
+Let $\sigma$ be any continuous sigmoidal function such that
+!bt
+\[
+\sigma(z) = \left\{\begin{array}{cc} 1 & z\rightarrow \infty\\ 0 & z \rightarrow -\infty \end{array}\right.
+\]
+!et
+Given a continuous and deterministic function $F(\bm{x})$ on the unit
+cube in $d$-dimensions $F\in [0,1]^d$, $x\in [0,1]^d$ and a parameter
+$\epsilon >0$, there is a one-layer (hidden) neural network
+$f(\bm{x};\bm{\Theta})$ with $\bm{\Theta}=(\bm{W},\bm{b})$ and $\bm{W}\in
+\mathbb{R}^{m\times n}$ and $\bm{b}\in \mathbb{R}^{n}$, for which
+!bt
+\[
+\vert F(\bm{x})-f(\bm{x};\bm{\Theta})\vert < \epsilon \hspace{0.1cm} \forall \bm{x}\in[0,1]^d.
+\]
+!et
+
+!eblock
+
+
+
+!split
+===== The approximation theorem in words =====
+
+_Any continuous function $y=F(\bm{x})$ supported on the unit cube in
+$d$-dimensions can be approximated by a one-layer sigmoidal network to
+arbitrary accuracy._
+
+"Hornik (1991)":"https://www.sciencedirect.com/science/article/abs/pii/089360809190009T" extended the theorem by letting any non-constant, bounded activation function to be included using that the expectation value
+!bt
+\[
+\mathbb{E}[\vert F(\bm{x})\vert^2] =\int_{\bm{x}\in D} \vert F(\bm{x})\vert^2p(\bm{x})d\bm{x} < \infty.
+\]
+!et
+Then we have
+!bt
+\[
+\mathbb{E}[\vert F(\bm{x})-f(\bm{x};\bm{\Theta})\vert^2] =\int_{\bm{x}\in D} \vert F(\bm{x})-f(\bm{x};\bm{\Theta})\vert^2p(\bm{x})d\bm{x} < \epsilon.
+\]
+!et
+
+
+!split
+===== More on the general approximation theorem =====
+
+None of the proofs give any insight into the relation between the
+number of of hidden layers and nodes and the approximation error
+$\epsilon$, nor the magnitudes of $\bm{W}$ and $\bm{b}$.
+
+Neural networks (NNs) have what we may call a kind of universality no matter what function we want to compute.
+
+!bblock
+It does not mean that an NN can be used to exactly compute any function. Rather, we get an approximation that is as good as we want. 
+!eblock
+
+!split
+===== Class of functions we can approximate =====
+
+!bblock
+The class of functions that can be approximated are the continuous ones.
+If the function $F(\bm{x})$ is discontinuous, it won't in general be possible to approximate it. However, an NN may still give an approximation even if we fail in some points.
+!eblock
+
+
+
+
+
+!split
 =====  Illustration of a single perceptron model and an FFNN =====
 
 FIGURE: [figures/nns.png, width=600 frac=0.7]  In a) we show a single perceptron model while in b) we dispay a network with two  hidden layers, an input layer and an output layer.
+
+
+!split
+===== Our network example, simple percepetron with one input =====
+
+As as simple example we define now a simple perceptron model with
+all quantities given by scalars. We consider only one input variable
+$x$ and one target value $y$.  We define an activation function
+$\sigma_1$ which takes as input
+
+!bt
+\[
+z_1 = w_1x+b_1,
+\]
+!et
+where $w_1$ is the weight and $b_1$ is the bias. These are the
+parameters we want to optimize.  This output is then fed into the
+_cost/loss_ function, which we here for the sake of simplicity just
+define as the squared error
+
+!bt
+\[
+C(x;w_1,b_1)=\frac{1}{2}(a_1-y)^2.
+\]
+!et
+
+
+!split
+===== Optimizing the parameters =====
+
+In setting up the feed forward and back propagation parts of the
+algorithm, we need now the derivative of the various variables we want
+to train.
+
+We need
+!bt
+\[
+\frac{\partial C}{\partial w_1} \hspace{0.1cm}\mathrm{and}\hspace{0.1cm}\frac{\partial C}{\partial b_1}. 
+\]
+!et
+
+Using the chain rule we find 
+!bt
+\[
+\frac{\partial C}{\partial w_1}=\frac{\partial C}{\partial a_1}\frac{\partial a_1}{\partial z_1}\frac{\partial z_1}{\partial w_1}=(a_1-y)\sigma_1'x,
+\]
+!et
+and
+!bt
+\[
+\frac{\partial C}{\partial b_1}=\frac{\partial C}{\partial a_1}\frac{\partial a_1}{\partial z_1}\frac{\partial z_1}{\partial b_1}=(a_1-y)\sigma_1',
+\]
+!et
+which we later will just define as
+!bt
+\[
+\frac{\partial C}{\partial a_1}\frac{\partial a_1}{\partial z_1}=\delta_1.
+\]
+!et
+
+!split
+===== Implementing the simple perceptron model =====
+
+In the example code here we implement the above equations (with explict
+expressions for the derivatives) with just one input variable $x$ and
+one output variable.  The target value $y=2x+1$ is a simple linear
+function in $x$. Since this is a regression problem, we define the cost function to be proportional to the least squares error
+!bt
+\[
+C(y,w_1,b_1)=\frac{1}{2}(a_1-y)^2,
+\]
+!et
+with $a_1$ the output from the network.
+
+!bc pycod
+# import necessary packages
+import numpy as np
+import matplotlib.pyplot as plt
+
+def feed_forward(x):
+    # weighted sum of inputs to the output layer
+    z_1 = x*output_weights + output_bias
+    # Output from output node (one node only)
+    # Here the output is equal to the input
+    a_1 = z_1
+    return a_1
+
+def backpropagation(x, y):
+    a_1 = feed_forward(x)
+    # derivative of cost function
+    derivative_cost = a_1 - y
+    # the variable delta in the equations, note that output a_1 = z_1, its derivatives wrt z_o is thus 1
+    delta_1 = derivative_cost
+    # gradients for the output layer
+    output_weights_gradient = delta_1*x
+    output_bias_gradient = delta_1
+    # The cost function is 0.5*(a_1-y)^2. This gives a measure of the error for each iteration
+    return output_weights_gradient, output_bias_gradient
+
+# ensure the same random numbers appear every time
+np.random.seed(0)
+# Input variable
+x = 4.0
+# Target values
+y = 2*x+1.0
+
+# Defining the neural network
+n_inputs = 1
+n_outputs = 1
+# Initialize the network
+# weights and bias in the output layer
+output_weights = np.random.randn()
+output_bias = np.random.randn()
+
+# implementing a simple gradient descent approach with fixed learning rate
+eta = 0.01
+for i in range(40):
+    # calculate gradients from back propagation
+    derivative_w1, derivative_b1 = backpropagation(x, y)
+    # update weights and biases
+    output_weights -= eta * derivative_w1
+    output_bias -= eta * derivative_b1
+# our final prediction after training
+ytilde = output_weights*x+output_bias
+print(0.5*((ytilde-y)**2))
+
+!ec
+Running this code gives us an acceptable results after some 40-50 iterations. Note that the results depend on the value of the learning rate.
+
+
+
+
+
+
 
 
 !split
@@ -1044,6 +1253,7 @@ o There are not enough potential employees in AI/ML and QIT . It is a supply gap
 o A BSc with specialization  is a good place to start
 o It is tremendously important to get everyone speaking the same language. Facility with the vernacular of quantum mechanics is a big plus.
 o There is a huge list of areas where technical expertise may be important. But employers are often more concerned with attributes like project management, working well in a team, interest in the field, and adaptability than in specific technical skills.
+
 
 
 

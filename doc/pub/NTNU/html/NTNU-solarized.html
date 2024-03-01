@@ -80,15 +80,47 @@ div.toc p,a {
                2,
                None,
                'the-plethora-of-machine-learning-algorithms-methods'),
-              ('What are the basic ingredients?',
+              ('What Is Generative Modeling?',
                2,
                None,
-               'what-are-the-basic-ingredients'),
-              ('Low-level machine lerning, the family of ordinary least '
+               'what-is-generative-modeling'),
+              ('Example of generative modeling, "taken from Generative Deeep '
+               'Learning by David '
+               'Foster":"https://www.oreilly.com/library/view/generative-deep-learning/9781098134174/ch01.html"',
+               2,
+               None,
+               'example-of-generative-modeling-taken-from-generative-deeep-learning-by-david-foster-https-www-oreilly-com-library-view-generative-deep-learning-9781098134174-ch01-html'),
+              ('Generative Modeling', 2, None, 'generative-modeling'),
+              ('Generative Versus Discriminative Modeling',
+               2,
+               None,
+               'generative-versus-discriminative-modeling'),
+              ('Example of discriminative modeling, "taken from Generative '
+               'Deeep Learning by David '
+               'Foster":"https://www.oreilly.com/library/view/generative-deep-learning/9781098134174/ch01.html"',
+               2,
+               None,
+               'example-of-discriminative-modeling-taken-from-generative-deeep-learning-by-david-foster-https-www-oreilly-com-library-view-generative-deep-learning-9781098134174-ch01-html'),
+              ('Discriminative Modeling', 2, None, 'discriminative-modeling'),
+              ('Taxonomy of generative deep learning, "taken from Generative '
+               'Deep Learning by David '
+               'Foster":"https://www.oreilly.com/library/view/generative-deep-learning/9781098134174/ch01.html"',
+               2,
+               None,
+               'taxonomy-of-generative-deep-learning-taken-from-generative-deep-learning-by-david-foster-https-www-oreilly-com-library-view-generative-deep-learning-9781098134174-ch01-html'),
+              ('Good books with hands-on material and codes',
+               2,
+               None,
+               'good-books-with-hands-on-material-and-codes'),
+              ('What are the basic Machine Learning ingredients?',
+               2,
+               None,
+               'what-are-the-basic-machine-learning-ingredients'),
+              ('Low-level machine learning, the family of ordinary least '
                'squares methods',
                2,
                None,
-               'low-level-machine-lerning-the-family-of-ordinary-least-squares-methods'),
+               'low-level-machine-learning-the-family-of-ordinary-least-squares-methods'),
               ('Setting up the equations', 2, None, 'setting-up-the-equations'),
               ('The objective/cost/loss function',
                2,
@@ -157,10 +189,38 @@ div.toc p,a {
                2,
                None,
                'why-feed-forward-neural-networks-ffnn'),
+              ('Universal approximation theorem',
+               2,
+               None,
+               'universal-approximation-theorem'),
+              ('The approximation theorem in words',
+               2,
+               None,
+               'the-approximation-theorem-in-words'),
+              ('More on the general approximation theorem',
+               2,
+               None,
+               'more-on-the-general-approximation-theorem'),
+              ('Class of functions we can approximate',
+               2,
+               None,
+               'class-of-functions-we-can-approximate'),
               ('Illustration of a single perceptron model and an FFNN',
                2,
                None,
                'illustration-of-a-single-perceptron-model-and-an-ffnn'),
+              ('Our network example, simple percepetron with one input',
+               2,
+               None,
+               'our-network-example-simple-percepetron-with-one-input'),
+              ('Optimizing the parameters',
+               2,
+               None,
+               'optimizing-the-parameters'),
+              ('Implementing the simple perceptron model',
+               2,
+               None,
+               'implementing-the-simple-perceptron-model'),
               ('Monte Carlo methods and Neural Networks',
                2,
                None,
@@ -207,7 +267,10 @@ div.toc p,a {
                2,
                None,
                'efficient-solutions-of-fermionic-systems-using-artificial-neural-networks-nordhagen-et-al-frontiers-in-physics-11-2023-https-doi-org-10-3389-fphy-2023-1061580'),
-              ('Why Boltzmann machines?', 2, None, 'why-boltzmann-machines'),
+              ('Generative models: Why Boltzmann machines?',
+               2,
+               None,
+               'generative-models-why-boltzmann-machines'),
               ('The structure of the RBM network',
                2,
                None,
@@ -215,6 +278,20 @@ div.toc p,a {
               ('The network', 2, None, 'the-network'),
               ('Goals', 2, None, 'goals'),
               ('Joint distribution', 2, None, 'joint-distribution'),
+              ('Network Elements, the energy function',
+               2,
+               None,
+               'network-elements-the-energy-function'),
+              ('Defining different types of RBMs (Energy based models)',
+               2,
+               None,
+               'defining-different-types-of-rbms-energy-based-models'),
+              ('Gaussian binary', 2, None, 'gaussian-binary'),
+              ('Representing the wave function',
+               2,
+               None,
+               'representing-the-wave-function'),
+              ('Define the cost function', 2, None, 'define-the-cost-function'),
               ('Quantum dots and Boltzmann machines, onebody densities $N=6$, '
                '$\\hbar\\omega=0.1$ a.u.',
                2,
@@ -251,8 +328,15 @@ div.toc p,a {
                2,
                None,
                'possible-start-to-raise-awareness-about-ml-in-your-own-field'),
+              ('Possible questions for discussions',
+               2,
+               None,
+               'possible-questions-for-discussions'),
               ('Education', 2, None, 'education'),
-              ('Possible courses', 2, None, 'possible-courses'),
+              ('Possible courses quantum courses',
+               2,
+               None,
+               'possible-courses-quantum-courses'),
               ('Important Issues to think of',
                2,
                None,
@@ -309,21 +393,9 @@ in physics. And why this could (or should) be of interest.
 
 
 <div class="alert alert-block alert-block alert-text-normal">
-<b>Additional info</b>
-<p>
-<p>Parts of this talk are based on</p>
-<ol>
-<li> <a href="https://journals.aps.org/rmp/abstract/10.1103/RevModPhys.94.031003" target="_blank">Artificial Intelligence and Machine Learning in Nuclear Physics, Amber Boehnlein et al., Reviews Modern of Physics 94, 031003 (2022)</a></li>
-<li> <a href="https://arxiv.org/abs/2305.08831" target="_blank">Neural-network quantum states for ultra-cold Fermi gases, Jane Kim et al.' Nature Physics Communications, in press (2024)</a></li>
-<li> <a href="https://arxiv.org/abs/2401.11694" target="_blank">Parametric Matrix Models, Patrick Cook et al., Nature, in press (2024)</a></li>
-</ol>
-</div>
-
-
-<div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
-<p>These slides at <a href="https://mhjensenseminars.github.io/MachineLearningTalk/doc/web/overview.html" target="_blank"><tt>https://mhjensenseminars.github.io/MachineLearningTalk/doc/web/overview.html</tt></a></p>
+<p>These slides and more at <a href="http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/NTNU/ipynb/NTNU.ipynb" target="_blank"><tt>http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/NTNU/ipynb/NTNU.ipynb</tt></a></p>
 </div>
 
 
@@ -339,13 +411,9 @@ Jonas Flaten, Oskar, Leinonen, &#216;yvind Sigmundson Sch&#248;yen, Stian Dysthe
 <h2 id="and-sponsors">And sponsors </h2>
 
 <ol>
-<li> NSF</li>
-<li> DOE
-<ol type="a"></li>
- <li> Streamline</li>
- <li> From quarks to neutron stars</li>
- <li> Nuclear many-body physics</li>
-</ol>
+<li> National Science Foundation, US (various grants)</li>
+<li> Department of Energy, US (various grants)</li>
+<li> Research Council of Norway (various grants) and my employers University of Oslo and Michigan State University</li>
 </ol>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 <h2 id="ai-ml-and-some-statements-you-may-have-heard-and-what-do-they-mean">AI/ML and some statements you may have heard (and what do they mean?)  </h2>
@@ -355,7 +423,7 @@ Jonas Flaten, Oskar, Leinonen, &#216;yvind Sigmundson Sch&#248;yen, Stian Dysthe
 <li> Russell and Norvig in their popular textbook: <b>relevant to any intellectual task; it is truly a universal field</b> (<a href="http://aima.cs.berkeley.edu/" target="_blank">Artificial Intelligence, A modern approach</a>)</li>
 <li> Woody Bledsoe puts it more bluntly: <b>in the long run, AI is the only science</b> (quoted in Pamilla McCorduck, <a href="https://www.pamelamccorduck.com/machines-who-think" target="_blank">Machines who think</a>)</li>
 </ol>
-<p>If you wish to have a critical read on AI/ML from a societal point of view, see <a href="https://www.katecrawford.net/" target="_blank">Kate Crawford's recent text Atlas of AI</a>. See also <a href="https://www.nationaldefensemagazine.org/articles/2023/3/24/ukraine-a-living-lab-for-ai-warfare" target="_blank"><tt>https://www.nationaldefensemagazine.org/articles/2023/3/24/ukraine-a-living-lab-for-ai-warfare</tt></a></p>
+<p>If you wish to have a critical read on AI/ML from a societal point of view, see <a href="https://www.katecrawford.net/" target="_blank">Kate Crawford's recent text Atlas of AI</a>. And you have a local and very popular expert, <a href="https://www.goodreads.com/en/book/show/144711751" target="_blank">Inga Strumke, Machines which think</a></p>
 
 <b>Here: with AI/ML we intend a collection of machine learning methods with an emphasis on statistical learning and data analysis</b>
 
@@ -371,7 +439,7 @@ and let the computer deduce the logic behind it. On the other hand, <em>unsuperv
 is a method for finding patterns and relationship in data sets without any prior knowledge of the system.
 </p>
 
-<p>An emerging  third category is  <em>reinforcement learning</em>. This is a paradigm 
+<p>An important  third category is  <em>reinforcement learning</em>. This is a paradigm 
 of learning inspired by behavioural psychology, where learning is achieved by trial-and-error, 
 solely from rewards and punishment.
 </p>
@@ -399,7 +467,7 @@ Some of the most common tasks are:
 <h2 id="the-plethora-of-machine-learning-algorithms-methods">The plethora  of machine learning algorithms/methods </h2>
 
 <ol>
-<li> Deep learning: Neural Networks (NN), Convolutional NN, Recurrent NN, Boltzmann machines, autoencoders and variational autoencoders  and generative adversarial networks, generative models</li> 
+<li> Deep learning: Neural Networks (NN), Convolutional NN, Recurrent NN, Boltzmann machines, autoencoders and variational autoencoders  and generative adversarial networks, stable diffusion and many more generative models</li>
 <li> Bayesian statistics and Bayesian Machine Learning, Bayesian experimental design, Bayesian Regression models, Bayesian neural networks, Gaussian processes and much more</li>
 <li> Dimensionality reduction (Principal component analysis), Clustering Methods and more</li>
 <li> Ensemble Methods, Random forests, bagging and voting methods, gradient boosting approaches</li> 
@@ -407,22 +475,130 @@ Some of the most common tasks are:
 <li> Reinforcement Learning; Transfer Learning and more</li> 
 </ol>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
-<h2 id="what-are-the-basic-ingredients">What are the basic ingredients? </h2>
+<h2 id="what-is-generative-modeling">What Is Generative Modeling? </h2>
+
+<p>Generative modeling can be broadly defined as follows:</p>
+
+<p>Generative modeling is a branch of machine learning that involves
+training a model to produce new data that is similar to a given
+dataset.
+</p>
+
+<p>What does this mean in practice? Suppose we have a dataset containing
+photos of horses. We can train a generative model on this dataset to
+capture the rules that govern the complex relationships between pixels
+in images of horses. Then we can sample from this model to create
+novel, realistic images of horses that did not exist in the original
+dataset. 
+</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="example-of-generative-modeling-taken-from-generative-deeep-learning-by-david-foster-https-www-oreilly-com-library-view-generative-deep-learning-9781098134174-ch01-html">Example of generative modeling, <a href="https://www.oreilly.com/library/view/generative-deep-learning/9781098134174/ch01.html" target="_blank">taken from Generative Deeep Learning by David Foster</a>  </h2>
+
+<br/><br/>
+<center>
+<p><img src="figures/generativelearning.png" width="900" align="bottom"></p>
+</center>
+<br/><br/>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="generative-modeling">Generative Modeling </h2>
+
+<p>In order to build a generative model, we require a dataset consisting
+of many examples of the entity we are trying to generate. This is
+known as the training data, and one such data point is called an
+observation.
+</p>
+
+<p>Each observation consists of many features. For an image generation
+problem, the features are usually the individual pixel values; for a
+text generation problem, the features could be individual words or
+groups of letters. It is our goal to build a model that can generate
+new sets of features that look as if they have been created using the
+same rules as the original data. Conceptually, for image generation
+this is an incredibly difficult task, considering the vast number of
+ways that individual pixel values can be assigned and the relatively
+tiny number of such arrangements that constitute an image of the
+entity we are trying to generate.
+</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="generative-versus-discriminative-modeling">Generative Versus Discriminative Modeling </h2>
+
+<p>In order to truly understand what generative modeling aims to achieve
+and why this is important, it is useful to compare it to its
+counterpart, discriminative modeling. If you have studied machine
+learning, most problems you will have faced will have most likely been
+discriminative in nature. 
+</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="example-of-discriminative-modeling-taken-from-generative-deeep-learning-by-david-foster-https-www-oreilly-com-library-view-generative-deep-learning-9781098134174-ch01-html">Example of discriminative modeling, <a href="https://www.oreilly.com/library/view/generative-deep-learning/9781098134174/ch01.html" target="_blank">taken from Generative Deeep Learning by David Foster</a>  </h2>
+
+<br/><br/>
+<center>
+<p><img src="figures/standarddeeplearning.png" width="900" align="bottom"></p>
+</center>
+<br/><br/>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="discriminative-modeling">Discriminative Modeling </h2>
+
+<p>When performing discriminative modeling, each observation in the
+training data has a label. For a binary classification problem such as
+our data could be labeled as ones and zeros. Our model then learns how to
+discriminate between these two groups and outputs the probability that
+a new observation has label 1 or 0
+</p>
+
+<p>In contrast, generative modeling doesn&#8217;t require the dataset to be
+labeled because it concerns itself with generating entirely new
+data (for example an image), rather than trying to predict a label for say  a given image.
+</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="taxonomy-of-generative-deep-learning-taken-from-generative-deep-learning-by-david-foster-https-www-oreilly-com-library-view-generative-deep-learning-9781098134174-ch01-html">Taxonomy of generative deep learning, <a href="https://www.oreilly.com/library/view/generative-deep-learning/9781098134174/ch01.html" target="_blank">taken from Generative Deep Learning by David Foster</a>  </h2>
+
+<br/><br/>
+<center>
+<p><img src="figures/generativemodels.png" width="900" align="bottom"></p>
+</center>
+<br/><br/>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="good-books-with-hands-on-material-and-codes">Good books with hands-on material and codes </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<ul>
+<li> <a href="https://sebastianraschka.com/blog/2022/ml-pytorch-book.html" target="_blank">Sebastian Rashcka et al, Machine learning with Sickit-Learn and PyTorch</a></li>
+<li> <a href="https://www.oreilly.com/library/view/generative-deep-learning/9781098134174/ch01.html" target="_blank">David Foster, Generative Deep Learning with TensorFlow</a></li>
+<li> <a href="https://github.com/PacktPublishing/Hands-On-Generative-AI-with-Python-and-TensorFlow-2" target="_blank">Bali and Gavras, Generative AI with Python and TensorFlow 2</a></li>
+</ul>
+</div>
+
+
+<p>All three books have GitHub addresses from where  one can download all codes. We will borrow most of the material from these three texts as well as 
+from Goodfellow, Bengio and Courville's text <a href="https://www.deeplearningbook.org/" target="_blank">Deep Learning</a>
+</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="what-are-the-basic-machine-learning-ingredients">What are the basic Machine Learning ingredients? </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
 <p>Almost every problem in ML and data science starts with the same ingredients:</p>
 <ul>
-<li> The dataset \( \mathbf{x} \) (could be some observable quantity of the system we are studying)</li>
-<li> A model which is a function of a set of parameters \( \mathbf{\alpha} \) that relates to the dataset, say a likelihood  function \( p(\mathbf{x}\vert \mathbf{\alpha}) \) or just a simple model \( f(\mathbf{\alpha}) \)</li>
-<li> A so-called <b>loss/cost/risk</b> function \( \mathcal{C} (\mathbf{x}, f(\mathbf{\alpha})) \) which allows us to decide how well our model represents the dataset.</li> 
+<li> The dataset \( \boldsymbol{x} \) (could be some observable quantity of the system we are studying)</li>
+<li> A model which is a function of a set of parameters \( \boldsymbol{\alpha} \) that relates to the dataset, say a likelihood  function \( p(\boldsymbol{x}\vert \boldsymbol{\alpha}) \) or just a simple model \( f(\boldsymbol{\alpha}) \)</li>
+<li> A so-called <b>loss/cost/risk</b> function \( \mathcal{C} (\boldsymbol{x}, f(\boldsymbol{\alpha})) \) which allows us to decide how well our model represents the dataset.</li> 
 </ul>
-<p>We seek to minimize the function \( \mathcal{C} (\mathbf{x}, f(\mathbf{\alpha})) \) by finding the parameter values which minimize \( \mathcal{C} \). This leads to  various minimization algorithms. It may surprise many, but at the heart of all machine learning algortihms there is an optimization problem. </p>
+<p>We seek to minimize the function \( \mathcal{C} (\boldsymbol{x}, f(\boldsymbol{\alpha})) \) by finding the parameter values which minimize \( \mathcal{C} \). This leads to  various minimization algorithms. It may surprise many, but at the heart of all machine learning algortihms there is an optimization problem. </p>
 </div>
 
 
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
-<h2 id="low-level-machine-lerning-the-family-of-ordinary-least-squares-methods">Low-level machine lerning, the family of ordinary least squares methods  </h2>
+<h2 id="low-level-machine-learning-the-family-of-ordinary-least-squares-methods">Low-level machine learning, the family of ordinary least squares methods  </h2>
 
 <p>Our data which we want to apply a machine learning method on, consist
 of a set of inputs \( \boldsymbol{x}^T=[x_0,x_1,x_2,\dots,x_{n-1}] \) and the
@@ -457,12 +633,12 @@ $$
 
 <p>The  simplest approach is the mean squared error</p>
 $$
-C(\boldsymbol{\beta})=\frac{1}{n}\sum_{i=0}^{n-1}\left(y_i-\tilde{y}_i\right)^2=\frac{1}{n}\left\{\left(\boldsymbol{y}-\boldsymbol{\tilde{y}}\right)^T\left(\boldsymbol{y}-\boldsymbol{\tilde{y}}\right)\right\},
+C(\boldsymbol{\Theta})=\frac{1}{n}\sum_{i=0}^{n-1}\left(y_i-\tilde{y}_i\right)^2=\frac{1}{n}\left\{\left(\boldsymbol{y}-\boldsymbol{\tilde{y}}\right)^T\left(\boldsymbol{y}-\boldsymbol{\tilde{y}}\right)\right\},
 $$
 
 <p>or using the matrix \( \boldsymbol{X} \) and in a more compact matrix-vector notation as</p>
 $$
-C(\boldsymbol{\beta})=\frac{1}{n}\left\{\left(\boldsymbol{y}-\boldsymbol{X}\boldsymbol{\theta}\right)^T\left(\boldsymbol{y}-\boldsymbol{X}\boldsymbol{\theta}\right)\right\}.
+C(\boldsymbol{\Theta})=\frac{1}{n}\left\{\left(\boldsymbol{y}-\boldsymbol{X}\boldsymbol{\theta}\right)^T\left(\boldsymbol{y}-\boldsymbol{X}\boldsymbol{\theta}\right)\right\}.
 $$
 
 <p>This function represents one of many possible ways to define the so-called cost function.</p>
@@ -470,7 +646,7 @@ $$
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 <h2 id="training-solution">Training solution  </h2>
 
-<p>Optimizing wrt to th eunknown paramters \( \theta_j \) we get </p>
+<p>Optimizing with respect to the unknown parameters \( \theta_j \) we get </p>
 $$
 \boldsymbol{X}^T\boldsymbol{y} = \boldsymbol{X}^T\boldsymbol{X}\boldsymbol{\theta},  
 $$
@@ -480,6 +656,7 @@ $$
 \hat{\boldsymbol{\theta}} =\left(\boldsymbol{X}^T\boldsymbol{X}\right)^{-1}\boldsymbol{X}^T\boldsymbol{y}.
 $$
 
+<p>We say we 'learn' the unknown parameters \( \boldsymbol{\theta} \) from the last equation.</p>
 
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 <h2 id="ridge-and-lasso-regression">Ridge and LASSO Regression </h2>
@@ -824,6 +1001,82 @@ monotonically-increasing continuous function</b>.
 </p>
 
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="universal-approximation-theorem">Universal approximation theorem </h2>
+
+<p>The universal approximation theorem plays a central role in deep
+learning.  <a href="https://link.springer.com/article/10.1007/BF02551274" target="_blank">Cybenko (1989)</a> showed
+the following:
+</p>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p>Let \( \sigma \) be any continuous sigmoidal function such that</p>
+$$
+\sigma(z) = \left\{\begin{array}{cc} 1 & z\rightarrow \infty\\ 0 & z \rightarrow -\infty \end{array}\right.
+$$
+
+<p>Given a continuous and deterministic function \( F(\boldsymbol{x}) \) on the unit
+cube in \( d \)-dimensions \( F\in [0,1]^d \), \( x\in [0,1]^d \) and a parameter
+\( \epsilon >0 \), there is a one-layer (hidden) neural network
+\( f(\boldsymbol{x};\boldsymbol{\Theta}) \) with \( \boldsymbol{\Theta}=(\boldsymbol{W},\boldsymbol{b}) \) and \( \boldsymbol{W}\in
+\mathbb{R}^{m\times n} \) and \( \boldsymbol{b}\in \mathbb{R}^{n} \), for which
+</p>
+$$
+\vert F(\boldsymbol{x})-f(\boldsymbol{x};\boldsymbol{\Theta})\vert < \epsilon \hspace{0.1cm} \forall \boldsymbol{x}\in[0,1]^d.
+$$
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="the-approximation-theorem-in-words">The approximation theorem in words </h2>
+
+<p><b>Any continuous function \( y=F(\boldsymbol{x}) \) supported on the unit cube in
+\( d \)-dimensions can be approximated by a one-layer sigmoidal network to
+arbitrary accuracy.</b>
+</p>
+
+<p><a href="https://www.sciencedirect.com/science/article/abs/pii/089360809190009T" target="_blank">Hornik (1991)</a> extended the theorem by letting any non-constant, bounded activation function to be included using that the expectation value</p>
+$$
+\mathbb{E}[\vert F(\boldsymbol{x})\vert^2] =\int_{\boldsymbol{x}\in D} \vert F(\boldsymbol{x})\vert^2p(\boldsymbol{x})d\boldsymbol{x} < \infty.
+$$
+
+<p>Then we have</p>
+$$
+\mathbb{E}[\vert F(\boldsymbol{x})-f(\boldsymbol{x};\boldsymbol{\Theta})\vert^2] =\int_{\boldsymbol{x}\in D} \vert F(\boldsymbol{x})-f(\boldsymbol{x};\boldsymbol{\Theta})\vert^2p(\boldsymbol{x})d\boldsymbol{x} < \epsilon.
+$$
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="more-on-the-general-approximation-theorem">More on the general approximation theorem </h2>
+
+<p>None of the proofs give any insight into the relation between the
+number of of hidden layers and nodes and the approximation error
+\( \epsilon \), nor the magnitudes of \( \boldsymbol{W} \) and \( \boldsymbol{b} \).
+</p>
+
+<p>Neural networks (NNs) have what we may call a kind of universality no matter what function we want to compute.</p>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p>It does not mean that an NN can be used to exactly compute any function. Rather, we get an approximation that is as good as we want. </p>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="class-of-functions-we-can-approximate">Class of functions we can approximate </h2>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p>The class of functions that can be approximated are the continuous ones.
+If the function \( F(\boldsymbol{x}) \) is discontinuous, it won't in general be possible to approximate it. However, an NN may still give an approximation even if we fail in some points.
+</p>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
 <h2 id="illustration-of-a-single-perceptron-model-and-an-ffnn">Illustration of a single perceptron model and an FFNN </h2>
 
 <center>  <!-- FIGURE -->
@@ -833,6 +1086,147 @@ monotonically-increasing continuous function</b>.
 </center>
 <p><img src="figures/nns.png" width="600" align="bottom"></p>
 </center>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="our-network-example-simple-percepetron-with-one-input">Our network example, simple percepetron with one input </h2>
+
+<p>As as simple example we define now a simple perceptron model with
+all quantities given by scalars. We consider only one input variable
+\( x \) and one target value \( y \).  We define an activation function
+\( \sigma_1 \) which takes as input
+</p>
+
+$$
+z_1 = w_1x+b_1,
+$$
+
+<p>where \( w_1 \) is the weight and \( b_1 \) is the bias. These are the
+parameters we want to optimize.  This output is then fed into the
+<b>cost/loss</b> function, which we here for the sake of simplicity just
+define as the squared error
+</p>
+
+$$
+C(x;w_1,b_1)=\frac{1}{2}(a_1-y)^2.
+$$
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="optimizing-the-parameters">Optimizing the parameters </h2>
+
+<p>In setting up the feed forward and back propagation parts of the
+algorithm, we need now the derivative of the various variables we want
+to train.
+</p>
+
+<p>We need</p>
+$$
+\frac{\partial C}{\partial w_1} \hspace{0.1cm}\mathrm{and}\hspace{0.1cm}\frac{\partial C}{\partial b_1}. 
+$$
+
+<p>Using the chain rule we find </p>
+$$
+\frac{\partial C}{\partial w_1}=\frac{\partial C}{\partial a_1}\frac{\partial a_1}{\partial z_1}\frac{\partial z_1}{\partial w_1}=(a_1-y)\sigma_1'x,
+$$
+
+<p>and</p>
+$$
+\frac{\partial C}{\partial b_1}=\frac{\partial C}{\partial a_1}\frac{\partial a_1}{\partial z_1}\frac{\partial z_1}{\partial b_1}=(a_1-y)\sigma_1',
+$$
+
+<p>which we later will just define as</p>
+$$
+\frac{\partial C}{\partial a_1}\frac{\partial a_1}{\partial z_1}=\delta_1.
+$$
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="implementing-the-simple-perceptron-model">Implementing the simple perceptron model </h2>
+
+<p>In the example code here we implement the above equations (with explict
+expressions for the derivatives) with just one input variable \( x \) and
+one output variable.  The target value \( y=2x+1 \) is a simple linear
+function in \( x \). Since this is a regression problem, we define the cost function to be proportional to the least squares error
+</p>
+$$
+C(y,w_1,b_1)=\frac{1}{2}(a_1-y)^2,
+$$
+
+<p>with \( a_1 \) the output from the network.</p>
+
+
+<!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #eeeedd">
+  <pre style="line-height: 125%;"><span style="color: #228B22"># import necessary packages</span>
+<span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">numpy</span> <span style="color: #8B008B; font-weight: bold">as</span> <span style="color: #008b45; text-decoration: underline">np</span>
+<span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">matplotlib.pyplot</span> <span style="color: #8B008B; font-weight: bold">as</span> <span style="color: #008b45; text-decoration: underline">plt</span>
+
+<span style="color: #8B008B; font-weight: bold">def</span> <span style="color: #008b45">feed_forward</span>(x):
+    <span style="color: #228B22"># weighted sum of inputs to the output layer</span>
+    z_1 = x*output_weights + output_bias
+    <span style="color: #228B22"># Output from output node (one node only)</span>
+    <span style="color: #228B22"># Here the output is equal to the input</span>
+    a_1 = z_1
+    <span style="color: #8B008B; font-weight: bold">return</span> a_1
+
+<span style="color: #8B008B; font-weight: bold">def</span> <span style="color: #008b45">backpropagation</span>(x, y):
+    a_1 = feed_forward(x)
+    <span style="color: #228B22"># derivative of cost function</span>
+    derivative_cost = a_1 - y
+    <span style="color: #228B22"># the variable delta in the equations, note that output a_1 = z_1, its derivatives wrt z_o is thus 1</span>
+    delta_1 = derivative_cost
+    <span style="color: #228B22"># gradients for the output layer</span>
+    output_weights_gradient = delta_1*x
+    output_bias_gradient = delta_1
+    <span style="color: #228B22"># The cost function is 0.5*(a_1-y)^2. This gives a measure of the error for each iteration</span>
+    <span style="color: #8B008B; font-weight: bold">return</span> output_weights_gradient, output_bias_gradient
+
+<span style="color: #228B22"># ensure the same random numbers appear every time</span>
+np.random.seed(<span style="color: #B452CD">0</span>)
+<span style="color: #228B22"># Input variable</span>
+x = <span style="color: #B452CD">4.0</span>
+<span style="color: #228B22"># Target values</span>
+y = <span style="color: #B452CD">2</span>*x+<span style="color: #B452CD">1.0</span>
+
+<span style="color: #228B22"># Defining the neural network</span>
+n_inputs = <span style="color: #B452CD">1</span>
+n_outputs = <span style="color: #B452CD">1</span>
+<span style="color: #228B22"># Initialize the network</span>
+<span style="color: #228B22"># weights and bias in the output layer</span>
+output_weights = np.random.randn()
+output_bias = np.random.randn()
+
+<span style="color: #228B22"># implementing a simple gradient descent approach with fixed learning rate</span>
+eta = <span style="color: #B452CD">0.01</span>
+<span style="color: #8B008B; font-weight: bold">for</span> i <span style="color: #8B008B">in</span> <span style="color: #658b00">range</span>(<span style="color: #B452CD">40</span>):
+    <span style="color: #228B22"># calculate gradients from back propagation</span>
+    derivative_w1, derivative_b1 = backpropagation(x, y)
+    <span style="color: #228B22"># update weights and biases</span>
+    output_weights -= eta * derivative_w1
+    output_bias -= eta * derivative_b1
+<span style="color: #228B22"># our final prediction after training</span>
+ytilde = output_weights*x+output_bias
+<span style="color: #658b00">print</span>(<span style="color: #B452CD">0.5</span>*((ytilde-y)**<span style="color: #B452CD">2</span>))
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p>Running this code gives us an acceptable results after some 40-50 iterations. Note that the results depend on the value of the learning rate.</p>
 
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 <h2 id="monte-carlo-methods-and-neural-networks">Monte Carlo methods and Neural Networks </h2>
@@ -970,7 +1364,7 @@ $$
 <p>Analytical solutions in two and three dimensions (<a href="https://journals.aps.org/pra/abstract/10.1103/PhysRevA.48.3561" target="_blank">M. Taut 1993 and 1994</a>). </p>
 
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
-<h2 id="why-boltzmann-machines">Why Boltzmann machines? </h2>
+<h2 id="generative-models-why-boltzmann-machines">Generative models: Why Boltzmann machines? </h2>
 
 <p>What is known as restricted Boltzmann Machines (RMB) have received a
 lot of attention lately.  One of the major reasons is that they can be
@@ -1003,8 +1397,8 @@ problems like the Ising and Potts classes of models.
 
 <b>The network layers</b>:
 <ol>
- <li> A function \( \mathbf{x} \) that represents the visible layer, a vector of \( M \) elements (nodes). This layer represents both what the RBM might be given as training input, and what we want it to be able to reconstruct. This might for example be the pixels of an image, the spin values of the Ising model, or coefficients representing speech.</li>
- <li> The function \( \mathbf{h} \) represents the hidden, or latent, layer. A vector of \( N \) elements (nodes). Also called "feature detectors".</li>
+ <li> A function \( \boldsymbol{x} \) that represents the visible layer, a vector of \( M \) elements (nodes). This layer represents both what the RBM might be given as training input, and what we want it to be able to reconstruct. This might for example be the pixels of an image, the spin values of the Ising model, or coefficients representing speech.</li>
+ <li> The function \( \boldsymbol{h} \) represents the hidden, or latent, layer. A vector of \( N \) elements (nodes). Also called "feature detectors".</li>
 </ol>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 <h2 id="goals">Goals </h2>
@@ -1019,30 +1413,114 @@ over (integrated out).
 
 <b>The network parameters, to be optimized/learned</b>:
 <ol>
- <li> \( \mathbf{a} \) represents the visible bias, a vector of same length as \( \mathbf{x} \).</li>
- <li> \( \mathbf{b} \) represents the hidden bias, a vector of same lenght as \( \mathbf{h} \).</li>
+ <li> \( \boldsymbol{a} \) represents the visible bias, a vector of same length as \( \boldsymbol{x} \).</li>
+ <li> \( \boldsymbol{b} \) represents the hidden bias, a vector of same lenght as \( \boldsymbol{h} \).</li>
  <li> \( W \) represents the interaction weights, a matrix of size \( M\times N \).</li>
 </ol>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 <h2 id="joint-distribution">Joint distribution </h2>
-
-<p>The restricted Boltzmann machine is described by a Boltzmann distribution</p>
+<p>The restricted Boltzmann machine is described by a Bolztmann distribution</p>
 $$
-\begin{align}
-	P_{rbm}(\mathbf{x},\mathbf{h}) = \frac{1}{Z} e^{-\frac{1}{T_0}E(\mathbf{x},\mathbf{h})},
-\label{_auto3}
-\end{align}
+	P_{\mathrm{rbm}}(\boldsymbol{x},\boldsymbol{h}) = \frac{1}{Z} \exp{-E(\boldsymbol{x},\boldsymbol{h})},
 $$
 
 <p>where \( Z \) is the normalization constant or partition function, defined as </p>
 $$
-\begin{align}
-	Z = \int \int e^{-\frac{1}{T_0}E(\mathbf{x},\mathbf{h})} d\mathbf{x} d\mathbf{h}.
-\label{_auto4}
-\end{align}
+	Z = \int \int \exp{-E(\boldsymbol{x},\boldsymbol{h})} d\boldsymbol{x} d\boldsymbol{h}.
 $$
 
-<p>It is common to ignore \( T_0 \) by setting it to one. </p>
+<p>Note the absence of the inverse temperature in these equations.</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="network-elements-the-energy-function">Network Elements, the energy function  </h2>
+
+<p>The function \( E(\boldsymbol{x},\boldsymbol{h}) \) gives the <b>energy</b> of a
+configuration (pair of vectors) \( (\boldsymbol{x}, \boldsymbol{h}) \). The lower
+the energy of a configuration, the higher the probability of it. This
+function also depends on the parameters \( \boldsymbol{a} \), \( \boldsymbol{b} \) and
+\( W \). Thus, when we adjust them during the learning procedure, we are
+adjusting the energy function to best fit our problem.
+</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="defining-different-types-of-rbms-energy-based-models">Defining different types of RBMs (Energy based models) </h2>
+
+<p>There are different variants of RBMs, and the differences lie in the types of visible and hidden units we choose as well as in the implementation of the energy function \( E(\boldsymbol{x},\boldsymbol{h}) \). The connection between the nodes in the two layers is given by the weights \( w_{ij} \). </p>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b>Binary-Binary RBM:</b>
+<p>
+
+<p>RBMs were first developed using binary units in both the visible and hidden layer. The corresponding energy function is defined as follows:</p>
+$$
+	E(\boldsymbol{x}, \boldsymbol{h}) = - \sum_i^M x_i a_i- \sum_j^N b_j h_j - \sum_{i,j}^{M,N} x_i w_{ij} h_j,
+$$
+
+<p>where the binary values taken on by the nodes are most commonly 0 and 1.</p>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="gaussian-binary">Gaussian binary </h2>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b>Gaussian-Binary RBM:</b>
+<p>
+
+<p>Another varient is the RBM where the visible units are Gaussian while the hidden units remain binary:</p>
+$$
+	E(\boldsymbol{x}, \boldsymbol{h}) = \sum_i^M \frac{(x_i - a_i)^2}{2\sigma_i^2} - \sum_j^N b_j h_j - \sum_{i,j}^{M,N} \frac{x_i w_{ij} h_j}{\sigma_i^2}. 
+$$
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="representing-the-wave-function">Representing the wave function </h2>
+
+<p>The wavefunction should be a probability amplitude depending on
+ \( \boldsymbol{x} \). The RBM model is given by the joint distribution of
+ \( \boldsymbol{x} \) and \( \boldsymbol{h} \)
+</p>
+
+$$
+        P_{\mathrm{rbm}}(\boldsymbol{x},\boldsymbol{h}) = \frac{1}{Z} \exp{-E(\boldsymbol{x},\boldsymbol{h})}.
+$$
+
+<p>To find the marginal distribution of \( \boldsymbol{x} \) we set:</p>
+
+$$
+        P_{\mathrm{rbm}}(\boldsymbol{x}) =\frac{1}{Z}\sum_{\boldsymbol{h}} \exp{-E(\boldsymbol{x}, \boldsymbol{h})}.
+$$
+
+<p>Now this is what we use to represent the wave function, calling it a neural-network quantum state (NQS)</p>
+$$
+        \vert\Psi (\boldsymbol{X})\vert^2 = P_{\mathrm{rbm}}(\boldsymbol{x}).
+$$
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="define-the-cost-function">Define the cost function </h2>
+
+<p>Now we don't necessarily have training data (unless we generate it by
+using some other method). However, what we do have is the variational
+principle which allows us to obtain the ground state wave function by
+minimizing the expectation value of the energy of a trial wavefunction
+(corresponding to the untrained NQS). Similarly to the traditional
+variational Monte Carlo method then, it is the local energy we wish to
+minimize. The gradient to use for the stochastic gradient descent
+procedure is
+</p>
+
+$$
+	C_i = \frac{\partial \langle E_L \rangle}{\partial \theta_i}
+	= 2(\langle E_L \frac{1}{\Psi}\frac{\partial \Psi}{\partial \theta_i} \rangle - \langle E_L \rangle \langle \frac{1}{\Psi}\frac{\partial \Psi}{\partial \theta_i} \rangle ),
+$$
+
+<p>where the local energy is given by</p>
+$$
+	E_L = \frac{1}{\Psi} \hat{\boldsymbol{H}} \Psi.
+$$
+
 
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 <h2 id="quantum-dots-and-boltzmann-machines-onebody-densities-n-6-hbar-omega-0-1-a-u">Quantum dots and Boltzmann machines, onebody densities \( N=6 \), \( \hbar\omega=0.1 \) a.u. </h2>
@@ -1185,6 +1663,13 @@ necessarily normalized and is normally called the likelihood function.
 
 
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="possible-questions-for-discussions">Possible questions for discussions </h2>
+
+<ol>
+<li> How do we incorporate these topics in our education?</li>
+<li> More difficult: what are the consequences for universities and our educational mission?</li>
+</ol>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
 <h2 id="education">Education </h2>
 
 <ol>
@@ -1205,7 +1690,7 @@ necessarily normalized and is normally called the likelihood function.
 </ol>
 </ol>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
-<h2 id="possible-courses">Possible courses  </h2>
+<h2 id="possible-courses-quantum-courses">Possible courses quantum courses  </h2>
 
 <div class="alert alert-block alert-block alert-text-normal">
 <b>Topics  in a Bachelor of Science/Master of Science</b>
