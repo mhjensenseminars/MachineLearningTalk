@@ -100,7 +100,7 @@ novel, realistic images of horses that did not exist in the original
 dataset. 
 
 !split
-===== Example of generative modeling, "taken from Generative Deeep Learning by David Foster":"https://www.oreilly.com/library/view/generative-deep-learning/9781098134174/ch01.html"  =====
+===== Example of generative modeling, "taken from Generative Deep Learning by David Foster":"https://www.oreilly.com/library/view/generative-deep-learning/9781098134174/ch01.html"  =====
 
 FIGURE: [figures/generativelearning.png, width=900 frac=1.0]
 
@@ -363,7 +363,6 @@ _Job market, a personal statement_: "A familiarity with ML is almost becoming a 
 * "Neural-network quantum states for ultra-cold Fermi gases, Jane Kim et al, Nature Physics Communcication, submitted":"https://doi.org/10.48550/arXiv.2305.08831"
 * "Message-Passing Neural Quantum States for the Homogeneous Electron Gas, Gabriel Pescia, Jane Kim et al. arXiv.2305.07240,":"https://doi.org/10.48550/arXiv.2305.07240"
 * "Efficient solutions of fermionic systems using artificial neural networks, Nordhagen et al, Frontiers in Physics 11, 2023":"https://doi.org/10.3389/fphy.2023.1061580"
-* "Report from the A.I. For Nuclear Physics  Workshop by Bedaque et al., Eur J. Phys. A 57, (2021)":"https://link.springer.com/article/10.1140/epja/s10050-020-00290-x"
 * "Particle Data Group summary on ML methods":"https://pdg.lbl.gov/2021/reviews/rpp2021-rev-machine-learning.pdf"
 !eblock
 
@@ -381,26 +380,6 @@ FIGURE: [figures/mlimage.png, width=800 frac=1.0]
 ===== ML in Nuclear  Physics (or any field in physics) =====
 
 FIGURE: [figures/ML-NP.pdf, width=900 frac=1.0]
-
-
-
-
-
-!split
-===== Machine learning in physics  (my bias): Why? =====
-
-o ML tools can help us to speed up the scientific process cycle and hence facilitate discoveries
-o Enabling fast emulation for big simulations
-o Revealing the information content of measured observables w.r.t. theory
-o Identifying crucial experimental data for better constraining theory
-o Providing meaningful input to applications and planned measurements
-o ML tools can help us to reveal the structure of our models
-o Parameter estimation with heterogeneous/multi-scale datasets
-o Model reduction
-o ML tools can help us to provide predictive capability
-o Theoretical results often involve ultraviolet  and infrared extrapolations due to Hilbert-space truncations 
-o Uncertainty quantification essential
-o Theoretical models are often applied to entirely new nuclear systems and conditions that are not accessible to experiment
 
 
 
