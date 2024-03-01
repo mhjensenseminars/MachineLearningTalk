@@ -10,15 +10,6 @@ The main emphasis is to give you a short and pedestrian introduction to the whys
 in physics. And why this could (or should) be of interest. 
 !eblock
 
-
-!bblock Additional info
-Parts of this talk are based on
-o "Artificial Intelligence and Machine Learning in Nuclear Physics, Amber Boehnlein et al., Reviews Modern of Physics 94, 031003 (2022)":"https://journals.aps.org/rmp/abstract/10.1103/RevModPhys.94.031003"
-o "Neural-network quantum states for ultra-cold Fermi gases, Jane Kim et al.' Nature Physics Communications, in press (2024)":"https://arxiv.org/abs/2305.08831"
-o "Parametric Matrix Models, Patrick Cook et al., Nature, in press (2024)":"https://arxiv.org/abs/2401.11694"
-
-!eblock
-
 !bblock
 These slides at URL:"https://mhjensenseminars.github.io/MachineLearningTalk/doc/web/overview.html"
 !eblock
@@ -33,13 +24,9 @@ Jonas Flaten, Oskar, Leinonen, Øyvind Sigmundson Schøyen, Stian Dysthe Bilek, 
 !split
 ===== And sponsors =====
 
-o NSF
-o DOE
-  o Streamline
-  o From quarks to neutron stars
-  o Nuclear many-body physics
-
-
+o National Science Foundation, US (various grants)
+o Department of Energy, US (various grants)
+o Research Council of Norway (various grants)
 
 !split
 =====  AI/ML and some statements you may have heard (and what do they mean?)  =====
@@ -49,7 +36,7 @@ o Russell and Norvig in their popular textbook: _relevant to any intellectual ta
 o Woody Bledsoe puts it more bluntly: _in the long run, AI is the only science_ (quoted in Pamilla McCorduck, "Machines who think":"https://www.pamelamccorduck.com/machines-who-think")
 
 
-If you wish to have a critical read on AI/ML from a societal point of view, see "Kate Crawford's recent text Atlas of AI":"https://www.katecrawford.net/". See also URL:"https://www.nationaldefensemagazine.org/articles/2023/3/24/ukraine-a-living-lab-for-ai-warfare"
+If you wish to have a critical read on AI/ML from a societal point of view, see "Kate Crawford's recent text Atlas of AI":"https://www.katecrawford.net/". And you have a local and very popular expert, "Inga Strumke, Machines which think":"https://www.goodreads.com/en/book/show/144711751"
 
 _Here: with AI/ML we intend a collection of machine learning methods with an emphasis on statistical learning and data analysis_
 
