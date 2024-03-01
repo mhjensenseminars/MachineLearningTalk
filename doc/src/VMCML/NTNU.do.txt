@@ -780,7 +780,10 @@ print(0.5*((ytilde-y)**2))
 Running this code gives us an acceptable results after some 40-50 iterations. Note that the results depend on the value of the learning rate.
 
 
+!split
+===== Central magic =====
 
+"Automatic differentian":"https://en.wikipedia.org/wiki/Automatic_differentiation"
 
 
 
