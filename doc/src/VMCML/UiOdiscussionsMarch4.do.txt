@@ -1,4 +1,4 @@
-TITLE: Discussions on SFIs, Machine Learning, Quantum Technologies and more
+TITLE: Discussions on SFIs, Machine Learning and Artificial Intelligence, Quantum Technologies and more
 AUTHOR: Department of Physics, UiO
 #  at Department of Physics and Astronomy and FRIB, Michigan State University, USA, and Department of Physics and Center for Computing in Science Education,
 # University of Oslo, Norway
@@ -33,12 +33,19 @@ o Digital technologies as a research area in itself, i.e. _research into artific
 
 o Research on how digital technologies can be used for _innovation_ in business and the public sector and how _artificial intelligence can be used in research in different disciplines_
 
+
 !split
 ===== Educational initiatives and international cooperation =====
 
 In addition to the AI centers, 150 MNOK will go to other things. This
 can for example include research schools, international cooperations
 and coordinations.
+
+
+!split
+===== What do we have =====
+
+Set up activities in ML
 
 
 UiO har allerede utstrakt teoretisk, beregningsorientert og eksperimentell aktivitet på kvantevitenskap og -teknologi
@@ -182,10 +189,10 @@ o Constructing quantum circuits to simulate specific systems
 o Quantum machine learning to optimize quantum circuits
 
 
-
 !split
-===== Candidate systems at UiO and MSU =====
+===== What should it be? =====
 
-!bblock
-!eblock
+Center for Artificial Intelligence and Quantum Technologies (CAIQT)
 
+* strong educational and training component
+* many international collaborations
