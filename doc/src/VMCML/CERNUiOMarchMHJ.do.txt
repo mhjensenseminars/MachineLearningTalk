@@ -2,7 +2,7 @@ TITLE: Quantum computing, Machine Learning and Quantum Machine Learning at UiO
 AUTHOR: Center for Computing in Science Education and Computational Physics Research Group, Department of Physics, UiO
 #  at Department of Physics and Astronomy and FRIB, Michigan State University, USA, and Department of Physics and Center for Computing in Science Education,
 # University of Oslo, Norway
-DATE: today
+DATE: March 5, 2024
 
 !split
 ===== What is this talk about? =====
