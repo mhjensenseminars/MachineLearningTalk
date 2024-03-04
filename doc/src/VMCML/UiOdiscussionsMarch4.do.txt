@@ -166,7 +166,7 @@ o Quantum sensing is a very active research direction with potential discoveries
 o Basic quantum science
 o Quantum materials
 o Quantum sensing
-o Quantum communication and encrypotion
+o Quantum communication and cryptography
 o Quantum computing
 !eblock
 
@@ -182,18 +182,20 @@ o Quantum Chemistry and Hylleraas center
 o Physics and QSpin center
 !eblock
 
+UiB? USN?, UiS?
+
 !split
 ===== Quantum materials =====
 
 !bblock Universities
 o UiO: SMN, LENS, NAFUMA and structure physics
-o NTNU: Institutt for elektroniske systemer, QSpin
+o NTNU: Physics and QSpin, Department of Electronic Systems
 !eblock
 
-!bblock Research institutes and other (public and private)
+!bblock Research institutes and companies (public and private)
 o SINTEF
-o Norwegian Metrology Servicet
-o FFI and more
+o Norwegian Metrology Service
+o Norwegian Defense Research Establishment and more
 !eblock
 
 
@@ -205,68 +207,50 @@ o UiO: SMN, LENS
 o USN: Quantum technology group
 !eblock
 
-!bblock Research institutes and other (public and private)
+!bblock Research institutes and companies (public and private)
 o SINTEF
-o Norwegian Metrology Servicet
-o FFI and more
+o Kongsberg group
+o Norwegian Metrology Service
+o Norwegian Defense Research Establishment
+o Equinor, Tomra, Jotne, Sony and more
 !eblock
 
 
+!split
+===== Quantum communication and cryptography =====
 
-Kvantesensorer
-Akademiske aktører
-▪ UiO
-o SMN, LENS
-▪ USN
-o Gruppe for Kvanteteknologi
-Andre interessenter
-▪ SINTEF
-▪ Kongsberg
-▪ Justervesenet
-▪ FFI
-▪ Equinor
-▪ Tomra
-▪ Jotne
-▪ Sony
-▪ … og mange flere
+!bblock Universities
+o UiO: Math, Physics and LENS
+o NTNU: Department of Electronic Systems
+!eblock
 
-Kvantekommunikasjon og kvantekryptering
-Akademiske aktører
-▪ UiO
-o Kondenserte faser
-o LENS
-▪ NTNU
-o Institutt for elektroniske systemer
-Andre interessenter
-▪ Justervesenet
-▪ FFI
-▪ NSM
-
-Kvanteberegninger
-Akademiske aktører
-▪ OsloMet
-▪ UiO
-oCCSE
-oKondenserte faser
-o
-Andre interessenter
-▪ Simula
-▪ SINTEF
-▪ DNB
-▪ Norges Bank
-▪ Ruter
-▪ Oljefondet
-▪ … og mange flere
-
+!bblock Research institutes and companies (public and private)
+o SINTEF
+o Simula
+o Norwegian Metrology Service
+o Norwegian Defense Research Establishment
+o IBM, Microsoft and other
+o Bank of Norway, DNB, insurance companies and more
+!eblock
 
 !split
-==== What do we have? =====
+===== Quantum computing =====
 
-o Experimental activity
-  o Quantum dots as candidate systems for quantum technologies
-  o Point Defects in semiconductors
-  o Sensors
-o Theoretical activities
+!bblock Universities
+o UiO: Math, Physics and CCSE, Quantum Chemistry and Hylleraas
+o NTNU: Qspin
+o OsloMet
+!eblock
+
+!bblock Research institutes and companies (public and private)
+o SINTEF
+o Simula
+o Norwegian Metrology Service
+o Norwegian Defense Research Establishment
+o IBM, Microsoft and other
+o Bank of Norway, DNB, insurance companies and more
+!eblock
+
 
 
 !split
@@ -277,6 +261,8 @@ o _New study direction on Quantum technology_ in Bachelor program Physis and Ast
   * FYS3405/4405 Quantum Materials
   * FYS3415/4415 Quantum Computing
 o _Developed Master of Science program on Computational Science_, started fall  2018 and many students here work on quantum computing and machine learning
+o New study direction in Physics Master on Quantum Science and technologies
+o New study direction in Computational Science program on AI and QT
 o Developed courses on machine learning, from basic to advanced ones, FYS-STK3155/4155 and FYS5429/9429
 o Developed advanced course on quantum computing and quantum machine learning, FYS5419/9419
 o Since 2019 organized and taught more than twenty  international schools and intensive courses on quantum computing and machine learning
