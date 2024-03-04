@@ -297,6 +297,8 @@ o Collaborations with companies like IBM and other universities, see for example
 !split
 ===== Possible questions for discussion =====
 
-o Should we focus only on QT or try to be broader (that is AI+QT)?
+o Should we focus only on QT or try to be broader (that is AI+QT)? And can we link them well? 
 o Can we develop educational modules (courses, certificates, degrees and more) in AI and/or QT for people outside universities?
 o Should we establish a working group which prepares the ground for an eventual call?
+o Most likely separate SFI application SMN+SINTEF on quantum sensing (Lasse says more about this).
+o What about an SFI on just quantum technologies+quantum sensing for a regular SFI call?
