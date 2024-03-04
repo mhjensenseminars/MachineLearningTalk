@@ -17,25 +17,11 @@ These slides and more at URL:"http://mhjensenseminars.github.io/MachineLearningT
 
 
 !split
-===== People  =====
-
-!bblock UiO
-o Morten Hjorth-Jensen (theory),  Lasse Vines, Marianne Bathen Etzelmueller, Justin Wells  and David Gongarra (experiment)
-o Four theory PhD students (2019-2025), one PD shared with Lasse Vines' QuTE project.
-o Nine  master of science students  (theory), many-body physics, quantum computing, quantum machine learning and machine learning
-!eblock
-!bblock MSU
-o Dean Lee, Scott Bogner, Angela Wilson and Heiko Hergert, theory and Johannes Pollanen and Niyaz Beysengulov, experiment
-o Four PhD students working on quantum computing and machine learning (theory)
-!eblock
-Since 2020, final thesis of three PhD students (MSU) and ten master of science students (UiO).
-
-!split
 ===== Thanks to many =====
 
 Jane Kim (MSU), Julie Butler (MSU), Patrick Cook (MSU), Danny Jammooa (MSU), Daniel Bazin (MSU), Dean Lee (MSU), Witek Nazarewicz (MSU), Michelle Kuchera (Davidson College), Even Nordhagen (UiO), Robert Solli (UiO, Expert Analytics), Bryce Fore (ANL), Alessandro Lovato (ANL), Stefano Gandolfi (LANL), Francesco Pederiva (UniTN), and Giuseppe Carleo (EPFL). 
 Niyaz Beysengulov and Johannes Pollanen (experiment, MSU); Zachary Stewart, Jared Weidman, and Angela Wilson (quantum chemistry, MSU)
-Jonas Flaten, Oskar, Leinonen, Øyvind Sigmundson Schøyen, Stian Dysthe Bilek, and Håkon Emil Kristiansen (UiO). Marianne Bathen and Lasse Vines (experiments (UiO). Excuses to those I have omitted.
+Jonas Flaten, Oskar, Leinonen, Christopher Linder\"alv, Øyvind Sigmundson Schøyen, Stian Dysthe Bilek, and Håkon Emil Kristiansen (UiO). Marianne Bathen, David Gongarra, Lasse Vines, and Justin Wells (experiments (UiO). Excuses to those I have omitted.
 
 !split
 ===== And sponsors =====
