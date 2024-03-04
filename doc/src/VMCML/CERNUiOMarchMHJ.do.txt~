@@ -1,0 +1,107 @@
+TITLE: Quantum computing, Machine Learning and Quantum Machine Learning at UiO
+AUTHOR: Center for Computing in Science Education and Computational Physics Research Group, Department of Physics, UiO
+#  at Department of Physics and Astronomy and FRIB, Michigan State University, USA, and Department of Physics and Center for Computing in Science Education,
+# University of Oslo, Norway
+DATE: today
+
+
+!split
+===== People  =====
+
+!bblock UiO
+o Morten Hjorth-Jensen (theory),  Lasse Vines, Marianne Bathen Etzelmueller, Justin Wells  and David Gongarra (experiment)
+o Four theory PhD students (2019-2025), one PD shared with Lasse Vines' QuTE project.
+o Nine  master of science students  (theory), many-body physics, quantum computing, quantum machine learning and machine learning
+!eblock
+!bblock MSU
+o Dean Lee, Scott Bogner, Angela Wilson and Heiko Hergert, theory and Johannes Pollanen and Niyaz Beysengulov, experiment
+o Four PhD students working on quantum computing and machine learning (theory)
+!eblock
+Since 2020, final thesis of three PhD students (MSU) and ten master of science students (UiO).
+
+
+!split
+===== Educational strategies =====
+
+o _New study direction on Quantum technology_ in Bachelor program Physis and Astronomy, starts Fall 2024. Three new courses:
+  * FYS1400 Introduction to Quantum Technologies
+  * FYS3405/4405 Quantum Materials
+  * FYS3415/4415 Quantum Computing
+o _Developed Master of Science program on Computational Science_, started fall  2018 and many students here work on quantum computing and machine learning
+o Developed courses on machine learning, from basic to advanced ones, FYS-STK3155/4155 and FYS5429/9429
+o Developed advanced course on quantum computing and quantum machine learning, FYS5419/9419
+o Since 2019 organized and taught more than twenty  international schools and intensive courses on quantum computing and machine learning
+
+!split
+===== More on educational research and strategies  =====
+
+* Member of the National Science Foundation sponsored project QSTEAM, see URL:"https://qusteam.org/".
+
+  * Here we have over three years developed educational material for several basic courses in quantum technology, quantum computing and quantum information theory.
+  * This is a collaboration between several universities in the midwest and involves close to 60 university faculty
+
+The courses are aimed at undergraduate students in the STEM fields.
+
+
+!split
+===== Machine learning research =====
+
+o Solving complicated quantum mechanical many-body systems with deep learning, see references at the end
+o Developing new machine learning algorithms _with applications to quantum computing as well_
+o Analyzing experimental data from nuclear physics experiments, NIMA URL:"https://www.sciencedirect.com/science/article/abs/pii/S0168900221004460?via%3Dihub"
+o Predicting solid state material platforms for quantum technologies, Nature Computational Materials URL:"https://www.nature.com/articles/s41524-022-00888-3" 
+
+!split
+===== Quantum computing and quantum machine learning, main activities =====
+
+_How to use many-body theory to design quantum circuits (Quantum engineering)_
+o Many-body methods like F(ull)C(onfiguration)I(nteraction) theory  with
+  * Adaptive basis sets 
+  * Time dependence
+  * Optimization of experimental parameters 
+  * Feedback from experiment
+o Finding optimal parameters for tuning of entanglement 
+o Numerical experiments to mimick real systems, quantum twins
+o Constructing quantum circuits to simulate specific systems
+o Quantum machine learning to optimize quantum circuits
+
+
+
+!split
+===== Candidate systems at UiO and MSU =====
+
+!bblock
+o _Quantum dots, experiments at MSU and UiO_
+o _Point Defects in semiconductors, experiments at UiO_
+o Recent article Coulomb interaction-driven entanglement of electrons on helium, see URL:"https://arxiv.org/abs/2310.04927", and submitted to Physical Review X Quantum
+!eblock
+
+
+!split
+===== Selected references =====
+!bblock
+* "Artificial Intelligence and Machine Learning in Nuclear Physics, Amber Boehnlein et al., Reviews Modern of Physics 94, 031003 (2022)":"https://journals.aps.org/rmp/abstract/10.1103/RevModPhys.94.031003" 
+* "Dilute neutron star matter from neural-network quantum states by Fore et al, Physical Review Research 5, 033062 (2023)":"https://journals.aps.org/prresearch/pdf/10.1103/PhysRevResearch.5.033062"
+* "Neural-network quantum states for ultra-cold Fermi gases, Jane Kim et al, Nature Physics Communication, in press":"https://doi.org/10.48550/arXiv.2305.08831"
+* "Message-Passing Neural Quantum States for the Homogeneous Electron Gas, Gabriel Pescia, Jane Kim et al. arXiv.2305.07240,":"https://doi.org/10.48550/arXiv.2305.07240"
+* "Efficient solutions of fermionic systems using artificial neural networks, Nordhagen et al, Frontiers in Physics 11, 2023":"https://doi.org/10.3389/fphy.2023.1061580"
+!eblock
+
+
+!split
+===== More selected references =====
+!bblock
+* "Unsupervised learning for identifying events in active target experiments, R. Solli et al, Nuclear Instruments and Methods Physics A":"https://www.sciencedirect.com/science/article/abs/pii/S0168900221004460?via%3Dihub"
+* "Coulomb interaction-driven entanglement of electrons on helium":"https://arxiv.org/abs/2310.04927", and submitted to Physical Review Research
+* "Predicting solid state material platforms for quantum technologies, Hebnes et al, Nature Computational Materials, 2022":"https://www.nature.com/articles/s41524-022-00888-3" 
+!eblock
+
+
+!split
+===== Machine Learning and Quantum Computing grants =====
+
+o 2021-2025 9M NOK from RCN, Norway, "QUantum emitters in semiconductors for future TEchnologies":"https://www.mn.uio.no/smn/english/research/projects/physics/325573-qute/index.html", co-PI
+o 2023-2025 1M USD from Department of Energy, USA, "STREAMLINE Collaboration: Machine Learning for Nuclear Many-Body Systems":"https://frib.msu.edu/news/2023/machine-learning.html#:~:text=For%20the%20grant%20supporting%20theoretical,in%20the%20cores%20of%20atoms", co-PI.
+o 2023-2026 450 kUSD from Department of Energy, USA, "Effective Field Theory and Renormalization Group Studies of Quantum Algorithms":"https://frib.msu.edu/news/2023/quantum-computing.html", co-PI.
+o 2020-2023 750 kUSD from the Department of Energy, USA, From Quarks to Stars; A Quantum Computing Approach to the Nuclear Many-Body Problem. PI.
+
