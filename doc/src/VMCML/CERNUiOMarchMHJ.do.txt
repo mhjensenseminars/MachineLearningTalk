@@ -309,6 +309,7 @@ FIGURE: [figures/elgasnew.png, width=700 frac=0.9]
 !split
 ===== Additional slides =====
 
+Here follows a set of slides various Machine Learning applications and some deep learning math.
 
 !split
 ===== Universal approximation theorem =====
