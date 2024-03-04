@@ -4,6 +4,17 @@ AUTHOR: Center for Computing in Science Education and Computational Physics Rese
 # University of Oslo, Norway
 DATE: today
 
+!split
+===== What is this talk about? =====
+!bblock
+The main emphasis is to give you a short and pedestrian introduction to the whys and hows we can use (with several examples) machine learning methods to solve quantum mechanical many-body problems
+in physics. And why this could (or should) be of interest. 
+!eblock
+
+!bblock
+These slides and more at URL:"http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/CERNUiOMarchMHJ"
+!eblock
+
 
 !split
 ===== People  =====
@@ -47,7 +58,7 @@ o Predicting solid state material platforms for quantum technologies, Nature Com
 ===== Quantum computing and quantum machine learning, main activities =====
 
 _How to use many-body theory to design quantum circuits (Quantum engineering)_
-o Many-body methods like F(ull)C(onfiguration)I(nteraction) theory  with
+o Many-body methods like F(ull)C(onfiguration)I(nteraction) theory, Coupled-Cluster theory and other  with
   * Adaptive basis sets 
   * Time dependence
   * Optimization of experimental parameters 
@@ -1047,4 +1058,6 @@ The function $p(X)$ on the right hand side is called the prior while the functio
 Predictions made with eleven global mass model and Bayesian model averaging
 
 FIGURE: [figures/landscape.jpg, width=800 frac=1.0]
+
+
 
