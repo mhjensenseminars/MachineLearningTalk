@@ -65,7 +65,7 @@ o Strong educational and training activities across disciplines
 o Many national and international collaborations across disciplines
 !eblock
 
-* Partners at UiO: Math, Informatics, Chemistry, Bioscience, Geoscience, ITA, DScience
+* Partners at UiO: Math, Informatics, Chemistry, Bioscience, Geoscience, ITA, DScience and more
 * Partners and collaborators outside UiO: CERN, SINTEF, OsloMet, SIMULA, Bank of Norway, DNB,  Norwegian Meteorological Institute and more
 
 !split
@@ -83,20 +83,20 @@ FIGURE: [figures/ML-NP.pdf, width=900 frac=1.0]
 ===== AI/ML for the Physical Sciences  =====
 
 !bblock
-o Analyzing data from experiments, see for example from subatomic physics NIMA URL:"https://www.sciencedirect.com/science/article/abs/pii/S0168900221004460?via%3Dihub"
+o Analyzing data from experiments, see for example from subatomic physics at URL:"https://www.sciencedirect.com/science/article/abs/pii/S0168900221004460?via%3Dihub"
 o Research on quantification of uncertainties
 o "Materials Science":"https://www.energy.gov/science/articles/search-engine-materials-data-how-materials-project-advances-research?utm_medium=email&utm_source=govdelivery". See for example Predicting solid state material platforms for quantum technologies, Nature Computational Materials URL:"https://www.nature.com/articles/s41524-022-00888-3"
 o Solving complicated quantum mechanical many-body systems with deep learning
-o Developing new ML  algorithms _with applications to quantum computing as well_
+o Developing new ML  algorithms with applications to quantum computing
 o Research on discriminative and generative AI/ML
-o Computational Neuroscience
+o Computational Neuroscience and more
 !eblock
 
 
 !split
 ===== Scientific Machine Learning =====
 
-An important and emerging field is what has been dubbed as scientific ML, see the article by Deiana et al "Applications and Techniques for Fast Machine Learning in Science, Big Data _5_, 787421 (2022):https://doi.org/10.3389/fdata.2022.787421"
+An important and emerging field is what has been dubbed as scientific ML, see the article by Deiana et al "Applications and Techniques for Fast Machine Learning in Science, Big Data _5_, 787421 (2022)":"https://doi.org/10.3389/fdata.2022.787421"
 
 !bblock
 The authors discuss applications and techniques for fast machine
@@ -142,7 +142,7 @@ o Simula
 !bblock
 * An important application of AI/ML methods is to improve the estimation of bias or uncertainty due to the introduction of or lack of physical constraints in various theoretical models.
 
-* In theory, we expect to use AI/ML algorithms and methods to improve our knowledge about  correlations of physical model parameters in data for quantum many-body systems. Deep learning methods show great promise in circumventing the exploding dimensionalities encountered in quantum mechanical many-body studies. 
+* In theory, we expect to use AI/ML algorithms and methods to improve our knowledge about  correlations of physical model parameters in data for quantum many-body systems. Deep learning methods show great promise in circumventing the exploding dimensionalities encountered in for example quantum mechanical many-body studies. 
 
 * Merging a frequentist approach (the standard path in ML theory) with a Bayesian approach, has the potential to infer better probabilitity distributions and error estimates. 
 
@@ -157,7 +157,7 @@ o Simula
 
 o We have at UiO extensive experimental, computational and theoretical activities in quantum science and technology
 o MiNaLab at UiO is one of the few experimental environments in Norway where we have a strong research activity on semiconductor based quantum technologies 
-o Quantum sensing is a very active research direction with potential discoveries
+o Quantum sensing is a very active research direction at UiO, with great potential for discoveries 
 
 !split
 ===== Five areas of quantum science and technology research in Norway =====
@@ -175,14 +175,14 @@ o Quantum computing
 
 !bblock UiO
 o Physics and CCSE
-o Quantum Chemistry and Hylleraas center
+o Chemistry and Hylleraas center
 !eblock
 
 !bblock NTNU
 o Physics and QSpin center
 !eblock
 
-UiB? USN?, UiS?
+UiB? USN? UiS? UiT? UiA?....
 
 !split
 ===== Quantum materials =====
@@ -237,7 +237,7 @@ o Bank of Norway, DNB, insurance companies and more
 ===== Quantum computing =====
 
 !bblock Universities
-o UiO: Math, Physics and CCSE, Quantum Chemistry and Hylleraas
+o UiO: Math, Physics and CCSE, Chemistry and Hylleraas
 o NTNU: Qspin
 o OsloMet
 !eblock
@@ -269,7 +269,7 @@ o Since 2018 organized and taught many international schools and intensive cours
 
 
 !split
-===== Important Issues to think of =====
+===== Important issues to think of =====
 
 o Lots of conceptual learning: superposition, entanglement, quantum applications, etc. Opens for Physics Education research studies
 o Coding is indispensable. 
@@ -286,10 +286,10 @@ o Students perceive that a graduate degree is necessary to work in QT. A BSc wil
 !split
 ===== Future needs a center or EDU program could address =====
 
-o There are already  great needs for specialized people (Ph. D. s, postdocs), but also needs of  people with a broad overview of what is possible in ML/AI and/or QT.
+o There are already  great needs for specialized people (PhDs, postdocs), but also needs of  people with a broad overview of what is possible in ML/AI and/or QT.
 o There are not enough potential employees in AI/ML and QT . It is a supply gap, not a skills gap.
 o A BSc with specialization  is a good place to start
-o It is tremendously important to get everyone speaking the same language. Facility with the vernacular of quantum mechanics is a big plus.
+o It is tremendously important to get everyone speaking the same language. Familiarity with the vernacular of quantum mechanics is a big plus.
 o There is a huge list of areas where technical expertise may be important. But employers are often more concerned with attributes like project management, working well in a team, interest in the field, and adaptability than in specific technical skills.
 o Collaborations with companies like IBM and other universities, see for example "IBM's partnership with universities":"https://newsroom.ibm.com/2023-11-27-The-University-of-Tokyo-Completes-Installation-of-127-Qubit-IBM-Quantum-Eagle-Processor".
 
