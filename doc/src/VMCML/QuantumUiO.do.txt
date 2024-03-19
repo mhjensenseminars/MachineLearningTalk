@@ -1013,3 +1013,550 @@ FIGURE: [figures/landscape.jpg, width=800 frac=1.0]
 
 
 
+!split
+===== Electrons (quantum dots) on superfluid helium =====
+
+Electrons on _superfluid helium represent_ (see URL:"https://www.youtube.com/watch?v=EuDuM-fe-lA&ab_channel=JoshuahHeath") a promising platform for investigating
+strongly-coupled qubits.
+
+A systematic investigation of the
+controlled generation of entanglement between two trapped electrons
+under the influence of coherent microwave driving pulses, taking into
+account the effects of the Coulomb interaction between electrons, may be of great interest for quantum information processing using
+trapped electrons.
+
+
+
+
+
+!split
+===== Experimental setup I =====
+
+FIGURE: [qcfigures/Elhelium1.png, width=700 frac=1.3]
+
+!split
+===== More on experimental setup II =====
+
+FIGURE: [qcfigures/Elhelium2.png, width=700 frac=1.3]
+
+!split
+===== More on experimental setup III =====
+
+FIGURE: [qcfigures/Elhelium3.png, width=700 frac=1.3]
+
+!split
+===== Experimental set up =====
+
+FIGURE: [qcfigures/figure1.png, width=600 frac=0.7]
+
+o (a) Schematic of the microdevice, where two electrons are trapped in a double-well potential created by electrodes 1-7. The read-out is provided by two superconducting resonators dispersively coupled to  electron's in-plane motional states.
+o (b) Coupling constants from each individual electrode beneath the helium layer.
+o (c+d) The electron's energy in a  double-well electrostatic potential (solid line). Dashed and dot-dashed lines represent the harmonic approximations of left and right wells respectively.
+
+
+
+
+
+
+
+!split
+===== Electrons on helium is another qubit platform =====
+
+_To our knowledge two qubit gates have never been discussed in a proper manner for these systems._
+
+!bblock
+The static Coulomb interaction arises from a virtual photon exchange
+ process between two charge particles according to quantum
+ electrodynamics. This results in a correlated motion of two charges
+ generating quantum entanglement. 
+!eblock
+
+!split
+===== Surface state electrons (SSE) =====
+
+!bblock
+Surface state electrons (SSE) 'floating' above liquid helium
+originates from quantization of electron's perpendicular to the
+surface motion in a trapping potential formed by attractive force from
+image charge and a large $\sim$ 1 eV barrier at the liquid-vacuum
+interface. At low temperatures the SSE are trapped in the lowest
+Rydberg state for vertical motion some 11 nm above the helium surface,
+which is perfectly clean and has a permittivity close to that of
+vacuum.
+!eblock
+
+!bblock
+The weak interaction with rthe enviroment, which is mainly governed
+by interaction with quantized surface capillary waves (ripplons) and
+bulk phonons, ensures long coherence times - a vital ingredient for
+any qubit platform. 
+!eblock
+
+
+!split
+===== Calculational details =====
+
+Hamiltonian:
+!bt
+\begin{align}
+\hat{H} &=\frac{\hat{p}_1^2}{2} + \sum_{i = 1}^7 V_i\alpha_i[\hat{x}_1] + \frac{\hat{p}_2^2}{2} + \sum_{i = 1}^7 V_i\alpha_i[\hat{x}_2] + \frac{\kappa}{\sqrt{(\hat{x}_1-\hat{x}_2)^2 + a^2}}\\
+&= h[\hat{p}_1,\hat{x}_1] + h[\hat{p}_2,\hat{x}_2] + u[\hat{x}_1,\hat{x}_2]
+\end{align}
+!et
+
+FIGURE: [qcfigures/well_basis.png, width=600 frac=0.8]
+
+
+!split
+===== Calculational details =====
+
+Hamiltonian:
+!bt
+\begin{align}
+\hat{H} &= \frac{\hat{p}_1^2}{2} + v[\hat{x}_1] + \frac{\hat{p}_2^2}{2} + v[\hat{x}_2] + \frac{\kappa}{\sqrt{(\hat{x}_1-\hat{x}_2)^2 + a^2}}\\
+&= h[\hat{p}_1,\hat{x}_1] + h[\hat{p}_2,\hat{x}_2] + u[\hat{x}_1,\hat{x}_2]
+\end{align}
+!et
+
+FIGURE: [qcfigures/wells.png, width=600 frac=0.8]
+
+
+!split
+===== Calculational details =====
+
+Hamiltonian:
+!bt
+\begin{align}
+\hat{H} &= \frac{\hat{p}_1^2}{2} + v[\hat{x}_1] + \frac{\hat{p}_2^2}{2} + v[\hat{x}_2] + \frac{\kappa}{\sqrt{(\hat{x}_1-\hat{x}_2)^2 + a^2}} \\
+&\equiv h[\hat{p}_1,\hat{x}_1] + h[\hat{p}_2,\hat{x}_2] + u[\hat{x}_1,\hat{x}_2]
+\end{align}
+!et
+
+Energy states:
+!bt
+\begin{equation}
+\vert\Phi_k\rangle = \sum_{i < j} C_{ij, k}\frac{\vert \varphi_i \varphi_j\rangle - \vert \varphi_j \varphi_i\rangle}{\sqrt{2}},
+\end{equation}
+!et
+(Slater basis)
+
+
+!split
+===== Calculational details =====
+
+Hamiltonian:
+!bt
+\begin{align}
+\hat{H} &= \frac{\hat{p}_1^2}{2} + v^L[\hat{x}_1] + \frac{\hat{p}_2^2}{2} + v^R[\hat{x}_2] + \frac{\kappa}{\sqrt{(\hat{x}_1-\hat{x}_2)^2 + a^2}} \\
+&\equiv h^L[\hat{p}_1,\hat{x}_1] + h^R[\hat{p}_2,\hat{x}_2] + u[\hat{x}_1,\hat{x}_2]
+\end{align}
+!et
+
+Energy states:
+!bt
+\begin{equation}
+\vert\Phi_k\rangle = \sum_{i} \sum_{j} C_{ij, k}\vert \varphi^L_i \varphi^R_j\rangle,
+\end{equation}
+!et
+(product basis)
+
+
+!split
+===== Calculational details =====
+
+Energy states:
+!bt
+\begin{equation}
+\vert\Phi_k\rangle = \sum_{i} \sum_{j} C_{ij, k}\vert \varphi^L_i \varphi^R_j\rangle,
+\end{equation}
+!et
+(product basis)
+
+FIGURE: [qcfigures/Hartree_states.png, width=700 frac=0.9]
+
+
+!split
+===== Calculational details =====
+
+Hamiltonian:
+!bt
+\begin{align}
+\hat{H} &= \frac{\hat{p}_1^2}{2} + v^L[\hat{x}_1] + \frac{\hat{p}_2^2}{2} + v^R[\hat{x}_2] + \frac{\kappa}{\sqrt{(\hat{x}_1-\hat{x}_2)^2 + a^2}} \\
+&\equiv h^L[\hat{p}_1,\hat{x}_1] + h^R[\hat{p}_2,\hat{x}_2] + u[\hat{x}_1,\hat{x}_2]
+\end{align}
+!et
+
+Energy states:
+!bt
+\begin{equation}
+\vert\Phi_k\rangle = \sum_{i} \sum_{j} C_{ij, k}\vert \varphi^L_i \varphi^R_j\rangle,
+\end{equation}
+!et
+(Hartree basis)
+
+
+!split
+===== Calculational details =====
+
+Hamiltonian:
+!bt
+\begin{align}
+\hat{H} &= \frac{\hat{p}_1^2}{2} + v^L[\hat{x}_1] + \frac{\hat{p}_2^2}{2} + v^R[\hat{x}_2] + \frac{\kappa}{\sqrt{(\hat{x}_1-\hat{x}_2)^2 + a^2}} \\
+&\equiv h^L[\hat{p}_1,\hat{x}_1] + h^R[\hat{p}_2,\hat{x}_2] + u[\hat{x}_1,\hat{x}_2]
+\end{align}
+!et
+
+Energy states:
+!bt
+\begin{equation}
+\vert\Phi_k\rangle = \sum_{i = 0}^{N^L} \sum_{j = 0}^{N^R} C_{ij, k}\vert \varphi^L_i \varphi^R_j\rangle,
+\end{equation}
+!et
+(Hartree basis)
+
+
+!split
+===== Calculational details =====
+
+Energy states:
+!bt
+\begin{equation}
+\vert\Phi_k\rangle = \sum_{i = 0}^{N^L} \sum_{j = 0}^{N^R} C_{ij, k}\vert \varphi^L_i \varphi^R_j\rangle,
+\end{equation}
+!et
+(Hartree basis)
+
+FIGURE: [qcfigures/Hartree_coefs.png, width=700 frac=0.7]
+
+
+!split
+===== Calculational details =====
+
+Hamiltonian:
+!bt
+\begin{align}
+\hat{H} &= \frac{\hat{p}_1^2}{2} + v^L[\hat{x}_1] + \frac{\hat{p}_2^2}{2} + v^R[\hat{x}_2] + \frac{\kappa}{\sqrt{(\hat{x}_1-\hat{x}_2)^2 + a^2}} \\
+&\equiv h^L[\hat{p}_1,\hat{x}_1] + h^R[\hat{p}_2,\hat{x}_2] + u[\hat{x}_1,\hat{x}_2]
+\end{align}
+!et
+
+Energy states:
+!bt
+\begin{equation}
+\vert\Phi_k\rangle = \sum_{i = 0}^{N^L} \sum_{j = 0}^{N^R} C_{ij, k}\vert \varphi^L_i \varphi^R_j\rangle,
+\end{equation}
+!et
+(Hartree basis)
+
+
+!split
+===== Results and discussions =====
+By adjusting the potential we can change the anharmonicities and detuning of the wells.
+o What values of these give interesting interactions?
+o Inspiration from superconducting qubits, see High-Contrast $ZZ$ Interaction Using Superconducting Qubits with Opposite-Sign Anharmonicity, "Zhao et al Phys. Rev. Lett. 125, 200503":"https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.125.200503"
+
+!split
+We search for well configurations corresponding to three different types of interaction between the two electrons.
+
+o In configuration I we address both qubits independently and can thereby perform single-qubit state rotations and measurements.
+o Configurations II and III correspond to avoided level crossings between two ($E_{01}, E_{10}$) and three ($E_{11}, E_{20}, E_{02}$) energy levels respectively, where the electrons' motion becomes correlated, that is they are entangled. 
+
+Both anharmonicity and detuning changes with the shape of our well.
+We create a voltage parameterization
+!bt
+\begin{equation}
+V(\lambda) = (1-\lambda)V_\mathrm{I} + \lambda V_\mathrm{III}
+\end{equation}
+!et
+
+!split
+===== Entanglement and more  =====
+
+FIGURE: [qcfigures/crossings-entropies-anharmonicities-1.png, width=800 frac=0.7]
+
+
+!split
+===== Legend to figure =====
+
+o (a) In this figure we have plotted the transition energy from the ground state to the labeled excited state as a function of the voltage parameter $\lambda$. The labeled states are the computational basis states when $\lambda = 0$.
+o (b) The von Neumann entropy of the five lowest excited states of the two-body Hamiltonian as a function of the configuration parameter $\lambda$. The ground state has zero entropy, or close to zero entropy. We have included the points for the double and triple degeneracy points. $\lambda_{II}$ and $\lambda_{III}$ in the figure. The von Neumann entropy is calculated using the binary logarithm.
+o (c) In this figure we have plotted the anharmonicites for the left well ($\alpha^L$) and the right well ($\alpha^R$) as a function of the well parameterization $\lambda$. We have also included the detuning $\Delta \omega = \omega^R - \omega^L$ between the two wells. We have marked configuration II at $\lambda_{II} \approx 0.554$ and configuration III at $\lambda_{III} = 1$.
+
+
+!split
+===== Particle densities and coefficients =====
+
+FIGURE: [qcfigures/configuration_I-1.png, width=600 frac=0.7]
+
+!split
+===== Potential wells, the one-body densities, and single-particle states =====
+
+FIGURE: [qcfigures/configuration_II_and_III-1.png, width=600 frac=0.7]
+
+!split
+===== Where we are now =====
+
+o Adding time-dependent studies of two electrons in two wells in one and two dimensions
+o Studies of the time-evolution of entangled states (now two electrons only)
+o Use theory to find optimal experimental setup
+o Expect two-electron system realized experimentally in approx $1$ year, great potential for studies of quantum simulations
+
+!split
+===== Plans =====
+
+o Add two and three-dimensions in order to simulate in  a more realistic way such many-body systems.
+o Develop time-dependent FCI code, useful up to approximately 10 particles with _effective_ (and effective Hilbert space) Hamiltonians in two and three dimensions
+o Develop codes for studies of entanglement as function of time
+o Do tomogrophy and extract density matrix and compare with experiment.
+o Study the feasibility of various setups for quantum simulations of specific Hamiltonians such as the Lipkin model
+o For larger many-body systems, study for example time-dependent CC theory
+
+
+
+
+!split
+===== Addendum: Quantum Monte Carlo Motivation =====
+!bblock
+Given a hamiltonian $H$ and a trial wave function $\Psi_T$, the variational principle states that the expectation value of $\langle H \rangle$, defined through 
+!bt
+\[
+   \langle E \rangle =
+   \frac{\int d\bm{R}\Psi^{\ast}_T(\bm{R})H(\bm{R})\Psi_T(\bm{R})}
+        {\int d\bm{R}\Psi^{\ast}_T(\bm{R})\Psi_T(\bm{R})},
+\]
+!et
+is an upper bound to the ground state energy $E_0$ of the hamiltonian $H$, that is 
+!bt
+\[
+    E_0 \le \langle E \rangle.
+\]
+!et
+In general, the integrals involved in the calculation of various  expectation values  are multi-dimensional ones. Traditional integration methods such as the Gauss-Legendre will not be adequate for say the  computation of the energy of a many-body system.
+!eblock
+
+
+!split
+===== Quantum Monte Carlo Motivation =====
+!bblock Basic steps
+Choose a trial wave function
+$\psi_T(\bm{R})$.
+!bt
+\[
+   P(\bm{R},\bm{\alpha})= \frac{\left|\psi_T(\bm{R},\bm{\alpha})\right|^2}{\int \left|\psi_T(\bm{R},\bm{\alpha})\right|^2d\bm{R}}.
+\]
+!et
+This is our model, or likelihood/probability distribution function  (PDF). It depends on some variational parameters $\bm{\alpha}$.
+The approximation to the expectation value of the Hamiltonian is now 
+!bt
+\[
+   \langle E[\bm{\alpha}] \rangle = 
+   \frac{\int d\bm{R}\Psi^{\ast}_T(\bm{R},\bm{\alpha})H(\bm{R})\Psi_T(\bm{R},\bm{\alpha})}
+        {\int d\bm{R}\Psi^{\ast}_T(\bm{R},\bm{\alpha})\Psi_T(\bm{R},\bm{\alpha})}.
+\]
+!et
+!eblock
+
+
+!split
+===== Quantum Monte Carlo Motivation =====
+!bblock Define a new quantity
+!bt
+\[
+   E_L(\bm{R},\bm{\alpha})=\frac{1}{\psi_T(\bm{R},\bm{\alpha})}H\psi_T(\bm{R},\bm{\alpha}),
+\]
+!et
+called the local energy, which, together with our trial PDF yields
+!bt
+\[
+  \langle E[\bm{\alpha}] \rangle=\int P(\bm{R})E_L(\bm{R},\bm{\alpha}) d\bm{R}\approx \frac{1}{N}\sum_{i=1}^NE_L(\bm{R_i},\bm{\alpha})
+\]
+!et
+with $N$ being the number of Monte Carlo samples.
+!eblock
+
+!split
+===== The trial wave function =====
+!bblock
+We want to perform  a Variational Monte Carlo calculation of the ground state of two electrons in a quantum dot well with different oscillator energies, assuming total spin $S=0$.
+Our trial wave function has the following form
+!bt
+\begin{equation}
+   \psi_{T}(\bm{r}_1,\bm{r}_2) = 
+   C\exp{\left(-\alpha_1\omega(r_1^2+r_2^2)/2\right)}
+   \exp{\left(\frac{r_{12}}{(1+\alpha_2 r_{12})}\right)}, 
+label{eq:trial}
+\end{equation}
+!et
+where the variables $\alpha_1$ and $\alpha_2$ represent our variational parameters.
+
+Why does the trial function look like this? How did we get there? _This is one of our main motivations_ for switching to
+Machine Learning.
+
+!eblock
+
+!split
+===== The correlation part of the wave function =====
+
+To find an ansatz for the correlated part of the wave function, it is useful to rewrite the two-particle
+local energy in terms of the relative and center-of-mass motion.
+Let us denote the distance between the two electrons as
+$r_{12}$. We omit the center-of-mass motion since we are only interested in the case when
+$r_{12} \rightarrow 0$. The contribution from the center-of-mass (CoM) variable $\bm{R}_{\mathrm{CoM}}$
+gives only a finite contribution.
+We focus only on the terms that are relevant for $r_{12}$ and for three dimensions. The relevant local energy operator becomes then (with $l=0$)
+!bt
+\[
+\lim_{r_{12} \rightarrow 0}E_L(R)=
+    \frac{1}{{\cal R}_T(r_{12})}\left(-2\frac{d^2}{dr_{ij}^2}-\frac{4}{r_{ij}}\frac{d}{dr_{ij}}+
+\frac{2}{r_{ij}}\right){\cal R}_T(r_{12}).
+\]
+!et
+In order to avoid divergencies when $r_{12}\rightarrow 0$ we obtain  the so-called _cusp_ condition
+!bt
+\[
+\frac{d {\cal R}_T(r_{12})}{dr_{12}} = \frac{1}{2}
+{\cal R}_T(r_{12})\qquad r_{12}\to 0
+\]
+!et
+
+!split
+===== Resulting ansatz =====
+The above  results in
+!bt
+\[
+{\cal R}_T  \propto \exp{(r_{ij}/2)}, 
+\]
+!et 
+for anti-parallel spins and 
+!bt
+\[
+{\cal R}_T  \propto \exp{(r_{ij}/4)}, 
+\]
+!et
+for anti-parallel spins. 
+This is the so-called cusp condition for the relative motion, resulting in a minimal requirement
+for the correlation part of the wave fuction.
+For general systems containing more than say two electrons, we have this
+condition for each electron pair $ij$.
+
+
+
+
+
+!split
+===== Energy derivatives =====
+!bblock
+To find the derivatives of the local energy expectation value as function of the variational parameters, we can use the chain rule and the hermiticity of the Hamiltonian.  
+
+Let us define (with the notation $\langle E[\bm{\alpha}]\rangle =\langle  E_L\rangle$)
+!bt
+\[
+\bar{E}_{\alpha_i}=\frac{d\langle  E_L\rangle}{d\alpha_i},
+\]
+!et
+as the derivative of the energy with respect to the variational parameter $\alpha_i$
+We define also the derivative of the trial function (skipping the subindex $T$) as 
+!bt
+\[
+\bar{\Psi}_{i}=\frac{d\Psi}{d\alpha_i}.
+\]
+!et  
+!eblock
+
+
+!split
+===== Derivatives of the local energy ===== 
+!bblock
+The elements of the gradient of the local energy are then (using the chain rule and the hermiticity of the Hamiltonian)
+!bt
+\[
+\bar{E}_{i}= 2\left( \langle \frac{\bar{\Psi}_{i}}{\Psi}E_L\rangle -\langle \frac{\bar{\Psi}_{i}}{\Psi}\rangle\langle E_L \rangle\right).
+\]
+!et
+From a computational point of view it means that you need to compute the expectation values of 
+!bt
+\[
+\langle \frac{\bar{\Psi}_{i}}{\Psi}E_L\rangle,
+\]
+!et
+and
+!bt
+\[
+\langle \frac{\bar{\Psi}_{i}}{\Psi}\rangle\langle E_L\rangle
+\]
+!et
+These integrals are evaluted using MC intergration (with all its possible error sources). 
+We can then use methods like stochastic gradient or other minimization methods to find the optimal variational parameters (I don't discuss this topic here, but these methods are very important in ML). 
+!eblock
+
+!split
+===== How do we define our cost function? =====
+!bblock
+We have a model, our likelihood function. 
+
+How should we define the cost function?
+
+!eblock
+
+!split
+===== Meet the variance and its derivatives  =====
+!bblock Why the variance?
+Suppose the trial function (our model) is the exact wave function. The action of the hamiltionan
+on the wave function
+!bt
+\[
+   H\Psi = \mathrm{constant}\times \Psi,
+\]
+!et
+The integral which defines various 
+expectation values involving moments of the hamiltonian becomes then
+!bt
+\[
+   \langle E^n \rangle =   \langle H^n \rangle =
+   \frac{\int d\bm{R}\Psi^{\ast}(\bm{R})H^n(\bm{R})\Psi(\bm{R})}
+        {\int d\bm{R}\Psi^{\ast}(\bm{R})\Psi(\bm{R})}=
+\mathrm{constant}\times\frac{\int d\bm{R}\Psi^{\ast}(\bm{R})\Psi(\bm{R})}
+        {\int d\bm{R}\Psi^{\ast}(\bm{R})\Psi(\bm{R})}=\mathrm{constant}.
+\]
+!et
+_This gives an important information: If I want the variance, the exact wave function leads to zero variance!_
+The variance is defined as 
+!bt
+\[
+\sigma_E = \langle E^2\rangle - \langle E\rangle^2.
+\]
+!et
+Variation is then performed by minimizing both the energy and the variance.
+
+!eblock
+
+
+!split
+===== The variance defines the cost function  =====
+!bblock 
+We can then take the derivatives of 
+!bt
+\[
+\sigma_E = \langle E^2\rangle - \langle E\rangle^2,
+\]
+!et
+with respect to the variational parameters. The derivatives of the variance can then be used to defined the
+so-called Hessian matrix, which in turn allows us to use minimization methods like Newton's method or 
+standard gradient methods. 
+
+This leads to however a more complicated expression, with obvious errors when evaluating integrals by Monte Carlo integration. Less used, see however "Filippi and Umrigar":"https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.94.150201". The expression becomes complicated
+!bt
+\begin{align}
+\bar{E}_{ij} &= 2\left[ \langle (\frac{\bar{\Psi}_{ij}}{\Psi}+\frac{\bar{\Psi}_{j}}{\Psi}\frac{\bar{\Psi}_{i}}{\Psi})(E_L-\langle E\rangle)\rangle -\langle \frac{\bar{\Psi}_{i}}{\Psi}\rangle\bar{E}_j-\langle \frac{\bar{\Psi}_{j}}{\Psi}\rangle\bar{E}_i\right] \\ \nonumber
+&+\langle \frac{\bar{\Psi}_{i}}{\Psi}E_L{_j}\rangle +\langle \frac{\bar{\Psi}_{j}}{\Psi}E_L{_i}\rangle -\langle \frac{\bar{\Psi}_{i}}{\Psi}\rangle\langle E_L{_j}\rangle \langle \frac{\bar{\Psi}_{j}}{\Psi}\rangle\langle E_L{_i}\rangle.  
+\end{align}
+!et
+
+Evaluating the cost function means having to evaluate the above second derivative of the energy. 
+
+!eblock
+
+
+
+
+
