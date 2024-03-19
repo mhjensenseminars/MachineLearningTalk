@@ -1,0 +1,304 @@
+TITLE: Discussions on SFIs, Machine Learning and Artificial Intelligence, Quantum Technologies and more
+AUTHOR: Department of Physics, UiO
+#  at Department of Physics and Astronomy and FRIB, Michigan State University, USA, and Department of Physics and Center for Computing in Science Education,
+# University of Oslo, Norway
+DATE: today
+
+
+!split
+===== Background =====
+
+The Research Council of Norway released on February 8, 2024, a notice about new centers for innovation.
+In the "original timeline":"https://www.forskningsradet.no/forskningspolitikk-strategi/ltp/kunstig-intelligens/", a tentative deadline for calls was end of February 2024.
+
+!split
+===== Summary from press release Feb 8 (in Norwegian) ===== 
+
+o AI-milliarden skal i hovedsak innrettes som utfordringsrettede sentra for kunstig intelligens.
+
+o Det skal utlyses 4-6 femårige, tverrfaglige og tverrsektorielle KI-sentre innenfor en ramme på 850 MNOK. Sentra kan ha ulik størrelse.
+
+o Disponering av resterende midler kan for eksempel omfatte forskerskoler, internasjonalt samarbeid og koordinering.
+
+Styret ber administrasjonen og porteføljestyret identifisere muligheter for supplerende finansiering av sentrene og av satsingen.
+Styret ber administrasjonen foreslå mekanismer for koordinering, dialog, nasjonal og internasjonal synlighet av norsk KI-forskning og KI-innovasjon, og legge dette frem for Styret medio 2024.
+
+
+!split
+===== Three main paths  =====
+
+o Research into the consequences of artificial intelligence and other digital technologies for society. Central themes will be democracy, trust, ethics, economy, legal certainty, legal regulations, privacy, _teaching and learning_, arts and culture.
+
+o Digital technologies as a research area in itself, i.e. _research into artificial intelligence_, _digital security_, _next generation information technologies_, _new sensors and quantum technologies_.
+
+o Research on how digital technologies can be used for _innovation_ in business and the public sector and how _artificial intelligence can be used in research in different disciplines_
+
+
+!split
+===== Educational initiatives and international cooperation =====
+
+In addition to the AI centers, 150 MNOK will go to other things. This
+can for example include research schools, international cooperations
+and coordinations.
+
+
+!split
+===== What can it be? =====
+
+_Center for Artificial Intelligence and Quantum Technology (CAIQT)_
+
+
+Artificial intelligence and quantum technology are revolutionizing our
+life and work. They offer enormous advantages for science, economy,
+politics and civil society.
+The challenges and opportunities in the field of artificial
+intelligence and quantum technology call for new kinds of cooperation and new research directions.
+
+
+!split
+===== Our strengths =====
+
+!bblock Several research activities on AI/ML for the physical sciences
+o Research, applications and development of new methods in AI/ML
+o Research and development of quantum information science/technologies
+o Strong educational and training activities across disciplines
+o Many national and international collaborations across disciplines
+!eblock
+
+* Partners at UiO: Math, Informatics, Chemistry, Bioscience, Geoscience, ITA, DScience and more
+* Partners and collaborators outside UiO: CERN, SINTEF, OsloMet, SIMULA, Bank of Norway, DNB,  Norwegian Meteorological Institute and more
+
+!split
+===== AI/Machine learning. A simple perspective on the interface between ML and Physics =====
+
+FIGURE: [figures/mlimage.png, width=800 frac=1.0]
+
+
+!split
+===== AI/ML in Nuclear  Physics (or any field in physics) =====
+
+FIGURE: [figures/ML-NP.pdf, width=900 frac=1.0]
+
+!split
+===== AI/ML for the Physical Sciences  =====
+
+!bblock
+o Analyzing data from experiments, see for example from subatomic physics at URL:"https://www.sciencedirect.com/science/article/abs/pii/S0168900221004460?via%3Dihub"
+o Research on quantification of uncertainties
+o "Materials Science":"https://www.energy.gov/science/articles/search-engine-materials-data-how-materials-project-advances-research?utm_medium=email&utm_source=govdelivery". See for example Predicting solid state material platforms for quantum technologies, Nature Computational Materials URL:"https://www.nature.com/articles/s41524-022-00888-3"
+o Solving complicated quantum mechanical many-body systems with deep learning
+o Developing new ML  algorithms with applications to quantum computing
+o Research on discriminative and generative AI/ML
+o Computational Neuroscience and more
+!eblock
+
+
+!split
+===== Scientific Machine Learning =====
+
+An important and emerging field is what has been dubbed as scientific ML, see the article by Deiana et al "Applications and Techniques for Fast Machine Learning in Science, Big Data _5_, 787421 (2022)":"https://doi.org/10.3389/fdata.2022.787421"
+
+!bblock
+The authors discuss applications and techniques for fast machine
+learning (ML) in science -- the concept of integrating power ML
+methods into the real-time experimental data processing loop to
+accelerate scientific discovery. The report covers three main areas
+
+o applications for fast ML across a number of scientific domains;
+o techniques for training and implementing performant and resource-efficient ML algorithms;
+o and computing architectures, platforms, and technologies for deploying these algorithms.
+!eblock
+
+!split
+===== ML for detectors =====
+
+FIGURE: [figures/detectors.png, width=900 frac=1.0]
+
+
+
+!split
+===== Physics informed Machine Learning =====
+
+Another hot topic is what has loosely been dubbed _Physics-informed  deep learning_.
+
+It bridges the gap between first-principles based approaches and
+data-driven approaches. By incorporating physics information, machine
+learning models are encouraged towards solutions that are also
+physically meaningful and robust to uncertainties in the data.
+
+See the recent work on "Physics-informed Machine Learning":"https://www.nature.com/articles/s42254-021-00314-5".
+
+!bblock Collaborations 
+o SINTEF
+o Norwegian Meteorological Institute
+o Simula
+!eblock
+
+
+
+!split
+===== And more   =====
+
+!bblock
+* An important application of AI/ML methods is to improve the estimation of bias or uncertainty due to the introduction of or lack of physical constraints in various theoretical models.
+
+* In theory, we expect to use AI/ML algorithms and methods to improve our knowledge about  correlations of physical model parameters in data for quantum many-body systems. Deep learning methods show great promise in circumventing the exploding dimensionalities encountered in for example quantum mechanical many-body studies. 
+
+* Merging a frequentist approach (the standard path in ML theory) with a Bayesian approach, has the potential to infer better probabilitity distributions and error estimates. 
+
+* Machine Learning and Quantum Computing is a very interesting avenue to explore. See for example a recent talk by "Sofia Vallecorsa":"https://www.youtube.com/watch?v=7WPKv1Q57os&list=PLUPPQ1TVXK7uHwCTccWMBud-zLyvAf8A2&index=5&ab_channel=ECTstar".
+!eblock
+
+
+
+
+!split
+===== Quantum technologies: what do we have? =====
+
+o We have at UiO extensive experimental, computational and theoretical activities in quantum science and technology
+o MiNaLab at UiO is one of the few experimental environments in Norway where we have a strong research activity on semiconductor based quantum technologies 
+o Quantum sensing is a very active research direction at UiO, with great potential for discoveries 
+
+!split
+===== Five areas of quantum science and technology research in Norway =====
+
+!bblock
+o Basic quantum science
+o Quantum materials
+o Quantum sensing
+o Quantum communication and cryptography
+o Quantum computing
+!eblock
+
+!split
+===== Main academic institutions and centers for basic quantum science =====
+
+!bblock UiO
+o Physics and CCSE
+o Chemistry and Hylleraas center
+!eblock
+
+!bblock NTNU
+o Physics and QSpin center
+!eblock
+
+UiB? USN? UiS? UiT? UiA?....
+
+!split
+===== Quantum materials =====
+
+!bblock Universities
+o UiO: LENS, NAFUMA and structure physics, all at SMN
+o NTNU: Physics and QSpin, Department of Electronic Systems
+!eblock
+
+!bblock Research institutes and companies (public and private)
+o SINTEF
+o Norwegian Metrology Service
+o Norwegian Defense Research Establishment and more
+!eblock
+
+
+!split
+===== Quantum sensing =====
+
+!bblock Universities
+o UiO: LENS at SMN
+o USN: Quantum technology group
+!eblock
+
+!bblock Research institutes and companies (public and private)
+o SINTEF
+o Kongsberg group
+o Norwegian Metrology Service
+o Norwegian Defense Research Establishment
+o Equinor, Tomra, Jotne, Sony and more
+!eblock
+
+
+!split
+===== Quantum communication and cryptography =====
+
+!bblock Universities
+o UiO: Math, Physics and LENS at SMN
+o NTNU: Department of Electronic Systems
+!eblock
+
+!bblock Research institutes and companies (public and private)
+o SINTEF
+o Simula
+o Norwegian Metrology Service
+o Norwegian Defense Research Establishment
+o IBM, Microsoft and other
+o Bank of Norway, DNB, insurance companies and more
+!eblock
+
+!split
+===== Quantum computing =====
+
+!bblock Universities
+o UiO: Math, Physics and CCSE, Chemistry and Hylleraas
+o NTNU: Qspin
+o OsloMet
+!eblock
+
+!bblock Research institutes and companies (public and private)
+o SINTEF
+o Simula
+o Norwegian Metrology Service
+o Norwegian Defense Research Establishment
+o IBM, Microsoft and other
+o Bank of Norway, DNB, insurance companies and more
+!eblock
+
+
+
+!split
+===== Education, what do we have? =====
+
+o _New study direction on Quantum technology_ in Bachelor program Physis and Astronomy, starts Fall 2024. Three new courses:
+  * FYS1400 Introduction to Quantum Technologies
+  * FYS3405/4405 Quantum Materials
+  * FYS3415/4415 Quantum Computing
+o _Developed Master of Science program on Computational Science_, started fall  2018 and many students here work on quantum computing and machine learning
+o New study direction in Physics Master on Quantum Science and technologies
+o New study direction in Computational Science program on AI and QT
+o Developed courses on machine learning, from basic to advanced ones, FYS-STK3155/4155 and FYS5429/9429
+o Developed advanced course on quantum computing and quantum machine learning, FYS5419/9419
+o Since 2018 organized and taught many international schools and intensive courses on quantum computing and machine learning
+
+
+!split
+===== Important issues to think of =====
+
+o Lots of conceptual learning: superposition, entanglement, quantum applications, etc. Opens for Physics Education research studies
+o Coding is indispensable. 
+o Teamwork, project management, and communication are important and highly valued
+o Engagement with industry: guest lectures, virtual tours, co-ops, and/or internships.
+
+!split
+===== QT observations  =====
+
+o Students do not really know what QT is.
+o ML/AI seen as black boxes/magic!
+o Students perceive that a graduate degree is necessary to work in QT. A BSc will help.
+
+!split
+===== Future needs a center or EDU program could address =====
+
+o There are already  great needs for specialized people (PhDs, postdocs), but also needs of  people with a broad overview of what is possible in ML/AI and/or QT.
+o There are not enough potential employees in AI/ML and QT . It is a supply gap, not a skills gap.
+o A BSc with specialization  is a good place to start
+o It is tremendously important to get everyone speaking the same language. Familiarity with the vernacular of quantum mechanics is a big plus.
+o There is a huge list of areas where technical expertise may be important. But employers are often more concerned with attributes like project management, working well in a team, interest in the field, and adaptability than in specific technical skills.
+o Collaborations with companies like IBM and other universities, see for example "IBM's partnership with universities":"https://newsroom.ibm.com/2023-11-27-The-University-of-Tokyo-Completes-Installation-of-127-Qubit-IBM-Quantum-Eagle-Processor".
+
+
+!split
+===== Possible questions for discussion =====
+
+o Should we focus only on QT or try to be broader (that is AI+QT)? And can we link them well? 
+o Can we develop educational modules (courses, certificates, degrees and more) in AI and/or QT for people outside universities?
+o Should we establish a working group which prepares the ground for an eventual call?
+o Most likely separate SFI application SMN+SINTEF on quantum sensing (Lasse says more about this).
+o What about an SFI on just quantum technologies+quantum sensing for a regular SFI call?
