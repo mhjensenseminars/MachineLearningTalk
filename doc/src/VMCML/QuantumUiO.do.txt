@@ -1,7 +1,5 @@
 TITLE: Quantum computing, Machine Learning and Quantum Machine Learning at UiO
-AUTHOR: MHJ, Lasse Vines and other, Center for Materials Science and Nanotechnology, Center for Computing in Science Education and Department of Physics, UiO
-#  at Department of Physics and Astronomy and FRIB, Michigan State University, USA, and Department of Physics and Center for Computing in Science Education,
-# University of Oslo, Norway
+AUTHOR: Morten Hjorth-Jensen, Lasse Vines et al., Center for Materials Science and Nanotechnology, Center for Computing in Science Education and Department of Physics, UiO
 DATE: March 20, 2024
 
 !split
@@ -56,7 +54,7 @@ o New study directions in Master of Science in Physics and Computational Science
 ===== Machine learning research =====
 
 o Solving complicated quantum mechanical many-body systems with deep learning, see references at the end
-o Developing new machine learning algorithms _with applications to quantum computing as well_
+o Developing new machine learning algorithms _with applications to quantum computing as well_, see URL:"https://arxiv.org/abs/2401.11694"
 o Analyzing experimental data from nuclear physics experiments, NIMA URL:"https://www.sciencedirect.com/science/article/abs/pii/S0168900221004460?via%3Dihub"
 o Predicting solid state material platforms for quantum technologies, Nature Computational Materials URL:"https://www.nature.com/articles/s41524-022-00888-3" 
 
