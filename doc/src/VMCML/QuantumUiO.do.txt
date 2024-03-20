@@ -77,10 +77,10 @@ o Quantum machine learning to optimize quantum circuits
 
 
 !split
-===== Candidate systems at UiO and MSU =====
+===== Candidate systems  =====
 
 !bblock
-o _Quantum dots, experiments at MSU and UiO_
+o _Quantum dots, experiments_
 o _Point Defects in semiconductors, experiments at UiO_
 o Recent article Coulomb interaction-driven entanglement of electrons on helium, see URL:"https://arxiv.org/abs/2310.04927", and PRX Quantum, under review
 !eblock
@@ -108,19 +108,11 @@ FIGURE: [qcfigures/Elhelium1.png, width=700 frac=1.3]
 
 FIGURE: [qcfigures/Elhelium2.png, width=700 frac=1.3]
 
-!split
-===== More on experimental setup III =====
-
-FIGURE: [qcfigures/Elhelium3.png, width=700 frac=1.3]
 
 !split
 ===== Experimental set up =====
 
-FIGURE: [qcfigures/figure1.png, width=600 frac=0.7]
-
-o (a) Schematic of the microdevice, where two electrons are trapped in a double-well potential created by electrodes 1-7. The read-out is provided by two superconducting resonators dispersively coupled to  electron's in-plane motional states.
-o (b) Coupling constants from each individual electrode beneath the helium layer.
-o (c+d) The electron's energy in a  double-well electrostatic potential (solid line). Dashed and dot-dashed lines represent the harmonic approximations of left and right wells respectively.
+FIGURE: [qcfigures/figure1x.png, width=600 frac=0.7]
 
 
 
