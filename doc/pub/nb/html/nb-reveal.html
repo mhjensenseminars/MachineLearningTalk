@@ -1,0 +1,735 @@
+<!--
+HTML file automatically generated from DocOnce source
+(https://github.com/doconce/doconce/)
+doconce format html nb-reveal.html nb-reveal reveal --html_slide_theme=beige
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="DocOnce: https://github.com/doconce/doconce/" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Exciting Avenues in Research and Education in AI, Quantum Science and Technology">
+<title>Exciting Avenues in Research and Education in AI, Quantum Science and Technology</title>
+
+<!-- reveal.js: https://lab.hakim.se/reveal-js/ -->
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+<link rel="stylesheet" href="reveal.js/css/reveal.css">
+<link rel="stylesheet" href="reveal.js/css/theme/beige.css" id="theme">
+<!--
+<link rel="stylesheet" href="reveal.js/css/reveal.css">
+<link rel="stylesheet" href="reveal.js/css/theme/beige.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/beigesmall.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/solarized.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/serif.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/night.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/moon.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/simple.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/sky.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/darkgray.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/default.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/cbc.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/simula.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/black.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/white.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/league.css" id="theme">
+-->
+
+<!-- For syntax highlighting -->
+<link rel="stylesheet" href="reveal.js/lib/css/zenburn.css">
+
+<!-- Printing and PDF exports -->
+<script>
+var link = document.createElement( 'link' );
+link.rel = 'stylesheet';
+link.type = 'text/css';
+link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+document.getElementsByTagName( 'head' )[0].appendChild( link );
+</script>
+
+<style type="text/css">
+hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+p.caption { width: 80%; font-size: 60%; font-style: italic; text-align: left; }
+hr.figure { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+.reveal .alert-text-small   { font-size: 80%;  }
+.reveal .alert-text-large   { font-size: 130%; }
+.reveal .alert-text-normal  { font-size: 90%;  }
+.reveal .alert {
+  padding:8px 35px 8px 14px; margin-bottom:18px;
+  text-shadow:0 1px 0 rgba(255,255,255,0.5);
+  border:5px solid #bababa;
+  -webkit-border-radius: 14px; -moz-border-radius: 14px;
+  border-radius:14px;
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  background-size: 38px;
+  padding-left: 30px; /* 55px; if icon */
+}
+.reveal .alert-block {padding-top:14px; padding-bottom:14px}
+.reveal .alert-block > p, .alert-block > ul {margin-bottom:1em}
+/*.reveal .alert li {margin-top: 1em}*/
+.reveal .alert-block p+p {margin-top:5px}
+/*.reveal .alert-notice { background-image: url(https://hplgit.github.io/doconce/bundled/html_images/small_gray_notice.png); }
+.reveal .alert-summary  { background-image:url(https://hplgit.github.io/doconce/bundled/html_images/small_gray_summary.png); }
+.reveal .alert-warning { background-image: url(https://hplgit.github.io/doconce/bundled/html_images/small_gray_warning.png); }
+.reveal .alert-question {background-image:url(https://hplgit.github.io/doconce/bundled/html_images/small_gray_question.png); } */
+/* Override reveal.js table border */
+.reveal table td {
+  border: 0;
+}
+
+<style type="text/css">
+/* Override h1, h2, ... styles */
+h1 { font-size: 2.8em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.4em; }
+h4 { font-size: 1.3em; }
+h1, h2, h3, h4 { font-weight: bold; line-height: 1.2; }
+body { overflow: auto; } /* vertical scrolling */
+hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+p.caption { width: 80%; font-size: 60%; font-style: italic; text-align: left; }
+hr.figure { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+.slide .alert-text-small   { font-size: 80%;  }
+.slide .alert-text-large   { font-size: 130%; }
+.slide .alert-text-normal  { font-size: 90%;  }
+.slide .alert {
+  padding:8px 35px 8px 14px; margin-bottom:18px;
+  text-shadow:0 1px 0 rgba(255,255,255,0.5);
+  border:5px solid #bababa;
+    -webkit-border-radius:14px; -moz-border-radius:14px;
+  border-radius:14px
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  background-size: 38px;
+  padding-left: 30px; /* 55px; if icon */
+}
+.slide .alert-block {padding-top:14px; padding-bottom:14px}
+.slide .alert-block > p, .alert-block > ul {margin-bottom:0}
+/*.slide .alert li {margin-top: 1em}*/
+.deck .alert-block p+p {margin-top:5px}
+/*.slide .alert-notice { background-image: url(https://hplgit.github.io/doconce/
+bundled/html_images//small_gray_notice.png); }
+.slide .alert-summary  { background-image:url(https://hplgit.github.io/doconce/
+bundled/html_images//small_gray_summary.png); }
+.slide .alert-warning { background-image: url(https://hplgit.github.io/doconce/
+bundled/html_images//small_gray_warning.png); }
+.slide .alert-question {background-image:url(https://hplgit.github.io/doconce/
+bundled/html_images/small_gray_question.png); } */
+.dotable table, .dotable th, .dotable tr, .dotable tr td {
+  border: 2px solid black;
+  border-collapse: collapse;
+  padding: 2px;
+}
+</style>
+
+
+<!-- Styles for table layout of slides -->
+<style type="text/css">
+td.padding {
+  padding-top:20px;
+  padding-bottom:20px;
+  padding-right:50px;
+  padding-left:50px;
+}
+</style>
+
+</head>
+
+
+<body>
+<div class="reveal">
+<div class="slides">
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+     equationNumbers: {  autoNumber: "none"  },
+     extensions: ["AMSmath.js", "AMSsymbols.js", "autobold.js", "color.js"]
+  }
+});
+</script>
+<script type="text/javascript" async
+ src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+
+<section>
+<!-- ------------------- main content ---------------------- -->
+<center>
+<h1 style="text-align: center;">Exciting Avenues in Research and Education in AI, Quantum Science and Technology</h1>
+</center>  <!-- document title -->
+
+<!-- author(s): Morten Hjorth-Jensen -->
+<center>
+<b>Morten Hjorth-Jensen</b> [1, 2]
+</center>
+<!-- institution(s) -->
+<center>
+[1] <b>Department of Physics and Astronomy and Facility for Rare Isotope Beams, Michigan State University, USA</b>
+</center>
+<center>
+[2] <b>Department of Physics and Center for Computing in Science Education, University of Oslo, Norway</b>
+</center>
+<br>
+<center>
+<h4>April 11, 2024</h4>
+</center> <!-- date -->
+<br>
+
+
+<center style="font-size:80%">
+<!-- copyright --> &copy; 1999-2024, Morten Hjorth-Jensen. Released under CC Attribution-NonCommercial 4.0 license
+</center>
+</section>
+
+<section>
+<h2 id="what-is-this-talk-about">What is this talk about? </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+
+<p>The main aim is to give you a short introduction to quantum computing and our
+activities and <b>possibly</b> how to build AI/ML, Quantum Information Systems and
+Quantum Technologies/Quantum Computing
+collaborations and activities, research and <b>education</b>.
+</p>
+</div>
+</section>
+
+<section>
+<h2 id="what-are-quantum-computers">What are Quantum Computers? </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+
+<p> A quantum computer is a type of computer that harnesses the laws of
+quantum mechanics to solve problems and perform calculations that
+would otherwise be too complex for classical computers.
+</p>
+</div>
+</section>
+
+<section>
+<h2 id="fairly-new-concepts">Fairly new concepts </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+
+<p>Quantum computing is a fairly new concept, introduced just 
+four decades ago. It was first put forward in the 1980s, when Paul
+Benioff proposed a quantum version of the Turing Machine. Richard Feynman suggested that a
+quantum computer possesses the potential to simulate things a
+classical computer could not feasibly do.
+</p>
+</div>
+</section>
+
+<section>
+<h2 id="revolution-in-the-last-years">Revolution in the last years </h2>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b>Two-qubit quantum computer</b>
+<p>
+<p>The research in quantum computing sped up at a rapid rate after that. In 1998 Isaac Chuang, Neil Gershenfeld, and Mark Kubinec created the first two-qubit quantum computer that could perform computations.</p>
+</div>
+
+<p>See for example <a href="https://www.ibm.com/quantum/assets/IBM_Quantum_Development_&_Innovation_Roadmap.pdf" target="_blank"><tt>https://www.ibm.com/quantum/assets/IBM_Quantum_Development_&_Innovation_Roadmap.pdf</tt></a></p>
+</section>
+
+<section>
+<h2 id="getting-started-yourself">Getting started yourself </h2>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p>Today, many companies make quantum computers while many others are actively working on them. IBM has now made availbale their 100++-qubits quantum computer for free use.
+See <a href="https://quantum.ibm.com/services/resources" target="_blank"><tt>https://quantum.ibm.com/services/resources</tt></a>.
+</p>
+</div>
+
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p>However, it must be kept in mind that these computers are only prototypes. They are too small to outperform classical computers. But with advancements in research, a real working quantum computer is becoming visible on the horizon.</p>
+</div>
+</section>
+
+<section>
+<h2 id="basics-of-a-quantum-computer">Basics of a quantum computer </h2>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b>The classical computer</b>
+<p>
+<p>uses bits, which are small units of data for performing all the tasks. A bit can hold a value of either 0 or 1. Therefore, all our applications on smartphones, videos, Internet, etc., use 1s and 0s at machine level.</p>
+</div>
+
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b>Quantum computers</b>
+<p>
+<p>work by using
+so-called called qubits. A qubit can be in a state of 0 and 1 at the same time. This state of a particle is called &#8220;superposition&#8221;. A qubit can remain in a superposition until it is checked for a value. At that point it gives the value of either 0 or 1.
+</p>
+</div>
+</section>
+
+<section>
+<h2 id="huge-dimensionalities">Huge dimensionalities </h2>
+
+<p>With \( N \) qubits we can ideally represent \( 2^N \) configurations. IBM's 127-qubit quantum computer can then ideally represent \( 2^{127}=170141183460469231731687303715884105728=1.7\times 10^{38} \) realizations. </p>
+
+<p>See note on <b>Quantum parallelism</b> at <a href="https://quantum-algorithms.herokuapp.com/299/paper/node16.html" target="_blank"><tt>https://quantum-algorithms.herokuapp.com/299/paper/node16.html</tt></a>.</p>
+</section>
+
+<section>
+<h2 id="quantum-superposition">Quantum Superposition </h2>
+
+<p>While classical bits can only take the values 0 or 1, quantum qubits
+can exist in both the 0 and 1 states at the same time. This is called
+quantum superposition. Quantum computing uses qubits in the
+superposition state to simultaneously process a computational problem
+with different possibilities. <b>In summary, quantum superposition is the
+simultaneous expression of multiple possibilities</b>.
+</p>
+
+<p>See for example the case of so-called Bell states at <a href="https://github.com/CompPhysics/QuantumComputingMachineLearning/blob/gh-pages/doc/pub/week5/ipynb/week5.ipynb" target="_blank"><tt>https://github.com/CompPhysics/QuantumComputingMachineLearning/blob/gh-pages/doc/pub/week5/ipynb/week5.ipynb</tt></a></p>
+</section>
+
+<section>
+<h2 id="quantum-entanglement">Quantum Entanglement </h2>
+
+<p>A special relationship can be established between qubits, called
+quantum entanglement or quantum correlation. Quantum entanglement
+allows quantum computing to provide parallel computing and data
+processing advantages in some algorithms. <b>In summary, quantum
+entanglement allows instantaneous interaction between connected
+qubits</b>.
+</p>
+
+<p>See for example the case of so-called Bell states at <a href="https://github.com/CompPhysics/QuantumComputingMachineLearning/blob/gh-pages/doc/pub/week5/ipynb/week5.ipynb" target="_blank"><tt>https://github.com/CompPhysics/QuantumComputingMachineLearning/blob/gh-pages/doc/pub/week5/ipynb/week5.ipynb</tt></a></p>
+</section>
+
+<section>
+<h2 id="quantum-gates">Quantum Gates </h2>
+
+<p>A quantum computer performs operations on qubits using quantum
+gates. Similar to the logical gates of classical computers, quantum
+gates are used to control specific quantum giants. Quantum gates can
+perform state changes between qubits and direct the computational
+process. <b>In summary, quantum gates control operations on qubits</b>.
+</p>
+
+<p>See for example the case of so-called Bell states at <a href="https://github.com/CompPhysics/QuantumComputingMachineLearning/blob/gh-pages/doc/pub/week5/ipynb/week5.ipynb" target="_blank"><tt>https://github.com/CompPhysics/QuantumComputingMachineLearning/blob/gh-pages/doc/pub/week5/ipynb/week5.ipynb</tt></a></p>
+</section>
+
+<section>
+<h2 id="quantum-supremacy">Quantum Supremacy </h2>
+
+<p>Quantum supremacy refers to the situation where quantum computers can
+perform a given task faster and more efficiently than classical
+computers. Quantum supremacy uses the potential of quantum computing
+to solve problems that classical computers cannot practically solve or
+to perform complex calculations faster. <b>In summary, quantum supremacy
+is the ability to perform tasks faster and more efficiently</b>.
+</p>
+</section>
+
+<section>
+<h2 id="error-correction">Error Correction </h2>
+
+<p>Quantum computers require precise and stable qubits. But qubits can be
+easily affected by environmental factors and errors can
+occur. Therefore, error correction techniques are used in quantum
+computers. Error correction algorithms detect and correct errors in
+qubits. This ensures reliable results in the computational process. <b>In
+summary, error correction refers to error correction techniques in
+quantum computing to ensure reliability</b>.
+</p>
+</section>
+
+<section>
+<h2 id="outperforming-classical-computers">Outperforming classical computers </h2>
+
+<p>Due to its use of qubits, a quantum computer is a lot more efficient
+and faster than traditional computers. In fact, a fully functional
+quantum computer can outperform the world&#8217;s most powerful
+supercomputers. In 2020, China claimed to have developed a quantum
+computer that performed computations 100 trillion times faster than
+any supercomputer.
+</p>
+
+<p>In 2019, Google&#8217;s quantum computer, named Sycamore,
+did a calculation in less than four minutes that would take the
+world&#8217;s most powerful computer 10,000 years to do.
+</p>
+</section>
+
+<section>
+<h2 id="a-quantum-computer-can-have-several-applications-due-to-its-efficiency">A quantum computer can have several applications due to its efficiency  </h2>
+
+<ul>
+<p><li> Quantum computers can help boost advancements in the field of artificial intelligence and machine learning.</li>
+<p><li> Quantum computing can be an effective way of figuring out the structures of drugs and their reactions to humans, which, in turn, can save a ton of money and time for drug companies.</li>
+<p><li> Quantum computing, with the help of machine learning, can help in developing various techniques to combat cybersecurity threats. Additionally, quantum computing can help in creating encryption methods, also known as quantum cryptography.</li>
+</ul>
+</section>
+
+<section>
+<h2 id="and-more">And more </h2>
+
+<ul>
+<p><li> With so many variables to consider, accurate weather forecasts are difficult to produce. Machine learning using quantum computers can improve pattern recognition, making it easier to predict extreme weather events and potentially saving thousands of lives a year.</li>
+<p><li> One potential application for quantum technologies is algorithmic trading &#8212; the use of complex algorithms to automatically trigger shared dealings based on a wide variety of market variables. The advantages, especially for high-volume transactions, are significant.</li>
+</ul>
+</section>
+
+<section>
+<h2 id="some-references">Some references </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p>Machine Learning and Quantum Computing hold great promise in tackling the 
+ever increasing dimensionalities. A hot new field is  <b>Quantum Machine Learning</b>, see for example the recent textbook by <a href="https://www.springer.com/gp/book/9783319964232" target="_blank">Maria Schuld and Francesco Petruccione</a>. 
+</p>
+</div>
+
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p>Quantum Machine Learning and Optimisation in Finance, see <a href="https://www.packtpub.com/product/quantum-machine-learning-and-optimisation-in-finance/9781801813570" target="_blank"><tt>https://www.packtpub.com/product/quantum-machine-learning-and-optimisation-in-finance/9781801813570</tt></a> by Antoine Jacquier and Oleksiy Kondratyev</p>
+</div>
+</section>
+
+<section>
+<h2 id="our-basic-activities-theory-overview">Our basic activities (theory), Overview </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<ul>
+<p><li> Machine Learning applied to Quantum Mechanical systems (optimize circuits)</li>
+<p><li> Quantum Engineering</li>
+<p><li> Quantum algorithms</li> 
+<p><li> Quantum Machine Learning</li>
+</ul>
+</div>
+</section>
+
+<section>
+<h2 id="quantum-engineering">Quantum Engineering </h2>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b>Quantum Computing requirements</b>
+<p>
+<ol>
+<p><li> be scalable</li>
+<p><li> have qubits that can be entangled</li>
+<p><li> have reliable initializations protocols to a standard state</li>
+<p><li> have a set of universal quantum gates to control the quantum evolution</li>
+<p><li> have a coherence time much longer than the gate operation time</li>
+<p><li> have a reliable read-out mechanism for measuring the qubit states</li>
+<p><li> and many more</li> 
+</ol>
+</div>
+</section>
+
+<section>
+<h2 id="candidate-systems">Candidate systems </h2>
+<ol>
+<p><li> Superconducting Josephon junctions</li>
+<p><li> Single photons</li>
+<p><li> <a href="https://www.insidequantumtechnology.com/news-archive/ionq-is-first-quantum-startup-to-go-public-will-it-be-first-to-deliver-profits/" target="_blank">Trapped ions and atoms</a></li>
+<p><li> Nuclear Magnetic Resonance</li>
+<p><li> <b>Quantum dots</b></li>
+<p><li> <b>Point Defects in semiconductors</b></li>
+<p><li> more</li>
+</ol>
+</section>
+
+<section>
+<h2 id="electrons-quantum-dots-on-superfluid-helium">Electrons (quantum dots) on superfluid helium </h2>
+
+<p>Electrons on <a href="https://www.youtube.com/watch?v=EuDuM-fe-lA&ab_channel=JoshuahHeath" target="_blank">superfluid helium represent</a> a promising platform for investigating
+strongly-coupled qubits.
+</p>
+
+<p>Therefore a systematic investigation of the
+controlled generation of entanglement between two trapped electrons
+under the influence of coherent microwave driving pulses, taking into
+account the effects of the Coulomb interaction between electrons, is
+of significant importance for quantum information processing using
+trapped electrons.
+</p>
+</section>
+
+<section>
+<h2 id="education-quantum-and-ai-machine-learning-what-we-have-at-uio">Education, Quantum and AI/Machine Learning: what we have at UiO </h2>
+
+<ol>
+<p><li> <a href="https://www.uio.no/studier/program/fysikk-astronomi/" target="_blank">Bachelor program</a> in Physics@UiO
+<ol type="a"></li>
+ <p><li> study direction/option in <b>quantum technologies</b>, start fall 2024</li>
+</ol>
+<p>
+<p><li> <a href="https://www.uio.no/studier/program/matematikk-data-beregninger/" target="_blank">New Bachelor program on Computational Science and Data Science</a>, start fall 2024
+<ol type="a"></li>
+ <p><li> Lots of emphasis on statistical data analysis and Machine Learning/AI</li>
+</ol>
+<p>
+<p><li> Master of Science programs in <a href="https://www.uio.no/english/studies/programmes/computational-science-master/" target="_blank">Computational Science</a> and <a href="https://www.uio.no/english/studies/programmes/datascience-master/" target="_blank">Data Science</a>.
+<ol type="a"></li>
+ <p><li> Study direction/option in Quantum Science and Technology in the Computational Science program, start fall 2025</li>
+</ol>
+<p>
+<p><li> Master program in Physics
+<ol type="a"></li>
+ <p><li> Study direction/option in Quantum Technologies and Quantum Science, start fall 2025</li>
+</ol>
+<p>
+<p><li> PhD research on quantum technologies and quantum science</li>
+</ol>
+</section>
+
+<section>
+<h2 id="courses-we-offer-or-are-developing-now">Courses we offer or are developing now </h2>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b>Topics</b>
+<p>
+<ol>
+<p><li> Information Systems</li> 
+<p><li> From Classical Information theory to Quantum Information theory</li>
+<p><li> Classical and Quantum Laboratory</li> 
+<p><li> Discipline-Based Quantum Mechanics</li> 
+<p><li> Quantum Software and Hardware</li>
+<p><li> Several  machine learning/AI courses, at all levels</li>
+</ol>
+</div>
+</section>
+
+<section>
+<h2 id="important-issues-to-think-of">Important Issues to think of </h2>
+
+<ol>
+<p><li> Lots of conceptual learning: superposition, entanglement, QIS applications, AI/ML etc</li>
+<p><li> Coding is indispensable</li> 
+<p><li> Teamwork, project management, and communication are important and highly valued</li>
+</ol>
+</section>
+
+<section>
+<h2 id="observations">Observations </h2>
+
+<ol>
+<p><li> Students do not really know what Quantum science, technology etc is.</li> 
+<p><li> Many perceive that a graduate degree is necessary to work in QIS.</li> 
+</ol>
+</section>
+
+<section>
+<h2 id="future-needs-problems">Future Needs/Problems  </h2>
+
+<ol>
+<p><li> There are already great needs for specialized people, but also needs of  people with a broad overview of what is possible in Quantum and AI.</li>
+<p><li> There are not enough potential employees. It is a supply gap, not a skills gap.</li>
+<p><li> A BSc with specialization  is a good place to start</li>
+<p><li> It is tremendously important to get everyone speaking the same language. Facility with the vernacular of quantum mechanics is a big plus. Same with ML/AI</li>
+<p><li> There is a huge list of areas where technical expertise may be important.</li> 
+</ol>
+</section>
+
+<section>
+<h2 id="what-can-we-offer-to-you">What can we offer to you? </h2>
+
+<br/><br/>
+<center>
+<p><img src="figures/qusteam.png" width="800" align="bottom"></p>
+</center>
+<br/><br/>
+</section>
+
+<section>
+<h2 id="education-for-a-broader-audience">Education for a broader audience </h2>
+
+<ol>
+<p><li> We have yearslong experience (with research based evidence on what works or not) in developing intensive training courses on ML/AI and Quantum Science</li>
+<p><li> We are now developing a framework for a center for research-based innovation  (SFI) in AI which includes quantum technologies, <b>QAI</b>, The Quantum Science and Artificial Intelligence center.</li>
+</ol>
+<p>
+<p>And we are obviously searching for partners from the private sector and the public sector.</p>
+</section>
+
+<section>
+<h2 id="what-can-be-done">What can be done  </h2>
+
+<p>The QAI centers plans to develop an education activity on quantum science and AI, <b>QAI TALENT</b>
+(TALENT=Training and Advanced Lectures in ENabling Technologies) offering
+</p>
+<ol>
+<p><li> Intensive short courses on selected topics (which can lead to credits and certificates)</li>
+<p><li> Certificates of expertise with modules that can add up to one year of credits or more.</li>
+<p><li> Possibilities of adding up to a master specialization in quantum science/technologies and/or AI/ML</li>
+<p><li> Common educational projects and supervision of students (examples from the Norwegian IRS)</li>
+<p><li> Input from you is essential!</li>
+</ol>
+</section>
+
+
+
+</div> <!-- class="slides" -->
+</div> <!-- class="reveal" -->
+
+<script src="reveal.js/lib/js/head.min.js"></script>
+<script src="reveal.js/js/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+  // Display navigation controls in the bottom right corner
+  controls: true,
+
+  // Display progress bar (below the horiz. slider)
+  progress: true,
+
+  // Display the page number of the current slide
+  slideNumber: true,
+
+  // Push each slide change to the browser history
+  history: false,
+
+  // Enable keyboard shortcuts for navigation
+  keyboard: true,
+
+  // Enable the slide overview mode
+  overview: true,
+
+  // Vertical centering of slides
+  //center: true,
+  center: false,
+
+  // Enables touch navigation on devices with touch input
+  touch: true,
+
+  // Loop the presentation
+  loop: false,
+
+  // Change the presentation direction to be RTL
+  rtl: false,
+
+  // Turns fragments on and off globally
+  fragments: true,
+
+  // Flags if the presentation is running in an embedded mode,
+  // i.e. contained within a limited portion of the screen
+  embedded: false,
+
+  // Number of milliseconds between automatically proceeding to the
+  // next slide, disabled when set to 0, this value can be overwritten
+  // by using a data-autoslide attribute on your slides
+  autoSlide: 0,
+
+  // Stop auto-sliding after user input
+  autoSlideStoppable: true,
+
+  // Enable slide navigation via mouse wheel
+  mouseWheel: false,
+
+  // Hides the address bar on mobile devices
+  hideAddressBar: true,
+
+  // Opens links in an iframe preview overlay
+  previewLinks: false,
+
+  // Transition style
+  transition: 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+  // Transition speed
+  transitionSpeed: 'default', // default/fast/slow
+
+  // Transition style for full page slide backgrounds
+  backgroundTransition: 'default', // default/none/slide/concave/convex/zoom
+
+  // Number of slides away from the current that are visible
+  viewDistance: 3,
+
+  // Parallax background image
+    //parallaxBackgroundImage: '', // e.g. "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'"
+
+  // Parallax background size
+  //parallaxBackgroundSize: '' // CSS syntax, e.g. "2100px 900px"
+
+  theme: Reveal.getQueryHash().theme, // available themes are in reveal.js/css/theme
+    transition: Reveal.getQueryHash().transition || 'none', // default/cube/page/concave/zoom/linear/none
+
+});
+
+Reveal.initialize({
+  dependencies: [
+      // Cross-browser shim that fully implements classList - https://github.com/eligrey/classList.js/
+      { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+
+      // Interpret Markdown in <section> elements
+      { src: 'reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: 'reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+
+      // Syntax highlight for <code> elements
+      { src: 'reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+
+      // Zoom in and out with Alt+click
+      { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+
+      // Speaker notes
+      { src: 'reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+
+      // Remote control your reveal.js presentation using a touch device
+      //{ src: 'reveal.js/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } },
+
+      // MathJax
+      //{ src: 'reveal.js/plugin/math/math.js', async: true }
+  ]
+});
+
+Reveal.initialize({
+
+  // The "normal" size of the presentation, aspect ratio will be preserved
+  // when the presentation is scaled to fit different resolutions. Can be
+  // specified using percentage units.
+  width: 1170,  // original: 960,
+  height: 700,
+
+  // Factor of the display size that should remain empty around the content
+  margin: 0.1,
+
+  // Bounds for smallest/largest possible scale to apply to content
+  minScale: 0.2,
+  maxScale: 1.0
+
+});
+</script>
+
+<!-- begin footer logo
+<div style="position: absolute; bottom: 0px; left: 0; margin-left: 0px">
+<img src="somelogo.png">
+</div>
+   end footer logo -->
+
+
+
+
+</body>
+</html>
