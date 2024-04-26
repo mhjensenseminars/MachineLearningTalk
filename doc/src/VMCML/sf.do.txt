@@ -1,0 +1,19 @@
+TITLE: 
+AUTHOR: Several university groups and partners
+DATE: 
+
+
+!split
+===== What is this talk about? =====
+!bblock
+
+
+!eblock
+
+
+
+!split
+===== What can we offer to you? =====
+
+FIGURE: [figures/qusteam.png, width=800 frac=1.0]
+
