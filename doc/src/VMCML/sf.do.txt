@@ -1,6 +1,6 @@
-TITLE: 
+TITLE: Center for \underline{Q}uantum technology and \underline{A}rtifical \underline{I}ntelligence (QAI center)
 AUTHOR: Several university groups and partners
-DATE: 
+DATE: today
 
 
 !split
