@@ -7,7 +7,7 @@ DATE: Argonne National Laboratory, May 6, 2024
 ===== What is this talk about? =====
 !bblock
 The main emphasis is to give you a short and pedestrian introduction to the whys and hows we can use (with several examples) machine learning methods
-in physics. And why this could (or should) be of interest. 
+in nuclear physics. And why this could (or should) be of interest. 
 !eblock
 
 !bblock
@@ -643,7 +643,10 @@ If the function $F(\bm{x})$ is discontinuous, it won't in general be possible to
 !eblock
 
 
+!split
+===== Simple example, fitting nuclear masses =====
 
+See example at 
 
 
 !split
@@ -783,7 +786,7 @@ Running this code gives us an acceptable results after some 40-50 iterations. No
 !split
 ===== Central magic =====
 
-"Automatic differentian":"https://en.wikipedia.org/wiki/Automatic_differentiation"
+"Automatic differentiation":"https://en.wikipedia.org/wiki/Automatic_differentiation"
 
 
 
