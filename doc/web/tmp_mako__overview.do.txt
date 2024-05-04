@@ -480,5 +480,18 @@ DATE: today
 
 
 
+===== Argonne National Laboratory, Physics Division Colloquium, May 6, 2024 =====
+
+
+
+ * HTML:
+   * "Plain html style": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/ANL/html/ANL.html"
+   * "reveal.js beige slide style": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/ANL/html/ANL-reveal.html"
+   * "Bootstrap style": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/ANL/html/ANL-bs.html"
+ * iPython notebook:
+   * "ipynb file": "http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/ANL/ipynb/ANL.ipynb"
+
+
+
 
 
