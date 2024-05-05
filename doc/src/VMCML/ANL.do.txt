@@ -646,7 +646,7 @@ If the function $F(\bm{x})$ is discontinuous, it won't in general be possible to
 !split
 ===== Simple example, fitting nuclear masses =====
 
-See example at 
+See example at URL:"https://github.com/CompPhysics/MachineLearning/blob/master/doc/pub/week34/ipynb/week34.ipynb", and scroll down to nuclear masses.
 
 
 !split
