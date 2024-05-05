@@ -1597,101 +1597,316 @@ necessarily normalized and is normally called the likelihood function.
 </section>
 
 <section>
-<h2 id="possible-start-to-raise-awareness-about-ml-in-your-own-field">Possible start to raise awareness about ML in your own field </h2>
-<div class="alert alert-block alert-block alert-text-normal">
-<b></b>
-<p>
-<ul>
-<p><li> Make an ML challenge in your own field a la <a href="https://home.cern/news/news/computing/higgs-boson-machine-learning-challenge" target="_blank">Learning to discover: the Higgs boson machine learning challenge</a>. Alternatively go to kaggle.com at <a href="https://www.kaggle.com/c/higgs-boson" target="_blank"><tt>https://www.kaggle.com/c/higgs-boson</tt></a></li>
-<p><li> HEP@CERN and HEP in general have made significant impacts in the field of machine learning and AI. Something to learn from</li>
-</ul>
-</div>
+<h2 id="additional-material">Additional material </h2>
 </section>
 
 <section>
-<h2 id="possible-questions-for-discussions">Possible questions for discussions </h2>
+<h2 id="essential-elements-of-generative-models">Essential elements of generative models </h2>
 
+<p>The aim of generative methods is to train a probability distribution \( p \). The methods we will focus on are:</p>
 <ol>
-<p><li> How do we incorporate these topics in our education?</li>
-<p><li> More difficult: what are the consequences for universities and our educational mission?</li>
+<p><li> Energy based models, with the family of Boltzmann distributions as a typical example</li>
+<p><li> Variational autoencoders, based on our discussions on autoencoders</li>
+<p><li> Generative adversarial networks (GANs) and</li>
+<p><li> Diffusion models</li>
 </ol>
 </section>
 
 <section>
-<h2 id="education">Education </h2>
+<h2 id="energy-models">Energy models </h2>
 
-<ol>
-<p><li> Incorporate elements of statistical data analysis and Machine Learning in undergraduate programs</li>
-<p><li> Develop courses on Machine Learning and statistical data analysis</li>
-<p><li> Build up a series of courses in Quantum Information Technologies (QIT)</li>
-<p><li> Modifying contents of present Physics programs or new programs on  Computational Physics and Quantum Technologies
-<ol type="a"></li>
- <p><li> study direction/option in <b>quantum technologies</b></li>
- <p><li> study direction/option in <b>Artificial Intelligence and Machine Learning</b></li>
- <p><li> and more</li>
-</ol>
-<p>
-<p><li> Master of Science/PhD programs in Computational and Data Science
-<ol type="a"></li>
- <p><li> UiO has already MSc programs in CS and DS</li>
- <p><li> MSU has own graduate programs plus dual degree programs in CS and DS</li>
- <p><li> Many other universities are developing or have similar programs</li>
-</ol>
-<p>
-</ol>
+<p>Last week we defined a domain \( \boldsymbol{X} \) of stochastic variables \( \boldsymbol{X}= \{x_0,x_1, \dots , x_{n-1}\} \) with a pertinent probability distribution</p>
+<p>&nbsp;<br>
+$$
+p(\boldsymbol{X})=\prod_{x_i\in \boldsymbol{X}}p(x_i),
+$$
+<p>&nbsp;<br>
+
+<p>where we have assumed that the random varaibles \( x_i \) are all independent and identically distributed (iid).</p>
+
+<p>We will now assume that we can defined this function in terms of optimization parameters \( \boldsymbol{\Theta} \), which could be the biases and weights of deep network, and a set of hidden variables we also assume to be random variables which also are iid. The domain of these variables is
+\( \boldsymbol{H}= \{h_0,h_1, \dots , h_{m-1}\} \).
+</p>
 </section>
 
 <section>
-<h2 id="possible-courses-quantum-courses">Possible courses quantum courses  </h2>
+<h2 id="probability-model">Probability model </h2>
 
-<div class="alert alert-block alert-block alert-text-normal">
-<b>Topics  in a Bachelor of Science/Master of Science</b>
-<p>
-<ol>
-<p><li> General university course on quantum mech and quantum technologies</li>
-<p><li> Information Systems</li> 
-<p><li> From Classical Information theory to Quantum Information theory</li>
-<p><li> Classical vs. Quantum Logic</li>
-<p><li> Classical and Quantum Laboratory</li> 
-<p><li> Discipline-Based Quantum Mechanics</li> 
-<p><li> Quantum Software</li>
-<p><li> Quantum Hardware</li>
-<p><li> more</li>
-</ol>
-</div>
+<p>We define a probability</p>
+<p>&nbsp;<br>
+$$
+p(x_i,h_j;\boldsymbol{\Theta}) = \frac{f(x_i,h_j;\boldsymbol{\Theta})}{Z(\boldsymbol{\Theta})},
+$$
+<p>&nbsp;<br>
+
+<p>where \( f(x_i,h_j;\boldsymbol{\Theta}) \) is a function which we assume is larger or
+equal than zero and obeys all properties required for a probability
+distribution and \( Z(\boldsymbol{\Theta}) \) is a normalization constant. Inspired by
+statistical mechanics, we call it often for the partition function.
+It is defined as (assuming that we have discrete probability distributions)
+</p>
+<p>&nbsp;<br>
+$$
+Z(\boldsymbol{\Theta})=\sum_{x_i\in \boldsymbol{X}}\sum_{h_j\in \boldsymbol{H}} f(x_i,h_j;\boldsymbol{\Theta}).
+$$
+<p>&nbsp;<br>
 </section>
 
 <section>
-<h2 id="important-issues-to-think-of">Important Issues to think of </h2>
+<h2 id="marginal-and-conditional-probabilities">Marginal and conditional probabilities </h2>
 
-<ol>
-<p><li> Lots of conceptual learning: superposition, entanglement, QIT applications, etc.</li>
-<p><li> Coding is indispensable.</li> 
-<p><li> Teamwork, project management, and communication are important and highly valued</li>
-<p><li> Engagement with industry: guest lectures, virtual tours, co-ops, and/or internships.</li>
-</ol>
+<p>We can in turn define the marginal probabilities</p>
+<p>&nbsp;<br>
+$$
+p(x_i;\boldsymbol{\Theta}) = \frac{\sum_{h_j\in \boldsymbol{H}}f(x_i,h_j;\boldsymbol{\Theta})}{Z(\boldsymbol{\Theta})},
+$$
+<p>&nbsp;<br>
+
+<p>and </p>
+<p>&nbsp;<br>
+$$
+p(h_i;\boldsymbol{\Theta}) = \frac{\sum_{x_i\in \boldsymbol{X}}f(x_i,h_j;\boldsymbol{\Theta})}{Z(\boldsymbol{\Theta})}.
+$$
+<p>&nbsp;<br>
 </section>
 
 <section>
-<h2 id="observations">Observations </h2>
+<h2 id="change-of-notation">Change of notation </h2>
 
-<ol>
-<p><li> Students do not really know what QIT is.</li>
-<p><li> ML/AI seen as black boxes/magic!</li>
-<p><li> Students perceive that a graduate degree is necessary to work in QIS. A BSc will help.</li>
-</ol>
+<p><b>Note the change to a vector notation</b>. A variable like \( \boldsymbol{x} \)
+represents now a specific <b>configuration</b>. We can generate an infinity
+of such configurations. The final partition function is then the sum
+over all such possible configurations, that is
+</p>
+
+<p>&nbsp;<br>
+$$
+Z(\boldsymbol{\Theta})=\sum_{x_i\in \boldsymbol{X}}\sum_{h_j\in \boldsymbol{H}} f(x_i,h_j;\boldsymbol{\Theta}),
+$$
+<p>&nbsp;<br>
+
+<p>changes to</p>
+<p>&nbsp;<br>
+$$
+Z(\boldsymbol{\Theta})=\sum_{\boldsymbol{x}}\sum_{\boldsymbol{h}} f(\boldsymbol{x},\boldsymbol{h};\boldsymbol{\Theta}).
+$$
+<p>&nbsp;<br>
+
+<p>If we have a binary set of variable \( x_i \) and \( h_j \) and \( M \) values of \( x_i \) and \( N \) values of \( h_j \) we have in total \( 2^M \) and \( 2^N \) possible \( \boldsymbol{x} \) and \( \boldsymbol{h} \) configurations, respectively.</p>
+
+<p>We see that even for the modest binary case, we can easily approach a
+number of configuration which is not possible to deal with.
+</p>
 </section>
 
 <section>
-<h2 id="future-needs-problems">Future Needs/Problems </h2>
+<h2 id="optimization-problem">Optimization problem </h2>
 
-<ol>
-<p><li> There are already  great needs for specialized people (Ph. D. s, postdocs), but also needs of  people with a broad overview of what is possible in ML/AI and/or QIT.</li>
-<p><li> There are not enough potential employees in AI/ML and QIT . It is a supply gap, not a skills gap.</li>
-<p><li> A BSc with specialization  is a good place to start</li>
-<p><li> It is tremendously important to get everyone speaking the same language. Facility with the vernacular of quantum mechanics is a big plus.</li>
-<p><li> There is a huge list of areas where technical expertise may be important. But employers are often more concerned with attributes like project management, working well in a team, interest in the field, and adaptability than in specific technical skills.</li>
-</ol>
+<p>At the end, we are not interested in the probabilities of the hidden variables. The probability we thus want to optimize is </p>
+<p>&nbsp;<br>
+$$
+p(\boldsymbol{X};\boldsymbol{\Theta})=\prod_{x_i\in \boldsymbol{X}}p(x_i;\boldsymbol{\Theta})=\prod_{x_i\in \boldsymbol{X}}\left(\frac{\sum_{h_j\in \boldsymbol{H}}f(x_i,h_j;\boldsymbol{\Theta})}{Z(\boldsymbol{\Theta})}\right),
+$$
+<p>&nbsp;<br>
+
+<p>which we rewrite as</p>
+<p>&nbsp;<br>
+$$
+p(\boldsymbol{X};\boldsymbol{\Theta})=\frac{1}{Z(\boldsymbol{\Theta})}\prod_{x_i\in \boldsymbol{X}}\left(\sum_{h_j\in \boldsymbol{H}}f(x_i,h_j;\boldsymbol{\Theta})\right).
+$$
+<p>&nbsp;<br>
+</section>
+
+<section>
+<h2 id="further-simplifications">Further simplifications </h2>
+
+<p>We simplify further by rewriting it as</p>
+<p>&nbsp;<br>
+$$
+p(\boldsymbol{X};\boldsymbol{\Theta})=\frac{1}{Z(\boldsymbol{\Theta})}\prod_{x_i\in \boldsymbol{X}}f(x_i;\boldsymbol{\Theta}),
+$$
+<p>&nbsp;<br>
+
+<p>where we used \( p(x_i;\boldsymbol{\Theta}) = \sum_{h_j\in \boldsymbol{H}}f(x_i,h_j;\boldsymbol{\Theta}) \).
+The optimization problem is then
+</p>
+<p>&nbsp;<br>
+$$
+{\displaystyle \mathrm{arg} \hspace{0.1cm}\max_{\boldsymbol{\boldsymbol{\Theta}}\in {\mathbb{R}}^{p}}} \hspace{0.1cm}p(\boldsymbol{X};\boldsymbol{\Theta}).
+$$
+<p>&nbsp;<br>
+</section>
+
+<section>
+<h2 id="optimizing-the-logarithm-instead">Optimizing the logarithm instead </h2>
+
+<p>Computing the derivatives with respect to the parameters \( \boldsymbol{\Theta} \) is
+easier (and equivalent) with taking the logarithm of the
+probability. We will thus optimize
+</p>
+<p>&nbsp;<br>
+$$
+{\displaystyle \mathrm{arg} \hspace{0.1cm}\max_{\boldsymbol{\boldsymbol{\Theta}}\in {\mathbb{R}}^{p}}} \hspace{0.1cm}\log{p(\boldsymbol{X};\boldsymbol{\Theta})},
+$$
+<p>&nbsp;<br>
+
+<p>which leads to</p>
+<p>&nbsp;<br>
+$$
+\nabla_{\boldsymbol{\Theta}}\log{p(\boldsymbol{X};\boldsymbol{\Theta})}=0.
+$$
+<p>&nbsp;<br>
+</section>
+
+<section>
+<h2 id="expression-for-the-gradients">Expression for the gradients </h2>
+<p>This leads to the following equation</p>
+<p>&nbsp;<br>
+$$
+\nabla_{\boldsymbol{\Theta}}\log{p(\boldsymbol{X};\boldsymbol{\Theta})}=\nabla_{\boldsymbol{\Theta}}\left(\sum_{x_i\in \boldsymbol{X}}\log{f(x_i;\boldsymbol{\Theta})}\right)-\nabla_{\boldsymbol{\Theta}}\log{Z(\boldsymbol{\Theta})}=0.
+$$
+<p>&nbsp;<br>
+
+<p>The first term is called the positive phase and we assume that we have a model for the function \( f \) from which we can sample values. Below we will develop an explicit model for this.
+The second term is called the negative phase and is the one which leads to more difficulties.
+</p>
+</section>
+
+<section>
+<h2 id="the-derivative-of-the-partition-function">The derivative of the partition function </h2>
+
+<p>The partition function, defined above as</p>
+<p>&nbsp;<br>
+$$
+Z(\boldsymbol{\Theta})=\sum_{x_i\in \boldsymbol{X}}\sum_{h_j\in \boldsymbol{H}} f(x_i,h_j;\boldsymbol{\Theta}),
+$$
+<p>&nbsp;<br>
+
+<p>is in general the most problematic term. In principle both \( x \) and \( h \) can span large degrees of freedom, if not even infinitely many ones, and computing the partition function itself is often not desirable or even feasible. The above derivative of the partition function can however be written in terms of an expectation value which is in turn evaluated  using Monte Carlo sampling and the theory of Markov chains, popularly shortened to MCMC (or just MC$^2$).</p>
+</section>
+
+<section>
+<h2 id="explicit-expression-for-the-derivative">Explicit expression for the derivative </h2>
+<p>We can rewrite</p>
+<p>&nbsp;<br>
+$$
+\nabla_{\boldsymbol{\Theta}}\log{Z(\boldsymbol{\Theta})}=\frac{\nabla_{\boldsymbol{\Theta}}Z(\boldsymbol{\Theta})}{Z(\boldsymbol{\Theta})},
+$$
+<p>&nbsp;<br>
+
+<p>which reads in more detail</p>
+<p>&nbsp;<br>
+$$
+\nabla_{\boldsymbol{\Theta}}\log{Z(\boldsymbol{\Theta})}=\frac{\nabla_{\boldsymbol{\Theta}} \sum_{x_i\in \boldsymbol{X}}f(x_i;\boldsymbol{\Theta})   }{Z(\boldsymbol{\Theta})}.
+$$
+<p>&nbsp;<br>
+
+<p>We can rewrite the function \( f \) (we have assumed that is larger or
+equal than zero) as \( f=\exp{\log{f}} \). We can then reqrite the last
+equation as
+</p>
+
+<p>&nbsp;<br>
+$$
+\nabla_{\boldsymbol{\Theta}}\log{Z(\boldsymbol{\Theta})}=\frac{ \sum_{x_i\in \boldsymbol{X}} \nabla_{\boldsymbol{\Theta}}\exp{\log{f(x_i;\boldsymbol{\Theta})}}   }{Z(\boldsymbol{\Theta})}.
+$$
+<p>&nbsp;<br>
+</section>
+
+<section>
+<h2 id="final-expression">Final expression </h2>
+
+<p>Taking the derivative gives us</p>
+<p>&nbsp;<br>
+$$
+\nabla_{\boldsymbol{\Theta}}\log{Z(\boldsymbol{\Theta})}=\frac{ \sum_{x_i\in \boldsymbol{X}}f(x_i;\boldsymbol{\Theta}) \nabla_{\boldsymbol{\Theta}}\log{f(x_i;\boldsymbol{\Theta})}   }{Z(\boldsymbol{\Theta})}, 
+$$
+<p>&nbsp;<br>
+
+<p>which is the expectation value of \( \log{f} \)</p>
+<p>&nbsp;<br>
+$$
+\nabla_{\boldsymbol{\Theta}}\log{Z(\boldsymbol{\Theta})}=\sum_{x_i\in \boldsymbol{X}}p(x_i;\boldsymbol{\Theta}) \nabla_{\boldsymbol{\Theta}}\log{f(x_i;\boldsymbol{\Theta})},
+$$
+<p>&nbsp;<br>
+
+<p>that is</p>
+<p>&nbsp;<br>
+$$
+\nabla_{\boldsymbol{\Theta}}\log{Z(\boldsymbol{\Theta})}=\mathbb{E}(\log{f(x_i;\boldsymbol{\Theta})}).
+$$
+<p>&nbsp;<br>
+
+<p>This quantity is evaluated using Monte Carlo sampling, with Gibbs
+sampling as the standard sampling rule.  Before we discuss the
+explicit algorithms, we need to remind ourselves about Markov chains
+and sampling rules like the Metropolis-Hastings algorithm and Gibbs
+sampling.
+</p>
+</section>
+
+<section>
+<h2 id="introducing-the-energy-model">Introducing the energy model </h2>
+
+<p>As we will see below, a typical Boltzmann machines employs a probability distribution</p>
+<p>&nbsp;<br>
+$$
+p(\boldsymbol{x},\boldsymbol{h};\boldsymbol{\Theta}) = \frac{f(\boldsymbol{x},\boldsymbol{h};\boldsymbol{\Theta})}{Z(\boldsymbol{\Theta})},
+$$
+<p>&nbsp;<br>
+
+<p>where \( f(\boldsymbol{x},\boldsymbol{h};\boldsymbol{\Theta}) \) is given by a so-called energy model. If we assume that the random variables \( x_i \) and \( h_j \) take binary values only, for example \( x_i,h_j=\{0,1\} \), we have a so-called binary-binary model where</p>
+<p>&nbsp;<br>
+$$
+f(\boldsymbol{x},\boldsymbol{h};\boldsymbol{\Theta})=-E(\boldsymbol{x}, \boldsymbol{h};\boldsymbol{\Theta}) = \sum_{x_i\in \boldsymbol{X}} x_i a_i+\sum_{h_j\in \boldsymbol{H}} b_j h_j + \sum_{x_i\in \boldsymbol{X},h_j\in\boldsymbol{H}} x_i w_{ij} h_j,
+$$
+<p>&nbsp;<br>
+
+<p>where the set of parameters are given by the biases and weights \( \boldsymbol{\Theta}=\{\boldsymbol{a},\boldsymbol{b},\boldsymbol{W}\} \).
+<b>Note the vector notation</b> instead of \( x_i \) and \( h_j \) for \( f \). The vectors \( \boldsymbol{x} \) and \( \boldsymbol{h} \) represent a specific instance of stochastic variables \( x_i \) and \( h_j \). These arrangements of \( \boldsymbol{x} \) and \( \boldsymbol{h} \) lead to a specific energy configuration.
+</p>
+</section>
+
+<section>
+<h2 id="more-compact-notation">More compact notation </h2>
+
+<p>With the above definition we can write the probability as</p>
+<p>&nbsp;<br>
+$$
+p(\boldsymbol{x},\boldsymbol{h};\boldsymbol{\Theta}) = \frac{\exp{(\boldsymbol{a}^T\boldsymbol{x}+\boldsymbol{b}^T\boldsymbol{h}+\boldsymbol{x}^T\boldsymbol{W}\boldsymbol{h})}}{Z(\boldsymbol{\Theta})},
+$$
+<p>&nbsp;<br>
+
+<p>where the biases \( \boldsymbol{a} \) and \( \boldsymbol{h} \) and the weights defined by the matrix \( \boldsymbol{W} \) are the parameters we need to optimize.</p>
+</section>
+
+<section>
+<h2 id="binary-binary-model">Binary-binary model  </h2>
+
+<p>Since the binary-binary energy model is linear in the parameters \( a_i \), \( b_j \) and
+\( w_{ij} \), it is easy to see that the derivatives with respect to the
+various optimization parameters yield expressions used in the
+evaluation of gradients like
+</p>
+<p>&nbsp;<br>
+$$
+\frac{\partial E(\boldsymbol{x}, \boldsymbol{h};\boldsymbol{\Theta})}{\partial w_{ij}}=-x_ih_j,
+$$
+<p>&nbsp;<br>
+
+<p>and</p>
+<p>&nbsp;<br>
+$$
+\frac{\partial E(\boldsymbol{x}, \boldsymbol{h};\boldsymbol{\Theta})}{\partial a_i}=-x_i,
+$$
+<p>&nbsp;<br>
+
+<p>and</p>
+<p>&nbsp;<br>
+$$
+\frac{\partial E(\boldsymbol{x}, \boldsymbol{h};\boldsymbol{\Theta})}{\partial b_j}=-h_j.
+$$
+<p>&nbsp;<br>
 </section>
 
 
