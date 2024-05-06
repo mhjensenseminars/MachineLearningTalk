@@ -182,19 +182,6 @@ doconce format html ANL.do.txt --html_style=bootstrap --pygments_html_style=defa
                2,
                None,
                'illustration-of-a-single-perceptron-model-and-an-ffnn'),
-              ('Our network example, simple percepetron with one input',
-               2,
-               None,
-               'our-network-example-simple-percepetron-with-one-input'),
-              ('Optimizing the parameters',
-               2,
-               None,
-               'optimizing-the-parameters'),
-              ('Implementing the simple perceptron model',
-               2,
-               None,
-               'implementing-the-simple-perceptron-model'),
-              ('Central magic', 2, None, 'central-magic'),
               ('Monte Carlo methods and Neural Networks',
                2,
                None,
@@ -275,10 +262,10 @@ doconce format html ANL.do.txt --html_style=bootstrap --pygments_html_style=defa
                2,
                None,
                'onebody-densities-n-30-hbar-omega-1-0-a-u'),
-              ('Onebody densities $N=30$, $\\hbar\\omega=0.1$ a.u.',
+              ('Expectation values as functions of the oscillator frequency',
                2,
                None,
-               'onebody-densities-n-30-hbar-omega-0-1-a-u'),
+               'expectation-values-as-functions-of-the-oscillator-frequency'),
               ('Extrapolations and model interpretability',
                2,
                None,
@@ -298,7 +285,24 @@ doconce format html ANL.do.txt --html_style=bootstrap --pygments_html_style=defa
                None,
                'observations-or-conclusions-if-you-prefer'),
               ('More observations', 2, None, 'more-observations'),
+              ('Possible start to raise awareness about ML in our own field',
+               2,
+               None,
+               'possible-start-to-raise-awareness-about-ml-in-our-own-field'),
               ('Additional material', 2, None, 'additional-material'),
+              ('Our network example, simple percepetron with one input',
+               2,
+               None,
+               'our-network-example-simple-percepetron-with-one-input'),
+              ('Optimizing the parameters',
+               2,
+               None,
+               'optimizing-the-parameters'),
+              ('Implementing the simple perceptron model',
+               2,
+               None,
+               'implementing-the-simple-perceptron-model'),
+              ('Central magic', 2, None, 'central-magic'),
               ('Essential elements of generative models',
                2,
                None,
@@ -413,53 +417,54 @@ MathJax.Hub.Config({
      <!-- navigation toc: --> <li><a href="._ANL-bs042.html#class-of-functions-we-can-approximate" style="font-size: 80%;">Class of functions we can approximate</a></li>
      <!-- navigation toc: --> <li><a href="._ANL-bs043.html#simple-example-fitting-nuclear-masses" style="font-size: 80%;">Simple example, fitting nuclear masses</a></li>
      <!-- navigation toc: --> <li><a href="._ANL-bs044.html#illustration-of-a-single-perceptron-model-and-an-ffnn" style="font-size: 80%;">Illustration of a single perceptron model and an FFNN</a></li>
-     <!-- navigation toc: --> <li><a href="._ANL-bs045.html#our-network-example-simple-percepetron-with-one-input" style="font-size: 80%;">Our network example, simple percepetron with one input</a></li>
-     <!-- navigation toc: --> <li><a href="._ANL-bs046.html#optimizing-the-parameters" style="font-size: 80%;">Optimizing the parameters</a></li>
-     <!-- navigation toc: --> <li><a href="._ANL-bs047.html#implementing-the-simple-perceptron-model" style="font-size: 80%;">Implementing the simple perceptron model</a></li>
-     <!-- navigation toc: --> <li><a href="._ANL-bs048.html#central-magic" style="font-size: 80%;">Central magic</a></li>
-     <!-- navigation toc: --> <li><a href="._ANL-bs049.html#monte-carlo-methods-and-neural-networks" style="font-size: 80%;">Monte Carlo methods and Neural Networks</a></li>
-     <!-- navigation toc: --> <li><a href="._ANL-bs050.html#deep-learning-neural-networks-variational-monte-carlo-calculations-of-a-le-4-nuclei-with-an-artificial-neural-network-correlator-ansatz-by-adams-et-al-https-journals-aps-org-prl-abstract-10-1103-physrevlett-127-022502" style="font-size: 80%;">Deep learning neural networks, "Variational Monte Carlo calculations of \( A\le 4 \) nuclei with an artificial neural-network correlator ansatz by Adams et al.":"https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.127.022502"</a></li>
-     <!-- navigation toc: --> <li><a href="._ANL-bs051.html#dilute-neutron-star-matter-from-neural-network-quantum-states-by-fore-et-al-physical-review-research-5-033062-2023-https-journals-aps-org-prresearch-pdf-10-1103-physrevresearch-5-033062-at-density-rho-0-04-fm-3" style="font-size: 80%;">"Dilute neutron star matter from neural-network quantum states by Fore et al, Physical Review Research 5, 033062 (2023)":"https://journals.aps.org/prresearch/pdf/10.1103/PhysRevResearch.5.033062" at density \( \rho=0.04 \) fm$^{-3}$</a></li>
-     <!-- navigation toc: --> <li><a href="._ANL-bs052.html#pairing-and-spin-singlet-and-triplet-two-body-distribution-functions-at-rho-0-01-fm-3" style="font-size: 80%;">Pairing and Spin-singlet and triplet two-body distribution functions at \( \rho=0.01 \) fm$^{-3}$</a></li>
-     <!-- navigation toc: --> <li><a href="._ANL-bs053.html#pairing-and-spin-singlet-and-triplet-two-body-distribution-functions-at-rho-0-04-fm-3" style="font-size: 80%;">Pairing and Spin-singlet and triplet two-body distribution functions at \( \rho=0.04 \) fm$^{-3}$</a></li>
-     <!-- navigation toc: --> <li><a href="._ANL-bs054.html#pairing-and-spin-singlet-and-triplet-two-body-distribution-functions-at-rho-0-08-fm-3" style="font-size: 80%;">Pairing and Spin-singlet and triplet two-body distribution functions at \( \rho=0.08 \) fm$^{-3}$</a></li>
-     <!-- navigation toc: --> <li><a href="._ANL-bs055.html#the-electron-gas-in-three-dimensions-with-n-14-electrons-wigner-seitz-radius-r-s-2-a-u-gabriel-pescia-jane-kim-et-al-arxiv-2305-07240-https-doi-org-10-48550-arxiv-2305-07240" style="font-size: 80%;">The electron gas in three dimensions with \( N=14 \) electrons (Wigner-Seitz radius \( r_s=2 \) a.u.), "Gabriel Pescia, Jane Kim et al. arXiv.2305.07240,":"https://doi.org/10.48550/arXiv.2305.07240"</a></li>
-     <!-- navigation toc: --> <li><a href="._ANL-bs056.html#efficient-solutions-of-fermionic-systems-using-artificial-neural-networks-nordhagen-et-al-frontiers-in-physics-11-2023-https-doi-org-10-3389-fphy-2023-1061580" style="font-size: 80%;">"Efficient solutions of fermionic systems using artificial neural networks, Nordhagen et al, Frontiers in Physics 11, 2023":"https://doi.org/10.3389/fphy.2023.1061580"</a></li>
-     <!-- navigation toc: --> <li><a href="._ANL-bs057.html#generative-models-why-boltzmann-machines" style="font-size: 80%;">Generative models: Why Boltzmann machines?</a></li>
-     <!-- navigation toc: --> <li><a href="._ANL-bs058.html#the-structure-of-the-rbm-network" style="font-size: 80%;">The structure of the RBM network</a></li>
-     <!-- navigation toc: --> <li><a href="._ANL-bs059.html#the-network" style="font-size: 80%;">The network</a></li>
-     <!-- navigation toc: --> <li><a href="._ANL-bs060.html#goals" style="font-size: 80%;">Goals</a></li>
-     <!-- navigation toc: --> <li><a href="._ANL-bs061.html#joint-distribution" style="font-size: 80%;">Joint distribution</a></li>
-     <!-- navigation toc: --> <li><a href="._ANL-bs062.html#network-elements-the-energy-function" style="font-size: 80%;">Network Elements, the energy function</a></li>
-     <!-- navigation toc: --> <li><a href="._ANL-bs063.html#defining-different-types-of-rbms-energy-based-models" style="font-size: 80%;">Defining different types of RBMs (Energy based models)</a></li>
-     <!-- navigation toc: --> <li><a href="._ANL-bs064.html#gaussian-binary" style="font-size: 80%;">Gaussian binary</a></li>
-     <!-- navigation toc: --> <li><a href="._ANL-bs065.html#representing-the-wave-function" style="font-size: 80%;">Representing the wave function</a></li>
-     <!-- navigation toc: --> <li><a href="._ANL-bs066.html#define-the-cost-function" style="font-size: 80%;">Define the cost function</a></li>
-     <!-- navigation toc: --> <li><a href="._ANL-bs067.html#quantum-dots-and-boltzmann-machines-onebody-densities-n-6-hbar-omega-0-1-a-u" style="font-size: 80%;">Quantum dots and Boltzmann machines, onebody densities \( N=6 \), \( \hbar\omega=0.1 \) a.u.</a></li>
-     <!-- navigation toc: --> <li><a href="._ANL-bs068.html#onebody-densities-n-30-hbar-omega-1-0-a-u" style="font-size: 80%;">Onebody densities \( N=30 \), \( \hbar\omega=1.0 \) a.u.</a></li>
-     <!-- navigation toc: --> <li><a href="._ANL-bs069.html#onebody-densities-n-30-hbar-omega-0-1-a-u" style="font-size: 80%;">Onebody densities \( N=30 \), \( \hbar\omega=0.1 \) a.u.</a></li>
-     <!-- navigation toc: --> <li><a href="._ANL-bs070.html#extrapolations-and-model-interpretability" style="font-size: 80%;">Extrapolations and model interpretability</a></li>
-     <!-- navigation toc: --> <li><a href="._ANL-bs071.html#physics-based-statistical-learning-and-data-analysis" style="font-size: 80%;">Physics based statistical learning and data analysis</a></li>
-     <!-- navigation toc: --> <li><a href="._ANL-bs072.html#bayes-theorem" style="font-size: 80%;">Bayes' Theorem</a></li>
-     <!-- navigation toc: --> <li><a href="._ANL-bs073.html#quantified-limits-of-the-nuclear-landscape-https-journals-aps-org-prc-abstract-10-1103-physrevc-101-044307" style="font-size: 80%;">"Quantified limits of the nuclear landscape":"https://journals.aps.org/prc/abstract/10.1103/PhysRevC.101.044307"</a></li>
-     <!-- navigation toc: --> <li><a href="._ANL-bs074.html#observations-or-conclusions-if-you-prefer" style="font-size: 80%;">Observations (or conclusions if you prefer)</a></li>
-     <!-- navigation toc: --> <li><a href="._ANL-bs075.html#more-observations" style="font-size: 80%;">More observations</a></li>
-     <!-- navigation toc: --> <li><a href="._ANL-bs076.html#additional-material" style="font-size: 80%;">Additional material</a></li>
-     <!-- navigation toc: --> <li><a href="._ANL-bs077.html#essential-elements-of-generative-models" style="font-size: 80%;">Essential elements of generative models</a></li>
-     <!-- navigation toc: --> <li><a href="._ANL-bs078.html#energy-models" style="font-size: 80%;">Energy models</a></li>
-     <!-- navigation toc: --> <li><a href="._ANL-bs079.html#probability-model" style="font-size: 80%;">Probability model</a></li>
-     <!-- navigation toc: --> <li><a href="._ANL-bs080.html#marginal-and-conditional-probabilities" style="font-size: 80%;">Marginal and conditional probabilities</a></li>
-     <!-- navigation toc: --> <li><a href="._ANL-bs081.html#change-of-notation" style="font-size: 80%;">Change of notation</a></li>
-     <!-- navigation toc: --> <li><a href="._ANL-bs082.html#optimization-problem" style="font-size: 80%;">Optimization problem</a></li>
-     <!-- navigation toc: --> <li><a href="._ANL-bs083.html#further-simplifications" style="font-size: 80%;">Further simplifications</a></li>
-     <!-- navigation toc: --> <li><a href="._ANL-bs084.html#optimizing-the-logarithm-instead" style="font-size: 80%;">Optimizing the logarithm instead</a></li>
-     <!-- navigation toc: --> <li><a href="._ANL-bs085.html#expression-for-the-gradients" style="font-size: 80%;">Expression for the gradients</a></li>
-     <!-- navigation toc: --> <li><a href="._ANL-bs086.html#the-derivative-of-the-partition-function" style="font-size: 80%;">The derivative of the partition function</a></li>
-     <!-- navigation toc: --> <li><a href="._ANL-bs087.html#explicit-expression-for-the-derivative" style="font-size: 80%;">Explicit expression for the derivative</a></li>
-     <!-- navigation toc: --> <li><a href="._ANL-bs088.html#final-expression" style="font-size: 80%;">Final expression</a></li>
-     <!-- navigation toc: --> <li><a href="._ANL-bs089.html#introducing-the-energy-model" style="font-size: 80%;">Introducing the energy model</a></li>
-     <!-- navigation toc: --> <li><a href="._ANL-bs090.html#more-compact-notation" style="font-size: 80%;">More compact notation</a></li>
-     <!-- navigation toc: --> <li><a href="._ANL-bs091.html#binary-binary-model" style="font-size: 80%;">Binary-binary model</a></li>
+     <!-- navigation toc: --> <li><a href="._ANL-bs045.html#monte-carlo-methods-and-neural-networks" style="font-size: 80%;">Monte Carlo methods and Neural Networks</a></li>
+     <!-- navigation toc: --> <li><a href="._ANL-bs046.html#deep-learning-neural-networks-variational-monte-carlo-calculations-of-a-le-4-nuclei-with-an-artificial-neural-network-correlator-ansatz-by-adams-et-al-https-journals-aps-org-prl-abstract-10-1103-physrevlett-127-022502" style="font-size: 80%;">Deep learning neural networks, "Variational Monte Carlo calculations of \( A\le 4 \) nuclei with an artificial neural-network correlator ansatz by Adams et al.":"https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.127.022502"</a></li>
+     <!-- navigation toc: --> <li><a href="._ANL-bs047.html#dilute-neutron-star-matter-from-neural-network-quantum-states-by-fore-et-al-physical-review-research-5-033062-2023-https-journals-aps-org-prresearch-pdf-10-1103-physrevresearch-5-033062-at-density-rho-0-04-fm-3" style="font-size: 80%;">"Dilute neutron star matter from neural-network quantum states by Fore et al, Physical Review Research 5, 033062 (2023)":"https://journals.aps.org/prresearch/pdf/10.1103/PhysRevResearch.5.033062" at density \( \rho=0.04 \) fm$^{-3}$</a></li>
+     <!-- navigation toc: --> <li><a href="._ANL-bs048.html#pairing-and-spin-singlet-and-triplet-two-body-distribution-functions-at-rho-0-01-fm-3" style="font-size: 80%;">Pairing and Spin-singlet and triplet two-body distribution functions at \( \rho=0.01 \) fm$^{-3}$</a></li>
+     <!-- navigation toc: --> <li><a href="._ANL-bs049.html#pairing-and-spin-singlet-and-triplet-two-body-distribution-functions-at-rho-0-04-fm-3" style="font-size: 80%;">Pairing and Spin-singlet and triplet two-body distribution functions at \( \rho=0.04 \) fm$^{-3}$</a></li>
+     <!-- navigation toc: --> <li><a href="._ANL-bs050.html#pairing-and-spin-singlet-and-triplet-two-body-distribution-functions-at-rho-0-08-fm-3" style="font-size: 80%;">Pairing and Spin-singlet and triplet two-body distribution functions at \( \rho=0.08 \) fm$^{-3}$</a></li>
+     <!-- navigation toc: --> <li><a href="._ANL-bs051.html#the-electron-gas-in-three-dimensions-with-n-14-electrons-wigner-seitz-radius-r-s-2-a-u-gabriel-pescia-jane-kim-et-al-arxiv-2305-07240-https-doi-org-10-48550-arxiv-2305-07240" style="font-size: 80%;">The electron gas in three dimensions with \( N=14 \) electrons (Wigner-Seitz radius \( r_s=2 \) a.u.), "Gabriel Pescia, Jane Kim et al. arXiv.2305.07240,":"https://doi.org/10.48550/arXiv.2305.07240"</a></li>
+     <!-- navigation toc: --> <li><a href="._ANL-bs052.html#efficient-solutions-of-fermionic-systems-using-artificial-neural-networks-nordhagen-et-al-frontiers-in-physics-11-2023-https-doi-org-10-3389-fphy-2023-1061580" style="font-size: 80%;">"Efficient solutions of fermionic systems using artificial neural networks, Nordhagen et al, Frontiers in Physics 11, 2023":"https://doi.org/10.3389/fphy.2023.1061580"</a></li>
+     <!-- navigation toc: --> <li><a href="._ANL-bs053.html#generative-models-why-boltzmann-machines" style="font-size: 80%;">Generative models: Why Boltzmann machines?</a></li>
+     <!-- navigation toc: --> <li><a href="._ANL-bs054.html#the-structure-of-the-rbm-network" style="font-size: 80%;">The structure of the RBM network</a></li>
+     <!-- navigation toc: --> <li><a href="._ANL-bs055.html#the-network" style="font-size: 80%;">The network</a></li>
+     <!-- navigation toc: --> <li><a href="._ANL-bs056.html#goals" style="font-size: 80%;">Goals</a></li>
+     <!-- navigation toc: --> <li><a href="._ANL-bs057.html#joint-distribution" style="font-size: 80%;">Joint distribution</a></li>
+     <!-- navigation toc: --> <li><a href="._ANL-bs058.html#network-elements-the-energy-function" style="font-size: 80%;">Network Elements, the energy function</a></li>
+     <!-- navigation toc: --> <li><a href="._ANL-bs059.html#defining-different-types-of-rbms-energy-based-models" style="font-size: 80%;">Defining different types of RBMs (Energy based models)</a></li>
+     <!-- navigation toc: --> <li><a href="._ANL-bs060.html#gaussian-binary" style="font-size: 80%;">Gaussian binary</a></li>
+     <!-- navigation toc: --> <li><a href="._ANL-bs061.html#representing-the-wave-function" style="font-size: 80%;">Representing the wave function</a></li>
+     <!-- navigation toc: --> <li><a href="._ANL-bs062.html#define-the-cost-function" style="font-size: 80%;">Define the cost function</a></li>
+     <!-- navigation toc: --> <li><a href="._ANL-bs063.html#quantum-dots-and-boltzmann-machines-onebody-densities-n-6-hbar-omega-0-1-a-u" style="font-size: 80%;">Quantum dots and Boltzmann machines, onebody densities \( N=6 \), \( \hbar\omega=0.1 \) a.u.</a></li>
+     <!-- navigation toc: --> <li><a href="._ANL-bs064.html#onebody-densities-n-30-hbar-omega-1-0-a-u" style="font-size: 80%;">Onebody densities \( N=30 \), \( \hbar\omega=1.0 \) a.u.</a></li>
+     <!-- navigation toc: --> <li><a href="._ANL-bs065.html#expectation-values-as-functions-of-the-oscillator-frequency" style="font-size: 80%;">Expectation values as functions of the oscillator frequency</a></li>
+     <!-- navigation toc: --> <li><a href="._ANL-bs066.html#extrapolations-and-model-interpretability" style="font-size: 80%;">Extrapolations and model interpretability</a></li>
+     <!-- navigation toc: --> <li><a href="._ANL-bs067.html#physics-based-statistical-learning-and-data-analysis" style="font-size: 80%;">Physics based statistical learning and data analysis</a></li>
+     <!-- navigation toc: --> <li><a href="._ANL-bs068.html#bayes-theorem" style="font-size: 80%;">Bayes' Theorem</a></li>
+     <!-- navigation toc: --> <li><a href="._ANL-bs069.html#quantified-limits-of-the-nuclear-landscape-https-journals-aps-org-prc-abstract-10-1103-physrevc-101-044307" style="font-size: 80%;">"Quantified limits of the nuclear landscape":"https://journals.aps.org/prc/abstract/10.1103/PhysRevC.101.044307"</a></li>
+     <!-- navigation toc: --> <li><a href="._ANL-bs070.html#observations-or-conclusions-if-you-prefer" style="font-size: 80%;">Observations (or conclusions if you prefer)</a></li>
+     <!-- navigation toc: --> <li><a href="._ANL-bs071.html#more-observations" style="font-size: 80%;">More observations</a></li>
+     <!-- navigation toc: --> <li><a href="._ANL-bs072.html#possible-start-to-raise-awareness-about-ml-in-our-own-field" style="font-size: 80%;">Possible start to raise awareness about ML in our own field</a></li>
+     <!-- navigation toc: --> <li><a href="._ANL-bs073.html#additional-material" style="font-size: 80%;">Additional material</a></li>
+     <!-- navigation toc: --> <li><a href="._ANL-bs074.html#our-network-example-simple-percepetron-with-one-input" style="font-size: 80%;">Our network example, simple percepetron with one input</a></li>
+     <!-- navigation toc: --> <li><a href="._ANL-bs075.html#optimizing-the-parameters" style="font-size: 80%;">Optimizing the parameters</a></li>
+     <!-- navigation toc: --> <li><a href="._ANL-bs076.html#implementing-the-simple-perceptron-model" style="font-size: 80%;">Implementing the simple perceptron model</a></li>
+     <!-- navigation toc: --> <li><a href="._ANL-bs077.html#central-magic" style="font-size: 80%;">Central magic</a></li>
+     <!-- navigation toc: --> <li><a href="._ANL-bs078.html#essential-elements-of-generative-models" style="font-size: 80%;">Essential elements of generative models</a></li>
+     <!-- navigation toc: --> <li><a href="._ANL-bs079.html#energy-models" style="font-size: 80%;">Energy models</a></li>
+     <!-- navigation toc: --> <li><a href="._ANL-bs080.html#probability-model" style="font-size: 80%;">Probability model</a></li>
+     <!-- navigation toc: --> <li><a href="._ANL-bs081.html#marginal-and-conditional-probabilities" style="font-size: 80%;">Marginal and conditional probabilities</a></li>
+     <!-- navigation toc: --> <li><a href="._ANL-bs082.html#change-of-notation" style="font-size: 80%;">Change of notation</a></li>
+     <!-- navigation toc: --> <li><a href="._ANL-bs083.html#optimization-problem" style="font-size: 80%;">Optimization problem</a></li>
+     <!-- navigation toc: --> <li><a href="._ANL-bs084.html#further-simplifications" style="font-size: 80%;">Further simplifications</a></li>
+     <!-- navigation toc: --> <li><a href="._ANL-bs085.html#optimizing-the-logarithm-instead" style="font-size: 80%;">Optimizing the logarithm instead</a></li>
+     <!-- navigation toc: --> <li><a href="._ANL-bs086.html#expression-for-the-gradients" style="font-size: 80%;">Expression for the gradients</a></li>
+     <!-- navigation toc: --> <li><a href="._ANL-bs087.html#the-derivative-of-the-partition-function" style="font-size: 80%;">The derivative of the partition function</a></li>
+     <!-- navigation toc: --> <li><a href="._ANL-bs088.html#explicit-expression-for-the-derivative" style="font-size: 80%;">Explicit expression for the derivative</a></li>
+     <!-- navigation toc: --> <li><a href="._ANL-bs089.html#final-expression" style="font-size: 80%;">Final expression</a></li>
+     <!-- navigation toc: --> <li><a href="._ANL-bs090.html#introducing-the-energy-model" style="font-size: 80%;">Introducing the energy model</a></li>
+     <!-- navigation toc: --> <li><a href="._ANL-bs091.html#more-compact-notation" style="font-size: 80%;">More compact notation</a></li>
+     <!-- navigation toc: --> <li><a href="._ANL-bs092.html#binary-binary-model" style="font-size: 80%;">Binary-binary model</a></li>
 
         </ul>
       </li>
@@ -504,7 +509,7 @@ MathJax.Hub.Config({
   <li><a href="._ANL-bs020.html">21</a></li>
   <li><a href="._ANL-bs021.html">22</a></li>
   <li><a href="">...</a></li>
-  <li><a href="._ANL-bs091.html">92</a></li>
+  <li><a href="._ANL-bs092.html">93</a></li>
   <li><a href="._ANL-bs013.html">&raquo;</a></li>
 </ul>
 <!-- ------------------- end of main content --------------- -->

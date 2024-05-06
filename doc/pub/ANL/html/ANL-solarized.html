@@ -209,19 +209,6 @@ div.toc p,a {
                2,
                None,
                'illustration-of-a-single-perceptron-model-and-an-ffnn'),
-              ('Our network example, simple percepetron with one input',
-               2,
-               None,
-               'our-network-example-simple-percepetron-with-one-input'),
-              ('Optimizing the parameters',
-               2,
-               None,
-               'optimizing-the-parameters'),
-              ('Implementing the simple perceptron model',
-               2,
-               None,
-               'implementing-the-simple-perceptron-model'),
-              ('Central magic', 2, None, 'central-magic'),
               ('Monte Carlo methods and Neural Networks',
                2,
                None,
@@ -302,10 +289,10 @@ div.toc p,a {
                2,
                None,
                'onebody-densities-n-30-hbar-omega-1-0-a-u'),
-              ('Onebody densities $N=30$, $\\hbar\\omega=0.1$ a.u.',
+              ('Expectation values as functions of the oscillator frequency',
                2,
                None,
-               'onebody-densities-n-30-hbar-omega-0-1-a-u'),
+               'expectation-values-as-functions-of-the-oscillator-frequency'),
               ('Extrapolations and model interpretability',
                2,
                None,
@@ -325,7 +312,24 @@ div.toc p,a {
                None,
                'observations-or-conclusions-if-you-prefer'),
               ('More observations', 2, None, 'more-observations'),
+              ('Possible start to raise awareness about ML in our own field',
+               2,
+               None,
+               'possible-start-to-raise-awareness-about-ml-in-our-own-field'),
               ('Additional material', 2, None, 'additional-material'),
+              ('Our network example, simple percepetron with one input',
+               2,
+               None,
+               'our-network-example-simple-percepetron-with-one-input'),
+              ('Optimizing the parameters',
+               2,
+               None,
+               'optimizing-the-parameters'),
+              ('Implementing the simple perceptron model',
+               2,
+               None,
+               'implementing-the-simple-perceptron-model'),
+              ('Central magic', 2, None, 'central-magic'),
               ('Essential elements of generative models',
                2,
                None,
@@ -1082,6 +1086,8 @@ If the function \( F(\boldsymbol{x}) \) is discontinuous, it won't in general be
 
 <p>See example at <a href="https://github.com/CompPhysics/MachineLearning/blob/master/doc/pub/week34/ipynb/week34.ipynb" target="_blank"><tt>https://github.com/CompPhysics/MachineLearning/blob/master/doc/pub/week34/ipynb/week34.ipynb</tt></a>, and scroll down to nuclear masses.</p>
 
+<p>And the recent article <a href="https://www.sciencedirect.com/science/article/pii/S0375947423001100" target="_blank"><tt>https://www.sciencedirect.com/science/article/pii/S0375947423001100</tt></a></p>
+
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 <h2 id="illustration-of-a-single-perceptron-model-and-an-ffnn">Illustration of a single perceptron model and an FFNN </h2>
 
@@ -1092,152 +1098,6 @@ If the function \( F(\boldsymbol{x}) \) is discontinuous, it won't in general be
 </center>
 <p><img src="figures/nns.png" width="600" align="bottom"></p>
 </center>
-
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-<h2 id="our-network-example-simple-percepetron-with-one-input">Our network example, simple percepetron with one input </h2>
-
-<p>As as simple example we define now a simple perceptron model with
-all quantities given by scalars. We consider only one input variable
-\( x \) and one target value \( y \).  We define an activation function
-\( \sigma_1 \) which takes as input
-</p>
-
-$$
-z_1 = w_1x+b_1,
-$$
-
-<p>where \( w_1 \) is the weight and \( b_1 \) is the bias. These are the
-parameters we want to optimize.  This output is then fed into the
-<b>cost/loss</b> function, which we here for the sake of simplicity just
-define as the squared error
-</p>
-
-$$
-C(x;w_1,b_1)=\frac{1}{2}(a_1-y)^2.
-$$
-
-
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-<h2 id="optimizing-the-parameters">Optimizing the parameters </h2>
-
-<p>In setting up the feed forward and back propagation parts of the
-algorithm, we need now the derivative of the various variables we want
-to train.
-</p>
-
-<p>We need</p>
-$$
-\frac{\partial C}{\partial w_1} \hspace{0.1cm}\mathrm{and}\hspace{0.1cm}\frac{\partial C}{\partial b_1}. 
-$$
-
-<p>Using the chain rule we find </p>
-$$
-\frac{\partial C}{\partial w_1}=\frac{\partial C}{\partial a_1}\frac{\partial a_1}{\partial z_1}\frac{\partial z_1}{\partial w_1}=(a_1-y)\sigma_1'x,
-$$
-
-<p>and</p>
-$$
-\frac{\partial C}{\partial b_1}=\frac{\partial C}{\partial a_1}\frac{\partial a_1}{\partial z_1}\frac{\partial z_1}{\partial b_1}=(a_1-y)\sigma_1',
-$$
-
-<p>which we later will just define as</p>
-$$
-\frac{\partial C}{\partial a_1}\frac{\partial a_1}{\partial z_1}=\delta_1.
-$$
-
-
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-<h2 id="implementing-the-simple-perceptron-model">Implementing the simple perceptron model </h2>
-
-<p>In the example code here we implement the above equations (with explict
-expressions for the derivatives) with just one input variable \( x \) and
-one output variable.  The target value \( y=2x+1 \) is a simple linear
-function in \( x \). Since this is a regression problem, we define the cost function to be proportional to the least squares error
-</p>
-$$
-C(y,w_1,b_1)=\frac{1}{2}(a_1-y)^2,
-$$
-
-<p>with \( a_1 \) the output from the network.</p>
-
-
-<!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
-<div class="cell border-box-sizing code_cell rendered">
-  <div class="input">
-    <div class="inner_cell">
-      <div class="input_area">
-        <div class="highlight" style="background: #eeeedd">
-  <pre style="line-height: 125%;"><span style="color: #228B22"># import necessary packages</span>
-<span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">numpy</span> <span style="color: #8B008B; font-weight: bold">as</span> <span style="color: #008b45; text-decoration: underline">np</span>
-<span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">matplotlib.pyplot</span> <span style="color: #8B008B; font-weight: bold">as</span> <span style="color: #008b45; text-decoration: underline">plt</span>
-
-<span style="color: #8B008B; font-weight: bold">def</span> <span style="color: #008b45">feed_forward</span>(x):
-    <span style="color: #228B22"># weighted sum of inputs to the output layer</span>
-    z_1 = x*output_weights + output_bias
-    <span style="color: #228B22"># Output from output node (one node only)</span>
-    <span style="color: #228B22"># Here the output is equal to the input</span>
-    a_1 = z_1
-    <span style="color: #8B008B; font-weight: bold">return</span> a_1
-
-<span style="color: #8B008B; font-weight: bold">def</span> <span style="color: #008b45">backpropagation</span>(x, y):
-    a_1 = feed_forward(x)
-    <span style="color: #228B22"># derivative of cost function</span>
-    derivative_cost = a_1 - y
-    <span style="color: #228B22"># the variable delta in the equations, note that output a_1 = z_1, its derivatives wrt z_o is thus 1</span>
-    delta_1 = derivative_cost
-    <span style="color: #228B22"># gradients for the output layer</span>
-    output_weights_gradient = delta_1*x
-    output_bias_gradient = delta_1
-    <span style="color: #228B22"># The cost function is 0.5*(a_1-y)^2. This gives a measure of the error for each iteration</span>
-    <span style="color: #8B008B; font-weight: bold">return</span> output_weights_gradient, output_bias_gradient
-
-<span style="color: #228B22"># ensure the same random numbers appear every time</span>
-np.random.seed(<span style="color: #B452CD">0</span>)
-<span style="color: #228B22"># Input variable</span>
-x = <span style="color: #B452CD">4.0</span>
-<span style="color: #228B22"># Target values</span>
-y = <span style="color: #B452CD">2</span>*x+<span style="color: #B452CD">1.0</span>
-
-<span style="color: #228B22"># Defining the neural network</span>
-n_inputs = <span style="color: #B452CD">1</span>
-n_outputs = <span style="color: #B452CD">1</span>
-<span style="color: #228B22"># Initialize the network</span>
-<span style="color: #228B22"># weights and bias in the output layer</span>
-output_weights = np.random.randn()
-output_bias = np.random.randn()
-
-<span style="color: #228B22"># implementing a simple gradient descent approach with fixed learning rate</span>
-eta = <span style="color: #B452CD">0.01</span>
-<span style="color: #8B008B; font-weight: bold">for</span> i <span style="color: #8B008B">in</span> <span style="color: #658b00">range</span>(<span style="color: #B452CD">40</span>):
-    <span style="color: #228B22"># calculate gradients from back propagation</span>
-    derivative_w1, derivative_b1 = backpropagation(x, y)
-    <span style="color: #228B22"># update weights and biases</span>
-    output_weights -= eta * derivative_w1
-    output_bias -= eta * derivative_b1
-<span style="color: #228B22"># our final prediction after training</span>
-ytilde = output_weights*x+output_bias
-<span style="color: #658b00">print</span>(<span style="color: #B452CD">0.5</span>*((ytilde-y)**<span style="color: #B452CD">2</span>))
-</pre>
-</div>
-      </div>
-    </div>
-  </div>
-  <div class="output_wrapper">
-    <div class="output">
-      <div class="output_area">
-        <div class="output_subarea output_stream output_stdout output_text">          
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<p>Running this code gives us an acceptable results after some 40-50 iterations. Note that the results depend on the value of the learning rate.</p>
-
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-<h2 id="central-magic">Central magic </h2>
-
-<a href="https://en.wikipedia.org/wiki/Automatic_differentiation" target="_blank">Automatic differentiation</a>
 
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 <h2 id="monte-carlo-methods-and-neural-networks">Monte Carlo methods and Neural Networks </h2>
@@ -1561,13 +1421,13 @@ $$
 
 
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
-<h2 id="onebody-densities-n-30-hbar-omega-0-1-a-u">Onebody densities \( N=30 \), \( \hbar\omega=0.1 \) a.u. </h2>
+<h2 id="expectation-values-as-functions-of-the-oscillator-frequency">Expectation values as functions of the oscillator frequency  </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
 <br/><br/>
 <center>
-<p><img src="figures/OB30hw01.png" width="700" align="bottom"></p>
+<p><img src="figures/virialtheorem.png" width="700" align="bottom"></p>
 </center>
 <br/><br/>
 </div>
@@ -1662,7 +1522,165 @@ necessarily normalized and is normally called the likelihood function.
 
 
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="possible-start-to-raise-awareness-about-ml-in-our-own-field">Possible start to raise awareness about ML in our own field </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<ul>
+<li> Make an ML challenge in your own field a la <a href="https://home.cern/news/news/computing/higgs-boson-machine-learning-challenge" target="_blank">Learning to discover: the Higgs boson machine learning challenge</a>. Alternatively go to kaggle.com at <a href="https://www.kaggle.com/c/higgs-boson" target="_blank"><tt>https://www.kaggle.com/c/higgs-boson</tt></a></li>
+<li> HEP@CERN and HEP in general have made significant impacts in the field of machine learning and AI. Something to learn from</li>
+</ul>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
 <h2 id="additional-material">Additional material </h2>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="our-network-example-simple-percepetron-with-one-input">Our network example, simple percepetron with one input </h2>
+
+<p>As as simple example we define now a simple perceptron model with
+all quantities given by scalars. We consider only one input variable
+\( x \) and one target value \( y \).  We define an activation function
+\( \sigma_1 \) which takes as input
+</p>
+
+$$
+z_1 = w_1x+b_1,
+$$
+
+<p>where \( w_1 \) is the weight and \( b_1 \) is the bias. These are the
+parameters we want to optimize.  This output is then fed into the
+<b>cost/loss</b> function, which we here for the sake of simplicity just
+define as the squared error
+</p>
+
+$$
+C(x;w_1,b_1)=\frac{1}{2}(a_1-y)^2.
+$$
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="optimizing-the-parameters">Optimizing the parameters </h2>
+
+<p>In setting up the feed forward and back propagation parts of the
+algorithm, we need now the derivative of the various variables we want
+to train.
+</p>
+
+<p>We need</p>
+$$
+\frac{\partial C}{\partial w_1} \hspace{0.1cm}\mathrm{and}\hspace{0.1cm}\frac{\partial C}{\partial b_1}. 
+$$
+
+<p>Using the chain rule we find </p>
+$$
+\frac{\partial C}{\partial w_1}=\frac{\partial C}{\partial a_1}\frac{\partial a_1}{\partial z_1}\frac{\partial z_1}{\partial w_1}=(a_1-y)\sigma_1'x,
+$$
+
+<p>and</p>
+$$
+\frac{\partial C}{\partial b_1}=\frac{\partial C}{\partial a_1}\frac{\partial a_1}{\partial z_1}\frac{\partial z_1}{\partial b_1}=(a_1-y)\sigma_1',
+$$
+
+<p>which we later will just define as</p>
+$$
+\frac{\partial C}{\partial a_1}\frac{\partial a_1}{\partial z_1}=\delta_1.
+$$
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="implementing-the-simple-perceptron-model">Implementing the simple perceptron model </h2>
+
+<p>In the example code here we implement the above equations (with explict
+expressions for the derivatives) with just one input variable \( x \) and
+one output variable.  The target value \( y=2x+1 \) is a simple linear
+function in \( x \). Since this is a regression problem, we define the cost function to be proportional to the least squares error
+</p>
+$$
+C(y,w_1,b_1)=\frac{1}{2}(a_1-y)^2,
+$$
+
+<p>with \( a_1 \) the output from the network.</p>
+
+
+<!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #eeeedd">
+  <pre style="line-height: 125%;"><span style="color: #228B22"># import necessary packages</span>
+<span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">numpy</span> <span style="color: #8B008B; font-weight: bold">as</span> <span style="color: #008b45; text-decoration: underline">np</span>
+<span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">matplotlib.pyplot</span> <span style="color: #8B008B; font-weight: bold">as</span> <span style="color: #008b45; text-decoration: underline">plt</span>
+
+<span style="color: #8B008B; font-weight: bold">def</span> <span style="color: #008b45">feed_forward</span>(x):
+    <span style="color: #228B22"># weighted sum of inputs to the output layer</span>
+    z_1 = x*output_weights + output_bias
+    <span style="color: #228B22"># Output from output node (one node only)</span>
+    <span style="color: #228B22"># Here the output is equal to the input</span>
+    a_1 = z_1
+    <span style="color: #8B008B; font-weight: bold">return</span> a_1
+
+<span style="color: #8B008B; font-weight: bold">def</span> <span style="color: #008b45">backpropagation</span>(x, y):
+    a_1 = feed_forward(x)
+    <span style="color: #228B22"># derivative of cost function</span>
+    derivative_cost = a_1 - y
+    <span style="color: #228B22"># the variable delta in the equations, note that output a_1 = z_1, its derivatives wrt z_o is thus 1</span>
+    delta_1 = derivative_cost
+    <span style="color: #228B22"># gradients for the output layer</span>
+    output_weights_gradient = delta_1*x
+    output_bias_gradient = delta_1
+    <span style="color: #228B22"># The cost function is 0.5*(a_1-y)^2. This gives a measure of the error for each iteration</span>
+    <span style="color: #8B008B; font-weight: bold">return</span> output_weights_gradient, output_bias_gradient
+
+<span style="color: #228B22"># ensure the same random numbers appear every time</span>
+np.random.seed(<span style="color: #B452CD">0</span>)
+<span style="color: #228B22"># Input variable</span>
+x = <span style="color: #B452CD">4.0</span>
+<span style="color: #228B22"># Target values</span>
+y = <span style="color: #B452CD">2</span>*x+<span style="color: #B452CD">1.0</span>
+
+<span style="color: #228B22"># Defining the neural network</span>
+n_inputs = <span style="color: #B452CD">1</span>
+n_outputs = <span style="color: #B452CD">1</span>
+<span style="color: #228B22"># Initialize the network</span>
+<span style="color: #228B22"># weights and bias in the output layer</span>
+output_weights = np.random.randn()
+output_bias = np.random.randn()
+
+<span style="color: #228B22"># implementing a simple gradient descent approach with fixed learning rate</span>
+eta = <span style="color: #B452CD">0.01</span>
+<span style="color: #8B008B; font-weight: bold">for</span> i <span style="color: #8B008B">in</span> <span style="color: #658b00">range</span>(<span style="color: #B452CD">40</span>):
+    <span style="color: #228B22"># calculate gradients from back propagation</span>
+    derivative_w1, derivative_b1 = backpropagation(x, y)
+    <span style="color: #228B22"># update weights and biases</span>
+    output_weights -= eta * derivative_w1
+    output_bias -= eta * derivative_b1
+<span style="color: #228B22"># our final prediction after training</span>
+ytilde = output_weights*x+output_bias
+<span style="color: #658b00">print</span>(<span style="color: #B452CD">0.5</span>*((ytilde-y)**<span style="color: #B452CD">2</span>))
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p>Running this code gives us an acceptable results after some 40-50 iterations. Note that the results depend on the value of the learning rate.</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="central-magic">Central magic </h2>
+
+<a href="https://en.wikipedia.org/wiki/Automatic_differentiation" target="_blank">Automatic differentiation</a>
 
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 <h2 id="essential-elements-of-generative-models">Essential elements of generative models </h2>
@@ -1677,14 +1695,14 @@ necessarily normalized and is normally called the likelihood function.
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 <h2 id="energy-models">Energy models </h2>
 
-<p>Last week we defined a domain \( \boldsymbol{X} \) of stochastic variables \( \boldsymbol{X}= \{x_0,x_1, \dots , x_{n-1}\} \) with a pertinent probability distribution</p>
+<p>We define a domain \( \boldsymbol{X} \) of stochastic variables \( \boldsymbol{X}= \{x_0,x_1, \dots , x_{n-1}\} \) with a pertinent probability distribution</p>
 $$
 p(\boldsymbol{X})=\prod_{x_i\in \boldsymbol{X}}p(x_i),
 $$
 
 <p>where we have assumed that the random varaibles \( x_i \) are all independent and identically distributed (iid).</p>
 
-<p>We will now assume that we can defined this function in terms of optimization parameters \( \boldsymbol{\Theta} \), which could be the biases and weights of deep network, and a set of hidden variables we also assume to be random variables which also are iid. The domain of these variables is
+<p>We will now assume that we can defined this function in terms of optimization parameters \( \boldsymbol{\Theta} \), which could be the biases and weights of a deep network, and a set of hidden variables we also assume to be random variables which also are iid. The domain of these variables is
 \( \boldsymbol{H}= \{h_0,h_1, \dots , h_{m-1}\} \).
 </p>
 
@@ -1794,6 +1812,7 @@ $$
 
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 <h2 id="expression-for-the-gradients">Expression for the gradients </h2>
+
 <p>This leads to the following equation</p>
 $$
 \nabla_{\boldsymbol{\Theta}}\log{p(\boldsymbol{X};\boldsymbol{\Theta})}=\nabla_{\boldsymbol{\Theta}}\left(\sum_{x_i\in \boldsymbol{X}}\log{f(x_i;\boldsymbol{\Theta})}\right)-\nabla_{\boldsymbol{\Theta}}\log{Z(\boldsymbol{\Theta})}=0.

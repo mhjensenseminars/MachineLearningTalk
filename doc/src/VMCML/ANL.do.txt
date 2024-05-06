@@ -648,146 +648,12 @@ If the function $F(\bm{x})$ is discontinuous, it won't in general be possible to
 
 See example at URL:"https://github.com/CompPhysics/MachineLearning/blob/master/doc/pub/week34/ipynb/week34.ipynb", and scroll down to nuclear masses.
 
+And the recent article URL:"https://www.sciencedirect.com/science/article/pii/S0375947423001100"
 
 !split
 =====  Illustration of a single perceptron model and an FFNN =====
 
 FIGURE: [figures/nns.png, width=600 frac=0.7]  In a) we show a single perceptron model while in b) we dispay a network with two  hidden layers, an input layer and an output layer.
-
-
-!split
-===== Our network example, simple percepetron with one input =====
-
-As as simple example we define now a simple perceptron model with
-all quantities given by scalars. We consider only one input variable
-$x$ and one target value $y$.  We define an activation function
-$\sigma_1$ which takes as input
-
-!bt
-\[
-z_1 = w_1x+b_1,
-\]
-!et
-where $w_1$ is the weight and $b_1$ is the bias. These are the
-parameters we want to optimize.  This output is then fed into the
-_cost/loss_ function, which we here for the sake of simplicity just
-define as the squared error
-
-!bt
-\[
-C(x;w_1,b_1)=\frac{1}{2}(a_1-y)^2.
-\]
-!et
-
-
-!split
-===== Optimizing the parameters =====
-
-In setting up the feed forward and back propagation parts of the
-algorithm, we need now the derivative of the various variables we want
-to train.
-
-We need
-!bt
-\[
-\frac{\partial C}{\partial w_1} \hspace{0.1cm}\mathrm{and}\hspace{0.1cm}\frac{\partial C}{\partial b_1}. 
-\]
-!et
-
-Using the chain rule we find 
-!bt
-\[
-\frac{\partial C}{\partial w_1}=\frac{\partial C}{\partial a_1}\frac{\partial a_1}{\partial z_1}\frac{\partial z_1}{\partial w_1}=(a_1-y)\sigma_1'x,
-\]
-!et
-and
-!bt
-\[
-\frac{\partial C}{\partial b_1}=\frac{\partial C}{\partial a_1}\frac{\partial a_1}{\partial z_1}\frac{\partial z_1}{\partial b_1}=(a_1-y)\sigma_1',
-\]
-!et
-which we later will just define as
-!bt
-\[
-\frac{\partial C}{\partial a_1}\frac{\partial a_1}{\partial z_1}=\delta_1.
-\]
-!et
-
-!split
-===== Implementing the simple perceptron model =====
-
-In the example code here we implement the above equations (with explict
-expressions for the derivatives) with just one input variable $x$ and
-one output variable.  The target value $y=2x+1$ is a simple linear
-function in $x$. Since this is a regression problem, we define the cost function to be proportional to the least squares error
-!bt
-\[
-C(y,w_1,b_1)=\frac{1}{2}(a_1-y)^2,
-\]
-!et
-with $a_1$ the output from the network.
-
-!bc pycod
-# import necessary packages
-import numpy as np
-import matplotlib.pyplot as plt
-
-def feed_forward(x):
-    # weighted sum of inputs to the output layer
-    z_1 = x*output_weights + output_bias
-    # Output from output node (one node only)
-    # Here the output is equal to the input
-    a_1 = z_1
-    return a_1
-
-def backpropagation(x, y):
-    a_1 = feed_forward(x)
-    # derivative of cost function
-    derivative_cost = a_1 - y
-    # the variable delta in the equations, note that output a_1 = z_1, its derivatives wrt z_o is thus 1
-    delta_1 = derivative_cost
-    # gradients for the output layer
-    output_weights_gradient = delta_1*x
-    output_bias_gradient = delta_1
-    # The cost function is 0.5*(a_1-y)^2. This gives a measure of the error for each iteration
-    return output_weights_gradient, output_bias_gradient
-
-# ensure the same random numbers appear every time
-np.random.seed(0)
-# Input variable
-x = 4.0
-# Target values
-y = 2*x+1.0
-
-# Defining the neural network
-n_inputs = 1
-n_outputs = 1
-# Initialize the network
-# weights and bias in the output layer
-output_weights = np.random.randn()
-output_bias = np.random.randn()
-
-# implementing a simple gradient descent approach with fixed learning rate
-eta = 0.01
-for i in range(40):
-    # calculate gradients from back propagation
-    derivative_w1, derivative_b1 = backpropagation(x, y)
-    # update weights and biases
-    output_weights -= eta * derivative_w1
-    output_bias -= eta * derivative_b1
-# our final prediction after training
-ytilde = output_weights*x+output_bias
-print(0.5*((ytilde-y)**2))
-
-!ec
-Running this code gives us an acceptable results after some 40-50 iterations. Note that the results depend on the value of the learning rate.
-
-
-!split
-===== Central magic =====
-
-"Automatic differentiation":"https://en.wikipedia.org/wiki/Automatic_differentiation"
-
 
 
 
@@ -1084,10 +950,12 @@ FIGURE: [figures/OB30hw1.png, width=700 frac=0.9]
 !eblock
 
 
+
+
 !split
-===== Onebody densities $N=30$, $\hbar\omega=0.1$ a.u. =====
+===== Expectation values as functions of the oscillator frequency  =====
 !bblock
-FIGURE: [figures/OB30hw01.png, width=700 frac=0.9]
+FIGURE: [figures/virialtheorem.pdf, width=700 frac=0.9]
 !eblock
 
 
@@ -1169,7 +1037,154 @@ FIGURE: [figures/landscape.jpg, width=800 frac=1.0]
 !eblock
 
 !split
+===== Possible start to raise awareness about ML in our own field =====
+!bblock 
+* Make an ML challenge in your own field a la "Learning to discover: the Higgs boson machine learning challenge":"https://home.cern/news/news/computing/higgs-boson-machine-learning-challenge". Alternatively go to kaggle.com at URL:"https://www.kaggle.com/c/higgs-boson"
+* HEP@CERN and HEP in general have made significant impacts in the field of machine learning and AI. Something to learn from
+!eblock
+
+
+
+!split
 ===== Additional material =====
+
+
+
+!split
+===== Our network example, simple percepetron with one input =====
+
+As as simple example we define now a simple perceptron model with
+all quantities given by scalars. We consider only one input variable
+$x$ and one target value $y$.  We define an activation function
+$\sigma_1$ which takes as input
+
+!bt
+\[
+z_1 = w_1x+b_1,
+\]
+!et
+where $w_1$ is the weight and $b_1$ is the bias. These are the
+parameters we want to optimize.  This output is then fed into the
+_cost/loss_ function, which we here for the sake of simplicity just
+define as the squared error
+
+!bt
+\[
+C(x;w_1,b_1)=\frac{1}{2}(a_1-y)^2.
+\]
+!et
+
+
+!split
+===== Optimizing the parameters =====
+
+In setting up the feed forward and back propagation parts of the
+algorithm, we need now the derivative of the various variables we want
+to train.
+
+We need
+!bt
+\[
+\frac{\partial C}{\partial w_1} \hspace{0.1cm}\mathrm{and}\hspace{0.1cm}\frac{\partial C}{\partial b_1}. 
+\]
+!et
+
+Using the chain rule we find 
+!bt
+\[
+\frac{\partial C}{\partial w_1}=\frac{\partial C}{\partial a_1}\frac{\partial a_1}{\partial z_1}\frac{\partial z_1}{\partial w_1}=(a_1-y)\sigma_1'x,
+\]
+!et
+and
+!bt
+\[
+\frac{\partial C}{\partial b_1}=\frac{\partial C}{\partial a_1}\frac{\partial a_1}{\partial z_1}\frac{\partial z_1}{\partial b_1}=(a_1-y)\sigma_1',
+\]
+!et
+which we later will just define as
+!bt
+\[
+\frac{\partial C}{\partial a_1}\frac{\partial a_1}{\partial z_1}=\delta_1.
+\]
+!et
+
+!split
+===== Implementing the simple perceptron model =====
+
+In the example code here we implement the above equations (with explict
+expressions for the derivatives) with just one input variable $x$ and
+one output variable.  The target value $y=2x+1$ is a simple linear
+function in $x$. Since this is a regression problem, we define the cost function to be proportional to the least squares error
+!bt
+\[
+C(y,w_1,b_1)=\frac{1}{2}(a_1-y)^2,
+\]
+!et
+with $a_1$ the output from the network.
+
+!bc pycod
+# import necessary packages
+import numpy as np
+import matplotlib.pyplot as plt
+
+def feed_forward(x):
+    # weighted sum of inputs to the output layer
+    z_1 = x*output_weights + output_bias
+    # Output from output node (one node only)
+    # Here the output is equal to the input
+    a_1 = z_1
+    return a_1
+
+def backpropagation(x, y):
+    a_1 = feed_forward(x)
+    # derivative of cost function
+    derivative_cost = a_1 - y
+    # the variable delta in the equations, note that output a_1 = z_1, its derivatives wrt z_o is thus 1
+    delta_1 = derivative_cost
+    # gradients for the output layer
+    output_weights_gradient = delta_1*x
+    output_bias_gradient = delta_1
+    # The cost function is 0.5*(a_1-y)^2. This gives a measure of the error for each iteration
+    return output_weights_gradient, output_bias_gradient
+
+# ensure the same random numbers appear every time
+np.random.seed(0)
+# Input variable
+x = 4.0
+# Target values
+y = 2*x+1.0
+
+# Defining the neural network
+n_inputs = 1
+n_outputs = 1
+# Initialize the network
+# weights and bias in the output layer
+output_weights = np.random.randn()
+output_bias = np.random.randn()
+
+# implementing a simple gradient descent approach with fixed learning rate
+eta = 0.01
+for i in range(40):
+    # calculate gradients from back propagation
+    derivative_w1, derivative_b1 = backpropagation(x, y)
+    # update weights and biases
+    output_weights -= eta * derivative_w1
+    output_bias -= eta * derivative_b1
+# our final prediction after training
+ytilde = output_weights*x+output_bias
+print(0.5*((ytilde-y)**2))
+
+!ec
+Running this code gives us an acceptable results after some 40-50 iterations. Note that the results depend on the value of the learning rate.
+
+
+!split
+===== Central magic =====
+
+"Automatic differentiation":"https://en.wikipedia.org/wiki/Automatic_differentiation"
+
+
+
 
 
 !split
@@ -1184,7 +1199,7 @@ o Diffusion models
 !split
 ===== Energy models =====
 
-Last week we defined a domain $\bm{X}$ of stochastic variables $\bm{X}= \{x_0,x_1, \dots , x_{n-1}\}$ with a pertinent probability distribution
+We define a domain $\bm{X}$ of stochastic variables $\bm{X}= \{x_0,x_1, \dots , x_{n-1}\}$ with a pertinent probability distribution
 !bt
 \[
 p(\bm{X})=\prod_{x_i\in \bm{X}}p(x_i),
@@ -1192,7 +1207,7 @@ p(\bm{X})=\prod_{x_i\in \bm{X}}p(x_i),
 !et
 where we have assumed that the random varaibles $x_i$ are all independent and identically distributed (iid).
 
-We will now assume that we can defined this function in terms of optimization parameters $\bm{\Theta}$, which could be the biases and weights of deep network, and a set of hidden variables we also assume to be random variables which also are iid. The domain of these variables is
+We will now assume that we can defined this function in terms of optimization parameters $\bm{\Theta}$, which could be the biases and weights of a deep network, and a set of hidden variables we also assume to be random variables which also are iid. The domain of these variables is
 $\bm{H}= \{h_0,h_1, \dots , h_{m-1}\}$.
 
 !split
@@ -1309,6 +1324,7 @@ which leads to
 
 !split
 ===== Expression for the gradients =====
+
 This leads to the following equation
 !bt
 \[
@@ -1436,6 +1452,9 @@ and
 \frac{\partial E(\bm{x}, \bm{h};\bm{\Theta})}{\partial b_j}=-h_j.
 \]
 !et
+
+
+
 
 
 
