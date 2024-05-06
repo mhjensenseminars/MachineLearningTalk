@@ -175,8 +175,8 @@ FIGURE: [figures/generativemodels.png, width=900 frac=1.0]
 * "Babcock and Gavras, Generative AI with Python and TensorFlow 2":"https://github.com/PacktPublishing/Hands-On-Generative-AI-with-Python-and-TensorFlow-2"
 !eblock
 
-All three books have GitHub addresses from where  one can download all codes. We will borrow most of the material from these three texts as well as 
-from Goodfellow, Bengio and Courville's text "Deep Learning":"https://www.deeplearningbook.org/"
+All three books have GitHub addresses from where  one can download all codes. A good and more general text (2016)
+is Goodfellow, Bengio and Courville's text "Deep Learning":"https://www.deeplearningbook.org/"
 
 
 
@@ -333,25 +333,6 @@ Here we have defined the norm-1 as
 
 
 
-!split
-===== Lots of room for creativity =====
-!bblock
-Not all the
-algorithms and methods can be given a rigorous mathematical
-justification, opening up thereby for experimenting
-and trial and error and thereby exciting new developments. 
-!eblock
-
-!bblock
-A solid command of linear algebra, multivariate theory, 
-probability theory, statistical data analysis, optimization algorithms, 
-understanding errors and Monte Carlo methods is important in order to understand many of the 
-various algorithms and methods. 
-!eblock
-
-_Job market, a personal statement_: "A familiarity with ML is almost becoming a prerequisite for many of the most exciting employment opportunities":"https://www.analyticsindiamag.com/top-countries-hiring-most-number-of-artificial-intelligence-machine-learning-experts/". And add quantum computing and there you are!
-
-
 
 !split
 ===== Selected references =====
@@ -360,9 +341,8 @@ _Job market, a personal statement_: "A familiarity with ML is almost becoming a 
 * "Machine Learning and the Physical Sciences by Carleo et al":"https://link.aps.org/doi/10.1103/RevModPhys.91.045002"
 * "Artificial Intelligence and Machine Learning in Nuclear Physics, Amber Boehnlein et al., Reviews Modern of Physics 94, 031003 (2022)":"https://journals.aps.org/rmp/abstract/10.1103/RevModPhys.94.031003" 
 * "Dilute neutron star matter from neural-network quantum states by Fore et al, Physical Review Research 5, 033062 (2023)":"https://journals.aps.org/prresearch/pdf/10.1103/PhysRevResearch.5.033062"
-* "Neural-network quantum states for ultra-cold Fermi gases, Jane Kim et al, Nature Physics Communcication, submitted":"https://doi.org/10.48550/arXiv.2305.08831"
+* Neural-network quantum states for ultra-cold Fermi gases, Jane Kim et al, Nature Physics Communcication, in press, see URL:"https://doi.org/10.48550/arXiv.2305.08831"
 * "Message-Passing Neural Quantum States for the Homogeneous Electron Gas, Gabriel Pescia, Jane Kim et al. arXiv.2305.07240,":"https://doi.org/10.48550/arXiv.2305.07240"
-* "Efficient solutions of fermionic systems using artificial neural networks, Nordhagen et al, Frontiers in Physics 11, 2023":"https://doi.org/10.3389/fphy.2023.1061580"
 * "Particle Data Group summary on ML methods":"https://pdg.lbl.gov/2021/reviews/rpp2021-rev-machine-learning.pdf"
 !eblock
 
@@ -950,10 +930,9 @@ FIGURE: [figures/OB30hw1.png, width=700 frac=0.9]
 !eblock
 
 
-
-
 !split
 ===== Expectation values as functions of the oscillator frequency  =====
+
 !bblock
 FIGURE: [figures/virialtheorem.pdf, width=700 frac=0.9]
 !eblock
