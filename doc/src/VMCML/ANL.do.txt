@@ -175,10 +175,22 @@ FIGURE: [figures/generativemodels.png, width=900 frac=1.0]
 * "Babcock and Gavras, Generative AI with Python and TensorFlow 2":"https://github.com/PacktPublishing/Hands-On-Generative-AI-with-Python-and-TensorFlow-2"
 !eblock
 
-All three books have GitHub addresses from where  one can download all codes. A good and more general text (2016)
-is Goodfellow, Bengio and Courville's text "Deep Learning":"https://www.deeplearningbook.org/"
+All three books have GitHub sites from where  one can download all codes. A good and more general text (2016)
+is Goodfellow, Bengio and Courville, "Deep Learning":"https://www.deeplearningbook.org/"
 
 
+!split
+===== More references =====
+
+!bblock Reading on diffusion models
+o A central paper is the one by Sohl-Dickstein et al, Deep Unsupervised Learning using Nonequilibrium Thermodynamics, URL:"https://arxiv.org/abs/1503.03585"
+o See also Diederik P. Kingma, Tim Salimans, Ben Poole, Jonathan Ho, Variational Diffusion Models, URL:"https://arxiv.org/abs/2107.00630"
+!eblock   
+
+!bblock and VAEs
+o Calvin Luo URL:"https://calvinyluo.com/2022/08/26/diffusion-tutorial.html"
+o An Introduction to Variational Autoencoders, by Kingma and Welling, see URL:"https://arxiv.org/abs/1906.02691"
+!eblock
 
 
 !split
