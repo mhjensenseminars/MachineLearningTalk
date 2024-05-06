@@ -11,7 +11,7 @@ in nuclear physics. And why this could (or should) be of interest.
 !eblock
 
 !bblock
-These slides and more at URL:"http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/ANL/"
+These slides and more at URL:"https://github.com/mhjensenseminars/MachineLearningTalk/tree/master/doc/pub/ANL"
 !eblock
 
 !split
