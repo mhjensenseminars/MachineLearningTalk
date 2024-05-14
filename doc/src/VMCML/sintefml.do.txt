@@ -1,18 +1,18 @@
-TITLE: Mathematics of discriminative and generative deep learning, from deep neural networks to diffusion models
-AUTHOR: Morten Hjorth-Jensen {copyright, 1999-present|CC BY-NC} at Department of Physics and Center for Computing in Science Education, University of Oslo, Norway & Department of Physics and Astronomy and Facility for Rare Isotope Beams, Michigan State University, East Lansing, Michigan, USA
-DATE: May 14-16
+TITLE: Machine learning approaches for quantum mechanical problems
+AUTHOR: Morten Hjorth-Jensen at Department of Physics and Center for Computing in Science Education, University of Oslo, Norway & Department of Physics and Astronomy and Facility for Rare Isotope Beams, Michigan State University, East Lansing, Michigan, USA
+DATE: PhysML workshop, Oslo, Norway, May 14-16, 2024
 
 
 
 !split
 ===== What is this talk about? =====
 !bblock
-The main emphasis is to give you a short and pedestrian introduction to the whys and hows we can use (with several examples) machine learning methods
-in nuclear physics. And why this could (or should) be of interest. 
+The main emphasis is to give you a short and hopefully pedestrian introduction to machine learning methods for solving quantum mechanical many-body problems.
+The first part has an emphasis on both generative and discriminative methods while the second part of the talk introduces a new method dubbed _Parametric Matrix Models_, see URL:"https://arxiv.org/abs/2401.11694". 
 !eblock
 
 !bblock
-These slides and more at URL:"https://github.com/mhjensenseminars/MachineLearningTalk/tree/master/doc/pub/ANL"
+These slides and more at URL:"https://github.com/mhjensenseminars/MachineLearningTalk/tree/master/doc/pub/sintefml"
 !eblock
 
 !split
@@ -23,25 +23,48 @@ Jane Kim (MSU/Ohio U), Julie Butler (MSU/Mt Union), Patrick Cook (MSU), Danny Ja
 !split
 ===== And sponsors =====
 
-o National Science Foundation, US (various grants)
-o Department of Energy, US (various grants)
+o National Science Foundation, USA (various grants)
+o Department of Energy, USA (various grants)
 o Research Council of Norway (various grants) and my employers University of Oslo and Michigan State University
 
 
 !split
 ===== Selected references =====
 !bblock
-* "Mehta et al.":"https://arxiv.org/abs/1803.08823" and "Physics Reports (2019)":"https://www.sciencedirect.com/science/article/pii/S0370157319300766?via%3Dihub".
-* "Machine Learning and the Physical Sciences by Carleo et al":"https://link.aps.org/doi/10.1103/RevModPhys.91.045002"
-* "Artificial Intelligence and Machine Learning in Nuclear Physics, Amber Boehnlein et al., Reviews Modern of Physics 94, 031003 (2022)":"https://journals.aps.org/rmp/abstract/10.1103/RevModPhys.94.031003" 
-* "Dilute neutron star matter from neural-network quantum states by Fore et al, Physical Review Research 5, 033062 (2023)":"https://journals.aps.org/prresearch/pdf/10.1103/PhysRevResearch.5.033062"
-* Neural-network quantum states for ultra-cold Fermi gases, Jane Kim et al, Nature Physics Communcication, in press, see URL:"https://doi.org/10.48550/arXiv.2305.08831"
-* "Message-Passing Neural Quantum States for the Homogeneous Electron Gas, Gabriel Pescia, Jane Kim et al. arXiv.2305.07240,":"https://doi.org/10.48550/arXiv.2305.07240"
-* "Particle Data Group summary on ML methods":"https://pdg.lbl.gov/2021/reviews/rpp2021-rev-machine-learning.pdf"
+* A high-bias, low-variance introduction to Machine Learning for physicists, Mehta et al., Physics Reports _810_, 1 (2019), URL:"https://www.sciencedirect.com/science/article/pii/S0370157319300766?via%3Dihub".
+* Machine Learning and the Physical Sciences by Carleo et al., Reviews of Modern Physics _91_, 045002 (2019), URL:"https://link.aps.org/doi/10.1103/RevModPhys.91.045002"
+* Artificial Intelligence and Machine Learning in Nuclear Physics, Amber Boehnlein et al., Reviews Modern of Physics _94_, 031003 (2022), URL:"https://journals.aps.org/rmp/abstract/10.1103/RevModPhys.94.031003" 
+* Dilute neutron star matter from neural-network quantum states by Fore et al, Physical Review Research _5_, 033062 (2023), URL:"https://journals.aps.org/prresearch/pdf/10.1103/PhysRevResearch.5.033062"
+* Neural-network quantum states for ultra-cold Fermi gases, Jane Kim et al, Nature Communications Physics _7_, 148 (2024), URL:"https://www.nature.com/articles/s42005-024-01613-w"
+* Message-Passing Neural Quantum States for the Homogeneous Electron Gas, Gabriel Pescia, Jane Kim et al. arXiv.2305.07240,":"https://doi.org/10.48550/arXiv.2305.07240"
+* "Parametric Matrix Models, Patrick Cook, Danny Jammooa, MHJ, Dean Lee and Daniel Lee, URL:"https://arxiv.org/abs/2401.11694". 
 !eblock
 
 
+!split
+===== Extrapolations and model interpretability  =====
 
+When you hear phrases like _predictions and estimations_ and
+_correlations and causations_, what do you think of?
+
+May be you think
+of the difference between classifying new data points and generating
+new data points.
+
+Or perhaps you consider that correlations represent some kind of symmetric statements like
+if $A$ is correlated with $B$, then $B$ is correlated with
+$A$. Causation on the other hand is directional, that is if $A$ causes $B$, $B$ does not
+necessarily cause $A$.
+
+
+!split
+===== Generative and discriminative models =====
+
+!bblock
+o Balance between tractability and flexibility
+o We want to extract information about correlations, to make predictions, quantify uncertainties and express causality
+o How do we represent reliably our effective degrees of freedom?
+!eblock
 
 
 !split
@@ -49,8 +72,15 @@ o Research Council of Norway (various grants) and my employers University of Osl
 
 FIGURE: [figures/mlimage.png, width=800 frac=1.0]
 
+!split
+=====  Background =====
 
-
+!bblock
+o I have my training and research in traditional many-body theories and have studied and coded almost all, FCI, mean-field methods, Coupled Cluster theories, Green's function approaches, many-body perturbation theories, Monte Carlo methods and also molecular dynamics. Time independent and time-dependent theories
+o Central keywords: Effective degrees of freedom and dimensionality reduction
+o Last 6-8 years  focus on quantum computing and machine learning
+o Developed many courses (regular and intensive) ones on many-body physics, computational physics, machine learning and quantum computing, see URL:"https://github.com/mhjensen"
+!eblock
 
 !split
 ===== Many-body physics, Quantum Monte Carlo and deep learning =====
@@ -554,17 +584,6 @@ FIGURE: [figures/virialtheorem.pdf, width=700 frac=0.9]
 !eblock
 
 
-!split
-===== Extrapolations and model interpretability  =====
-
-When you hear phrases like _predictions and estimations_ and
-_correlations and causations_, what do you think of?  May be you think
-of the difference between classifying new data points and generating
-new data points.
-Or perhaps you consider that correlations represent some kind of symmetric statements like
-if $A$ is correlated with $B$, then $B$ is correlated with
-$A$. Causation on the other hand is directional, that is if $A$ causes $B$, $B$ does not
-necessarily cause $A$.
 
 
 
