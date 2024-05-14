@@ -7,8 +7,15 @@ DATE: PhysML workshop, Oslo, Norway, May 14-16, 2024
 !split
 ===== What is this talk about? =====
 !bblock
-The main emphasis is to give you a short and hopefully pedestrian introduction to machine learning methods for solving quantum mechanical many-body problems.
-The first part has an emphasis on both generative and discriminative methods while the second part of the talk introduces a new method dubbed _Parametric Matrix Models_, see URL:"https://arxiv.org/abs/2401.11694". 
+
+The main aim is to give you a short and hopefully pedestrian
+introduction to machine learning methods for solving quantum
+mechanical many-body problems.
+
+The first part has an emphasis on both generative and discriminative
+methods while the second part of the talk introduces a new method
+dubbed _Parametric Matrix Models_, see
+URL:"https://arxiv.org/abs/2401.11694".
 !eblock
 
 !bblock
