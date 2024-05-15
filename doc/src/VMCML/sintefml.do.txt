@@ -34,6 +34,16 @@ o National Science Foundation, USA (various grants)
 o Department of Energy, USA (various grants)
 o Research Council of Norway (various grants) and my employers University of Oslo and Michigan State University
 
+!split
+=====  Background =====
+
+!bblock
+o I have my training and research in traditional many-body theories and have studied and coded almost all, FCI, mean-field methods, Coupled Cluster theories, Green's function approaches, many-body perturbation theories, Monte Carlo methods and also molecular dynamics. Time independent and time-dependent theories
+o Central keywords: Effective degrees of freedom and dimensionality reduction
+o Last 6-8 years  focus on quantum computing and machine learning
+o Developed many courses (regular and intensive) ones on many-body physics, computational physics, machine learning and quantum computing, see URL:"https://github.com/mhjensen"
+!eblock
+
 
 !split
 ===== Selected references =====
@@ -79,15 +89,6 @@ o How do we represent reliably our effective degrees of freedom?
 
 FIGURE: [figures/mlimage.png, width=800 frac=1.0]
 
-!split
-=====  Background =====
-
-!bblock
-o I have my training and research in traditional many-body theories and have studied and coded almost all, FCI, mean-field methods, Coupled Cluster theories, Green's function approaches, many-body perturbation theories, Monte Carlo methods and also molecular dynamics. Time independent and time-dependent theories
-o Central keywords: Effective degrees of freedom and dimensionality reduction
-o Last 6-8 years  focus on quantum computing and machine learning
-o Developed many courses (regular and intensive) ones on many-body physics, computational physics, machine learning and quantum computing, see URL:"https://github.com/mhjensen"
-!eblock
 
 !split
 ===== Many-body physics, Quantum Monte Carlo and deep learning =====
