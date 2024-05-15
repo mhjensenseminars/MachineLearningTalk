@@ -763,3 +763,5 @@ FIGURE: [figures/virialtheorem.pdf, width=700 frac=0.9]
 !eblock
 
 
+!split
+===== Parametric matrix models =====
