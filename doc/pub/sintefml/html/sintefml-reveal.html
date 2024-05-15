@@ -194,8 +194,16 @@ MathJax.Hub.Config({
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
-<p>The main emphasis is to give you a short and hopefully pedestrian introduction to machine learning methods for solving quantum mechanical many-body problems.
-The first part has an emphasis on both generative and discriminative methods while the second part of the talk introduces a new method dubbed <b>Parametric Matrix Models</b>, see <a href="https://arxiv.org/abs/2401.11694" target="_blank"><tt>https://arxiv.org/abs/2401.11694</tt></a>. 
+
+<p>The main aim is to give you a short and hopefully pedestrian
+introduction to machine learning methods for solving quantum
+mechanical many-body problems.
+</p>
+
+<p>The first part has an emphasis on both generative and discriminative
+methods while the second part of the talk introduces a new method
+dubbed <b>Parametric Matrix Models</b>, see
+<a href="https://arxiv.org/abs/2401.11694" target="_blank"><tt>https://arxiv.org/abs/2401.11694</tt></a>.
 </p>
 </div>
 
@@ -221,6 +229,21 @@ The first part has an emphasis on both generative and discriminative methods whi
 <p><li> Department of Energy, USA (various grants)</li>
 <p><li> Research Council of Norway (various grants) and my employers University of Oslo and Michigan State University</li>
 </ol>
+</section>
+
+<section>
+<h2 id="background">Background </h2>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<ol>
+<p><li> I have my training and research in traditional many-body theories and have studied and coded almost all, FCI, mean-field methods, Coupled Cluster theories, Green's function approaches, many-body perturbation theories, Monte Carlo methods and also molecular dynamics. Time independent and time-dependent theories</li>
+<p><li> Central keywords: Effective degrees of freedom and dimensionality reduction</li>
+<p><li> Last 6-8 years  focus on quantum computing and machine learning</li>
+<p><li> Developed many courses (regular and intensive) ones on many-body physics, computational physics, machine learning and quantum computing, see <a href="https://github.com/mhjensen" target="_blank"><tt>https://github.com/mhjensen</tt></a></li>
+</ol>
+</div>
 </section>
 
 <section>
@@ -274,6 +297,39 @@ necessarily cause \( A \).
 </section>
 
 <section>
+<h2 id="the-plethora-of-machine-learning-algorithms-methods">The plethora  of machine learning algorithms/methods </h2>
+
+<ol>
+<p><li> Deep learning: Neural Networks (NN), Convolutional NN, Recurrent NN, Boltzmann machines, autoencoders and variational autoencoders  and generative adversarial networks, stable diffusion and many more generative models</li>
+<p><li> Bayesian statistics and Bayesian Machine Learning, Bayesian experimental design, Bayesian Regression models, Bayesian neural networks, Gaussian processes and much more</li>
+<p><li> Dimensionality reduction (Principal component analysis), Clustering Methods and more</li>
+<p><li> Ensemble Methods, Random forests, bagging and voting methods, gradient boosting approaches</li> 
+<p><li> Linear and logistic regression, Kernel methods, support vector machines and more</li>
+<p><li> Reinforcement Learning; Transfer Learning and more</li> 
+</ol>
+</section>
+
+<section>
+<h2 id="example-of-generative-modeling-taken-from-generative-deep-learning-by-david-foster-https-www-oreilly-com-library-view-generative-deep-learning-9781098134174-ch01-html">Example of generative modeling, <a href="https://www.oreilly.com/library/view/generative-deep-learning/9781098134174/ch01.html" target="_blank">taken from Generative Deep Learning by David Foster</a>  </h2>
+
+<br/><br/>
+<center>
+<p><img src="figures/generativelearning.png" width="900" align="bottom"></p>
+</center>
+<br/><br/>
+</section>
+
+<section>
+<h2 id="example-of-discriminative-modeling-taken-from-generative-deeep-learning-by-david-foster-https-www-oreilly-com-library-view-generative-deep-learning-9781098134174-ch01-html">Example of discriminative modeling, <a href="https://www.oreilly.com/library/view/generative-deep-learning/9781098134174/ch01.html" target="_blank">taken from Generative Deeep Learning by David Foster</a>  </h2>
+
+<br/><br/>
+<center>
+<p><img src="figures/standarddeeplearning.png" width="900" align="bottom"></p>
+</center>
+<br/><br/>
+</section>
+
+<section>
 <h2 id="machine-learning-a-simple-perspective-on-the-interface-between-ml-and-physics">Machine learning. A simple perspective on the interface between ML and Physics </h2>
 
 <br/><br/>
@@ -281,21 +337,6 @@ necessarily cause \( A \).
 <p><img src="figures/mlimage.png" width="800" align="bottom"></p>
 </center>
 <br/><br/>
-</section>
-
-<section>
-<h2 id="background">Background </h2>
-
-<div class="alert alert-block alert-block alert-text-normal">
-<b></b>
-<p>
-<ol>
-<p><li> I have my training and research in traditional many-body theories and have studied and coded almost all, FCI, mean-field methods, Coupled Cluster theories, Green's function approaches, many-body perturbation theories, Monte Carlo methods and also molecular dynamics. Time independent and time-dependent theories</li>
-<p><li> Central keywords: Effective degrees of freedom and dimensionality reduction</li>
-<p><li> Last 6-8 years  focus on quantum computing and machine learning</li>
-<p><li> Developed many courses (regular and intensive) ones on many-body physics, computational physics, machine learning and quantum computing, see <a href="https://github.com/mhjensen" target="_blank"><tt>https://github.com/mhjensen</tt></a></li>
-</ol>
-</div>
 </section>
 
 <section>
@@ -657,335 +698,21 @@ The above function is replaced by a four-layer Neural Network.
 </section>
 
 <section>
-<h2 id="efficient-solutions-of-fermionic-systems-using-artificial-neural-networks-nordhagen-et-al-frontiers-in-physics-11-2023-https-doi-org-10-3389-fphy-2023-1061580"><a href="https://doi.org/10.3389/fphy.2023.1061580" target="_blank">Efficient solutions of fermionic systems using artificial neural networks, Nordhagen et al, Frontiers in Physics 11, 2023</a> </h2>
-
-<p>The Hamiltonian of the quantum dot is given by</p>
-<p>&nbsp;<br>
-$$ \hat{H} = \hat{H}_0 + \hat{V}, 
-$$
-<p>&nbsp;<br>
-
-<p>where \( \hat{H}_0 \) is the many-body HO Hamiltonian, and \( \hat{V} \) is the
-inter-electron Coulomb interactions. In dimensionless units,
-</p>
-<p>&nbsp;<br>
-$$ \hat{V}= \sum_{i < j}^N \frac{1}{r_{ij}},
-$$
-<p>&nbsp;<br>
-
-<p>with \( r_{ij}=\sqrt{\mathbf{r}_i^2 - \mathbf{r}_j^2} \).</p>
-
-<p>Separable Hamiltonian with the relative motion part (\( r_{ij}=r \))</p>
-<p>&nbsp;<br>
-$$ 
-\hat{H}_r=-\nabla^2_r + \frac{1}{4}\omega^2r^2+ \frac{1}{r},
-$$
-<p>&nbsp;<br>
-
-<p>Analytical solutions in two and three dimensions (<a href="https://journals.aps.org/pra/abstract/10.1103/PhysRevA.48.3561" target="_blank">M. Taut 1993 and 1994</a>). </p>
-</section>
-
-<section>
-<h2 id="generative-models-why-boltzmann-machines">Generative models: Why Boltzmann machines? </h2>
-
-<p>What is known as restricted Boltzmann Machines (RMB) have received a
-lot of attention lately.  One of the major reasons is that they can be
-stacked layer-wise to build deep neural networks that capture
-complicated statistics.
-</p>
-
-<p>The original RBMs had just one visible layer and a hidden layer, but
-recently so-called Gaussian-binary RBMs have gained quite some
-popularity in imaging since they are capable of modeling continuous
-data that are common to natural images.
-</p>
-
-<p>Furthermore, they have been used to solve complicated quantum
-mechanical many-particle problems or classical statistical physics
-problems like the Ising and Potts classes of models.
-</p>
-</section>
-
-<section>
-<h2 id="the-structure-of-the-rbm-network">The structure of the RBM network </h2>
-
-<br/><br/>
-<center>
-<p><img src="figures/RBM.png" width="800" align="bottom"></p>
-</center>
-<br/><br/>
-</section>
-
-<section>
-<h2 id="the-network">The network </h2>
-
-<b>The network layers</b>:
-<ol>
- <p><li> A function \( \boldsymbol{x} \) that represents the visible layer, a vector of \( M \) elements (nodes). This layer represents both what the RBM might be given as training input, and what we want it to be able to reconstruct. This might for example be the pixels of an image, the spin values of the Ising model, or coefficients representing speech.</li>
- <p><li> The function \( \boldsymbol{h} \) represents the hidden, or latent, layer. A vector of \( N \) elements (nodes). Also called "feature detectors".</li>
-</ol>
-</section>
-
-<section>
-<h2 id="goals">Goals </h2>
-
-<p>The goal of the hidden layer is to increase the model's expressive
-power. We encode complex interactions between visible variables by
-introducing additional, hidden variables that interact with visible
-degrees of freedom in a simple manner, yet still reproduce the complex
-correlations between visible degrees in the data once marginalized
-over (integrated out).
-</p>
-
-<b>The network parameters, to be optimized/learned</b>:
-<ol>
- <p><li> \( \boldsymbol{a} \) represents the visible bias, a vector of same length as \( \boldsymbol{x} \).</li>
- <p><li> \( \boldsymbol{b} \) represents the hidden bias, a vector of same lenght as \( \boldsymbol{h} \).</li>
- <p><li> \( W \) represents the interaction weights, a matrix of size \( M\times N \).</li>
-</ol>
-</section>
-
-<section>
-<h2 id="joint-distribution">Joint distribution </h2>
-<p>The restricted Boltzmann machine is described by a Bolztmann distribution</p>
-<p>&nbsp;<br>
-$$
-	P_{\mathrm{rbm}}(\boldsymbol{x},\boldsymbol{h}) = \frac{1}{Z} \exp{-E(\boldsymbol{x},\boldsymbol{h})},
-$$
-<p>&nbsp;<br>
-
-<p>where \( Z \) is the normalization constant or partition function, defined as </p>
-<p>&nbsp;<br>
-$$
-	Z = \int \int \exp{-E(\boldsymbol{x},\boldsymbol{h})} d\boldsymbol{x} d\boldsymbol{h}.
-$$
-<p>&nbsp;<br>
-
-<p>Note the absence of the inverse temperature in these equations.</p>
-</section>
-
-<section>
-<h2 id="network-elements-the-energy-function">Network Elements, the energy function  </h2>
-
-<p>The function \( E(\boldsymbol{x},\boldsymbol{h}) \) gives the <b>energy</b> of a
-configuration (pair of vectors) \( (\boldsymbol{x}, \boldsymbol{h}) \). The lower
-the energy of a configuration, the higher the probability of it. This
-function also depends on the parameters \( \boldsymbol{a} \), \( \boldsymbol{b} \) and
-\( W \). Thus, when we adjust them during the learning procedure, we are
-adjusting the energy function to best fit our problem.
-</p>
-</section>
-
-<section>
-<h2 id="defining-different-types-of-rbms-energy-based-models">Defining different types of RBMs (Energy based models) </h2>
-
-<p>There are different variants of RBMs, and the differences lie in the types of visible and hidden units we choose as well as in the implementation of the energy function \( E(\boldsymbol{x},\boldsymbol{h}) \). The connection between the nodes in the two layers is given by the weights \( w_{ij} \). </p>
-
-<div class="alert alert-block alert-block alert-text-normal">
-<b>Binary-Binary RBM:</b>
-<p>
-
-<p>RBMs were first developed using binary units in both the visible and hidden layer. The corresponding energy function is defined as follows:</p>
-<p>&nbsp;<br>
-$$
-	E(\boldsymbol{x}, \boldsymbol{h}) = - \sum_i^M x_i a_i- \sum_j^N b_j h_j - \sum_{i,j}^{M,N} x_i w_{ij} h_j,
-$$
-<p>&nbsp;<br>
-
-<p>where the binary values taken on by the nodes are most commonly 0 and 1.</p>
-</div>
-</section>
-
-<section>
-<h2 id="gaussian-binary">Gaussian binary </h2>
-
-<div class="alert alert-block alert-block alert-text-normal">
-<b>Gaussian-Binary RBM:</b>
-<p>
-
-<p>Another varient is the RBM where the visible units are Gaussian while the hidden units remain binary:</p>
-<p>&nbsp;<br>
-$$
-	E(\boldsymbol{x}, \boldsymbol{h}) = \sum_i^M \frac{(x_i - a_i)^2}{2\sigma_i^2} - \sum_j^N b_j h_j - \sum_{i,j}^{M,N} \frac{x_i w_{ij} h_j}{\sigma_i^2}. 
-$$
-<p>&nbsp;<br>
-</div>
-</section>
-
-<section>
-<h2 id="representing-the-wave-function">Representing the wave function </h2>
-
-<p>The wavefunction should be a probability amplitude depending on
- \( \boldsymbol{x} \). The RBM model is given by the joint distribution of
- \( \boldsymbol{x} \) and \( \boldsymbol{h} \)
-</p>
-
-<p>&nbsp;<br>
-$$
-        P_{\mathrm{rbm}}(\boldsymbol{x},\boldsymbol{h}) = \frac{1}{Z} \exp{-E(\boldsymbol{x},\boldsymbol{h})}.
-$$
-<p>&nbsp;<br>
-
-<p>To find the marginal distribution of \( \boldsymbol{x} \) we set:</p>
-
-<p>&nbsp;<br>
-$$
-        P_{\mathrm{rbm}}(\boldsymbol{x}) =\frac{1}{Z}\sum_{\boldsymbol{h}} \exp{-E(\boldsymbol{x}, \boldsymbol{h})}.
-$$
-<p>&nbsp;<br>
-
-<p>Now this is what we use to represent the wave function, calling it a neural-network quantum state (NQS)</p>
-<p>&nbsp;<br>
-$$
-        \vert\Psi (\boldsymbol{X})\vert^2 = P_{\mathrm{rbm}}(\boldsymbol{x}).
-$$
-<p>&nbsp;<br>
-</section>
-
-<section>
-<h2 id="define-the-cost-function">Define the cost function </h2>
-
-<p>Now we don't necessarily have training data (unless we generate it by
-using some other method). However, what we do have is the variational
-principle which allows us to obtain the ground state wave function by
-minimizing the expectation value of the energy of a trial wavefunction
-(corresponding to the untrained NQS). Similarly to the traditional
-variational Monte Carlo method then, it is the local energy we wish to
-minimize. The gradient to use for the stochastic gradient descent
-procedure is
-</p>
-
-<p>&nbsp;<br>
-$$
-	C_i = \frac{\partial \langle E_L \rangle}{\partial \theta_i}
-	= 2(\langle E_L \frac{1}{\Psi}\frac{\partial \Psi}{\partial \theta_i} \rangle - \langle E_L \rangle \langle \frac{1}{\Psi}\frac{\partial \Psi}{\partial \theta_i} \rangle ),
-$$
-<p>&nbsp;<br>
-
-<p>where the local energy is given by</p>
-<p>&nbsp;<br>
-$$
-	E_L = \frac{1}{\Psi} \hat{\boldsymbol{H}} \Psi.
-$$
-<p>&nbsp;<br>
-</section>
-
-<section>
-<h2 id="quantum-dots-and-boltzmann-machines-onebody-densities-n-6-hbar-omega-0-1-a-u">Quantum dots and Boltzmann machines, onebody densities \( N=6 \), \( \hbar\omega=0.1 \) a.u. </h2>
-
-<div class="alert alert-block alert-block alert-text-normal">
-<b></b>
-<p>
-<br/><br/>
-<center>
-<p><img src="figures/OB6hw01.png" width="700" align="bottom"></p>
-</center>
-<br/><br/>
-</div>
-</section>
-
-<section>
-<h2 id="onebody-densities-n-30-hbar-omega-1-0-a-u">Onebody densities \( N=30 \), \( \hbar\omega=1.0 \) a.u. </h2>
-<div class="alert alert-block alert-block alert-text-normal">
-<b></b>
-<p>
-<br/><br/>
-<center>
-<p><img src="figures/OB30hw1.png" width="700" align="bottom"></p>
-</center>
-<br/><br/>
-</div>
-</section>
-
-<section>
-<h2 id="expectation-values-as-functions-of-the-oscillator-frequency">Expectation values as functions of the oscillator frequency  </h2>
-
-<div class="alert alert-block alert-block alert-text-normal">
-<b></b>
-<p>
-<br/><br/>
-<center>
-<p><img src="figures/virialtheorem.png" width="700" align="bottom"></p>
-</center>
-<br/><br/>
-</div>
-</section>
-
-<section>
-<h2 id="observations-or-conclusions-if-you-prefer">Observations (or conclusions if you prefer) </h2>
-<div class="alert alert-block alert-block alert-text-normal">
-<b></b>
-<p>
-<ul>
-<p><li> Need for AI/Machine Learning in physics, lots of ongoing activities</li>
-<p><li> To solve many complex problems and facilitate discoveries, multidisciplinary efforts efforts are required involving scientists in  physics, statistics, computational science, applied math and other fields.</li>
-<p><li> There is a need for  focused AI/ML learning efforts that will benefit accelerator science and experimental and theoretical programs</li>
-</ul>
-</div>
-</section>
-
-<section>
-<h2 id="more-observations">More observations  </h2>
-<div class="alert alert-block alert-block alert-text-normal">
-<b></b>
-<p>
-<ul>
-<p><li> How do we develop insights, competences, knowledge in statistical learning that can advance a given field?</li>
-<ul>
-
-<p><li> For example: Can we use ML to find out which correlations are relevant and thereby diminish the dimensionality problem in standard many-body  theories?</li>
-
-<p><li> Can we use AI/ML in detector analysis, accelerator design, analysis of experimental data and more?</li>
-
-<p><li> Can we use AL/ML to carry out reliable extrapolations by using current experimental knowledge and current theoretical models?</li>
-</ul>
-<p>
-<p><li> The community needs to invest in relevant educational efforts and training of scientists with knowledge in AI/ML. These are great challenges to the CS and DS communities</li>
-<p><li> Quantum computing and quantum machine learning not discussed here</li>
-<p><li> Most likely tons of things I have forgotten</li>
-</ul>
-</div>
-</section>
-
-<section>
-<h2 id="possible-start-to-raise-awareness-about-ml-in-our-own-field">Possible start to raise awareness about ML in our own field </h2>
-<div class="alert alert-block alert-block alert-text-normal">
-<b></b>
-<p>
-<ul>
-<p><li> Make an ML challenge in your own field a la <a href="https://home.cern/news/news/computing/higgs-boson-machine-learning-challenge" target="_blank">Learning to discover: the Higgs boson machine learning challenge</a>. Alternatively go to kaggle.com at <a href="https://www.kaggle.com/c/higgs-boson" target="_blank"><tt>https://www.kaggle.com/c/higgs-boson</tt></a></li>
-<p><li> HEP@CERN and HEP in general have made significant impacts in the field of machine learning and AI. Something to learn from</li>
-</ul>
-</div>
-</section>
-
-<section>
 <h2 id="essential-elements-of-generative-models">Essential elements of generative models </h2>
 
 <p>The aim of generative methods is to train a probability distribution \( p \). The methods we will focus on are:</p>
 <ol>
 <p><li> Energy based models, with the family of Boltzmann distributions as a typical example</li>
 <p><li> Variational autoencoders, based on our discussions on autoencoders</li>
-<p><li> Generative adversarial networks (GANs) and</li>
 <p><li> Diffusion models</li>
 </ol>
-</section>
-
-<section>
-<h2 id="energy-models">Energy models </h2>
-
-<p>We define a domain \( \boldsymbol{X} \) of stochastic variables \( \boldsymbol{X}= \{x_0,x_1, \dots , x_{n-1}\} \) with a pertinent probability distribution</p>
-<p>&nbsp;<br>
-$$
-p(\boldsymbol{X})=\prod_{x_i\in \boldsymbol{X}}p(x_i),
-$$
-<p>&nbsp;<br>
-
-<p>where we have assumed that the random varaibles \( x_i \) are all independent and identically distributed (iid).</p>
-
-<p>We will now assume that we can defined this function in terms of optimization parameters \( \boldsymbol{\Theta} \), which could be the biases and weights of a deep network, and a set of hidden variables we also assume to be random variables which also are iid. The domain of these variables is
-\( \boldsymbol{H}= \{h_0,h_1, \dots , h_{m-1}\} \).
-</p>
+<p>
+<p>Not included here</p>
+<ol>
+<p><li> Generative adversarial networks (GANs) and</li>
+<p><li> Autoregressive models</li>
+<p><li> Normalizing flow models</li>
+</ol>
 </section>
 
 <section>
@@ -1162,7 +889,7 @@ $$
 <p>&nbsp;<br>
 
 <p>We can rewrite the function \( f \) (we have assumed that is larger or
-equal than zero) as \( f=\exp{\log{f}} \). We can then reqrite the last
+equal than zero) as \( f=\exp{\log{f}} \). We can then rewrite the last
 equation as
 </p>
 
@@ -1186,7 +913,7 @@ $$
 <p>which is the expectation value of \( \log{f} \)</p>
 <p>&nbsp;<br>
 $$
-\nabla_{\boldsymbol{\Theta}}\log{Z(\boldsymbol{\Theta})}=\sum_{x_i\in \boldsymbol{X}}p(x_i;\boldsymbol{\Theta}) \nabla_{\boldsymbol{\Theta}}\log{f(x_i;\boldsymbol{\Theta})},
+\nabla_{\boldsymbol{\Theta}}\log{Z(\boldsymbol{\Theta})}=\sum_{x_i\sim p}p(x_i;\boldsymbol{\Theta}) \nabla_{\boldsymbol{\Theta}}\log{f(x_i;\boldsymbol{\Theta})},
 $$
 <p>&nbsp;<br>
 
@@ -1198,11 +925,19 @@ $$
 <p>&nbsp;<br>
 
 <p>This quantity is evaluated using Monte Carlo sampling, with Gibbs
-sampling as the standard sampling rule.  Before we discuss the
-explicit algorithms, we need to remind ourselves about Markov chains
-and sampling rules like the Metropolis-Hastings algorithm and Gibbs
-sampling.
+sampling as the standard sampling rule.  
 </p>
+</section>
+
+<section>
+<h2 id="final-expression-for-the-gradients">Final expression for the gradients </h2>
+
+<p>This leads to the following equation</p>
+<p>&nbsp;<br>
+$$
+\nabla_{\boldsymbol{\Theta}}\log{p(\boldsymbol{X};\boldsymbol{\Theta})}=\nabla_{\boldsymbol{\Theta}}\left(\sum_{x_i\in \boldsymbol{X}}\log{f(x_i;\boldsymbol{\Theta})}\right)-\mathbb{E}_{x\sim p}(\log{f(x_i;\boldsymbol{\Theta})})=0.
+$$
+<p>&nbsp;<br>
 </section>
 
 <section>
@@ -1241,7 +976,7 @@ $$
 </section>
 
 <section>
-<h2 id="binary-binary-model">Binary-binary model  </h2>
+<h2 id="examples-of-gradient-expressions">Examples of gradient expressions  </h2>
 
 <p>Since the binary-binary energy model is linear in the parameters \( a_i \), \( b_j \) and
 \( w_{ij} \), it is easy to see that the derivatives with respect to the
@@ -1267,6 +1002,125 @@ $$
 \frac{\partial E(\boldsymbol{x}, \boldsymbol{h};\boldsymbol{\Theta})}{\partial b_j}=-h_j.
 $$
 <p>&nbsp;<br>
+</section>
+
+<section>
+<h2 id="network-elements-the-energy-function">Network Elements, the energy function  </h2>
+
+<p>The function \( E(\boldsymbol{x},\boldsymbol{h},\boldsymbol{\Theta}) \) gives the <b>energy</b> of a
+configuration (pair of vectors) \( (\boldsymbol{x}, \boldsymbol{h}) \). The lower
+the energy of a configuration, the higher the probability of it. This
+function also depends on the parameters \( \boldsymbol{a} \), \( \boldsymbol{b} \) and
+\( W \). Thus, when we adjust them during the learning procedure, we are
+adjusting the energy function to best fit our problem.
+</p>
+</section>
+
+<section>
+<h2 id="defining-different-types-of-rbms">Defining different types of RBMs </h2>
+
+<p>There are different variants of RBMs, and the differences lie in the types of visible and hidden units we choose as well as in the implementation of the energy function \( E(\boldsymbol{x},\boldsymbol{h},\boldsymbol{\Theta}) \). The connection between the nodes in the two layers is given by the weights \( w_{ij} \). </p>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b>Binary-Binary RBM:</b>
+<p>
+
+<p>RBMs were first developed using binary units in both the visible and hidden layer. The corresponding energy function is defined as follows:</p>
+<p>&nbsp;<br>
+$$
+\begin{align*}
+	E(\boldsymbol{x}, \boldsymbol{h},\boldsymbol{\Theta}) = - \sum_i^M x_i a_i- \sum_j^N b_j h_j - \sum_{i,j}^{M,N} x_i w_{ij} h_j,
+\end{align*}
+$$
+<p>&nbsp;<br>
+
+<p>where the binary values taken on by the nodes are most commonly 0 and 1.</p>
+</div>
+</section>
+
+<section>
+<h2 id="gaussian-binary-rbm">Gaussian-binary RBM </h2>
+
+<p>Another varient is the RBM where the visible units are Gaussian while the hidden units remain binary:</p>
+<p>&nbsp;<br>
+$$
+\begin{align*}
+	E(\boldsymbol{x}, \boldsymbol{h},\boldsymbol{\Theta}) = \sum_i^M \frac{(x_i - a_i)^2}{2\sigma_i^2} - \sum_j^N b_j h_j - \sum_{i,j}^{M,N} \frac{x_i w_{ij} h_j}{\sigma_i^2}. 
+\end{align*}
+$$
+<p>&nbsp;<br>
+
+<p>This type of RBMs are useful when we model continuous data (i.e., we wish \( \boldsymbol{x} \) to be continuous). The paramater \( \sigma_i^2 \) is meant to represent a variance and is foten just set to one.</p>
+</section>
+
+<section>
+<h2 id="efficient-solutions-of-fermionic-systems-using-artificial-neural-networks-nordhagen-et-al-frontiers-in-physics-11-2023-https-doi-org-10-3389-fphy-2023-1061580"><a href="https://doi.org/10.3389/fphy.2023.1061580" target="_blank">Efficient solutions of fermionic systems using artificial neural networks, Nordhagen et al, Frontiers in Physics 11, 2023</a> </h2>
+
+<p>The Hamiltonian of the quantum dot is given by</p>
+<p>&nbsp;<br>
+$$ \hat{H} = \hat{H}_0 + \hat{V}, 
+$$
+<p>&nbsp;<br>
+
+<p>where \( \hat{H}_0 \) is the many-body HO Hamiltonian, and \( \hat{V} \) is the
+inter-electron Coulomb interactions. In dimensionless units,
+</p>
+<p>&nbsp;<br>
+$$ \hat{V}= \sum_{i < j}^N \frac{1}{r_{ij}},
+$$
+<p>&nbsp;<br>
+
+<p>with \( r_{ij}=\sqrt{\mathbf{r}_i^2 - \mathbf{r}_j^2} \).</p>
+
+<p>Separable Hamiltonian with the relative motion part (\( r_{ij}=r \))</p>
+<p>&nbsp;<br>
+$$ 
+\hat{H}_r=-\nabla^2_r + \frac{1}{4}\omega^2r^2+ \frac{1}{r},
+$$
+<p>&nbsp;<br>
+
+<p>Analytical solutions in two and three dimensions (<a href="https://journals.aps.org/pra/abstract/10.1103/PhysRevA.48.3561" target="_blank">M. Taut 1993 and 1994</a>). </p>
+</section>
+
+<section>
+<h2 id="quantum-dots-and-boltzmann-machines-onebody-densities-n-6-hbar-omega-0-1-a-u">Quantum dots and Boltzmann machines, onebody densities \( N=6 \), \( \hbar\omega=0.1 \) a.u. </h2>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<br/><br/>
+<center>
+<p><img src="figures/OB6hw01.png" width="700" align="bottom"></p>
+</center>
+<br/><br/>
+</div>
+</section>
+
+<section>
+<h2 id="onebody-densities-n-30-hbar-omega-1-0-a-u">Onebody densities \( N=30 \), \( \hbar\omega=1.0 \) a.u. </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<br/><br/>
+<center>
+<p><img src="figures/OB30hw1.png" width="700" align="bottom"></p>
+</center>
+<br/><br/>
+</div>
+</section>
+
+<section>
+<h2 id="expectation-values-as-functions-of-the-oscillator-frequency">Expectation values as functions of the oscillator frequency  </h2>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<br/><br/>
+<center>
+<p><img src="figures/virialtheorem.png" width="700" align="bottom"></p>
+</center>
+<br/><br/>
+</div>
 </section>
 
 
