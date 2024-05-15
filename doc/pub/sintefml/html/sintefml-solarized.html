@@ -68,6 +68,7 @@ div.toc p,a {
               ('And sponsors', 2, None, 'and-sponsors'),
               ('Background', 2, None, 'background'),
               ('Selected references', 2, None, 'selected-references'),
+              ('Selected references', 2, None, 'selected-references'),
               ('Extrapolations and model interpretability',
                2,
                None,
@@ -76,10 +77,6 @@ div.toc p,a {
                2,
                None,
                'generative-and-discriminative-models'),
-              ('The plethora  of machine learning algorithms/methods',
-               2,
-               None,
-               'the-plethora-of-machine-learning-algorithms-methods'),
               ('Example of generative modeling, "taken from Generative Deep '
                'Learning by David '
                'Foster":"https://www.oreilly.com/library/view/generative-deep-learning/9781098134174/ch01.html"',
@@ -178,11 +175,10 @@ div.toc p,a {
                2,
                None,
                'the-electron-gas-in-three-dimensions-with-n-14-electrons-wigner-seitz-radius-r-s-2-a-u-gabriel-pescia-jane-kim-et-al-arxiv-2305-07240-https-doi-org-10-48550-arxiv-2305-07240'),
-              ('Essential elements of generative models',
+              ('Generical approaches to probability models',
                2,
                None,
-               'essential-elements-of-generative-models'),
-              ('Probability model', 2, None, 'probability-model'),
+               'generical-approaches-to-probability-models'),
               ('Marginal and conditional probabilities',
                2,
                None,
@@ -248,10 +244,12 @@ div.toc p,a {
                2,
                None,
                'expectation-values-as-functions-of-the-oscillator-frequency'),
-              ('Parametric matrix models',
+              ('Parametric matrix models for rgression type problems',
                2,
                None,
-               'parametric-matrix-models')]}
+               'parametric-matrix-models-for-rgression-type-problems'),
+              ('Calcilating eigensystem', 2, None, 'calcilating-eigensystem'),
+              ('Ordering eigenpairs', 2, None, 'ordering-eigenpairs')]}
 end of tocinfo -->
 
 <body>
@@ -357,9 +355,19 @@ dubbed <b>Parametric Matrix Models</b>, see
 <li> Machine Learning and the Physical Sciences by Carleo et al., Reviews of Modern Physics <b>91</b>, 045002 (2019), <a href="https://link.aps.org/doi/10.1103/RevModPhys.91.045002" target="_blank"><tt>https://link.aps.org/doi/10.1103/RevModPhys.91.045002</tt></a></li>
 <li> Artificial Intelligence and Machine Learning in Nuclear Physics, Amber Boehnlein et al., Reviews Modern of Physics <b>94</b>, 031003 (2022), <a href="https://journals.aps.org/rmp/abstract/10.1103/RevModPhys.94.031003" target="_blank"><tt>https://journals.aps.org/rmp/abstract/10.1103/RevModPhys.94.031003</tt></a></li> 
 <li> Dilute neutron star matter from neural-network quantum states by Fore et al, Physical Review Research <b>5</b>, 033062 (2023), <a href="https://journals.aps.org/prresearch/pdf/10.1103/PhysRevResearch.5.033062" target="_blank"><tt>https://journals.aps.org/prresearch/pdf/10.1103/PhysRevResearch.5.033062</tt></a></li>
+</ul>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="selected-references">Selected references </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<ul>
 <li> Neural-network quantum states for ultra-cold Fermi gases, Jane Kim et al, Nature Communications Physics <b>7</b>, 148 (2024), <a href="https://www.nature.com/articles/s42005-024-01613-w" target="_self<a href="https://doi.org/10.48550/arXiv.2305.07240" target="_blank">><tt>https://www.nature.com/articles/s42005-024-01613-w</tt></a></li>
 <li> Message-Passing Neural Quantum States for the Homogeneous Electron Gas, Gabriel Pescia, Jane Kim et al. arXiv.2305.07240,</a></li>
-<li> "Parametric Matrix Models, Patrick Cook, Danny Jammooa, MHJ, Dean Lee and Daniel Lee, <a href="https://arxiv.org/abs/2401.11694" target="_blank"><tt>https://arxiv.org/abs/2401.11694</tt></a>.</li> 
+<li> Parametric Matrix Models, Patrick Cook, Danny Jammooa, MHJ, Dean Lee and Daniel Lee, <a href="https://arxiv.org/abs/2401.11694" target="_blank"><tt>https://arxiv.org/abs/2401.11694</tt></a>.</li> 
 </ul>
 </div>
 
@@ -396,17 +404,6 @@ necessarily cause \( A \).
 </div>
 
 
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-<h2 id="the-plethora-of-machine-learning-algorithms-methods">The plethora  of machine learning algorithms/methods </h2>
-
-<ol>
-<li> Deep learning: Neural Networks (NN), Convolutional NN, Recurrent NN, Boltzmann machines, autoencoders and variational autoencoders  and generative adversarial networks, stable diffusion and many more generative models</li>
-<li> Bayesian statistics and Bayesian Machine Learning, Bayesian experimental design, Bayesian Regression models, Bayesian neural networks, Gaussian processes and much more</li>
-<li> Dimensionality reduction (Principal component analysis), Clustering Methods and more</li>
-<li> Ensemble Methods, Random forests, bagging and voting methods, gradient boosting approaches</li> 
-<li> Linear and logistic regression, Kernel methods, support vector machines and more</li>
-<li> Reinforcement Learning; Transfer Learning and more</li> 
-</ol>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 <h2 id="example-of-generative-modeling-taken-from-generative-deep-learning-by-david-foster-https-www-oreilly-com-library-view-generative-deep-learning-9781098134174-ch01-html">Example of generative modeling, <a href="https://www.oreilly.com/library/view/generative-deep-learning/9781098134174/ch01.html" target="_blank">taken from Generative Deep Learning by David Foster</a>  </h2>
 
@@ -683,7 +680,7 @@ $$
 $$
 
 <p>which is commonly used for nuclear Hamiltonians that do not contain tensor and spin-orbit terms.
-The above function is replaced by a four-layer Neural Network. 
+The above function is replaced by a multi-layer Neural Network. 
 </p>
 
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
@@ -755,22 +752,7 @@ The above function is replaced by a four-layer Neural Network.
 
 
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
-<h2 id="essential-elements-of-generative-models">Essential elements of generative models </h2>
-
-<p>The aim of generative methods is to train a probability distribution \( p \). The methods we will focus on are:</p>
-<ol>
-<li> Energy based models, with the family of Boltzmann distributions as a typical example</li>
-<li> Variational autoencoders, based on our discussions on autoencoders</li>
-<li> Diffusion models</li>
-</ol>
-<p>Not included here</p>
-<ol>
-<li> Generative adversarial networks (GANs) and</li>
-<li> Autoregressive models</li>
-<li> Normalizing flow models</li>
-</ol>
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-<h2 id="probability-model">Probability model </h2>
+<h2 id="generical-approaches-to-probability-models">Generical approaches to probability models </h2>
 
 <p>We define a probability</p>
 $$
@@ -1105,7 +1087,56 @@ $$
 
 
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
-<h2 id="parametric-matrix-models">Parametric matrix models </h2>
+<h2 id="parametric-matrix-models-for-rgression-type-problems">Parametric matrix models for rgression type problems </h2>
+
+<p>Given dataset \( X\in \mathbb{R}^{n\times m} \), we compute a &quot;Hamiltonian&quot; that is linear in the input features \( x_i \)</p>
+$$
+\begin{aligned}
+        H(X) = \underline{H_0} +\sum_i^mx_i\underline{H_i},
+\end{aligned}
+$$
+
+<p>Where \( H_i\in \mathbb{C}^{N\times N} \).</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="calcilating-eigensystem">Calcilating eigensystem </h2>
+
+<p>The eigensystem is then calculated for \( H \)</p>
+$$
+    H_k = V\Lambda V^\dagger = %
+    \begin{bmatrix}
+        \vert & \vert & \cdots & \vert \\
+        v_1 & v_2 & \cdots & v_{l}\\
+        \vert & \vert & \cdots & \vert
+    \end{bmatrix}%
+    \begin{bmatrix}
+        \lambda_1 & & & \\
+        & \lambda_2 & & \\
+        & & \ddots & \\
+        & & & \lambda_{l}
+    \end{bmatrix}%
+    \begin{bmatrix}
+        \vert & \vert & \cdots & \vert \\
+        v_1 & v_2 & \cdots & v_{l}\\
+        \vert & \vert & \cdots & \vert
+    \end{bmatrix}^\dagger
+$$
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="ordering-eigenpairs">Ordering eigenpairs </h2>
+
+<p>Ordering the eigenpairs by decreasing eigenvalue magnitude, \( \vert\lambda^{(k)}_1\vert\geq\vert\lambda^{(k)}_2\vert\geq\cdots\geq\vert\lambda^{(k)}_l \), we select the first \( d \)-eigenvectors to &quot;decode&quot; into the penultimate output vector \( \vec{z}\in\mathbb{R}^c \),</p>
+$$
+    z_k = \underline{b_k} + \sum_{i\leq j}^{d}\vert\vec{v}_i^\dagger \underline{\Delta_{kij}\vert \vec{v}_j}^2 - \frac{1}{2}\vert\underline{\Delta_{kij}}\vert_2^2,
+$$
+
+<p>where \( \underline{\Delta_{kij}} \) are trainable Hermitian &quot;decoder&quot; matrices and \( \underline{\vec{b}}\in\mathbb{R}^c \) is a trainable bias vector. The trainable parameters are trained by minimizing a loss function over all \( J \) training points.</p>
+$$
+    \mathcal{L} = \sum_i\vert\hat{z}_i-z_i\vert^P
+$$
+
+<p>Where \( \hat{z} \) is the true data, and \( z \) is the output correspnding to the PMM.</p>
 <!-- ------------------- end of main content --------------- -->
 </body>
 </html>

@@ -256,9 +256,19 @@ dubbed <b>Parametric Matrix Models</b>, see
 <p><li> Machine Learning and the Physical Sciences by Carleo et al., Reviews of Modern Physics <b>91</b>, 045002 (2019), <a href="https://link.aps.org/doi/10.1103/RevModPhys.91.045002" target="_blank"><tt>https://link.aps.org/doi/10.1103/RevModPhys.91.045002</tt></a></li>
 <p><li> Artificial Intelligence and Machine Learning in Nuclear Physics, Amber Boehnlein et al., Reviews Modern of Physics <b>94</b>, 031003 (2022), <a href="https://journals.aps.org/rmp/abstract/10.1103/RevModPhys.94.031003" target="_blank"><tt>https://journals.aps.org/rmp/abstract/10.1103/RevModPhys.94.031003</tt></a></li> 
 <p><li> Dilute neutron star matter from neural-network quantum states by Fore et al, Physical Review Research <b>5</b>, 033062 (2023), <a href="https://journals.aps.org/prresearch/pdf/10.1103/PhysRevResearch.5.033062" target="_blank"><tt>https://journals.aps.org/prresearch/pdf/10.1103/PhysRevResearch.5.033062</tt></a></li>
+</ul>
+</div>
+</section>
+
+<section>
+<h2 id="selected-references">Selected references </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<ul>
 <p><li> Neural-network quantum states for ultra-cold Fermi gases, Jane Kim et al, Nature Communications Physics <b>7</b>, 148 (2024), <a href="https://www.nature.com/articles/s42005-024-01613-w" target="_self<a href="https://doi.org/10.48550/arXiv.2305.07240" target="_blank">><tt>https://www.nature.com/articles/s42005-024-01613-w</tt></a></li>
 <p><li> Message-Passing Neural Quantum States for the Homogeneous Electron Gas, Gabriel Pescia, Jane Kim et al. arXiv.2305.07240,</a></li>
-<p><li> "Parametric Matrix Models, Patrick Cook, Danny Jammooa, MHJ, Dean Lee and Daniel Lee, <a href="https://arxiv.org/abs/2401.11694" target="_blank"><tt>https://arxiv.org/abs/2401.11694</tt></a>.</li> 
+<p><li> Parametric Matrix Models, Patrick Cook, Danny Jammooa, MHJ, Dean Lee and Daniel Lee, <a href="https://arxiv.org/abs/2401.11694" target="_blank"><tt>https://arxiv.org/abs/2401.11694</tt></a>.</li> 
 </ul>
 </div>
 </section>
@@ -294,19 +304,6 @@ necessarily cause \( A \).
 <p><li> How do we represent reliably our effective degrees of freedom?</li>
 </ol>
 </div>
-</section>
-
-<section>
-<h2 id="the-plethora-of-machine-learning-algorithms-methods">The plethora  of machine learning algorithms/methods </h2>
-
-<ol>
-<p><li> Deep learning: Neural Networks (NN), Convolutional NN, Recurrent NN, Boltzmann machines, autoencoders and variational autoencoders  and generative adversarial networks, stable diffusion and many more generative models</li>
-<p><li> Bayesian statistics and Bayesian Machine Learning, Bayesian experimental design, Bayesian Regression models, Bayesian neural networks, Gaussian processes and much more</li>
-<p><li> Dimensionality reduction (Principal component analysis), Clustering Methods and more</li>
-<p><li> Ensemble Methods, Random forests, bagging and voting methods, gradient boosting approaches</li> 
-<p><li> Linear and logistic regression, Kernel methods, support vector machines and more</li>
-<p><li> Reinforcement Learning; Transfer Learning and more</li> 
-</ol>
 </section>
 
 <section>
@@ -625,7 +622,7 @@ $$
 <p>&nbsp;<br>
 
 <p>which is commonly used for nuclear Hamiltonians that do not contain tensor and spin-orbit terms.
-The above function is replaced by a four-layer Neural Network. 
+The above function is replaced by a multi-layer Neural Network. 
 </p>
 </section>
 
@@ -698,25 +695,7 @@ The above function is replaced by a four-layer Neural Network.
 </section>
 
 <section>
-<h2 id="essential-elements-of-generative-models">Essential elements of generative models </h2>
-
-<p>The aim of generative methods is to train a probability distribution \( p \). The methods we will focus on are:</p>
-<ol>
-<p><li> Energy based models, with the family of Boltzmann distributions as a typical example</li>
-<p><li> Variational autoencoders, based on our discussions on autoencoders</li>
-<p><li> Diffusion models</li>
-</ol>
-<p>
-<p>Not included here</p>
-<ol>
-<p><li> Generative adversarial networks (GANs) and</li>
-<p><li> Autoregressive models</li>
-<p><li> Normalizing flow models</li>
-</ol>
-</section>
-
-<section>
-<h2 id="probability-model">Probability model </h2>
+<h2 id="generical-approaches-to-probability-models">Generical approaches to probability models </h2>
 
 <p>We define a probability</p>
 <p>&nbsp;<br>
@@ -1124,7 +1103,65 @@ $$
 </section>
 
 <section>
-<h2 id="parametric-matrix-models">Parametric matrix models </h2>
+<h2 id="parametric-matrix-models-for-rgression-type-problems">Parametric matrix models for rgression type problems </h2>
+
+<p>Given dataset \( X\in \mathbb{R}^{n\times m} \), we compute a &quot;Hamiltonian&quot; that is linear in the input features \( x_i \)</p>
+<p>&nbsp;<br>
+$$
+\begin{aligned}
+        H(X) = \underline{H_0} +\sum_i^mx_i\underline{H_i},
+\end{aligned}
+$$
+<p>&nbsp;<br>
+
+<p>Where \( H_i\in \mathbb{C}^{N\times N} \).</p>
+</section>
+
+<section>
+<h2 id="calcilating-eigensystem">Calcilating eigensystem </h2>
+
+<p>The eigensystem is then calculated for \( H \)</p>
+<p>&nbsp;<br>
+$$
+    H_k = V\Lambda V^\dagger = %
+    \begin{bmatrix}
+        \vert & \vert & \cdots & \vert \\
+        v_1 & v_2 & \cdots & v_{l}\\
+        \vert & \vert & \cdots & \vert
+    \end{bmatrix}%
+    \begin{bmatrix}
+        \lambda_1 & & & \\
+        & \lambda_2 & & \\
+        & & \ddots & \\
+        & & & \lambda_{l}
+    \end{bmatrix}%
+    \begin{bmatrix}
+        \vert & \vert & \cdots & \vert \\
+        v_1 & v_2 & \cdots & v_{l}\\
+        \vert & \vert & \cdots & \vert
+    \end{bmatrix}^\dagger
+$$
+<p>&nbsp;<br>
+</section>
+
+<section>
+<h2 id="ordering-eigenpairs">Ordering eigenpairs </h2>
+
+<p>Ordering the eigenpairs by decreasing eigenvalue magnitude, \( \vert\lambda^{(k)}_1\vert\geq\vert\lambda^{(k)}_2\vert\geq\cdots\geq\vert\lambda^{(k)}_l \), we select the first \( d \)-eigenvectors to &quot;decode&quot; into the penultimate output vector \( \vec{z}\in\mathbb{R}^c \),</p>
+<p>&nbsp;<br>
+$$
+    z_k = \underline{b_k} + \sum_{i\leq j}^{d}\vert\vec{v}_i^\dagger \underline{\Delta_{kij}\vert \vec{v}_j}^2 - \frac{1}{2}\vert\underline{\Delta_{kij}}\vert_2^2,
+$$
+<p>&nbsp;<br>
+
+<p>where \( \underline{\Delta_{kij}} \) are trainable Hermitian &quot;decoder&quot; matrices and \( \underline{\vec{b}}\in\mathbb{R}^c \) is a trainable bias vector. The trainable parameters are trained by minimizing a loss function over all \( J \) training points.</p>
+<p>&nbsp;<br>
+$$
+    \mathcal{L} = \sum_i\vert\hat{z}_i-z_i\vert^P
+$$
+<p>&nbsp;<br>
+
+<p>Where \( \hat{z} \) is the true data, and \( z \) is the output correspnding to the PMM.</p>
 </section>
 
 
