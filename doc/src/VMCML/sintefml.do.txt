@@ -52,9 +52,15 @@ o Developed many courses (regular and intensive) ones on many-body physics, comp
 * Machine Learning and the Physical Sciences by Carleo et al., Reviews of Modern Physics _91_, 045002 (2019), URL:"https://link.aps.org/doi/10.1103/RevModPhys.91.045002"
 * Artificial Intelligence and Machine Learning in Nuclear Physics, Amber Boehnlein et al., Reviews Modern of Physics _94_, 031003 (2022), URL:"https://journals.aps.org/rmp/abstract/10.1103/RevModPhys.94.031003" 
 * Dilute neutron star matter from neural-network quantum states by Fore et al, Physical Review Research _5_, 033062 (2023), URL:"https://journals.aps.org/prresearch/pdf/10.1103/PhysRevResearch.5.033062"
+!eblock
+
+
+!split
+===== Selected references =====
+!bblock
 * Neural-network quantum states for ultra-cold Fermi gases, Jane Kim et al, Nature Communications Physics _7_, 148 (2024), URL:"https://www.nature.com/articles/s42005-024-01613-w"
 * Message-Passing Neural Quantum States for the Homogeneous Electron Gas, Gabriel Pescia, Jane Kim et al. arXiv.2305.07240,":"https://doi.org/10.48550/arXiv.2305.07240"
-* "Parametric Matrix Models, Patrick Cook, Danny Jammooa, MHJ, Dean Lee and Daniel Lee, URL:"https://arxiv.org/abs/2401.11694". 
+* Parametric Matrix Models, Patrick Cook, Danny Jammooa, MHJ, Dean Lee and Daniel Lee, URL:"https://arxiv.org/abs/2401.11694". 
 !eblock
 
 
@@ -82,17 +88,6 @@ o Balance between tractability and flexibility
 o We want to extract information about correlations, to make predictions, quantify uncertainties and express causality
 o How do we represent reliably our effective degrees of freedom?
 !eblock
-
-!split
-=====  The plethora  of machine learning algorithms/methods =====
-
-o Deep learning: Neural Networks (NN), Convolutional NN, Recurrent NN, Boltzmann machines, autoencoders and variational autoencoders  and generative adversarial networks, stable diffusion and many more generative models
-o Bayesian statistics and Bayesian Machine Learning, Bayesian experimental design, Bayesian Regression models, Bayesian neural networks, Gaussian processes and much more
-o Dimensionality reduction (Principal component analysis), Clustering Methods and more
-o Ensemble Methods, Random forests, bagging and voting methods, gradient boosting approaches 
-o Linear and logistic regression, Kernel methods, support vector machines and more
-o Reinforcement Learning; Transfer Learning and more 
-
 
 
 
@@ -358,7 +353,7 @@ and three-body spin-independent Jastrow functions
 \end{align}
 !et
 which is commonly used for nuclear Hamiltonians that do not contain tensor and spin-orbit terms.
-The above function is replaced by a four-layer Neural Network. 
+The above function is replaced by a multi-layer Neural Network. 
 
 
 !split
@@ -403,21 +398,7 @@ FIGURE: [figures/elgasnew.png, width=700 frac=0.9]
 !eblock
 
 !split
-===== Essential elements of generative models =====
-
-The aim of generative methods is to train a probability distribution $p$. The methods we will focus on are:
-o Energy based models, with the family of Boltzmann distributions as a typical example
-o Variational autoencoders, based on our discussions on autoencoders
-o Diffusion models
-
-Not included here
-o Generative adversarial networks (GANs) and
-o Autoregressive models
-o Normalizing flow models
-
-
-!split
-===== Probability model =====
+===== Generical approaches to probability models =====
 
 We define a probability
 !bt
@@ -764,4 +745,58 @@ FIGURE: [figures/virialtheorem.pdf, width=700 frac=0.9]
 
 
 !split
-===== Parametric matrix models =====
+===== Parametric matrix models for rgression type problems =====
+
+
+Given dataset $X\in \mathbb{R}^{n\times m}$, we compute a ``Hamiltonian'' that is linear in the input features $x_i$
+!bt
+\[
+\begin{aligned}
+        H(X) = \underline{H_0} +\sum_i^mx_i\underline{H_i},
+\end{aligned}
+\]
+!et
+Where $H_i\in \mathbb{C}^{N\times N}$.
+
+!split
+===== Calcilating eigensystem =====
+
+The eigensystem is then calculated for $H$
+!bt
+\[
+    H_k = V\Lambda V^\dagger = %
+    \begin{bmatrix}
+        \vert & \vert & \cdots & \vert \\
+        v_1 & v_2 & \cdots & v_{\hyper{l}}\\
+        \vert & \vert & \cdots & \vert
+    \end{bmatrix}%
+    \begin{bmatrix}
+        \lambda_1 & & & \\
+        & \lambda_2 & & \\
+        & & \ddots & \\
+        & & & \lambda_{\hyper{l}}
+    \end{bmatrix}%
+    \begin{bmatrix}
+        \vert & \vert & \cdots & \vert \\
+        v_1 & v_2 & \cdots & v_{\hyper{l}}\\
+        \vert & \vert & \cdots & \vert
+    \end{bmatrix}^\dagger
+\]
+!et
+
+!split
+===== Ordering eigenpairs =====
+
+Ordering the eigenpairs by decreasing eigenvalue magnitude, $\abs{\lambda^{(k)}_1}\geq\abs{\lambda^{(k)}_2}\geq\cdots\geq\abs{\lambda^{(k)}_l}$, we select the first $\hyper{d}$ eigenvectors to ``decode'' into the penultimate output vector $\vec{z}\in\R^c$,
+!bt
+\[
+    z_k = \underline{b_k} + \sum_{i\leq j}^{\hyper{d}}\abs{\vec{v}_i^\dagger \underline{\Delta_{kij}} \vec{v}_j}^2 - \frac{1}{2}\norm{\underline{\Delta_{kij}}}_2^2,
+\]
+!et
+where $\underline{\Delta_{kij}}\in\Herm\left(\hyper{l}\right)$ are trainable Hermitian ``decoder'' matrices and $\underline{\vec{b}}\in\R^c$ is a trainable bias vector. The trainable parameters are trained by minimizing a loss function over all $J$ training points.
+!bt
+\[
+    \mathcal{L} = \sum_i\norm{\hat{z}_i-z_i}^P
+\]
+!et
+Where $\hat{z}$ is the true data, and $z$ is the output correspnding to the PMM.

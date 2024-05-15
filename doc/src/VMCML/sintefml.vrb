@@ -1,0 +1,11 @@
+\frametitle{Ordering eigenpairs}
+
+Ordering the eigenpairs by decreasing eigenvalue magnitude, $\abs{\lambda^{(k)}_1}\geq\abs{\lambda^{(k)}_2}\geq\cdots\geq\abs{\lambda^{(k)}_l}$, we select the first $\hyper{d}$ eigenvectors to ``decode'' into the penultimate output vector $\vec{z}\in\R^c$,
+\[
+    z_k = \underline{b_k} + \sum_{i\leq j}^{\hyper{d}}\abs{\vec{v}_i^\dagger \underline{\Delta_{kij}} \vec{v}_j}^2 - \frac{1}{2}\norm{\underline{\Delta_{kij}}}_2^2,
+\]
+where $\underline{\Delta_{kij}}\in\Herm\left(\hyper{l}\right)$ are trainable Hermitian ``decoder'' matrices and $\underline{\vec{b}}\in\R^c$ is a trainable bias vector. The trainable parameters are trained by minimizing a loss function over all $J$ training points.
+\[
+    \mathcal{L} = \sum_i\norm{\hat{z}_i-z_i}^P
+\]
+Where $\hat{z}$ is the true data, and $z$ is the output correspnding to the PMM.
