@@ -185,7 +185,6 @@ div.toc p,a {
                'marginal-and-conditional-probabilities'),
               ('Change of notation', 2, None, 'change-of-notation'),
               ('Optimization problem', 2, None, 'optimization-problem'),
-              ('Further simplifications', 2, None, 'further-simplifications'),
               ('Optimizing the logarithm instead',
                2,
                None,
@@ -194,14 +193,6 @@ div.toc p,a {
                2,
                None,
                'expression-for-the-gradients'),
-              ('The derivative of the partition function',
-               2,
-               None,
-               'the-derivative-of-the-partition-function'),
-              ('Explicit expression for the derivative',
-               2,
-               None,
-               'explicit-expression-for-the-derivative'),
               ('Final expression', 2, None, 'final-expression'),
               ('Final expression for the gradients',
                2,
@@ -244,11 +235,16 @@ div.toc p,a {
                2,
                None,
                'expectation-values-as-functions-of-the-oscillator-frequency'),
-              ('Parametric matrix models for rgression type problems',
+              ('Parametric Matrix Models', 2, None, 'parametric-matrix-models'),
+              ('Model with same structure',
                2,
                None,
-               'parametric-matrix-models-for-rgression-type-problems'),
-              ('Calcilating eigensystem', 2, None, 'calcilating-eigensystem'),
+               'model-with-same-structure'),
+              ('Parametric matrix models for regression type problems',
+               2,
+               None,
+               'parametric-matrix-models-for-regression-type-problems'),
+              ('Calculating eigensystem', 2, None, 'calculating-eigensystem'),
               ('Ordering eigenpairs', 2, None, 'ordering-eigenpairs')]}
 end of tocinfo -->
 
@@ -320,7 +316,7 @@ dubbed <b>Parametric Matrix Models</b>, see
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 <h2 id="thanks-to-many">Thanks to many </h2>
 
-<p>Jane Kim (MSU/Ohio U), Julie Butler (MSU/Mt Union), Patrick Cook (MSU), Danny Jammooa (MSU), Daniel Bazin (MSU), Dean Lee (MSU), Daniel Lee (Cornell), Even Nordhagen (UiO), Robert Solli (UiO, Expert Analytics), Bryce Fore (ANL), Alessandro Lovato (ANL), Stefano Gandolfi (LANL), Francesco Pederiva (UniTN), and Giuseppe Carleo (EPFL). </p>
+<p>Jane Kim (MSU/Ohio U), Julie Butler (MSU/Mt Union), Patrick Cook (MSU), Danny Jammooa (MSU), Dean Lee (MSU), Daniel Lee (Cornell), Even Nordhagen (UiO), Bryce Fore (ANL), Alessandro Lovato (ANL), Stefano Gandolfi (LANL), Francesco Pederiva (UniTN), and Giuseppe Carleo (EPFL). </p>
 
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 <h2 id="and-sponsors">And sponsors </h2>
@@ -340,7 +336,7 @@ dubbed <b>Parametric Matrix Models</b>, see
 <li> I have my training and research in traditional many-body theories and have studied and coded almost all, FCI, mean-field methods, Coupled Cluster theories, Green's function approaches, many-body perturbation theories, Monte Carlo methods and also molecular dynamics. Time independent and time-dependent theories</li>
 <li> Central keywords: Effective degrees of freedom and dimensionality reduction</li>
 <li> Last 6-8 years  focus on quantum computing and machine learning</li>
-<li> Developed many courses (regular and intensive) ones on many-body physics, computational physics, machine learning and quantum computing, see <a href="https://github.com/mhjensen" target="_blank"><tt>https://github.com/mhjensen</tt></a></li>
+<li> Developed many courses (regular and intensive) on many-body physics, computational physics, machine learning and quantum computing, see <a href="https://github.com/mhjensen" target="_blank"><tt>https://github.com/mhjensen</tt></a></li>
 </ol>
 </div>
 
@@ -823,22 +819,6 @@ $$
 
 
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
-<h2 id="further-simplifications">Further simplifications </h2>
-
-<p>We simplify further by rewriting it as</p>
-$$
-p(\boldsymbol{X};\boldsymbol{\Theta})=\frac{1}{Z(\boldsymbol{\Theta})}\prod_{x_i\in \boldsymbol{X}}f(x_i;\boldsymbol{\Theta}),
-$$
-
-<p>where we used \( p(x_i;\boldsymbol{\Theta}) = \sum_{h_j\in \boldsymbol{H}}f(x_i,h_j;\boldsymbol{\Theta}) \).
-The optimization problem is then
-</p>
-$$
-{\displaystyle \mathrm{arg} \hspace{0.1cm}\max_{\boldsymbol{\boldsymbol{\Theta}}\in {\mathbb{R}}^{p}}} \hspace{0.1cm}p(\boldsymbol{X};\boldsymbol{\Theta}).
-$$
-
-
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
 <h2 id="optimizing-the-logarithm-instead">Optimizing the logarithm instead </h2>
 
 <p>Computing the derivatives with respect to the parameters \( \boldsymbol{\Theta} \) is
@@ -866,38 +846,6 @@ $$
 <p>The first term is called the positive phase and we assume that we have a model for the function \( f \) from which we can sample values. Below we will develop an explicit model for this.
 The second term is called the negative phase and is the one which leads to more difficulties.
 </p>
-
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-<h2 id="the-derivative-of-the-partition-function">The derivative of the partition function </h2>
-
-<p>The partition function, defined above as</p>
-$$
-Z(\boldsymbol{\Theta})=\sum_{x_i\in \boldsymbol{X}}\sum_{h_j\in \boldsymbol{H}} f(x_i,h_j;\boldsymbol{\Theta}),
-$$
-
-<p>is in general the most problematic term. In principle both \( x \) and \( h \) can span large degrees of freedom, if not even infinitely many ones, and computing the partition function itself is often not desirable or even feasible. The above derivative of the partition function can however be written in terms of an expectation value which is in turn evaluated  using Monte Carlo sampling and the theory of Markov chains, popularly shortened to MCMC (or just MC$^2$).</p>
-
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-<h2 id="explicit-expression-for-the-derivative">Explicit expression for the derivative </h2>
-<p>We can rewrite</p>
-$$
-\nabla_{\boldsymbol{\Theta}}\log{Z(\boldsymbol{\Theta})}=\frac{\nabla_{\boldsymbol{\Theta}}Z(\boldsymbol{\Theta})}{Z(\boldsymbol{\Theta})},
-$$
-
-<p>which reads in more detail</p>
-$$
-\nabla_{\boldsymbol{\Theta}}\log{Z(\boldsymbol{\Theta})}=\frac{\nabla_{\boldsymbol{\Theta}} \sum_{x_i\in \boldsymbol{X}}f(x_i;\boldsymbol{\Theta})   }{Z(\boldsymbol{\Theta})}.
-$$
-
-<p>We can rewrite the function \( f \) (we have assumed that is larger or
-equal than zero) as \( f=\exp{\log{f}} \). We can then rewrite the last
-equation as
-</p>
-
-$$
-\nabla_{\boldsymbol{\Theta}}\log{Z(\boldsymbol{\Theta})}=\frac{ \sum_{x_i\in \boldsymbol{X}} \nabla_{\boldsymbol{\Theta}}\exp{\log{f(x_i;\boldsymbol{\Theta})}}   }{Z(\boldsymbol{\Theta})}.
-$$
-
 
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 <h2 id="final-expression">Final expression </h2>
@@ -1087,7 +1035,50 @@ $$
 
 
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
-<h2 id="parametric-matrix-models-for-rgression-type-problems">Parametric matrix models for rgression type problems </h2>
+<h2 id="parametric-matrix-models">Parametric Matrix Models </h2>
+
+<p>Given data for \( k \) energies and \( k \) observables in the ground state of a Hamiltonian that is a function of some coupling consents</p>
+$$
+\begin{aligned}
+    H(\boldsymbol{c}) &= H_0 +\sum_jc_jH_j\\
+      \hat{y}(\boldsymbol{c}) &= [\hat{E}_k(\boldsymbol{c}),\langle\psi_0(\boldsymbol{c})|\hat{O}_k|\psi_0(\boldsymbol{c})\rangle]
+      \end{aligned}
+$$
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="model-with-same-structure">Model with same structure </h2>
+<p>We form a PMM with same structure</p>
+$$
+    M(\boldsymbol{c}) = \underline{M_0} + \sum_jc_j\underline{M_j}
+$$
+
+<p>and calculate its \( k \) energies and \( k \) ovservables in the PMM ground state</p>
+$$
+\begin{equation}
+    y(\boldsymbol{c}) = [E_k(\boldsymbol{c}),\langle\phi_0(\boldsymbol{c})|\underline{O}_k|\phi_0(\boldsymbol{c})\rangle]
+\label{_auto3}
+\end{equation} 
+$$
+
+<p>where \( \underline{M_0},\underline{M}_j,\underline{O}\in\mathbf{C}^{\overline{n}\times\overline{n}} \) are Hermitian matrices.</p>
+
+<p>We label the trainable matrices, vectors, and scalars of the PMM by an
+underline. Likewise denote hyperparameters of the PMM by an overline.
+The trainable parameters are trained by minimizing the mean squared
+error over all \( N \) training points.
+</p>
+
+$$
+    \begin{aligned}
+        \mathcal{L} = \frac{1}{N}\sum^N_i(\hat{y}_k(\boldsymbol{c}_i)-y_k(\boldsymbol{c}_i))^2
+    \end{aligned}
+$$
+
+<p>Where \( \hat{y}_k(\boldsymbol{c}) \) is the true data, and \( y_k(\boldsymbol{c}) \) corresponds to the output of the PMM.</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="parametric-matrix-models-for-regression-type-problems">Parametric matrix models for regression type problems </h2>
 
 <p>Given dataset \( X\in \mathbb{R}^{n\times m} \), we compute a &quot;Hamiltonian&quot; that is linear in the input features \( x_i \)</p>
 $$
@@ -1099,7 +1090,7 @@ $$
 <p>Where \( H_i\in \mathbb{C}^{N\times N} \).</p>
 
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
-<h2 id="calcilating-eigensystem">Calcilating eigensystem </h2>
+<h2 id="calculating-eigensystem">Calculating eigensystem </h2>
 
 <p>The eigensystem is then calculated for \( H \)</p>
 $$

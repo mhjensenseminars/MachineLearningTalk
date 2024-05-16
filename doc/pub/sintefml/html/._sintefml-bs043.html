@@ -158,7 +158,6 @@ doconce format html sintefml.do.txt --html_style=bootstrap --pygments_html_style
                'marginal-and-conditional-probabilities'),
               ('Change of notation', 2, None, 'change-of-notation'),
               ('Optimization problem', 2, None, 'optimization-problem'),
-              ('Further simplifications', 2, None, 'further-simplifications'),
               ('Optimizing the logarithm instead',
                2,
                None,
@@ -167,14 +166,6 @@ doconce format html sintefml.do.txt --html_style=bootstrap --pygments_html_style
                2,
                None,
                'expression-for-the-gradients'),
-              ('The derivative of the partition function',
-               2,
-               None,
-               'the-derivative-of-the-partition-function'),
-              ('Explicit expression for the derivative',
-               2,
-               None,
-               'explicit-expression-for-the-derivative'),
               ('Final expression', 2, None, 'final-expression'),
               ('Final expression for the gradients',
                2,
@@ -217,11 +208,16 @@ doconce format html sintefml.do.txt --html_style=bootstrap --pygments_html_style
                2,
                None,
                'expectation-values-as-functions-of-the-oscillator-frequency'),
-              ('Parametric matrix models for rgression type problems',
+              ('Parametric Matrix Models', 2, None, 'parametric-matrix-models'),
+              ('Model with same structure',
                2,
                None,
-               'parametric-matrix-models-for-rgression-type-problems'),
-              ('Calcilating eigensystem', 2, None, 'calcilating-eigensystem'),
+               'model-with-same-structure'),
+              ('Parametric matrix models for regression type problems',
+               2,
+               None,
+               'parametric-matrix-models-for-regression-type-problems'),
+              ('Calculating eigensystem', 2, None, 'calculating-eigensystem'),
               ('Ordering eigenpairs', 2, None, 'ordering-eigenpairs')]}
 end of tocinfo -->
 
@@ -290,26 +286,25 @@ MathJax.Hub.Config({
      <!-- navigation toc: --> <li><a href="._sintefml-bs031.html#marginal-and-conditional-probabilities" style="font-size: 80%;">Marginal and conditional probabilities</a></li>
      <!-- navigation toc: --> <li><a href="._sintefml-bs032.html#change-of-notation" style="font-size: 80%;">Change of notation</a></li>
      <!-- navigation toc: --> <li><a href="._sintefml-bs033.html#optimization-problem" style="font-size: 80%;">Optimization problem</a></li>
-     <!-- navigation toc: --> <li><a href="._sintefml-bs034.html#further-simplifications" style="font-size: 80%;">Further simplifications</a></li>
-     <!-- navigation toc: --> <li><a href="._sintefml-bs035.html#optimizing-the-logarithm-instead" style="font-size: 80%;">Optimizing the logarithm instead</a></li>
-     <!-- navigation toc: --> <li><a href="._sintefml-bs036.html#expression-for-the-gradients" style="font-size: 80%;">Expression for the gradients</a></li>
-     <!-- navigation toc: --> <li><a href="._sintefml-bs037.html#the-derivative-of-the-partition-function" style="font-size: 80%;">The derivative of the partition function</a></li>
-     <!-- navigation toc: --> <li><a href="._sintefml-bs038.html#explicit-expression-for-the-derivative" style="font-size: 80%;">Explicit expression for the derivative</a></li>
-     <!-- navigation toc: --> <li><a href="._sintefml-bs039.html#final-expression" style="font-size: 80%;">Final expression</a></li>
-     <!-- navigation toc: --> <li><a href="._sintefml-bs040.html#final-expression-for-the-gradients" style="font-size: 80%;">Final expression for the gradients</a></li>
-     <!-- navigation toc: --> <li><a href="._sintefml-bs041.html#introducing-the-energy-model" style="font-size: 80%;">Introducing the energy model</a></li>
-     <!-- navigation toc: --> <li><a href="._sintefml-bs042.html#more-compact-notation" style="font-size: 80%;">More compact notation</a></li>
-     <!-- navigation toc: --> <li><a href="#examples-of-gradient-expressions" style="font-size: 80%;">Examples of gradient expressions</a></li>
-     <!-- navigation toc: --> <li><a href="._sintefml-bs044.html#network-elements-the-energy-function" style="font-size: 80%;">Network Elements, the energy function</a></li>
-     <!-- navigation toc: --> <li><a href="._sintefml-bs045.html#defining-different-types-of-rbms" style="font-size: 80%;">Defining different types of RBMs</a></li>
-     <!-- navigation toc: --> <li><a href="._sintefml-bs046.html#gaussian-binary-rbm" style="font-size: 80%;">Gaussian-binary RBM</a></li>
-     <!-- navigation toc: --> <li><a href="._sintefml-bs047.html#efficient-solutions-of-fermionic-systems-using-artificial-neural-networks-nordhagen-et-al-frontiers-in-physics-11-2023-https-doi-org-10-3389-fphy-2023-1061580" style="font-size: 80%;">"Efficient solutions of fermionic systems using artificial neural networks, Nordhagen et al, Frontiers in Physics 11, 2023":"https://doi.org/10.3389/fphy.2023.1061580"</a></li>
-     <!-- navigation toc: --> <li><a href="._sintefml-bs048.html#quantum-dots-and-boltzmann-machines-onebody-densities-n-6-hbar-omega-0-1-a-u" style="font-size: 80%;">Quantum dots and Boltzmann machines, onebody densities \( N=6 \), \( \hbar\omega=0.1 \) a.u.</a></li>
-     <!-- navigation toc: --> <li><a href="._sintefml-bs049.html#onebody-densities-n-30-hbar-omega-1-0-a-u" style="font-size: 80%;">Onebody densities \( N=30 \), \( \hbar\omega=1.0 \) a.u.</a></li>
-     <!-- navigation toc: --> <li><a href="._sintefml-bs050.html#expectation-values-as-functions-of-the-oscillator-frequency" style="font-size: 80%;">Expectation values as functions of the oscillator frequency</a></li>
-     <!-- navigation toc: --> <li><a href="._sintefml-bs051.html#parametric-matrix-models-for-rgression-type-problems" style="font-size: 80%;">Parametric matrix models for rgression type problems</a></li>
-     <!-- navigation toc: --> <li><a href="._sintefml-bs052.html#calcilating-eigensystem" style="font-size: 80%;">Calcilating eigensystem</a></li>
-     <!-- navigation toc: --> <li><a href="._sintefml-bs053.html#ordering-eigenpairs" style="font-size: 80%;">Ordering eigenpairs</a></li>
+     <!-- navigation toc: --> <li><a href="._sintefml-bs034.html#optimizing-the-logarithm-instead" style="font-size: 80%;">Optimizing the logarithm instead</a></li>
+     <!-- navigation toc: --> <li><a href="._sintefml-bs035.html#expression-for-the-gradients" style="font-size: 80%;">Expression for the gradients</a></li>
+     <!-- navigation toc: --> <li><a href="._sintefml-bs036.html#final-expression" style="font-size: 80%;">Final expression</a></li>
+     <!-- navigation toc: --> <li><a href="._sintefml-bs037.html#final-expression-for-the-gradients" style="font-size: 80%;">Final expression for the gradients</a></li>
+     <!-- navigation toc: --> <li><a href="._sintefml-bs038.html#introducing-the-energy-model" style="font-size: 80%;">Introducing the energy model</a></li>
+     <!-- navigation toc: --> <li><a href="._sintefml-bs039.html#more-compact-notation" style="font-size: 80%;">More compact notation</a></li>
+     <!-- navigation toc: --> <li><a href="._sintefml-bs040.html#examples-of-gradient-expressions" style="font-size: 80%;">Examples of gradient expressions</a></li>
+     <!-- navigation toc: --> <li><a href="._sintefml-bs041.html#network-elements-the-energy-function" style="font-size: 80%;">Network Elements, the energy function</a></li>
+     <!-- navigation toc: --> <li><a href="._sintefml-bs042.html#defining-different-types-of-rbms" style="font-size: 80%;">Defining different types of RBMs</a></li>
+     <!-- navigation toc: --> <li><a href="#gaussian-binary-rbm" style="font-size: 80%;">Gaussian-binary RBM</a></li>
+     <!-- navigation toc: --> <li><a href="._sintefml-bs044.html#efficient-solutions-of-fermionic-systems-using-artificial-neural-networks-nordhagen-et-al-frontiers-in-physics-11-2023-https-doi-org-10-3389-fphy-2023-1061580" style="font-size: 80%;">"Efficient solutions of fermionic systems using artificial neural networks, Nordhagen et al, Frontiers in Physics 11, 2023":"https://doi.org/10.3389/fphy.2023.1061580"</a></li>
+     <!-- navigation toc: --> <li><a href="._sintefml-bs045.html#quantum-dots-and-boltzmann-machines-onebody-densities-n-6-hbar-omega-0-1-a-u" style="font-size: 80%;">Quantum dots and Boltzmann machines, onebody densities \( N=6 \), \( \hbar\omega=0.1 \) a.u.</a></li>
+     <!-- navigation toc: --> <li><a href="._sintefml-bs046.html#onebody-densities-n-30-hbar-omega-1-0-a-u" style="font-size: 80%;">Onebody densities \( N=30 \), \( \hbar\omega=1.0 \) a.u.</a></li>
+     <!-- navigation toc: --> <li><a href="._sintefml-bs047.html#expectation-values-as-functions-of-the-oscillator-frequency" style="font-size: 80%;">Expectation values as functions of the oscillator frequency</a></li>
+     <!-- navigation toc: --> <li><a href="._sintefml-bs048.html#parametric-matrix-models" style="font-size: 80%;">Parametric Matrix Models</a></li>
+     <!-- navigation toc: --> <li><a href="._sintefml-bs049.html#model-with-same-structure" style="font-size: 80%;">Model with same structure</a></li>
+     <!-- navigation toc: --> <li><a href="._sintefml-bs050.html#parametric-matrix-models-for-regression-type-problems" style="font-size: 80%;">Parametric matrix models for regression type problems</a></li>
+     <!-- navigation toc: --> <li><a href="._sintefml-bs051.html#calculating-eigensystem" style="font-size: 80%;">Calculating eigensystem</a></li>
+     <!-- navigation toc: --> <li><a href="._sintefml-bs052.html#ordering-eigenpairs" style="font-size: 80%;">Ordering eigenpairs</a></li>
 
         </ul>
       </li>
@@ -321,27 +316,16 @@ MathJax.Hub.Config({
 <p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p> <!-- add vertical space -->
 <a name="part0043"></a>
 <!-- !split -->
-<h2 id="examples-of-gradient-expressions" class="anchor">Examples of gradient expressions  </h2>
+<h2 id="gaussian-binary-rbm" class="anchor">Gaussian-binary RBM </h2>
 
-<p>Since the binary-binary energy model is linear in the parameters \( a_i \), \( b_j \) and
-\( w_{ij} \), it is easy to see that the derivatives with respect to the
-various optimization parameters yield expressions used in the
-evaluation of gradients like
-</p>
+<p>Another varient is the RBM where the visible units are Gaussian while the hidden units remain binary:</p>
 $$
-\frac{\partial E(\boldsymbol{x}, \boldsymbol{h};\boldsymbol{\Theta})}{\partial w_{ij}}=-x_ih_j,
+\begin{align*}
+	E(\boldsymbol{x}, \boldsymbol{h},\boldsymbol{\Theta}) = \sum_i^M \frac{(x_i - a_i)^2}{2\sigma_i^2} - \sum_j^N b_j h_j - \sum_{i,j}^{M,N} \frac{x_i w_{ij} h_j}{\sigma_i^2}. 
+\end{align*}
 $$
 
-<p>and</p>
-$$
-\frac{\partial E(\boldsymbol{x}, \boldsymbol{h};\boldsymbol{\Theta})}{\partial a_i}=-x_i,
-$$
-
-<p>and</p>
-$$
-\frac{\partial E(\boldsymbol{x}, \boldsymbol{h};\boldsymbol{\Theta})}{\partial b_j}=-h_j.
-$$
-
+<p>This type of RBMs are useful when we model continuous data (i.e., we wish \( \boldsymbol{x} \) to be continuous). The paramater \( \sigma_i^2 \) is meant to represent a variance and is foten just set to one.</p>
 
 <p>
 <!-- navigation buttons at the bottom of the page -->
@@ -367,8 +351,6 @@ $$
   <li><a href="._sintefml-bs050.html">51</a></li>
   <li><a href="._sintefml-bs051.html">52</a></li>
   <li><a href="._sintefml-bs052.html">53</a></li>
-  <li><a href="">...</a></li>
-  <li><a href="._sintefml-bs053.html">54</a></li>
   <li><a href="._sintefml-bs044.html">&raquo;</a></li>
 </ul>
 <!-- ------------------- end of main content --------------- -->

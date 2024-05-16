@@ -25,7 +25,7 @@ These slides and more at URL:"https://github.com/mhjensenseminars/MachineLearnin
 !split
 ===== Thanks to many =====
 
-Jane Kim (MSU/Ohio U), Julie Butler (MSU/Mt Union), Patrick Cook (MSU), Danny Jammooa (MSU), Daniel Bazin (MSU), Dean Lee (MSU), Daniel Lee (Cornell), Even Nordhagen (UiO), Robert Solli (UiO, Expert Analytics), Bryce Fore (ANL), Alessandro Lovato (ANL), Stefano Gandolfi (LANL), Francesco Pederiva (UniTN), and Giuseppe Carleo (EPFL). 
+Jane Kim (MSU/Ohio U), Julie Butler (MSU/Mt Union), Patrick Cook (MSU), Danny Jammooa (MSU), Dean Lee (MSU), Daniel Lee (Cornell), Even Nordhagen (UiO), Bryce Fore (ANL), Alessandro Lovato (ANL), Stefano Gandolfi (LANL), Francesco Pederiva (UniTN), and Giuseppe Carleo (EPFL). 
 
 !split
 ===== And sponsors =====
@@ -41,7 +41,7 @@ o Research Council of Norway (various grants) and my employers University of Osl
 o I have my training and research in traditional many-body theories and have studied and coded almost all, FCI, mean-field methods, Coupled Cluster theories, Green's function approaches, many-body perturbation theories, Monte Carlo methods and also molecular dynamics. Time independent and time-dependent theories
 o Central keywords: Effective degrees of freedom and dimensionality reduction
 o Last 6-8 years  focus on quantum computing and machine learning
-o Developed many courses (regular and intensive) ones on many-body physics, computational physics, machine learning and quantum computing, see URL:"https://github.com/mhjensen"
+o Developed many courses (regular and intensive) on many-body physics, computational physics, machine learning and quantum computing, see URL:"https://github.com/mhjensen"
 !eblock
 
 
@@ -474,22 +474,6 @@ p(\bm{X};\bm{\Theta})=\frac{1}{Z(\bm{\Theta})}\prod_{x_i\in \bm{X}}\left(\sum_{h
 \]
 !et
 
-!split
-===== Further simplifications =====
-
-We simplify further by rewriting it as
-!bt
-\[
-p(\bm{X};\bm{\Theta})=\frac{1}{Z(\bm{\Theta})}\prod_{x_i\in \bm{X}}f(x_i;\bm{\Theta}),
-\]
-!et
-where we used $p(x_i;\bm{\Theta}) = \sum_{h_j\in \bm{H}}f(x_i,h_j;\bm{\Theta})$.
-The optimization problem is then
-!bt
-\[
-{\displaystyle \mathrm{arg} \hspace{0.1cm}\max_{\bm{\bm{\Theta}}\in {\mathbb{R}}^{p}}} \hspace{0.1cm}p(\bm{X};\bm{\Theta}).
-\]
-!et
 
 !split
 ===== Optimizing the logarithm instead =====
@@ -521,42 +505,6 @@ This leads to the following equation
 
 The first term is called the positive phase and we assume that we have a model for the function $f$ from which we can sample values. Below we will develop an explicit model for this.
 The second term is called the negative phase and is the one which leads to more difficulties.
-
-!split
-===== The derivative of the partition function =====
-
-The partition function, defined above as
-!bt
-\[
-Z(\bm{\Theta})=\sum_{x_i\in \bm{X}}\sum_{h_j\in \bm{H}} f(x_i,h_j;\bm{\Theta}),
-\]
-!et
-is in general the most problematic term. In principle both $x$ and $h$ can span large degrees of freedom, if not even infinitely many ones, and computing the partition function itself is often not desirable or even feasible. The above derivative of the partition function can however be written in terms of an expectation value which is in turn evaluated  using Monte Carlo sampling and the theory of Markov chains, popularly shortened to MCMC (or just MC$^2$).
-
-!split
-===== Explicit expression for the derivative =====
-We can rewrite
-!bt
-\[
-\nabla_{\bm{\Theta}}\log{Z(\bm{\Theta})}=\frac{\nabla_{\bm{\Theta}}Z(\bm{\Theta})}{Z(\bm{\Theta})},
-\]
-!et
-which reads in more detail
-!bt
-\[
-\nabla_{\bm{\Theta}}\log{Z(\bm{\Theta})}=\frac{\nabla_{\bm{\Theta}} \sum_{x_i\in \bm{X}}f(x_i;\bm{\Theta})   }{Z(\bm{\Theta})}.
-\]
-!et
-
-We can rewrite the function $f$ (we have assumed that is larger or
-equal than zero) as $f=\exp{\log{f}}$. We can then rewrite the last
-equation as
-
-!bt
-\[
-\nabla_{\bm{\Theta}}\log{Z(\bm{\Theta})}=\frac{ \sum_{x_i\in \bm{X}} \nabla_{\bm{\Theta}}\exp{\log{f(x_i;\bm{\Theta})}}   }{Z(\bm{\Theta})}.
-\]
-!et
 
 !split
 ===== Final expression =====
@@ -745,7 +693,52 @@ FIGURE: [figures/virialtheorem.pdf, width=700 frac=0.9]
 
 
 !split
-===== Parametric matrix models for rgression type problems =====
+=====  Parametric Matrix Models =====
+
+Given data for $k$ energies and $k$ observables in the ground state of a Hamiltonian that is a function of some coupling consents
+!bt
+\[
+\begin{aligned}
+    H(\bm{c}) &= H_0 +\sum_jc_jH_j\\
+      \hat{y}(\bm{c}) &= [\hat{E}_k(\bm{c}),\langle\psi_0(\bm{c})|\hat{O}_k|\psi_0(\bm{c})\rangle]
+      \end{aligned}
+\]
+!et
+
+!split
+===== Model with same structure =====
+We form a PMM with same structure
+!bt
+\[
+    M(\bm{c}) = \underline{M_0} + \sum_jc_j\underline{M_j}
+\]
+!et
+and calculate its $k$ energies and $k$ ovservables in the PMM ground state
+!bt
+\begin{equation}
+    y(\bm{c}) = [E_k(\bm{c}),\langle\phi_0(\bm{c})|\underline{O}_k|\phi_0(\bm{c})\rangle]
+\end{equation} 
+!et
+
+where $\underline{M_0},\underline{M}_j,\underline{O}\in\mathbf{C}^{\overline{n}\times\overline{n}}$ are Hermitian matrices.
+
+We label the trainable matrices, vectors, and scalars of the PMM by an
+underline. Likewise denote hyperparameters of the PMM by an overline.
+The trainable parameters are trained by minimizing the mean squared
+error over all $N$ training points.
+
+!bt
+\[
+    \begin{aligned}
+        \mathcal{L} = \frac{1}{N}\sum^N_i(\hat{y}_k(\bm{c}_i)-y_k(\bm{c}_i))^2
+    \end{aligned}
+\]
+!et
+Where $\hat{y}_k(\bm{c})$ is the true data, and $y_k(\bm{c})$ corresponds to the output of the PMM.
+
+
+!split
+===== Parametric matrix models for regression type problems =====
 
 
 Given dataset $X\in \mathbb{R}^{n\times m}$, we compute a ``Hamiltonian'' that is linear in the input features $x_i$
@@ -759,7 +752,7 @@ Given dataset $X\in \mathbb{R}^{n\times m}$, we compute a ``Hamiltonian'' that i
 Where $H_i\in \mathbb{C}^{N\times N}$.
 
 !split
-===== Calcilating eigensystem =====
+===== Calculating eigensystem =====
 
 The eigensystem is then calculated for $H$
 !bt
