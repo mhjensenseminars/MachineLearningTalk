@@ -707,6 +707,7 @@ Given data for $k$ energies and $k$ observables in the ground state of a Hamilto
 
 !split
 ===== Model with same structure =====
+
 We form a PMM with same structure
 !bt
 \[
@@ -719,8 +720,10 @@ and calculate its $k$ energies and $k$ ovservables in the PMM ground state
     y(\bm{c}) = [E_k(\bm{c}),\langle\phi_0(\bm{c})|\underline{O}_k|\phi_0(\bm{c})\rangle]
 \end{equation} 
 !et
-
 where $\underline{M_0},\underline{M}_j,\underline{O}\in\mathbf{C}^{\overline{n}\times\overline{n}}$ are Hermitian matrices.
+
+!split
+===== Simple labeling =====
 
 We label the trainable matrices, vectors, and scalars of the PMM by an
 underline. Likewise denote hyperparameters of the PMM by an overline.
@@ -730,11 +733,11 @@ error over all $N$ training points.
 !bt
 \[
     \begin{aligned}
-        \mathcal{L} = \frac{1}{N}\sum^N_i(\hat{y}_k(\bm{c}_i)-y_k(\bm{c}_i))^2
+        \mathcal{L} = \frac{1}{N}\sum^N_i(\hat{y}_k(\bm{c}_i)-y_k(\bm{c}_i))^2,
     \end{aligned}
 \]
 !et
-Where $\hat{y}_k(\bm{c})$ is the true data, and $y_k(\bm{c})$ corresponds to the output of the PMM.
+where $\hat{y}_k(\bm{c})$ is the true data, and $y_k(\bm{c})$ corresponds to the output of the PMM.
 
 
 !split

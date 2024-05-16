@@ -317,6 +317,7 @@ div.toc p,a {
                2,
                None,
                'model-with-same-structure'),
+              ('Simple labeling', 2, None, 'simple-labeling'),
               ('Parametric matrix models for regression type problems',
                2,
                None,
@@ -1125,6 +1126,7 @@ $$
 
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 <h2 id="model-with-same-structure">Model with same structure </h2>
+
 <p>We form a PMM with same structure</p>
 $$
     M(\boldsymbol{c}) = \underline{M_0} + \sum_jc_j\underline{M_j}
@@ -1140,6 +1142,9 @@ $$
 
 <p>where \( \underline{M_0},\underline{M}_j,\underline{O}\in\mathbf{C}^{\overline{n}\times\overline{n}} \) are Hermitian matrices.</p>
 
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="simple-labeling">Simple labeling </h2>
+
 <p>We label the trainable matrices, vectors, and scalars of the PMM by an
 underline. Likewise denote hyperparameters of the PMM by an overline.
 The trainable parameters are trained by minimizing the mean squared
@@ -1148,11 +1153,11 @@ error over all \( N \) training points.
 
 $$
     \begin{aligned}
-        \mathcal{L} = \frac{1}{N}\sum^N_i(\hat{y}_k(\boldsymbol{c}_i)-y_k(\boldsymbol{c}_i))^2
+        \mathcal{L} = \frac{1}{N}\sum^N_i(\hat{y}_k(\boldsymbol{c}_i)-y_k(\boldsymbol{c}_i))^2,
     \end{aligned}
 $$
 
-<p>Where \( \hat{y}_k(\boldsymbol{c}) \) is the true data, and \( y_k(\boldsymbol{c}) \) corresponds to the output of the PMM.</p>
+<p>where \( \hat{y}_k(\boldsymbol{c}) \) is the true data, and \( y_k(\boldsymbol{c}) \) corresponds to the output of the PMM.</p>
 
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 <h2 id="parametric-matrix-models-for-regression-type-problems">Parametric matrix models for regression type problems </h2>

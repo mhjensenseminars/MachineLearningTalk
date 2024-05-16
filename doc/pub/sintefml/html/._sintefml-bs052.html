@@ -213,6 +213,7 @@ doconce format html sintefml.do.txt --html_style=bootstrap --pygments_html_style
                2,
                None,
                'model-with-same-structure'),
+              ('Simple labeling', 2, None, 'simple-labeling'),
               ('Parametric matrix models for regression type problems',
                2,
                None,
@@ -302,9 +303,10 @@ MathJax.Hub.Config({
      <!-- navigation toc: --> <li><a href="._sintefml-bs047.html#expectation-values-as-functions-of-the-oscillator-frequency" style="font-size: 80%;">Expectation values as functions of the oscillator frequency</a></li>
      <!-- navigation toc: --> <li><a href="._sintefml-bs048.html#parametric-matrix-models" style="font-size: 80%;">Parametric Matrix Models</a></li>
      <!-- navigation toc: --> <li><a href="._sintefml-bs049.html#model-with-same-structure" style="font-size: 80%;">Model with same structure</a></li>
-     <!-- navigation toc: --> <li><a href="._sintefml-bs050.html#parametric-matrix-models-for-regression-type-problems" style="font-size: 80%;">Parametric matrix models for regression type problems</a></li>
-     <!-- navigation toc: --> <li><a href="._sintefml-bs051.html#calculating-eigensystem" style="font-size: 80%;">Calculating eigensystem</a></li>
-     <!-- navigation toc: --> <li><a href="#ordering-eigenpairs" style="font-size: 80%;">Ordering eigenpairs</a></li>
+     <!-- navigation toc: --> <li><a href="._sintefml-bs050.html#simple-labeling" style="font-size: 80%;">Simple labeling</a></li>
+     <!-- navigation toc: --> <li><a href="._sintefml-bs051.html#parametric-matrix-models-for-regression-type-problems" style="font-size: 80%;">Parametric matrix models for regression type problems</a></li>
+     <!-- navigation toc: --> <li><a href="#calculating-eigensystem" style="font-size: 80%;">Calculating eigensystem</a></li>
+     <!-- navigation toc: --> <li><a href="._sintefml-bs053.html#ordering-eigenpairs" style="font-size: 80%;">Ordering eigenpairs</a></li>
 
         </ul>
       </li>
@@ -316,19 +318,30 @@ MathJax.Hub.Config({
 <p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p> <!-- add vertical space -->
 <a name="part0052"></a>
 <!-- !split -->
-<h2 id="ordering-eigenpairs" class="anchor">Ordering eigenpairs </h2>
+<h2 id="calculating-eigensystem" class="anchor">Calculating eigensystem </h2>
 
-<p>Ordering the eigenpairs by decreasing eigenvalue magnitude, \( \vert\lambda^{(k)}_1\vert\geq\vert\lambda^{(k)}_2\vert\geq\cdots\geq\vert\lambda^{(k)}_l \), we select the first \( d \)-eigenvectors to &quot;decode&quot; into the penultimate output vector \( \vec{z}\in\mathbb{R}^c \),</p>
+<p>The eigensystem is then calculated for \( H \)</p>
 $$
-    z_k = \underline{b_k} + \sum_{i\leq j}^{d}\vert\vec{v}_i^\dagger \underline{\Delta_{kij}\vert \vec{v}_j}^2 - \frac{1}{2}\vert\underline{\Delta_{kij}}\vert_2^2,
+    H_k = V\Lambda V^\dagger = %
+    \begin{bmatrix}
+        \vert & \vert & \cdots & \vert \\
+        v_1 & v_2 & \cdots & v_{l}\\
+        \vert & \vert & \cdots & \vert
+    \end{bmatrix}%
+    \begin{bmatrix}
+        \lambda_1 & & & \\
+        & \lambda_2 & & \\
+        & & \ddots & \\
+        & & & \lambda_{l}
+    \end{bmatrix}%
+    \begin{bmatrix}
+        \vert & \vert & \cdots & \vert \\
+        v_1 & v_2 & \cdots & v_{l}\\
+        \vert & \vert & \cdots & \vert
+    \end{bmatrix}^\dagger
 $$
 
-<p>where \( \underline{\Delta_{kij}} \) are trainable Hermitian &quot;decoder&quot; matrices and \( \underline{\vec{b}}\in\mathbb{R}^c \) is a trainable bias vector. The trainable parameters are trained by minimizing a loss function over all \( J \) training points.</p>
-$$
-    \mathcal{L} = \sum_i\vert\hat{z}_i-z_i\vert^P
-$$
 
-<p>Where \( \hat{z} \) is the true data, and \( z \) is the output correspnding to the PMM.</p>
 <p>
 <!-- navigation buttons at the bottom of the page -->
 <ul class="pagination">
@@ -344,6 +357,8 @@ $$
   <li><a href="._sintefml-bs050.html">51</a></li>
   <li><a href="._sintefml-bs051.html">52</a></li>
   <li class="active"><a href="._sintefml-bs052.html">53</a></li>
+  <li><a href="._sintefml-bs053.html">54</a></li>
+  <li><a href="._sintefml-bs053.html">&raquo;</a></li>
 </ul>
 <!-- ------------------- end of main content --------------- -->
 </div>  <!-- end container -->
