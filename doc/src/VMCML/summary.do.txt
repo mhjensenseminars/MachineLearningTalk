@@ -1,0 +1,38 @@
+TITLE: Quantum computing, Machine Learning and Quantum Machine Learning at UiO
+AUTHOR: Center for Computing in Science Education and Computational Physics Research Group, Department of Physics, UiO
+#  at Department of Physics and Astronomy and FRIB, Michigan State University, USA, and Department of Physics and Center for Computing in Science Education,
+# University of Oslo, Norway
+DATE: today
+
+
+!split
+===== People  =====
+
+!bblock UiO
+o Morten Hjorth-Jensen (theory),  Lasse Vines, Marianne Bathen Etzelmueller, Justin Wells  and David Gongarra (experiment)
+o Four theory PhD students (2019-2025), one PD
+o Twelve  master of science students  (theory), many-body physics, quantum computing, quantum machine learning and machine learning
+!eblock
+
+!split
+===== Machine learning research =====
+
+o Solving complicated quantum mechanical many-body systems with deep learning, see URL:"https://www.nature.com/articles/s42005-024-01613-w"
+o Developing new machine learning algorithms, with applications to quantum computing as well, see URL:"https://arxiv.org/abs/2401.11694"
+o Analyzing experimental data from physics experiments, see for example URL:"https://www.sciencedirect.com/science/article/abs/pii/S0168900221004460?via%3Dihub"
+o Predicting solid state material platforms for quantum technologies, see for example URL:"https://www.nature.com/articles/s41524-022-00888-3" 
+
+!split
+===== Many-body physics, Quantum computing and quantum machine learning =====
+
+o How to use many-body theory to design quantum circuits and gates (Quantum engineering), see for example URL:"https://arxiv.org/abs/2401.11694"
+o Many-body theory with focus on
+  * Adaptive basis sets 
+  * Time dependence
+  * Feedback from experiment
+o Studies of many-body entanglement and quantum tomography
+o Numerical experiments to mimick real systems, quantum twins
+o Constructing quantum circuits to simulate specific systems
+o Quantum machine learning to optimize quantum circuits
+
+
