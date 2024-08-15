@@ -1,6 +1,6 @@
-TITLE: Machine Learning, artificial intelligence and quantum technologies at the university of Oslo; research, education and exciting possibilities in the future job market
+TITLE: Machine Learning/artificial intelligence and quantum technologies at the university of Oslo; research, education and exciting possibilities in the future job market
 AUTHOR: Morten Hjorth-Jensen at Department of Physics and Center for Computing in Science Education, University of Oslo, Norway
-DATE: 
+DATE: today
 
 
 !split
