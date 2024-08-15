@@ -1,0 +1,616 @@
+<!--
+HTML file automatically generated from DocOnce source
+(https://github.com/doconce/doconce/)
+doconce format html lynforedrag-reveal.html lynforedrag-reveal reveal --html_slide_theme=beige
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="DocOnce: https://github.com/doconce/doconce/" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Machine Learning, artificial intelligence and quantum technologies at the university of Oslo; research, education and exciting possibilities in the future job market">
+<title>Machine Learning, artificial intelligence and quantum technologies at the university of Oslo; research, education and exciting possibilities in the future job market</title>
+
+<!-- reveal.js: https://lab.hakim.se/reveal-js/ -->
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+<link rel="stylesheet" href="reveal.js/css/reveal.css">
+<link rel="stylesheet" href="reveal.js/css/theme/beige.css" id="theme">
+<!--
+<link rel="stylesheet" href="reveal.js/css/reveal.css">
+<link rel="stylesheet" href="reveal.js/css/theme/beige.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/beigesmall.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/solarized.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/serif.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/night.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/moon.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/simple.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/sky.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/darkgray.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/default.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/cbc.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/simula.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/black.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/white.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/league.css" id="theme">
+-->
+
+<!-- For syntax highlighting -->
+<link rel="stylesheet" href="reveal.js/lib/css/zenburn.css">
+
+<!-- Printing and PDF exports -->
+<script>
+var link = document.createElement( 'link' );
+link.rel = 'stylesheet';
+link.type = 'text/css';
+link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+document.getElementsByTagName( 'head' )[0].appendChild( link );
+</script>
+
+<style type="text/css">
+hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+p.caption { width: 80%; font-size: 60%; font-style: italic; text-align: left; }
+hr.figure { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+.reveal .alert-text-small   { font-size: 80%;  }
+.reveal .alert-text-large   { font-size: 130%; }
+.reveal .alert-text-normal  { font-size: 90%;  }
+.reveal .alert {
+  padding:8px 35px 8px 14px; margin-bottom:18px;
+  text-shadow:0 1px 0 rgba(255,255,255,0.5);
+  border:5px solid #bababa;
+  -webkit-border-radius: 14px; -moz-border-radius: 14px;
+  border-radius:14px;
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  background-size: 38px;
+  padding-left: 30px; /* 55px; if icon */
+}
+.reveal .alert-block {padding-top:14px; padding-bottom:14px}
+.reveal .alert-block > p, .alert-block > ul {margin-bottom:1em}
+/*.reveal .alert li {margin-top: 1em}*/
+.reveal .alert-block p+p {margin-top:5px}
+/*.reveal .alert-notice { background-image: url(https://hplgit.github.io/doconce/bundled/html_images/small_gray_notice.png); }
+.reveal .alert-summary  { background-image:url(https://hplgit.github.io/doconce/bundled/html_images/small_gray_summary.png); }
+.reveal .alert-warning { background-image: url(https://hplgit.github.io/doconce/bundled/html_images/small_gray_warning.png); }
+.reveal .alert-question {background-image:url(https://hplgit.github.io/doconce/bundled/html_images/small_gray_question.png); } */
+/* Override reveal.js table border */
+.reveal table td {
+  border: 0;
+}
+
+<style type="text/css">
+/* Override h1, h2, ... styles */
+h1 { font-size: 2.8em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.4em; }
+h4 { font-size: 1.3em; }
+h1, h2, h3, h4 { font-weight: bold; line-height: 1.2; }
+body { overflow: auto; } /* vertical scrolling */
+hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+p.caption { width: 80%; font-size: 60%; font-style: italic; text-align: left; }
+hr.figure { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+.slide .alert-text-small   { font-size: 80%;  }
+.slide .alert-text-large   { font-size: 130%; }
+.slide .alert-text-normal  { font-size: 90%;  }
+.slide .alert {
+  padding:8px 35px 8px 14px; margin-bottom:18px;
+  text-shadow:0 1px 0 rgba(255,255,255,0.5);
+  border:5px solid #bababa;
+    -webkit-border-radius:14px; -moz-border-radius:14px;
+  border-radius:14px
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  background-size: 38px;
+  padding-left: 30px; /* 55px; if icon */
+}
+.slide .alert-block {padding-top:14px; padding-bottom:14px}
+.slide .alert-block > p, .alert-block > ul {margin-bottom:0}
+/*.slide .alert li {margin-top: 1em}*/
+.deck .alert-block p+p {margin-top:5px}
+/*.slide .alert-notice { background-image: url(https://hplgit.github.io/doconce/
+bundled/html_images//small_gray_notice.png); }
+.slide .alert-summary  { background-image:url(https://hplgit.github.io/doconce/
+bundled/html_images//small_gray_summary.png); }
+.slide .alert-warning { background-image: url(https://hplgit.github.io/doconce/
+bundled/html_images//small_gray_warning.png); }
+.slide .alert-question {background-image:url(https://hplgit.github.io/doconce/
+bundled/html_images/small_gray_question.png); } */
+.dotable table, .dotable th, .dotable tr, .dotable tr td {
+  border: 2px solid black;
+  border-collapse: collapse;
+  padding: 2px;
+}
+</style>
+
+
+<!-- Styles for table layout of slides -->
+<style type="text/css">
+td.padding {
+  padding-top:20px;
+  padding-bottom:20px;
+  padding-right:50px;
+  padding-left:50px;
+}
+</style>
+
+</head>
+
+
+<body>
+<div class="reveal">
+<div class="slides">
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+     equationNumbers: {  autoNumber: "none"  },
+     extensions: ["AMSmath.js", "AMSsymbols.js", "autobold.js", "color.js"]
+  }
+});
+</script>
+<script type="text/javascript" async
+ src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+
+<section>
+<!-- ------------------- main content ---------------------- -->
+<center>
+<h1 style="text-align: center;">Machine Learning, artificial intelligence and quantum technologies at the university of Oslo; research, education and exciting possibilities in the future job market</h1>
+</center>  <!-- document title -->
+
+<!-- author(s): Morten Hjorth-Jensen -->
+<center>
+<b>Morten Hjorth-Jensen</b> 
+</center>
+<!-- institution -->
+<center>
+<b>Department of Physics and Center for Computing in Science Education, University of Oslo, Norway</b>
+</center>
+<br>
+<center>
+<h4></h4>
+</center> <!-- date -->
+<br>
+</section>
+
+<section>
+<h2 id="what-is-this-talk-about">What is this talk about? </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p>The main emphasis is to give you a short and pedestrian introduction to the whys and hows we can use (with several examples) machine learning methods and quantum technologies 
+in science and perhaps in general. And why this could (or should) be of interest.  I will also try to link to potential job possibilities and educational activities.
+</p>
+</div>
+</section>
+
+<section>
+<h2 id="ai-ml-and-some-statements-you-may-have-heard-and-what-do-they-mean">AI/ML and some statements you may have heard (and what do they mean?)  </h2>
+
+<ol>
+<p><li> Fei-Fei Li on ImageNet: <b>map out the entire world of objects</b> (<a href="https://cacm.acm.org/news/219702-the-data-that-transformed-ai-research-and-possibly-the-world/fulltext" target="_blank">The data that transformed AI research</a>)</li>
+<p><li> Russell and Norvig in their popular textbook: <b>relevant to any intellectual task; it is truly a universal field</b> (<a href="http://aima.cs.berkeley.edu/" target="_blank">Artificial Intelligence, A modern approach</a>)</li>
+<p><li> Woody Bledsoe puts it more bluntly: <b>in the long run, AI is the only science</b> (quoted in Pamilla McCorduck, <a href="https://www.pamelamccorduck.com/machines-who-think" target="_blank">Machines who think</a>)</li>
+</ol>
+<p>
+<p>If you wish to have a critical read on AI/ML from a societal point of view, see <a href="https://www.katecrawford.net/" target="_blank">Kate Crawford's recent text Atlas of AI</a>. And <a href="https://www.goodreads.com/en/book/show/144711751" target="_blank">Inga Strumke, Machines which think</a></p>
+
+<b>Here: with AI/ML we intend a collection of machine learning methods with an emphasis on statistical learning and data analysis</b>
+</section>
+
+<section>
+<h2 id="types-of-machine-learning">Types of machine learning </h2>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p>The approaches to machine learning are many, but are often split into two main categories. 
+In <em>supervised learning</em> we know the answer to a problem,
+and let the computer deduce the logic behind it. On the other hand, <em>unsupervised learning</em>
+is a method for finding patterns and relationship in data sets without any prior knowledge of the system.
+</p>
+
+<p>An important  third category is  <em>reinforcement learning</em>. This is a paradigm 
+of learning inspired by behavioural psychology, where learning is achieved by trial-and-error, 
+solely from rewards and punishment.
+</p>
+</div>
+</section>
+
+<section>
+<h2 id="main-categories">Main categories </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p>Another way to categorize machine learning tasks is to consider the desired output of a system.
+Some of the most common tasks are:
+</p>
+
+<ul>
+
+<p><li> Classification: Outputs are divided into two or more classes. The goal is to   produce a model that assigns inputs into one of these classes. An example is to identify  digits based on pictures of hand-written ones. Classification is typically supervised learning.</li>
+
+<p><li> Regression: Finding a functional relationship between an input data set and a reference data set.   The goal is to construct a function that maps input data to continuous output values.</li>
+
+<p><li> Clustering: Data are divided into groups with certain common traits, without knowing the different groups beforehand.  It is thus a form of unsupervised learning.</li>
+</ul>
+</div>
+</section>
+
+<section>
+<h2 id="the-plethora-of-machine-learning-algorithms-methods">The plethora  of machine learning algorithms/methods </h2>
+
+<ol>
+<p><li> Deep learning: Neural Networks (NN), Convolutional NN, Recurrent NN, Boltzmann machines, autoencoders and variational autoencoders  and generative adversarial networks, stable diffusion and many more generative models</li>
+<p><li> Bayesian statistics and Bayesian Machine Learning, Bayesian experimental design, Bayesian Regression models, Bayesian neural networks, Gaussian processes and much more</li>
+<p><li> Dimensionality reduction (Principal component analysis), Clustering Methods and more</li>
+<p><li> Ensemble Methods, Random forests, bagging and voting methods, gradient boosting approaches</li> 
+<p><li> Linear and logistic regression, Kernel methods, support vector machines and more</li>
+<p><li> Reinforcement Learning; Transfer Learning and more</li> 
+</ol>
+</section>
+
+<section>
+<h2 id="example-of-discriminative-modeling-taken-from-generative-deep-learning-by-david-foster-https-www-oreilly-com-library-view-generative-deep-learning-9781098134174-ch01-html">Example of discriminative modeling, <a href="https://www.oreilly.com/library/view/generative-deep-learning/9781098134174/ch01.html" target="_blank">taken from Generative Deep Learning by David Foster</a>  </h2>
+
+<br/><br/>
+<center>
+<p><img src="figures/standarddeeplearning.png" width="900" align="bottom"></p>
+</center>
+<br/><br/>
+</section>
+
+<section>
+<h2 id="discriminative-modeling">Discriminative Modeling </h2>
+
+<p>When performing discriminative modeling, each observation in the
+training data has a label. For a binary classification problem such as
+our data could be labeled as ones and zeros. Our model then learns how to
+discriminate between these two groups and outputs the probability that
+a new observation has label 1 or 0
+</p>
+
+<p>In contrast, generative modeling doesn&#8217;t require the dataset to be
+labeled because it concerns itself with generating entirely new
+data (for example an image), rather than trying to predict a label for say  a given image.
+</p>
+</section>
+
+<section>
+<h2 id="what-is-generative-modeling">What Is Generative Modeling? </h2>
+
+<p>Generative modeling can be broadly defined as follows:</p>
+
+<p>Generative modeling is a branch of machine learning that involves
+training a model to produce new data that is similar to a given
+dataset.
+</p>
+
+<p>What does this mean in practice? Suppose we have a dataset containing
+photos of horses. We can train a generative model on this dataset to
+capture the rules that govern the complex relationships between pixels
+in images of horses. Then we can sample from this model to create
+novel, realistic images of horses that did not exist in the original
+dataset. 
+</p>
+</section>
+
+<section>
+<h2 id="example-of-generative-modeling-taken-from-generative-deep-learning-by-david-foster-https-www-oreilly-com-library-view-generative-deep-learning-9781098134174-ch01-html">Example of generative modeling, <a href="https://www.oreilly.com/library/view/generative-deep-learning/9781098134174/ch01.html" target="_blank">taken from Generative Deep Learning by David Foster</a>  </h2>
+
+<br/><br/>
+<center>
+<p><img src="figures/generativelearning.png" width="900" align="bottom"></p>
+</center>
+<br/><br/>
+</section>
+
+<section>
+<h2 id="good-books-with-hands-on-material-and-codes">Good books with hands-on material and codes </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<ul>
+<p><li> <a href="https://sebastianraschka.com/blog/2022/ml-pytorch-book.html" target="_blank">Sebastian Rashcka et al, Machine learning with Sickit-Learn and PyTorch</a></li>
+<p><li> <a href="https://www.oreilly.com/library/view/generative-deep-learning/9781098134174/ch01.html" target="_blank">David Foster, Generative Deep Learning with TensorFlow</a></li>
+<p><li> <a href="https://github.com/PacktPublishing/Hands-On-Generative-AI-with-Python-and-TensorFlow-2" target="_blank">Bali and Gavras, Generative AI with Python and TensorFlow 2</a></li>
+</ul>
+</div>
+
+<p>All three books have GitHub addresses from where  one can download all codes. We will borrow most of the material from these three texts as well as 
+from Goodfellow, Bengio and Courville's text <a href="https://www.deeplearningbook.org/" target="_blank">Deep Learning</a>
+</p>
+</section>
+
+<section>
+<h2 id="what-are-the-basic-machine-learning-ingredients">What are the basic Machine Learning ingredients? </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p>Almost every problem in ML and data science starts with the same ingredients:</p>
+<ul>
+<p><li> The dataset \( \boldsymbol{x} \) (could be some observable quantity of the system we are studying)</li>
+<p><li> A model which is a function of a set of parameters \( \boldsymbol{\alpha} \) that relates to the dataset, say a likelihood  function \( p(\boldsymbol{x}\vert \boldsymbol{\alpha}) \) or just a simple model \( f(\boldsymbol{\alpha}) \)</li>
+<p><li> A so-called <b>loss/cost/risk</b> function \( \mathcal{C} (\boldsymbol{x}, f(\boldsymbol{\alpha})) \) which allows us to decide how well our model represents the dataset.</li> 
+</ul>
+<p>
+<p>We seek to minimize the function \( \mathcal{C} (\boldsymbol{x},
+f(\boldsymbol{\alpha})) \) by finding the parameter values which minimize
+\( \mathcal{C} \). This leads to various minimization algorithms. It may
+surprise many, but at the heart of all machine learning algortihms
+there is an optimization problem.
+</p>
+</div>
+</section>
+
+<section>
+<h2 id="machine-learning-a-simple-perspective-on-the-interface-between-ml-and-physics">Machine learning. A simple perspective on the interface between ML and Physics </h2>
+
+<br/><br/>
+<center>
+<p><img src="figures/mlimage.png" width="800" align="bottom"></p>
+</center>
+<br/><br/>
+</section>
+
+<section>
+<h2 id="high-performance-computing-demands-and-immense-power-consumption">High performance computing demands (and immense power consumption) </h2>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p>In June 2023, just a few months after GPT-4 was released, the developers
+publicly explained that GPT-4 was comprised of roughly 1.8 trillion (trillion=1000 billions= one million millions) 
+parameters. More specifically, the architecture consisted of eight
+models, with each internal model made up of 220 billion parameters.
+</p>
+</div>
+</section>
+
+<section>
+<h2 id="observations">Observations  </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<ul>
+<p><li> Need for AI/Machine Learning in science, lots of ongoing activities</li>
+<p><li> To solve many complex problems and facilitate discoveries, multidisciplinary efforts efforts are required involving scientists in  physics, statistics, computational science, applied math and many many other fields.</li>
+<p><li> There is a need for  focused AI/ML learning for specific disciplines</li> 
+</ul>
+</div>
+</section>
+
+<section>
+<h2 id="possible-start-to-raise-awareness-about-ml-in-your-own-field">Possible start to raise awareness about ML in your own field </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<ul>
+<p><li> Make an ML challenge in your own field a la <a href="https://home.cern/news/news/computing/higgs-boson-machine-learning-challenge" target="_blank">Learning to discover: the Higgs boson machine learning challenge</a>. Alternatively go to kaggle.com at <a href="https://www.kaggle.com/c/higgs-boson" target="_blank"><tt>https://www.kaggle.com/c/higgs-boson</tt></a></li>
+<p><li> HEP@CERN and HEP in general have made significant impacts in the field of machine learning and AI. Something to learn from</li>
+</ul>
+</div>
+</section>
+
+<section>
+<h2 id="important-questions">Important questions </h2>
+
+<ol>
+<p><li> How do we incorporate these topics in our education?</li>
+<p><li> More difficult: what are the consequences for universities and our educational mission?</li>
+</ol>
+</section>
+
+<section>
+<h2 id="education">Education </h2>
+
+<ol>
+<p><li> Incorporate elements of statistical data analysis and Machine Learning in undergraduate programs</li>
+<p><li> Develop courses on Machine Learning and statistical data analysis</li>
+<p><li> Build up a series of courses in Quantum Information Technologies (QIT)</li>
+<p><li> Modifying contents of present Physics programs or new programs on  Computational Physics and Quantum Technologies
+<ol type="a"></li>
+ <p><li> study direction/option in <b>quantum technologies</b></li>
+ <p><li> study direction/option in <b>Artificial Intelligence and Machine Learning</b></li>
+ <p><li> and more</li>
+</ol>
+<p>
+<p><li> Master of Science/PhD programs in Computational and Data Science
+<ol type="a"></li>
+ <p><li> UiO has already MSc programs in CS and DS</li>
+ <p><li> Many other universities are developing or have similar programs</li>
+</ol>
+<p>
+</ol>
+</section>
+
+<section>
+<h2 id="important-issues-to-think-of">Important Issues to think of </h2>
+
+<ol>
+<p><li> Lots of conceptual learning: superposition, entanglement, QIT applications, etc.</li>
+<p><li> Coding is indispensable.</li> 
+<p><li> Teamwork, project management, and communication are important and highly valued</li>
+<p><li> Engagement with industry: guest lectures, virtual tours, co-ops, and/or internships.</li>
+</ol>
+</section>
+
+<section>
+<h2 id="observations">Observations </h2>
+
+<ol>
+<p><li> People  do not really know what QIT is.</li>
+<p><li> ML/AI seen as black boxes/magic!</li>
+</ol>
+</section>
+
+<section>
+<h2 id="future-needs-problems">Future Needs/Problems </h2>
+
+<ol>
+<p><li> There are already  great needs for specialized people (Ph. D. s, postdocs), but also needs of  people with a broad overview of what is possible in ML/AI and/or QIT.</li>
+<p><li> There are not enough potential employees in AI/ML and QIT . It is a supply gap, not a skills gap.</li>
+<p><li> A BSc with specialization  is a good place to start</li>
+<p><li> It is tremendously important to get everyone speaking the same language. Facility with the vernacular of quantum mechanics is a big plus.</li>
+</ol>
+</section>
+
+
+
+</div> <!-- class="slides" -->
+</div> <!-- class="reveal" -->
+
+<script src="reveal.js/lib/js/head.min.js"></script>
+<script src="reveal.js/js/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+  // Display navigation controls in the bottom right corner
+  controls: true,
+
+  // Display progress bar (below the horiz. slider)
+  progress: true,
+
+  // Display the page number of the current slide
+  slideNumber: true,
+
+  // Push each slide change to the browser history
+  history: false,
+
+  // Enable keyboard shortcuts for navigation
+  keyboard: true,
+
+  // Enable the slide overview mode
+  overview: true,
+
+  // Vertical centering of slides
+  //center: true,
+  center: false,
+
+  // Enables touch navigation on devices with touch input
+  touch: true,
+
+  // Loop the presentation
+  loop: false,
+
+  // Change the presentation direction to be RTL
+  rtl: false,
+
+  // Turns fragments on and off globally
+  fragments: true,
+
+  // Flags if the presentation is running in an embedded mode,
+  // i.e. contained within a limited portion of the screen
+  embedded: false,
+
+  // Number of milliseconds between automatically proceeding to the
+  // next slide, disabled when set to 0, this value can be overwritten
+  // by using a data-autoslide attribute on your slides
+  autoSlide: 0,
+
+  // Stop auto-sliding after user input
+  autoSlideStoppable: true,
+
+  // Enable slide navigation via mouse wheel
+  mouseWheel: false,
+
+  // Hides the address bar on mobile devices
+  hideAddressBar: true,
+
+  // Opens links in an iframe preview overlay
+  previewLinks: false,
+
+  // Transition style
+  transition: 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+  // Transition speed
+  transitionSpeed: 'default', // default/fast/slow
+
+  // Transition style for full page slide backgrounds
+  backgroundTransition: 'default', // default/none/slide/concave/convex/zoom
+
+  // Number of slides away from the current that are visible
+  viewDistance: 3,
+
+  // Parallax background image
+    //parallaxBackgroundImage: '', // e.g. "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'"
+
+  // Parallax background size
+  //parallaxBackgroundSize: '' // CSS syntax, e.g. "2100px 900px"
+
+  theme: Reveal.getQueryHash().theme, // available themes are in reveal.js/css/theme
+    transition: Reveal.getQueryHash().transition || 'none', // default/cube/page/concave/zoom/linear/none
+
+});
+
+Reveal.initialize({
+  dependencies: [
+      // Cross-browser shim that fully implements classList - https://github.com/eligrey/classList.js/
+      { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+
+      // Interpret Markdown in <section> elements
+      { src: 'reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: 'reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+
+      // Syntax highlight for <code> elements
+      { src: 'reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+
+      // Zoom in and out with Alt+click
+      { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+
+      // Speaker notes
+      { src: 'reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+
+      // Remote control your reveal.js presentation using a touch device
+      //{ src: 'reveal.js/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } },
+
+      // MathJax
+      //{ src: 'reveal.js/plugin/math/math.js', async: true }
+  ]
+});
+
+Reveal.initialize({
+
+  // The "normal" size of the presentation, aspect ratio will be preserved
+  // when the presentation is scaled to fit different resolutions. Can be
+  // specified using percentage units.
+  width: 1170,  // original: 960,
+  height: 700,
+
+  // Factor of the display size that should remain empty around the content
+  margin: 0.1,
+
+  // Bounds for smallest/largest possible scale to apply to content
+  minScale: 0.2,
+  maxScale: 1.0
+
+});
+</script>
+
+<!-- begin footer logo
+<div style="position: absolute; bottom: 0px; left: 0; margin-left: 0px">
+<img src="somelogo.png">
+</div>
+   end footer logo -->
+
+
+
+
+</body>
+</html>
