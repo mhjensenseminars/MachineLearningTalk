@@ -1,5 +1,5 @@
 TITLE: Quantum technologies and machine learning, research and education at the university of Oslo
-AUTHOR: Morten Hjorth-Jensen, Center for Computing in Science Education and Department of Physics, UiO
+AUTHOR: Morten Hjorth-Jensen, Center for Computing in Science Education and Department of Physics, UiO  & Department of Physics and Astronomy and Facility for Rare Isotope Beams, Michigan State University, USA
 DATE: September 16, 2024
 
 !split
@@ -50,6 +50,7 @@ o Excellent condensed matter theory group at the Department of Physics
 !bblock OsloMet and Simula lab
 o See talks here by Shaukat Ali and Sølve Selstø
 !eblock
+
 
 !split
 ===== Education and advanced training =====
@@ -118,7 +119,7 @@ o Quantum Information theory
 o From Classical Information theory to Quantum Information theory
 o Classical and Quantum Laboratory 
 o Discipline-Based Quantum Mechanics 
-o Quantum Software and Hardware
+o Quantum algorithms, computing, software and hardware
 o Several  machine learning/AI courses, at all levels
 !eblock
 
@@ -157,7 +158,7 @@ o Common educational projects and supervision of students
 
 
 !split
-===== Research directions =====
+===== Research directions, not exhaustive =====
 
 !bblock
 o _Theory and experiments for quantum sensors_, from standard many-body theories, via machine learning to quantum computing. Close collaboration with Norwegian industry
@@ -355,8 +356,8 @@ FIGURE: [figures/elgasnew.png, width=700 frac=0.9]
 !bblock
 * "Artificial Intelligence and Machine Learning in Nuclear Physics, Amber Boehnlein et al., Reviews Modern of Physics 94, 031003 (2022)":"https://journals.aps.org/rmp/abstract/10.1103/RevModPhys.94.031003" 
 * "Dilute neutron star matter from neural-network quantum states by Fore et al, Physical Review Research 5, 033062 (2023)":"https://journals.aps.org/prresearch/pdf/10.1103/PhysRevResearch.5.033062"
-* "Neural-network quantum states for ultra-cold Fermi gases, Jane Kim et al, Nature Physics Communication, in press":"https://doi.org/10.48550/arXiv.2305.08831"
-* "Message-Passing Neural Quantum States for the Homogeneous Electron Gas, Gabriel Pescia, Jane Kim et al. arXiv.2305.07240,":"https://doi.org/10.48550/arXiv.2305.07240"
+* "Neural-network quantum states for ultra-cold Fermi gases, Jane Kim et al, Nature Physics Communication":"https://doi.org/10.48550/arXiv.2305.08831"
+* "Message-Passing Neural Quantum States for the Homogeneous Electron Gas, Gabriel Pescia, Jane Kim et al. Physical Review B (2024),":"https://doi.org/10.48550/arXiv.2305.07240"
 * "Efficient solutions of fermionic systems using artificial neural networks, Nordhagen et al, Frontiers in Physics 11, 2023":"https://doi.org/10.3389/fphy.2023.1061580"
 !eblock
 
