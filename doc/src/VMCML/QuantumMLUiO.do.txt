@@ -112,10 +112,9 @@ o New study directions in Master of Science in Physics and Computational Science
 
 
 !split
-===== Courses we offer =====
-Presently we have developed or are developing regular university courses which address the following topics
+===== Content of courses we offer =====
 !bblock
-o Quantum Information Systems 
+o Quantum Information theory
 o From Classical Information theory to Quantum Information theory
 o Classical and Quantum Laboratory 
 o Discipline-Based Quantum Mechanics 
@@ -169,7 +168,7 @@ o _Fundamental studies (theory and experiment) of quantum mechanics_
 !split
 ===== Machine learning research =====
 
-o Discriminative and generative deep learning applied to the physical sciences (catalysis, quantum many-body theories and much more) 
+o Discriminative and generative deep learning applied to the physical sciences (catalysis, subatomic physics experiments quantum many-body theories and much more) 
 o Solving complicated quantum mechanical many-body systems with deep learning, see references at the end
 o Developing new machine learning algorithms _with applications to quantum computing as well_, see URL:"https://arxiv.org/abs/2401.11694"
 o Predicting solid state material platforms for quantum technologies, Nature Computational Materials URL:"https://www.nature.com/articles/s41524-022-00888-3" 
@@ -186,12 +185,10 @@ o Many-body methods like F(ull)C(onfiguration)I(nteraction) theory, Coupled-Clus
   * Time dependence
   * Optimization of experimental parameters 
   * Feedback from experiment
-o Finding optimal parameters for tuning of entanglement, see URL:"https://arxiv.org/abs/2310.04927"
-o Numerical experiments to mimick real systems, quantum twins
+o Finding optimal parameters for tuning of entanglement, see PRX Quantum _5_, 030324 (2024)
+o Numerical experiments to mimick real systems
 o Constructing quantum circuits to simulate specific systems
-o Quantum machine learning to optimize quantum circuits
-
-
+o Quantum machine learning to optimize quantum circuits, see URL:"https://arxiv.org/abs/2403.14406"
 
 !split
 ===== Candidate systems  =====
@@ -200,6 +197,25 @@ o Quantum machine learning to optimize quantum circuits
 o _Quantum dots, experiments_ at UiO and else
 o _Point Defects in semiconductors, experiments at UiO_
 o Recent article Coulomb interaction-driven entanglement of electrons on helium, PRX Quantum _5_, 030324 (2024), at URL:"https://journals.aps.org/prxquantum/abstract/10.1103/PRXQuantum.5.030324"
+o Superconducting Josephon junctions
+o Single photons
+o "Trapped ions and atoms":"https://journals.aps.org/rmp/pdf/10.1103/RevModPhys.93.025001"
+o Nuclear Magnetic Resonance
+o ...and more
+!eblock
+
+
+!split
+===== Quantum Engineering =====
+
+!bblock Quantum computing requirements
+o be scalable
+o have qubits that can be entangled
+o have reliable initializations protocols to a standard state
+o have a set of universal quantum gates to control the quantum evolution
+o have a coherence time much longer than the gate operation time
+o have a reliable read-out mechanism for measuring the qubit states
+o ...more
 !eblock
 
 !split
@@ -224,6 +240,15 @@ FIGURE: [qcfigures/Elhelium1.png, width=700 frac=1.3]
 ===== More on experimental setup II =====
 
 FIGURE: [qcfigures/Elhelium2.png, width=700 frac=1.3]
+
+!split
+===== Experimental set up =====
+
+FIGURE: [qcfigures/figure1.png, width=600 frac=0.7]
+
+o (a) Schematic of the microdevice, where two electrons are trapped in a double-well potential created by electrodes 1-7. The read-out is provided by two superconducting resonators dispersively coupled to  electron's in-plane motional states.
+o (b) Coupling constants from each individual electrode beneath the helium layer.
+o (c+d) The electron's energy in a  double-well electrostatic potential (solid line). Dashed and dot-dashed lines represent the harmonic approximations of left and right wells respectively.
 
 
 
@@ -346,11 +371,9 @@ FIGURE: [figures/elgasnew.png, width=700 frac=0.9]
 
 
 
-!split
-===== And sponsors =====
 
-o National Science Foundation, US (various grants)
-o Department of Energy, US (various grants)
-o Research Council of Norway (various grants) and University of Oslo and Michigan State University
+
+
+
 
 
