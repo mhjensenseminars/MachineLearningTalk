@@ -18,6 +18,7 @@ These slides and more at URL:"http://mhjensenseminars.github.io/MachineLearningT
 
 !bblock Physics and Center for Materials Science@UiO
 o MHJ, Lasse Vines, Marianne Bathen Etzelm{\"u}ller, Andrej Kuznetsov, Ed Monakov, Justin Wells, Simon Cooils  and David Gongarra (experiment), Joakim Bergli (theory) and Johannes Skaar (theory)
+o Subatomic Physics experiment: Heidi Sandaker, Antoine Camper  and Ann-Cecilie Larsen
 o Many students and postdocs working on  theory and experiments (30+)
 !eblock
 !bblock Math@UiO
@@ -34,13 +35,71 @@ o Many students and postdocs working on  theory and links with experiments (20+)
 !eblock
 !bblock SINTEF@Oslo
 o Franz Fuchs and Johannes Stasik, and the Gemini  center on Quantum Computing, see URL"https://www.quantumcomputing.no/"
+!eblock
+!bblock University of South-Eastern Norway@Kongsberg
+o Francesco Pietro Massel, Kjetil Bjørke et al. Research on entanglement, quantum measurements, quantum noise and more, see URL:"https://www.usn.no/research/our-research/technology/quantum-technology/". 
+!eblock
 
+!split
+===== People  =====
+
+!bblock NTNU
+o Strong experimental activity on Nanoelectronics and Photonics at Department of Electronic Systems
+o Excellent condensed matter theory group at the Department of Physics
+!eblock
+!bblock OsloMet and Simula lab
+o See talks here by Shaukat Ali and Sølve Selstø
+!eblock
+
+!split
+===== Education and advanced training =====
+
+!bblock
+o Outreach and communication on quantum technologies and AI, explaining quantum technologies and AI to a broader audience
+o Research on education in AI and QT. How are these topics best communicated and implemented in different enviroments, from  high school education to universities and to a broader audience, including external partners
+o QAI-TALENT, Education and knowledge transfer through the development of advanced educational programs
 !eblock
 
 
 
+
 !split
-===== Educational strategies =====
+===== Deliverable: Education and advanced training =====
+
+!bblock
+o An outreach program on quantum technologies and AI for a broader audience
+o Develop an advanced educational and training program on QTs and AI for industry partners in  the public and private sectors.
+!eblock
+
+!split
+===== QAI-TALENT, Education and knowledge transfer through the development of advanced educational programs =====
+
+The QAI-TALENT (\underline{T}raining and \underline{A}dvanced \underline{L}ectures in
+\underline{EN}anbling \underline{T}echnologies) axis of the center aims at developing a consistent
+training and educational program at all levels in QTs and AI, which
+will facilitate the development of a workforce with the competences
+and knowledge to meet future technological challenges and
+developments. 
+
+!split
+===== Education, Quantum and AI/Machine Learning =====
+
+
+At the university of Oslo we have now established several educational
+programs in AI and QTs and quantum science. These programs span the
+whole spectrum from beginners courses to advanced training and
+education tailored to the specific needs of the participants.
+
+Furthermore, through research done at the center for Computing in
+Science Education and the physics education research group at the
+department of physics of the university of Oslo, we have over the
+years developed knowledge and insights on how to teach central
+concepts in quantum science as well as developing computational
+literacy and understanding of central algorithms applied to scientific
+problems. 
+
+!split
+===== Courses and study programs =====
 
 o _New study direction on Quantum technology_ in Bachelor program Physics and Astronomy, starts Fall 2024. Three new courses:
   * FYS1400 Introduction to Quantum Technologies
@@ -53,14 +112,70 @@ o New study directions in Master of Science in Physics and Computational Science
 
 
 !split
-===== AI center =====
+===== Courses we offer =====
+Presently we have developed or are developing regular university courses which address the following topics
+!bblock
+o Quantum Information Systems 
+o From Classical Information theory to Quantum Information theory
+o Classical and Quantum Laboratory 
+o Discipline-Based Quantum Mechanics 
+o Quantum Software and Hardware
+o Several  machine learning/AI courses, at all levels
+!eblock
+
+!split
+===== Structure of courses =====
+
+These courses address many central concepts, such as quantum
+mechanical superposition, entanglement, QT applications, and many
+different methods and algorithms for AI and machine learning, covering
+both supervised and unsupervised learning as well as central
+discriminative and generative deep learning methods. Programming is
+indispensable in all courses and course participants learn to
+study complicated problems which require knowledge and skills
+necessary for educating a modern workforce. Many of these courses
+focus also on teamwork, project management, and communication.
+
+These courses are all regular one-semester university courses,
+resulting in typically 10 ECTS credits each. The courses can be
+adapted to single students having full-time jobs. They run however
+through a whole semester with final evaluations either as projects,
+take-home exams or final written/oral exams as assessment form.
+
+!split
+===== QAI-TALENT: Education for a broader audience =====
+
+We have yearslong experience (with research based evidence on what works or not) in developing intensive training courses on ML/AI and QT.
+We  plan to develop an educational activity on quantum science and AI, \textbf{QAI TALENT}
+(TALENT=Training and Advanced Lectures in EmergiNg Technologies) offering
+
+!bblock
+o Intensive short courses on selected topics (which can lead to credits and certificates)
+o Certificates of expertise with modules that can add up to one year of credits or more.
+o Possibilities of adding up to a master specialization in quantum science/technologies and/or AI/ML
+o Common educational projects and supervision of students
+!eblock
+
+
+!split
+===== Research directions =====
+
+!bblock
+o _Theory and experiments for quantum sensors_, from standard many-body theories, via machine learning to quantum computing. Close collaboration with Norwegian industry
+o _Theory and experiments for quantum computing and quantum information theory_
+o _Fundamental studies (theory and experiment) of quantum mechanics_
+!eblock
 
 !split
 ===== Machine learning research =====
 
+o Discriminative and generative deep learning applied to the physical sciences (catalysis, quantum many-body theories and much more) 
 o Solving complicated quantum mechanical many-body systems with deep learning, see references at the end
 o Developing new machine learning algorithms _with applications to quantum computing as well_, see URL:"https://arxiv.org/abs/2401.11694"
 o Predicting solid state material platforms for quantum technologies, Nature Computational Materials URL:"https://www.nature.com/articles/s41524-022-00888-3" 
+
+
+
 
 !split
 ===== Quantum computing and quantum machine learning, main activities =====
@@ -84,7 +199,7 @@ o Quantum machine learning to optimize quantum circuits
 !bblock
 o _Quantum dots, experiments_ at UiO and else
 o _Point Defects in semiconductors, experiments at UiO_
-o Recent article Coulomb interaction-driven entanglement of electrons on helium, see URL:"https://arxiv.org/abs/2310.04927", and PRX Quantum, under review
+o Recent article Coulomb interaction-driven entanglement of electrons on helium, PRX Quantum _5_, 030324 (2024), at URL:"https://journals.aps.org/prxquantum/abstract/10.1103/PRXQuantum.5.030324"
 !eblock
 
 !split
@@ -109,12 +224,6 @@ FIGURE: [qcfigures/Elhelium1.png, width=700 frac=1.3]
 ===== More on experimental setup II =====
 
 FIGURE: [qcfigures/Elhelium2.png, width=700 frac=1.3]
-
-
-!split
-===== Experimental set up =====
-
-FIGURE: [qcfigures/figure1x.png, width=600 frac=0.7]
 
 
 
@@ -231,7 +340,7 @@ FIGURE: [figures/elgasnew.png, width=700 frac=0.9]
 ===== More selected references =====
 !bblock
 * "Unsupervised learning for identifying events in active target experiments, R. Solli et al, Nuclear Instruments and Methods Physics A":"https://www.sciencedirect.com/science/article/abs/pii/S0168900221004460?via%3Dihub"
-* "Coulomb interaction-driven entanglement of electrons on helium":"https://arxiv.org/abs/2310.04927", PRX Quantum, under review
+* Coulomb interaction-driven entanglement of electrons on helium, PRX Quantum _5_, 030324 (2024), at URL:"https://journals.aps.org/prxquantum/abstract/10.1103/PRXQuantum.5.030324"
 * "Predicting solid state material platforms for quantum technologies, Hebnes et al, Nature Computational Materials, 2022":"https://www.nature.com/articles/s41524-022-00888-3" 
 !eblock
 
