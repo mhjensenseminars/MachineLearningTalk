@@ -76,7 +76,7 @@ o Develop an advanced educational and training program on QTs and AI for industr
 ===== QAI-TALENT, Education and knowledge transfer through the development of advanced educational programs =====
 
 The QAI-TALENT (\underline{T}raining and \underline{A}dvanced \underline{L}ectures in
-\underline{EN}anbling \underline{T}echnologies) axis of the center aims at developing a consistent
+\underline{E}mergi\underline{N}g \underline{T}echnologies) aims at developing a consistent
 training and educational program at all levels in QTs and AI, which
 will facilitate the development of a workforce with the competences
 and knowledge to meet future technological challenges and
@@ -232,10 +232,6 @@ account the effects of the Coulomb interaction between electrons, may be of grea
 trapped electrons.
 
 
-!split
-===== Experimental setup I =====
-
-FIGURE: [qcfigures/Elhelium1.png, width=700 frac=1.3]
 
 !split
 ===== More on experimental setup II =====
@@ -245,7 +241,7 @@ FIGURE: [qcfigures/Elhelium2.png, width=700 frac=1.3]
 !split
 ===== Experimental set up =====
 
-FIGURE: [qcfigures/figure1.png, width=600 frac=0.7]
+FIGURE: [qcfigures/figure1.png, width=600 frac=0.5]
 
 o (a) Schematic of the microdevice, where two electrons are trapped in a double-well potential created by electrodes 1-7. The read-out is provided by two superconducting resonators dispersively coupled to  electron's in-plane motional states.
 o (b) Coupling constants from each individual electrode beneath the helium layer.
