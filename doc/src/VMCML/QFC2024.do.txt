@@ -368,7 +368,7 @@ FIGURE: [figures/mlimage.png, width=800 frac=1.0]
 
 
 !split
-===== ML in Nuclear  Physics (or any field in physics) =====
+===== ML in Nuclear  Physics (or any field, almost) =====
 
 FIGURE: [figures/ML-NP.pdf, width=900 frac=1.0]
 
@@ -425,21 +425,6 @@ A less known but powerful result is that an NN with a single hidden layer can ac
 !eblock
 
 
-
-!split
-===== Argon-46 by Solli et al., NIMA 1010, 165461 (2021) =====
-
-!bblock
-Representations of two events from the
-Argon-46 experiment. Each row is one event in two projections,
-where the color intensity of each point indicates higher charge values
-recorded by the detector. The bottom row illustrates a carbon event with
-a large fraction of noise, while the top row shows a proton event
-almost free of noise. 
-!eblock
-
-
-FIGURE: [figures/examples_raw.png, width=500 frac=0.6]
 
 
 !split
