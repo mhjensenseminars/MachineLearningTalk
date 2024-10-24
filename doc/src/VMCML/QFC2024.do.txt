@@ -81,58 +81,6 @@ o Linear and logistic regression, Kernel methods, support vector machines and mo
 o Reinforcement Learning; Transfer Learning and more 
 
 
-!split
-===== What Is Generative Modeling? =====
-
-
-Generative modeling can be broadly defined as follows:
-
-Generative modeling is a branch of machine learning that involves
-training a model to produce new data that is similar to a given
-dataset.
-
-What does this mean in practice? Suppose we have a dataset containing
-photos of horses. We can train a generative model on this dataset to
-capture the rules that govern the complex relationships between pixels
-in images of horses. Then we can sample from this model to create
-novel, realistic images of horses that did not exist in the original
-dataset. 
-
-!split
-===== Example of generative modeling, "taken from Generative Deep Learning by David Foster":"https://www.oreilly.com/library/view/generative-deep-learning/9781098134174/ch01.html"  =====
-
-FIGURE: [figures/generativelearning.png, width=900 frac=1.0]
-
-!split
-===== Generative Modeling =====
-
-
-In order to build a generative model, we require a dataset consisting
-of many examples of the entity we are trying to generate. This is
-known as the training data, and one such data point is called an
-observation.
-
-Each observation consists of many features. For an image generation
-problem, the features are usually the individual pixel values; for a
-text generation problem, the features could be individual words or
-groups of letters. It is our goal to build a model that can generate
-new sets of features that look as if they have been created using the
-same rules as the original data. Conceptually, for image generation
-this is an incredibly difficult task, considering the vast number of
-ways that individual pixel values can be assigned and the relatively
-tiny number of such arrangements that constitute an image of the
-entity we are trying to generate.
-
-
-!split
-===== Generative Versus Discriminative Modeling =====
-
-In order to truly understand what generative modeling aims to achieve
-and why this is important, it is useful to compare it to its
-counterpart, discriminative modeling. If you have studied machine
-learning, most problems you will have faced will have most likely been
-discriminative in nature. 
-
 
 !split
 ===== Example of discriminative modeling, "taken from Generative Deeep Learning by David Foster":"https://www.oreilly.com/library/view/generative-deep-learning/9781098134174/ch01.html"  =====
@@ -141,18 +89,12 @@ discriminative in nature.
 FIGURE: [figures/standarddeeplearning.png, width=900 frac=1.0]
 
 
+
 !split
-===== Discriminative Modeling =====
+===== Example of generative modeling, "taken from Generative Deep Learning by David Foster":"https://www.oreilly.com/library/view/generative-deep-learning/9781098134174/ch01.html"  =====
 
-When performing discriminative modeling, each observation in the
-training data has a label. For a binary classification problem such as
-our data could be labeled as ones and zeros. Our model then learns how to
-discriminate between these two groups and outputs the probability that
-a new observation has label 1 or 0
+FIGURE: [figures/generativelearning.png, width=900 frac=1.0]
 
-In contrast, generative modeling doesn’t require the dataset to be
-labeled because it concerns itself with generating entirely new
-data (for example an image), rather than trying to predict a label for say  a given image.
 
 
 
@@ -187,7 +129,6 @@ o See also Diederik P. Kingma, Tim Salimans, Ben Poole, Jonathan Ho, Variational
 !eblock   
 
 !bblock and VAEs
-o Calvin Luo URL:"https://calvinyluo.com/2022/08/26/diffusion-tutorial.html"
 o An Introduction to Variational Autoencoders, by Kingma and Welling, see URL:"https://arxiv.org/abs/1906.02691"
 !eblock
 
@@ -272,78 +213,6 @@ We say we 'learn' the unknown parameters $\bm{\theta}$ from the last equation.
 
 
 
-!split
-===== Ridge and LASSO Regression =====
-
-
-Our optimization problem is
-!bt
-\[
-{\displaystyle \min_{\bm{\theta}\in {\mathbb{R}}^{p}}}\frac{1}{n}\left\{\left(\bm{y}-\bm{X}\bm{\theta}\right)^T\left(\bm{y}-\bm{X}\bm{\theta}\right)\right\}.
-\]
-!et
-or we can state it as
-!bt
-\[
-{\displaystyle \min_{\bm{\theta}\in
-{\mathbb{R}}^{p}}}\frac{1}{n}\sum_{i=0}^{n-1}\left(y_i-\tilde{y}_i\right)^2=\frac{1}{n}\vert\vert \bm{y}-\bm{X}\bm{\theta}\vert\vert_2^2,
-\]
-!et
-where we have used the definition of  a norm-2 vector, that is
-!bt
-\[
-\vert\vert \bm{x}\vert\vert_2 = \sqrt{\sum_i x_i^2}. 
-\]
-!et
-
-!split
-===== From OLS to Ridge and Lasso =====
-
-By minimizing the above equation with respect to the parameters
-$\bm{\theta}$ we could then obtain an analytical expression for the
-parameters $\bm{\theta}$.  We can add a regularization parameter $\lambda$ by
-defining a new cost function to be optimized, that is
-
-!bt
-\[
-{\displaystyle \min_{\bm{\theta}\in
-{\mathbb{R}}^{p}}}\frac{1}{n}\vert\vert \bm{y}-\bm{X}\bm{\theta}\vert\vert_2^2+\lambda\vert\vert \bm{\theta}\vert\vert_2^2
-\]
-!et
-
-which leads to the Ridge regression minimization problem where we
-require that $\vert\vert \bm{\theta}\vert\vert_2^2\le t$, where $t$ is
-a finite number larger than zero. We do not include such a constraints in the discussions here.
-
-!split
-===== Lasso regression  =====
-
-Defining
-
-!bt
-\[
-C(\bm{X},\bm{\theta})=\frac{1}{n}\vert\vert \bm{y}-\bm{X}\bm{\theta}\vert\vert_2^2+\lambda\vert\vert \bm{\theta}\vert\vert_1,
-\]
-!et
-we have a new optimization equation
-!bt
-\[
-{\displaystyle \min_{\bm{\theta}\in
-{\mathbb{R}}^{p}}}\frac{1}{n}\vert\vert \bm{y}-\bm{X}\bm{\theta}\vert\vert_2^2+\lambda\vert\vert \bm{\theta}\vert\vert_1
-\]
-!et
-which leads to Lasso regression. Lasso stands for least absolute shrinkage and selection operator. 
-Here we have defined the norm-1 as 
-!bt
-\[
-\vert\vert \bm{x}\vert\vert_1 = \sum_i \vert x_i\vert. 
-\]
-!et
-
-
-
-
-
 
 !split
 ===== Selected references =====
@@ -401,13 +270,9 @@ FIGURE: [figures/detectors.png, width=900 frac=1.0]
 
 
 !split
-===== Physics driven Machine Learning =====
+===== Physics inspired neural networks =====
 
 Another hot topic is what has loosely been dubbed _Physics-driven deep learning_. See the recent work on "Learning nonlinear operators via DeepONet based on the universal approximation theorem of operators, Nature Machine Learning, vol 3, 218 (2021)":"https://www.nature.com/articles/s42256-021-00302-5".
-
-!bblock From their abstract
-A less known but powerful result is that an NN with a single hidden layer can accurately approximate any nonlinear continuous operator. This universal approximation theorem of operators is suggestive of the structure and potential of deep neural networks (DNNs) in learning continuous operators or complex systems from streams of scattered data. ...  We demonstrate that DeepONet can learn various explicit operators, such as integrals and fractional Laplacians, as well as implicit operators that represent deterministic and stochastic differential equations. 
-!eblock
 
 
 
@@ -424,6 +289,8 @@ A less known but powerful result is that an NN with a single hidden layer can ac
 * Machine Learning and Quantum Computing is a very interesting avenue to explore. See for example a recent talk by "Sofia Vallecorsa":"https://www.youtube.com/watch?v=7WPKv1Q57os&list=PLUPPQ1TVXK7uHwCTccWMBud-zLyvAf8A2&index=5&ab_channel=ECTstar".
 !eblock
 
+
+#Add more
 
 
 
