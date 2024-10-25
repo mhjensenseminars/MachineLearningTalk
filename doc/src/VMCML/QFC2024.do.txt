@@ -28,6 +28,20 @@ o Department of Energy, US (various grants)
 o Research Council of Norway (various grants) and my employers University of Oslo and Michigan State University
 
 !split
+===== Perhaps I should have talked about this instead.... =====
+
+_How to use many-body theory to design quantum circuits (Quantum engineering)_
+o Many-body methods like F(ull)C(onfiguration)I(nteraction) theory, Coupled-Cluster theory and other  with
+  * Adaptive basis sets 
+  * Time dependence
+  * Optimization of experimental parameters 
+  * Feedback from experiment
+o Finding optimal parameters for tuning of entanglement, see PRX Quantum _5_, 030324 (2024)
+o Numerical experiments to mimick real systems
+o Constructing quantum circuits to simulate specific systems
+o Quantum machine learning to optimize quantum circuits, see URL:"https://arxiv.org/abs/2403.14406" and more
+
+!split
 =====  AI/ML and some statements you may have heard (and what do they mean?)  =====
 
 o Fei-Fei Li on ImageNet: _map out the entire world of objects_ ("The data that transformed AI research":"https://cacm.acm.org/news/219702-the-data-that-transformed-ai-research-and-possibly-the-world/fulltext")
@@ -38,6 +52,36 @@ o Woody Bledsoe puts it more bluntly: _in the long run, AI is the only science_ 
 If you wish to have a critical read on AI/ML from a societal point of view, see "Kate Crawford's recent text Atlas of AI":"https://www.katecrawford.net/".
 
 _Here: with AI/ML we intend a collection of machine learning methods with an emphasis on statistical learning and data analysis_
+
+!split
+===== Qauntum mechanical many-body problems (nuclear example here)  =====
+
+FIGURE: [figures/mbpfig1.png, width=900 frac=1.1]
+
+!split
+===== Curse of dimensionality  =====
+
+FIGURE: [figures/mbpfig2.png, width=900 frac=1.0]
+
+
+!split
+===== Neural network quantum states  =====
+
+!bblock Neural networks compactly represent complex high-dimensional functions
+Most quantum states of interest have distinctive features and intrinsic structures
+FIGURE: [figures/mbpfig3.png, width=900 frac=1.0]
+!eblock
+
+!split
+===== Machine learning. A simple perspective on the interface between ML and Physics =====
+
+FIGURE: [figures/mlimage.png, width=800 frac=1.0]
+
+
+!split
+===== ML in Nuclear  Physics (or any field, almost) =====
+
+FIGURE: [figures/ML-NP.pdf, width=900 frac=1.0]
 
 
 
@@ -233,17 +277,6 @@ We say we 'learn' the unknown parameters $\bm{\theta}$ from the last equation.
 
 
 
-!split
-===== Machine learning. A simple perspective on the interface between ML and Physics =====
-
-FIGURE: [figures/mlimage.png, width=800 frac=1.0]
-
-
-!split
-===== ML in Nuclear  Physics (or any field, almost) =====
-
-FIGURE: [figures/ML-NP.pdf, width=900 frac=1.0]
-
 
 
 
@@ -265,20 +298,6 @@ o and computing architectures, platforms, and technologies for deploying these a
 !eblock
 
 
-
-!split
-===== ML for detectors =====
-
-FIGURE: [figures/detectors.png, width=900 frac=1.0]
-
-
-!split
-===== Physics inspired neural networks =====
-
-Another hot topic is what has loosely been dubbed _Physics-driven deep learning_. See the recent work on "Learning nonlinear operators via DeepONet based on the universal approximation theorem of operators, Nature Machine Learning, vol 3, 218 (2021)":"https://www.nature.com/articles/s42256-021-00302-5".
-
-
-
 !split
 ===== And more   =====
 
@@ -289,30 +308,9 @@ Another hot topic is what has loosely been dubbed _Physics-driven deep learning_
 
 * Merging a frequentist approach (the standard path in ML theory) with a Bayesian approach, has the potential to infer better probabilitity distributions and error estimates. 
 
-* Machine Learning and Quantum Computing is a very interesting avenue to explore. 
+* Machine Learning and Quantum Computing is a very interesting avenue
 !eblock
 
-
-#Add more
-
-!split
-===== Nuclear many-body problem (or any many-body problem =====
-
-FIGURE: [figures/mbpfig1.png, width=900 frac=1.1]
-
-!split
-===== Curse of dimensionality  =====
-
-FIGURE: [figures/mbpfig2.png, width=900 frac=1.0]
-
-
-!split
-===== Neural network quantum states  =====
-
-!bblock Neural networks compactly represent complex high-dimensional functions
-Most quantum states of interest have distinctive features and intrinsic structures
-FIGURE: [figures/mbpfig3.png, width=900 frac=1.0]
-!eblock
 
 !split
 ===== Many-body physics, Quantum Monte Carlo and deep learning =====
@@ -871,62 +869,6 @@ FIGURE: [figures/virialtheorem.pdf, width=700 frac=0.9]
 !eblock
 
 
-!split
-===== Extrapolations and model interpretability  =====
-
-When you hear phrases like _predictions and estimations_ and
-_correlations and causations_, what do you think of?  May be you think
-of the difference between classifying new data points and generating
-new data points.
-Or perhaps you consider that correlations represent some kind of symmetric statements like
-if $A$ is correlated with $B$, then $B$ is correlated with
-$A$. Causation on the other hand is directional, that is if $A$ causes $B$, $B$ does not
-necessarily cause $A$.
-
-
-!split
-===== Physics based statistical learning and data analysis =====
-
-The above concepts are in some sense the difference between _old-fashioned_ machine
-learning and statistics and Bayesian learning. In machine learning and prediction based
-tasks, we are often interested in developing algorithms that are
-capable of learning patterns from given data in an automated fashion,
-and then using these learned patterns to make predictions or
-assessments of newly given data. In many cases, our primary concern
-is the quality of the predictions or assessments, and we are less
-concerned about the underlying patterns that were learned in order
-to make these predictions.
-
-Physics based statistical learning points however to approaches that give us both predictions and correlations as well as being able to produce error estimates and understand causations.  This leads us to the very interesting field of Bayesian statistics.
-
-
-
-!split
-===== Bayes' Theorem =====
-
-Bayes' theorem
-!bt
-\[
-p(X\vert Y)= \frac{p(X,Y)}{\sum_{i=0}^{n-1}p(Y\vert X=x_i)p(x_i)}=\frac{p(Y\vert X)p(X)}{\sum_{i=0}^{n-1}p(Y\vert X=x_i)p(x_i)}.
-\]
-!et
-
-
-The quantity $p(Y\vert X)$ on the right-hand side of the theorem is
-evaluated for the observed data $Y$ and can be viewed as a function of
-the parameter space represented by $X$. This function is not
-necessarily normalized and is normally called the likelihood function.
-
-The function $p(X)$ on the right hand side is called the prior while the function on the left hand side is the called the posterior probability. The denominator on the right hand side serves as a normalization factor for the posterior distribution.
-
-
-
-!split
-===== "Quantified limits of the nuclear landscape":"https://journals.aps.org/prc/abstract/10.1103/PhysRevC.101.044307" =====
-
-Predictions made with eleven global mass model and Bayesian model averaging
-
-FIGURE: [figures/landscape.jpg, width=800 frac=1.0]
 
 !split
 ===== Observations (or conclusions if you prefer) =====
@@ -941,7 +883,7 @@ FIGURE: [figures/landscape.jpg, width=800 frac=1.0]
 !bblock
 * How do we develop insights, competences, knowledge in statistical learning that can advance a given field?
   * For example: Can we use ML to find out which correlations are relevant and thereby diminish the dimensionality problem in standard many-body  theories?
-  * Can we use AI/ML in detector analysis, accelerator design, analysis of experimental data and more?
+  * Can we use AI/ML in detector analysis, experimental design, analysis of experimental data and more?
   * Can we use AL/ML to carry out reliable extrapolations by using current experimental knowledge and current theoretical models?
 * The community needs to invest in relevant educational efforts and training of scientists with knowledge in AI/ML. These are great challenges to the CS and DS communities
 * Quantum computing and quantum machine learning not discussed here
@@ -1102,9 +1044,9 @@ Running this code gives us an acceptable results after some 40-50 iterations. No
 !split
 ===== Essential elements of generative models =====
 
-The aim of generative methods is to train a probability distribution $p$. The methods we will focus on are:
+The aim of generative methods is to train a probability distribution $p$. Popular methods are:
 o Energy based models, with the family of Boltzmann distributions as a typical example
-o Variational autoencoders, based on our discussions on autoencoders
+o Variational autoencoders
 o Generative adversarial networks (GANs) and
 o Diffusion models
 
