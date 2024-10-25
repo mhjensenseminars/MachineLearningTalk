@@ -225,7 +225,7 @@ We say we 'learn' the unknown parameters $\bm{\theta}$ from the last equation.
 * "Machine Learning and the Physical Sciences by Carleo et al":"https://link.aps.org/doi/10.1103/RevModPhys.91.045002"
 * "Artificial Intelligence and Machine Learning in Nuclear Physics, Amber Boehnlein et al., Reviews Modern of Physics 94, 031003 (2022)":"https://journals.aps.org/rmp/abstract/10.1103/RevModPhys.94.031003" 
 * "Dilute neutron star matter from neural-network quantum states by Fore et al, Physical Review Research 5, 033062 (2023)":"https://journals.aps.org/prresearch/pdf/10.1103/PhysRevResearch.5.033062"
-* Neural-network quantum states for ultra-cold Fermi gases, Jane Kim et al, Nature Physics Communcication, see URL:"https://doi.org/10.48550/arXiv.2305.08831"
+* Neural-network quantum states for ultra-cold Fermi gases, Jane Kim et al, Commun Phys 7, 148 (2024), see URL:"https://doi.org/10.48550/arXiv.2305.08831"
 * "Particle Data Group summary on ML methods":"https://pdg.lbl.gov/2021/reviews/rpp2021-rev-machine-learning.pdf"
 !eblock
 
@@ -298,7 +298,7 @@ Another hot topic is what has loosely been dubbed _Physics-driven deep learning_
 !split
 ===== Nuclear many-body problem (or any many-body problem =====
 
-FIGURE: [figures/mbpfig1.png, width=900 frac=1.0]
+FIGURE: [figures/mbpfig1.png, width=900 frac=1.1]
 
 !split
 ===== Curse of dimensionality  =====
@@ -313,7 +313,6 @@ FIGURE: [figures/mbpfig2.png, width=900 frac=1.0]
 Most quantum states of interest have distinctive features and intrinsic structures
 FIGURE: [figures/mbpfig3.png, width=900 frac=1.0]
 !eblock
-
 
 !split
 ===== Many-body physics, Quantum Monte Carlo and deep learning =====
@@ -507,19 +506,11 @@ If the function $F(\bm{x})$ is discontinuous, it won't in general be possible to
 !eblock
 
 
-!split
-===== Simple example, fitting nuclear masses =====
-
-See example at URL:"https://github.com/CompPhysics/MachineLearning/blob/master/doc/pub/week34/ipynb/week34.ipynb", and scroll down to nuclear masses.
-
-And the recent article URL:"https://www.sciencedirect.com/science/article/pii/S0375947423001100"
 
 !split
 =====  Illustration of a single perceptron model and an FFNN =====
 
 FIGURE: [figures/nns.png, width=600 frac=0.7]  In a) we show a single perceptron model while in b) we dispay a network with two  hidden layers, an input layer and an output layer.
-
-
 
 
 !split
@@ -563,6 +554,37 @@ and three-body spin-independent Jastrow functions
 which is commonly used for nuclear Hamiltonians that do not contain tensor and spin-orbit terms.
 The above function is replaced by a four-layer Neural Network. 
 
+!split
+===== Ansatz for a fermionic state function, Jane Kim et al, Commun Phys 7, 148 (2024) =====
+
+!bt
+\[
+\Psi_T(\bm{X}) =\exp{U(\bm{X})}\Phi(\bm{X}).
+\]
+!et
+
+!bblock 
+o Build in fermion antisymmetry for network compactness
+o Permutation-invariant Jastrow function improves ansatz flexibility
+o Build $U$ and $\Phi$ functions from fully connected, deep neural networks
+o Use Slater determinant (or Pfaffian) $\Phi$ to enforce antisymmetry with single particle wavefunctions represented by neural networks
+!eblock
+
+
+!split
+===== Nuclear matter setup =====
+
+
+FIGURE: [figures/mbpfig4.png, width=900 frac=1.0]
+
+
+!split
+===== Neutron star structure =====
+
+
+FIGURE: [figures/mbpfig5.png, width=900 frac=1.0]
+
+
 
 !split
 ===== "Dilute neutron star matter from neural-network quantum states by Fore et al, Physical Review Research 5, 033062 (2023)":"https://journals.aps.org/prresearch/pdf/10.1103/PhysRevResearch.5.033062" at density $\rho=0.04$ fm$^{-3}$ =====
@@ -595,6 +617,33 @@ FIGURE: [figures/08_tbd.pdf, width=700 frac=0.9]
 !eblock
 
 
+!split
+===== Symmetric nuclear matter  =====
+
+
+FIGURE: [figures/mbpfig6.png, width=900 frac=1.0]
+
+
+!split
+===== Self-emerging clustering  =====
+
+
+FIGURE: [figures/mbpfig7.png, width=900 frac=1.0]
+
+
+!split
+===== Clustering: Two-body pair distributions  =====
+
+
+FIGURE: [figures/mbpfig8.png, width=900 frac=1.0]
+
+
+
+!split
+===== Nuclear matter proton fraction  =====
+
+
+FIGURE: [figures/mbpfig9.png, width=900 frac=1.0]
 
 
 
