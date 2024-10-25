@@ -54,11 +54,11 @@ doconce format html QFC2024.do.txt --html_style=bootstrap --pygments_html_style=
                None,
                'the-plethora-of-machine-learning-algorithms-methods'),
               ('Example of discriminative modeling, "taken from Generative '
-               'Deeep Learning by David '
+               'Deep Learning by David '
                'Foster":"https://www.oreilly.com/library/view/generative-deep-learning/9781098134174/ch01.html"',
                2,
                None,
-               'example-of-discriminative-modeling-taken-from-generative-deeep-learning-by-david-foster-https-www-oreilly-com-library-view-generative-deep-learning-9781098134174-ch01-html'),
+               'example-of-discriminative-modeling-taken-from-generative-deep-learning-by-david-foster-https-www-oreilly-com-library-view-generative-deep-learning-9781098134174-ch01-html'),
               ('Example of generative modeling, "taken from Generative Deep '
                'Learning by David '
                'Foster":"https://www.oreilly.com/library/view/generative-deep-learning/9781098134174/ch01.html"',
@@ -111,6 +111,15 @@ doconce format html QFC2024.do.txt --html_style=bootstrap --pygments_html_style=
                None,
                'physics-inspired-neural-networks'),
               ('And more', 2, None, 'and-more'),
+              ('Nuclear many-body problem (or any many-body problem',
+               2,
+               None,
+               'nuclear-many-body-problem-or-any-many-body-problem'),
+              ('Curse of dimensionality', 2, None, 'curse-of-dimensionality'),
+              ('Neural network quantum states',
+               2,
+               None,
+               'neural-network-quantum-states'),
               ('Many-body physics, Quantum Monte Carlo and deep learning',
                2,
                None,
@@ -354,7 +363,7 @@ MathJax.Hub.Config({
      <!-- navigation toc: --> <li><a href="._QFC2024-bs005.html#types-of-machine-learning" style="font-size: 80%;">Types of machine learning</a></li>
      <!-- navigation toc: --> <li><a href="._QFC2024-bs006.html#main-categories" style="font-size: 80%;">Main categories</a></li>
      <!-- navigation toc: --> <li><a href="._QFC2024-bs007.html#the-plethora-of-machine-learning-algorithms-methods" style="font-size: 80%;">The plethora  of machine learning algorithms/methods</a></li>
-     <!-- navigation toc: --> <li><a href="._QFC2024-bs008.html#example-of-discriminative-modeling-taken-from-generative-deeep-learning-by-david-foster-https-www-oreilly-com-library-view-generative-deep-learning-9781098134174-ch01-html" style="font-size: 80%;">Example of discriminative modeling, "taken from Generative Deeep Learning by David Foster":"https://www.oreilly.com/library/view/generative-deep-learning/9781098134174/ch01.html"</a></li>
+     <!-- navigation toc: --> <li><a href="._QFC2024-bs008.html#example-of-discriminative-modeling-taken-from-generative-deep-learning-by-david-foster-https-www-oreilly-com-library-view-generative-deep-learning-9781098134174-ch01-html" style="font-size: 80%;">Example of discriminative modeling, "taken from Generative Deep Learning by David Foster":"https://www.oreilly.com/library/view/generative-deep-learning/9781098134174/ch01.html"</a></li>
      <!-- navigation toc: --> <li><a href="._QFC2024-bs009.html#example-of-generative-modeling-taken-from-generative-deep-learning-by-david-foster-https-www-oreilly-com-library-view-generative-deep-learning-9781098134174-ch01-html" style="font-size: 80%;">Example of generative modeling, "taken from Generative Deep Learning by David Foster":"https://www.oreilly.com/library/view/generative-deep-learning/9781098134174/ch01.html"</a></li>
      <!-- navigation toc: --> <li><a href="._QFC2024-bs010.html#taxonomy-of-generative-deep-learning-taken-from-generative-deep-learning-by-david-foster-https-www-oreilly-com-library-view-generative-deep-learning-9781098134174-ch01-html" style="font-size: 80%;">Taxonomy of generative deep learning, "taken from Generative Deep Learning by David Foster":"https://www.oreilly.com/library/view/generative-deep-learning/9781098134174/ch01.html"</a></li>
      <!-- navigation toc: --> <li><a href="._QFC2024-bs011.html#good-books-with-hands-on-material-and-codes" style="font-size: 80%;">Good books with hands-on material and codes</a></li>
@@ -371,66 +380,69 @@ MathJax.Hub.Config({
      <!-- navigation toc: --> <li><a href="._QFC2024-bs022.html#ml-for-detectors" style="font-size: 80%;">ML for detectors</a></li>
      <!-- navigation toc: --> <li><a href="._QFC2024-bs023.html#physics-inspired-neural-networks" style="font-size: 80%;">Physics inspired neural networks</a></li>
      <!-- navigation toc: --> <li><a href="._QFC2024-bs024.html#and-more" style="font-size: 80%;">And more</a></li>
-     <!-- navigation toc: --> <li><a href="._QFC2024-bs025.html#many-body-physics-quantum-monte-carlo-and-deep-learning" style="font-size: 80%;">Many-body physics, Quantum Monte Carlo and deep learning</a></li>
-     <!-- navigation toc: --> <li><a href="._QFC2024-bs027.html#quantum-monte-carlo-motivation" style="font-size: 80%;">Quantum Monte Carlo Motivation</a></li>
-     <!-- navigation toc: --> <li><a href="._QFC2024-bs027.html#quantum-monte-carlo-motivation" style="font-size: 80%;">Quantum Monte Carlo Motivation</a></li>
-     <!-- navigation toc: --> <li><a href="._QFC2024-bs028.html#energy-derivatives" style="font-size: 80%;">Energy derivatives</a></li>
-     <!-- navigation toc: --> <li><a href="._QFC2024-bs029.html#derivatives-of-the-local-energy" style="font-size: 80%;">Derivatives of the local energy</a></li>
-     <!-- navigation toc: --> <li><a href="._QFC2024-bs030.html#why-feed-forward-neural-networks-ffnn" style="font-size: 80%;">Why Feed Forward Neural Networks (FFNN)?</a></li>
-     <!-- navigation toc: --> <li><a href="._QFC2024-bs031.html#universal-approximation-theorem" style="font-size: 80%;">Universal approximation theorem</a></li>
-     <!-- navigation toc: --> <li><a href="._QFC2024-bs032.html#the-approximation-theorem-in-words" style="font-size: 80%;">The approximation theorem in words</a></li>
-     <!-- navigation toc: --> <li><a href="._QFC2024-bs033.html#more-on-the-general-approximation-theorem" style="font-size: 80%;">More on the general approximation theorem</a></li>
-     <!-- navigation toc: --> <li><a href="._QFC2024-bs034.html#class-of-functions-we-can-approximate" style="font-size: 80%;">Class of functions we can approximate</a></li>
-     <!-- navigation toc: --> <li><a href="._QFC2024-bs035.html#simple-example-fitting-nuclear-masses" style="font-size: 80%;">Simple example, fitting nuclear masses</a></li>
-     <!-- navigation toc: --> <li><a href="._QFC2024-bs036.html#illustration-of-a-single-perceptron-model-and-an-ffnn" style="font-size: 80%;">Illustration of a single perceptron model and an FFNN</a></li>
-     <!-- navigation toc: --> <li><a href="._QFC2024-bs037.html#monte-carlo-methods-and-neural-networks" style="font-size: 80%;">Monte Carlo methods and Neural Networks</a></li>
-     <!-- navigation toc: --> <li><a href="._QFC2024-bs038.html#deep-learning-neural-networks-variational-monte-carlo-calculations-of-a-le-4-nuclei-with-an-artificial-neural-network-correlator-ansatz-by-adams-et-al-https-journals-aps-org-prl-abstract-10-1103-physrevlett-127-022502" style="font-size: 80%;">Deep learning neural networks, "Variational Monte Carlo calculations of \( A\le 4 \) nuclei with an artificial neural-network correlator ansatz by Adams et al.":"https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.127.022502"</a></li>
-     <!-- navigation toc: --> <li><a href="._QFC2024-bs039.html#dilute-neutron-star-matter-from-neural-network-quantum-states-by-fore-et-al-physical-review-research-5-033062-2023-https-journals-aps-org-prresearch-pdf-10-1103-physrevresearch-5-033062-at-density-rho-0-04-fm-3" style="font-size: 80%;">"Dilute neutron star matter from neural-network quantum states by Fore et al, Physical Review Research 5, 033062 (2023)":"https://journals.aps.org/prresearch/pdf/10.1103/PhysRevResearch.5.033062" at density \( \rho=0.04 \) fm$^{-3}$</a></li>
-     <!-- navigation toc: --> <li><a href="._QFC2024-bs040.html#pairing-and-spin-singlet-and-triplet-two-body-distribution-functions-at-rho-0-01-fm-3" style="font-size: 80%;">Pairing and Spin-singlet and triplet two-body distribution functions at \( \rho=0.01 \) fm$^{-3}$</a></li>
-     <!-- navigation toc: --> <li><a href="._QFC2024-bs041.html#pairing-and-spin-singlet-and-triplet-two-body-distribution-functions-at-rho-0-04-fm-3" style="font-size: 80%;">Pairing and Spin-singlet and triplet two-body distribution functions at \( \rho=0.04 \) fm$^{-3}$</a></li>
-     <!-- navigation toc: --> <li><a href="._QFC2024-bs042.html#pairing-and-spin-singlet-and-triplet-two-body-distribution-functions-at-rho-0-08-fm-3" style="font-size: 80%;">Pairing and Spin-singlet and triplet two-body distribution functions at \( \rho=0.08 \) fm$^{-3}$</a></li>
-     <!-- navigation toc: --> <li><a href="._QFC2024-bs043.html#the-electron-gas-in-three-dimensions-with-n-14-electrons-wigner-seitz-radius-r-s-2-a-u-gabriel-pescia-jane-kim-et-al-arxiv-2305-07240-https-doi-org-10-48550-arxiv-2305-07240" style="font-size: 80%;">The electron gas in three dimensions with \( N=14 \) electrons (Wigner-Seitz radius \( r_s=2 \) a.u.), "Gabriel Pescia, Jane Kim et al. arXiv.2305.07240,":"https://doi.org/10.48550/arXiv.2305.07240"</a></li>
-     <!-- navigation toc: --> <li><a href="#efficient-solutions-of-fermionic-systems-using-artificial-neural-networks-nordhagen-et-al-frontiers-in-physics-11-2023-https-doi-org-10-3389-fphy-2023-1061580" style="font-size: 80%;">"Efficient solutions of fermionic systems using artificial neural networks, Nordhagen et al, Frontiers in Physics 11, 2023":"https://doi.org/10.3389/fphy.2023.1061580"</a></li>
-     <!-- navigation toc: --> <li><a href="._QFC2024-bs045.html#generative-models-why-boltzmann-machines" style="font-size: 80%;">Generative models: Why Boltzmann machines?</a></li>
-     <!-- navigation toc: --> <li><a href="._QFC2024-bs046.html#the-structure-of-the-rbm-network" style="font-size: 80%;">The structure of the RBM network</a></li>
-     <!-- navigation toc: --> <li><a href="._QFC2024-bs047.html#the-network" style="font-size: 80%;">The network</a></li>
-     <!-- navigation toc: --> <li><a href="._QFC2024-bs048.html#goals" style="font-size: 80%;">Goals</a></li>
-     <!-- navigation toc: --> <li><a href="._QFC2024-bs049.html#joint-distribution" style="font-size: 80%;">Joint distribution</a></li>
-     <!-- navigation toc: --> <li><a href="._QFC2024-bs050.html#network-elements-the-energy-function" style="font-size: 80%;">Network Elements, the energy function</a></li>
-     <!-- navigation toc: --> <li><a href="._QFC2024-bs051.html#defining-different-types-of-rbms-energy-based-models" style="font-size: 80%;">Defining different types of RBMs (Energy based models)</a></li>
-     <!-- navigation toc: --> <li><a href="._QFC2024-bs052.html#gaussian-binary" style="font-size: 80%;">Gaussian binary</a></li>
-     <!-- navigation toc: --> <li><a href="._QFC2024-bs053.html#representing-the-wave-function" style="font-size: 80%;">Representing the wave function</a></li>
-     <!-- navigation toc: --> <li><a href="._QFC2024-bs054.html#define-the-cost-function" style="font-size: 80%;">Define the cost function</a></li>
-     <!-- navigation toc: --> <li><a href="._QFC2024-bs055.html#quantum-dots-and-boltzmann-machines-onebody-densities-n-6-hbar-omega-0-1-a-u" style="font-size: 80%;">Quantum dots and Boltzmann machines, onebody densities \( N=6 \), \( \hbar\omega=0.1 \) a.u.</a></li>
-     <!-- navigation toc: --> <li><a href="._QFC2024-bs056.html#onebody-densities-n-30-hbar-omega-1-0-a-u" style="font-size: 80%;">Onebody densities \( N=30 \), \( \hbar\omega=1.0 \) a.u.</a></li>
-     <!-- navigation toc: --> <li><a href="._QFC2024-bs057.html#expectation-values-as-functions-of-the-oscillator-frequency" style="font-size: 80%;">Expectation values as functions of the oscillator frequency</a></li>
-     <!-- navigation toc: --> <li><a href="._QFC2024-bs058.html#extrapolations-and-model-interpretability" style="font-size: 80%;">Extrapolations and model interpretability</a></li>
-     <!-- navigation toc: --> <li><a href="._QFC2024-bs059.html#physics-based-statistical-learning-and-data-analysis" style="font-size: 80%;">Physics based statistical learning and data analysis</a></li>
-     <!-- navigation toc: --> <li><a href="._QFC2024-bs060.html#bayes-theorem" style="font-size: 80%;">Bayes' Theorem</a></li>
-     <!-- navigation toc: --> <li><a href="._QFC2024-bs061.html#quantified-limits-of-the-nuclear-landscape-https-journals-aps-org-prc-abstract-10-1103-physrevc-101-044307" style="font-size: 80%;">"Quantified limits of the nuclear landscape":"https://journals.aps.org/prc/abstract/10.1103/PhysRevC.101.044307"</a></li>
-     <!-- navigation toc: --> <li><a href="._QFC2024-bs062.html#observations-or-conclusions-if-you-prefer" style="font-size: 80%;">Observations (or conclusions if you prefer)</a></li>
-     <!-- navigation toc: --> <li><a href="._QFC2024-bs063.html#more-observations" style="font-size: 80%;">More observations</a></li>
-     <!-- navigation toc: --> <li><a href="._QFC2024-bs064.html#possible-start-to-raise-awareness-about-ml-in-our-own-field" style="font-size: 80%;">Possible start to raise awareness about ML in our own field</a></li>
-     <!-- navigation toc: --> <li><a href="._QFC2024-bs065.html#additional-material" style="font-size: 80%;">Additional material</a></li>
-     <!-- navigation toc: --> <li><a href="._QFC2024-bs066.html#our-network-example-simple-percepetron-with-one-input" style="font-size: 80%;">Our network example, simple percepetron with one input</a></li>
-     <!-- navigation toc: --> <li><a href="._QFC2024-bs067.html#optimizing-the-parameters" style="font-size: 80%;">Optimizing the parameters</a></li>
-     <!-- navigation toc: --> <li><a href="._QFC2024-bs068.html#implementing-the-simple-perceptron-model" style="font-size: 80%;">Implementing the simple perceptron model</a></li>
-     <!-- navigation toc: --> <li><a href="._QFC2024-bs069.html#central-magic" style="font-size: 80%;">Central magic</a></li>
-     <!-- navigation toc: --> <li><a href="._QFC2024-bs070.html#essential-elements-of-generative-models" style="font-size: 80%;">Essential elements of generative models</a></li>
-     <!-- navigation toc: --> <li><a href="._QFC2024-bs071.html#energy-models" style="font-size: 80%;">Energy models</a></li>
-     <!-- navigation toc: --> <li><a href="._QFC2024-bs072.html#probability-model" style="font-size: 80%;">Probability model</a></li>
-     <!-- navigation toc: --> <li><a href="._QFC2024-bs073.html#marginal-and-conditional-probabilities" style="font-size: 80%;">Marginal and conditional probabilities</a></li>
-     <!-- navigation toc: --> <li><a href="._QFC2024-bs074.html#change-of-notation" style="font-size: 80%;">Change of notation</a></li>
-     <!-- navigation toc: --> <li><a href="._QFC2024-bs075.html#optimization-problem" style="font-size: 80%;">Optimization problem</a></li>
-     <!-- navigation toc: --> <li><a href="._QFC2024-bs076.html#further-simplifications" style="font-size: 80%;">Further simplifications</a></li>
-     <!-- navigation toc: --> <li><a href="._QFC2024-bs077.html#optimizing-the-logarithm-instead" style="font-size: 80%;">Optimizing the logarithm instead</a></li>
-     <!-- navigation toc: --> <li><a href="._QFC2024-bs078.html#expression-for-the-gradients" style="font-size: 80%;">Expression for the gradients</a></li>
-     <!-- navigation toc: --> <li><a href="._QFC2024-bs079.html#the-derivative-of-the-partition-function" style="font-size: 80%;">The derivative of the partition function</a></li>
-     <!-- navigation toc: --> <li><a href="._QFC2024-bs080.html#explicit-expression-for-the-derivative" style="font-size: 80%;">Explicit expression for the derivative</a></li>
-     <!-- navigation toc: --> <li><a href="._QFC2024-bs081.html#final-expression" style="font-size: 80%;">Final expression</a></li>
-     <!-- navigation toc: --> <li><a href="._QFC2024-bs082.html#introducing-the-energy-model" style="font-size: 80%;">Introducing the energy model</a></li>
-     <!-- navigation toc: --> <li><a href="._QFC2024-bs083.html#more-compact-notation" style="font-size: 80%;">More compact notation</a></li>
-     <!-- navigation toc: --> <li><a href="._QFC2024-bs084.html#binary-binary-model" style="font-size: 80%;">Binary-binary model</a></li>
+     <!-- navigation toc: --> <li><a href="._QFC2024-bs025.html#nuclear-many-body-problem-or-any-many-body-problem" style="font-size: 80%;">Nuclear many-body problem (or any many-body problem</a></li>
+     <!-- navigation toc: --> <li><a href="._QFC2024-bs026.html#curse-of-dimensionality" style="font-size: 80%;">Curse of dimensionality</a></li>
+     <!-- navigation toc: --> <li><a href="._QFC2024-bs027.html#neural-network-quantum-states" style="font-size: 80%;">Neural network quantum states</a></li>
+     <!-- navigation toc: --> <li><a href="._QFC2024-bs028.html#many-body-physics-quantum-monte-carlo-and-deep-learning" style="font-size: 80%;">Many-body physics, Quantum Monte Carlo and deep learning</a></li>
+     <!-- navigation toc: --> <li><a href="._QFC2024-bs030.html#quantum-monte-carlo-motivation" style="font-size: 80%;">Quantum Monte Carlo Motivation</a></li>
+     <!-- navigation toc: --> <li><a href="._QFC2024-bs030.html#quantum-monte-carlo-motivation" style="font-size: 80%;">Quantum Monte Carlo Motivation</a></li>
+     <!-- navigation toc: --> <li><a href="._QFC2024-bs031.html#energy-derivatives" style="font-size: 80%;">Energy derivatives</a></li>
+     <!-- navigation toc: --> <li><a href="._QFC2024-bs032.html#derivatives-of-the-local-energy" style="font-size: 80%;">Derivatives of the local energy</a></li>
+     <!-- navigation toc: --> <li><a href="._QFC2024-bs033.html#why-feed-forward-neural-networks-ffnn" style="font-size: 80%;">Why Feed Forward Neural Networks (FFNN)?</a></li>
+     <!-- navigation toc: --> <li><a href="._QFC2024-bs034.html#universal-approximation-theorem" style="font-size: 80%;">Universal approximation theorem</a></li>
+     <!-- navigation toc: --> <li><a href="._QFC2024-bs035.html#the-approximation-theorem-in-words" style="font-size: 80%;">The approximation theorem in words</a></li>
+     <!-- navigation toc: --> <li><a href="._QFC2024-bs036.html#more-on-the-general-approximation-theorem" style="font-size: 80%;">More on the general approximation theorem</a></li>
+     <!-- navigation toc: --> <li><a href="._QFC2024-bs037.html#class-of-functions-we-can-approximate" style="font-size: 80%;">Class of functions we can approximate</a></li>
+     <!-- navigation toc: --> <li><a href="._QFC2024-bs038.html#simple-example-fitting-nuclear-masses" style="font-size: 80%;">Simple example, fitting nuclear masses</a></li>
+     <!-- navigation toc: --> <li><a href="._QFC2024-bs039.html#illustration-of-a-single-perceptron-model-and-an-ffnn" style="font-size: 80%;">Illustration of a single perceptron model and an FFNN</a></li>
+     <!-- navigation toc: --> <li><a href="._QFC2024-bs040.html#monte-carlo-methods-and-neural-networks" style="font-size: 80%;">Monte Carlo methods and Neural Networks</a></li>
+     <!-- navigation toc: --> <li><a href="._QFC2024-bs041.html#deep-learning-neural-networks-variational-monte-carlo-calculations-of-a-le-4-nuclei-with-an-artificial-neural-network-correlator-ansatz-by-adams-et-al-https-journals-aps-org-prl-abstract-10-1103-physrevlett-127-022502" style="font-size: 80%;">Deep learning neural networks, "Variational Monte Carlo calculations of \( A\le 4 \) nuclei with an artificial neural-network correlator ansatz by Adams et al.":"https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.127.022502"</a></li>
+     <!-- navigation toc: --> <li><a href="._QFC2024-bs042.html#dilute-neutron-star-matter-from-neural-network-quantum-states-by-fore-et-al-physical-review-research-5-033062-2023-https-journals-aps-org-prresearch-pdf-10-1103-physrevresearch-5-033062-at-density-rho-0-04-fm-3" style="font-size: 80%;">"Dilute neutron star matter from neural-network quantum states by Fore et al, Physical Review Research 5, 033062 (2023)":"https://journals.aps.org/prresearch/pdf/10.1103/PhysRevResearch.5.033062" at density \( \rho=0.04 \) fm$^{-3}$</a></li>
+     <!-- navigation toc: --> <li><a href="._QFC2024-bs043.html#pairing-and-spin-singlet-and-triplet-two-body-distribution-functions-at-rho-0-01-fm-3" style="font-size: 80%;">Pairing and Spin-singlet and triplet two-body distribution functions at \( \rho=0.01 \) fm$^{-3}$</a></li>
+     <!-- navigation toc: --> <li><a href="#pairing-and-spin-singlet-and-triplet-two-body-distribution-functions-at-rho-0-04-fm-3" style="font-size: 80%;">Pairing and Spin-singlet and triplet two-body distribution functions at \( \rho=0.04 \) fm$^{-3}$</a></li>
+     <!-- navigation toc: --> <li><a href="._QFC2024-bs045.html#pairing-and-spin-singlet-and-triplet-two-body-distribution-functions-at-rho-0-08-fm-3" style="font-size: 80%;">Pairing and Spin-singlet and triplet two-body distribution functions at \( \rho=0.08 \) fm$^{-3}$</a></li>
+     <!-- navigation toc: --> <li><a href="._QFC2024-bs046.html#the-electron-gas-in-three-dimensions-with-n-14-electrons-wigner-seitz-radius-r-s-2-a-u-gabriel-pescia-jane-kim-et-al-arxiv-2305-07240-https-doi-org-10-48550-arxiv-2305-07240" style="font-size: 80%;">The electron gas in three dimensions with \( N=14 \) electrons (Wigner-Seitz radius \( r_s=2 \) a.u.), "Gabriel Pescia, Jane Kim et al. arXiv.2305.07240,":"https://doi.org/10.48550/arXiv.2305.07240"</a></li>
+     <!-- navigation toc: --> <li><a href="._QFC2024-bs047.html#efficient-solutions-of-fermionic-systems-using-artificial-neural-networks-nordhagen-et-al-frontiers-in-physics-11-2023-https-doi-org-10-3389-fphy-2023-1061580" style="font-size: 80%;">"Efficient solutions of fermionic systems using artificial neural networks, Nordhagen et al, Frontiers in Physics 11, 2023":"https://doi.org/10.3389/fphy.2023.1061580"</a></li>
+     <!-- navigation toc: --> <li><a href="._QFC2024-bs048.html#generative-models-why-boltzmann-machines" style="font-size: 80%;">Generative models: Why Boltzmann machines?</a></li>
+     <!-- navigation toc: --> <li><a href="._QFC2024-bs049.html#the-structure-of-the-rbm-network" style="font-size: 80%;">The structure of the RBM network</a></li>
+     <!-- navigation toc: --> <li><a href="._QFC2024-bs050.html#the-network" style="font-size: 80%;">The network</a></li>
+     <!-- navigation toc: --> <li><a href="._QFC2024-bs051.html#goals" style="font-size: 80%;">Goals</a></li>
+     <!-- navigation toc: --> <li><a href="._QFC2024-bs052.html#joint-distribution" style="font-size: 80%;">Joint distribution</a></li>
+     <!-- navigation toc: --> <li><a href="._QFC2024-bs053.html#network-elements-the-energy-function" style="font-size: 80%;">Network Elements, the energy function</a></li>
+     <!-- navigation toc: --> <li><a href="._QFC2024-bs054.html#defining-different-types-of-rbms-energy-based-models" style="font-size: 80%;">Defining different types of RBMs (Energy based models)</a></li>
+     <!-- navigation toc: --> <li><a href="._QFC2024-bs055.html#gaussian-binary" style="font-size: 80%;">Gaussian binary</a></li>
+     <!-- navigation toc: --> <li><a href="._QFC2024-bs056.html#representing-the-wave-function" style="font-size: 80%;">Representing the wave function</a></li>
+     <!-- navigation toc: --> <li><a href="._QFC2024-bs057.html#define-the-cost-function" style="font-size: 80%;">Define the cost function</a></li>
+     <!-- navigation toc: --> <li><a href="._QFC2024-bs058.html#quantum-dots-and-boltzmann-machines-onebody-densities-n-6-hbar-omega-0-1-a-u" style="font-size: 80%;">Quantum dots and Boltzmann machines, onebody densities \( N=6 \), \( \hbar\omega=0.1 \) a.u.</a></li>
+     <!-- navigation toc: --> <li><a href="._QFC2024-bs059.html#onebody-densities-n-30-hbar-omega-1-0-a-u" style="font-size: 80%;">Onebody densities \( N=30 \), \( \hbar\omega=1.0 \) a.u.</a></li>
+     <!-- navigation toc: --> <li><a href="._QFC2024-bs060.html#expectation-values-as-functions-of-the-oscillator-frequency" style="font-size: 80%;">Expectation values as functions of the oscillator frequency</a></li>
+     <!-- navigation toc: --> <li><a href="._QFC2024-bs061.html#extrapolations-and-model-interpretability" style="font-size: 80%;">Extrapolations and model interpretability</a></li>
+     <!-- navigation toc: --> <li><a href="._QFC2024-bs062.html#physics-based-statistical-learning-and-data-analysis" style="font-size: 80%;">Physics based statistical learning and data analysis</a></li>
+     <!-- navigation toc: --> <li><a href="._QFC2024-bs063.html#bayes-theorem" style="font-size: 80%;">Bayes' Theorem</a></li>
+     <!-- navigation toc: --> <li><a href="._QFC2024-bs064.html#quantified-limits-of-the-nuclear-landscape-https-journals-aps-org-prc-abstract-10-1103-physrevc-101-044307" style="font-size: 80%;">"Quantified limits of the nuclear landscape":"https://journals.aps.org/prc/abstract/10.1103/PhysRevC.101.044307"</a></li>
+     <!-- navigation toc: --> <li><a href="._QFC2024-bs065.html#observations-or-conclusions-if-you-prefer" style="font-size: 80%;">Observations (or conclusions if you prefer)</a></li>
+     <!-- navigation toc: --> <li><a href="._QFC2024-bs066.html#more-observations" style="font-size: 80%;">More observations</a></li>
+     <!-- navigation toc: --> <li><a href="._QFC2024-bs067.html#possible-start-to-raise-awareness-about-ml-in-our-own-field" style="font-size: 80%;">Possible start to raise awareness about ML in our own field</a></li>
+     <!-- navigation toc: --> <li><a href="._QFC2024-bs068.html#additional-material" style="font-size: 80%;">Additional material</a></li>
+     <!-- navigation toc: --> <li><a href="._QFC2024-bs069.html#our-network-example-simple-percepetron-with-one-input" style="font-size: 80%;">Our network example, simple percepetron with one input</a></li>
+     <!-- navigation toc: --> <li><a href="._QFC2024-bs070.html#optimizing-the-parameters" style="font-size: 80%;">Optimizing the parameters</a></li>
+     <!-- navigation toc: --> <li><a href="._QFC2024-bs071.html#implementing-the-simple-perceptron-model" style="font-size: 80%;">Implementing the simple perceptron model</a></li>
+     <!-- navigation toc: --> <li><a href="._QFC2024-bs072.html#central-magic" style="font-size: 80%;">Central magic</a></li>
+     <!-- navigation toc: --> <li><a href="._QFC2024-bs073.html#essential-elements-of-generative-models" style="font-size: 80%;">Essential elements of generative models</a></li>
+     <!-- navigation toc: --> <li><a href="._QFC2024-bs074.html#energy-models" style="font-size: 80%;">Energy models</a></li>
+     <!-- navigation toc: --> <li><a href="._QFC2024-bs075.html#probability-model" style="font-size: 80%;">Probability model</a></li>
+     <!-- navigation toc: --> <li><a href="._QFC2024-bs076.html#marginal-and-conditional-probabilities" style="font-size: 80%;">Marginal and conditional probabilities</a></li>
+     <!-- navigation toc: --> <li><a href="._QFC2024-bs077.html#change-of-notation" style="font-size: 80%;">Change of notation</a></li>
+     <!-- navigation toc: --> <li><a href="._QFC2024-bs078.html#optimization-problem" style="font-size: 80%;">Optimization problem</a></li>
+     <!-- navigation toc: --> <li><a href="._QFC2024-bs079.html#further-simplifications" style="font-size: 80%;">Further simplifications</a></li>
+     <!-- navigation toc: --> <li><a href="._QFC2024-bs080.html#optimizing-the-logarithm-instead" style="font-size: 80%;">Optimizing the logarithm instead</a></li>
+     <!-- navigation toc: --> <li><a href="._QFC2024-bs081.html#expression-for-the-gradients" style="font-size: 80%;">Expression for the gradients</a></li>
+     <!-- navigation toc: --> <li><a href="._QFC2024-bs082.html#the-derivative-of-the-partition-function" style="font-size: 80%;">The derivative of the partition function</a></li>
+     <!-- navigation toc: --> <li><a href="._QFC2024-bs083.html#explicit-expression-for-the-derivative" style="font-size: 80%;">Explicit expression for the derivative</a></li>
+     <!-- navigation toc: --> <li><a href="._QFC2024-bs084.html#final-expression" style="font-size: 80%;">Final expression</a></li>
+     <!-- navigation toc: --> <li><a href="._QFC2024-bs085.html#introducing-the-energy-model" style="font-size: 80%;">Introducing the energy model</a></li>
+     <!-- navigation toc: --> <li><a href="._QFC2024-bs086.html#more-compact-notation" style="font-size: 80%;">More compact notation</a></li>
+     <!-- navigation toc: --> <li><a href="._QFC2024-bs087.html#binary-binary-model" style="font-size: 80%;">Binary-binary model</a></li>
 
         </ul>
       </li>
@@ -442,26 +454,19 @@ MathJax.Hub.Config({
 <p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p> <!-- add vertical space -->
 <a name="part0044"></a>
 <!-- !split -->
-<h2 id="efficient-solutions-of-fermionic-systems-using-artificial-neural-networks-nordhagen-et-al-frontiers-in-physics-11-2023-https-doi-org-10-3389-fphy-2023-1061580" class="anchor"><a href="https://doi.org/10.3389/fphy.2023.1061580" target="_self">Efficient solutions of fermionic systems using artificial neural networks, Nordhagen et al, Frontiers in Physics 11, 2023</a> </h2>
+<h2 id="pairing-and-spin-singlet-and-triplet-two-body-distribution-functions-at-rho-0-04-fm-3" class="anchor">Pairing and Spin-singlet and triplet two-body distribution functions at \( \rho=0.04 \) fm$^{-3}$ </h2>
 
-<p>The Hamiltonian of the quantum dot is given by</p>
-$$ \hat{H} = \hat{H}_0 + \hat{V}, 
-$$
+<div class="panel panel-default">
+<div class="panel-body">
+<!-- subsequent paragraphs come in larger fonts, so start with a paragraph -->
+<br/><br/>
+<center>
+<p><img src="figures/04_tbd.png" width="700" align="bottom"></p>
+</center>
+<br/><br/>
+</div>
+</div>
 
-<p>where \( \hat{H}_0 \) is the many-body HO Hamiltonian, and \( \hat{V} \) is the
-inter-electron Coulomb interactions. In dimensionless units,
-</p>
-$$ \hat{V}= \sum_{i < j}^N \frac{1}{r_{ij}},
-$$
-
-<p>with \( r_{ij}=\sqrt{\mathbf{r}_i^2 - \mathbf{r}_j^2} \).</p>
-
-<p>Separable Hamiltonian with the relative motion part (\( r_{ij}=r \))</p>
-$$ 
-\hat{H}_r=-\nabla^2_r + \frac{1}{4}\omega^2r^2+ \frac{1}{r},
-$$
-
-<p>Analytical solutions in two and three dimensions (<a href="https://journals.aps.org/pra/abstract/10.1103/PhysRevA.48.3561" target="_self">M. Taut 1993 and 1994</a>). </p>
 
 <p>
 <!-- navigation buttons at the bottom of the page -->
@@ -488,7 +493,7 @@ $$
   <li><a href="._QFC2024-bs052.html">53</a></li>
   <li><a href="._QFC2024-bs053.html">54</a></li>
   <li><a href="">...</a></li>
-  <li><a href="._QFC2024-bs084.html">85</a></li>
+  <li><a href="._QFC2024-bs087.html">88</a></li>
   <li><a href="._QFC2024-bs045.html">&raquo;</a></li>
 </ul>
 <!-- ------------------- end of main content --------------- -->

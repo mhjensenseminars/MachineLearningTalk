@@ -289,12 +289,30 @@ Another hot topic is what has loosely been dubbed _Physics-driven deep learning_
 
 * Merging a frequentist approach (the standard path in ML theory) with a Bayesian approach, has the potential to infer better probabilitity distributions and error estimates. 
 
-* Machine Learning and Quantum Computing is a very interesting avenue to explore. See for example a recent talk by "Sofia Vallecorsa":"https://www.youtube.com/watch?v=7WPKv1Q57os&list=PLUPPQ1TVXK7uHwCTccWMBud-zLyvAf8A2&index=5&ab_channel=ECTstar".
+* Machine Learning and Quantum Computing is a very interesting avenue to explore. 
 !eblock
 
 
 #Add more
 
+!split
+===== Nuclear many-body problem (or any many-body problem =====
+
+FIGURE: [figures/mbpfig1.png, width=900 frac=1.0]
+
+!split
+===== Curse of dimensionality  =====
+
+FIGURE: [figures/mbpfig2.png, width=900 frac=1.0]
+
+
+!split
+===== Neural network quantum states  =====
+
+!bblock Neural networks compactly represent complex high-dimensional functions
+Most quantum states of interest have distinctive features and intrinsic structures
+FIGURE: [figures/mbpfig3.png, width=900 frac=1.0]
+!eblock
 
 
 !split
