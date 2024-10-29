@@ -39,7 +39,7 @@ doconce format html NBI.do.txt --html_style=bootstrap --pygments_html_style=defa
  'sections': [('What is this talk about?', 2, None, 'what-is-this-talk-about'),
               ('People', 2, None, 'people'),
               ('People', 2, None, 'people'),
-              ('People', 2, None, 'people'),
+              ('Other places People', 2, None, 'other-places-people'),
               ('Education and advanced training',
                2,
                None,
@@ -94,6 +94,41 @@ doconce format html NBI.do.txt --html_style=bootstrap --pygments_html_style=defa
                None,
                'more-on-experimental-setup-ii'),
               ('Experimental set up', 2, None, 'experimental-set-up'),
+              ('Quantum dots and the Coulomb interaction',
+               2,
+               None,
+               'quantum-dots-and-the-coulomb-interaction'),
+              ('Electrons on helium is another qubit platform',
+               2,
+               None,
+               'electrons-on-helium-is-another-qubit-platform'),
+              ('Surface state electrons (SSE)',
+               2,
+               None,
+               'surface-state-electrons-sse'),
+              ('Calculational details', 2, None, 'calculational-details'),
+              ('Calculational details', 2, None, 'calculational-details'),
+              ('Calculational details', 2, None, 'calculational-details'),
+              ('Calculational details', 2, None, 'calculational-details'),
+              ('Calculational details', 2, None, 'calculational-details'),
+              ('Calculational details', 2, None, 'calculational-details'),
+              ('Calculational details', 2, None, 'calculational-details'),
+              ('Calculational details', 2, None, 'calculational-details'),
+              ('Calculational details', 2, None, 'calculational-details'),
+              ('Results and discussions', 2, None, 'results-and-discussions'),
+              ('Entanglement and more', 2, None, 'entanglement-and-more'),
+              ('Legend to figure', 2, None, 'legend-to-figure'),
+              ('Particle densities and coefficients',
+               2,
+               None,
+               'particle-densities-and-coefficients'),
+              ('Potential wells, the one-body densities, and single-particle '
+               'states',
+               2,
+               None,
+               'potential-wells-the-one-body-densities-and-single-particle-states'),
+              ('Where we are now', 2, None, 'where-we-are-now'),
+              ('Plans', 2, None, 'plans'),
               ('Many-body physics, Quantum Monte Carlo and deep learning',
                2,
                None,
@@ -167,9 +202,9 @@ MathJax.Hub.Config({
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Contents <b class="caret"></b></a>
         <ul class="dropdown-menu">
      <!-- navigation toc: --> <li><a href="._NBI-bs001.html#what-is-this-talk-about" style="font-size: 80%;">What is this talk about?</a></li>
-     <!-- navigation toc: --> <li><a href="._NBI-bs004.html#people" style="font-size: 80%;">People</a></li>
-     <!-- navigation toc: --> <li><a href="._NBI-bs004.html#people" style="font-size: 80%;">People</a></li>
-     <!-- navigation toc: --> <li><a href="._NBI-bs004.html#people" style="font-size: 80%;">People</a></li>
+     <!-- navigation toc: --> <li><a href="._NBI-bs003.html#people" style="font-size: 80%;">People</a></li>
+     <!-- navigation toc: --> <li><a href="._NBI-bs003.html#people" style="font-size: 80%;">People</a></li>
+     <!-- navigation toc: --> <li><a href="._NBI-bs004.html#other-places-people" style="font-size: 80%;">Other places People</a></li>
      <!-- navigation toc: --> <li><a href="._NBI-bs005.html#education-and-advanced-training" style="font-size: 80%;">Education and advanced training</a></li>
      <!-- navigation toc: --> <li><a href="._NBI-bs006.html#deliverable-education-and-advanced-training" style="font-size: 80%;">Deliverable: Education and advanced training</a></li>
      <!-- navigation toc: --> <li><a href="._NBI-bs007.html#qai-talent-education-and-knowledge-transfer-through-the-development-of-advanced-educational-programs" style="font-size: 80%;">QAI-TALENT, Education and knowledge transfer through the development of advanced educational programs</a></li>
@@ -186,14 +221,33 @@ MathJax.Hub.Config({
      <!-- navigation toc: --> <li><a href="._NBI-bs018.html#electrons-quantum-dots-on-superfluid-helium" style="font-size: 80%;">Electrons (quantum dots) on superfluid helium</a></li>
      <!-- navigation toc: --> <li><a href="._NBI-bs019.html#more-on-experimental-setup-ii" style="font-size: 80%;">More on experimental setup II</a></li>
      <!-- navigation toc: --> <li><a href="._NBI-bs020.html#experimental-set-up" style="font-size: 80%;">Experimental set up</a></li>
-     <!-- navigation toc: --> <li><a href="._NBI-bs021.html#many-body-physics-quantum-monte-carlo-and-deep-learning" style="font-size: 80%;">Many-body physics, Quantum Monte Carlo and deep learning</a></li>
-     <!-- navigation toc: --> <li><a href="._NBI-bs023.html#quantum-monte-carlo-motivation" style="font-size: 80%;">Quantum Monte Carlo Motivation</a></li>
-     <!-- navigation toc: --> <li><a href="._NBI-bs023.html#quantum-monte-carlo-motivation" style="font-size: 80%;">Quantum Monte Carlo Motivation</a></li>
-     <!-- navigation toc: --> <li><a href="._NBI-bs024.html#deep-learning-neural-networks-variational-monte-carlo-calculations-of-a-le-4-nuclei-with-an-artificial-neural-network-correlator-ansatz-by-adams-et-al-https-journals-aps-org-prl-abstract-10-1103-physrevlett-127-022502" style="font-size: 80%;">Deep learning neural networks, "Variational Monte Carlo calculations of \( A\le 4 \) nuclei with an artificial neural-network correlator ansatz by Adams et al.":"https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.127.022502"</a></li>
-     <!-- navigation toc: --> <li><a href="._NBI-bs025.html#dilute-neutron-star-matter-from-neural-network-quantum-states-by-fore-et-al-physical-review-research-5-033062-2023-https-journals-aps-org-prresearch-pdf-10-1103-physrevresearch-5-033062-at-density-rho-0-04-fm-3" style="font-size: 80%;">"Dilute neutron star matter from neural-network quantum states by Fore et al, Physical Review Research 5, 033062 (2023)":"https://journals.aps.org/prresearch/pdf/10.1103/PhysRevResearch.5.033062" at density \( \rho=0.04 \) fm$^{-3}$</a></li>
-     <!-- navigation toc: --> <li><a href="._NBI-bs026.html#the-electron-gas-in-three-dimensions-with-n-14-electrons-wigner-seitz-radius-r-s-2-a-u-gabriel-pescia-jane-kim-et-al-arxiv-2305-07240-https-doi-org-10-48550-arxiv-2305-07240" style="font-size: 80%;">The electron gas in three dimensions with \( N=14 \) electrons (Wigner-Seitz radius \( r_s=2 \) a.u.), "Gabriel Pescia, Jane Kim et al. arXiv.2305.07240,":"https://doi.org/10.48550/arXiv.2305.07240"</a></li>
-     <!-- navigation toc: --> <li><a href="._NBI-bs027.html#selected-references" style="font-size: 80%;">Selected references</a></li>
-     <!-- navigation toc: --> <li><a href="._NBI-bs028.html#more-selected-references" style="font-size: 80%;">More selected references</a></li>
+     <!-- navigation toc: --> <li><a href="._NBI-bs021.html#quantum-dots-and-the-coulomb-interaction" style="font-size: 80%;">Quantum dots and the Coulomb interaction</a></li>
+     <!-- navigation toc: --> <li><a href="._NBI-bs022.html#electrons-on-helium-is-another-qubit-platform" style="font-size: 80%;">Electrons on helium is another qubit platform</a></li>
+     <!-- navigation toc: --> <li><a href="._NBI-bs023.html#surface-state-electrons-sse" style="font-size: 80%;">Surface state electrons (SSE)</a></li>
+     <!-- navigation toc: --> <li><a href="._NBI-bs032.html#calculational-details" style="font-size: 80%;">Calculational details</a></li>
+     <!-- navigation toc: --> <li><a href="._NBI-bs032.html#calculational-details" style="font-size: 80%;">Calculational details</a></li>
+     <!-- navigation toc: --> <li><a href="._NBI-bs032.html#calculational-details" style="font-size: 80%;">Calculational details</a></li>
+     <!-- navigation toc: --> <li><a href="._NBI-bs032.html#calculational-details" style="font-size: 80%;">Calculational details</a></li>
+     <!-- navigation toc: --> <li><a href="._NBI-bs032.html#calculational-details" style="font-size: 80%;">Calculational details</a></li>
+     <!-- navigation toc: --> <li><a href="._NBI-bs032.html#calculational-details" style="font-size: 80%;">Calculational details</a></li>
+     <!-- navigation toc: --> <li><a href="._NBI-bs032.html#calculational-details" style="font-size: 80%;">Calculational details</a></li>
+     <!-- navigation toc: --> <li><a href="._NBI-bs032.html#calculational-details" style="font-size: 80%;">Calculational details</a></li>
+     <!-- navigation toc: --> <li><a href="._NBI-bs032.html#calculational-details" style="font-size: 80%;">Calculational details</a></li>
+     <!-- navigation toc: --> <li><a href="._NBI-bs033.html#results-and-discussions" style="font-size: 80%;">Results and discussions</a></li>
+     <!-- navigation toc: --> <li><a href="._NBI-bs035.html#entanglement-and-more" style="font-size: 80%;">Entanglement and more</a></li>
+     <!-- navigation toc: --> <li><a href="._NBI-bs036.html#legend-to-figure" style="font-size: 80%;">Legend to figure</a></li>
+     <!-- navigation toc: --> <li><a href="._NBI-bs037.html#particle-densities-and-coefficients" style="font-size: 80%;">Particle densities and coefficients</a></li>
+     <!-- navigation toc: --> <li><a href="._NBI-bs038.html#potential-wells-the-one-body-densities-and-single-particle-states" style="font-size: 80%;">Potential wells, the one-body densities, and single-particle states</a></li>
+     <!-- navigation toc: --> <li><a href="._NBI-bs039.html#where-we-are-now" style="font-size: 80%;">Where we are now</a></li>
+     <!-- navigation toc: --> <li><a href="._NBI-bs040.html#plans" style="font-size: 80%;">Plans</a></li>
+     <!-- navigation toc: --> <li><a href="._NBI-bs041.html#many-body-physics-quantum-monte-carlo-and-deep-learning" style="font-size: 80%;">Many-body physics, Quantum Monte Carlo and deep learning</a></li>
+     <!-- navigation toc: --> <li><a href="._NBI-bs043.html#quantum-monte-carlo-motivation" style="font-size: 80%;">Quantum Monte Carlo Motivation</a></li>
+     <!-- navigation toc: --> <li><a href="._NBI-bs043.html#quantum-monte-carlo-motivation" style="font-size: 80%;">Quantum Monte Carlo Motivation</a></li>
+     <!-- navigation toc: --> <li><a href="._NBI-bs044.html#deep-learning-neural-networks-variational-monte-carlo-calculations-of-a-le-4-nuclei-with-an-artificial-neural-network-correlator-ansatz-by-adams-et-al-https-journals-aps-org-prl-abstract-10-1103-physrevlett-127-022502" style="font-size: 80%;">Deep learning neural networks, "Variational Monte Carlo calculations of \( A\le 4 \) nuclei with an artificial neural-network correlator ansatz by Adams et al.":"https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.127.022502"</a></li>
+     <!-- navigation toc: --> <li><a href="._NBI-bs045.html#dilute-neutron-star-matter-from-neural-network-quantum-states-by-fore-et-al-physical-review-research-5-033062-2023-https-journals-aps-org-prresearch-pdf-10-1103-physrevresearch-5-033062-at-density-rho-0-04-fm-3" style="font-size: 80%;">"Dilute neutron star matter from neural-network quantum states by Fore et al, Physical Review Research 5, 033062 (2023)":"https://journals.aps.org/prresearch/pdf/10.1103/PhysRevResearch.5.033062" at density \( \rho=0.04 \) fm$^{-3}$</a></li>
+     <!-- navigation toc: --> <li><a href="._NBI-bs046.html#the-electron-gas-in-three-dimensions-with-n-14-electrons-wigner-seitz-radius-r-s-2-a-u-gabriel-pescia-jane-kim-et-al-arxiv-2305-07240-https-doi-org-10-48550-arxiv-2305-07240" style="font-size: 80%;">The electron gas in three dimensions with \( N=14 \) electrons (Wigner-Seitz radius \( r_s=2 \) a.u.), "Gabriel Pescia, Jane Kim et al. arXiv.2305.07240,":"https://doi.org/10.48550/arXiv.2305.07240"</a></li>
+     <!-- navigation toc: --> <li><a href="._NBI-bs047.html#selected-references" style="font-size: 80%;">Selected references</a></li>
+     <!-- navigation toc: --> <li><a href="._NBI-bs048.html#more-selected-references" style="font-size: 80%;">More selected references</a></li>
 
         </ul>
       </li>
@@ -248,7 +302,7 @@ MathJax.Hub.Config({
   <li><a href="._NBI-bs025.html">26</a></li>
   <li><a href="._NBI-bs026.html">27</a></li>
   <li><a href="">...</a></li>
-  <li><a href="._NBI-bs028.html">29</a></li>
+  <li><a href="._NBI-bs048.html">49</a></li>
   <li><a href="._NBI-bs018.html">&raquo;</a></li>
 </ul>
 <!-- ------------------- end of main content --------------- -->

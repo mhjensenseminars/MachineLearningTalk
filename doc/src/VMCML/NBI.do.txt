@@ -1,6 +1,6 @@
 TITLE: Quantum technologies and machine learning, research and education at the university of Oslo
 AUTHOR: Morten Hjorth-Jensen, Center for Computing in Science Education and Department of Physics, UiO  & Department of Physics and Astronomy and Facility for Rare Isotope Beams, Michigan State University, USA
-DATE: September 16, 2024
+DATE: October 29, 2024
 
 !split
 ===== What is this talk about? =====
@@ -17,12 +17,12 @@ These slides and more at URL:"http://mhjensenseminars.github.io/MachineLearningT
 ===== People  =====
 
 !bblock Physics and Center for Materials Science@UiO
-o MHJ, Lasse Vines, Marianne Bathen Etzelm{\"u}ller, Andrej Kuznetsov, Ed Monakov, Justin Wells, Simon Cooils  and David Gongarra (experiment), Joakim Bergli (theory) and Johannes Skaar (theory)
+o MHJ, Lasse Vines, Marianne Bathen Etzelm\"u ller, Andrej Kuznetsov, Ed Monakov, Justin Wells, Simon Cooils  and David Gongarra (experiment), Joakim Bergli (theory) and Johannes Skaar (theory)
 o Subatomic Physics experiment: Heidi Sandaker, Antoine Camper  and Ann-Cecilie Larsen
 o Many students and postdocs working on  theory and experiments (30+)
 !eblock
 !bblock Math@UiO
-o Nadia Slavila Larsen, Makoto Yamashita, Alexander M{\"u}ller-Hermes, Sergiy Neshveyev plus many students
+o Nadia Slavila Larsen, Makoto Yamashita, Alexander M\"u ller-Hermes, Sergiy Neshveyev plus many students
 o Large activity on Quantum Information theory, Shannon theory, error correction theory and more
 !eblock
 
@@ -36,19 +36,19 @@ o Many students and postdocs working on  theory and links with experiments (20+)
 !bblock SINTEF@Oslo
 o Franz Fuchs and Johannes Stasik, and the Gemini  center on Quantum Computing, see URL"https://www.quantumcomputing.no/"
 !eblock
-!bblock University of South-Eastern Norway@Kongsberg
-o Francesco Pietro Massel, Kjetil Bjørke et al. Research on entanglement, quantum measurements, quantum noise and more, see URL:"https://www.usn.no/research/our-research/technology/quantum-technology/". 
-!eblock
 
 !split
-===== People  =====
+===== Other places People  =====
 
+!bblock University of South-Eastern Norway@Kongsberg
+o Francesco Pietro Massel et al. Research on entanglement, quantum measurements, quantum noise and more, see URL:"https://www.usn.no/research/our-research/technology/quantum-technology/". 
+!eblock
 !bblock NTNU
 o Experimental activity on Nanoelectronics and Photonics at Department of Electronic Systems
 o Excellent condensed matter theory group at the Department of Physics
 !eblock
-!bblock OsloMet and Simula lab
-o See talks here by Shaukat Ali and Sølve Selstø
+!bblock
+o OsloMet and Simula lab@Oslo
 !eblock
 
 
@@ -248,6 +248,281 @@ o (b) Coupling constants from each individual electrode beneath the helium layer
 o (c+d) The electron's energy in a  double-well electrostatic potential (solid line). Dashed and dot-dashed lines represent the harmonic approximations of left and right wells respectively.
 
 
+!split
+===== Quantum dots and the Coulomb interaction =====
+
+!bblock
+Coulomb interaction governed entanglement can be realized in
+the system of electrons on the surface of superfluid helium, where
+qubit states are formed by in-plane lateral motional or out-of plane
+Rydberg states. Trapped near the surface of liquid helium these states
+have different spatial charge configurations and the wavefunctions of
+different electrons do not overlap.
+!eblock
+
+!bblock
+This results in a strong exchange
+free Coulomb interaction which depends on the states of the
+electrons. The lack of disorder in the systems
+also leads to slow electron decoherence, which has attracted interest
+to the system as a candidate for quantum information
+processing.
+!eblock
+
+!split
+===== Electrons on helium is another qubit platform =====
+
+_To our knowledge two qubit gates have never been discussed in a proper manner for these systems._
+
+!bblock
+The static Coulomb interaction arises from a virtual photon exchange
+ process between two charge particles according to quantum
+ electrodynamics. This results in a correlated motion of two charges
+ generating quantum entanglement. 
+!eblock
+
+!split
+===== Surface state electrons (SSE) =====
+
+!bblock
+Surface state electrons (SSE) 'floating' above liquid helium
+originates from quantization of electron's perpendicular to the
+surface motion in a trapping potential formed by attractive force from
+image charge and a large $\sim$ 1 eV barrier at the liquid-vacuum
+interface. At low temperatures the SSE are trapped in the lowest
+Rydberg state for vertical motion some 11 nm above the helium surface,
+which is perfectly clean and has a permittivity close to that of
+vacuum.
+!eblock
+
+!bblock
+The weak interaction with rthe enviroment, which is mainly governed
+by interaction with quantized surface capillary waves (ripplons) and
+bulk phonons, ensures long coherence times - a vital ingredient for
+any qubit platform. 
+!eblock
+
+
+!split
+===== Calculational details =====
+
+Hamiltonian:
+!bt
+\begin{align}
+\hat{H} &=\frac{\hat{p}_1^2}{2} + \sum_{i = 1}^7 V_i\alpha_i[\hat{x}_1] + \frac{\hat{p}_2^2}{2} + \sum_{i = 1}^7 V_i\alpha_i[\hat{x}_2] + \frac{\kappa}{\sqrt{(\hat{x}_1-\hat{x}_2)^2 + a^2}}\\
+&= h[\hat{p}_1,\hat{x}_1] + h[\hat{p}_2,\hat{x}_2] + u[\hat{x}_1,\hat{x}_2]
+\end{align}
+!et
+
+FIGURE: [qcfigures/well_basis.png, width=600 frac=0.8]
+
+
+!split
+===== Calculational details =====
+
+Hamiltonian:
+!bt
+\begin{align}
+\hat{H} &= \frac{\hat{p}_1^2}{2} + v[\hat{x}_1] + \frac{\hat{p}_2^2}{2} + v[\hat{x}_2] + \frac{\kappa}{\sqrt{(\hat{x}_1-\hat{x}_2)^2 + a^2}}\\
+&= h[\hat{p}_1,\hat{x}_1] + h[\hat{p}_2,\hat{x}_2] + u[\hat{x}_1,\hat{x}_2]
+\end{align}
+!et
+
+FIGURE: [qcfigures/wells.png, width=600 frac=0.8]
+
+
+!split
+===== Calculational details =====
+
+Hamiltonian:
+!bt
+\begin{align}
+\hat{H} &= \frac{\hat{p}_1^2}{2} + v[\hat{x}_1] + \frac{\hat{p}_2^2}{2} + v[\hat{x}_2] + \frac{\kappa}{\sqrt{(\hat{x}_1-\hat{x}_2)^2 + a^2}} \\
+&\equiv h[\hat{p}_1,\hat{x}_1] + h[\hat{p}_2,\hat{x}_2] + u[\hat{x}_1,\hat{x}_2]
+\end{align}
+!et
+
+Energy states:
+!bt
+\begin{equation}
+\vert\Phi_k\rangle = \sum_{i < j} C_{ij, k}\frac{\vert \varphi_i \varphi_j\rangle - \vert \varphi_j \varphi_i\rangle}{\sqrt{2}},
+\end{equation}
+!et
+(Slater basis)
+
+
+!split
+===== Calculational details =====
+
+Hamiltonian:
+!bt
+\begin{align}
+\hat{H} &= \frac{\hat{p}_1^2}{2} + v^L[\hat{x}_1] + \frac{\hat{p}_2^2}{2} + v^R[\hat{x}_2] + \frac{\kappa}{\sqrt{(\hat{x}_1-\hat{x}_2)^2 + a^2}} \\
+&\equiv h^L[\hat{p}_1,\hat{x}_1] + h^R[\hat{p}_2,\hat{x}_2] + u[\hat{x}_1,\hat{x}_2]
+\end{align}
+!et
+
+Energy states:
+!bt
+\begin{equation}
+\vert\Phi_k\rangle = \sum_{i} \sum_{j} C_{ij, k}\vert \varphi^L_i \varphi^R_j\rangle,
+\end{equation}
+!et
+(product basis)
+
+
+!split
+===== Calculational details =====
+
+Energy states:
+!bt
+\begin{equation}
+\vert\Phi_k\rangle = \sum_{i} \sum_{j} C_{ij, k}\vert \varphi^L_i \varphi^R_j\rangle,
+\end{equation}
+!et
+(product basis)
+
+FIGURE: [qcfigures/Hartree_states.png, width=700 frac=0.9]
+
+
+!split
+===== Calculational details =====
+
+Hamiltonian:
+!bt
+\begin{align}
+\hat{H} &= \frac{\hat{p}_1^2}{2} + v^L[\hat{x}_1] + \frac{\hat{p}_2^2}{2} + v^R[\hat{x}_2] + \frac{\kappa}{\sqrt{(\hat{x}_1-\hat{x}_2)^2 + a^2}} \\
+&\equiv h^L[\hat{p}_1,\hat{x}_1] + h^R[\hat{p}_2,\hat{x}_2] + u[\hat{x}_1,\hat{x}_2]
+\end{align}
+!et
+
+Energy states:
+!bt
+\begin{equation}
+\vert\Phi_k\rangle = \sum_{i} \sum_{j} C_{ij, k}\vert \varphi^L_i \varphi^R_j\rangle,
+\end{equation}
+!et
+(Hartree basis)
+
+
+!split
+===== Calculational details =====
+
+Hamiltonian:
+!bt
+\begin{align}
+\hat{H} &= \frac{\hat{p}_1^2}{2} + v^L[\hat{x}_1] + \frac{\hat{p}_2^2}{2} + v^R[\hat{x}_2] + \frac{\kappa}{\sqrt{(\hat{x}_1-\hat{x}_2)^2 + a^2}} \\
+&\equiv h^L[\hat{p}_1,\hat{x}_1] + h^R[\hat{p}_2,\hat{x}_2] + u[\hat{x}_1,\hat{x}_2]
+\end{align}
+!et
+
+Energy states:
+!bt
+\begin{equation}
+\vert\Phi_k\rangle = \sum_{i = 0}^{N^L} \sum_{j = 0}^{N^R} C_{ij, k}\vert \varphi^L_i \varphi^R_j\rangle,
+\end{equation}
+!et
+(Hartree basis)
+
+
+!split
+===== Calculational details =====
+
+Energy states:
+!bt
+\begin{equation}
+\vert\Phi_k\rangle = \sum_{i = 0}^{N^L} \sum_{j = 0}^{N^R} C_{ij, k}\vert \varphi^L_i \varphi^R_j\rangle,
+\end{equation}
+!et
+(Hartree basis)
+
+FIGURE: [qcfigures/Hartree_coefs.png, width=700 frac=0.9]
+
+
+!split
+===== Calculational details =====
+
+Hamiltonian:
+!bt
+\begin{align}
+\hat{H} &= \frac{\hat{p}_1^2}{2} + v^L[\hat{x}_1] + \frac{\hat{p}_2^2}{2} + v^R[\hat{x}_2] + \frac{\kappa}{\sqrt{(\hat{x}_1-\hat{x}_2)^2 + a^2}} \\
+&\equiv h^L[\hat{p}_1,\hat{x}_1] + h^R[\hat{p}_2,\hat{x}_2] + u[\hat{x}_1,\hat{x}_2]
+\end{align}
+!et
+
+Energy states:
+!bt
+\begin{equation}
+\vert\Phi_k\rangle = \sum_{i = 0}^{N^L} \sum_{j = 0}^{N^R} C_{ij, k}\vert \varphi^L_i \varphi^R_j\rangle,
+\end{equation}
+!et
+(Hartree basis)
+
+
+!split
+===== Results and discussions =====
+By adjusting the potential we can change the anharmonicities and detuning of the wells.
+o What values of these give interesting interactions?
+o Inspiration from superconducting qubits, see High-Contrast $ZZ$ Interaction Using Superconducting Qubits with Opposite-Sign Anharmonicity, "Zhao et al Phys. Rev. Lett. 125, 200503":"https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.125.200503"
+
+!split
+We search for well configurations corresponding to three different types of interaction between the two electrons.
+
+o In configuration I we address both qubits independently and can thereby perform single-qubit state rotations and measurements.
+o Configurations II and III correspond to avoided level crossings between two ($E_{01}, E_{10}$) and three ($E_{11}, E_{20}, E_{02}$) energy levels respectively, where the electrons' motion becomes correlated, that is they are entangled. 
+
+Both anharmonicity and detuning changes with the shape of our well.
+We create a voltage parameterization
+!bt
+\begin{equation}
+V(\lambda) = (1-\lambda)V_\mathrm{I} + \lambda V_\mathrm{III}
+\end{equation}
+!et
+
+!split
+===== Entanglement and more  =====
+
+FIGURE: [qcfigures/crossings-entropies-anharmonicities-1.png, width=800 frac=0.8]
+
+
+!split
+===== Legend to figure =====
+
+o (a) In this figure we have plotted the transition energy from the ground state to the labeled excited state as a function of the voltage parameter $\lambda$. The labeled states are the computational basis states when $\lambda = 0$.
+o (b) The von Neumann entropy of the five lowest excited states of the two-body Hamiltonian as a function of the configuration parameter $\lambda$. The ground state has zero entropy, or close to zero entropy. We have included the points for the double and triple degeneracy points. $\lambda_{II}$ and $\lambda_{III}$ in the figure. The von Neumann entropy is calculated using the binary logarithm.
+o (c) In this figure we have plotted the anharmonicites for the left well ($\alpha^L$) and the right well ($\alpha^R$) as a function of the well parameterization $\lambda$. We have also included the detuning $\Delta \omega = \omega^R - \omega^L$ between the two wells. We have marked configuration II at $\lambda_{II} \approx 0.554$ and configuration III at $\lambda_{III} = 1$.
+
+
+!split
+===== Particle densities and coefficients =====
+
+FIGURE: [qcfigures/configuration_I-1.png, width=600 frac=0.8]
+
+!split
+===== Potential wells, the one-body densities, and single-particle states =====
+
+FIGURE: [qcfigures/configuration_II_and_III-1.png, width=600 frac=1.0]
+
+!split
+===== Where we are now =====
+
+o Adding time-dependent studies of two electrons in two wells in one and two dimensions
+o Studies of the time-evolution of entangled states (now two electrons only)
+o Use theory to find optimal experimental setup
+o Expect two-electron system realized experimentally in approx $1$ year, great potential for studies of quantum simulations
+
+
+!split
+===== Plans =====
+
+o Add two and three-dimensions in order to simulate in  a more realistic way such many-body systems.
+o Develop time-dependent FCI code, useful up to approximately 10 particles with _effective_ (and effective Hilbert space) Hamiltonians in two and three dimensions
+o Develop codes for studies of entanglement as function of time
+o Do tomogrophy and extract density matrix and compare with experiment.
+o Study the feasibility of various setups for quantum simulations of specific Hamiltonians such as the Lipkin model
+o For larger many-body systems, study for example time-dependent CC theory
+
+
 
 
 !split
@@ -365,11 +640,6 @@ FIGURE: [figures/elgasnew.png, width=700 frac=0.9]
 * Coulomb interaction-driven entanglement of electrons on helium, PRX Quantum _5_, 030324 (2024), at URL:"https://journals.aps.org/prxquantum/abstract/10.1103/PRXQuantum.5.030324"
 * "Predicting solid state material platforms for quantum technologies, Hebnes et al, Nature Computational Materials, 2022":"https://www.nature.com/articles/s41524-022-00888-3" 
 !eblock
-
-
-
-
-
 
 
 

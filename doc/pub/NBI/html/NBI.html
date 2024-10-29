@@ -143,7 +143,7 @@ div.toc p,a {
  'sections': [('What is this talk about?', 2, None, 'what-is-this-talk-about'),
               ('People', 2, None, 'people'),
               ('People', 2, None, 'people'),
-              ('People', 2, None, 'people'),
+              ('Other places People', 2, None, 'other-places-people'),
               ('Education and advanced training',
                2,
                None,
@@ -198,6 +198,41 @@ div.toc p,a {
                None,
                'more-on-experimental-setup-ii'),
               ('Experimental set up', 2, None, 'experimental-set-up'),
+              ('Quantum dots and the Coulomb interaction',
+               2,
+               None,
+               'quantum-dots-and-the-coulomb-interaction'),
+              ('Electrons on helium is another qubit platform',
+               2,
+               None,
+               'electrons-on-helium-is-another-qubit-platform'),
+              ('Surface state electrons (SSE)',
+               2,
+               None,
+               'surface-state-electrons-sse'),
+              ('Calculational details', 2, None, 'calculational-details'),
+              ('Calculational details', 2, None, 'calculational-details'),
+              ('Calculational details', 2, None, 'calculational-details'),
+              ('Calculational details', 2, None, 'calculational-details'),
+              ('Calculational details', 2, None, 'calculational-details'),
+              ('Calculational details', 2, None, 'calculational-details'),
+              ('Calculational details', 2, None, 'calculational-details'),
+              ('Calculational details', 2, None, 'calculational-details'),
+              ('Calculational details', 2, None, 'calculational-details'),
+              ('Results and discussions', 2, None, 'results-and-discussions'),
+              ('Entanglement and more', 2, None, 'entanglement-and-more'),
+              ('Legend to figure', 2, None, 'legend-to-figure'),
+              ('Particle densities and coefficients',
+               2,
+               None,
+               'particle-densities-and-coefficients'),
+              ('Potential wells, the one-body densities, and single-particle '
+               'states',
+               2,
+               None,
+               'potential-wells-the-one-body-densities-and-single-particle-states'),
+              ('Where we are now', 2, None, 'where-we-are-now'),
+              ('Plans', 2, None, 'plans'),
               ('Many-body physics, Quantum Monte Carlo and deep learning',
                2,
                None,
@@ -267,7 +302,7 @@ MathJax.Hub.Config({
 <!-- institution(s) -->
 <br>
 <center>
-<h4>September 16, 2024</h4>
+<h4>October 29, 2024</h4>
 </center> <!-- date -->
 <br>
 
@@ -294,7 +329,7 @@ MathJax.Hub.Config({
 <b>Physics and Center for Materials Science@UiO</b>
 <p>
 <ol>
-<li> MHJ, Lasse Vines, Marianne Bathen Etzelm{\"u}ller, Andrej Kuznetsov, Ed Monakov, Justin Wells, Simon Cooils  and David Gongarra (experiment), Joakim Bergli (theory) and Johannes Skaar (theory)</li>
+<li> MHJ, Lasse Vines, Marianne Bathen Etzelm\"u ller, Andrej Kuznetsov, Ed Monakov, Justin Wells, Simon Cooils  and David Gongarra (experiment), Joakim Bergli (theory) and Johannes Skaar (theory)</li>
 <li> Subatomic Physics experiment: Heidi Sandaker, Antoine Camper  and Ann-Cecilie Larsen</li>
 <li> Many students and postdocs working on  theory and experiments (30+)</li>
 </ol>
@@ -304,7 +339,7 @@ MathJax.Hub.Config({
 <b>Math@UiO</b>
 <p>
 <ol>
-<li> Nadia Slavila Larsen, Makoto Yamashita, Alexander M{\"u}ller-Hermes, Sergiy Neshveyev plus many students</li>
+<li> Nadia Slavila Larsen, Makoto Yamashita, Alexander M\"u ller-Hermes, Sergiy Neshveyev plus many students</li>
 <li> Large activity on Quantum Information theory, Shannon theory, error correction theory and more</li>
 </ol>
 </div>
@@ -330,17 +365,17 @@ MathJax.Hub.Config({
 </ol>
 </div>
 
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="other-places-people">Other places People  </h2>
+
 <div class="alert alert-block alert-block alert-text-normal">
 <b>University of South-Eastern Norway@Kongsberg</b>
 <p>
 <ol>
-<li> Francesco Pietro Massel, Kjetil Bj&#248;rke et al. Research on entanglement, quantum measurements, quantum noise and more, see <a href="https://www.usn.no/research/our-research/technology/quantum-technology/" target="_blank"><tt>https://www.usn.no/research/our-research/technology/quantum-technology/</tt></a>.</li> 
+<li> Francesco Pietro Massel et al. Research on entanglement, quantum measurements, quantum noise and more, see <a href="https://www.usn.no/research/our-research/technology/quantum-technology/" target="_blank"><tt>https://www.usn.no/research/our-research/technology/quantum-technology/</tt></a>.</li> 
 </ol>
 </div>
-
-
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-<h2 id="people">People  </h2>
 
 <div class="alert alert-block alert-block alert-text-normal">
 <b>NTNU</b>
@@ -352,10 +387,10 @@ MathJax.Hub.Config({
 </div>
 
 <div class="alert alert-block alert-block alert-text-normal">
-<b>OsloMet and Simula lab</b>
+<b></b>
 <p>
 <ol>
-<li> See talks here by Shaukat Ali and S&#248;lve Selst&#248;</li>
+<li> OsloMet and Simula lab@Oslo</li>
 </ol>
 </div>
 
@@ -603,6 +638,353 @@ trapped electrons.
 <li> (c+d) The electron's energy in a  double-well electrostatic potential (solid line). Dashed and dot-dashed lines represent the harmonic approximations of left and right wells respectively.</li>
 </ol>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="quantum-dots-and-the-coulomb-interaction">Quantum dots and the Coulomb interaction </h2>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p>Coulomb interaction governed entanglement can be realized in
+the system of electrons on the surface of superfluid helium, where
+qubit states are formed by in-plane lateral motional or out-of plane
+Rydberg states. Trapped near the surface of liquid helium these states
+have different spatial charge configurations and the wavefunctions of
+different electrons do not overlap.
+</p>
+</div>
+
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p>This results in a strong exchange
+free Coulomb interaction which depends on the states of the
+electrons. The lack of disorder in the systems
+also leads to slow electron decoherence, which has attracted interest
+to the system as a candidate for quantum information
+processing.
+</p>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="electrons-on-helium-is-another-qubit-platform">Electrons on helium is another qubit platform </h2>
+
+<b>To our knowledge two qubit gates have never been discussed in a proper manner for these systems.</b>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p>The static Coulomb interaction arises from a virtual photon exchange
+ process between two charge particles according to quantum
+ electrodynamics. This results in a correlated motion of two charges
+ generating quantum entanglement. 
+</p>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="surface-state-electrons-sse">Surface state electrons (SSE) </h2>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p>Surface state electrons (SSE) 'floating' above liquid helium
+originates from quantization of electron's perpendicular to the
+surface motion in a trapping potential formed by attractive force from
+image charge and a large \( \sim \) 1 eV barrier at the liquid-vacuum
+interface. At low temperatures the SSE are trapped in the lowest
+Rydberg state for vertical motion some 11 nm above the helium surface,
+which is perfectly clean and has a permittivity close to that of
+vacuum.
+</p>
+</div>
+
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p>The weak interaction with rthe enviroment, which is mainly governed
+by interaction with quantized surface capillary waves (ripplons) and
+bulk phonons, ensures long coherence times - a vital ingredient for
+any qubit platform. 
+</p>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="calculational-details">Calculational details </h2>
+
+<p>Hamiltonian:</p>
+$$
+\begin{align}
+\hat{H} &=\frac{\hat{p}_1^2}{2} + \sum_{i = 1}^7 V_i\alpha_i[\hat{x}_1] + \frac{\hat{p}_2^2}{2} + \sum_{i = 1}^7 V_i\alpha_i[\hat{x}_2] + \frac{\kappa}{\sqrt{(\hat{x}_1-\hat{x}_2)^2 + a^2}}
+\label{_auto1}\\
+&= h[\hat{p}_1,\hat{x}_1] + h[\hat{p}_2,\hat{x}_2] + u[\hat{x}_1,\hat{x}_2]
+\label{_auto2}
+\end{align}
+$$
+
+
+<br/><br/>
+<center>
+<p><img src="qcfigures/well_basis.png" width="600" align="bottom"></p>
+</center>
+<br/><br/>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="calculational-details">Calculational details </h2>
+
+<p>Hamiltonian:</p>
+$$
+\begin{align}
+\hat{H} &= \frac{\hat{p}_1^2}{2} + v[\hat{x}_1] + \frac{\hat{p}_2^2}{2} + v[\hat{x}_2] + \frac{\kappa}{\sqrt{(\hat{x}_1-\hat{x}_2)^2 + a^2}}
+\label{_auto3}\\
+&= h[\hat{p}_1,\hat{x}_1] + h[\hat{p}_2,\hat{x}_2] + u[\hat{x}_1,\hat{x}_2]
+\label{_auto4}
+\end{align}
+$$
+
+
+<br/><br/>
+<center>
+<p><img src="qcfigures/wells.png" width="600" align="bottom"></p>
+</center>
+<br/><br/>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="calculational-details">Calculational details </h2>
+
+<p>Hamiltonian:</p>
+$$
+\begin{align}
+\hat{H} &= \frac{\hat{p}_1^2}{2} + v[\hat{x}_1] + \frac{\hat{p}_2^2}{2} + v[\hat{x}_2] + \frac{\kappa}{\sqrt{(\hat{x}_1-\hat{x}_2)^2 + a^2}} 
+\label{_auto5}\\
+&\equiv h[\hat{p}_1,\hat{x}_1] + h[\hat{p}_2,\hat{x}_2] + u[\hat{x}_1,\hat{x}_2]
+\label{_auto6}
+\end{align}
+$$
+
+<p>Energy states:</p>
+$$
+\begin{equation}
+\vert\Phi_k\rangle = \sum_{i < j} C_{ij, k}\frac{\vert \varphi_i \varphi_j\rangle - \vert \varphi_j \varphi_i\rangle}{\sqrt{2}},
+\label{_auto7}
+\end{equation}
+$$
+
+<p>(Slater basis)</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="calculational-details">Calculational details </h2>
+
+<p>Hamiltonian:</p>
+$$
+\begin{align}
+\hat{H} &= \frac{\hat{p}_1^2}{2} + v^L[\hat{x}_1] + \frac{\hat{p}_2^2}{2} + v^R[\hat{x}_2] + \frac{\kappa}{\sqrt{(\hat{x}_1-\hat{x}_2)^2 + a^2}} 
+\label{_auto8}\\
+&\equiv h^L[\hat{p}_1,\hat{x}_1] + h^R[\hat{p}_2,\hat{x}_2] + u[\hat{x}_1,\hat{x}_2]
+\label{_auto9}
+\end{align}
+$$
+
+<p>Energy states:</p>
+$$
+\begin{equation}
+\vert\Phi_k\rangle = \sum_{i} \sum_{j} C_{ij, k}\vert \varphi^L_i \varphi^R_j\rangle,
+\label{_auto10}
+\end{equation}
+$$
+
+<p>(product basis)</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="calculational-details">Calculational details </h2>
+
+<p>Energy states:</p>
+$$
+\begin{equation}
+\vert\Phi_k\rangle = \sum_{i} \sum_{j} C_{ij, k}\vert \varphi^L_i \varphi^R_j\rangle,
+\label{_auto11}
+\end{equation}
+$$
+
+<p>(product basis)</p>
+
+<br/><br/>
+<center>
+<p><img src="qcfigures/Hartree_states.png" width="700" align="bottom"></p>
+</center>
+<br/><br/>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="calculational-details">Calculational details </h2>
+
+<p>Hamiltonian:</p>
+$$
+\begin{align}
+\hat{H} &= \frac{\hat{p}_1^2}{2} + v^L[\hat{x}_1] + \frac{\hat{p}_2^2}{2} + v^R[\hat{x}_2] + \frac{\kappa}{\sqrt{(\hat{x}_1-\hat{x}_2)^2 + a^2}} 
+\label{_auto12}\\
+&\equiv h^L[\hat{p}_1,\hat{x}_1] + h^R[\hat{p}_2,\hat{x}_2] + u[\hat{x}_1,\hat{x}_2]
+\label{_auto13}
+\end{align}
+$$
+
+<p>Energy states:</p>
+$$
+\begin{equation}
+\vert\Phi_k\rangle = \sum_{i} \sum_{j} C_{ij, k}\vert \varphi^L_i \varphi^R_j\rangle,
+\label{_auto14}
+\end{equation}
+$$
+
+<p>(Hartree basis)</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="calculational-details">Calculational details </h2>
+
+<p>Hamiltonian:</p>
+$$
+\begin{align}
+\hat{H} &= \frac{\hat{p}_1^2}{2} + v^L[\hat{x}_1] + \frac{\hat{p}_2^2}{2} + v^R[\hat{x}_2] + \frac{\kappa}{\sqrt{(\hat{x}_1-\hat{x}_2)^2 + a^2}} 
+\label{_auto15}\\
+&\equiv h^L[\hat{p}_1,\hat{x}_1] + h^R[\hat{p}_2,\hat{x}_2] + u[\hat{x}_1,\hat{x}_2]
+\label{_auto16}
+\end{align}
+$$
+
+<p>Energy states:</p>
+$$
+\begin{equation}
+\vert\Phi_k\rangle = \sum_{i = 0}^{N^L} \sum_{j = 0}^{N^R} C_{ij, k}\vert \varphi^L_i \varphi^R_j\rangle,
+\label{_auto17}
+\end{equation}
+$$
+
+<p>(Hartree basis)</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="calculational-details">Calculational details </h2>
+
+<p>Energy states:</p>
+$$
+\begin{equation}
+\vert\Phi_k\rangle = \sum_{i = 0}^{N^L} \sum_{j = 0}^{N^R} C_{ij, k}\vert \varphi^L_i \varphi^R_j\rangle,
+\label{_auto18}
+\end{equation}
+$$
+
+<p>(Hartree basis)</p>
+
+<br/><br/>
+<center>
+<p><img src="qcfigures/Hartree_coefs.png" width="700" align="bottom"></p>
+</center>
+<br/><br/>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="calculational-details">Calculational details </h2>
+
+<p>Hamiltonian:</p>
+$$
+\begin{align}
+\hat{H} &= \frac{\hat{p}_1^2}{2} + v^L[\hat{x}_1] + \frac{\hat{p}_2^2}{2} + v^R[\hat{x}_2] + \frac{\kappa}{\sqrt{(\hat{x}_1-\hat{x}_2)^2 + a^2}} 
+\label{_auto19}\\
+&\equiv h^L[\hat{p}_1,\hat{x}_1] + h^R[\hat{p}_2,\hat{x}_2] + u[\hat{x}_1,\hat{x}_2]
+\label{_auto20}
+\end{align}
+$$
+
+<p>Energy states:</p>
+$$
+\begin{equation}
+\vert\Phi_k\rangle = \sum_{i = 0}^{N^L} \sum_{j = 0}^{N^R} C_{ij, k}\vert \varphi^L_i \varphi^R_j\rangle,
+\label{_auto21}
+\end{equation}
+$$
+
+<p>(Hartree basis)</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="results-and-discussions">Results and discussions </h2>
+<p>By adjusting the potential we can change the anharmonicities and detuning of the wells.</p>
+<ol>
+<li> What values of these give interesting interactions?</li>
+<li> Inspiration from superconducting qubits, see High-Contrast \( ZZ \) Interaction Using Superconducting Qubits with Opposite-Sign Anharmonicity, <a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.125.200503" target="_blank">Zhao et al Phys. Rev. Lett. 125, 200503</a></li>
+</ol>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<p>We search for well configurations corresponding to three different types of interaction between the two electrons.</p>
+
+<ol>
+<li> In configuration I we address both qubits independently and can thereby perform single-qubit state rotations and measurements.</li>
+<li> Configurations II and III correspond to avoided level crossings between two (\( E_{01}, E_{10} \)) and three (\( E_{11}, E_{20}, E_{02} \)) energy levels respectively, where the electrons' motion becomes correlated, that is they are entangled.</li> 
+</ol>
+<p>Both anharmonicity and detuning changes with the shape of our well.
+We create a voltage parameterization
+</p>
+$$
+\begin{equation}
+V(\lambda) = (1-\lambda)V_\mathrm{I} + \lambda V_\mathrm{III}
+\label{_auto22}
+\end{equation}
+$$
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="entanglement-and-more">Entanglement and more  </h2>
+
+<br/><br/>
+<center>
+<p><img src="qcfigures/crossings-entropies-anharmonicities-1.png" width="800" align="bottom"></p>
+</center>
+<br/><br/>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="legend-to-figure">Legend to figure </h2>
+
+<ol>
+<li> (a) In this figure we have plotted the transition energy from the ground state to the labeled excited state as a function of the voltage parameter \( \lambda \). The labeled states are the computational basis states when \( \lambda = 0 \).</li>
+<li> (b) The von Neumann entropy of the five lowest excited states of the two-body Hamiltonian as a function of the configuration parameter \( \lambda \). The ground state has zero entropy, or close to zero entropy. We have included the points for the double and triple degeneracy points. \( \lambda_{II} \) and \( \lambda_{III} \) in the figure. The von Neumann entropy is calculated using the binary logarithm.</li>
+<li> (c) In this figure we have plotted the anharmonicites for the left well (\( \alpha^L \)) and the right well (\( \alpha^R \)) as a function of the well parameterization \( \lambda \). We have also included the detuning \( \Delta \omega = \omega^R - \omega^L \) between the two wells. We have marked configuration II at \( \lambda_{II} \approx 0.554 \) and configuration III at \( \lambda_{III} = 1 \).</li>
+</ol>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="particle-densities-and-coefficients">Particle densities and coefficients </h2>
+
+<br/><br/>
+<center>
+<p><img src="qcfigures/configuration_I-1.png" width="600" align="bottom"></p>
+</center>
+<br/><br/>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="potential-wells-the-one-body-densities-and-single-particle-states">Potential wells, the one-body densities, and single-particle states </h2>
+
+<br/><br/>
+<center>
+<p><img src="qcfigures/configuration_II_and_III-1.png" width="600" align="bottom"></p>
+</center>
+<br/><br/>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="where-we-are-now">Where we are now </h2>
+
+<ol>
+<li> Adding time-dependent studies of two electrons in two wells in one and two dimensions</li>
+<li> Studies of the time-evolution of entangled states (now two electrons only)</li>
+<li> Use theory to find optimal experimental setup</li>
+<li> Expect two-electron system realized experimentally in approx \( 1 \) year, great potential for studies of quantum simulations</li>
+</ol>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="plans">Plans </h2>
+
+<ol>
+<li> Add two and three-dimensions in order to simulate in  a more realistic way such many-body systems.</li>
+<li> Develop time-dependent FCI code, useful up to approximately 10 particles with <b>effective</b> (and effective Hilbert space) Hamiltonians in two and three dimensions</li>
+<li> Develop codes for studies of entanglement as function of time</li>
+<li> Do tomogrophy and extract density matrix and compare with experiment.</li>
+<li> Study the feasibility of various setups for quantum simulations of specific Hamiltonians such as the Lipkin model</li>
+<li> For larger many-body systems, study for example time-dependent CC theory</li>
+</ol>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
 <h2 id="many-body-physics-quantum-monte-carlo-and-deep-learning">Many-body physics, Quantum Monte Carlo and deep learning </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
@@ -674,7 +1056,7 @@ and three-body spin-independent Jastrow functions
 $$
 \begin{align}
 |\Psi_V^J \rangle = \prod_{i < j < k} \Big( 1-\sum_{\text{cyc}} u(r_{ij}) u(r_{jk})\Big) \prod_{i < j} f(r_{ij}) | \Phi\rangle\,,
-\label{_auto1}
+\label{_auto23}
 \end{align}
 $$
 
