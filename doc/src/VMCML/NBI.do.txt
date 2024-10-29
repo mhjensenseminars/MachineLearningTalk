@@ -241,7 +241,7 @@ FIGURE: [qcfigures/Elhelium2.png, width=700 frac=1.3]
 !split
 ===== Experimental set up =====
 
-FIGURE: [qcfigures/figure1.png, width=600 frac=0.5]
+FIGURE: [qcfigures/figure1.png, width=600 frac=0.3]
 
 o (a) Schematic of the microdevice, where two electrons are trapped in a double-well potential created by electrodes 1-7. The read-out is provided by two superconducting resonators dispersively coupled to  electron's in-plane motional states.
 o (b) Coupling constants from each individual electrode beneath the helium layer.
@@ -382,7 +382,7 @@ Energy states:
 !et
 (product basis)
 
-FIGURE: [qcfigures/Hartree_states.png, width=700 frac=0.9]
+FIGURE: [qcfigures/Hartree_states.png, width=700 frac=0.7]
 
 
 !split
@@ -436,7 +436,7 @@ Energy states:
 !et
 (Hartree basis)
 
-FIGURE: [qcfigures/Hartree_coefs.png, width=700 frac=0.9]
+FIGURE: [qcfigures/Hartree_coefs.png, width=700 frac=0.6]
 
 
 !split
@@ -482,7 +482,7 @@ V(\lambda) = (1-\lambda)V_\mathrm{I} + \lambda V_\mathrm{III}
 !split
 ===== Entanglement and more  =====
 
-FIGURE: [qcfigures/crossings-entropies-anharmonicities-1.png, width=800 frac=0.8]
+FIGURE: [qcfigures/crossings-entropies-anharmonicities-1.png, width=800 frac=0.6]
 
 
 !split
@@ -496,7 +496,7 @@ o (c) In this figure we have plotted the anharmonicites for the left well ($\alp
 !split
 ===== Particle densities and coefficients =====
 
-FIGURE: [qcfigures/configuration_I-1.png, width=600 frac=0.8]
+FIGURE: [qcfigures/configuration_I-1.png, width=600 frac=0.6]
 
 !split
 ===== Potential wells, the one-body densities, and single-particle states =====
