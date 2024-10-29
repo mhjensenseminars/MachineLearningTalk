@@ -1,0 +1,667 @@
+<!--
+HTML file automatically generated from DocOnce source
+(https://github.com/doconce/doconce/)
+doconce format html NBI.do.txt --pygments_html_style=perldoc --html_style=solarized3 --html_links_in_new_window --html_output=NBI-solarized --no_mako
+-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="DocOnce: https://github.com/doconce/doconce/" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Quantum technologies and machine learning, research and education at the university of Oslo">
+<title>Quantum technologies and machine learning, research and education at the university of Oslo</title>
+<link href="https://cdn.rawgit.com/doconce/doconce/master/bundled/html_styles/style_solarized_box/css/solarized_light_code.css" rel="stylesheet" type="text/css" title="light"/>
+<script src="https://cdn.rawgit.com/doconce/doconce/master/bundled/html_styles/style_solarized_box/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<link href="https://thomasf.github.io/solarized-css/solarized-light.min.css" rel="stylesheet">
+<style type="text/css">
+h1 {color: #b58900;}  /* yellow */
+/* h1 {color: #cb4b16;}  orange */
+/* h1 {color: #d33682;}  magenta, the original choice of thomasf */
+code { padding: 0px; background-color: inherit; }
+pre {
+  border: 0pt solid #93a1a1;
+  box-shadow: none;
+}
+.alert-text-small   { font-size: 80%;  }
+.alert-text-large   { font-size: 130%; }
+.alert-text-normal  { font-size: 90%;  }
+.alert {
+  padding:8px 35px 8px 14px; margin-bottom:18px;
+  text-shadow:0 1px 0 rgba(255,255,255,0.5);
+  border:1px solid #93a1a1;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  color: #555;
+  background-color: #eee8d5;
+  background-position: 10px 5px;
+  background-repeat: no-repeat;
+  background-size: 38px;
+  padding-left: 55px;
+  width: 75%;
+ }
+.alert-block {padding-top:14px; padding-bottom:14px}
+.alert-block > p, .alert-block > ul {margin-bottom:1em}
+.alert li {margin-top: 1em}
+.alert-block p+p {margin-top:5px}
+.alert-notice { background-image: url(https://cdn.rawgit.com/doconce/doconce/master/bundled/html_images/small_yellow_notice.png); }
+.alert-summary  { background-image:url(https://cdn.rawgit.com/doconce/doconce/master/bundled/html_images/small_yellow_summary.png); }
+.alert-warning { background-image: url(https://cdn.rawgit.com/doconce/doconce/master/bundled/html_images/small_yellow_warning.png); }
+.alert-question {background-image:url(https://cdn.rawgit.com/doconce/doconce/master/bundled/html_images/small_yellow_question.png); }
+div { text-align: justify; text-justify: inter-word; }
+.tab {
+  padding-left: 1.5em;
+}
+div.toc p,a {
+  line-height: 1.3;
+  margin-top: 1.1;
+  margin-bottom: 1.1;
+}
+</style>
+</head>
+
+<!-- tocinfo
+{'highest level': 2,
+ 'sections': [('What is this talk about?', 2, None, 'what-is-this-talk-about'),
+              ('People', 2, None, 'people'),
+              ('People', 2, None, 'people'),
+              ('People', 2, None, 'people'),
+              ('Education and advanced training',
+               2,
+               None,
+               'education-and-advanced-training'),
+              ('Deliverable: Education and advanced training',
+               2,
+               None,
+               'deliverable-education-and-advanced-training'),
+              ('QAI-TALENT, Education and knowledge transfer through the '
+               'development of advanced educational programs',
+               2,
+               None,
+               'qai-talent-education-and-knowledge-transfer-through-the-development-of-advanced-educational-programs'),
+              ('Education, Quantum and AI/Machine Learning',
+               2,
+               None,
+               'education-quantum-and-ai-machine-learning'),
+              ('Courses and study programs',
+               2,
+               None,
+               'courses-and-study-programs'),
+              ('Content of courses we offer',
+               2,
+               None,
+               'content-of-courses-we-offer'),
+              ('Structure of courses', 2, None, 'structure-of-courses'),
+              ('QAI-TALENT: Education for a broader audience',
+               2,
+               None,
+               'qai-talent-education-for-a-broader-audience'),
+              ('Research directions, not exhaustive',
+               2,
+               None,
+               'research-directions-not-exhaustive'),
+              ('Machine learning research',
+               2,
+               None,
+               'machine-learning-research'),
+              ('Quantum computing and quantum machine learning, main '
+               'activities',
+               2,
+               None,
+               'quantum-computing-and-quantum-machine-learning-main-activities'),
+              ('Candidate systems', 2, None, 'candidate-systems'),
+              ('Quantum Engineering', 2, None, 'quantum-engineering'),
+              ('Electrons (quantum dots) on superfluid helium',
+               2,
+               None,
+               'electrons-quantum-dots-on-superfluid-helium'),
+              ('More on experimental setup II',
+               2,
+               None,
+               'more-on-experimental-setup-ii'),
+              ('Experimental set up', 2, None, 'experimental-set-up'),
+              ('Many-body physics, Quantum Monte Carlo and deep learning',
+               2,
+               None,
+               'many-body-physics-quantum-monte-carlo-and-deep-learning'),
+              ('Quantum Monte Carlo Motivation',
+               2,
+               None,
+               'quantum-monte-carlo-motivation'),
+              ('Quantum Monte Carlo Motivation',
+               2,
+               None,
+               'quantum-monte-carlo-motivation'),
+              ('Deep learning neural networks, "Variational Monte Carlo '
+               'calculations of $A\\le 4$ nuclei with an artificial '
+               'neural-network correlator ansatz by Adams et '
+               'al.":"https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.127.022502"',
+               2,
+               None,
+               'deep-learning-neural-networks-variational-monte-carlo-calculations-of-a-le-4-nuclei-with-an-artificial-neural-network-correlator-ansatz-by-adams-et-al-https-journals-aps-org-prl-abstract-10-1103-physrevlett-127-022502'),
+              ('"Dilute neutron star matter from neural-network quantum states '
+               'by Fore et al, Physical Review Research 5, 033062 '
+               '(2023)":"https://journals.aps.org/prresearch/pdf/10.1103/PhysRevResearch.5.033062" '
+               'at density $\\rho=0.04$ fm$^{-3}$',
+               2,
+               None,
+               'dilute-neutron-star-matter-from-neural-network-quantum-states-by-fore-et-al-physical-review-research-5-033062-2023-https-journals-aps-org-prresearch-pdf-10-1103-physrevresearch-5-033062-at-density-rho-0-04-fm-3'),
+              ('The electron gas in three dimensions with $N=14$ electrons '
+               '(Wigner-Seitz radius $r_s=2$ a.u.), "Gabriel Pescia, Jane Kim '
+               'et al. '
+               'arXiv.2305.07240,":"https://doi.org/10.48550/arXiv.2305.07240"',
+               2,
+               None,
+               'the-electron-gas-in-three-dimensions-with-n-14-electrons-wigner-seitz-radius-r-s-2-a-u-gabriel-pescia-jane-kim-et-al-arxiv-2305-07240-https-doi-org-10-48550-arxiv-2305-07240'),
+              ('Selected references', 2, None, 'selected-references'),
+              ('More selected references',
+               2,
+               None,
+               'more-selected-references')]}
+end of tocinfo -->
+
+<body>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+     equationNumbers: {  autoNumber: "AMS"  },
+     extensions: ["AMSmath.js", "AMSsymbols.js", "autobold.js", "color.js"]
+  }
+});
+</script>
+<script type="text/javascript" async
+ src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<!-- ------------------- main content ---------------------- -->
+<center>
+<h1>Quantum technologies and machine learning, research and education at the university of Oslo</h1>
+</center>  <!-- document title -->
+
+<!-- author(s): Morten Hjorth-Jensen, Center for Computing in Science Education and Department of Physics, UiO &amp; Department of Physics and Astronomy and Facility for Rare Isotope Beams, Michigan State University, USA -->
+<center>
+<b>Morten Hjorth-Jensen, Center for Computing in Science Education and Department of Physics, UiO &amp; Department of Physics and Astronomy and Facility for Rare Isotope Beams, Michigan State University, USA</b> 
+</center>
+<!-- institution(s) -->
+<br>
+<center>
+<h4>September 16, 2024</h4>
+</center> <!-- date -->
+<br>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="what-is-this-talk-about">What is this talk about? </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p>The main emphasis is to give you a short introduction to present research and educational initiatives on Quantum Computing, Machine Learning and Quantum Machine Learning at the university of Oslo and collaborators.  </p>
+</div>
+
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p>These slides and more at <a href="http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/QuantumMLUiO" target="_blank"><tt>http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/QuantumMLUiO</tt></a></p>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="people">People  </h2>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b>Physics and Center for Materials Science@UiO</b>
+<p>
+<ol>
+<li> MHJ, Lasse Vines, Marianne Bathen Etzelm{\"u}ller, Andrej Kuznetsov, Ed Monakov, Justin Wells, Simon Cooils  and David Gongarra (experiment), Joakim Bergli (theory) and Johannes Skaar (theory)</li>
+<li> Subatomic Physics experiment: Heidi Sandaker, Antoine Camper  and Ann-Cecilie Larsen</li>
+<li> Many students and postdocs working on  theory and experiments (30+)</li>
+</ol>
+</div>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b>Math@UiO</b>
+<p>
+<ol>
+<li> Nadia Slavila Larsen, Makoto Yamashita, Alexander M{\"u}ller-Hermes, Sergiy Neshveyev plus many students</li>
+<li> Large activity on Quantum Information theory, Shannon theory, error correction theory and more</li>
+</ol>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="people">People  </h2>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b>Chemistry and Hylleraas center @UiO and Hylleraas center@University of Troms{\"o}</b>
+<p>
+<ol>
+<li> Thomas B. Pedersen, David Balcells, Simen Kvaal, Simen Reine, Ainara Nova Flores</li>
+<li> Many students and postdocs working on  theory and links with experiments (20+)</li>
+</ol>
+</div>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b>SINTEF@Oslo</b>
+<p>
+<ol>
+<li> Franz Fuchs and Johannes Stasik, and the Gemini  center on Quantum Computing, see URL"https://www.quantumcomputing.no/"</li>
+</ol>
+</div>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b>University of South-Eastern Norway@Kongsberg</b>
+<p>
+<ol>
+<li> Francesco Pietro Massel, Kjetil Bj&#248;rke et al. Research on entanglement, quantum measurements, quantum noise and more, see <a href="https://www.usn.no/research/our-research/technology/quantum-technology/" target="_blank"><tt>https://www.usn.no/research/our-research/technology/quantum-technology/</tt></a>.</li> 
+</ol>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="people">People  </h2>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b>NTNU</b>
+<p>
+<ol>
+<li> Experimental activity on Nanoelectronics and Photonics at Department of Electronic Systems</li>
+<li> Excellent condensed matter theory group at the Department of Physics</li>
+</ol>
+</div>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b>OsloMet and Simula lab</b>
+<p>
+<ol>
+<li> See talks here by Shaukat Ali and S&#248;lve Selst&#248;</li>
+</ol>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="education-and-advanced-training">Education and advanced training </h2>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<ol>
+<li> Outreach and communication on quantum technologies and AI, explaining quantum technologies and AI to a broader audience</li>
+<li> Research on education in AI and QT. How are these topics best communicated and implemented in different enviroments, from  high school education to universities and to a broader audience, including external partners</li>
+<li> QAI-TALENT, Education and knowledge transfer through the development of advanced educational programs</li>
+</ol>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="deliverable-education-and-advanced-training">Deliverable: Education and advanced training </h2>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<ol>
+<li> An outreach program on quantum technologies and AI for a broader audience</li>
+<li> Develop an advanced educational and training program on QTs and AI for industry partners in  the public and private sectors.</li>
+</ol>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="qai-talent-education-and-knowledge-transfer-through-the-development-of-advanced-educational-programs">QAI-TALENT, Education and knowledge transfer through the development of advanced educational programs </h2>
+
+<p>The QAI-TALENT (\underline{T}raining and \underline{A}dvanced \underline{L}ectures in
+\underline{E}mergi\underline{N}g \underline{T}echnologies) aims at developing a consistent
+training and educational program at all levels in QTs and AI, which
+will facilitate the development of a workforce with the competences
+and knowledge to meet future technological challenges and
+developments. 
+</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="education-quantum-and-ai-machine-learning">Education, Quantum and AI/Machine Learning </h2>
+
+<p>At the university of Oslo we have now established several educational
+programs in AI and QTs and quantum science. These programs span the
+whole spectrum from beginners courses to advanced training and
+education tailored to the specific needs of the participants.
+</p>
+
+<p>Furthermore, through research done at the center for Computing in
+Science Education and the physics education research group at the
+department of physics of the university of Oslo, we have over the
+years developed knowledge and insights on how to teach central
+concepts in quantum science as well as developing computational
+literacy and understanding of central algorithms applied to scientific
+problems. 
+</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="courses-and-study-programs">Courses and study programs </h2>
+
+<ol>
+<li> <b>New study direction on Quantum technology</b> in Bachelor program Physics and Astronomy, starts Fall 2024. Three new courses:</li>
+<ul>
+  <li> FYS1400 Introduction to Quantum Technologies</li>
+  <li> FYS3405/4405 Quantum Materials</li>
+  <li> FYS3415/4415 Quantum Computing</li>
+</ul>
+<li> <b>Developed Master of Science program on Computational Science</b>, started fall  2018 and many students here work on quantum computing and machine learning</li>
+<li> Developed courses on machine learning, from basic to advanced ones</li>
+<li> Developed advanced course on quantum computing and quantum machine learning, MAT3420, MAT4430/9430, FYS5419/9419</li>
+<li> New study directions in Master of Science in Physics and Computational Science on Quantum technologies and more. Start fall 2025</li>
+</ol>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="content-of-courses-we-offer">Content of courses we offer </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<ol>
+<li> Quantum Information theory</li>
+<li> From Classical Information theory to Quantum Information theory</li>
+<li> Classical and Quantum Laboratory</li> 
+<li> Discipline-Based Quantum Mechanics</li> 
+<li> Quantum algorithms, computing, software and hardware</li>
+<li> Several  machine learning/AI courses, at all levels</li>
+</ol>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="structure-of-courses">Structure of courses </h2>
+
+<p>These courses address many central concepts, such as quantum
+mechanical superposition, entanglement, QT applications, and many
+different methods and algorithms for AI and machine learning, covering
+both supervised and unsupervised learning as well as central
+discriminative and generative deep learning methods. Programming is
+indispensable in all courses and course participants learn to
+study complicated problems which require knowledge and skills
+necessary for educating a modern workforce. Many of these courses
+focus also on teamwork, project management, and communication.
+</p>
+
+<p>These courses are all regular one-semester university courses,
+resulting in typically 10 ECTS credits each. The courses can be
+adapted to single students having full-time jobs. They run however
+through a whole semester with final evaluations either as projects,
+take-home exams or final written/oral exams as assessment form.
+</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="qai-talent-education-for-a-broader-audience">QAI-TALENT: Education for a broader audience </h2>
+
+<p>We have yearslong experience (with research based evidence on what works or not) in developing intensive training courses on ML/AI and QT.
+We  plan to develop an educational activity on quantum science and AI, \textbf{QAI TALENT}
+(TALENT=Training and Advanced Lectures in EmergiNg Technologies) offering
+</p>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<ol>
+<li> Intensive short courses on selected topics (which can lead to credits and certificates)</li>
+<li> Certificates of expertise with modules that can add up to one year of credits or more.</li>
+<li> Possibilities of adding up to a master specialization in quantum science/technologies and/or AI/ML</li>
+<li> Common educational projects and supervision of students</li>
+</ol>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="research-directions-not-exhaustive">Research directions, not exhaustive </h2>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<ol>
+<li> <b>Theory and experiments for quantum sensors</b>, from standard many-body theories, via machine learning to quantum computing. Close collaboration with Norwegian industry</li>
+<li> <b>Theory and experiments for quantum computing and quantum information theory</b></li>
+<li> <b>Fundamental studies (theory and experiment) of quantum mechanics</b></li>
+</ol>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="machine-learning-research">Machine learning research </h2>
+
+<ol>
+<li> Discriminative and generative deep learning applied to the physical sciences (catalysis, subatomic physics experiments quantum many-body theories and much more)</li> 
+<li> Solving complicated quantum mechanical many-body systems with deep learning, see references at the end</li>
+<li> Developing new machine learning algorithms <b>with applications to quantum computing as well</b>, see <a href="https://arxiv.org/abs/2401.11694" target="_blank"><tt>https://arxiv.org/abs/2401.11694</tt></a></li>
+<li> Predicting solid state material platforms for quantum technologies, Nature Computational Materials <a href="https://www.nature.com/articles/s41524-022-00888-3" target="_blank"><tt>https://www.nature.com/articles/s41524-022-00888-3</tt></a></li> 
+</ol>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="quantum-computing-and-quantum-machine-learning-main-activities">Quantum computing and quantum machine learning, main activities </h2>
+
+<b>How to use many-body theory to design quantum circuits (Quantum engineering)</b>
+<ol>
+<li> Many-body methods like F(ull)C(onfiguration)I(nteraction) theory, Coupled-Cluster theory and other  with</li>
+<ul>
+  <li> Adaptive basis sets</li> 
+  <li> Time dependence</li>
+  <li> Optimization of experimental parameters</li> 
+  <li> Feedback from experiment</li>
+</ul>
+<li> Finding optimal parameters for tuning of entanglement, see PRX Quantum <b>5</b>, 030324 (2024)</li>
+<li> Numerical experiments to mimick real systems</li>
+<li> Constructing quantum circuits to simulate specific systems</li>
+<li> Quantum machine learning to optimize quantum circuits, see <a href="https://arxiv.org/abs/2403.14406" target="_blank"><tt>https://arxiv.org/abs/2403.14406</tt></a></li>
+</ol>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="candidate-systems">Candidate systems  </h2>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<ol>
+<li> <b>Quantum dots, experiments</b> at UiO and else</li>
+<li> <b>Point Defects in semiconductors, experiments at UiO</b></li>
+<li> Recent article Coulomb interaction-driven entanglement of electrons on helium, PRX Quantum <b>5</b>, 030324 (2024), at <a href="https://journals.aps.org/prxquantum/abstract/10.1103/PRXQuantum.5.030324" target="_blank"><tt>https://journals.aps.org/prxquantum/abstract/10.1103/PRXQuantum.5.030324</tt></a></li>
+<li> Superconducting Josephon junctions</li>
+<li> Single photons</li>
+<li> <a href="https://journals.aps.org/rmp/pdf/10.1103/RevModPhys.93.025001" target="_blank">Trapped ions and atoms</a></li>
+<li> Nuclear Magnetic Resonance</li>
+<li> ...and more</li>
+</ol>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="quantum-engineering">Quantum Engineering </h2>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b>Quantum computing requirements</b>
+<p>
+<ol>
+<li> be scalable</li>
+<li> have qubits that can be entangled</li>
+<li> have reliable initializations protocols to a standard state</li>
+<li> have a set of universal quantum gates to control the quantum evolution</li>
+<li> have a coherence time much longer than the gate operation time</li>
+<li> have a reliable read-out mechanism for measuring the qubit states</li>
+<li> ...more</li>
+</ol>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="electrons-quantum-dots-on-superfluid-helium">Electrons (quantum dots) on superfluid helium </h2>
+
+<p>Electrons on <b>superfluid helium represent</b> (see <a href="https://www.youtube.com/watch?v=EuDuM-fe-lA&ab_channel=JoshuahHeath" target="_blank"><tt>https://www.youtube.com/watch?v=EuDuM-fe-lA&ab_channel=JoshuahHeath</tt></a>) a promising platform for investigating
+strongly-coupled qubits.
+</p>
+
+<p>A systematic investigation of the
+controlled generation of entanglement between two trapped electrons
+under the influence of coherent microwave driving pulses, taking into
+account the effects of the Coulomb interaction between electrons, may be of great interest for quantum information processing using
+trapped electrons.
+</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="more-on-experimental-setup-ii">More on experimental setup II </h2>
+
+<br/><br/>
+<center>
+<p><img src="qcfigures/Elhelium2.png" width="700" align="bottom"></p>
+</center>
+<br/><br/>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="experimental-set-up">Experimental set up </h2>
+
+<br/><br/>
+<center>
+<p><img src="qcfigures/figure1.png" width="600" align="bottom"></p>
+</center>
+<br/><br/>
+
+<ol>
+<li> (a) Schematic of the microdevice, where two electrons are trapped in a double-well potential created by electrodes 1-7. The read-out is provided by two superconducting resonators dispersively coupled to  electron's in-plane motional states.</li>
+<li> (b) Coupling constants from each individual electrode beneath the helium layer.</li>
+<li> (c+d) The electron's energy in a  double-well electrostatic potential (solid line). Dashed and dot-dashed lines represent the harmonic approximations of left and right wells respectively.</li>
+</ol>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="many-body-physics-quantum-monte-carlo-and-deep-learning">Many-body physics, Quantum Monte Carlo and deep learning </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p>Given a hamiltonian \( H \) and a trial wave function \( \Psi_T \), the variational principle states that the expectation value of \( \langle H \rangle \), defined through </p>
+$$
+   \langle E \rangle =
+   \frac{\int d\boldsymbol{R}\Psi^{\ast}_T(\boldsymbol{R})H(\boldsymbol{R})\Psi_T(\boldsymbol{R})}
+        {\int d\boldsymbol{R}\Psi^{\ast}_T(\boldsymbol{R})\Psi_T(\boldsymbol{R})},
+$$
+
+<p>is an upper bound to the ground state energy \( E_0 \) of the hamiltonian \( H \), that is </p>
+$$
+    E_0 \le \langle E \rangle.
+$$
+
+<p>In general, the integrals involved in the calculation of various  expectation values  are multi-dimensional ones. Traditional integration methods such as the Gauss-Legendre will not be adequate for say the  computation of the energy of a many-body system.  <b>Basic philosophy: Let a neural network find the optimal wave function</b></p>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="quantum-monte-carlo-motivation">Quantum Monte Carlo Motivation </h2>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b>Basic steps</b>
+<p>
+<p>Choose a trial wave function
+\( \psi_T(\boldsymbol{R}) \).
+</p>
+$$
+   P(\boldsymbol{R},\boldsymbol{\alpha})= \frac{\left|\psi_T(\boldsymbol{R},\boldsymbol{\alpha})\right|^2}{\int \left|\psi_T(\boldsymbol{R},\boldsymbol{\alpha})\right|^2d\boldsymbol{R}}.
+$$
+
+<p>This is our model, or likelihood/probability distribution function  (PDF). It depends on some variational parameters \( \boldsymbol{\alpha} \).
+The approximation to the expectation value of the Hamiltonian is now 
+</p>
+$$
+   \langle E[\boldsymbol{\alpha}] \rangle = 
+   \frac{\int d\boldsymbol{R}\Psi^{\ast}_T(\boldsymbol{R},\boldsymbol{\alpha})H(\boldsymbol{R})\Psi_T(\boldsymbol{R},\boldsymbol{\alpha})}
+        {\int d\boldsymbol{R}\Psi^{\ast}_T(\boldsymbol{R},\boldsymbol{\alpha})\Psi_T(\boldsymbol{R},\boldsymbol{\alpha})}.
+$$
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="quantum-monte-carlo-motivation">Quantum Monte Carlo Motivation </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b>Define a new quantity</b>
+<p>
+$$
+   E_L(\boldsymbol{R},\boldsymbol{\alpha})=\frac{1}{\psi_T(\boldsymbol{R},\boldsymbol{\alpha})}H\psi_T(\boldsymbol{R},\boldsymbol{\alpha}),
+$$
+
+<p>called the local energy, which, together with our trial PDF yields</p>
+$$
+  \langle E[\boldsymbol{\alpha}] \rangle=\int P(\boldsymbol{R})E_L(\boldsymbol{R},\boldsymbol{\alpha}) d\boldsymbol{R}\approx \frac{1}{N}\sum_{i=1}^NE_L(\boldsymbol{R_i},\boldsymbol{\alpha})
+$$
+
+<p>with \( N \) being the number of Monte Carlo samples.</p>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="deep-learning-neural-networks-variational-monte-carlo-calculations-of-a-le-4-nuclei-with-an-artificial-neural-network-correlator-ansatz-by-adams-et-al-https-journals-aps-org-prl-abstract-10-1103-physrevlett-127-022502">Deep learning neural networks, <a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.127.022502" target="_blank">Variational Monte Carlo calculations of \( A\le 4 \) nuclei with an artificial neural-network correlator ansatz by Adams et al.</a> </h2>
+
+<p>An appealing feature of the neural network ansatz is that it is more general than the more conventional product of two-
+and three-body spin-independent Jastrow functions
+</p>
+$$
+\begin{align}
+|\Psi_V^J \rangle = \prod_{i < j < k} \Big( 1-\sum_{\text{cyc}} u(r_{ij}) u(r_{jk})\Big) \prod_{i < j} f(r_{ij}) | \Phi\rangle\,,
+\label{_auto1}
+\end{align}
+$$
+
+<p>which is commonly used for nuclear Hamiltonians that do not contain tensor and spin-orbit terms.
+The above function is replaced by a deep  Neural Network. 
+</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="dilute-neutron-star-matter-from-neural-network-quantum-states-by-fore-et-al-physical-review-research-5-033062-2023-https-journals-aps-org-prresearch-pdf-10-1103-physrevresearch-5-033062-at-density-rho-0-04-fm-3"><a href="https://journals.aps.org/prresearch/pdf/10.1103/PhysRevResearch.5.033062" target="_blank">Dilute neutron star matter from neural-network quantum states by Fore et al, Physical Review Research 5, 033062 (2023)</a> at density \( \rho=0.04 \) fm$^{-3}$ </h2>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<br/><br/>
+<center>
+<p><img src="figures/nmatter.png" width="700" align="bottom"></p>
+</center>
+<br/><br/>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="the-electron-gas-in-three-dimensions-with-n-14-electrons-wigner-seitz-radius-r-s-2-a-u-gabriel-pescia-jane-kim-et-al-arxiv-2305-07240-https-doi-org-10-48550-arxiv-2305-07240">The electron gas in three dimensions with \( N=14 \) electrons (Wigner-Seitz radius \( r_s=2 \) a.u.), <a href="https://doi.org/10.48550/arXiv.2305.07240" target="_blank">Gabriel Pescia, Jane Kim et al. arXiv.2305.07240,</a> </h2>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<br/><br/>
+<center>
+<p><img src="figures/elgasnew.png" width="700" align="bottom"></p>
+</center>
+<br/><br/>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="selected-references">Selected references </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<ul>
+<li> <a href="https://journals.aps.org/rmp/abstract/10.1103/RevModPhys.94.031003" target="_blank">Artificial Intelligence and Machine Learning in Nuclear Physics, Amber Boehnlein et al., Reviews Modern of Physics 94, 031003 (2022)</a></li> 
+<li> <a href="https://journals.aps.org/prresearch/pdf/10.1103/PhysRevResearch.5.033062" target="_blank">Dilute neutron star matter from neural-network quantum states by Fore et al, Physical Review Research 5, 033062 (2023)</a></li>
+<li> <a href="https://doi.org/10.48550/arXiv.2305.08831" target="_blank">Neural-network quantum states for ultra-cold Fermi gases, Jane Kim et al, Nature Physics Communication</a></li>
+<li> <a href="https://doi.org/10.48550/arXiv.2305.07240" target="_blank">Message-Passing Neural Quantum States for the Homogeneous Electron Gas, Gabriel Pescia, Jane Kim et al. Physical Review B (2024),</a></li>
+<li> <a href="https://doi.org/10.3389/fphy.2023.1061580" target="_blank">Efficient solutions of fermionic systems using artificial neural networks, Nordhagen et al, Frontiers in Physics 11, 2023</a></li>
+</ul>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="more-selected-references">More selected references </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<ul>
+<li> <a href="https://www.sciencedirect.com/science/article/abs/pii/S0168900221004460?via%3Dihub" target="_blank">Unsupervised learning for identifying events in active target experiments, R. Solli et al, Nuclear Instruments and Methods Physics A</a></li>
+<li> Coulomb interaction-driven entanglement of electrons on helium, PRX Quantum <b>5</b>, 030324 (2024), at <a href="https://journals.aps.org/prxquantum/abstract/10.1103/PRXQuantum.5.030324" target="_blank"><tt>https://journals.aps.org/prxquantum/abstract/10.1103/PRXQuantum.5.030324</tt></a></li>
+<li> <a href="https://www.nature.com/articles/s41524-022-00888-3" target="_blank">Predicting solid state material platforms for quantum technologies, Hebnes et al, Nature Computational Materials, 2022</a></li> 
+</ul>
+</div>
+
+
+<!-- ------------------- end of main content --------------- -->
+</body>
+</html>
+
