@@ -1,0 +1,267 @@
+<!--
+HTML file automatically generated from DocOnce source
+(https://github.com/doconce/doconce/)
+doconce format html FPD.do.txt --html_style=bootstrap --pygments_html_style=default --html_admon=bootstrap_panel --html_output=FPD-bs --no_mako
+-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="DocOnce: https://github.com/doconce/doconce/" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Kvanteteknologi og kunstig intelligens">
+<title>Kvanteteknologi og kunstig intelligens</title>
+<!-- Bootstrap style: bootstrap -->
+<!-- doconce format html FPD.do.txt --html_style=bootstrap --pygments_html_style=default --html_admon=bootstrap_panel --html_output=FPD-bs --no_mako -->
+<link href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+<!-- not necessary
+<link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+-->
+<style type="text/css">
+/* Add scrollbar to dropdown menus in bootstrap navigation bar */
+.dropdown-menu {
+   height: auto;
+   max-height: 400px;
+   overflow-x: hidden;
+}
+/* Adds an invisible element before each target to offset for the navigation
+   bar */
+.anchor::before {
+  content:"";
+  display:block;
+  height:50px;      /* fixed header height for style bootstrap */
+  margin:-50px 0 0; /* negative fixed header height */
+}
+</style>
+</head>
+
+<!-- tocinfo
+{'highest level': 2,
+ 'sections': [('Kort oppsumering', 2, None, 'kort-oppsumering'),
+              ('AI/ML and some statements you may have heard (and what do they '
+               'mean?)',
+               2,
+               None,
+               'ai-ml-and-some-statements-you-may-have-heard-and-what-do-they-mean'),
+              ('Curse of dimensionality', 2, None, 'curse-of-dimensionality'),
+              ('Neural network quantum states',
+               2,
+               None,
+               'neural-network-quantum-states'),
+              ('Machine learning. A simple perspective on the interface '
+               'between ML and Physics',
+               2,
+               None,
+               'machine-learning-a-simple-perspective-on-the-interface-between-ml-and-physics'),
+              ('Types of machine learning',
+               2,
+               None,
+               'types-of-machine-learning'),
+              ('Main categories', 2, None, 'main-categories'),
+              ('The plethora  of machine learning algorithms/methods',
+               2,
+               None,
+               'the-plethora-of-machine-learning-algorithms-methods'),
+              ('Example of discriminative modeling, "taken from Generative '
+               'Deep Learning by David '
+               'Foster":"https://www.oreilly.com/library/view/generative-deep-learning/9781098134174/ch01.html"',
+               2,
+               None,
+               'example-of-discriminative-modeling-taken-from-generative-deep-learning-by-david-foster-https-www-oreilly-com-library-view-generative-deep-learning-9781098134174-ch01-html'),
+              ('Example of generative modeling, "taken from Generative Deep '
+               'Learning by David '
+               'Foster":"https://www.oreilly.com/library/view/generative-deep-learning/9781098134174/ch01.html"',
+               2,
+               None,
+               'example-of-generative-modeling-taken-from-generative-deep-learning-by-david-foster-https-www-oreilly-com-library-view-generative-deep-learning-9781098134174-ch01-html'),
+              ('Taxonomy of generative deep learning, "taken from Generative '
+               'Deep Learning by David '
+               'Foster":"https://www.oreilly.com/library/view/generative-deep-learning/9781098134174/ch01.html"',
+               2,
+               None,
+               'taxonomy-of-generative-deep-learning-taken-from-generative-deep-learning-by-david-foster-https-www-oreilly-com-library-view-generative-deep-learning-9781098134174-ch01-html'),
+              ('Good books with hands-on material and codes',
+               2,
+               None,
+               'good-books-with-hands-on-material-and-codes'),
+              ('More references', 2, None, 'more-references'),
+              ('What are the basic Machine Learning ingredients?',
+               2,
+               None,
+               'what-are-the-basic-machine-learning-ingredients'),
+              ('Low-level machine learning, the family of ordinary least '
+               'squares methods',
+               2,
+               None,
+               'low-level-machine-learning-the-family-of-ordinary-least-squares-methods'),
+              ('Setting up the equations', 2, None, 'setting-up-the-equations'),
+              ('The objective/cost/loss function',
+               2,
+               None,
+               'the-objective-cost-loss-function'),
+              ('Training solution', 2, None, 'training-solution'),
+              ('Selected references', 2, None, 'selected-references'),
+              ('Scientific Machine Learning',
+               2,
+               None,
+               'scientific-machine-learning'),
+              ('ML for detectors', 2, None, 'ml-for-detectors'),
+              ('Physics driven Machine Learning',
+               2,
+               None,
+               'physics-driven-machine-learning'),
+              ('Argon-46 by Solli et al., NIMA 1010, 165461 (2021)',
+               2,
+               None,
+               'argon-46-by-solli-et-al-nima-1010-165461-2021'),
+              ('Neutron star structure', 2, None, 'neutron-star-structure'),
+              ('"Dilute neutron star matter from neural-network quantum states '
+               'by Fore et al, Physical Review Research 5, 033062 '
+               '(2023)":"https://journals.aps.org/prresearch/pdf/10.1103/PhysRevResearch.5.033062" '
+               'at density $\\rho=0.04$ fm$^{-3}$',
+               2,
+               None,
+               'dilute-neutron-star-matter-from-neural-network-quantum-states-by-fore-et-al-physical-review-research-5-033062-2023-https-journals-aps-org-prresearch-pdf-10-1103-physrevresearch-5-033062-at-density-rho-0-04-fm-3'),
+              ('Education and advanced training',
+               2,
+               None,
+               'education-and-advanced-training'),
+              ('Education, Quantum and AI/Machine Learning',
+               2,
+               None,
+               'education-quantum-and-ai-machine-learning'),
+              ('Courses and study programs',
+               2,
+               None,
+               'courses-and-study-programs'),
+              ('Content of courses we offer',
+               2,
+               None,
+               'content-of-courses-we-offer'),
+              ('QAI-TALENT: Education for a broader audience',
+               2,
+               None,
+               'qai-talent-education-for-a-broader-audience'),
+              ('Research directions, not exhaustive',
+               2,
+               None,
+               'research-directions-not-exhaustive')]}
+end of tocinfo -->
+
+<body>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+     equationNumbers: {  autoNumber: "none"  },
+     extensions: ["AMSmath.js", "AMSsymbols.js", "autobold.js", "color.js"]
+  }
+});
+</script>
+<script type="text/javascript" async
+ src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<!-- Bootstrap navigation bar -->
+<div class="navbar navbar-default navbar-fixed-top">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="FPD-bs.html">Kvanteteknologi og kunstig intelligens</a>
+  </div>
+  <div class="navbar-collapse collapse navbar-responsive-collapse">
+    <ul class="nav navbar-nav navbar-right">
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Contents <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+     <!-- navigation toc: --> <li><a href="._FPD-bs001.html#kort-oppsumering" style="font-size: 80%;">Kort oppsumering</a></li>
+     <!-- navigation toc: --> <li><a href="._FPD-bs002.html#ai-ml-and-some-statements-you-may-have-heard-and-what-do-they-mean" style="font-size: 80%;">AI/ML and some statements you may have heard (and what do they mean?)</a></li>
+     <!-- navigation toc: --> <li><a href="._FPD-bs003.html#curse-of-dimensionality" style="font-size: 80%;">Curse of dimensionality</a></li>
+     <!-- navigation toc: --> <li><a href="._FPD-bs004.html#neural-network-quantum-states" style="font-size: 80%;">Neural network quantum states</a></li>
+     <!-- navigation toc: --> <li><a href="#machine-learning-a-simple-perspective-on-the-interface-between-ml-and-physics" style="font-size: 80%;">Machine learning. A simple perspective on the interface between ML and Physics</a></li>
+     <!-- navigation toc: --> <li><a href="._FPD-bs006.html#types-of-machine-learning" style="font-size: 80%;">Types of machine learning</a></li>
+     <!-- navigation toc: --> <li><a href="._FPD-bs007.html#main-categories" style="font-size: 80%;">Main categories</a></li>
+     <!-- navigation toc: --> <li><a href="._FPD-bs008.html#the-plethora-of-machine-learning-algorithms-methods" style="font-size: 80%;">The plethora  of machine learning algorithms/methods</a></li>
+     <!-- navigation toc: --> <li><a href="._FPD-bs009.html#example-of-discriminative-modeling-taken-from-generative-deep-learning-by-david-foster-https-www-oreilly-com-library-view-generative-deep-learning-9781098134174-ch01-html" style="font-size: 80%;">Example of discriminative modeling, "taken from Generative Deep Learning by David Foster":"https://www.oreilly.com/library/view/generative-deep-learning/9781098134174/ch01.html"</a></li>
+     <!-- navigation toc: --> <li><a href="._FPD-bs010.html#example-of-generative-modeling-taken-from-generative-deep-learning-by-david-foster-https-www-oreilly-com-library-view-generative-deep-learning-9781098134174-ch01-html" style="font-size: 80%;">Example of generative modeling, "taken from Generative Deep Learning by David Foster":"https://www.oreilly.com/library/view/generative-deep-learning/9781098134174/ch01.html"</a></li>
+     <!-- navigation toc: --> <li><a href="._FPD-bs011.html#taxonomy-of-generative-deep-learning-taken-from-generative-deep-learning-by-david-foster-https-www-oreilly-com-library-view-generative-deep-learning-9781098134174-ch01-html" style="font-size: 80%;">Taxonomy of generative deep learning, "taken from Generative Deep Learning by David Foster":"https://www.oreilly.com/library/view/generative-deep-learning/9781098134174/ch01.html"</a></li>
+     <!-- navigation toc: --> <li><a href="._FPD-bs012.html#good-books-with-hands-on-material-and-codes" style="font-size: 80%;">Good books with hands-on material and codes</a></li>
+     <!-- navigation toc: --> <li><a href="._FPD-bs013.html#more-references" style="font-size: 80%;">More references</a></li>
+     <!-- navigation toc: --> <li><a href="._FPD-bs014.html#what-are-the-basic-machine-learning-ingredients" style="font-size: 80%;">What are the basic Machine Learning ingredients?</a></li>
+     <!-- navigation toc: --> <li><a href="._FPD-bs015.html#low-level-machine-learning-the-family-of-ordinary-least-squares-methods" style="font-size: 80%;">Low-level machine learning, the family of ordinary least squares methods</a></li>
+     <!-- navigation toc: --> <li><a href="._FPD-bs016.html#setting-up-the-equations" style="font-size: 80%;">Setting up the equations</a></li>
+     <!-- navigation toc: --> <li><a href="._FPD-bs017.html#the-objective-cost-loss-function" style="font-size: 80%;">The objective/cost/loss function</a></li>
+     <!-- navigation toc: --> <li><a href="._FPD-bs018.html#training-solution" style="font-size: 80%;">Training solution</a></li>
+     <!-- navigation toc: --> <li><a href="._FPD-bs019.html#selected-references" style="font-size: 80%;">Selected references</a></li>
+     <!-- navigation toc: --> <li><a href="._FPD-bs020.html#scientific-machine-learning" style="font-size: 80%;">Scientific Machine Learning</a></li>
+     <!-- navigation toc: --> <li><a href="._FPD-bs021.html#ml-for-detectors" style="font-size: 80%;">ML for detectors</a></li>
+     <!-- navigation toc: --> <li><a href="._FPD-bs022.html#physics-driven-machine-learning" style="font-size: 80%;">Physics driven Machine Learning</a></li>
+     <!-- navigation toc: --> <li><a href="._FPD-bs023.html#argon-46-by-solli-et-al-nima-1010-165461-2021" style="font-size: 80%;">Argon-46 by Solli et al., NIMA 1010, 165461 (2021)</a></li>
+     <!-- navigation toc: --> <li><a href="._FPD-bs024.html#neutron-star-structure" style="font-size: 80%;">Neutron star structure</a></li>
+     <!-- navigation toc: --> <li><a href="._FPD-bs025.html#dilute-neutron-star-matter-from-neural-network-quantum-states-by-fore-et-al-physical-review-research-5-033062-2023-https-journals-aps-org-prresearch-pdf-10-1103-physrevresearch-5-033062-at-density-rho-0-04-fm-3" style="font-size: 80%;">"Dilute neutron star matter from neural-network quantum states by Fore et al, Physical Review Research 5, 033062 (2023)":"https://journals.aps.org/prresearch/pdf/10.1103/PhysRevResearch.5.033062" at density \( \rho=0.04 \) fm$^{-3}$</a></li>
+     <!-- navigation toc: --> <li><a href="._FPD-bs026.html#education-and-advanced-training" style="font-size: 80%;">Education and advanced training</a></li>
+     <!-- navigation toc: --> <li><a href="._FPD-bs027.html#education-quantum-and-ai-machine-learning" style="font-size: 80%;">Education, Quantum and AI/Machine Learning</a></li>
+     <!-- navigation toc: --> <li><a href="._FPD-bs028.html#courses-and-study-programs" style="font-size: 80%;">Courses and study programs</a></li>
+     <!-- navigation toc: --> <li><a href="._FPD-bs029.html#content-of-courses-we-offer" style="font-size: 80%;">Content of courses we offer</a></li>
+     <!-- navigation toc: --> <li><a href="._FPD-bs030.html#qai-talent-education-for-a-broader-audience" style="font-size: 80%;">QAI-TALENT: Education for a broader audience</a></li>
+     <!-- navigation toc: --> <li><a href="._FPD-bs031.html#research-directions-not-exhaustive" style="font-size: 80%;">Research directions, not exhaustive</a></li>
+
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
+</div> <!-- end of navigation bar -->
+<div class="container">
+<p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p> <!-- add vertical space -->
+<a name="part0005"></a>
+<!-- !split -->
+<h2 id="machine-learning-a-simple-perspective-on-the-interface-between-ml-and-physics" class="anchor">Machine learning. A simple perspective on the interface between ML and Physics </h2>
+
+<br/><br/>
+<center>
+<p><img src="figures/mlimage.png" width="800" align="bottom"></p>
+</center>
+<br/><br/>
+
+<p>
+<!-- navigation buttons at the bottom of the page -->
+<ul class="pagination">
+<li><a href="._FPD-bs004.html">&laquo;</a></li>
+  <li><a href="._FPD-bs000.html">1</a></li>
+  <li><a href="._FPD-bs001.html">2</a></li>
+  <li><a href="._FPD-bs002.html">3</a></li>
+  <li><a href="._FPD-bs003.html">4</a></li>
+  <li><a href="._FPD-bs004.html">5</a></li>
+  <li class="active"><a href="._FPD-bs005.html">6</a></li>
+  <li><a href="._FPD-bs006.html">7</a></li>
+  <li><a href="._FPD-bs007.html">8</a></li>
+  <li><a href="._FPD-bs008.html">9</a></li>
+  <li><a href="._FPD-bs009.html">10</a></li>
+  <li><a href="._FPD-bs010.html">11</a></li>
+  <li><a href="._FPD-bs011.html">12</a></li>
+  <li><a href="._FPD-bs012.html">13</a></li>
+  <li><a href="._FPD-bs013.html">14</a></li>
+  <li><a href="._FPD-bs014.html">15</a></li>
+  <li><a href="">...</a></li>
+  <li><a href="._FPD-bs031.html">32</a></li>
+  <li><a href="._FPD-bs006.html">&raquo;</a></li>
+</ul>
+<!-- ------------------- end of main content --------------- -->
+</div>  <!-- end container -->
+<!-- include javascript, jQuery *first* -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<!-- Bootstrap footer
+<footer>
+<a href="https://..."><img width="250" align=right src="https://..."></a>
+</footer>
+-->
+</body>
+</html>
+

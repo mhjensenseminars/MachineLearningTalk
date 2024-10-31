@@ -1,0 +1,674 @@
+<!--
+HTML file automatically generated from DocOnce source
+(https://github.com/doconce/doconce/)
+doconce format html FPD.do.txt --pygments_html_style=perldoc --html_style=solarized3 --html_links_in_new_window --html_output=FPD-solarized --no_mako
+-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="DocOnce: https://github.com/doconce/doconce/" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Kvanteteknologi og kunstig intelligens">
+<title>Kvanteteknologi og kunstig intelligens</title>
+<link href="https://cdn.rawgit.com/doconce/doconce/master/bundled/html_styles/style_solarized_box/css/solarized_light_code.css" rel="stylesheet" type="text/css" title="light"/>
+<script src="https://cdn.rawgit.com/doconce/doconce/master/bundled/html_styles/style_solarized_box/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<link href="https://thomasf.github.io/solarized-css/solarized-light.min.css" rel="stylesheet">
+<style type="text/css">
+h1 {color: #b58900;}  /* yellow */
+/* h1 {color: #cb4b16;}  orange */
+/* h1 {color: #d33682;}  magenta, the original choice of thomasf */
+code { padding: 0px; background-color: inherit; }
+pre {
+  border: 0pt solid #93a1a1;
+  box-shadow: none;
+}
+.alert-text-small   { font-size: 80%;  }
+.alert-text-large   { font-size: 130%; }
+.alert-text-normal  { font-size: 90%;  }
+.alert {
+  padding:8px 35px 8px 14px; margin-bottom:18px;
+  text-shadow:0 1px 0 rgba(255,255,255,0.5);
+  border:1px solid #93a1a1;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  color: #555;
+  background-color: #eee8d5;
+  background-position: 10px 5px;
+  background-repeat: no-repeat;
+  background-size: 38px;
+  padding-left: 55px;
+  width: 75%;
+ }
+.alert-block {padding-top:14px; padding-bottom:14px}
+.alert-block > p, .alert-block > ul {margin-bottom:1em}
+.alert li {margin-top: 1em}
+.alert-block p+p {margin-top:5px}
+.alert-notice { background-image: url(https://cdn.rawgit.com/doconce/doconce/master/bundled/html_images/small_yellow_notice.png); }
+.alert-summary  { background-image:url(https://cdn.rawgit.com/doconce/doconce/master/bundled/html_images/small_yellow_summary.png); }
+.alert-warning { background-image: url(https://cdn.rawgit.com/doconce/doconce/master/bundled/html_images/small_yellow_warning.png); }
+.alert-question {background-image:url(https://cdn.rawgit.com/doconce/doconce/master/bundled/html_images/small_yellow_question.png); }
+div { text-align: justify; text-justify: inter-word; }
+.tab {
+  padding-left: 1.5em;
+}
+div.toc p,a {
+  line-height: 1.3;
+  margin-top: 1.1;
+  margin-bottom: 1.1;
+}
+</style>
+</head>
+
+<!-- tocinfo
+{'highest level': 2,
+ 'sections': [('Kort oppsumering', 2, None, 'kort-oppsumering'),
+              ('AI/ML and some statements you may have heard (and what do they '
+               'mean?)',
+               2,
+               None,
+               'ai-ml-and-some-statements-you-may-have-heard-and-what-do-they-mean'),
+              ('Curse of dimensionality', 2, None, 'curse-of-dimensionality'),
+              ('Neural network quantum states',
+               2,
+               None,
+               'neural-network-quantum-states'),
+              ('Machine learning. A simple perspective on the interface '
+               'between ML and Physics',
+               2,
+               None,
+               'machine-learning-a-simple-perspective-on-the-interface-between-ml-and-physics'),
+              ('Types of machine learning',
+               2,
+               None,
+               'types-of-machine-learning'),
+              ('Main categories', 2, None, 'main-categories'),
+              ('The plethora  of machine learning algorithms/methods',
+               2,
+               None,
+               'the-plethora-of-machine-learning-algorithms-methods'),
+              ('Example of discriminative modeling, "taken from Generative '
+               'Deep Learning by David '
+               'Foster":"https://www.oreilly.com/library/view/generative-deep-learning/9781098134174/ch01.html"',
+               2,
+               None,
+               'example-of-discriminative-modeling-taken-from-generative-deep-learning-by-david-foster-https-www-oreilly-com-library-view-generative-deep-learning-9781098134174-ch01-html'),
+              ('Example of generative modeling, "taken from Generative Deep '
+               'Learning by David '
+               'Foster":"https://www.oreilly.com/library/view/generative-deep-learning/9781098134174/ch01.html"',
+               2,
+               None,
+               'example-of-generative-modeling-taken-from-generative-deep-learning-by-david-foster-https-www-oreilly-com-library-view-generative-deep-learning-9781098134174-ch01-html'),
+              ('Taxonomy of generative deep learning, "taken from Generative '
+               'Deep Learning by David '
+               'Foster":"https://www.oreilly.com/library/view/generative-deep-learning/9781098134174/ch01.html"',
+               2,
+               None,
+               'taxonomy-of-generative-deep-learning-taken-from-generative-deep-learning-by-david-foster-https-www-oreilly-com-library-view-generative-deep-learning-9781098134174-ch01-html'),
+              ('Good books with hands-on material and codes',
+               2,
+               None,
+               'good-books-with-hands-on-material-and-codes'),
+              ('More references', 2, None, 'more-references'),
+              ('What are the basic Machine Learning ingredients?',
+               2,
+               None,
+               'what-are-the-basic-machine-learning-ingredients'),
+              ('Low-level machine learning, the family of ordinary least '
+               'squares methods',
+               2,
+               None,
+               'low-level-machine-learning-the-family-of-ordinary-least-squares-methods'),
+              ('Setting up the equations', 2, None, 'setting-up-the-equations'),
+              ('The objective/cost/loss function',
+               2,
+               None,
+               'the-objective-cost-loss-function'),
+              ('Training solution', 2, None, 'training-solution'),
+              ('Selected references', 2, None, 'selected-references'),
+              ('Scientific Machine Learning',
+               2,
+               None,
+               'scientific-machine-learning'),
+              ('ML for detectors', 2, None, 'ml-for-detectors'),
+              ('Physics driven Machine Learning',
+               2,
+               None,
+               'physics-driven-machine-learning'),
+              ('Argon-46 by Solli et al., NIMA 1010, 165461 (2021)',
+               2,
+               None,
+               'argon-46-by-solli-et-al-nima-1010-165461-2021'),
+              ('Neutron star structure', 2, None, 'neutron-star-structure'),
+              ('"Dilute neutron star matter from neural-network quantum states '
+               'by Fore et al, Physical Review Research 5, 033062 '
+               '(2023)":"https://journals.aps.org/prresearch/pdf/10.1103/PhysRevResearch.5.033062" '
+               'at density $\\rho=0.04$ fm$^{-3}$',
+               2,
+               None,
+               'dilute-neutron-star-matter-from-neural-network-quantum-states-by-fore-et-al-physical-review-research-5-033062-2023-https-journals-aps-org-prresearch-pdf-10-1103-physrevresearch-5-033062-at-density-rho-0-04-fm-3'),
+              ('Education and advanced training',
+               2,
+               None,
+               'education-and-advanced-training'),
+              ('Education, Quantum and AI/Machine Learning',
+               2,
+               None,
+               'education-quantum-and-ai-machine-learning'),
+              ('Courses and study programs',
+               2,
+               None,
+               'courses-and-study-programs'),
+              ('Content of courses we offer',
+               2,
+               None,
+               'content-of-courses-we-offer'),
+              ('QAI-TALENT: Education for a broader audience',
+               2,
+               None,
+               'qai-talent-education-for-a-broader-audience'),
+              ('Research directions, not exhaustive',
+               2,
+               None,
+               'research-directions-not-exhaustive')]}
+end of tocinfo -->
+
+<body>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+     equationNumbers: {  autoNumber: "AMS"  },
+     extensions: ["AMSmath.js", "AMSsymbols.js", "autobold.js", "color.js"]
+  }
+});
+</script>
+<script type="text/javascript" async
+ src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<!-- ------------------- main content ---------------------- -->
+<center>
+<h1>Kvanteteknologi og kunstig intelligens</h1>
+</center>  <!-- document title -->
+
+<!-- author(s): Morten Hjorth-Jensen -->
+<center>
+<b>Morten Hjorth-Jensen</b> 
+</center>
+<!-- institution -->
+<center>
+<b>Department of Physics and Center for Computing in Science Education, University of Oslo, Norway</b>
+</center>
+<br>
+<center>
+<h4>Faglig pedagogisk dag, 31 2024</h4>
+</center> <!-- date -->
+<br>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="kort-oppsumering">Kort oppsumering </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p>Kvanteteknologi og kunstig intelligens er teknologier som vil kunne
+revolusjonere m&#229;ten vi jobber og lever p&#229; og er forventa &#229; kunne gi
+store fordeler for vitenskapelig og teknologisk utvikling, og vil
+sannsynligvis p&#229;virke store og/eller alle deler av framtidas samfunn.
+Foredraget her vil ta for seg hvordan disse teknologiene vil p&#229;virke
+naturfaglig og teknologisk forskning og undervisning, og hvorfor det
+er s&#229; viktig &#229; forst&#229; mulighetene og begrensningene.
+</p>
+</div>
+
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p>Lysark finner du her  <a href="https://github.com/mhjensenseminars/MachineLearningTalk/tree/master/doc/pub/FPD" target="_blank"><tt>https://github.com/mhjensenseminars/MachineLearningTalk/tree/master/doc/pub/FPD</tt></a></p>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="ai-ml-and-some-statements-you-may-have-heard-and-what-do-they-mean">AI/ML and some statements you may have heard (and what do they mean?)  </h2>
+
+<ol>
+<li> Fei-Fei Li on ImageNet: <b>map out the entire world of objects</b> (<a href="https://cacm.acm.org/news/219702-the-data-that-transformed-ai-research-and-possibly-the-world/fulltext" target="_blank">The data that transformed AI research</a>)</li>
+<li> Russell and Norvig in their popular textbook: <b>relevant to any intellectual task; it is truly a universal field</b> (<a href="http://aima.cs.berkeley.edu/" target="_blank">Artificial Intelligence, A modern approach</a>)</li>
+<li> Woody Bledsoe puts it more bluntly: <b>in the long run, AI is the only science</b> (quoted in Pamilla McCorduck, <a href="https://www.pamelamccorduck.com/machines-who-think" target="_blank">Machines who think</a>)</li>
+</ol>
+<p>If you wish to have a critical read on AI/ML from a societal point of view, see <a href="https://www.katecrawford.net/" target="_blank">Kate Crawford's recent text Atlas of AI</a>.</p>
+
+<b>Here: with AI/ML we intend a collection of machine learning methods with an emphasis on statistical learning and data analysis</b>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="curse-of-dimensionality">Curse of dimensionality  </h2>
+
+<br/><br/>
+<center>
+<p><img src="figures/mbpfig2.png" width="900" align="bottom"></p>
+</center>
+<br/><br/>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="neural-network-quantum-states">Neural network quantum states  </h2>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b>Neural networks compactly represent complex high-dimensional functions</b>
+<p>
+<p>Most quantum states of interest have distinctive features and intrinsic structures</p>
+<br/><br/>
+<center>
+<p><img src="figures/mbpfig3.png" width="900" align="bottom"></p>
+</center>
+<br/><br/>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="machine-learning-a-simple-perspective-on-the-interface-between-ml-and-physics">Machine learning. A simple perspective on the interface between ML and Physics </h2>
+
+<br/><br/>
+<center>
+<p><img src="figures/mlimage.png" width="800" align="bottom"></p>
+</center>
+<br/><br/>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="types-of-machine-learning">Types of machine learning </h2>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p>The approaches to machine learning are many, but are often split into two main categories. 
+In <em>supervised learning</em> we know the answer to a problem,
+and let the computer deduce the logic behind it. On the other hand, <em>unsupervised learning</em>
+is a method for finding patterns and relationship in data sets without any prior knowledge of the system.
+</p>
+
+<p>An important  third category is  <em>reinforcement learning</em>. This is a paradigm 
+of learning inspired by behavioural psychology, where learning is achieved by trial-and-error, 
+solely from rewards and punishment.
+</p>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="main-categories">Main categories </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p>Another way to categorize machine learning tasks is to consider the desired output of a system.
+Some of the most common tasks are:
+</p>
+
+<ul>
+  <li> Classification: Outputs are divided into two or more classes. The goal is to   produce a model that assigns inputs into one of these classes. An example is to identify  digits based on pictures of hand-written ones. Classification is typically supervised learning.</li>
+  <li> Regression: Finding a functional relationship between an input data set and a reference data set.   The goal is to construct a function that maps input data to continuous output values.</li>
+  <li> Clustering: Data are divided into groups with certain common traits, without knowing the different groups beforehand.  It is thus a form of unsupervised learning.</li>
+</ul>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="the-plethora-of-machine-learning-algorithms-methods">The plethora  of machine learning algorithms/methods </h2>
+
+<ol>
+<li> Deep learning: Neural Networks (NN), Convolutional NN, Recurrent NN, Boltzmann machines, autoencoders and variational autoencoders  and generative adversarial networks, stable diffusion and many more generative models</li>
+<li> Bayesian statistics and Bayesian Machine Learning, Bayesian experimental design, Bayesian Regression models, Bayesian neural networks, Gaussian processes and much more</li>
+<li> Dimensionality reduction (Principal component analysis), Clustering Methods and more</li>
+<li> Ensemble Methods, Random forests, bagging and voting methods, gradient boosting approaches</li> 
+<li> Linear and logistic regression, Kernel methods, support vector machines and more</li>
+<li> Reinforcement Learning; Transfer Learning and more</li> 
+</ol>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="example-of-discriminative-modeling-taken-from-generative-deep-learning-by-david-foster-https-www-oreilly-com-library-view-generative-deep-learning-9781098134174-ch01-html">Example of discriminative modeling, <a href="https://www.oreilly.com/library/view/generative-deep-learning/9781098134174/ch01.html" target="_blank">taken from Generative Deep Learning by David Foster</a>  </h2>
+
+<br/><br/>
+<center>
+<p><img src="figures/standarddeeplearning.png" width="900" align="bottom"></p>
+</center>
+<br/><br/>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="example-of-generative-modeling-taken-from-generative-deep-learning-by-david-foster-https-www-oreilly-com-library-view-generative-deep-learning-9781098134174-ch01-html">Example of generative modeling, <a href="https://www.oreilly.com/library/view/generative-deep-learning/9781098134174/ch01.html" target="_blank">taken from Generative Deep Learning by David Foster</a>  </h2>
+
+<br/><br/>
+<center>
+<p><img src="figures/generativelearning.png" width="900" align="bottom"></p>
+</center>
+<br/><br/>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="taxonomy-of-generative-deep-learning-taken-from-generative-deep-learning-by-david-foster-https-www-oreilly-com-library-view-generative-deep-learning-9781098134174-ch01-html">Taxonomy of generative deep learning, <a href="https://www.oreilly.com/library/view/generative-deep-learning/9781098134174/ch01.html" target="_blank">taken from Generative Deep Learning by David Foster</a>  </h2>
+
+<br/><br/>
+<center>
+<p><img src="figures/generativemodels.png" width="900" align="bottom"></p>
+</center>
+<br/><br/>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="good-books-with-hands-on-material-and-codes">Good books with hands-on material and codes </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<ul>
+<li> <a href="https://sebastianraschka.com/blog/2022/ml-pytorch-book.html" target="_blank">Sebastian Rashcka et al, Machine learning with Sickit-Learn and PyTorch</a></li>
+<li> <a href="https://www.oreilly.com/library/view/generative-deep-learning/9781098134174/ch01.html" target="_blank">David Foster, Generative Deep Learning with TensorFlow</a></li>
+<li> <a href="https://github.com/PacktPublishing/Hands-On-Generative-AI-with-Python-and-TensorFlow-2" target="_blank">Babcock and Gavras, Generative AI with Python and TensorFlow 2</a></li>
+</ul>
+</div>
+
+
+<p>All three books have GitHub sites from where  one can download all codes. A good and more general text (2016)
+is Goodfellow, Bengio and Courville, <a href="https://www.deeplearningbook.org/" target="_blank">Deep Learning</a>
+</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="more-references">More references </h2>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b>Reading on diffusion models</b>
+<p>
+<ol>
+<li> A central paper is the one by Sohl-Dickstein et al, Deep Unsupervised Learning using Nonequilibrium Thermodynamics, <a href="https://arxiv.org/abs/1503.03585" target="_blank"><tt>https://arxiv.org/abs/1503.03585</tt></a></li>
+<li> See also Diederik P. Kingma, Tim Salimans, Ben Poole, Jonathan Ho, Variational Diffusion Models, <a href="https://arxiv.org/abs/2107.00630" target="_blank"><tt>https://arxiv.org/abs/2107.00630</tt></a></li>
+</ol>
+</div>
+   
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b>and VAEs</b>
+<p>
+<ol>
+<li> An Introduction to Variational Autoencoders, by Kingma and Welling, see <a href="https://arxiv.org/abs/1906.02691" target="_blank"><tt>https://arxiv.org/abs/1906.02691</tt></a></li>
+</ol>
+</div>
+
+
+<b>And two Nobel prizes this year. Physics and Chemistry</b>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="what-are-the-basic-machine-learning-ingredients">What are the basic Machine Learning ingredients? </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p>Almost every problem in ML and data science starts with the same ingredients:</p>
+<ul>
+<li> The dataset \( \boldsymbol{x} \) (could be some observable quantity of the system we are studying)</li>
+<li> A model which is a function of a set of parameters \( \boldsymbol{\alpha} \) that relates to the dataset, say a likelihood  function \( p(\boldsymbol{x}\vert \boldsymbol{\alpha}) \) or just a simple model \( f(\boldsymbol{\alpha}) \)</li>
+<li> A so-called <b>loss/cost/risk</b> function \( \mathcal{C} (\boldsymbol{x}, f(\boldsymbol{\alpha})) \) which allows us to decide how well our model represents the dataset.</li> 
+</ul>
+<p>We seek to minimize the function \( \mathcal{C} (\boldsymbol{x}, f(\boldsymbol{\alpha})) \) by finding the parameter values which minimize \( \mathcal{C} \). This leads to  various minimization algorithms. It may surprise many, but at the heart of all machine learning algortihms there is an optimization problem. </p>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="low-level-machine-learning-the-family-of-ordinary-least-squares-methods">Low-level machine learning, the family of ordinary least squares methods  </h2>
+
+<p>Our data which we want to apply a machine learning method on, consist
+of a set of inputs \( \boldsymbol{x}^T=[x_0,x_1,x_2,\dots,x_{n-1}] \) and the
+outputs we want to model \( \boldsymbol{y}^T=[y_0,y_1,y_2,\dots,y_{n-1}] \).
+We assume  that the output data can be represented (for a regression case) by a continuous function \( f \)
+through
+</p>
+$$
+\boldsymbol{y}=f(\boldsymbol{x})+\boldsymbol{\epsilon}.
+$$
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="setting-up-the-equations">Setting up the equations </h2>
+
+<p>In linear regression we approximate the unknown function with another
+continuous function \( \tilde{\boldsymbol{y}}(\boldsymbol{x}) \) which depends linearly on
+some unknown parameters
+\( \boldsymbol{\theta}^T=[\theta_0,\theta_1,\theta_2,\dots,\theta_{p-1}] \).
+</p>
+
+<p>The input data can be organized in terms of a so-called design matrix 
+with an approximating function \( \boldsymbol{\tilde{y}} \) 
+</p>
+$$
+\boldsymbol{\tilde{y}}= \boldsymbol{X}\boldsymbol{\theta},
+$$
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="the-objective-cost-loss-function">The objective/cost/loss function </h2>
+
+<p>The  simplest approach is the mean squared error</p>
+$$
+C(\boldsymbol{\Theta})=\frac{1}{n}\sum_{i=0}^{n-1}\left(y_i-\tilde{y}_i\right)^2=\frac{1}{n}\left\{\left(\boldsymbol{y}-\boldsymbol{\tilde{y}}\right)^T\left(\boldsymbol{y}-\boldsymbol{\tilde{y}}\right)\right\},
+$$
+
+<p>or using the matrix \( \boldsymbol{X} \) and in a more compact matrix-vector notation as</p>
+$$
+C(\boldsymbol{\Theta})=\frac{1}{n}\left\{\left(\boldsymbol{y}-\boldsymbol{X}\boldsymbol{\theta}\right)^T\left(\boldsymbol{y}-\boldsymbol{X}\boldsymbol{\theta}\right)\right\}.
+$$
+
+<p>This function represents one of many possible ways to define the so-called cost function.</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="training-solution">Training solution  </h2>
+
+<p>Optimizing with respect to the unknown parameters \( \theta_j \) we get </p>
+$$
+\boldsymbol{X}^T\boldsymbol{y} = \boldsymbol{X}^T\boldsymbol{X}\boldsymbol{\theta},  
+$$
+
+<p>and if the matrix \( \boldsymbol{X}^T\boldsymbol{X} \) is invertible we have the optimal values</p>
+$$
+\hat{\boldsymbol{\theta}} =\left(\boldsymbol{X}^T\boldsymbol{X}\right)^{-1}\boldsymbol{X}^T\boldsymbol{y}.
+$$
+
+<p>We say we 'learn' the unknown parameters \( \boldsymbol{\theta} \) from the last equation.</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="selected-references">Selected references </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<ul>
+<li> <a href="https://arxiv.org/abs/1803.08823" target="_blank">Mehta et al.</a> and <a href="https://www.sciencedirect.com/science/article/pii/S0370157319300766?via%3Dihub" target="_blank">Physics Reports (2019)</a>.</li>
+<li> <a href="https://link.aps.org/doi/10.1103/RevModPhys.91.045002" target="_blank">Machine Learning and the Physical Sciences by Carleo et al</a></li>
+<li> <a href="https://journals.aps.org/rmp/abstract/10.1103/RevModPhys.94.031003" target="_blank">Artificial Intelligence and Machine Learning in Nuclear Physics, Amber Boehnlein et al., Reviews Modern of Physics 94, 031003 (2022)</a></li> 
+<li> <a href="https://pdg.lbl.gov/2021/reviews/rpp2021-rev-machine-learning.pdf" target="_blank">Particle Data Group summary on ML methods</a></li>
+</ul>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="scientific-machine-learning">Scientific Machine Learning </h2>
+
+<p>An important and emerging field is what has been dubbed as scientific ML, see the article by Deiana et al, Applications and Techniques for Fast Machine Learning in Science, Big Data <b>5</b>, 787421 (2022) <a href="https://doi.org/10.3389/fdata.2022.787421" target="_blank"><tt>https://doi.org/10.3389/fdata.2022.787421</tt></a></p>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p>The authors discuss applications and techniques for fast machine
+learning (ML) in science &ndash; the concept of integrating power ML
+methods into the real-time experimental data processing loop to
+accelerate scientific discovery. The report covers three main areas
+</p>
+
+<ol>
+<li> applications for fast ML across a number of scientific domains;</li>
+<li> techniques for training and implementing performant and resource-efficient ML algorithms;</li>
+<li> and computing architectures, platforms, and technologies for deploying these algorithms.</li>
+</ol>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="ml-for-detectors">ML for detectors </h2>
+
+<br/><br/>
+<center>
+<p><img src="figures/detectors.png" width="900" align="bottom"></p>
+</center>
+<br/><br/>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="physics-driven-machine-learning">Physics driven Machine Learning </h2>
+
+<p>Another hot topic is what has loosely been dubbed <b>Physics-driven deep learning</b>. See the recent work on <a href="https://www.nature.com/articles/s42256-021-00302-5" target="_blank">Learning nonlinear operators via DeepONet based on the universal approximation theorem of operators, Nature Machine Learning, vol 3, 218 (2021)</a>.</p>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b>From their abstract</b>
+<p>
+<p>A less known but powerful result is that an NN with a single hidden layer can accurately approximate any nonlinear continuous operator. This universal approximation theorem of operators is suggestive of the structure and potential of deep neural networks (DNNs) in learning continuous operators or complex systems from streams of scattered data. ...  We demonstrate that DeepONet can learn various explicit operators, such as integrals and fractional Laplacians, as well as implicit operators that represent deterministic and stochastic differential equations. </p>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="argon-46-by-solli-et-al-nima-1010-165461-2021">Argon-46 by Solli et al., NIMA 1010, 165461 (2021) </h2>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p>Representations of two events from the
+Argon-46 experiment. Each row is one event in two projections,
+where the color intensity of each point indicates higher charge values
+recorded by the detector. The bottom row illustrates a carbon event with
+a large fraction of noise, while the top row shows a proton event
+almost free of noise. 
+</p>
+</div>
+
+
+<br/><br/>
+<center>
+<p><img src="figures/examples_raw.png" width="500" align="bottom"></p>
+</center>
+<br/><br/>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="neutron-star-structure">Neutron star structure </h2>
+
+<br/><br/>
+<center>
+<p><img src="figures/mbpfig5.png" width="900" align="bottom"></p>
+</center>
+<br/><br/>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="dilute-neutron-star-matter-from-neural-network-quantum-states-by-fore-et-al-physical-review-research-5-033062-2023-https-journals-aps-org-prresearch-pdf-10-1103-physrevresearch-5-033062-at-density-rho-0-04-fm-3"><a href="https://journals.aps.org/prresearch/pdf/10.1103/PhysRevResearch.5.033062" target="_blank">Dilute neutron star matter from neural-network quantum states by Fore et al, Physical Review Research 5, 033062 (2023)</a> at density \( \rho=0.04 \) fm$^{-3}$ </h2>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<br/><br/>
+<center>
+<p><img src="figures/nmatter.png" width="700" align="bottom"></p>
+</center>
+<br/><br/>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="education-and-advanced-training">Education and advanced training </h2>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<ol>
+<li> Outreach and communication on quantum technologies and AI, explaining quantum technologies and AI to a broader audience</li>
+<li> Research on education in AI and QT. How are these topics best communicated and implemented in different enviroments, from  high school education to universities and to a broader audience, including external partners</li>
+<li> QAI-TALENT, Education and knowledge transfer through the development of advanced educational programs</li>
+</ol>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="education-quantum-and-ai-machine-learning">Education, Quantum and AI/Machine Learning </h2>
+
+<p>At the university of Oslo we have now established several educational
+programs in AI and QTs and quantum science. These programs span the
+whole spectrum from beginners courses to advanced training and
+education tailored to the specific needs of the participants.
+</p>
+
+<p>Furthermore, through research done at the center for Computing in
+Science Education and the physics education research group at the
+department of physics of the university of Oslo, we have over the
+years developed knowledge and insights on how to teach central
+concepts in quantum science as well as developing computational
+literacy and understanding of central algorithms applied to scientific
+problems. 
+</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="courses-and-study-programs">Courses and study programs </h2>
+
+<ol>
+<li> <b>New study direction on Quantum technology</b> in Bachelor program Physics and Astronomy, starts Fall 2024. Three new courses:</li>
+<ul>
+  <li> FYS1400 Introduction to Quantum Technologies</li>
+  <li> FYS3405/4405 Quantum Materials</li>
+  <li> FYS3415/4415 Quantum Computing</li>
+</ul>
+<li> <b>Developed Master of Science program on Computational Science</b>, started fall  2018 and many students here work on quantum computing and machine learning</li>
+<li> Developed courses on machine learning, from basic to advanced ones</li>
+<li> Developed advanced course on quantum computing and quantum machine learning, MAT3420, MAT4430/9430, FYS5419/9419</li>
+<li> New study directions in Master of Science in Physics and Computational Science on Quantum technologies and more. Start fall 2025</li>
+</ol>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="content-of-courses-we-offer">Content of courses we offer </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<ol>
+<li> Quantum Information theory</li>
+<li> From Classical Information theory to Quantum Information theory</li>
+<li> Classical and Quantum Laboratory</li> 
+<li> Discipline-Based Quantum Mechanics</li> 
+<li> Quantum algorithms, computing, software and hardware</li>
+<li> Several  machine learning/AI courses, at all levels</li>
+</ol>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="qai-talent-education-for-a-broader-audience">QAI-TALENT: Education for a broader audience </h2>
+
+<p>We have yearslong experience (with research based evidence on what works or not) in developing intensive training courses on ML/AI and QT.
+We  plan to develop an educational activity on quantum science and AI, \textbf{QAI TALENT}
+(TALENT=Training and Advanced Lectures in EmergiNg Technologies) offering
+</p>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<ol>
+<li> Intensive short courses on selected topics (which can lead to credits and certificates)</li>
+<li> Certificates of expertise with modules that can add up to one year of credits or more.</li>
+<li> Possibilities of adding up to a master specialization in quantum science/technologies and/or AI/ML</li>
+<li> Common educational projects and supervision of students</li>
+</ol>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="research-directions-not-exhaustive">Research directions, not exhaustive </h2>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<ol>
+<li> <b>Theory and experiments for quantum sensors</b>, from standard many-body theories, via machine learning to quantum computing. Close collaboration with Norwegian industry</li>
+<li> <b>Theory and experiments for quantum computing and quantum information theory</b></li>
+<li> <b>Fundamental studies (theory and experiment) of quantum mechanics</b></li>
+</ol>
+</div>
+
+
+<!-- ------------------- end of main content --------------- -->
+</body>
+</html>
+
