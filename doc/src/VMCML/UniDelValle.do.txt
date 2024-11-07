@@ -36,7 +36,7 @@ o Russell and Norvig in their popular textbook: _relevant to any intellectual ta
 o Woody Bledsoe puts it more bluntly: _in the long run, AI is the only science_ (quoted in Pamilla McCorduck, "Machines who think":"https://www.pamelamccorduck.com/machines-who-think")
 
 
-If you wish to have a critical read on AI/ML from a societal point of view, see "Kate Crawford's recent text Atlas of AI":"https://www.katecrawford.net/". And you have a local and very popular expert, "Inga Strumke, Machines which think":"https://www.goodreads.com/en/book/show/144711751"
+If you wish to have a critical read on AI/ML from a societal point of view, see "Kate Crawford's recent text Atlas of AI":"https://www.katecrawford.net/". 
 
 _Here: with AI/ML we intend a collection of machine learning methods with an emphasis on statistical learning and data analysis_
 
