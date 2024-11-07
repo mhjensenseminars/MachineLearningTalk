@@ -366,7 +366,7 @@ A less known but powerful result is that an NN with a single hidden layer can ac
 
 * Merging a frequentist approach (the standard path in ML theory) with a Bayesian approach, has the potential to infer better probabilitity distributions and error estimates. 
 
-* Machine Learning and Quantum Computing is a very interesting avenue to explore. See for example a recent talk by "Sofia Vallecorsa":"https://www.youtube.com/watch?v=7WPKv1Q57os&list=PLUPPQ1TVXK7uHwCTccWMBud-zLyvAf8A2&index=5&ab_channel=ECTstar".
+* Machine Learning and Quantum Computing is a very interesting avenue to explore.
 !eblock
 
 
@@ -375,8 +375,8 @@ A less known but powerful result is that an NN with a single hidden layer can ac
 ===== Argon-46 by Solli et al., NIMA 1010, 165461 (2021) =====
 
 !bblock
-Representations of two events from the
-Argon-46 experiment. Each row is one event in two projections,
+Representations of two events from an 
+Argon-46 experiment at MSU. Each row is one event in two projections,
 where the color intensity of each point indicates higher charge values
 recorded by the detector. The bottom row illustrates a carbon event with
 a large fraction of noise, while the top row shows a proton event
