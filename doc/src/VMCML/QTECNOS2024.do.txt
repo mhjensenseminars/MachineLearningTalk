@@ -10,7 +10,7 @@ The main emphasis is to give you a short and pedestrian introduction to the whys
 !eblock
 
 !bblock
-These slides and more at URL:"https://github.com/mhjensenseminars/MachineLearningTalk/tree/master/doc/pub/QFC2024"
+These slides and more at URL:"https://github.com/mhjensenseminars/MachineLearningTalk/tree/master/doc/pub/QTECNOS2024"
 !eblock
 
 !split
