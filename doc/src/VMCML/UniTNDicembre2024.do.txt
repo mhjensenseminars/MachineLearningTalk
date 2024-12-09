@@ -2,6 +2,7 @@ TITLE: Premio Nobel per la  Fisica 2024
 AUTHOR: Morten Hjorth-Jensen at Department of Physics and Center for Computing in Science Education, University of Oslo, Norvegia
 DATE: UniTN, Dipartimento di Fisica, 9 dicembre 2024
 
+FIGURE: [figures/nnillustration.png, width=900 frac=1.0]
 
 !split
 ===== Nobel per la  Fisica  sull'apprendimento automatico  =====
@@ -9,6 +10,8 @@ DATE: UniTN, Dipartimento di Fisica, 9 dicembre 2024
 !bblock
 Quali furono le ragioni e motivazioni per dare  il premio Nobel per la Fisica a Hopfield e Hinton? 
 !eblock
+
+
 
 !bblock
 Tutto il materiale per questo seminario lo potete trovare sul sito  URL:"http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/UniTNDicembre2024/pdf/UniTNDicembre2024.pdf"
@@ -121,36 +124,6 @@ FIGURE: [figures/standarddeeplearning.png, width=900 frac=1.0]
 FIGURE: [figures/generativemodels.png, width=900 frac=1.0]
 
 
-!split
-===== Extrapolations and model interpretability  =====
-
-When you hear phrases like _predictions and estimations_ and
-_correlations and causations_, what do you think of?  May be you think
-of the difference between classifying new data points and generating
-new data points.
-Or perhaps you consider that correlations represent some kind of symmetric statements like
-if $A$ is correlated with $B$, then $B$ is correlated with
-$A$. Causation on the other hand is directional, that is if $A$ causes $B$, $B$ does not
-necessarily cause $A$.
-
-
-!split
-===== Physics based statistical learning and data analysis =====
-
-The above concepts are in some sense the difference between _old-fashioned_ machine
-learning and statistics and Bayesian learning. In machine learning and prediction based
-tasks, we are often interested in developing algorithms that are
-capable of learning patterns from given data in an automated fashion,
-and then using these learned patterns to make predictions or
-assessments of newly given data. In many cases, our primary concern
-is the quality of the predictions or assessments, and we are less
-concerned about the underlying patterns that were learned in order
-to make these predictions.
-
-Physics based statistical learning points however to approaches that give us both predictions and correlations as well as being able to produce error estimates and understand causations.  This leads us to the very interesting field of Bayesian statistics.
-
-
-
 
 !split
 ===== Good books with hands-on material and codes =====
@@ -224,6 +197,12 @@ We seek to minimize the function $\mathcal{C} (\bm{x}, f(\bm{\alpha}))$ by findi
 !eblock
 
 !split
+===== Optimization at the heart of all ML  =====
+
+FIGURE: [figures/optimization.png, width=900 frac=1.0]
+
+
+!split
 ===== Low-level machine learning, the family of ordinary least squares methods  =====
 
 Our data which we want to apply a machine learning method on, consist
@@ -290,6 +269,11 @@ and if the matrix $\bm{X}^T\bm{X}$ is invertible we have the optimal values
 
 We say we 'learn' the unknown parameters $\bm{\theta}$ from the last equation.
 
+
+!split
+===== Inspiration from Neuroscience  =====
+
+FIGURE: [figures/neuronandnn.png, width=900 frac=1.0]
 
 
 
@@ -834,6 +818,117 @@ sampling.
 
 
 
+!split
+===== Defining different types of RBMs (Energy based models) =====
+
+There are different variants of RBMs, and the differences lie in the types of visible and hidden units we choose as well as in the implementation of the energy function $E(\bm{x},\bm{h})$. The connection between the nodes in the two layers is given by the weights $w_{ij}$. 
+
+!bblock Binary-Binary RBM:
+
+RBMs were first developed using binary units in both the visible and hidden layer. The corresponding energy function is defined as follows:
+!bt
+\[
+	E(\bm{x}, \bm{h}) = - \sum_i^M x_i a_i- \sum_j^N b_j h_j - \sum_{i,j}^{M,N} x_i w_{ij} h_j,
+\]
+!et
+where the binary values taken on by the nodes are most commonly 0 and 1.
+!eblock
+
+
+!split
+===== Gaussian binary =====
+
+
+!bblock Gaussian-Binary RBM:
+
+Another varient is the RBM where the visible units are Gaussian while the hidden units remain binary:
+!bt
+\[
+	E(\bm{x}, \bm{h}) = \sum_i^M \frac{(x_i - a_i)^2}{2\sigma_i^2} - \sum_j^N b_j h_j - \sum_{i,j}^{M,N} \frac{x_i w_{ij} h_j}{\sigma_i^2}. 
+\]
+!et
+!eblock
+
+!split
+===== Representing the wave function =====
+
+The wavefunction should be a probability amplitude depending on
+ $\bm{x}$. The RBM model is given by the joint distribution of
+ $\bm{x}$ and $\bm{h}$
+
+!bt
+\[
+        P_{\mathrm{rbm}}(\bm{x},\bm{h}) = \frac{1}{Z} \exp{-E(\bm{x},\bm{h})}.
+\]
+!et
+
+To find the marginal distribution of $\bm{x}$ we set:
+
+!bt
+\[
+        P_{\mathrm{rbm}}(\bm{x}) =\frac{1}{Z}\sum_{\bm{h}} \exp{-E(\bm{x}, \bm{h})}.
+\]
+!et
+
+Now this is what we use to represent the wave function, calling it a neural-network quantum state (NQS)
+!bt
+\[
+        \vert\Psi (\bm{X})\vert^2 = P_{\mathrm{rbm}}(\bm{x}).
+\]
+!et
+
+!split
+===== Define the cost function =====
+
+Now we don't necessarily have training data (unless we generate it by
+using some other method). However, what we do have is the variational
+principle which allows us to obtain the ground state wave function by
+minimizing the expectation value of the energy of a trial wavefunction
+(corresponding to the untrained NQS). Similarly to the traditional
+variational Monte Carlo method then, it is the local energy we wish to
+minimize. The gradient to use for the stochastic gradient descent
+procedure is
+
+!bt
+\[
+	C_i = \frac{\partial \langle E_L \rangle}{\partial \theta_i}
+	= 2(\langle E_L \frac{1}{\Psi}\frac{\partial \Psi}{\partial \theta_i} \rangle - \langle E_L \rangle \langle \frac{1}{\Psi}\frac{\partial \Psi}{\partial \theta_i} \rangle ),
+\]
+!et
+where the local energy is given by
+!bt
+\[
+	E_L = \frac{1}{\Psi} \hat{\bm{H}} \Psi.
+\]
+!et
+
+
+
+
+!split
+===== Quantum dots and Boltzmann machines, onebody densities $N=6$, $\hbar\omega=0.1$ a.u. =====
+
+!bblock
+FIGURE: [figures/OB6hw01.png, width=700 frac=0.9]
+!eblock
+
+
+!split
+===== Onebody densities $N=30$, $\hbar\omega=1.0$ a.u. =====
+!bblock
+FIGURE: [figures/OB30hw1.png, width=700 frac=0.9]
+!eblock
+
+
+!split
+===== Expectation values as functions of the oscillator frequency  =====
+
+!bblock
+FIGURE: [figures/virialtheorem.pdf, width=700 frac=0.9]
+!eblock
+
+
+
 
 
 
@@ -876,314 +971,6 @@ sampling.
 o How do we incorporate these topics in our education?
 o More difficult: what are the consequences for universities and our educational mission?
 
-
-
-
-!split
-===== Defining different types of RBMs (Energy based models) =====
-
-There are different variants of RBMs, and the differences lie in the types of visible and hidden units we choose as well as in the implementation of the energy function $E(\bm{x},\bm{h})$. The connection between the nodes in the two layers is given by the weights $w_{ij}$. 
-
-!bblock Binary-Binary RBM:
-
-RBMs were first developed using binary units in both the visible and hidden layer. The corresponding energy function is defined as follows:
-!bt
-\[
-	E(\bm{x}, \bm{h}) = - \sum_i^M x_i a_i- \sum_j^N b_j h_j - \sum_{i,j}^{M,N} x_i w_{ij} h_j,
-\]
-!et
-where the binary values taken on by the nodes are most commonly 0 and 1.
-!eblock
-
-
-!split
-===== Gaussian binary =====
-
-
-!bblock Gaussian-Binary RBM:
-
-Another varient is the RBM where the visible units are Gaussian while the hidden units remain binary:
-!bt
-\[
-	E(\bm{x}, \bm{h}) = \sum_i^M \frac{(x_i - a_i)^2}{2\sigma_i^2} - \sum_j^N b_j h_j - \sum_{i,j}^{M,N} \frac{x_i w_{ij} h_j}{\sigma_i^2}. 
-\]
-!et
-!eblock
-
-!split
-===== Representing the wave function =====
-
-The wavefunction should be a probability amplitude depending on
- $\bm{x}$. The RBM model is given by the joint distribution of
- $\bm{x}$ and $\bm{h}$
-
-!bt
-\[
-        P_{\mathrm{rbm}}(\bm{x},\bm{h}) = \frac{1}{Z} \exp{-E(\bm{x},\bm{h})}.
-\]
-!et
-
-To find the marginal distribution of $\bm{x}$ we set:
-
-!bt
-\[
-        P_{\mathrm{rbm}}(\bm{x}) =\frac{1}{Z}\sum_{\bm{h}} \exp{-E(\bm{x}, \bm{h})}.
-\]
-!et
-
-Now this is what we use to represent the wave function, calling it a neural-network quantum state (NQS)
-!bt
-\[
-        \vert\Psi (\bm{X})\vert^2 = P_{\mathrm{rbm}}(\bm{x}).
-\]
-!et
-
-!split
-===== Define the cost function =====
-
-Now we don't necessarily have training data (unless we generate it by
-using some other method). However, what we do have is the variational
-principle which allows us to obtain the ground state wave function by
-minimizing the expectation value of the energy of a trial wavefunction
-(corresponding to the untrained NQS). Similarly to the traditional
-variational Monte Carlo method then, it is the local energy we wish to
-minimize. The gradient to use for the stochastic gradient descent
-procedure is
-
-!bt
-\[
-	C_i = \frac{\partial \langle E_L \rangle}{\partial \theta_i}
-	= 2(\langle E_L \frac{1}{\Psi}\frac{\partial \Psi}{\partial \theta_i} \rangle - \langle E_L \rangle \langle \frac{1}{\Psi}\frac{\partial \Psi}{\partial \theta_i} \rangle ),
-\]
-!et
-where the local energy is given by
-!bt
-\[
-	E_L = \frac{1}{\Psi} \hat{\bm{H}} \Psi.
-\]
-!et
-
-
-
-
-!split
-===== Quantum dots and Boltzmann machines, onebody densities $N=6$, $\hbar\omega=0.1$ a.u. =====
-
-!bblock
-FIGURE: [figures/OB6hw01.png, width=700 frac=0.9]
-!eblock
-
-
-!split
-===== Onebody densities $N=30$, $\hbar\omega=1.0$ a.u. =====
-!bblock
-FIGURE: [figures/OB30hw1.png, width=700 frac=0.9]
-!eblock
-
-
-!split
-===== Expectation values as functions of the oscillator frequency  =====
-
-!bblock
-FIGURE: [figures/virialtheorem.pdf, width=700 frac=0.9]
-!eblock
-
-
-
-
-!split
-===== "Efficient solutions of fermionic systems using artificial neural networks, Nordhagen et al, Frontiers in Physics 11, 2023":"https://doi.org/10.3389/fphy.2023.1061580" =====
-
-The Hamiltonian of the quantum dot is given by
-!bt
-\[ \hat{H} = \hat{H}_0 + \hat{V}, 
-\]
-!et
-where $\hat{H}_0$ is the many-body HO Hamiltonian, and $\hat{V}$ is the
-inter-electron Coulomb interactions. In dimensionless units,
-!bt
-\[ \hat{V}= \sum_{i < j}^N \frac{1}{r_{ij}},
-\]
-!et
-with $r_{ij}=\sqrt{\mathbf{r}_i^2 - \mathbf{r}_j^2}$.
-
-Separable Hamiltonian with the relative motion part ($r_{ij}=r$)
-!bt
-\[ 
-\hat{H}_r=-\nabla^2_r + \frac{1}{4}\omega^2r^2+ \frac{1}{r},
-\]
-!et
-Analytical solutions in two and three dimensions ("M. Taut 1993 and 1994":"https://journals.aps.org/pra/abstract/10.1103/PhysRevA.48.3561"). 
-
-
-
-
-
-!split
-===== Defining different types of RBMs (Energy based models) =====
-
-There are different variants of RBMs, and the differences lie in the types of visible and hidden units we choose as well as in the implementation of the energy function $E(\bm{x},\bm{h})$. The connection between the nodes in the two layers is given by the weights $w_{ij}$. 
-
-!bblock Binary-Binary RBM:
-
-RBMs were first developed using binary units in both the visible and hidden layer. The corresponding energy function is defined as follows:
-!bt
-\[
-	E(\bm{x}, \bm{h}) = - \sum_i^M x_i a_i- \sum_j^N b_j h_j - \sum_{i,j}^{M,N} x_i w_{ij} h_j,
-\]
-!et
-where the binary values taken on by the nodes are most commonly 0 and 1.
-!eblock
-
-
-!split
-===== Gaussian binary =====
-
-
-!bblock Gaussian-Binary RBM:
-
-Another varient is the RBM where the visible units are Gaussian while the hidden units remain binary:
-!bt
-\[
-	E(\bm{x}, \bm{h}) = \sum_i^M \frac{(x_i - a_i)^2}{2\sigma_i^2} - \sum_j^N b_j h_j - \sum_{i,j}^{M,N} \frac{x_i w_{ij} h_j}{\sigma_i^2}. 
-\]
-!et
-!eblock
-
-!split
-===== Representing the wave function =====
-
-The wavefunction should be a probability amplitude depending on
- $\bm{x}$. The RBM model is given by the joint distribution of
- $\bm{x}$ and $\bm{h}$
-
-!bt
-\[
-        P_{\mathrm{rbm}}(\bm{x},\bm{h}) = \frac{1}{Z} \exp{-E(\bm{x},\bm{h})}.
-\]
-!et
-
-To find the marginal distribution of $\bm{x}$ we set:
-
-!bt
-\[
-        P_{\mathrm{rbm}}(\bm{x}) =\frac{1}{Z}\sum_{\bm{h}} \exp{-E(\bm{x}, \bm{h})}.
-\]
-!et
-
-Now this is what we use to represent the wave function, calling it a neural-network quantum state (NQS)
-!bt
-\[
-        \vert\Psi (\bm{X})\vert^2 = P_{\mathrm{rbm}}(\bm{x}).
-\]
-!et
-
-!split
-===== Define the cost function =====
-
-Now we don't necessarily have training data (unless we generate it by
-using some other method). However, what we do have is the variational
-principle which allows us to obtain the ground state wave function by
-minimizing the expectation value of the energy of a trial wavefunction
-(corresponding to the untrained NQS). Similarly to the traditional
-variational Monte Carlo method then, it is the local energy we wish to
-minimize. The gradient to use for the stochastic gradient descent
-procedure is
-
-!bt
-\[
-	C_i = \frac{\partial \langle E_L \rangle}{\partial \theta_i}
-	= 2(\langle E_L \frac{1}{\Psi}\frac{\partial \Psi}{\partial \theta_i} \rangle - \langle E_L \rangle \langle \frac{1}{\Psi}\frac{\partial \Psi}{\partial \theta_i} \rangle ),
-\]
-!et
-where the local energy is given by
-!bt
-\[
-	E_L = \frac{1}{\Psi} \hat{\bm{H}} \Psi.
-\]
-!et
-
-
-
-
-!split
-===== Quantum dots and Boltzmann machines, onebody densities $N=6$, $\hbar\omega=0.1$ a.u. =====
-
-!bblock
-FIGURE: [figures/OB6hw01.png, width=700 frac=0.9]
-!eblock
-
-
-!split
-===== Onebody densities $N=30$, $\hbar\omega=1.0$ a.u. =====
-!bblock
-FIGURE: [figures/OB30hw1.png, width=700 frac=0.9]
-!eblock
-
-
-!split
-===== Expectation values as functions of the oscillator frequency  =====
-
-!bblock
-FIGURE: [figures/virialtheorem.pdf, width=700 frac=0.9]
-!eblock
-
-
-
-
-!split
-===== Introducing the energy model =====
-
-As we will see below, a typical Boltzmann machines employs a probability distribution
-!bt
-\[
-p(\bm{x},\bm{h};\bm{\Theta}) = \frac{f(\bm{x},\bm{h};\bm{\Theta})}{Z(\bm{\Theta})},
-\]
-!et
-where $f(\bm{x},\bm{h};\bm{\Theta})$ is given by a so-called energy model. If we assume that the random variables $x_i$ and $h_j$ take binary values only, for example $x_i,h_j=\{0,1\}$, we have a so-called binary-binary model where
-!bt
-\[
-f(\bm{x},\bm{h};\bm{\Theta})=-E(\bm{x}, \bm{h};\bm{\Theta}) = \sum_{x_i\in \bm{X}} x_i a_i+\sum_{h_j\in \bm{H}} b_j h_j + \sum_{x_i\in \bm{X},h_j\in\bm{H}} x_i w_{ij} h_j,
-\]
-!et
-where the set of parameters are given by the biases and weights $\bm{\Theta}=\{\bm{a},\bm{b},\bm{W}\}$.
-_Note the vector notation_ instead of $x_i$ and $h_j$ for $f$. The vectors $\bm{x}$ and $\bm{h}$ represent a specific instance of stochastic variables $x_i$ and $h_j$. These arrangements of $\bm{x}$ and $\bm{h}$ lead to a specific energy configuration.
-
-!split
-===== More compact notation =====
-
-With the above definition we can write the probability as
-!bt
-\[
-p(\bm{x},\bm{h};\bm{\Theta}) = \frac{\exp{(\bm{a}^T\bm{x}+\bm{b}^T\bm{h}+\bm{x}^T\bm{W}\bm{h})}}{Z(\bm{\Theta})},
-\]
-!et
-where the biases $\bm{a}$ and $\bm{h}$ and the weights defined by the matrix $\bm{W}$ are the parameters we need to optimize.
-
-!split
-===== Binary-binary model  =====
-
-Since the binary-binary energy model is linear in the parameters $a_i$, $b_j$ and
-$w_{ij}$, it is easy to see that the derivatives with respect to the
-various optimization parameters yield expressions used in the
-evaluation of gradients like
-!bt
-\[
-\frac{\partial E(\bm{x}, \bm{h};\bm{\Theta})}{\partial w_{ij}}=-x_ih_j,
-\]
-!et
-and
-!bt
-\[
-\frac{\partial E(\bm{x}, \bm{h};\bm{\Theta})}{\partial a_i}=-x_i,
-\]
-!et
-and
-!bt
-\[
-\frac{\partial E(\bm{x}, \bm{h};\bm{\Theta})}{\partial b_j}=-h_j.
-\]
-!et
 
 
 
