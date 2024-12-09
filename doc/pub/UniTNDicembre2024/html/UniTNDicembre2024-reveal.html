@@ -192,21 +192,21 @@ MathJax.Hub.Config({
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
-<p> diedero il premio Nobel per la Fisica a Hopfield e Hinton? </p>
+<p>Quali furono le ragioni e motivazioni per dare  il premio Nobel per la Fisica a Hopfield e Hinton? </p>
 </div>
 
 
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
-<p>Tutto il materiale per questo seminario lo potete trovare sul sito  <a href="http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/UniDelValle/pdf/UniTNDicembre2024.pdf" target="_blank"><tt>http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/UniDelValle/pdf/UniTNDicembre2024.pdf</tt></a></p>
+<p>Tutto il materiale per questo seminario lo potete trovare sul sito  <a href="http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/UniTNDicembre2024/pdf/UniTNDicembre2024.pdf" target="_blank"><tt>http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/UniTNDicembre2024/pdf/UniTNDicembre2024.pdf</tt></a></p>
 </div>
 </section>
 
 <section>
 <h2 id="premio-nobel-2024">Premio Nobel 2024 </h2>
 
-<p>Tratto dalla conferenza stampa per il premio Nobel:</p>
+<p>Tratto dal sito per il premio Nobel:</p>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -285,11 +285,8 @@ Some of the most common tasks are:
 </p>
 
 <ul>
-
 <p><li> Classification: Outputs are divided into two or more classes. The goal is to   produce a model that assigns inputs into one of these classes. An example is to identify  digits based on pictures of hand-written ones. Classification is typically supervised learning.</li>
-
 <p><li> Regression: Finding a functional relationship between an input data set and a reference data set.   The goal is to construct a function that maps input data to continuous output values.</li>
-
 <p><li> Clustering: Data are divided into groups with certain common traits, without knowing the different groups beforehand.  It is thus a form of unsupervised learning.</li>
 </ul>
 </div>
@@ -501,13 +498,109 @@ various algorithms and methods.
 </section>
 
 <section>
-<h2 id="ml-in-nuclear-physics-or-any-field-in-physics">ML in Nuclear  Physics (or any field in physics) </h2>
+<h2 id="ai-ml-and-quantum-computing">AI/ML and Quantum Computing </h2>
 
 <br/><br/>
 <center>
-<p><img src="figures/ML-NP.png" width="900" align="bottom"></p>
+<p><img src="figures/QAIfig1.png" width="900" align="bottom"></p>
 </center>
 <br/><br/>
+</section>
+
+<section>
+<h2 id="why-feed-forward-neural-networks-ffnn">Why Feed Forward Neural Networks (FFNN)?  </h2>
+
+<p>According to the <em>Universal approximation theorem</em>, a feed-forward
+neural network with just a single hidden layer containing a finite
+number of neurons can approximate a continuous multidimensional
+function to arbitrary accuracy, assuming the activation function for
+the hidden layer is a <b>non-constant, bounded and
+monotonically-increasing continuous function</b>.
+</p>
+</section>
+
+<section>
+<h2 id="universal-approximation-theorem">Universal approximation theorem </h2>
+
+<p>The universal approximation theorem plays a central role in deep
+learning.  <a href="https://link.springer.com/article/10.1007/BF02551274" target="_blank">Cybenko (1989)</a> showed
+the following:
+</p>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p>Let \( \sigma \) be any continuous sigmoidal function such that</p>
+<p>&nbsp;<br>
+$$
+\sigma(z) = \left\{\begin{array}{cc} 1 & z\rightarrow \infty\\ 0 & z \rightarrow -\infty \end{array}\right.
+$$
+<p>&nbsp;<br>
+
+<p>Given a continuous and deterministic function \( F(\boldsymbol{x}) \) on the unit
+cube in \( d \)-dimensions \( F\in [0,1]^d \), \( x\in [0,1]^d \) and a parameter
+\( \epsilon >0 \), there is a one-layer (hidden) neural network
+\( f(\boldsymbol{x};\boldsymbol{\Theta}) \) with \( \boldsymbol{\Theta}=(\boldsymbol{W},\boldsymbol{b}) \) and \( \boldsymbol{W}\in
+\mathbb{R}^{m\times n} \) and \( \boldsymbol{b}\in \mathbb{R}^{n} \), for which
+</p>
+<p>&nbsp;<br>
+$$
+\vert F(\boldsymbol{x})-f(\boldsymbol{x};\boldsymbol{\Theta})\vert < \epsilon \hspace{0.1cm} \forall \boldsymbol{x}\in[0,1]^d.
+$$
+<p>&nbsp;<br>
+</div>
+</section>
+
+<section>
+<h2 id="the-approximation-theorem-in-words">The approximation theorem in words </h2>
+
+<p><b>Any continuous function \( y=F(\boldsymbol{x}) \) supported on the unit cube in
+\( d \)-dimensions can be approximated by a one-layer sigmoidal network to
+arbitrary accuracy.</b>
+</p>
+
+<p><a href="https://www.sciencedirect.com/science/article/abs/pii/089360809190009T" target="_blank">Hornik (1991)</a> extended the theorem by letting any non-constant, bounded activation function to be included using that the expectation value</p>
+<p>&nbsp;<br>
+$$
+\mathbb{E}[\vert F(\boldsymbol{x})\vert^2] =\int_{\boldsymbol{x}\in D} \vert F(\boldsymbol{x})\vert^2p(\boldsymbol{x})d\boldsymbol{x} < \infty.
+$$
+<p>&nbsp;<br>
+
+<p>Then we have</p>
+<p>&nbsp;<br>
+$$
+\mathbb{E}[\vert F(\boldsymbol{x})-f(\boldsymbol{x};\boldsymbol{\Theta})\vert^2] =\int_{\boldsymbol{x}\in D} \vert F(\boldsymbol{x})-f(\boldsymbol{x};\boldsymbol{\Theta})\vert^2p(\boldsymbol{x})d\boldsymbol{x} < \epsilon.
+$$
+<p>&nbsp;<br>
+</section>
+
+<section>
+<h2 id="more-on-the-general-approximation-theorem">More on the general approximation theorem </h2>
+
+<p>None of the proofs give any insight into the relation between the
+number of of hidden layers and nodes and the approximation error
+\( \epsilon \), nor the magnitudes of \( \boldsymbol{W} \) and \( \boldsymbol{b} \).
+</p>
+
+<p>Neural networks (NNs) have what we may call a kind of universality no matter what function we want to compute.</p>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p>It does not mean that an NN can be used to exactly compute any function. Rather, we get an approximation that is as good as we want. </p>
+</div>
+</section>
+
+<section>
+<h2 id="class-of-functions-we-can-approximate">Class of functions we can approximate </h2>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p>The class of functions that can be approximated are the continuous ones.
+If the function \( F(\boldsymbol{x}) \) is discontinuous, it won't in general be possible to approximate it. However, an NN may still give an approximation even if we fail in some points.
+</p>
+</div>
 </section>
 
 <section>
@@ -642,102 +735,6 @@ $$
 </section>
 
 <section>
-<h2 id="why-feed-forward-neural-networks-ffnn">Why Feed Forward Neural Networks (FFNN)?  </h2>
-
-<p>According to the <em>Universal approximation theorem</em>, a feed-forward
-neural network with just a single hidden layer containing a finite
-number of neurons can approximate a continuous multidimensional
-function to arbitrary accuracy, assuming the activation function for
-the hidden layer is a <b>non-constant, bounded and
-monotonically-increasing continuous function</b>.
-</p>
-</section>
-
-<section>
-<h2 id="universal-approximation-theorem">Universal approximation theorem </h2>
-
-<p>The universal approximation theorem plays a central role in deep
-learning.  <a href="https://link.springer.com/article/10.1007/BF02551274" target="_blank">Cybenko (1989)</a> showed
-the following:
-</p>
-
-<div class="alert alert-block alert-block alert-text-normal">
-<b></b>
-<p>
-<p>Let \( \sigma \) be any continuous sigmoidal function such that</p>
-<p>&nbsp;<br>
-$$
-\sigma(z) = \left\{\begin{array}{cc} 1 & z\rightarrow \infty\\ 0 & z \rightarrow -\infty \end{array}\right.
-$$
-<p>&nbsp;<br>
-
-<p>Given a continuous and deterministic function \( F(\boldsymbol{x}) \) on the unit
-cube in \( d \)-dimensions \( F\in [0,1]^d \), \( x\in [0,1]^d \) and a parameter
-\( \epsilon >0 \), there is a one-layer (hidden) neural network
-\( f(\boldsymbol{x};\boldsymbol{\Theta}) \) with \( \boldsymbol{\Theta}=(\boldsymbol{W},\boldsymbol{b}) \) and \( \boldsymbol{W}\in
-\mathbb{R}^{m\times n} \) and \( \boldsymbol{b}\in \mathbb{R}^{n} \), for which
-</p>
-<p>&nbsp;<br>
-$$
-\vert F(\boldsymbol{x})-f(\boldsymbol{x};\boldsymbol{\Theta})\vert < \epsilon \hspace{0.1cm} \forall \boldsymbol{x}\in[0,1]^d.
-$$
-<p>&nbsp;<br>
-</div>
-</section>
-
-<section>
-<h2 id="the-approximation-theorem-in-words">The approximation theorem in words </h2>
-
-<p><b>Any continuous function \( y=F(\boldsymbol{x}) \) supported on the unit cube in
-\( d \)-dimensions can be approximated by a one-layer sigmoidal network to
-arbitrary accuracy.</b>
-</p>
-
-<p><a href="https://www.sciencedirect.com/science/article/abs/pii/089360809190009T" target="_blank">Hornik (1991)</a> extended the theorem by letting any non-constant, bounded activation function to be included using that the expectation value</p>
-<p>&nbsp;<br>
-$$
-\mathbb{E}[\vert F(\boldsymbol{x})\vert^2] =\int_{\boldsymbol{x}\in D} \vert F(\boldsymbol{x})\vert^2p(\boldsymbol{x})d\boldsymbol{x} < \infty.
-$$
-<p>&nbsp;<br>
-
-<p>Then we have</p>
-<p>&nbsp;<br>
-$$
-\mathbb{E}[\vert F(\boldsymbol{x})-f(\boldsymbol{x};\boldsymbol{\Theta})\vert^2] =\int_{\boldsymbol{x}\in D} \vert F(\boldsymbol{x})-f(\boldsymbol{x};\boldsymbol{\Theta})\vert^2p(\boldsymbol{x})d\boldsymbol{x} < \epsilon.
-$$
-<p>&nbsp;<br>
-</section>
-
-<section>
-<h2 id="more-on-the-general-approximation-theorem">More on the general approximation theorem </h2>
-
-<p>None of the proofs give any insight into the relation between the
-number of of hidden layers and nodes and the approximation error
-\( \epsilon \), nor the magnitudes of \( \boldsymbol{W} \) and \( \boldsymbol{b} \).
-</p>
-
-<p>Neural networks (NNs) have what we may call a kind of universality no matter what function we want to compute.</p>
-
-<div class="alert alert-block alert-block alert-text-normal">
-<b></b>
-<p>
-<p>It does not mean that an NN can be used to exactly compute any function. Rather, we get an approximation that is as good as we want. </p>
-</div>
-</section>
-
-<section>
-<h2 id="class-of-functions-we-can-approximate">Class of functions we can approximate </h2>
-
-<div class="alert alert-block alert-block alert-text-normal">
-<b></b>
-<p>
-<p>The class of functions that can be approximated are the continuous ones.
-If the function \( F(\boldsymbol{x}) \) is discontinuous, it won't in general be possible to approximate it. However, an NN may still give an approximation even if we fail in some points.
-</p>
-</div>
-</section>
-
-<section>
 <h2 id="monte-carlo-methods-and-neural-networks">Monte Carlo methods and Neural Networks </h2>
 
 <p><a href="https://www.sciencedirect.com/science/article/pii/S0370269320305463?via%3Dihub" target="_blank">Machine Learning and the Deuteron by Kebble and Rios</a> and
@@ -842,86 +839,6 @@ $$
 </center>
 <br/><br/>
 </div>
-</section>
-
-<section>
-<h2 id="pairing-and-spin-singlet-and-triplet-two-body-distribution-functions-at-rho-0-01-fm-3">Pairing and Spin-singlet and triplet two-body distribution functions at \( \rho=0.01 \) fm$^{-3}$ </h2>
-<div class="alert alert-block alert-block alert-text-normal">
-<b></b>
-<p>
-<br/><br/>
-<center>
-<p><img src="figures/01_tbd.png" width="700" align="bottom"></p>
-</center>
-<br/><br/>
-</div>
-</section>
-
-<section>
-<h2 id="pairing-and-spin-singlet-and-triplet-two-body-distribution-functions-at-rho-0-04-fm-3">Pairing and Spin-singlet and triplet two-body distribution functions at \( \rho=0.04 \) fm$^{-3}$ </h2>
-
-<div class="alert alert-block alert-block alert-text-normal">
-<b></b>
-<p>
-<br/><br/>
-<center>
-<p><img src="figures/04_tbd.png" width="700" align="bottom"></p>
-</center>
-<br/><br/>
-</div>
-</section>
-
-<section>
-<h2 id="pairing-and-spin-singlet-and-triplet-two-body-distribution-functions-at-rho-0-08-fm-3">Pairing and Spin-singlet and triplet two-body distribution functions at \( \rho=0.08 \) fm$^{-3}$ </h2>
-<div class="alert alert-block alert-block alert-text-normal">
-<b></b>
-<p>
-<br/><br/>
-<center>
-<p><img src="figures/08_tbd.png" width="700" align="bottom"></p>
-</center>
-<br/><br/>
-</div>
-</section>
-
-<section>
-<h2 id="symmetric-nuclear-matter">Symmetric nuclear matter  </h2>
-
-<br/><br/>
-<center>
-<p><img src="figures/mbpfig6.png" width="900" align="bottom"></p>
-</center>
-<br/><br/>
-</section>
-
-<section>
-<h2 id="self-emerging-clustering">Self-emerging clustering  </h2>
-
-<br/><br/>
-<center>
-<p><img src="figures/mbpfig7.png" width="900" align="bottom"></p>
-</center>
-<br/><br/>
-</section>
-
-<section>
-<h2 id="clustering-two-body-pair-distributions">Clustering: Two-body pair distributions  </h2>
-
-<br/><br/>
-<center>
-<p><img src="figures/mbpfig8.png" width="900" align="bottom"></p>
-</center>
-<br/><br/>
-</section>
-
-<section>
-<h2 id="nuclear-matter-proton-fraction">Nuclear matter proton fraction  </h2>
-
-<br/><br/>
-<center>
-<p><img src="figures/mbpfig9.png" width="900" align="bottom"></p>
-</center>
-<br/><br/>
 </section>
 
 <section>

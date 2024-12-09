@@ -7,18 +7,18 @@ DATE: UniTN, Dipartimento di Fisica, 9 dicembre 2024
 ===== Nobel per la  Fisica  sull'apprendimento automatico  =====
 
 !bblock
- diedero il premio Nobel per la Fisica a Hopfield e Hinton? 
+Quali furono le ragioni e motivazioni per dare  il premio Nobel per la Fisica a Hopfield e Hinton? 
 !eblock
 
 !bblock
-Tutto il materiale per questo seminario lo potete trovare sul sito  URL:"http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/UniDelValle/pdf/UniTNDicembre2024.pdf"
+Tutto il materiale per questo seminario lo potete trovare sul sito  URL:"http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/UniTNDicembre2024/pdf/UniTNDicembre2024.pdf"
 !eblock
 
 
 !split
 ===== Premio Nobel 2024 =====
 
-Tratto dalla conferenza stampa per il premio Nobel:
+Tratto dal sito per il premio Nobel:
 !bblock
 This year’s two Nobel Laureates in Physics have used tools from
 physics to develop methods that are the foundation of today’s powerful
@@ -80,11 +80,11 @@ solely from rewards and punishment.
 Another way to categorize machine learning tasks is to consider the desired output of a system.
 Some of the most common tasks are:
 
-  * Classification: Outputs are divided into two or more classes. The goal is to   produce a model that assigns inputs into one of these classes. An example is to identify  digits based on pictures of hand-written ones. Classification is typically supervised learning.
+* Classification: Outputs are divided into two or more classes. The goal is to   produce a model that assigns inputs into one of these classes. An example is to identify  digits based on pictures of hand-written ones. Classification is typically supervised learning.
 
-  * Regression: Finding a functional relationship between an input data set and a reference data set.   The goal is to construct a function that maps input data to continuous output values.
+* Regression: Finding a functional relationship between an input data set and a reference data set.   The goal is to construct a function that maps input data to continuous output values.
 
-  * Clustering: Data are divided into groups with certain common traits, without knowing the different groups beforehand.  It is thus a form of unsupervised learning.
+* Clustering: Data are divided into groups with certain common traits, without knowing the different groups beforehand.  It is thus a form of unsupervised learning.
 !eblock
 
 
@@ -260,10 +260,92 @@ FIGURE: [figures/mlimage.png, width=800 frac=1.0]
 
 
 !split
-===== ML in Nuclear  Physics (or any field in physics) =====
+===== AI/ML and Quantum Computing =====
 
-FIGURE: [figures/ML-NP.pdf, width=900 frac=1.0]
+FIGURE: [figures/QAIfig1.png, width=900 frac=1.0]
 
+
+!split
+===== Why Feed Forward Neural Networks (FFNN)?  =====
+
+According to the *Universal approximation theorem*, a feed-forward
+neural network with just a single hidden layer containing a finite
+number of neurons can approximate a continuous multidimensional
+function to arbitrary accuracy, assuming the activation function for
+the hidden layer is a _non-constant, bounded and
+monotonically-increasing continuous function_.
+
+
+!split
+===== Universal approximation theorem =====
+
+The universal approximation theorem plays a central role in deep
+learning.  "Cybenko (1989)":"https://link.springer.com/article/10.1007/BF02551274" showed
+the following:
+
+!bblock
+Let $\sigma$ be any continuous sigmoidal function such that
+!bt
+\[
+\sigma(z) = \left\{\begin{array}{cc} 1 & z\rightarrow \infty\\ 0 & z \rightarrow -\infty \end{array}\right.
+\]
+!et
+Given a continuous and deterministic function $F(\bm{x})$ on the unit
+cube in $d$-dimensions $F\in [0,1]^d$, $x\in [0,1]^d$ and a parameter
+$\epsilon >0$, there is a one-layer (hidden) neural network
+$f(\bm{x};\bm{\Theta})$ with $\bm{\Theta}=(\bm{W},\bm{b})$ and $\bm{W}\in
+\mathbb{R}^{m\times n}$ and $\bm{b}\in \mathbb{R}^{n}$, for which
+!bt
+\[
+\vert F(\bm{x})-f(\bm{x};\bm{\Theta})\vert < \epsilon \hspace{0.1cm} \forall \bm{x}\in[0,1]^d.
+\]
+!et
+
+!eblock
+
+
+
+!split
+===== The approximation theorem in words =====
+
+_Any continuous function $y=F(\bm{x})$ supported on the unit cube in
+$d$-dimensions can be approximated by a one-layer sigmoidal network to
+arbitrary accuracy._
+
+"Hornik (1991)":"https://www.sciencedirect.com/science/article/abs/pii/089360809190009T" extended the theorem by letting any non-constant, bounded activation function to be included using that the expectation value
+!bt
+\[
+\mathbb{E}[\vert F(\bm{x})\vert^2] =\int_{\bm{x}\in D} \vert F(\bm{x})\vert^2p(\bm{x})d\bm{x} < \infty.
+\]
+!et
+Then we have
+!bt
+\[
+\mathbb{E}[\vert F(\bm{x})-f(\bm{x};\bm{\Theta})\vert^2] =\int_{\bm{x}\in D} \vert F(\bm{x})-f(\bm{x};\bm{\Theta})\vert^2p(\bm{x})d\bm{x} < \epsilon.
+\]
+!et
+
+
+!split
+===== More on the general approximation theorem =====
+
+None of the proofs give any insight into the relation between the
+number of of hidden layers and nodes and the approximation error
+$\epsilon$, nor the magnitudes of $\bm{W}$ and $\bm{b}$.
+
+Neural networks (NNs) have what we may call a kind of universality no matter what function we want to compute.
+
+!bblock
+It does not mean that an NN can be used to exactly compute any function. Rather, we get an approximation that is as good as we want. 
+!eblock
+
+!split
+===== Class of functions we can approximate =====
+
+!bblock
+The class of functions that can be approximated are the continuous ones.
+If the function $F(\bm{x})$ is discontinuous, it won't in general be possible to approximate it. However, an NN may still give an approximation even if we fail in some points.
+!eblock
 
 
 
@@ -377,88 +459,6 @@ These integrals are evaluted using MC intergration (with all its possible error 
 !eblock
 
 
-!split
-===== Why Feed Forward Neural Networks (FFNN)?  =====
-
-According to the *Universal approximation theorem*, a feed-forward
-neural network with just a single hidden layer containing a finite
-number of neurons can approximate a continuous multidimensional
-function to arbitrary accuracy, assuming the activation function for
-the hidden layer is a _non-constant, bounded and
-monotonically-increasing continuous function_.
-
-
-!split
-===== Universal approximation theorem =====
-
-The universal approximation theorem plays a central role in deep
-learning.  "Cybenko (1989)":"https://link.springer.com/article/10.1007/BF02551274" showed
-the following:
-
-!bblock
-Let $\sigma$ be any continuous sigmoidal function such that
-!bt
-\[
-\sigma(z) = \left\{\begin{array}{cc} 1 & z\rightarrow \infty\\ 0 & z \rightarrow -\infty \end{array}\right.
-\]
-!et
-Given a continuous and deterministic function $F(\bm{x})$ on the unit
-cube in $d$-dimensions $F\in [0,1]^d$, $x\in [0,1]^d$ and a parameter
-$\epsilon >0$, there is a one-layer (hidden) neural network
-$f(\bm{x};\bm{\Theta})$ with $\bm{\Theta}=(\bm{W},\bm{b})$ and $\bm{W}\in
-\mathbb{R}^{m\times n}$ and $\bm{b}\in \mathbb{R}^{n}$, for which
-!bt
-\[
-\vert F(\bm{x})-f(\bm{x};\bm{\Theta})\vert < \epsilon \hspace{0.1cm} \forall \bm{x}\in[0,1]^d.
-\]
-!et
-
-!eblock
-
-
-
-!split
-===== The approximation theorem in words =====
-
-_Any continuous function $y=F(\bm{x})$ supported on the unit cube in
-$d$-dimensions can be approximated by a one-layer sigmoidal network to
-arbitrary accuracy._
-
-"Hornik (1991)":"https://www.sciencedirect.com/science/article/abs/pii/089360809190009T" extended the theorem by letting any non-constant, bounded activation function to be included using that the expectation value
-!bt
-\[
-\mathbb{E}[\vert F(\bm{x})\vert^2] =\int_{\bm{x}\in D} \vert F(\bm{x})\vert^2p(\bm{x})d\bm{x} < \infty.
-\]
-!et
-Then we have
-!bt
-\[
-\mathbb{E}[\vert F(\bm{x})-f(\bm{x};\bm{\Theta})\vert^2] =\int_{\bm{x}\in D} \vert F(\bm{x})-f(\bm{x};\bm{\Theta})\vert^2p(\bm{x})d\bm{x} < \epsilon.
-\]
-!et
-
-
-!split
-===== More on the general approximation theorem =====
-
-None of the proofs give any insight into the relation between the
-number of of hidden layers and nodes and the approximation error
-$\epsilon$, nor the magnitudes of $\bm{W}$ and $\bm{b}$.
-
-Neural networks (NNs) have what we may call a kind of universality no matter what function we want to compute.
-
-!bblock
-It does not mean that an NN can be used to exactly compute any function. Rather, we get an approximation that is as good as we want. 
-!eblock
-
-!split
-===== Class of functions we can approximate =====
-
-!bblock
-The class of functions that can be approximated are the continuous ones.
-If the function $F(\bm{x})$ is discontinuous, it won't in general be possible to approximate it. However, an NN may still give an approximation even if we fail in some points.
-!eblock
-
 
 
 !split
@@ -540,58 +540,6 @@ FIGURE: [figures/mbpfig5.png, width=900 frac=1.0]
 !bblock
 FIGURE: [figures/nmatter.png, width=700 frac=0.9]
 !eblock
-
-
-!split
-
-===== Pairing and Spin-singlet and triplet two-body distribution functions at $\rho=0.01$ fm$^{-3}$ =====
-!bblock
-FIGURE: [figures/01_tbd.pdf, width=700 frac=0.9]
-!eblock
-
-
-!split
-===== Pairing and Spin-singlet and triplet two-body distribution functions at $\rho=0.04$ fm$^{-3}$ =====
-
-!bblock
-FIGURE: [figures/04_tbd.pdf, width=700 frac=0.9]
-!eblock
-
-
-!split
-===== Pairing and Spin-singlet and triplet two-body distribution functions at $\rho=0.08$ fm$^{-3}$ =====
-!bblock
-FIGURE: [figures/08_tbd.pdf, width=700 frac=0.9]
-!eblock
-
-
-!split
-===== Symmetric nuclear matter  =====
-
-
-FIGURE: [figures/mbpfig6.png, width=900 frac=1.0]
-
-
-!split
-===== Self-emerging clustering  =====
-
-
-FIGURE: [figures/mbpfig7.png, width=900 frac=1.0]
-
-
-!split
-===== Clustering: Two-body pair distributions  =====
-
-
-FIGURE: [figures/mbpfig8.png, width=900 frac=1.0]
-
-
-
-!split
-===== Nuclear matter proton fraction  =====
-
-
-FIGURE: [figures/mbpfig9.png, width=900 frac=1.0]
 
 
 
