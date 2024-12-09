@@ -1,0 +1,1519 @@
+%%
+%% Automatically generated file from DocOnce source
+%% (https://github.com/doconce/doconce/)
+%% doconce format latex UniTNDicembre2024.do.txt --latex_title_layout=beamer --latex_table_format=footnotesize --no_mako
+%%
+% #ifdef PTEX2TEX_EXPLANATION
+%%
+%% The file follows the ptex2tex extended LaTeX format, see
+%% ptex2tex: https://code.google.com/p/ptex2tex/
+%%
+%% Run
+%%      ptex2tex myfile
+%% or
+%%      doconce ptex2tex myfile
+%%
+%% to turn myfile.p.tex into an ordinary LaTeX file myfile.tex.
+%% (The ptex2tex program: https://code.google.com/p/ptex2tex)
+%% Many preprocess options can be added to ptex2tex or doconce ptex2tex
+%%
+%%      ptex2tex -DMINTED myfile
+%%      doconce ptex2tex myfile envir=minted
+%%
+%% ptex2tex will typeset code environments according to a global or local
+%% .ptex2tex.cfg configure file. doconce ptex2tex will typeset code
+%% according to options on the command line (just type doconce ptex2tex to
+%% see examples). If doconce ptex2tex has envir=minted, it enables the
+%% minted style without needing -DMINTED.
+% #endif
+
+% #define PREAMBLE
+
+% #ifdef PREAMBLE
+%-------------------- begin preamble ----------------------
+
+\documentclass[%
+oneside,                 % oneside: electronic viewing, twoside: printing
+final,                   % draft: marks overfull hboxes, figures with paths
+10pt]{article}
+
+\listfiles               %  print all files needed to compile this document
+
+\usepackage{relsize,makeidx,color,setspace,amsmath,amsfonts,amssymb}
+\usepackage[table]{xcolor}
+\usepackage{bm,ltablex,microtype}
+
+\usepackage[pdftex]{graphicx}
+
+\usepackage{ptex2tex}
+% #ifdef MINTED
+\usepackage{minted}
+\usemintedstyle{default}
+% #endif
+
+\usepackage[T1]{fontenc}
+%\usepackage[latin1]{inputenc}
+\usepackage{ucs}
+\usepackage[utf8x]{inputenc}
+
+\usepackage{lmodern}         % Latin Modern fonts derived from Computer Modern
+
+% Hyperlinks in PDF:
+\definecolor{linkcolor}{rgb}{0,0,0.4}
+\usepackage{hyperref}
+\hypersetup{
+    breaklinks=true,
+    colorlinks=true,
+    linkcolor=linkcolor,
+    urlcolor=linkcolor,
+    citecolor=black,
+    filecolor=black,
+    %filecolor=blue,
+    pdfmenubar=true,
+    pdftoolbar=true,
+    bookmarksdepth=3   % Uncomment (and tweak) for PDF bookmarks with more levels than the TOC
+    }
+%\hyperbaseurl{}   % hyperlinks are relative to this root
+
+\setcounter{tocdepth}{2}  % levels in table of contents
+
+% Tricks for having figures close to where they are defined:
+% 1. define less restrictive rules for where to put figures
+\setcounter{topnumber}{2}
+\setcounter{bottomnumber}{2}
+\setcounter{totalnumber}{4}
+\renewcommand{\topfraction}{0.95}
+\renewcommand{\bottomfraction}{0.95}
+\renewcommand{\textfraction}{0}
+\renewcommand{\floatpagefraction}{0.75}
+% floatpagefraction must always be less than topfraction!
+% 2. ensure all figures are flushed before next section
+\usepackage[section]{placeins}
+% 3. enable begin{figure}[H] (often leads to ugly pagebreaks)
+%\usepackage{float}\restylefloat{figure}
+
+\usepackage[framemethod=TikZ]{mdframed}
+
+% --- begin definitions of admonition environments ---
+
+% Admonition style "mdfbox" is an oval colored box based on mdframed
+% "notice" admon
+\colorlet{mdfbox_notice_background}{gray!5}
+\newmdenv[
+  skipabove=15pt,
+  skipbelow=15pt,
+  outerlinewidth=0,
+  backgroundcolor=mdfbox_notice_background,
+  linecolor=black,
+  linewidth=2pt,       % frame thickness
+  frametitlebackgroundcolor=mdfbox_notice_background,
+  frametitlerule=true,
+  frametitlefont=\normalfont\bfseries,
+  shadow=false,        % frame shadow?
+  shadowsize=11pt,
+  leftmargin=0,
+  rightmargin=0,
+  roundcorner=5,
+  needspace=0pt,
+]{notice_mdfboxmdframed}
+
+\newenvironment{notice_mdfboxadmon}[1][]{
+\begin{notice_mdfboxmdframed}[frametitle=#1]
+}
+{
+\end{notice_mdfboxmdframed}
+}
+
+% Admonition style "mdfbox" is an oval colored box based on mdframed
+% "summary" admon
+\colorlet{mdfbox_summary_background}{gray!5}
+\newmdenv[
+  skipabove=15pt,
+  skipbelow=15pt,
+  outerlinewidth=0,
+  backgroundcolor=mdfbox_summary_background,
+  linecolor=black,
+  linewidth=2pt,       % frame thickness
+  frametitlebackgroundcolor=mdfbox_summary_background,
+  frametitlerule=true,
+  frametitlefont=\normalfont\bfseries,
+  shadow=false,        % frame shadow?
+  shadowsize=11pt,
+  leftmargin=0,
+  rightmargin=0,
+  roundcorner=5,
+  needspace=0pt,
+]{summary_mdfboxmdframed}
+
+\newenvironment{summary_mdfboxadmon}[1][]{
+\begin{summary_mdfboxmdframed}[frametitle=#1]
+}
+{
+\end{summary_mdfboxmdframed}
+}
+
+% Admonition style "mdfbox" is an oval colored box based on mdframed
+% "warning" admon
+\colorlet{mdfbox_warning_background}{gray!5}
+\newmdenv[
+  skipabove=15pt,
+  skipbelow=15pt,
+  outerlinewidth=0,
+  backgroundcolor=mdfbox_warning_background,
+  linecolor=black,
+  linewidth=2pt,       % frame thickness
+  frametitlebackgroundcolor=mdfbox_warning_background,
+  frametitlerule=true,
+  frametitlefont=\normalfont\bfseries,
+  shadow=false,        % frame shadow?
+  shadowsize=11pt,
+  leftmargin=0,
+  rightmargin=0,
+  roundcorner=5,
+  needspace=0pt,
+]{warning_mdfboxmdframed}
+
+\newenvironment{warning_mdfboxadmon}[1][]{
+\begin{warning_mdfboxmdframed}[frametitle=#1]
+}
+{
+\end{warning_mdfboxmdframed}
+}
+
+% Admonition style "mdfbox" is an oval colored box based on mdframed
+% "question" admon
+\colorlet{mdfbox_question_background}{gray!5}
+\newmdenv[
+  skipabove=15pt,
+  skipbelow=15pt,
+  outerlinewidth=0,
+  backgroundcolor=mdfbox_question_background,
+  linecolor=black,
+  linewidth=2pt,       % frame thickness
+  frametitlebackgroundcolor=mdfbox_question_background,
+  frametitlerule=true,
+  frametitlefont=\normalfont\bfseries,
+  shadow=false,        % frame shadow?
+  shadowsize=11pt,
+  leftmargin=0,
+  rightmargin=0,
+  roundcorner=5,
+  needspace=0pt,
+]{question_mdfboxmdframed}
+
+\newenvironment{question_mdfboxadmon}[1][]{
+\begin{question_mdfboxmdframed}[frametitle=#1]
+}
+{
+\end{question_mdfboxmdframed}
+}
+
+% Admonition style "mdfbox" is an oval colored box based on mdframed
+% "block" admon
+\colorlet{mdfbox_block_background}{gray!5}
+\newmdenv[
+  skipabove=15pt,
+  skipbelow=15pt,
+  outerlinewidth=0,
+  backgroundcolor=mdfbox_block_background,
+  linecolor=black,
+  linewidth=2pt,       % frame thickness
+  frametitlebackgroundcolor=mdfbox_block_background,
+  frametitlerule=true,
+  frametitlefont=\normalfont\bfseries,
+  shadow=false,        % frame shadow?
+  shadowsize=11pt,
+  leftmargin=0,
+  rightmargin=0,
+  roundcorner=5,
+  needspace=0pt,
+]{block_mdfboxmdframed}
+
+\newenvironment{block_mdfboxadmon}[1][]{
+\begin{block_mdfboxmdframed}[frametitle=#1]
+}
+{
+\end{block_mdfboxmdframed}
+}
+
+% --- end of definitions of admonition environments ---
+
+% prevent orhpans and widows
+\clubpenalty = 10000
+\widowpenalty = 10000
+
+% --- end of standard preamble for documents ---
+
+
+% insert custom LaTeX commands...
+
+\raggedbottom
+\makeindex
+
+%-------------------- end preamble ----------------------
+
+\begin{document}
+
+% matching end for #ifdef PREAMBLE
+% #endif
+
+\newcommand{\exercisesection}[1]{\subsection*{#1}}
+
+
+% ------------------- main content ----------------------
+
+
+
+% ----------------- title -------------------------
+
+\title{Premio Nobel per la  Fisica 2024}
+
+% ----------------- author(s) -------------------------
+
+\author{Morten Hjorth-Jensen\inst{1}}
+\institute{Department of Physics and Center for Computing in Science Education, University of Oslo, Norvegia\inst{1}}
+% ----------------- end author(s) -------------------------
+
+\date{UniTN, Dipartimento di Fisica, 9 dicembre 2024
+% <optional titlepage figure>
+% <optional copyright>
+}
+
+% !split
+\subsection{Nobel per la  Fisica  sull'apprendimento automatico}
+
+\begin{block}{}
+ diedero il premio Nobel per la Fisica a Hopfield e Hinton? 
+\end{block}
+
+\begin{block}{}
+Tutto il materiale per questo seminario lo potete trovare sul sito  \href{{http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/UniDelValle/pdf/UniTNDicembre2024.pdf}}{\nolinkurl{http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/UniDelValle/pdf/UniTNDicembre2024.pdf}}
+\end{block}
+
+% !split
+\subsection{Premio Nobel 2024}
+
+Tratto dalla conferenza stampa per il premio Nobel:
+\begin{block}{}
+This year’s two Nobel Laureates in Physics have used tools from
+physics to develop methods that are the foundation of today’s powerful
+machine learning. John Hopfield created an associative memory that can
+store and reconstruct images and other types of patterns in
+data. Geoffrey Hinton invented a method that can autonomously find
+properties in data, and so perform tasks such as identifying specific
+elements in pictures.
+\end{block}
+
+% !split
+\subsection{Geoffrey Hinton}
+
+\href{{https://www.nobelprize.org/prizes/physics/2024/press-release/#:~:text=Geoffrey%20Hinton%20invented%20a%20method,learning%20using%20artificial%20neural%20networks}}{Dal sito per il premio Nobel}.
+\begin{block}{}
+Geoffrey Hinton used the Hopfield network as the foundation for a new
+network that uses a different method: the Boltzmann machine. This can
+learn to recognise characteristic elements in a given type of
+data. Hinton used tools from statistical physics, the science of
+systems built from many similar components. The machine is trained by
+feeding it examples that are very likely to arise when the machine is
+run. The Boltzmann machine can be used to classify images or create
+new examples of the type of pattern on which it was trained. Hinton
+has built upon this work, helping initiate the current explosive
+development of machine learning.
+\end{block}
+
+% !split
+\subsection{AI/ML and some statements you may have heard (and what do they mean?)}
+
+\begin{enumerate}
+\item Fei-Fei Li on ImageNet: \textbf{map out the entire world of objects} (\href{{https://cacm.acm.org/news/219702-the-data-that-transformed-ai-research-and-possibly-the-world/fulltext}}{The data that transformed AI research})
+
+\item Russell and Norvig in their popular textbook: \textbf{relevant to any intellectual task; it is truly a universal field} (\href{{http://aima.cs.berkeley.edu/}}{Artificial Intelligence, A modern approach})
+
+\item Woody Bledsoe puts it more bluntly: \textbf{in the long run, AI is the only science} (quoted in Pamilla McCorduck, \href{{https://www.pamelamccorduck.com/machines-who-think}}{Machines who think})
+\end{enumerate}
+
+\noindent
+If you wish to have a critical read on AI/ML from a societal point of view, see \href{{https://www.katecrawford.net/}}{Kate Crawford's recent text Atlas of AI}. 
+
+\textbf{Here: with AI/ML we intend a collection of machine learning methods with an emphasis on statistical learning and data analysis}
+
+% !split
+\subsection{Types of machine learning}
+
+\begin{block}{}
+The approaches to machine learning are many, but are often split into two main categories. 
+In \emph{supervised learning} we know the answer to a problem,
+and let the computer deduce the logic behind it. On the other hand, \emph{unsupervised learning}
+is a method for finding patterns and relationship in data sets without any prior knowledge of the system.
+
+An important  third category is  \emph{reinforcement learning}. This is a paradigm 
+of learning inspired by behavioural psychology, where learning is achieved by trial-and-error, 
+solely from rewards and punishment.
+\end{block}
+
+% !split
+\subsection{Main categories}
+\begin{block}{}
+Another way to categorize machine learning tasks is to consider the desired output of a system.
+Some of the most common tasks are:
+
+\begin{itemize}
+  \item Classification: Outputs are divided into two or more classes. The goal is to   produce a model that assigns inputs into one of these classes. An example is to identify  digits based on pictures of hand-written ones. Classification is typically supervised learning.
+
+  \item Regression: Finding a functional relationship between an input data set and a reference data set.   The goal is to construct a function that maps input data to continuous output values.
+
+  \item Clustering: Data are divided into groups with certain common traits, without knowing the different groups beforehand.  It is thus a form of unsupervised learning.
+\end{itemize}
+
+\noindent
+\end{block}
+
+% !split
+\subsection{The plethora  of machine learning algorithms/methods}
+
+\begin{enumerate}
+\item Deep learning: Neural Networks (NN), Convolutional NN, Recurrent NN, Boltzmann machines, autoencoders and variational autoencoders  and generative adversarial networks, stable diffusion and many more generative models
+
+\item Bayesian statistics and Bayesian Machine Learning, Bayesian experimental design, Bayesian Regression models, Bayesian neural networks, Gaussian processes and much more
+
+\item Dimensionality reduction (Principal component analysis), Clustering Methods and more
+
+\item Ensemble Methods, Random forests, bagging and voting methods, gradient boosting approaches 
+
+\item Linear and logistic regression, Kernel methods, support vector machines and more
+
+\item Reinforcement Learning; Transfer Learning and more 
+\end{enumerate}
+
+\noindent
+% !split
+\subsection{Example of generative modeling, \href{{https://www.oreilly.com/library/view/generative-deep-learning/9781098134174/ch01.html}}{taken from Generative Deep Learning by David Foster}}
+
+\vspace{6mm}
+
+% inline figure
+\centerline{\includegraphics[width=1.0\linewidth]{figures/generativelearning.png}}
+
+\vspace{6mm}
+
+% !split
+\subsection{Example of discriminative modeling, \href{{https://www.oreilly.com/library/view/generative-deep-learning/9781098134174/ch01.html}}{taken from Generative Deeep Learning by David Foster}}
+
+\vspace{6mm}
+
+% inline figure
+\centerline{\includegraphics[width=1.0\linewidth]{figures/standarddeeplearning.png}}
+
+\vspace{6mm}
+
+% !split
+\subsection{Taxonomy of generative deep learning, \href{{https://www.oreilly.com/library/view/generative-deep-learning/9781098134174/ch01.html}}{taken from Generative Deep Learning by David Foster}}
+
+\vspace{6mm}
+
+% inline figure
+\centerline{\includegraphics[width=1.0\linewidth]{figures/generativemodels.png}}
+
+\vspace{6mm}
+
+% !split
+\subsection{Good books with hands-on material and codes}
+\begin{block}{}
+\begin{itemize}
+\item \href{{https://sebastianraschka.com/blog/2022/ml-pytorch-book.html}}{Sebastian Rashcka et al, Machine learning with Sickit-Learn and PyTorch}
+
+\item \href{{https://www.oreilly.com/library/view/generative-deep-learning/9781098134174/ch01.html}}{David Foster, Generative Deep Learning with TensorFlow}
+
+\item \href{{https://github.com/PacktPublishing/Hands-On-Generative-AI-with-Python-and-TensorFlow-2}}{Bali and Gavras, Generative AI with Python and TensorFlow 2}
+\end{itemize}
+
+\noindent
+\end{block}
+
+All three books have GitHub addresses from where  one can download all codes. We will borrow most of the material from these three texts as well as 
+from Goodfellow, Bengio and Courville's text \href{{https://www.deeplearningbook.org/}}{Deep Learning}
+
+% !split
+\subsection{What are the basic Machine Learning ingredients?}
+\begin{block}{}
+Almost every problem in ML and data science starts with the same ingredients:
+\begin{itemize}
+\item The dataset $\bm{x}$ (could be some observable quantity of the system we are studying)
+
+\item A model which is a function of a set of parameters $\bm{\alpha}$ that relates to the dataset, say a likelihood  function $p(\bm{x}\vert \bm{\alpha})$ or just a simple model $f(\bm{\alpha})$
+
+\item A so-called \textbf{loss/cost/risk} function $\mathcal{C} (\bm{x}, f(\bm{\alpha}))$ which allows us to decide how well our model represents the dataset. 
+\end{itemize}
+
+\noindent
+We seek to minimize the function $\mathcal{C} (\bm{x}, f(\bm{\alpha}))$ by finding the parameter values which minimize $\mathcal{C}$. This leads to  various minimization algorithms. It may surprise many, but at the heart of all machine learning algortihms there is an optimization problem. 
+\end{block}
+
+% !split
+\subsection{Low-level machine learning, the family of ordinary least squares methods}
+
+Our data which we want to apply a machine learning method on, consist
+of a set of inputs $\bm{x}^T=[x_0,x_1,x_2,\dots,x_{n-1}]$ and the
+outputs we want to model $\bm{y}^T=[y_0,y_1,y_2,\dots,y_{n-1}]$.
+We assume  that the output data can be represented (for a regression case) by a continuous function $f$
+through
+\[
+\bm{y}=f(\bm{x})+\bm{\epsilon}.
+\]
+
+% !split
+\subsection{Setting up the equations}
+
+In linear regression we approximate the unknown function with another
+continuous function $\tilde{\bm{y}}(\bm{x})$ which depends linearly on
+some unknown parameters
+$\bm{\theta}^T=[\theta_0,\theta_1,\theta_2,\dots,\theta_{p-1}]$.
+
+The input data can be organized in terms of a so-called design matrix 
+with an approximating function $\bm{\tilde{y}}$ 
+\[
+\bm{\tilde{y}}= \bm{X}\bm{\theta},
+\]
+
+% !split
+\subsection{The objective/cost/loss function}
+
+The  simplest approach is the mean squared error
+\[
+C(\bm{\Theta})=\frac{1}{n}\sum_{i=0}^{n-1}\left(y_i-\tilde{y}_i\right)^2=\frac{1}{n}\left\{\left(\bm{y}-\bm{\tilde{y}}\right)^T\left(\bm{y}-\bm{\tilde{y}}\right)\right\},
+\]
+or using the matrix $\bm{X}$ and in a more compact matrix-vector notation as
+\[
+C(\bm{\Theta})=\frac{1}{n}\left\{\left(\bm{y}-\bm{X}\bm{\theta}\right)^T\left(\bm{y}-\bm{X}\bm{\theta}\right)\right\}.
+\]
+This function represents one of many possible ways to define the so-called cost function.
+
+% !split
+\subsection{Training solution}
+
+Optimizing with respect to the unknown parameters $\theta_j$ we get 
+\[
+\bm{X}^T\bm{y} = \bm{X}^T\bm{X}\bm{\theta},  
+\]
+and if the matrix $\bm{X}^T\bm{X}$ is invertible we have the optimal values
+\[
+\hat{\bm{\theta}} =\left(\bm{X}^T\bm{X}\right)^{-1}\bm{X}^T\bm{y}.
+\]
+
+We say we 'learn' the unknown parameters $\bm{\theta}$ from the last equation.
+
+% !split
+\subsection{Lots of room for creativity}
+\begin{block}{}
+Not all the
+algorithms and methods can be given a rigorous mathematical
+justification, opening up thereby for experimenting
+and trial and error and thereby exciting new developments. 
+\end{block}
+
+\begin{block}{}
+A solid command of linear algebra, multivariate theory, 
+probability theory, statistical data analysis, optimization algorithms, 
+understanding errors and Monte Carlo methods is important in order to understand many of the 
+various algorithms and methods. 
+\end{block}
+
+\textbf{Job market, a personal statement}: \href{{https://www.analyticsindiamag.com/top-countries-hiring-most-number-of-artificial-intelligence-machine-learning-experts/}}{A familiarity with ML is almost becoming a prerequisite for many of the most exciting employment opportunities}. And add quantum computing and there you are!
+
+% !split
+\subsection{Selected references}
+\begin{block}{}
+\begin{itemize}
+\item \href{{https://arxiv.org/abs/1803.08823}}{Mehta et al.} and \href{{https://www.sciencedirect.com/science/article/pii/S0370157319300766?via%3Dihub}}{Physics Reports (2019)}.
+
+\item \href{{https://link.aps.org/doi/10.1103/RevModPhys.91.045002}}{Machine Learning and the Physical Sciences by Carleo et al}
+
+\item \href{{https://journals.aps.org/rmp/abstract/10.1103/RevModPhys.94.031003}}{Artificial Intelligence and Machine Learning in Nuclear Physics, Amber Boehnlein et al., Reviews Modern of Physics 94, 031003 (2022)} 
+
+\item \href{{https://journals.aps.org/prresearch/pdf/10.1103/PhysRevResearch.5.033062}}{Dilute neutron star matter from neural-network quantum states by Fore et al, Physical Review Research 5, 033062 (2023)}
+
+\item \href{{https://doi.org/10.48550/arXiv.2305.08831}}{Neural-network quantum states for ultra-cold Fermi gases, Jane Kim et al, Nature Physics Communcication, submitted}
+
+\item \href{{https://doi.org/10.48550/arXiv.2305.07240}}{Message-Passing Neural Quantum States for the Homogeneous Electron Gas, Gabriel Pescia, Jane Kim et al.~arXiv.2305.07240,}
+
+\item \href{{https://doi.org/10.3389/fphy.2023.1061580}}{Efficient solutions of fermionic systems using artificial neural networks, Nordhagen et al, Frontiers in Physics 11, 2023}
+
+\item \href{{https://pdg.lbl.gov/2021/reviews/rpp2021-rev-machine-learning.pdf}}{Particle Data Group summary on ML methods}
+\end{itemize}
+
+\noindent
+\end{block}
+
+% !split
+\subsection{Machine learning. A simple perspective on the interface between ML and Physics}
+
+\vspace{6mm}
+
+% inline figure
+\centerline{\includegraphics[width=1.0\linewidth]{figures/mlimage.png}}
+
+\vspace{6mm}
+
+% !split
+\subsection{ML in Nuclear  Physics (or any field in physics)}
+
+\vspace{6mm}
+
+% inline figure
+\centerline{\includegraphics[width=1.0\linewidth]{figures/ML-NP.pdf}}
+
+\vspace{6mm}
+
+% !split
+\subsection{Many-body physics, Quantum Monte Carlo and deep learning}
+\begin{block}{}
+Given a hamiltonian $H$ and a trial wave function $\Psi_T$, the variational principle states that the expectation value of $\langle H \rangle$, defined through 
+\[
+   \langle E \rangle =
+   \frac{\int d\bm{R}\Psi^{\ast}_T(\bm{R})H(\bm{R})\Psi_T(\bm{R})}
+        {\int d\bm{R}\Psi^{\ast}_T(\bm{R})\Psi_T(\bm{R})},
+\]
+is an upper bound to the ground state energy $E_0$ of the hamiltonian $H$, that is 
+\[
+    E_0 \le \langle E \rangle.
+\]
+In general, the integrals involved in the calculation of various  expectation values  are multi-dimensional ones. Traditional integration methods such as the Gauss-Legendre will not be adequate for say the  computation of the energy of a many-body system.  \textbf{Basic philosophy: Let a neural network find the optimal wave function}
+\end{block}
+
+% !split
+\subsection{Quantum Monte Carlo Motivation}
+\begin{block}{Basic steps }
+Choose a trial wave function
+$\psi_T(\bm{R})$.
+\[
+   P(\bm{R},\bm{\alpha})= \frac{\left|\psi_T(\bm{R},\bm{\alpha})\right|^2}{\int \left|\psi_T(\bm{R},\bm{\alpha})\right|^2d\bm{R}}.
+\]
+This is our model, or likelihood/probability distribution function  (PDF). It depends on some variational parameters $\bm{\alpha}$.
+The approximation to the expectation value of the Hamiltonian is now 
+\[
+   \langle E[\bm{\alpha}] \rangle = 
+   \frac{\int d\bm{R}\Psi^{\ast}_T(\bm{R},\bm{\alpha})H(\bm{R})\Psi_T(\bm{R},\bm{\alpha})}
+        {\int d\bm{R}\Psi^{\ast}_T(\bm{R},\bm{\alpha})\Psi_T(\bm{R},\bm{\alpha})}.
+\]
+\end{block}
+
+% !split
+\subsection{Quantum Monte Carlo Motivation}
+\begin{block}{Define a new quantity }
+\[
+   E_L(\bm{R},\bm{\alpha})=\frac{1}{\psi_T(\bm{R},\bm{\alpha})}H\psi_T(\bm{R},\bm{\alpha}),
+\]
+called the local energy, which, together with our trial PDF yields
+\[
+  \langle E[\bm{\alpha}] \rangle=\int P(\bm{R})E_L(\bm{R},\bm{\alpha}) d\bm{R}\approx \frac{1}{N}\sum_{i=1}^NE_L(\bm{R_i},\bm{\alpha})
+\]
+with $N$ being the number of Monte Carlo samples.
+\end{block}
+
+% !split
+\subsection{Energy derivatives}
+\begin{block}{}
+The local energy as function of the variational parameters defines now our \textbf{objective/cost} function.
+
+To find the derivatives of the local energy expectation value as function of the variational parameters, we can use the chain rule and the hermiticity of the Hamiltonian.  
+
+Let us define (with the notation $\langle E[\bm{\alpha}]\rangle =\langle  E_L\rangle$)
+\[
+\bar{E}_{\alpha_i}=\frac{d\langle  E_L\rangle}{d\alpha_i},
+\]
+as the derivative of the energy with respect to the variational parameter $\alpha_i$
+We define also the derivative of the trial function (skipping the subindex $T$) as 
+\[
+\bar{\Psi}_{i}=\frac{d\Psi}{d\alpha_i}.
+\]
+\end{block}
+
+% !split
+\subsection{Derivatives of the local energy}
+\begin{block}{}
+The elements of the gradient of the local energy are 
+\[
+\bar{E}_{i}= 2\left( \langle \frac{\bar{\Psi}_{i}}{\Psi}E_L\rangle -\langle \frac{\bar{\Psi}_{i}}{\Psi}\rangle\langle E_L \rangle\right).
+\]
+From a computational point of view it means that you need to compute the expectation values of 
+\[
+\langle \frac{\bar{\Psi}_{i}}{\Psi}E_L\rangle,
+\]
+and
+\[
+\langle \frac{\bar{\Psi}_{i}}{\Psi}\rangle\langle E_L\rangle
+\]
+These integrals are evaluted using MC intergration (with all its possible error sources). Use methods like stochastic gradient or other minimization methods to find the optimal parameters.
+\end{block}
+
+% !split
+\subsection{Why Feed Forward Neural Networks (FFNN)?}
+
+According to the \emph{Universal approximation theorem}, a feed-forward
+neural network with just a single hidden layer containing a finite
+number of neurons can approximate a continuous multidimensional
+function to arbitrary accuracy, assuming the activation function for
+the hidden layer is a \textbf{non-constant, bounded and
+monotonically-increasing continuous function}.
+
+% !split
+\subsection{Universal approximation theorem}
+
+The universal approximation theorem plays a central role in deep
+learning.  \href{{https://link.springer.com/article/10.1007/BF02551274}}{Cybenko (1989)} showed
+the following:
+
+\begin{block}{}
+Let $\sigma$ be any continuous sigmoidal function such that
+\[
+\sigma(z) = \left\{\begin{array}{cc} 1 & z\rightarrow \infty\\ 0 & z \rightarrow -\infty \end{array}\right.
+\]
+Given a continuous and deterministic function $F(\bm{x})$ on the unit
+cube in $d$-dimensions $F\in [0,1]^d$, $x\in [0,1]^d$ and a parameter
+$\epsilon >0$, there is a one-layer (hidden) neural network
+$f(\bm{x};\bm{\Theta})$ with $\bm{\Theta}=(\bm{W},\bm{b})$ and $\bm{W}\in
+\mathbb{R}^{m\times n}$ and $\bm{b}\in \mathbb{R}^{n}$, for which
+\[
+\vert F(\bm{x})-f(\bm{x};\bm{\Theta})\vert < \epsilon \hspace{0.1cm} \forall \bm{x}\in[0,1]^d.
+\]
+
+\end{block}
+
+% !split
+\subsection{The approximation theorem in words}
+
+\textbf{Any continuous function $y=F(\bm{x})$ supported on the unit cube in
+$d$-dimensions can be approximated by a one-layer sigmoidal network to
+arbitrary accuracy.}
+
+\href{{https://www.sciencedirect.com/science/article/abs/pii/089360809190009T}}{Hornik (1991)} extended the theorem by letting any non-constant, bounded activation function to be included using that the expectation value
+\[
+\mathbb{E}[\vert F(\bm{x})\vert^2] =\int_{\bm{x}\in D} \vert F(\bm{x})\vert^2p(\bm{x})d\bm{x} < \infty.
+\]
+Then we have
+\[
+\mathbb{E}[\vert F(\bm{x})-f(\bm{x};\bm{\Theta})\vert^2] =\int_{\bm{x}\in D} \vert F(\bm{x})-f(\bm{x};\bm{\Theta})\vert^2p(\bm{x})d\bm{x} < \epsilon.
+\]
+
+% !split
+\subsection{More on the general approximation theorem}
+
+None of the proofs give any insight into the relation between the
+number of of hidden layers and nodes and the approximation error
+$\epsilon$, nor the magnitudes of $\bm{W}$ and $\bm{b}$.
+
+Neural networks (NNs) have what we may call a kind of universality no matter what function we want to compute.
+
+\begin{block}{}
+It does not mean that an NN can be used to exactly compute any function. Rather, we get an approximation that is as good as we want. 
+\end{block}
+
+% !split
+\subsection{Class of functions we can approximate}
+
+\begin{block}{}
+The class of functions that can be approximated are the continuous ones.
+If the function $F(\bm{x})$ is discontinuous, it won't in general be possible to approximate it. However, an NN may still give an approximation even if we fail in some points.
+\end{block}
+
+% !split
+\subsection{Monte Carlo methods and Neural Networks}
+
+\href{{https://www.sciencedirect.com/science/article/pii/S0370269320305463?via%3Dihub}}{Machine Learning and the Deuteron by Kebble and Rios} and
+\href{{https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.127.022502}}{Variational Monte Carlo calculations of $A\le 4$ nuclei with an artificial neural-network correlator ansatz by Adams et al.}
+
+\textbf{Adams et al}:
+
+\begin{align}
+H_{LO} &=-\sum_i \frac{{\vec{\nabla}_i^2}}{2m_N}
++\sum_{i<j} {\left(C_1  + C_2\, \vec{\sigma_i}\cdot\vec{\sigma_j}\right)
+e^{-r_{ij}^2\Lambda^2 / 4 }}
+\nonumber\\
+&+D_0 \sum_{i<j<k} \sum_{\text{cyc}}
+{e^{-\left(r_{ik}^2+r_{ij}^2\right)\Lambda^2/4}}\,,
+\end{align}
+
+where $m_N$ is the mass of the nucleon, $\vec{\sigma_i}$ is the Pauli
+matrix acting on nucleon $i$, and $\sum_{\text{cyc}}$ stands for the
+cyclic permutation of $i$, $j$, and $k$. The low-energy constants
+$C_1$ and $C_2$ are fit to the deuteron binding energy and to the
+neutron-neutron scattering length
+
+% !split
+\subsection{Deep learning neural networks, \href{{https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.127.022502}}{Variational Monte Carlo calculations of $A\le 4$ nuclei with an artificial neural-network correlator ansatz by Adams et al.}}
+
+An appealing feature of the neural network ansatz is that it is more general than the more conventional product of two-
+and three-body spin-independent Jastrow functions
+\begin{align}
+|\Psi_V^J \rangle = \prod_{i<j<k} \Big( 1-\sum_{\text{cyc}} u(r_{ij}) u(r_{jk})\Big) \prod_{i<j} f(r_{ij}) | \Phi\rangle\,,
+\end{align}
+which is commonly used for nuclear Hamiltonians that do not contain tensor and spin-orbit terms.
+The above function is replaced by a four-layer Neural Network. 
+
+% !split
+\subsection{Ansatz for a fermionic state function, Jane Kim et al, Commun Phys 7, 148 (2024)}
+
+\[
+\Psi_T(\bm{X}) =\exp{U(\bm{X})}\Phi(\bm{X}).
+\]
+
+\begin{block}{}
+\begin{enumerate}
+\item Build in fermion antisymmetry for network compactness
+
+\item Permutation-invariant Jastrow function improves ansatz flexibility
+
+\item Build $U$ and $\Phi$ functions from fully connected, deep neural networks
+
+\item Use Slater determinant (or Pfaffian) $\Phi$ to enforce antisymmetry with single particle wavefunctions represented by neural networks
+\end{enumerate}
+
+\noindent
+\end{block}
+
+% !split
+\subsection{Nuclear matter setup}
+
+\vspace{6mm}
+
+% inline figure
+\centerline{\includegraphics[width=1.0\linewidth]{figures/mbpfig4.png}}
+
+\vspace{6mm}
+
+% !split
+\subsection{Neutron star structure}
+
+\vspace{6mm}
+
+% inline figure
+\centerline{\includegraphics[width=1.0\linewidth]{figures/mbpfig5.png}}
+
+\vspace{6mm}
+
+% !split
+\subsection{\href{{https://journals.aps.org/prresearch/pdf/10.1103/PhysRevResearch.5.033062}}{Dilute neutron star matter from neural-network quantum states by Fore et al, Physical Review Research 5, 033062 (2023)} at density $\rho=0.04$ fm$^{-3}$}
+
+\begin{block}{}
+
+\vspace{6mm}
+
+% inline figure
+\centerline{\includegraphics[width=0.9\linewidth]{figures/nmatter.png}}
+
+\vspace{6mm}
+
+\end{block}
+
+% !split
+
+\subsection{Pairing and Spin-singlet and triplet two-body distribution functions at $\rho=0.01$ fm$^{-3}$}
+\begin{block}{}
+
+\vspace{6mm}
+
+% inline figure
+\centerline{\includegraphics[width=0.9\linewidth]{figures/01_tbd.pdf}}
+
+\vspace{6mm}
+
+\end{block}
+
+% !split
+\subsection{Pairing and Spin-singlet and triplet two-body distribution functions at $\rho=0.04$ fm$^{-3}$}
+
+\begin{block}{}
+
+\vspace{6mm}
+
+% inline figure
+\centerline{\includegraphics[width=0.9\linewidth]{figures/04_tbd.pdf}}
+
+\vspace{6mm}
+
+\end{block}
+
+% !split
+\subsection{Pairing and Spin-singlet and triplet two-body distribution functions at $\rho=0.08$ fm$^{-3}$}
+\begin{block}{}
+
+\vspace{6mm}
+
+% inline figure
+\centerline{\includegraphics[width=0.9\linewidth]{figures/08_tbd.pdf}}
+
+\vspace{6mm}
+
+\end{block}
+
+% !split
+\subsection{Symmetric nuclear matter}
+
+\vspace{6mm}
+
+% inline figure
+\centerline{\includegraphics[width=1.0\linewidth]{figures/mbpfig6.png}}
+
+\vspace{6mm}
+
+% !split
+\subsection{Self-emerging clustering}
+
+\vspace{6mm}
+
+% inline figure
+\centerline{\includegraphics[width=1.0\linewidth]{figures/mbpfig7.png}}
+
+\vspace{6mm}
+
+% !split
+\subsection{Clustering: Two-body pair distributions}
+
+\vspace{6mm}
+
+% inline figure
+\centerline{\includegraphics[width=1.0\linewidth]{figures/mbpfig8.png}}
+
+\vspace{6mm}
+
+% !split
+\subsection{Nuclear matter proton fraction}
+
+\vspace{6mm}
+
+% inline figure
+\centerline{\includegraphics[width=1.0\linewidth]{figures/mbpfig9.png}}
+
+\vspace{6mm}
+
+% !split
+\subsection{The electron gas in three dimensions with $N=14$ electrons (Wigner-Seitz radius $r_s=2$ a.u.), \href{{https://doi.org/10.48550/arXiv.2305.07240}}{Gabriel Pescia, Jane Kim et al.~arXiv.2305.07240,}}
+
+\begin{block}{}
+
+\vspace{6mm}
+
+% inline figure
+\centerline{\includegraphics[width=0.9\linewidth]{figures/elgasnew.png}}
+
+\vspace{6mm}
+
+\end{block}
+
+% !split
+\subsection{Extrapolations and model interpretability}
+
+When you hear phrases like \textbf{predictions and estimations} and
+\textbf{correlations and causations}, what do you think of?  May be you think
+of the difference between classifying new data points and generating
+new data points.
+Or perhaps you consider that correlations represent some kind of symmetric statements like
+if $A$ is correlated with $B$, then $B$ is correlated with
+$A$. Causation on the other hand is directional, that is if $A$ causes $B$, $B$ does not
+necessarily cause $A$.
+
+% !split
+\subsection{Physics based statistical learning and data analysis}
+
+The above concepts are in some sense the difference between \textbf{old-fashioned} machine
+learning and statistics and Bayesian learning. In machine learning and prediction based
+tasks, we are often interested in developing algorithms that are
+capable of learning patterns from given data in an automated fashion,
+and then using these learned patterns to make predictions or
+assessments of newly given data. In many cases, our primary concern
+is the quality of the predictions or assessments, and we are less
+concerned about the underlying patterns that were learned in order
+to make these predictions.
+
+Physics based statistical learning points however to approaches that give us both predictions and correlations as well as being able to produce error estimates and understand causations.  This leads us to the very interesting field of Bayesian statistics.
+
+% !split
+\subsection{Bayes' Theorem}
+
+Bayes' theorem
+\[
+p(X\vert Y)= \frac{p(X,Y)}{\sum_{i=0}^{n-1}p(Y\vert X=x_i)p(x_i)}=\frac{p(Y\vert X)p(X)}{\sum_{i=0}^{n-1}p(Y\vert X=x_i)p(x_i)}.
+\]
+
+The quantity $p(Y\vert X)$ on the right-hand side of the theorem is
+evaluated for the observed data $Y$ and can be viewed as a function of
+the parameter space represented by $X$. This function is not
+necessarily normalized and is normally called the likelihood function.
+
+The function $p(X)$ on the right hand side is called the prior while the function on the left hand side is the called the posterior probability. The denominator on the right hand side serves as a normalization factor for the posterior distribution.
+
+% !split
+\subsection{\href{{https://journals.aps.org/prc/abstract/10.1103/PhysRevC.101.044307}}{Quantified limits of the nuclear landscape}}
+
+Predictions made with eleven global mass model and Bayesian model averaging
+
+\vspace{6mm}
+
+% inline figure
+\centerline{\includegraphics[width=1.0\linewidth]{figures/landscape.jpg}}
+
+\vspace{6mm}
+
+% !split
+\subsection{Observations (or conclusions if you prefer)}
+\begin{block}{}
+\begin{itemize}
+\item Need for AI/Machine Learning in physics, lots of ongoing activities
+
+\item To solve many complex problems and facilitate discoveries, multidisciplinary efforts efforts are required involving scientists in  physics, statistics, computational science, applied math and other fields.
+
+\item There is a need for  focused AI/ML learning efforts that will benefit accelerator science and experimental and theoretical programs
+\end{itemize}
+
+\noindent
+\end{block}
+
+% !split
+\subsection{More observations}
+\begin{block}{}
+\begin{itemize}
+\item How do we develop insights, competences, knowledge in statistical learning that can advance a given field?
+\begin{itemize}
+
+  \item For example: Can we use ML to find out which correlations are relevant and thereby diminish the dimensionality problem in standard many-body  theories?
+
+  \item Can we use AI/ML in detector analysis, accelerator design, analysis of experimental data and more?
+
+  \item Can we use AL/ML to carry out reliable extrapolations by using current experimental knowledge and current theoretical models?
+
+\end{itemize}
+
+\noindent
+\item The community needs to invest in relevant educational efforts and training of scientists with knowledge in AI/ML. These are great challenges to the CS and DS communities
+
+\item Quantum computing and quantum machine learning not discussed here
+
+\item Most likely tons of things I have forgotten
+\end{itemize}
+
+\noindent
+\end{block}
+
+% !split
+\subsection{Possible start to raise awareness about ML in your own field}
+\begin{block}{}
+\begin{itemize}
+\item Make an ML challenge in your own field a la \href{{https://home.cern/news/news/computing/higgs-boson-machine-learning-challenge}}{Learning to discover: the Higgs boson machine learning challenge}. Alternatively go to kaggle.com at \href{{https://www.kaggle.com/c/higgs-boson}}{\nolinkurl{https://www.kaggle.com/c/higgs-boson}}
+
+\item HEP@CERN and HEP in general have made significant impacts in the field of machine learning and AI. Something to learn from
+\end{itemize}
+
+\noindent
+\end{block}
+
+% !split
+\subsection{Possible questions for discussions}
+
+\begin{enumerate}
+\item How do we incorporate these topics in our education?
+
+\item More difficult: what are the consequences for universities and our educational mission?
+\end{enumerate}
+
+\noindent
+% !split
+\subsection{Education}
+
+\begin{enumerate}
+\item Incorporate elements of statistical data analysis and Machine Learning in undergraduate programs
+
+\item Develop courses on Machine Learning and statistical data analysis
+
+\item Build up a series of courses in Quantum Information Technologies (QIT)
+
+\item Modifying contents of present Physics programs or new programs on  Computational Physics and Quantum Technologies
+\begin{enumerate}
+
+ \item study direction/option in \textbf{quantum technologies}
+
+ \item study direction/option in \textbf{Artificial Intelligence and Machine Learning}
+
+ \item and more
+
+\end{enumerate}
+
+\noindent
+\item Master of Science/PhD programs in Computational and Data Science
+\begin{enumerate}
+
+ \item UiO has already MSc programs in CS and DS
+
+ \item MSU has own graduate programs plus dual degree programs in CS and DS
+
+ \item Many other universities are developing or have similar programs
+\end{enumerate}
+
+\noindent
+\end{enumerate}
+
+\noindent
+% !split
+\subsection{Possible courses quantum courses}
+
+\begin{block}{Topics  in a Bachelor of Science/Master of Science }
+\begin{enumerate}
+\item General university course on quantum mech and quantum technologies
+
+\item Information Systems 
+
+\item From Classical Information theory to Quantum Information theory
+
+\item Classical vs.~Quantum Logic
+
+\item Classical and Quantum Laboratory 
+
+\item Discipline-Based Quantum Mechanics 
+
+\item Quantum Software
+
+\item Quantum Hardware
+
+\item more
+\end{enumerate}
+
+\noindent
+\end{block}
+
+% !split
+\subsection{Important Issues to think of}
+
+\begin{enumerate}
+\item Lots of conceptual learning: superposition, entanglement, QIT applications, etc.
+
+\item Coding is indispensable. 
+
+\item Teamwork, project management, and communication are important and highly valued
+
+\item Engagement with industry: guest lectures, virtual tours, co-ops, and/or internships.
+\end{enumerate}
+
+\noindent
+% !split
+\subsection{Observations}
+
+\begin{enumerate}
+\item Students do not really know what QIT is.
+
+\item ML/AI seen as black boxes/magic!
+
+\item Students perceive that a graduate degree is necessary to work in QIS. A BSc will help.
+\end{enumerate}
+
+\noindent
+% !split
+\subsection{Future Needs/Problems}
+
+\begin{enumerate}
+\item There are already  great needs for specialized people (Ph. D. s, postdocs), but also needs of  people with a broad overview of what is possible in ML/AI and/or QIT.
+
+\item There are not enough potential employees in AI/ML and QIT . It is a supply gap, not a skills gap.
+
+\item A BSc with specialization  is a good place to start
+
+\item It is tremendously important to get everyone speaking the same language. Facility with the vernacular of quantum mechanics is a big plus.
+
+\item There is a huge list of areas where technical expertise may be important. But employers are often more concerned with attributes like project management, working well in a team, interest in the field, and adaptability than in specific technical skills.
+\end{enumerate}
+
+\noindent
+% !split
+\subsection{Illustration of a single perceptron model and an FFNN}
+
+\begin{figure}[!ht]  % 
+  \centerline{\includegraphics[width=0.7\linewidth]{figures/nns.png}}
+  \caption{
+  In a) we show a single perceptron model while in b) we dispay a network with two  hidden layers, an input layer and an output layer.
+  }
+\end{figure}
+%\clearpage % flush figures 
+
+% !split
+\subsection{Our network example, simple percepetron with one input}
+
+As as simple example we define now a simple perceptron model with
+all quantities given by scalars. We consider only one input variable
+$x$ and one target value $y$.  We define an activation function
+$\sigma_1$ which takes as input
+
+\[
+z_1 = w_1x+b_1,
+\]
+where $w_1$ is the weight and $b_1$ is the bias. These are the
+parameters we want to optimize.  This output is then fed into the
+\textbf{cost/loss} function, which we here for the sake of simplicity just
+define as the squared error
+
+\[
+C(x;w_1,b_1)=\frac{1}{2}(a_1-y)^2.
+\]
+
+% !split
+\subsection{Optimizing the parameters}
+
+In setting up the feed forward and back propagation parts of the
+algorithm, we need now the derivative of the various variables we want
+to train.
+
+We need
+\[
+\frac{\partial C}{\partial w_1} \hspace{0.1cm}\mathrm{and}\hspace{0.1cm}\frac{\partial C}{\partial b_1}. 
+\]
+
+Using the chain rule we find 
+\[
+\frac{\partial C}{\partial w_1}=\frac{\partial C}{\partial a_1}\frac{\partial a_1}{\partial z_1}\frac{\partial z_1}{\partial w_1}=(a_1-y)\sigma_1'x,
+\]
+and
+\[
+\frac{\partial C}{\partial b_1}=\frac{\partial C}{\partial a_1}\frac{\partial a_1}{\partial z_1}\frac{\partial z_1}{\partial b_1}=(a_1-y)\sigma_1',
+\]
+which we later will just define as
+\[
+\frac{\partial C}{\partial a_1}\frac{\partial a_1}{\partial z_1}=\delta_1.
+\]
+
+% !split
+\subsection{Implementing the simple perceptron model}
+
+In the example code here we implement the above equations (with explict
+expressions for the derivatives) with just one input variable $x$ and
+one output variable.  The target value $y=2x+1$ is a simple linear
+function in $x$. Since this is a regression problem, we define the cost function to be proportional to the least squares error
+\[
+C(y,w_1,b_1)=\frac{1}{2}(a_1-y)^2,
+\]
+with $a_1$ the output from the network.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\bpycod
+# import necessary packages
+import numpy as np
+import matplotlib.pyplot as plt
+
+def feed_forward(x):
+    # weighted sum of inputs to the output layer
+    z_1 = x*output_weights + output_bias
+    # Output from output node (one node only)
+    # Here the output is equal to the input
+    a_1 = z_1
+    return a_1
+
+def backpropagation(x, y):
+    a_1 = feed_forward(x)
+    # derivative of cost function
+    derivative_cost = a_1 - y
+    # the variable delta in the equations, note that output a_1 = z_1, its derivatives wrt z_o is thus 1
+    delta_1 = derivative_cost
+    # gradients for the output layer
+    output_weights_gradient = delta_1*x
+    output_bias_gradient = delta_1
+    # The cost function is 0.5*(a_1-y)^2. This gives a measure of the error for each iteration
+    return output_weights_gradient, output_bias_gradient
+
+# ensure the same random numbers appear every time
+np.random.seed(0)
+# Input variable
+x = 4.0
+# Target values
+y = 2*x+1.0
+
+# Defining the neural network
+n_inputs = 1
+n_outputs = 1
+# Initialize the network
+# weights and bias in the output layer
+output_weights = np.random.randn()
+output_bias = np.random.randn()
+
+# implementing a simple gradient descent approach with fixed learning rate
+eta = 0.01
+for i in range(40):
+    # calculate gradients from back propagation
+    derivative_w1, derivative_b1 = backpropagation(x, y)
+    # update weights and biases
+    output_weights -= eta * derivative_w1
+    output_bias -= eta * derivative_b1
+# our final prediction after training
+ytilde = output_weights*x+output_bias
+print(0.5*((ytilde-y)**2))
+
+
+\epycod
+
+Running this code gives us an acceptable results after some 40-50 iterations. Note that the results depend on the value of the learning rate.
+
+% !split
+\subsection{Central magic}
+
+\href{{https://en.wikipedia.org/wiki/Automatic_differentiation}}{Automatic differentian}
+
+% !split
+\subsection{\href{{https://doi.org/10.3389/fphy.2023.1061580}}{Efficient solutions of fermionic systems using artificial neural networks, Nordhagen et al, Frontiers in Physics 11, 2023}}
+
+The Hamiltonian of the quantum dot is given by
+\[ \hat{H} = \hat{H}_0 + \hat{V}, 
+\]
+where $\hat{H}_0$ is the many-body HO Hamiltonian, and $\hat{V}$ is the
+inter-electron Coulomb interactions. In dimensionless units,
+\[ \hat{V}= \sum_{i < j}^N \frac{1}{r_{ij}},
+\]
+with $r_{ij}=\sqrt{\mathbf{r}_i^2 - \mathbf{r}_j^2}$.
+
+Separable Hamiltonian with the relative motion part ($r_{ij}=r$)
+\[ 
+\hat{H}_r=-\nabla^2_r + \frac{1}{4}\omega^2r^2+ \frac{1}{r},
+\]
+Analytical solutions in two and three dimensions (\href{{https://journals.aps.org/pra/abstract/10.1103/PhysRevA.48.3561}}{M. Taut 1993 and 1994}). 
+
+% !split
+\subsection{Generative models: Why Boltzmann machines?}
+
+What is known as restricted Boltzmann Machines (RMB) have received a
+lot of attention lately.  One of the major reasons is that they can be
+stacked layer-wise to build deep neural networks that capture
+complicated statistics.
+
+The original RBMs had just one visible layer and a hidden layer, but
+recently so-called Gaussian-binary RBMs have gained quite some
+popularity in imaging since they are capable of modeling continuous
+data that are common to natural images.
+
+Furthermore, they have been used to solve complicated quantum
+mechanical many-particle problems or classical statistical physics
+problems like the Ising and Potts classes of models.
+
+% !split
+\subsection{The structure of the RBM network}
+
+\vspace{6mm}
+
+% inline figure
+\centerline{\includegraphics[width=1.0\linewidth]{figures/RBM.pdf}}
+
+\vspace{6mm}
+
+% !split
+\subsection{The network}
+
+\textbf{The network layers}:
+\begin{enumerate}
+ \item A function $\bm{x}$ that represents the visible layer, a vector of $M$ elements (nodes). This layer represents both what the RBM might be given as training input, and what we want it to be able to reconstruct. This might for example be the pixels of an image, the spin values of the Ising model, or coefficients representing speech.
+
+ \item The function $\bm{h}$ represents the hidden, or latent, layer. A vector of $N$ elements (nodes). Also called "feature detectors".
+\end{enumerate}
+
+\noindent
+% !split
+\subsection{Goals}
+
+The goal of the hidden layer is to increase the model's expressive
+power. We encode complex interactions between visible variables by
+introducing additional, hidden variables that interact with visible
+degrees of freedom in a simple manner, yet still reproduce the complex
+correlations between visible degrees in the data once marginalized
+over (integrated out).
+
+\textbf{The network parameters, to be optimized/learned}:
+\begin{enumerate}
+ \item $\bm{a}$ represents the visible bias, a vector of same length as $\bm{x}$.
+
+ \item $\bm{b}$ represents the hidden bias, a vector of same lenght as $\bm{h}$.
+
+ \item $W$ represents the interaction weights, a matrix of size $M\times N$.
+\end{enumerate}
+
+\noindent
+% !split
+\subsection{Joint distribution}
+The restricted Boltzmann machine is described by a Bolztmann distribution
+\[
+	P_{\mathrm{rbm}}(\bm{x},\bm{h}) = \frac{1}{Z} \exp{-E(\bm{x},\bm{h})},
+\]
+where $Z$ is the normalization constant or partition function, defined as 
+\[
+	Z = \int \int \exp{-E(\bm{x},\bm{h})} d\bm{x} d\bm{h}.
+\]
+Note the absence of the inverse temperature in these equations.
+
+% !split
+\subsection{Network Elements, the energy function}
+
+The function $E(\bm{x},\bm{h})$ gives the \textbf{energy} of a
+configuration (pair of vectors) $(\bm{x}, \bm{h})$. The lower
+the energy of a configuration, the higher the probability of it. This
+function also depends on the parameters $\bm{a}$, $\bm{b}$ and
+$W$. Thus, when we adjust them during the learning procedure, we are
+adjusting the energy function to best fit our problem.
+
+% !split
+\subsection{Defining different types of RBMs (Energy based models)}
+
+There are different variants of RBMs, and the differences lie in the types of visible and hidden units we choose as well as in the implementation of the energy function $E(\bm{x},\bm{h})$. The connection between the nodes in the two layers is given by the weights $w_{ij}$. 
+
+\begin{block}{Binary-Binary RBM: }
+
+RBMs were first developed using binary units in both the visible and hidden layer. The corresponding energy function is defined as follows:
+\[
+	E(\bm{x}, \bm{h}) = - \sum_i^M x_i a_i- \sum_j^N b_j h_j - \sum_{i,j}^{M,N} x_i w_{ij} h_j,
+\]
+where the binary values taken on by the nodes are most commonly 0 and 1.
+\end{block}
+
+% !split
+\subsection{Gaussian binary}
+
+\begin{block}{Gaussian-Binary RBM: }
+
+Another varient is the RBM where the visible units are Gaussian while the hidden units remain binary:
+\[
+	E(\bm{x}, \bm{h}) = \sum_i^M \frac{(x_i - a_i)^2}{2\sigma_i^2} - \sum_j^N b_j h_j - \sum_{i,j}^{M,N} \frac{x_i w_{ij} h_j}{\sigma_i^2}. 
+\]
+\end{block}
+
+% !split
+\subsection{Representing the wave function}
+
+The wavefunction should be a probability amplitude depending on
+ $\bm{x}$. The RBM model is given by the joint distribution of
+ $\bm{x}$ and $\bm{h}$
+
+\[
+        P_{\mathrm{rbm}}(\bm{x},\bm{h}) = \frac{1}{Z} \exp{-E(\bm{x},\bm{h})}.
+\]
+
+To find the marginal distribution of $\bm{x}$ we set:
+
+\[
+        P_{\mathrm{rbm}}(\bm{x}) =\frac{1}{Z}\sum_{\bm{h}} \exp{-E(\bm{x}, \bm{h})}.
+\]
+
+Now this is what we use to represent the wave function, calling it a neural-network quantum state (NQS)
+\[
+        \vert\Psi (\bm{X})\vert^2 = P_{\mathrm{rbm}}(\bm{x}).
+\]
+
+% !split
+\subsection{Define the cost function}
+
+Now we don't necessarily have training data (unless we generate it by
+using some other method). However, what we do have is the variational
+principle which allows us to obtain the ground state wave function by
+minimizing the expectation value of the energy of a trial wavefunction
+(corresponding to the untrained NQS). Similarly to the traditional
+variational Monte Carlo method then, it is the local energy we wish to
+minimize. The gradient to use for the stochastic gradient descent
+procedure is
+
+\[
+	C_i = \frac{\partial \langle E_L \rangle}{\partial \theta_i}
+	= 2(\langle E_L \frac{1}{\Psi}\frac{\partial \Psi}{\partial \theta_i} \rangle - \langle E_L \rangle \langle \frac{1}{\Psi}\frac{\partial \Psi}{\partial \theta_i} \rangle ),
+\]
+where the local energy is given by
+\[
+	E_L = \frac{1}{\Psi} \hat{\bm{H}} \Psi.
+\]
+
+% !split
+\subsection{Quantum dots and Boltzmann machines, onebody densities $N=6$, $\hbar\omega=0.1$ a.u.}
+
+\begin{block}{}
+
+\vspace{6mm}
+
+% inline figure
+\centerline{\includegraphics[width=0.9\linewidth]{figures/OB6hw01.png}}
+
+\vspace{6mm}
+
+\end{block}
+
+% !split
+\subsection{Onebody densities $N=30$, $\hbar\omega=1.0$ a.u.}
+\begin{block}{}
+
+\vspace{6mm}
+
+% inline figure
+\centerline{\includegraphics[width=0.9\linewidth]{figures/OB30hw1.png}}
+
+\vspace{6mm}
+
+\end{block}
+
+% !split
+\subsection{Expectation values as functions of the oscillator frequency}
+
+\begin{block}{}
+
+\vspace{6mm}
+
+% inline figure
+\centerline{\includegraphics[width=0.9\linewidth]{figures/virialtheorem.pdf}}
+
+\vspace{6mm}
+
+\end{block}
+
+
+% ------------------- end of main content ---------------
+
+% #ifdef PREAMBLE
+\end{document}
+% #endif
+
