@@ -1,8 +1,8 @@
 TITLE: Premio Nobel per la  Fisica 2024
-AUTHOR: Morten Hjorth-Jensen at Department of Physics and Center for Computing in Science Education, University of Oslo, Norvegia
+AUTHOR: Martino (Morten) Hjorth-Jensen, Dipartimento di Fisica, UniOslo, Oslo, Norvegia
 DATE: UniTN, Dipartimento di Fisica, 9 dicembre 2024
 
-FIGURE: [figures/nnillustration.png, width=900 frac=1.0]
+FIGURE: [figures/nnillustration.png, width=1200 frac=0.45]
 
 !split
 ===== Nobel per la  Fisica  sull'apprendimento automatico  =====
@@ -111,7 +111,7 @@ FIGURE: [figures/generativelearning.png, width=900 frac=1.0]
 
 
 !split
-===== Example of discriminative modeling, "taken from Generative Deeep Learning by David Foster":"https://www.oreilly.com/library/view/generative-deep-learning/9781098134174/ch01.html"  =====
+===== Example of discriminative modeling, "taken from Generative Deep Learning by David Foster":"https://www.oreilly.com/library/view/generative-deep-learning/9781098134174/ch01.html"  =====
 
 
 FIGURE: [figures/standarddeeplearning.png, width=900 frac=1.0]
