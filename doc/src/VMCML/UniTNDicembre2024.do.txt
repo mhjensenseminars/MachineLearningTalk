@@ -533,6 +533,304 @@ FIGURE: [figures/elgasnew.png, width=700 frac=0.9]
 !eblock
 
 
+!split
+===== Adesso le macchine di Boltzmann, modello basato sul lavoro di Hinton =====
+
+FIGURE: [figures/boltzmannnobel.png, width=700 frac=1.0]
+
+!split
+===== Essential elements of generative models =====
+
+The aim of generative methods is to train a probability distribution $p$. Popular methods are:
+o Energy based models, with the family of Boltzmann distributions as a typical example
+o Variational autoencoders
+o Generative adversarial networks (GANs) and
+o Diffusion models
+
+!split
+===== Generative models: Why Boltzmann machines? =====
+
+What is known as restricted Boltzmann Machines (RMB) have received a
+lot of attention lately.  One of the major reasons is that they can be
+stacked layer-wise to build deep neural networks that capture
+complicated statistics.
+
+The original RBMs had just one visible layer and a hidden layer, but
+recently so-called Gaussian-binary RBMs have gained quite some
+popularity in imaging since they are capable of modeling continuous
+data that are common to natural images.
+
+Furthermore, they have been used to solve complicated quantum
+mechanical many-particle problems or classical statistical physics
+problems like the Ising and Potts classes of models.
+
+
+
+
+
+!split
+===== The structure of the RBM network =====
+
+FIGURE: [figures/RBM.pdf, width=800 frac=1.0]
+
+
+
+!split
+===== The network =====
+
+_The network layers_:
+o A function $\bm{x}$ that represents the visible layer, a vector of $M$ elements (nodes). This layer represents both what the RBM might be given as training input, and what we want it to be able to reconstruct. This might for example be the pixels of an image, the spin values of the Ising model, or coefficients representing speech.
+o The function $\bm{h}$ represents the hidden, or latent, layer. A vector of $N$ elements (nodes). Also called "feature detectors".
+
+!split
+===== Goals =====
+
+The goal of the hidden layer is to increase the model's expressive
+power. We encode complex interactions between visible variables by
+introducing additional, hidden variables that interact with visible
+degrees of freedom in a simple manner, yet still reproduce the complex
+correlations between visible degrees in the data once marginalized
+over (integrated out).
+
+_The network parameters, to be optimized/learned_:
+  o $\bm{a}$ represents the visible bias, a vector of same length as $\bm{x}$.
+  o $\bm{b}$ represents the hidden bias, a vector of same lenght as $\bm{h}$.
+  o $W$ represents the interaction weights, a matrix of size $M\times N$.
+
+
+!split
+===== Joint distribution =====
+The restricted Boltzmann machine is described by a Bolztmann distribution
+!bt
+\[
+	P_{\mathrm{rbm}}(\bm{x},\bm{h}) = \frac{1}{Z} \exp{-E(\bm{x},\bm{h})},
+\]
+!et
+where $Z$ is the normalization constant or partition function, defined as 
+!bt
+\[
+	Z = \int \int \exp{-E(\bm{x},\bm{h})} d\bm{x} d\bm{h}.
+\]
+!et
+Note the absence of the inverse temperature in these equations.
+
+
+!split
+===== Network Elements, the energy function  =====
+
+The function $E(\bm{x},\bm{h})$ gives the _energy_ of a
+configuration (pair of vectors) $(\bm{x}, \bm{h})$. The lower
+the energy of a configuration, the higher the probability of it. This
+function also depends on the parameters $\bm{a}$, $\bm{b}$ and
+$W$. Thus, when we adjust them during the learning procedure, we are
+adjusting the energy function to best fit our problem.
+
+
+
+
+
+!split
+===== Energy models =====
+
+We define a domain $\bm{X}$ of stochastic variables $\bm{X}= \{x_0,x_1, \dots , x_{n-1}\}$ with a pertinent probability distribution
+!bt
+\[
+p(\bm{X})=\prod_{x_i\in \bm{X}}p(x_i),
+\]
+!et
+where we have assumed that the random varaibles $x_i$ are all independent and identically distributed (iid).
+
+We will now assume that we can defined this function in terms of optimization parameters $\bm{\Theta}$, which could be the biases and weights of a deep network, and a set of hidden variables we also assume to be random variables which also are iid. The domain of these variables is
+$\bm{H}= \{h_0,h_1, \dots , h_{m-1}\}$.
+
+!split
+===== Probability model =====
+
+We define a probability
+!bt
+\[
+p(x_i,h_j;\bm{\Theta}) = \frac{f(x_i,h_j;\bm{\Theta})}{Z(\bm{\Theta})},
+\]
+!et
+where $f(x_i,h_j;\bm{\Theta})$ is a function which we assume is larger or
+equal than zero and obeys all properties required for a probability
+distribution and $Z(\bm{\Theta})$ is a normalization constant. Inspired by
+statistical mechanics, we call it often for the partition function.
+It is defined as (assuming that we have discrete probability distributions)
+!bt
+\[
+Z(\bm{\Theta})=\sum_{x_i\in \bm{X}}\sum_{h_j\in \bm{H}} f(x_i,h_j;\bm{\Theta}).
+\]
+!et
+
+!split
+===== Marginal and conditional probabilities =====
+
+We can in turn define the marginal probabilities
+!bt
+\[
+p(x_i;\bm{\Theta}) = \frac{\sum_{h_j\in \bm{H}}f(x_i,h_j;\bm{\Theta})}{Z(\bm{\Theta})},
+\]
+!et
+and 
+!bt
+\[
+p(h_i;\bm{\Theta}) = \frac{\sum_{x_i\in \bm{X}}f(x_i,h_j;\bm{\Theta})}{Z(\bm{\Theta})}.
+\]
+!et
+
+
+!split
+===== Change of notation =====
+
+_Note the change to a vector notation_. A variable like $\bm{x}$
+represents now a specific _configuration_. We can generate an infinity
+of such configurations. The final partition function is then the sum
+over all such possible configurations, that is
+
+!bt
+\[
+Z(\bm{\Theta})=\sum_{x_i\in \bm{X}}\sum_{h_j\in \bm{H}} f(x_i,h_j;\bm{\Theta}),
+\]
+!et
+changes to
+!bt
+\[
+Z(\bm{\Theta})=\sum_{\bm{x}}\sum_{\bm{h}} f(\bm{x},\bm{h};\bm{\Theta}).
+\]
+!et
+If we have a binary set of variable $x_i$ and $h_j$ and $M$ values of $x_i$ and $N$ values of $h_j$ we have in total $2^M$ and $2^N$ possible $\bm{x}$ and $\bm{h}$ configurations, respectively.
+
+We see that even for the modest binary case, we can easily approach a
+number of configuration which is not possible to deal with.
+
+!split
+===== Optimization problem =====
+
+At the end, we are not interested in the probabilities of the hidden variables. The probability we thus want to optimize is 
+!bt
+\[
+p(\bm{X};\bm{\Theta})=\prod_{x_i\in \bm{X}}p(x_i;\bm{\Theta})=\prod_{x_i\in \bm{X}}\left(\frac{\sum_{h_j\in \bm{H}}f(x_i,h_j;\bm{\Theta})}{Z(\bm{\Theta})}\right),
+\]
+!et
+which we rewrite as
+!bt
+\[
+p(\bm{X};\bm{\Theta})=\frac{1}{Z(\bm{\Theta})}\prod_{x_i\in \bm{X}}\left(\sum_{h_j\in \bm{H}}f(x_i,h_j;\bm{\Theta})\right).
+\]
+!et
+
+!split
+===== Further simplifications =====
+
+We simplify further by rewriting it as
+!bt
+\[
+p(\bm{X};\bm{\Theta})=\frac{1}{Z(\bm{\Theta})}\prod_{x_i\in \bm{X}}f(x_i;\bm{\Theta}),
+\]
+!et
+where we used $p(x_i;\bm{\Theta}) = \sum_{h_j\in \bm{H}}f(x_i,h_j;\bm{\Theta})$.
+The optimization problem is then
+!bt
+\[
+{\displaystyle \mathrm{arg} \hspace{0.1cm}\max_{\bm{\bm{\Theta}}\in {\mathbb{R}}^{p}}} \hspace{0.1cm}p(\bm{X};\bm{\Theta}).
+\]
+!et
+
+!split
+===== Optimizing the logarithm instead =====
+
+Computing the derivatives with respect to the parameters $\bm{\Theta}$ is
+easier (and equivalent) with taking the logarithm of the
+probability. We will thus optimize
+!bt
+\[
+{\displaystyle \mathrm{arg} \hspace{0.1cm}\max_{\bm{\bm{\Theta}}\in {\mathbb{R}}^{p}}} \hspace{0.1cm}\log{p(\bm{X};\bm{\Theta})},
+\]
+!et
+which leads to
+!bt
+\[
+\nabla_{\bm{\Theta}}\log{p(\bm{X};\bm{\Theta})}=0.
+\]
+!et
+
+!split
+===== Expression for the gradients =====
+
+This leads to the following equation
+!bt
+\[
+\nabla_{\bm{\Theta}}\log{p(\bm{X};\bm{\Theta})}=\nabla_{\bm{\Theta}}\left(\sum_{x_i\in \bm{X}}\log{f(x_i;\bm{\Theta})}\right)-\nabla_{\bm{\Theta}}\log{Z(\bm{\Theta})}=0.
+\]
+!et
+
+The first term is called the positive phase and we assume that we have a model for the function $f$ from which we can sample values. Below we will develop an explicit model for this.
+The second term is called the negative phase and is the one which leads to more difficulties.
+
+!split
+===== The derivative of the partition function =====
+
+The partition function, defined above as
+!bt
+\[
+Z(\bm{\Theta})=\sum_{x_i\in \bm{X}}\sum_{h_j\in \bm{H}} f(x_i,h_j;\bm{\Theta}),
+\]
+!et
+is in general the most problematic term. In principle both $x$ and $h$ can span large degrees of freedom, if not even infinitely many ones, and computing the partition function itself is often not desirable or even feasible. The above derivative of the partition function can however be written in terms of an expectation value which is in turn evaluated  using Monte Carlo sampling and the theory of Markov chains, popularly shortened to MCMC (or just MC$^2$).
+
+!split
+===== Explicit expression for the derivative =====
+We can rewrite
+!bt
+\[
+\nabla_{\bm{\Theta}}\log{Z(\bm{\Theta})}=\frac{\nabla_{\bm{\Theta}}Z(\bm{\Theta})}{Z(\bm{\Theta})},
+\]
+!et
+which reads in more detail
+!bt
+\[
+\nabla_{\bm{\Theta}}\log{Z(\bm{\Theta})}=\frac{\nabla_{\bm{\Theta}} \sum_{x_i\in \bm{X}}f(x_i;\bm{\Theta})   }{Z(\bm{\Theta})}.
+\]
+!et
+
+We can rewrite the function $f$ (we have assumed that is larger or
+equal than zero) as $f=\exp{\log{f}}$. We can then reqrite the last
+equation as
+
+!bt
+\[
+\nabla_{\bm{\Theta}}\log{Z(\bm{\Theta})}=\frac{ \sum_{x_i\in \bm{X}} \nabla_{\bm{\Theta}}\exp{\log{f(x_i;\bm{\Theta})}}   }{Z(\bm{\Theta})}.
+\]
+!et
+
+!split
+===== Final expression =====
+
+Taking the derivative gives us
+!bt
+\[
+\nabla_{\bm{\Theta}}\log{Z(\bm{\Theta})}=\frac{ \sum_{x_i\in \bm{X}}f(x_i;\bm{\Theta}) \nabla_{\bm{\Theta}}\log{f(x_i;\bm{\Theta})}   }{Z(\bm{\Theta})}, 
+\]
+!et
+which is the expectation value of $\log{f}$
+!bt
+\[
+\nabla_{\bm{\Theta}}\log{Z(\bm{\Theta})}=\sum_{x_i\in \bm{X}}p(x_i;\bm{\Theta}) \nabla_{\bm{\Theta}}\log{f(x_i;\bm{\Theta})},
+\]
+!et
+that is
+!bt
+\[
+\nabla_{\bm{\Theta}}\log{Z(\bm{\Theta})}=\mathbb{E}(\log{f(x_i;\bm{\Theta})}).
+\]
+!et
+
+This quantity is evaluated using Monte Carlo sampling, with Gibbs
+sampling as the standard sampling rule.  Before we discuss the
+explicit algorithms, we need to remind ourselves about Markov chains
+and sampling rules like the Metropolis-Hastings algorithm and Gibbs
+sampling.
 
 
 
@@ -578,319 +876,7 @@ FIGURE: [figures/elgasnew.png, width=700 frac=0.9]
 o How do we incorporate these topics in our education?
 o More difficult: what are the consequences for universities and our educational mission?
 
-!split
-=====  Education =====
 
-o Incorporate elements of statistical data analysis and Machine Learning in undergraduate programs
-o Develop courses on Machine Learning and statistical data analysis
-o Build up a series of courses in Quantum Information Technologies (QIT)
-o Modifying contents of present Physics programs or new programs on  Computational Physics and Quantum Technologies
-  o study direction/option in _quantum technologies_
-  o study direction/option in _Artificial Intelligence and Machine Learning_
-  o and more
-o Master of Science/PhD programs in Computational and Data Science
-  o UiO has already MSc programs in CS and DS
-  o MSU has own graduate programs plus dual degree programs in CS and DS
-  o Many other universities are developing or have similar programs
-
-
-
-!split
-===== Possible courses quantum courses  =====
-
-!bblock Topics  in a Bachelor of Science/Master of Science
-o General university course on quantum mech and quantum technologies
-o Information Systems 
-o From Classical Information theory to Quantum Information theory
-o Classical vs. Quantum Logic
-o Classical and Quantum Laboratory 
-o Discipline-Based Quantum Mechanics 
-o Quantum Software
-o Quantum Hardware
-o more
-!eblock
-
-!split
-===== Important Issues to think of =====
-
-o Lots of conceptual learning: superposition, entanglement, QIT applications, etc.
-o Coding is indispensable. 
-o Teamwork, project management, and communication are important and highly valued
-o Engagement with industry: guest lectures, virtual tours, co-ops, and/or internships.
-
-!split
-===== Observations =====
-
-o Students do not really know what QIT is.
-o ML/AI seen as black boxes/magic!
-o Students perceive that a graduate degree is necessary to work in QIS. A BSc will help.
-
-!split
-===== Future Needs/Problems =====
-
-o There are already  great needs for specialized people (Ph. D. s, postdocs), but also needs of  people with a broad overview of what is possible in ML/AI and/or QIT.
-o There are not enough potential employees in AI/ML and QIT . It is a supply gap, not a skills gap.
-o A BSc with specialization  is a good place to start
-o It is tremendously important to get everyone speaking the same language. Facility with the vernacular of quantum mechanics is a big plus.
-o There is a huge list of areas where technical expertise may be important. But employers are often more concerned with attributes like project management, working well in a team, interest in the field, and adaptability than in specific technical skills.
-
-
-
-
-
-
-
-
-
-
-!split
-=====  Illustration of a single perceptron model and an FFNN =====
-
-FIGURE: [figures/nns.png, width=600 frac=0.7]  In a) we show a single perceptron model while in b) we dispay a network with two  hidden layers, an input layer and an output layer.
-
-
-!split
-===== Our network example, simple percepetron with one input =====
-
-As as simple example we define now a simple perceptron model with
-all quantities given by scalars. We consider only one input variable
-$x$ and one target value $y$.  We define an activation function
-$\sigma_1$ which takes as input
-
-!bt
-\[
-z_1 = w_1x+b_1,
-\]
-!et
-where $w_1$ is the weight and $b_1$ is the bias. These are the
-parameters we want to optimize.  This output is then fed into the
-_cost/loss_ function, which we here for the sake of simplicity just
-define as the squared error
-
-!bt
-\[
-C(x;w_1,b_1)=\frac{1}{2}(a_1-y)^2.
-\]
-!et
-
-
-!split
-===== Optimizing the parameters =====
-
-In setting up the feed forward and back propagation parts of the
-algorithm, we need now the derivative of the various variables we want
-to train.
-
-We need
-!bt
-\[
-\frac{\partial C}{\partial w_1} \hspace{0.1cm}\mathrm{and}\hspace{0.1cm}\frac{\partial C}{\partial b_1}. 
-\]
-!et
-
-Using the chain rule we find 
-!bt
-\[
-\frac{\partial C}{\partial w_1}=\frac{\partial C}{\partial a_1}\frac{\partial a_1}{\partial z_1}\frac{\partial z_1}{\partial w_1}=(a_1-y)\sigma_1'x,
-\]
-!et
-and
-!bt
-\[
-\frac{\partial C}{\partial b_1}=\frac{\partial C}{\partial a_1}\frac{\partial a_1}{\partial z_1}\frac{\partial z_1}{\partial b_1}=(a_1-y)\sigma_1',
-\]
-!et
-which we later will just define as
-!bt
-\[
-\frac{\partial C}{\partial a_1}\frac{\partial a_1}{\partial z_1}=\delta_1.
-\]
-!et
-
-!split
-===== Implementing the simple perceptron model =====
-
-In the example code here we implement the above equations (with explict
-expressions for the derivatives) with just one input variable $x$ and
-one output variable.  The target value $y=2x+1$ is a simple linear
-function in $x$. Since this is a regression problem, we define the cost function to be proportional to the least squares error
-!bt
-\[
-C(y,w_1,b_1)=\frac{1}{2}(a_1-y)^2,
-\]
-!et
-with $a_1$ the output from the network.
-
-!bc pycod
-# import necessary packages
-import numpy as np
-import matplotlib.pyplot as plt
-
-def feed_forward(x):
-    # weighted sum of inputs to the output layer
-    z_1 = x*output_weights + output_bias
-    # Output from output node (one node only)
-    # Here the output is equal to the input
-    a_1 = z_1
-    return a_1
-
-def backpropagation(x, y):
-    a_1 = feed_forward(x)
-    # derivative of cost function
-    derivative_cost = a_1 - y
-    # the variable delta in the equations, note that output a_1 = z_1, its derivatives wrt z_o is thus 1
-    delta_1 = derivative_cost
-    # gradients for the output layer
-    output_weights_gradient = delta_1*x
-    output_bias_gradient = delta_1
-    # The cost function is 0.5*(a_1-y)^2. This gives a measure of the error for each iteration
-    return output_weights_gradient, output_bias_gradient
-
-# ensure the same random numbers appear every time
-np.random.seed(0)
-# Input variable
-x = 4.0
-# Target values
-y = 2*x+1.0
-
-# Defining the neural network
-n_inputs = 1
-n_outputs = 1
-# Initialize the network
-# weights and bias in the output layer
-output_weights = np.random.randn()
-output_bias = np.random.randn()
-
-# implementing a simple gradient descent approach with fixed learning rate
-eta = 0.01
-for i in range(40):
-    # calculate gradients from back propagation
-    derivative_w1, derivative_b1 = backpropagation(x, y)
-    # update weights and biases
-    output_weights -= eta * derivative_w1
-    output_bias -= eta * derivative_b1
-# our final prediction after training
-ytilde = output_weights*x+output_bias
-print(0.5*((ytilde-y)**2))
-
-!ec
-Running this code gives us an acceptable results after some 40-50 iterations. Note that the results depend on the value of the learning rate.
-
-
-!split
-===== Central magic =====
-
-"Automatic differentian":"https://en.wikipedia.org/wiki/Automatic_differentiation"
-
-
-
-
-
-
-
-!split
-===== "Efficient solutions of fermionic systems using artificial neural networks, Nordhagen et al, Frontiers in Physics 11, 2023":"https://doi.org/10.3389/fphy.2023.1061580" =====
-
-The Hamiltonian of the quantum dot is given by
-!bt
-\[ \hat{H} = \hat{H}_0 + \hat{V}, 
-\]
-!et
-where $\hat{H}_0$ is the many-body HO Hamiltonian, and $\hat{V}$ is the
-inter-electron Coulomb interactions. In dimensionless units,
-!bt
-\[ \hat{V}= \sum_{i < j}^N \frac{1}{r_{ij}},
-\]
-!et
-with $r_{ij}=\sqrt{\mathbf{r}_i^2 - \mathbf{r}_j^2}$.
-
-Separable Hamiltonian with the relative motion part ($r_{ij}=r$)
-!bt
-\[ 
-\hat{H}_r=-\nabla^2_r + \frac{1}{4}\omega^2r^2+ \frac{1}{r},
-\]
-!et
-Analytical solutions in two and three dimensions ("M. Taut 1993 and 1994":"https://journals.aps.org/pra/abstract/10.1103/PhysRevA.48.3561"). 
-
-
-
-
-!split
-===== Generative models: Why Boltzmann machines? =====
-
-What is known as restricted Boltzmann Machines (RMB) have received a
-lot of attention lately.  One of the major reasons is that they can be
-stacked layer-wise to build deep neural networks that capture
-complicated statistics.
-
-The original RBMs had just one visible layer and a hidden layer, but
-recently so-called Gaussian-binary RBMs have gained quite some
-popularity in imaging since they are capable of modeling continuous
-data that are common to natural images.
-
-Furthermore, they have been used to solve complicated quantum
-mechanical many-particle problems or classical statistical physics
-problems like the Ising and Potts classes of models.
-
-
-
-
-
-!split
-===== The structure of the RBM network =====
-
-FIGURE: [figures/RBM.pdf, width=800 frac=1.0]
-
-
-
-!split
-===== The network =====
-
-_The network layers_:
-  o A function $\bm{x}$ that represents the visible layer, a vector of $M$ elements (nodes). This layer represents both what the RBM might be given as training input, and what we want it to be able to reconstruct. This might for example be the pixels of an image, the spin values of the Ising model, or coefficients representing speech.
-  o The function $\bm{h}$ represents the hidden, or latent, layer. A vector of $N$ elements (nodes). Also called "feature detectors".
-
-!split
-===== Goals =====
-
-The goal of the hidden layer is to increase the model's expressive
-power. We encode complex interactions between visible variables by
-introducing additional, hidden variables that interact with visible
-degrees of freedom in a simple manner, yet still reproduce the complex
-correlations between visible degrees in the data once marginalized
-over (integrated out).
-
-_The network parameters, to be optimized/learned_:
-  o $\bm{a}$ represents the visible bias, a vector of same length as $\bm{x}$.
-  o $\bm{b}$ represents the hidden bias, a vector of same lenght as $\bm{h}$.
-  o $W$ represents the interaction weights, a matrix of size $M\times N$.
-
-
-!split
-===== Joint distribution =====
-The restricted Boltzmann machine is described by a Bolztmann distribution
-!bt
-\[
-	P_{\mathrm{rbm}}(\bm{x},\bm{h}) = \frac{1}{Z} \exp{-E(\bm{x},\bm{h})},
-\]
-!et
-where $Z$ is the normalization constant or partition function, defined as 
-!bt
-\[
-	Z = \int \int \exp{-E(\bm{x},\bm{h})} d\bm{x} d\bm{h}.
-\]
-!et
-Note the absence of the inverse temperature in these equations.
-
-!split
-===== Network Elements, the energy function  =====
-
-The function $E(\bm{x},\bm{h})$ gives the _energy_ of a
-configuration (pair of vectors) $(\bm{x}, \bm{h})$. The lower
-the energy of a configuration, the higher the probability of it. This
-function also depends on the parameters $\bm{a}$, $\bm{b}$ and
-$W$. Thus, when we adjust them during the learning procedure, we are
-adjusting the energy function to best fit our problem.
 
 
 !split
@@ -1001,6 +987,215 @@ FIGURE: [figures/OB30hw1.png, width=700 frac=0.9]
 !bblock
 FIGURE: [figures/virialtheorem.pdf, width=700 frac=0.9]
 !eblock
+
+
+
+
+!split
+===== "Efficient solutions of fermionic systems using artificial neural networks, Nordhagen et al, Frontiers in Physics 11, 2023":"https://doi.org/10.3389/fphy.2023.1061580" =====
+
+The Hamiltonian of the quantum dot is given by
+!bt
+\[ \hat{H} = \hat{H}_0 + \hat{V}, 
+\]
+!et
+where $\hat{H}_0$ is the many-body HO Hamiltonian, and $\hat{V}$ is the
+inter-electron Coulomb interactions. In dimensionless units,
+!bt
+\[ \hat{V}= \sum_{i < j}^N \frac{1}{r_{ij}},
+\]
+!et
+with $r_{ij}=\sqrt{\mathbf{r}_i^2 - \mathbf{r}_j^2}$.
+
+Separable Hamiltonian with the relative motion part ($r_{ij}=r$)
+!bt
+\[ 
+\hat{H}_r=-\nabla^2_r + \frac{1}{4}\omega^2r^2+ \frac{1}{r},
+\]
+!et
+Analytical solutions in two and three dimensions ("M. Taut 1993 and 1994":"https://journals.aps.org/pra/abstract/10.1103/PhysRevA.48.3561"). 
+
+
+
+
+
+!split
+===== Defining different types of RBMs (Energy based models) =====
+
+There are different variants of RBMs, and the differences lie in the types of visible and hidden units we choose as well as in the implementation of the energy function $E(\bm{x},\bm{h})$. The connection between the nodes in the two layers is given by the weights $w_{ij}$. 
+
+!bblock Binary-Binary RBM:
+
+RBMs were first developed using binary units in both the visible and hidden layer. The corresponding energy function is defined as follows:
+!bt
+\[
+	E(\bm{x}, \bm{h}) = - \sum_i^M x_i a_i- \sum_j^N b_j h_j - \sum_{i,j}^{M,N} x_i w_{ij} h_j,
+\]
+!et
+where the binary values taken on by the nodes are most commonly 0 and 1.
+!eblock
+
+
+!split
+===== Gaussian binary =====
+
+
+!bblock Gaussian-Binary RBM:
+
+Another varient is the RBM where the visible units are Gaussian while the hidden units remain binary:
+!bt
+\[
+	E(\bm{x}, \bm{h}) = \sum_i^M \frac{(x_i - a_i)^2}{2\sigma_i^2} - \sum_j^N b_j h_j - \sum_{i,j}^{M,N} \frac{x_i w_{ij} h_j}{\sigma_i^2}. 
+\]
+!et
+!eblock
+
+!split
+===== Representing the wave function =====
+
+The wavefunction should be a probability amplitude depending on
+ $\bm{x}$. The RBM model is given by the joint distribution of
+ $\bm{x}$ and $\bm{h}$
+
+!bt
+\[
+        P_{\mathrm{rbm}}(\bm{x},\bm{h}) = \frac{1}{Z} \exp{-E(\bm{x},\bm{h})}.
+\]
+!et
+
+To find the marginal distribution of $\bm{x}$ we set:
+
+!bt
+\[
+        P_{\mathrm{rbm}}(\bm{x}) =\frac{1}{Z}\sum_{\bm{h}} \exp{-E(\bm{x}, \bm{h})}.
+\]
+!et
+
+Now this is what we use to represent the wave function, calling it a neural-network quantum state (NQS)
+!bt
+\[
+        \vert\Psi (\bm{X})\vert^2 = P_{\mathrm{rbm}}(\bm{x}).
+\]
+!et
+
+!split
+===== Define the cost function =====
+
+Now we don't necessarily have training data (unless we generate it by
+using some other method). However, what we do have is the variational
+principle which allows us to obtain the ground state wave function by
+minimizing the expectation value of the energy of a trial wavefunction
+(corresponding to the untrained NQS). Similarly to the traditional
+variational Monte Carlo method then, it is the local energy we wish to
+minimize. The gradient to use for the stochastic gradient descent
+procedure is
+
+!bt
+\[
+	C_i = \frac{\partial \langle E_L \rangle}{\partial \theta_i}
+	= 2(\langle E_L \frac{1}{\Psi}\frac{\partial \Psi}{\partial \theta_i} \rangle - \langle E_L \rangle \langle \frac{1}{\Psi}\frac{\partial \Psi}{\partial \theta_i} \rangle ),
+\]
+!et
+where the local energy is given by
+!bt
+\[
+	E_L = \frac{1}{\Psi} \hat{\bm{H}} \Psi.
+\]
+!et
+
+
+
+
+!split
+===== Quantum dots and Boltzmann machines, onebody densities $N=6$, $\hbar\omega=0.1$ a.u. =====
+
+!bblock
+FIGURE: [figures/OB6hw01.png, width=700 frac=0.9]
+!eblock
+
+
+!split
+===== Onebody densities $N=30$, $\hbar\omega=1.0$ a.u. =====
+!bblock
+FIGURE: [figures/OB30hw1.png, width=700 frac=0.9]
+!eblock
+
+
+!split
+===== Expectation values as functions of the oscillator frequency  =====
+
+!bblock
+FIGURE: [figures/virialtheorem.pdf, width=700 frac=0.9]
+!eblock
+
+
+
+
+!split
+===== Introducing the energy model =====
+
+As we will see below, a typical Boltzmann machines employs a probability distribution
+!bt
+\[
+p(\bm{x},\bm{h};\bm{\Theta}) = \frac{f(\bm{x},\bm{h};\bm{\Theta})}{Z(\bm{\Theta})},
+\]
+!et
+where $f(\bm{x},\bm{h};\bm{\Theta})$ is given by a so-called energy model. If we assume that the random variables $x_i$ and $h_j$ take binary values only, for example $x_i,h_j=\{0,1\}$, we have a so-called binary-binary model where
+!bt
+\[
+f(\bm{x},\bm{h};\bm{\Theta})=-E(\bm{x}, \bm{h};\bm{\Theta}) = \sum_{x_i\in \bm{X}} x_i a_i+\sum_{h_j\in \bm{H}} b_j h_j + \sum_{x_i\in \bm{X},h_j\in\bm{H}} x_i w_{ij} h_j,
+\]
+!et
+where the set of parameters are given by the biases and weights $\bm{\Theta}=\{\bm{a},\bm{b},\bm{W}\}$.
+_Note the vector notation_ instead of $x_i$ and $h_j$ for $f$. The vectors $\bm{x}$ and $\bm{h}$ represent a specific instance of stochastic variables $x_i$ and $h_j$. These arrangements of $\bm{x}$ and $\bm{h}$ lead to a specific energy configuration.
+
+!split
+===== More compact notation =====
+
+With the above definition we can write the probability as
+!bt
+\[
+p(\bm{x},\bm{h};\bm{\Theta}) = \frac{\exp{(\bm{a}^T\bm{x}+\bm{b}^T\bm{h}+\bm{x}^T\bm{W}\bm{h})}}{Z(\bm{\Theta})},
+\]
+!et
+where the biases $\bm{a}$ and $\bm{h}$ and the weights defined by the matrix $\bm{W}$ are the parameters we need to optimize.
+
+!split
+===== Binary-binary model  =====
+
+Since the binary-binary energy model is linear in the parameters $a_i$, $b_j$ and
+$w_{ij}$, it is easy to see that the derivatives with respect to the
+various optimization parameters yield expressions used in the
+evaluation of gradients like
+!bt
+\[
+\frac{\partial E(\bm{x}, \bm{h};\bm{\Theta})}{\partial w_{ij}}=-x_ih_j,
+\]
+!et
+and
+!bt
+\[
+\frac{\partial E(\bm{x}, \bm{h};\bm{\Theta})}{\partial a_i}=-x_i,
+\]
+!et
+and
+!bt
+\[
+\frac{\partial E(\bm{x}, \bm{h};\bm{\Theta})}{\partial b_j}=-h_j.
+\]
+!et
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
