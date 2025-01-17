@@ -8,12 +8,10 @@ DATE: January 20-21, 2025, Nordic Quantum days
 
 _How to use many-body theory to design quantum circuits (Quantum engineering)_
 o Many-body methods like F(ull)C(onfiguration)I(nteraction) theory  with
-  * Adaptive basis sets (see for example "Sigmundson et al arXiv:2111.09638":"https://arxiv.org/abs/2111.09638")
   * Time dependence
-  * Optimization of experimental parameter 
+  * Optimization of experimental parameters 
   * Feedback from experiment
 o Finding optimal parameters for tuning of entanglement
-o Numerical experiments to mimick real systems, using many-body methods to develop _quantum twins_ ("inspiration from  work by Herschel Rabitz et al on Control of quantum phenomena, see New Journal of Physics 12 (2010) 075008":"https://iopscience.iop.org/article/10.1088/1367-2630/12/7/075008")!
 
 
 !split
@@ -23,7 +21,7 @@ o Numerical experiments to mimick real systems, using many-body methods to devel
 Niyaz Beysengulov and Johannes Pollanen (experiment, Physics); Zachary Stewart, Jared Weidman, and Angela Wilson (quantum chemistry)
 !eblock
 !bblock University of Oslo
-Øyvind Sigmundson Schøyen, Stian Dysthe Bilek, and Håkon Emil Kristiansen (Physics and quantum chemistry). In addition collaboration on point defects with Marianne Bathen and Lasse Vines.
+Jonas B. Flaten, Oskar M. Leinonen, Øyvind Sigmundson Schøyen, Stian Dysthe Bilek, and Håkon Emil Kristiansen (Physics and quantum chemistry).
 !eblock
 
 
