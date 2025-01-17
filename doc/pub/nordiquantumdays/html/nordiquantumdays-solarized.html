@@ -1,0 +1,774 @@
+<!--
+HTML file automatically generated from DocOnce source
+(https://github.com/doconce/doconce/)
+doconce format html nordiquantumdays.do.txt --pygments_html_style=perldoc --html_style=solarized3 --html_links_in_new_window --html_output=nordiquantumdays-solarized --no_mako
+-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="DocOnce: https://github.com/doconce/doconce/" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Coulomb interaction driven entanglement of electrons on helium, theory and experiment">
+<title>Coulomb interaction driven entanglement of electrons on helium, theory and experiment</title>
+<link href="https://cdn.rawgit.com/doconce/doconce/master/bundled/html_styles/style_solarized_box/css/solarized_light_code.css" rel="stylesheet" type="text/css" title="light"/>
+<script src="https://cdn.rawgit.com/doconce/doconce/master/bundled/html_styles/style_solarized_box/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<link href="https://thomasf.github.io/solarized-css/solarized-light.min.css" rel="stylesheet">
+<style type="text/css">
+h1 {color: #b58900;}  /* yellow */
+/* h1 {color: #cb4b16;}  orange */
+/* h1 {color: #d33682;}  magenta, the original choice of thomasf */
+code { padding: 0px; background-color: inherit; }
+pre {
+  border: 0pt solid #93a1a1;
+  box-shadow: none;
+}
+.alert-text-small   { font-size: 80%;  }
+.alert-text-large   { font-size: 130%; }
+.alert-text-normal  { font-size: 90%;  }
+.alert {
+  padding:8px 35px 8px 14px; margin-bottom:18px;
+  text-shadow:0 1px 0 rgba(255,255,255,0.5);
+  border:1px solid #93a1a1;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  color: #555;
+  background-color: #eee8d5;
+  background-position: 10px 5px;
+  background-repeat: no-repeat;
+  background-size: 38px;
+  padding-left: 55px;
+  width: 75%;
+ }
+.alert-block {padding-top:14px; padding-bottom:14px}
+.alert-block > p, .alert-block > ul {margin-bottom:1em}
+.alert li {margin-top: 1em}
+.alert-block p+p {margin-top:5px}
+.alert-notice { background-image: url(https://cdn.rawgit.com/doconce/doconce/master/bundled/html_images/small_yellow_notice.png); }
+.alert-summary  { background-image:url(https://cdn.rawgit.com/doconce/doconce/master/bundled/html_images/small_yellow_summary.png); }
+.alert-warning { background-image: url(https://cdn.rawgit.com/doconce/doconce/master/bundled/html_images/small_yellow_warning.png); }
+.alert-question {background-image:url(https://cdn.rawgit.com/doconce/doconce/master/bundled/html_images/small_yellow_question.png); }
+div { text-align: justify; text-justify: inter-word; }
+.tab {
+  padding-left: 1.5em;
+}
+div.toc p,a {
+  line-height: 1.3;
+  margin-top: 1.1;
+  margin-bottom: 1.1;
+}
+</style>
+</head>
+
+<!-- tocinfo
+{'highest level': 2,
+ 'sections': [('Overview and Motivation', 2, None, 'overview-and-motivation'),
+              ('Collaborators and people to thank',
+               2,
+               None,
+               'collaborators-and-people-to-thank'),
+              ('What is this talk about?', 2, None, 'what-is-this-talk-about'),
+              ('Literature and more reading',
+               2,
+               None,
+               'literature-and-more-reading'),
+              ('Quantum Engineering, Di Vincenzo criteria',
+               2,
+               None,
+               'quantum-engineering-di-vincenzo-criteria'),
+              ('Candidate systems', 2, None, 'candidate-systems'),
+              ('Electrons (quantum dots) on superfluid helium',
+               2,
+               None,
+               'electrons-quantum-dots-on-superfluid-helium'),
+              ('To read more', 2, None, 'to-read-more'),
+              ('Experimental setup I', 2, None, 'experimental-setup-i'),
+              ('More on experimental setup II',
+               2,
+               None,
+               'more-on-experimental-setup-ii'),
+              ('More on experimental setup III',
+               2,
+               None,
+               'more-on-experimental-setup-iii'),
+              ('Experimental set up', 2, None, 'experimental-set-up'),
+              ('Entanglement', 2, None, 'entanglement'),
+              ('More on Entanglement', 2, None, 'more-on-entanglement'),
+              ('Entanglement gates in trapped ions and more',
+               2,
+               None,
+               'entanglement-gates-in-trapped-ions-and-more'),
+              ('Quantum dots and the Coulomb interaction',
+               2,
+               None,
+               'quantum-dots-and-the-coulomb-interaction'),
+              ('Electrons on helium is another qubit platform',
+               2,
+               None,
+               'electrons-on-helium-is-another-qubit-platform'),
+              ('Surface state electrons (SSE)',
+               2,
+               None,
+               'surface-state-electrons-sse'),
+              ('Calculational details', 2, None, 'calculational-details'),
+              ('Calculational details', 2, None, 'calculational-details'),
+              ('Calculational details', 2, None, 'calculational-details'),
+              ('Calculational details', 2, None, 'calculational-details'),
+              ('Calculational details', 2, None, 'calculational-details'),
+              ('Calculational details', 2, None, 'calculational-details'),
+              ('Calculational details', 2, None, 'calculational-details'),
+              ('Calculational details', 2, None, 'calculational-details'),
+              ('Calculational details', 2, None, 'calculational-details'),
+              ('Results and discussions', 2, None, 'results-and-discussions'),
+              ('Entanglement and more', 2, None, 'entanglement-and-more'),
+              ('Legend to figure', 2, None, 'legend-to-figure'),
+              ('Particle densities and coefficients',
+               2,
+               None,
+               'particle-densities-and-coefficients'),
+              ('Potential wells, the one-body densities, and single-particle '
+               'states',
+               2,
+               None,
+               'potential-wells-the-one-body-densities-and-single-particle-states'),
+              ('Where we are now', 2, None, 'where-we-are-now'),
+              ('Plans', 2, None, 'plans')]}
+end of tocinfo -->
+
+<body>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+     equationNumbers: {  autoNumber: "AMS"  },
+     extensions: ["AMSmath.js", "AMSsymbols.js", "autobold.js", "color.js"]
+  }
+});
+</script>
+<script type="text/javascript" async
+ src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<!-- ------------------- main content ---------------------- -->
+<center>
+<h1>Coulomb interaction driven entanglement of electrons on helium, theory and experiment</h1>
+</center>  <!-- document title -->
+
+<!-- author(s): Morten Hjorth-Jensen -->
+<center>
+<b>Morten Hjorth-Jensen</b> [1, 2]
+</center>
+<!-- institution(s) -->
+<center>
+[1] <b>Department of Physics and Astronomy and Facility for Rare Isotope Beams (FRIB), Michigan State University, USA</b>
+</center>
+<center>
+[2] <b>Department of Physics, University of Oslo, Norway</b>
+</center>
+<br>
+<center>
+<h4>January 20-21, 2025, Nordic Quantum days</h4>
+</center> <!-- date -->
+<br>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="overview-and-motivation">Overview and Motivation </h2>
+
+<b>How to use many-body theory to design quantum circuits (Quantum engineering)</b>
+<ol>
+<li> Many-body methods like F(ull)C(onfiguration)I(nteraction) theory  with</li>
+<ul>
+  <li> Adaptive basis sets (see for example <a href="https://arxiv.org/abs/2111.09638" target="_blank">Sigmundson et al arXiv:2111.09638</a>)</li>
+  <li> Time dependence</li>
+  <li> Optimization of experimental parameter</li> 
+  <li> Feedback from experiment</li>
+</ul>
+<li> Finding optimal parameters for tuning of entanglement</li>
+<li> Numerical experiments to mimick real systems, using many-body methods to develop <b>quantum twins</b> (<a href="https://iopscience.iop.org/article/10.1088/1367-2630/12/7/075008" target="_blank">inspiration from  work by Herschel Rabitz et al on Control of quantum phenomena, see New Journal of Physics 12 (2010) 075008</a>)!</li>
+</ol>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="collaborators-and-people-to-thank">Collaborators and people to thank </h2>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b>MSU</b>
+<p>
+<p>Niyaz Beysengulov and Johannes Pollanen (experiment, Physics); Zachary Stewart, Jared Weidman, and Angela Wilson (quantum chemistry)</p>
+</div>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b>University of Oslo</b>
+<p>
+<p>&#216;yvind Sigmundson Sch&#248;yen, Stian Dysthe Bilek, and H&#229;kon Emil Kristiansen (Physics and quantum chemistry). In addition collaboration on point defects with Marianne Bathen and Lasse Vines.</p>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="what-is-this-talk-about">What is this talk about? </h2>
+
+<p>Here we describe a method for generating motional entanglement between
+two electrons trapped above the surface of superfluid helium. In this
+proposed scheme these electronic charge qubits are laterally confined
+via electrostatic gates to create an anharmonic trapping
+potential. When the system is cooled to sufficiently low temperature
+these in-plane charge qubit states are quantized and circuit quantum
+electrodynamic methods can be used to control and readout single qubit
+operations. Perspectives for quantum simulations with quantum dots
+systems will be discussed.
+</p>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="literature-and-more-reading">Literature and more reading  </h2>
+
+<ol>
+<li> <a href="https://journals.aps.org/rmp/abstract/10.1103/RevModPhys.95.011006" target="_blank">Justyna P. Zwolak and Jacob M. Taylor, Rev. Mod. Phys. 95, 011006, Advances in automation of quantum dot devices control</a></li>
+<li> <a href="https://arxiv.org/pdf/2210.14757.pdf" target="_blank">Pollanen and many other, Accelerating Progress Towards Practical Quantum Advantage: The Quantum Technology Demonstration Project Roadmap</a></li>
+<li> <a href="https://link.springer.com/book/10.1007/978-981-19-4641-7" target="_blank">Osada et al, introduction to quantum technologies, Springer, 2022</a></li>
+<li> <a href="https://journals.aps.org/pra/pdf/10.1103/PhysRevA.57.120" target="_blank">Original inspiration a series of articles of Loss and DiVincenzo from the nineties, Quantum Computation with Quantum Dots</a></li>
+</ol>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="quantum-engineering-di-vincenzo-criteria">Quantum Engineering, Di Vincenzo criteria </h2>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b>Quantum computing requirements</b>
+<p>
+<ol>
+<li> be scalable</li>
+<li> have qubits that can be entangled</li>
+<li> have reliable initializations protocols to a standard state</li>
+<li> have a set of universal quantum gates to control the quantum evolution</li>
+<li> have a coherence time much longer than the gate operation time</li>
+<li> have a reliable read-out mechanism for measuring the qubit states</li>
+<li> ...more</li>
+</ol>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="candidate-systems">Candidate systems </h2>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<ol>
+<li> Superconducting Josephon junctions</li>
+<li> Single photons</li>
+<li> <a href="https://journals.aps.org/rmp/pdf/10.1103/RevModPhys.93.025001" target="_blank">Trapped ions and atoms</a></li>
+<li> Nuclear Magnetic Resonance</li>
+<li> <b>Quantum dots, experiments at MSU</b></li>
+<li> Point Defects in semiconductors</li>
+<li> ...more</li>
+</ol>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="electrons-quantum-dots-on-superfluid-helium">Electrons (quantum dots) on superfluid helium </h2>
+
+<p>Electrons on <b>superfluid helium represent</b> (see <a href="https://www.youtube.com/watch?v=EuDuM-fe-lA&ab_channel=JoshuahHeath" target="_blank"><tt>https://www.youtube.com/watch?v=EuDuM-fe-lA&ab_channel=JoshuahHeath</tt></a>) a promising platform for investigating
+strongly-coupled qubits.
+</p>
+
+<p>A systematic investigation of the
+controlled generation of entanglement between two trapped electrons
+under the influence of coherent microwave driving pulses, taking into
+account the effects of the Coulomb interaction between electrons, may be of great interest for quantum information processing using
+trapped electrons.
+</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="to-read-more">To read more </h2>
+
+<ol>
+<li> See <a href="https://www.nature.com/articles/s41586-022-04539-x" target="_blank">Single electrons on solid neon as a solid-state qubit platform, David Schuster et al, Nature <b>605</b>, 46&#8211;50 (2022)</a></li>
+<li> See Mark Dykman et al, Spin dynamics in quantum dots on liquid helium, PRB <b>107</b>. 035437 (2023) at <a href="https://link.aps.org/doi/10.1103/PhysRevB.107.035437" target="_blank"><tt>https://link.aps.org/doi/10.1103/PhysRevB.107.035437</tt></a>.</li>
+</ol>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="experimental-setup-i">Experimental setup I </h2>
+
+<br/><br/>
+<center>
+<p><img src="qcfigures/Elhelium1.png" width="700" align="bottom"></p>
+</center>
+<br/><br/>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="more-on-experimental-setup-ii">More on experimental setup II </h2>
+
+<br/><br/>
+<center>
+<p><img src="qcfigures/Elhelium2.png" width="700" align="bottom"></p>
+</center>
+<br/><br/>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="more-on-experimental-setup-iii">More on experimental setup III </h2>
+
+<br/><br/>
+<center>
+<p><img src="qcfigures/Elhelium3.png" width="700" align="bottom"></p>
+</center>
+<br/><br/>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="experimental-set-up">Experimental set up </h2>
+
+<br/><br/>
+<center>
+<p><img src="qcfigures/figure1.png" width="600" align="bottom"></p>
+</center>
+<br/><br/>
+
+<ol>
+<li> (a) Schematic of the microdevice, where two electrons are trapped in a double-well potential created by electrodes 1-7. The read-out is provided by two superconducting resonators dispersively coupled to  electron's in-plane motional states.</li>
+<li> (b) Coupling constants from each individual electrode beneath the helium layer.</li>
+<li> (c+d) The electron's energy in a  double-well electrostatic potential (solid line). Dashed and dot-dashed lines represent the harmonic approximations of left and right wells respectively.</li>
+</ol>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="entanglement">Entanglement </h2>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p><a href="https://link.springer.com/content/pdf/10.1007/s11232-007-0098-9.pdf" target="_blank">Entanglement</a> is the fundamental characteristic that distinguishes
+quantum systems composed of two or more coupled objects from their
+classical counterparts. The study of entanglement in precisely
+engineered quantum systems with countably many degrees of freedom is
+at the forefront of modern physics and is a key resource in quantum
+information science (QIS). This is particularly true in the
+development of two-qubit logic for quantum computation.
+</p>
+</div>
+
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p>The
+generation of two-qubit entanglement has been demonstrated in a wide
+variety of physical systems used in present-day quantum computing,
+including superconducting circuits, trapped
+ions, semiconductor quantum dots, color-center
+defects in diamond, and neutral atoms in optical
+lattices, just to name a few.
+</p>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="more-on-entanglement">More on Entanglement </h2>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p>Generating an entanglement between two quantum systems rely on
+exploiting interactions in a controllable way. The details in the
+interaction Hamiltonian between two systems defines the protocol
+schemes for two-qubit logic.
+</p>
+</div>
+
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p>In  superconducting circuits the
+interaction between qubits may arise from direct capacitive coupling
+between circuit elements or by indirect coupling of two qubits to a
+common resonator (virtually populating resonator mode) which results
+in a non-local Hamiltonian in the form of exchange
+interaction. This allow to implement various
+schemes for entanglement, such as controlled-phase
+gate, resonator-induced phase
+gate, cross-resonance gates etc.
+</p>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="entanglement-gates-in-trapped-ions-and-more">Entanglement gates in trapped ions and more </h2>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p>Entanglement gates in trapped ions are
+produced by means of the Coulomb interaction, where shared motional
+modes of two or more ions, entangled to their internal states, used
+for transferring excitations between ion
+qubits. This has been experimentally
+demonstrated.
+</p>
+</div>
+
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p>In photonic quantum
+computing schemes two-qubit entangling operations are realized by
+nonlinear interactions between two photons scattering from quantum
+dots, plasmonic nanowires, diamond vacancy centers and others embedded
+into waveguides. Two-qubit gates in
+semiconductor quantum dots are based on spin-spin exchange
+interactions or generated
+by coupling to a superconducting resonator via artificial spin-orbit
+interaction.
+</p>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="quantum-dots-and-the-coulomb-interaction">Quantum dots and the Coulomb interaction </h2>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p>Coulomb interaction governed entanglement can be realized in
+the system of electrons on the surface of superfluid helium, where
+qubit states are formed by in-plane lateral motional or out-of plane
+Rydberg states. Trapped near the surface of liquid helium these states
+have different spatial charge configurations and the wavefunctions of
+different electrons do not overlap.
+</p>
+</div>
+
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p>This results in a strong exchange
+free Coulomb interaction which depends on the states of the
+electrons. The lack of disorder in the systems
+also leads to slow electron decoherence, which has attracted interest
+to the system as a candidate for quantum information
+processing.
+</p>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="electrons-on-helium-is-another-qubit-platform">Electrons on helium is another qubit platform </h2>
+
+<b>To our knowledge two qubit gates have never been discussed in a proper manner for these systems.</b>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p>The static Coulomb interaction arises from a virtual photon exchange
+ process between two charge particles according to quantum
+ electrodynamics. This results in a correlated motion of two charges
+ generating quantum entanglement. 
+</p>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="surface-state-electrons-sse">Surface state electrons (SSE) </h2>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p>Surface state electrons (SSE) 'floating' above liquid helium
+originates from quantization of electron's perpendicular to the
+surface motion in a trapping potential formed by attractive force from
+image charge and a large \( \sim \) 1 eV barrier at the liquid-vacuum
+interface. At low temperatures the SSE are trapped in the lowest
+Rydberg state for vertical motion some 11 nm above the helium surface,
+which is perfectly clean and has a permittivity close to that of
+vacuum.
+</p>
+</div>
+
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p>The weak interaction with rthe enviroment, which is mainly governed
+by interaction with quantized surface capillary waves (ripplons) and
+bulk phonons, ensures long coherence times - a vital ingredient for
+any qubit platform. 
+</p>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="calculational-details">Calculational details </h2>
+
+<p>Hamiltonian:</p>
+$$
+\begin{align}
+\hat{H} &=\frac{\hat{p}_1^2}{2} + \sum_{i = 1}^7 V_i\alpha_i[\hat{x}_1] + \frac{\hat{p}_2^2}{2} + \sum_{i = 1}^7 V_i\alpha_i[\hat{x}_2] + \frac{\kappa}{\sqrt{(\hat{x}_1-\hat{x}_2)^2 + a^2}}
+\label{_auto1}\\
+&= h[\hat{p}_1,\hat{x}_1] + h[\hat{p}_2,\hat{x}_2] + u[\hat{x}_1,\hat{x}_2]
+\label{_auto2}
+\end{align}
+$$
+
+
+<br/><br/>
+<center>
+<p><img src="qcfigures/well_basis.png" width="600" align="bottom"></p>
+</center>
+<br/><br/>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="calculational-details">Calculational details </h2>
+
+<p>Hamiltonian:</p>
+$$
+\begin{align}
+\hat{H} &= \frac{\hat{p}_1^2}{2} + v[\hat{x}_1] + \frac{\hat{p}_2^2}{2} + v[\hat{x}_2] + \frac{\kappa}{\sqrt{(\hat{x}_1-\hat{x}_2)^2 + a^2}}
+\label{_auto3}\\
+&= h[\hat{p}_1,\hat{x}_1] + h[\hat{p}_2,\hat{x}_2] + u[\hat{x}_1,\hat{x}_2]
+\label{_auto4}
+\end{align}
+$$
+
+
+<br/><br/>
+<center>
+<p><img src="qcfigures/wells.png" width="600" align="bottom"></p>
+</center>
+<br/><br/>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="calculational-details">Calculational details </h2>
+
+<p>Hamiltonian:</p>
+$$
+\begin{align}
+\hat{H} &= \frac{\hat{p}_1^2}{2} + v[\hat{x}_1] + \frac{\hat{p}_2^2}{2} + v[\hat{x}_2] + \frac{\kappa}{\sqrt{(\hat{x}_1-\hat{x}_2)^2 + a^2}} 
+\label{_auto5}\\
+&\equiv h[\hat{p}_1,\hat{x}_1] + h[\hat{p}_2,\hat{x}_2] + u[\hat{x}_1,\hat{x}_2]
+\label{_auto6}
+\end{align}
+$$
+
+<p>Energy states:</p>
+$$
+\begin{equation}
+\vert\Phi_k\rangle = \sum_{i < j} C_{ij, k}\frac{\vert \varphi_i \varphi_j\rangle - \vert \varphi_j \varphi_i\rangle}{\sqrt{2}},
+\label{_auto7}
+\end{equation}
+$$
+
+<p>(Slater basis)</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="calculational-details">Calculational details </h2>
+
+<p>Hamiltonian:</p>
+$$
+\begin{align}
+\hat{H} &= \frac{\hat{p}_1^2}{2} + v^L[\hat{x}_1] + \frac{\hat{p}_2^2}{2} + v^R[\hat{x}_2] + \frac{\kappa}{\sqrt{(\hat{x}_1-\hat{x}_2)^2 + a^2}} 
+\label{_auto8}\\
+&\equiv h^L[\hat{p}_1,\hat{x}_1] + h^R[\hat{p}_2,\hat{x}_2] + u[\hat{x}_1,\hat{x}_2]
+\label{_auto9}
+\end{align}
+$$
+
+<p>Energy states:</p>
+$$
+\begin{equation}
+\vert\Phi_k\rangle = \sum_{i} \sum_{j} C_{ij, k}\vert \varphi^L_i \varphi^R_j\rangle,
+\label{_auto10}
+\end{equation}
+$$
+
+<p>(product basis)</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="calculational-details">Calculational details </h2>
+
+<p>Energy states:</p>
+$$
+\begin{equation}
+\vert\Phi_k\rangle = \sum_{i} \sum_{j} C_{ij, k}\vert \varphi^L_i \varphi^R_j\rangle,
+\label{_auto11}
+\end{equation}
+$$
+
+<p>(product basis)</p>
+
+<br/><br/>
+<center>
+<p><img src="qcfigures/Hartree_states.png" width="700" align="bottom"></p>
+</center>
+<br/><br/>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="calculational-details">Calculational details </h2>
+
+<p>Hamiltonian:</p>
+$$
+\begin{align}
+\hat{H} &= \frac{\hat{p}_1^2}{2} + v^L[\hat{x}_1] + \frac{\hat{p}_2^2}{2} + v^R[\hat{x}_2] + \frac{\kappa}{\sqrt{(\hat{x}_1-\hat{x}_2)^2 + a^2}} 
+\label{_auto12}\\
+&\equiv h^L[\hat{p}_1,\hat{x}_1] + h^R[\hat{p}_2,\hat{x}_2] + u[\hat{x}_1,\hat{x}_2]
+\label{_auto13}
+\end{align}
+$$
+
+<p>Energy states:</p>
+$$
+\begin{equation}
+\vert\Phi_k\rangle = \sum_{i} \sum_{j} C_{ij, k}\vert \varphi^L_i \varphi^R_j\rangle,
+\label{_auto14}
+\end{equation}
+$$
+
+<p>(Hartree basis)</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="calculational-details">Calculational details </h2>
+
+<p>Hamiltonian:</p>
+$$
+\begin{align}
+\hat{H} &= \frac{\hat{p}_1^2}{2} + v^L[\hat{x}_1] + \frac{\hat{p}_2^2}{2} + v^R[\hat{x}_2] + \frac{\kappa}{\sqrt{(\hat{x}_1-\hat{x}_2)^2 + a^2}} 
+\label{_auto15}\\
+&\equiv h^L[\hat{p}_1,\hat{x}_1] + h^R[\hat{p}_2,\hat{x}_2] + u[\hat{x}_1,\hat{x}_2]
+\label{_auto16}
+\end{align}
+$$
+
+<p>Energy states:</p>
+$$
+\begin{equation}
+\vert\Phi_k\rangle = \sum_{i = 0}^{N^L} \sum_{j = 0}^{N^R} C_{ij, k}\vert \varphi^L_i \varphi^R_j\rangle,
+\label{_auto17}
+\end{equation}
+$$
+
+<p>(Hartree basis)</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="calculational-details">Calculational details </h2>
+
+<p>Energy states:</p>
+$$
+\begin{equation}
+\vert\Phi_k\rangle = \sum_{i = 0}^{N^L} \sum_{j = 0}^{N^R} C_{ij, k}\vert \varphi^L_i \varphi^R_j\rangle,
+\label{_auto18}
+\end{equation}
+$$
+
+<p>(Hartree basis)</p>
+
+<br/><br/>
+<center>
+<p><img src="qcfigures/Hartree_coefs.png" width="700" align="bottom"></p>
+</center>
+<br/><br/>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="calculational-details">Calculational details </h2>
+
+<p>Hamiltonian:</p>
+$$
+\begin{align}
+\hat{H} &= \frac{\hat{p}_1^2}{2} + v^L[\hat{x}_1] + \frac{\hat{p}_2^2}{2} + v^R[\hat{x}_2] + \frac{\kappa}{\sqrt{(\hat{x}_1-\hat{x}_2)^2 + a^2}} 
+\label{_auto19}\\
+&\equiv h^L[\hat{p}_1,\hat{x}_1] + h^R[\hat{p}_2,\hat{x}_2] + u[\hat{x}_1,\hat{x}_2]
+\label{_auto20}
+\end{align}
+$$
+
+<p>Energy states:</p>
+$$
+\begin{equation}
+\vert\Phi_k\rangle = \sum_{i = 0}^{N^L} \sum_{j = 0}^{N^R} C_{ij, k}\vert \varphi^L_i \varphi^R_j\rangle,
+\label{_auto21}
+\end{equation}
+$$
+
+<p>(Hartree basis)</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="results-and-discussions">Results and discussions </h2>
+<p>By adjusting the potential we can change the anharmonicities and detuning of the wells.</p>
+<ol>
+<li> What values of these give interesting interactions?</li>
+<li> Inspiration from superconducting qubits, see High-Contrast \( ZZ \) Interaction Using Superconducting Qubits with Opposite-Sign Anharmonicity, <a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.125.200503" target="_blank">Zhao et al Phys. Rev. Lett. 125, 200503</a></li>
+</ol>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<p>We search for well configurations corresponding to three different types of interaction between the two electrons.</p>
+
+<ol>
+<li> In configuration I we address both qubits independently and can thereby perform single-qubit state rotations and measurements.</li>
+<li> Configurations II and III correspond to avoided level crossings between two (\( E_{01}, E_{10} \)) and three (\( E_{11}, E_{20}, E_{02} \)) energy levels respectively, where the electrons' motion becomes correlated, that is they are entangled.</li> 
+</ol>
+<p>Both anharmonicity and detuning changes with the shape of our well.
+We create a voltage parameterization
+</p>
+$$
+\begin{equation}
+V(\lambda) = (1-\lambda)V_\mathrm{I} + \lambda V_\mathrm{III}
+\label{_auto22}
+\end{equation}
+$$
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="entanglement-and-more">Entanglement and more  </h2>
+
+<br/><br/>
+<center>
+<p><img src="qcfigures/crossings-entropies-anharmonicities-1.png" width="800" align="bottom"></p>
+</center>
+<br/><br/>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="legend-to-figure">Legend to figure </h2>
+
+<ol>
+<li> (a) In this figure we have plotted the transition energy from the ground state to the labeled excited state as a function of the voltage parameter \( \lambda \). The labeled states are the computational basis states when \( \lambda = 0 \).</li>
+<li> (b) The von Neumann entropy of the five lowest excited states of the two-body Hamiltonian as a function of the configuration parameter \( \lambda \). The ground state has zero entropy, or close to zero entropy. We have included the points for the double and triple degeneracy points. \( \lambda_{II} \) and \( \lambda_{III} \) in the figure. The von Neumann entropy is calculated using the binary logarithm.</li>
+<li> (c) In this figure we have plotted the anharmonicites for the left well (\( \alpha^L \)) and the right well (\( \alpha^R \)) as a function of the well parameterization \( \lambda \). We have also included the detuning \( \Delta \omega = \omega^R - \omega^L \) between the two wells. We have marked configuration II at \( \lambda_{II} \approx 0.554 \) and configuration III at \( \lambda_{III} = 1 \).</li>
+</ol>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="particle-densities-and-coefficients">Particle densities and coefficients </h2>
+
+<br/><br/>
+<center>
+<p><img src="qcfigures/configuration_I-1.png" width="600" align="bottom"></p>
+</center>
+<br/><br/>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="potential-wells-the-one-body-densities-and-single-particle-states">Potential wells, the one-body densities, and single-particle states </h2>
+
+<br/><br/>
+<center>
+<p><img src="qcfigures/configuration_II_and_III-1.png" width="600" align="bottom"></p>
+</center>
+<br/><br/>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="where-we-are-now">Where we are now </h2>
+
+<ol>
+<li> Adding time-dependent studies of two electrons in two wells in one and two dimensions</li>
+<li> Studies of the time-evolution of entangled states (now two electrons only)</li>
+<li> Use theory to find optimal experimental setup</li>
+<li> Expect two-electron system realized experimentally in approx \( 1 \) year, great potential for studies of quantum simulations</li>
+</ol>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="plans">Plans </h2>
+
+<ol>
+<li> Add two and three-dimensions in order to simulate in  a more realistic way such many-body systems.</li>
+<li> Develop time-dependent FCI code, useful up to approximately 10 particles with <b>effective</b> (and effective Hilbert space) Hamiltonians in two and three dimensions</li>
+<li> Develop codes for studies of entanglement as function of time</li>
+<li> Do tomogrophy and extract density matrix and compare with experiment.</li>
+<li> Study the feasibility of various setups for quantum simulations of specific Hamiltonians such as the Lipkin model</li>
+<li> For larger many-body systems, study for example time-dependent CC theory</li>
+</ol>
+<!-- ------------------- end of main content --------------- -->
+</body>
+</html>
+

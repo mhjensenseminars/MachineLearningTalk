@@ -1,0 +1,228 @@
+<!--
+HTML file automatically generated from DocOnce source
+(https://github.com/doconce/doconce/)
+doconce format html nordiquantumdays.do.txt --html_style=bootstrap --pygments_html_style=default --html_admon=bootstrap_panel --html_output=nordiquantumdays-bs --no_mako
+-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="DocOnce: https://github.com/doconce/doconce/" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Coulomb interaction driven entanglement of electrons on helium, theory and experiment">
+<title>Coulomb interaction driven entanglement of electrons on helium, theory and experiment</title>
+<!-- Bootstrap style: bootstrap -->
+<!-- doconce format html nordiquantumdays.do.txt --html_style=bootstrap --pygments_html_style=default --html_admon=bootstrap_panel --html_output=nordiquantumdays-bs --no_mako -->
+<link href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+<!-- not necessary
+<link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+-->
+<style type="text/css">
+/* Add scrollbar to dropdown menus in bootstrap navigation bar */
+.dropdown-menu {
+   height: auto;
+   max-height: 400px;
+   overflow-x: hidden;
+}
+/* Adds an invisible element before each target to offset for the navigation
+   bar */
+.anchor::before {
+  content:"";
+  display:block;
+  height:50px;      /* fixed header height for style bootstrap */
+  margin:-50px 0 0; /* negative fixed header height */
+}
+</style>
+</head>
+
+<!-- tocinfo
+{'highest level': 2,
+ 'sections': [('Overview and Motivation', 2, None, 'overview-and-motivation'),
+              ('Collaborators and people to thank',
+               2,
+               None,
+               'collaborators-and-people-to-thank'),
+              ('What is this talk about?', 2, None, 'what-is-this-talk-about'),
+              ('Literature and more reading',
+               2,
+               None,
+               'literature-and-more-reading'),
+              ('Quantum Engineering, Di Vincenzo criteria',
+               2,
+               None,
+               'quantum-engineering-di-vincenzo-criteria'),
+              ('Candidate systems', 2, None, 'candidate-systems'),
+              ('Electrons (quantum dots) on superfluid helium',
+               2,
+               None,
+               'electrons-quantum-dots-on-superfluid-helium'),
+              ('To read more', 2, None, 'to-read-more'),
+              ('Experimental setup I', 2, None, 'experimental-setup-i'),
+              ('More on experimental setup II',
+               2,
+               None,
+               'more-on-experimental-setup-ii'),
+              ('More on experimental setup III',
+               2,
+               None,
+               'more-on-experimental-setup-iii'),
+              ('Experimental set up', 2, None, 'experimental-set-up'),
+              ('Entanglement', 2, None, 'entanglement'),
+              ('More on Entanglement', 2, None, 'more-on-entanglement'),
+              ('Entanglement gates in trapped ions and more',
+               2,
+               None,
+               'entanglement-gates-in-trapped-ions-and-more'),
+              ('Quantum dots and the Coulomb interaction',
+               2,
+               None,
+               'quantum-dots-and-the-coulomb-interaction'),
+              ('Electrons on helium is another qubit platform',
+               2,
+               None,
+               'electrons-on-helium-is-another-qubit-platform'),
+              ('Surface state electrons (SSE)',
+               2,
+               None,
+               'surface-state-electrons-sse'),
+              ('Calculational details', 2, None, 'calculational-details'),
+              ('Calculational details', 2, None, 'calculational-details'),
+              ('Calculational details', 2, None, 'calculational-details'),
+              ('Calculational details', 2, None, 'calculational-details'),
+              ('Calculational details', 2, None, 'calculational-details'),
+              ('Calculational details', 2, None, 'calculational-details'),
+              ('Calculational details', 2, None, 'calculational-details'),
+              ('Calculational details', 2, None, 'calculational-details'),
+              ('Calculational details', 2, None, 'calculational-details'),
+              ('Results and discussions', 2, None, 'results-and-discussions'),
+              ('Entanglement and more', 2, None, 'entanglement-and-more'),
+              ('Legend to figure', 2, None, 'legend-to-figure'),
+              ('Particle densities and coefficients',
+               2,
+               None,
+               'particle-densities-and-coefficients'),
+              ('Potential wells, the one-body densities, and single-particle '
+               'states',
+               2,
+               None,
+               'potential-wells-the-one-body-densities-and-single-particle-states'),
+              ('Where we are now', 2, None, 'where-we-are-now'),
+              ('Plans', 2, None, 'plans')]}
+end of tocinfo -->
+
+<body>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+     equationNumbers: {  autoNumber: "none"  },
+     extensions: ["AMSmath.js", "AMSsymbols.js", "autobold.js", "color.js"]
+  }
+});
+</script>
+<script type="text/javascript" async
+ src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<!-- Bootstrap navigation bar -->
+<div class="navbar navbar-default navbar-fixed-top">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="nordiquantumdays-bs.html">Coulomb interaction driven entanglement of electrons on helium, theory and experiment</a>
+  </div>
+  <div class="navbar-collapse collapse navbar-responsive-collapse">
+    <ul class="nav navbar-nav navbar-right">
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Contents <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+     <!-- navigation toc: --> <li><a href="._nordiquantumdays-bs001.html#overview-and-motivation" style="font-size: 80%;">Overview and Motivation</a></li>
+     <!-- navigation toc: --> <li><a href="._nordiquantumdays-bs002.html#collaborators-and-people-to-thank" style="font-size: 80%;">Collaborators and people to thank</a></li>
+     <!-- navigation toc: --> <li><a href="._nordiquantumdays-bs003.html#what-is-this-talk-about" style="font-size: 80%;">What is this talk about?</a></li>
+     <!-- navigation toc: --> <li><a href="._nordiquantumdays-bs004.html#literature-and-more-reading" style="font-size: 80%;">Literature and more reading</a></li>
+     <!-- navigation toc: --> <li><a href="._nordiquantumdays-bs005.html#quantum-engineering-di-vincenzo-criteria" style="font-size: 80%;">Quantum Engineering, Di Vincenzo criteria</a></li>
+     <!-- navigation toc: --> <li><a href="._nordiquantumdays-bs006.html#candidate-systems" style="font-size: 80%;">Candidate systems</a></li>
+     <!-- navigation toc: --> <li><a href="._nordiquantumdays-bs007.html#electrons-quantum-dots-on-superfluid-helium" style="font-size: 80%;">Electrons (quantum dots) on superfluid helium</a></li>
+     <!-- navigation toc: --> <li><a href="._nordiquantumdays-bs008.html#to-read-more" style="font-size: 80%;">To read more</a></li>
+     <!-- navigation toc: --> <li><a href="._nordiquantumdays-bs009.html#experimental-setup-i" style="font-size: 80%;">Experimental setup I</a></li>
+     <!-- navigation toc: --> <li><a href="._nordiquantumdays-bs010.html#more-on-experimental-setup-ii" style="font-size: 80%;">More on experimental setup II</a></li>
+     <!-- navigation toc: --> <li><a href="._nordiquantumdays-bs011.html#more-on-experimental-setup-iii" style="font-size: 80%;">More on experimental setup III</a></li>
+     <!-- navigation toc: --> <li><a href="._nordiquantumdays-bs012.html#experimental-set-up" style="font-size: 80%;">Experimental set up</a></li>
+     <!-- navigation toc: --> <li><a href="._nordiquantumdays-bs013.html#entanglement" style="font-size: 80%;">Entanglement</a></li>
+     <!-- navigation toc: --> <li><a href="._nordiquantumdays-bs014.html#more-on-entanglement" style="font-size: 80%;">More on Entanglement</a></li>
+     <!-- navigation toc: --> <li><a href="._nordiquantumdays-bs015.html#entanglement-gates-in-trapped-ions-and-more" style="font-size: 80%;">Entanglement gates in trapped ions and more</a></li>
+     <!-- navigation toc: --> <li><a href="._nordiquantumdays-bs016.html#quantum-dots-and-the-coulomb-interaction" style="font-size: 80%;">Quantum dots and the Coulomb interaction</a></li>
+     <!-- navigation toc: --> <li><a href="._nordiquantumdays-bs017.html#electrons-on-helium-is-another-qubit-platform" style="font-size: 80%;">Electrons on helium is another qubit platform</a></li>
+     <!-- navigation toc: --> <li><a href="._nordiquantumdays-bs018.html#surface-state-electrons-sse" style="font-size: 80%;">Surface state electrons (SSE)</a></li>
+     <!-- navigation toc: --> <li><a href="._nordiquantumdays-bs027.html#calculational-details" style="font-size: 80%;">Calculational details</a></li>
+     <!-- navigation toc: --> <li><a href="._nordiquantumdays-bs027.html#calculational-details" style="font-size: 80%;">Calculational details</a></li>
+     <!-- navigation toc: --> <li><a href="._nordiquantumdays-bs027.html#calculational-details" style="font-size: 80%;">Calculational details</a></li>
+     <!-- navigation toc: --> <li><a href="._nordiquantumdays-bs027.html#calculational-details" style="font-size: 80%;">Calculational details</a></li>
+     <!-- navigation toc: --> <li><a href="._nordiquantumdays-bs027.html#calculational-details" style="font-size: 80%;">Calculational details</a></li>
+     <!-- navigation toc: --> <li><a href="._nordiquantumdays-bs027.html#calculational-details" style="font-size: 80%;">Calculational details</a></li>
+     <!-- navigation toc: --> <li><a href="._nordiquantumdays-bs027.html#calculational-details" style="font-size: 80%;">Calculational details</a></li>
+     <!-- navigation toc: --> <li><a href="._nordiquantumdays-bs027.html#calculational-details" style="font-size: 80%;">Calculational details</a></li>
+     <!-- navigation toc: --> <li><a href="._nordiquantumdays-bs027.html#calculational-details" style="font-size: 80%;">Calculational details</a></li>
+     <!-- navigation toc: --> <li><a href="._nordiquantumdays-bs028.html#results-and-discussions" style="font-size: 80%;">Results and discussions</a></li>
+     <!-- navigation toc: --> <li><a href="._nordiquantumdays-bs030.html#entanglement-and-more" style="font-size: 80%;">Entanglement and more</a></li>
+     <!-- navigation toc: --> <li><a href="._nordiquantumdays-bs031.html#legend-to-figure" style="font-size: 80%;">Legend to figure</a></li>
+     <!-- navigation toc: --> <li><a href="._nordiquantumdays-bs032.html#particle-densities-and-coefficients" style="font-size: 80%;">Particle densities and coefficients</a></li>
+     <!-- navigation toc: --> <li><a href="#potential-wells-the-one-body-densities-and-single-particle-states" style="font-size: 80%;">Potential wells, the one-body densities, and single-particle states</a></li>
+     <!-- navigation toc: --> <li><a href="._nordiquantumdays-bs034.html#where-we-are-now" style="font-size: 80%;">Where we are now</a></li>
+     <!-- navigation toc: --> <li><a href="._nordiquantumdays-bs035.html#plans" style="font-size: 80%;">Plans</a></li>
+
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
+</div> <!-- end of navigation bar -->
+<div class="container">
+<p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p> <!-- add vertical space -->
+<a name="part0033"></a>
+<!-- !split -->
+<h2 id="potential-wells-the-one-body-densities-and-single-particle-states" class="anchor">Potential wells, the one-body densities, and single-particle states </h2>
+
+<br/><br/>
+<center>
+<p><img src="qcfigures/configuration_II_and_III-1.png" width="600" align="bottom"></p>
+</center>
+<br/><br/>
+
+<p>
+<!-- navigation buttons at the bottom of the page -->
+<ul class="pagination">
+<li><a href="._nordiquantumdays-bs032.html">&laquo;</a></li>
+  <li><a href="._nordiquantumdays-bs000.html">1</a></li>
+  <li><a href="">...</a></li>
+  <li><a href="._nordiquantumdays-bs025.html">26</a></li>
+  <li><a href="._nordiquantumdays-bs026.html">27</a></li>
+  <li><a href="._nordiquantumdays-bs027.html">28</a></li>
+  <li><a href="._nordiquantumdays-bs028.html">29</a></li>
+  <li><a href="._nordiquantumdays-bs029.html">30</a></li>
+  <li><a href="._nordiquantumdays-bs030.html">31</a></li>
+  <li><a href="._nordiquantumdays-bs031.html">32</a></li>
+  <li><a href="._nordiquantumdays-bs032.html">33</a></li>
+  <li class="active"><a href="._nordiquantumdays-bs033.html">34</a></li>
+  <li><a href="._nordiquantumdays-bs034.html">35</a></li>
+  <li><a href="._nordiquantumdays-bs035.html">36</a></li>
+  <li><a href="._nordiquantumdays-bs034.html">&raquo;</a></li>
+</ul>
+<!-- ------------------- end of main content --------------- -->
+</div>  <!-- end container -->
+<!-- include javascript, jQuery *first* -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<!-- Bootstrap footer
+<footer>
+<a href="https://..."><img width="250" align=right src="https://..."></a>
+</footer>
+-->
+</body>
+</html>
+
