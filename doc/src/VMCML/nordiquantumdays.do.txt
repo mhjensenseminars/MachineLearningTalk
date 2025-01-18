@@ -14,6 +14,9 @@ o Many-body methods like F(ull)C(onfiguration)I(nteraction) theory  with
 o Finding optimal parameters for tuning of entanglement
 
 
+# add di vincenzo criteria
+# add di vincenzo and loss paper from 1998
+
 !split
 ===== Collaborators and people to thank =====
 
