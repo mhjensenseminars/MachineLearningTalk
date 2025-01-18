@@ -53,19 +53,24 @@ o "Osada et al, introduction to quantum technologies, Springer, 2022":"https://l
 o "Original inspiration a series of articles of Loss and DiVincenzo from the nineties, Quantum Computation with Quantum Dots":"https://journals.aps.org/pra/pdf/10.1103/PhysRevA.57.120"
 
 
-
 !split
-===== Quantum Engineering, Di Vincenzo criteria =====
+===== Di Vincenzo criteria =====
 
 !bblock Quantum computing requirements
+o A scalable physical system with well-characterized qubit
+o The ability to initialize the state of the qubits to a simple fiducial state
+o Long relevant Quantum coherence times longer than the gate operation time
+o A _universal_ set of quantum gates
+o A qubit-specific measurement capability
+!eblock 
+
+
 o be scalable
 o have qubits that can be entangled
 o have reliable initializations protocols to a standard state
 o have a set of universal quantum gates to control the quantum evolution
-o have a coherence time much longer than the gate operation time
+o have a coherence time much 
 o have a reliable read-out mechanism for measuring the qubit states
-o ...more
-!eblock
 
 !split
 ===== Candidate systems =====
