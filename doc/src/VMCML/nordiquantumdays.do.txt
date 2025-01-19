@@ -111,6 +111,30 @@ o CMOS compatible
 o Fast gates
 !eblock
 
+!split
+===== Experimental setup I =====
+
+FIGURE: [qcfigures/nordicquantumfig1.png, width=700 frac=1.3]
+
+
+!split
+===== Experimental setup I =====
+
+FIGURE: [qcfigures/nordicquantumfig2.png, width=700 frac=1.3]
+
+
+!split
+===== Experimental setup I =====
+
+FIGURE: [qcfigures/nordicquantumfig3.png, width=700 frac=1.3]
+
+
+!split
+===== Experimental setup I =====
+
+FIGURE: [qcfigures/nordicquantumfig4.png, width=700 frac=1.3]
+
+
 
 !split
 ===== Experimental setup I =====

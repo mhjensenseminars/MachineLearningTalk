@@ -75,11 +75,16 @@ div.toc p,a {
                'literature-and-more-reading'),
               ('Di Vincenzo criteria', 2, None, 'di-vincenzo-criteria'),
               ('Candidate systems', 2, None, 'candidate-systems'),
-              ('Electrons (quantum dots) on superfluid helium',
+              ('Electrons on superfluid helium (Idealized quantum dot system)',
                2,
                None,
-               'electrons-quantum-dots-on-superfluid-helium'),
+               'electrons-on-superfluid-helium-idealized-quantum-dot-system'),
               ('To read more', 2, None, 'to-read-more'),
+              ('properties', 2, None, 'properties'),
+              ('Experimental setup I', 2, None, 'experimental-setup-i'),
+              ('Experimental setup I', 2, None, 'experimental-setup-i'),
+              ('Experimental setup I', 2, None, 'experimental-setup-i'),
+              ('Experimental setup I', 2, None, 'experimental-setup-i'),
               ('Experimental setup I', 2, None, 'experimental-setup-i'),
               ('More on experimental setup II',
                2,
@@ -168,7 +173,7 @@ MathJax.Hub.Config({
 </center>
 <br>
 <center>
-<h4>January 20-21, 2025, Nordic Quantum days</h4>
+<h4>January 20-21, 2025, Nordic Quantum Meeting</h4>
 </center> <!-- date -->
 <br>
 
@@ -193,13 +198,13 @@ MathJax.Hub.Config({
 <div class="alert alert-block alert-block alert-text-normal">
 <b>MSU</b>
 <p>
-<p>Niyaz Beysengulov and Johannes Pollanen (experiment, Physics); Zachary Stewart, Jared Weidman, and Angela Wilson (quantum chemistry)</p>
+<p>Niyaz Beysengulov and Johannes Pollanen (experiment, Physics); Zachary Stewart, Jared Weidman, and Angela Wilson (quantum chemistry), Dean Lee, Patrick Cook, Danny Jammooa, Nicholas Cariello, and Aymeric McRau (theory)</p>
 </div>
 
 <div class="alert alert-block alert-block alert-text-normal">
 <b>University of Oslo</b>
 <p>
-<p>Jonas B. Flaten, Oskar M. Leinonen, &#216;yvind Sigmundson Sch&#248;yen, Stian Dysthe Bilek, and H&#229;kon Emil Kristiansen (Physics and quantum chemistry).</p>
+<p>Jonas B. Flaten, Oskar M. Leinonen, Christopher Linder{\"a}lv, H&#229;kon Kvernmoen, &#216;yvind Sigmundson Sch&#248;yen, Stian Dysthe Bilek, and H&#229;kon Emil Kristiansen (Physics and quantum chemistry).</p>
 </div>
 
 
@@ -207,7 +212,7 @@ MathJax.Hub.Config({
 <h2 id="what-is-this-talk-about">What is this talk about? </h2>
 
 <p>Here we describe a method for generating motional entanglement between
-two electrons trapped above the surface of superfluid helium. In this
+electrons trapped above the surface of superfluid helium. In this
 proposed scheme these electronic charge qubits are laterally confined
 via electrostatic gates to create an anharmonic trapping
 potential. When the system is cooled to sufficiently low temperature
@@ -221,12 +226,19 @@ systems will be discussed.
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 <h2 id="literature-and-more-reading">Literature and more reading  </h2>
 
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
 <ol>
-<li> <a href="https://journals.aps.org/rmp/abstract/10.1103/RevModPhys.95.011006" target="_blank">Justyna P. Zwolak and Jacob M. Taylor, Rev. Mod. Phys. 95, 011006, Advances in automation of quantum dot devices control</a></li>
-<li> <a href="https://arxiv.org/pdf/2210.14757.pdf" target="_blank">Pollanen and many other, Accelerating Progress Towards Practical Quantum Advantage: The Quantum Technology Demonstration Project Roadmap</a></li>
-<li> <a href="https://link.springer.com/book/10.1007/978-981-19-4641-7" target="_blank">Osada et al, introduction to quantum technologies, Springer, 2022</a></li>
-<li> <a href="https://journals.aps.org/pra/pdf/10.1103/PhysRevA.57.120" target="_blank">Original inspiration a series of articles of Loss and DiVincenzo from the nineties, Quantum Computation with Quantum Dots</a></li>
+<li> Justyna P. Zwolak and Jacob M. Taylor, Rev. Mod. Phys. 95, 011006, Advances in automation of quantum dot devices control at <a href="https://journals.aps.org/rmp/abstract/10.1103/RevModPhys.95.011006" target="_blank"><tt>https://journals.aps.org/rmp/abstract/10.1103/RevModPhys.95.011006</tt></a></li>
+<li> EEROQ corporation at <a href="https://eeroq.com/" target="_blank"><tt>https://eeroq.com/</tt></a></li>
+<li> Pollanen and many other, Accelerating Progress Towards Practical Quantum Advantage: The Quantum Technology Demonstration Project Roadmap <a href="https://arxiv.org/pdf/2210.14757.pdf" target="_blank"><tt>https://arxiv.org/pdf/2210.14757.pdf</tt></a></li>
+<li> Original inspiration a series of articles of Loss and DiVincenzo from the nineties, Quantum Computation with Quantum Dots <a href="https://journals.aps.org/pra/pdf/10.1103/PhysRevA.57.120" target="_blank"><tt>https://journals.aps.org/pra/pdf/10.1103/PhysRevA.57.120</tt></a></li>
+<li> Niyaz R. Beysengulov, Johannes Pollanen, &#216;yvind S. Sch&#248;yen, Stian D. Bilek, Jonas B. Flaten, Oskar Leinonen, H&#229;kon Emil Kristiansen, Zachary J. Stewart, Jared D. Weidman, Angela K. Wilson, Morten Hjorth-Jensen, Coulomb interaction-driven entanglement of electrons on helium, PRX Quantum 5, 030324 (2024) and <a href="https://journals.aps.org/prxquantum/abstract/10.1103/PRXQuantum.5.030324" target="_blank"><tt>https://journals.aps.org/prxquantum/abstract/10.1103/PRXQuantum.5.030324</tt></a></li>
 </ol>
+</div>
+ 
+
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 <h2 id="di-vincenzo-criteria">Di Vincenzo criteria </h2>
 
@@ -243,14 +255,6 @@ systems will be discussed.
 </div>
  
 
-<ol>
-<li> be scalable</li>
-<li> have qubits that can be entangled</li>
-<li> have reliable initializations protocols to a standard state</li>
-<li> have a set of universal quantum gates to control the quantum evolution</li>
-<li> have a coherence time much</li> 
-<li> have a reliable read-out mechanism for measuring the qubit states</li>
-</ol>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 <h2 id="candidate-systems">Candidate systems </h2>
 
@@ -262,15 +266,14 @@ systems will be discussed.
 <li> Single photons</li>
 <li> <a href="https://journals.aps.org/rmp/pdf/10.1103/RevModPhys.93.025001" target="_blank">Trapped ions and atoms</a></li>
 <li> Nuclear Magnetic Resonance</li>
-<li> <b>Quantum dots, experiments at MSU</b></li>
-<li> Point Defects in semiconductors</li>
+<li> Quantum dots and Point Defects in semiconductors</li>
 <li> ...more</li>
 </ol>
 </div>
 
 
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
-<h2 id="electrons-quantum-dots-on-superfluid-helium">Electrons (quantum dots) on superfluid helium </h2>
+<h2 id="electrons-on-superfluid-helium-idealized-quantum-dot-system">Electrons on superfluid helium (Idealized quantum dot system) </h2>
 
 <p>Electrons on <b>superfluid helium represent</b> (see <a href="https://www.youtube.com/watch?v=EuDuM-fe-lA&ab_channel=JoshuahHeath" target="_blank"><tt>https://www.youtube.com/watch?v=EuDuM-fe-lA&ab_channel=JoshuahHeath</tt></a>) a promising platform for investigating
 strongly-coupled qubits.
@@ -290,6 +293,57 @@ trapped electrons.
 <li> See <a href="https://www.nature.com/articles/s41586-022-04539-x" target="_blank">Single electrons on solid neon as a solid-state qubit platform, David Schuster et al, Nature <b>605</b>, 46&#8211;50 (2022)</a></li>
 <li> See Mark Dykman et al, Spin dynamics in quantum dots on liquid helium, PRB <b>107</b>. 035437 (2023) at <a href="https://link.aps.org/doi/10.1103/PhysRevB.107.035437" target="_blank"><tt>https://link.aps.org/doi/10.1103/PhysRevB.107.035437</tt></a>.</li>
 </ol>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="properties">properties </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<ol>
+<li> Long coherence times</li>
+<li> Highly connect qubits</li>
+<li> Many qubits in a small area</li>
+<li> CMOS compatible</li>
+<li> Fast gates</li>
+</ol>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="experimental-setup-i">Experimental setup I </h2>
+
+<br/><br/>
+<center>
+<p><img src="qcfigures/nordicquantumfig1.png" width="700" align="bottom"></p>
+</center>
+<br/><br/>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="experimental-setup-i">Experimental setup I </h2>
+
+<br/><br/>
+<center>
+<p><img src="qcfigures/nordicquantumfig2.png" width="700" align="bottom"></p>
+</center>
+<br/><br/>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="experimental-setup-i">Experimental setup I </h2>
+
+<br/><br/>
+<center>
+<p><img src="qcfigures/nordicquantumfig3.png" width="700" align="bottom"></p>
+</center>
+<br/><br/>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="experimental-setup-i">Experimental setup I </h2>
+
+<br/><br/>
+<center>
+<p><img src="qcfigures/nordicquantumfig4.png" width="700" align="bottom"></p>
+</center>
+<br/><br/>
+
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 <h2 id="experimental-setup-i">Experimental setup I </h2>
 
