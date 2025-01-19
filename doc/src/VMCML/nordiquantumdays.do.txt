@@ -161,6 +161,25 @@ o (b) Coupling constants from each individual electrode beneath the helium layer
 o (c+d) The electron's energy in a  double-well electrostatic potential (solid line). Dashed and dot-dashed lines represent the harmonic approximations of left and right wells respectively.
 
 
+!split
+===== Quantum mechanical many-body problems (nuclear physics example here)  =====
+
+FIGURE: [qcfigures/mbpfig1.png, width=900 frac=1.1]
+
+!split
+===== Curse of dimensionality  =====
+
+FIGURE: [qcfigures/mbpfig2.png, width=900 frac=1.0]
+
+
+!split
+===== "Dilute neutron star matter from neural-network quantum states by Fore et al, Physical Review Research 5, 033062 (2023)":"https://journals.aps.org/prresearch/pdf/10.1103/PhysRevResearch.5.033062" at density $\rho=0.04$ fm$^{-3}$ =====
+
+!bblock
+FIGURE: [qcfigures/nmatter.png, width=700 frac=0.9]
+!eblock
+
+
 
 
 
