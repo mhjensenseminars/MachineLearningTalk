@@ -1,6 +1,6 @@
 TITLE: Coulomb interaction driven entanglement of electrons on helium, theory and experiment
 AUTHOR: Morten Hjorth-Jensen  at Department of Physics and Astronomy and Facility for Rare Isotope Beams (FRIB), Michigan State University, USA & Department of Physics, University of Oslo, Norway
-DATE: January 20-21, 2025, Nordic Quantum days
+DATE: January 20-21, 2025, Nordic Quantum Meeting
 
 
 !split
@@ -21,10 +21,10 @@ o Finding optimal parameters for tuning of entanglement
 ===== Collaborators and people to thank =====
 
 !bblock MSU
-Niyaz Beysengulov and Johannes Pollanen (experiment, Physics); Zachary Stewart, Jared Weidman, and Angela Wilson (quantum chemistry)
+Niyaz Beysengulov and Johannes Pollanen (experiment, Physics); Zachary Stewart, Jared Weidman, and Angela Wilson (quantum chemistry), Dean Lee, Patrick Cook, Danny Jammooa, Nicholas Cariello, and Aymeric McRau (theory)
 !eblock
 !bblock University of Oslo
-Jonas B. Flaten, Oskar M. Leinonen, Øyvind Sigmundson Schøyen, Stian Dysthe Bilek, and Håkon Emil Kristiansen (Physics and quantum chemistry).
+Jonas B. Flaten, Oskar M. Leinonen, Christopher Linder{\"a}lv, Håkon Kvernmoen, Øyvind Sigmundson Schøyen, Stian Dysthe Bilek, and Håkon Emil Kristiansen (Physics and quantum chemistry).
 !eblock
 
 
@@ -33,7 +33,7 @@ Jonas B. Flaten, Oskar M. Leinonen, Øyvind Sigmundson Schøyen, Stian Dysthe Bi
 ===== What is this talk about? =====
 
 Here we describe a method for generating motional entanglement between
-two electrons trapped above the surface of superfluid helium. In this
+electrons trapped above the surface of superfluid helium. In this
 proposed scheme these electronic charge qubits are laterally confined
 via electrostatic gates to create an anharmonic trapping
 potential. When the system is cooled to sufficiently low temperature
@@ -46,12 +46,14 @@ systems will be discussed.
 !split
 ===== Literature and more reading  =====
 
-
+!bblock
 o "Justyna P. Zwolak and Jacob M. Taylor, Rev. Mod. Phys. 95, 011006, Advances in automation of quantum dot devices control":"https://journals.aps.org/rmp/abstract/10.1103/RevModPhys.95.011006"
+o "EEROQ corporation":"https://eeroq.com/"
 o "Pollanen and many other, Accelerating Progress Towards Practical Quantum Advantage: The Quantum Technology Demonstration Project Roadmap":"https://arxiv.org/pdf/2210.14757.pdf"
 o "Osada et al, introduction to quantum technologies, Springer, 2022":"https://link.springer.com/book/10.1007/978-981-19-4641-7"
 o "Original inspiration a series of articles of Loss and DiVincenzo from the nineties, Quantum Computation with Quantum Dots":"https://journals.aps.org/pra/pdf/10.1103/PhysRevA.57.120"
-
+o "
+!eeblock 
 
 !split
 ===== Di Vincenzo criteria =====
@@ -64,13 +66,6 @@ o A _universal_ set of quantum gates
 o A qubit-specific measurement capability
 !eblock 
 
-
-o be scalable
-o have qubits that can be entangled
-o have reliable initializations protocols to a standard state
-o have a set of universal quantum gates to control the quantum evolution
-o have a coherence time much 
-o have a reliable read-out mechanism for measuring the qubit states
 
 !split
 ===== Candidate systems =====
