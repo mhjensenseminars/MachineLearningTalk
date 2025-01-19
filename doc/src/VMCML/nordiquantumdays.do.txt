@@ -47,13 +47,15 @@ systems will be discussed.
 ===== Literature and more reading  =====
 
 !bblock
-o "Justyna P. Zwolak and Jacob M. Taylor, Rev. Mod. Phys. 95, 011006, Advances in automation of quantum dot devices control":"https://journals.aps.org/rmp/abstract/10.1103/RevModPhys.95.011006"
-o "EEROQ corporation":"https://eeroq.com/"
-o "Pollanen and many other, Accelerating Progress Towards Practical Quantum Advantage: The Quantum Technology Demonstration Project Roadmap":"https://arxiv.org/pdf/2210.14757.pdf"
-o "Osada et al, introduction to quantum technologies, Springer, 2022":"https://link.springer.com/book/10.1007/978-981-19-4641-7"
-o "Original inspiration a series of articles of Loss and DiVincenzo from the nineties, Quantum Computation with Quantum Dots":"https://journals.aps.org/pra/pdf/10.1103/PhysRevA.57.120"
-o "
-!eeblock 
+o Justyna P. Zwolak and Jacob M. Taylor, Rev. Mod. Phys. 95, 011006, Advances in automation of quantum dot devices control at URL:"https://journals.aps.org/rmp/abstract/10.1103/RevModPhys.95.011006"
+o EEROQ corporation at URL:"https://eeroq.com/"
+o Pollanen and many other, Accelerating Progress Towards Practical Quantum Advantage: The Quantum Technology Demonstration Project Roadmap URL:"https://arxiv.org/pdf/2210.14757.pdf"
+o Original inspiration a series of articles of Loss and DiVincenzo from the nineties, Quantum Computation with Quantum Dots URL:"https://journals.aps.org/pra/pdf/10.1103/PhysRevA.57.120"
+o Niyaz R. Beysengulov, Johannes Pollanen, Øyvind S. Schøyen, Stian D. Bilek, Jonas B. Flaten, Oskar Leinonen, Håkon Emil Kristiansen, Zachary J. Stewart, Jared D. Weidman, Angela K. Wilson, Morten Hjorth-Jensen, Coulomb interaction-driven entanglement of electrons on helium, PRX Quantum 5, 030324 (2024) and URL:"https://journals.aps.org/prxquantum/abstract/10.1103/PRXQuantum.5.030324"
+
+
+
+!eblock 
 
 !split
 ===== Di Vincenzo criteria =====
