@@ -75,13 +75,12 @@ o Superconducting Josephon junctions
 o Single photons
 o "Trapped ions and atoms":"https://journals.aps.org/rmp/pdf/10.1103/RevModPhys.93.025001"
 o Nuclear Magnetic Resonance
-o _Quantum dots, experiments at MSU_
-o Point Defects in semiconductors
+o Quantum dots and Point Defects in semiconductors
 o ...more
 !eblock
 
 !split
-===== Electrons (quantum dots) on superfluid helium =====
+===== Electrons on superfluid helium (Idealized quantum dot system) =====
 
 Electrons on _superfluid helium represent_ (see URL:"https://www.youtube.com/watch?v=EuDuM-fe-lA&ab_channel=JoshuahHeath") a promising platform for investigating
 strongly-coupled qubits.
@@ -100,6 +99,15 @@ trapped electrons.
 o See "Single electrons on solid neon as a solid-state qubit platform, David Schuster et al, Nature _605_, 46–50 (2022)":"https://www.nature.com/articles/s41586-022-04539-x"
 o See Mark Dykman et al, Spin dynamics in quantum dots on liquid helium, PRB _107_. 035437 (2023) at URL:"https://link.aps.org/doi/10.1103/PhysRevB.107.035437".
 
+!split
+===== properties =====
+!bblock
+o Long coherence times
+o Highly connect qubits
+o Many qubits in a small area
+o CMOS compatible
+o Fast gates
+!eblock
 
 
 !split
