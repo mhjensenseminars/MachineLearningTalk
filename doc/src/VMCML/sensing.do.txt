@@ -400,15 +400,14 @@ This need not necessarily be the same basis into which the system was initialize
 
 The state evolves as
 !bt
-\[
-\begin{gathered}
-|\psi(t)\rangle=\left(e^{\frac{i t}{\hbar}\left(E_{0}-\frac{1}{2} \gamma V_Z\right)}|0\rangle\langle 0|+e^{\frac{i t}{\hbar}\left(E_{1}+\frac{1}{2} \gamma V_Z\right)}|1\rangle\langle 1|\right)\left|\psi_{\text {Init }}(0)\right\rangle=\left(\begin{array}{cc}
+\begin{align*}
+|\psi(t)\rangle=&\left(e^{\frac{i t}{\hbar}\left(E_{0}-\frac{1}{2} \gamma V_Z\right)}|0\rangle\langle 0|+e^{\frac{i t}{\hbar}\left(E_{1}+\frac{1}{2} \gamma V_Z\right)}|1\rangle\langle 1|\right)\left|\psi_{\text {Init }}(0)\right\rangle=\left(\begin{array}{cc}
 e^{\frac{i t}{\hbar}\left(E_{0}-\frac{1}{2} \gamma V_Z\right)} & 0 \\
 0 & e^{\frac{i t}{\hbar}\left(E_{1}+\frac{1}{2} \gamma V_Z\right)}
 \end{array}\right) \frac{1}{\sqrt{2}}\binom{1}{1} \\
-=\frac{1}{\sqrt{2}}\binom{e^{\frac{i t}{\hbar}\left(E_{0}-\frac{1}{2} \gamma V_Z\right)}}{e^{\frac{i t}{\hbar}\left(E_{1}+\frac{1}{2} \gamma V_Z\right)}}=\frac{1}{\sqrt{2}} e^{\frac{i t}{\hbar}\left(E_{0}-\frac{1}{2} \gamma V_Z\right)}\binom{1}{e^{\frac{i t}{\hbar}\left(E_{1}-E_{0}+\gamma V_Z\right)}}
-\end{gathered}
-\]
+& =\frac{1}{\sqrt{2}}\binom{e^{\frac{i t}{\hbar}\left(E_{0}-\frac{1}{2} \gamma V_Z\right)}}{e^{\frac{i t}{\hbar}\left(E_{1}+\frac{1}{2} \gamma V_Z\right)}}\\
+&=\frac{1}{\sqrt{2}} e^{\frac{i t}{\hbar}\left(E_{0}-\frac{1}{2} \gamma V_Z\right)}\binom{1}{e^{\frac{i t}{\hbar}\left(E_{1}-E_{0}+\gamma V_Z\right)}}
+\end{align*}
 !et
 
 !split
@@ -418,8 +417,7 @@ This is then prepared for readout as
 
 !bt
 \[
-\vert\psi_{\text {Final }}\rangle=\hat{U}_{H a d}\vert\psi(t)\rangle=
-\frac{1}{2} \exp{\frac{\imath t}{\hbar}(E_{0}-\frac{1}{2} \gamma V_Z)}
+\vert\psi_{\text {Final }}\rangle=\frac{1}{2} \exp{\frac{\imath t}{\hbar}(E_{0}-\frac{1}{2} \gamma V_Z)}
 \begin{bmatrix} 1+\exp{\frac{\imath t}{\hbar}(E_{1}-E_{0}+\gamma V_Z)} \\ 1-\exp{(\frac{\imath t}{\hbar}(E_{1}-E_{0}+\gamma V_Z)}\end{bmatrix}.
 \]
 !et
@@ -436,7 +434,7 @@ p_{|0\rangle \rightarrow|1\rangle}=\left|\left\langle 1 \mid \psi_{\text {Final 
 !et
 
 !split
-===== Ramsey intferometry =====
+===== "Ramsey interferometry":"https://en.wikipedia.org/wiki/Ramsey_interferometry" =====
 
 We know the difference in energy between $E_{1}$ and $E_{0}$, either
 since we constructed the system or by taking measurements without the
@@ -469,9 +467,9 @@ scales as
 !et
 
 !split
-===== Ramsey intferometry =====
+===== Ramsey interferometry =====
 
-If we consider the Ramsey Intferometry as an example, then the
+If we consider Ramsey Interferometry as an example, see URL:"https://en.wikipedia.org/wiki/Ramsey_interferometry", then the
 uncertainty in $\gamma V_Z$ and so in $V_Z$, denoted $\sigma_{V}$,
 scales as
 

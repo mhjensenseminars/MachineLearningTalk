@@ -651,13 +651,14 @@ $$
 <p>The state evolves as</p>
 <p>&nbsp;<br>
 $$
-\begin{gathered}
-|\psi(t)\rangle=\left(e^{\frac{i t}{\hbar}\left(E_{0}-\frac{1}{2} \gamma V_Z\right)}|0\rangle\langle 0|+e^{\frac{i t}{\hbar}\left(E_{1}+\frac{1}{2} \gamma V_Z\right)}|1\rangle\langle 1|\right)\left|\psi_{\text {Init }}(0)\right\rangle=\left(\begin{array}{cc}
+\begin{align*}
+|\psi(t)\rangle=&\left(e^{\frac{i t}{\hbar}\left(E_{0}-\frac{1}{2} \gamma V_Z\right)}|0\rangle\langle 0|+e^{\frac{i t}{\hbar}\left(E_{1}+\frac{1}{2} \gamma V_Z\right)}|1\rangle\langle 1|\right)\left|\psi_{\text {Init }}(0)\right\rangle=\left(\begin{array}{cc}
 e^{\frac{i t}{\hbar}\left(E_{0}-\frac{1}{2} \gamma V_Z\right)} & 0 \\
 0 & e^{\frac{i t}{\hbar}\left(E_{1}+\frac{1}{2} \gamma V_Z\right)}
 \end{array}\right) \frac{1}{\sqrt{2}}\binom{1}{1} \\
-=\frac{1}{\sqrt{2}}\binom{e^{\frac{i t}{\hbar}\left(E_{0}-\frac{1}{2} \gamma V_Z\right)}}{e^{\frac{i t}{\hbar}\left(E_{1}+\frac{1}{2} \gamma V_Z\right)}}=\frac{1}{\sqrt{2}} e^{\frac{i t}{\hbar}\left(E_{0}-\frac{1}{2} \gamma V_Z\right)}\binom{1}{e^{\frac{i t}{\hbar}\left(E_{1}-E_{0}+\gamma V_Z\right)}}
-\end{gathered}
+& =\frac{1}{\sqrt{2}}\binom{e^{\frac{i t}{\hbar}\left(E_{0}-\frac{1}{2} \gamma V_Z\right)}}{e^{\frac{i t}{\hbar}\left(E_{1}+\frac{1}{2} \gamma V_Z\right)}}\\
+&=\frac{1}{\sqrt{2}} e^{\frac{i t}{\hbar}\left(E_{0}-\frac{1}{2} \gamma V_Z\right)}\binom{1}{e^{\frac{i t}{\hbar}\left(E_{1}-E_{0}+\gamma V_Z\right)}}
+\end{align*}
 $$
 <p>&nbsp;<br>
 </section>
@@ -669,8 +670,7 @@ $$
 
 <p>&nbsp;<br>
 $$
-\vert\psi_{\text {Final }}\rangle=\hat{U}_{H a d}\vert\psi(t)\rangle=
-\frac{1}{2} \exp{\frac{\imath t}{\hbar}(E_{0}-\frac{1}{2} \gamma V_Z)}
+\vert\psi_{\text {Final }}\rangle=\frac{1}{2} \exp{\frac{\imath t}{\hbar}(E_{0}-\frac{1}{2} \gamma V_Z)}
 \begin{bmatrix} 1+\exp{\frac{\imath t}{\hbar}(E_{1}-E_{0}+\gamma V_Z)} \\ 1-\exp{(\frac{\imath t}{\hbar}(E_{1}-E_{0}+\gamma V_Z)}\end{bmatrix}.
 $$
 <p>&nbsp;<br>
@@ -691,7 +691,7 @@ $$
 </section>
 
 <section>
-<h2 id="ramsey-intferometry">Ramsey intferometry </h2>
+<h2 id="ramsey-interferometry-https-en-wikipedia-org-wiki-ramsey-interferometry"><a href="https://en.wikipedia.org/wiki/Ramsey_interferometry" target="_blank">Ramsey interferometry</a> </h2>
 
 <p>We know the difference in energy between \( E_{1} \) and \( E_{0} \), either
 since we constructed the system or by taking measurements without the
@@ -728,9 +728,9 @@ $$
 </section>
 
 <section>
-<h2 id="ramsey-intferometry">Ramsey intferometry </h2>
+<h2 id="ramsey-interferometry">Ramsey interferometry </h2>
 
-<p>If we consider the Ramsey Intferometry as an example, then the
+<p>If we consider Ramsey Interferometry as an example, see <a href="https://en.wikipedia.org/wiki/Ramsey_interferometry" target="_blank"><tt>https://en.wikipedia.org/wiki/Ramsey_interferometry</tt></a>, then the
 uncertainty in \( \gamma V_Z \) and so in \( V_Z \), denoted \( \sigma_{V} \),
 scales as
 </p>
