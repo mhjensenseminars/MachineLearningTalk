@@ -83,6 +83,7 @@ doconce format html sensing.do.txt --html_style=bootstrap --pygments_html_style=
               ('State evolution', 2, None, 'state-evolution'),
               ('Preparing for readout', 2, None, 'preparing-for-readout'),
               ('Transition probability', 2, None, 'transition-probability'),
+              ('Ramsey intferometry', 2, None, 'ramsey-intferometry'),
               ('Benefits of Entanglement', 2, None, 'benefits-of-entanglement'),
               ('Ramsey intferometry', 2, None, 'ramsey-intferometry'),
               ('More than one qubit', 2, None, 'more-than-one-qubit'),
@@ -146,14 +147,15 @@ MathJax.Hub.Config({
      <!-- navigation toc: --> <li><a href="._sensing-bs020.html#evolution-of-initial-state" style="font-size: 80%;">Evolution of initial state</a></li>
      <!-- navigation toc: --> <li><a href="._sensing-bs021.html#state-evolution" style="font-size: 80%;">State evolution</a></li>
      <!-- navigation toc: --> <li><a href="._sensing-bs022.html#preparing-for-readout" style="font-size: 80%;">Preparing for readout</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs028.html#transition-probability" style="font-size: 80%;">Transition probability</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs024.html#benefits-of-entanglement" style="font-size: 80%;">Benefits of Entanglement</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs025.html#ramsey-intferometry" style="font-size: 80%;">Ramsey intferometry</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs026.html#more-than-one-qubit" style="font-size: 80%;">More than one qubit</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs027.html#after-initialization" style="font-size: 80%;">After initialization</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs028.html#transition-probability" style="font-size: 80%;">Transition probability</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs029.html#role-of-entanglement" style="font-size: 80%;">Role of entanglement</a></li>
-     <!-- navigation toc: --> <li><a href="#concluding-remarks" style="font-size: 80%;">Concluding remarks</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs029.html#transition-probability" style="font-size: 80%;">Transition probability</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs026.html#ramsey-intferometry" style="font-size: 80%;">Ramsey intferometry</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs025.html#benefits-of-entanglement" style="font-size: 80%;">Benefits of Entanglement</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs026.html#ramsey-intferometry" style="font-size: 80%;">Ramsey intferometry</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs027.html#more-than-one-qubit" style="font-size: 80%;">More than one qubit</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs028.html#after-initialization" style="font-size: 80%;">After initialization</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs029.html#transition-probability" style="font-size: 80%;">Transition probability</a></li>
+     <!-- navigation toc: --> <li><a href="#role-of-entanglement" style="font-size: 80%;">Role of entanglement</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs031.html#concluding-remarks" style="font-size: 80%;">Concluding remarks</a></li>
 
         </ul>
       </li>
@@ -165,23 +167,27 @@ MathJax.Hub.Config({
 <p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p> <!-- add vertical space -->
 <a name="part0030"></a>
 <!-- !split -->
-<h2 id="concluding-remarks" class="anchor">Concluding remarks </h2>
+<h2 id="role-of-entanglement" class="anchor">Role of entanglement </h2>
 
-<p>Quantum sensing is an emerging field with a large number of exciting
-applications. In terms of physical implementation, quantum sensors are
-able to naturally be more sensitive and sense on
-smaller scales than many classical sensors, while also often being
-directly tracable to fundamental physical constants.
+<p>From this, we can see that through entangling \( n \) sensing qubits, the
+<b>signal</b> we are trying to sense increases from \( V_Z \rightarrow n
+V_Z \), and with \( \frac{N}{n} \) total measurements,
+</p>
+$$
+\sigma_{V} \propto \frac{1}{n} \sigma_{p} \propto \frac{1}{n}\left(\frac{1}{\sqrt{\frac{N}{n}}}\right)=\frac{1}{\sqrt{N n}}
+$$
+
+<p>which means the error decreased by a factor of \( \sqrt{n} \). In the case where \( n=N \), the uncertainty now scales as</p>
+$$
+\sigma_{V} \propto \frac{1}{N}
+$$
+
+<p>which is known as the Heisenberg limit, and is the
+quantum-mechanically limited, maximal amount of information one can
+get from taking \( n \) quantum sensing measurements [Giovannetti et al.,
+2011].
 </p>
 
-<p>Additionally, exploiting entanglement and the quantum nature of these
-devices allows for fundamentally more information to be collected than
-is allowed by classical measurements and the SQL. Quantum sensing
-fundamentally improves upon the physical and theoretical limitations
-of classical sensing, and it will be interesting to see how and what
-physical realizations develop to the point of practicality in the near
-future.
-</p>
 <p>
 <!-- navigation buttons at the bottom of the page -->
 <ul class="pagination">
@@ -197,6 +203,8 @@ future.
   <li><a href="._sensing-bs028.html">29</a></li>
   <li><a href="._sensing-bs029.html">30</a></li>
   <li class="active"><a href="._sensing-bs030.html">31</a></li>
+  <li><a href="._sensing-bs031.html">32</a></li>
+  <li><a href="._sensing-bs031.html">&raquo;</a></li>
 </ul>
 <!-- ------------------- end of main content --------------- -->
 </div>  <!-- end container -->

@@ -410,7 +410,8 @@ This is then prepared for readout as
 !bt
 \[
 \vert\psi_{\text {Final }}\rangle=\hat{U}_{H a d}\vert\psi(t)\rangle=
-\frac{1}{2} \exp{\frac{\imath t}{\hbar}(E_{0}-\frac{1}{2} \gamma V_Z)}\begin{bmatrix}{1+\exp{\frac{\imath t}{\hbar}(E_{1}-E_{0}+\gamma V_Z)} \\{1-\exp{(\frac{\imath t}{\hbar}(E_{1}-E_{0}+\gamma V_Z)}\end{bmatrix}.
+\frac{1}{2} \exp{\frac{\imath t}{\hbar}(E_{0}-\frac{1}{2} \gamma V_Z)}
+\begin{bmatrix} 1+\exp{\frac{\imath t}{\hbar}(E_{1}-E_{0}+\gamma V_Z)} \\ 1-\exp{(\frac{\imath t}{\hbar}(E_{1}-E_{0}+\gamma V_Z)}\end{bmatrix}.
 \]
 !et
 

@@ -84,6 +84,7 @@ div.toc p,a {
               ('State evolution', 2, None, 'state-evolution'),
               ('Preparing for readout', 2, None, 'preparing-for-readout'),
               ('Transition probability', 2, None, 'transition-probability'),
+              ('Ramsey intferometry', 2, None, 'ramsey-intferometry'),
               ('Benefits of Entanglement', 2, None, 'benefits-of-entanglement'),
               ('Ramsey intferometry', 2, None, 'ramsey-intferometry'),
               ('More than one qubit', 2, None, 'more-than-one-qubit'),
@@ -425,7 +426,7 @@ $$
 
 <p>which means the sensing state evolves as</p>
 $$
-|\psi(t)\rangle=\left(e^{\frac{i t}{\hbar}\left(E_{0}-\frac{1}{2} \gamma V_{\|}\right)}\left|\lambda_{0}\right\rangle\left\langle\lambda_{0}\right|+e^{\frac{i t}{\hbar}\left(E_{1}+\frac{1}{2} \gamma V_{\|}\right)}\left|\lambda_{1}\right\rangle\left\langle\lambda_{1}\right|\right)\left|\psi_{\text {Init }}(0)\right\rangle
+|\psi(t)\rangle=\left(e^{\frac{i t}{\hbar}\left(E_{0}-\frac{1}{2} \gamma V_Z\right)}\left|\lambda_{0}\right\rangle\left\langle\lambda_{0}\right|+e^{\frac{i t}{\hbar}\left(E_{1}+\frac{1}{2} \gamma V_Z\right)}\left|\lambda_{1}\right\rangle\left\langle\lambda_{1}\right|\right)\left|\psi_{\text {Init }}(0)\right\rangle
 $$
 
 <p>using the spectral decomposition and the final representation of the
@@ -498,7 +499,8 @@ $$
 
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 <h2 id="evolution-of-initial-state">Evolution of initial state </h2>
-<p>Then the initial state</p>
+
+<p>The initial state is </p>
 
 $$
 \left|\psi_{\text {Init }}\right\rangle=\hat{U}_{\text {Had }}|0\rangle=\frac{1}{\sqrt{2}}\left(\begin{array}{cc}
@@ -512,14 +514,14 @@ $$
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 <h2 id="state-evolution">State evolution </h2>
 
-<p>The state time evolves as</p>
+<p>The state evolves as</p>
 $$
 \begin{gathered}
-|\psi(t)\rangle=\left(e^{\frac{i t}{\hbar}\left(E_{0}-\frac{1}{2} \gamma V_{\|}\right)}|0\rangle\langle 0|+e^{\frac{i t}{\hbar}\left(E_{1}+\frac{1}{2} \gamma V_{\|}\right)}|1\rangle\langle 1|\right)\left|\psi_{\text {Init }}(0)\right\rangle=\left(\begin{array}{cc}
-e^{\frac{i t}{\hbar}\left(E_{0}-\frac{1}{2} \gamma V_{\|}\right)} & 0 \\
-0 & e^{\frac{i t}{\hbar}\left(E_{1}+\frac{1}{2} \gamma V_{\|}\right)}
+|\psi(t)\rangle=\left(e^{\frac{i t}{\hbar}\left(E_{0}-\frac{1}{2} \gamma V_Z\right)}|0\rangle\langle 0|+e^{\frac{i t}{\hbar}\left(E_{1}+\frac{1}{2} \gamma V_Z\right)}|1\rangle\langle 1|\right)\left|\psi_{\text {Init }}(0)\right\rangle=\left(\begin{array}{cc}
+e^{\frac{i t}{\hbar}\left(E_{0}-\frac{1}{2} \gamma V_Z\right)} & 0 \\
+0 & e^{\frac{i t}{\hbar}\left(E_{1}+\frac{1}{2} \gamma V_Z\right)}
 \end{array}\right) \frac{1}{\sqrt{2}}\binom{1}{1} \\
-=\frac{1}{\sqrt{2}}\binom{e^{\frac{i t}{\hbar}\left(E_{0}-\frac{1}{2} \gamma V_{\|}\right)}}{e^{\frac{i t}{\hbar}\left(E_{1}+\frac{1}{2} \gamma V_{\|}\right)}}=\frac{1}{\sqrt{2}} e^{\frac{i t}{\hbar}\left(E_{0}-\frac{1}{2} \gamma V_{\|}\right)}\binom{1}{e^{\frac{i t}{\hbar}\left(E_{1}-E_{0}+\gamma V_{\|}\right)}}
+=\frac{1}{\sqrt{2}}\binom{e^{\frac{i t}{\hbar}\left(E_{0}-\frac{1}{2} \gamma V_Z\right)}}{e^{\frac{i t}{\hbar}\left(E_{1}+\frac{1}{2} \gamma V_Z\right)}}=\frac{1}{\sqrt{2}} e^{\frac{i t}{\hbar}\left(E_{0}-\frac{1}{2} \gamma V_Z\right)}\binom{1}{e^{\frac{i t}{\hbar}\left(E_{1}-E_{0}+\gamma V_Z\right)}}
 \end{gathered}
 $$
 
@@ -530,16 +532,9 @@ $$
 <p>This is then prepared for readout as</p>
 
 $$
-\begin{gathered}
-\left|\psi_{\text {Final }}\right\rangle=\hat{U}_{H a d}|\psi(t)\rangle=\frac{1}{\sqrt{2}}\left(\begin{array}{cc}
-1 & 1 \\
-1 & -1
-\end{array}\right) \frac{1}{\sqrt{2}} e^{\frac{i t}{\hbar}\left(E_{0}-\frac{1}{2} \gamma V_{\|}\right)}\left(\begin{array}{c}
-1 \\
-\left.e^{\frac{i t}{\hbar}\left(E_{1}-E_{0}+\gamma V_{\|}\right)}\right) \\
-=\frac{1}{2} e^{\frac{i t}{\hbar}\left(E_{0}-\frac{1}{2} \gamma V_{\|}\right)}\binom{1+e^{\frac{i t}{\hbar}\left(E_{1}-E_{0}+\gamma V_{\|}\right)}}{1-e^{\frac{i t}{\hbar}\left(E_{1}-E_{0}+\gamma V_{\|}\right)}}
-\end{array}, ~\right.
-\end{gathered}
+\vert\psi_{\text {Final }}\rangle=\hat{U}_{H a d}\vert\psi(t)\rangle=
+\frac{1}{2} \exp{\frac{\imath t}{\hbar}(E_{0}-\frac{1}{2} \gamma V_Z)}
+\begin{bmatrix} 1+\exp{\frac{\imath t}{\hbar}(E_{1}-E_{0}+\gamma V_Z)} \\ 1-\exp{(\frac{\imath t}{\hbar}(E_{1}-E_{0}+\gamma V_Z)}\end{bmatrix}.
 $$
 
 
@@ -548,10 +543,27 @@ $$
 
 <p>The transition probability</p>
 $$
-p_{|0\rangle \rightarrow|1\rangle}=\left|\left\langle 1 \mid \psi_{\text {Final }}\right\rangle\right|^{2}=\left|1-e^{\frac{i t}{\hbar}\left(E_{1}-E_{0}+\gamma V_{\|}\right)}\right|^{2}=\frac{1}{2}\left(1-\cos \left(t \frac{\left(E_{1}-E_{0}\right)+\gamma V_{\|}}{\hbar}\right)\right)
+\begin{align*}
+p_{|0\rangle \rightarrow|1\rangle}=\left|\left\langle 1 \mid \psi_{\text {Final }}\right\rangle\right|^{2}=&\left|1-e^{\frac{i t}{\hbar}\left(E_{1}-E_{0}+\gamma V_Z\right)}\right|^{2}\\
+&=\frac{1}{2}\left(1-\cos \left(t \frac{\left(E_{1}-E_{0}\right)+\gamma V_Z}{\hbar}\right)\right)
+\end{align*}
 $$
 
-<p>We know the difference in energy between \( E_{1} \) and \( E_{0} \), either since we constructed the system or by taking measurements without the external stimulus \( V \), and we can control the time \( t \) for which the system is allowed to evolve under the external stimulus. Then we can fix \( t \) and take many measurements to estimate \( p_{|0\rangle \rightarrow|1\rangle} \), which then makes finding \( t \frac{\gamma V_{\|}}{\hbar} \) a simple phase-estimation problem which gives us \( \gamma V_{\|} \). The physical implementation of this process is known as Ramsey Interferometry, and it can be done with arbitary initialization and readout preparation unitary operators.</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="ramsey-intferometry">Ramsey intferometry </h2>
+
+<p>We know the difference in energy between \( E_{1} \) and \( E_{0} \), either
+since we constructed the system or by taking measurements without the
+external stimulus \( V \), and we can control the time \( t \) for which the
+system is allowed to evolve under the external stimulus. Then we can
+fix \( t \) and take many measurements to estimate \( p_{|0\rangle
+\rightarrow|1\rangle} \), which then makes finding \( t \frac{\gamma
+V_Z}{\hbar} \) a simple phase-estimation problem which gives us \( \gamma
+V_Z \). The physical implementation of this process is known as Ramsey
+Interferometry, and it can be done with arbitary initialization and
+readout preparation unitary operators.
+</p>
 
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 <h2 id="benefits-of-entanglement">Benefits of Entanglement </h2>
@@ -566,6 +578,7 @@ apparatus, the uncertainty in \( p \), denoted as \( \sigma_{p} \) (this is a
 positive real number; not to be confused with the Pauli matrices),
 scales as
 </p>
+
 $$
 \sigma_{p} \propto \frac{1}{\sqrt{N}}
 $$
@@ -574,14 +587,20 @@ $$
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 <h2 id="ramsey-intferometry">Ramsey intferometry </h2>
 
-<p>If we consider the Ramsey Intferometry as an example, then the uncertainty in \( \gamma V_{\|} \) and so in \( V_{\|} \), denoted \( \sigma_{V} \), scales as</p>
+<p>If we consider the Ramsey Intferometry as an example, then the
+uncertainty in \( \gamma V_Z \) and so in \( V_Z \), denoted \( \sigma_{V} \),
+scales as
+</p>
+
 $$
 \sigma_{V} \propto \sigma_{p} \propto \frac{1}{\sqrt{N}}
 $$
 
 <p>This relationship is known as the standard quantum limit (SQL)
 [Giovannetti et al., 2011], but can also be explained with the Law of
-Large Numbers from statistics, where measuring\\ \( N \) similarly
+</p>
+
+<p>Large Numbers from statistics, where measuring \( N \) similarly
 distributed, well-behaved random variables gives the sample mean as an
 estimator for the population mean and the sample variance divided by
 the size of the sample as an uncertainty in the estimate of the
@@ -590,17 +609,19 @@ population mean.
 
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 <h2 id="more-than-one-qubit">More than one qubit </h2>
-<p>However, the nature of quantum systems allows for more information to
-be extracted by exploiting entanglement between quantum systems. This
-is the fundamental basis for the benefits of quantum computing over
+
+<p>The nature of quantum systems allows for more information to be
+extracted by exploiting entanglement between quantum systems. This is
+the fundamental basis for the benefits of quantum computing over
 classical computing, and quantum sensing has similar benefits over
-classical sensing. Suppose we return to the Ramsey Interferometry
-example above, but rather than initializing \( N \) sensing qubits
-separately, we initialize \( \frac{N}{n} \) groups each with \( n \) entangled
-quantum systems. Then we have
+classical sensing. Suppose we return to the example above, but rather
+than initializing \( N \) sensing qubits separately, we initialize
+\( \frac{N}{n} \) groups each with \( n \) entangled quantum systems. Then we
+have
 </p>
+
 $$
-\left|\psi_{\text {Init }}\right\rangle=\frac{1}{\sqrt{2^{n}}}\left(|0\rangle^{\otimes n}+|1\rangle^{\otimes n}\right)
+\left|\psi_{\text {Init }}\right\rangle=\frac{1}{\sqrt{2^{n}}}\left(|0\rangle^{\otimes n}+|1\rangle^{\otimes n}\right),
 $$
 
 <p>where \( |0\rangle^{\otimes n}=|0\rangle \otimes \ldots \otimes|0\rangle, n \) times.</p>
@@ -608,25 +629,29 @@ $$
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 <h2 id="after-initialization">After initialization </h2>
 
-<p>After initialization, each of the \( n \) sensing qubits evolves to pick up a relative phase factor of \( e^{\frac{i t}{\hbar}\left(E_{1}-E_{0}+\gamma V_{\|}\right)} \), which combined results in</p>
+<p>After initialization, each of the \( n \) sensing qubits evolves to pick up a relative phase factor of \( e^{\frac{i t}{\hbar}\left(E_{1}-E_{0}+\gamma V_Z\right)} \), which combined results in</p>
 $$
-|\psi(t)\rangle=\mathcal{N}\left(|0\rangle^{\otimes n}+\left(e^{\frac{i t}{\hbar}\left(E_{1}-E_{0}+\gamma V_{\|}\right)}|1\rangle\right)^{\otimes n}\right)=\mathcal{N}\left(|0\rangle^{\otimes n}+e^{n \frac{i t}{\hbar}\left(E_{1}-E_{0}+\gamma V_{\|}\right)}|1\rangle^{\otimes n}\right)
+|\psi(t)\rangle=\mathcal{N}\left(|0\rangle^{\otimes n}+e^{n \frac{i t}{\hbar}\left(E_{1}-E_{0}+\gamma V_Z\right)}|1\rangle^{\otimes n}\right)
 $$
 
 <p>where \( \mathcal{N} \) is just a factor to take care of normalization.</p>
 
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 <h2 id="transition-probability">Transition probability </h2>
-<p>Then the transition probability</p>
+
+<p>The transition probability</p>
 $$
-p_{|0\rangle \rightarrow|1\rangle}=\left|\left\langle 1 \mid \psi_{\text {Final }}\right\rangle\right|^{2}=\left|1-e^{n \frac{i t}{\hbar}\left(E_{1}-E_{0}+\gamma V_{\|}\right)}\right|^{2}=\frac{1}{2}\left(1-\cos \left(t \frac{n\left(E_{1}-E_{0}\right)+n \gamma V_{\|}}{\hbar}\right)\right)
+p_{|0\rangle \rightarrow|1\rangle}=\left|\left\langle 1 \mid \psi_{\text {Final }}\right\rangle\right|^{2}=\frac{1}{2}\left(1-\cos \left(t \frac{n\left(E_{1}-E_{0}\right)+n \gamma V_Z}{\hbar}\right)\right)
 $$
 
 
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 <h2 id="role-of-entanglement">Role of entanglement </h2>
 
-<p>From this, we can see that through entangling \( n \) sensing qubits, the 'signal' we're trying to sense increases from \( V_{\|} \rightarrow n V_{\|} \), and with \( \frac{N}{n} \) total measurements,</p>
+<p>From this, we can see that through entangling \( n \) sensing qubits, the
+<b>signal</b> we are trying to sense increases from \( V_Z \rightarrow n
+V_Z \), and with \( \frac{N}{n} \) total measurements,
+</p>
 $$
 \sigma_{V} \propto \frac{1}{n} \sigma_{p} \propto \frac{1}{n}\left(\frac{1}{\sqrt{\frac{N}{n}}}\right)=\frac{1}{\sqrt{N n}}
 $$
@@ -636,16 +661,20 @@ $$
 \sigma_{V} \propto \frac{1}{N}
 $$
 
-<p>which is known as the Heisenberg limit, and is the quantum-mechanically limited, maximal amount of information one can get from taking \( n \) quantum sensing measurements [Giovannetti et al., 2011].</p>
+<p>which is known as the Heisenberg limit, and is the
+quantum-mechanically limited, maximal amount of information one can
+get from taking \( n \) quantum sensing measurements [Giovannetti et al.,
+2011].
+</p>
 
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 <h2 id="concluding-remarks">Concluding remarks </h2>
 
 <p>Quantum sensing is an emerging field with a large number of exciting
 applications. In terms of physical implementation, quantum sensors are
-able to naturally be more sensitive and sense on
-smaller scales than many classical sensors, while also often being
-directly tracable to fundamental physical constants.
+able to naturally be more sensitive and sense on smaller scales than
+many classical sensors, while also often being directly tracable to
+fundamental physical constants.
 </p>
 
 <p>Additionally, exploiting entanglement and the quantum nature of these

@@ -83,6 +83,7 @@ doconce format html sensing.do.txt --html_style=bootstrap --pygments_html_style=
               ('State evolution', 2, None, 'state-evolution'),
               ('Preparing for readout', 2, None, 'preparing-for-readout'),
               ('Transition probability', 2, None, 'transition-probability'),
+              ('Ramsey intferometry', 2, None, 'ramsey-intferometry'),
               ('Benefits of Entanglement', 2, None, 'benefits-of-entanglement'),
               ('Ramsey intferometry', 2, None, 'ramsey-intferometry'),
               ('More than one qubit', 2, None, 'more-than-one-qubit'),
@@ -146,14 +147,15 @@ MathJax.Hub.Config({
      <!-- navigation toc: --> <li><a href="._sensing-bs020.html#evolution-of-initial-state" style="font-size: 80%;">Evolution of initial state</a></li>
      <!-- navigation toc: --> <li><a href="._sensing-bs021.html#state-evolution" style="font-size: 80%;">State evolution</a></li>
      <!-- navigation toc: --> <li><a href="._sensing-bs022.html#preparing-for-readout" style="font-size: 80%;">Preparing for readout</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs028.html#transition-probability" style="font-size: 80%;">Transition probability</a></li>
-     <!-- navigation toc: --> <li><a href="#benefits-of-entanglement" style="font-size: 80%;">Benefits of Entanglement</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs025.html#ramsey-intferometry" style="font-size: 80%;">Ramsey intferometry</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs026.html#more-than-one-qubit" style="font-size: 80%;">More than one qubit</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs027.html#after-initialization" style="font-size: 80%;">After initialization</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs028.html#transition-probability" style="font-size: 80%;">Transition probability</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs029.html#role-of-entanglement" style="font-size: 80%;">Role of entanglement</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs030.html#concluding-remarks" style="font-size: 80%;">Concluding remarks</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs029.html#transition-probability" style="font-size: 80%;">Transition probability</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs026.html#ramsey-intferometry" style="font-size: 80%;">Ramsey intferometry</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs025.html#benefits-of-entanglement" style="font-size: 80%;">Benefits of Entanglement</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs026.html#ramsey-intferometry" style="font-size: 80%;">Ramsey intferometry</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs027.html#more-than-one-qubit" style="font-size: 80%;">More than one qubit</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs028.html#after-initialization" style="font-size: 80%;">After initialization</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs029.html#transition-probability" style="font-size: 80%;">Transition probability</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs030.html#role-of-entanglement" style="font-size: 80%;">Role of entanglement</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs031.html#concluding-remarks" style="font-size: 80%;">Concluding remarks</a></li>
 
         </ul>
       </li>
@@ -165,22 +167,19 @@ MathJax.Hub.Config({
 <p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p> <!-- add vertical space -->
 <a name="part0024"></a>
 <!-- !split -->
-<h2 id="benefits-of-entanglement" class="anchor">Benefits of Entanglement </h2>
+<h2 id="ramsey-intferometry" class="anchor">Ramsey intferometry </h2>
 
-<p>Up until now, we have said that we take many measurements of
-\( \left|\psi_{\text {Final }}\right\rangle \) to estimate \( p_{|0\rangle
-\rightarrow|1\rangle} \), but we have been glossing over the estimation
-process. Assuming we can take \( N \) measurements, either by having \( N \)
-experimental apparatuses running in parallel or by taking \( N \)
-different measurements of a (relatively) constant \( V \) with a single
-apparatus, the uncertainty in \( p \), denoted as \( \sigma_{p} \) (this is a
-positive real number; not to be confused with the Pauli matrices),
-scales as
+<p>We know the difference in energy between \( E_{1} \) and \( E_{0} \), either
+since we constructed the system or by taking measurements without the
+external stimulus \( V \), and we can control the time \( t \) for which the
+system is allowed to evolve under the external stimulus. Then we can
+fix \( t \) and take many measurements to estimate \( p_{|0\rangle
+\rightarrow|1\rangle} \), which then makes finding \( t \frac{\gamma
+V_Z}{\hbar} \) a simple phase-estimation problem which gives us \( \gamma
+V_Z \). The physical implementation of this process is known as Ramsey
+Interferometry, and it can be done with arbitary initialization and
+readout preparation unitary operators.
 </p>
-$$
-\sigma_{p} \propto \frac{1}{\sqrt{N}}
-$$
-
 
 <p>
 <!-- navigation buttons at the bottom of the page -->
@@ -203,6 +202,7 @@ $$
   <li><a href="._sensing-bs028.html">29</a></li>
   <li><a href="._sensing-bs029.html">30</a></li>
   <li><a href="._sensing-bs030.html">31</a></li>
+  <li><a href="._sensing-bs031.html">32</a></li>
   <li><a href="._sensing-bs025.html">&raquo;</a></li>
 </ul>
 <!-- ------------------- end of main content --------------- -->
