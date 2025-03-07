@@ -1,0 +1,665 @@
+<!--
+HTML file automatically generated from DocOnce source
+(https://github.com/doconce/doconce/)
+doconce format html sensing.do.txt --pygments_html_style=perldoc --html_style=solarized3 --html_links_in_new_window --html_output=sensing-solarized --no_mako
+-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="DocOnce: https://github.com/doconce/doconce/" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Making sense of sensing?">
+<title>Making sense of sensing?</title>
+<link href="https://cdn.rawgit.com/doconce/doconce/master/bundled/html_styles/style_solarized_box/css/solarized_light_code.css" rel="stylesheet" type="text/css" title="light"/>
+<script src="https://cdn.rawgit.com/doconce/doconce/master/bundled/html_styles/style_solarized_box/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<link href="https://thomasf.github.io/solarized-css/solarized-light.min.css" rel="stylesheet">
+<style type="text/css">
+h1 {color: #b58900;}  /* yellow */
+/* h1 {color: #cb4b16;}  orange */
+/* h1 {color: #d33682;}  magenta, the original choice of thomasf */
+code { padding: 0px; background-color: inherit; }
+pre {
+  border: 0pt solid #93a1a1;
+  box-shadow: none;
+}
+div { text-align: justify; text-justify: inter-word; }
+.tab {
+  padding-left: 1.5em;
+}
+div.toc p,a {
+  line-height: 1.3;
+  margin-top: 1.1;
+  margin-bottom: 1.1;
+}
+</style>
+</head>
+
+<!-- tocinfo
+{'highest level': 2,
+ 'sections': [('Content', 2, None, 'content'),
+              ('Computational basis', 2, None, 'computational-basis'),
+              ('Simple system to lllustrate entanglement',
+               2,
+               None,
+               'simple-system-to-lllustrate-entanglement'),
+              ('Computational basis states',
+               2,
+               None,
+               'computational-basis-states'),
+              ('Eigenstates of non-interacting Hamiltonian',
+               2,
+               None,
+               'eigenstates-of-non-interacting-hamiltonian'),
+              ('Interaction part', 2, None, 'interaction-part'),
+              ('Density matrices', 2, None, 'density-matrices'),
+              ('Subsystems', 2, None, 'subsystems'),
+              ('Entropies', 2, None, 'entropies'),
+              ('Understanding the example',
+               2,
+               None,
+               'understanding-the-example'),
+              ('Code, best seen in jupyter-notebook',
+               2,
+               None,
+               'code-best-seen-in-jupyter-notebook'),
+              ('Hamiltonian example, simple one-qubit system',
+               2,
+               None,
+               'hamiltonian-example-simple-one-qubit-system'),
+              ('Initialization', 2, None, 'initialization'),
+              ('Effects of Stimulus', 2, None, 'effects-of-stimulus'),
+              ('Slowly changing potential',
+               2,
+               None,
+               'slowly-changing-potential'),
+              ('Readout', 2, None, 'readout'),
+              ('Measurement', 2, None, 'measurement'),
+              ('Multiple measurements', 2, None, 'multiple-measurements'),
+              ('Example', 2, None, 'example'),
+              ('Evolution of initial state',
+               2,
+               None,
+               'evolution-of-initial-state'),
+              ('State evolution', 2, None, 'state-evolution'),
+              ('Preparing for readout', 2, None, 'preparing-for-readout'),
+              ('Transition probability', 2, None, 'transition-probability'),
+              ('Benefits of Entanglement', 2, None, 'benefits-of-entanglement'),
+              ('Ramsey intferometry', 2, None, 'ramsey-intferometry'),
+              ('More than one qubit', 2, None, 'more-than-one-qubit'),
+              ('After initialization', 2, None, 'after-initialization'),
+              ('Transition probability', 2, None, 'transition-probability'),
+              ('Role of entanglement', 2, None, 'role-of-entanglement'),
+              ('Concluding remarks', 2, None, 'concluding-remarks')]}
+end of tocinfo -->
+
+<body>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+     equationNumbers: {  autoNumber: "AMS"  },
+     extensions: ["AMSmath.js", "AMSsymbols.js", "autobold.js", "color.js"]
+  }
+});
+</script>
+<script type="text/javascript" async
+ src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<!-- ------------------- main content ---------------------- -->
+<center>
+<h1>Making sense of sensing?</h1>
+</center>  <!-- document title -->
+
+<!-- author(s): Morten Hjorth-Jensen -->
+<center>
+<b>Morten Hjorth-Jensen</b> 
+</center>
+<!-- institution -->
+<center>
+<b>Department of Physics, University of Oslo, Norway</b>
+</center>
+<br>
+<center>
+<h4>March 7, 2025</h4>
+</center> <!-- date -->
+<br>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="content">Content </h2>
+<ol>
+<li> Simple two-particle (or two-qubit) system to demonstrate entanglement</li>
+<li> Basic elements of sensing</li>
+</ol>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="computational-basis">Computational basis </h2>
+<p>Our computational basis states</p>
+
+$$
+\vert 00\rangle = \vert 0\rangle_{\mathrm{A}}\otimes \vert 0\rangle_{\mathrm{B}}=\begin{bmatrix} 1 & 0 & 0 &0\end{bmatrix}^T,
+$$
+
+<p>and</p>
+$$
+\vert 01\rangle = \vert 0\rangle_{\mathrm{A}}\otimes \vert 1\rangle_{\mathrm{B}}=\begin{bmatrix} 0 & 1 & 0 &0\end{bmatrix}^T,
+$$
+
+<p>and</p>
+$$
+\vert 10\rangle = \vert 1\rangle_{\mathrm{A}}\otimes \vert 0\rangle_{\mathrm{B}}=\begin{bmatrix} 0 & 0 & 1 &0\end{bmatrix}^T,
+$$
+
+<p>and finally</p>
+$$
+\vert 11\rangle = \vert 1\rangle_{\mathrm{A}}\otimes \vert 1\rangle_{\mathrm{B}}=\begin{bmatrix} 0 & 0 & 0 &1\end{bmatrix}^T.
+$$
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="simple-system-to-lllustrate-entanglement">Simple system to lllustrate entanglement  </h2>
+
+<p>This system can be thought of as composed of two subsystems
+\( A \) and \( B \). Each subsystem has computational basis states
+</p>
+
+$$
+\vert 0\rangle_{\mathrm{A,B}}=\begin{bmatrix} 1 & 0\end{bmatrix}^T \hspace{1cm} \vert 1\rangle_{\mathrm{A,B}}=\begin{bmatrix} 0 & 1\end{bmatrix}^T.
+$$
+
+<p>The subsystems could represent single particles or composite many-particle systems of a given symmetry.</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="computational-basis-states">Computational basis states </h2>
+
+<p>This leads to the many-body computational basis states</p>
+
+$$
+\vert 00\rangle = \vert 0\rangle_{\mathrm{A}}\otimes \vert 0\rangle_{\mathrm{B}}=\begin{bmatrix} 1 & 0 & 0 &0\end{bmatrix}^T,
+$$
+
+<p>and</p>
+$$
+\vert 01\rangle = \vert 0\rangle_{\mathrm{A}}\otimes \vert 1\rangle_{\mathrm{B}}=\begin{bmatrix} 0 & 1 & 0 &0\end{bmatrix}^T,
+$$
+
+<p>and</p>
+$$
+\vert 10\rangle = \vert 1\rangle_{\mathrm{A}}\otimes \vert 0\rangle_{\mathrm{B}}=\begin{bmatrix} 0 & 0 & 1 &0\end{bmatrix}^T,
+$$
+
+<p>and finally</p>
+$$
+\vert 11\rangle = \vert 1\rangle_{\mathrm{A}}\otimes \vert 1\rangle_{\mathrm{B}}=\begin{bmatrix} 0 & 0 & 0 &1\end{bmatrix}^T.
+$$
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="eigenstates-of-non-interacting-hamiltonian">Eigenstates of non-interacting Hamiltonian </h2>
+
+<p>These computational basis states define the eigenstates of the non-interacting  Hamiltonian</p>
+$$
+H_0\vert 00 \rangle = \epsilon_{00}\vert 00 \rangle,
+$$
+
+$$
+H_0\vert 10 \rangle = \epsilon_{10}\vert 10 \rangle,
+$$
+
+$$
+H_0\vert 01 \rangle = \epsilon_{01}\vert 01 \rangle,
+$$
+
+<p>and</p>
+$$
+H_0\vert 11 \rangle = \epsilon_{11}\vert 11 \rangle.
+$$
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="interaction-part">Interaction part </h2>
+
+<p>The interacting part of the Hamiltonian \( H_{\mathrm{I}} \) is given by the tensor product of two \( \sigma_x \) and \( \sigma_z \)  matrices, respectively, that is</p>
+$$
+H_{\mathrm{I}}=H_x\sigma_x\otimes\sigma_x+H_z\sigma_z\otimes\sigma_z,
+$$
+
+<p>where \( H_x \) and \( H_z \) are interaction strength parameters. Our final Hamiltonian matrix is given by</p>
+$$
+\boldsymbol{H}=\begin{bmatrix} \epsilon_{00}+H_z & 0 & 0 & H_x \\
+                       0  & \epsilon_{10}-H_z & H_x & 0 \\
+		       0 & H_x & \epsilon_{01}-H_z & 0 \\
+		       H_x & 0 & 0 & \epsilon_{11} +H_z \end{bmatrix}.
+$$
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="density-matrices">Density matrices </h2>
+
+<p>The four eigenstates of the above Hamiltonian matrix can in turn be used to
+define density matrices. As an example, the density matrix of the
+first eigenstate (lowest energy \( E_0 \)) \( \Psi_0 \) is given by the outerproduct
+</p>
+
+$$
+\rho_0=\left(\alpha_{00}\vert 00 \rangle+\alpha_{10}\vert 10 \rangle+\alpha_{01}\vert 01 \rangle+\alpha_{11}\vert 11 \rangle\right)\left(\alpha_{00}^*\langle 00\vert+\alpha_{10}^*\langle 10\vert+\alpha_{01}^*\langle 01\vert+\alpha_{11}^*\langle 11\vert\right),
+$$
+
+<p>where the coefficients \( \alpha_{ij} \) are the eigenvector coefficients
+resulting from the solution of the above eigenvalue problem. 
+</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="subsystems">Subsystems </h2>
+
+<p>We can
+then in turn define the density matrix for the subsets \( A \) or \( B \) as
+</p>
+
+$$
+\rho_A=\mathrm{Tr}_B(\rho_{0})=\langle 0 \vert \rho_{0} \vert 0\rangle_{B}+\langle 1 \vert \rho_{0} \vert 1\rangle_{B},
+$$
+
+<p>or</p>
+
+$$
+\rho_B=\mathrm{Tr}_A(\rho_0)=\langle 0 \vert \rho_{0} \vert 0\rangle_{A}+\langle 1 \vert \rho_{0} \vert 1\rangle_{A}.
+$$
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="entropies">Entropies </h2>
+
+<p>The density matrices for these subsets can be used to compute the
+so-called von Neumann entropy, which is one of the possible measures
+of entanglement. A pure state has entropy equal zero while entangled
+state have an entropy larger than zero. The von-Neumann entropy is
+defined as
+</p>
+
+$$
+S(A,B)=-\mathrm{Tr}\left(\rho_{A,B}\log_2 (\rho_{A,B})\right).
+$$
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="understanding-the-example">Understanding the example </h2>
+<p>The example here shows the above von Neumann entropy based on the
+density matrix for the lowest many-body state. We see clearly a jump
+in the entropy around the point where we have a level crossing. At
+interaction strenght \( \lambda=0 \) we have many-body states purely
+defined by their computational basis states. As we switch on the
+interaction strength, we obtain an increased degree of mixing and the
+entropy increases till we reach the level crossing point where we see
+an additional and sudden increase in entropy. Similar behaviors are
+observed for the other states. The most important result from this
+example is that entanglement is driven by the Hamiltonian itself and
+the strength of the interaction matrix elements and the
+non-interacting energies.
+</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="code-best-seen-in-jupyter-notebook">Code, best seen in jupyter-notebook </h2>
+
+<!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #eeeedd">
+  <pre style="line-height: 125%;">%matplotlib inline
+<span style="color: #8B008B; font-weight: bold">from</span>  <span style="color: #008b45; text-decoration: underline">matplotlib</span> <span style="color: #8B008B; font-weight: bold">import</span> pyplot <span style="color: #8B008B; font-weight: bold">as</span> plt
+<span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">numpy</span> <span style="color: #8B008B; font-weight: bold">as</span> <span style="color: #008b45; text-decoration: underline">np</span>
+<span style="color: #8B008B; font-weight: bold">from</span> <span style="color: #008b45; text-decoration: underline">scipy.linalg</span> <span style="color: #8B008B; font-weight: bold">import</span> logm, expm
+<span style="color: #8B008B; font-weight: bold">def</span> <span style="color: #008b45">log2M</span>(a): <span style="color: #228B22"># base 2 matrix logarithm</span>
+    <span style="color: #8B008B; font-weight: bold">return</span> logm(a)/np.log(<span style="color: #B452CD">2.0</span>)
+
+dim = <span style="color: #B452CD">4</span>
+Hamiltonian = np.zeros((dim,dim))
+<span style="color: #228B22">#number of lambda values</span>
+n = <span style="color: #B452CD">40</span>
+lmbd = np.linspace(<span style="color: #B452CD">0.0</span>,<span style="color: #B452CD">1.0</span>,n)
+Hx = <span style="color: #B452CD">2.0</span>
+Hz = <span style="color: #B452CD">3.0</span>
+<span style="color: #228B22"># Non-diagonal part as sigma_x tensor product with sigma_x</span>
+sx = np.matrix([[<span style="color: #B452CD">0</span>,<span style="color: #B452CD">1</span>],[<span style="color: #B452CD">1</span>,<span style="color: #B452CD">0</span>]])
+sx2 = Hx*np.kron(sx, sx)
+<span style="color: #228B22"># Diagonal part as sigma_z tensor product with sigma_z</span>
+sz = np.matrix([[<span style="color: #B452CD">1</span>,<span style="color: #B452CD">0</span>],[<span style="color: #B452CD">0</span>,-<span style="color: #B452CD">1</span>]])
+sz2 = Hz*np.kron(sz, sz)
+noninteracting = [<span style="color: #B452CD">0.0</span>, <span style="color: #B452CD">2.5</span>, <span style="color: #B452CD">6.5</span>, <span style="color: #B452CD">7.0</span>]
+D = np.diag(noninteracting)
+Eigenvalue = np.zeros((dim,n))
+Entropy = np.zeros(n)
+
+<span style="color: #8B008B; font-weight: bold">for</span> i <span style="color: #8B008B">in</span> <span style="color: #658b00">range</span>(n): 
+    Hamiltonian = lmbd[i]*(sx2+sz2)+D
+    <span style="color: #228B22"># diagonalize and obtain eigenvalues, not necessarily sorted</span>
+    EigValues, EigVectors = np.linalg.eig(Hamiltonian)
+    <span style="color: #228B22"># sort eigenvectors and eigenvalues</span>
+    permute = EigValues.argsort()
+    EigValues = EigValues[permute]
+    EigVectors = EigVectors[:,permute]
+    <span style="color: #228B22"># Compute density matrix for selected system state, here ground state</span>
+    DensityMatrix = np.zeros((dim,dim))
+    DensityMatrix = np.outer(EigVectors[:,<span style="color: #B452CD">0</span>],EigVectors[:,<span style="color: #B452CD">0</span>])
+    <span style="color: #228B22"># Project down on substates and find density matrix for subsystem</span>
+    d = np.matrix([[<span style="color: #B452CD">1</span>,<span style="color: #B452CD">0</span>],[<span style="color: #B452CD">0</span>,<span style="color: #B452CD">1</span>]])
+    v1 = [<span style="color: #B452CD">1.0</span>,<span style="color: #B452CD">0.0</span>]
+    proj1 = np.kron(v1,d)
+    x1 = proj1 @ DensityMatrix @ proj1.T
+    v2 = [<span style="color: #B452CD">0.0</span>,<span style="color: #B452CD">1.0</span>]
+    proj2 = np.kron(v2,d)
+    x2 = proj2 @ DensityMatrix @ proj2.T
+    <span style="color: #228B22"># Total density matrix for subsystem</span>
+    total = x1+x2
+    <span style="color: #228B22"># von Neumann Entropy for subsystem </span>
+    Entropy[i] = -np.matrix.trace(total @ log2M(total))
+    <span style="color: #228B22"># Plotting eigenvalues and entropy as functions of interaction strengths</span>
+    Eigenvalue[<span style="color: #B452CD">0</span>,i] = EigValues[<span style="color: #B452CD">0</span>]
+    Eigenvalue[<span style="color: #B452CD">1</span>,i] = EigValues[<span style="color: #B452CD">1</span>]
+    Eigenvalue[<span style="color: #B452CD">2</span>,i] = EigValues[<span style="color: #B452CD">2</span>]
+    Eigenvalue[<span style="color: #B452CD">3</span>,i] = EigValues[<span style="color: #B452CD">3</span>]
+plt.plot(lmbd, Eigenvalue[<span style="color: #B452CD">0</span>,:] ,<span style="color: #CD5555">&#39;b-&#39;</span>,lmbd, Eigenvalue[<span style="color: #B452CD">1</span>,:],<span style="color: #CD5555">&#39;g-&#39;</span>,)
+plt.plot(lmbd, Eigenvalue[<span style="color: #B452CD">2</span>,:] ,<span style="color: #CD5555">&#39;r-&#39;</span>,lmbd, Eigenvalue[<span style="color: #B452CD">3</span>,:],<span style="color: #CD5555">&#39;y-&#39;</span>,)
+plt.xlabel(<span style="color: #CD5555">&#39;$\lambda$&#39;</span>)
+plt.ylabel(<span style="color: #CD5555">&#39;Eigenvalues&#39;</span>)
+plt.show()
+plt.plot(lmbd, Entropy)
+plt.xlabel(<span style="color: #CD5555">&#39;$\lambda$&#39;</span>)
+plt.ylabel(<span style="color: #CD5555">&#39;Entropy&#39;</span>)          
+plt.show
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="hamiltonian-example-simple-one-qubit-system">Hamiltonian example, simple one-qubit system  </h2>
+<p>See whiteboard notes</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="initialization">Initialization </h2>
+
+<p>To initialize a given system to a known quantum state, we first start
+with a known ground state \( |0\rangle \). Then, depending on the type of
+information that we want to learn about the stimulus, the measurement
+scheme to be used, and the physical implementation of the quantum
+system, we choose some unitary operator \( U_{\text {Init }} \) such that
+it transforms our state \( |0\rangle \) to a desired initial superposition
+state \( \left|\psi_{\text {Init }}\right\rangle=a|0\rangle+b|1\rangle \)
+for some \( a, b \in \mathbb{C} \) such that \( |a|^{2}+|b|^{2}=1 \).
+</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="effects-of-stimulus">Effects of Stimulus </h2>
+
+<p>After the sensing state is initialized, it is exposed to the environment and evolves according to the time-evolution operator of the sensing Hamiltonian \( \hat{U}_{H} \) as</p>
+$$
+|\psi(t)\rangle=\hat{U}_{H}(0, t)\left|\psi_{\text {Init }}(0)\right\rangle
+$$
+
+<p>In general, \( \hat{U}_{H}(0, t)=e^{\frac{i}{\hbar} \int_{0}^{t} \hat{H} d \tau} \) could be a complicated, non-analytical function for a time-dependent \( V(t) \) (making \( \hat{H} \) time-dependent as well).</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="slowly-changing-potential">Slowly changing potential </h2>
+
+<p>However, in the case where \( V(t) \) is constant or changes much more slowly than our sensing integration time, we can assume</p>
+$$
+|\psi(t)\rangle=\hat{U}_{H}(0, t)\left|\psi_{\text {Init }}(0)\right\rangle=e^{\frac{i t}{\hbar} \hat{H}}\left|\psi_{\text {Init }}(0)\right\rangle
+$$
+
+<p>which means the sensing state evolves as</p>
+$$
+|\psi(t)\rangle=\left(e^{\frac{i t}{\hbar}\left(E_{0}-\frac{1}{2} \gamma V_{\|}\right)}\left|\lambda_{0}\right\rangle\left\langle\lambda_{0}\right|+e^{\frac{i t}{\hbar}\left(E_{1}+\frac{1}{2} \gamma V_{\|}\right)}\left|\lambda_{1}\right\rangle\left\langle\lambda_{1}\right|\right)\left|\psi_{\text {Init }}(0)\right\rangle
+$$
+
+<p>using the spectral decomposition and the final representation of the
+sensing Hamiltonian found previously (whiteboard notes).
+</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="readout">Readout </h2>
+
+<p>After the sensing state has time-evolved in the presence of \( V(t) \), it
+can be transformed again before a measurement is taken. The first
+part, the transformation to some desired read-out state, is performed
+by an operator \( \hat{U}_{\text {Readout }} \) (which is often
+\( \hat{U}_{\text {Init }}^{-1} \), see Degen et al., 2017, where
+</p>
+$$
+\left|\psi_{\text {Final }}\right\rangle=\hat{U}_{\text {Readout }}|\psi(t)\rangle
+$$
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="measurement">Measurement </h2>
+
+<p>A measurement of this final state \( \left|\psi_{\text {Final
+}}\right\rangle=a^{\prime}|0\rangle+b^{\prime}|1\rangle \) is made with
+respect to the basis \( \{|0\rangle,|1\rangle\},{ }^{3} \) where
+\( |0\rangle \) is measured with proability \( \left|\left\langle 0 \mid
+\psi_{\text {Final
+}}\right\rangle\right|^{2}=\left|a^{\prime}\right|^{2} \) and
+\( |1\rangle \) is measured with probability \( \left|\left\langle 1 \mid
+\psi_{\text {Final
+}}\right\rangle\right|^{2}=\left|b^{\prime}\right|^{2} \). After this
+measurement, the sensing state has been collapsed into one of the
+basis states, so no more information can be gained.
+</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="multiple-measurements">Multiple measurements </h2>
+
+<p>However, by having
+multiple quantum sensing elements time-evolving together or by
+repeating the process many times before the external stimulus \( V(t) \)
+can change, a transition probability \( p_{|0\rangle
+\rightarrow|1\rangle}=\left|\left\langle 1 \mid \psi_{\text {Final
+}}\right\rangle\right|^{2}=\left|b^{\prime}\right|^{2} \) can be
+estimated. The 'sensing' is then accomplished by taking a series of
+these transition probabilities as a time-series, and then using the
+results to estimate the sensed stimulus \( V(t) \) [Degen et al., 2017].
+</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="example">Example </h2>
+
+<p>The simplest mathematical example of quantum sensing is sensing an
+external stimulus's effect on the splitting of the energy levels of an
+isolated system. Suppose our stimulus is constant and 'parallel' with
+our sensor, i.e. \( V_z(t)=V_{0} \) and \( V_x=0 \), and we choose
+our initialization and readout preparation operators to be the famous
+Hadamard gate
+</p>
+
+$$
+\hat{U}_{H a d}=\frac{1}{\sqrt{2}}\left(\begin{array}{cc}
+1 & 1 \\
+1 & -1
+\end{array}\right)
+$$
+
+<p>since \( \hat{U}_{\text {Had }}^{-1}=\hat{U}_{\text {Had }} \).\\</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="evolution-of-initial-state">Evolution of initial state </h2>
+<p>Then the initial state</p>
+
+$$
+\left|\psi_{\text {Init }}\right\rangle=\hat{U}_{\text {Had }}|0\rangle=\frac{1}{\sqrt{2}}\left(\begin{array}{cc}
+1 & 1 \\
+1 & -1
+\end{array}\right)\binom{1}{0}=\frac{1}{\sqrt{2}}\binom{1}{1}
+$$
+
+<p>This need not necessarily be the same basis into which the system was initialized, but we'll assume it is so that we only have to keep track of one basis.</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="state-evolution">State evolution </h2>
+
+<p>The state time evolves as</p>
+$$
+\begin{gathered}
+|\psi(t)\rangle=\left(e^{\frac{i t}{\hbar}\left(E_{0}-\frac{1}{2} \gamma V_{\|}\right)}|0\rangle\langle 0|+e^{\frac{i t}{\hbar}\left(E_{1}+\frac{1}{2} \gamma V_{\|}\right)}|1\rangle\langle 1|\right)\left|\psi_{\text {Init }}(0)\right\rangle=\left(\begin{array}{cc}
+e^{\frac{i t}{\hbar}\left(E_{0}-\frac{1}{2} \gamma V_{\|}\right)} & 0 \\
+0 & e^{\frac{i t}{\hbar}\left(E_{1}+\frac{1}{2} \gamma V_{\|}\right)}
+\end{array}\right) \frac{1}{\sqrt{2}}\binom{1}{1} \\
+=\frac{1}{\sqrt{2}}\binom{e^{\frac{i t}{\hbar}\left(E_{0}-\frac{1}{2} \gamma V_{\|}\right)}}{e^{\frac{i t}{\hbar}\left(E_{1}+\frac{1}{2} \gamma V_{\|}\right)}}=\frac{1}{\sqrt{2}} e^{\frac{i t}{\hbar}\left(E_{0}-\frac{1}{2} \gamma V_{\|}\right)}\binom{1}{e^{\frac{i t}{\hbar}\left(E_{1}-E_{0}+\gamma V_{\|}\right)}}
+\end{gathered}
+$$
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="preparing-for-readout">Preparing for readout </h2>
+
+<p>This is then prepared for readout as</p>
+
+$$
+\begin{gathered}
+\left|\psi_{\text {Final }}\right\rangle=\hat{U}_{H a d}|\psi(t)\rangle=\frac{1}{\sqrt{2}}\left(\begin{array}{cc}
+1 & 1 \\
+1 & -1
+\end{array}\right) \frac{1}{\sqrt{2}} e^{\frac{i t}{\hbar}\left(E_{0}-\frac{1}{2} \gamma V_{\|}\right)}\left(\begin{array}{c}
+1 \\
+\left.e^{\frac{i t}{\hbar}\left(E_{1}-E_{0}+\gamma V_{\|}\right)}\right) \\
+=\frac{1}{2} e^{\frac{i t}{\hbar}\left(E_{0}-\frac{1}{2} \gamma V_{\|}\right)}\binom{1+e^{\frac{i t}{\hbar}\left(E_{1}-E_{0}+\gamma V_{\|}\right)}}{1-e^{\frac{i t}{\hbar}\left(E_{1}-E_{0}+\gamma V_{\|}\right)}}
+\end{array}, ~\right.
+\end{gathered}
+$$
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="transition-probability">Transition probability </h2>
+
+<p>The transition probability</p>
+$$
+p_{|0\rangle \rightarrow|1\rangle}=\left|\left\langle 1 \mid \psi_{\text {Final }}\right\rangle\right|^{2}=\left|1-e^{\frac{i t}{\hbar}\left(E_{1}-E_{0}+\gamma V_{\|}\right)}\right|^{2}=\frac{1}{2}\left(1-\cos \left(t \frac{\left(E_{1}-E_{0}\right)+\gamma V_{\|}}{\hbar}\right)\right)
+$$
+
+<p>We know the difference in energy between \( E_{1} \) and \( E_{0} \), either since we constructed the system or by taking measurements without the external stimulus \( V \), and we can control the time \( t \) for which the system is allowed to evolve under the external stimulus. Then we can fix \( t \) and take many measurements to estimate \( p_{|0\rangle \rightarrow|1\rangle} \), which then makes finding \( t \frac{\gamma V_{\|}}{\hbar} \) a simple phase-estimation problem which gives us \( \gamma V_{\|} \). The physical implementation of this process is known as Ramsey Interferometry, and it can be done with arbitary initialization and readout preparation unitary operators.</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="benefits-of-entanglement">Benefits of Entanglement </h2>
+
+<p>Up until now, we have said that we take many measurements of
+\( \left|\psi_{\text {Final }}\right\rangle \) to estimate \( p_{|0\rangle
+\rightarrow|1\rangle} \), but we have been glossing over the estimation
+process. Assuming we can take \( N \) measurements, either by having \( N \)
+experimental apparatuses running in parallel or by taking \( N \)
+different measurements of a (relatively) constant \( V \) with a single
+apparatus, the uncertainty in \( p \), denoted as \( \sigma_{p} \) (this is a
+positive real number; not to be confused with the Pauli matrices),
+scales as
+</p>
+$$
+\sigma_{p} \propto \frac{1}{\sqrt{N}}
+$$
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="ramsey-intferometry">Ramsey intferometry </h2>
+
+<p>If we consider the Ramsey Intferometry as an example, then the uncertainty in \( \gamma V_{\|} \) and so in \( V_{\|} \), denoted \( \sigma_{V} \), scales as</p>
+$$
+\sigma_{V} \propto \sigma_{p} \propto \frac{1}{\sqrt{N}}
+$$
+
+<p>This relationship is known as the standard quantum limit (SQL)
+[Giovannetti et al., 2011], but can also be explained with the Law of
+Large Numbers from statistics, where measuring\\ \( N \) similarly
+distributed, well-behaved random variables gives the sample mean as an
+estimator for the population mean and the sample variance divided by
+the size of the sample as an uncertainty in the estimate of the
+population mean.
+</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="more-than-one-qubit">More than one qubit </h2>
+<p>However, the nature of quantum systems allows for more information to
+be extracted by exploiting entanglement between quantum systems. This
+is the fundamental basis for the benefits of quantum computing over
+classical computing, and quantum sensing has similar benefits over
+classical sensing. Suppose we return to the Ramsey Interferometry
+example above, but rather than initializing \( N \) sensing qubits
+separately, we initialize \( \frac{N}{n} \) groups each with \( n \) entangled
+quantum systems. Then we have
+</p>
+$$
+\left|\psi_{\text {Init }}\right\rangle=\frac{1}{\sqrt{2^{n}}}\left(|0\rangle^{\otimes n}+|1\rangle^{\otimes n}\right)
+$$
+
+<p>where \( |0\rangle^{\otimes n}=|0\rangle \otimes \ldots \otimes|0\rangle, n \) times.</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="after-initialization">After initialization </h2>
+
+<p>After initialization, each of the \( n \) sensing qubits evolves to pick up a relative phase factor of \( e^{\frac{i t}{\hbar}\left(E_{1}-E_{0}+\gamma V_{\|}\right)} \), which combined results in</p>
+$$
+|\psi(t)\rangle=\mathcal{N}\left(|0\rangle^{\otimes n}+\left(e^{\frac{i t}{\hbar}\left(E_{1}-E_{0}+\gamma V_{\|}\right)}|1\rangle\right)^{\otimes n}\right)=\mathcal{N}\left(|0\rangle^{\otimes n}+e^{n \frac{i t}{\hbar}\left(E_{1}-E_{0}+\gamma V_{\|}\right)}|1\rangle^{\otimes n}\right)
+$$
+
+<p>where \( \mathcal{N} \) is just a factor to take care of normalization.</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="transition-probability">Transition probability </h2>
+<p>Then the transition probability</p>
+$$
+p_{|0\rangle \rightarrow|1\rangle}=\left|\left\langle 1 \mid \psi_{\text {Final }}\right\rangle\right|^{2}=\left|1-e^{n \frac{i t}{\hbar}\left(E_{1}-E_{0}+\gamma V_{\|}\right)}\right|^{2}=\frac{1}{2}\left(1-\cos \left(t \frac{n\left(E_{1}-E_{0}\right)+n \gamma V_{\|}}{\hbar}\right)\right)
+$$
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="role-of-entanglement">Role of entanglement </h2>
+
+<p>From this, we can see that through entangling \( n \) sensing qubits, the 'signal' we're trying to sense increases from \( V_{\|} \rightarrow n V_{\|} \), and with \( \frac{N}{n} \) total measurements,</p>
+$$
+\sigma_{V} \propto \frac{1}{n} \sigma_{p} \propto \frac{1}{n}\left(\frac{1}{\sqrt{\frac{N}{n}}}\right)=\frac{1}{\sqrt{N n}}
+$$
+
+<p>which means the error decreased by a factor of \( \sqrt{n} \). In the case where \( n=N \), the uncertainty now scales as</p>
+$$
+\sigma_{V} \propto \frac{1}{N}
+$$
+
+<p>which is known as the Heisenberg limit, and is the quantum-mechanically limited, maximal amount of information one can get from taking \( n \) quantum sensing measurements [Giovannetti et al., 2011].</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="concluding-remarks">Concluding remarks </h2>
+
+<p>Quantum sensing is an emerging field with a large number of exciting
+applications. In terms of physical implementation, quantum sensors are
+able to naturally be more sensitive and sense on
+smaller scales than many classical sensors, while also often being
+directly tracable to fundamental physical constants.
+</p>
+
+<p>Additionally, exploiting entanglement and the quantum nature of these
+devices allows for fundamentally more information to be collected than
+is allowed by classical measurements and the SQL. Quantum sensing
+fundamentally improves upon the physical and theoretical limitations
+of classical sensing, and it will be interesting to see how and what
+physical realizations develop to the point of practicality in the near
+future.
+</p>
+<!-- ------------------- end of main content --------------- -->
+<center style="font-size:80%">
+<!-- copyright --> &copy; 1999-2025, Morten Hjorth-Jensen. Released under CC Attribution-NonCommercial 4.0 license
+</center>
+</body>
+</html>
+

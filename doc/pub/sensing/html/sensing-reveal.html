@@ -1,0 +1,956 @@
+<!--
+HTML file automatically generated from DocOnce source
+(https://github.com/doconce/doconce/)
+doconce format html sensing-reveal.html sensing-reveal reveal --html_slide_theme=beige
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="DocOnce: https://github.com/doconce/doconce/" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Making sense of sensing?">
+<title>Making sense of sensing?</title>
+
+<!-- reveal.js: https://lab.hakim.se/reveal-js/ -->
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+<link rel="stylesheet" href="reveal.js/css/reveal.css">
+<link rel="stylesheet" href="reveal.js/css/theme/beige.css" id="theme">
+<!--
+<link rel="stylesheet" href="reveal.js/css/reveal.css">
+<link rel="stylesheet" href="reveal.js/css/theme/beige.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/beigesmall.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/solarized.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/serif.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/night.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/moon.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/simple.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/sky.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/darkgray.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/default.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/cbc.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/simula.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/black.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/white.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/league.css" id="theme">
+-->
+
+<!-- For syntax highlighting -->
+<link rel="stylesheet" href="reveal.js/lib/css/zenburn.css">
+
+<!-- Printing and PDF exports -->
+<script>
+var link = document.createElement( 'link' );
+link.rel = 'stylesheet';
+link.type = 'text/css';
+link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+document.getElementsByTagName( 'head' )[0].appendChild( link );
+</script>
+
+<style type="text/css">
+hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+p.caption { width: 80%; font-size: 60%; font-style: italic; text-align: left; }
+hr.figure { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+.reveal .alert-text-small   { font-size: 80%;  }
+.reveal .alert-text-large   { font-size: 130%; }
+.reveal .alert-text-normal  { font-size: 90%;  }
+.reveal .alert {
+  padding:8px 35px 8px 14px; margin-bottom:18px;
+  text-shadow:0 1px 0 rgba(255,255,255,0.5);
+  border:5px solid #bababa;
+  -webkit-border-radius: 14px; -moz-border-radius: 14px;
+  border-radius:14px;
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  background-size: 38px;
+  padding-left: 30px; /* 55px; if icon */
+}
+.reveal .alert-block {padding-top:14px; padding-bottom:14px}
+.reveal .alert-block > p, .alert-block > ul {margin-bottom:1em}
+/*.reveal .alert li {margin-top: 1em}*/
+.reveal .alert-block p+p {margin-top:5px}
+/*.reveal .alert-notice { background-image: url(https://hplgit.github.io/doconce/bundled/html_images/small_gray_notice.png); }
+.reveal .alert-summary  { background-image:url(https://hplgit.github.io/doconce/bundled/html_images/small_gray_summary.png); }
+.reveal .alert-warning { background-image: url(https://hplgit.github.io/doconce/bundled/html_images/small_gray_warning.png); }
+.reveal .alert-question {background-image:url(https://hplgit.github.io/doconce/bundled/html_images/small_gray_question.png); } */
+/* Override reveal.js table border */
+.reveal table td {
+  border: 0;
+}
+
+<style type="text/css">
+/* Override h1, h2, ... styles */
+h1 { font-size: 2.8em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.4em; }
+h4 { font-size: 1.3em; }
+h1, h2, h3, h4 { font-weight: bold; line-height: 1.2; }
+body { overflow: auto; } /* vertical scrolling */
+hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+p.caption { width: 80%; font-size: 60%; font-style: italic; text-align: left; }
+hr.figure { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+.slide .alert-text-small   { font-size: 80%;  }
+.slide .alert-text-large   { font-size: 130%; }
+.slide .alert-text-normal  { font-size: 90%;  }
+.slide .alert {
+  padding:8px 35px 8px 14px; margin-bottom:18px;
+  text-shadow:0 1px 0 rgba(255,255,255,0.5);
+  border:5px solid #bababa;
+    -webkit-border-radius:14px; -moz-border-radius:14px;
+  border-radius:14px
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  background-size: 38px;
+  padding-left: 30px; /* 55px; if icon */
+}
+.slide .alert-block {padding-top:14px; padding-bottom:14px}
+.slide .alert-block > p, .alert-block > ul {margin-bottom:0}
+/*.slide .alert li {margin-top: 1em}*/
+.deck .alert-block p+p {margin-top:5px}
+/*.slide .alert-notice { background-image: url(https://hplgit.github.io/doconce/
+bundled/html_images//small_gray_notice.png); }
+.slide .alert-summary  { background-image:url(https://hplgit.github.io/doconce/
+bundled/html_images//small_gray_summary.png); }
+.slide .alert-warning { background-image: url(https://hplgit.github.io/doconce/
+bundled/html_images//small_gray_warning.png); }
+.slide .alert-question {background-image:url(https://hplgit.github.io/doconce/
+bundled/html_images/small_gray_question.png); } */
+.dotable table, .dotable th, .dotable tr, .dotable tr td {
+  border: 2px solid black;
+  border-collapse: collapse;
+  padding: 2px;
+}
+</style>
+
+
+<!-- Styles for table layout of slides -->
+<style type="text/css">
+td.padding {
+  padding-top:20px;
+  padding-bottom:20px;
+  padding-right:50px;
+  padding-left:50px;
+}
+</style>
+
+</head>
+
+
+<body>
+<div class="reveal">
+<div class="slides">
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+     equationNumbers: {  autoNumber: "none"  },
+     extensions: ["AMSmath.js", "AMSsymbols.js", "autobold.js", "color.js"]
+  }
+});
+</script>
+<script type="text/javascript" async
+ src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+
+<section>
+<!-- ------------------- main content ---------------------- -->
+<center>
+<h1 style="text-align: center;">Making sense of sensing?</h1>
+</center>  <!-- document title -->
+
+<!-- author(s): Morten Hjorth-Jensen -->
+<center>
+<b>Morten Hjorth-Jensen</b> 
+</center>
+<!-- institution -->
+<center>
+<b>Department of Physics, University of Oslo, Norway</b>
+</center>
+<br>
+<center>
+<h4>March 7, 2025</h4>
+</center> <!-- date -->
+<br>
+
+
+<center style="font-size:80%">
+<!-- copyright --> &copy; 1999-2025, Morten Hjorth-Jensen. Released under CC Attribution-NonCommercial 4.0 license
+</center>
+</section>
+
+<section>
+<h2 id="content">Content </h2>
+<ol>
+<p><li> Simple two-particle (or two-qubit) system to demonstrate entanglement</li>
+<p><li> Basic elements of sensing</li>
+</ol>
+</section>
+
+<section>
+<h2 id="computational-basis">Computational basis </h2>
+<p>Our computational basis states</p>
+
+<p>&nbsp;<br>
+$$
+\vert 00\rangle = \vert 0\rangle_{\mathrm{A}}\otimes \vert 0\rangle_{\mathrm{B}}=\begin{bmatrix} 1 & 0 & 0 &0\end{bmatrix}^T,
+$$
+<p>&nbsp;<br>
+
+<p>and</p>
+<p>&nbsp;<br>
+$$
+\vert 01\rangle = \vert 0\rangle_{\mathrm{A}}\otimes \vert 1\rangle_{\mathrm{B}}=\begin{bmatrix} 0 & 1 & 0 &0\end{bmatrix}^T,
+$$
+<p>&nbsp;<br>
+
+<p>and</p>
+<p>&nbsp;<br>
+$$
+\vert 10\rangle = \vert 1\rangle_{\mathrm{A}}\otimes \vert 0\rangle_{\mathrm{B}}=\begin{bmatrix} 0 & 0 & 1 &0\end{bmatrix}^T,
+$$
+<p>&nbsp;<br>
+
+<p>and finally</p>
+<p>&nbsp;<br>
+$$
+\vert 11\rangle = \vert 1\rangle_{\mathrm{A}}\otimes \vert 1\rangle_{\mathrm{B}}=\begin{bmatrix} 0 & 0 & 0 &1\end{bmatrix}^T.
+$$
+<p>&nbsp;<br>
+</section>
+
+<section>
+<h2 id="simple-system-to-lllustrate-entanglement">Simple system to lllustrate entanglement  </h2>
+
+<p>This system can be thought of as composed of two subsystems
+\( A \) and \( B \). Each subsystem has computational basis states
+</p>
+
+<p>&nbsp;<br>
+$$
+\vert 0\rangle_{\mathrm{A,B}}=\begin{bmatrix} 1 & 0\end{bmatrix}^T \hspace{1cm} \vert 1\rangle_{\mathrm{A,B}}=\begin{bmatrix} 0 & 1\end{bmatrix}^T.
+$$
+<p>&nbsp;<br>
+
+<p>The subsystems could represent single particles or composite many-particle systems of a given symmetry.</p>
+</section>
+
+<section>
+<h2 id="computational-basis-states">Computational basis states </h2>
+
+<p>This leads to the many-body computational basis states</p>
+
+<p>&nbsp;<br>
+$$
+\vert 00\rangle = \vert 0\rangle_{\mathrm{A}}\otimes \vert 0\rangle_{\mathrm{B}}=\begin{bmatrix} 1 & 0 & 0 &0\end{bmatrix}^T,
+$$
+<p>&nbsp;<br>
+
+<p>and</p>
+<p>&nbsp;<br>
+$$
+\vert 01\rangle = \vert 0\rangle_{\mathrm{A}}\otimes \vert 1\rangle_{\mathrm{B}}=\begin{bmatrix} 0 & 1 & 0 &0\end{bmatrix}^T,
+$$
+<p>&nbsp;<br>
+
+<p>and</p>
+<p>&nbsp;<br>
+$$
+\vert 10\rangle = \vert 1\rangle_{\mathrm{A}}\otimes \vert 0\rangle_{\mathrm{B}}=\begin{bmatrix} 0 & 0 & 1 &0\end{bmatrix}^T,
+$$
+<p>&nbsp;<br>
+
+<p>and finally</p>
+<p>&nbsp;<br>
+$$
+\vert 11\rangle = \vert 1\rangle_{\mathrm{A}}\otimes \vert 1\rangle_{\mathrm{B}}=\begin{bmatrix} 0 & 0 & 0 &1\end{bmatrix}^T.
+$$
+<p>&nbsp;<br>
+</section>
+
+<section>
+<h2 id="eigenstates-of-non-interacting-hamiltonian">Eigenstates of non-interacting Hamiltonian </h2>
+
+<p>These computational basis states define the eigenstates of the non-interacting  Hamiltonian</p>
+<p>&nbsp;<br>
+$$
+H_0\vert 00 \rangle = \epsilon_{00}\vert 00 \rangle,
+$$
+<p>&nbsp;<br>
+
+<p>&nbsp;<br>
+$$
+H_0\vert 10 \rangle = \epsilon_{10}\vert 10 \rangle,
+$$
+<p>&nbsp;<br>
+
+<p>&nbsp;<br>
+$$
+H_0\vert 01 \rangle = \epsilon_{01}\vert 01 \rangle,
+$$
+<p>&nbsp;<br>
+
+<p>and</p>
+<p>&nbsp;<br>
+$$
+H_0\vert 11 \rangle = \epsilon_{11}\vert 11 \rangle.
+$$
+<p>&nbsp;<br>
+</section>
+
+<section>
+<h2 id="interaction-part">Interaction part </h2>
+
+<p>The interacting part of the Hamiltonian \( H_{\mathrm{I}} \) is given by the tensor product of two \( \sigma_x \) and \( \sigma_z \)  matrices, respectively, that is</p>
+<p>&nbsp;<br>
+$$
+H_{\mathrm{I}}=H_x\sigma_x\otimes\sigma_x+H_z\sigma_z\otimes\sigma_z,
+$$
+<p>&nbsp;<br>
+
+<p>where \( H_x \) and \( H_z \) are interaction strength parameters. Our final Hamiltonian matrix is given by</p>
+<p>&nbsp;<br>
+$$
+\boldsymbol{H}=\begin{bmatrix} \epsilon_{00}+H_z & 0 & 0 & H_x \\
+                       0  & \epsilon_{10}-H_z & H_x & 0 \\
+		       0 & H_x & \epsilon_{01}-H_z & 0 \\
+		       H_x & 0 & 0 & \epsilon_{11} +H_z \end{bmatrix}.
+$$
+<p>&nbsp;<br>
+</section>
+
+<section>
+<h2 id="density-matrices">Density matrices </h2>
+
+<p>The four eigenstates of the above Hamiltonian matrix can in turn be used to
+define density matrices. As an example, the density matrix of the
+first eigenstate (lowest energy \( E_0 \)) \( \Psi_0 \) is given by the outerproduct
+</p>
+
+<p>&nbsp;<br>
+$$
+\rho_0=\left(\alpha_{00}\vert 00 \rangle+\alpha_{10}\vert 10 \rangle+\alpha_{01}\vert 01 \rangle+\alpha_{11}\vert 11 \rangle\right)\left(\alpha_{00}^*\langle 00\vert+\alpha_{10}^*\langle 10\vert+\alpha_{01}^*\langle 01\vert+\alpha_{11}^*\langle 11\vert\right),
+$$
+<p>&nbsp;<br>
+
+<p>where the coefficients \( \alpha_{ij} \) are the eigenvector coefficients
+resulting from the solution of the above eigenvalue problem. 
+</p>
+</section>
+
+<section>
+<h2 id="subsystems">Subsystems </h2>
+
+<p>We can
+then in turn define the density matrix for the subsets \( A \) or \( B \) as
+</p>
+
+<p>&nbsp;<br>
+$$
+\rho_A=\mathrm{Tr}_B(\rho_{0})=\langle 0 \vert \rho_{0} \vert 0\rangle_{B}+\langle 1 \vert \rho_{0} \vert 1\rangle_{B},
+$$
+<p>&nbsp;<br>
+
+<p>or</p>
+
+<p>&nbsp;<br>
+$$
+\rho_B=\mathrm{Tr}_A(\rho_0)=\langle 0 \vert \rho_{0} \vert 0\rangle_{A}+\langle 1 \vert \rho_{0} \vert 1\rangle_{A}.
+$$
+<p>&nbsp;<br>
+</section>
+
+<section>
+<h2 id="entropies">Entropies </h2>
+
+<p>The density matrices for these subsets can be used to compute the
+so-called von Neumann entropy, which is one of the possible measures
+of entanglement. A pure state has entropy equal zero while entangled
+state have an entropy larger than zero. The von-Neumann entropy is
+defined as
+</p>
+
+<p>&nbsp;<br>
+$$
+S(A,B)=-\mathrm{Tr}\left(\rho_{A,B}\log_2 (\rho_{A,B})\right).
+$$
+<p>&nbsp;<br>
+</section>
+
+<section>
+<h2 id="understanding-the-example">Understanding the example </h2>
+<p>The example here shows the above von Neumann entropy based on the
+density matrix for the lowest many-body state. We see clearly a jump
+in the entropy around the point where we have a level crossing. At
+interaction strenght \( \lambda=0 \) we have many-body states purely
+defined by their computational basis states. As we switch on the
+interaction strength, we obtain an increased degree of mixing and the
+entropy increases till we reach the level crossing point where we see
+an additional and sudden increase in entropy. Similar behaviors are
+observed for the other states. The most important result from this
+example is that entanglement is driven by the Hamiltonian itself and
+the strength of the interaction matrix elements and the
+non-interacting energies.
+</p>
+</section>
+
+<section>
+<h2 id="code-best-seen-in-jupyter-notebook">Code, best seen in jupyter-notebook </h2>
+
+<!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #eeeedd">
+  <pre style="font-size: 80%; line-height: 125%;">%matplotlib inline
+<span style="color: #8B008B; font-weight: bold">from</span>  <span style="color: #008b45; text-decoration: underline">matplotlib</span> <span style="color: #8B008B; font-weight: bold">import</span> pyplot <span style="color: #8B008B; font-weight: bold">as</span> plt
+<span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">numpy</span> <span style="color: #8B008B; font-weight: bold">as</span> <span style="color: #008b45; text-decoration: underline">np</span>
+<span style="color: #8B008B; font-weight: bold">from</span> <span style="color: #008b45; text-decoration: underline">scipy.linalg</span> <span style="color: #8B008B; font-weight: bold">import</span> logm, expm
+<span style="color: #8B008B; font-weight: bold">def</span> <span style="color: #008b45">log2M</span>(a): <span style="color: #228B22"># base 2 matrix logarithm</span>
+    <span style="color: #8B008B; font-weight: bold">return</span> logm(a)/np.log(<span style="color: #B452CD">2.0</span>)
+
+dim = <span style="color: #B452CD">4</span>
+Hamiltonian = np.zeros((dim,dim))
+<span style="color: #228B22">#number of lambda values</span>
+n = <span style="color: #B452CD">40</span>
+lmbd = np.linspace(<span style="color: #B452CD">0.0</span>,<span style="color: #B452CD">1.0</span>,n)
+Hx = <span style="color: #B452CD">2.0</span>
+Hz = <span style="color: #B452CD">3.0</span>
+<span style="color: #228B22"># Non-diagonal part as sigma_x tensor product with sigma_x</span>
+sx = np.matrix([[<span style="color: #B452CD">0</span>,<span style="color: #B452CD">1</span>],[<span style="color: #B452CD">1</span>,<span style="color: #B452CD">0</span>]])
+sx2 = Hx*np.kron(sx, sx)
+<span style="color: #228B22"># Diagonal part as sigma_z tensor product with sigma_z</span>
+sz = np.matrix([[<span style="color: #B452CD">1</span>,<span style="color: #B452CD">0</span>],[<span style="color: #B452CD">0</span>,-<span style="color: #B452CD">1</span>]])
+sz2 = Hz*np.kron(sz, sz)
+noninteracting = [<span style="color: #B452CD">0.0</span>, <span style="color: #B452CD">2.5</span>, <span style="color: #B452CD">6.5</span>, <span style="color: #B452CD">7.0</span>]
+D = np.diag(noninteracting)
+Eigenvalue = np.zeros((dim,n))
+Entropy = np.zeros(n)
+
+<span style="color: #8B008B; font-weight: bold">for</span> i <span style="color: #8B008B">in</span> <span style="color: #658b00">range</span>(n): 
+    Hamiltonian = lmbd[i]*(sx2+sz2)+D
+    <span style="color: #228B22"># diagonalize and obtain eigenvalues, not necessarily sorted</span>
+    EigValues, EigVectors = np.linalg.eig(Hamiltonian)
+    <span style="color: #228B22"># sort eigenvectors and eigenvalues</span>
+    permute = EigValues.argsort()
+    EigValues = EigValues[permute]
+    EigVectors = EigVectors[:,permute]
+    <span style="color: #228B22"># Compute density matrix for selected system state, here ground state</span>
+    DensityMatrix = np.zeros((dim,dim))
+    DensityMatrix = np.outer(EigVectors[:,<span style="color: #B452CD">0</span>],EigVectors[:,<span style="color: #B452CD">0</span>])
+    <span style="color: #228B22"># Project down on substates and find density matrix for subsystem</span>
+    d = np.matrix([[<span style="color: #B452CD">1</span>,<span style="color: #B452CD">0</span>],[<span style="color: #B452CD">0</span>,<span style="color: #B452CD">1</span>]])
+    v1 = [<span style="color: #B452CD">1.0</span>,<span style="color: #B452CD">0.0</span>]
+    proj1 = np.kron(v1,d)
+    x1 = proj1 @ DensityMatrix @ proj1.T
+    v2 = [<span style="color: #B452CD">0.0</span>,<span style="color: #B452CD">1.0</span>]
+    proj2 = np.kron(v2,d)
+    x2 = proj2 @ DensityMatrix @ proj2.T
+    <span style="color: #228B22"># Total density matrix for subsystem</span>
+    total = x1+x2
+    <span style="color: #228B22"># von Neumann Entropy for subsystem </span>
+    Entropy[i] = -np.matrix.trace(total @ log2M(total))
+    <span style="color: #228B22"># Plotting eigenvalues and entropy as functions of interaction strengths</span>
+    Eigenvalue[<span style="color: #B452CD">0</span>,i] = EigValues[<span style="color: #B452CD">0</span>]
+    Eigenvalue[<span style="color: #B452CD">1</span>,i] = EigValues[<span style="color: #B452CD">1</span>]
+    Eigenvalue[<span style="color: #B452CD">2</span>,i] = EigValues[<span style="color: #B452CD">2</span>]
+    Eigenvalue[<span style="color: #B452CD">3</span>,i] = EigValues[<span style="color: #B452CD">3</span>]
+plt.plot(lmbd, Eigenvalue[<span style="color: #B452CD">0</span>,:] ,<span style="color: #CD5555">&#39;b-&#39;</span>,lmbd, Eigenvalue[<span style="color: #B452CD">1</span>,:],<span style="color: #CD5555">&#39;g-&#39;</span>,)
+plt.plot(lmbd, Eigenvalue[<span style="color: #B452CD">2</span>,:] ,<span style="color: #CD5555">&#39;r-&#39;</span>,lmbd, Eigenvalue[<span style="color: #B452CD">3</span>,:],<span style="color: #CD5555">&#39;y-&#39;</span>,)
+plt.xlabel(<span style="color: #CD5555">&#39;$\lambda$&#39;</span>)
+plt.ylabel(<span style="color: #CD5555">&#39;Eigenvalues&#39;</span>)
+plt.show()
+plt.plot(lmbd, Entropy)
+plt.xlabel(<span style="color: #CD5555">&#39;$\lambda$&#39;</span>)
+plt.ylabel(<span style="color: #CD5555">&#39;Entropy&#39;</span>)          
+plt.show
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section>
+<h2 id="hamiltonian-example-simple-one-qubit-system">Hamiltonian example, simple one-qubit system  </h2>
+<p>See whiteboard notes</p>
+</section>
+
+<section>
+<h2 id="initialization">Initialization </h2>
+
+<p>To initialize a given system to a known quantum state, we first start
+with a known ground state \( |0\rangle \). Then, depending on the type of
+information that we want to learn about the stimulus, the measurement
+scheme to be used, and the physical implementation of the quantum
+system, we choose some unitary operator \( U_{\text {Init }} \) such that
+it transforms our state \( |0\rangle \) to a desired initial superposition
+state \( \left|\psi_{\text {Init }}\right\rangle=a|0\rangle+b|1\rangle \)
+for some \( a, b \in \mathbb{C} \) such that \( |a|^{2}+|b|^{2}=1 \).
+</p>
+</section>
+
+<section>
+<h2 id="effects-of-stimulus">Effects of Stimulus </h2>
+
+<p>After the sensing state is initialized, it is exposed to the environment and evolves according to the time-evolution operator of the sensing Hamiltonian \( \hat{U}_{H} \) as</p>
+<p>&nbsp;<br>
+$$
+|\psi(t)\rangle=\hat{U}_{H}(0, t)\left|\psi_{\text {Init }}(0)\right\rangle
+$$
+<p>&nbsp;<br>
+
+<p>In general, \( \hat{U}_{H}(0, t)=e^{\frac{i}{\hbar} \int_{0}^{t} \hat{H} d \tau} \) could be a complicated, non-analytical function for a time-dependent \( V(t) \) (making \( \hat{H} \) time-dependent as well).</p>
+</section>
+
+<section>
+<h2 id="slowly-changing-potential">Slowly changing potential </h2>
+
+<p>However, in the case where \( V(t) \) is constant or changes much more slowly than our sensing integration time, we can assume</p>
+<p>&nbsp;<br>
+$$
+|\psi(t)\rangle=\hat{U}_{H}(0, t)\left|\psi_{\text {Init }}(0)\right\rangle=e^{\frac{i t}{\hbar} \hat{H}}\left|\psi_{\text {Init }}(0)\right\rangle
+$$
+<p>&nbsp;<br>
+
+<p>which means the sensing state evolves as</p>
+<p>&nbsp;<br>
+$$
+|\psi(t)\rangle=\left(e^{\frac{i t}{\hbar}\left(E_{0}-\frac{1}{2} \gamma V_{\|}\right)}\left|\lambda_{0}\right\rangle\left\langle\lambda_{0}\right|+e^{\frac{i t}{\hbar}\left(E_{1}+\frac{1}{2} \gamma V_{\|}\right)}\left|\lambda_{1}\right\rangle\left\langle\lambda_{1}\right|\right)\left|\psi_{\text {Init }}(0)\right\rangle
+$$
+<p>&nbsp;<br>
+
+<p>using the spectral decomposition and the final representation of the
+sensing Hamiltonian found previously (whiteboard notes).
+</p>
+</section>
+
+<section>
+<h2 id="readout">Readout </h2>
+
+<p>After the sensing state has time-evolved in the presence of \( V(t) \), it
+can be transformed again before a measurement is taken. The first
+part, the transformation to some desired read-out state, is performed
+by an operator \( \hat{U}_{\text {Readout }} \) (which is often
+\( \hat{U}_{\text {Init }}^{-1} \), see Degen et al., 2017, where
+</p>
+<p>&nbsp;<br>
+$$
+\left|\psi_{\text {Final }}\right\rangle=\hat{U}_{\text {Readout }}|\psi(t)\rangle
+$$
+<p>&nbsp;<br>
+</section>
+
+<section>
+<h2 id="measurement">Measurement </h2>
+
+<p>A measurement of this final state \( \left|\psi_{\text {Final
+}}\right\rangle=a^{\prime}|0\rangle+b^{\prime}|1\rangle \) is made with
+respect to the basis \( \{|0\rangle,|1\rangle\},{ }^{3} \) where
+\( |0\rangle \) is measured with proability \( \left|\left\langle 0 \mid
+\psi_{\text {Final
+}}\right\rangle\right|^{2}=\left|a^{\prime}\right|^{2} \) and
+\( |1\rangle \) is measured with probability \( \left|\left\langle 1 \mid
+\psi_{\text {Final
+}}\right\rangle\right|^{2}=\left|b^{\prime}\right|^{2} \). After this
+measurement, the sensing state has been collapsed into one of the
+basis states, so no more information can be gained.
+</p>
+</section>
+
+<section>
+<h2 id="multiple-measurements">Multiple measurements </h2>
+
+<p>However, by having
+multiple quantum sensing elements time-evolving together or by
+repeating the process many times before the external stimulus \( V(t) \)
+can change, a transition probability \( p_{|0\rangle
+\rightarrow|1\rangle}=\left|\left\langle 1 \mid \psi_{\text {Final
+}}\right\rangle\right|^{2}=\left|b^{\prime}\right|^{2} \) can be
+estimated. The 'sensing' is then accomplished by taking a series of
+these transition probabilities as a time-series, and then using the
+results to estimate the sensed stimulus \( V(t) \) [Degen et al., 2017].
+</p>
+</section>
+
+<section>
+<h2 id="example">Example </h2>
+
+<p>The simplest mathematical example of quantum sensing is sensing an
+external stimulus's effect on the splitting of the energy levels of an
+isolated system. Suppose our stimulus is constant and 'parallel' with
+our sensor, i.e. \( V_z(t)=V_{0} \) and \( V_x=0 \), and we choose
+our initialization and readout preparation operators to be the famous
+Hadamard gate
+</p>
+
+<p>&nbsp;<br>
+$$
+\hat{U}_{H a d}=\frac{1}{\sqrt{2}}\left(\begin{array}{cc}
+1 & 1 \\
+1 & -1
+\end{array}\right)
+$$
+<p>&nbsp;<br>
+
+<p>since \( \hat{U}_{\text {Had }}^{-1}=\hat{U}_{\text {Had }} \).\\</p>
+</section>
+
+<section>
+<h2 id="evolution-of-initial-state">Evolution of initial state </h2>
+<p>Then the initial state</p>
+
+<p>&nbsp;<br>
+$$
+\left|\psi_{\text {Init }}\right\rangle=\hat{U}_{\text {Had }}|0\rangle=\frac{1}{\sqrt{2}}\left(\begin{array}{cc}
+1 & 1 \\
+1 & -1
+\end{array}\right)\binom{1}{0}=\frac{1}{\sqrt{2}}\binom{1}{1}
+$$
+<p>&nbsp;<br>
+
+<p>This need not necessarily be the same basis into which the system was initialized, but we'll assume it is so that we only have to keep track of one basis.</p>
+</section>
+
+<section>
+<h2 id="state-evolution">State evolution </h2>
+
+<p>The state time evolves as</p>
+<p>&nbsp;<br>
+$$
+\begin{gathered}
+|\psi(t)\rangle=\left(e^{\frac{i t}{\hbar}\left(E_{0}-\frac{1}{2} \gamma V_{\|}\right)}|0\rangle\langle 0|+e^{\frac{i t}{\hbar}\left(E_{1}+\frac{1}{2} \gamma V_{\|}\right)}|1\rangle\langle 1|\right)\left|\psi_{\text {Init }}(0)\right\rangle=\left(\begin{array}{cc}
+e^{\frac{i t}{\hbar}\left(E_{0}-\frac{1}{2} \gamma V_{\|}\right)} & 0 \\
+0 & e^{\frac{i t}{\hbar}\left(E_{1}+\frac{1}{2} \gamma V_{\|}\right)}
+\end{array}\right) \frac{1}{\sqrt{2}}\binom{1}{1} \\
+=\frac{1}{\sqrt{2}}\binom{e^{\frac{i t}{\hbar}\left(E_{0}-\frac{1}{2} \gamma V_{\|}\right)}}{e^{\frac{i t}{\hbar}\left(E_{1}+\frac{1}{2} \gamma V_{\|}\right)}}=\frac{1}{\sqrt{2}} e^{\frac{i t}{\hbar}\left(E_{0}-\frac{1}{2} \gamma V_{\|}\right)}\binom{1}{e^{\frac{i t}{\hbar}\left(E_{1}-E_{0}+\gamma V_{\|}\right)}}
+\end{gathered}
+$$
+<p>&nbsp;<br>
+</section>
+
+<section>
+<h2 id="preparing-for-readout">Preparing for readout </h2>
+
+<p>This is then prepared for readout as</p>
+
+<p>&nbsp;<br>
+$$
+\begin{gathered}
+\left|\psi_{\text {Final }}\right\rangle=\hat{U}_{H a d}|\psi(t)\rangle=\frac{1}{\sqrt{2}}\left(\begin{array}{cc}
+1 & 1 \\
+1 & -1
+\end{array}\right) \frac{1}{\sqrt{2}} e^{\frac{i t}{\hbar}\left(E_{0}-\frac{1}{2} \gamma V_{\|}\right)}\left(\begin{array}{c}
+1 \\
+\left.e^{\frac{i t}{\hbar}\left(E_{1}-E_{0}+\gamma V_{\|}\right)}\right) \\
+=\frac{1}{2} e^{\frac{i t}{\hbar}\left(E_{0}-\frac{1}{2} \gamma V_{\|}\right)}\binom{1+e^{\frac{i t}{\hbar}\left(E_{1}-E_{0}+\gamma V_{\|}\right)}}{1-e^{\frac{i t}{\hbar}\left(E_{1}-E_{0}+\gamma V_{\|}\right)}}
+\end{array}, ~\right.
+\end{gathered}
+$$
+<p>&nbsp;<br>
+</section>
+
+<section>
+<h2 id="transition-probability">Transition probability </h2>
+
+<p>The transition probability</p>
+<p>&nbsp;<br>
+$$
+p_{|0\rangle \rightarrow|1\rangle}=\left|\left\langle 1 \mid \psi_{\text {Final }}\right\rangle\right|^{2}=\left|1-e^{\frac{i t}{\hbar}\left(E_{1}-E_{0}+\gamma V_{\|}\right)}\right|^{2}=\frac{1}{2}\left(1-\cos \left(t \frac{\left(E_{1}-E_{0}\right)+\gamma V_{\|}}{\hbar}\right)\right)
+$$
+<p>&nbsp;<br>
+
+<p>We know the difference in energy between \( E_{1} \) and \( E_{0} \), either since we constructed the system or by taking measurements without the external stimulus \( V \), and we can control the time \( t \) for which the system is allowed to evolve under the external stimulus. Then we can fix \( t \) and take many measurements to estimate \( p_{|0\rangle \rightarrow|1\rangle} \), which then makes finding \( t \frac{\gamma V_{\|}}{\hbar} \) a simple phase-estimation problem which gives us \( \gamma V_{\|} \). The physical implementation of this process is known as Ramsey Interferometry, and it can be done with arbitary initialization and readout preparation unitary operators.</p>
+</section>
+
+<section>
+<h2 id="benefits-of-entanglement">Benefits of Entanglement </h2>
+
+<p>Up until now, we have said that we take many measurements of
+\( \left|\psi_{\text {Final }}\right\rangle \) to estimate \( p_{|0\rangle
+\rightarrow|1\rangle} \), but we have been glossing over the estimation
+process. Assuming we can take \( N \) measurements, either by having \( N \)
+experimental apparatuses running in parallel or by taking \( N \)
+different measurements of a (relatively) constant \( V \) with a single
+apparatus, the uncertainty in \( p \), denoted as \( \sigma_{p} \) (this is a
+positive real number; not to be confused with the Pauli matrices),
+scales as
+</p>
+<p>&nbsp;<br>
+$$
+\sigma_{p} \propto \frac{1}{\sqrt{N}}
+$$
+<p>&nbsp;<br>
+</section>
+
+<section>
+<h2 id="ramsey-intferometry">Ramsey intferometry </h2>
+
+<p>If we consider the Ramsey Intferometry as an example, then the uncertainty in \( \gamma V_{\|} \) and so in \( V_{\|} \), denoted \( \sigma_{V} \), scales as</p>
+<p>&nbsp;<br>
+$$
+\sigma_{V} \propto \sigma_{p} \propto \frac{1}{\sqrt{N}}
+$$
+<p>&nbsp;<br>
+
+<p>This relationship is known as the standard quantum limit (SQL)
+[Giovannetti et al., 2011], but can also be explained with the Law of
+Large Numbers from statistics, where measuring\\ \( N \) similarly
+distributed, well-behaved random variables gives the sample mean as an
+estimator for the population mean and the sample variance divided by
+the size of the sample as an uncertainty in the estimate of the
+population mean.
+</p>
+</section>
+
+<section>
+<h2 id="more-than-one-qubit">More than one qubit </h2>
+<p>However, the nature of quantum systems allows for more information to
+be extracted by exploiting entanglement between quantum systems. This
+is the fundamental basis for the benefits of quantum computing over
+classical computing, and quantum sensing has similar benefits over
+classical sensing. Suppose we return to the Ramsey Interferometry
+example above, but rather than initializing \( N \) sensing qubits
+separately, we initialize \( \frac{N}{n} \) groups each with \( n \) entangled
+quantum systems. Then we have
+</p>
+<p>&nbsp;<br>
+$$
+\left|\psi_{\text {Init }}\right\rangle=\frac{1}{\sqrt{2^{n}}}\left(|0\rangle^{\otimes n}+|1\rangle^{\otimes n}\right)
+$$
+<p>&nbsp;<br>
+
+<p>where \( |0\rangle^{\otimes n}=|0\rangle \otimes \ldots \otimes|0\rangle, n \) times.</p>
+</section>
+
+<section>
+<h2 id="after-initialization">After initialization </h2>
+
+<p>After initialization, each of the \( n \) sensing qubits evolves to pick up a relative phase factor of \( e^{\frac{i t}{\hbar}\left(E_{1}-E_{0}+\gamma V_{\|}\right)} \), which combined results in</p>
+<p>&nbsp;<br>
+$$
+|\psi(t)\rangle=\mathcal{N}\left(|0\rangle^{\otimes n}+\left(e^{\frac{i t}{\hbar}\left(E_{1}-E_{0}+\gamma V_{\|}\right)}|1\rangle\right)^{\otimes n}\right)=\mathcal{N}\left(|0\rangle^{\otimes n}+e^{n \frac{i t}{\hbar}\left(E_{1}-E_{0}+\gamma V_{\|}\right)}|1\rangle^{\otimes n}\right)
+$$
+<p>&nbsp;<br>
+
+<p>where \( \mathcal{N} \) is just a factor to take care of normalization.</p>
+</section>
+
+<section>
+<h2 id="transition-probability">Transition probability </h2>
+<p>Then the transition probability</p>
+<p>&nbsp;<br>
+$$
+p_{|0\rangle \rightarrow|1\rangle}=\left|\left\langle 1 \mid \psi_{\text {Final }}\right\rangle\right|^{2}=\left|1-e^{n \frac{i t}{\hbar}\left(E_{1}-E_{0}+\gamma V_{\|}\right)}\right|^{2}=\frac{1}{2}\left(1-\cos \left(t \frac{n\left(E_{1}-E_{0}\right)+n \gamma V_{\|}}{\hbar}\right)\right)
+$$
+<p>&nbsp;<br>
+</section>
+
+<section>
+<h2 id="role-of-entanglement">Role of entanglement </h2>
+
+<p>From this, we can see that through entangling \( n \) sensing qubits, the 'signal' we're trying to sense increases from \( V_{\|} \rightarrow n V_{\|} \), and with \( \frac{N}{n} \) total measurements,</p>
+<p>&nbsp;<br>
+$$
+\sigma_{V} \propto \frac{1}{n} \sigma_{p} \propto \frac{1}{n}\left(\frac{1}{\sqrt{\frac{N}{n}}}\right)=\frac{1}{\sqrt{N n}}
+$$
+<p>&nbsp;<br>
+
+<p>which means the error decreased by a factor of \( \sqrt{n} \). In the case where \( n=N \), the uncertainty now scales as</p>
+<p>&nbsp;<br>
+$$
+\sigma_{V} \propto \frac{1}{N}
+$$
+<p>&nbsp;<br>
+
+<p>which is known as the Heisenberg limit, and is the quantum-mechanically limited, maximal amount of information one can get from taking \( n \) quantum sensing measurements [Giovannetti et al., 2011].</p>
+</section>
+
+<section>
+<h2 id="concluding-remarks">Concluding remarks </h2>
+
+<p>Quantum sensing is an emerging field with a large number of exciting
+applications. In terms of physical implementation, quantum sensors are
+able to naturally be more sensitive and sense on
+smaller scales than many classical sensors, while also often being
+directly tracable to fundamental physical constants.
+</p>
+
+<p>Additionally, exploiting entanglement and the quantum nature of these
+devices allows for fundamentally more information to be collected than
+is allowed by classical measurements and the SQL. Quantum sensing
+fundamentally improves upon the physical and theoretical limitations
+of classical sensing, and it will be interesting to see how and what
+physical realizations develop to the point of practicality in the near
+future.
+</p>
+</section>
+
+
+
+</div> <!-- class="slides" -->
+</div> <!-- class="reveal" -->
+
+<script src="reveal.js/lib/js/head.min.js"></script>
+<script src="reveal.js/js/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+  // Display navigation controls in the bottom right corner
+  controls: true,
+
+  // Display progress bar (below the horiz. slider)
+  progress: true,
+
+  // Display the page number of the current slide
+  slideNumber: true,
+
+  // Push each slide change to the browser history
+  history: false,
+
+  // Enable keyboard shortcuts for navigation
+  keyboard: true,
+
+  // Enable the slide overview mode
+  overview: true,
+
+  // Vertical centering of slides
+  //center: true,
+  center: false,
+
+  // Enables touch navigation on devices with touch input
+  touch: true,
+
+  // Loop the presentation
+  loop: false,
+
+  // Change the presentation direction to be RTL
+  rtl: false,
+
+  // Turns fragments on and off globally
+  fragments: true,
+
+  // Flags if the presentation is running in an embedded mode,
+  // i.e. contained within a limited portion of the screen
+  embedded: false,
+
+  // Number of milliseconds between automatically proceeding to the
+  // next slide, disabled when set to 0, this value can be overwritten
+  // by using a data-autoslide attribute on your slides
+  autoSlide: 0,
+
+  // Stop auto-sliding after user input
+  autoSlideStoppable: true,
+
+  // Enable slide navigation via mouse wheel
+  mouseWheel: false,
+
+  // Hides the address bar on mobile devices
+  hideAddressBar: true,
+
+  // Opens links in an iframe preview overlay
+  previewLinks: false,
+
+  // Transition style
+  transition: 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+  // Transition speed
+  transitionSpeed: 'default', // default/fast/slow
+
+  // Transition style for full page slide backgrounds
+  backgroundTransition: 'default', // default/none/slide/concave/convex/zoom
+
+  // Number of slides away from the current that are visible
+  viewDistance: 3,
+
+  // Parallax background image
+    //parallaxBackgroundImage: '', // e.g. "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'"
+
+  // Parallax background size
+  //parallaxBackgroundSize: '' // CSS syntax, e.g. "2100px 900px"
+
+  theme: Reveal.getQueryHash().theme, // available themes are in reveal.js/css/theme
+    transition: Reveal.getQueryHash().transition || 'none', // default/cube/page/concave/zoom/linear/none
+
+});
+
+Reveal.initialize({
+  dependencies: [
+      // Cross-browser shim that fully implements classList - https://github.com/eligrey/classList.js/
+      { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+
+      // Interpret Markdown in <section> elements
+      { src: 'reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: 'reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+
+      // Syntax highlight for <code> elements
+      { src: 'reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+
+      // Zoom in and out with Alt+click
+      { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+
+      // Speaker notes
+      { src: 'reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+
+      // Remote control your reveal.js presentation using a touch device
+      //{ src: 'reveal.js/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } },
+
+      // MathJax
+      //{ src: 'reveal.js/plugin/math/math.js', async: true }
+  ]
+});
+
+Reveal.initialize({
+
+  // The "normal" size of the presentation, aspect ratio will be preserved
+  // when the presentation is scaled to fit different resolutions. Can be
+  // specified using percentage units.
+  width: 1170,  // original: 960,
+  height: 700,
+
+  // Factor of the display size that should remain empty around the content
+  margin: 0.1,
+
+  // Bounds for smallest/largest possible scale to apply to content
+  minScale: 0.2,
+  maxScale: 1.0
+
+});
+</script>
+
+<!-- begin footer logo
+<div style="position: absolute; bottom: 0px; left: 0; margin-left: 0px">
+<img src="somelogo.png">
+</div>
+   end footer logo -->
+
+
+
+
+</body>
+</html>

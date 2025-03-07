@@ -1,0 +1,224 @@
+<!--
+HTML file automatically generated from DocOnce source
+(https://github.com/doconce/doconce/)
+doconce format html sensing.do.txt --html_style=bootstrap --pygments_html_style=default --html_admon=bootstrap_panel --html_output=sensing-bs --no_mako
+-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="DocOnce: https://github.com/doconce/doconce/" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Making sense of sensing?">
+<title>Making sense of sensing?</title>
+<!-- Bootstrap style: bootstrap -->
+<!-- doconce format html sensing.do.txt --html_style=bootstrap --pygments_html_style=default --html_admon=bootstrap_panel --html_output=sensing-bs --no_mako -->
+<link href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+<!-- not necessary
+<link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+-->
+<style type="text/css">
+/* Add scrollbar to dropdown menus in bootstrap navigation bar */
+.dropdown-menu {
+   height: auto;
+   max-height: 400px;
+   overflow-x: hidden;
+}
+/* Adds an invisible element before each target to offset for the navigation
+   bar */
+.anchor::before {
+  content:"";
+  display:block;
+  height:50px;      /* fixed header height for style bootstrap */
+  margin:-50px 0 0; /* negative fixed header height */
+}
+</style>
+</head>
+
+<!-- tocinfo
+{'highest level': 2,
+ 'sections': [('Content', 2, None, 'content'),
+              ('Computational basis', 2, None, 'computational-basis'),
+              ('Simple system to lllustrate entanglement',
+               2,
+               None,
+               'simple-system-to-lllustrate-entanglement'),
+              ('Computational basis states',
+               2,
+               None,
+               'computational-basis-states'),
+              ('Eigenstates of non-interacting Hamiltonian',
+               2,
+               None,
+               'eigenstates-of-non-interacting-hamiltonian'),
+              ('Interaction part', 2, None, 'interaction-part'),
+              ('Density matrices', 2, None, 'density-matrices'),
+              ('Subsystems', 2, None, 'subsystems'),
+              ('Entropies', 2, None, 'entropies'),
+              ('Understanding the example',
+               2,
+               None,
+               'understanding-the-example'),
+              ('Code, best seen in jupyter-notebook',
+               2,
+               None,
+               'code-best-seen-in-jupyter-notebook'),
+              ('Hamiltonian example, simple one-qubit system',
+               2,
+               None,
+               'hamiltonian-example-simple-one-qubit-system'),
+              ('Initialization', 2, None, 'initialization'),
+              ('Effects of Stimulus', 2, None, 'effects-of-stimulus'),
+              ('Slowly changing potential',
+               2,
+               None,
+               'slowly-changing-potential'),
+              ('Readout', 2, None, 'readout'),
+              ('Measurement', 2, None, 'measurement'),
+              ('Multiple measurements', 2, None, 'multiple-measurements'),
+              ('Example', 2, None, 'example'),
+              ('Evolution of initial state',
+               2,
+               None,
+               'evolution-of-initial-state'),
+              ('State evolution', 2, None, 'state-evolution'),
+              ('Preparing for readout', 2, None, 'preparing-for-readout'),
+              ('Transition probability', 2, None, 'transition-probability'),
+              ('Benefits of Entanglement', 2, None, 'benefits-of-entanglement'),
+              ('Ramsey intferometry', 2, None, 'ramsey-intferometry'),
+              ('More than one qubit', 2, None, 'more-than-one-qubit'),
+              ('After initialization', 2, None, 'after-initialization'),
+              ('Transition probability', 2, None, 'transition-probability'),
+              ('Role of entanglement', 2, None, 'role-of-entanglement'),
+              ('Concluding remarks', 2, None, 'concluding-remarks')]}
+end of tocinfo -->
+
+<body>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+     equationNumbers: {  autoNumber: "none"  },
+     extensions: ["AMSmath.js", "AMSsymbols.js", "autobold.js", "color.js"]
+  }
+});
+</script>
+<script type="text/javascript" async
+ src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<!-- Bootstrap navigation bar -->
+<div class="navbar navbar-default navbar-fixed-top">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="sensing-bs.html">Making sense of sensing?</a>
+  </div>
+  <div class="navbar-collapse collapse navbar-responsive-collapse">
+    <ul class="nav navbar-nav navbar-right">
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Contents <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+     <!-- navigation toc: --> <li><a href="._sensing-bs001.html#content" style="font-size: 80%;">Content</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs002.html#computational-basis" style="font-size: 80%;">Computational basis</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs003.html#simple-system-to-lllustrate-entanglement" style="font-size: 80%;">Simple system to lllustrate entanglement</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs004.html#computational-basis-states" style="font-size: 80%;">Computational basis states</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs005.html#eigenstates-of-non-interacting-hamiltonian" style="font-size: 80%;">Eigenstates of non-interacting Hamiltonian</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs006.html#interaction-part" style="font-size: 80%;">Interaction part</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs007.html#density-matrices" style="font-size: 80%;">Density matrices</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs008.html#subsystems" style="font-size: 80%;">Subsystems</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs009.html#entropies" style="font-size: 80%;">Entropies</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs010.html#understanding-the-example" style="font-size: 80%;">Understanding the example</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs011.html#code-best-seen-in-jupyter-notebook" style="font-size: 80%;">Code, best seen in jupyter-notebook</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs012.html#hamiltonian-example-simple-one-qubit-system" style="font-size: 80%;">Hamiltonian example, simple one-qubit system</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs013.html#initialization" style="font-size: 80%;">Initialization</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs014.html#effects-of-stimulus" style="font-size: 80%;">Effects of Stimulus</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs015.html#slowly-changing-potential" style="font-size: 80%;">Slowly changing potential</a></li>
+     <!-- navigation toc: --> <li><a href="#readout" style="font-size: 80%;">Readout</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs017.html#measurement" style="font-size: 80%;">Measurement</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs018.html#multiple-measurements" style="font-size: 80%;">Multiple measurements</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs019.html#example" style="font-size: 80%;">Example</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs020.html#evolution-of-initial-state" style="font-size: 80%;">Evolution of initial state</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs021.html#state-evolution" style="font-size: 80%;">State evolution</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs022.html#preparing-for-readout" style="font-size: 80%;">Preparing for readout</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs028.html#transition-probability" style="font-size: 80%;">Transition probability</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs024.html#benefits-of-entanglement" style="font-size: 80%;">Benefits of Entanglement</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs025.html#ramsey-intferometry" style="font-size: 80%;">Ramsey intferometry</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs026.html#more-than-one-qubit" style="font-size: 80%;">More than one qubit</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs027.html#after-initialization" style="font-size: 80%;">After initialization</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs028.html#transition-probability" style="font-size: 80%;">Transition probability</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs029.html#role-of-entanglement" style="font-size: 80%;">Role of entanglement</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs030.html#concluding-remarks" style="font-size: 80%;">Concluding remarks</a></li>
+
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
+</div> <!-- end of navigation bar -->
+<div class="container">
+<p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p> <!-- add vertical space -->
+<a name="part0016"></a>
+<!-- !split -->
+<h2 id="readout" class="anchor">Readout </h2>
+
+<p>After the sensing state has time-evolved in the presence of \( V(t) \), it
+can be transformed again before a measurement is taken. The first
+part, the transformation to some desired read-out state, is performed
+by an operator \( \hat{U}_{\text {Readout }} \) (which is often
+\( \hat{U}_{\text {Init }}^{-1} \), see Degen et al., 2017, where
+</p>
+$$
+\left|\psi_{\text {Final }}\right\rangle=\hat{U}_{\text {Readout }}|\psi(t)\rangle
+$$
+
+
+<p>
+<!-- navigation buttons at the bottom of the page -->
+<ul class="pagination">
+<li><a href="._sensing-bs015.html">&laquo;</a></li>
+  <li><a href="._sensing-bs000.html">1</a></li>
+  <li><a href="">...</a></li>
+  <li><a href="._sensing-bs008.html">9</a></li>
+  <li><a href="._sensing-bs009.html">10</a></li>
+  <li><a href="._sensing-bs010.html">11</a></li>
+  <li><a href="._sensing-bs011.html">12</a></li>
+  <li><a href="._sensing-bs012.html">13</a></li>
+  <li><a href="._sensing-bs013.html">14</a></li>
+  <li><a href="._sensing-bs014.html">15</a></li>
+  <li><a href="._sensing-bs015.html">16</a></li>
+  <li class="active"><a href="._sensing-bs016.html">17</a></li>
+  <li><a href="._sensing-bs017.html">18</a></li>
+  <li><a href="._sensing-bs018.html">19</a></li>
+  <li><a href="._sensing-bs019.html">20</a></li>
+  <li><a href="._sensing-bs020.html">21</a></li>
+  <li><a href="._sensing-bs021.html">22</a></li>
+  <li><a href="._sensing-bs022.html">23</a></li>
+  <li><a href="._sensing-bs023.html">24</a></li>
+  <li><a href="._sensing-bs024.html">25</a></li>
+  <li><a href="._sensing-bs025.html">26</a></li>
+  <li><a href="">...</a></li>
+  <li><a href="._sensing-bs030.html">31</a></li>
+  <li><a href="._sensing-bs017.html">&raquo;</a></li>
+</ul>
+<!-- ------------------- end of main content --------------- -->
+</div>  <!-- end container -->
+<!-- include javascript, jQuery *first* -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<!-- Bootstrap footer
+<footer>
+<a href="https://..."><img width="250" align=right src="https://..."></a>
+</footer>
+-->
+<center style="font-size:80%">
+<!-- copyright only on the titlepage -->
+</center>
+</body>
+</html>
+
