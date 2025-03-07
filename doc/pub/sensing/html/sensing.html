@@ -517,7 +517,7 @@ sensing Hamiltonian found previously (whiteboard notes).
 can be transformed again before a measurement is taken. The first
 part, the transformation to some desired read-out state, is performed
 by an operator \( \hat{U}_{\text {Readout }} \) (which is often
-\( \hat{U}_{\text {Init }}^{-1} \), see Degen et al., 2017, where
+\( \hat{U}_{\text {Init }}^{-1} \), see Degen et al., 2017) where
 </p>
 $$
 \left|\psi_{\text {Final }}\right\rangle=\hat{U}_{\text {Readout }}|\psi(t)\rangle
@@ -529,13 +529,19 @@ $$
 
 <p>A measurement of this final state \( \left|\psi_{\text {Final
 }}\right\rangle=a^{\prime}|0\rangle+b^{\prime}|1\rangle \) is made with
-respect to the basis \( \{|0\rangle,|1\rangle\},{ }^{3} \) where
-\( |0\rangle \) is measured with proability \( \left|\left\langle 0 \mid
-\psi_{\text {Final
-}}\right\rangle\right|^{2}=\left|a^{\prime}\right|^{2} \) and
-\( |1\rangle \) is measured with probability \( \left|\left\langle 1 \mid
-\psi_{\text {Final
-}}\right\rangle\right|^{2}=\left|b^{\prime}\right|^{2} \). After this
+respect to the basis \( \{|0\rangle,|1\rangle\} \) where
+\( |0\rangle \) is measured with proability
+</p>
+$$
+\left|\left\langle 0 \mid \psi_{\text {Final}}\right\rangle\right|^{2}=\left|a^{\prime}\right|^{2},
+$$
+
+<p>and \( |1\rangle \) is measured with probability </p>
+$$
+\left|\left\langle 1 \mid\psi_{\text {Final}}\right\rangle\right|^{2}=\left|b^{\prime}\right|^{2}.
+$$
+
+<p>After this
 measurement, the sensing state has been collapsed into one of the
 basis states, so no more information can be gained.
 </p>
