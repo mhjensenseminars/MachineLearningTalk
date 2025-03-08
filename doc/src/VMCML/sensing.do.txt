@@ -6,7 +6,7 @@ DATE: March 7, 2025
 ===== Content =====
 o Simple two-particle (or two-qubit) system to demonstrate entanglement
 o Basic elements of sensing
-
+#add more material
 
 !split
 ===== Computational basis =====
