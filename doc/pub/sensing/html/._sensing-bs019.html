@@ -70,8 +70,11 @@ doconce format html sensing.do.txt --html_style=bootstrap --pygments_html_style=
                2,
                None,
                'setting-up-the-matrix-for-the-simple-one-qubit-system'),
-              ('Initialization', 2, None, 'initialization'),
-              ('Effects of Stimulus', 2, None, 'effects-of-stimulus'),
+              ('Initialization and sensing analysis',
+               2,
+               None,
+               'initialization-and-sensing-analysis'),
+              ('Effects of stimulus', 2, None, 'effects-of-stimulus'),
               ('Slowly changing potential',
                2,
                None,
@@ -180,8 +183,8 @@ MathJax.Hub.Config({
      <!-- navigation toc: --> <li><a href="._sensing-bs014.html#exact-solution" style="font-size: 80%;">Exact solution</a></li>
      <!-- navigation toc: --> <li><a href="._sensing-bs015.html#selecting-parameters" style="font-size: 80%;">Selecting parameters</a></li>
      <!-- navigation toc: --> <li><a href="._sensing-bs016.html#setting-up-the-matrix-for-the-simple-one-qubit-system" style="font-size: 80%;">Setting up the matrix for the simple one-qubit system</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs017.html#initialization" style="font-size: 80%;">Initialization</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs018.html#effects-of-stimulus" style="font-size: 80%;">Effects of Stimulus</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs017.html#initialization-and-sensing-analysis" style="font-size: 80%;">Initialization and sensing analysis</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs018.html#effects-of-stimulus" style="font-size: 80%;">Effects of stimulus</a></li>
      <!-- navigation toc: --> <li><a href="#slowly-changing-potential" style="font-size: 80%;">Slowly changing potential</a></li>
      <!-- navigation toc: --> <li><a href="._sensing-bs020.html#readout" style="font-size: 80%;">Readout</a></li>
      <!-- navigation toc: --> <li><a href="._sensing-bs021.html#measurement" style="font-size: 80%;">Measurement</a></li>
@@ -224,16 +227,16 @@ MathJax.Hub.Config({
 
 <p>However, in the case where \( V(t) \) is constant or changes much more slowly than our sensing integration time, we can assume</p>
 $$
-|\psi(t)\rangle=\hat{U}_{H}(0, t)\left|\psi_{\text {Init }}(0)\right\rangle=e^{\frac{i t}{\hbar} \hat{H}}\left|\psi_{\text {Init }}(0)\right\rangle
+|\psi(t)\rangle=\hat{U}_{H}(0, t)\left|\psi_{\text {Init }}(0)\right\rangle=\exp{\frac{i t}{\hbar} \hat{H}}\left|\psi_{\text {Init }}(0)\right\rangle,
 $$
 
 <p>which means the sensing state evolves as</p>
 $$
-|\psi(t)\rangle=\left(e^{\frac{i t}{\hbar}\left(E_{0}-\frac{1}{2} \gamma V_Z\right)}\left|\lambda_{0}\right\rangle\left\langle\lambda_{0}\right|+e^{\frac{i t}{\hbar}\left(E_{1}+\frac{1}{2} \gamma V_Z\right)}\left|\lambda_{1}\right\rangle\left\langle\lambda_{1}\right|\right)\left|\psi_{\text {Init }}(0)\right\rangle
+|\psi(t)\rangle=\left(\exp{\frac{i t}{\hbar}\left(E_{0}-\frac{1}{2} \gamma V_Z\right)}\left|\lambda_{0}\right\rangle\left\langle\lambda_{0}\right|+\exp{\frac{i t}{\hbar}\left(E_{1}+\frac{1}{2} \gamma V_Z\right)}\left|\lambda_{1}\right\rangle\left\langle\lambda_{1}\right|\right)\left|\psi_{\text {Init }}(0)\right\rangle,
 $$
 
 <p>using the spectral decomposition and the final representation of the
-sensing Hamiltonian found previously (whiteboard notes).
+sensing Hamiltonian found above.
 </p>
 
 <p>

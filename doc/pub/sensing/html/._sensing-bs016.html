@@ -70,8 +70,11 @@ doconce format html sensing.do.txt --html_style=bootstrap --pygments_html_style=
                2,
                None,
                'setting-up-the-matrix-for-the-simple-one-qubit-system'),
-              ('Initialization', 2, None, 'initialization'),
-              ('Effects of Stimulus', 2, None, 'effects-of-stimulus'),
+              ('Initialization and sensing analysis',
+               2,
+               None,
+               'initialization-and-sensing-analysis'),
+              ('Effects of stimulus', 2, None, 'effects-of-stimulus'),
               ('Slowly changing potential',
                2,
                None,
@@ -180,8 +183,8 @@ MathJax.Hub.Config({
      <!-- navigation toc: --> <li><a href="._sensing-bs014.html#exact-solution" style="font-size: 80%;">Exact solution</a></li>
      <!-- navigation toc: --> <li><a href="._sensing-bs015.html#selecting-parameters" style="font-size: 80%;">Selecting parameters</a></li>
      <!-- navigation toc: --> <li><a href="#setting-up-the-matrix-for-the-simple-one-qubit-system" style="font-size: 80%;">Setting up the matrix for the simple one-qubit system</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs017.html#initialization" style="font-size: 80%;">Initialization</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs018.html#effects-of-stimulus" style="font-size: 80%;">Effects of Stimulus</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs017.html#initialization-and-sensing-analysis" style="font-size: 80%;">Initialization and sensing analysis</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs018.html#effects-of-stimulus" style="font-size: 80%;">Effects of stimulus</a></li>
      <!-- navigation toc: --> <li><a href="._sensing-bs019.html#slowly-changing-potential" style="font-size: 80%;">Slowly changing potential</a></li>
      <!-- navigation toc: --> <li><a href="._sensing-bs020.html#readout" style="font-size: 80%;">Readout</a></li>
      <!-- navigation toc: --> <li><a href="._sensing-bs021.html#measurement" style="font-size: 80%;">Measurement</a></li>
@@ -271,7 +274,7 @@ eigvals_ana <span style="color: #666666">=</span> np<span style="color: #666666"
 
 fig, axs <span style="color: #666666">=</span> plt<span style="color: #666666">.</span>subplots(<span style="color: #666666">1</span>, <span style="color: #666666">1</span>, figsize<span style="color: #666666">=</span>(<span style="color: #666666">10</span>, <span style="color: #666666">10</span>))
 <span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(<span style="color: #666666">2</span>):
-    axs<span style="color: #666666">.</span>plot(lmbvalues_ana, eigvals_ana[:,i], label<span style="color: #666666">=</span><span style="color: #BA2121">f&#39;$E_</span><span style="color: #BB6688; font-weight: bold">{</span>i<span style="color: #666666">+1</span><span style="color: #BB6688; font-weight: bold">}</span><span style="color: #BA2121">$&#39;</span>)
+    axs<span style="color: #666666">.</span>plot(lmbvalues_ana, eigvals_ana[:,i], label<span style="color: #666666">=</span><span style="color: #BA2121">f&#39;$E_</span><span style="color: #BB6688; font-weight: bold">{</span>i<span style="color: #BB6688; font-weight: bold">}</span><span style="color: #BA2121">$&#39;</span>)
 axs<span style="color: #666666">.</span>set_xlabel(<span style="color: #BA2121">r&#39;$\lambda$&#39;</span>)
 axs<span style="color: #666666">.</span>set_ylabel(<span style="color: #BA2121">&#39;Energy&#39;</span>)
 axs<span style="color: #666666">.</span>legend()

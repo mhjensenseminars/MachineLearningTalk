@@ -452,6 +452,8 @@ $$
 <p>&nbsp;<br>
 
 <p>with \( V_z(t) = V_{11}=-V_{22} \), \( V_x(t) = \Re (V_{12}) \) and \( V_y(t) = \Im (V_{12}) \).</p>
+
+<p>This is the expression we will discuss in connection with quantum computing simulations. The discussions here, focus mainly on some simpler analytical considerations and simplifications. The numerical solutions are also given by standard eigenvalue solvers.</p>
 </section>
 
 <section>
@@ -573,7 +575,7 @@ eigvals_ana = np.zeros((<span style="color: #658b00">len</span>(lmbvalues_ana), 
 
 fig, axs = plt.subplots(<span style="color: #B452CD">1</span>, <span style="color: #B452CD">1</span>, figsize=(<span style="color: #B452CD">10</span>, <span style="color: #B452CD">10</span>))
 <span style="color: #8B008B; font-weight: bold">for</span> i <span style="color: #8B008B">in</span> <span style="color: #658b00">range</span>(<span style="color: #B452CD">2</span>):
-    axs.plot(lmbvalues_ana, eigvals_ana[:,i], label=<span style="color: #CD5555">f&#39;$E_{</span>i+<span style="color: #B452CD">1</span><span style="color: #CD5555">}$&#39;</span>)
+    axs.plot(lmbvalues_ana, eigvals_ana[:,i], label=<span style="color: #CD5555">f&#39;$E_{</span>i<span style="color: #CD5555">}$&#39;</span>)
 axs.set_xlabel(<span style="color: #CD5555">r&#39;$\lambda$&#39;</span>)
 axs.set_ylabel(<span style="color: #CD5555">&#39;Energy&#39;</span>)
 axs.legend()
@@ -595,30 +597,32 @@ plt.show()
 </section>
 
 <section>
-<h2 id="initialization">Initialization </h2>
+<h2 id="initialization-and-sensing-analysis">Initialization and sensing analysis </h2>
+
+<p>We stay now with the Taylor-approximated solution in order to illustrate some of the basic sensing ideas.</p>
 
 <p>To initialize a given system to a known quantum state, we first start
-with a known ground state \( |0\rangle \). Then, depending on the type of
+with a known initial state \( |0\rangle \). Then, depending on the type of
 information that we want to learn about the stimulus, the measurement
 scheme to be used, and the physical implementation of the quantum
-system, we choose some unitary operator \( U_{\text {Init }} \) such that
+system, we choose some unitary operator \( U_{\mathrm{Init}} \) such that
 it transforms our state \( |0\rangle \) to a desired initial superposition
-state \( \left|\psi_{\text {Init }}\right\rangle=a|0\rangle+b|1\rangle \)
+state \( \left|\psi_{\mathrm{Init}}\right\rangle=a|0\rangle+b|1\rangle \)
 for some \( a, b \in \mathbb{C} \) such that \( |a|^{2}+|b|^{2}=1 \).
 </p>
 </section>
 
 <section>
-<h2 id="effects-of-stimulus">Effects of Stimulus </h2>
+<h2 id="effects-of-stimulus">Effects of stimulus </h2>
 
 <p>After the sensing state is initialized, it is exposed to the environment and evolves according to the time-evolution operator of the sensing Hamiltonian \( \hat{U}_{H} \) as</p>
 <p>&nbsp;<br>
 $$
-|\psi(t)\rangle=\hat{U}_{H}(0, t)\left|\psi_{\text {Init }}(0)\right\rangle
+|\psi(t)\rangle=\hat{U}_{H}(t, 0)\left|\psi_{\text {Init }}(0)\right\rangle.
 $$
 <p>&nbsp;<br>
 
-<p>In general, \( \hat{U}_{H}(0, t)=e^{\frac{i}{\hbar} \int_{0}^{t} \hat{H} d \tau} \) could be a complicated, non-analytical function for a time-dependent \( V(t) \) (making \( \hat{H} \) time-dependent as well).</p>
+<p>In general, \( \hat{U}_{H}(0, t)=\exp{\frac{i}{\hbar} \int_{0}^{t} \hat{H} d \tau} \) could be a complicated, non-analytical function for a time-dependent \( V(t) \) (making \( \hat{H} \) time-dependent as well).</p>
 </section>
 
 <section>
@@ -627,19 +631,19 @@ $$
 <p>However, in the case where \( V(t) \) is constant or changes much more slowly than our sensing integration time, we can assume</p>
 <p>&nbsp;<br>
 $$
-|\psi(t)\rangle=\hat{U}_{H}(0, t)\left|\psi_{\text {Init }}(0)\right\rangle=e^{\frac{i t}{\hbar} \hat{H}}\left|\psi_{\text {Init }}(0)\right\rangle
+|\psi(t)\rangle=\hat{U}_{H}(0, t)\left|\psi_{\text {Init }}(0)\right\rangle=\exp{\frac{i t}{\hbar} \hat{H}}\left|\psi_{\text {Init }}(0)\right\rangle,
 $$
 <p>&nbsp;<br>
 
 <p>which means the sensing state evolves as</p>
 <p>&nbsp;<br>
 $$
-|\psi(t)\rangle=\left(e^{\frac{i t}{\hbar}\left(E_{0}-\frac{1}{2} \gamma V_Z\right)}\left|\lambda_{0}\right\rangle\left\langle\lambda_{0}\right|+e^{\frac{i t}{\hbar}\left(E_{1}+\frac{1}{2} \gamma V_Z\right)}\left|\lambda_{1}\right\rangle\left\langle\lambda_{1}\right|\right)\left|\psi_{\text {Init }}(0)\right\rangle
+|\psi(t)\rangle=\left(\exp{\frac{i t}{\hbar}\left(E_{0}-\frac{1}{2} \gamma V_Z\right)}\left|\lambda_{0}\right\rangle\left\langle\lambda_{0}\right|+\exp{\frac{i t}{\hbar}\left(E_{1}+\frac{1}{2} \gamma V_Z\right)}\left|\lambda_{1}\right\rangle\left\langle\lambda_{1}\right|\right)\left|\psi_{\text {Init }}(0)\right\rangle,
 $$
 <p>&nbsp;<br>
 
 <p>using the spectral decomposition and the final representation of the
-sensing Hamiltonian found previously (whiteboard notes).
+sensing Hamiltonian found above.
 </p>
 </section>
 
@@ -649,12 +653,11 @@ sensing Hamiltonian found previously (whiteboard notes).
 <p>After the sensing state has time-evolved in the presence of \( V(t) \), it
 can be transformed again before a measurement is taken. The first
 part, the transformation to some desired read-out state, is performed
-by an operator \( \hat{U}_{\text {Readout }} \) (which is often
-\( \hat{U}_{\text {Init }}^{-1} \), see Degen et al., 2017) where
+by a readout  operator, see discussions in Degen et al., 2017) where
 </p>
 <p>&nbsp;<br>
 $$
-\left|\psi_{\text {Final }}\right\rangle=\hat{U}_{\text {Readout }}|\psi(t)\rangle
+\left|\psi_{\text {Final }}\right\rangle=\hat{U}_{\mathrm{Readout }}|\psi(t)\rangle
 $$
 <p>&nbsp;<br>
 </section>
@@ -669,14 +672,14 @@ respect to the basis \( \{|0\rangle,|1\rangle\} \) where
 </p>
 <p>&nbsp;<br>
 $$
-\left|\left\langle 0 \mid \psi_{\text {Final}}\right\rangle\right|^{2}=\left|a^{\prime}\right|^{2},
+\left|\left\langle 0 \mid \psi_{\mathrm{Final}}\right\rangle\right|^{2}=\left|a^{\prime}\right|^{2},
 $$
 <p>&nbsp;<br>
 
 <p>and \( |1\rangle \) is measured with probability </p>
 <p>&nbsp;<br>
 $$
-\left|\left\langle 1 \mid\psi_{\text {Final}}\right\rangle\right|^{2}=\left|b^{\prime}\right|^{2}.
+\left|\left\langle 1 \mid\psi_{\mathrm{Final}}\right\rangle\right|^{2}=\left|b^{\prime}\right|^{2}.
 $$
 <p>&nbsp;<br>
 
@@ -697,7 +700,7 @@ can change, a transition probability \( p_{|0\rangle
 }}\right\rangle\right|^{2}=\left|b^{\prime}\right|^{2} \) can be
 estimated. The 'sensing' is then accomplished by taking a series of
 these transition probabilities as a time-series, and then using the
-results to estimate the sensed stimulus \( V(t) \) [Degen et al., 2017].
+results to estimate the sensed stimulus \( V(t) \), see Degen et al., 2017.
 </p>
 </section>
 
@@ -714,14 +717,12 @@ Hadamard gate
 
 <p>&nbsp;<br>
 $$
-\hat{U}_{H a d}=\frac{1}{\sqrt{2}}\left(\begin{array}{cc}
+\hat{U}_{H a d}=\frac{1}{\sqrt{2}}\left[\begin{array}{cc}
 1 & 1 \\
 1 & -1
-\end{array}\right)
+\end{array}\right].
 $$
 <p>&nbsp;<br>
-
-<p>since \( \hat{U}_{\text {Had }}^{-1}=\hat{U}_{\text {Had }} \).\\</p>
 </section>
 
 <section>
@@ -731,14 +732,17 @@ $$
 
 <p>&nbsp;<br>
 $$
-\left|\psi_{\text {Init }}\right\rangle=\hat{U}_{\text {Had }}|0\rangle=\frac{1}{\sqrt{2}}\left(\begin{array}{cc}
+\left|\psi_{\text {Init }}\right\rangle=\hat{U}_{\mathrm{Hadamard}}|0\rangle=\frac{1}{\sqrt{2}}\left[\begin{array}{cc}
 1 & 1 \\
 1 & -1
-\end{array}\right)\binom{1}{0}=\frac{1}{\sqrt{2}}\binom{1}{1}
+\end{array}\right]\begin{bmatrix} 1 \\ 0\end{bmatrix}=\frac{1}{\sqrt{2}}\begin{bmatrix} 1 \\ 1\end{bmatrix}
 $$
 <p>&nbsp;<br>
 
-<p>This need not necessarily be the same basis into which the system was initialized, but we'll assume it is so that we only have to keep track of one basis.</p>
+<p>This need not necessarily be the same basis into which the system was
+initialized, but we  assume it is so and then we only have to keep track
+of one basis.
+</p>
 </section>
 
 <section>
@@ -748,7 +752,7 @@ $$
 <p>&nbsp;<br>
 $$
 \begin{align*}
-|\psi(t)\rangle=&\left(e^{\frac{i t}{\hbar}\left(E_{0}-\frac{1}{2} \gamma V_Z\right)}|0\rangle\langle 0|+e^{\frac{i t}{\hbar}\left(E_{1}+\frac{1}{2} \gamma V_Z\right)}|1\rangle\langle 1|\right)\left|\psi_{\text {Init }}(0)\right\rangle\\
+|\psi(t)\rangle=&\left(\exp{\frac{i t}{\hbar}\left(E_{0}-\frac{1}{2} \gamma V_Z\right)}|0\rangle\langle 0|+\exp{\frac{i t}{\hbar}\left(E_{1}+\frac{1}{2} \gamma V_Z\right)}|1\rangle\langle 1|\right)\left|\psi_{\text {Init }}(0)\right\rangle\\
 &=\left(\begin{array}{cc}
 e^{\frac{i t}{\hbar}\left(E_{0}-\frac{1}{2} \gamma V_Z\right)} & 0 \\
 0 & e^{\frac{i t}{\hbar}\left(E_{1}+\frac{1}{2} \gamma V_Z\right)}
@@ -767,7 +771,7 @@ $$
 
 <p>&nbsp;<br>
 $$
-\vert\psi_{\text {Final }}\rangle=\frac{1}{2} \exp{\frac{\imath t}{\hbar}(E_{0}-\frac{1}{2} \gamma V_Z)}
+\vert\psi_{\mathrm{Final}}\rangle=\frac{1}{2} \exp{\frac{\imath t}{\hbar}(E_{0}-\frac{1}{2} \gamma V_Z)}
 \begin{bmatrix} 1+\exp{\frac{\imath t}{\hbar}(E_{1}-E_{0}+\gamma V_Z)} \\ 1-\exp{(\frac{\imath t}{\hbar}(E_{1}-E_{0}+\gamma V_Z)}\end{bmatrix}.
 $$
 <p>&nbsp;<br>
