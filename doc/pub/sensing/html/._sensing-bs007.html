@@ -43,38 +43,23 @@ doconce format html sensing.do.txt --html_style=bootstrap --pygments_html_style=
                'more-material-will-be-added'),
               ('Literature', 2, None, 'literature'),
               ('One-qubit system', 2, None, 'one-qubit-system'),
-              ('Two-qubit system, Computational basis',
+              ('Definitions: Single qubit gates',
                2,
                None,
-               'two-qubit-system-computational-basis'),
-              ('Simple system to lllustrate entanglement',
+               'definitions-single-qubit-gates'),
+              ('Pauli-$\\boldsymbol{X}$ gate',
                2,
                None,
-               'simple-system-to-lllustrate-entanglement'),
-              ('Computational basis states',
+               'pauli-boldsymbol-x-gate'),
+              ('Hadamard gate', 2, None, 'hadamard-gate'),
+              ('Symmetric matrix', 2, None, 'symmetric-matrix'),
+              ('Non-interacting solution', 2, None, 'non-interacting-solution'),
+              ('Rewriting with Pauli matrices',
                2,
                None,
-               'computational-basis-states'),
-              ('Eigenstates of non-interacting Hamiltonian',
-               2,
-               None,
-               'eigenstates-of-non-interacting-hamiltonian'),
-              ('Interaction part', 2, None, 'interaction-part'),
-              ('Density matrices', 2, None, 'density-matrices'),
-              ('Subsystems', 2, None, 'subsystems'),
-              ('Entropies', 2, None, 'entropies'),
-              ('Understanding the example',
-               2,
-               None,
-               'understanding-the-example'),
-              ('Code, best seen in jupyter-notebook',
-               2,
-               None,
-               'code-best-seen-in-jupyter-notebook'),
-              ('Hamiltonian example, simple one-qubit system',
-               2,
-               None,
-               'hamiltonian-example-simple-one-qubit-system'),
+               'rewriting-with-pauli-matrices'),
+              ('Selecting parameters', 2, None, 'selecting-parameters'),
+              ('Setting up the matrix', 2, None, 'setting-up-the-matrix'),
               ('Initialization', 2, None, 'initialization'),
               ('Effects of Stimulus', 2, None, 'effects-of-stimulus'),
               ('Slowly changing potential',
@@ -103,7 +88,38 @@ doconce format html sensing.do.txt --html_style=bootstrap --pygments_html_style=
               ('After initialization', 2, None, 'after-initialization'),
               ('Transition probability', 2, None, 'transition-probability'),
               ('Role of entanglement', 2, None, 'role-of-entanglement'),
-              ('Concluding remarks', 2, None, 'concluding-remarks')]}
+              ('Concluding remarks for the simple example',
+               2,
+               None,
+               'concluding-remarks-for-the-simple-example'),
+              ('Two-qubit system, Computational basis',
+               2,
+               None,
+               'two-qubit-system-computational-basis'),
+              ('Simple system to lllustrate entanglement',
+               2,
+               None,
+               'simple-system-to-lllustrate-entanglement'),
+              ('Computational basis states',
+               2,
+               None,
+               'computational-basis-states'),
+              ('Eigenstates of non-interacting Hamiltonian',
+               2,
+               None,
+               'eigenstates-of-non-interacting-hamiltonian'),
+              ('Interaction part', 2, None, 'interaction-part'),
+              ('Density matrices', 2, None, 'density-matrices'),
+              ('Subsystems', 2, None, 'subsystems'),
+              ('Entropies', 2, None, 'entropies'),
+              ('Understanding the example',
+               2,
+               None,
+               'understanding-the-example'),
+              ('Code, best seen in jupyter-notebook',
+               2,
+               None,
+               'code-best-seen-in-jupyter-notebook')]}
 end of tocinfo -->
 
 <body>
@@ -142,36 +158,43 @@ MathJax.Hub.Config({
      <!-- navigation toc: --> <li><a href="._sensing-bs002.html#more-material-will-be-added" style="font-size: 80%;">More material will be added</a></li>
      <!-- navigation toc: --> <li><a href="._sensing-bs003.html#literature" style="font-size: 80%;">Literature</a></li>
      <!-- navigation toc: --> <li><a href="._sensing-bs004.html#one-qubit-system" style="font-size: 80%;">One-qubit system</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs005.html#two-qubit-system-computational-basis" style="font-size: 80%;">Two-qubit system, Computational basis</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs006.html#simple-system-to-lllustrate-entanglement" style="font-size: 80%;">Simple system to lllustrate entanglement</a></li>
-     <!-- navigation toc: --> <li><a href="#computational-basis-states" style="font-size: 80%;">Computational basis states</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs008.html#eigenstates-of-non-interacting-hamiltonian" style="font-size: 80%;">Eigenstates of non-interacting Hamiltonian</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs009.html#interaction-part" style="font-size: 80%;">Interaction part</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs010.html#density-matrices" style="font-size: 80%;">Density matrices</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs011.html#subsystems" style="font-size: 80%;">Subsystems</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs012.html#entropies" style="font-size: 80%;">Entropies</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs013.html#understanding-the-example" style="font-size: 80%;">Understanding the example</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs014.html#code-best-seen-in-jupyter-notebook" style="font-size: 80%;">Code, best seen in jupyter-notebook</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs015.html#hamiltonian-example-simple-one-qubit-system" style="font-size: 80%;">Hamiltonian example, simple one-qubit system</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs016.html#initialization" style="font-size: 80%;">Initialization</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs017.html#effects-of-stimulus" style="font-size: 80%;">Effects of Stimulus</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs018.html#slowly-changing-potential" style="font-size: 80%;">Slowly changing potential</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs019.html#readout" style="font-size: 80%;">Readout</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs020.html#measurement" style="font-size: 80%;">Measurement</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs021.html#multiple-measurements" style="font-size: 80%;">Multiple measurements</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs022.html#example" style="font-size: 80%;">Example</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs023.html#evolution-of-initial-state" style="font-size: 80%;">Evolution of initial state</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs024.html#state-evolution" style="font-size: 80%;">State evolution</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs025.html#preparing-for-readout" style="font-size: 80%;">Preparing for readout</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs032.html#transition-probability" style="font-size: 80%;">Transition probability</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs027.html#ramsey-interferometry-https-en-wikipedia-org-wiki-ramsey-interferometry" style="font-size: 80%;">"Ramsey interferometry":"https://en.wikipedia.org/wiki/Ramsey_interferometry"</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs028.html#benefits-of-entanglement" style="font-size: 80%;">Benefits of Entanglement</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs029.html#ramsey-interferometry" style="font-size: 80%;">Ramsey interferometry</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs030.html#more-than-one-qubit" style="font-size: 80%;">More than one qubit</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs031.html#after-initialization" style="font-size: 80%;">After initialization</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs032.html#transition-probability" style="font-size: 80%;">Transition probability</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs033.html#role-of-entanglement" style="font-size: 80%;">Role of entanglement</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs034.html#concluding-remarks" style="font-size: 80%;">Concluding remarks</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs005.html#definitions-single-qubit-gates" style="font-size: 80%;">Definitions: Single qubit gates</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs006.html#pauli-boldsymbol-x-gate" style="font-size: 80%;">Pauli-\( \boldsymbol{X} \) gate</a></li>
+     <!-- navigation toc: --> <li><a href="#hadamard-gate" style="font-size: 80%;">Hadamard gate</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs008.html#symmetric-matrix" style="font-size: 80%;">Symmetric matrix</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs009.html#non-interacting-solution" style="font-size: 80%;">Non-interacting solution</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs010.html#rewriting-with-pauli-matrices" style="font-size: 80%;">Rewriting with Pauli matrices</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs011.html#selecting-parameters" style="font-size: 80%;">Selecting parameters</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs012.html#setting-up-the-matrix" style="font-size: 80%;">Setting up the matrix</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs013.html#initialization" style="font-size: 80%;">Initialization</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs014.html#effects-of-stimulus" style="font-size: 80%;">Effects of Stimulus</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs015.html#slowly-changing-potential" style="font-size: 80%;">Slowly changing potential</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs016.html#readout" style="font-size: 80%;">Readout</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs017.html#measurement" style="font-size: 80%;">Measurement</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs018.html#multiple-measurements" style="font-size: 80%;">Multiple measurements</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs019.html#example" style="font-size: 80%;">Example</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs020.html#evolution-of-initial-state" style="font-size: 80%;">Evolution of initial state</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs021.html#state-evolution" style="font-size: 80%;">State evolution</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs022.html#preparing-for-readout" style="font-size: 80%;">Preparing for readout</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs029.html#transition-probability" style="font-size: 80%;">Transition probability</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs024.html#ramsey-interferometry-https-en-wikipedia-org-wiki-ramsey-interferometry" style="font-size: 80%;">"Ramsey interferometry":"https://en.wikipedia.org/wiki/Ramsey_interferometry"</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs025.html#benefits-of-entanglement" style="font-size: 80%;">Benefits of Entanglement</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs026.html#ramsey-interferometry" style="font-size: 80%;">Ramsey interferometry</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs027.html#more-than-one-qubit" style="font-size: 80%;">More than one qubit</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs028.html#after-initialization" style="font-size: 80%;">After initialization</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs029.html#transition-probability" style="font-size: 80%;">Transition probability</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs030.html#role-of-entanglement" style="font-size: 80%;">Role of entanglement</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs031.html#concluding-remarks-for-the-simple-example" style="font-size: 80%;">Concluding remarks for the simple example</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs032.html#two-qubit-system-computational-basis" style="font-size: 80%;">Two-qubit system, Computational basis</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs033.html#simple-system-to-lllustrate-entanglement" style="font-size: 80%;">Simple system to lllustrate entanglement</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs034.html#computational-basis-states" style="font-size: 80%;">Computational basis states</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs035.html#eigenstates-of-non-interacting-hamiltonian" style="font-size: 80%;">Eigenstates of non-interacting Hamiltonian</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs036.html#interaction-part" style="font-size: 80%;">Interaction part</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs037.html#density-matrices" style="font-size: 80%;">Density matrices</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs038.html#subsystems" style="font-size: 80%;">Subsystems</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs039.html#entropies" style="font-size: 80%;">Entropies</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs040.html#understanding-the-example" style="font-size: 80%;">Understanding the example</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs041.html#code-best-seen-in-jupyter-notebook" style="font-size: 80%;">Code, best seen in jupyter-notebook</a></li>
 
         </ul>
       </li>
@@ -183,29 +206,27 @@ MathJax.Hub.Config({
 <p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p> <!-- add vertical space -->
 <a name="part0007"></a>
 <!-- !split -->
-<h2 id="computational-basis-states" class="anchor">Computational basis states </h2>
+<h2 id="hadamard-gate" class="anchor">Hadamard gate </h2>
 
-<p>This leads to the many-body computational basis states</p>
-
+<p>The Hadamard gate is defined as</p>
 $$
-\vert 00\rangle = \vert 0\rangle_{\mathrm{A}}\otimes \vert 0\rangle_{\mathrm{B}}=\begin{bmatrix} 1 & 0 & 0 &0\end{bmatrix}^T,
-$$
-
-<p>and</p>
-$$
-\vert 01\rangle = \vert 0\rangle_{\mathrm{A}}\otimes \vert 1\rangle_{\mathrm{B}}=\begin{bmatrix} 0 & 1 & 0 &0\end{bmatrix}^T,
+	\boldsymbol{H} = \frac{1}{\sqrt{2}} \begin{bmatrix}
+		1 & 1 \\
+		1 & -1
+	\end{bmatrix}.
 $$
 
-<p>and</p>
+<p>It creates a superposition of the  \) \vert 0\rangle $ and $ \vert 1\rangle $ states.</p>
 $$
-\vert 10\rangle = \vert 1\rangle_{\mathrm{A}}\otimes \vert 0\rangle_{\mathrm{B}}=\begin{bmatrix} 0 & 0 & 1 &0\end{bmatrix}^T,
+\begin{align}
+	\boldsymbol{H}\vert 0\rangle &= \frac{1}{\sqrt{2}} \left( \vert 0\rangle + \vert 1\rangle \right), 
+\tag{1}\\
+	\boldsymbol{H}\vert 1\rangle &= \frac{1}{\sqrt{2}} \left( \vert 0\rangle - \vert 1\rangle \right).
+\tag{2}
+\end{align}
 $$
 
-<p>and finally</p>
-$$
-\vert 11\rangle = \vert 1\rangle_{\mathrm{A}}\otimes \vert 1\rangle_{\mathrm{B}}=\begin{bmatrix} 0 & 0 & 0 &1\end{bmatrix}^T.
-$$
-
+<p>Note that we will use \( H \) as symbol for the Hadamard gate while we will reserve the notation \( \mathcal{H} \) for a given Hamiltonian.</p>
 
 <p>
 <!-- navigation buttons at the bottom of the page -->
@@ -229,7 +250,7 @@ $$
   <li><a href="._sensing-bs015.html">16</a></li>
   <li><a href="._sensing-bs016.html">17</a></li>
   <li><a href="">...</a></li>
-  <li><a href="._sensing-bs034.html">35</a></li>
+  <li><a href="._sensing-bs041.html">42</a></li>
   <li><a href="._sensing-bs008.html">&raquo;</a></li>
 </ul>
 <!-- ------------------- end of main content --------------- -->

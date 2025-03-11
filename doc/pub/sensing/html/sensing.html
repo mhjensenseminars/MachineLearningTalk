@@ -121,38 +121,23 @@ div.toc p,a {
                'more-material-will-be-added'),
               ('Literature', 2, None, 'literature'),
               ('One-qubit system', 2, None, 'one-qubit-system'),
-              ('Two-qubit system, Computational basis',
+              ('Definitions: Single qubit gates',
                2,
                None,
-               'two-qubit-system-computational-basis'),
-              ('Simple system to lllustrate entanglement',
+               'definitions-single-qubit-gates'),
+              ('Pauli-$\\boldsymbol{X}$ gate',
                2,
                None,
-               'simple-system-to-lllustrate-entanglement'),
-              ('Computational basis states',
+               'pauli-boldsymbol-x-gate'),
+              ('Hadamard gate', 2, None, 'hadamard-gate'),
+              ('Symmetric matrix', 2, None, 'symmetric-matrix'),
+              ('Non-interacting solution', 2, None, 'non-interacting-solution'),
+              ('Rewriting with Pauli matrices',
                2,
                None,
-               'computational-basis-states'),
-              ('Eigenstates of non-interacting Hamiltonian',
-               2,
-               None,
-               'eigenstates-of-non-interacting-hamiltonian'),
-              ('Interaction part', 2, None, 'interaction-part'),
-              ('Density matrices', 2, None, 'density-matrices'),
-              ('Subsystems', 2, None, 'subsystems'),
-              ('Entropies', 2, None, 'entropies'),
-              ('Understanding the example',
-               2,
-               None,
-               'understanding-the-example'),
-              ('Code, best seen in jupyter-notebook',
-               2,
-               None,
-               'code-best-seen-in-jupyter-notebook'),
-              ('Hamiltonian example, simple one-qubit system',
-               2,
-               None,
-               'hamiltonian-example-simple-one-qubit-system'),
+               'rewriting-with-pauli-matrices'),
+              ('Selecting parameters', 2, None, 'selecting-parameters'),
+              ('Setting up the matrix', 2, None, 'setting-up-the-matrix'),
               ('Initialization', 2, None, 'initialization'),
               ('Effects of Stimulus', 2, None, 'effects-of-stimulus'),
               ('Slowly changing potential',
@@ -181,7 +166,38 @@ div.toc p,a {
               ('After initialization', 2, None, 'after-initialization'),
               ('Transition probability', 2, None, 'transition-probability'),
               ('Role of entanglement', 2, None, 'role-of-entanglement'),
-              ('Concluding remarks', 2, None, 'concluding-remarks')]}
+              ('Concluding remarks for the simple example',
+               2,
+               None,
+               'concluding-remarks-for-the-simple-example'),
+              ('Two-qubit system, Computational basis',
+               2,
+               None,
+               'two-qubit-system-computational-basis'),
+              ('Simple system to lllustrate entanglement',
+               2,
+               None,
+               'simple-system-to-lllustrate-entanglement'),
+              ('Computational basis states',
+               2,
+               None,
+               'computational-basis-states'),
+              ('Eigenstates of non-interacting Hamiltonian',
+               2,
+               None,
+               'eigenstates-of-non-interacting-hamiltonian'),
+              ('Interaction part', 2, None, 'interaction-part'),
+              ('Density matrices', 2, None, 'density-matrices'),
+              ('Subsystems', 2, None, 'subsystems'),
+              ('Entropies', 2, None, 'entropies'),
+              ('Understanding the example',
+               2,
+               None,
+               'understanding-the-example'),
+              ('Code, best seen in jupyter-notebook',
+               2,
+               None,
+               'code-best-seen-in-jupyter-notebook')]}
 end of tocinfo -->
 
 <body>
@@ -252,190 +268,182 @@ articles
 </p>
 <ol>
 <li> <b>Quantum sensing</b>, C.L. Degen, F. Reinhard, and P. Cappellaro, Reviews of  Modern  Physics <b>89</b>, 035002 (2017), see <a href="https://journals.aps.org/rmp/abstract/10.1103/RevModPhys.89.035002" target="_blank"><tt>https://journals.aps.org/rmp/abstract/10.1103/RevModPhys.89.035002</tt></a></li>
-<li> <b>Quantum metrology with nonclassical states of atomic ensembles</b>,</li> 
-</ol>
-<p>L. Pezz&#232;, A. Smerzi, M.K. Oberthaler, R. Schmied, and P. Treutlein, Reviews of  Modern  Physics <b>90</b>, 035005 (2018), see <a href="https://journals.aps.org/rmp/abstract/10.1103/RevModPhys.90.035005" target="_blank"><tt>https://journals.aps.org/rmp/abstract/10.1103/RevModPhys.90.035005</tt></a></p>
-<ol>
-<li> See also recent work by Liu et at <a href="https://www.nature.com/articles/s41534-021-00507-x" target="_blank"><tt>https://www.nature.com/articles/s41534-021-00507-x</tt></a></li>
+<li> <b>Quantum metrology with nonclassical states of atomic ensembles</b>, L. Pezz&#232;, A. Smerzi, M.K. Oberthaler, R. Schmied, and P. Treutlein, Reviews of  Modern  Physics <b>90</b>, 035005 (2018), see <a href="https://journals.aps.org/rmp/abstract/10.1103/RevModPhys.90.035005" target="_blank"><tt>https://journals.aps.org/rmp/abstract/10.1103/RevModPhys.90.035005</tt></a></li>
+<li> See also recent work by Liu et at <a href="https://www.nature.com/articles/s41534-021-00507-x" target="_blank"><tt>https://www.nature.com/articles/s41534-021-00507-x</tt></a>. We may add codes which simulate these systems as well, stay tuned.</li>
 </ol>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 <h2 id="one-qubit-system">One-qubit system </h2>
 
-<p>In the first part of this notebook, we will analyze our systems using plain diagonalization and simple analytical manipulations.
-Thereafter we will develop codes and material for performing a quantum computing simulation of the same systems.
+<p>In the first part of this notebook, we will analyze our systems using
+plain diagonalization and simple analytical manipulations.  Thereafter
+we will develop codes and material for performing a quantum computing
+simulation of the same systems (this material is not yet ready).
 </p>
 
-<p>Our first encounter is a simple </p>
+<p>Our first encounter is a simple one-qubit system, described by a simple \( 2\times 2 \) Hamiltonian.</p>
+
+<p>We start with a simple \( 2\times 2 \) Hamiltonian matrix expressed in
+terms of Pauli \( \boldsymbol{X} \), \( \boldsymbol{Y} \)  and \( \boldsymbol{Z} \) matrices. But before we proceed, a simple reminder is appropriate.
+</p>
 
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
-<h2 id="two-qubit-system-computational-basis">Two-qubit system, Computational basis </h2>
+<h2 id="definitions-single-qubit-gates">Definitions: Single qubit gates </h2>
 
-<p>Our computational basis states</p>
-
+<p>The Pauli matrices (and gate operations following therefrom) are defined as</p>
 $$
-\vert 00\rangle = \vert 0\rangle_{\mathrm{A}}\otimes \vert 0\rangle_{\mathrm{B}}=\begin{bmatrix} 1 & 0 & 0 &0\end{bmatrix}^T,
+	\boldsymbol{X} \equiv \sigma_x = \begin{bmatrix}
+		0 & 1 \\
+		1 & 0
+	\end{bmatrix}, \quad
+	\boldsymbol{Y} \equiv \sigma_y = \begin{bmatrix}
+		0 & -i \\
+		i & 0
+	\end{bmatrix}, \quad
+	\boldsymbol{Z} \equiv \sigma_z = \begin{bmatrix}
+		1 & 0 \\
+		0 & -1
+	\end{bmatrix}.
+$$
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="pauli-boldsymbol-x-gate">Pauli-\( \boldsymbol{X} \) gate </h2>
+
+<p>The Pauli-\( \boldsymbol{X} \) gate is also known as the <b>NOT</b> gate, which flips the state of the qubit.</p>
+$$
+\begin{align*}
+	\boldsymbol{X}\vert 0\rangle &= \vert 1\rangle, \\
+	\boldsymbol{X}\vert 1\rangle &= \vert 0\rangle.	
+\end{align*}
+$$
+
+<p>The Pauli-\( \boldsymbol{Y} \) gate flips the bit and multiplies the phase by $ i $. </p>
+$$
+\begin{align*}
+	\boldsymbol{Y}\vert 0\rangle &= i\vert 1\rangle, \\
+	\boldsymbol{Y}\vert 1\rangle &= -i\vert 0\rangle.
+\end{align*}
+$$
+
+<p>The Pauli-\( \boldsymbol{Z} \) gate multiplies only the phase of \( \vert 1\rangle \) by $ -1 \( .</p>
+$$
+\begin{align*}
+	\boldsymbol{Z}\vert 0\rangle &= \vert 0\rangle, \\
+	\boldsymbol{Z}\vert 1\rangle &= -\vert 1\rangle.
+\end{align*}
+$$
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="hadamard-gate">Hadamard gate </h2>
+
+<p>The Hadamard gate is defined as</p>
+$$
+	\boldsymbol{H} = \frac{1}{\sqrt{2}} \begin{bmatrix}
+		1 & 1 \\
+		1 & -1
+	\end{bmatrix}.
+$$
+
+<p>It creates a superposition of the  \) \vert 0\rangle $ and $ \vert 1\rangle $ states.</p>
+$$
+\begin{align}
+	\boldsymbol{H}\vert 0\rangle &= \frac{1}{\sqrt{2}} \left( \vert 0\rangle + \vert 1\rangle \right), 
+\label{_auto1}\\
+	\boldsymbol{H}\vert 1\rangle &= \frac{1}{\sqrt{2}} \left( \vert 0\rangle - \vert 1\rangle \right).
+\label{_auto2}
+\end{align}
+$$
+
+<p>Note that we will use \( H \) as symbol for the Hadamard gate while we will reserve the notation \( \mathcal{H} \) for a given Hamiltonian.</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="symmetric-matrix">Symmetric matrix </h2>
+
+<p>We define a  hermitian  matrix  \( H\in {\mathbb{R}}^{2\times 2} \)</p>
+$$
+\mathcal{H} = \begin{bmatrix} \mathcal{H}_{11} & \mathcal{H}_{12} \\ \mathcal{H}_{21} & \mathcal{H}_{22}
+\end{bmatrix},
+$$
+
+<p>We  let \( \mathcal{H} = \mathcal{H}_0 + \mathcal{H}_I \), where</p>
+$$
+\mathcal{H}_0= \begin{bmatrix} E_1 & 0 \\ 0 & E_2\end{bmatrix},
+$$
+
+<p>is a diagonal matrix. Similarly,</p>
+$$
+\mathcal{H}_I= \begin{bmatrix} V_{11} & V_{12} \\ V_{21} & V_{22}\end{bmatrix},
+$$
+
+<p>where \( V_{ij} \) represent various interaction matrix elements. </p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="non-interacting-solution">Non-interacting solution </h2>
+
+<p>We can view \( H_0 \) as the non-interacting solution</p>
+$$
+       \mathcal{H}_0\vert 0 \rangle =E_1\vert 0 \rangle,
 $$
 
 <p>and</p>
 $$
-\vert 01\rangle = \vert 0\rangle_{\mathrm{A}}\otimes \vert 1\rangle_{\mathrm{B}}=\begin{bmatrix} 0 & 1 & 0 &0\end{bmatrix}^T,
+       \mathcal{H}_0\vert 1\rangle =E_2\vert 1\rangle,
+$$
+
+<p>where we have defined the orthogonal computational one-qubit basis states \( \vert 0\rangle \) and \( \vert 1\rangle \).</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="rewriting-with-pauli-matrices">Rewriting with Pauli matrices </h2>
+<p>We rewrite \( H \) (and \( H_0 \) and \( H_I \))  via Pauli matrices</p>
+$$
+\mathcal{H}_0 = \mathcal{E} I + \Omega \boldsymbol{Z}, \quad \mathcal{E} = \frac{E_1
+  + E_2}{2}, \; \Omega = \frac{E_1-E_2}{2},
 $$
 
 <p>and</p>
 $$
-\vert 10\rangle = \vert 1\rangle_{\mathrm{A}}\otimes \vert 0\rangle_{\mathrm{B}}=\begin{bmatrix} 0 & 0 & 1 &0\end{bmatrix}^T,
+\mathcal{H}_I = c \boldsymbol{I} +\omega_z\boldsymbol{Z} + \omega_x\boldsymbol{X},
 $$
 
-<p>and finally</p>
-$$
-\vert 11\rangle = \vert 1\rangle_{\mathrm{A}}\otimes \vert 1\rangle_{\mathrm{B}}=\begin{bmatrix} 0 & 0 & 0 &1\end{bmatrix}^T.
-$$
-
-
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-<h2 id="simple-system-to-lllustrate-entanglement">Simple system to lllustrate entanglement  </h2>
-
-<p>This system can be thought of as composed of two subsystems
-\( A \) and \( B \). Each subsystem has computational basis states
+<p>with \( c = (V_{11}+V_{22})/2 \), \( \omega_z = (V_{11}-V_{22})/2 \) and \( \omega_x = V_{12}=V_{21} \).
+We let our Hamiltonian depend linearly on a strength parameter \( \lambda \)
 </p>
 
 $$
-\vert 0\rangle_{\mathrm{A,B}}=\begin{bmatrix} 1 & 0\end{bmatrix}^T \hspace{1cm} \vert 1\rangle_{\mathrm{A,B}}=\begin{bmatrix} 0 & 1\end{bmatrix}^T.
+\mathcal{H}=\mathcal{H}_0+\lambda \mathcal{H}_\mathrm{I},
 $$
 
-<p>The subsystems could represent single particles or composite many-particle systems of a given symmetry.</p>
-
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-<h2 id="computational-basis-states">Computational basis states </h2>
-
-<p>This leads to the many-body computational basis states</p>
-
-$$
-\vert 00\rangle = \vert 0\rangle_{\mathrm{A}}\otimes \vert 0\rangle_{\mathrm{B}}=\begin{bmatrix} 1 & 0 & 0 &0\end{bmatrix}^T,
-$$
-
-<p>and</p>
-$$
-\vert 01\rangle = \vert 0\rangle_{\mathrm{A}}\otimes \vert 1\rangle_{\mathrm{B}}=\begin{bmatrix} 0 & 1 & 0 &0\end{bmatrix}^T,
-$$
-
-<p>and</p>
-$$
-\vert 10\rangle = \vert 1\rangle_{\mathrm{A}}\otimes \vert 0\rangle_{\mathrm{B}}=\begin{bmatrix} 0 & 0 & 1 &0\end{bmatrix}^T,
-$$
-
-<p>and finally</p>
-$$
-\vert 11\rangle = \vert 1\rangle_{\mathrm{A}}\otimes \vert 1\rangle_{\mathrm{B}}=\begin{bmatrix} 0 & 0 & 0 &1\end{bmatrix}^T.
-$$
-
-
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-<h2 id="eigenstates-of-non-interacting-hamiltonian">Eigenstates of non-interacting Hamiltonian </h2>
-
-<p>These computational basis states define the eigenstates of the non-interacting  Hamiltonian</p>
-$$
-H_0\vert 00 \rangle = \epsilon_{00}\vert 00 \rangle,
-$$
-
-$$
-H_0\vert 10 \rangle = \epsilon_{10}\vert 10 \rangle,
-$$
-
-$$
-H_0\vert 01 \rangle = \epsilon_{01}\vert 01 \rangle,
-$$
-
-<p>and</p>
-$$
-H_0\vert 11 \rangle = \epsilon_{11}\vert 11 \rangle.
-$$
-
-
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-<h2 id="interaction-part">Interaction part </h2>
-
-<p>The interacting part of the Hamiltonian \( H_{\mathrm{I}} \) is given by the tensor product of two \( \sigma_x \) and \( \sigma_z \)  matrices, respectively, that is</p>
-$$
-H_{\mathrm{I}}=H_x\sigma_x\otimes\sigma_x+H_z\sigma_z\otimes\sigma_z,
-$$
-
-<p>where \( H_x \) and \( H_z \) are interaction strength parameters. Our final Hamiltonian matrix is given by</p>
-$$
-\boldsymbol{H}=\begin{bmatrix} \epsilon_{00}+H_z & 0 & 0 & H_x \\
-                       0  & \epsilon_{10}-H_z & H_x & 0 \\
-		       0 & H_x & \epsilon_{01}-H_z & 0 \\
-		       H_x & 0 & 0 & \epsilon_{11} +H_z \end{bmatrix}.
-$$
-
-
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-<h2 id="density-matrices">Density matrices </h2>
-
-<p>The four eigenstates of the above Hamiltonian matrix can in turn be used to
-define density matrices. As an example, the density matrix of the
-first eigenstate (lowest energy \( E_0 \)) \( \Psi_0 \) is given by the outerproduct
-</p>
-
-$$
-\rho_0=\left(\alpha_{00}\vert 00 \rangle+\alpha_{10}\vert 10 \rangle+\alpha_{01}\vert 01 \rangle+\alpha_{11}\vert 11 \rangle\right)\left(\alpha_{00}^*\langle 00\vert+\alpha_{10}^*\langle 10\vert+\alpha_{01}^*\langle 01\vert+\alpha_{11}^*\langle 11\vert\right),
-$$
-
-<p>where the coefficients \( \alpha_{ij} \) are the eigenvector coefficients
-resulting from the solution of the above eigenvalue problem. 
+<p>with \( \lambda \in [0,1] \), where the limits \( \lambda=0 \) and \( \lambda=1 \)
+represent the non-interacting (or unperturbed) and fully interacting
+system, respectively.
 </p>
 
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
-<h2 id="subsystems">Subsystems </h2>
+<h2 id="selecting-parameters">Selecting parameters </h2>
 
-<p>We can
-then in turn define the density matrix for the subsets \( A \) or \( B \) as
+<p>The model is an eigenvalue problem with only
+two available states.
 </p>
 
-$$
-\rho_A=\mathrm{Tr}_B(\rho_{0})=\langle 0 \vert \rho_{0} \vert 0\rangle_{B}+\langle 1 \vert \rho_{0} \vert 1\rangle_{B},
-$$
-
-<p>or</p>
-
-$$
-\rho_B=\mathrm{Tr}_A(\rho_0)=\langle 0 \vert \rho_{0} \vert 0\rangle_{A}+\langle 1 \vert \rho_{0} \vert 1\rangle_{A}.
-$$
-
-
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-<h2 id="entropies">Entropies </h2>
-
-<p>The density matrices for these subsets can be used to compute the
-so-called von Neumann entropy, which is one of the possible measures
-of entanglement. A pure state has entropy equal zero while entangled
-state have an entropy larger than zero. The von-Neumann entropy is
-defined as
+<p>Here we set the parameters \( E_1=0 \),
+\( E_2=4 \), \( V_{11}=-V_{22}=3 \) and \( V_{12}=V_{21}=0.2 \).
 </p>
 
-$$
-S(A,B)=-\mathrm{Tr}\left(\rho_{A,B}\log_2 (\rho_{A,B})\right).
-$$
-
-
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-<h2 id="understanding-the-example">Understanding the example </h2>
-<p>The example here shows the above von Neumann entropy based on the
-density matrix for the lowest many-body state. We see clearly a jump
-in the entropy around the point where we have a level crossing. At
-interaction strenght \( \lambda=0 \) we have many-body states purely
-defined by their computational basis states. As we switch on the
-interaction strength, we obtain an increased degree of mixing and the
-entropy increases till we reach the level crossing point where we see
-an additional and sudden increase in entropy. Similar behaviors are
-observed for the other states. The most important result from this
-example is that entanglement is driven by the Hamiltonian itself and
-the strength of the interaction matrix elements and the
-non-interacting energies.
+<p>The non-interacting solutions represent our computational basis.
+Pertinent to our choice of parameters, is that at \( \lambda\geq 2/3 \),
+the lowest eigenstate is dominated by \( \vert 1\rangle \) while the upper
+is \( \vert 0 \rangle \). At \( \lambda=1 \) the \( \vert 0 \rangle \) mixing of
+the lowest eigenvalue is \( 1\% \) while for \( \lambda\leq 2/3 \) we have a
+\( \vert 0 \rangle \) component of more than \( 90\% \).  The character of the
+eigenvectors has therefore been interchanged when passing \( z=2/3 \). The
+value of the parameter \( V_{12} \) represents the strength of the coupling
+between the two states.
 </p>
 
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
-<h2 id="code-best-seen-in-jupyter-notebook">Code, best seen in jupyter-notebook </h2>
+<h2 id="setting-up-the-matrix">Setting up the matrix </h2>
+<p>This part is best seen using the jupyter-notebook</p>
+
 
 <!-- code=python (!bc pycod) typeset with pygments style "default" -->
 <div class="cell border-box-sizing code_cell rendered">
@@ -443,68 +451,26 @@ non-interacting energies.
     <div class="inner_cell">
       <div class="input_area">
         <div class="highlight" style="background: #f8f8f8">
-  <pre style="line-height: 125%;"><span style="color: #666666">%</span>matplotlib inline
-<span style="color: #008000; font-weight: bold">from</span>  <span style="color: #0000FF; font-weight: bold">matplotlib</span> <span style="color: #008000; font-weight: bold">import</span> pyplot <span style="color: #008000; font-weight: bold">as</span> plt
+  <pre style="line-height: 125%;"><span style="color: #008000; font-weight: bold">from</span>  <span style="color: #0000FF; font-weight: bold">matplotlib</span> <span style="color: #008000; font-weight: bold">import</span> pyplot <span style="color: #008000; font-weight: bold">as</span> plt
 <span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">numpy</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">np</span>
-<span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">scipy.linalg</span> <span style="color: #008000; font-weight: bold">import</span> logm, expm
-<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">log2M</span>(a): <span style="color: #408080; font-style: italic"># base 2 matrix logarithm</span>
-    <span style="color: #008000; font-weight: bold">return</span> logm(a)<span style="color: #666666">/</span>np<span style="color: #666666">.</span>log(<span style="color: #666666">2.0</span>)
-
-dim <span style="color: #666666">=</span> <span style="color: #666666">4</span>
+dim <span style="color: #666666">=</span> <span style="color: #666666">2</span>
 Hamiltonian <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros((dim,dim))
-<span style="color: #408080; font-style: italic">#number of lambda values</span>
-n <span style="color: #666666">=</span> <span style="color: #666666">40</span>
-lmbd <span style="color: #666666">=</span> np<span style="color: #666666">.</span>linspace(<span style="color: #666666">0.0</span>,<span style="color: #666666">1.0</span>,n)
-Hx <span style="color: #666666">=</span> <span style="color: #666666">2.0</span>
-Hz <span style="color: #666666">=</span> <span style="color: #666666">3.0</span>
-<span style="color: #408080; font-style: italic"># Non-diagonal part as sigma_x tensor product with sigma_x</span>
-sx <span style="color: #666666">=</span> np<span style="color: #666666">.</span>matrix([[<span style="color: #666666">0</span>,<span style="color: #666666">1</span>],[<span style="color: #666666">1</span>,<span style="color: #666666">0</span>]])
-sx2 <span style="color: #666666">=</span> Hx<span style="color: #666666">*</span>np<span style="color: #666666">.</span>kron(sx, sx)
-<span style="color: #408080; font-style: italic"># Diagonal part as sigma_z tensor product with sigma_z</span>
-sz <span style="color: #666666">=</span> np<span style="color: #666666">.</span>matrix([[<span style="color: #666666">1</span>,<span style="color: #666666">0</span>],[<span style="color: #666666">0</span>,<span style="color: #666666">-1</span>]])
-sz2 <span style="color: #666666">=</span> Hz<span style="color: #666666">*</span>np<span style="color: #666666">.</span>kron(sz, sz)
-noninteracting <span style="color: #666666">=</span> [<span style="color: #666666">0.0</span>, <span style="color: #666666">2.5</span>, <span style="color: #666666">6.5</span>, <span style="color: #666666">7.0</span>]
-D <span style="color: #666666">=</span> np<span style="color: #666666">.</span>diag(noninteracting)
-Eigenvalue <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros((dim,n))
-Entropy <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros(n)
-
-<span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(n): 
-    Hamiltonian <span style="color: #666666">=</span> lmbd[i]<span style="color: #666666">*</span>(sx2<span style="color: #666666">+</span>sz2)<span style="color: #666666">+</span>D
-    <span style="color: #408080; font-style: italic"># diagonalize and obtain eigenvalues, not necessarily sorted</span>
-    EigValues, EigVectors <span style="color: #666666">=</span> np<span style="color: #666666">.</span>linalg<span style="color: #666666">.</span>eig(Hamiltonian)
-    <span style="color: #408080; font-style: italic"># sort eigenvectors and eigenvalues</span>
-    permute <span style="color: #666666">=</span> EigValues<span style="color: #666666">.</span>argsort()
-    EigValues <span style="color: #666666">=</span> EigValues[permute]
-    EigVectors <span style="color: #666666">=</span> EigVectors[:,permute]
-    <span style="color: #408080; font-style: italic"># Compute density matrix for selected system state, here ground state</span>
-    DensityMatrix <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros((dim,dim))
-    DensityMatrix <span style="color: #666666">=</span> np<span style="color: #666666">.</span>outer(EigVectors[:,<span style="color: #666666">0</span>],EigVectors[:,<span style="color: #666666">0</span>])
-    <span style="color: #408080; font-style: italic"># Project down on substates and find density matrix for subsystem</span>
-    d <span style="color: #666666">=</span> np<span style="color: #666666">.</span>matrix([[<span style="color: #666666">1</span>,<span style="color: #666666">0</span>],[<span style="color: #666666">0</span>,<span style="color: #666666">1</span>]])
-    v1 <span style="color: #666666">=</span> [<span style="color: #666666">1.0</span>,<span style="color: #666666">0.0</span>]
-    proj1 <span style="color: #666666">=</span> np<span style="color: #666666">.</span>kron(v1,d)
-    x1 <span style="color: #666666">=</span> proj1 <span style="color: #666666">@</span> DensityMatrix <span style="color: #666666">@</span> proj1<span style="color: #666666">.</span>T
-    v2 <span style="color: #666666">=</span> [<span style="color: #666666">0.0</span>,<span style="color: #666666">1.0</span>]
-    proj2 <span style="color: #666666">=</span> np<span style="color: #666666">.</span>kron(v2,d)
-    x2 <span style="color: #666666">=</span> proj2 <span style="color: #666666">@</span> DensityMatrix <span style="color: #666666">@</span> proj2<span style="color: #666666">.</span>T
-    <span style="color: #408080; font-style: italic"># Total density matrix for subsystem</span>
-    total <span style="color: #666666">=</span> x1<span style="color: #666666">+</span>x2
-    <span style="color: #408080; font-style: italic"># von Neumann Entropy for subsystem </span>
-    Entropy[i] <span style="color: #666666">=</span> <span style="color: #666666">-</span>np<span style="color: #666666">.</span>matrix<span style="color: #666666">.</span>trace(total <span style="color: #666666">@</span> log2M(total))
-    <span style="color: #408080; font-style: italic"># Plotting eigenvalues and entropy as functions of interaction strengths</span>
-    Eigenvalue[<span style="color: #666666">0</span>,i] <span style="color: #666666">=</span> EigValues[<span style="color: #666666">0</span>]
-    Eigenvalue[<span style="color: #666666">1</span>,i] <span style="color: #666666">=</span> EigValues[<span style="color: #666666">1</span>]
-    Eigenvalue[<span style="color: #666666">2</span>,i] <span style="color: #666666">=</span> EigValues[<span style="color: #666666">2</span>]
-    Eigenvalue[<span style="color: #666666">3</span>,i] <span style="color: #666666">=</span> EigValues[<span style="color: #666666">3</span>]
-plt<span style="color: #666666">.</span>plot(lmbd, Eigenvalue[<span style="color: #666666">0</span>,:] ,<span style="color: #BA2121">&#39;b-&#39;</span>,lmbd, Eigenvalue[<span style="color: #666666">1</span>,:],<span style="color: #BA2121">&#39;g-&#39;</span>,)
-plt<span style="color: #666666">.</span>plot(lmbd, Eigenvalue[<span style="color: #666666">2</span>,:] ,<span style="color: #BA2121">&#39;r-&#39;</span>,lmbd, Eigenvalue[<span style="color: #666666">3</span>,:],<span style="color: #BA2121">&#39;y-&#39;</span>,)
-plt<span style="color: #666666">.</span>xlabel(<span style="color: #BA2121">&#39;$\lambda$&#39;</span>)
-plt<span style="color: #666666">.</span>ylabel(<span style="color: #BA2121">&#39;Eigenvalues&#39;</span>)
-plt<span style="color: #666666">.</span>show()
-plt<span style="color: #666666">.</span>plot(lmbd, Entropy)
-plt<span style="color: #666666">.</span>xlabel(<span style="color: #BA2121">&#39;$\lambda$&#39;</span>)
-plt<span style="color: #666666">.</span>ylabel(<span style="color: #BA2121">&#39;Entropy&#39;</span>)          
-plt<span style="color: #666666">.</span>show
+e0 <span style="color: #666666">=</span> <span style="color: #666666">0.0</span>
+e1 <span style="color: #666666">=</span> <span style="color: #666666">4.0</span>
+Xnondiag <span style="color: #666666">=</span> <span style="color: #666666">0.20</span>
+Xdiag <span style="color: #666666">=</span> <span style="color: #666666">3.0</span>
+Eigenvalue <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros(dim)
+<span style="color: #408080; font-style: italic"># setting up the Hamiltonian</span>
+Hamiltonian[<span style="color: #666666">0</span>,<span style="color: #666666">0</span>] <span style="color: #666666">=</span> Xdiag<span style="color: #666666">+</span>e0
+Hamiltonian[<span style="color: #666666">0</span>,<span style="color: #666666">1</span>] <span style="color: #666666">=</span> Xnondiag
+Hamiltonian[<span style="color: #666666">1</span>,<span style="color: #666666">0</span>] <span style="color: #666666">=</span> Hamiltonian[<span style="color: #666666">0</span>,<span style="color: #666666">1</span>]
+Hamiltonian[<span style="color: #666666">1</span>,<span style="color: #666666">1</span>] <span style="color: #666666">=</span> e1<span style="color: #666666">-</span>Xdiag
+<span style="color: #408080; font-style: italic"># diagonalize and obtain eigenvalues, not necessarily sorted</span>
+EigValues, EigVectors <span style="color: #666666">=</span> np<span style="color: #666666">.</span>linalg<span style="color: #666666">.</span>eig(Hamiltonian)
+permute <span style="color: #666666">=</span> EigValues<span style="color: #666666">.</span>argsort()
+EigValues <span style="color: #666666">=</span> EigValues[permute]
+<span style="color: #408080; font-style: italic"># print only the lowest eigenvalue</span>
+<span style="color: #008000">print</span>(EigValues[<span style="color: #666666">0</span>])
 </pre>
 </div>
       </div>
@@ -520,10 +486,45 @@ plt<span style="color: #666666">.</span>show
   </div>
 </div>
 
+<p>Now rewrite it in terms of the identity matrix and the Pauli matrix X and Z</p>
 
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-<h2 id="hamiltonian-example-simple-one-qubit-system">Hamiltonian example, simple one-qubit system  </h2>
-<p>See whiteboard notes</p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #f8f8f8">
+  <pre style="line-height: 125%;"><span style="color: #408080; font-style: italic"># Now rewrite it in terms of the identity matrix and the Pauli matrix X and Z</span>
+X <span style="color: #666666">=</span> np<span style="color: #666666">.</span>array([[<span style="color: #666666">0</span>,<span style="color: #666666">1</span>],[<span style="color: #666666">1</span>,<span style="color: #666666">0</span>]])
+Y <span style="color: #666666">=</span> np<span style="color: #666666">.</span>array([[<span style="color: #666666">0</span>,<span style="color: #666666">-1</span>j],[<span style="color: #666666">1</span>j,<span style="color: #666666">0</span>]])
+Z <span style="color: #666666">=</span> np<span style="color: #666666">.</span>array([[<span style="color: #666666">1</span>,<span style="color: #666666">0</span>],[<span style="color: #666666">0</span>,<span style="color: #666666">-1</span>]])
+<span style="color: #408080; font-style: italic"># identity matrix</span>
+I <span style="color: #666666">=</span> np<span style="color: #666666">.</span>array([[<span style="color: #666666">1</span>,<span style="color: #666666">0</span>],[<span style="color: #666666">0</span>,<span style="color: #666666">1</span>]])
+
+epsilon <span style="color: #666666">=</span> (e0<span style="color: #666666">+</span>e1)<span style="color: #666666">*0.5</span>; omega <span style="color: #666666">=</span> (e0<span style="color: #666666">-</span>e1)<span style="color: #666666">*0.5</span>
+c <span style="color: #666666">=</span> <span style="color: #666666">0.0</span>; omega_z<span style="color: #666666">=</span>Xdiag; omega_x <span style="color: #666666">=</span> Xnondiag
+Hamiltonian <span style="color: #666666">=</span> (epsilon<span style="color: #666666">+</span>c)<span style="color: #666666">*</span>I<span style="color: #666666">+</span>(omega_z<span style="color: #666666">+</span>omega)<span style="color: #666666">*</span>Z<span style="color: #666666">+</span>omega_x<span style="color: #666666">*</span>X
+EigValues, EigVectors <span style="color: #666666">=</span> np<span style="color: #666666">.</span>linalg<span style="color: #666666">.</span>eig(Hamiltonian)
+permute <span style="color: #666666">=</span> EigValues<span style="color: #666666">.</span>argsort()
+EigValues <span style="color: #666666">=</span> EigValues[permute]
+<span style="color: #408080; font-style: italic"># print only the lowest eigenvalue</span>
+<span style="color: #008000">print</span>(EigValues[<span style="color: #666666">0</span>])
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 <h2 id="initialization">Initialization </h2>
@@ -807,7 +808,7 @@ get from taking \( n \) quantum sensing measurements [Giovannetti et al.,
 </p>
 
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
-<h2 id="concluding-remarks">Concluding remarks </h2>
+<h2 id="concluding-remarks-for-the-simple-example">Concluding remarks for the simple example </h2>
 
 <p>Quantum sensing is an emerging field with a large number of exciting
 applications. In terms of physical implementation, quantum sensors are
@@ -824,6 +825,261 @@ of classical sensing, and it will be interesting to see how and what
 physical realizations develop to the point of practicality in the near
 future.
 </p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="two-qubit-system-computational-basis">Two-qubit system, Computational basis </h2>
+
+<p>Our computational basis states</p>
+
+$$
+\vert 00\rangle = \vert 0\rangle_{\mathrm{A}}\otimes \vert 0\rangle_{\mathrm{B}}=\begin{bmatrix} 1 & 0 & 0 &0\end{bmatrix}^T,
+$$
+
+<p>and</p>
+$$
+\vert 01\rangle = \vert 0\rangle_{\mathrm{A}}\otimes \vert 1\rangle_{\mathrm{B}}=\begin{bmatrix} 0 & 1 & 0 &0\end{bmatrix}^T,
+$$
+
+<p>and</p>
+$$
+\vert 10\rangle = \vert 1\rangle_{\mathrm{A}}\otimes \vert 0\rangle_{\mathrm{B}}=\begin{bmatrix} 0 & 0 & 1 &0\end{bmatrix}^T,
+$$
+
+<p>and finally</p>
+$$
+\vert 11\rangle = \vert 1\rangle_{\mathrm{A}}\otimes \vert 1\rangle_{\mathrm{B}}=\begin{bmatrix} 0 & 0 & 0 &1\end{bmatrix}^T.
+$$
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="simple-system-to-lllustrate-entanglement">Simple system to lllustrate entanglement  </h2>
+
+<p>This system can be thought of as composed of two subsystems
+\( A \) and \( B \). Each subsystem has computational basis states
+</p>
+
+$$
+\vert 0\rangle_{\mathrm{A,B}}=\begin{bmatrix} 1 & 0\end{bmatrix}^T \hspace{1cm} \vert 1\rangle_{\mathrm{A,B}}=\begin{bmatrix} 0 & 1\end{bmatrix}^T.
+$$
+
+<p>The subsystems could represent single particles or composite many-particle systems of a given symmetry.</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="computational-basis-states">Computational basis states </h2>
+
+<p>This leads to the many-body computational basis states</p>
+
+$$
+\vert 00\rangle = \vert 0\rangle_{\mathrm{A}}\otimes \vert 0\rangle_{\mathrm{B}}=\begin{bmatrix} 1 & 0 & 0 &0\end{bmatrix}^T,
+$$
+
+<p>and</p>
+$$
+\vert 01\rangle = \vert 0\rangle_{\mathrm{A}}\otimes \vert 1\rangle_{\mathrm{B}}=\begin{bmatrix} 0 & 1 & 0 &0\end{bmatrix}^T,
+$$
+
+<p>and</p>
+$$
+\vert 10\rangle = \vert 1\rangle_{\mathrm{A}}\otimes \vert 0\rangle_{\mathrm{B}}=\begin{bmatrix} 0 & 0 & 1 &0\end{bmatrix}^T,
+$$
+
+<p>and finally</p>
+$$
+\vert 11\rangle = \vert 1\rangle_{\mathrm{A}}\otimes \vert 1\rangle_{\mathrm{B}}=\begin{bmatrix} 0 & 0 & 0 &1\end{bmatrix}^T.
+$$
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="eigenstates-of-non-interacting-hamiltonian">Eigenstates of non-interacting Hamiltonian </h2>
+
+<p>These computational basis states define the eigenstates of the non-interacting  Hamiltonian</p>
+$$
+H_0\vert 00 \rangle = \epsilon_{00}\vert 00 \rangle,
+$$
+
+$$
+H_0\vert 10 \rangle = \epsilon_{10}\vert 10 \rangle,
+$$
+
+$$
+H_0\vert 01 \rangle = \epsilon_{01}\vert 01 \rangle,
+$$
+
+<p>and</p>
+$$
+H_0\vert 11 \rangle = \epsilon_{11}\vert 11 \rangle.
+$$
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="interaction-part">Interaction part </h2>
+
+<p>The interacting part of the Hamiltonian \( H_{\mathrm{I}} \) is given by the tensor product of two \( \sigma_x \) and \( \sigma_z \)  matrices, respectively, that is</p>
+$$
+H_{\mathrm{I}}=H_x\sigma_x\otimes\sigma_x+H_z\sigma_z\otimes\sigma_z,
+$$
+
+<p>where \( H_x \) and \( H_z \) are interaction strength parameters. Our final Hamiltonian matrix is given by</p>
+$$
+\boldsymbol{H}=\begin{bmatrix} \epsilon_{00}+H_z & 0 & 0 & H_x \\
+                       0  & \epsilon_{10}-H_z & H_x & 0 \\
+		       0 & H_x & \epsilon_{01}-H_z & 0 \\
+		       H_x & 0 & 0 & \epsilon_{11} +H_z \end{bmatrix}.
+$$
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="density-matrices">Density matrices </h2>
+
+<p>The four eigenstates of the above Hamiltonian matrix can in turn be used to
+define density matrices. As an example, the density matrix of the
+first eigenstate (lowest energy \( E_0 \)) \( \Psi_0 \) is given by the outerproduct
+</p>
+
+$$
+\rho_0=\left(\alpha_{00}\vert 00 \rangle+\alpha_{10}\vert 10 \rangle+\alpha_{01}\vert 01 \rangle+\alpha_{11}\vert 11 \rangle\right)\left(\alpha_{00}^*\langle 00\vert+\alpha_{10}^*\langle 10\vert+\alpha_{01}^*\langle 01\vert+\alpha_{11}^*\langle 11\vert\right),
+$$
+
+<p>where the coefficients \( \alpha_{ij} \) are the eigenvector coefficients
+resulting from the solution of the above eigenvalue problem. 
+</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="subsystems">Subsystems </h2>
+
+<p>We can
+then in turn define the density matrix for the subsets \( A \) or \( B \) as
+</p>
+
+$$
+\rho_A=\mathrm{Tr}_B(\rho_{0})=\langle 0 \vert \rho_{0} \vert 0\rangle_{B}+\langle 1 \vert \rho_{0} \vert 1\rangle_{B},
+$$
+
+<p>or</p>
+
+$$
+\rho_B=\mathrm{Tr}_A(\rho_0)=\langle 0 \vert \rho_{0} \vert 0\rangle_{A}+\langle 1 \vert \rho_{0} \vert 1\rangle_{A}.
+$$
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="entropies">Entropies </h2>
+
+<p>The density matrices for these subsets can be used to compute the
+so-called von Neumann entropy, which is one of the possible measures
+of entanglement. A pure state has entropy equal zero while entangled
+state have an entropy larger than zero. The von-Neumann entropy is
+defined as
+</p>
+
+$$
+S(A,B)=-\mathrm{Tr}\left(\rho_{A,B}\log_2 (\rho_{A,B})\right).
+$$
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="understanding-the-example">Understanding the example </h2>
+<p>The example here shows the above von Neumann entropy based on the
+density matrix for the lowest many-body state. We see clearly a jump
+in the entropy around the point where we have a level crossing. At
+interaction strenght \( \lambda=0 \) we have many-body states purely
+defined by their computational basis states. As we switch on the
+interaction strength, we obtain an increased degree of mixing and the
+entropy increases till we reach the level crossing point where we see
+an additional and sudden increase in entropy. Similar behaviors are
+observed for the other states. The most important result from this
+example is that entanglement is driven by the Hamiltonian itself and
+the strength of the interaction matrix elements and the
+non-interacting energies.
+</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="code-best-seen-in-jupyter-notebook">Code, best seen in jupyter-notebook </h2>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #f8f8f8">
+  <pre style="line-height: 125%;"><span style="color: #666666">%</span>matplotlib inline
+<span style="color: #008000; font-weight: bold">from</span>  <span style="color: #0000FF; font-weight: bold">matplotlib</span> <span style="color: #008000; font-weight: bold">import</span> pyplot <span style="color: #008000; font-weight: bold">as</span> plt
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">numpy</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">np</span>
+<span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">scipy.linalg</span> <span style="color: #008000; font-weight: bold">import</span> logm, expm
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">log2M</span>(a): <span style="color: #408080; font-style: italic"># base 2 matrix logarithm</span>
+    <span style="color: #008000; font-weight: bold">return</span> logm(a)<span style="color: #666666">/</span>np<span style="color: #666666">.</span>log(<span style="color: #666666">2.0</span>)
+
+dim <span style="color: #666666">=</span> <span style="color: #666666">4</span>
+Hamiltonian <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros((dim,dim))
+<span style="color: #408080; font-style: italic">#number of lambda values</span>
+n <span style="color: #666666">=</span> <span style="color: #666666">40</span>
+lmbd <span style="color: #666666">=</span> np<span style="color: #666666">.</span>linspace(<span style="color: #666666">0.0</span>,<span style="color: #666666">1.0</span>,n)
+Hx <span style="color: #666666">=</span> <span style="color: #666666">2.0</span>
+Hz <span style="color: #666666">=</span> <span style="color: #666666">3.0</span>
+<span style="color: #408080; font-style: italic"># Non-diagonal part as sigma_x tensor product with sigma_x</span>
+sx <span style="color: #666666">=</span> np<span style="color: #666666">.</span>matrix([[<span style="color: #666666">0</span>,<span style="color: #666666">1</span>],[<span style="color: #666666">1</span>,<span style="color: #666666">0</span>]])
+sx2 <span style="color: #666666">=</span> Hx<span style="color: #666666">*</span>np<span style="color: #666666">.</span>kron(sx, sx)
+<span style="color: #408080; font-style: italic"># Diagonal part as sigma_z tensor product with sigma_z</span>
+sz <span style="color: #666666">=</span> np<span style="color: #666666">.</span>matrix([[<span style="color: #666666">1</span>,<span style="color: #666666">0</span>],[<span style="color: #666666">0</span>,<span style="color: #666666">-1</span>]])
+sz2 <span style="color: #666666">=</span> Hz<span style="color: #666666">*</span>np<span style="color: #666666">.</span>kron(sz, sz)
+noninteracting <span style="color: #666666">=</span> [<span style="color: #666666">0.0</span>, <span style="color: #666666">2.5</span>, <span style="color: #666666">6.5</span>, <span style="color: #666666">7.0</span>]
+D <span style="color: #666666">=</span> np<span style="color: #666666">.</span>diag(noninteracting)
+Eigenvalue <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros((dim,n))
+Entropy <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros(n)
+
+<span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(n): 
+    Hamiltonian <span style="color: #666666">=</span> lmbd[i]<span style="color: #666666">*</span>(sx2<span style="color: #666666">+</span>sz2)<span style="color: #666666">+</span>D
+    <span style="color: #408080; font-style: italic"># diagonalize and obtain eigenvalues, not necessarily sorted</span>
+    EigValues, EigVectors <span style="color: #666666">=</span> np<span style="color: #666666">.</span>linalg<span style="color: #666666">.</span>eig(Hamiltonian)
+    <span style="color: #408080; font-style: italic"># sort eigenvectors and eigenvalues</span>
+    permute <span style="color: #666666">=</span> EigValues<span style="color: #666666">.</span>argsort()
+    EigValues <span style="color: #666666">=</span> EigValues[permute]
+    EigVectors <span style="color: #666666">=</span> EigVectors[:,permute]
+    <span style="color: #408080; font-style: italic"># Compute density matrix for selected system state, here ground state</span>
+    DensityMatrix <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros((dim,dim))
+    DensityMatrix <span style="color: #666666">=</span> np<span style="color: #666666">.</span>outer(EigVectors[:,<span style="color: #666666">0</span>],EigVectors[:,<span style="color: #666666">0</span>])
+    <span style="color: #408080; font-style: italic"># Project down on substates and find density matrix for subsystem</span>
+    d <span style="color: #666666">=</span> np<span style="color: #666666">.</span>matrix([[<span style="color: #666666">1</span>,<span style="color: #666666">0</span>],[<span style="color: #666666">0</span>,<span style="color: #666666">1</span>]])
+    v1 <span style="color: #666666">=</span> [<span style="color: #666666">1.0</span>,<span style="color: #666666">0.0</span>]
+    proj1 <span style="color: #666666">=</span> np<span style="color: #666666">.</span>kron(v1,d)
+    x1 <span style="color: #666666">=</span> proj1 <span style="color: #666666">@</span> DensityMatrix <span style="color: #666666">@</span> proj1<span style="color: #666666">.</span>T
+    v2 <span style="color: #666666">=</span> [<span style="color: #666666">0.0</span>,<span style="color: #666666">1.0</span>]
+    proj2 <span style="color: #666666">=</span> np<span style="color: #666666">.</span>kron(v2,d)
+    x2 <span style="color: #666666">=</span> proj2 <span style="color: #666666">@</span> DensityMatrix <span style="color: #666666">@</span> proj2<span style="color: #666666">.</span>T
+    <span style="color: #408080; font-style: italic"># Total density matrix for subsystem</span>
+    total <span style="color: #666666">=</span> x1<span style="color: #666666">+</span>x2
+    <span style="color: #408080; font-style: italic"># von Neumann Entropy for subsystem </span>
+    Entropy[i] <span style="color: #666666">=</span> <span style="color: #666666">-</span>np<span style="color: #666666">.</span>matrix<span style="color: #666666">.</span>trace(total <span style="color: #666666">@</span> log2M(total))
+    <span style="color: #408080; font-style: italic"># Plotting eigenvalues and entropy as functions of interaction strengths</span>
+    Eigenvalue[<span style="color: #666666">0</span>,i] <span style="color: #666666">=</span> EigValues[<span style="color: #666666">0</span>]
+    Eigenvalue[<span style="color: #666666">1</span>,i] <span style="color: #666666">=</span> EigValues[<span style="color: #666666">1</span>]
+    Eigenvalue[<span style="color: #666666">2</span>,i] <span style="color: #666666">=</span> EigValues[<span style="color: #666666">2</span>]
+    Eigenvalue[<span style="color: #666666">3</span>,i] <span style="color: #666666">=</span> EigValues[<span style="color: #666666">3</span>]
+plt<span style="color: #666666">.</span>plot(lmbd, Eigenvalue[<span style="color: #666666">0</span>,:] ,<span style="color: #BA2121">&#39;b-&#39;</span>,lmbd, Eigenvalue[<span style="color: #666666">1</span>,:],<span style="color: #BA2121">&#39;g-&#39;</span>,)
+plt<span style="color: #666666">.</span>plot(lmbd, Eigenvalue[<span style="color: #666666">2</span>,:] ,<span style="color: #BA2121">&#39;r-&#39;</span>,lmbd, Eigenvalue[<span style="color: #666666">3</span>,:],<span style="color: #BA2121">&#39;y-&#39;</span>,)
+plt<span style="color: #666666">.</span>xlabel(<span style="color: #BA2121">&#39;$\lambda$&#39;</span>)
+plt<span style="color: #666666">.</span>ylabel(<span style="color: #BA2121">&#39;Eigenvalues&#39;</span>)
+plt<span style="color: #666666">.</span>show()
+plt<span style="color: #666666">.</span>plot(lmbd, Entropy)
+plt<span style="color: #666666">.</span>xlabel(<span style="color: #BA2121">&#39;$\lambda$&#39;</span>)
+plt<span style="color: #666666">.</span>ylabel(<span style="color: #BA2121">&#39;Entropy&#39;</span>)          
+plt<span style="color: #666666">.</span>show
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 <!-- ------------------- end of main content --------------- -->
 <center style="font-size:80%">
 <!-- copyright --> &copy; 1999-2025, Morten Hjorth-Jensen. Released under CC Attribution-NonCommercial 4.0 license
