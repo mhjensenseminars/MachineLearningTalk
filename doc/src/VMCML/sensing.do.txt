@@ -6,7 +6,8 @@ DATE: March 2025
 
 !split
 ===== Motivation and Content =====
-These notes aim at linking entanglement in quantum mechanical systems with quantum sensing, using simple examples.
+
+These notes aim at linking entanglement in quantum mechanical systems with quantum sensing using simple examples.
 Numerical codes are included in order to illustrate basic elements of sensing.
 The examples are tailored to simple one- and two-qubit systems. The material contains
 o One-qubit system with basic elements of sensing
@@ -36,6 +37,9 @@ o See also recent work by Liu et at URL:"https://www.nature.com/articles/s41534-
 
 !split
 ===== One-qubit system =====
+
+In the first part of this notebook, we will analyze our systems using plain diagonalization and simple analytical manipulations.
+Thereafter we will develop codes and material for performing a quantum computing simulation of the same systems. 
 
 !split
 ===== Two-qubit system, Computational basis =====
