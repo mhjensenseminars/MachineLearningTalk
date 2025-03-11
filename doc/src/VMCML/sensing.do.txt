@@ -140,7 +140,7 @@ controlled way.
 The goal of a quantum sensing experiment is then to
 infer $V(t)$ from the effect it has on the qubit via its Hamiltonian
 $\hat{H}_I(t)$, usually by a clever choice of
-$\hat{H}_\mr{control}(t)$.
+$\hat{H}_\mathrm{control}(t)$.
 
 
 !split
@@ -246,61 +246,69 @@ Here we set the parameters $E_1=0$,
 $E_2=4$, $V_{11}=-V_{22}=3$ and $V_{12}=V_{21}=0.2$.
 
 The non-interacting solutions represent our computational basis.
-Pertinent to our choice of parameters, is that at $\lambda\geq 2/3$,
+Pertinent to our choice of parameters, is that at $t\geq 2/3$,
 the lowest eigenstate is dominated by $\vert 1\rangle$ while the upper
-is $\vert 0 \rangle$. At $\lambda=1$ the $\vert 0 \rangle$ mixing of
-the lowest eigenvalue is $1\%$ while for $\lambda\leq 2/3$ we have a
+is $\vert 0 \rangle$. At $t=1$ the $\vert 0 \rangle$ mixing of
+the lowest eigenvalue is $1\%$ while for $t\leq 2/3$ we have a
 $\vert 0 \rangle$ component of more than $90\%$.  The character of the
 eigenvectors has therefore been interchanged when passing $z=2/3$. The
 value of the parameter $V_{12}$ represents the strength of the coupling
-between the two states.
+between the two states.  Here we keep only the real part of the non-diagonal term.
 
 !split
-=====  Setting up the matrix =====
-This part is best seen using the jupyter-notebook
+=====  Setting up the matrix for the simple one-qubit system =====
+
+Here we solve the above problem as a standard eigenvalue problem.
 
 !bc pycod
-from  matplotlib import pyplot as plt
 import numpy as np
-dim = 2
-Hamiltonian = np.zeros((dim,dim))
-e0 = 0.0
-e1 = 4.0
-Xnondiag = 0.20
-Xdiag = 3.0
-Eigenvalue = np.zeros(dim)
-# setting up the Hamiltonian
-Hamiltonian[0,0] = Xdiag+e0
-Hamiltonian[0,1] = Xnondiag
-Hamiltonian[1,0] = Hamiltonian[0,1]
-Hamiltonian[1,1] = e1-Xdiag
-# diagonalize and obtain eigenvalues, not necessarily sorted
-EigValues, EigVectors = np.linalg.eig(Hamiltonian)
-permute = EigValues.argsort()
-EigValues = EigValues[permute]
-# print only the lowest eigenvalue
-print(EigValues[0])
+import matplotlib.pyplot as plt
+import seaborn as sns; sns.set_theme(font_scale=1.5)
+from tqdm import tqdm
+
+sigma_x = np.array([[0, 1], [1, 0]])
+sigma_y = np.array([[0, -1j], [1j, 0]])
+sigma_z = np.array([[1, 0], [0, -1]])
+I = np.eye(2)
+
+def Hamiltonian(lmb):
+    E1 = 0
+    E2 = 4
+    V11 = 3
+    V22 = -3
+    V12 = 0.2
+    V21 = 0.2
+
+    eps = (E1 + E2) / 2
+    omega = (E1 - E2) / 2
+    c = (V11 + V22) / 2
+    omega_z = (V11 - V22) / 2
+    omega_x = V12
+
+    H0 = eps * I + omega * sigma_z
+    H1 = c * I + omega_z * sigma_z + omega_x * sigma_x
+    return H0 + lmb * H1
+    
+lmbvalues_ana = np.arange(0, 1, 0.01)
+eigvals_ana = np.zeros((len(lmbvalues_ana), 2))
+for index, lmb in enumerate(lmbvalues_ana):
+    H = Hamiltonian(lmb)
+    eigen, eigvecs = np.linalg.eig(H)
+    permute = eigen.argsort()
+    eigvals_ana[index] = eigen[permute]
+    eigvecs = eigvecs[:,permute]
+
+
+fig, axs = plt.subplots(1, 1, figsize=(10, 10))
+for i in range(2):
+    axs.plot(lmbvalues_ana, eigvals_ana[:,i], label=f'$E_{i+1}$')
+axs.set_xlabel(r'$\lambda$')
+axs.set_ylabel('Energy')
+axs.legend()
+plt.show()
+
 !ec
 
-Now rewrite it in terms of the identity matrix and the Pauli matrix X and Z
-
-!bc pycod
-# Now rewrite it in terms of the identity matrix and the Pauli matrix X and Z
-X = np.array([[0,1],[1,0]])
-Y = np.array([[0,-1j],[1j,0]])
-Z = np.array([[1,0],[0,-1]])
-# identity matrix
-I = np.array([[1,0],[0,1]])
-
-epsilon = (e0+e1)*0.5; omega = (e0-e1)*0.5
-c = 0.0; omega_z=Xdiag; omega_x = Xnondiag
-Hamiltonian = (epsilon+c)*I+(omega_z+omega)*Z+omega_x*X
-EigValues, EigVectors = np.linalg.eig(Hamiltonian)
-permute = EigValues.argsort()
-EigValues = EigValues[permute]
-# print only the lowest eigenvalue
-print(EigValues[0])
-!ec
 
 
 
@@ -867,8 +875,6 @@ plt.xlabel('$\lambda$')
 plt.ylabel('Entropy')          
 plt.show
 !ec
-
-
 
 
 

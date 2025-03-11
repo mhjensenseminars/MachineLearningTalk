@@ -65,7 +65,10 @@ doconce format html sensing.do.txt --html_style=bootstrap --pygments_html_style=
                'rewriting-with-pauli-matrices'),
               ('Simple time dependence', 2, None, 'simple-time-dependence'),
               ('Selecting parameters', 2, None, 'selecting-parameters'),
-              ('Setting up the matrix', 2, None, 'setting-up-the-matrix'),
+              ('Setting up the matrix for the simple one-qubit system',
+               2,
+               None,
+               'setting-up-the-matrix-for-the-simple-one-qubit-system'),
               ('Initialization', 2, None, 'initialization'),
               ('Effects of Stimulus', 2, None, 'effects-of-stimulus'),
               ('Slowly changing potential',
@@ -174,7 +177,7 @@ MathJax.Hub.Config({
      <!-- navigation toc: --> <li><a href="._sensing-bs012.html#rewriting-with-pauli-matrices" style="font-size: 80%;">Rewriting with Pauli matrices</a></li>
      <!-- navigation toc: --> <li><a href="._sensing-bs013.html#simple-time-dependence" style="font-size: 80%;">Simple time dependence</a></li>
      <!-- navigation toc: --> <li><a href="._sensing-bs014.html#selecting-parameters" style="font-size: 80%;">Selecting parameters</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs015.html#setting-up-the-matrix" style="font-size: 80%;">Setting up the matrix</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs015.html#setting-up-the-matrix-for-the-simple-one-qubit-system" style="font-size: 80%;">Setting up the matrix for the simple one-qubit system</a></li>
      <!-- navigation toc: --> <li><a href="._sensing-bs016.html#initialization" style="font-size: 80%;">Initialization</a></li>
      <!-- navigation toc: --> <li><a href="._sensing-bs017.html#effects-of-stimulus" style="font-size: 80%;">Effects of Stimulus</a></li>
      <!-- navigation toc: --> <li><a href="._sensing-bs018.html#slowly-changing-potential" style="font-size: 80%;">Slowly changing potential</a></li>
@@ -187,7 +190,7 @@ MathJax.Hub.Config({
      <!-- navigation toc: --> <li><a href="._sensing-bs025.html#preparing-for-readout" style="font-size: 80%;">Preparing for readout</a></li>
      <!-- navigation toc: --> <li><a href="._sensing-bs032.html#transition-probability" style="font-size: 80%;">Transition probability</a></li>
      <!-- navigation toc: --> <li><a href="._sensing-bs027.html#ramsey-interferometry-https-en-wikipedia-org-wiki-ramsey-interferometry" style="font-size: 80%;">"Ramsey interferometry":"https://en.wikipedia.org/wiki/Ramsey_interferometry"</a></li>
-     <!-- navigation toc: --> <li><a href="#benefits-of-entanglement" style="font-size: 80%;">Benefits of Entanglement</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs028.html#benefits-of-entanglement" style="font-size: 80%;">Benefits of Entanglement</a></li>
      <!-- navigation toc: --> <li><a href="._sensing-bs029.html#ramsey-interferometry" style="font-size: 80%;">Ramsey interferometry</a></li>
      <!-- navigation toc: --> <li><a href="._sensing-bs030.html#more-than-one-qubit" style="font-size: 80%;">More than one qubit</a></li>
      <!-- navigation toc: --> <li><a href="._sensing-bs031.html#after-initialization" style="font-size: 80%;">After initialization</a></li>
@@ -203,7 +206,7 @@ MathJax.Hub.Config({
      <!-- navigation toc: --> <li><a href="._sensing-bs041.html#subsystems" style="font-size: 80%;">Subsystems</a></li>
      <!-- navigation toc: --> <li><a href="._sensing-bs042.html#entropies" style="font-size: 80%;">Entropies</a></li>
      <!-- navigation toc: --> <li><a href="._sensing-bs043.html#understanding-the-example" style="font-size: 80%;">Understanding the example</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs044.html#code-best-seen-in-jupyter-notebook" style="font-size: 80%;">Code, best seen in jupyter-notebook</a></li>
+     <!-- navigation toc: --> <li><a href="#code-best-seen-in-jupyter-notebook" style="font-size: 80%;">Code, best seen in jupyter-notebook</a></li>
 
         </ul>
       </li>
@@ -213,53 +216,109 @@ MathJax.Hub.Config({
 </div> <!-- end of navigation bar -->
 <div class="container">
 <p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p> <!-- add vertical space -->
-<a name="part0028"></a>
+<a name="part0044"></a>
 <!-- !split -->
-<h2 id="benefits-of-entanglement" class="anchor">Benefits of Entanglement </h2>
+<h2 id="code-best-seen-in-jupyter-notebook" class="anchor">Code, best seen in jupyter-notebook </h2>
 
-<p>Up until now, we have said that we take many measurements of
-\( \left|\psi_{\text {Final }}\right\rangle \) to estimate \( p_{|0\rangle
-\rightarrow|1\rangle} \), but we have been glossing over the estimation
-process. Assuming we can take \( N \) measurements, either by having \( N \)
-experimental apparatuses running in parallel or by taking \( N \)
-different measurements of a (relatively) constant \( V \) with a single
-apparatus, the uncertainty in \( p \), denoted as \( \sigma_{p} \) (this is a
-positive real number; not to be confused with the Pauli matrices),
-scales as
-</p>
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #f8f8f8">
+  <pre style="line-height: 125%;"><span style="color: #666666">%</span>matplotlib inline
+<span style="color: #008000; font-weight: bold">from</span>  <span style="color: #0000FF; font-weight: bold">matplotlib</span> <span style="color: #008000; font-weight: bold">import</span> pyplot <span style="color: #008000; font-weight: bold">as</span> plt
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">numpy</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">np</span>
+<span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">scipy.linalg</span> <span style="color: #008000; font-weight: bold">import</span> logm, expm
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">log2M</span>(a): <span style="color: #408080; font-style: italic"># base 2 matrix logarithm</span>
+    <span style="color: #008000; font-weight: bold">return</span> logm(a)<span style="color: #666666">/</span>np<span style="color: #666666">.</span>log(<span style="color: #666666">2.0</span>)
 
-$$
-\sigma_{p} \propto \frac{1}{\sqrt{N}}
-$$
+dim <span style="color: #666666">=</span> <span style="color: #666666">4</span>
+Hamiltonian <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros((dim,dim))
+<span style="color: #408080; font-style: italic">#number of lambda values</span>
+n <span style="color: #666666">=</span> <span style="color: #666666">40</span>
+lmbd <span style="color: #666666">=</span> np<span style="color: #666666">.</span>linspace(<span style="color: #666666">0.0</span>,<span style="color: #666666">1.0</span>,n)
+Hx <span style="color: #666666">=</span> <span style="color: #666666">2.0</span>
+Hz <span style="color: #666666">=</span> <span style="color: #666666">3.0</span>
+<span style="color: #408080; font-style: italic"># Non-diagonal part as sigma_x tensor product with sigma_x</span>
+sx <span style="color: #666666">=</span> np<span style="color: #666666">.</span>matrix([[<span style="color: #666666">0</span>,<span style="color: #666666">1</span>],[<span style="color: #666666">1</span>,<span style="color: #666666">0</span>]])
+sx2 <span style="color: #666666">=</span> Hx<span style="color: #666666">*</span>np<span style="color: #666666">.</span>kron(sx, sx)
+<span style="color: #408080; font-style: italic"># Diagonal part as sigma_z tensor product with sigma_z</span>
+sz <span style="color: #666666">=</span> np<span style="color: #666666">.</span>matrix([[<span style="color: #666666">1</span>,<span style="color: #666666">0</span>],[<span style="color: #666666">0</span>,<span style="color: #666666">-1</span>]])
+sz2 <span style="color: #666666">=</span> Hz<span style="color: #666666">*</span>np<span style="color: #666666">.</span>kron(sz, sz)
+noninteracting <span style="color: #666666">=</span> [<span style="color: #666666">0.0</span>, <span style="color: #666666">2.5</span>, <span style="color: #666666">6.5</span>, <span style="color: #666666">7.0</span>]
+D <span style="color: #666666">=</span> np<span style="color: #666666">.</span>diag(noninteracting)
+Eigenvalue <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros((dim,n))
+Entropy <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros(n)
+
+<span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(n): 
+    Hamiltonian <span style="color: #666666">=</span> lmbd[i]<span style="color: #666666">*</span>(sx2<span style="color: #666666">+</span>sz2)<span style="color: #666666">+</span>D
+    <span style="color: #408080; font-style: italic"># diagonalize and obtain eigenvalues, not necessarily sorted</span>
+    EigValues, EigVectors <span style="color: #666666">=</span> np<span style="color: #666666">.</span>linalg<span style="color: #666666">.</span>eig(Hamiltonian)
+    <span style="color: #408080; font-style: italic"># sort eigenvectors and eigenvalues</span>
+    permute <span style="color: #666666">=</span> EigValues<span style="color: #666666">.</span>argsort()
+    EigValues <span style="color: #666666">=</span> EigValues[permute]
+    EigVectors <span style="color: #666666">=</span> EigVectors[:,permute]
+    <span style="color: #408080; font-style: italic"># Compute density matrix for selected system state, here ground state</span>
+    DensityMatrix <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros((dim,dim))
+    DensityMatrix <span style="color: #666666">=</span> np<span style="color: #666666">.</span>outer(EigVectors[:,<span style="color: #666666">0</span>],EigVectors[:,<span style="color: #666666">0</span>])
+    <span style="color: #408080; font-style: italic"># Project down on substates and find density matrix for subsystem</span>
+    d <span style="color: #666666">=</span> np<span style="color: #666666">.</span>matrix([[<span style="color: #666666">1</span>,<span style="color: #666666">0</span>],[<span style="color: #666666">0</span>,<span style="color: #666666">1</span>]])
+    v1 <span style="color: #666666">=</span> [<span style="color: #666666">1.0</span>,<span style="color: #666666">0.0</span>]
+    proj1 <span style="color: #666666">=</span> np<span style="color: #666666">.</span>kron(v1,d)
+    x1 <span style="color: #666666">=</span> proj1 <span style="color: #666666">@</span> DensityMatrix <span style="color: #666666">@</span> proj1<span style="color: #666666">.</span>T
+    v2 <span style="color: #666666">=</span> [<span style="color: #666666">0.0</span>,<span style="color: #666666">1.0</span>]
+    proj2 <span style="color: #666666">=</span> np<span style="color: #666666">.</span>kron(v2,d)
+    x2 <span style="color: #666666">=</span> proj2 <span style="color: #666666">@</span> DensityMatrix <span style="color: #666666">@</span> proj2<span style="color: #666666">.</span>T
+    <span style="color: #408080; font-style: italic"># Total density matrix for subsystem</span>
+    total <span style="color: #666666">=</span> x1<span style="color: #666666">+</span>x2
+    <span style="color: #408080; font-style: italic"># von Neumann Entropy for subsystem </span>
+    Entropy[i] <span style="color: #666666">=</span> <span style="color: #666666">-</span>np<span style="color: #666666">.</span>matrix<span style="color: #666666">.</span>trace(total <span style="color: #666666">@</span> log2M(total))
+    <span style="color: #408080; font-style: italic"># Plotting eigenvalues and entropy as functions of interaction strengths</span>
+    Eigenvalue[<span style="color: #666666">0</span>,i] <span style="color: #666666">=</span> EigValues[<span style="color: #666666">0</span>]
+    Eigenvalue[<span style="color: #666666">1</span>,i] <span style="color: #666666">=</span> EigValues[<span style="color: #666666">1</span>]
+    Eigenvalue[<span style="color: #666666">2</span>,i] <span style="color: #666666">=</span> EigValues[<span style="color: #666666">2</span>]
+    Eigenvalue[<span style="color: #666666">3</span>,i] <span style="color: #666666">=</span> EigValues[<span style="color: #666666">3</span>]
+plt<span style="color: #666666">.</span>plot(lmbd, Eigenvalue[<span style="color: #666666">0</span>,:] ,<span style="color: #BA2121">&#39;b-&#39;</span>,lmbd, Eigenvalue[<span style="color: #666666">1</span>,:],<span style="color: #BA2121">&#39;g-&#39;</span>,)
+plt<span style="color: #666666">.</span>plot(lmbd, Eigenvalue[<span style="color: #666666">2</span>,:] ,<span style="color: #BA2121">&#39;r-&#39;</span>,lmbd, Eigenvalue[<span style="color: #666666">3</span>,:],<span style="color: #BA2121">&#39;y-&#39;</span>,)
+plt<span style="color: #666666">.</span>xlabel(<span style="color: #BA2121">&#39;$\lambda$&#39;</span>)
+plt<span style="color: #666666">.</span>ylabel(<span style="color: #BA2121">&#39;Eigenvalues&#39;</span>)
+plt<span style="color: #666666">.</span>show()
+plt<span style="color: #666666">.</span>plot(lmbd, Entropy)
+plt<span style="color: #666666">.</span>xlabel(<span style="color: #BA2121">&#39;$\lambda$&#39;</span>)
+plt<span style="color: #666666">.</span>ylabel(<span style="color: #BA2121">&#39;Entropy&#39;</span>)          
+plt<span style="color: #666666">.</span>show
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 <p>
 <!-- navigation buttons at the bottom of the page -->
 <ul class="pagination">
-<li><a href="._sensing-bs027.html">&laquo;</a></li>
+<li><a href="._sensing-bs043.html">&laquo;</a></li>
   <li><a href="._sensing-bs000.html">1</a></li>
   <li><a href="">...</a></li>
-  <li><a href="._sensing-bs020.html">21</a></li>
-  <li><a href="._sensing-bs021.html">22</a></li>
-  <li><a href="._sensing-bs022.html">23</a></li>
-  <li><a href="._sensing-bs023.html">24</a></li>
-  <li><a href="._sensing-bs024.html">25</a></li>
-  <li><a href="._sensing-bs025.html">26</a></li>
-  <li><a href="._sensing-bs026.html">27</a></li>
-  <li><a href="._sensing-bs027.html">28</a></li>
-  <li class="active"><a href="._sensing-bs028.html">29</a></li>
-  <li><a href="._sensing-bs029.html">30</a></li>
-  <li><a href="._sensing-bs030.html">31</a></li>
-  <li><a href="._sensing-bs031.html">32</a></li>
-  <li><a href="._sensing-bs032.html">33</a></li>
-  <li><a href="._sensing-bs033.html">34</a></li>
-  <li><a href="._sensing-bs034.html">35</a></li>
-  <li><a href="._sensing-bs035.html">36</a></li>
   <li><a href="._sensing-bs036.html">37</a></li>
   <li><a href="._sensing-bs037.html">38</a></li>
-  <li><a href="">...</a></li>
-  <li><a href="._sensing-bs044.html">45</a></li>
-  <li><a href="._sensing-bs029.html">&raquo;</a></li>
+  <li><a href="._sensing-bs038.html">39</a></li>
+  <li><a href="._sensing-bs039.html">40</a></li>
+  <li><a href="._sensing-bs040.html">41</a></li>
+  <li><a href="._sensing-bs041.html">42</a></li>
+  <li><a href="._sensing-bs042.html">43</a></li>
+  <li><a href="._sensing-bs043.html">44</a></li>
+  <li class="active"><a href="._sensing-bs044.html">45</a></li>
 </ul>
 <!-- ------------------- end of main content --------------- -->
 </div>  <!-- end container -->

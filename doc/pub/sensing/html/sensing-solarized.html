@@ -53,15 +53,23 @@ div.toc p,a {
                None,
                'pauli-boldsymbol-x-gate'),
               ('Hadamard gate', 2, None, 'hadamard-gate'),
-              ('Hamiltonian matrix', 2, None, 'hamiltonian-matrix'),
+              ('Sensing Hamiltonian', 2, None, 'sensing-hamiltonian'),
+              ('Time-dependent Hamiltonian matrix',
+               2,
+               None,
+               'time-dependent-hamiltonian-matrix'),
               ('Interaction part', 2, None, 'interaction-part'),
               ('Non-interacting solution', 2, None, 'non-interacting-solution'),
               ('Rewriting with Pauli matrices',
                2,
                None,
                'rewriting-with-pauli-matrices'),
+              ('Simple time dependence', 2, None, 'simple-time-dependence'),
               ('Selecting parameters', 2, None, 'selecting-parameters'),
-              ('Setting up the matrix', 2, None, 'setting-up-the-matrix'),
+              ('Setting up the matrix for the simple one-qubit system',
+               2,
+               None,
+               'setting-up-the-matrix-for-the-simple-one-qubit-system'),
               ('Initialization', 2, None, 'initialization'),
               ('Effects of Stimulus', 2, None, 'effects-of-stimulus'),
               ('Slowly changing potential',
@@ -284,7 +292,31 @@ $$
 <p>Note that we will use \( H \) as symbol for the Hadamard gate while we will reserve the notation \( \mathcal{H} \) for a given Hamiltonian.</p>
 
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
-<h2 id="hamiltonian-matrix">Hamiltonian matrix </h2>
+<h2 id="sensing-hamiltonian">Sensing Hamiltonian </h2>
+
+<p>For our discussions, we will assume that the quantum sensor can be
+described by the generic Hamiltonian (we follow here Degen <em>et al.,</em>
+</p>
+$$
+\hat{H}(t) = \hat{H}_0 + \hat{H}_I(t) + \hat{H}_\mathrm{control}(t),
+$$
+
+<p>where \( \hat{H}_0 \) is the internal Hamiltonian, \( \hat{H}_I(t) \) is the
+Hamiltonian associated with a signal (\( V(t) \) in the notes below), and
+\( \hat{H}_\mathrm{control}(t) \) is the control Hamiltonian.  Following the above mentioned authors, we  will assume
+that \( \hat{H}_0 \) is known and that \( \hat{H}_\mathrm{control}(t) \) can be
+deliberately chosen so as to manipulate or tune the sensor in a
+controlled way.
+</p>
+
+<p>The goal of a quantum sensing experiment is then to
+infer \( V(t) \) from the effect it has on the qubit via its Hamiltonian
+\( \hat{H}_I(t) \), usually by a clever choice of
+\( \hat{H}_\mathrm{control}(t) \).
+</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="time-dependent-hamiltonian-matrix">Time-dependent Hamiltonian matrix </h2>
 
 <p>We define a  hermitian  matrix  \( H\in {\mathbb{R}}^{2\times 2} \)</p>
 $$
@@ -299,10 +331,10 @@ $$
 
 <p>is a diagonal matrix. Similarly,</p>
 $$
-\mathcal{H}_I= \begin{bmatrix} V_{11} & V_{12} \\ V_{21} & V_{22}\end{bmatrix},
+\mathcal{H}_I(t)= \begin{bmatrix} V_{11}(t) & V_{12}(t) \\ V_{21}(t) & V_{22}(t)\end{bmatrix},
 $$
 
-<p>where \( V_{ij} \) represent various interaction matrix elements and since we have a hermitian matrix, we require that
+<p>where \( V_{ij}(t) \) represent various time-dependent interaction matrix elements and since we have a hermitian matrix, we require that
 \( V_{21}=V_{12}^* \).
 </p>
 
@@ -354,9 +386,11 @@ $$
 \mathcal{H}_I = V_z(t)\boldsymbol{Z} + V_x(t)\boldsymbol{X}+V_y(t)\boldsymbol{Y},
 $$
 
-<p>with \( V_z(t) = V_{11}=-V_{22}) \), \( V_x(t) = Re{V}_{12} \) and \( V_y(t) = \Im{V}_{12} \).
-We let our Hamiltonian depend linearly on time  \( t \)
-</p>
+<p>with \( V_z(t) = V_{11}=-V_{22} \), \( V_x(t) = \Re (V)_{12} \) and \( V_y(t) = \Im (V)_{12} \).</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="simple-time-dependence">Simple time dependence </h2>
+<p>We let our Hamiltonian depend linearly on time  \( t \)</p>
 
 $$
 \mathcal{H}=\mathcal{H}_0+t \mathcal{H}_\mathrm{I},
@@ -379,19 +413,20 @@ two available states.
 </p>
 
 <p>The non-interacting solutions represent our computational basis.
-Pertinent to our choice of parameters, is that at \( \lambda\geq 2/3 \),
+Pertinent to our choice of parameters, is that at \( t\geq 2/3 \),
 the lowest eigenstate is dominated by \( \vert 1\rangle \) while the upper
-is \( \vert 0 \rangle \). At \( \lambda=1 \) the \( \vert 0 \rangle \) mixing of
-the lowest eigenvalue is \( 1\% \) while for \( \lambda\leq 2/3 \) we have a
+is \( \vert 0 \rangle \). At \( t=1 \) the \( \vert 0 \rangle \) mixing of
+the lowest eigenvalue is \( 1\% \) while for \( t\leq 2/3 \) we have a
 \( \vert 0 \rangle \) component of more than \( 90\% \).  The character of the
 eigenvectors has therefore been interchanged when passing \( z=2/3 \). The
 value of the parameter \( V_{12} \) represents the strength of the coupling
-between the two states.
+between the two states.  Here we keep only the real part of the non-diagonal term.
 </p>
 
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
-<h2 id="setting-up-the-matrix">Setting up the matrix </h2>
-<p>This part is best seen using the jupyter-notebook</p>
+<h2 id="setting-up-the-matrix-for-the-simple-one-qubit-system">Setting up the matrix for the simple one-qubit system </h2>
+
+<p>Here we solve the above problem as a standard eigenvalue problem.</p>
 
 
 <!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
@@ -400,65 +435,51 @@ between the two states.
     <div class="inner_cell">
       <div class="input_area">
         <div class="highlight" style="background: #eeeedd">
-  <pre style="line-height: 125%;"><span style="color: #8B008B; font-weight: bold">from</span>  <span style="color: #008b45; text-decoration: underline">matplotlib</span> <span style="color: #8B008B; font-weight: bold">import</span> pyplot <span style="color: #8B008B; font-weight: bold">as</span> plt
-<span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">numpy</span> <span style="color: #8B008B; font-weight: bold">as</span> <span style="color: #008b45; text-decoration: underline">np</span>
-dim = <span style="color: #B452CD">2</span>
-Hamiltonian = np.zeros((dim,dim))
-e0 = <span style="color: #B452CD">0.0</span>
-e1 = <span style="color: #B452CD">4.0</span>
-Xnondiag = <span style="color: #B452CD">0.20</span>
-Xdiag = <span style="color: #B452CD">3.0</span>
-Eigenvalue = np.zeros(dim)
-<span style="color: #228B22"># setting up the Hamiltonian</span>
-Hamiltonian[<span style="color: #B452CD">0</span>,<span style="color: #B452CD">0</span>] = Xdiag+e0
-Hamiltonian[<span style="color: #B452CD">0</span>,<span style="color: #B452CD">1</span>] = Xnondiag
-Hamiltonian[<span style="color: #B452CD">1</span>,<span style="color: #B452CD">0</span>] = Hamiltonian[<span style="color: #B452CD">0</span>,<span style="color: #B452CD">1</span>]
-Hamiltonian[<span style="color: #B452CD">1</span>,<span style="color: #B452CD">1</span>] = e1-Xdiag
-<span style="color: #228B22"># diagonalize and obtain eigenvalues, not necessarily sorted</span>
-EigValues, EigVectors = np.linalg.eig(Hamiltonian)
-permute = EigValues.argsort()
-EigValues = EigValues[permute]
-<span style="color: #228B22"># print only the lowest eigenvalue</span>
-<span style="color: #658b00">print</span>(EigValues[<span style="color: #B452CD">0</span>])
-</pre>
-</div>
-      </div>
-    </div>
-  </div>
-  <div class="output_wrapper">
-    <div class="output">
-      <div class="output_area">
-        <div class="output_subarea output_stream output_stdout output_text">          
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+  <pre style="line-height: 125%;"><span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">numpy</span> <span style="color: #8B008B; font-weight: bold">as</span> <span style="color: #008b45; text-decoration: underline">np</span>
+<span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">matplotlib.pyplot</span> <span style="color: #8B008B; font-weight: bold">as</span> <span style="color: #008b45; text-decoration: underline">plt</span>
+<span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">seaborn</span> <span style="color: #8B008B; font-weight: bold">as</span> <span style="color: #008b45; text-decoration: underline">sns</span>; sns.set_theme(font_scale=<span style="color: #B452CD">1.5</span>)
+<span style="color: #8B008B; font-weight: bold">from</span> <span style="color: #008b45; text-decoration: underline">tqdm</span> <span style="color: #8B008B; font-weight: bold">import</span> tqdm
 
-<p>Now rewrite it in terms of the identity matrix and the Pauli matrix X and Z</p>
+sigma_x = np.array([[<span style="color: #B452CD">0</span>, <span style="color: #B452CD">1</span>], [<span style="color: #B452CD">1</span>, <span style="color: #B452CD">0</span>]])
+sigma_y = np.array([[<span style="color: #B452CD">0</span>, -<span style="color: #B452CD">1</span>j], [<span style="color: #B452CD">1</span>j, <span style="color: #B452CD">0</span>]])
+sigma_z = np.array([[<span style="color: #B452CD">1</span>, <span style="color: #B452CD">0</span>], [<span style="color: #B452CD">0</span>, -<span style="color: #B452CD">1</span>]])
+I = np.eye(<span style="color: #B452CD">2</span>)
+
+<span style="color: #8B008B; font-weight: bold">def</span> <span style="color: #008b45">Hamiltonian</span>(lmb):
+    E1 = <span style="color: #B452CD">0</span>
+    E2 = <span style="color: #B452CD">4</span>
+    V11 = <span style="color: #B452CD">3</span>
+    V22 = -<span style="color: #B452CD">3</span>
+    V12 = <span style="color: #B452CD">0.2</span>
+    V21 = <span style="color: #B452CD">0.2</span>
+
+    eps = (E1 + E2) / <span style="color: #B452CD">2</span>
+    omega = (E1 - E2) / <span style="color: #B452CD">2</span>
+    c = (V11 + V22) / <span style="color: #B452CD">2</span>
+    omega_z = (V11 - V22) / <span style="color: #B452CD">2</span>
+    omega_x = V12
+
+    H0 = eps * I + omega * sigma_z
+    H1 = c * I + omega_z * sigma_z + omega_x * sigma_x
+    <span style="color: #8B008B; font-weight: bold">return</span> H0 + lmb * H1
+    
+lmbvalues_ana = np.arange(<span style="color: #B452CD">0</span>, <span style="color: #B452CD">1</span>, <span style="color: #B452CD">0.01</span>)
+eigvals_ana = np.zeros((<span style="color: #658b00">len</span>(lmbvalues_ana), <span style="color: #B452CD">2</span>))
+<span style="color: #8B008B; font-weight: bold">for</span> index, lmb <span style="color: #8B008B">in</span> <span style="color: #658b00">enumerate</span>(lmbvalues_ana):
+    H = Hamiltonian(lmb)
+    eigen, eigvecs = np.linalg.eig(H)
+    permute = eigen.argsort()
+    eigvals_ana[index] = eigen[permute]
+    eigvecs = eigvecs[:,permute]
 
 
-<!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
-<div class="cell border-box-sizing code_cell rendered">
-  <div class="input">
-    <div class="inner_cell">
-      <div class="input_area">
-        <div class="highlight" style="background: #eeeedd">
-  <pre style="line-height: 125%;"><span style="color: #228B22"># Now rewrite it in terms of the identity matrix and the Pauli matrix X and Z</span>
-X = np.array([[<span style="color: #B452CD">0</span>,<span style="color: #B452CD">1</span>],[<span style="color: #B452CD">1</span>,<span style="color: #B452CD">0</span>]])
-Y = np.array([[<span style="color: #B452CD">0</span>,-<span style="color: #B452CD">1</span>j],[<span style="color: #B452CD">1</span>j,<span style="color: #B452CD">0</span>]])
-Z = np.array([[<span style="color: #B452CD">1</span>,<span style="color: #B452CD">0</span>],[<span style="color: #B452CD">0</span>,-<span style="color: #B452CD">1</span>]])
-<span style="color: #228B22"># identity matrix</span>
-I = np.array([[<span style="color: #B452CD">1</span>,<span style="color: #B452CD">0</span>],[<span style="color: #B452CD">0</span>,<span style="color: #B452CD">1</span>]])
-
-epsilon = (e0+e1)*<span style="color: #B452CD">0.5</span>; omega = (e0-e1)*<span style="color: #B452CD">0.5</span>
-c = <span style="color: #B452CD">0.0</span>; omega_z=Xdiag; omega_x = Xnondiag
-Hamiltonian = (epsilon+c)*I+(omega_z+omega)*Z+omega_x*X
-EigValues, EigVectors = np.linalg.eig(Hamiltonian)
-permute = EigValues.argsort()
-EigValues = EigValues[permute]
-<span style="color: #228B22"># print only the lowest eigenvalue</span>
-<span style="color: #658b00">print</span>(EigValues[<span style="color: #B452CD">0</span>])
+fig, axs = plt.subplots(<span style="color: #B452CD">1</span>, <span style="color: #B452CD">1</span>, figsize=(<span style="color: #B452CD">10</span>, <span style="color: #B452CD">10</span>))
+<span style="color: #8B008B; font-weight: bold">for</span> i <span style="color: #8B008B">in</span> <span style="color: #658b00">range</span>(<span style="color: #B452CD">2</span>):
+    axs.plot(lmbvalues_ana, eigvals_ana[:,i], label=<span style="color: #CD5555">f&#39;$E_{</span>i+<span style="color: #B452CD">1</span><span style="color: #CD5555">}$&#39;</span>)
+axs.set_xlabel(<span style="color: #CD5555">r&#39;$\lambda$&#39;</span>)
+axs.set_ylabel(<span style="color: #CD5555">&#39;Energy&#39;</span>)
+axs.legend()
+plt.show()
 </pre>
 </div>
       </div>
