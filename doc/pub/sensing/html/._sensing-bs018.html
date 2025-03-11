@@ -225,12 +225,24 @@ MathJax.Hub.Config({
 <!-- !split -->
 <h2 id="effects-of-stimulus" class="anchor">Effects of stimulus </h2>
 
-<p>After the sensing state is initialized, it is exposed to the environment and evolves according to the time-evolution operator of the sensing Hamiltonian \( \hat{U}_{H} \) as</p>
+<p>After the sensing state is initialized, it is exposed to the
+environment and evolves according to the time-evolution operator of
+the sensing Hamiltonian via the unitary transformation \( \boldsymbol{U} \) as (setting \( \hbar=c=e=1 \))
+</p>
+
 $$
-|\psi(t)\rangle=\hat{U}_{H}(t, 0)\left|\psi_{\text {Init }}(0)\right\rangle.
+|\psi(t)\rangle=\boldsymbol{U}(t, 0)\left|\psi_{\mathrm{Init }}(0)\right\rangle.
 $$
 
-<p>In general, \( \hat{U}_{H}(0, t)=\exp{\frac{i}{\hbar} \int_{0}^{t} \hat{H} d \tau} \) could be a complicated, non-analytical function for a time-dependent \( V(t) \) (making \( \hat{H} \) time-dependent as well).</p>
+<p>In general we have</p>
+$$ \boldsymbol{U}(t, 0)=\exp{\imath\int_{0}^{t}
+\mathcal{H}(\tau) d \tau}.
+$$
+
+<p>Here the Hamiltonian could be a
+complicated, non-analytical function with a time-dependent \( V(t) \)
+(making \( \mathcal{H} \) time-dependent as well).
+</p>
 
 <p>
 <!-- navigation buttons at the bottom of the page -->
