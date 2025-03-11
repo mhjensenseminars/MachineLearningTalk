@@ -118,10 +118,12 @@ It creates a superposition of the $ \vert 0\rangle $ and $ \vert 1\rangle $ stat
 Note that we will use $H$ as symbol for the Hadamard gate while we will reserve the notation $\mathcal{H}$ for a given Hamiltonian.
 
 
+!split
+===== Sensing Hamiltonian =====
 
 
 !split
-===== Hamiltonian matrix =====
+===== Time-dependent Hamiltonian matrix =====
 
 We define a  hermitian  matrix  $H\in {\mathbb{R}}^{2\times 2}$
 !bt
@@ -139,10 +141,10 @@ We  let $\mathcal{H} = \mathcal{H}_0 + \mathcal{H}_I$, where
 is a diagonal matrix. Similarly,
 !bt
 \[
-\mathcal{H}_I= \begin{bmatrix} V_{11} & V_{12} \\ V_{21} & V_{22}\end{bmatrix},
+\mathcal{H}_I(t)= \begin{bmatrix} V_{11}(t) & V_{12}(t) \\ V_{21}(t) & V_{22}(t)\end{bmatrix},
 \]
 !et
-where $V_{ij}$ represent various interaction matrix elements and since we have a hermitian matrix, we require that
+where $V_{ij}(t)$ represent various time-dependent interaction matrix elements and since we have a hermitian matrix, we require that
 $V_{21}=V_{12}^*$.
 
 
@@ -196,7 +198,10 @@ and
 \mathcal{H}_I = V_z(t)\bm{Z} + V_x(t)\bm{X}+V_y(t)\bm{Y},
 \]
 !et
-with $V_z(t) = V_{11}=-V_{22})$, $V_x(t) = Re{V}_{12}$ and $V_y(t) = \Im{V}_{12}$.
+with $V_z(t) = V_{11}=-V_{22}$, $V_x(t) = \Re (V)_{12}$ and $V_y(t) = \Im (V)_{12}$.
+
+!split
+===== Simple time dependence =====
 We let our Hamiltonian depend linearly on time  $t$
 
 !bt
