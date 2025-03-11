@@ -351,9 +351,9 @@ To initialize a given system to a known quantum state, we first start
 with a known initial state $|0\rangle$. Then, depending on the type of
 information that we want to learn about the stimulus, the measurement
 scheme to be used, and the physical implementation of the quantum
-system, we choose some unitary operator $U_{\mathrm{Init}}$ such that
+system, we choose some unitary operator $\bm{U}_{\mathrm{Initial}}$ such that
 it transforms our state $|0\rangle$ to a desired initial superposition
-state $\left|\psi_{\mathrm{Init}}\right\rangle=a|0\rangle+b|1\rangle$
+state $\left|\psi_{\mathrm{Initial}}\right\rangle=a|0\rangle+b|1\rangle$
 for some $a, b \in \mathbb{C}$ such that $|a|^{2}+|b|^{2}=1$.
 
 !split
@@ -365,14 +365,14 @@ the sensing Hamiltonian via the unitary transformation $\bm{U}$ as (setting $\hb
 
 !bt
 \[
-|\psi(t)\rangle=\bm{U}(t, 0)\left|\psi_{\mathrm{Init }}(0)\right\rangle.
+|\psi(t)\rangle=\bm{U}(t, 0)\left|\psi_{\mathrm{Initial}}\right\rangle.
 \]
 !et
 
 In general we have
 !bt
-\[ \bm{U}(t, 0)=\exp{\imath\int_{0}^{t}
-\mathcal{H}(\tau) d \tau}.
+\[ \bm{U}(t, 0)=\exp{(\imath\int_{0}^{t}
+\mathcal{H}(\tau) d \tau)}.
 \]
 !et
 
@@ -387,7 +387,7 @@ complicated, non-analytical function with a time-dependent $V(t)$
 In the case where $V(t)$ is constant or changes much more slowly than our sensing integration time, we can assume
 !bt
 \[
-|\psi(t)\rangle=\bm{U}(t, 0)\left|\psi_{\mathrm{Init}}(0)\right\rangle=\exp{\imath t \mathcal{H}}\left|\psi_{\mathrm{Init }}(0)\right\rangle.
+|\psi(t)\rangle=\bm{U}(t, 0)\left|\psi_{\mathrm{Initial}}\right\rangle=\exp{(\imath t \mathcal{H})}\left|\psi_{\mathrm{Initial}}\right\rangle.
 \]
 !et
 The sensing state evolves thus as
