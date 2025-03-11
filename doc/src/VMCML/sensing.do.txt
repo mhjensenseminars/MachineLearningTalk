@@ -351,9 +351,9 @@ To initialize a given system to a known quantum state, we first start
 with a known initial state $|0\rangle$. Then, depending on the type of
 information that we want to learn about the stimulus, the measurement
 scheme to be used, and the physical implementation of the quantum
-system, we choose some unitary operator $U_{\mathrm{Init}}$ such that
+system, we choose some unitary operator $\bm{U}_{\mathrm{Initial}}$ such that
 it transforms our state $|0\rangle$ to a desired initial superposition
-state $\left|\psi_{\mathrm{Init}}\right\rangle=a|0\rangle+b|1\rangle$
+state $\left|\psi_{\mathrm{Initial}}\right\rangle=a|0\rangle+b|1\rangle$
 for some $a, b \in \mathbb{C}$ such that $|a|^{2}+|b|^{2}=1$.
 
 !split
@@ -365,14 +365,14 @@ the sensing Hamiltonian via the unitary transformation $\bm{U}$ as (setting $\hb
 
 !bt
 \[
-|\psi(t)\rangle=\bm{U}(t, 0)\left|\psi_{\mathrm{Init }}(0)\right\rangle.
+|\psi(t)\rangle=\bm{U}(t, 0)\left|\psi_{\mathrm{Initial}}\right\rangle.
 \]
 !et
 
 In general we have
 !bt
-\[ \bm{U}(t, 0)=\exp{\imath\int_{0}^{t}
-\mathcal{H}(\tau) d \tau}.
+\[ \bm{U}(t, 0)=\exp{(\imath\int_{0}^{t}
+\mathcal{H}(\tau) d \tau)}.
 \]
 !et
 
@@ -387,13 +387,13 @@ complicated, non-analytical function with a time-dependent $V(t)$
 In the case where $V(t)$ is constant or changes much more slowly than our sensing integration time, we can assume
 !bt
 \[
-|\psi(t)\rangle=\bm{U}(t, 0)\left|\psi_{\mathrm{Init}}(0)\right\rangle=\exp{\imath t \mathcal{H}}\left|\psi_{\mathrm{Init }}(0)\right\rangle.
+|\psi(t)\rangle=\bm{U}(t, 0)\left|\psi_{\mathrm{Initial}}\right\rangle=\exp{(\imath t \mathcal{H})}\left|\psi_{\mathrm{Initial}}\right\rangle.
 \]
 !et
 The sensing state evolves thus as
 !bt
 \[
-|\psi(t)\rangle=\left(\exp{\imath t\left(E_{0}-\frac{1}{2}  V_z\right)}\left|\lambda_{0}\right\rangle\left\langle\lambda_{0}\right|+\exp{\imath t\left(E_{1}+\frac{1}{2}  V_z\right)}\left|\lambda_{1}\right\rangle\left\langle\lambda_{1}\right|\right)\left|\psi_{\mathrm{Init}}(0)\right\rangle,
+|\psi(t)\rangle=\left(\exp{\imath t\left(E_{0}-\frac{1}{2}  V_z\right)}\left|\lambda_{0}\right\rangle\left\langle\lambda_{0}\right|+\exp{\imath t\left(E_{1}+\frac{1}{2}  V_z\right)}\left|\lambda_{1}\right\rangle\left\langle\lambda_{1}\right|\right)\left|\psi_{\mathrm{Initial}}\right\rangle,
 \]
 !et
 where we have using the spectral decomposition and the final representation of the
@@ -482,7 +482,7 @@ The initial state is
 
 !bt
 \[
-\left|\psi_{\mathrm{Init}}\right\rangle=\bm{U}_{\mathrm{Hadamard}}|0\rangle=\frac{1}{\sqrt{2}}\left[\begin{array}{cc}
+\left|\psi_{\mathrm{Initial}}\right\rangle=\bm{U}_{H}|0\rangle=\frac{1}{\sqrt{2}}\left[\begin{array}{cc}
 1 & 1 \\
 1 & -1
 \end{array}\right]\begin{bmatrix} 1 \\ 0\end{bmatrix}=\frac{1}{\sqrt{2}}\begin{bmatrix} 1 \\ 1\end{bmatrix}.
@@ -499,13 +499,8 @@ of one basis.
 The state evolves as
 !bt
 \begin{align*}
-|\psi(t)\rangle=&\left(\exp{\frac{i t}{\hbar}\left(E_{0}-\frac{1}{2}  V_z\right)}|0\rangle\langle 0|+\exp{\frac{i t}{\hbar}\left(E_{1}+\frac{1}{2}  V_z\right)}|1\rangle\langle 1|\right)\left|\psi_{\text {Init }}(0)\right\rangle\\
-&=\left(\begin{array}{cc}
-e^{\frac{i t}{\hbar}\left(E_{0}-\frac{1}{2}  V_z\right)} & 0 \\
-0 & e^{\frac{i t}{\hbar}\left(E_{1}+\frac{1}{2}  V_z\right)}
-\end{array}\right) \frac{1}{\sqrt{2}}\binom{1}{1} \\
-& =\frac{1}{\sqrt{2}}\binom{e^{\frac{i t}{\hbar}\left(E_{0}-\frac{1}{2}  V_z\right)}}{e^{\frac{i t}{\hbar}\left(E_{1}+\frac{1}{2}  V_z\right)}}\\
-&=\frac{1}{\sqrt{2}} e^{\frac{i t}{\hbar}\left(E_{0}-\frac{1}{2}  V_z\right)}\binom{1}{e^{\frac{i t}{\hbar}\left(E_{1}-E_{0}+ V_z\right)}}
+|\psi(t)\rangle=&\left(\exp{\imath t\left(E_{0}-\frac{1}{2}  V_z\right)}|0\rangle\langle 0|+\exp{\imath t\left(E_{1}+\frac{1}{2}  V_z\right)}|1\rangle\langle 1|\right)\left|\psi_{\mathrm{Initial}}\right\rangle\\
+&=\frac{1}{\sqrt{2}} \exp{\imath t\left(E_{0}-\frac{1}{2}  V_z\right)}\begin{bmatrix}1 \\ \exp{\imath t\left(E_{1}-E_{0}+ V_z\right)}\end{bmatrix}
 \end{align*}
 !et
 
@@ -516,8 +511,8 @@ This is then prepared for readout as
 
 !bt
 \[
-\vert\psi_{\mathrm{Final}}\rangle=\frac{1}{2} \exp{\frac{\imath t}{\hbar}(E_{0}-\frac{1}{2}  V_z)}
-\begin{bmatrix} 1+\exp{\frac{\imath t}{\hbar}(E_{1}-E_{0}+ V_z)} \\ 1-\exp{(\frac{\imath t}{\hbar}(E_{1}-E_{0}+ V_z)}\end{bmatrix}.
+\vert\psi_{\mathrm{Final}}\rangle=\frac{1}{2} \exp{\imath t(E_{0}-\frac{1}{2}  V_z)}
+\begin{bmatrix} 1+\exp{\imath t(E_{1}-E_{0}+ V_z)} \\ 1-\exp{(\imath t(E_{1}-E_{0}+ V_z)}\end{bmatrix}.
 \]
 !et
 
@@ -527,8 +522,8 @@ This is then prepared for readout as
 The transition probability
 !bt
 \begin{align*}
-p_{|0\rangle \rightarrow|1\rangle}=\left|\left\langle 1 \mid \psi_{\text {Final }}\right\rangle\right|^{2}=&\left|1-e^{\frac{i t}{\hbar}\left(E_{1}-E_{0}+ V_z\right)}\right|^{2}\\
-&=\frac{1}{2}\left(1-\cos \left(t \frac{\left(E_{1}-E_{0}\right)+ V_z}{\hbar}\right)\right)
+p_{|0\rangle \rightarrow|1\rangle}=\left|\left\langle 1 \mid \psi_{\mathrm{Final}}\right\rangle\right|^{2}=&\left|1-\exp{\imath t\left(E_{1}-E_{0}+ V_z\right)}\right|^{2}\\
+&=\frac{1}{2}\left(1-\cos \left(t\left(E_{1}-E_{0}\right)+ V_z\right)\right)
 \end{align*}
 !et
 
@@ -540,8 +535,7 @@ since we constructed the system or by taking measurements without the
 external stimulus $V$, and we can control the time $t$ for which the
 system is allowed to evolve under the external stimulus. Then we can
 fix $t$ and take many measurements to estimate $p_{|0\rangle
-\rightarrow|1\rangle}$, which then makes finding $t \frac{
-V_z}{\hbar}$ a simple phase-estimation problem which gives us $
+\rightarrow|1\rangle}$, which then makes finding $tV_z$ a simple phase-estimation problem which gives us $
 V_z$. The physical implementation of this process is known as Ramsey
 Interferometry, and it can be done with arbitary initialization and
 readout preparation unitary operators.
@@ -551,11 +545,11 @@ readout preparation unitary operators.
 
 Up until now, we have said that we take many measurements of
 $\left|\psi_{\text {Final }}\right\rangle$ to estimate $p_{|0\rangle
-\rightarrow|1\rangle}$, but we have been glossing over the estimation
+\rightarrow|1\rangle}$, but we have neglected the estimation
 process. Assuming we can take $N$ measurements, either by having $N$
 experimental apparatuses running in parallel or by taking $N$
 different measurements of a (relatively) constant $V$ with a single
-apparatus, the uncertainty in $p$, denoted as $\sigma_{p}$ (this is a
+apparatus (this is what we will do below), the uncertainty in $p$, denoted as $\sigma_{p}$ (this is a
 positive real number; not to be confused with the Pauli matrices),
 scales as
 
@@ -569,7 +563,7 @@ scales as
 ===== Ramsey interferometry =====
 
 If we consider Ramsey Interferometry as an example, see URL:"https://en.wikipedia.org/wiki/Ramsey_interferometry", then the
-uncertainty in $ V_z$ and so in $V_z$, denoted $\sigma_{V}$,
+uncertainty in $V_z$, denoted $\sigma_{V}$,
 scales as
 
 !bt
@@ -579,8 +573,8 @@ scales as
 !et
 
 This relationship is known as the standard quantum limit (SQL)
-[Giovannetti et al., 2011], but can also be explained with the Law of
-
+, see Giovannetti *et al.*, 2011, URL:"https://www.nature.com/articles/nphoton.2011.35",
+but can also be explained with the law of
 Large Numbers from statistics, where measuring $N$ similarly
 distributed, well-behaved random variables gives the sample mean as an
 estimator for the population mean and the sample variance divided by
@@ -613,7 +607,7 @@ where $|0\rangle^{\otimes n}=|0\rangle \otimes \ldots \otimes|0\rangle, n$ times
 After initialization, each of the $n$ sensing qubits evolves to pick up a relative phase factor of $e^{\frac{i t}{\hbar}\left(E_{1}-E_{0}+ V_z\right)}$, which combined results in
 !bt
 \[
-|\psi(t)\rangle=\mathcal{N}\left(|0\rangle^{\otimes n}+e^{n \frac{i t}{\hbar}\left(E_{1}-E_{0}+ V_z\right)}|1\rangle^{\otimes n}\right)
+|\psi(t)\rangle=\mathcal{N}\left(|0\rangle^{\otimes n}+\exp{n \imath t\left(E_{1}-E_{0}+ V_z\right)}|1\rangle^{\otimes n}\right)
 \]
 !et
 
@@ -625,7 +619,7 @@ where $\mathcal{N}$ is just a factor to take care of normalization.
 The transition probability
 !bt
 \[
-p_{|0\rangle \rightarrow|1\rangle}=\left|\left\langle 1 \mid \psi_{\text {Final }}\right\rangle\right|^{2}=\frac{1}{2}\left(1-\cos \left(t \frac{n\left(E_{1}-E_{0}\right)+n  V_z}{\hbar}\right)\right)
+p_{|0\rangle \rightarrow|1\rangle}=\left|\left\langle 1 \mid \psi_{\text {Final }}\right\rangle\right|^{2}=\frac{1}{2}\left(1-\cos \left(t n\left(E_{1}-E_{0}\right)+n  V_z\right)\right)
 \]
 !et
 
@@ -648,31 +642,12 @@ which means the error decreased by a factor of $\sqrt{n}$. In the case where $n=
 !et
 which is known as the Heisenberg limit, and is the
 quantum-mechanically limited, maximal amount of information one can
-get from taking $n$ quantum sensing measurements [Giovannetti et al.,
-2011].
+get from taking $n$ quantum sensing measurements, see again Giovannetti *et al.*, at URL:"https://www.nature.com/articles/nphoton.2011.35".
 
 !split
-===== Concluding remarks for the simple example =====
+=====  Moving on to other systems =====
 
-Quantum sensing is an emerging field with a large number of exciting
-applications. In terms of physical implementation, quantum sensors are
-able to naturally be more sensitive and sense on smaller scales than
-many classical sensors, while also often being directly tracable to
-fundamental physical constants.
-
-Additionally, exploiting entanglement and the quantum nature of these
-devices allows for fundamentally more information to be collected than
-is allowed by classical measurements and the SQL. Quantum sensing
-fundamentally improves upon the physical and theoretical limitations
-of classical sensing, and it will be interesting to see how and what
-physical realizations develop to the point of practicality in the near
-future.
-
-
-
-
-!split
-===== Two-qubit system, Computational basis =====
+We will now look at a simple system where we can produce an entangled state. We focus on a two-qubit system.
 
 Our computational basis states
 
@@ -924,7 +899,8 @@ plt.show
 !ec
 
 
-
+!split
+===== More material to come =====
 
 
 

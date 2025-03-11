@@ -179,14 +179,10 @@ div.toc p,a {
               ('After initialization', 2, None, 'after-initialization'),
               ('Transition probability', 2, None, 'transition-probability'),
               ('Role of entanglement', 2, None, 'role-of-entanglement'),
-              ('Concluding remarks for the simple example',
+              ('Moving on to other systems',
                2,
                None,
-               'concluding-remarks-for-the-simple-example'),
-              ('Two-qubit system, Computational basis',
-               2,
-               None,
-               'two-qubit-system-computational-basis'),
+               'moving-on-to-other-systems'),
               ('Simple system to lllustrate entanglement',
                2,
                None,
@@ -210,7 +206,8 @@ div.toc p,a {
               ('Code, best seen in jupyter-notebook',
                2,
                None,
-               'code-best-seen-in-jupyter-notebook')]}
+               'code-best-seen-in-jupyter-notebook'),
+              ('More material to come', 2, None, 'more-material-to-come')]}
 end of tocinfo -->
 
 <body>
@@ -376,7 +373,7 @@ $$
 <h2 id="sensing-hamiltonian">Sensing Hamiltonian </h2>
 
 <p>For our discussions, we will assume that the quantum sensor can be
-described by the generic Hamiltonian (we follow here Degen <em>et al.,</em>
+described by the generic Hamiltonian (we follow here Degen <em>et al.,</em>)
 </p>
 $$
 \mathcal{H}(t) = \mathcal{H}_0 + \mathcal{H}_I(t) + \mathcal{H}_\mathrm{control}(t),
@@ -456,7 +453,7 @@ $$
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 <h2 id="rewriting-with-pauli-matrices">Rewriting with Pauli matrices </h2>
 
-<p>We rewrite \( H \) (and \( H_0 \) and \( H_I \))  via Pauli matrices</p>
+<p>We rewrite \( \mathcal{H} \) (and \( \mathcal{H}_0 \) and \( \mathcal{H}_I \))  via Pauli matrices</p>
 $$
 \mathcal{H}_0 = \mathcal{E}_{\mathrm{avg}} I -\Delta E \boldsymbol{Z}, \quad \mathcal{E}_{\mathrm{avg}} = \frac{E_0
   + E_1}{2}, \; \Delta E = \frac{E_1-E_0}{2},
@@ -487,13 +484,13 @@ system, respectively. This means that the various potential terms are given by \
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 <h2 id="exact-solution">Exact solution </h2>
 
-<p>Since this a simple \( 2\times 2 \) matrix eigenvalue problem we find the eigenvalues \( \lambda_{\pm} \) to be</p>
+<p>Since this a simple \( 2\times 2 \) matrix eigenvalue problem we find the eigenvalues \( \lambda_0 \) and \( \lambda_1 \) to be</p>
 $$
-\lambda_{\pm}=\mathcal{E}_{\mathrm{avg}}\pm \Delta E\sqrt{1+\frac{2V_z(t)}{\Delta E}+\frac{1}{\Delta E^2}(V_z^2(t)+V_x^2(t)+V_y^2(t))}.
+\lambda_{0,1}=\mathcal{E}_{\mathrm{avg}}\pm \Delta E\sqrt{1+\frac{2V_z(t)}{\Delta E}+\frac{1}{\Delta E^2}(V_z^2(t)+V_x^2(t)+V_y^2(t))}.
 $$
 
 <p>If we assume that \( \Delta E \gg V_z(t) \) and set \( V_x(t)=V_y(t)=0 \) for
-simplicity and Taylor-expand our square root expression we obtain
+simplicity and Taylor-expand our square root expression, we obtain
 </p>
 $$
 \lambda_{0}=E_0-\frac{1}{2}V_z(t),
@@ -609,9 +606,9 @@ plt<span style="color: #666666">.</span>show()
 with a known initial state \( |0\rangle \). Then, depending on the type of
 information that we want to learn about the stimulus, the measurement
 scheme to be used, and the physical implementation of the quantum
-system, we choose some unitary operator \( U_{\mathrm{Init}} \) such that
+system, we choose some unitary operator \( \boldsymbol{U}_{\mathrm{Initial}} \) such that
 it transforms our state \( |0\rangle \) to a desired initial superposition
-state \( \left|\psi_{\mathrm{Init}}\right\rangle=a|0\rangle+b|1\rangle \)
+state \( \left|\psi_{\mathrm{Initial}}\right\rangle=a|0\rangle+b|1\rangle \)
 for some \( a, b \in \mathbb{C} \) such that \( |a|^{2}+|b|^{2}=1 \).
 </p>
 
@@ -624,12 +621,12 @@ the sensing Hamiltonian via the unitary transformation \( \boldsymbol{U} \) as (
 </p>
 
 $$
-|\psi(t)\rangle=\boldsymbol{U}(t, 0)\left|\psi_{\mathrm{Init }}(0)\right\rangle.
+|\psi(t)\rangle=\boldsymbol{U}(t, 0)\left|\psi_{\mathrm{Initial}}\right\rangle.
 $$
 
 <p>In general we have</p>
-$$ \boldsymbol{U}(t, 0)=\exp{\imath\int_{0}^{t}
-\mathcal{H}(\tau) d \tau}.
+$$ \boldsymbol{U}(t, 0)=\exp{(\imath\int_{0}^{t}
+\mathcal{H}(\tau) d \tau)}.
 $$
 
 <p>Here the Hamiltonian could be a
@@ -642,12 +639,12 @@ complicated, non-analytical function with a time-dependent \( V(t) \)
 
 <p>In the case where \( V(t) \) is constant or changes much more slowly than our sensing integration time, we can assume</p>
 $$
-|\psi(t)\rangle=\boldsymbol{U}(t, 0)\left|\psi_{\mathrm{Init}}(0)\right\rangle=\exp{\imath t \mathcal{H}}\left|\psi_{\mathrm{Init }}(0)\right\rangle.
+|\psi(t)\rangle=\boldsymbol{U}(t, 0)\left|\psi_{\mathrm{Initial}}\right\rangle=\exp{(\imath t \mathcal{H})}\left|\psi_{\mathrm{Initial}}\right\rangle.
 $$
 
 <p>The sensing state evolves thus as</p>
 $$
-|\psi(t)\rangle=\left(\exp{\imath t\left(E_{0}-\frac{1}{2}  V_z\right)}\left|\lambda_{0}\right\rangle\left\langle\lambda_{0}\right|+\exp{\imath t\left(E_{1}+\frac{1}{2}  V_z\right)}\left|\lambda_{1}\right\rangle\left\langle\lambda_{1}\right|\right)\left|\psi_{\mathrm{Init}}(0)\right\rangle,
+|\psi(t)\rangle=\left(\exp{\imath t\left(E_{0}-\frac{1}{2}  V_z\right)}\left|\lambda_{0}\right\rangle\left\langle\lambda_{0}\right|+\exp{\imath t\left(E_{1}+\frac{1}{2}  V_z\right)}\left|\lambda_{1}\right\rangle\left\langle\lambda_{1}\right|\right)\left|\psi_{\mathrm{Initial}}\right\rangle,
 $$
 
 <p>where we have using the spectral decomposition and the final representation of the
@@ -732,7 +729,7 @@ $$
 <p>The initial state is </p>
 
 $$
-\left|\psi_{\mathrm{Init}}\right\rangle=\boldsymbol{U}_{\mathrm{Hadamard}}|0\rangle=\frac{1}{\sqrt{2}}\left[\begin{array}{cc}
+\left|\psi_{\mathrm{Initial}}\right\rangle=\boldsymbol{U}_{H}|0\rangle=\frac{1}{\sqrt{2}}\left[\begin{array}{cc}
 1 & 1 \\
 1 & -1
 \end{array}\right]\begin{bmatrix} 1 \\ 0\end{bmatrix}=\frac{1}{\sqrt{2}}\begin{bmatrix} 1 \\ 1\end{bmatrix}.
@@ -749,13 +746,8 @@ of one basis.
 <p>The state evolves as</p>
 $$
 \begin{align*}
-|\psi(t)\rangle=&\left(\exp{\frac{i t}{\hbar}\left(E_{0}-\frac{1}{2}  V_z\right)}|0\rangle\langle 0|+\exp{\frac{i t}{\hbar}\left(E_{1}+\frac{1}{2}  V_z\right)}|1\rangle\langle 1|\right)\left|\psi_{\text {Init }}(0)\right\rangle\\
-&=\left(\begin{array}{cc}
-e^{\frac{i t}{\hbar}\left(E_{0}-\frac{1}{2}  V_z\right)} & 0 \\
-0 & e^{\frac{i t}{\hbar}\left(E_{1}+\frac{1}{2}  V_z\right)}
-\end{array}\right) \frac{1}{\sqrt{2}}\binom{1}{1} \\
-& =\frac{1}{\sqrt{2}}\binom{e^{\frac{i t}{\hbar}\left(E_{0}-\frac{1}{2}  V_z\right)}}{e^{\frac{i t}{\hbar}\left(E_{1}+\frac{1}{2}  V_z\right)}}\\
-&=\frac{1}{\sqrt{2}} e^{\frac{i t}{\hbar}\left(E_{0}-\frac{1}{2}  V_z\right)}\binom{1}{e^{\frac{i t}{\hbar}\left(E_{1}-E_{0}+ V_z\right)}}
+|\psi(t)\rangle=&\left(\exp{\imath t\left(E_{0}-\frac{1}{2}  V_z\right)}|0\rangle\langle 0|+\exp{\imath t\left(E_{1}+\frac{1}{2}  V_z\right)}|1\rangle\langle 1|\right)\left|\psi_{\mathrm{Initial}}\right\rangle\\
+&=\frac{1}{\sqrt{2}} \exp{\imath t\left(E_{0}-\frac{1}{2}  V_z\right)}\begin{bmatrix}1 \\ \exp{\imath t\left(E_{1}-E_{0}+ V_z\right)}\end{bmatrix}
 \end{align*}
 $$
 
@@ -766,8 +758,8 @@ $$
 <p>This is then prepared for readout as</p>
 
 $$
-\vert\psi_{\mathrm{Final}}\rangle=\frac{1}{2} \exp{\frac{\imath t}{\hbar}(E_{0}-\frac{1}{2}  V_z)}
-\begin{bmatrix} 1+\exp{\frac{\imath t}{\hbar}(E_{1}-E_{0}+ V_z)} \\ 1-\exp{(\frac{\imath t}{\hbar}(E_{1}-E_{0}+ V_z)}\end{bmatrix}.
+\vert\psi_{\mathrm{Final}}\rangle=\frac{1}{2} \exp{\imath t(E_{0}-\frac{1}{2}  V_z)}
+\begin{bmatrix} 1+\exp{\imath t(E_{1}-E_{0}+ V_z)} \\ 1-\exp{(\imath t(E_{1}-E_{0}+ V_z)}\end{bmatrix}.
 $$
 
 
@@ -777,8 +769,8 @@ $$
 <p>The transition probability</p>
 $$
 \begin{align*}
-p_{|0\rangle \rightarrow|1\rangle}=\left|\left\langle 1 \mid \psi_{\text {Final }}\right\rangle\right|^{2}=&\left|1-e^{\frac{i t}{\hbar}\left(E_{1}-E_{0}+ V_z\right)}\right|^{2}\\
-&=\frac{1}{2}\left(1-\cos \left(t \frac{\left(E_{1}-E_{0}\right)+ V_z}{\hbar}\right)\right)
+p_{|0\rangle \rightarrow|1\rangle}=\left|\left\langle 1 \mid \psi_{\mathrm{Final}}\right\rangle\right|^{2}=&\left|1-\exp{\imath t\left(E_{1}-E_{0}+ V_z\right)}\right|^{2}\\
+&=\frac{1}{2}\left(1-\cos \left(t\left(E_{1}-E_{0}\right)+ V_z\right)\right)
 \end{align*}
 $$
 
@@ -791,8 +783,7 @@ since we constructed the system or by taking measurements without the
 external stimulus \( V \), and we can control the time \( t \) for which the
 system is allowed to evolve under the external stimulus. Then we can
 fix \( t \) and take many measurements to estimate \( p_{|0\rangle
-\rightarrow|1\rangle} \), which then makes finding \( t \frac{
-V_z}{\hbar} \) a simple phase-estimation problem which gives us \( 
+\rightarrow|1\rangle} \), which then makes finding \( tV_z \) a simple phase-estimation problem which gives us \( 
 V_z \). The physical implementation of this process is known as Ramsey
 Interferometry, and it can be done with arbitary initialization and
 readout preparation unitary operators.
@@ -803,11 +794,11 @@ readout preparation unitary operators.
 
 <p>Up until now, we have said that we take many measurements of
 \( \left|\psi_{\text {Final }}\right\rangle \) to estimate \( p_{|0\rangle
-\rightarrow|1\rangle} \), but we have been glossing over the estimation
+\rightarrow|1\rangle} \), but we have neglected the estimation
 process. Assuming we can take \( N \) measurements, either by having \( N \)
 experimental apparatuses running in parallel or by taking \( N \)
 different measurements of a (relatively) constant \( V \) with a single
-apparatus, the uncertainty in \( p \), denoted as \( \sigma_{p} \) (this is a
+apparatus (this is what we will do below), the uncertainty in \( p \), denoted as \( \sigma_{p} \) (this is a
 positive real number; not to be confused with the Pauli matrices),
 scales as
 </p>
@@ -821,7 +812,7 @@ $$
 <h2 id="ramsey-interferometry">Ramsey interferometry </h2>
 
 <p>If we consider Ramsey Interferometry as an example, see <a href="https://en.wikipedia.org/wiki/Ramsey_interferometry" target="_blank"><tt>https://en.wikipedia.org/wiki/Ramsey_interferometry</tt></a>, then the
-uncertainty in $ V_z$ and so in \( V_z \), denoted \( \sigma_{V} \),
+uncertainty in \( V_z \), denoted \( \sigma_{V} \),
 scales as
 </p>
 
@@ -830,10 +821,9 @@ $$
 $$
 
 <p>This relationship is known as the standard quantum limit (SQL)
-[Giovannetti et al., 2011], but can also be explained with the Law of
-</p>
-
-<p>Large Numbers from statistics, where measuring \( N \) similarly
+, see Giovannetti <em>et al.</em>, 2011, <a href="https://www.nature.com/articles/nphoton.2011.35" target="_blank"><tt>https://www.nature.com/articles/nphoton.2011.35</tt></a>,
+but can also be explained with the law of
+Large Numbers from statistics, where measuring \( N \) similarly
 distributed, well-behaved random variables gives the sample mean as an
 estimator for the population mean and the sample variance divided by
 the size of the sample as an uncertainty in the estimate of the
@@ -864,7 +854,7 @@ $$
 
 <p>After initialization, each of the \( n \) sensing qubits evolves to pick up a relative phase factor of \( e^{\frac{i t}{\hbar}\left(E_{1}-E_{0}+ V_z\right)} \), which combined results in</p>
 $$
-|\psi(t)\rangle=\mathcal{N}\left(|0\rangle^{\otimes n}+e^{n \frac{i t}{\hbar}\left(E_{1}-E_{0}+ V_z\right)}|1\rangle^{\otimes n}\right)
+|\psi(t)\rangle=\mathcal{N}\left(|0\rangle^{\otimes n}+\exp{n \imath t\left(E_{1}-E_{0}+ V_z\right)}|1\rangle^{\otimes n}\right)
 $$
 
 <p>where \( \mathcal{N} \) is just a factor to take care of normalization.</p>
@@ -874,7 +864,7 @@ $$
 
 <p>The transition probability</p>
 $$
-p_{|0\rangle \rightarrow|1\rangle}=\left|\left\langle 1 \mid \psi_{\text {Final }}\right\rangle\right|^{2}=\frac{1}{2}\left(1-\cos \left(t \frac{n\left(E_{1}-E_{0}\right)+n  V_z}{\hbar}\right)\right)
+p_{|0\rangle \rightarrow|1\rangle}=\left|\left\langle 1 \mid \psi_{\text {Final }}\right\rangle\right|^{2}=\frac{1}{2}\left(1-\cos \left(t n\left(E_{1}-E_{0}\right)+n  V_z\right)\right)
 $$
 
 
@@ -896,31 +886,13 @@ $$
 
 <p>which is known as the Heisenberg limit, and is the
 quantum-mechanically limited, maximal amount of information one can
-get from taking \( n \) quantum sensing measurements [Giovannetti et al.,
-2011].
+get from taking \( n \) quantum sensing measurements, see again Giovannetti <em>et al.</em>, at <a href="https://www.nature.com/articles/nphoton.2011.35" target="_blank"><tt>https://www.nature.com/articles/nphoton.2011.35</tt></a>.
 </p>
 
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
-<h2 id="concluding-remarks-for-the-simple-example">Concluding remarks for the simple example </h2>
+<h2 id="moving-on-to-other-systems">Moving on to other systems </h2>
 
-<p>Quantum sensing is an emerging field with a large number of exciting
-applications. In terms of physical implementation, quantum sensors are
-able to naturally be more sensitive and sense on smaller scales than
-many classical sensors, while also often being directly tracable to
-fundamental physical constants.
-</p>
-
-<p>Additionally, exploiting entanglement and the quantum nature of these
-devices allows for fundamentally more information to be collected than
-is allowed by classical measurements and the SQL. Quantum sensing
-fundamentally improves upon the physical and theoretical limitations
-of classical sensing, and it will be interesting to see how and what
-physical realizations develop to the point of practicality in the near
-future.
-</p>
-
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-<h2 id="two-qubit-system-computational-basis">Two-qubit system, Computational basis </h2>
+<p>We will now look at a simple system where we can produce an entangled state. We focus on a two-qubit system.</p>
 
 <p>Our computational basis states</p>
 
@@ -1172,6 +1144,9 @@ plt<span style="color: #666666">.</span>show
   </div>
 </div>
 
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="more-material-to-come">More material to come </h2>
 
 <!-- ------------------- end of main content --------------- -->
 <center style="font-size:80%">
