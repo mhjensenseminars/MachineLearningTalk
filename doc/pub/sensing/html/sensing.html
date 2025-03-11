@@ -270,7 +270,7 @@ material contains
 <li> Numerical codes for general time-dependent interactions</li>
 <li> Initial state preparations and final results and more</li>
 </ul>
-<p>Feel free to come with suggestions for additions. You can access the material at <a href="https://github.com/mhjensenseminars/MachineLearningTalk/blob/master/doc/pub/sensing/ipynb/sensing.ipynb" target="_blank"><tt>https://github.com/mhjensenseminars/MachineLearningTalk/blob/master/doc/pub/sensing/ipynb/sensing.ipynb</tt></a></p>
+<p>Feel free to come with suggestions for additions. You can access the material as a jupyter-notebook at <a href="https://github.com/mhjensenseminars/MachineLearningTalk/blob/master/doc/pub/sensing/ipynb/sensing.ipynb" target="_blank"><tt>https://github.com/mhjensenseminars/MachineLearningTalk/blob/master/doc/pub/sensing/ipynb/sensing.ipynb</tt></a> or as a PDF file at <a href="https://github.com/mhjensenseminars/MachineLearningTalk/blob/master/doc/pub/sensing/pdf/sensing.pdf" target="_blank"><tt>https://github.com/mhjensenseminars/MachineLearningTalk/blob/master/doc/pub/sensing/pdf/sensing.pdf</tt></a></p>
 
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 <h2 id="literature">Literature </h2>
@@ -396,10 +396,10 @@ the effect it has on the actual qubits via its Hamiltonian
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 <h2 id="time-dependent-hamiltonian-matrix">Time-dependent Hamiltonian matrix </h2>
 
-<p>We define a  hermitian  matrix  \( H\in {\mathbb{R}}^{2\times 2} \)</p>
+<p>We define a  hermitian  matrix  \( \mathcal{H}\in {\mathbb{C}}^{2\times 2} \)</p>
 $$
 \mathcal{H} = \begin{bmatrix} \mathcal{H}_{11} & \mathcal{H}_{12} \\ \mathcal{H}_{21} & \mathcal{H}_{22}
-\end{bmatrix},
+\end{bmatrix}.
 $$
 
 <p>We  let \( \mathcal{H} = \mathcal{H}_0 + \mathcal{H}_I \), where</p>
@@ -431,14 +431,14 @@ V_{12} & = V_x(t)-\imath V_y(t).
 $$
 
 <p>In the numerical example below we let \( V_y(t)=0 \), \( V_z(t) = tV_z \)
-and \( V_x(t) = tV_x \) with \( V_z \) and \( V_x \) real-valued constants to
+and \( V_x(t) = tV_x \) with \( V_z \) and \( V_x \) being real-valued constants to
 be determined. In the same numerical example we let \( t\in [0,1] \).
 </p>
 
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 <h2 id="non-interacting-solution">Non-interacting solution </h2>
 
-<p>We can view \( H_0 \) as the non-interacting solution</p>
+<p>We can view \( \mathcal{H}_0 \) as the non-interacting solution</p>
 $$
        \mathcal{H}_0\vert 0 \rangle =E_0\vert 0 \rangle,
 $$
@@ -478,7 +478,7 @@ $$
 
 <p>with \( t \in [0,1] \), where the limits \( t=0 \) and \( t=1 \)
 represent the non-interacting (or unperturbed) and fully interacting
-system, respectively. This means that the various potential terms are given by \( V_i(t)=tV_i \), with \( i=\{x,y,z\} \) and \( V_i \) real-valued constants.
+system, respectively. This means that the various potential terms are given by \( V_i(t)=tV_i \), with \( i=\{x,y,z\} \) and \( V_i \) are real-valued constants.
 </p>
 
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
