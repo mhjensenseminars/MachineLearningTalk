@@ -6,16 +6,39 @@ DATE: March 2025
 
 !split
 ===== Motivation and Content =====
-These notes aim at linking entanglement in quantum mechanical systems with quantum sensing, using some simple examples.
-Numerical codes are included i order and the examples are tailored to simple one- and two-qubit systems. The material contains
+These notes aim at linking entanglement in quantum mechanical systems with quantum sensing, using simple examples.
+Numerical codes are included in order to illustrate basic elements of sensing.
+The examples are tailored to simple one- and two-qubit systems. The material contains
 o One-qubit system with basic elements of sensing
+o Linking analytically solvable case with many-qubit entanglement
 o Simple two-particle (or two-qubit) system to demonstrate entanglement and its links with sensing
-o More material will be added, in particular we will include
-  * Discussion of Fisher entropy
-  * Numerical codes for a general time-dependent interactions 
 
 !split
-===== Computational basis =====
+===== More material will be added =====
+
+In particular, we will include
+* Quantum computing simulations of the above systems using the Variational Quantum Eigensolver algorithm
+* Discussion of Fisher entropy and other measures
+* Numerical codes for general time-dependent interactions
+* Initial state preparations and final results and more
+
+Feel free to come with suggestions for addition. You can access the material at URL:"
+
+!split
+===== Literature =====
+
+In the discussions here we have borrowed extensively from two Review of Modern Physics
+articles
+o _Quantum sensing_, C.L. Degen, F. Reinhard, and P. Cappellaro, Reviews of  Modern  Physics _89_, 035002 (2017), see URL:"https://journals.aps.org/rmp/abstract/10.1103/RevModPhys.89.035002"
+o _Quantum metrology with nonclassical states of atomic ensembles_, 
+L. Pezzè, A. Smerzi, M.K. Oberthaler, R. Schmied, and P. Treutlein, Reviews of  Modern  Physics _90_, 035005 (2018), see URL:"https://journals.aps.org/rmp/abstract/10.1103/RevModPhys.90.035005"
+o See also recent work by Liu et at URL:"https://www.nature.com/articles/s41534-021-00507-x"
+
+!split
+===== One-qubit system =====
+
+!split
+===== Two-qubit system, Computational basis =====
 Our computational basis states
 
 !bt
