@@ -638,7 +638,7 @@ $$
 <p>which means the sensing state evolves as</p>
 <p>&nbsp;<br>
 $$
-|\psi(t)\rangle=\left(\exp{\frac{i t}{\hbar}\left(E_{0}-\frac{1}{2} \gamma V_Z\right)}\left|\lambda_{0}\right\rangle\left\langle\lambda_{0}\right|+\exp{\frac{i t}{\hbar}\left(E_{1}+\frac{1}{2} \gamma V_Z\right)}\left|\lambda_{1}\right\rangle\left\langle\lambda_{1}\right|\right)\left|\psi_{\text {Init }}(0)\right\rangle,
+|\psi(t)\rangle=\left(\exp{\frac{i t}{\hbar}\left(E_{0}-\frac{1}{2}  V_Z\right)}\left|\lambda_{0}\right\rangle\left\langle\lambda_{0}\right|+\exp{\frac{i t}{\hbar}\left(E_{1}+\frac{1}{2}  V_Z\right)}\left|\lambda_{1}\right\rangle\left\langle\lambda_{1}\right|\right)\left|\psi_{\text {Init }}(0)\right\rangle,
 $$
 <p>&nbsp;<br>
 
@@ -752,13 +752,13 @@ of one basis.
 <p>&nbsp;<br>
 $$
 \begin{align*}
-|\psi(t)\rangle=&\left(\exp{\frac{i t}{\hbar}\left(E_{0}-\frac{1}{2} \gamma V_Z\right)}|0\rangle\langle 0|+\exp{\frac{i t}{\hbar}\left(E_{1}+\frac{1}{2} \gamma V_Z\right)}|1\rangle\langle 1|\right)\left|\psi_{\text {Init }}(0)\right\rangle\\
+|\psi(t)\rangle=&\left(\exp{\frac{i t}{\hbar}\left(E_{0}-\frac{1}{2}  V_Z\right)}|0\rangle\langle 0|+\exp{\frac{i t}{\hbar}\left(E_{1}+\frac{1}{2}  V_Z\right)}|1\rangle\langle 1|\right)\left|\psi_{\text {Init }}(0)\right\rangle\\
 &=\left(\begin{array}{cc}
-e^{\frac{i t}{\hbar}\left(E_{0}-\frac{1}{2} \gamma V_Z\right)} & 0 \\
-0 & e^{\frac{i t}{\hbar}\left(E_{1}+\frac{1}{2} \gamma V_Z\right)}
+e^{\frac{i t}{\hbar}\left(E_{0}-\frac{1}{2}  V_Z\right)} & 0 \\
+0 & e^{\frac{i t}{\hbar}\left(E_{1}+\frac{1}{2}  V_Z\right)}
 \end{array}\right) \frac{1}{\sqrt{2}}\binom{1}{1} \\
-& =\frac{1}{\sqrt{2}}\binom{e^{\frac{i t}{\hbar}\left(E_{0}-\frac{1}{2} \gamma V_Z\right)}}{e^{\frac{i t}{\hbar}\left(E_{1}+\frac{1}{2} \gamma V_Z\right)}}\\
-&=\frac{1}{\sqrt{2}} e^{\frac{i t}{\hbar}\left(E_{0}-\frac{1}{2} \gamma V_Z\right)}\binom{1}{e^{\frac{i t}{\hbar}\left(E_{1}-E_{0}+\gamma V_Z\right)}}
+& =\frac{1}{\sqrt{2}}\binom{e^{\frac{i t}{\hbar}\left(E_{0}-\frac{1}{2}  V_Z\right)}}{e^{\frac{i t}{\hbar}\left(E_{1}+\frac{1}{2}  V_Z\right)}}\\
+&=\frac{1}{\sqrt{2}} e^{\frac{i t}{\hbar}\left(E_{0}-\frac{1}{2}  V_Z\right)}\binom{1}{e^{\frac{i t}{\hbar}\left(E_{1}-E_{0}+ V_Z\right)}}
 \end{align*}
 $$
 <p>&nbsp;<br>
@@ -771,8 +771,8 @@ $$
 
 <p>&nbsp;<br>
 $$
-\vert\psi_{\mathrm{Final}}\rangle=\frac{1}{2} \exp{\frac{\imath t}{\hbar}(E_{0}-\frac{1}{2} \gamma V_Z)}
-\begin{bmatrix} 1+\exp{\frac{\imath t}{\hbar}(E_{1}-E_{0}+\gamma V_Z)} \\ 1-\exp{(\frac{\imath t}{\hbar}(E_{1}-E_{0}+\gamma V_Z)}\end{bmatrix}.
+\vert\psi_{\mathrm{Final}}\rangle=\frac{1}{2} \exp{\frac{\imath t}{\hbar}(E_{0}-\frac{1}{2}  V_Z)}
+\begin{bmatrix} 1+\exp{\frac{\imath t}{\hbar}(E_{1}-E_{0}+ V_Z)} \\ 1-\exp{(\frac{\imath t}{\hbar}(E_{1}-E_{0}+ V_Z)}\end{bmatrix}.
 $$
 <p>&nbsp;<br>
 </section>
@@ -784,8 +784,8 @@ $$
 <p>&nbsp;<br>
 $$
 \begin{align*}
-p_{|0\rangle \rightarrow|1\rangle}=\left|\left\langle 1 \mid \psi_{\text {Final }}\right\rangle\right|^{2}=&\left|1-e^{\frac{i t}{\hbar}\left(E_{1}-E_{0}+\gamma V_Z\right)}\right|^{2}\\
-&=\frac{1}{2}\left(1-\cos \left(t \frac{\left(E_{1}-E_{0}\right)+\gamma V_Z}{\hbar}\right)\right)
+p_{|0\rangle \rightarrow|1\rangle}=\left|\left\langle 1 \mid \psi_{\text {Final }}\right\rangle\right|^{2}=&\left|1-e^{\frac{i t}{\hbar}\left(E_{1}-E_{0}+ V_Z\right)}\right|^{2}\\
+&=\frac{1}{2}\left(1-\cos \left(t \frac{\left(E_{1}-E_{0}\right)+ V_Z}{\hbar}\right)\right)
 \end{align*}
 $$
 <p>&nbsp;<br>
@@ -799,8 +799,8 @@ since we constructed the system or by taking measurements without the
 external stimulus \( V \), and we can control the time \( t \) for which the
 system is allowed to evolve under the external stimulus. Then we can
 fix \( t \) and take many measurements to estimate \( p_{|0\rangle
-\rightarrow|1\rangle} \), which then makes finding \( t \frac{\gamma
-V_Z}{\hbar} \) a simple phase-estimation problem which gives us \( \gamma
+\rightarrow|1\rangle} \), which then makes finding \( t \frac{
+V_Z}{\hbar} \) a simple phase-estimation problem which gives us \( 
 V_Z \). The physical implementation of this process is known as Ramsey
 Interferometry, and it can be done with arbitary initialization and
 readout preparation unitary operators.
@@ -832,7 +832,7 @@ $$
 <h2 id="ramsey-interferometry">Ramsey interferometry </h2>
 
 <p>If we consider Ramsey Interferometry as an example, see <a href="https://en.wikipedia.org/wiki/Ramsey_interferometry" target="_blank"><tt>https://en.wikipedia.org/wiki/Ramsey_interferometry</tt></a>, then the
-uncertainty in \( \gamma V_Z \) and so in \( V_Z \), denoted \( \sigma_{V} \),
+uncertainty in $ V_Z$ and so in \( V_Z \), denoted \( \sigma_{V} \),
 scales as
 </p>
 
@@ -879,10 +879,10 @@ $$
 <section>
 <h2 id="after-initialization">After initialization </h2>
 
-<p>After initialization, each of the \( n \) sensing qubits evolves to pick up a relative phase factor of \( e^{\frac{i t}{\hbar}\left(E_{1}-E_{0}+\gamma V_Z\right)} \), which combined results in</p>
+<p>After initialization, each of the \( n \) sensing qubits evolves to pick up a relative phase factor of \( e^{\frac{i t}{\hbar}\left(E_{1}-E_{0}+ V_Z\right)} \), which combined results in</p>
 <p>&nbsp;<br>
 $$
-|\psi(t)\rangle=\mathcal{N}\left(|0\rangle^{\otimes n}+e^{n \frac{i t}{\hbar}\left(E_{1}-E_{0}+\gamma V_Z\right)}|1\rangle^{\otimes n}\right)
+|\psi(t)\rangle=\mathcal{N}\left(|0\rangle^{\otimes n}+e^{n \frac{i t}{\hbar}\left(E_{1}-E_{0}+ V_Z\right)}|1\rangle^{\otimes n}\right)
 $$
 <p>&nbsp;<br>
 
@@ -895,7 +895,7 @@ $$
 <p>The transition probability</p>
 <p>&nbsp;<br>
 $$
-p_{|0\rangle \rightarrow|1\rangle}=\left|\left\langle 1 \mid \psi_{\text {Final }}\right\rangle\right|^{2}=\frac{1}{2}\left(1-\cos \left(t \frac{n\left(E_{1}-E_{0}\right)+n \gamma V_Z}{\hbar}\right)\right)
+p_{|0\rangle \rightarrow|1\rangle}=\left|\left\langle 1 \mid \psi_{\text {Final }}\right\rangle\right|^{2}=\frac{1}{2}\left(1-\cos \left(t \frac{n\left(E_{1}-E_{0}\right)+n  V_Z}{\hbar}\right)\right)
 $$
 <p>&nbsp;<br>
 </section>
