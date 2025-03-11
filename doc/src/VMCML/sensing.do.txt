@@ -23,7 +23,7 @@ In particular, we will include
 * Numerical codes for general time-dependent interactions
 * Initial state preparations and final results and more
 
-Feel free to come with suggestions for addition. You can access the material at URL:"
+Feel free to come with suggestions for additions. You can access the material at URL:"https://github.com/mhjensenseminars/MachineLearningTalk/blob/master/doc/pub/sensing/ipynb/sensing.ipynb"
 
 !split
 ===== Literature =====
@@ -39,10 +39,13 @@ o See also recent work by Liu et at URL:"https://www.nature.com/articles/s41534-
 ===== One-qubit system =====
 
 In the first part of this notebook, we will analyze our systems using plain diagonalization and simple analytical manipulations.
-Thereafter we will develop codes and material for performing a quantum computing simulation of the same systems. 
+Thereafter we will develop codes and material for performing a quantum computing simulation of the same systems.
+
+Our first encounter is a simple 
 
 !split
 ===== Two-qubit system, Computational basis =====
+
 Our computational basis states
 
 !bt

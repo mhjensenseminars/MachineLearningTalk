@@ -37,8 +37,17 @@ div.toc p,a {
 
 <!-- tocinfo
 {'highest level': 2,
- 'sections': [('Content', 2, None, 'content'),
-              ('Computational basis', 2, None, 'computational-basis'),
+ 'sections': [('Motivation and Content', 2, None, 'motivation-and-content'),
+              ('More material will be added',
+               2,
+               None,
+               'more-material-will-be-added'),
+              ('Literature', 2, None, 'literature'),
+              ('One-qubit system', 2, None, 'one-qubit-system'),
+              ('Two-qubit system, Computational basis',
+               2,
+               None,
+               'two-qubit-system-computational-basis'),
               ('Simple system to lllustrate entanglement',
                2,
                None,
@@ -117,7 +126,7 @@ MathJax.Hub.Config({
 
 <!-- ------------------- main content ---------------------- -->
 <center>
-<h1>Making sense of sensing?</h1>
+<h1>Making sense of sensing? </h1>
 </center>  <!-- document title -->
 
 <!-- author(s): Morten Hjorth-Jensen -->
@@ -130,19 +139,60 @@ MathJax.Hub.Config({
 </center>
 <br>
 <center>
-<h4>March 7, 2025</h4>
+<h4>March 2025</h4>
 </center> <!-- date -->
 <br>
 
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
-<h2 id="content">Content </h2>
+<h2 id="motivation-and-content">Motivation and Content </h2>
+
+<p>These notes aim at linking entanglement in quantum mechanical systems with quantum sensing using simple examples.
+Numerical codes are included in order to illustrate basic elements of sensing.
+The examples are tailored to simple one- and two-qubit systems. The material contains
+</p>
 <ol>
-<li> Simple two-particle (or two-qubit) system to demonstrate entanglement</li>
-<li> Basic elements of sensing
-<!-- add more material --></li>
+<li> One-qubit system with basic elements of sensing</li>
+<li> Linking analytically solvable case with many-qubit entanglement</li>
+<li> Simple two-particle (or two-qubit) system to demonstrate entanglement and its links with sensing</li>
 </ol>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
-<h2 id="computational-basis">Computational basis </h2>
+<h2 id="more-material-will-be-added">More material will be added </h2>
+
+<p>In particular, we will include</p>
+<ul>
+<li> Quantum computing simulations of the above systems using the Variational Quantum Eigensolver algorithm</li>
+<li> Discussion of Fisher entropy and other measures</li>
+<li> Numerical codes for general time-dependent interactions</li>
+<li> Initial state preparations and final results and more</li>
+</ul>
+<p>Feel free to come with suggestions for additions. You can access the material at <a href="https://github.com/mhjensenseminars/MachineLearningTalk/blob/master/doc/pub/sensing/ipynb/sensing.ipynb" target="_blank"><tt>https://github.com/mhjensenseminars/MachineLearningTalk/blob/master/doc/pub/sensing/ipynb/sensing.ipynb</tt></a></p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="literature">Literature </h2>
+
+<p>In the discussions here we have borrowed extensively from two Review of Modern Physics
+articles
+</p>
+<ol>
+<li> <b>Quantum sensing</b>, C.L. Degen, F. Reinhard, and P. Cappellaro, Reviews of  Modern  Physics <b>89</b>, 035002 (2017), see <a href="https://journals.aps.org/rmp/abstract/10.1103/RevModPhys.89.035002" target="_blank"><tt>https://journals.aps.org/rmp/abstract/10.1103/RevModPhys.89.035002</tt></a></li>
+<li> <b>Quantum metrology with nonclassical states of atomic ensembles</b>,</li> 
+</ol>
+<p>L. Pezz&#232;, A. Smerzi, M.K. Oberthaler, R. Schmied, and P. Treutlein, Reviews of  Modern  Physics <b>90</b>, 035005 (2018), see <a href="https://journals.aps.org/rmp/abstract/10.1103/RevModPhys.90.035005" target="_blank"><tt>https://journals.aps.org/rmp/abstract/10.1103/RevModPhys.90.035005</tt></a></p>
+<ol>
+<li> See also recent work by Liu et at <a href="https://www.nature.com/articles/s41534-021-00507-x" target="_blank"><tt>https://www.nature.com/articles/s41534-021-00507-x</tt></a></li>
+</ol>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="one-qubit-system">One-qubit system </h2>
+
+<p>In the first part of this notebook, we will analyze our systems using plain diagonalization and simple analytical manipulations.
+Thereafter we will develop codes and material for performing a quantum computing simulation of the same systems.
+</p>
+
+<p>Our first encounter is a simple </p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="two-qubit-system-computational-basis">Two-qubit system, Computational basis </h2>
+
 <p>Our computational basis states</p>
 
 $$
