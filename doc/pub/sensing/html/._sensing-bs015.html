@@ -64,6 +64,7 @@ doconce format html sensing.do.txt --html_style=bootstrap --pygments_html_style=
                None,
                'rewriting-with-pauli-matrices'),
               ('Simple time dependence', 2, None, 'simple-time-dependence'),
+              ('Exact solution', 2, None, 'exact-solution'),
               ('Selecting parameters', 2, None, 'selecting-parameters'),
               ('Setting up the matrix for the simple one-qubit system',
                2,
@@ -172,41 +173,42 @@ MathJax.Hub.Config({
      <!-- navigation toc: --> <li><a href="._sensing-bs007.html#hadamard-gate" style="font-size: 80%;">Hadamard gate</a></li>
      <!-- navigation toc: --> <li><a href="._sensing-bs008.html#sensing-hamiltonian" style="font-size: 80%;">Sensing Hamiltonian</a></li>
      <!-- navigation toc: --> <li><a href="._sensing-bs009.html#time-dependent-hamiltonian-matrix" style="font-size: 80%;">Time-dependent Hamiltonian matrix</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs039.html#interaction-part" style="font-size: 80%;">Interaction part</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs040.html#interaction-part" style="font-size: 80%;">Interaction part</a></li>
      <!-- navigation toc: --> <li><a href="._sensing-bs011.html#non-interacting-solution" style="font-size: 80%;">Non-interacting solution</a></li>
      <!-- navigation toc: --> <li><a href="._sensing-bs012.html#rewriting-with-pauli-matrices" style="font-size: 80%;">Rewriting with Pauli matrices</a></li>
      <!-- navigation toc: --> <li><a href="._sensing-bs013.html#simple-time-dependence" style="font-size: 80%;">Simple time dependence</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs014.html#selecting-parameters" style="font-size: 80%;">Selecting parameters</a></li>
-     <!-- navigation toc: --> <li><a href="#setting-up-the-matrix-for-the-simple-one-qubit-system" style="font-size: 80%;">Setting up the matrix for the simple one-qubit system</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs016.html#initialization" style="font-size: 80%;">Initialization</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs017.html#effects-of-stimulus" style="font-size: 80%;">Effects of Stimulus</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs018.html#slowly-changing-potential" style="font-size: 80%;">Slowly changing potential</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs019.html#readout" style="font-size: 80%;">Readout</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs020.html#measurement" style="font-size: 80%;">Measurement</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs021.html#multiple-measurements" style="font-size: 80%;">Multiple measurements</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs022.html#example" style="font-size: 80%;">Example</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs023.html#evolution-of-initial-state" style="font-size: 80%;">Evolution of initial state</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs024.html#state-evolution" style="font-size: 80%;">State evolution</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs025.html#preparing-for-readout" style="font-size: 80%;">Preparing for readout</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs032.html#transition-probability" style="font-size: 80%;">Transition probability</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs027.html#ramsey-interferometry-https-en-wikipedia-org-wiki-ramsey-interferometry" style="font-size: 80%;">"Ramsey interferometry":"https://en.wikipedia.org/wiki/Ramsey_interferometry"</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs028.html#benefits-of-entanglement" style="font-size: 80%;">Benefits of Entanglement</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs029.html#ramsey-interferometry" style="font-size: 80%;">Ramsey interferometry</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs030.html#more-than-one-qubit" style="font-size: 80%;">More than one qubit</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs031.html#after-initialization" style="font-size: 80%;">After initialization</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs032.html#transition-probability" style="font-size: 80%;">Transition probability</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs033.html#role-of-entanglement" style="font-size: 80%;">Role of entanglement</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs034.html#concluding-remarks-for-the-simple-example" style="font-size: 80%;">Concluding remarks for the simple example</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs035.html#two-qubit-system-computational-basis" style="font-size: 80%;">Two-qubit system, Computational basis</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs036.html#simple-system-to-lllustrate-entanglement" style="font-size: 80%;">Simple system to lllustrate entanglement</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs037.html#computational-basis-states" style="font-size: 80%;">Computational basis states</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs038.html#eigenstates-of-non-interacting-hamiltonian" style="font-size: 80%;">Eigenstates of non-interacting Hamiltonian</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs039.html#interaction-part" style="font-size: 80%;">Interaction part</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs040.html#density-matrices" style="font-size: 80%;">Density matrices</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs041.html#subsystems" style="font-size: 80%;">Subsystems</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs042.html#entropies" style="font-size: 80%;">Entropies</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs043.html#understanding-the-example" style="font-size: 80%;">Understanding the example</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs044.html#code-best-seen-in-jupyter-notebook" style="font-size: 80%;">Code, best seen in jupyter-notebook</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs014.html#exact-solution" style="font-size: 80%;">Exact solution</a></li>
+     <!-- navigation toc: --> <li><a href="#selecting-parameters" style="font-size: 80%;">Selecting parameters</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs016.html#setting-up-the-matrix-for-the-simple-one-qubit-system" style="font-size: 80%;">Setting up the matrix for the simple one-qubit system</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs017.html#initialization" style="font-size: 80%;">Initialization</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs018.html#effects-of-stimulus" style="font-size: 80%;">Effects of Stimulus</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs019.html#slowly-changing-potential" style="font-size: 80%;">Slowly changing potential</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs020.html#readout" style="font-size: 80%;">Readout</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs021.html#measurement" style="font-size: 80%;">Measurement</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs022.html#multiple-measurements" style="font-size: 80%;">Multiple measurements</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs023.html#example" style="font-size: 80%;">Example</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs024.html#evolution-of-initial-state" style="font-size: 80%;">Evolution of initial state</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs025.html#state-evolution" style="font-size: 80%;">State evolution</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs026.html#preparing-for-readout" style="font-size: 80%;">Preparing for readout</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs033.html#transition-probability" style="font-size: 80%;">Transition probability</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs028.html#ramsey-interferometry-https-en-wikipedia-org-wiki-ramsey-interferometry" style="font-size: 80%;">"Ramsey interferometry":"https://en.wikipedia.org/wiki/Ramsey_interferometry"</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs029.html#benefits-of-entanglement" style="font-size: 80%;">Benefits of Entanglement</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs030.html#ramsey-interferometry" style="font-size: 80%;">Ramsey interferometry</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs031.html#more-than-one-qubit" style="font-size: 80%;">More than one qubit</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs032.html#after-initialization" style="font-size: 80%;">After initialization</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs033.html#transition-probability" style="font-size: 80%;">Transition probability</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs034.html#role-of-entanglement" style="font-size: 80%;">Role of entanglement</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs035.html#concluding-remarks-for-the-simple-example" style="font-size: 80%;">Concluding remarks for the simple example</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs036.html#two-qubit-system-computational-basis" style="font-size: 80%;">Two-qubit system, Computational basis</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs037.html#simple-system-to-lllustrate-entanglement" style="font-size: 80%;">Simple system to lllustrate entanglement</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs038.html#computational-basis-states" style="font-size: 80%;">Computational basis states</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs039.html#eigenstates-of-non-interacting-hamiltonian" style="font-size: 80%;">Eigenstates of non-interacting Hamiltonian</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs040.html#interaction-part" style="font-size: 80%;">Interaction part</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs041.html#density-matrices" style="font-size: 80%;">Density matrices</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs042.html#subsystems" style="font-size: 80%;">Subsystems</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs043.html#entropies" style="font-size: 80%;">Entropies</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs044.html#understanding-the-example" style="font-size: 80%;">Understanding the example</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs045.html#code-best-seen-in-jupyter-notebook" style="font-size: 80%;">Code, best seen in jupyter-notebook</a></li>
 
         </ul>
       </li>
@@ -218,77 +220,26 @@ MathJax.Hub.Config({
 <p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p> <!-- add vertical space -->
 <a name="part0015"></a>
 <!-- !split -->
-<h2 id="setting-up-the-matrix-for-the-simple-one-qubit-system" class="anchor">Setting up the matrix for the simple one-qubit system </h2>
+<h2 id="selecting-parameters" class="anchor">Selecting parameters </h2>
 
-<p>Here we solve the above problem as a standard eigenvalue problem.</p>
+<p>The model is an eigenvalue problem with only
+two available states.
+</p>
 
+<p>Here we set the parameters \( E_0=0 \),
+\( E_1=4 \), \( V_{11}=-V_{22}=3 \) and \( V_{12}=V_{21}=0.2 \).
+</p>
 
-<!-- code=python (!bc pycod) typeset with pygments style "default" -->
-<div class="cell border-box-sizing code_cell rendered">
-  <div class="input">
-    <div class="inner_cell">
-      <div class="input_area">
-        <div class="highlight" style="background: #f8f8f8">
-  <pre style="line-height: 125%;"><span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">numpy</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">np</span>
-<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">matplotlib.pyplot</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">plt</span>
-<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">seaborn</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">sns</span>; sns<span style="color: #666666">.</span>set_theme(font_scale<span style="color: #666666">=1.5</span>)
-<span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">tqdm</span> <span style="color: #008000; font-weight: bold">import</span> tqdm
-
-sigma_x <span style="color: #666666">=</span> np<span style="color: #666666">.</span>array([[<span style="color: #666666">0</span>, <span style="color: #666666">1</span>], [<span style="color: #666666">1</span>, <span style="color: #666666">0</span>]])
-sigma_y <span style="color: #666666">=</span> np<span style="color: #666666">.</span>array([[<span style="color: #666666">0</span>, <span style="color: #666666">-1</span>j], [<span style="color: #666666">1</span>j, <span style="color: #666666">0</span>]])
-sigma_z <span style="color: #666666">=</span> np<span style="color: #666666">.</span>array([[<span style="color: #666666">1</span>, <span style="color: #666666">0</span>], [<span style="color: #666666">0</span>, <span style="color: #666666">-1</span>]])
-I <span style="color: #666666">=</span> np<span style="color: #666666">.</span>eye(<span style="color: #666666">2</span>)
-
-<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">Hamiltonian</span>(lmb):
-    E1 <span style="color: #666666">=</span> <span style="color: #666666">0</span>
-    E2 <span style="color: #666666">=</span> <span style="color: #666666">4</span>
-    V11 <span style="color: #666666">=</span> <span style="color: #666666">3</span>
-    V22 <span style="color: #666666">=</span> <span style="color: #666666">-3</span>
-    V12 <span style="color: #666666">=</span> <span style="color: #666666">0.2</span>
-    V21 <span style="color: #666666">=</span> <span style="color: #666666">0.2</span>
-
-    eps <span style="color: #666666">=</span> (E1 <span style="color: #666666">+</span> E2) <span style="color: #666666">/</span> <span style="color: #666666">2</span>
-    omega <span style="color: #666666">=</span> (E1 <span style="color: #666666">-</span> E2) <span style="color: #666666">/</span> <span style="color: #666666">2</span>
-    c <span style="color: #666666">=</span> (V11 <span style="color: #666666">+</span> V22) <span style="color: #666666">/</span> <span style="color: #666666">2</span>
-    omega_z <span style="color: #666666">=</span> (V11 <span style="color: #666666">-</span> V22) <span style="color: #666666">/</span> <span style="color: #666666">2</span>
-    omega_x <span style="color: #666666">=</span> V12
-
-    H0 <span style="color: #666666">=</span> eps <span style="color: #666666">*</span> I <span style="color: #666666">+</span> omega <span style="color: #666666">*</span> sigma_z
-    H1 <span style="color: #666666">=</span> c <span style="color: #666666">*</span> I <span style="color: #666666">+</span> omega_z <span style="color: #666666">*</span> sigma_z <span style="color: #666666">+</span> omega_x <span style="color: #666666">*</span> sigma_x
-    <span style="color: #008000; font-weight: bold">return</span> H0 <span style="color: #666666">+</span> lmb <span style="color: #666666">*</span> H1
-    
-lmbvalues_ana <span style="color: #666666">=</span> np<span style="color: #666666">.</span>arange(<span style="color: #666666">0</span>, <span style="color: #666666">1</span>, <span style="color: #666666">0.01</span>)
-eigvals_ana <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros((<span style="color: #008000">len</span>(lmbvalues_ana), <span style="color: #666666">2</span>))
-<span style="color: #008000; font-weight: bold">for</span> index, lmb <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">enumerate</span>(lmbvalues_ana):
-    H <span style="color: #666666">=</span> Hamiltonian(lmb)
-    eigen, eigvecs <span style="color: #666666">=</span> np<span style="color: #666666">.</span>linalg<span style="color: #666666">.</span>eig(H)
-    permute <span style="color: #666666">=</span> eigen<span style="color: #666666">.</span>argsort()
-    eigvals_ana[index] <span style="color: #666666">=</span> eigen[permute]
-    eigvecs <span style="color: #666666">=</span> eigvecs[:,permute]
-
-
-fig, axs <span style="color: #666666">=</span> plt<span style="color: #666666">.</span>subplots(<span style="color: #666666">1</span>, <span style="color: #666666">1</span>, figsize<span style="color: #666666">=</span>(<span style="color: #666666">10</span>, <span style="color: #666666">10</span>))
-<span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(<span style="color: #666666">2</span>):
-    axs<span style="color: #666666">.</span>plot(lmbvalues_ana, eigvals_ana[:,i], label<span style="color: #666666">=</span><span style="color: #BA2121">f&#39;$E_</span><span style="color: #BB6688; font-weight: bold">{</span>i<span style="color: #666666">+1</span><span style="color: #BB6688; font-weight: bold">}</span><span style="color: #BA2121">$&#39;</span>)
-axs<span style="color: #666666">.</span>set_xlabel(<span style="color: #BA2121">r&#39;$\lambda$&#39;</span>)
-axs<span style="color: #666666">.</span>set_ylabel(<span style="color: #BA2121">&#39;Energy&#39;</span>)
-axs<span style="color: #666666">.</span>legend()
-plt<span style="color: #666666">.</span>show()
-</pre>
-</div>
-      </div>
-    </div>
-  </div>
-  <div class="output_wrapper">
-    <div class="output">
-      <div class="output_area">
-        <div class="output_subarea output_stream output_stdout output_text">          
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
+<p>The non-interacting solutions represent our computational basis.
+Pertinent to our choice of parameters, is that at \( t\geq 2/3 \),
+the lowest eigenstate is dominated by \( \vert 1\rangle \) while the upper
+is \( \vert 0 \rangle \). At \( t=1 \) the \( \vert 0 \rangle \) mixing of
+the lowest eigenvalue is \( 1\% \) while for \( t\leq 2/3 \) we have a
+\( \vert 0 \rangle \) component of more than \( 90\% \).  The character of the
+eigenvectors has therefore been interchanged when passing \( z=2/3 \). The
+value of the parameter \( V_{12} \) represents the strength of the coupling
+between the two states.  Here we keep only the real part of the non-diagonal term.
+</p>
 
 <p>
 <!-- navigation buttons at the bottom of the page -->
@@ -315,7 +266,7 @@ plt<span style="color: #666666">.</span>show()
   <li><a href="._sensing-bs023.html">24</a></li>
   <li><a href="._sensing-bs024.html">25</a></li>
   <li><a href="">...</a></li>
-  <li><a href="._sensing-bs044.html">45</a></li>
+  <li><a href="._sensing-bs045.html">46</a></li>
   <li><a href="._sensing-bs016.html">&raquo;</a></li>
 </ul>
 <!-- ------------------- end of main content --------------- -->

@@ -179,7 +179,7 @@ MathJax.Hub.Config({
      <!-- navigation toc: --> <li><a href="._sensing-bs013.html#simple-time-dependence" style="font-size: 80%;">Simple time dependence</a></li>
      <!-- navigation toc: --> <li><a href="._sensing-bs014.html#exact-solution" style="font-size: 80%;">Exact solution</a></li>
      <!-- navigation toc: --> <li><a href="._sensing-bs015.html#selecting-parameters" style="font-size: 80%;">Selecting parameters</a></li>
-     <!-- navigation toc: --> <li><a href="#setting-up-the-matrix-for-the-simple-one-qubit-system" style="font-size: 80%;">Setting up the matrix for the simple one-qubit system</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs016.html#setting-up-the-matrix-for-the-simple-one-qubit-system" style="font-size: 80%;">Setting up the matrix for the simple one-qubit system</a></li>
      <!-- navigation toc: --> <li><a href="._sensing-bs017.html#initialization" style="font-size: 80%;">Initialization</a></li>
      <!-- navigation toc: --> <li><a href="._sensing-bs018.html#effects-of-stimulus" style="font-size: 80%;">Effects of Stimulus</a></li>
      <!-- navigation toc: --> <li><a href="._sensing-bs019.html#slowly-changing-potential" style="font-size: 80%;">Slowly changing potential</a></li>
@@ -208,7 +208,7 @@ MathJax.Hub.Config({
      <!-- navigation toc: --> <li><a href="._sensing-bs042.html#subsystems" style="font-size: 80%;">Subsystems</a></li>
      <!-- navigation toc: --> <li><a href="._sensing-bs043.html#entropies" style="font-size: 80%;">Entropies</a></li>
      <!-- navigation toc: --> <li><a href="._sensing-bs044.html#understanding-the-example" style="font-size: 80%;">Understanding the example</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs045.html#code-best-seen-in-jupyter-notebook" style="font-size: 80%;">Code, best seen in jupyter-notebook</a></li>
+     <!-- navigation toc: --> <li><a href="#code-best-seen-in-jupyter-notebook" style="font-size: 80%;">Code, best seen in jupyter-notebook</a></li>
 
         </ul>
       </li>
@@ -218,12 +218,9 @@ MathJax.Hub.Config({
 </div> <!-- end of navigation bar -->
 <div class="container">
 <p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p> <!-- add vertical space -->
-<a name="part0016"></a>
+<a name="part0045"></a>
 <!-- !split -->
-<h2 id="setting-up-the-matrix-for-the-simple-one-qubit-system" class="anchor">Setting up the matrix for the simple one-qubit system </h2>
-
-<p>Here we solve the above problem as a standard eigenvalue problem.</p>
-
+<h2 id="code-best-seen-in-jupyter-notebook" class="anchor">Code, best seen in jupyter-notebook </h2>
 
 <!-- code=python (!bc pycod) typeset with pygments style "default" -->
 <div class="cell border-box-sizing code_cell rendered">
@@ -231,51 +228,68 @@ MathJax.Hub.Config({
     <div class="inner_cell">
       <div class="input_area">
         <div class="highlight" style="background: #f8f8f8">
-  <pre style="line-height: 125%;"><span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">numpy</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">np</span>
-<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">matplotlib.pyplot</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">plt</span>
-<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">seaborn</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">sns</span>; sns<span style="color: #666666">.</span>set_theme(font_scale<span style="color: #666666">=1.5</span>)
-<span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">tqdm</span> <span style="color: #008000; font-weight: bold">import</span> tqdm
+  <pre style="line-height: 125%;"><span style="color: #666666">%</span>matplotlib inline
+<span style="color: #008000; font-weight: bold">from</span>  <span style="color: #0000FF; font-weight: bold">matplotlib</span> <span style="color: #008000; font-weight: bold">import</span> pyplot <span style="color: #008000; font-weight: bold">as</span> plt
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">numpy</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">np</span>
+<span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">scipy.linalg</span> <span style="color: #008000; font-weight: bold">import</span> logm, expm
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">log2M</span>(a): <span style="color: #408080; font-style: italic"># base 2 matrix logarithm</span>
+    <span style="color: #008000; font-weight: bold">return</span> logm(a)<span style="color: #666666">/</span>np<span style="color: #666666">.</span>log(<span style="color: #666666">2.0</span>)
 
-sigma_x <span style="color: #666666">=</span> np<span style="color: #666666">.</span>array([[<span style="color: #666666">0</span>, <span style="color: #666666">1</span>], [<span style="color: #666666">1</span>, <span style="color: #666666">0</span>]])
-sigma_y <span style="color: #666666">=</span> np<span style="color: #666666">.</span>array([[<span style="color: #666666">0</span>, <span style="color: #666666">-1</span>j], [<span style="color: #666666">1</span>j, <span style="color: #666666">0</span>]])
-sigma_z <span style="color: #666666">=</span> np<span style="color: #666666">.</span>array([[<span style="color: #666666">1</span>, <span style="color: #666666">0</span>], [<span style="color: #666666">0</span>, <span style="color: #666666">-1</span>]])
-I <span style="color: #666666">=</span> np<span style="color: #666666">.</span>eye(<span style="color: #666666">2</span>)
+dim <span style="color: #666666">=</span> <span style="color: #666666">4</span>
+Hamiltonian <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros((dim,dim))
+<span style="color: #408080; font-style: italic">#number of lambda values</span>
+n <span style="color: #666666">=</span> <span style="color: #666666">40</span>
+lmbd <span style="color: #666666">=</span> np<span style="color: #666666">.</span>linspace(<span style="color: #666666">0.0</span>,<span style="color: #666666">1.0</span>,n)
+Hx <span style="color: #666666">=</span> <span style="color: #666666">2.0</span>
+Hz <span style="color: #666666">=</span> <span style="color: #666666">3.0</span>
+<span style="color: #408080; font-style: italic"># Non-diagonal part as sigma_x tensor product with sigma_x</span>
+sx <span style="color: #666666">=</span> np<span style="color: #666666">.</span>matrix([[<span style="color: #666666">0</span>,<span style="color: #666666">1</span>],[<span style="color: #666666">1</span>,<span style="color: #666666">0</span>]])
+sx2 <span style="color: #666666">=</span> Hx<span style="color: #666666">*</span>np<span style="color: #666666">.</span>kron(sx, sx)
+<span style="color: #408080; font-style: italic"># Diagonal part as sigma_z tensor product with sigma_z</span>
+sz <span style="color: #666666">=</span> np<span style="color: #666666">.</span>matrix([[<span style="color: #666666">1</span>,<span style="color: #666666">0</span>],[<span style="color: #666666">0</span>,<span style="color: #666666">-1</span>]])
+sz2 <span style="color: #666666">=</span> Hz<span style="color: #666666">*</span>np<span style="color: #666666">.</span>kron(sz, sz)
+noninteracting <span style="color: #666666">=</span> [<span style="color: #666666">0.0</span>, <span style="color: #666666">2.5</span>, <span style="color: #666666">6.5</span>, <span style="color: #666666">7.0</span>]
+D <span style="color: #666666">=</span> np<span style="color: #666666">.</span>diag(noninteracting)
+Eigenvalue <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros((dim,n))
+Entropy <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros(n)
 
-<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">Hamiltonian</span>(lmb):
-    E0 <span style="color: #666666">=</span> <span style="color: #666666">0</span>
-    E1 <span style="color: #666666">=</span> <span style="color: #666666">4</span>
-    V11 <span style="color: #666666">=</span> <span style="color: #666666">3</span>
-    V22 <span style="color: #666666">=</span> <span style="color: #666666">-3</span>
-    V12 <span style="color: #666666">=</span> <span style="color: #666666">0.2</span>
-    V21 <span style="color: #666666">=</span> <span style="color: #666666">0.2</span>
-
-    eps <span style="color: #666666">=</span> (E0 <span style="color: #666666">+</span> E1) <span style="color: #666666">/</span> <span style="color: #666666">2</span>
-    omega <span style="color: #666666">=</span> (E0 <span style="color: #666666">-</span> E1) <span style="color: #666666">/</span> <span style="color: #666666">2</span>
-    c <span style="color: #666666">=</span> (V11 <span style="color: #666666">+</span> V22) <span style="color: #666666">/</span> <span style="color: #666666">2</span>
-    omega_z <span style="color: #666666">=</span> (V11 <span style="color: #666666">-</span> V22) <span style="color: #666666">/</span> <span style="color: #666666">2</span>
-    omega_x <span style="color: #666666">=</span> V12
-
-    H0 <span style="color: #666666">=</span> eps <span style="color: #666666">*</span> I <span style="color: #666666">+</span> omega <span style="color: #666666">*</span> sigma_z
-    H1 <span style="color: #666666">=</span> c <span style="color: #666666">*</span> I <span style="color: #666666">+</span> omega_z <span style="color: #666666">*</span> sigma_z <span style="color: #666666">+</span> omega_x <span style="color: #666666">*</span> sigma_x
-    <span style="color: #008000; font-weight: bold">return</span> H0 <span style="color: #666666">+</span> lmb <span style="color: #666666">*</span> H1
-    
-lmbvalues_ana <span style="color: #666666">=</span> np<span style="color: #666666">.</span>arange(<span style="color: #666666">0</span>, <span style="color: #666666">1</span>, <span style="color: #666666">0.01</span>)
-eigvals_ana <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros((<span style="color: #008000">len</span>(lmbvalues_ana), <span style="color: #666666">2</span>))
-<span style="color: #008000; font-weight: bold">for</span> index, lmb <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">enumerate</span>(lmbvalues_ana):
-    H <span style="color: #666666">=</span> Hamiltonian(lmb)
-    eigen, eigvecs <span style="color: #666666">=</span> np<span style="color: #666666">.</span>linalg<span style="color: #666666">.</span>eig(H)
-    permute <span style="color: #666666">=</span> eigen<span style="color: #666666">.</span>argsort()
-    eigvals_ana[index] <span style="color: #666666">=</span> eigen[permute]
-    eigvecs <span style="color: #666666">=</span> eigvecs[:,permute]
-
-
-fig, axs <span style="color: #666666">=</span> plt<span style="color: #666666">.</span>subplots(<span style="color: #666666">1</span>, <span style="color: #666666">1</span>, figsize<span style="color: #666666">=</span>(<span style="color: #666666">10</span>, <span style="color: #666666">10</span>))
-<span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(<span style="color: #666666">2</span>):
-    axs<span style="color: #666666">.</span>plot(lmbvalues_ana, eigvals_ana[:,i], label<span style="color: #666666">=</span><span style="color: #BA2121">f&#39;$E_</span><span style="color: #BB6688; font-weight: bold">{</span>i<span style="color: #666666">+1</span><span style="color: #BB6688; font-weight: bold">}</span><span style="color: #BA2121">$&#39;</span>)
-axs<span style="color: #666666">.</span>set_xlabel(<span style="color: #BA2121">r&#39;$\lambda$&#39;</span>)
-axs<span style="color: #666666">.</span>set_ylabel(<span style="color: #BA2121">&#39;Energy&#39;</span>)
-axs<span style="color: #666666">.</span>legend()
+<span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(n): 
+    Hamiltonian <span style="color: #666666">=</span> lmbd[i]<span style="color: #666666">*</span>(sx2<span style="color: #666666">+</span>sz2)<span style="color: #666666">+</span>D
+    <span style="color: #408080; font-style: italic"># diagonalize and obtain eigenvalues, not necessarily sorted</span>
+    EigValues, EigVectors <span style="color: #666666">=</span> np<span style="color: #666666">.</span>linalg<span style="color: #666666">.</span>eig(Hamiltonian)
+    <span style="color: #408080; font-style: italic"># sort eigenvectors and eigenvalues</span>
+    permute <span style="color: #666666">=</span> EigValues<span style="color: #666666">.</span>argsort()
+    EigValues <span style="color: #666666">=</span> EigValues[permute]
+    EigVectors <span style="color: #666666">=</span> EigVectors[:,permute]
+    <span style="color: #408080; font-style: italic"># Compute density matrix for selected system state, here ground state</span>
+    DensityMatrix <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros((dim,dim))
+    DensityMatrix <span style="color: #666666">=</span> np<span style="color: #666666">.</span>outer(EigVectors[:,<span style="color: #666666">0</span>],EigVectors[:,<span style="color: #666666">0</span>])
+    <span style="color: #408080; font-style: italic"># Project down on substates and find density matrix for subsystem</span>
+    d <span style="color: #666666">=</span> np<span style="color: #666666">.</span>matrix([[<span style="color: #666666">1</span>,<span style="color: #666666">0</span>],[<span style="color: #666666">0</span>,<span style="color: #666666">1</span>]])
+    v1 <span style="color: #666666">=</span> [<span style="color: #666666">1.0</span>,<span style="color: #666666">0.0</span>]
+    proj1 <span style="color: #666666">=</span> np<span style="color: #666666">.</span>kron(v1,d)
+    x1 <span style="color: #666666">=</span> proj1 <span style="color: #666666">@</span> DensityMatrix <span style="color: #666666">@</span> proj1<span style="color: #666666">.</span>T
+    v2 <span style="color: #666666">=</span> [<span style="color: #666666">0.0</span>,<span style="color: #666666">1.0</span>]
+    proj2 <span style="color: #666666">=</span> np<span style="color: #666666">.</span>kron(v2,d)
+    x2 <span style="color: #666666">=</span> proj2 <span style="color: #666666">@</span> DensityMatrix <span style="color: #666666">@</span> proj2<span style="color: #666666">.</span>T
+    <span style="color: #408080; font-style: italic"># Total density matrix for subsystem</span>
+    total <span style="color: #666666">=</span> x1<span style="color: #666666">+</span>x2
+    <span style="color: #408080; font-style: italic"># von Neumann Entropy for subsystem </span>
+    Entropy[i] <span style="color: #666666">=</span> <span style="color: #666666">-</span>np<span style="color: #666666">.</span>matrix<span style="color: #666666">.</span>trace(total <span style="color: #666666">@</span> log2M(total))
+    <span style="color: #408080; font-style: italic"># Plotting eigenvalues and entropy as functions of interaction strengths</span>
+    Eigenvalue[<span style="color: #666666">0</span>,i] <span style="color: #666666">=</span> EigValues[<span style="color: #666666">0</span>]
+    Eigenvalue[<span style="color: #666666">1</span>,i] <span style="color: #666666">=</span> EigValues[<span style="color: #666666">1</span>]
+    Eigenvalue[<span style="color: #666666">2</span>,i] <span style="color: #666666">=</span> EigValues[<span style="color: #666666">2</span>]
+    Eigenvalue[<span style="color: #666666">3</span>,i] <span style="color: #666666">=</span> EigValues[<span style="color: #666666">3</span>]
+plt<span style="color: #666666">.</span>plot(lmbd, Eigenvalue[<span style="color: #666666">0</span>,:] ,<span style="color: #BA2121">&#39;b-&#39;</span>,lmbd, Eigenvalue[<span style="color: #666666">1</span>,:],<span style="color: #BA2121">&#39;g-&#39;</span>,)
+plt<span style="color: #666666">.</span>plot(lmbd, Eigenvalue[<span style="color: #666666">2</span>,:] ,<span style="color: #BA2121">&#39;r-&#39;</span>,lmbd, Eigenvalue[<span style="color: #666666">3</span>,:],<span style="color: #BA2121">&#39;y-&#39;</span>,)
+plt<span style="color: #666666">.</span>xlabel(<span style="color: #BA2121">&#39;$\lambda$&#39;</span>)
+plt<span style="color: #666666">.</span>ylabel(<span style="color: #BA2121">&#39;Eigenvalues&#39;</span>)
 plt<span style="color: #666666">.</span>show()
+plt<span style="color: #666666">.</span>plot(lmbd, Entropy)
+plt<span style="color: #666666">.</span>xlabel(<span style="color: #BA2121">&#39;$\lambda$&#39;</span>)
+plt<span style="color: #666666">.</span>ylabel(<span style="color: #BA2121">&#39;Entropy&#39;</span>)          
+plt<span style="color: #666666">.</span>show
 </pre>
 </div>
       </div>
@@ -295,30 +309,18 @@ plt<span style="color: #666666">.</span>show()
 <p>
 <!-- navigation buttons at the bottom of the page -->
 <ul class="pagination">
-<li><a href="._sensing-bs015.html">&laquo;</a></li>
+<li><a href="._sensing-bs044.html">&laquo;</a></li>
   <li><a href="._sensing-bs000.html">1</a></li>
   <li><a href="">...</a></li>
-  <li><a href="._sensing-bs008.html">9</a></li>
-  <li><a href="._sensing-bs009.html">10</a></li>
-  <li><a href="._sensing-bs010.html">11</a></li>
-  <li><a href="._sensing-bs011.html">12</a></li>
-  <li><a href="._sensing-bs012.html">13</a></li>
-  <li><a href="._sensing-bs013.html">14</a></li>
-  <li><a href="._sensing-bs014.html">15</a></li>
-  <li><a href="._sensing-bs015.html">16</a></li>
-  <li class="active"><a href="._sensing-bs016.html">17</a></li>
-  <li><a href="._sensing-bs017.html">18</a></li>
-  <li><a href="._sensing-bs018.html">19</a></li>
-  <li><a href="._sensing-bs019.html">20</a></li>
-  <li><a href="._sensing-bs020.html">21</a></li>
-  <li><a href="._sensing-bs021.html">22</a></li>
-  <li><a href="._sensing-bs022.html">23</a></li>
-  <li><a href="._sensing-bs023.html">24</a></li>
-  <li><a href="._sensing-bs024.html">25</a></li>
-  <li><a href="._sensing-bs025.html">26</a></li>
-  <li><a href="">...</a></li>
-  <li><a href="._sensing-bs045.html">46</a></li>
-  <li><a href="._sensing-bs017.html">&raquo;</a></li>
+  <li><a href="._sensing-bs037.html">38</a></li>
+  <li><a href="._sensing-bs038.html">39</a></li>
+  <li><a href="._sensing-bs039.html">40</a></li>
+  <li><a href="._sensing-bs040.html">41</a></li>
+  <li><a href="._sensing-bs041.html">42</a></li>
+  <li><a href="._sensing-bs042.html">43</a></li>
+  <li><a href="._sensing-bs043.html">44</a></li>
+  <li><a href="._sensing-bs044.html">45</a></li>
+  <li class="active"><a href="._sensing-bs045.html">46</a></li>
 </ul>
 <!-- ------------------- end of main content --------------- -->
 </div>  <!-- end container -->

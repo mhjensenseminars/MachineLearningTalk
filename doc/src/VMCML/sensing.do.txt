@@ -132,14 +132,14 @@ described by the generic Hamiltonian (we follow here Degen *et al.,*
 
 where $\hat{H}_0$ is the internal Hamiltonian, $\hat{H}_I(t)$ is the
 Hamiltonian associated with a signal ($V(t)$ in the notes below), and
-$\hat{H}_\mathrm{control}(t)$ is the control Hamiltonian.  Following the above mentioned authors, we  will assume
-that $\hat{H}_0$ is known and that $\hat{H}_\mathrm{control}(t)$ can be
-deliberately chosen so as to manipulate or tune the sensor in a
-controlled way.
+$\hat{H}_\mathrm{control}(t)$ is the control Hamiltonian.  Following
+the above mentioned authors, we will assume that $\hat{H}_0$ is known
+and that $\hat{H}_\mathrm{control}(t)$ can be chosen so as to
+manipulate or tune the sensor in a controlled way.
 
-The goal of a quantum sensing experiment is then to
-infer $V(t)$ from the effect it has on the qubit via its Hamiltonian
-$\hat{H}_I(t)$, usually by a clever choice of
+The goal of a quantum sensing experiment is then to infer $V(t)$ from
+the effect it has on the actual qubits via its Hamiltonian
+$\hat{H}_I(t)$, usually by a specific choice of
 $\hat{H}_\mathrm{control}(t)$.
 
 
@@ -219,7 +219,7 @@ and
 \mathcal{H}_I = V_z(t)\bm{Z} + V_x(t)\bm{X}+V_y(t)\bm{Y},
 \]
 !et
-with $V_z(t) = V_{11}=-V_{22}$, $V_x(t) = \Re (V)_{12}$ and $V_y(t) = \Im (V)_{12}$.
+with $V_z(t) = V_{11}=-V_{22}$, $V_x(t) = \Re (V_{12})$ and $V_y(t) = \Im (V_{12})$.
 
 !split
 ===== Simple time dependence =====
@@ -235,6 +235,31 @@ with $t \in [0,1]$, where the limits $t=0$ and $t=1$
 represent the non-interacting (or unperturbed) and fully interacting
 system, respectively. This means that the various potential terms are given by $V_i(t)=tV_i$, with $i=\{x,y,z\}$ and $V_i$ real-valued constants.
 
+!split
+===== Exact solution =====
+
+Since this a simple $2\times 2$ matrix eigenvalue problem we find the eigenvalues $\lambda_{\pm}$ to be
+!bt
+\[
+\lambda_{\pm}=\mathcal{E}_{\mathrm{avg}}\pm \Delta E\sqrt{1+\frac{2V_z(t)}{\Delta E}+\frac{1}{\Delta E^2}(V_z^2(t)+V_x^2(t)+V_y^2(t))}.
+\]
+!et
+
+If we assume that $\Delta E \gg V_z(t)$ and set $V_x(t)=V_y(t)=0$ for
+simplicity and Taylor-expand our square root expression we obtain
+!bt
+\[
+\lambda_{0}=E_0-\frac{1}{2}V_z(t),
+\]
+!et
+!bt
+\[
+\lambda_{1}=E_1+\frac{1}{2}V_z(t),
+\]
+!et
+where we kept only terms up to $\Delta E$. The above problem can however be easily solved numerically, see the code here.
+
+
 
 !split
 ===== Selecting parameters =====
@@ -242,8 +267,8 @@ system, respectively. This means that the various potential terms are given by $
 The model is an eigenvalue problem with only
 two available states.
 
-Here we set the parameters $E_1=0$,
-$E_2=4$, $V_{11}=-V_{22}=3$ and $V_{12}=V_{21}=0.2$.
+Here we set the parameters $E_0=0$,
+$E_1=4$, $V_{11}=-V_{22}=3$ and $V_{12}=V_{21}=0.2$.
 
 The non-interacting solutions represent our computational basis.
 Pertinent to our choice of parameters, is that at $t\geq 2/3$,
@@ -272,15 +297,15 @@ sigma_z = np.array([[1, 0], [0, -1]])
 I = np.eye(2)
 
 def Hamiltonian(lmb):
-    E1 = 0
-    E2 = 4
+    E0 = 0
+    E1 = 4
     V11 = 3
     V22 = -3
     V12 = 0.2
     V21 = 0.2
 
-    eps = (E1 + E2) / 2
-    omega = (E1 - E2) / 2
+    eps = (E0 + E1) / 2
+    omega = (E0 - E1) / 2
     c = (V11 + V22) / 2
     omega_z = (V11 - V22) / 2
     omega_x = V12

@@ -65,6 +65,7 @@ div.toc p,a {
                None,
                'rewriting-with-pauli-matrices'),
               ('Simple time dependence', 2, None, 'simple-time-dependence'),
+              ('Exact solution', 2, None, 'exact-solution'),
               ('Selecting parameters', 2, None, 'selecting-parameters'),
               ('Setting up the matrix for the simple one-qubit system',
                2,
@@ -303,15 +304,15 @@ $$
 
 <p>where \( \hat{H}_0 \) is the internal Hamiltonian, \( \hat{H}_I(t) \) is the
 Hamiltonian associated with a signal (\( V(t) \) in the notes below), and
-\( \hat{H}_\mathrm{control}(t) \) is the control Hamiltonian.  Following the above mentioned authors, we  will assume
-that \( \hat{H}_0 \) is known and that \( \hat{H}_\mathrm{control}(t) \) can be
-deliberately chosen so as to manipulate or tune the sensor in a
-controlled way.
+\( \hat{H}_\mathrm{control}(t) \) is the control Hamiltonian.  Following
+the above mentioned authors, we will assume that \( \hat{H}_0 \) is known
+and that \( \hat{H}_\mathrm{control}(t) \) can be chosen so as to
+manipulate or tune the sensor in a controlled way.
 </p>
 
-<p>The goal of a quantum sensing experiment is then to
-infer \( V(t) \) from the effect it has on the qubit via its Hamiltonian
-\( \hat{H}_I(t) \), usually by a clever choice of
+<p>The goal of a quantum sensing experiment is then to infer \( V(t) \) from
+the effect it has on the actual qubits via its Hamiltonian
+\( \hat{H}_I(t) \), usually by a specific choice of
 \( \hat{H}_\mathrm{control}(t) \).
 </p>
 
@@ -386,7 +387,7 @@ $$
 \mathcal{H}_I = V_z(t)\boldsymbol{Z} + V_x(t)\boldsymbol{X}+V_y(t)\boldsymbol{Y},
 $$
 
-<p>with \( V_z(t) = V_{11}=-V_{22} \), \( V_x(t) = \Re (V)_{12} \) and \( V_y(t) = \Im (V)_{12} \).</p>
+<p>with \( V_z(t) = V_{11}=-V_{22} \), \( V_x(t) = \Re (V_{12}) \) and \( V_y(t) = \Im (V_{12}) \).</p>
 
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 <h2 id="simple-time-dependence">Simple time dependence </h2>
@@ -402,14 +403,35 @@ system, respectively. This means that the various potential terms are given by \
 </p>
 
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="exact-solution">Exact solution </h2>
+
+<p>Since this a simple \( 2\times 2 \) matrix eigenvalue problem we find the eigenvalues \( \lambda_{\pm} \) to be</p>
+$$
+\lambda_{\pm}=\mathcal{E}_{\mathrm{avg}}\pm \Delta E\sqrt{1+\frac{2V_z(t)}{\Delta E}+\frac{1}{\Delta E^2}(V_z^2(t)+V_x^2(t)+V_y^2(t))}.
+$$
+
+<p>If we assume that \( \Delta E \gg V_z(t) \) and set \( V_x(t)=V_y(t)=0 \) for
+simplicity and Taylor-expand our square root expression we obtain
+</p>
+$$
+\lambda_{0}=E_0-\frac{1}{2}V_z(t),
+$$
+
+$$
+\lambda_{1}=E_1+\frac{1}{2}V_z(t),
+$$
+
+<p>where we kept only terms up to \( \Delta E \). The above problem can however be easily solved numerically, see the code here.</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
 <h2 id="selecting-parameters">Selecting parameters </h2>
 
 <p>The model is an eigenvalue problem with only
 two available states.
 </p>
 
-<p>Here we set the parameters \( E_1=0 \),
-\( E_2=4 \), \( V_{11}=-V_{22}=3 \) and \( V_{12}=V_{21}=0.2 \).
+<p>Here we set the parameters \( E_0=0 \),
+\( E_1=4 \), \( V_{11}=-V_{22}=3 \) and \( V_{12}=V_{21}=0.2 \).
 </p>
 
 <p>The non-interacting solutions represent our computational basis.
@@ -446,15 +468,15 @@ sigma_z = np.array([[<span style="color: #B452CD">1</span>, <span style="color: 
 I = np.eye(<span style="color: #B452CD">2</span>)
 
 <span style="color: #8B008B; font-weight: bold">def</span> <span style="color: #008b45">Hamiltonian</span>(lmb):
-    E1 = <span style="color: #B452CD">0</span>
-    E2 = <span style="color: #B452CD">4</span>
+    E0 = <span style="color: #B452CD">0</span>
+    E1 = <span style="color: #B452CD">4</span>
     V11 = <span style="color: #B452CD">3</span>
     V22 = -<span style="color: #B452CD">3</span>
     V12 = <span style="color: #B452CD">0.2</span>
     V21 = <span style="color: #B452CD">0.2</span>
 
-    eps = (E1 + E2) / <span style="color: #B452CD">2</span>
-    omega = (E1 - E2) / <span style="color: #B452CD">2</span>
+    eps = (E0 + E1) / <span style="color: #B452CD">2</span>
+    omega = (E0 - E1) / <span style="color: #B452CD">2</span>
     c = (V11 + V22) / <span style="color: #B452CD">2</span>
     omega_z = (V11 - V22) / <span style="color: #B452CD">2</span>
     omega_x = V12
