@@ -194,14 +194,16 @@ MathJax.Hub.Config({
 <section>
 <h2 id="motivation-and-content">Motivation and Content </h2>
 
-<p>These notes aim at linking entanglement in quantum mechanical systems with quantum sensing using simple examples.
-Numerical codes are included in order to illustrate basic elements of sensing.
-The examples are tailored to simple one- and two-qubit systems. The material contains
+<p>These notes aim at linking entanglement in quantum mechanical systems
+with quantum sensing using simple examples.  Numerical codes are
+included in order to illustrate basic elements of sensing.  The
+examples are tailored to simple one- and two-qubit systems. The
+material contains
 </p>
 <ol>
 <p><li> One-qubit system with basic elements of sensing</li>
-<p><li> Linking analytically solvable case with many-qubit entanglement</li>
-<p><li> Simple two-particle (or two-qubit) system to demonstrate entanglement and its links with sensing</li>
+<p><li> Linking analytically solvable case with many-qubit entanglement and sensing</li>
+<p><li> Simple two-particle (or two-qubit) system to demonstrate entanglement and its links with sensing (to come)</li>
 </ol>
 </section>
 
@@ -333,7 +335,7 @@ $$
 </section>
 
 <section>
-<h2 id="symmetric-matrix">Symmetric matrix </h2>
+<h2 id="hamiltonian-matrix">Hamiltonian matrix </h2>
 
 <p>We define a  hermitian  matrix  \( H\in {\mathbb{R}}^{2\times 2} \)</p>
 <p>&nbsp;<br>
@@ -346,7 +348,7 @@ $$
 <p>We  let \( \mathcal{H} = \mathcal{H}_0 + \mathcal{H}_I \), where</p>
 <p>&nbsp;<br>
 $$
-\mathcal{H}_0= \begin{bmatrix} E_1 & 0 \\ 0 & E_2\end{bmatrix},
+\mathcal{H}_0= \begin{bmatrix} E_0 & 0 \\ 0 & E_1\end{bmatrix},
 $$
 <p>&nbsp;<br>
 
@@ -357,7 +359,31 @@ $$
 $$
 <p>&nbsp;<br>
 
-<p>where \( V_{ij} \) represent various interaction matrix elements. </p>
+<p>where \( V_{ij} \) represent various interaction matrix elements and since we have a hermitian matrix, we require that
+\( V_{21}=V_{12}^* \).
+</p>
+</section>
+
+<section>
+<h2 id="interaction-part">Interaction part </h2>
+
+<p>We will now label  the interaction matrix elements, assuming that they have an explicit time dependence.
+We define
+</p>
+<p>&nbsp;<br>
+$$
+\begin{align*}
+V_{11} & = V_z(t)\\
+V_{22} & = -V_z(t)\\
+V_{12} & = V_x(t)-\imath V_y(t).
+\end{align*}
+$$
+<p>&nbsp;<br>
+
+<p>In the numerical example below we let \( V_y(t)=0 \), \( V_z(t) = tV_z \)
+and \( V_x(t) = tV_x \) with \( V_z \) and \( V_x \) real-valued constants to
+be determined. In the same numerical example we let \( t\in [0,1] \).
+</p>
 </section>
 
 <section>
@@ -366,14 +392,14 @@ $$
 <p>We can view \( H_0 \) as the non-interacting solution</p>
 <p>&nbsp;<br>
 $$
-       \mathcal{H}_0\vert 0 \rangle =E_1\vert 0 \rangle,
+       \mathcal{H}_0\vert 0 \rangle =E_0\vert 0 \rangle,
 $$
 <p>&nbsp;<br>
 
 <p>and</p>
 <p>&nbsp;<br>
 $$
-       \mathcal{H}_0\vert 1\rangle =E_2\vert 1\rangle,
+       \mathcal{H}_0\vert 1\rangle =E_1\vert 1\rangle,
 $$
 <p>&nbsp;<br>
 
@@ -382,34 +408,35 @@ $$
 
 <section>
 <h2 id="rewriting-with-pauli-matrices">Rewriting with Pauli matrices </h2>
+
 <p>We rewrite \( H \) (and \( H_0 \) and \( H_I \))  via Pauli matrices</p>
 <p>&nbsp;<br>
 $$
-\mathcal{H}_0 = \mathcal{E} I + \Omega \boldsymbol{Z}, \quad \mathcal{E} = \frac{E_1
-  + E_2}{2}, \; \Omega = \frac{E_1-E_2}{2},
+\mathcal{H}_0 = \mathcal{E}_{\mathrm{avg}} I -\Delta E \boldsymbol{Z}, \quad \mathcal{E}_{\mathrm{avg}} = \frac{E_0
+  + E_1}{2}, \; \Delta E = \frac{E_1-E_0}{2},
 $$
 <p>&nbsp;<br>
 
 <p>and</p>
 <p>&nbsp;<br>
 $$
-\mathcal{H}_I = c \boldsymbol{I} +\omega_z\boldsymbol{Z} + \omega_x\boldsymbol{X},
+\mathcal{H}_I = V_z(t)\boldsymbol{Z} + V_x(t)\boldsymbol{X}+V_y(t)\boldsymbol{Y},
 $$
 <p>&nbsp;<br>
 
-<p>with \( c = (V_{11}+V_{22})/2 \), \( \omega_z = (V_{11}-V_{22})/2 \) and \( \omega_x = V_{12}=V_{21} \).
-We let our Hamiltonian depend linearly on a strength parameter \( \lambda \)
+<p>with \( V_z(t) = V_{11}=-V_{22}) \), \( V_x(t) = Re{V}_{12} \) and \( V_y(t) = \Im{V}_{12} \).
+We let our Hamiltonian depend linearly on time  \( t \)
 </p>
 
 <p>&nbsp;<br>
 $$
-\mathcal{H}=\mathcal{H}_0+\lambda \mathcal{H}_\mathrm{I},
+\mathcal{H}=\mathcal{H}_0+t \mathcal{H}_\mathrm{I},
 $$
 <p>&nbsp;<br>
 
-<p>with \( \lambda \in [0,1] \), where the limits \( \lambda=0 \) and \( \lambda=1 \)
+<p>with \( t \in [0,1] \), where the limits \( t=0 \) and \( t=1 \)
 represent the non-interacting (or unperturbed) and fully interacting
-system, respectively.
+system, respectively. This means that the various potential terms are given by \( V_i(t)=tV_i \), with \( i=\{x,y,z\} \) and \( V_i \) real-valued constants.
 </p>
 </section>
 
