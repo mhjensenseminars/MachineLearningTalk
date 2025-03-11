@@ -1,0 +1,137 @@
+Translating doconce text in sensing.do.txt to html
+*** replacing \bm{...} by \boldsymbol{...} (\bm is not supported by MathJax)
+*** warning: inline math in HTML must have space around <:
+    .</p>
+3 <<<!!MATH_BLOCK
+<p></p>
+
+<h2>Hadamard gate  <a name="hadamard-gate"></a></h2>
+<p></p>
+<p>The Hadamard gate is defined as</p>
+4 <<<!!MATH_BLOCK
+<p></p>
+<p>It creates a superposition of the   ->  . < /p>
+3 < < <!!MATH_BLOCK
+ < p> < /p>
+
+ < h2>Hadamard gate  < a name="hadamard-gate"> < /a> < /h2>
+ < p> < /p>
+ < p>The Hadamard gate is defined as < /p>
+4 < < <!!MATH_BLOCK
+ < p> < /p>
+ < p>It creates a superposition of the 
+*** warning: --html_output is obsolete. Use the --output option
+
+output in sensing-reveal.html
+Translating doconce text in sensing.do.txt to html
+*** replacing \bm{...} by \boldsymbol{...} (\bm is not supported by MathJax)
+*** warning: inline math in HTML must have space around <:
+    .</p>
+3 <<<!!MATH_BLOCK
+<p></p>
+
+<h2>Hadamard gate  <a name="hadamard-gate"></a></h2>
+<p></p>
+<p>The Hadamard gate is defined as</p>
+4 <<<!!MATH_BLOCK
+<p></p>
+<p>It creates a superposition of the   ->  . < /p>
+3 < < <!!MATH_BLOCK
+ < p> < /p>
+
+ < h2>Hadamard gate  < a name="hadamard-gate"> < /a> < /h2>
+ < p> < /p>
+ < p>The Hadamard gate is defined as < /p>
+4 < < <!!MATH_BLOCK
+ < p> < /p>
+ < p>It creates a superposition of the 
+*** warning: --html_output is obsolete. Use the --output option
+
+output in sensing-solarized.html
+Translating doconce text in sensing.do.txt to html
+*** replacing \bm{...} by \boldsymbol{...} (\bm is not supported by MathJax)
+*** warning: inline math in HTML must have space around <:
+    .</p>
+3 <<<!!MATH_BLOCK
+<p></p>
+
+<h2>Hadamard gate  <a name="hadamard-gate"></a></h2>
+<p></p>
+<p>The Hadamard gate is defined as</p>
+4 <<<!!MATH_BLOCK
+<p></p>
+<p>It creates a superposition of the   ->  . < /p>
+3 < < <!!MATH_BLOCK
+ < p> < /p>
+
+ < h2>Hadamard gate  < a name="hadamard-gate"> < /a> < /h2>
+ < p> < /p>
+ < p>The Hadamard gate is defined as < /p>
+4 < < <!!MATH_BLOCK
+ < p> < /p>
+ < p>It creates a superposition of the 
+*** warning: --html_output is obsolete. Use the --output option
+
+output in sensing.html
+Translating doconce text in sensing.do.txt to html
+*** replacing \bm{...} by \boldsymbol{...} (\bm is not supported by MathJax)
+*** warning: inline math in HTML must have space around <:
+    .</p>
+3 <<<!!MATH_BLOCK
+<p></p>
+
+<h2>Hadamard gate  <a name="hadamard-gate"></a></h2>
+<p></p>
+<p>The Hadamard gate is defined as</p>
+4 <<<!!MATH_BLOCK
+<p></p>
+<p>It creates a superposition of the   ->  . < /p>
+3 < < <!!MATH_BLOCK
+ < p> < /p>
+
+ < h2>Hadamard gate  < a name="hadamard-gate"> < /a> < /h2>
+ < p> < /p>
+ < p>The Hadamard gate is defined as < /p>
+4 < < <!!MATH_BLOCK
+ < p> < /p>
+ < p>It creates a superposition of the 
+*** warning: --html_output is obsolete. Use the --output option
+
+output in sensing-bs.html
+Translating doconce text in sensing.do.txt to ipynb
+*** replacing \bm{...} by \boldsymbol{...} (\bm is not supported by MathJax)
+
+*** warning: latex envir \begin{bmatrix} does not work well in Markdown.    Stick to \[ ... \], equation, equation*, align, or align*    environments in math environments.
+
+*** warning: latex envir \begin{bmatrix} does not work well in Markdown.    Stick to \[ ... \], equation, equation*, align, or align*    environments in math environments.
+
+*** warning: latex envir \begin{bmatrix} does not work well in Markdown.    Stick to \[ ... \], equation, equation*, align, or align*    environments in math environments.
+
+*** warning: latex envir \begin{bmatrix} does not work well in Markdown.    Stick to \[ ... \], equation, equation*, align, or align*    environments in math environments.
+
+*** warning: latex envir \begin{bmatrix} does not work well in Markdown.    Stick to \[ ... \], equation, equation*, align, or align*    environments in math environments.
+
+*** warning: latex envir \begin{bmatrix} does not work well in Markdown.    Stick to \[ ... \], equation, equation*, align, or align*    environments in math environments.
+
+*** warning: latex envir \begin{bmatrix} does not work well in Markdown.    Stick to \[ ... \], equation, equation*, align, or align*    environments in math environments.
+
+*** warning: latex envir \begin{bmatrix} does not work well in Markdown.    Stick to \[ ... \], equation, equation*, align, or align*    environments in math environments.
+
+*** warning: latex envir \begin{bmatrix} does not work well in Markdown.    Stick to \[ ... \], equation, equation*, align, or align*    environments in math environments.
+
+*** warning: latex envir \begin{bmatrix} does not work well in Markdown.    Stick to \[ ... \], equation, equation*, align, or align*    environments in math environments.
+
+*** warning: latex envir \begin{bmatrix} does not work well in Markdown.    Stick to \[ ... \], equation, equation*, align, or align*    environments in math environments.
+
+*** warning: latex envir \begin{bmatrix} does not work well in Markdown.    Stick to \[ ... \], equation, equation*, align, or align*    environments in math environments.
+
+*** warning: latex envir \begin{bmatrix} does not work well in Markdown.    Stick to \[ ... \], equation, equation*, align, or align*    environments in math environments.
+
+*** warning: latex envir \begin{bmatrix} does not work well in Markdown.    Stick to \[ ... \], equation, equation*, align, or align*    environments in math environments.
+
+*** warning: latex envir \begin{bmatrix} does not work well in Markdown.    Stick to \[ ... \], equation, equation*, align, or align*    environments in math environments.
+
+*** warning: latex envir \begin{bmatrix} does not work well in Markdown.    Stick to \[ ... \], equation, equation*, align, or align*    environments in math environments.
+output in sensing.ipynb
+Translating doconce text in sensing.do.txt to pdflatex
+output in sensing.p.tex
