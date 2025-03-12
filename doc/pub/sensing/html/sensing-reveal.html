@@ -597,9 +597,31 @@ plt.show()
 </section>
 
 <section>
-<h2 id="initialization-and-sensing-analysis">Initialization and sensing analysis </h2>
+<h2 id="sensing-protocol">Sensing protocol </h2>
 
-<p>We stay now with the Taylor-approximated solution in order to illustrate some of the basic sensing ideas.</p>
+<p>The steps here follow to a large extend Degen <em>et al.,</em>. These steps are: </p>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<ol>
+<p><li> The quantum sensor is initialized in some known basis, say \( \vert 0\rangle \).</li>
+<p><li> The quantum sensor is transformed into the desired inittial state \( \vert \psi_{\mathrm{Initial}}\rangle \), see notes here below)  through an appropriate transformation \( \boldsymbol{U}_1 \). For a single qubit system this could be a Hadamard gate which results in a linear superposition of \( \vert 0\rangle \) and \( \vert 1\rangle \).</li>
+<p><li> The quantum sensor evolves under the Hamiltonian \( \mathcal{H} \) for a time \( t \). At the end of the sensing period, the sensor is in its final stage (see below) \( \vert\psi(t)\rangle=\boldsymbol{U}_{\mathcal{H}}(t, 0)\left|\psi_{\mathrm{Initial}}\right\rangle \)</li>
+<p><li> This quantum state is transformed into a superposition of observable readout states, say a superposition of the one=qubit states \( \vert 0\rangle \) and \( \vert 1\rangle \), via the action \( \boldsymbol{U}_2\vert \psi(t) \).</li>
+<p><li> The final state of the quantum sensor is read out.</li>
+<p><li> Steps 1-5 are repeated and averaged over a large number of cycles \( N \) to estimate the final transition probabilities \( p \).</li>
+<p><li> The transition probability \( p \) is measured as a function of time \( t \) and used to infer to desired signal \( V(t) \).</li>
+</ol>
+</div>
+</section>
+
+<section>
+<h2 id="initialization-and-sensing-analysis-ramsey-measurement">Initialization and sensing analysis, Ramsey measurement </h2>
+
+<p>We stay now with the Taylor-approximated solution from the simple
+example above (the one-qubit case). We do so in order to illustrate
+some of the basic sensing ideas.
+</p>
 
 <p>To initialize a given system to a known quantum state, we first start
 with a known initial state \( |0\rangle \). Then, depending on the type of
