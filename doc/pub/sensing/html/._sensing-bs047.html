@@ -120,10 +120,10 @@ doconce format html sensing.do.txt --html_style=bootstrap --pygments_html_style=
               ('After initialization', 2, None, 'after-initialization'),
               ('Transition probability', 2, None, 'transition-probability'),
               ('Role of entanglement', 2, None, 'role-of-entanglement'),
-              ('Moving on to other systems',
+              ('Two qubits and entanglement',
                2,
                None,
-               'moving-on-to-other-systems'),
+               'two-qubits-and-entanglement'),
               ('Simple system to lllustrate entanglement',
                2,
                None,
@@ -137,7 +137,11 @@ doconce format html sensing.do.txt --html_style=bootstrap --pygments_html_style=
                None,
                'eigenstates-of-non-interacting-hamiltonian'),
               ('Interaction part', 2, None, 'interaction-part'),
-              ('Density matrices', 2, None, 'density-matrices'),
+              ('Entangled state', 2, None, 'entangled-state'),
+              ('Intermezzo (digression) on density matrices and entropy',
+               2,
+               None,
+               'intermezzo-digression-on-density-matrices-and-entropy'),
               ('Subsystems', 2, None, 'subsystems'),
               ('Entropies', 2, None, 'entropies'),
               ('Understanding the example',
@@ -223,17 +227,18 @@ MathJax.Hub.Config({
      <!-- navigation toc: --> <li><a href="._sensing-bs038.html#after-initialization" style="font-size: 80%;">After initialization</a></li>
      <!-- navigation toc: --> <li><a href="._sensing-bs039.html#transition-probability" style="font-size: 80%;">Transition probability</a></li>
      <!-- navigation toc: --> <li><a href="._sensing-bs040.html#role-of-entanglement" style="font-size: 80%;">Role of entanglement</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs041.html#moving-on-to-other-systems" style="font-size: 80%;">Moving on to other systems</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs041.html#two-qubits-and-entanglement" style="font-size: 80%;">Two qubits and entanglement</a></li>
      <!-- navigation toc: --> <li><a href="._sensing-bs042.html#simple-system-to-lllustrate-entanglement" style="font-size: 80%;">Simple system to lllustrate entanglement</a></li>
      <!-- navigation toc: --> <li><a href="._sensing-bs043.html#computational-basis-states" style="font-size: 80%;">Computational basis states</a></li>
      <!-- navigation toc: --> <li><a href="._sensing-bs044.html#eigenstates-of-non-interacting-hamiltonian" style="font-size: 80%;">Eigenstates of non-interacting Hamiltonian</a></li>
      <!-- navigation toc: --> <li><a href="._sensing-bs045.html#interaction-part" style="font-size: 80%;">Interaction part</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs046.html#density-matrices" style="font-size: 80%;">Density matrices</a></li>
-     <!-- navigation toc: --> <li><a href="#subsystems" style="font-size: 80%;">Subsystems</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs048.html#entropies" style="font-size: 80%;">Entropies</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs049.html#understanding-the-example" style="font-size: 80%;">Understanding the example</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs050.html#code-best-seen-in-jupyter-notebook" style="font-size: 80%;">Code, best seen in jupyter-notebook</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs051.html#more-material-to-come" style="font-size: 80%;">More material to come</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs046.html#entangled-state" style="font-size: 80%;">Entangled state</a></li>
+     <!-- navigation toc: --> <li><a href="#intermezzo-digression-on-density-matrices-and-entropy" style="font-size: 80%;">Intermezzo (digression) on density matrices and entropy</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs048.html#subsystems" style="font-size: 80%;">Subsystems</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs049.html#entropies" style="font-size: 80%;">Entropies</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs050.html#understanding-the-example" style="font-size: 80%;">Understanding the example</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs051.html#code-best-seen-in-jupyter-notebook" style="font-size: 80%;">Code, best seen in jupyter-notebook</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs052.html#more-material-to-come" style="font-size: 80%;">More material to come</a></li>
 
         </ul>
       </li>
@@ -245,22 +250,20 @@ MathJax.Hub.Config({
 <p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p> <!-- add vertical space -->
 <a name="part0047"></a>
 <!-- !split -->
-<h2 id="subsystems" class="anchor">Subsystems </h2>
+<h2 id="intermezzo-digression-on-density-matrices-and-entropy" class="anchor">Intermezzo (digression) on density matrices and entropy </h2>
 
-<p>We can
-then in turn define the density matrix for the subsets \( A \) or \( B \) as
+<p>The four eigenstates of the above Hamiltonian matrix can in turn be used to
+define density matrices. As an example, the density matrix of the
+first eigenstate (lowest energy \( E_0 \)) \( \Psi_0 \) is given by the outerproduct
 </p>
 
 $$
-\rho_A=\mathrm{Tr}_B(\rho_{0})=\langle 0 \vert \rho_{0} \vert 0\rangle_{B}+\langle 1 \vert \rho_{0} \vert 1\rangle_{B},
+\rho_0=\left(\alpha_{00}\vert 00 \rangle+\alpha_{10}\vert 10 \rangle+\alpha_{01}\vert 01 \rangle+\alpha_{11}\vert 11 \rangle\right)\left(\alpha_{00}^*\langle 00\vert+\alpha_{10}^*\langle 10\vert+\alpha_{01}^*\langle 01\vert+\alpha_{11}^*\langle 11\vert\right),
 $$
 
-<p>or</p>
-
-$$
-\rho_B=\mathrm{Tr}_A(\rho_0)=\langle 0 \vert \rho_{0} \vert 0\rangle_{A}+\langle 1 \vert \rho_{0} \vert 1\rangle_{A}.
-$$
-
+<p>where the coefficients \( \alpha_{ij} \) are the eigenvector coefficients
+resulting from the solution of the above eigenvalue problem. 
+</p>
 
 <p>
 <!-- navigation buttons at the bottom of the page -->
@@ -281,6 +284,7 @@ $$
   <li><a href="._sensing-bs049.html">50</a></li>
   <li><a href="._sensing-bs050.html">51</a></li>
   <li><a href="._sensing-bs051.html">52</a></li>
+  <li><a href="._sensing-bs052.html">53</a></li>
   <li><a href="._sensing-bs048.html">&raquo;</a></li>
 </ul>
 <!-- ------------------- end of main content --------------- -->

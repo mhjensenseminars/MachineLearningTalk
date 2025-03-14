@@ -120,10 +120,10 @@ doconce format html sensing.do.txt --html_style=bootstrap --pygments_html_style=
               ('After initialization', 2, None, 'after-initialization'),
               ('Transition probability', 2, None, 'transition-probability'),
               ('Role of entanglement', 2, None, 'role-of-entanglement'),
-              ('Moving on to other systems',
+              ('Two qubits and entanglement',
                2,
                None,
-               'moving-on-to-other-systems'),
+               'two-qubits-and-entanglement'),
               ('Simple system to lllustrate entanglement',
                2,
                None,
@@ -137,7 +137,11 @@ doconce format html sensing.do.txt --html_style=bootstrap --pygments_html_style=
                None,
                'eigenstates-of-non-interacting-hamiltonian'),
               ('Interaction part', 2, None, 'interaction-part'),
-              ('Density matrices', 2, None, 'density-matrices'),
+              ('Entangled state', 2, None, 'entangled-state'),
+              ('Intermezzo (digression) on density matrices and entropy',
+               2,
+               None,
+               'intermezzo-digression-on-density-matrices-and-entropy'),
               ('Subsystems', 2, None, 'subsystems'),
               ('Entropies', 2, None, 'entropies'),
               ('Understanding the example',
@@ -223,17 +227,18 @@ MathJax.Hub.Config({
      <!-- navigation toc: --> <li><a href="._sensing-bs038.html#after-initialization" style="font-size: 80%;">After initialization</a></li>
      <!-- navigation toc: --> <li><a href="._sensing-bs039.html#transition-probability" style="font-size: 80%;">Transition probability</a></li>
      <!-- navigation toc: --> <li><a href="._sensing-bs040.html#role-of-entanglement" style="font-size: 80%;">Role of entanglement</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs041.html#moving-on-to-other-systems" style="font-size: 80%;">Moving on to other systems</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs041.html#two-qubits-and-entanglement" style="font-size: 80%;">Two qubits and entanglement</a></li>
      <!-- navigation toc: --> <li><a href="._sensing-bs042.html#simple-system-to-lllustrate-entanglement" style="font-size: 80%;">Simple system to lllustrate entanglement</a></li>
      <!-- navigation toc: --> <li><a href="._sensing-bs043.html#computational-basis-states" style="font-size: 80%;">Computational basis states</a></li>
      <!-- navigation toc: --> <li><a href="._sensing-bs044.html#eigenstates-of-non-interacting-hamiltonian" style="font-size: 80%;">Eigenstates of non-interacting Hamiltonian</a></li>
      <!-- navigation toc: --> <li><a href="._sensing-bs045.html#interaction-part" style="font-size: 80%;">Interaction part</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs046.html#density-matrices" style="font-size: 80%;">Density matrices</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs047.html#subsystems" style="font-size: 80%;">Subsystems</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs048.html#entropies" style="font-size: 80%;">Entropies</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs049.html#understanding-the-example" style="font-size: 80%;">Understanding the example</a></li>
-     <!-- navigation toc: --> <li><a href="#code-best-seen-in-jupyter-notebook" style="font-size: 80%;">Code, best seen in jupyter-notebook</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs051.html#more-material-to-come" style="font-size: 80%;">More material to come</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs046.html#entangled-state" style="font-size: 80%;">Entangled state</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs047.html#intermezzo-digression-on-density-matrices-and-entropy" style="font-size: 80%;">Intermezzo (digression) on density matrices and entropy</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs048.html#subsystems" style="font-size: 80%;">Subsystems</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs049.html#entropies" style="font-size: 80%;">Entropies</a></li>
+     <!-- navigation toc: --> <li><a href="#understanding-the-example" style="font-size: 80%;">Understanding the example</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs051.html#code-best-seen-in-jupyter-notebook" style="font-size: 80%;">Code, best seen in jupyter-notebook</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs052.html#more-material-to-come" style="font-size: 80%;">More material to come</a></li>
 
         </ul>
       </li>
@@ -245,91 +250,20 @@ MathJax.Hub.Config({
 <p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p> <!-- add vertical space -->
 <a name="part0050"></a>
 <!-- !split -->
-<h2 id="code-best-seen-in-jupyter-notebook" class="anchor">Code, best seen in jupyter-notebook </h2>
-
-<!-- code=python (!bc pycod) typeset with pygments style "default" -->
-<div class="cell border-box-sizing code_cell rendered">
-  <div class="input">
-    <div class="inner_cell">
-      <div class="input_area">
-        <div class="highlight" style="background: #f8f8f8">
-  <pre style="line-height: 125%;"><span style="color: #666666">%</span>matplotlib inline
-<span style="color: #008000; font-weight: bold">from</span>  <span style="color: #0000FF; font-weight: bold">matplotlib</span> <span style="color: #008000; font-weight: bold">import</span> pyplot <span style="color: #008000; font-weight: bold">as</span> plt
-<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">numpy</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">np</span>
-<span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">scipy.linalg</span> <span style="color: #008000; font-weight: bold">import</span> logm, expm
-<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">log2M</span>(a): <span style="color: #408080; font-style: italic"># base 2 matrix logarithm</span>
-    <span style="color: #008000; font-weight: bold">return</span> logm(a)<span style="color: #666666">/</span>np<span style="color: #666666">.</span>log(<span style="color: #666666">2.0</span>)
-
-dim <span style="color: #666666">=</span> <span style="color: #666666">4</span>
-Hamiltonian <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros((dim,dim))
-<span style="color: #408080; font-style: italic">#number of lambda values</span>
-n <span style="color: #666666">=</span> <span style="color: #666666">40</span>
-lmbd <span style="color: #666666">=</span> np<span style="color: #666666">.</span>linspace(<span style="color: #666666">0.0</span>,<span style="color: #666666">1.0</span>,n)
-Hx <span style="color: #666666">=</span> <span style="color: #666666">2.0</span>
-Hz <span style="color: #666666">=</span> <span style="color: #666666">3.0</span>
-<span style="color: #408080; font-style: italic"># Non-diagonal part as sigma_x tensor product with sigma_x</span>
-sx <span style="color: #666666">=</span> np<span style="color: #666666">.</span>matrix([[<span style="color: #666666">0</span>,<span style="color: #666666">1</span>],[<span style="color: #666666">1</span>,<span style="color: #666666">0</span>]])
-sx2 <span style="color: #666666">=</span> Hx<span style="color: #666666">*</span>np<span style="color: #666666">.</span>kron(sx, sx)
-<span style="color: #408080; font-style: italic"># Diagonal part as sigma_z tensor product with sigma_z</span>
-sz <span style="color: #666666">=</span> np<span style="color: #666666">.</span>matrix([[<span style="color: #666666">1</span>,<span style="color: #666666">0</span>],[<span style="color: #666666">0</span>,<span style="color: #666666">-1</span>]])
-sz2 <span style="color: #666666">=</span> Hz<span style="color: #666666">*</span>np<span style="color: #666666">.</span>kron(sz, sz)
-noninteracting <span style="color: #666666">=</span> [<span style="color: #666666">0.0</span>, <span style="color: #666666">2.5</span>, <span style="color: #666666">6.5</span>, <span style="color: #666666">7.0</span>]
-D <span style="color: #666666">=</span> np<span style="color: #666666">.</span>diag(noninteracting)
-Eigenvalue <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros((dim,n))
-Entropy <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros(n)
-
-<span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(n): 
-    Hamiltonian <span style="color: #666666">=</span> lmbd[i]<span style="color: #666666">*</span>(sx2<span style="color: #666666">+</span>sz2)<span style="color: #666666">+</span>D
-    <span style="color: #408080; font-style: italic"># diagonalize and obtain eigenvalues, not necessarily sorted</span>
-    EigValues, EigVectors <span style="color: #666666">=</span> np<span style="color: #666666">.</span>linalg<span style="color: #666666">.</span>eig(Hamiltonian)
-    <span style="color: #408080; font-style: italic"># sort eigenvectors and eigenvalues</span>
-    permute <span style="color: #666666">=</span> EigValues<span style="color: #666666">.</span>argsort()
-    EigValues <span style="color: #666666">=</span> EigValues[permute]
-    EigVectors <span style="color: #666666">=</span> EigVectors[:,permute]
-    <span style="color: #408080; font-style: italic"># Compute density matrix for selected system state, here ground state</span>
-    DensityMatrix <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros((dim,dim))
-    DensityMatrix <span style="color: #666666">=</span> np<span style="color: #666666">.</span>outer(EigVectors[:,<span style="color: #666666">0</span>],EigVectors[:,<span style="color: #666666">0</span>])
-    <span style="color: #408080; font-style: italic"># Project down on substates and find density matrix for subsystem</span>
-    d <span style="color: #666666">=</span> np<span style="color: #666666">.</span>matrix([[<span style="color: #666666">1</span>,<span style="color: #666666">0</span>],[<span style="color: #666666">0</span>,<span style="color: #666666">1</span>]])
-    v1 <span style="color: #666666">=</span> [<span style="color: #666666">1.0</span>,<span style="color: #666666">0.0</span>]
-    proj1 <span style="color: #666666">=</span> np<span style="color: #666666">.</span>kron(v1,d)
-    x1 <span style="color: #666666">=</span> proj1 <span style="color: #666666">@</span> DensityMatrix <span style="color: #666666">@</span> proj1<span style="color: #666666">.</span>T
-    v2 <span style="color: #666666">=</span> [<span style="color: #666666">0.0</span>,<span style="color: #666666">1.0</span>]
-    proj2 <span style="color: #666666">=</span> np<span style="color: #666666">.</span>kron(v2,d)
-    x2 <span style="color: #666666">=</span> proj2 <span style="color: #666666">@</span> DensityMatrix <span style="color: #666666">@</span> proj2<span style="color: #666666">.</span>T
-    <span style="color: #408080; font-style: italic"># Total density matrix for subsystem</span>
-    total <span style="color: #666666">=</span> x1<span style="color: #666666">+</span>x2
-    <span style="color: #408080; font-style: italic"># von Neumann Entropy for subsystem </span>
-    Entropy[i] <span style="color: #666666">=</span> <span style="color: #666666">-</span>np<span style="color: #666666">.</span>matrix<span style="color: #666666">.</span>trace(total <span style="color: #666666">@</span> log2M(total))
-    <span style="color: #408080; font-style: italic"># Plotting eigenvalues and entropy as functions of interaction strengths</span>
-    Eigenvalue[<span style="color: #666666">0</span>,i] <span style="color: #666666">=</span> EigValues[<span style="color: #666666">0</span>]
-    Eigenvalue[<span style="color: #666666">1</span>,i] <span style="color: #666666">=</span> EigValues[<span style="color: #666666">1</span>]
-    Eigenvalue[<span style="color: #666666">2</span>,i] <span style="color: #666666">=</span> EigValues[<span style="color: #666666">2</span>]
-    Eigenvalue[<span style="color: #666666">3</span>,i] <span style="color: #666666">=</span> EigValues[<span style="color: #666666">3</span>]
-plt<span style="color: #666666">.</span>plot(lmbd, Eigenvalue[<span style="color: #666666">0</span>,:] ,<span style="color: #BA2121">&#39;b-&#39;</span>,lmbd, Eigenvalue[<span style="color: #666666">1</span>,:],<span style="color: #BA2121">&#39;g-&#39;</span>,)
-plt<span style="color: #666666">.</span>plot(lmbd, Eigenvalue[<span style="color: #666666">2</span>,:] ,<span style="color: #BA2121">&#39;r-&#39;</span>,lmbd, Eigenvalue[<span style="color: #666666">3</span>,:],<span style="color: #BA2121">&#39;y-&#39;</span>,)
-plt<span style="color: #666666">.</span>xlabel(<span style="color: #BA2121">&#39;$\lambda$&#39;</span>)
-plt<span style="color: #666666">.</span>ylabel(<span style="color: #BA2121">&#39;Eigenvalues&#39;</span>)
-plt<span style="color: #666666">.</span>show()
-plt<span style="color: #666666">.</span>plot(lmbd, Entropy)
-plt<span style="color: #666666">.</span>xlabel(<span style="color: #BA2121">&#39;$\lambda$&#39;</span>)
-plt<span style="color: #666666">.</span>ylabel(<span style="color: #BA2121">&#39;Entropy&#39;</span>)          
-plt<span style="color: #666666">.</span>show
-</pre>
-</div>
-      </div>
-    </div>
-  </div>
-  <div class="output_wrapper">
-    <div class="output">
-      <div class="output_area">
-        <div class="output_subarea output_stream output_stdout output_text">          
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
+<h2 id="understanding-the-example" class="anchor">Understanding the example </h2>
+<p>The example here shows the above von Neumann entropy based on the
+density matrix for the lowest many-body state. We see clearly a jump
+in the entropy around the point where we have a level crossing. At
+interaction strenght \( \lambda=0 \) we have many-body states purely
+defined by their computational basis states. As we switch on the
+interaction strength, we obtain an increased degree of mixing and the
+entropy increases till we reach the level crossing point where we see
+an additional and sudden increase in entropy. Similar behaviors are
+observed for the other states. The most important result from this
+example is that entanglement is driven by the Hamiltonian itself and
+the strength of the interaction matrix elements and the
+non-interacting energies.
+</p>
 
 <p>
 <!-- navigation buttons at the bottom of the page -->
@@ -347,6 +281,7 @@ plt<span style="color: #666666">.</span>show
   <li><a href="._sensing-bs049.html">50</a></li>
   <li class="active"><a href="._sensing-bs050.html">51</a></li>
   <li><a href="._sensing-bs051.html">52</a></li>
+  <li><a href="._sensing-bs052.html">53</a></li>
   <li><a href="._sensing-bs051.html">&raquo;</a></li>
 </ul>
 <!-- ------------------- end of main content --------------- -->

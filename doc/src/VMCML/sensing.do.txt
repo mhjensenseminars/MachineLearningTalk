@@ -643,17 +643,20 @@ import numpy as np
 from scipy.linalg import expm
 import matplotlib.pyplot as plt
 
-# Define Pauli matrices
+# Define Pauli, Hadamard and S matrices
 X = np.array([[0, 1], [1, 0]], dtype=complex)
 Y = np.array([[0, -1j], [1j, 0]], dtype=complex)
 Z = np.array([[1, 0], [0, -1]], dtype=complex)
+Had = np.array([[1, 1],[1, -1]], dtype=complex) / np.sqrt(2)
+S = np.array([[1, 0],[0, 1j]], dtype=complex)
 
 # Simulation parameters
 B = 2 * np.pi  # Magnetic field strength (in angular frequency units)
 times = np.linspace(0, 1, 200)  # Time range from 0 to 1 seconds
 
 # Initial state: superposition state via Hadamard gate acting on |0>
-psi0 = np.array([1, 1], dtype=complex) / np.sqrt(2)
+psi0 =  np.array([1, 0], dtype=complex)
+psi0 *= Had #np.array([1, 1], dtype=complex) / np.sqrt(2)
 
 # Lists to store expectation values
 expect_x, expect_y, expect_z = [], [], []
@@ -761,9 +764,10 @@ quantum-mechanically limited, maximal amount of information one can
 get from taking $n$ quantum sensing measurements, see again Giovannetti *et al.*, at URL:"https://www.nature.com/articles/nphoton.2011.35".
 
 !split
-=====  Moving on to other systems =====
+=====  Two qubits and entanglement =====
 
 We will now look at a simple system where we can produce an entangled state. We focus on a two-qubit system.
+
 
 Our computational basis states
 
@@ -881,7 +885,26 @@ where $H_x$ and $H_z$ are interaction strength parameters. Our final Hamiltonian
 !et
 
 !split
-===== Density matrices =====
+===== Entangled state =====
+
+This system produces an initial state (we select the lowest-lying state) which is entangled (it acts like
+a SWAP gate) transforming the system from $\vert 00\rangle$ at interaction strength $0$ to
+!bt
+\[
+\vert \psi_{\mathrm{Initial}}=\alpha \vert 01\rangle +\beta \vert 10\rangle.
+\]
+!et
+We can then act with a given probe on this state and study its time-evolution, in the same way as we studied the one-qubit system.
+
+The code below (to be added) performs then
+!bt
+\[
+\vert \psi(t) = \bm{U}_{\mathcal{H}}(\alpha \vert 01\rangle +\beta \vert 10\rangle). 
+\]
+!et
+
+!split
+===== Intermezzo (digression) on density matrices and entropy =====
 
 The four eigenstates of the above Hamiltonian matrix can in turn be used to
 define density matrices. As an example, the density matrix of the
@@ -1018,6 +1041,20 @@ plt.show
 !split
 ===== More material to come =====
 
+Our initial state (the lowest lying one) is an entangled state
+!bt
+\[
+\vert \psi_{\mathrm{Initial}}=\alpha \vert 01\rangle +\beta \vert 10\rangle.
+\]
+!et
+We can then act with a given probe on this state and study its time-evolution, in the same way as we studied the one-qubit system.
+
+The code below (to be added) performs then
+!bt
+\[
+\vert \psi(t) = \bm{U}_{\mathcal{H}}(\alpha \vert 01\rangle +\beta \vert 10\rangle). 
+\]
+!et
 
 
 

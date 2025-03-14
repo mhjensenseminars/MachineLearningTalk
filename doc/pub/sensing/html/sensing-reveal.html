@@ -960,17 +960,20 @@ population mean.
 <span style="color: #8B008B; font-weight: bold">from</span> <span style="color: #008b45; text-decoration: underline">scipy.linalg</span> <span style="color: #8B008B; font-weight: bold">import</span> expm
 <span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">matplotlib.pyplot</span> <span style="color: #8B008B; font-weight: bold">as</span> <span style="color: #008b45; text-decoration: underline">plt</span>
 
-<span style="color: #228B22"># Define Pauli matrices</span>
+<span style="color: #228B22"># Define Pauli, Hadamard and S matrices</span>
 X = np.array([[<span style="color: #B452CD">0</span>, <span style="color: #B452CD">1</span>], [<span style="color: #B452CD">1</span>, <span style="color: #B452CD">0</span>]], dtype=<span style="color: #658b00">complex</span>)
 Y = np.array([[<span style="color: #B452CD">0</span>, -<span style="color: #B452CD">1</span>j], [<span style="color: #B452CD">1</span>j, <span style="color: #B452CD">0</span>]], dtype=<span style="color: #658b00">complex</span>)
 Z = np.array([[<span style="color: #B452CD">1</span>, <span style="color: #B452CD">0</span>], [<span style="color: #B452CD">0</span>, -<span style="color: #B452CD">1</span>]], dtype=<span style="color: #658b00">complex</span>)
+Had = np.array([[<span style="color: #B452CD">1</span>, <span style="color: #B452CD">1</span>],[<span style="color: #B452CD">1</span>, -<span style="color: #B452CD">1</span>]], dtype=<span style="color: #658b00">complex</span>) / np.sqrt(<span style="color: #B452CD">2</span>)
+S = np.array([[<span style="color: #B452CD">1</span>, <span style="color: #B452CD">0</span>],[<span style="color: #B452CD">0</span>, <span style="color: #B452CD">1</span>j]], dtype=<span style="color: #658b00">complex</span>)
 
 <span style="color: #228B22"># Simulation parameters</span>
 B = <span style="color: #B452CD">2</span> * np.pi  <span style="color: #228B22"># Magnetic field strength (in angular frequency units)</span>
 times = np.linspace(<span style="color: #B452CD">0</span>, <span style="color: #B452CD">1</span>, <span style="color: #B452CD">200</span>)  <span style="color: #228B22"># Time range from 0 to 1 seconds</span>
 
 <span style="color: #228B22"># Initial state: superposition state via Hadamard gate acting on |0&gt;</span>
-psi0 = np.array([<span style="color: #B452CD">1</span>, <span style="color: #B452CD">1</span>], dtype=<span style="color: #658b00">complex</span>) / np.sqrt(<span style="color: #B452CD">2</span>)
+psi0 =  np.array([<span style="color: #B452CD">1</span>, <span style="color: #B452CD">0</span>], dtype=<span style="color: #658b00">complex</span>)
+psi0 *= Had <span style="color: #228B22">#np.array([1, 1], dtype=complex) / np.sqrt(2)</span>
 
 <span style="color: #228B22"># Lists to store expectation values</span>
 expect_x, expect_y, expect_z = [], [], []
@@ -1103,7 +1106,7 @@ get from taking \( n \) quantum sensing measurements, see again Giovannetti <em>
 </section>
 
 <section>
-<h2 id="moving-on-to-other-systems">Moving on to other systems </h2>
+<h2 id="two-qubits-and-entanglement">Two qubits and entanglement </h2>
 
 <p>We will now look at a simple system where we can produce an entangled state. We focus on a two-qubit system.</p>
 
@@ -1238,7 +1241,29 @@ $$
 </section>
 
 <section>
-<h2 id="density-matrices">Density matrices </h2>
+<h2 id="entangled-state">Entangled state </h2>
+
+<p>This system produces an initial state (we select the lowest-lying state) which is entangled (it acts like
+a SWAP gate) transforming the system from \( \vert 00\rangle \) at interaction strength \( 0 \) to
+</p>
+<p>&nbsp;<br>
+$$
+\vert \psi_{\mathrm{Initial}}=\alpha \vert 01\rangle +\beta \vert 10\rangle.
+$$
+<p>&nbsp;<br>
+
+<p>We can then act with a given probe on this state and study its time-evolution, in the same way as we studied the one-qubit system.</p>
+
+<p>The code below (to be added) performs then</p>
+<p>&nbsp;<br>
+$$
+\vert \psi(t) = \boldsymbol{U}_{\mathcal{H}}(\alpha \vert 01\rangle +\beta \vert 10\rangle). 
+$$
+<p>&nbsp;<br>
+</section>
+
+<section>
+<h2 id="intermezzo-digression-on-density-matrices-and-entropy">Intermezzo (digression) on density matrices and entropy </h2>
 
 <p>The four eigenstates of the above Hamiltonian matrix can in turn be used to
 define density matrices. As an example, the density matrix of the
@@ -1401,6 +1426,22 @@ plt.show
 
 <section>
 <h2 id="more-material-to-come">More material to come </h2>
+
+<p>Our initial state (the lowest lying one) is an entangled state</p>
+<p>&nbsp;<br>
+$$
+\vert \psi_{\mathrm{Initial}}=\alpha \vert 01\rangle +\beta \vert 10\rangle.
+$$
+<p>&nbsp;<br>
+
+<p>We can then act with a given probe on this state and study its time-evolution, in the same way as we studied the one-qubit system.</p>
+
+<p>The code below (to be added) performs then</p>
+<p>&nbsp;<br>
+$$
+\vert \psi(t) = \boldsymbol{U}_{\mathcal{H}}(\alpha \vert 01\rangle +\beta \vert 10\rangle). 
+$$
+<p>&nbsp;<br>
 </section>
 
 
