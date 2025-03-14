@@ -105,13 +105,16 @@ doconce format html sensing.do.txt --html_style=bootstrap --pygments_html_style=
                2,
                None,
                'key-components-of-code-for-one-qubit'),
-              ('Interpretation', 2, None, 'interpretation'),
-              ('To use this for sensing', 2, None, 'to-use-this-for-sensing'),
               ('One-qubit program example (best seen using the '
                'jupyter-notebook)',
                2,
                None,
                'one-qubit-program-example-best-seen-using-the-jupyter-notebook'),
+              ('Interpretation', 2, None, 'interpretation'),
+              ('To use this for sensing (protocol of Degen *et al.,* (2017))',
+               2,
+               None,
+               'to-use-this-for-sensing-protocol-of-degen-et-al-2017'),
               ('Feel free to play around with this code',
                2,
                None,
@@ -219,9 +222,9 @@ MathJax.Hub.Config({
      <!-- navigation toc: --> <li><a href="._sensing-bs030.html#benefits-of-entanglement" style="font-size: 80%;">Benefits of Entanglement</a></li>
      <!-- navigation toc: --> <li><a href="._sensing-bs031.html#ramsey-interferometry" style="font-size: 80%;">Ramsey interferometry</a></li>
      <!-- navigation toc: --> <li><a href="._sensing-bs032.html#key-components-of-code-for-one-qubit" style="font-size: 80%;">Key components of code for one qubit</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs033.html#interpretation" style="font-size: 80%;">Interpretation</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs034.html#to-use-this-for-sensing" style="font-size: 80%;">To use this for sensing</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs035.html#one-qubit-program-example-best-seen-using-the-jupyter-notebook" style="font-size: 80%;">One-qubit program example (best seen using the jupyter-notebook)</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs033.html#one-qubit-program-example-best-seen-using-the-jupyter-notebook" style="font-size: 80%;">One-qubit program example (best seen using the jupyter-notebook)</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs034.html#interpretation" style="font-size: 80%;">Interpretation</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs035.html#to-use-this-for-sensing-protocol-of-degen-et-al-2017" style="font-size: 80%;">To use this for sensing (protocol of Degen <em>et al.,</em> (2017))</a></li>
      <!-- navigation toc: --> <li><a href="._sensing-bs036.html#feel-free-to-play-around-with-this-code" style="font-size: 80%;">Feel free to play around with this code</a></li>
      <!-- navigation toc: --> <li><a href="._sensing-bs037.html#more-than-one-qubit" style="font-size: 80%;">More than one qubit</a></li>
      <!-- navigation toc: --> <li><a href="._sensing-bs038.html#after-initialization" style="font-size: 80%;">After initialization</a></li>
@@ -254,14 +257,14 @@ MathJax.Hub.Config({
 
 <p>Our initial state (the lowest lying one) is an entangled state</p>
 $$
-\vert \psi_{\mathrm{Initial}}=\alpha \vert 01\rangle +\beta \vert 10\rangle.
+\vert \psi_{\mathrm{Initial}}\rangle =\alpha \vert 01\rangle +\beta \vert 10\rangle.
 $$
 
 <p>We can then act with a given probe on this state and study its time-evolution, in the same way as we studied the one-qubit system.</p>
 
 <p>The code below (to be added) performs then</p>
 $$
-\vert \psi(t) = \boldsymbol{U}_{\mathcal{H}}(\alpha \vert 01\rangle +\beta \vert 10\rangle). 
+\vert \psi(t)\rangle = \boldsymbol{U}_{\mathcal{H}}(\alpha \vert 01\rangle +\beta \vert 10\rangle). 
 $$
 
 

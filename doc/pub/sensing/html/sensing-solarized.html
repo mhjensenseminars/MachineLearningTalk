@@ -132,13 +132,16 @@ div.toc p,a {
                2,
                None,
                'key-components-of-code-for-one-qubit'),
-              ('Interpretation', 2, None, 'interpretation'),
-              ('To use this for sensing', 2, None, 'to-use-this-for-sensing'),
               ('One-qubit program example (best seen using the '
                'jupyter-notebook)',
                2,
                None,
                'one-qubit-program-example-best-seen-using-the-jupyter-notebook'),
+              ('Interpretation', 2, None, 'interpretation'),
+              ('To use this for sensing (protocol of Degen *et al.,* (2017))',
+               2,
+               None,
+               'to-use-this-for-sensing-protocol-of-degen-et-al-2017'),
               ('Feel free to play around with this code',
                2,
                None,
@@ -859,23 +862,6 @@ population mean.
 
 
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
-<h2 id="interpretation">Interpretation </h2>
-
-<ol>
-<li> The oscillations in \( X \) and \( Y \) components demonstrate the Larmor precession caused by the magnetic field</li>
-<li> The frequency of oscillation is directly proportional to the magnetic field strength \( B \)</li>
-<li> This forms the basis for quantum sensing: measuring oscillation frequency allows precise determination of \( B \)</li>
-</ol>
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
-<h2 id="to-use-this-for-sensing">To use this for sensing </h2>
-
-<ol>
-<li> Prepare the qubit in a known superposition state</li>
-<li> Let it evolve in the magnetic field for a known time</li>
-<li> Measure the expectation values</li>
-<li> Determine \( B \) from the oscillation frequency</li>
-</ol>
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
 <h2 id="one-qubit-program-example-best-seen-using-the-jupyter-notebook">One-qubit program example (best seen using the jupyter-notebook) </h2>
 
 
@@ -889,7 +875,8 @@ population mean.
 <span style="color: #8B008B; font-weight: bold">from</span> <span style="color: #008b45; text-decoration: underline">scipy.linalg</span> <span style="color: #8B008B; font-weight: bold">import</span> expm
 <span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">matplotlib.pyplot</span> <span style="color: #8B008B; font-weight: bold">as</span> <span style="color: #008b45; text-decoration: underline">plt</span>
 
-<span style="color: #228B22"># Define Pauli, Hadamard and S matrices</span>
+<span style="color: #228B22"># Define single-qubit operations, Identity, Pauli, Hadamard and S matrices</span>
+Id = np.array([[<span style="color: #B452CD">1</span>, <span style="color: #B452CD">0</span>], [<span style="color: #B452CD">0</span>, <span style="color: #B452CD">1</span>]], dtype=<span style="color: #658b00">complex</span>)
 X = np.array([[<span style="color: #B452CD">0</span>, <span style="color: #B452CD">1</span>], [<span style="color: #B452CD">1</span>, <span style="color: #B452CD">0</span>]], dtype=<span style="color: #658b00">complex</span>)
 Y = np.array([[<span style="color: #B452CD">0</span>, -<span style="color: #B452CD">1</span>j], [<span style="color: #B452CD">1</span>j, <span style="color: #B452CD">0</span>]], dtype=<span style="color: #658b00">complex</span>)
 Z = np.array([[<span style="color: #B452CD">1</span>, <span style="color: #B452CD">0</span>], [<span style="color: #B452CD">0</span>, -<span style="color: #B452CD">1</span>]], dtype=<span style="color: #658b00">complex</span>)
@@ -901,8 +888,8 @@ B = <span style="color: #B452CD">2</span> * np.pi  <span style="color: #228B22">
 times = np.linspace(<span style="color: #B452CD">0</span>, <span style="color: #B452CD">1</span>, <span style="color: #B452CD">200</span>)  <span style="color: #228B22"># Time range from 0 to 1 seconds</span>
 
 <span style="color: #228B22"># Initial state: superposition state via Hadamard gate acting on |0&gt;</span>
-psi0 =  np.array([<span style="color: #B452CD">1</span>, <span style="color: #B452CD">0</span>], dtype=<span style="color: #658b00">complex</span>)
-psi0 *= Had <span style="color: #228B22">#np.array([1, 1], dtype=complex) / np.sqrt(2)</span>
+psi0 =  np.array([<span style="color: #B452CD">1</span>, <span style="color: #B452CD">0</span>], dtype=<span style="color: #658b00">complex</span>) <span style="color: #228B22"># start with |0&gt; then act with Hadamard</span>
+psi0 = Had @ psi0
 
 <span style="color: #228B22"># Lists to store expectation values</span>
 expect_x, expect_y, expect_z = [], [], []
@@ -920,9 +907,9 @@ expect_x, expect_y, expect_z = [], [], []
    expect_z.append(np.vdot(psi_t, Z @ psi_t).real)
 <span style="color: #228B22"># Plot results</span>
 plt.figure(figsize=(<span style="color: #B452CD">10</span>, <span style="color: #B452CD">6</span>))
-plt.plot(times, expect_x, label=<span style="color: #CD5555">&#39;⟨X⟩&#39;</span>)
-plt.plot(times, expect_y, label=<span style="color: #CD5555">&#39;⟨Y⟩&#39;</span>)
-plt.plot(times, expect_z, label=<span style="color: #CD5555">&#39;⟨Z⟩&#39;</span>)
+plt.plot(times, expect_x, label=<span style="color: #CD5555">&#39;$\langle X\rangle$&#39;</span>)
+plt.plot(times, expect_y, label=<span style="color: #CD5555">&#39;$\langle Y\rangle$&#39;</span>)
+plt.plot(times, expect_z, label=<span style="color: #CD5555">&#39;$\langle Z\rangle$&#39;</span>)
 plt.xlabel(<span style="color: #CD5555">&#39;Time (s)&#39;</span>)
 plt.ylabel(<span style="color: #CD5555">&#39;Expectation value&#39;</span>)
 plt.title(<span style="color: #CD5555">&#39;Qubit Spin Evolution in a z-Directional Magnetic Field&#39;</span>)
@@ -945,6 +932,23 @@ plt.show()
 </div>
 
 
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="interpretation">Interpretation </h2>
+
+<ol>
+<li> The oscillations in \( X \) and \( Y \) components demonstrate the Larmor precession caused by the magnetic field</li>
+<li> The frequency of oscillation is directly proportional to the magnetic field strength \( B \)</li>
+<li> This forms the basis for quantum sensing: measuring oscillation frequency allows precise determination of \( B \)</li>
+</ol>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="to-use-this-for-sensing-protocol-of-degen-et-al-2017">To use this for sensing (protocol of Degen <em>et al.,</em> (2017)) </h2>
+
+<ol>
+<li> Prepare the qubit in a known superposition state</li>
+<li> Let it evolve in the magnetic field for a known time</li>
+<li> Measure the expectation values</li>
+<li> Determine (here) \( B \) from the oscillation frequency</li>
+</ol>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 <h2 id="feel-free-to-play-around-with-this-code">Feel free to play around with this code </h2>
 
@@ -1130,14 +1134,14 @@ $$
 a SWAP gate) transforming the system from \( \vert 00\rangle \) at interaction strength \( 0 \) to
 </p>
 $$
-\vert \psi_{\mathrm{Initial}}=\alpha \vert 01\rangle +\beta \vert 10\rangle.
+\vert \psi_{\mathrm{Initial}}\rangle=\alpha \vert 01\rangle +\beta \vert 10\rangle.
 $$
 
 <p>We can then act with a given probe on this state and study its time-evolution, in the same way as we studied the one-qubit system.</p>
 
 <p>The code below (to be added) performs then</p>
 $$
-\vert \psi(t) = \boldsymbol{U}_{\mathcal{H}}(\alpha \vert 01\rangle +\beta \vert 10\rangle). 
+\vert \psi(t)\rangle = \boldsymbol{U}_{\mathcal{H}}(\alpha \vert 01\rangle +\beta \vert 10\rangle). 
 $$
 
 
@@ -1298,14 +1302,14 @@ plt.show
 
 <p>Our initial state (the lowest lying one) is an entangled state</p>
 $$
-\vert \psi_{\mathrm{Initial}}=\alpha \vert 01\rangle +\beta \vert 10\rangle.
+\vert \psi_{\mathrm{Initial}}\rangle =\alpha \vert 01\rangle +\beta \vert 10\rangle.
 $$
 
 <p>We can then act with a given probe on this state and study its time-evolution, in the same way as we studied the one-qubit system.</p>
 
 <p>The code below (to be added) performs then</p>
 $$
-\vert \psi(t) = \boldsymbol{U}_{\mathcal{H}}(\alpha \vert 01\rangle +\beta \vert 10\rangle). 
+\vert \psi(t)\rangle = \boldsymbol{U}_{\mathcal{H}}(\alpha \vert 01\rangle +\beta \vert 10\rangle). 
 $$
 
 

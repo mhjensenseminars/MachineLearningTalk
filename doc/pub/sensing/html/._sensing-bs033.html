@@ -105,13 +105,16 @@ doconce format html sensing.do.txt --html_style=bootstrap --pygments_html_style=
                2,
                None,
                'key-components-of-code-for-one-qubit'),
-              ('Interpretation', 2, None, 'interpretation'),
-              ('To use this for sensing', 2, None, 'to-use-this-for-sensing'),
               ('One-qubit program example (best seen using the '
                'jupyter-notebook)',
                2,
                None,
                'one-qubit-program-example-best-seen-using-the-jupyter-notebook'),
+              ('Interpretation', 2, None, 'interpretation'),
+              ('To use this for sensing (protocol of Degen *et al.,* (2017))',
+               2,
+               None,
+               'to-use-this-for-sensing-protocol-of-degen-et-al-2017'),
               ('Feel free to play around with this code',
                2,
                None,
@@ -219,9 +222,9 @@ MathJax.Hub.Config({
      <!-- navigation toc: --> <li><a href="._sensing-bs030.html#benefits-of-entanglement" style="font-size: 80%;">Benefits of Entanglement</a></li>
      <!-- navigation toc: --> <li><a href="._sensing-bs031.html#ramsey-interferometry" style="font-size: 80%;">Ramsey interferometry</a></li>
      <!-- navigation toc: --> <li><a href="._sensing-bs032.html#key-components-of-code-for-one-qubit" style="font-size: 80%;">Key components of code for one qubit</a></li>
-     <!-- navigation toc: --> <li><a href="#interpretation" style="font-size: 80%;">Interpretation</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs034.html#to-use-this-for-sensing" style="font-size: 80%;">To use this for sensing</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs035.html#one-qubit-program-example-best-seen-using-the-jupyter-notebook" style="font-size: 80%;">One-qubit program example (best seen using the jupyter-notebook)</a></li>
+     <!-- navigation toc: --> <li><a href="#one-qubit-program-example-best-seen-using-the-jupyter-notebook" style="font-size: 80%;">One-qubit program example (best seen using the jupyter-notebook)</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs034.html#interpretation" style="font-size: 80%;">Interpretation</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs035.html#to-use-this-for-sensing-protocol-of-degen-et-al-2017" style="font-size: 80%;">To use this for sensing (protocol of Degen <em>et al.,</em> (2017))</a></li>
      <!-- navigation toc: --> <li><a href="._sensing-bs036.html#feel-free-to-play-around-with-this-code" style="font-size: 80%;">Feel free to play around with this code</a></li>
      <!-- navigation toc: --> <li><a href="._sensing-bs037.html#more-than-one-qubit" style="font-size: 80%;">More than one qubit</a></li>
      <!-- navigation toc: --> <li><a href="._sensing-bs038.html#after-initialization" style="font-size: 80%;">After initialization</a></li>
@@ -250,13 +253,76 @@ MathJax.Hub.Config({
 <p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p> <!-- add vertical space -->
 <a name="part0033"></a>
 <!-- !split -->
-<h2 id="interpretation" class="anchor">Interpretation </h2>
+<h2 id="one-qubit-program-example-best-seen-using-the-jupyter-notebook" class="anchor">One-qubit program example (best seen using the jupyter-notebook) </h2>
 
-<ol>
-<li> The oscillations in \( X \) and \( Y \) components demonstrate the Larmor precession caused by the magnetic field</li>
-<li> The frequency of oscillation is directly proportional to the magnetic field strength \( B \)</li>
-<li> This forms the basis for quantum sensing: measuring oscillation frequency allows precise determination of \( B \)</li>
-</ol>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #f8f8f8">
+  <pre style="line-height: 125%;"><span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">numpy</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">np</span>
+<span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">scipy.linalg</span> <span style="color: #008000; font-weight: bold">import</span> expm
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">matplotlib.pyplot</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">plt</span>
+
+<span style="color: #408080; font-style: italic"># Define single-qubit operations, Identity, Pauli, Hadamard and S matrices</span>
+Id <span style="color: #666666">=</span> np<span style="color: #666666">.</span>array([[<span style="color: #666666">1</span>, <span style="color: #666666">0</span>], [<span style="color: #666666">0</span>, <span style="color: #666666">1</span>]], dtype<span style="color: #666666">=</span><span style="color: #008000">complex</span>)
+X <span style="color: #666666">=</span> np<span style="color: #666666">.</span>array([[<span style="color: #666666">0</span>, <span style="color: #666666">1</span>], [<span style="color: #666666">1</span>, <span style="color: #666666">0</span>]], dtype<span style="color: #666666">=</span><span style="color: #008000">complex</span>)
+Y <span style="color: #666666">=</span> np<span style="color: #666666">.</span>array([[<span style="color: #666666">0</span>, <span style="color: #666666">-1</span>j], [<span style="color: #666666">1</span>j, <span style="color: #666666">0</span>]], dtype<span style="color: #666666">=</span><span style="color: #008000">complex</span>)
+Z <span style="color: #666666">=</span> np<span style="color: #666666">.</span>array([[<span style="color: #666666">1</span>, <span style="color: #666666">0</span>], [<span style="color: #666666">0</span>, <span style="color: #666666">-1</span>]], dtype<span style="color: #666666">=</span><span style="color: #008000">complex</span>)
+Had <span style="color: #666666">=</span> np<span style="color: #666666">.</span>array([[<span style="color: #666666">1</span>, <span style="color: #666666">1</span>],[<span style="color: #666666">1</span>, <span style="color: #666666">-1</span>]], dtype<span style="color: #666666">=</span><span style="color: #008000">complex</span>) <span style="color: #666666">/</span> np<span style="color: #666666">.</span>sqrt(<span style="color: #666666">2</span>)
+S <span style="color: #666666">=</span> np<span style="color: #666666">.</span>array([[<span style="color: #666666">1</span>, <span style="color: #666666">0</span>],[<span style="color: #666666">0</span>, <span style="color: #666666">1</span>j]], dtype<span style="color: #666666">=</span><span style="color: #008000">complex</span>)
+
+<span style="color: #408080; font-style: italic"># Simulation parameters</span>
+B <span style="color: #666666">=</span> <span style="color: #666666">2</span> <span style="color: #666666">*</span> np<span style="color: #666666">.</span>pi  <span style="color: #408080; font-style: italic"># Magnetic field strength (in angular frequency units)</span>
+times <span style="color: #666666">=</span> np<span style="color: #666666">.</span>linspace(<span style="color: #666666">0</span>, <span style="color: #666666">1</span>, <span style="color: #666666">200</span>)  <span style="color: #408080; font-style: italic"># Time range from 0 to 1 seconds</span>
+
+<span style="color: #408080; font-style: italic"># Initial state: superposition state via Hadamard gate acting on |0&gt;</span>
+psi0 <span style="color: #666666">=</span>  np<span style="color: #666666">.</span>array([<span style="color: #666666">1</span>, <span style="color: #666666">0</span>], dtype<span style="color: #666666">=</span><span style="color: #008000">complex</span>) <span style="color: #408080; font-style: italic"># start with |0&gt; then act with Hadamard</span>
+psi0 <span style="color: #666666">=</span> Had <span style="color: #666666">@</span> psi0
+
+<span style="color: #408080; font-style: italic"># Lists to store expectation values</span>
+expect_x, expect_y, expect_z <span style="color: #666666">=</span> [], [], []
+
+<span style="color: #008000; font-weight: bold">for</span> t <span style="color: #AA22FF; font-weight: bold">in</span> times:
+   <span style="color: #408080; font-style: italic"># Construct Hamiltonian</span>
+   H <span style="color: #666666">=</span> B <span style="color: #666666">*</span> Z<span style="color: #666666">/</span> <span style="color: #666666">2</span>
+   <span style="color: #408080; font-style: italic"># Calculate time evolution operator</span>
+   U <span style="color: #666666">=</span> expm(<span style="color: #666666">-1</span>j <span style="color: #666666">*</span> H <span style="color: #666666">*</span> t)
+   <span style="color: #408080; font-style: italic"># Evolve the initial state</span>
+   psi_t <span style="color: #666666">=</span> U <span style="color: #666666">@</span> psi0
+   <span style="color: #408080; font-style: italic"># Calculate expectation values</span>
+   expect_x<span style="color: #666666">.</span>append(np<span style="color: #666666">.</span>vdot(psi_t, X <span style="color: #666666">@</span> psi_t)<span style="color: #666666">.</span>real)
+   expect_y<span style="color: #666666">.</span>append(np<span style="color: #666666">.</span>vdot(psi_t, Y <span style="color: #666666">@</span> psi_t)<span style="color: #666666">.</span>real)
+   expect_z<span style="color: #666666">.</span>append(np<span style="color: #666666">.</span>vdot(psi_t, Z <span style="color: #666666">@</span> psi_t)<span style="color: #666666">.</span>real)
+<span style="color: #408080; font-style: italic"># Plot results</span>
+plt<span style="color: #666666">.</span>figure(figsize<span style="color: #666666">=</span>(<span style="color: #666666">10</span>, <span style="color: #666666">6</span>))
+plt<span style="color: #666666">.</span>plot(times, expect_x, label<span style="color: #666666">=</span><span style="color: #BA2121">&#39;$\langle X</span><span style="color: #BB6622; font-weight: bold">\r</span><span style="color: #BA2121">angle$&#39;</span>)
+plt<span style="color: #666666">.</span>plot(times, expect_y, label<span style="color: #666666">=</span><span style="color: #BA2121">&#39;$\langle Y</span><span style="color: #BB6622; font-weight: bold">\r</span><span style="color: #BA2121">angle$&#39;</span>)
+plt<span style="color: #666666">.</span>plot(times, expect_z, label<span style="color: #666666">=</span><span style="color: #BA2121">&#39;$\langle Z</span><span style="color: #BB6622; font-weight: bold">\r</span><span style="color: #BA2121">angle$&#39;</span>)
+plt<span style="color: #666666">.</span>xlabel(<span style="color: #BA2121">&#39;Time (s)&#39;</span>)
+plt<span style="color: #666666">.</span>ylabel(<span style="color: #BA2121">&#39;Expectation value&#39;</span>)
+plt<span style="color: #666666">.</span>title(<span style="color: #BA2121">&#39;Qubit Spin Evolution in a z-Directional Magnetic Field&#39;</span>)
+plt<span style="color: #666666">.</span>legend()
+plt<span style="color: #666666">.</span>grid(<span style="color: #008000; font-weight: bold">True</span>)
+plt<span style="color: #666666">.</span>show()
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 <p>
 <!-- navigation buttons at the bottom of the page -->
 <ul class="pagination">
