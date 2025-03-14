@@ -229,7 +229,7 @@ MathJax.Hub.Config({
      <!-- navigation toc: --> <li><a href="._sensing-bs033.html#one-qubit-program-example-best-seen-using-the-jupyter-notebook" style="font-size: 80%;">One-qubit program example (best seen using the jupyter-notebook)</a></li>
      <!-- navigation toc: --> <li><a href="._sensing-bs034.html#interpretation" style="font-size: 80%;">Interpretation</a></li>
      <!-- navigation toc: --> <li><a href="._sensing-bs035.html#to-use-this-for-sensing-protocol-of-degen-et-al-2017" style="font-size: 80%;">To use this for sensing (protocol of Degen <em>et al.,</em> (2017))</a></li>
-     <!-- navigation toc: --> <li><a href="#feel-free-to-play-around-with-this-code" style="font-size: 80%;">Feel free to play around with this code</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs036.html#feel-free-to-play-around-with-this-code" style="font-size: 80%;">Feel free to play around with this code</a></li>
      <!-- navigation toc: --> <li><a href="._sensing-bs037.html#more-than-one-qubit" style="font-size: 80%;">More than one qubit</a></li>
      <!-- navigation toc: --> <li><a href="._sensing-bs038.html#after-initialization" style="font-size: 80%;">After initialization</a></li>
      <!-- navigation toc: --> <li><a href="._sensing-bs039.html#transition-probability" style="font-size: 80%;">Transition probability</a></li>
@@ -246,7 +246,7 @@ MathJax.Hub.Config({
      <!-- navigation toc: --> <li><a href="._sensing-bs050.html#entropies" style="font-size: 80%;">Entropies</a></li>
      <!-- navigation toc: --> <li><a href="._sensing-bs051.html#understanding-the-example" style="font-size: 80%;">Understanding the example</a></li>
      <!-- navigation toc: --> <li><a href="._sensing-bs052.html#code-best-seen-in-jupyter-notebook" style="font-size: 80%;">Code, best seen in jupyter-notebook</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs053.html#more-material-to-come" style="font-size: 80%;">More material to come</a></li>
+     <!-- navigation toc: --> <li><a href="#more-material-to-come" style="font-size: 80%;">More material to come</a></li>
 
         </ul>
       </li>
@@ -256,49 +256,38 @@ MathJax.Hub.Config({
 </div> <!-- end of navigation bar -->
 <div class="container">
 <p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p> <!-- add vertical space -->
-<a name="part0036"></a>
+<a name="part0053"></a>
 <!-- !split -->
-<h2 id="feel-free-to-play-around-with-this-code" class="anchor">Feel free to play around with this code </h2>
+<h2 id="more-material-to-come" class="anchor">More material to come </h2>
 
-<ol>
-<li> Change \( B \) value to see different oscillation frequencies</li>
-<li> Adjust <em>time</em> array to observe different numbers of oscillations</li>
-<li> Add noise to simulate real-world sensing scenarios</li>
-<li> Implement actual measurement simulations instead of expectation values</li>
-</ol>
-<p>This code provides a fundamental demonstration of quantum sensing
-principles using a simple qubit system. Real-world implementations
-would typically use more sophisticated techniques like Ramsey
-interferometry or dynamical decoupling for enhanced sensitivity.
-</p>
+<p>Our initial state (the lowest lying one) is an entangled state</p>
+$$
+\vert \psi_{\mathrm{Initial}}\rangle =\alpha \vert 01\rangle +\beta \vert 10\rangle.
+$$
+
+<p>We can then act with a given probe on this state and study its time-evolution, in the same way as we studied the one-qubit system.</p>
+
+<p>The code below (to be added) performs then</p>
+$$
+\vert \psi(t)\rangle = \boldsymbol{U}_{\mathcal{H}}(\alpha \vert 01\rangle +\beta \vert 10\rangle). 
+$$
+
 
 <p>
 <!-- navigation buttons at the bottom of the page -->
 <ul class="pagination">
-<li><a href="._sensing-bs035.html">&laquo;</a></li>
+<li><a href="._sensing-bs052.html">&laquo;</a></li>
   <li><a href="._sensing-bs000.html">1</a></li>
   <li><a href="">...</a></li>
-  <li><a href="._sensing-bs028.html">29</a></li>
-  <li><a href="._sensing-bs029.html">30</a></li>
-  <li><a href="._sensing-bs030.html">31</a></li>
-  <li><a href="._sensing-bs031.html">32</a></li>
-  <li><a href="._sensing-bs032.html">33</a></li>
-  <li><a href="._sensing-bs033.html">34</a></li>
-  <li><a href="._sensing-bs034.html">35</a></li>
-  <li><a href="._sensing-bs035.html">36</a></li>
-  <li class="active"><a href="._sensing-bs036.html">37</a></li>
-  <li><a href="._sensing-bs037.html">38</a></li>
-  <li><a href="._sensing-bs038.html">39</a></li>
-  <li><a href="._sensing-bs039.html">40</a></li>
-  <li><a href="._sensing-bs040.html">41</a></li>
-  <li><a href="._sensing-bs041.html">42</a></li>
-  <li><a href="._sensing-bs042.html">43</a></li>
-  <li><a href="._sensing-bs043.html">44</a></li>
-  <li><a href="._sensing-bs044.html">45</a></li>
   <li><a href="._sensing-bs045.html">46</a></li>
-  <li><a href="">...</a></li>
-  <li><a href="._sensing-bs053.html">54</a></li>
-  <li><a href="._sensing-bs037.html">&raquo;</a></li>
+  <li><a href="._sensing-bs046.html">47</a></li>
+  <li><a href="._sensing-bs047.html">48</a></li>
+  <li><a href="._sensing-bs048.html">49</a></li>
+  <li><a href="._sensing-bs049.html">50</a></li>
+  <li><a href="._sensing-bs050.html">51</a></li>
+  <li><a href="._sensing-bs051.html">52</a></li>
+  <li><a href="._sensing-bs052.html">53</a></li>
+  <li class="active"><a href="._sensing-bs053.html">54</a></li>
 </ul>
 <!-- ------------------- end of main content --------------- -->
 </div>  <!-- end container -->

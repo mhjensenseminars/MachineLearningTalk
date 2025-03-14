@@ -141,6 +141,10 @@ doconce format html sensing.do.txt --html_style=bootstrap --pygments_html_style=
                'eigenstates-of-non-interacting-hamiltonian'),
               ('Interaction part', 2, None, 'interaction-part'),
               ('Entangled state', 2, None, 'entangled-state'),
+              ("Sensing protocol and Gunnar's part",
+               2,
+               None,
+               'sensing-protocol-and-gunnar-s-part'),
               ('Intermezzo (digression) on density matrices and entropy',
                2,
                None,
@@ -236,12 +240,13 @@ MathJax.Hub.Config({
      <!-- navigation toc: --> <li><a href="._sensing-bs044.html#eigenstates-of-non-interacting-hamiltonian" style="font-size: 80%;">Eigenstates of non-interacting Hamiltonian</a></li>
      <!-- navigation toc: --> <li><a href="._sensing-bs045.html#interaction-part" style="font-size: 80%;">Interaction part</a></li>
      <!-- navigation toc: --> <li><a href="._sensing-bs046.html#entangled-state" style="font-size: 80%;">Entangled state</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs047.html#intermezzo-digression-on-density-matrices-and-entropy" style="font-size: 80%;">Intermezzo (digression) on density matrices and entropy</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs048.html#subsystems" style="font-size: 80%;">Subsystems</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs049.html#entropies" style="font-size: 80%;">Entropies</a></li>
-     <!-- navigation toc: --> <li><a href="#understanding-the-example" style="font-size: 80%;">Understanding the example</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs051.html#code-best-seen-in-jupyter-notebook" style="font-size: 80%;">Code, best seen in jupyter-notebook</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs052.html#more-material-to-come" style="font-size: 80%;">More material to come</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs047.html#sensing-protocol-and-gunnar-s-part" style="font-size: 80%;">Sensing protocol and Gunnar's part</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs048.html#intermezzo-digression-on-density-matrices-and-entropy" style="font-size: 80%;">Intermezzo (digression) on density matrices and entropy</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs049.html#subsystems" style="font-size: 80%;">Subsystems</a></li>
+     <!-- navigation toc: --> <li><a href="#entropies" style="font-size: 80%;">Entropies</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs051.html#understanding-the-example" style="font-size: 80%;">Understanding the example</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs052.html#code-best-seen-in-jupyter-notebook" style="font-size: 80%;">Code, best seen in jupyter-notebook</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs053.html#more-material-to-come" style="font-size: 80%;">More material to come</a></li>
 
         </ul>
       </li>
@@ -253,20 +258,19 @@ MathJax.Hub.Config({
 <p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p> <!-- add vertical space -->
 <a name="part0050"></a>
 <!-- !split -->
-<h2 id="understanding-the-example" class="anchor">Understanding the example </h2>
-<p>The example here shows the above von Neumann entropy based on the
-density matrix for the lowest many-body state. We see clearly a jump
-in the entropy around the point where we have a level crossing. At
-interaction strenght \( \lambda=0 \) we have many-body states purely
-defined by their computational basis states. As we switch on the
-interaction strength, we obtain an increased degree of mixing and the
-entropy increases till we reach the level crossing point where we see
-an additional and sudden increase in entropy. Similar behaviors are
-observed for the other states. The most important result from this
-example is that entanglement is driven by the Hamiltonian itself and
-the strength of the interaction matrix elements and the
-non-interacting energies.
+<h2 id="entropies" class="anchor">Entropies </h2>
+
+<p>The density matrices for these subsets can be used to compute the
+so-called von Neumann entropy, which is one of the possible measures
+of entanglement. A pure state has entropy equal zero while entangled
+state have an entropy larger than zero. The von-Neumann entropy is
+defined as
 </p>
+
+$$
+S(A,B)=-\mathrm{Tr}\left(\rho_{A,B}\log_2 (\rho_{A,B})\right).
+$$
+
 
 <p>
 <!-- navigation buttons at the bottom of the page -->
@@ -285,6 +289,7 @@ non-interacting energies.
   <li class="active"><a href="._sensing-bs050.html">51</a></li>
   <li><a href="._sensing-bs051.html">52</a></li>
   <li><a href="._sensing-bs052.html">53</a></li>
+  <li><a href="._sensing-bs053.html">54</a></li>
   <li><a href="._sensing-bs051.html">&raquo;</a></li>
 </ul>
 <!-- ------------------- end of main content --------------- -->

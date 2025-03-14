@@ -971,9 +971,9 @@ expect_x, expect_y, expect_z = [], [], []
    expect_z.append(np.vdot(psi_t, Z @ psi_t).real)
 <span style="color: #228B22"># Plot results</span>
 plt.figure(figsize=(<span style="color: #B452CD">10</span>, <span style="color: #B452CD">6</span>))
-plt.plot(times, expect_x, label=<span style="color: #CD5555">&#39;$\langle X\rangle$&#39;</span>)
-plt.plot(times, expect_y, label=<span style="color: #CD5555">&#39;$\langle Y\rangle$&#39;</span>)
-plt.plot(times, expect_z, label=<span style="color: #CD5555">&#39;$\langle Z\rangle$&#39;</span>)
+plt.plot(times, expect_x, label=<span style="color: #CD5555">&#39;&lt;X&gt;&#39;</span>)
+plt.plot(times, expect_y, label=<span style="color: #CD5555">&#39;&lt;Y&gt;&#39;</span>)
+plt.plot(times, expect_z, label=<span style="color: #CD5555">&#39;&lt;Z&gt;&#39;</span>)
 plt.xlabel(<span style="color: #CD5555">&#39;Time (s)&#39;</span>)
 plt.ylabel(<span style="color: #CD5555">&#39;Expectation value&#39;</span>)
 plt.title(<span style="color: #CD5555">&#39;Qubit Spin Evolution in a z-Directional Magnetic Field&#39;</span>)
@@ -1261,6 +1261,16 @@ $$
 \vert \psi(t)\rangle = \boldsymbol{U}_{\mathcal{H}}(\alpha \vert 01\rangle +\beta \vert 10\rangle). 
 $$
 <p>&nbsp;<br>
+</section>
+
+<section>
+<h2 id="sensing-protocol-and-gunnar-s-part">Sensing protocol and Gunnar's part </h2>
+
+<br/><br/>
+<center>
+<p><img src="figures/sensingLiu.png" width="900" align="bottom"></p>
+</center>
+<br/><br/>
 </section>
 
 <section>

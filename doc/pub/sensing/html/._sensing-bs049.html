@@ -141,6 +141,10 @@ doconce format html sensing.do.txt --html_style=bootstrap --pygments_html_style=
                'eigenstates-of-non-interacting-hamiltonian'),
               ('Interaction part', 2, None, 'interaction-part'),
               ('Entangled state', 2, None, 'entangled-state'),
+              ("Sensing protocol and Gunnar's part",
+               2,
+               None,
+               'sensing-protocol-and-gunnar-s-part'),
               ('Intermezzo (digression) on density matrices and entropy',
                2,
                None,
@@ -236,12 +240,13 @@ MathJax.Hub.Config({
      <!-- navigation toc: --> <li><a href="._sensing-bs044.html#eigenstates-of-non-interacting-hamiltonian" style="font-size: 80%;">Eigenstates of non-interacting Hamiltonian</a></li>
      <!-- navigation toc: --> <li><a href="._sensing-bs045.html#interaction-part" style="font-size: 80%;">Interaction part</a></li>
      <!-- navigation toc: --> <li><a href="._sensing-bs046.html#entangled-state" style="font-size: 80%;">Entangled state</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs047.html#intermezzo-digression-on-density-matrices-and-entropy" style="font-size: 80%;">Intermezzo (digression) on density matrices and entropy</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs048.html#subsystems" style="font-size: 80%;">Subsystems</a></li>
-     <!-- navigation toc: --> <li><a href="#entropies" style="font-size: 80%;">Entropies</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs050.html#understanding-the-example" style="font-size: 80%;">Understanding the example</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs051.html#code-best-seen-in-jupyter-notebook" style="font-size: 80%;">Code, best seen in jupyter-notebook</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs052.html#more-material-to-come" style="font-size: 80%;">More material to come</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs047.html#sensing-protocol-and-gunnar-s-part" style="font-size: 80%;">Sensing protocol and Gunnar's part</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs048.html#intermezzo-digression-on-density-matrices-and-entropy" style="font-size: 80%;">Intermezzo (digression) on density matrices and entropy</a></li>
+     <!-- navigation toc: --> <li><a href="#subsystems" style="font-size: 80%;">Subsystems</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs050.html#entropies" style="font-size: 80%;">Entropies</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs051.html#understanding-the-example" style="font-size: 80%;">Understanding the example</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs052.html#code-best-seen-in-jupyter-notebook" style="font-size: 80%;">Code, best seen in jupyter-notebook</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs053.html#more-material-to-come" style="font-size: 80%;">More material to come</a></li>
 
         </ul>
       </li>
@@ -253,17 +258,20 @@ MathJax.Hub.Config({
 <p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p> <!-- add vertical space -->
 <a name="part0049"></a>
 <!-- !split -->
-<h2 id="entropies" class="anchor">Entropies </h2>
+<h2 id="subsystems" class="anchor">Subsystems </h2>
 
-<p>The density matrices for these subsets can be used to compute the
-so-called von Neumann entropy, which is one of the possible measures
-of entanglement. A pure state has entropy equal zero while entangled
-state have an entropy larger than zero. The von-Neumann entropy is
-defined as
+<p>We can
+then in turn define the density matrix for the subsets \( A \) or \( B \) as
 </p>
 
 $$
-S(A,B)=-\mathrm{Tr}\left(\rho_{A,B}\log_2 (\rho_{A,B})\right).
+\rho_A=\mathrm{Tr}_B(\rho_{0})=\langle 0 \vert \rho_{0} \vert 0\rangle_{B}+\langle 1 \vert \rho_{0} \vert 1\rangle_{B},
+$$
+
+<p>or</p>
+
+$$
+\rho_B=\mathrm{Tr}_A(\rho_0)=\langle 0 \vert \rho_{0} \vert 0\rangle_{A}+\langle 1 \vert \rho_{0} \vert 1\rangle_{A}.
 $$
 
 
@@ -285,6 +293,7 @@ $$
   <li><a href="._sensing-bs050.html">51</a></li>
   <li><a href="._sensing-bs051.html">52</a></li>
   <li><a href="._sensing-bs052.html">53</a></li>
+  <li><a href="._sensing-bs053.html">54</a></li>
   <li><a href="._sensing-bs050.html">&raquo;</a></li>
 </ul>
 <!-- ------------------- end of main content --------------- -->

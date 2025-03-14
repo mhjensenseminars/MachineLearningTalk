@@ -141,6 +141,10 @@ doconce format html sensing.do.txt --html_style=bootstrap --pygments_html_style=
                'eigenstates-of-non-interacting-hamiltonian'),
               ('Interaction part', 2, None, 'interaction-part'),
               ('Entangled state', 2, None, 'entangled-state'),
+              ("Sensing protocol and Gunnar's part",
+               2,
+               None,
+               'sensing-protocol-and-gunnar-s-part'),
               ('Intermezzo (digression) on density matrices and entropy',
                2,
                None,
@@ -236,12 +240,13 @@ MathJax.Hub.Config({
      <!-- navigation toc: --> <li><a href="._sensing-bs044.html#eigenstates-of-non-interacting-hamiltonian" style="font-size: 80%;">Eigenstates of non-interacting Hamiltonian</a></li>
      <!-- navigation toc: --> <li><a href="._sensing-bs045.html#interaction-part" style="font-size: 80%;">Interaction part</a></li>
      <!-- navigation toc: --> <li><a href="._sensing-bs046.html#entangled-state" style="font-size: 80%;">Entangled state</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs047.html#intermezzo-digression-on-density-matrices-and-entropy" style="font-size: 80%;">Intermezzo (digression) on density matrices and entropy</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs048.html#subsystems" style="font-size: 80%;">Subsystems</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs049.html#entropies" style="font-size: 80%;">Entropies</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs050.html#understanding-the-example" style="font-size: 80%;">Understanding the example</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs051.html#code-best-seen-in-jupyter-notebook" style="font-size: 80%;">Code, best seen in jupyter-notebook</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs052.html#more-material-to-come" style="font-size: 80%;">More material to come</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs047.html#sensing-protocol-and-gunnar-s-part" style="font-size: 80%;">Sensing protocol and Gunnar's part</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs048.html#intermezzo-digression-on-density-matrices-and-entropy" style="font-size: 80%;">Intermezzo (digression) on density matrices and entropy</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs049.html#subsystems" style="font-size: 80%;">Subsystems</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs050.html#entropies" style="font-size: 80%;">Entropies</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs051.html#understanding-the-example" style="font-size: 80%;">Understanding the example</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs052.html#code-best-seen-in-jupyter-notebook" style="font-size: 80%;">Code, best seen in jupyter-notebook</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs053.html#more-material-to-come" style="font-size: 80%;">More material to come</a></li>
 
         </ul>
       </li>
@@ -298,9 +303,9 @@ expect_x, expect_y, expect_z <span style="color: #666666">=</span> [], [], []
    expect_z<span style="color: #666666">.</span>append(np<span style="color: #666666">.</span>vdot(psi_t, Z <span style="color: #666666">@</span> psi_t)<span style="color: #666666">.</span>real)
 <span style="color: #408080; font-style: italic"># Plot results</span>
 plt<span style="color: #666666">.</span>figure(figsize<span style="color: #666666">=</span>(<span style="color: #666666">10</span>, <span style="color: #666666">6</span>))
-plt<span style="color: #666666">.</span>plot(times, expect_x, label<span style="color: #666666">=</span><span style="color: #BA2121">&#39;$\langle X</span><span style="color: #BB6622; font-weight: bold">\r</span><span style="color: #BA2121">angle$&#39;</span>)
-plt<span style="color: #666666">.</span>plot(times, expect_y, label<span style="color: #666666">=</span><span style="color: #BA2121">&#39;$\langle Y</span><span style="color: #BB6622; font-weight: bold">\r</span><span style="color: #BA2121">angle$&#39;</span>)
-plt<span style="color: #666666">.</span>plot(times, expect_z, label<span style="color: #666666">=</span><span style="color: #BA2121">&#39;$\langle Z</span><span style="color: #BB6622; font-weight: bold">\r</span><span style="color: #BA2121">angle$&#39;</span>)
+plt<span style="color: #666666">.</span>plot(times, expect_x, label<span style="color: #666666">=</span><span style="color: #BA2121">&#39;&lt;X&gt;&#39;</span>)
+plt<span style="color: #666666">.</span>plot(times, expect_y, label<span style="color: #666666">=</span><span style="color: #BA2121">&#39;&lt;Y&gt;&#39;</span>)
+plt<span style="color: #666666">.</span>plot(times, expect_z, label<span style="color: #666666">=</span><span style="color: #BA2121">&#39;&lt;Z&gt;&#39;</span>)
 plt<span style="color: #666666">.</span>xlabel(<span style="color: #BA2121">&#39;Time (s)&#39;</span>)
 plt<span style="color: #666666">.</span>ylabel(<span style="color: #BA2121">&#39;Expectation value&#39;</span>)
 plt<span style="color: #666666">.</span>title(<span style="color: #BA2121">&#39;Qubit Spin Evolution in a z-Directional Magnetic Field&#39;</span>)
@@ -348,7 +353,7 @@ plt<span style="color: #666666">.</span>show()
   <li><a href="._sensing-bs041.html">42</a></li>
   <li><a href="._sensing-bs042.html">43</a></li>
   <li><a href="">...</a></li>
-  <li><a href="._sensing-bs052.html">53</a></li>
+  <li><a href="._sensing-bs053.html">54</a></li>
   <li><a href="._sensing-bs034.html">&raquo;</a></li>
 </ul>
 <!-- ------------------- end of main content --------------- -->

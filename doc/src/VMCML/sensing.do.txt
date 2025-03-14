@@ -658,9 +658,9 @@ for t in times:
    expect_z.append(np.vdot(psi_t, Z @ psi_t).real)
 # Plot results
 plt.figure(figsize=(10, 6))
-plt.plot(times, expect_x, label='$\langle X\rangle$')
-plt.plot(times, expect_y, label='$\langle Y\rangle$')
-plt.plot(times, expect_z, label='$\langle Z\rangle$')
+plt.plot(times, expect_x, label='<X>')
+plt.plot(times, expect_y, label='<Y>')
+plt.plot(times, expect_z, label='<Z>')
 plt.xlabel('Time (s)')
 plt.ylabel('Expectation value')
 plt.title('Qubit Spin Evolution in a z-Directional Magnetic Field')
@@ -904,6 +904,13 @@ The code below (to be added) performs then
 \vert \psi(t)\rangle = \bm{U}_{\mathcal{H}}(\alpha \vert 01\rangle +\beta \vert 10\rangle). 
 \]
 !et
+
+!split
+===== Sensing protocol and Gunnar's part =====
+
+FIGURE: [figures/sensingLiu.png, width=900 frac=1.0]
+
+
 
 !split
 ===== Intermezzo (digression) on density matrices and entropy =====
