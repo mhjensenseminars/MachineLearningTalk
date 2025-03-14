@@ -601,7 +601,7 @@ population mean.
 ===== Key components of code for one qubit =====
 
 !bblock Physical System:
-o Hamiltonian: $\mathcal{H} = -\frac{\gamma B}{2}Z$ (we will set $\gamma$  set to 1)
+o Hamiltonian: $\mathcal{H} = -\frac{\gamma B}{2}Z$ (we will set $\gamma=1$)
 o Initial state: $\vert \psi_{\mathrm{Initial}}\rangle = \frac{1}{\sqrt{2}}(|0\rangle + |1\rangle)$, Hadamard gate
 !eblock
 
@@ -720,7 +720,7 @@ where $|0\rangle^{\otimes n}=|0\rangle \otimes \ldots \otimes|0\rangle, n$ times
 !split
 ===== After initialization =====
 
-After initialization, each of the $n$ sensing qubits evolves to pick up a relative phase factor of $e^{\frac{i t}{\hbar}\left(E_{1}-E_{0}+ V_z\right)}$, which combined results in
+After initialization, each of the $n$ sensing qubits evolves to pick up a relative phase factor of $\exp{\imath t\left(E_{1}-E_{0}+ V_z\right)}$, which combined results in
 !bt
 \[
 |\psi(t)\rangle=\mathcal{N}\left(|0\rangle^{\otimes n}+\exp{n \imath t\left(E_{1}-E_{0}+ V_z\right)}|1\rangle^{\otimes n}\right)
