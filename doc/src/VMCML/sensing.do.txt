@@ -1048,22 +1048,25 @@ plt.show
 
 
 !split
-===== More material to come =====
+===== Role of entanglement =====
 
-Our initial state (the lowest lying one) is an entangled state
+As seen from this example,  our initial state (the lowest lying one) is an entangled state
 !bt
 \[
 \vert \psi_{\mathrm{Initial}}\rangle =\alpha \vert 01\rangle +\beta \vert 10\rangle.
 \]
 !et
-We can then act with a given probe on this state and study its time-evolution, in the same way as we studied the one-qubit system.
 
-The code below (to be added) performs then
+We can then act with a given probe on this state and study its
+time-evolution, in the same way as we studied the one-qubit system.
+
+The code below ) performs then
 !bt
 \[
 \vert \psi(t)\rangle = \bm{U}_{\mathcal{H}}(\alpha \vert 01\rangle +\beta \vert 10\rangle). 
 \]
 !et
+Thereafter we implement an explicit measurement. Note that this code does not compute these expectation values as one would when implementing a quantum computing approach. The subsequent example mimicks the way we would run this as a real experiment.
 
 
 
