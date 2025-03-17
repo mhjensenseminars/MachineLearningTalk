@@ -11,7 +11,7 @@ in physics. And why this could (or should) be of interest.
 !eblock
 
 !bblock
-These slides and more at URL:"http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/Geiloschool/pdf/Geiloschool.pdf"
+These slides and more at URL:"http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/Geiloschool/"
 !eblock
 
 !split
