@@ -1,0 +1,820 @@
+<!--
+HTML file automatically generated from DocOnce source
+(https://github.com/doconce/doconce/)
+doconce format html Geiloschool2.do.txt --pygments_html_style=default --html_style=bloodish --html_links_in_new_window --html_output=Geiloschool2 --no_mako
+-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="DocOnce: https://github.com/doconce/doconce/" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Third part, quantum mechanical studies">
+<title>Third part, quantum mechanical studies</title>
+<style type="text/css">
+/* bloodish style */
+body {
+  font-family: Helvetica, Verdana, Arial, Sans-serif;
+  color: #404040;
+  background: #ffffff;
+}
+h1 { font-size: 1.8em; color: #8A0808; }
+h2 { font-size: 1.6em; color: #8A0808; }
+h3 { font-size: 1.4em; color: #8A0808; }
+h4 { font-size: 1.2em; color: #8A0808; }
+a { color: #8A0808; text-decoration:none; }
+tt { font-family: "Courier New", Courier; }
+p { text-indent: 0px; }
+hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+p.caption { width: 80%; font-style: normal; text-align: left; }
+hr.figure { border: 0; width: 80%; border-bottom: 1px solid #aaa; }div.highlight {
+    border: 1px solid #cfcfcf;
+    border-radius: 2px;
+    line-height: 1.21429em;
+}
+div.cell {
+    width: 100%;
+    padding: 5px 5px 5px 0;
+    margin: 0;
+    outline: none;
+}
+div.input {
+    page-break-inside: avoid;
+    box-orient: horizontal;
+    box-align: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+}
+div.inner_cell {
+    box-orient: vertical;
+    box-align: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    box-flex: 1;
+    flex: 1;
+}
+div.input_area {
+    border: 1px solid #cfcfcf;
+    border-radius: 4px;
+    background: #f7f7f7;
+    line-height: 1.21429em;
+}
+div.input_area > div.highlight {
+    margin: .4em;
+    border: none;
+    padding: 0;
+    background-color: transparent;
+}
+div.output_wrapper {
+    position: relative;
+    box-orient: vertical;
+    box-align: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+.output {
+    box-orient: vertical;
+    box-align: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+div.output_area {
+    padding: 0;
+    page-break-inside: avoid;
+    box-orient: horizontal;
+    box-align: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+}
+div.output_subarea {
+    padding: .4em .4em 0 .4em;
+    box-flex: 1;
+    flex: 1;
+}
+div.output_text {
+    text-align: left;
+    color: #000;
+    line-height: 1.21429em;
+}
+.alert-text-small   { font-size: 80%;  }
+.alert-text-large   { font-size: 130%; }
+.alert-text-normal  { font-size: 90%;  }
+.alert {
+  padding:8px 35px 8px 14px; margin-bottom:18px;
+  text-shadow:0 1px 0 rgba(255,255,255,0.5);
+  border:1px solid #bababa;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  color: #555;
+  background-color: #f8f8f8;
+  background-position: 10px 5px;
+  background-repeat: no-repeat;
+  background-size: 38px;
+  padding-left: 55px;
+  width: 75%;
+ }
+.alert-block {padding-top:14px; padding-bottom:14px}
+.alert-block > p, .alert-block > ul {margin-bottom:1em}
+.alert li {margin-top: 1em}
+.alert-block p+p {margin-top:5px}
+.alert-notice { background-image: url(https://cdn.rawgit.com/doconce/doconce/master/bundled/html_images/small_gray_notice.png); }
+.alert-summary  { background-image:url(https://cdn.rawgit.com/doconce/doconce/master/bundled/html_images/small_gray_summary.png); }
+.alert-warning { background-image: url(https://cdn.rawgit.com/doconce/doconce/master/bundled/html_images/small_gray_warning.png); }
+.alert-question {background-image:url(https://cdn.rawgit.com/doconce/doconce/master/bundled/html_images/small_gray_question.png); }
+div { text-align: justify; text-justify: inter-word; }
+.tab {
+  padding-left: 1.5em;
+}
+div.toc p,a {
+  line-height: 1.3;
+  margin-top: 1.1;
+  margin-bottom: 1.1;
+}
+</style>
+</head>
+
+<!-- tocinfo
+{'highest level': 2,
+ 'sections': [('Many-body physics, Quantum Monte Carlo and deep learning',
+               2,
+               None,
+               'many-body-physics-quantum-monte-carlo-and-deep-learning'),
+              ('Quantum Monte Carlo Motivation',
+               2,
+               None,
+               'quantum-monte-carlo-motivation'),
+              ('Quantum Monte Carlo Motivation',
+               2,
+               None,
+               'quantum-monte-carlo-motivation'),
+              ('Energy derivatives', 2, None, 'energy-derivatives'),
+              ('Derivatives of the local energy',
+               2,
+               None,
+               'derivatives-of-the-local-energy'),
+              ('Monte Carlo methods and Neural Networks',
+               2,
+               None,
+               'monte-carlo-methods-and-neural-networks'),
+              ('Deep learning neural networks, "Variational Monte Carlo '
+               'calculations of $A\\le 4$ nuclei with an artificial '
+               'neural-network correlator ansatz by Adams et '
+               'al.":"https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.127.022502"',
+               2,
+               None,
+               'deep-learning-neural-networks-variational-monte-carlo-calculations-of-a-le-4-nuclei-with-an-artificial-neural-network-correlator-ansatz-by-adams-et-al-https-journals-aps-org-prl-abstract-10-1103-physrevlett-127-022502'),
+              ('Ansatz for a fermionic state function, Jane Kim et al, Commun '
+               'Phys 7, 148 (2024)',
+               2,
+               None,
+               'ansatz-for-a-fermionic-state-function-jane-kim-et-al-commun-phys-7-148-2024'),
+              ('Nuclear matter setup', 2, None, 'nuclear-matter-setup'),
+              ('Neutron star structure', 2, None, 'neutron-star-structure'),
+              ('"Dilute neutron star matter from neural-network quantum states '
+               'by Fore et al, Physical Review Research 5, 033062 '
+               '(2023)":"https://journals.aps.org/prresearch/pdf/10.1103/PhysRevResearch.5.033062" '
+               'at density $\\rho=0.04$ fm$^{-3}$',
+               2,
+               None,
+               'dilute-neutron-star-matter-from-neural-network-quantum-states-by-fore-et-al-physical-review-research-5-033062-2023-https-journals-aps-org-prresearch-pdf-10-1103-physrevresearch-5-033062-at-density-rho-0-04-fm-3'),
+              ('Pairing and Spin-singlet and triplet two-body distribution '
+               'functions at $\\rho=0.01$ fm$^{-3}$',
+               2,
+               None,
+               'pairing-and-spin-singlet-and-triplet-two-body-distribution-functions-at-rho-0-01-fm-3'),
+              ('Pairing and Spin-singlet and triplet two-body distribution '
+               'functions at $\\rho=0.04$ fm$^{-3}$',
+               2,
+               None,
+               'pairing-and-spin-singlet-and-triplet-two-body-distribution-functions-at-rho-0-04-fm-3'),
+              ('Pairing and Spin-singlet and triplet two-body distribution '
+               'functions at $\\rho=0.08$ fm$^{-3}$',
+               2,
+               None,
+               'pairing-and-spin-singlet-and-triplet-two-body-distribution-functions-at-rho-0-08-fm-3'),
+              ('Symmetric nuclear matter', 2, None, 'symmetric-nuclear-matter'),
+              ('Self-emerging clustering', 2, None, 'self-emerging-clustering'),
+              ('Clustering: Two-body pair distributions',
+               2,
+               None,
+               'clustering-two-body-pair-distributions'),
+              ('Nuclear matter proton fraction',
+               2,
+               None,
+               'nuclear-matter-proton-fraction'),
+              ('The electron gas in three dimensions with $N=14$ electrons '
+               '(Wigner-Seitz radius $r_s=2$ a.u.), "Gabriel Pescia, Jane Kim '
+               'et al. '
+               'arXiv.2305.07240,":"https://doi.org/10.48550/arXiv.2305.07240"',
+               2,
+               None,
+               'the-electron-gas-in-three-dimensions-with-n-14-electrons-wigner-seitz-radius-r-s-2-a-u-gabriel-pescia-jane-kim-et-al-arxiv-2305-07240-https-doi-org-10-48550-arxiv-2305-07240'),
+              ('"Efficient solutions of fermionic systems using artificial '
+               'neural networks, Nordhagen et al, Frontiers in Physics 11, '
+               '2023":"https://doi.org/10.3389/fphy.2023.1061580"',
+               2,
+               None,
+               'efficient-solutions-of-fermionic-systems-using-artificial-neural-networks-nordhagen-et-al-frontiers-in-physics-11-2023-https-doi-org-10-3389-fphy-2023-1061580'),
+              ('Generative models: Why Boltzmann machines?',
+               2,
+               None,
+               'generative-models-why-boltzmann-machines'),
+              ('The structure of the RBM network',
+               2,
+               None,
+               'the-structure-of-the-rbm-network'),
+              ('The network', 2, None, 'the-network'),
+              ('Goals', 2, None, 'goals'),
+              ('Joint distribution', 2, None, 'joint-distribution'),
+              ('Network Elements, the energy function',
+               2,
+               None,
+               'network-elements-the-energy-function'),
+              ('Defining different types of RBMs (Energy based models)',
+               2,
+               None,
+               'defining-different-types-of-rbms-energy-based-models'),
+              ('Gaussian binary', 2, None, 'gaussian-binary'),
+              ('Representing the wave function',
+               2,
+               None,
+               'representing-the-wave-function'),
+              ('Define the cost function', 2, None, 'define-the-cost-function'),
+              ('Quantum dots and Boltzmann machines, onebody densities $N=6$, '
+               '$\\hbar\\omega=0.1$ a.u.',
+               2,
+               None,
+               'quantum-dots-and-boltzmann-machines-onebody-densities-n-6-hbar-omega-0-1-a-u'),
+              ('Onebody densities $N=30$, $\\hbar\\omega=1.0$ a.u.',
+               2,
+               None,
+               'onebody-densities-n-30-hbar-omega-1-0-a-u'),
+              ('Expectation values as functions of the oscillator frequency',
+               2,
+               None,
+               'expectation-values-as-functions-of-the-oscillator-frequency')]}
+end of tocinfo -->
+
+<body>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+     equationNumbers: {  autoNumber: "AMS"  },
+     extensions: ["AMSmath.js", "AMSsymbols.js", "autobold.js", "color.js"]
+  }
+});
+</script>
+<script type="text/javascript" async
+ src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<!-- ------------------- main content ---------------------- -->
+<center>
+<h1>Third part, quantum mechanical studies </h1>
+</center>  <!-- document title -->
+
+<!-- author(s): Morten Hjorth-Jensen -->
+<center>
+<b>Morten Hjorth-Jensen</b> 
+</center>
+<!-- institution -->
+<center>
+<b>Department of Physics and Center for Computing in Science Education, University of Oslo, Norway</b>
+</center>
+<br>
+<center>
+<h4>Geilo Winter School, March 10-20, 2025</h4>
+</center> <!-- date -->
+<br>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="many-body-physics-quantum-monte-carlo-and-deep-learning">Many-body physics, Quantum Monte Carlo and deep learning </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p>Given a hamiltonian \( H \) and a trial wave function \( \Psi_T \), the variational principle states that the expectation value of \( \langle H \rangle \), defined through </p>
+$$
+   \langle E \rangle =
+   \frac{\int d\boldsymbol{R}\Psi^{\ast}_T(\boldsymbol{R})H(\boldsymbol{R})\Psi_T(\boldsymbol{R})}
+        {\int d\boldsymbol{R}\Psi^{\ast}_T(\boldsymbol{R})\Psi_T(\boldsymbol{R})},
+$$
+
+<p>is an upper bound to the ground state energy \( E_0 \) of the hamiltonian \( H \), that is </p>
+$$
+    E_0 \le \langle E \rangle.
+$$
+
+<p>In general, the integrals involved in the calculation of various  expectation values  are multi-dimensional ones. Traditional integration methods such as the Gauss-Legendre will not be adequate for say the  computation of the energy of a many-body system.  <b>Basic philosophy: Let a neural network find the optimal wave function</b></p>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="quantum-monte-carlo-motivation">Quantum Monte Carlo Motivation </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b>Basic steps</b>
+<p>
+<p>Choose a trial wave function
+\( \psi_T(\boldsymbol{R}) \).
+</p>
+$$
+   P(\boldsymbol{R},\boldsymbol{\alpha})= \frac{\left|\psi_T(\boldsymbol{R},\boldsymbol{\alpha})\right|^2}{\int \left|\psi_T(\boldsymbol{R},\boldsymbol{\alpha})\right|^2d\boldsymbol{R}}.
+$$
+
+<p>This is our model, or likelihood/probability distribution function  (PDF). It depends on some variational parameters \( \boldsymbol{\alpha} \).
+The approximation to the expectation value of the Hamiltonian is now 
+</p>
+$$
+   \langle E[\boldsymbol{\alpha}] \rangle = 
+   \frac{\int d\boldsymbol{R}\Psi^{\ast}_T(\boldsymbol{R},\boldsymbol{\alpha})H(\boldsymbol{R})\Psi_T(\boldsymbol{R},\boldsymbol{\alpha})}
+        {\int d\boldsymbol{R}\Psi^{\ast}_T(\boldsymbol{R},\boldsymbol{\alpha})\Psi_T(\boldsymbol{R},\boldsymbol{\alpha})}.
+$$
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="quantum-monte-carlo-motivation">Quantum Monte Carlo Motivation </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b>Define a new quantity</b>
+<p>
+$$
+   E_L(\boldsymbol{R},\boldsymbol{\alpha})=\frac{1}{\psi_T(\boldsymbol{R},\boldsymbol{\alpha})}H\psi_T(\boldsymbol{R},\boldsymbol{\alpha}),
+$$
+
+<p>called the local energy, which, together with our trial PDF yields</p>
+$$
+  \langle E[\boldsymbol{\alpha}] \rangle=\int P(\boldsymbol{R})E_L(\boldsymbol{R},\boldsymbol{\alpha}) d\boldsymbol{R}\approx \frac{1}{N}\sum_{i=1}^NE_L(\boldsymbol{R_i},\boldsymbol{\alpha})
+$$
+
+<p>with \( N \) being the number of Monte Carlo samples.</p>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="energy-derivatives">Energy derivatives </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p>The local energy as function of the variational parameters defines now our <b>objective/cost</b> function.</p>
+
+<p>To find the derivatives of the local energy expectation value as function of the variational parameters, we can use the chain rule and the hermiticity of the Hamiltonian.  </p>
+
+<p>Let us define (with the notation \( \langle E[\boldsymbol{\alpha}]\rangle =\langle  E_L\rangle \))</p>
+$$
+\bar{E}_{\alpha_i}=\frac{d\langle  E_L\rangle}{d\alpha_i},
+$$
+
+<p>as the derivative of the energy with respect to the variational parameter \( \alpha_i \)
+We define also the derivative of the trial function (skipping the subindex \( T \)) as 
+</p>
+$$
+\bar{\Psi}_{i}=\frac{d\Psi}{d\alpha_i}.
+$$
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="derivatives-of-the-local-energy">Derivatives of the local energy </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p>The elements of the gradient of the local energy are </p>
+$$
+\bar{E}_{i}= 2\left( \langle \frac{\bar{\Psi}_{i}}{\Psi}E_L\rangle -\langle \frac{\bar{\Psi}_{i}}{\Psi}\rangle\langle E_L \rangle\right).
+$$
+
+<p>From a computational point of view it means that you need to compute the expectation values of </p>
+$$
+\langle \frac{\bar{\Psi}_{i}}{\Psi}E_L\rangle,
+$$
+
+<p>and</p>
+$$
+\langle \frac{\bar{\Psi}_{i}}{\Psi}\rangle\langle E_L\rangle
+$$
+
+<p>These integrals are evaluted using MC integration (with all its possible error sources). Use methods like stochastic gradient or other minimization methods to find the optimal parameters.</p>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="monte-carlo-methods-and-neural-networks">Monte Carlo methods and Neural Networks </h2>
+
+<p><a href="https://www.sciencedirect.com/science/article/pii/S0370269320305463?via%3Dihub" target="_blank">Machine Learning and the Deuteron by Kebble and Rios</a> and
+<a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.127.022502" target="_blank">Variational Monte Carlo calculations of \( A\le 4 \) nuclei with an artificial neural-network correlator ansatz by Adams et al.</a>
+</p>
+
+<b>Adams et al</b>:
+
+$$
+\begin{align}
+H_{LO} &=-\sum_i \frac{{\vec{\nabla}_i^2}}{2m_N}
++\sum_{i < j} {\left(C_1  + C_2\, \vec{\sigma_i}\cdot\vec{\sigma_j}\right)
+e^{-r_{ij}^2\Lambda^2 / 4 }}
+\nonumber\\
+&+D_0 \sum_{i < j < k} \sum_{\text{cyc}}
+{e^{-\left(r_{ik}^2+r_{ij}^2\right)\Lambda^2/4}}\,,
+\label{_auto1}
+\end{align}
+$$
+
+<p>where \( m_N \) is the mass of the nucleon, \( \vec{\sigma_i} \) is the Pauli
+matrix acting on nucleon \( i \), and \( \sum_{\text{cyc}} \) stands for the
+cyclic permutation of \( i \), \( j \), and \( k \). The low-energy constants
+\( C_1 \) and \( C_2 \) are fit to the deuteron binding energy and to the
+neutron-neutron scattering length
+</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="deep-learning-neural-networks-variational-monte-carlo-calculations-of-a-le-4-nuclei-with-an-artificial-neural-network-correlator-ansatz-by-adams-et-al-https-journals-aps-org-prl-abstract-10-1103-physrevlett-127-022502">Deep learning neural networks, <a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.127.022502" target="_blank">Variational Monte Carlo calculations of \( A\le 4 \) nuclei with an artificial neural-network correlator ansatz by Adams et al.</a> </h2>
+
+<p>An appealing feature of the neural network ansatz is that it is more general than the more conventional product of two-
+and three-body spin-independent Jastrow functions
+</p>
+$$
+\begin{align}
+|\Psi_V^J \rangle = \prod_{i < j < k} \Big( 1-\sum_{\text{cyc}} u(r_{ij}) u(r_{jk})\Big) \prod_{i < j} f(r_{ij}) | \Phi\rangle\,,
+\label{_auto2}
+\end{align}
+$$
+
+<p>which is commonly used for nuclear Hamiltonians that do not contain tensor and spin-orbit terms.
+The above function is replaced by a four-layer Neural Network. 
+</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="ansatz-for-a-fermionic-state-function-jane-kim-et-al-commun-phys-7-148-2024">Ansatz for a fermionic state function, Jane Kim et al, Commun Phys 7, 148 (2024) </h2>
+
+$$
+\Psi_T(\boldsymbol{X}) =\exp{U(\boldsymbol{X})}\Phi(\boldsymbol{X}).
+$$
+
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<ol>
+<li> Build in fermion antisymmetry for network compactness</li>
+<li> Permutation-invariant Jastrow function improves ansatz flexibility</li>
+<li> Build \( U \) and \( \Phi \) functions from fully connected, deep neural networks</li>
+<li> Use Slater determinant (or Pfaffian) \( \Phi \) to enforce antisymmetry with single particle wavefunctions represented by neural networks</li>
+</ol>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="nuclear-matter-setup">Nuclear matter setup </h2>
+
+<br/><br/>
+<center>
+<p><img src="figures/mbpfig4.png" width="900" align="bottom"></p>
+</center>
+<br/><br/>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="neutron-star-structure">Neutron star structure </h2>
+
+<br/><br/>
+<center>
+<p><img src="figures/mbpfig5.png" width="900" align="bottom"></p>
+</center>
+<br/><br/>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="dilute-neutron-star-matter-from-neural-network-quantum-states-by-fore-et-al-physical-review-research-5-033062-2023-https-journals-aps-org-prresearch-pdf-10-1103-physrevresearch-5-033062-at-density-rho-0-04-fm-3"><a href="https://journals.aps.org/prresearch/pdf/10.1103/PhysRevResearch.5.033062" target="_blank">Dilute neutron star matter from neural-network quantum states by Fore et al, Physical Review Research 5, 033062 (2023)</a> at density \( \rho=0.04 \) fm$^{-3}$ </h2>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<br/><br/>
+<center>
+<p><img src="figures/nmatter.png" width="700" align="bottom"></p>
+</center>
+<br/><br/>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="pairing-and-spin-singlet-and-triplet-two-body-distribution-functions-at-rho-0-01-fm-3">Pairing and Spin-singlet and triplet two-body distribution functions at \( \rho=0.01 \) fm$^{-3}$ </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<br/><br/>
+<center>
+<p><img src="figures/01_tbd.png" width="700" align="bottom"></p>
+</center>
+<br/><br/>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="pairing-and-spin-singlet-and-triplet-two-body-distribution-functions-at-rho-0-04-fm-3">Pairing and Spin-singlet and triplet two-body distribution functions at \( \rho=0.04 \) fm$^{-3}$ </h2>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<br/><br/>
+<center>
+<p><img src="figures/04_tbd.png" width="700" align="bottom"></p>
+</center>
+<br/><br/>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="pairing-and-spin-singlet-and-triplet-two-body-distribution-functions-at-rho-0-08-fm-3">Pairing and Spin-singlet and triplet two-body distribution functions at \( \rho=0.08 \) fm$^{-3}$ </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<br/><br/>
+<center>
+<p><img src="figures/08_tbd.png" width="700" align="bottom"></p>
+</center>
+<br/><br/>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="symmetric-nuclear-matter">Symmetric nuclear matter  </h2>
+
+<br/><br/>
+<center>
+<p><img src="figures/mbpfig6.png" width="900" align="bottom"></p>
+</center>
+<br/><br/>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="self-emerging-clustering">Self-emerging clustering  </h2>
+
+<br/><br/>
+<center>
+<p><img src="figures/mbpfig7.png" width="900" align="bottom"></p>
+</center>
+<br/><br/>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="clustering-two-body-pair-distributions">Clustering: Two-body pair distributions  </h2>
+
+<br/><br/>
+<center>
+<p><img src="figures/mbpfig8.png" width="900" align="bottom"></p>
+</center>
+<br/><br/>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="nuclear-matter-proton-fraction">Nuclear matter proton fraction  </h2>
+
+<br/><br/>
+<center>
+<p><img src="figures/mbpfig9.png" width="900" align="bottom"></p>
+</center>
+<br/><br/>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="the-electron-gas-in-three-dimensions-with-n-14-electrons-wigner-seitz-radius-r-s-2-a-u-gabriel-pescia-jane-kim-et-al-arxiv-2305-07240-https-doi-org-10-48550-arxiv-2305-07240">The electron gas in three dimensions with \( N=14 \) electrons (Wigner-Seitz radius \( r_s=2 \) a.u.), <a href="https://doi.org/10.48550/arXiv.2305.07240" target="_blank">Gabriel Pescia, Jane Kim et al. arXiv.2305.07240,</a> </h2>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<br/><br/>
+<center>
+<p><img src="figures/elgasnew.png" width="700" align="bottom"></p>
+</center>
+<br/><br/>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="efficient-solutions-of-fermionic-systems-using-artificial-neural-networks-nordhagen-et-al-frontiers-in-physics-11-2023-https-doi-org-10-3389-fphy-2023-1061580"><a href="https://doi.org/10.3389/fphy.2023.1061580" target="_blank">Efficient solutions of fermionic systems using artificial neural networks, Nordhagen et al, Frontiers in Physics 11, 2023</a> </h2>
+
+<p>The Hamiltonian of the quantum dot is given by</p>
+$$ \hat{H} = \hat{H}_0 + \hat{V}, 
+$$
+
+<p>where \( \hat{H}_0 \) is the many-body HO Hamiltonian, and \( \hat{V} \) is the
+inter-electron Coulomb interactions. In dimensionless units,
+</p>
+$$ \hat{V}= \sum_{i < j}^N \frac{1}{r_{ij}},
+$$
+
+<p>with \( r_{ij}=\sqrt{\mathbf{r}_i^2 - \mathbf{r}_j^2} \).</p>
+
+<p>Separable Hamiltonian with the relative motion part (\( r_{ij}=r \))</p>
+$$ 
+\hat{H}_r=-\nabla^2_r + \frac{1}{4}\omega^2r^2+ \frac{1}{r},
+$$
+
+<p>Analytical solutions in two and three dimensions (<a href="https://journals.aps.org/pra/abstract/10.1103/PhysRevA.48.3561" target="_blank">M. Taut 1993 and 1994</a>). </p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="generative-models-why-boltzmann-machines">Generative models: Why Boltzmann machines? </h2>
+
+<p>What is known as restricted Boltzmann Machines (RMB) have received a
+lot of attention lately.  One of the major reasons is that they can be
+stacked layer-wise to build deep neural networks that capture
+complicated statistics.
+</p>
+
+<p>The original RBMs had just one visible layer and a hidden layer, but
+recently so-called Gaussian-binary RBMs have gained quite some
+popularity in imaging since they are capable of modeling continuous
+data that are common to natural images.
+</p>
+
+<p>Furthermore, they have been used to solve complicated quantum
+mechanical many-particle problems or classical statistical physics
+problems like the Ising and Potts classes of models.
+</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="the-structure-of-the-rbm-network">The structure of the RBM network </h2>
+
+<br/><br/>
+<center>
+<p><img src="figures/RBM.png" width="800" align="bottom"></p>
+</center>
+<br/><br/>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="the-network">The network </h2>
+
+<b>The network layers</b>:
+<ol>
+ <li> A function \( \boldsymbol{x} \) that represents the visible layer, a vector of \( M \) elements (nodes). This layer represents both what the RBM might be given as training input, and what we want it to be able to reconstruct. This might for example be the pixels of an image, the spin values of the Ising model, or coefficients representing speech.</li>
+ <li> The function \( \boldsymbol{h} \) represents the hidden, or latent, layer. A vector of \( N \) elements (nodes). Also called "feature detectors".</li>
+</ol>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="goals">Goals </h2>
+
+<p>The goal of the hidden layer is to increase the model's expressive
+power. We encode complex interactions between visible variables by
+introducing additional, hidden variables that interact with visible
+degrees of freedom in a simple manner, yet still reproduce the complex
+correlations between visible degrees in the data once marginalized
+over (integrated out).
+</p>
+
+<b>The network parameters, to be optimized/learned</b>:
+<ol>
+ <li> \( \boldsymbol{a} \) represents the visible bias, a vector of same length as \( \boldsymbol{x} \).</li>
+ <li> \( \boldsymbol{b} \) represents the hidden bias, a vector of same lenght as \( \boldsymbol{h} \).</li>
+ <li> \( W \) represents the interaction weights, a matrix of size \( M\times N \).</li>
+</ol>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="joint-distribution">Joint distribution </h2>
+<p>The restricted Boltzmann machine is described by a Bolztmann distribution</p>
+$$
+	P_{\mathrm{rbm}}(\boldsymbol{x},\boldsymbol{h}) = \frac{1}{Z} \exp{-E(\boldsymbol{x},\boldsymbol{h})},
+$$
+
+<p>where \( Z \) is the normalization constant or partition function, defined as </p>
+$$
+	Z = \int \int \exp{-E(\boldsymbol{x},\boldsymbol{h})} d\boldsymbol{x} d\boldsymbol{h}.
+$$
+
+<p>Note the absence of the inverse temperature in these equations.</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="network-elements-the-energy-function">Network Elements, the energy function  </h2>
+
+<p>The function \( E(\boldsymbol{x},\boldsymbol{h}) \) gives the <b>energy</b> of a
+configuration (pair of vectors) \( (\boldsymbol{x}, \boldsymbol{h}) \). The lower
+the energy of a configuration, the higher the probability of it. This
+function also depends on the parameters \( \boldsymbol{a} \), \( \boldsymbol{b} \) and
+\( W \). Thus, when we adjust them during the learning procedure, we are
+adjusting the energy function to best fit our problem.
+</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="defining-different-types-of-rbms-energy-based-models">Defining different types of RBMs (Energy based models) </h2>
+
+<p>There are different variants of RBMs, and the differences lie in the types of visible and hidden units we choose as well as in the implementation of the energy function \( E(\boldsymbol{x},\boldsymbol{h}) \). The connection between the nodes in the two layers is given by the weights \( w_{ij} \). </p>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b>Binary-Binary RBM:</b>
+<p>
+
+<p>RBMs were first developed using binary units in both the visible and hidden layer. The corresponding energy function is defined as follows:</p>
+$$
+	E(\boldsymbol{x}, \boldsymbol{h}) = - \sum_i^M x_i a_i- \sum_j^N b_j h_j - \sum_{i,j}^{M,N} x_i w_{ij} h_j,
+$$
+
+<p>where the binary values taken on by the nodes are most commonly 0 and 1.</p>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="gaussian-binary">Gaussian binary </h2>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b>Gaussian-Binary RBM:</b>
+<p>
+
+<p>Another varient is the RBM where the visible units are Gaussian while the hidden units remain binary:</p>
+$$
+	E(\boldsymbol{x}, \boldsymbol{h}) = \sum_i^M \frac{(x_i - a_i)^2}{2\sigma_i^2} - \sum_j^N b_j h_j - \sum_{i,j}^{M,N} \frac{x_i w_{ij} h_j}{\sigma_i^2}. 
+$$
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="representing-the-wave-function">Representing the wave function </h2>
+
+<p>The wavefunction should be a probability amplitude depending on
+ \( \boldsymbol{x} \). The RBM model is given by the joint distribution of
+ \( \boldsymbol{x} \) and \( \boldsymbol{h} \)
+</p>
+
+$$
+        P_{\mathrm{rbm}}(\boldsymbol{x},\boldsymbol{h}) = \frac{1}{Z} \exp{-E(\boldsymbol{x},\boldsymbol{h})}.
+$$
+
+<p>To find the marginal distribution of \( \boldsymbol{x} \) we set:</p>
+
+$$
+        P_{\mathrm{rbm}}(\boldsymbol{x}) =\frac{1}{Z}\sum_{\boldsymbol{h}} \exp{-E(\boldsymbol{x}, \boldsymbol{h})}.
+$$
+
+<p>Now this is what we use to represent the wave function, calling it a neural-network quantum state (NQS)</p>
+$$
+        \vert\Psi (\boldsymbol{X})\vert^2 = P_{\mathrm{rbm}}(\boldsymbol{x}).
+$$
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="define-the-cost-function">Define the cost function </h2>
+
+<p>Now we don't necessarily have training data (unless we generate it by
+using some other method). However, what we do have is the variational
+principle which allows us to obtain the ground state wave function by
+minimizing the expectation value of the energy of a trial wavefunction
+(corresponding to the untrained NQS). Similarly to the traditional
+variational Monte Carlo method then, it is the local energy we wish to
+minimize. The gradient to use for the stochastic gradient descent
+procedure is
+</p>
+
+$$
+	C_i = \frac{\partial \langle E_L \rangle}{\partial \theta_i}
+	= 2(\langle E_L \frac{1}{\Psi}\frac{\partial \Psi}{\partial \theta_i} \rangle - \langle E_L \rangle \langle \frac{1}{\Psi}\frac{\partial \Psi}{\partial \theta_i} \rangle ),
+$$
+
+<p>where the local energy is given by</p>
+$$
+	E_L = \frac{1}{\Psi} \hat{\boldsymbol{H}} \Psi.
+$$
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="quantum-dots-and-boltzmann-machines-onebody-densities-n-6-hbar-omega-0-1-a-u">Quantum dots and Boltzmann machines, onebody densities \( N=6 \), \( \hbar\omega=0.1 \) a.u. </h2>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<br/><br/>
+<center>
+<p><img src="figures/OB6hw01.png" width="700" align="bottom"></p>
+</center>
+<br/><br/>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="onebody-densities-n-30-hbar-omega-1-0-a-u">Onebody densities \( N=30 \), \( \hbar\omega=1.0 \) a.u. </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<br/><br/>
+<center>
+<p><img src="figures/OB30hw1.png" width="700" align="bottom"></p>
+</center>
+<br/><br/>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="expectation-values-as-functions-of-the-oscillator-frequency">Expectation values as functions of the oscillator frequency  </h2>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<br/><br/>
+<center>
+<p><img src="figures/virialtheorem.png" width="700" align="bottom"></p>
+</center>
+<br/><br/>
+</div>
+
+
+<!-- ------------------- end of main content --------------- -->
+</body>
+</html>
+
