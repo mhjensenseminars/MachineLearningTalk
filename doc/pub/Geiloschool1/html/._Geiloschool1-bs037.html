@@ -1,0 +1,284 @@
+<!--
+HTML file automatically generated from DocOnce source
+(https://github.com/doconce/doconce/)
+doconce format html Geiloschool1.do.txt --html_style=bootstrap --pygments_html_style=default --html_admon=bootstrap_panel --html_output=Geiloschool1-bs --no_mako
+-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="DocOnce: https://github.com/doconce/doconce/" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Artificial intelligence and machine learning in physics, part I, introduction">
+<title>Artificial intelligence and machine learning in physics, part I, introduction</title>
+<!-- Bootstrap style: bootstrap -->
+<!-- doconce format html Geiloschool1.do.txt --html_style=bootstrap --pygments_html_style=default --html_admon=bootstrap_panel --html_output=Geiloschool1-bs --no_mako -->
+<link href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+<!-- not necessary
+<link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+-->
+<style type="text/css">
+/* Add scrollbar to dropdown menus in bootstrap navigation bar */
+.dropdown-menu {
+   height: auto;
+   max-height: 400px;
+   overflow-x: hidden;
+}
+/* Adds an invisible element before each target to offset for the navigation
+   bar */
+.anchor::before {
+  content:"";
+  display:block;
+  height:50px;      /* fixed header height for style bootstrap */
+  margin:-50px 0 0; /* negative fixed header height */
+}
+</style>
+</head>
+
+<!-- tocinfo
+{'highest level': 2,
+ 'sections': [('What is this talk about?', 2, None, 'what-is-this-talk-about'),
+              ('Thanks to many', 2, None, 'thanks-to-many'),
+              ('And sponsors', 2, None, 'and-sponsors'),
+              ('AI/ML and some statements you may have heard (and what do they '
+               'mean?)',
+               2,
+               None,
+               'ai-ml-and-some-statements-you-may-have-heard-and-what-do-they-mean'),
+              ('Types of machine learning',
+               2,
+               None,
+               'types-of-machine-learning'),
+              ('Main categories', 2, None, 'main-categories'),
+              ('The plethora  of machine learning algorithms/methods',
+               2,
+               None,
+               'the-plethora-of-machine-learning-algorithms-methods'),
+              ('Example of generative modeling, "taken from Generative Deep '
+               'Learning by David '
+               'Foster":"https://www.oreilly.com/library/view/generative-deep-learning/9781098134174/ch01.html"',
+               2,
+               None,
+               'example-of-generative-modeling-taken-from-generative-deep-learning-by-david-foster-https-www-oreilly-com-library-view-generative-deep-learning-9781098134174-ch01-html'),
+              ('Example of discriminative modeling, "taken from Generative '
+               'Deeep Learning by David '
+               'Foster":"https://www.oreilly.com/library/view/generative-deep-learning/9781098134174/ch01.html"',
+               2,
+               None,
+               'example-of-discriminative-modeling-taken-from-generative-deeep-learning-by-david-foster-https-www-oreilly-com-library-view-generative-deep-learning-9781098134174-ch01-html'),
+              ('Taxonomy of generative deep learning, "taken from Generative '
+               'Deep Learning by David '
+               'Foster":"https://www.oreilly.com/library/view/generative-deep-learning/9781098134174/ch01.html"',
+               2,
+               None,
+               'taxonomy-of-generative-deep-learning-taken-from-generative-deep-learning-by-david-foster-https-www-oreilly-com-library-view-generative-deep-learning-9781098134174-ch01-html'),
+              ('Good books with hands-on material and codes',
+               2,
+               None,
+               'good-books-with-hands-on-material-and-codes'),
+              ('What are the basic Machine Learning ingredients?',
+               2,
+               None,
+               'what-are-the-basic-machine-learning-ingredients'),
+              ('Low-level machine learning, the family of ordinary least '
+               'squares methods',
+               2,
+               None,
+               'low-level-machine-learning-the-family-of-ordinary-least-squares-methods'),
+              ('Setting up the equations', 2, None, 'setting-up-the-equations'),
+              ('The objective/cost/loss function',
+               2,
+               None,
+               'the-objective-cost-loss-function'),
+              ('Training solution', 2, None, 'training-solution'),
+              ('Ridge and LASSO Regression',
+               2,
+               None,
+               'ridge-and-lasso-regression'),
+              ('From OLS to Ridge and Lasso',
+               2,
+               None,
+               'from-ols-to-ridge-and-lasso'),
+              ('Lasso regression', 2, None, 'lasso-regression'),
+              ('Lots of room for creativity',
+               2,
+               None,
+               'lots-of-room-for-creativity'),
+              ('Selected references', 2, None, 'selected-references'),
+              ('Machine learning. A simple perspective on the interface '
+               'between ML and Physics',
+               2,
+               None,
+               'machine-learning-a-simple-perspective-on-the-interface-between-ml-and-physics'),
+              ('ML in Nuclear  Physics (or any field in physics)',
+               2,
+               None,
+               'ml-in-nuclear-physics-or-any-field-in-physics'),
+              ('Scientific Machine Learning',
+               2,
+               None,
+               'scientific-machine-learning'),
+              ('ML for detectors', 2, None, 'ml-for-detectors'),
+              ('Physics driven Machine Learning',
+               2,
+               None,
+               'physics-driven-machine-learning'),
+              ('And more', 2, None, 'and-more'),
+              ('Argon-46 by Solli et al., NIMA 1010, 165461 (2021)',
+               2,
+               None,
+               'argon-46-by-solli-et-al-nima-1010-165461-2021'),
+              ('Why Feed Forward Neural Networks (FFNN)?',
+               2,
+               None,
+               'why-feed-forward-neural-networks-ffnn'),
+              ('Universal approximation theorem',
+               2,
+               None,
+               'universal-approximation-theorem'),
+              ('The approximation theorem in words',
+               2,
+               None,
+               'the-approximation-theorem-in-words'),
+              ('More on the general approximation theorem',
+               2,
+               None,
+               'more-on-the-general-approximation-theorem'),
+              ('Class of functions we can approximate',
+               2,
+               None,
+               'class-of-functions-we-can-approximate'),
+              ('Extrapolations and model interpretability',
+               2,
+               None,
+               'extrapolations-and-model-interpretability'),
+              ('Physics based statistical learning and data analysis',
+               2,
+               None,
+               'physics-based-statistical-learning-and-data-analysis'),
+              ("Bayes' Theorem", 2, None, 'bayes-theorem'),
+              ('"Quantified limits of the nuclear '
+               'landscape":"https://journals.aps.org/prc/abstract/10.1103/PhysRevC.101.044307"',
+               2,
+               None,
+               'quantified-limits-of-the-nuclear-landscape-https-journals-aps-org-prc-abstract-10-1103-physrevc-101-044307')]}
+end of tocinfo -->
+
+<body>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+     equationNumbers: {  autoNumber: "none"  },
+     extensions: ["AMSmath.js", "AMSsymbols.js", "autobold.js", "color.js"]
+  }
+});
+</script>
+<script type="text/javascript" async
+ src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<!-- Bootstrap navigation bar -->
+<div class="navbar navbar-default navbar-fixed-top">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="Geiloschool1-bs.html">Artificial intelligence and machine learning in physics, part I, introduction</a>
+  </div>
+  <div class="navbar-collapse collapse navbar-responsive-collapse">
+    <ul class="nav navbar-nav navbar-right">
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Contents <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+     <!-- navigation toc: --> <li><a href="._Geiloschool1-bs001.html#what-is-this-talk-about" style="font-size: 80%;">What is this talk about?</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool1-bs002.html#thanks-to-many" style="font-size: 80%;">Thanks to many</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool1-bs003.html#and-sponsors" style="font-size: 80%;">And sponsors</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool1-bs004.html#ai-ml-and-some-statements-you-may-have-heard-and-what-do-they-mean" style="font-size: 80%;">AI/ML and some statements you may have heard (and what do they mean?)</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool1-bs005.html#types-of-machine-learning" style="font-size: 80%;">Types of machine learning</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool1-bs006.html#main-categories" style="font-size: 80%;">Main categories</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool1-bs007.html#the-plethora-of-machine-learning-algorithms-methods" style="font-size: 80%;">The plethora  of machine learning algorithms/methods</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool1-bs008.html#example-of-generative-modeling-taken-from-generative-deep-learning-by-david-foster-https-www-oreilly-com-library-view-generative-deep-learning-9781098134174-ch01-html" style="font-size: 80%;">Example of generative modeling, "taken from Generative Deep Learning by David Foster":"https://www.oreilly.com/library/view/generative-deep-learning/9781098134174/ch01.html"</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool1-bs009.html#example-of-discriminative-modeling-taken-from-generative-deeep-learning-by-david-foster-https-www-oreilly-com-library-view-generative-deep-learning-9781098134174-ch01-html" style="font-size: 80%;">Example of discriminative modeling, "taken from Generative Deeep Learning by David Foster":"https://www.oreilly.com/library/view/generative-deep-learning/9781098134174/ch01.html"</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool1-bs010.html#taxonomy-of-generative-deep-learning-taken-from-generative-deep-learning-by-david-foster-https-www-oreilly-com-library-view-generative-deep-learning-9781098134174-ch01-html" style="font-size: 80%;">Taxonomy of generative deep learning, "taken from Generative Deep Learning by David Foster":"https://www.oreilly.com/library/view/generative-deep-learning/9781098134174/ch01.html"</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool1-bs011.html#good-books-with-hands-on-material-and-codes" style="font-size: 80%;">Good books with hands-on material and codes</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool1-bs012.html#what-are-the-basic-machine-learning-ingredients" style="font-size: 80%;">What are the basic Machine Learning ingredients?</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool1-bs013.html#low-level-machine-learning-the-family-of-ordinary-least-squares-methods" style="font-size: 80%;">Low-level machine learning, the family of ordinary least squares methods</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool1-bs014.html#setting-up-the-equations" style="font-size: 80%;">Setting up the equations</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool1-bs015.html#the-objective-cost-loss-function" style="font-size: 80%;">The objective/cost/loss function</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool1-bs016.html#training-solution" style="font-size: 80%;">Training solution</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool1-bs017.html#ridge-and-lasso-regression" style="font-size: 80%;">Ridge and LASSO Regression</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool1-bs018.html#from-ols-to-ridge-and-lasso" style="font-size: 80%;">From OLS to Ridge and Lasso</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool1-bs019.html#lasso-regression" style="font-size: 80%;">Lasso regression</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool1-bs020.html#lots-of-room-for-creativity" style="font-size: 80%;">Lots of room for creativity</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool1-bs021.html#selected-references" style="font-size: 80%;">Selected references</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool1-bs022.html#machine-learning-a-simple-perspective-on-the-interface-between-ml-and-physics" style="font-size: 80%;">Machine learning. A simple perspective on the interface between ML and Physics</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool1-bs023.html#ml-in-nuclear-physics-or-any-field-in-physics" style="font-size: 80%;">ML in Nuclear  Physics (or any field in physics)</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool1-bs024.html#scientific-machine-learning" style="font-size: 80%;">Scientific Machine Learning</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool1-bs025.html#ml-for-detectors" style="font-size: 80%;">ML for detectors</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool1-bs026.html#physics-driven-machine-learning" style="font-size: 80%;">Physics driven Machine Learning</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool1-bs027.html#and-more" style="font-size: 80%;">And more</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool1-bs028.html#argon-46-by-solli-et-al-nima-1010-165461-2021" style="font-size: 80%;">Argon-46 by Solli et al., NIMA 1010, 165461 (2021)</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool1-bs029.html#why-feed-forward-neural-networks-ffnn" style="font-size: 80%;">Why Feed Forward Neural Networks (FFNN)?</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool1-bs030.html#universal-approximation-theorem" style="font-size: 80%;">Universal approximation theorem</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool1-bs031.html#the-approximation-theorem-in-words" style="font-size: 80%;">The approximation theorem in words</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool1-bs032.html#more-on-the-general-approximation-theorem" style="font-size: 80%;">More on the general approximation theorem</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool1-bs033.html#class-of-functions-we-can-approximate" style="font-size: 80%;">Class of functions we can approximate</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool1-bs034.html#extrapolations-and-model-interpretability" style="font-size: 80%;">Extrapolations and model interpretability</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool1-bs035.html#physics-based-statistical-learning-and-data-analysis" style="font-size: 80%;">Physics based statistical learning and data analysis</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool1-bs036.html#bayes-theorem" style="font-size: 80%;">Bayes' Theorem</a></li>
+     <!-- navigation toc: --> <li><a href="#quantified-limits-of-the-nuclear-landscape-https-journals-aps-org-prc-abstract-10-1103-physrevc-101-044307" style="font-size: 80%;">"Quantified limits of the nuclear landscape":"https://journals.aps.org/prc/abstract/10.1103/PhysRevC.101.044307"</a></li>
+
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
+</div> <!-- end of navigation bar -->
+<div class="container">
+<p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p> <!-- add vertical space -->
+<a name="part0037"></a>
+<!-- !split -->
+<h2 id="quantified-limits-of-the-nuclear-landscape-https-journals-aps-org-prc-abstract-10-1103-physrevc-101-044307" class="anchor"><a href="https://journals.aps.org/prc/abstract/10.1103/PhysRevC.101.044307" target="_self">Quantified limits of the nuclear landscape</a> </h2>
+
+<p>Predictions made with eleven global mass model and Bayesian model averaging</p>
+
+<br/><br/>
+<center>
+<p><img src="figures/landscape.jpg" width="800" align="bottom"></p>
+</center>
+<br/><br/>
+
+<p>
+<!-- navigation buttons at the bottom of the page -->
+<ul class="pagination">
+<li><a href="._Geiloschool1-bs036.html">&laquo;</a></li>
+  <li><a href="._Geiloschool1-bs000.html">1</a></li>
+  <li><a href="">...</a></li>
+  <li><a href="._Geiloschool1-bs029.html">30</a></li>
+  <li><a href="._Geiloschool1-bs030.html">31</a></li>
+  <li><a href="._Geiloschool1-bs031.html">32</a></li>
+  <li><a href="._Geiloschool1-bs032.html">33</a></li>
+  <li><a href="._Geiloschool1-bs033.html">34</a></li>
+  <li><a href="._Geiloschool1-bs034.html">35</a></li>
+  <li><a href="._Geiloschool1-bs035.html">36</a></li>
+  <li><a href="._Geiloschool1-bs036.html">37</a></li>
+  <li class="active"><a href="._Geiloschool1-bs037.html">38</a></li>
+</ul>
+<!-- ------------------- end of main content --------------- -->
+</div>  <!-- end container -->
+<!-- include javascript, jQuery *first* -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<!-- Bootstrap footer
+<footer>
+<a href="https://..."><img width="250" align=right src="https://..."></a>
+</footer>
+-->
+</body>
+</html>
+
