@@ -1,4 +1,4 @@
-TITLE: Artificial intelligence and machine learning in physics 
+TITLE: Artificial intelligence and machine learning in physics, part I, introduction 
 AUTHOR: Morten Hjorth-Jensen at Department of Physics and Astronomy and FRIB, Michigan State University, USA, and Department of Physics and Center for Computing in Science Education, University of Oslo, Norway
 DATE: Department of Physics, Universidad del Valle, November 7, 2024
 
@@ -11,7 +11,7 @@ in physics. And why this could (or should) be of interest.
 !eblock
 
 !bblock
-These slides and more at URL:"http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/UniDelValle/pdf/UniDelValle.pdf"
+These slides and more at URL:"http://mhjensenseminars.github.io/MachineLearningTalk/doc/pub/Geiloschool/pdf/Geiloschool.pdf"
 !eblock
 
 !split
@@ -298,8 +298,7 @@ _Job market, a personal statement_: "A familiarity with ML is almost becoming a 
 * "Dilute neutron star matter from neural-network quantum states by Fore et al, Physical Review Research 5, 033062 (2023)":"https://journals.aps.org/prresearch/pdf/10.1103/PhysRevResearch.5.033062"
 * "Neural-network quantum states for ultra-cold Fermi gases, Jane Kim et al, Nature Physics Communcication, submitted":"https://doi.org/10.48550/arXiv.2305.08831"
 * "Message-Passing Neural Quantum States for the Homogeneous Electron Gas, Gabriel Pescia, Jane Kim et al. arXiv.2305.07240,":"https://doi.org/10.48550/arXiv.2305.07240"
-* "Efficient solutions of fermionic systems using artificial neural networks, Nordhagen et al, Frontiers in Physics 11, 2023":"https://doi.org/10.3389/fphy.2023.1061580"
-* "Particle Data Group summary on ML methods":"https://pdg.lbl.gov/2021/reviews/rpp2021-rev-machine-learning.pdf"
+* "Efficient solutions of fermionic systems using artificial neural networks, Nordhagen et al, Frontiers in Physics
 !eblock
 
 
@@ -805,80 +804,6 @@ FIGURE: [figures/landscape.jpg, width=800 frac=1.0]
 !eblock
 
 
-!split
-===== Possible start to raise awareness about ML in your own field =====
-!bblock 
-* Make an ML challenge in your own field a la "Learning to discover: the Higgs boson machine learning challenge":"https://home.cern/news/news/computing/higgs-boson-machine-learning-challenge". Alternatively go to kaggle.com at URL:"https://www.kaggle.com/c/higgs-boson"
-* HEP@CERN and HEP in general have made significant impacts in the field of machine learning and AI. Something to learn from
-!eblock
-
-
-!split
-===== Possible questions for discussions =====
-
-o How do we incorporate these topics in our education?
-o More difficult: what are the consequences for universities and our educational mission?
-
-!split
-=====  Education =====
-
-o Incorporate elements of statistical data analysis and Machine Learning in undergraduate programs
-o Develop courses on Machine Learning and statistical data analysis
-o Build up a series of courses in Quantum Information Technologies (QIT)
-o Modifying contents of present Physics programs or new programs on  Computational Physics and Quantum Technologies
-  o study direction/option in _quantum technologies_
-  o study direction/option in _Artificial Intelligence and Machine Learning_
-  o and more
-o Master of Science/PhD programs in Computational and Data Science
-  o UiO has already MSc programs in CS and DS
-  o MSU has own graduate programs plus dual degree programs in CS and DS
-  o Many other universities are developing or have similar programs
-
-
-
-!split
-===== Possible courses quantum courses  =====
-
-!bblock Topics  in a Bachelor of Science/Master of Science
-o General university course on quantum mech and quantum technologies
-o Information Systems 
-o From Classical Information theory to Quantum Information theory
-o Classical vs. Quantum Logic
-o Classical and Quantum Laboratory 
-o Discipline-Based Quantum Mechanics 
-o Quantum Software
-o Quantum Hardware
-o more
-!eblock
-
-!split
-===== Important Issues to think of =====
-
-o Lots of conceptual learning: superposition, entanglement, QIT applications, etc.
-o Coding is indispensable. 
-o Teamwork, project management, and communication are important and highly valued
-o Engagement with industry: guest lectures, virtual tours, co-ops, and/or internships.
-
-!split
-===== Observations =====
-
-o Students do not really know what QIT is.
-o ML/AI seen as black boxes/magic!
-o Students perceive that a graduate degree is necessary to work in QIS. A BSc will help.
-
-!split
-===== Future Needs/Problems =====
-
-o There are already  great needs for specialized people (Ph. D. s, postdocs), but also needs of  people with a broad overview of what is possible in ML/AI and/or QIT.
-o There are not enough potential employees in AI/ML and QIT . It is a supply gap, not a skills gap.
-o A BSc with specialization  is a good place to start
-o It is tremendously important to get everyone speaking the same language. Facility with the vernacular of quantum mechanics is a big plus.
-o There is a huge list of areas where technical expertise may be important. But employers are often more concerned with attributes like project management, working well in a team, interest in the field, and adaptability than in specific technical skills.
-
-
-
-
-
 
 
 
@@ -1021,7 +946,7 @@ Running this code gives us an acceptable results after some 40-50 iterations. No
 !split
 ===== Central magic =====
 
-"Automatic differentian":"https://en.wikipedia.org/wiki/Automatic_differentiation"
+"Automatic differentiation":"https://en.wikipedia.org/wiki/Automatic_differentiation"
 
 
 
