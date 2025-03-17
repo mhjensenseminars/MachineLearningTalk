@@ -140,18 +140,6 @@ doconce format html geilonn.do.txt --html_style=bootstrap --pygments_html_style=
                None,
                'setting-up-the-back-propagation-algorithm-part-3'),
               ('Updating the gradients', 2, None, 'updating-the-gradients'),
-              ('A very nice website on Neural Networks',
-               2,
-               None,
-               'a-very-nice-website-on-neural-networks'),
-              ('A top-down perspective on Neural networks',
-               2,
-               None,
-               'a-top-down-perspective-on-neural-networks'),
-              ('More top-down perspectives',
-               2,
-               None,
-               'more-top-down-perspectives'),
               ('Limitations of supervised learning with deep networks',
                2,
                None,
@@ -233,15 +221,12 @@ MathJax.Hub.Config({
      <!-- navigation toc: --> <li><a href="._geilonn-bs030.html#setting-up-the-back-propagation-algorithm-part-2" style="font-size: 80%;">Setting up the back propagation algorithm, part 2</a></li>
      <!-- navigation toc: --> <li><a href="._geilonn-bs031.html#setting-up-the-back-propagation-algorithm-part-3" style="font-size: 80%;">Setting up the Back propagation algorithm, part 3</a></li>
      <!-- navigation toc: --> <li><a href="._geilonn-bs032.html#updating-the-gradients" style="font-size: 80%;">Updating the gradients</a></li>
-     <!-- navigation toc: --> <li><a href="._geilonn-bs033.html#a-very-nice-website-on-neural-networks" style="font-size: 80%;">A very nice website on Neural Networks</a></li>
-     <!-- navigation toc: --> <li><a href="._geilonn-bs034.html#a-top-down-perspective-on-neural-networks" style="font-size: 80%;">A top-down perspective on Neural networks</a></li>
-     <!-- navigation toc: --> <li><a href="._geilonn-bs035.html#more-top-down-perspectives" style="font-size: 80%;">More top-down perspectives</a></li>
-     <!-- navigation toc: --> <li><a href="#limitations-of-supervised-learning-with-deep-networks" style="font-size: 80%;">Limitations of supervised learning with deep networks</a></li>
-     <!-- navigation toc: --> <li><a href="._geilonn-bs037.html#limitations-of-nns" style="font-size: 80%;">Limitations of NNs</a></li>
-     <!-- navigation toc: --> <li><a href="._geilonn-bs038.html#homogeneous-data" style="font-size: 80%;">Homogeneous data</a></li>
-     <!-- navigation toc: --> <li><a href="._geilonn-bs039.html#more-limitations" style="font-size: 80%;">More limitations</a></li>
-     <!-- navigation toc: --> <li><a href="._geilonn-bs040.html#using-tensorflow-collect-and-pre-process-data" style="font-size: 80%;">Using TensorFlow: Collect and pre-process data</a></li>
-     <!-- navigation toc: --> <li><a href="._geilonn-bs041.html#and-a-similar-code-using-pytorch" style="font-size: 80%;">And a similar code using PyTorch</a></li>
+     <!-- navigation toc: --> <li><a href="._geilonn-bs033.html#limitations-of-supervised-learning-with-deep-networks" style="font-size: 80%;">Limitations of supervised learning with deep networks</a></li>
+     <!-- navigation toc: --> <li><a href="._geilonn-bs034.html#limitations-of-nns" style="font-size: 80%;">Limitations of NNs</a></li>
+     <!-- navigation toc: --> <li><a href="._geilonn-bs035.html#homogeneous-data" style="font-size: 80%;">Homogeneous data</a></li>
+     <!-- navigation toc: --> <li><a href="#more-limitations" style="font-size: 80%;">More limitations</a></li>
+     <!-- navigation toc: --> <li><a href="._geilonn-bs037.html#using-tensorflow-collect-and-pre-process-data" style="font-size: 80%;">Using TensorFlow: Collect and pre-process data</a></li>
+     <!-- navigation toc: --> <li><a href="._geilonn-bs038.html#and-a-similar-code-using-pytorch" style="font-size: 80%;">And a similar code using PyTorch</a></li>
 
         </ul>
       </li>
@@ -253,16 +238,12 @@ MathJax.Hub.Config({
 <p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p> <!-- add vertical space -->
 <a name="part0036"></a>
 <!-- !split -->
-<h2 id="limitations-of-supervised-learning-with-deep-networks" class="anchor">Limitations of supervised learning with deep networks </h2>
+<h2 id="more-limitations" class="anchor">More limitations </h2>
 
-<p>Like all statistical methods, supervised learning using neural
-networks has important limitations. This is especially important when
-one seeks to apply these methods, especially to physics problems. Like
-all tools, DNNs are not a universal solution. Often, the same or
-better performance on a task can be achieved by using a few
-hand-engineered features (or even a collection of random
-features). 
-</p>
+<ul>
+<li> <b>Many problems are not about prediction.</b> In natural science we are often interested in learning something about the underlying distribution that generates the data. In this case, it is often difficult to cast these ideas in a supervised learning setting. While the problems are related, it is possible to make good predictions with a <em>wrong</em> model. The model might or might not be useful for understanding the underlying science.</li>
+</ul>
+<p>Some of these remarks are particular to DNNs, others are shared by all supervised learning methods. This motivates the use of unsupervised methods which in part circumvent these problems.</p>
 
 <p>
 <!-- navigation buttons at the bottom of the page -->
@@ -281,9 +262,6 @@ features).
   <li class="active"><a href="._geilonn-bs036.html">37</a></li>
   <li><a href="._geilonn-bs037.html">38</a></li>
   <li><a href="._geilonn-bs038.html">39</a></li>
-  <li><a href="._geilonn-bs039.html">40</a></li>
-  <li><a href="._geilonn-bs040.html">41</a></li>
-  <li><a href="._geilonn-bs041.html">42</a></li>
   <li><a href="._geilonn-bs037.html">&raquo;</a></li>
 </ul>
 <!-- ------------------- end of main content --------------- -->

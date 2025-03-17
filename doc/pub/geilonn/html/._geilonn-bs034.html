@@ -140,18 +140,6 @@ doconce format html geilonn.do.txt --html_style=bootstrap --pygments_html_style=
                None,
                'setting-up-the-back-propagation-algorithm-part-3'),
               ('Updating the gradients', 2, None, 'updating-the-gradients'),
-              ('A very nice website on Neural Networks',
-               2,
-               None,
-               'a-very-nice-website-on-neural-networks'),
-              ('A top-down perspective on Neural networks',
-               2,
-               None,
-               'a-top-down-perspective-on-neural-networks'),
-              ('More top-down perspectives',
-               2,
-               None,
-               'more-top-down-perspectives'),
               ('Limitations of supervised learning with deep networks',
                2,
                None,
@@ -233,15 +221,12 @@ MathJax.Hub.Config({
      <!-- navigation toc: --> <li><a href="._geilonn-bs030.html#setting-up-the-back-propagation-algorithm-part-2" style="font-size: 80%;">Setting up the back propagation algorithm, part 2</a></li>
      <!-- navigation toc: --> <li><a href="._geilonn-bs031.html#setting-up-the-back-propagation-algorithm-part-3" style="font-size: 80%;">Setting up the Back propagation algorithm, part 3</a></li>
      <!-- navigation toc: --> <li><a href="._geilonn-bs032.html#updating-the-gradients" style="font-size: 80%;">Updating the gradients</a></li>
-     <!-- navigation toc: --> <li><a href="._geilonn-bs033.html#a-very-nice-website-on-neural-networks" style="font-size: 80%;">A very nice website on Neural Networks</a></li>
-     <!-- navigation toc: --> <li><a href="#a-top-down-perspective-on-neural-networks" style="font-size: 80%;">A top-down perspective on Neural networks</a></li>
-     <!-- navigation toc: --> <li><a href="._geilonn-bs035.html#more-top-down-perspectives" style="font-size: 80%;">More top-down perspectives</a></li>
-     <!-- navigation toc: --> <li><a href="._geilonn-bs036.html#limitations-of-supervised-learning-with-deep-networks" style="font-size: 80%;">Limitations of supervised learning with deep networks</a></li>
-     <!-- navigation toc: --> <li><a href="._geilonn-bs037.html#limitations-of-nns" style="font-size: 80%;">Limitations of NNs</a></li>
-     <!-- navigation toc: --> <li><a href="._geilonn-bs038.html#homogeneous-data" style="font-size: 80%;">Homogeneous data</a></li>
-     <!-- navigation toc: --> <li><a href="._geilonn-bs039.html#more-limitations" style="font-size: 80%;">More limitations</a></li>
-     <!-- navigation toc: --> <li><a href="._geilonn-bs040.html#using-tensorflow-collect-and-pre-process-data" style="font-size: 80%;">Using TensorFlow: Collect and pre-process data</a></li>
-     <!-- navigation toc: --> <li><a href="._geilonn-bs041.html#and-a-similar-code-using-pytorch" style="font-size: 80%;">And a similar code using PyTorch</a></li>
+     <!-- navigation toc: --> <li><a href="._geilonn-bs033.html#limitations-of-supervised-learning-with-deep-networks" style="font-size: 80%;">Limitations of supervised learning with deep networks</a></li>
+     <!-- navigation toc: --> <li><a href="#limitations-of-nns" style="font-size: 80%;">Limitations of NNs</a></li>
+     <!-- navigation toc: --> <li><a href="._geilonn-bs035.html#homogeneous-data" style="font-size: 80%;">Homogeneous data</a></li>
+     <!-- navigation toc: --> <li><a href="._geilonn-bs036.html#more-limitations" style="font-size: 80%;">More limitations</a></li>
+     <!-- navigation toc: --> <li><a href="._geilonn-bs037.html#using-tensorflow-collect-and-pre-process-data" style="font-size: 80%;">Using TensorFlow: Collect and pre-process data</a></li>
+     <!-- navigation toc: --> <li><a href="._geilonn-bs038.html#and-a-similar-code-using-pytorch" style="font-size: 80%;">And a similar code using PyTorch</a></li>
 
         </ul>
       </li>
@@ -252,24 +237,14 @@ MathJax.Hub.Config({
 <div class="container">
 <p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p> <!-- add vertical space -->
 <a name="part0034"></a>
-<!-- !split  -->
-<h2 id="a-top-down-perspective-on-neural-networks" class="anchor">A top-down perspective on Neural networks </h2>
+<!-- !split -->
+<h2 id="limitations-of-nns" class="anchor">Limitations of NNs </h2>
 
-<p>The first thing we would like to do is divide the data into two or
-three parts. A training set, a validation or dev (development) set,
-and a test set. The test set is the data on which we want to make
-predictions. The dev set is a subset of the training data we use to
-check how well we are doing out-of-sample, after training the model on
-the training dataset. We use the validation error as a proxy for the
-test error in order to make tweaks to our model. It is crucial that we
-do not use any of the test data to train the algorithm. This is a
-cardinal sin in ML. Then:
-</p>
+<p>Here we list some of the important limitations of supervised neural network based models. </p>
 
 <ul>
-<li> Estimate optimal error rate</li>
-<li> Minimize underfitting (bias) on training data set.</li>
-<li> Make sure you are not overfitting.</li>
+<li> <b>Need labeled data</b>. All supervised learning methods, DNNs for supervised learning require labeled data. Often, labeled data is harder to acquire than unlabeled data (e.g. one must pay for human experts to label images).</li>
+<li> <b>Supervised neural networks are extremely data intensive.</b> DNNs are data hungry. They perform best when data is plentiful. This is doubly so for supervised methods where the data must also be labeled. The utility of DNNs is extremely limited if data is hard to acquire or the datasets are small (hundreds to a few thousand samples). In this case, the performance of other methods that utilize hand-engineered features can exceed that of DNNs.</li>
 </ul>
 <p>
 <!-- navigation buttons at the bottom of the page -->
@@ -290,9 +265,6 @@ cardinal sin in ML. Then:
   <li><a href="._geilonn-bs036.html">37</a></li>
   <li><a href="._geilonn-bs037.html">38</a></li>
   <li><a href="._geilonn-bs038.html">39</a></li>
-  <li><a href="._geilonn-bs039.html">40</a></li>
-  <li><a href="._geilonn-bs040.html">41</a></li>
-  <li><a href="._geilonn-bs041.html">42</a></li>
   <li><a href="._geilonn-bs035.html">&raquo;</a></li>
 </ul>
 <!-- ------------------- end of main content --------------- -->

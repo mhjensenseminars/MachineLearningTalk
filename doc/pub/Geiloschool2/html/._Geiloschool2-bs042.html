@@ -213,7 +213,11 @@ doconce format html Geiloschool2.do.txt --html_style=bootstrap --pygments_html_s
                2,
                None,
                'expectation-values-as-functions-of-the-oscillator-frequency'),
-              ('Cost function', 2, None, 'cost-function'),
+              ('Code example', 2, None, 'code-example'),
+              ('Additional material: Cost function',
+               2,
+               None,
+               'additional-material-cost-function'),
               ('Optimization / Training', 2, None, 'optimization-training'),
               ('Gradients', 2, None, 'gradients'),
               ('Simplifications', 2, None, 'simplifications'),
@@ -379,37 +383,38 @@ MathJax.Hub.Config({
      <!-- navigation toc: --> <li><a href="._Geiloschool2-bs057.html#quantum-dots-and-boltzmann-machines-onebody-densities-n-6-hbar-omega-0-1-a-u" style="font-size: 80%;">Quantum dots and Boltzmann machines, onebody densities \( N=6 \), \( \hbar\omega=0.1 \) a.u.</a></li>
      <!-- navigation toc: --> <li><a href="._Geiloschool2-bs058.html#onebody-densities-n-30-hbar-omega-1-0-a-u" style="font-size: 80%;">Onebody densities \( N=30 \), \( \hbar\omega=1.0 \) a.u.</a></li>
      <!-- navigation toc: --> <li><a href="._Geiloschool2-bs059.html#expectation-values-as-functions-of-the-oscillator-frequency" style="font-size: 80%;">Expectation values as functions of the oscillator frequency</a></li>
-     <!-- navigation toc: --> <li><a href="._Geiloschool2-bs060.html#cost-function" style="font-size: 80%;">Cost function</a></li>
-     <!-- navigation toc: --> <li><a href="._Geiloschool2-bs061.html#optimization-training" style="font-size: 80%;">Optimization / Training</a></li>
-     <!-- navigation toc: --> <li><a href="._Geiloschool2-bs062.html#gradients" style="font-size: 80%;">Gradients</a></li>
-     <!-- navigation toc: --> <li><a href="._Geiloschool2-bs063.html#simplifications" style="font-size: 80%;">Simplifications</a></li>
-     <!-- navigation toc: --> <li><a href="._Geiloschool2-bs064.html#positive-and-negative-phases" style="font-size: 80%;">Positive and negative phases</a></li>
-     <!-- navigation toc: --> <li><a href="._Geiloschool2-bs065.html#gradient-examples" style="font-size: 80%;">Gradient examples</a></li>
-     <!-- navigation toc: --> <li><a href="._Geiloschool2-bs066.html#kullback-leibler-relative-entropy" style="font-size: 80%;">Kullback-Leibler relative entropy</a></li>
-     <!-- navigation toc: --> <li><a href="._Geiloschool2-bs067.html#kullback-leibler-divergence" style="font-size: 80%;">Kullback-Leibler divergence</a></li>
-     <!-- navigation toc: --> <li><a href="._Geiloschool2-bs068.html#maximizing-log-likelihood" style="font-size: 80%;">Maximizing log-likelihood</a></li>
-     <!-- navigation toc: --> <li><a href="._Geiloschool2-bs069.html#more-on-the-partition-function" style="font-size: 80%;">More on the partition function</a></li>
-     <!-- navigation toc: --> <li><a href="._Geiloschool2-bs070.html#setting-up-for-gradient-descent-calculations" style="font-size: 80%;">Setting up for gradient descent calculations</a></li>
-     <!-- navigation toc: --> <li><a href="._Geiloschool2-bs071.html#difference-of-moments" style="font-size: 80%;">Difference of moments</a></li>
-     <!-- navigation toc: --> <li><a href="._Geiloschool2-bs072.html#more-observations" style="font-size: 80%;">More observations</a></li>
-     <!-- navigation toc: --> <li><a href="._Geiloschool2-bs073.html#adding-hyperparameters" style="font-size: 80%;">Adding hyperparameters</a></li>
-     <!-- navigation toc: --> <li><a href="._Geiloschool2-bs074.html#mathematical-details" style="font-size: 80%;">Mathematical details</a></li>
-     <!-- navigation toc: --> <li><a href="._Geiloschool2-bs075.html#binary-binary-bb-rbms" style="font-size: 80%;">Binary-binary (BB) RBMs</a></li>
-     <!-- navigation toc: --> <li><a href="._Geiloschool2-bs076.html#marginal-probability" style="font-size: 80%;">Marginal probability</a></li>
-     <!-- navigation toc: --> <li><a href="._Geiloschool2-bs077.html#marginal-probability-density-function-for-the-visible-units" style="font-size: 80%;">Marginal Probability Density Function for the visible units</a></li>
-     <!-- navigation toc: --> <li><a href="._Geiloschool2-bs078.html#marginal-probability-for-hidden-units" style="font-size: 80%;">Marginal probability for hidden units</a></li>
-     <!-- navigation toc: --> <li><a href="._Geiloschool2-bs087.html#conditional-probability-density-functions" style="font-size: 80%;">Conditional Probability Density Functions</a></li>
-     <!-- navigation toc: --> <li><a href="._Geiloschool2-bs080.html#on-and-off-probabilities" style="font-size: 80%;">On and off probabilities</a></li>
-     <!-- navigation toc: --> <li><a href="._Geiloschool2-bs081.html#conditional-probability-for-visible-units" style="font-size: 80%;">Conditional probability for visible units</a></li>
-     <!-- navigation toc: --> <li><a href="._Geiloschool2-bs082.html#gaussian-binary-restricted-boltzmann-machines" style="font-size: 80%;">Gaussian-Binary Restricted Boltzmann Machines</a></li>
-     <!-- navigation toc: --> <li><a href="._Geiloschool2-bs083.html#joint-probability-density-function" style="font-size: 80%;">Joint Probability Density Function</a></li>
-     <!-- navigation toc: --> <li><a href="._Geiloschool2-bs084.html#partition-function" style="font-size: 80%;">Partition function</a></li>
-     <!-- navigation toc: --> <li><a href="._Geiloschool2-bs085.html#marginal-probability-density-functions" style="font-size: 80%;">Marginal Probability Density Functions</a></li>
-     <!-- navigation toc: --> <li><a href="._Geiloschool2-bs086.html#then-the-visible-units" style="font-size: 80%;">Then the visible units</a></li>
-     <!-- navigation toc: --> <li><a href="._Geiloschool2-bs087.html#conditional-probability-density-functions" style="font-size: 80%;">Conditional Probability Density Functions</a></li>
-     <!-- navigation toc: --> <li><a href="._Geiloschool2-bs088.html#hidden-units" style="font-size: 80%;">Hidden units</a></li>
-     <!-- navigation toc: --> <li><a href="._Geiloschool2-bs089.html#visible-units" style="font-size: 80%;">Visible units</a></li>
-     <!-- navigation toc: --> <li><a href="._Geiloschool2-bs090.html#comments" style="font-size: 80%;">Comments</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool2-bs060.html#code-example" style="font-size: 80%;">Code example</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool2-bs061.html#additional-material-cost-function" style="font-size: 80%;">Additional material: Cost function</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool2-bs062.html#optimization-training" style="font-size: 80%;">Optimization / Training</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool2-bs063.html#gradients" style="font-size: 80%;">Gradients</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool2-bs064.html#simplifications" style="font-size: 80%;">Simplifications</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool2-bs065.html#positive-and-negative-phases" style="font-size: 80%;">Positive and negative phases</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool2-bs066.html#gradient-examples" style="font-size: 80%;">Gradient examples</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool2-bs067.html#kullback-leibler-relative-entropy" style="font-size: 80%;">Kullback-Leibler relative entropy</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool2-bs068.html#kullback-leibler-divergence" style="font-size: 80%;">Kullback-Leibler divergence</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool2-bs069.html#maximizing-log-likelihood" style="font-size: 80%;">Maximizing log-likelihood</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool2-bs070.html#more-on-the-partition-function" style="font-size: 80%;">More on the partition function</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool2-bs071.html#setting-up-for-gradient-descent-calculations" style="font-size: 80%;">Setting up for gradient descent calculations</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool2-bs072.html#difference-of-moments" style="font-size: 80%;">Difference of moments</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool2-bs073.html#more-observations" style="font-size: 80%;">More observations</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool2-bs074.html#adding-hyperparameters" style="font-size: 80%;">Adding hyperparameters</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool2-bs075.html#mathematical-details" style="font-size: 80%;">Mathematical details</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool2-bs076.html#binary-binary-bb-rbms" style="font-size: 80%;">Binary-binary (BB) RBMs</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool2-bs077.html#marginal-probability" style="font-size: 80%;">Marginal probability</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool2-bs078.html#marginal-probability-density-function-for-the-visible-units" style="font-size: 80%;">Marginal Probability Density Function for the visible units</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool2-bs079.html#marginal-probability-for-hidden-units" style="font-size: 80%;">Marginal probability for hidden units</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool2-bs088.html#conditional-probability-density-functions" style="font-size: 80%;">Conditional Probability Density Functions</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool2-bs081.html#on-and-off-probabilities" style="font-size: 80%;">On and off probabilities</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool2-bs082.html#conditional-probability-for-visible-units" style="font-size: 80%;">Conditional probability for visible units</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool2-bs083.html#gaussian-binary-restricted-boltzmann-machines" style="font-size: 80%;">Gaussian-Binary Restricted Boltzmann Machines</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool2-bs084.html#joint-probability-density-function" style="font-size: 80%;">Joint Probability Density Function</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool2-bs085.html#partition-function" style="font-size: 80%;">Partition function</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool2-bs086.html#marginal-probability-density-functions" style="font-size: 80%;">Marginal Probability Density Functions</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool2-bs087.html#then-the-visible-units" style="font-size: 80%;">Then the visible units</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool2-bs088.html#conditional-probability-density-functions" style="font-size: 80%;">Conditional Probability Density Functions</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool2-bs089.html#hidden-units" style="font-size: 80%;">Hidden units</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool2-bs090.html#visible-units" style="font-size: 80%;">Visible units</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool2-bs091.html#comments" style="font-size: 80%;">Comments</a></li>
 
         </ul>
       </li>
@@ -456,7 +461,7 @@ adjusting the energy function to best fit our problem.
   <li><a href="._Geiloschool2-bs050.html">51</a></li>
   <li><a href="._Geiloschool2-bs051.html">52</a></li>
   <li><a href="">...</a></li>
-  <li><a href="._Geiloschool2-bs090.html">91</a></li>
+  <li><a href="._Geiloschool2-bs091.html">92</a></li>
   <li><a href="._Geiloschool2-bs043.html">&raquo;</a></li>
 </ul>
 <!-- ------------------- end of main content --------------- -->

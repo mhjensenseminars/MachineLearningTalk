@@ -347,7 +347,7 @@ MathJax.Hub.Config({
      <!-- navigation toc: --> <li><a href="._Geiloschool2-bs021.html#energy-models" style="font-size: 80%;">Energy models</a></li>
      <!-- navigation toc: --> <li><a href="._Geiloschool2-bs022.html#probability-model" style="font-size: 80%;">Probability model</a></li>
      <!-- navigation toc: --> <li><a href="._Geiloschool2-bs023.html#marginal-and-conditional-probabilities" style="font-size: 80%;">Marginal and conditional probabilities</a></li>
-     <!-- navigation toc: --> <li><a href="#change-of-notation" style="font-size: 80%;">Change of notation</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool2-bs024.html#change-of-notation" style="font-size: 80%;">Change of notation</a></li>
      <!-- navigation toc: --> <li><a href="._Geiloschool2-bs025.html#optimization-problem" style="font-size: 80%;">Optimization problem</a></li>
      <!-- navigation toc: --> <li><a href="._Geiloschool2-bs026.html#further-simplifications" style="font-size: 80%;">Further simplifications</a></li>
      <!-- navigation toc: --> <li><a href="._Geiloschool2-bs027.html#optimizing-the-logarithm-instead" style="font-size: 80%;">Optimizing the logarithm instead</a></li>
@@ -414,7 +414,7 @@ MathJax.Hub.Config({
      <!-- navigation toc: --> <li><a href="._Geiloschool2-bs088.html#conditional-probability-density-functions" style="font-size: 80%;">Conditional Probability Density Functions</a></li>
      <!-- navigation toc: --> <li><a href="._Geiloschool2-bs089.html#hidden-units" style="font-size: 80%;">Hidden units</a></li>
      <!-- navigation toc: --> <li><a href="._Geiloschool2-bs090.html#visible-units" style="font-size: 80%;">Visible units</a></li>
-     <!-- navigation toc: --> <li><a href="._Geiloschool2-bs091.html#comments" style="font-size: 80%;">Comments</a></li>
+     <!-- navigation toc: --> <li><a href="#comments" style="font-size: 80%;">Comments</a></li>
 
         </ul>
       </li>
@@ -424,58 +424,32 @@ MathJax.Hub.Config({
 </div> <!-- end of navigation bar -->
 <div class="container">
 <p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p> <!-- add vertical space -->
-<a name="part0024"></a>
+<a name="part0091"></a>
 <!-- !split -->
-<h2 id="change-of-notation" class="anchor">Change of notation </h2>
+<h2 id="comments" class="anchor">Comments </h2>
 
-<p><b>Note the change to a vector notation</b>. A variable like \( \boldsymbol{x} \)
-represents now a specific <b>configuration</b>. We can generate an infinity
-of such configurations. The final partition function is then the sum
-over all such possible configurations, that is
-</p>
-
-$$
-Z(\boldsymbol{\Theta})=\sum_{x_i\in \boldsymbol{X}}\sum_{h_j\in \boldsymbol{H}} f(x_i,h_j;\boldsymbol{\Theta}),
-$$
-
-<p>changes to</p>
-$$
-Z(\boldsymbol{\Theta})=\sum_{\boldsymbol{x}}\sum_{\boldsymbol{h}} f(\boldsymbol{x},\boldsymbol{h};\boldsymbol{\Theta}).
-$$
-
-<p>If we have a binary set of variable \( x_i \) and \( h_j \) and \( M \) values of \( x_i \) and \( N \) values of \( h_j \) we have in total \( 2^M \) and \( 2^N \) possible \( \boldsymbol{x} \) and \( \boldsymbol{h} \) configurations, respectively.</p>
-
-<p>We see that even for the modest binary case, we can easily approach a
-number of configuration which is not possible to deal with.
+<p>The form of these conditional probabilities explains the name
+"Gaussian" and the form of the Gaussian-binary energy function. We see
+that the conditional probability of \( x_i \) given \( \boldsymbol{h} \) is a normal
+distribution with mean \( b_i + \boldsymbol{w}_{i\ast}^T \boldsymbol{h} \) and variance
+\( \sigma_i^2 \).
 </p>
 
 <p>
 <!-- navigation buttons at the bottom of the page -->
 <ul class="pagination">
-<li><a href="._Geiloschool2-bs023.html">&laquo;</a></li>
+<li><a href="._Geiloschool2-bs090.html">&laquo;</a></li>
   <li><a href="._Geiloschool2-bs000.html">1</a></li>
   <li><a href="">...</a></li>
-  <li><a href="._Geiloschool2-bs016.html">17</a></li>
-  <li><a href="._Geiloschool2-bs017.html">18</a></li>
-  <li><a href="._Geiloschool2-bs018.html">19</a></li>
-  <li><a href="._Geiloschool2-bs019.html">20</a></li>
-  <li><a href="._Geiloschool2-bs020.html">21</a></li>
-  <li><a href="._Geiloschool2-bs021.html">22</a></li>
-  <li><a href="._Geiloschool2-bs022.html">23</a></li>
-  <li><a href="._Geiloschool2-bs023.html">24</a></li>
-  <li class="active"><a href="._Geiloschool2-bs024.html">25</a></li>
-  <li><a href="._Geiloschool2-bs025.html">26</a></li>
-  <li><a href="._Geiloschool2-bs026.html">27</a></li>
-  <li><a href="._Geiloschool2-bs027.html">28</a></li>
-  <li><a href="._Geiloschool2-bs028.html">29</a></li>
-  <li><a href="._Geiloschool2-bs029.html">30</a></li>
-  <li><a href="._Geiloschool2-bs030.html">31</a></li>
-  <li><a href="._Geiloschool2-bs031.html">32</a></li>
-  <li><a href="._Geiloschool2-bs032.html">33</a></li>
-  <li><a href="._Geiloschool2-bs033.html">34</a></li>
-  <li><a href="">...</a></li>
-  <li><a href="._Geiloschool2-bs091.html">92</a></li>
-  <li><a href="._Geiloschool2-bs025.html">&raquo;</a></li>
+  <li><a href="._Geiloschool2-bs083.html">84</a></li>
+  <li><a href="._Geiloschool2-bs084.html">85</a></li>
+  <li><a href="._Geiloschool2-bs085.html">86</a></li>
+  <li><a href="._Geiloschool2-bs086.html">87</a></li>
+  <li><a href="._Geiloschool2-bs087.html">88</a></li>
+  <li><a href="._Geiloschool2-bs088.html">89</a></li>
+  <li><a href="._Geiloschool2-bs089.html">90</a></li>
+  <li><a href="._Geiloschool2-bs090.html">91</a></li>
+  <li class="active"><a href="._Geiloschool2-bs091.html">92</a></li>
 </ul>
 <!-- ------------------- end of main content --------------- -->
 </div>  <!-- end container -->

@@ -140,18 +140,6 @@ doconce format html geilonn.do.txt --html_style=bootstrap --pygments_html_style=
                None,
                'setting-up-the-back-propagation-algorithm-part-3'),
               ('Updating the gradients', 2, None, 'updating-the-gradients'),
-              ('A very nice website on Neural Networks',
-               2,
-               None,
-               'a-very-nice-website-on-neural-networks'),
-              ('A top-down perspective on Neural networks',
-               2,
-               None,
-               'a-top-down-perspective-on-neural-networks'),
-              ('More top-down perspectives',
-               2,
-               None,
-               'more-top-down-perspectives'),
               ('Limitations of supervised learning with deep networks',
                2,
                None,
@@ -233,15 +221,12 @@ MathJax.Hub.Config({
      <!-- navigation toc: --> <li><a href="._geilonn-bs030.html#setting-up-the-back-propagation-algorithm-part-2" style="font-size: 80%;">Setting up the back propagation algorithm, part 2</a></li>
      <!-- navigation toc: --> <li><a href="._geilonn-bs031.html#setting-up-the-back-propagation-algorithm-part-3" style="font-size: 80%;">Setting up the Back propagation algorithm, part 3</a></li>
      <!-- navigation toc: --> <li><a href="._geilonn-bs032.html#updating-the-gradients" style="font-size: 80%;">Updating the gradients</a></li>
-     <!-- navigation toc: --> <li><a href="._geilonn-bs033.html#a-very-nice-website-on-neural-networks" style="font-size: 80%;">A very nice website on Neural Networks</a></li>
-     <!-- navigation toc: --> <li><a href="._geilonn-bs034.html#a-top-down-perspective-on-neural-networks" style="font-size: 80%;">A top-down perspective on Neural networks</a></li>
-     <!-- navigation toc: --> <li><a href="._geilonn-bs035.html#more-top-down-perspectives" style="font-size: 80%;">More top-down perspectives</a></li>
-     <!-- navigation toc: --> <li><a href="._geilonn-bs036.html#limitations-of-supervised-learning-with-deep-networks" style="font-size: 80%;">Limitations of supervised learning with deep networks</a></li>
-     <!-- navigation toc: --> <li><a href="#limitations-of-nns" style="font-size: 80%;">Limitations of NNs</a></li>
-     <!-- navigation toc: --> <li><a href="._geilonn-bs038.html#homogeneous-data" style="font-size: 80%;">Homogeneous data</a></li>
-     <!-- navigation toc: --> <li><a href="._geilonn-bs039.html#more-limitations" style="font-size: 80%;">More limitations</a></li>
-     <!-- navigation toc: --> <li><a href="._geilonn-bs040.html#using-tensorflow-collect-and-pre-process-data" style="font-size: 80%;">Using TensorFlow: Collect and pre-process data</a></li>
-     <!-- navigation toc: --> <li><a href="._geilonn-bs041.html#and-a-similar-code-using-pytorch" style="font-size: 80%;">And a similar code using PyTorch</a></li>
+     <!-- navigation toc: --> <li><a href="._geilonn-bs033.html#limitations-of-supervised-learning-with-deep-networks" style="font-size: 80%;">Limitations of supervised learning with deep networks</a></li>
+     <!-- navigation toc: --> <li><a href="._geilonn-bs034.html#limitations-of-nns" style="font-size: 80%;">Limitations of NNs</a></li>
+     <!-- navigation toc: --> <li><a href="._geilonn-bs035.html#homogeneous-data" style="font-size: 80%;">Homogeneous data</a></li>
+     <!-- navigation toc: --> <li><a href="._geilonn-bs036.html#more-limitations" style="font-size: 80%;">More limitations</a></li>
+     <!-- navigation toc: --> <li><a href="#using-tensorflow-collect-and-pre-process-data" style="font-size: 80%;">Using TensorFlow: Collect and pre-process data</a></li>
+     <!-- navigation toc: --> <li><a href="._geilonn-bs038.html#and-a-similar-code-using-pytorch" style="font-size: 80%;">And a similar code using PyTorch</a></li>
 
         </ul>
       </li>
@@ -253,14 +238,232 @@ MathJax.Hub.Config({
 <p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p> <!-- add vertical space -->
 <a name="part0037"></a>
 <!-- !split -->
-<h2 id="limitations-of-nns" class="anchor">Limitations of NNs </h2>
+<h2 id="using-tensorflow-collect-and-pre-process-data" class="anchor">Using TensorFlow: Collect and pre-process data </h2>
 
-<p>Here we list some of the important limitations of supervised neural network based models. </p>
+<p>Let us look at the MINST data set.</p>
 
-<ul>
-<li> <b>Need labeled data</b>. All supervised learning methods, DNNs for supervised learning require labeled data. Often, labeled data is harder to acquire than unlabeled data (e.g. one must pay for human experts to label images).</li>
-<li> <b>Supervised neural networks are extremely data intensive.</b> DNNs are data hungry. They perform best when data is plentiful. This is doubly so for supervised methods where the data must also be labeled. The utility of DNNs is extremely limited if data is hard to acquire or the datasets are small (hundreds to a few thousand samples). In this case, the performance of other methods that utilize hand-engineered features can exceed that of DNNs.</li>
-</ul>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #f8f8f8">
+  <pre style="line-height: 125%;"><span style="color: #408080; font-style: italic"># import necessary packages</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">numpy</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">np</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">matplotlib.pyplot</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">plt</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">tensorflow</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">tf</span>
+<span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">sklearn</span> <span style="color: #008000; font-weight: bold">import</span> datasets
+
+
+<span style="color: #408080; font-style: italic"># ensure the same random numbers appear every time</span>
+np<span style="color: #666666">.</span>random<span style="color: #666666">.</span>seed(<span style="color: #666666">0</span>)
+
+<span style="color: #408080; font-style: italic"># display images in notebook</span>
+<span style="color: #666666">%</span>matplotlib inline
+plt<span style="color: #666666">.</span>rcParams[<span style="color: #BA2121">&#39;figure.figsize&#39;</span>] <span style="color: #666666">=</span> (<span style="color: #666666">12</span>,<span style="color: #666666">12</span>)
+
+
+<span style="color: #408080; font-style: italic"># download MNIST dataset</span>
+digits <span style="color: #666666">=</span> datasets<span style="color: #666666">.</span>load_digits()
+
+<span style="color: #408080; font-style: italic"># define inputs and labels</span>
+inputs <span style="color: #666666">=</span> digits<span style="color: #666666">.</span>images
+labels <span style="color: #666666">=</span> digits<span style="color: #666666">.</span>target
+
+<span style="color: #008000">print</span>(<span style="color: #BA2121">&quot;inputs = (n_inputs, pixel_width, pixel_height) = &quot;</span> <span style="color: #666666">+</span> <span style="color: #008000">str</span>(inputs<span style="color: #666666">.</span>shape))
+<span style="color: #008000">print</span>(<span style="color: #BA2121">&quot;labels = (n_inputs) = &quot;</span> <span style="color: #666666">+</span> <span style="color: #008000">str</span>(labels<span style="color: #666666">.</span>shape))
+
+
+<span style="color: #408080; font-style: italic"># flatten the image</span>
+<span style="color: #408080; font-style: italic"># the value -1 means dimension is inferred from the remaining dimensions: 8x8 = 64</span>
+n_inputs <span style="color: #666666">=</span> <span style="color: #008000">len</span>(inputs)
+inputs <span style="color: #666666">=</span> inputs<span style="color: #666666">.</span>reshape(n_inputs, <span style="color: #666666">-1</span>)
+<span style="color: #008000">print</span>(<span style="color: #BA2121">&quot;X = (n_inputs, n_features) = &quot;</span> <span style="color: #666666">+</span> <span style="color: #008000">str</span>(inputs<span style="color: #666666">.</span>shape))
+
+
+<span style="color: #408080; font-style: italic"># choose some random images to display</span>
+indices <span style="color: #666666">=</span> np<span style="color: #666666">.</span>arange(n_inputs)
+random_indices <span style="color: #666666">=</span> np<span style="color: #666666">.</span>random<span style="color: #666666">.</span>choice(indices, size<span style="color: #666666">=5</span>)
+
+<span style="color: #008000; font-weight: bold">for</span> i, image <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">enumerate</span>(digits<span style="color: #666666">.</span>images[random_indices]):
+    plt<span style="color: #666666">.</span>subplot(<span style="color: #666666">1</span>, <span style="color: #666666">5</span>, i<span style="color: #666666">+1</span>)
+    plt<span style="color: #666666">.</span>axis(<span style="color: #BA2121">&#39;off&#39;</span>)
+    plt<span style="color: #666666">.</span>imshow(image, cmap<span style="color: #666666">=</span>plt<span style="color: #666666">.</span>cm<span style="color: #666666">.</span>gray_r, interpolation<span style="color: #666666">=</span><span style="color: #BA2121">&#39;nearest&#39;</span>)
+    plt<span style="color: #666666">.</span>title(<span style="color: #BA2121">&quot;Label: </span><span style="color: #BB6688; font-weight: bold">%d</span><span style="color: #BA2121">&quot;</span> <span style="color: #666666">%</span> digits<span style="color: #666666">.</span>target[random_indices[i]])
+plt<span style="color: #666666">.</span>show()
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #f8f8f8">
+  <pre style="line-height: 125%;"><span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">tensorflow.keras.layers</span> <span style="color: #008000; font-weight: bold">import</span> Input
+<span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">tensorflow.keras.models</span> <span style="color: #008000; font-weight: bold">import</span> Sequential      <span style="color: #408080; font-style: italic">#This allows appending layers to existing models</span>
+<span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">tensorflow.keras.layers</span> <span style="color: #008000; font-weight: bold">import</span> Dense           <span style="color: #408080; font-style: italic">#This allows defining the characteristics of a particular layer</span>
+<span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">tensorflow.keras</span> <span style="color: #008000; font-weight: bold">import</span> optimizers             <span style="color: #408080; font-style: italic">#This allows using whichever optimiser we want (sgd,adam,RMSprop)</span>
+<span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">tensorflow.keras</span> <span style="color: #008000; font-weight: bold">import</span> regularizers           <span style="color: #408080; font-style: italic">#This allows using whichever regularizer we want (l1,l2,l1_l2)</span>
+<span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">tensorflow.keras.utils</span> <span style="color: #008000; font-weight: bold">import</span> to_categorical   <span style="color: #408080; font-style: italic">#This allows using categorical cross entropy as the cost function</span>
+
+<span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">sklearn.model_selection</span> <span style="color: #008000; font-weight: bold">import</span> train_test_split
+
+<span style="color: #408080; font-style: italic"># one-hot representation of labels</span>
+labels <span style="color: #666666">=</span> to_categorical(labels)
+
+<span style="color: #408080; font-style: italic"># split into train and test data</span>
+train_size <span style="color: #666666">=</span> <span style="color: #666666">0.8</span>
+test_size <span style="color: #666666">=</span> <span style="color: #666666">1</span> <span style="color: #666666">-</span> train_size
+X_train, X_test, Y_train, Y_test <span style="color: #666666">=</span> train_test_split(inputs, labels, train_size<span style="color: #666666">=</span>train_size,
+                                                    test_size<span style="color: #666666">=</span>test_size)
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #f8f8f8">
+  <pre style="line-height: 125%;">epochs <span style="color: #666666">=</span> <span style="color: #666666">100</span>
+batch_size <span style="color: #666666">=</span> <span style="color: #666666">100</span>
+n_neurons_layer1 <span style="color: #666666">=</span> <span style="color: #666666">100</span>
+n_neurons_layer2 <span style="color: #666666">=</span> <span style="color: #666666">50</span>
+n_categories <span style="color: #666666">=</span> <span style="color: #666666">10</span>
+eta_vals <span style="color: #666666">=</span> np<span style="color: #666666">.</span>logspace(<span style="color: #666666">-5</span>, <span style="color: #666666">1</span>, <span style="color: #666666">7</span>)
+lmbd_vals <span style="color: #666666">=</span> np<span style="color: #666666">.</span>logspace(<span style="color: #666666">-5</span>, <span style="color: #666666">1</span>, <span style="color: #666666">7</span>)
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">create_neural_network_keras</span>(n_neurons_layer1, n_neurons_layer2, n_categories, eta, lmbd):
+    model <span style="color: #666666">=</span> Sequential()
+    model<span style="color: #666666">.</span>add(Dense(n_neurons_layer1, activation<span style="color: #666666">=</span><span style="color: #BA2121">&#39;sigmoid&#39;</span>, kernel_regularizer<span style="color: #666666">=</span>regularizers<span style="color: #666666">.</span>l2(lmbd)))
+    model<span style="color: #666666">.</span>add(Dense(n_neurons_layer2, activation<span style="color: #666666">=</span><span style="color: #BA2121">&#39;sigmoid&#39;</span>, kernel_regularizer<span style="color: #666666">=</span>regularizers<span style="color: #666666">.</span>l2(lmbd)))
+    model<span style="color: #666666">.</span>add(Dense(n_categories, activation<span style="color: #666666">=</span><span style="color: #BA2121">&#39;softmax&#39;</span>))
+    
+    sgd <span style="color: #666666">=</span> optimizers<span style="color: #666666">.</span>SGD(lr<span style="color: #666666">=</span>eta)
+    model<span style="color: #666666">.</span>compile(loss<span style="color: #666666">=</span><span style="color: #BA2121">&#39;categorical_crossentropy&#39;</span>, optimizer<span style="color: #666666">=</span>sgd, metrics<span style="color: #666666">=</span>[<span style="color: #BA2121">&#39;accuracy&#39;</span>])
+    
+    <span style="color: #008000; font-weight: bold">return</span> model
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #f8f8f8">
+  <pre style="line-height: 125%;">DNN_keras <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros((<span style="color: #008000">len</span>(eta_vals), <span style="color: #008000">len</span>(lmbd_vals)), dtype<span style="color: #666666">=</span><span style="color: #008000">object</span>)
+        
+<span style="color: #008000; font-weight: bold">for</span> i, eta <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">enumerate</span>(eta_vals):
+    <span style="color: #008000; font-weight: bold">for</span> j, lmbd <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">enumerate</span>(lmbd_vals):
+        DNN <span style="color: #666666">=</span> create_neural_network_keras(n_neurons_layer1, n_neurons_layer2, n_categories,
+                                         eta<span style="color: #666666">=</span>eta, lmbd<span style="color: #666666">=</span>lmbd)
+        DNN<span style="color: #666666">.</span>fit(X_train, Y_train, epochs<span style="color: #666666">=</span>epochs, batch_size<span style="color: #666666">=</span>batch_size, verbose<span style="color: #666666">=0</span>)
+        scores <span style="color: #666666">=</span> DNN<span style="color: #666666">.</span>evaluate(X_test, Y_test)
+        
+        DNN_keras[i][j] <span style="color: #666666">=</span> DNN
+        
+        <span style="color: #008000">print</span>(<span style="color: #BA2121">&quot;Learning rate = &quot;</span>, eta)
+        <span style="color: #008000">print</span>(<span style="color: #BA2121">&quot;Lambda = &quot;</span>, lmbd)
+        <span style="color: #008000">print</span>(<span style="color: #BA2121">&quot;Test accuracy: </span><span style="color: #BB6688; font-weight: bold">%.3f</span><span style="color: #BA2121">&quot;</span> <span style="color: #666666">%</span> scores[<span style="color: #666666">1</span>])
+        <span style="color: #008000">print</span>()
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #f8f8f8">
+  <pre style="line-height: 125%;"><span style="color: #408080; font-style: italic"># optional</span>
+<span style="color: #408080; font-style: italic"># visual representation of grid search</span>
+<span style="color: #408080; font-style: italic"># uses seaborn heatmap, could probably do this in matplotlib</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">seaborn</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">sns</span>
+
+sns<span style="color: #666666">.</span>set()
+
+train_accuracy <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros((<span style="color: #008000">len</span>(eta_vals), <span style="color: #008000">len</span>(lmbd_vals)))
+test_accuracy <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros((<span style="color: #008000">len</span>(eta_vals), <span style="color: #008000">len</span>(lmbd_vals)))
+
+<span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(<span style="color: #008000">len</span>(eta_vals)):
+    <span style="color: #008000; font-weight: bold">for</span> j <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(<span style="color: #008000">len</span>(lmbd_vals)):
+        DNN <span style="color: #666666">=</span> DNN_keras[i][j]
+
+        train_accuracy[i][j] <span style="color: #666666">=</span> DNN<span style="color: #666666">.</span>evaluate(X_train, Y_train)[<span style="color: #666666">1</span>]
+        test_accuracy[i][j] <span style="color: #666666">=</span> DNN<span style="color: #666666">.</span>evaluate(X_test, Y_test)[<span style="color: #666666">1</span>]
+
+        
+fig, ax <span style="color: #666666">=</span> plt<span style="color: #666666">.</span>subplots(figsize <span style="color: #666666">=</span> (<span style="color: #666666">10</span>, <span style="color: #666666">10</span>))
+sns<span style="color: #666666">.</span>heatmap(train_accuracy, annot<span style="color: #666666">=</span><span style="color: #008000; font-weight: bold">True</span>, ax<span style="color: #666666">=</span>ax, cmap<span style="color: #666666">=</span><span style="color: #BA2121">&quot;viridis&quot;</span>)
+ax<span style="color: #666666">.</span>set_title(<span style="color: #BA2121">&quot;Training Accuracy&quot;</span>)
+ax<span style="color: #666666">.</span>set_ylabel(<span style="color: #BA2121">&quot;$\eta$&quot;</span>)
+ax<span style="color: #666666">.</span>set_xlabel(<span style="color: #BA2121">&quot;$\lambda$&quot;</span>)
+plt<span style="color: #666666">.</span>show()
+
+fig, ax <span style="color: #666666">=</span> plt<span style="color: #666666">.</span>subplots(figsize <span style="color: #666666">=</span> (<span style="color: #666666">10</span>, <span style="color: #666666">10</span>))
+sns<span style="color: #666666">.</span>heatmap(test_accuracy, annot<span style="color: #666666">=</span><span style="color: #008000; font-weight: bold">True</span>, ax<span style="color: #666666">=</span>ax, cmap<span style="color: #666666">=</span><span style="color: #BA2121">&quot;viridis&quot;</span>)
+ax<span style="color: #666666">.</span>set_title(<span style="color: #BA2121">&quot;Test Accuracy&quot;</span>)
+ax<span style="color: #666666">.</span>set_ylabel(<span style="color: #BA2121">&quot;$\eta$&quot;</span>)
+ax<span style="color: #666666">.</span>set_xlabel(<span style="color: #BA2121">&quot;$\lambda$&quot;</span>)
+plt<span style="color: #666666">.</span>show()
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 <p>
 <!-- navigation buttons at the bottom of the page -->
 <ul class="pagination">
@@ -277,9 +480,6 @@ MathJax.Hub.Config({
   <li><a href="._geilonn-bs036.html">37</a></li>
   <li class="active"><a href="._geilonn-bs037.html">38</a></li>
   <li><a href="._geilonn-bs038.html">39</a></li>
-  <li><a href="._geilonn-bs039.html">40</a></li>
-  <li><a href="._geilonn-bs040.html">41</a></li>
-  <li><a href="._geilonn-bs041.html">42</a></li>
   <li><a href="._geilonn-bs038.html">&raquo;</a></li>
 </ul>
 <!-- ------------------- end of main content --------------- -->

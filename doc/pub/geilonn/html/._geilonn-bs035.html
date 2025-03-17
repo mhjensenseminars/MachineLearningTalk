@@ -140,18 +140,6 @@ doconce format html geilonn.do.txt --html_style=bootstrap --pygments_html_style=
                None,
                'setting-up-the-back-propagation-algorithm-part-3'),
               ('Updating the gradients', 2, None, 'updating-the-gradients'),
-              ('A very nice website on Neural Networks',
-               2,
-               None,
-               'a-very-nice-website-on-neural-networks'),
-              ('A top-down perspective on Neural networks',
-               2,
-               None,
-               'a-top-down-perspective-on-neural-networks'),
-              ('More top-down perspectives',
-               2,
-               None,
-               'more-top-down-perspectives'),
               ('Limitations of supervised learning with deep networks',
                2,
                None,
@@ -233,15 +221,12 @@ MathJax.Hub.Config({
      <!-- navigation toc: --> <li><a href="._geilonn-bs030.html#setting-up-the-back-propagation-algorithm-part-2" style="font-size: 80%;">Setting up the back propagation algorithm, part 2</a></li>
      <!-- navigation toc: --> <li><a href="._geilonn-bs031.html#setting-up-the-back-propagation-algorithm-part-3" style="font-size: 80%;">Setting up the Back propagation algorithm, part 3</a></li>
      <!-- navigation toc: --> <li><a href="._geilonn-bs032.html#updating-the-gradients" style="font-size: 80%;">Updating the gradients</a></li>
-     <!-- navigation toc: --> <li><a href="._geilonn-bs033.html#a-very-nice-website-on-neural-networks" style="font-size: 80%;">A very nice website on Neural Networks</a></li>
-     <!-- navigation toc: --> <li><a href="._geilonn-bs034.html#a-top-down-perspective-on-neural-networks" style="font-size: 80%;">A top-down perspective on Neural networks</a></li>
-     <!-- navigation toc: --> <li><a href="#more-top-down-perspectives" style="font-size: 80%;">More top-down perspectives</a></li>
-     <!-- navigation toc: --> <li><a href="._geilonn-bs036.html#limitations-of-supervised-learning-with-deep-networks" style="font-size: 80%;">Limitations of supervised learning with deep networks</a></li>
-     <!-- navigation toc: --> <li><a href="._geilonn-bs037.html#limitations-of-nns" style="font-size: 80%;">Limitations of NNs</a></li>
-     <!-- navigation toc: --> <li><a href="._geilonn-bs038.html#homogeneous-data" style="font-size: 80%;">Homogeneous data</a></li>
-     <!-- navigation toc: --> <li><a href="._geilonn-bs039.html#more-limitations" style="font-size: 80%;">More limitations</a></li>
-     <!-- navigation toc: --> <li><a href="._geilonn-bs040.html#using-tensorflow-collect-and-pre-process-data" style="font-size: 80%;">Using TensorFlow: Collect and pre-process data</a></li>
-     <!-- navigation toc: --> <li><a href="._geilonn-bs041.html#and-a-similar-code-using-pytorch" style="font-size: 80%;">And a similar code using PyTorch</a></li>
+     <!-- navigation toc: --> <li><a href="._geilonn-bs033.html#limitations-of-supervised-learning-with-deep-networks" style="font-size: 80%;">Limitations of supervised learning with deep networks</a></li>
+     <!-- navigation toc: --> <li><a href="._geilonn-bs034.html#limitations-of-nns" style="font-size: 80%;">Limitations of NNs</a></li>
+     <!-- navigation toc: --> <li><a href="#homogeneous-data" style="font-size: 80%;">Homogeneous data</a></li>
+     <!-- navigation toc: --> <li><a href="._geilonn-bs036.html#more-limitations" style="font-size: 80%;">More limitations</a></li>
+     <!-- navigation toc: --> <li><a href="._geilonn-bs037.html#using-tensorflow-collect-and-pre-process-data" style="font-size: 80%;">Using TensorFlow: Collect and pre-process data</a></li>
+     <!-- navigation toc: --> <li><a href="._geilonn-bs038.html#and-a-similar-code-using-pytorch" style="font-size: 80%;">And a similar code using PyTorch</a></li>
 
         </ul>
       </li>
@@ -253,29 +238,11 @@ MathJax.Hub.Config({
 <p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p> <!-- add vertical space -->
 <a name="part0035"></a>
 <!-- !split -->
-<h2 id="more-top-down-perspectives" class="anchor">More top-down perspectives </h2>
+<h2 id="homogeneous-data" class="anchor">Homogeneous data </h2>
 
-<p>If the validation and test sets are drawn from the same distributions,
-then a good performance on the validation set should lead to similarly
-good performance on the test set. 
-</p>
-
-<p>However, sometimes
-the training data and test data differ in subtle ways because, for
-example, they are collected using slightly different methods, or
-because it is cheaper to collect data in one way versus another. In
-this case, there can be a mismatch between the training and test
-data. This can lead to the neural network overfitting these small
-differences between the test and training sets, and a poor performance
-on the test set despite having a good performance on the validation
-set. To rectify this, Andrew Ng suggests making two validation or dev
-sets, one constructed from the training data and one constructed from
-the test data. The difference between the performance of the algorithm
-on these two validation sets quantifies the train-test mismatch. This
-can serve as another important diagnostic when using DNNs for
-supervised learning.
-</p>
-
+<ul>
+<li> <b>Homogeneous data.</b> Almost all DNNs deal with homogeneous data of one type. It is very hard to design architectures that mix and match data types (i.e.&nbsp;some continuous variables, some discrete variables, some time series). In applications beyond images, video, and language, this is often what is required. In contrast, ensemble models like random forests or gradient-boosted trees have no difficulty handling mixed data types.</li>
+</ul>
 <p>
 <!-- navigation buttons at the bottom of the page -->
 <ul class="pagination">
@@ -294,9 +261,6 @@ supervised learning.
   <li><a href="._geilonn-bs036.html">37</a></li>
   <li><a href="._geilonn-bs037.html">38</a></li>
   <li><a href="._geilonn-bs038.html">39</a></li>
-  <li><a href="._geilonn-bs039.html">40</a></li>
-  <li><a href="._geilonn-bs040.html">41</a></li>
-  <li><a href="._geilonn-bs041.html">42</a></li>
   <li><a href="._geilonn-bs036.html">&raquo;</a></li>
 </ul>
 <!-- ------------------- end of main content --------------- -->
