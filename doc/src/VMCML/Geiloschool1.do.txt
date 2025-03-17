@@ -1,6 +1,6 @@
-TITLE: Artificial intelligence and machine learning in physics, part I, introduction 
-AUTHOR: Morten Hjorth-Jensen at Department of Physics and Astronomy and FRIB, Michigan State University, USA, and Department of Physics and Center for Computing in Science Education, University of Oslo, Norway
-DATE: Department of Physics, Universidad del Valle, November 7, 2024
+TITLE: Artificial intelligence and machine learning in physics, introduction 
+AUTHOR: Morten Hjorth-Jensen at Department of Physics and Center for Computing in Science Education, University of Oslo, Norway
+DATE: Geilo Winter school, March 10-20, 2025
 
 
 !split
@@ -461,6 +461,7 @@ Neural networks (NNs) have what we may call a kind of universality no matter wha
 It does not mean that an NN can be used to exactly compute any function. Rather, we get an approximation that is as good as we want. 
 !eblock
 
+
 !split
 ===== Class of functions we can approximate =====
 
@@ -473,63 +474,144 @@ If the function $F(\bm{x})$ is discontinuous, it won't in general be possible to
 
 
 
-
 !split
-===== Extrapolations and model interpretability  =====
+=====  Illustration of a single perceptron model and an FFNN =====
 
-When you hear phrases like _predictions and estimations_ and
-_correlations and causations_, what do you think of?  May be you think
-of the difference between classifying new data points and generating
-new data points.
-Or perhaps you consider that correlations represent some kind of symmetric statements like
-if $A$ is correlated with $B$, then $B$ is correlated with
-$A$. Causation on the other hand is directional, that is if $A$ causes $B$, $B$ does not
-necessarily cause $A$.
+FIGURE: [figures/nns.png, width=600 frac=0.7]  In a) we show a single perceptron model while in b) we dispay a network with two  hidden layers, an input layer and an output layer.
 
 
 !split
-===== Physics based statistical learning and data analysis =====
+===== Our network example, simple percepetron with one input =====
 
-The above concepts are in some sense the difference between _old-fashioned_ machine
-learning and statistics and Bayesian learning. In machine learning and prediction based
-tasks, we are often interested in developing algorithms that are
-capable of learning patterns from given data in an automated fashion,
-and then using these learned patterns to make predictions or
-assessments of newly given data. In many cases, our primary concern
-is the quality of the predictions or assessments, and we are less
-concerned about the underlying patterns that were learned in order
-to make these predictions.
+As as simple example we define now a simple perceptron model with
+all quantities given by scalars. We consider only one input variable
+$x$ and one target value $y$.  We define an activation function
+$\sigma_1$ which takes as input
 
-Physics based statistical learning points however to approaches that give us both predictions and correlations as well as being able to produce error estimates and understand causations.  This leads us to the very interesting field of Bayesian statistics.
-
-
-
-!split
-===== Bayes' Theorem =====
-
-Bayes' theorem
 !bt
 \[
-p(X\vert Y)= \frac{p(X,Y)}{\sum_{i=0}^{n-1}p(Y\vert X=x_i)p(x_i)}=\frac{p(Y\vert X)p(X)}{\sum_{i=0}^{n-1}p(Y\vert X=x_i)p(x_i)}.
+z_1 = w_1x+b_1,
+\]
+!et
+where $w_1$ is the weight and $b_1$ is the bias. These are the
+parameters we want to optimize.  This output is then fed into the
+_cost/loss_ function, which we here for the sake of simplicity just
+define as the squared error
+
+!bt
+\[
+C(x;w_1,b_1)=\frac{1}{2}(a_1-y)^2.
 \]
 !et
 
 
-The quantity $p(Y\vert X)$ on the right-hand side of the theorem is
-evaluated for the observed data $Y$ and can be viewed as a function of
-the parameter space represented by $X$. This function is not
-necessarily normalized and is normally called the likelihood function.
+!split
+===== Optimizing the parameters =====
 
-The function $p(X)$ on the right hand side is called the prior while the function on the left hand side is the called the posterior probability. The denominator on the right hand side serves as a normalization factor for the posterior distribution.
+In setting up the feed forward and back propagation parts of the
+algorithm, we need now the derivative of the various variables we want
+to train.
 
+We need
+!bt
+\[
+\frac{\partial C}{\partial w_1} \hspace{0.1cm}\mathrm{and}\hspace{0.1cm}\frac{\partial C}{\partial b_1}. 
+\]
+!et
+
+Using the chain rule we find 
+!bt
+\[
+\frac{\partial C}{\partial w_1}=\frac{\partial C}{\partial a_1}\frac{\partial a_1}{\partial z_1}\frac{\partial z_1}{\partial w_1}=(a_1-y)\sigma_1'x,
+\]
+!et
+and
+!bt
+\[
+\frac{\partial C}{\partial b_1}=\frac{\partial C}{\partial a_1}\frac{\partial a_1}{\partial z_1}\frac{\partial z_1}{\partial b_1}=(a_1-y)\sigma_1',
+\]
+!et
+which we later will just define as
+!bt
+\[
+\frac{\partial C}{\partial a_1}\frac{\partial a_1}{\partial z_1}=\delta_1.
+\]
+!et
+
+!split
+===== Implementing the simple perceptron model =====
+
+In the example code here we implement the above equations (with explict
+expressions for the derivatives) with just one input variable $x$ and
+one output variable.  The target value $y=2x+1$ is a simple linear
+function in $x$. Since this is a regression problem, we define the cost function to be proportional to the least squares error
+!bt
+\[
+C(y,w_1,b_1)=\frac{1}{2}(a_1-y)^2,
+\]
+!et
+with $a_1$ the output from the network.
+
+!bc pycod
+# import necessary packages
+import numpy as np
+import matplotlib.pyplot as plt
+
+def feed_forward(x):
+    # weighted sum of inputs to the output layer
+    z_1 = x*output_weights + output_bias
+    # Output from output node (one node only)
+    # Here the output is equal to the input
+    a_1 = z_1
+    return a_1
+
+def backpropagation(x, y):
+    a_1 = feed_forward(x)
+    # derivative of cost function
+    derivative_cost = a_1 - y
+    # the variable delta in the equations, note that output a_1 = z_1, its derivatives wrt z_o is thus 1
+    delta_1 = derivative_cost
+    # gradients for the output layer
+    output_weights_gradient = delta_1*x
+    output_bias_gradient = delta_1
+    # The cost function is 0.5*(a_1-y)^2. This gives a measure of the error for each iteration
+    return output_weights_gradient, output_bias_gradient
+
+# ensure the same random numbers appear every time
+np.random.seed(0)
+# Input variable
+x = 4.0
+# Target values
+y = 2*x+1.0
+
+# Defining the neural network
+n_inputs = 1
+n_outputs = 1
+# Initialize the network
+# weights and bias in the output layer
+output_weights = np.random.randn()
+output_bias = np.random.randn()
+
+# implementing a simple gradient descent approach with fixed learning rate
+eta = 0.01
+for i in range(40):
+    # calculate gradients from back propagation
+    derivative_w1, derivative_b1 = backpropagation(x, y)
+    # update weights and biases
+    output_weights -= eta * derivative_w1
+    output_bias -= eta * derivative_b1
+# our final prediction after training
+ytilde = output_weights*x+output_bias
+print(0.5*((ytilde-y)**2))
+
+!ec
+Running this code gives us an acceptable results after some 40-50 iterations. Note that the results depend on the value of the learning rate.
 
 
 !split
-===== "Quantified limits of the nuclear landscape":"https://journals.aps.org/prc/abstract/10.1103/PhysRevC.101.044307" =====
+===== Central magic =====
 
-Predictions made with eleven global mass model and Bayesian model averaging
-
-FIGURE: [figures/landscape.jpg, width=800 frac=1.0]
+"Automatic differentiation":"https://en.wikipedia.org/wiki/Automatic_differentiation"
 
 
 

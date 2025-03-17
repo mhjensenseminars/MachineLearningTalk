@@ -9,8 +9,8 @@ doconce format html Geiloschool1-reveal.html Geiloschool1-reveal reveal --html_s
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="DocOnce: https://github.com/doconce/doconce/" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="Artificial intelligence and machine learning in physics, part I, introduction">
-<title>Artificial intelligence and machine learning in physics, part I, introduction</title>
+<meta name="description" content="Artificial intelligence and machine learning in physics, introduction">
+<title>Artificial intelligence and machine learning in physics, introduction</title>
 
 <!-- reveal.js: https://lab.hakim.se/reveal-js/ -->
 
@@ -168,7 +168,7 @@ MathJax.Hub.Config({
 <section>
 <!-- ------------------- main content ---------------------- -->
 <center>
-<h1 style="text-align: center;">Artificial intelligence and machine learning in physics, part I, introduction </h1>
+<h1 style="text-align: center;">Artificial intelligence and machine learning in physics, introduction </h1>
 </center>  <!-- document title -->
 
 <!-- author(s): Morten Hjorth-Jensen -->
@@ -177,11 +177,11 @@ MathJax.Hub.Config({
 </center>
 <!-- institution -->
 <center>
-<b>Department of Physics and Astronomy and FRIB, Michigan State University, USA, and Department of Physics and Center for Computing in Science Education, University of Oslo, Norway</b>
+<b>Department of Physics and Center for Computing in Science Education, University of Oslo, Norway</b>
 </center>
 <br>
 <center>
-<h4>Department of Physics, Universidad del Valle, November 7, 2024</h4>
+<h4>Geilo Winter school, March 10-20, 2025</h4>
 </center> <!-- date -->
 <br>
 </section>
@@ -746,65 +746,177 @@ If the function \( F(\boldsymbol{x}) \) is discontinuous, it won't in general be
 </section>
 
 <section>
-<h2 id="extrapolations-and-model-interpretability">Extrapolations and model interpretability  </h2>
+<h2 id="illustration-of-a-single-perceptron-model-and-an-ffnn">Illustration of a single perceptron model and an FFNN </h2>
 
-<p>When you hear phrases like <b>predictions and estimations</b> and
-<b>correlations and causations</b>, what do you think of?  May be you think
-of the difference between classifying new data points and generating
-new data points.
-Or perhaps you consider that correlations represent some kind of symmetric statements like
-if \( A \) is correlated with \( B \), then \( B \) is correlated with
-\( A \). Causation on the other hand is directional, that is if \( A \) causes \( B \), \( B \) does not
-necessarily cause \( A \).
-</p>
-</section>
-
-<section>
-<h2 id="physics-based-statistical-learning-and-data-analysis">Physics based statistical learning and data analysis </h2>
-
-<p>The above concepts are in some sense the difference between <b>old-fashioned</b> machine
-learning and statistics and Bayesian learning. In machine learning and prediction based
-tasks, we are often interested in developing algorithms that are
-capable of learning patterns from given data in an automated fashion,
-and then using these learned patterns to make predictions or
-assessments of newly given data. In many cases, our primary concern
-is the quality of the predictions or assessments, and we are less
-concerned about the underlying patterns that were learned in order
-to make these predictions.
-</p>
-
-<p>Physics based statistical learning points however to approaches that give us both predictions and correlations as well as being able to produce error estimates and understand causations.  This leads us to the very interesting field of Bayesian statistics.</p>
-</section>
-
-<section>
-<h2 id="bayes-theorem">Bayes' Theorem </h2>
-
-<p>Bayes' theorem</p>
-<p>&nbsp;<br>
-$$
-p(X\vert Y)= \frac{p(X,Y)}{\sum_{i=0}^{n-1}p(Y\vert X=x_i)p(x_i)}=\frac{p(Y\vert X)p(X)}{\sum_{i=0}^{n-1}p(Y\vert X=x_i)p(x_i)}.
-$$
-<p>&nbsp;<br>
-
-<p>The quantity \( p(Y\vert X) \) on the right-hand side of the theorem is
-evaluated for the observed data \( Y \) and can be viewed as a function of
-the parameter space represented by \( X \). This function is not
-necessarily normalized and is normally called the likelihood function.
-</p>
-
-<p>The function \( p(X) \) on the right hand side is called the prior while the function on the left hand side is the called the posterior probability. The denominator on the right hand side serves as a normalization factor for the posterior distribution.</p>
-</section>
-
-<section>
-<h2 id="quantified-limits-of-the-nuclear-landscape-https-journals-aps-org-prc-abstract-10-1103-physrevc-101-044307"><a href="https://journals.aps.org/prc/abstract/10.1103/PhysRevC.101.044307" target="_blank">Quantified limits of the nuclear landscape</a> </h2>
-
-<p>Predictions made with eleven global mass model and Bayesian model averaging</p>
-
-<br/><br/>
+<center>  <!-- FIGURE -->
+<hr class="figure">
 <center>
-<p><img src="figures/landscape.jpg" width="800" align="bottom"></p>
+<p class="caption">Figure 1:  In a) we show a single perceptron model while in b) we dispay a network with two  hidden layers, an input layer and an output layer. </p>
 </center>
-<br/><br/>
+<p><img src="figures/nns.png" width="600" align="bottom"></p>
+</center>
+</section>
+
+<section>
+<h2 id="our-network-example-simple-percepetron-with-one-input">Our network example, simple percepetron with one input </h2>
+
+<p>As as simple example we define now a simple perceptron model with
+all quantities given by scalars. We consider only one input variable
+\( x \) and one target value \( y \).  We define an activation function
+\( \sigma_1 \) which takes as input
+</p>
+
+<p>&nbsp;<br>
+$$
+z_1 = w_1x+b_1,
+$$
+<p>&nbsp;<br>
+
+<p>where \( w_1 \) is the weight and \( b_1 \) is the bias. These are the
+parameters we want to optimize.  This output is then fed into the
+<b>cost/loss</b> function, which we here for the sake of simplicity just
+define as the squared error
+</p>
+
+<p>&nbsp;<br>
+$$
+C(x;w_1,b_1)=\frac{1}{2}(a_1-y)^2.
+$$
+<p>&nbsp;<br>
+</section>
+
+<section>
+<h2 id="optimizing-the-parameters">Optimizing the parameters </h2>
+
+<p>In setting up the feed forward and back propagation parts of the
+algorithm, we need now the derivative of the various variables we want
+to train.
+</p>
+
+<p>We need</p>
+<p>&nbsp;<br>
+$$
+\frac{\partial C}{\partial w_1} \hspace{0.1cm}\mathrm{and}\hspace{0.1cm}\frac{\partial C}{\partial b_1}. 
+$$
+<p>&nbsp;<br>
+
+<p>Using the chain rule we find </p>
+<p>&nbsp;<br>
+$$
+\frac{\partial C}{\partial w_1}=\frac{\partial C}{\partial a_1}\frac{\partial a_1}{\partial z_1}\frac{\partial z_1}{\partial w_1}=(a_1-y)\sigma_1'x,
+$$
+<p>&nbsp;<br>
+
+<p>and</p>
+<p>&nbsp;<br>
+$$
+\frac{\partial C}{\partial b_1}=\frac{\partial C}{\partial a_1}\frac{\partial a_1}{\partial z_1}\frac{\partial z_1}{\partial b_1}=(a_1-y)\sigma_1',
+$$
+<p>&nbsp;<br>
+
+<p>which we later will just define as</p>
+<p>&nbsp;<br>
+$$
+\frac{\partial C}{\partial a_1}\frac{\partial a_1}{\partial z_1}=\delta_1.
+$$
+<p>&nbsp;<br>
+</section>
+
+<section>
+<h2 id="implementing-the-simple-perceptron-model">Implementing the simple perceptron model </h2>
+
+<p>In the example code here we implement the above equations (with explict
+expressions for the derivatives) with just one input variable \( x \) and
+one output variable.  The target value \( y=2x+1 \) is a simple linear
+function in \( x \). Since this is a regression problem, we define the cost function to be proportional to the least squares error
+</p>
+<p>&nbsp;<br>
+$$
+C(y,w_1,b_1)=\frac{1}{2}(a_1-y)^2,
+$$
+<p>&nbsp;<br>
+
+<p>with \( a_1 \) the output from the network.</p>
+
+
+<!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #eeeedd">
+  <pre style="font-size: 80%; line-height: 125%;"><span style="color: #228B22"># import necessary packages</span>
+<span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">numpy</span> <span style="color: #8B008B; font-weight: bold">as</span> <span style="color: #008b45; text-decoration: underline">np</span>
+<span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">matplotlib.pyplot</span> <span style="color: #8B008B; font-weight: bold">as</span> <span style="color: #008b45; text-decoration: underline">plt</span>
+
+<span style="color: #8B008B; font-weight: bold">def</span> <span style="color: #008b45">feed_forward</span>(x):
+    <span style="color: #228B22"># weighted sum of inputs to the output layer</span>
+    z_1 = x*output_weights + output_bias
+    <span style="color: #228B22"># Output from output node (one node only)</span>
+    <span style="color: #228B22"># Here the output is equal to the input</span>
+    a_1 = z_1
+    <span style="color: #8B008B; font-weight: bold">return</span> a_1
+
+<span style="color: #8B008B; font-weight: bold">def</span> <span style="color: #008b45">backpropagation</span>(x, y):
+    a_1 = feed_forward(x)
+    <span style="color: #228B22"># derivative of cost function</span>
+    derivative_cost = a_1 - y
+    <span style="color: #228B22"># the variable delta in the equations, note that output a_1 = z_1, its derivatives wrt z_o is thus 1</span>
+    delta_1 = derivative_cost
+    <span style="color: #228B22"># gradients for the output layer</span>
+    output_weights_gradient = delta_1*x
+    output_bias_gradient = delta_1
+    <span style="color: #228B22"># The cost function is 0.5*(a_1-y)^2. This gives a measure of the error for each iteration</span>
+    <span style="color: #8B008B; font-weight: bold">return</span> output_weights_gradient, output_bias_gradient
+
+<span style="color: #228B22"># ensure the same random numbers appear every time</span>
+np.random.seed(<span style="color: #B452CD">0</span>)
+<span style="color: #228B22"># Input variable</span>
+x = <span style="color: #B452CD">4.0</span>
+<span style="color: #228B22"># Target values</span>
+y = <span style="color: #B452CD">2</span>*x+<span style="color: #B452CD">1.0</span>
+
+<span style="color: #228B22"># Defining the neural network</span>
+n_inputs = <span style="color: #B452CD">1</span>
+n_outputs = <span style="color: #B452CD">1</span>
+<span style="color: #228B22"># Initialize the network</span>
+<span style="color: #228B22"># weights and bias in the output layer</span>
+output_weights = np.random.randn()
+output_bias = np.random.randn()
+
+<span style="color: #228B22"># implementing a simple gradient descent approach with fixed learning rate</span>
+eta = <span style="color: #B452CD">0.01</span>
+<span style="color: #8B008B; font-weight: bold">for</span> i <span style="color: #8B008B">in</span> <span style="color: #658b00">range</span>(<span style="color: #B452CD">40</span>):
+    <span style="color: #228B22"># calculate gradients from back propagation</span>
+    derivative_w1, derivative_b1 = backpropagation(x, y)
+    <span style="color: #228B22"># update weights and biases</span>
+    output_weights -= eta * derivative_w1
+    output_bias -= eta * derivative_b1
+<span style="color: #228B22"># our final prediction after training</span>
+ytilde = output_weights*x+output_bias
+<span style="color: #658b00">print</span>(<span style="color: #B452CD">0.5</span>*((ytilde-y)**<span style="color: #B452CD">2</span>))
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p>Running this code gives us an acceptable results after some 40-50 iterations. Note that the results depend on the value of the learning rate.</p>
+</section>
+
+<section>
+<h2 id="central-magic">Central magic </h2>
+
+<a href="https://en.wikipedia.org/wiki/Automatic_differentiation" target="_blank">Automatic differentiation</a>
 </section>
 
 
