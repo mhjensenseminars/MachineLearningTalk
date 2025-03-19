@@ -253,7 +253,7 @@ MathJax.Hub.Config({
      <!-- navigation toc: --> <li><a href="._sensing-bs051.html#understanding-the-example" style="font-size: 80%;">Understanding the example</a></li>
      <!-- navigation toc: --> <li><a href="._sensing-bs052.html#code-best-seen-in-jupyter-notebook" style="font-size: 80%;">Code, best seen in jupyter-notebook</a></li>
      <!-- navigation toc: --> <li><a href="._sensing-bs053.html#role-of-entanglement" style="font-size: 80%;">Role of entanglement</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs054.html#two-qubit-program-example-best-seen-using-the-jupyter-notebook" style="font-size: 80%;">Two-qubit program example (best seen using the jupyter-notebook)</a></li>
+     <!-- navigation toc: --> <li><a href="#two-qubit-program-example-best-seen-using-the-jupyter-notebook" style="font-size: 80%;">Two-qubit program example (best seen using the jupyter-notebook)</a></li>
      <!-- navigation toc: --> <li><a href="._sensing-bs055.html#analysis" style="font-size: 80%;">Analysis</a></li>
 
         </ul>
@@ -264,53 +264,111 @@ MathJax.Hub.Config({
 </div> <!-- end of navigation bar -->
 <div class="container">
 <p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p> <!-- add vertical space -->
-<a name="part0010"></a>
+<a name="part0054"></a>
 <!-- !split -->
-<h2 id="interaction-part" class="anchor">Interaction part </h2>
+<h2 id="two-qubit-program-example-best-seen-using-the-jupyter-notebook" class="anchor">Two-qubit program example (best seen using the jupyter-notebook) </h2>
 
-<p>We will now label  the interaction matrix elements, assuming that they have an explicit time dependence.
-We define
-</p>
-$$
-\begin{align*}
-V_{11} & = V_z(t)\\
-V_{22} & = -V_z(t)\\
-V_{12} & = V_x(t)-\imath V_y(t).
-\end{align*}
-$$
 
-<p>In the numerical example below we let \( V_y(t)=0 \), \( V_z(t) = tV_z \)
-and \( V_x(t) = tV_x \) with \( V_z \) and \( V_x \) being real-valued constants to
-be determined. In the same numerical example we let \( t\in [0,1] \).
-</p>
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #f8f8f8">
+  <pre style="line-height: 125%;"><span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">numpy</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">np</span>
+<span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">scipy.linalg</span> <span style="color: #008000; font-weight: bold">import</span> expm
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">matplotlib.pyplot</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">plt</span>
+
+<span style="color: #408080; font-style: italic"># Define single-qubit operations, Identity, Pauli, Hadamard and S matrices</span>
+Id <span style="color: #666666">=</span> np<span style="color: #666666">.</span>array([[<span style="color: #666666">1</span>, <span style="color: #666666">0</span>], [<span style="color: #666666">0</span>, <span style="color: #666666">1</span>]], dtype<span style="color: #666666">=</span><span style="color: #008000">complex</span>)
+X <span style="color: #666666">=</span> np<span style="color: #666666">.</span>array([[<span style="color: #666666">0</span>, <span style="color: #666666">1</span>], [<span style="color: #666666">1</span>, <span style="color: #666666">0</span>]], dtype<span style="color: #666666">=</span><span style="color: #008000">complex</span>)
+Y <span style="color: #666666">=</span> np<span style="color: #666666">.</span>array([[<span style="color: #666666">0</span>, <span style="color: #666666">-1</span>j], [<span style="color: #666666">1</span>j, <span style="color: #666666">0</span>]], dtype<span style="color: #666666">=</span><span style="color: #008000">complex</span>)
+Z <span style="color: #666666">=</span> np<span style="color: #666666">.</span>array([[<span style="color: #666666">1</span>, <span style="color: #666666">0</span>], [<span style="color: #666666">0</span>, <span style="color: #666666">-1</span>]], dtype<span style="color: #666666">=</span><span style="color: #008000">complex</span>)
+Had <span style="color: #666666">=</span> np<span style="color: #666666">.</span>array([[<span style="color: #666666">1</span>, <span style="color: #666666">1</span>],[<span style="color: #666666">1</span>, <span style="color: #666666">-1</span>]], dtype<span style="color: #666666">=</span><span style="color: #008000">complex</span>) <span style="color: #666666">/</span> np<span style="color: #666666">.</span>sqrt(<span style="color: #666666">2</span>)
+S <span style="color: #666666">=</span> np<span style="color: #666666">.</span>array([[<span style="color: #666666">1</span>, <span style="color: #666666">0</span>],[<span style="color: #666666">0</span>, <span style="color: #666666">1</span>j]], dtype<span style="color: #666666">=</span><span style="color: #008000">complex</span>)
+<span style="color: #408080; font-style: italic"># Define two-qubit gates</span>
+CNOT01 <span style="color: #666666">=</span> np<span style="color: #666666">.</span>array([[<span style="color: #666666">1</span>, <span style="color: #666666">0</span>, <span style="color: #666666">0</span>, <span style="color: #666666">0</span>], [<span style="color: #666666">0</span>, <span style="color: #666666">1</span>, <span style="color: #666666">0</span>, <span style="color: #666666">0</span>], [<span style="color: #666666">0</span>, <span style="color: #666666">0</span>, <span style="color: #666666">0</span>, <span style="color: #666666">1</span>], [<span style="color: #666666">0</span>, <span style="color: #666666">0</span>, <span style="color: #666666">1</span>, <span style="color: #666666">0</span>]], dtype<span style="color: #666666">=</span><span style="color: #008000">complex</span>)
+CNOT10 <span style="color: #666666">=</span> np<span style="color: #666666">.</span>array([[<span style="color: #666666">1</span>, <span style="color: #666666">0</span>, <span style="color: #666666">0</span>, <span style="color: #666666">0</span>], [<span style="color: #666666">0</span>, <span style="color: #666666">0</span>, <span style="color: #666666">0</span>, <span style="color: #666666">1</span>], [<span style="color: #666666">0</span>, <span style="color: #666666">0</span>, <span style="color: #666666">1</span>, <span style="color: #666666">0</span>], [<span style="color: #666666">0</span>, <span style="color: #666666">1</span>, <span style="color: #666666">0</span>, <span style="color: #666666">0</span>]], dtype<span style="color: #666666">=</span><span style="color: #008000">complex</span>)
+SWAP <span style="color: #666666">=</span> np<span style="color: #666666">.</span>array([[<span style="color: #666666">1</span>, <span style="color: #666666">0</span>, <span style="color: #666666">0</span>, <span style="color: #666666">0</span>], [<span style="color: #666666">0</span>, <span style="color: #666666">0</span>, <span style="color: #666666">1</span>, <span style="color: #666666">0</span>], [<span style="color: #666666">0</span>, <span style="color: #666666">1</span>, <span style="color: #666666">0</span>, <span style="color: #666666">0</span>], [<span style="color: #666666">0</span>, <span style="color: #666666">0</span>, <span style="color: #666666">0</span>, <span style="color: #666666">1</span>]], dtype<span style="color: #666666">=</span><span style="color: #008000">complex</span>)
+
+times <span style="color: #666666">=</span> np<span style="color: #666666">.</span>linspace(<span style="color: #666666">0</span>, <span style="color: #666666">1</span>, <span style="color: #666666">100</span>)  <span style="color: #408080; font-style: italic"># Time range from 0 to 1 seconds</span>
+
+<span style="color: #408080; font-style: italic"># Initial state for each qubit</span>
+psi_1 <span style="color: #666666">=</span>  np<span style="color: #666666">.</span>array([<span style="color: #666666">1</span>, <span style="color: #666666">0</span>], dtype<span style="color: #666666">=</span><span style="color: #008000">complex</span>) <span style="color: #408080; font-style: italic"># start with |0&gt; for qubits 1 and 2</span>
+psi_2 <span style="color: #666666">=</span>  np<span style="color: #666666">.</span>array([<span style="color: #666666">1</span>, <span style="color: #666666">0</span>], dtype<span style="color: #666666">=</span><span style="color: #008000">complex</span>) <span style="color: #408080; font-style: italic"># start with |0&gt; for qubits 1 and 2</span>
+<span style="color: #408080; font-style: italic"># possible basis states for measurements</span>
+basis_00 <span style="color: #666666">=</span> np<span style="color: #666666">.</span>array([<span style="color: #666666">1</span>, <span style="color: #666666">0</span>, <span style="color: #666666">0</span>, <span style="color: #666666">0</span>], dtype<span style="color: #666666">=</span><span style="color: #008000">complex</span>)
+basis_01 <span style="color: #666666">=</span> np<span style="color: #666666">.</span>array([<span style="color: #666666">0</span>, <span style="color: #666666">1</span>, <span style="color: #666666">0</span>, <span style="color: #666666">0</span>], dtype<span style="color: #666666">=</span><span style="color: #008000">complex</span>)
+basis_10 <span style="color: #666666">=</span> np<span style="color: #666666">.</span>array([<span style="color: #666666">0</span>, <span style="color: #666666">0</span>, <span style="color: #666666">1</span>, <span style="color: #666666">0</span>], dtype<span style="color: #666666">=</span><span style="color: #008000">complex</span>)
+basis_11 <span style="color: #666666">=</span> np<span style="color: #666666">.</span>array([<span style="color: #666666">0</span>, <span style="color: #666666">0</span>, <span style="color: #666666">0</span>, <span style="color: #666666">1</span>], dtype<span style="color: #666666">=</span><span style="color: #008000">complex</span>)
+<span style="color: #408080; font-style: italic"># then act with Hadamard on first qubit only</span>
+psi_1 <span style="color: #666666">=</span> Had <span style="color: #666666">@</span> psi_1
+<span style="color: #408080; font-style: italic"># Initial two-qubit state</span>
+Psi_0 <span style="color: #666666">=</span> np<span style="color: #666666">.</span>kron(psi_1,psi_2)
+<span style="color: #408080; font-style: italic"># Define parameters</span>
+<span style="color: #408080; font-style: italic"># Then we act on this state in order to get a Bell state 1/sqrt(2)(|00&gt;+|11)</span>
+Psi_0 <span style="color: #666666">=</span> CNOT01 <span style="color: #666666">@</span> Psi_0
+B <span style="color: #666666">=</span> <span style="color: #666666">1.0</span>  <span style="color: #408080; font-style: italic"># Strength of the magnetic field (in arbitrary units)</span>
+omega <span style="color: #666666">=</span> B  <span style="color: #408080; font-style: italic"># Frequency associated with the magnetic field</span>
+<span style="color: #408080; font-style: italic"># Constructing the Hamiltonian H = -omega/2 * (Z * I + I * Z)</span>
+H_z_I <span style="color: #666666">=</span> <span style="color: #666666">-</span>omega <span style="color: #666666">/</span> <span style="color: #666666">2</span> <span style="color: #666666">*</span> np<span style="color: #666666">.</span>kron(Z, Id)  <span style="color: #408080; font-style: italic"># Z * I</span>
+I_H_z <span style="color: #666666">=</span> <span style="color: #666666">-</span>omega <span style="color: #666666">/</span> <span style="color: #666666">2</span> <span style="color: #666666">*</span> np<span style="color: #666666">.</span>kron(Id, Z)    <span style="color: #408080; font-style: italic"># I * Z</span>
+<span style="color: #408080; font-style: italic"># Total Hamiltonian, try a more complicated one, this one is very simple</span>
+H <span style="color: #666666">=</span> H_z_I <span style="color: #666666">+</span> I_H_z   
+<span style="color: #408080; font-style: italic"># Lists to store expectation values</span>
+expect_00, expect_11 <span style="color: #666666">=</span> [], []
+<span style="color: #008000; font-weight: bold">for</span> t <span style="color: #AA22FF; font-weight: bold">in</span> times:
+   <span style="color: #408080; font-style: italic"># Calculate time evolution operator</span>
+   U <span style="color: #666666">=</span> expm(<span style="color: #666666">-1</span>j <span style="color: #666666">*</span> H <span style="color: #666666">*</span> t)
+   <span style="color: #408080; font-style: italic"># Evolve the initial state (if you have a time-dependent H, remember to integrate or Trotterize)</span>
+   Psi_t <span style="color: #666666">=</span> U <span style="color: #666666">@</span> Psi_0
+   <span style="color: #408080; font-style: italic"># Calculate probabilities of measuring specific states: P(|00&gt;) and P(|11&gt;)</span>
+   <span style="color: #408080; font-style: italic"># Calculate expectation values (boring case here)</span>
+   expect_00<span style="color: #666666">.</span>append(<span style="color: #008000">abs</span>(np<span style="color: #666666">.</span>dot(basis_00<span style="color: #666666">.</span>conj(), Psi_t))<span style="color: #666666">**2</span>)
+   expect_11<span style="color: #666666">.</span>append(<span style="color: #008000">abs</span>(np<span style="color: #666666">.</span>dot(basis_11<span style="color: #666666">.</span>conj(), Psi_t))<span style="color: #666666">**2</span>)
+
+<span style="color: #408080; font-style: italic"># Plotting results using matplotlib</span>
+plt<span style="color: #666666">.</span>figure(figsize<span style="color: #666666">=</span>(<span style="color: #666666">10</span>, <span style="color: #666666">6</span>))
+plt<span style="color: #666666">.</span>plot(times, expect_00, label<span style="color: #666666">=</span><span style="color: #BA2121">&#39;Probability |00&gt;&#39;</span>)
+plt<span style="color: #666666">.</span>plot(times, expect_11, label<span style="color: #666666">=</span><span style="color: #BA2121">&#39;Probability |11&gt;&#39;</span>)
+plt<span style="color: #666666">.</span>xlabel(<span style="color: #BA2121">&#39;Time&#39;</span>)
+plt<span style="color: #666666">.</span>ylabel(<span style="color: #BA2121">&#39;Probability&#39;</span>)
+plt<span style="color: #666666">.</span>title(<span style="color: #BA2121">&#39;Quantum Sensing Simulation&#39;</span>)
+plt<span style="color: #666666">.</span>legend()
+plt<span style="color: #666666">.</span>show()
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 <p>
 <!-- navigation buttons at the bottom of the page -->
 <ul class="pagination">
-<li><a href="._sensing-bs009.html">&laquo;</a></li>
+<li><a href="._sensing-bs053.html">&laquo;</a></li>
   <li><a href="._sensing-bs000.html">1</a></li>
   <li><a href="">...</a></li>
-  <li><a href="._sensing-bs002.html">3</a></li>
-  <li><a href="._sensing-bs003.html">4</a></li>
-  <li><a href="._sensing-bs004.html">5</a></li>
-  <li><a href="._sensing-bs005.html">6</a></li>
-  <li><a href="._sensing-bs006.html">7</a></li>
-  <li><a href="._sensing-bs007.html">8</a></li>
-  <li><a href="._sensing-bs008.html">9</a></li>
-  <li><a href="._sensing-bs009.html">10</a></li>
-  <li class="active"><a href="._sensing-bs010.html">11</a></li>
-  <li><a href="._sensing-bs011.html">12</a></li>
-  <li><a href="._sensing-bs012.html">13</a></li>
-  <li><a href="._sensing-bs013.html">14</a></li>
-  <li><a href="._sensing-bs014.html">15</a></li>
-  <li><a href="._sensing-bs015.html">16</a></li>
-  <li><a href="._sensing-bs016.html">17</a></li>
-  <li><a href="._sensing-bs017.html">18</a></li>
-  <li><a href="._sensing-bs018.html">19</a></li>
-  <li><a href="._sensing-bs019.html">20</a></li>
-  <li><a href="">...</a></li>
+  <li><a href="._sensing-bs046.html">47</a></li>
+  <li><a href="._sensing-bs047.html">48</a></li>
+  <li><a href="._sensing-bs048.html">49</a></li>
+  <li><a href="._sensing-bs049.html">50</a></li>
+  <li><a href="._sensing-bs050.html">51</a></li>
+  <li><a href="._sensing-bs051.html">52</a></li>
+  <li><a href="._sensing-bs052.html">53</a></li>
+  <li><a href="._sensing-bs053.html">54</a></li>
+  <li class="active"><a href="._sensing-bs054.html">55</a></li>
   <li><a href="._sensing-bs055.html">56</a></li>
-  <li><a href="._sensing-bs011.html">&raquo;</a></li>
+  <li><a href="._sensing-bs055.html">&raquo;</a></li>
 </ul>
 <!-- ------------------- end of main content --------------- -->
 </div>  <!-- end container -->

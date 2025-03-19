@@ -263,7 +263,13 @@ div.toc p,a {
                2,
                None,
                'code-best-seen-in-jupyter-notebook'),
-              ('Role of entanglement', 2, None, 'role-of-entanglement')]}
+              ('Role of entanglement', 2, None, 'role-of-entanglement'),
+              ('Two-qubit program example (best seen using the '
+               'jupyter-notebook)',
+               2,
+               None,
+               'two-qubit-program-example-best-seen-using-the-jupyter-notebook'),
+              ('Analysis', 2, None, 'analysis')]}
 end of tocinfo -->
 
 <body>
@@ -315,17 +321,15 @@ material contains (as of now, March 14, 2025))
 <li> One-qubit system with basic elements of sensing</li>
 <li> Linking analytically solvable case with many-qubit entanglement and sensing</li>
 <li> Simple two-particle (or two-qubit) system to demonstrate entanglement and its links with sensing (to come)</li>
-<li> Numerical codes for simple time-dependent interactions</li>
+<li> Numerical codes for simple time-dependent interactions for one and two qubits</li>
 </ol>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 <h2 id="more-material-will-be-added">More material will be added </h2>
 
 <p>In particular, we will include</p>
 <ul>
-<li> Quantum computing simulations of the above systems using the Variational Quantum Eigensolver algorithm</li>
+<li> Quantum computing simulations of the above systems where the measurement is done on only one qubit</li>
 <li> Discussion of Fisher entropy and other measures</li>
-<li> Numerical codes for general time-dependent interactions</li>
-<li> Initial state preparations and final results and more</li>
 </ul>
 <p>Feel free to come with suggestions for additions. You can access the material as a jupyter-notebook at <a href="https://github.com/mhjensenseminars/MachineLearningTalk/blob/master/doc/pub/sensing/ipynb/sensing.ipynb" target="_blank"><tt>https://github.com/mhjensenseminars/MachineLearningTalk/blob/master/doc/pub/sensing/ipynb/sensing.ipynb</tt></a> or as a PDF file at <a href="https://github.com/mhjensenseminars/MachineLearningTalk/blob/master/doc/pub/sensing/pdf/sensing.pdf" target="_blank"><tt>https://github.com/mhjensenseminars/MachineLearningTalk/blob/master/doc/pub/sensing/pdf/sensing.pdf</tt></a></p>
 
@@ -1404,8 +1408,112 @@ $$
 \vert \psi(t)\rangle = \boldsymbol{U}_{\mathcal{H}}(\alpha \vert 01\rangle +\beta \vert 10\rangle). 
 $$
 
-<p>Thereafter we implement an explicit measurement. Note that this code does not compute these expectation values as one would when implementing a quantum computing approach. The subsequent example mimicks the way we would run this as a real experiment.</p>
+<p>Thereafter we implement an explicit measurement. Note that this code
+does not compute these expectation values as one would when
+implementing a quantum sensing approach. The readout is as simnple as possible. Further improvements will include measurements on only one qubit and with more realistic <b>readout</b> functions.
+</p>
 
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="two-qubit-program-example-best-seen-using-the-jupyter-notebook">Two-qubit program example (best seen using the jupyter-notebook) </h2>
+
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="cell border-box-sizing code_cell rendered">
+  <div class="input">
+    <div class="inner_cell">
+      <div class="input_area">
+        <div class="highlight" style="background: #f8f8f8">
+  <pre style="line-height: 125%;"><span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">numpy</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">np</span>
+<span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">scipy.linalg</span> <span style="color: #008000; font-weight: bold">import</span> expm
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">matplotlib.pyplot</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">plt</span>
+
+<span style="color: #408080; font-style: italic"># Define single-qubit operations, Identity, Pauli, Hadamard and S matrices</span>
+Id <span style="color: #666666">=</span> np<span style="color: #666666">.</span>array([[<span style="color: #666666">1</span>, <span style="color: #666666">0</span>], [<span style="color: #666666">0</span>, <span style="color: #666666">1</span>]], dtype<span style="color: #666666">=</span><span style="color: #008000">complex</span>)
+X <span style="color: #666666">=</span> np<span style="color: #666666">.</span>array([[<span style="color: #666666">0</span>, <span style="color: #666666">1</span>], [<span style="color: #666666">1</span>, <span style="color: #666666">0</span>]], dtype<span style="color: #666666">=</span><span style="color: #008000">complex</span>)
+Y <span style="color: #666666">=</span> np<span style="color: #666666">.</span>array([[<span style="color: #666666">0</span>, <span style="color: #666666">-1</span>j], [<span style="color: #666666">1</span>j, <span style="color: #666666">0</span>]], dtype<span style="color: #666666">=</span><span style="color: #008000">complex</span>)
+Z <span style="color: #666666">=</span> np<span style="color: #666666">.</span>array([[<span style="color: #666666">1</span>, <span style="color: #666666">0</span>], [<span style="color: #666666">0</span>, <span style="color: #666666">-1</span>]], dtype<span style="color: #666666">=</span><span style="color: #008000">complex</span>)
+Had <span style="color: #666666">=</span> np<span style="color: #666666">.</span>array([[<span style="color: #666666">1</span>, <span style="color: #666666">1</span>],[<span style="color: #666666">1</span>, <span style="color: #666666">-1</span>]], dtype<span style="color: #666666">=</span><span style="color: #008000">complex</span>) <span style="color: #666666">/</span> np<span style="color: #666666">.</span>sqrt(<span style="color: #666666">2</span>)
+S <span style="color: #666666">=</span> np<span style="color: #666666">.</span>array([[<span style="color: #666666">1</span>, <span style="color: #666666">0</span>],[<span style="color: #666666">0</span>, <span style="color: #666666">1</span>j]], dtype<span style="color: #666666">=</span><span style="color: #008000">complex</span>)
+<span style="color: #408080; font-style: italic"># Define two-qubit gates</span>
+CNOT01 <span style="color: #666666">=</span> np<span style="color: #666666">.</span>array([[<span style="color: #666666">1</span>, <span style="color: #666666">0</span>, <span style="color: #666666">0</span>, <span style="color: #666666">0</span>], [<span style="color: #666666">0</span>, <span style="color: #666666">1</span>, <span style="color: #666666">0</span>, <span style="color: #666666">0</span>], [<span style="color: #666666">0</span>, <span style="color: #666666">0</span>, <span style="color: #666666">0</span>, <span style="color: #666666">1</span>], [<span style="color: #666666">0</span>, <span style="color: #666666">0</span>, <span style="color: #666666">1</span>, <span style="color: #666666">0</span>]], dtype<span style="color: #666666">=</span><span style="color: #008000">complex</span>)
+CNOT10 <span style="color: #666666">=</span> np<span style="color: #666666">.</span>array([[<span style="color: #666666">1</span>, <span style="color: #666666">0</span>, <span style="color: #666666">0</span>, <span style="color: #666666">0</span>], [<span style="color: #666666">0</span>, <span style="color: #666666">0</span>, <span style="color: #666666">0</span>, <span style="color: #666666">1</span>], [<span style="color: #666666">0</span>, <span style="color: #666666">0</span>, <span style="color: #666666">1</span>, <span style="color: #666666">0</span>], [<span style="color: #666666">0</span>, <span style="color: #666666">1</span>, <span style="color: #666666">0</span>, <span style="color: #666666">0</span>]], dtype<span style="color: #666666">=</span><span style="color: #008000">complex</span>)
+SWAP <span style="color: #666666">=</span> np<span style="color: #666666">.</span>array([[<span style="color: #666666">1</span>, <span style="color: #666666">0</span>, <span style="color: #666666">0</span>, <span style="color: #666666">0</span>], [<span style="color: #666666">0</span>, <span style="color: #666666">0</span>, <span style="color: #666666">1</span>, <span style="color: #666666">0</span>], [<span style="color: #666666">0</span>, <span style="color: #666666">1</span>, <span style="color: #666666">0</span>, <span style="color: #666666">0</span>], [<span style="color: #666666">0</span>, <span style="color: #666666">0</span>, <span style="color: #666666">0</span>, <span style="color: #666666">1</span>]], dtype<span style="color: #666666">=</span><span style="color: #008000">complex</span>)
+
+times <span style="color: #666666">=</span> np<span style="color: #666666">.</span>linspace(<span style="color: #666666">0</span>, <span style="color: #666666">1</span>, <span style="color: #666666">100</span>)  <span style="color: #408080; font-style: italic"># Time range from 0 to 1 seconds</span>
+
+<span style="color: #408080; font-style: italic"># Initial state for each qubit</span>
+psi_1 <span style="color: #666666">=</span>  np<span style="color: #666666">.</span>array([<span style="color: #666666">1</span>, <span style="color: #666666">0</span>], dtype<span style="color: #666666">=</span><span style="color: #008000">complex</span>) <span style="color: #408080; font-style: italic"># start with |0&gt; for qubits 1 and 2</span>
+psi_2 <span style="color: #666666">=</span>  np<span style="color: #666666">.</span>array([<span style="color: #666666">1</span>, <span style="color: #666666">0</span>], dtype<span style="color: #666666">=</span><span style="color: #008000">complex</span>) <span style="color: #408080; font-style: italic"># start with |0&gt; for qubits 1 and 2</span>
+<span style="color: #408080; font-style: italic"># possible basis states for measurements</span>
+basis_00 <span style="color: #666666">=</span> np<span style="color: #666666">.</span>array([<span style="color: #666666">1</span>, <span style="color: #666666">0</span>, <span style="color: #666666">0</span>, <span style="color: #666666">0</span>], dtype<span style="color: #666666">=</span><span style="color: #008000">complex</span>)
+basis_01 <span style="color: #666666">=</span> np<span style="color: #666666">.</span>array([<span style="color: #666666">0</span>, <span style="color: #666666">1</span>, <span style="color: #666666">0</span>, <span style="color: #666666">0</span>], dtype<span style="color: #666666">=</span><span style="color: #008000">complex</span>)
+basis_10 <span style="color: #666666">=</span> np<span style="color: #666666">.</span>array([<span style="color: #666666">0</span>, <span style="color: #666666">0</span>, <span style="color: #666666">1</span>, <span style="color: #666666">0</span>], dtype<span style="color: #666666">=</span><span style="color: #008000">complex</span>)
+basis_11 <span style="color: #666666">=</span> np<span style="color: #666666">.</span>array([<span style="color: #666666">0</span>, <span style="color: #666666">0</span>, <span style="color: #666666">0</span>, <span style="color: #666666">1</span>], dtype<span style="color: #666666">=</span><span style="color: #008000">complex</span>)
+<span style="color: #408080; font-style: italic"># then act with Hadamard on first qubit only</span>
+psi_1 <span style="color: #666666">=</span> Had <span style="color: #666666">@</span> psi_1
+<span style="color: #408080; font-style: italic"># Initial two-qubit state</span>
+Psi_0 <span style="color: #666666">=</span> np<span style="color: #666666">.</span>kron(psi_1,psi_2)
+<span style="color: #408080; font-style: italic"># Define parameters</span>
+<span style="color: #408080; font-style: italic"># Then we act on this state in order to get a Bell state 1/sqrt(2)(|00&gt;+|11)</span>
+Psi_0 <span style="color: #666666">=</span> CNOT01 <span style="color: #666666">@</span> Psi_0
+B <span style="color: #666666">=</span> <span style="color: #666666">1.0</span>  <span style="color: #408080; font-style: italic"># Strength of the magnetic field (in arbitrary units)</span>
+omega <span style="color: #666666">=</span> B  <span style="color: #408080; font-style: italic"># Frequency associated with the magnetic field</span>
+<span style="color: #408080; font-style: italic"># Constructing the Hamiltonian H = -omega/2 * (Z * I + I * Z)</span>
+H_z_I <span style="color: #666666">=</span> <span style="color: #666666">-</span>omega <span style="color: #666666">/</span> <span style="color: #666666">2</span> <span style="color: #666666">*</span> np<span style="color: #666666">.</span>kron(Z, Id)  <span style="color: #408080; font-style: italic"># Z * I</span>
+I_H_z <span style="color: #666666">=</span> <span style="color: #666666">-</span>omega <span style="color: #666666">/</span> <span style="color: #666666">2</span> <span style="color: #666666">*</span> np<span style="color: #666666">.</span>kron(Id, Z)    <span style="color: #408080; font-style: italic"># I * Z</span>
+<span style="color: #408080; font-style: italic"># Total Hamiltonian, try a more complicated one, this one is very simple</span>
+H <span style="color: #666666">=</span> H_z_I <span style="color: #666666">+</span> I_H_z   
+<span style="color: #408080; font-style: italic"># Lists to store expectation values</span>
+expect_00, expect_11 <span style="color: #666666">=</span> [], []
+<span style="color: #008000; font-weight: bold">for</span> t <span style="color: #AA22FF; font-weight: bold">in</span> times:
+   <span style="color: #408080; font-style: italic"># Calculate time evolution operator</span>
+   U <span style="color: #666666">=</span> expm(<span style="color: #666666">-1</span>j <span style="color: #666666">*</span> H <span style="color: #666666">*</span> t)
+   <span style="color: #408080; font-style: italic"># Evolve the initial state (if you have a time-dependent H, remember to integrate or Trotterize)</span>
+   Psi_t <span style="color: #666666">=</span> U <span style="color: #666666">@</span> Psi_0
+   <span style="color: #408080; font-style: italic"># Calculate probabilities of measuring specific states: P(|00&gt;) and P(|11&gt;)</span>
+   <span style="color: #408080; font-style: italic"># Calculate expectation values (boring case here)</span>
+   expect_00<span style="color: #666666">.</span>append(<span style="color: #008000">abs</span>(np<span style="color: #666666">.</span>dot(basis_00<span style="color: #666666">.</span>conj(), Psi_t))<span style="color: #666666">**2</span>)
+   expect_11<span style="color: #666666">.</span>append(<span style="color: #008000">abs</span>(np<span style="color: #666666">.</span>dot(basis_11<span style="color: #666666">.</span>conj(), Psi_t))<span style="color: #666666">**2</span>)
+
+<span style="color: #408080; font-style: italic"># Plotting results using matplotlib</span>
+plt<span style="color: #666666">.</span>figure(figsize<span style="color: #666666">=</span>(<span style="color: #666666">10</span>, <span style="color: #666666">6</span>))
+plt<span style="color: #666666">.</span>plot(times, expect_00, label<span style="color: #666666">=</span><span style="color: #BA2121">&#39;Probability |00&gt;&#39;</span>)
+plt<span style="color: #666666">.</span>plot(times, expect_11, label<span style="color: #666666">=</span><span style="color: #BA2121">&#39;Probability |11&gt;&#39;</span>)
+plt<span style="color: #666666">.</span>xlabel(<span style="color: #BA2121">&#39;Time&#39;</span>)
+plt<span style="color: #666666">.</span>ylabel(<span style="color: #BA2121">&#39;Probability&#39;</span>)
+plt<span style="color: #666666">.</span>title(<span style="color: #BA2121">&#39;Quantum Sensing Simulation&#39;</span>)
+plt<span style="color: #666666">.</span>legend()
+plt<span style="color: #666666">.</span>show()
+</pre>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="output_wrapper">
+    <div class="output">
+      <div class="output_area">
+        <div class="output_subarea output_stream output_stdout output_text">          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="analysis">Analysis </h2>
+
+<p>The result here is pretty boring, we just get \( 0.5 \), as expected. The field acts only in the \( z \)-direction and is a constant. The probabilities are thus left unchanged.
+Feel free to change the Hamiltonian. Here's a list of suggestion:
+</p>
+<ol>
+<li> More realistic Hamiltonian (keep in mind that if you make it time-dependent, you need to integrate over time or Trotterize)</li>
+<li> Change the measurements to say making a measurement on only one of the qubits</li>
+<li> More realistic readout functions</li>
+<li> Study different entangled states</li>
+<li> Study the Fisher entropy and much more</li>
+</ol>
+<p>Several of these additions will be added. </p>
 <!-- ------------------- end of main content --------------- -->
 <center style="font-size:80%">
 <!-- copyright --> &copy; 1999-2025, Morten Hjorth-Jensen. Released under CC Attribution-NonCommercial 4.0 license

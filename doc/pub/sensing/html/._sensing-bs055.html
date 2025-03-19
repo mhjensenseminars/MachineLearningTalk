@@ -254,7 +254,7 @@ MathJax.Hub.Config({
      <!-- navigation toc: --> <li><a href="._sensing-bs052.html#code-best-seen-in-jupyter-notebook" style="font-size: 80%;">Code, best seen in jupyter-notebook</a></li>
      <!-- navigation toc: --> <li><a href="._sensing-bs053.html#role-of-entanglement" style="font-size: 80%;">Role of entanglement</a></li>
      <!-- navigation toc: --> <li><a href="._sensing-bs054.html#two-qubit-program-example-best-seen-using-the-jupyter-notebook" style="font-size: 80%;">Two-qubit program example (best seen using the jupyter-notebook)</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs055.html#analysis" style="font-size: 80%;">Analysis</a></li>
+     <!-- navigation toc: --> <li><a href="#analysis" style="font-size: 80%;">Analysis</a></li>
 
         </ul>
       </li>
@@ -264,53 +264,36 @@ MathJax.Hub.Config({
 </div> <!-- end of navigation bar -->
 <div class="container">
 <p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p> <!-- add vertical space -->
-<a name="part0010"></a>
+<a name="part0055"></a>
 <!-- !split -->
-<h2 id="interaction-part" class="anchor">Interaction part </h2>
+<h2 id="analysis" class="anchor">Analysis </h2>
 
-<p>We will now label  the interaction matrix elements, assuming that they have an explicit time dependence.
-We define
+<p>The result here is pretty boring, we just get \( 0.5 \), as expected. The field acts only in the \( z \)-direction and is a constant. The probabilities are thus left unchanged.
+Feel free to change the Hamiltonian. Here's a list of suggestion:
 </p>
-$$
-\begin{align*}
-V_{11} & = V_z(t)\\
-V_{22} & = -V_z(t)\\
-V_{12} & = V_x(t)-\imath V_y(t).
-\end{align*}
-$$
-
-<p>In the numerical example below we let \( V_y(t)=0 \), \( V_z(t) = tV_z \)
-and \( V_x(t) = tV_x \) with \( V_z \) and \( V_x \) being real-valued constants to
-be determined. In the same numerical example we let \( t\in [0,1] \).
-</p>
-
+<ol>
+<li> More realistic Hamiltonian (keep in mind that if you make it time-dependent, you need to integrate over time or Trotterize)</li>
+<li> Change the measurements to say making a measurement on only one of the qubits</li>
+<li> More realistic readout functions</li>
+<li> Study different entangled states</li>
+<li> Study the Fisher entropy and much more</li>
+</ol>
+<p>Several of these additions will be added. </p>
 <p>
 <!-- navigation buttons at the bottom of the page -->
 <ul class="pagination">
-<li><a href="._sensing-bs009.html">&laquo;</a></li>
+<li><a href="._sensing-bs054.html">&laquo;</a></li>
   <li><a href="._sensing-bs000.html">1</a></li>
   <li><a href="">...</a></li>
-  <li><a href="._sensing-bs002.html">3</a></li>
-  <li><a href="._sensing-bs003.html">4</a></li>
-  <li><a href="._sensing-bs004.html">5</a></li>
-  <li><a href="._sensing-bs005.html">6</a></li>
-  <li><a href="._sensing-bs006.html">7</a></li>
-  <li><a href="._sensing-bs007.html">8</a></li>
-  <li><a href="._sensing-bs008.html">9</a></li>
-  <li><a href="._sensing-bs009.html">10</a></li>
-  <li class="active"><a href="._sensing-bs010.html">11</a></li>
-  <li><a href="._sensing-bs011.html">12</a></li>
-  <li><a href="._sensing-bs012.html">13</a></li>
-  <li><a href="._sensing-bs013.html">14</a></li>
-  <li><a href="._sensing-bs014.html">15</a></li>
-  <li><a href="._sensing-bs015.html">16</a></li>
-  <li><a href="._sensing-bs016.html">17</a></li>
-  <li><a href="._sensing-bs017.html">18</a></li>
-  <li><a href="._sensing-bs018.html">19</a></li>
-  <li><a href="._sensing-bs019.html">20</a></li>
-  <li><a href="">...</a></li>
-  <li><a href="._sensing-bs055.html">56</a></li>
-  <li><a href="._sensing-bs011.html">&raquo;</a></li>
+  <li><a href="._sensing-bs047.html">48</a></li>
+  <li><a href="._sensing-bs048.html">49</a></li>
+  <li><a href="._sensing-bs049.html">50</a></li>
+  <li><a href="._sensing-bs050.html">51</a></li>
+  <li><a href="._sensing-bs051.html">52</a></li>
+  <li><a href="._sensing-bs052.html">53</a></li>
+  <li><a href="._sensing-bs053.html">54</a></li>
+  <li><a href="._sensing-bs054.html">55</a></li>
+  <li class="active"><a href="._sensing-bs055.html">56</a></li>
 </ul>
 <!-- ------------------- end of main content --------------- -->
 </div>  <!-- end container -->
