@@ -70,7 +70,7 @@ The Pauli matrices (and gate operations following therefrom) are defined as
 !et
 
 !split
-===== Pauli-$\bm{X}$ gate =====
+===== Pauli gates =====
 
 The Pauli-$\bm{X}$ gate is also known as the _NOT_ gate, which flips the state of the qubit.
 !bt
