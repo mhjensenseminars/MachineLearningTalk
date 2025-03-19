@@ -315,7 +315,7 @@ expect_00, expect_11 <span style="color: #666666">=</span> [], []
 <span style="color: #008000; font-weight: bold">for</span> t <span style="color: #AA22FF; font-weight: bold">in</span> times:
    <span style="color: #408080; font-style: italic"># Calculate time evolution operator</span>
    U <span style="color: #666666">=</span> expm(<span style="color: #666666">-1</span>j <span style="color: #666666">*</span> H <span style="color: #666666">*</span> t)
-   <span style="color: #408080; font-style: italic"># Evolve the initial state (if you have a time-dependent H, remember to integrate or Trotterize)</span>
+   <span style="color: #408080; font-style: italic"># Evolve the initial state (if you have a time-dependent H, remember to integrate)</span>
    Psi_t <span style="color: #666666">=</span> U <span style="color: #666666">@</span> Psi_0
    <span style="color: #408080; font-style: italic"># Calculate probabilities of measuring specific states: P(|00&gt;) and P(|11&gt;)</span>
    <span style="color: #408080; font-style: italic"># Calculate expectation values (boring case here)</span>

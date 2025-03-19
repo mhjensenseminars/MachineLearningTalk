@@ -14,7 +14,7 @@ examples are tailored to simple one- and two-qubit systems. The
 material contains (as of now, March 14, 2025))
 o One-qubit system with basic elements of sensing
 o Linking analytically solvable case with many-qubit entanglement and sensing
-o Simple two-particle (or two-qubit) system to demonstrate entanglement and its links with sensing (to come)
+o Simple two-particle (or two-qubit) system to demonstrate entanglement and its links with sensing
 o Numerical codes for simple time-dependent interactions for one and two qubits
 
 !split
@@ -1058,9 +1058,9 @@ The code below ) performs then
 \]
 !et
 
-Thereafter we implement an explicit measurement. Note that this code
+Thereafter we implement an explicit measurement. Note that the code here is rather simple and 
 does not compute these expectation values as one would when
-implementing a quantum sensing approach. The readout is as simnple as possible. Further improvements will include measurements on only one qubit and with more realistic _readout_ functions.
+implementing an experimental quantum sensing approach. Further improvements will include measurements on only one qubit and with more realistic _readout_ functions.
 
 
 
@@ -1113,7 +1113,7 @@ expect_00, expect_11 = [], []
 for t in times:
    # Calculate time evolution operator
    U = expm(-1j * H * t)
-   # Evolve the initial state (if you have a time-dependent H, remember to integrate or Trotterize)
+   # Evolve the initial state (if you have a time-dependent H, remember to integrate)
    Psi_t = U @ Psi_0
    # Calculate probabilities of measuring specific states: P(|00>) and P(|11>)
    # Calculate expectation values (boring case here)
@@ -1137,7 +1137,7 @@ plt.show()
 
 The result here is pretty boring, we just get $0.5$, as expected. The field acts only in the $z$-direction and is a constant. The probabilities are thus left unchanged.
 Feel free to change the Hamiltonian. Here's a list of suggestion:
-o More realistic Hamiltonian (keep in mind that if you make it time-dependent, you need to integrate over time or Trotterize)
+o More realistic Hamiltonian (keep in mind that if you make it time-dependent, you need to integrate over time. Different approximation exist.
 o Change the measurements to say making a measurement on only one of the qubits
 o More realistic readout functions and series of measurements as experiments
 o Study different entangled states

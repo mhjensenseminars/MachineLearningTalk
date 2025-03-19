@@ -203,7 +203,7 @@ material contains (as of now, March 14, 2025))
 <ol>
 <p><li> One-qubit system with basic elements of sensing</li>
 <p><li> Linking analytically solvable case with many-qubit entanglement and sensing</li>
-<p><li> Simple two-particle (or two-qubit) system to demonstrate entanglement and its links with sensing (to come)</li>
+<p><li> Simple two-particle (or two-qubit) system to demonstrate entanglement and its links with sensing</li>
 <p><li> Numerical codes for simple time-dependent interactions for one and two qubits</li>
 </ol>
 </section>
@@ -1444,9 +1444,9 @@ $$
 $$
 <p>&nbsp;<br>
 
-<p>Thereafter we implement an explicit measurement. Note that this code
+<p>Thereafter we implement an explicit measurement. Note that the code here is rather simple and 
 does not compute these expectation values as one would when
-implementing a quantum sensing approach. The readout is as simnple as possible. Further improvements will include measurements on only one qubit and with more realistic <b>readout</b> functions.
+implementing an experimental quantum sensing approach. Further improvements will include measurements on only one qubit and with more realistic <b>readout</b> functions.
 </p>
 </section>
 
@@ -1505,7 +1505,7 @@ expect_00, expect_11 = [], []
 <span style="color: #8B008B; font-weight: bold">for</span> t <span style="color: #8B008B">in</span> times:
    <span style="color: #228B22"># Calculate time evolution operator</span>
    U = expm(-<span style="color: #B452CD">1</span>j * H * t)
-   <span style="color: #228B22"># Evolve the initial state (if you have a time-dependent H, remember to integrate or Trotterize)</span>
+   <span style="color: #228B22"># Evolve the initial state (if you have a time-dependent H, remember to integrate)</span>
    Psi_t = U @ Psi_0
    <span style="color: #228B22"># Calculate probabilities of measuring specific states: P(|00&gt;) and P(|11&gt;)</span>
    <span style="color: #228B22"># Calculate expectation values (boring case here)</span>
@@ -1544,7 +1544,7 @@ plt.show()
 Feel free to change the Hamiltonian. Here's a list of suggestion:
 </p>
 <ol>
-<p><li> More realistic Hamiltonian (keep in mind that if you make it time-dependent, you need to integrate over time or Trotterize)</li>
+<p><li> More realistic Hamiltonian (keep in mind that if you make it time-dependent, you need to integrate over time. Different approximation exist.</li>
 <p><li> Change the measurements to say making a measurement on only one of the qubits</li>
 <p><li> More realistic readout functions and series of measurements as experiments</li>
 <p><li> Study different entangled states</li>
