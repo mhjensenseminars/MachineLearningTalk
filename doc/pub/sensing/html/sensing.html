@@ -245,10 +245,6 @@ div.toc p,a {
                'eigenstates-of-non-interacting-hamiltonian'),
               ('Interaction part', 2, None, 'interaction-part'),
               ('Entangled state', 2, None, 'entangled-state'),
-              ("Sensing protocol and Gunnar's part",
-               2,
-               None,
-               'sensing-protocol-and-gunnar-s-part'),
               ('Intermezzo (digression) on density matrices and entropy',
                2,
                None,
@@ -1231,15 +1227,6 @@ $$
 
 
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
-<h2 id="sensing-protocol-and-gunnar-s-part">Sensing protocol and Gunnar's part </h2>
-
-<br/><br/>
-<center>
-<p><img src="figures/sensingLiu.png" width="900" align="bottom"></p>
-</center>
-<br/><br/>
-
-<!-- !split --><br><br><br><br><br><br><br><br><br><br>
 <h2 id="intermezzo-digression-on-density-matrices-and-entropy">Intermezzo (digression) on density matrices and entropy </h2>
 
 <p>The four eigenstates of the above Hamiltonian matrix can in turn be used to
@@ -1394,9 +1381,9 @@ plt<span style="color: #666666">.</span>show
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 <h2 id="role-of-entanglement">Role of entanglement </h2>
 
-<p>As seen from this example,  our initial state (the lowest lying one) is an entangled state</p>
+<p>In the example below, our initial state is an entangled Bell state</p>
 $$
-\vert \psi_{\mathrm{Initial}}\rangle =\alpha \vert 01\rangle +\beta \vert 10\rangle.
+\vert \psi_{\mathrm{Initial}}\rangle =\frac{1}{\sqrt{2}}\left) \vert 00\rangle +\vert 11\rangle\right).
 $$
 
 <p>We can then act with a given probe on this state and study its
@@ -1405,7 +1392,7 @@ time-evolution, in the same way as we studied the one-qubit system.
 
 <p>The code below ) performs then</p>
 $$
-\vert \psi(t)\rangle = \boldsymbol{U}_{\mathcal{H}}(\alpha \vert 01\rangle +\beta \vert 10\rangle). 
+\vert \psi(t)\rangle = \boldsymbol{U}_{\mathcal{H}}\frac{1}{\sqrt{2}}\left) \vert 00\rangle +\vert 11\rangle\right).
 $$
 
 <p>Thereafter we implement an explicit measurement. Note that this code
@@ -1453,9 +1440,9 @@ basis_11 <span style="color: #666666">=</span> np<span style="color: #666666">.<
 psi_1 <span style="color: #666666">=</span> Had <span style="color: #666666">@</span> psi_1
 <span style="color: #408080; font-style: italic"># Initial two-qubit state</span>
 Psi_0 <span style="color: #666666">=</span> np<span style="color: #666666">.</span>kron(psi_1,psi_2)
-<span style="color: #408080; font-style: italic"># Define parameters</span>
 <span style="color: #408080; font-style: italic"># Then we act on this state in order to get a Bell state 1/sqrt(2)(|00&gt;+|11)</span>
 Psi_0 <span style="color: #666666">=</span> CNOT01 <span style="color: #666666">@</span> Psi_0
+<span style="color: #408080; font-style: italic"># Define parameters of Hamiltonian (Time-independent)</span>
 B <span style="color: #666666">=</span> <span style="color: #666666">1.0</span>  <span style="color: #408080; font-style: italic"># Strength of the magnetic field (in arbitrary units)</span>
 omega <span style="color: #666666">=</span> B  <span style="color: #408080; font-style: italic"># Frequency associated with the magnetic field</span>
 <span style="color: #408080; font-style: italic"># Constructing the Hamiltonian H = -omega/2 * (Z * I + I * Z)</span>

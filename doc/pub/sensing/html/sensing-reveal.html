@@ -1262,16 +1262,6 @@ $$
 </section>
 
 <section>
-<h2 id="sensing-protocol-and-gunnar-s-part">Sensing protocol and Gunnar's part </h2>
-
-<br/><br/>
-<center>
-<p><img src="figures/sensingLiu.png" width="900" align="bottom"></p>
-</center>
-<br/><br/>
-</section>
-
-<section>
 <h2 id="intermezzo-digression-on-density-matrices-and-entropy">Intermezzo (digression) on density matrices and entropy </h2>
 
 <p>The four eigenstates of the above Hamiltonian matrix can in turn be used to
@@ -1436,10 +1426,10 @@ plt.show
 <section>
 <h2 id="role-of-entanglement">Role of entanglement </h2>
 
-<p>As seen from this example,  our initial state (the lowest lying one) is an entangled state</p>
+<p>In the example below, our initial state is an entangled Bell state</p>
 <p>&nbsp;<br>
 $$
-\vert \psi_{\mathrm{Initial}}\rangle =\alpha \vert 01\rangle +\beta \vert 10\rangle.
+\vert \psi_{\mathrm{Initial}}\rangle =\frac{1}{\sqrt{2}}\left) \vert 00\rangle +\vert 11\rangle\right).
 $$
 <p>&nbsp;<br>
 
@@ -1450,7 +1440,7 @@ time-evolution, in the same way as we studied the one-qubit system.
 <p>The code below ) performs then</p>
 <p>&nbsp;<br>
 $$
-\vert \psi(t)\rangle = \boldsymbol{U}_{\mathcal{H}}(\alpha \vert 01\rangle +\beta \vert 10\rangle). 
+\vert \psi(t)\rangle = \boldsymbol{U}_{\mathcal{H}}\frac{1}{\sqrt{2}}\left) \vert 00\rangle +\vert 11\rangle\right).
 $$
 <p>&nbsp;<br>
 
@@ -1500,9 +1490,9 @@ basis_11 = np.array([<span style="color: #B452CD">0</span>, <span style="color: 
 psi_1 = Had @ psi_1
 <span style="color: #228B22"># Initial two-qubit state</span>
 Psi_0 = np.kron(psi_1,psi_2)
-<span style="color: #228B22"># Define parameters</span>
 <span style="color: #228B22"># Then we act on this state in order to get a Bell state 1/sqrt(2)(|00&gt;+|11)</span>
 Psi_0 = CNOT01 @ Psi_0
+<span style="color: #228B22"># Define parameters of Hamiltonian (Time-independent)</span>
 B = <span style="color: #B452CD">1.0</span>  <span style="color: #228B22"># Strength of the magnetic field (in arbitrary units)</span>
 omega = B  <span style="color: #228B22"># Frequency associated with the magnetic field</span>
 <span style="color: #228B22"># Constructing the Hamiltonian H = -omega/2 * (Z * I + I * Z)</span>

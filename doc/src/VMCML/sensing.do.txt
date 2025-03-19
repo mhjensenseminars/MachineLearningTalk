@@ -904,13 +904,6 @@ The code below (to be added) performs then
 !et
 
 !split
-===== Sensing protocol and Gunnar's part =====
-
-FIGURE: [figures/sensingLiu.png, width=900 frac=1.0]
-
-
-
-!split
 ===== Intermezzo (digression) on density matrices and entropy =====
 
 The four eigenstates of the above Hamiltonian matrix can in turn be used to
@@ -1048,10 +1041,10 @@ plt.show
 !split
 ===== Role of entanglement =====
 
-As seen from this example,  our initial state (the lowest lying one) is an entangled state
+In the example below, our initial state is an entangled Bell state
 !bt
 \[
-\vert \psi_{\mathrm{Initial}}\rangle =\alpha \vert 01\rangle +\beta \vert 10\rangle.
+\vert \psi_{\mathrm{Initial}}\rangle =\frac{1}{\sqrt{2}}\left) \vert 00\rangle +\vert 11\rangle\right).
 \]
 !et
 
@@ -1061,7 +1054,7 @@ time-evolution, in the same way as we studied the one-qubit system.
 The code below ) performs then
 !bt
 \[
-\vert \psi(t)\rangle = \bm{U}_{\mathcal{H}}(\alpha \vert 01\rangle +\beta \vert 10\rangle). 
+\vert \psi(t)\rangle = \bm{U}_{\mathcal{H}}\frac{1}{\sqrt{2}}\left) \vert 00\rangle +\vert 11\rangle\right).
 \]
 !et
 
@@ -1105,9 +1098,9 @@ basis_11 = np.array([0, 0, 0, 1], dtype=complex)
 psi_1 = Had @ psi_1
 # Initial two-qubit state
 Psi_0 = np.kron(psi_1,psi_2)
-# Define parameters
 # Then we act on this state in order to get a Bell state 1/sqrt(2)(|00>+|11)
 Psi_0 = CNOT01 @ Psi_0
+# Define parameters of Hamiltonian (Time-independent)
 B = 1.0  # Strength of the magnetic field (in arbitrary units)
 omega = B  # Frequency associated with the magnetic field
 # Constructing the Hamiltonian H = -omega/2 * (Z * I + I * Z)
