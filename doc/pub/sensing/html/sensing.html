@@ -1383,7 +1383,7 @@ plt<span style="color: #666666">.</span>show
 
 <p>In the example below, our initial state is an entangled Bell state</p>
 $$
-\vert \psi_{\mathrm{Initial}}\rangle =\frac{1}{\sqrt{2}}\left) \vert 00\rangle +\vert 11\rangle\right).
+\vert \psi_{\mathrm{Initial}}\rangle =\frac{1}{\sqrt{2}}\left( \vert 00\rangle +\vert 11\rangle\right).
 $$
 
 <p>We can then act with a given probe on this state and study its
@@ -1392,7 +1392,7 @@ time-evolution, in the same way as we studied the one-qubit system.
 
 <p>The code below ) performs then</p>
 $$
-\vert \psi(t)\rangle = \boldsymbol{U}_{\mathcal{H}}\frac{1}{\sqrt{2}}\left) \vert 00\rangle +\vert 11\rangle\right).
+\vert \psi(t)\rangle = \boldsymbol{U}_{\mathcal{H}}\frac{1}{\sqrt{2}}\left( \vert 00\rangle +\vert 11\rangle\right).
 $$
 
 <p>Thereafter we implement an explicit measurement. Note that this code
@@ -1496,8 +1496,9 @@ Feel free to change the Hamiltonian. Here's a list of suggestion:
 <ol>
 <li> More realistic Hamiltonian (keep in mind that if you make it time-dependent, you need to integrate over time or Trotterize)</li>
 <li> Change the measurements to say making a measurement on only one of the qubits</li>
-<li> More realistic readout functions</li>
+<li> More realistic readout functions and series of measurements as experiments</li>
 <li> Study different entangled states</li>
+<li> Find the field which acts on the system! How wuld you do that?</li>
 <li> Study the Fisher entropy and much more</li>
 </ol>
 <p>Several of these additions will be added. </p>
