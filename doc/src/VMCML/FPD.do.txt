@@ -44,7 +44,7 @@ FIGURE: [figures/mbpfig2.png, width=900 frac=1.0]
 
 !bblock Neural networks compactly represent complex high-dimensional functions
 Most quantum states of interest have distinctive features and intrinsic structures
-FIGURE: [figures/mbpfig3.png, width=900 frac=1.0]
+%FIGURE: [figures/mbpfig3.png, width=900 frac=1.0]
 !eblock
 
 !split
