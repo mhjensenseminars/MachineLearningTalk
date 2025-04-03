@@ -1,26 +1,6 @@
-\frametitle{Observations (or conclusions if you prefer)}
-
+\frametitle{Class of functions we can approximate}
 
 \begin{block}{}
-\begin{itemize}
-\item How do we develop insights, competences, knowledge in statistical learning that can advance a given field?
-\begin{itemize}
-
-  \item For example: Can we use ML to find out which correlations are relevant and thereby diminish the dimensionality problem in standard many-body  theories?
-
-  \item Can we use AI/ML in detector analysis, accelerator design, analysis of experimental data and more?
-
-  \item Can we use AL/ML to carry out reliable extrapolations by using current experimental knowledge and current theoretical models?
-
-\end{itemize}
-
-\noindent
-\item The community needs to invest in relevant educational efforts and training of scientists with knowledge in AI/ML. These are great challenges to the CS and DS communities
-
-\item Quantum computing and quantum machine learning not discussed here
-
-\item Most likely tons of things I have forgotten
-\end{itemize}
-
-\noindent
+The class of functions that can be approximated are the continuous ones.
+If the function $F(\bm{x})$ is discontinuous, it won't in general be possible to approximate it. However, an NN may still give an approximation even if we fail in some points.
 \end{block}

@@ -93,32 +93,67 @@
 \headcommand {\beamer@framepages {39}{39}}
 \headcommand {\slideentry {5}{0}{31}{40/40}{}{0}}
 \headcommand {\beamer@framepages {40}{40}}
-\headcommand {\beamer@sectionpages {10}{40}}
-\headcommand {\beamer@subsectionpages {10}{40}}
-\headcommand {\sectionentry {6}{Applications of QML}{41}{Applications of QML}{0}}
-\headcommand {\slideentry {6}{0}{1}{41/41}{}{0}}
+\headcommand {\slideentry {5}{0}{32}{41/41}{}{0}}
 \headcommand {\beamer@framepages {41}{41}}
-\headcommand {\slideentry {6}{0}{2}{42/42}{}{0}}
+\headcommand {\slideentry {5}{0}{33}{42/42}{}{0}}
 \headcommand {\beamer@framepages {42}{42}}
-\headcommand {\gdef \insertmainframenumber {42}}
-\headcommand {\partentry {\translate {Appendix}}{1}}
-\headcommand {\beamer@partpages {1}{42}}
-\headcommand {\beamer@sectionpages {41}{42}}
-\headcommand {\beamer@subsectionpages {41}{42}}
-\headcommand {\beamer@appendixpages {43}}
-\headcommand {\slideentry {6}{0}{3}{43/45}{}{1}}
-\headcommand {\beamer@framepages {43}{45}}
-\headcommand {\slideentry {6}{0}{4}{46/47}{}{1}}
-\headcommand {\beamer@framepages {46}{47}}
-\headcommand {\slideentry {6}{0}{5}{48/49}{}{1}}
-\headcommand {\beamer@framepages {48}{49}}
-\headcommand {\beamer@sectionpages {43}{49}}
-\headcommand {\beamer@subsectionpages {43}{49}}
-\headcommand {\sectionentry {7}{Future Perspectives}{50}{Future Perspectives}{1}}
-\headcommand {\slideentry {7}{0}{1}{50/50}{}{1}}
+\headcommand {\slideentry {5}{0}{34}{43/43}{}{0}}
+\headcommand {\beamer@framepages {43}{43}}
+\headcommand {\slideentry {5}{0}{35}{44/44}{}{0}}
+\headcommand {\beamer@framepages {44}{44}}
+\headcommand {\slideentry {5}{0}{36}{45/45}{}{0}}
+\headcommand {\beamer@framepages {45}{45}}
+\headcommand {\slideentry {5}{0}{37}{46/46}{}{0}}
+\headcommand {\beamer@framepages {46}{46}}
+\headcommand {\slideentry {5}{0}{38}{47/47}{}{0}}
+\headcommand {\beamer@framepages {47}{47}}
+\headcommand {\beamer@sectionpages {10}{47}}
+\headcommand {\beamer@subsectionpages {10}{47}}
+\headcommand {\sectionentry {6}{Experiment and theory}{48}{Experiment and theory}{0}}
+\headcommand {\slideentry {6}{0}{1}{48/48}{}{0}}
+\headcommand {\beamer@framepages {48}{48}}
+\headcommand {\slideentry {6}{0}{2}{49/49}{}{0}}
+\headcommand {\beamer@framepages {49}{49}}
+\headcommand {\slideentry {6}{0}{3}{50/50}{}{0}}
 \headcommand {\beamer@framepages {50}{50}}
-\headcommand {\beamer@partpages {43}{50}}
-\headcommand {\beamer@subsectionpages {50}{50}}
-\headcommand {\beamer@sectionpages {50}{50}}
-\headcommand {\beamer@documentpages {50}}
-\headcommand {\gdef \inserttotalframenumber {46}}
+\headcommand {\slideentry {6}{0}{4}{51/51}{}{0}}
+\headcommand {\beamer@framepages {51}{51}}
+\headcommand {\beamer@sectionpages {48}{51}}
+\headcommand {\beamer@subsectionpages {48}{51}}
+\headcommand {\sectionentry {7}{Applications of QML}{52}{Applications of QML}{0}}
+\headcommand {\slideentry {7}{0}{1}{52/52}{}{0}}
+\headcommand {\beamer@framepages {52}{52}}
+\headcommand {\slideentry {7}{0}{2}{53/53}{}{0}}
+\headcommand {\beamer@framepages {53}{53}}
+\headcommand {\slideentry {7}{0}{3}{54/54}{}{0}}
+\headcommand {\beamer@framepages {54}{54}}
+\headcommand {\gdef \insertmainframenumber {54}}
+\headcommand {\partentry {\translate {Appendix}}{1}}
+\headcommand {\beamer@partpages {1}{54}}
+\headcommand {\beamer@sectionpages {52}{54}}
+\headcommand {\beamer@subsectionpages {52}{54}}
+\headcommand {\beamer@appendixpages {55}}
+\headcommand {\slideentry {7}{0}{4}{55/57}{}{1}}
+\headcommand {\beamer@framepages {55}{57}}
+\headcommand {\slideentry {7}{0}{5}{58/59}{}{1}}
+\headcommand {\beamer@framepages {58}{59}}
+\headcommand {\slideentry {7}{0}{6}{60/61}{}{1}}
+\headcommand {\beamer@framepages {60}{61}}
+\headcommand {\beamer@sectionpages {55}{61}}
+\headcommand {\beamer@subsectionpages {55}{61}}
+\headcommand {\sectionentry {8}{Future Perspectives}{62}{Future Perspectives}{1}}
+\headcommand {\slideentry {8}{0}{1}{62/62}{}{1}}
+\headcommand {\beamer@framepages {62}{62}}
+\headcommand {\slideentry {8}{0}{2}{63/63}{}{1}}
+\headcommand {\beamer@framepages {63}{63}}
+\headcommand {\slideentry {8}{0}{3}{64/64}{}{1}}
+\headcommand {\beamer@framepages {64}{64}}
+\headcommand {\slideentry {8}{0}{4}{65/65}{}{1}}
+\headcommand {\beamer@framepages {65}{65}}
+\headcommand {\slideentry {8}{0}{5}{66/66}{}{1}}
+\headcommand {\beamer@framepages {66}{66}}
+\headcommand {\beamer@partpages {55}{66}}
+\headcommand {\beamer@subsectionpages {62}{66}}
+\headcommand {\beamer@sectionpages {62}{66}}
+\headcommand {\beamer@documentpages {66}}
+\headcommand {\gdef \inserttotalframenumber {62}}

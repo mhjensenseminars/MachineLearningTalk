@@ -3,5 +3,6 @@
 \beamer@sectionintoc {3}{Quantum Machine Learning (QML)}{8}{0}{3}
 \beamer@sectionintoc {4}{Quantum Speedups}{9}{0}{4}
 \beamer@sectionintoc {5}{Challenges in Quantum Machine Learning}{10}{0}{5}
-\beamer@sectionintoc {6}{Applications of QML}{41}{0}{6}
-\beamer@sectionintoc {7}{Future Perspectives}{50}{1}{7}
+\beamer@sectionintoc {6}{Experiment and theory}{48}{0}{6}
+\beamer@sectionintoc {7}{Applications of QML}{52}{0}{7}
+\beamer@sectionintoc {8}{Future Perspectives}{62}{1}{8}

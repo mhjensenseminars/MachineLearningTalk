@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.3.29)  3 APR 2025 08:31
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.3.29)  3 APR 2025 10:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1016,7 +1016,7 @@ Package hyperref Warning: Option `pdfauthor' has already been used,
 
 pdfTeX warning: pdflatex (file ./figures/figureintro.pdf): PDF inclusion: found
  PDF version <1.7>, but at most version <1.5> allowed
-<figures/figureintro.pdf, id=191, 1927.2pt x 1084.05pt>
+<figures/figureintro.pdf, id=195, 1927.2pt x 1084.05pt>
 File: figures/figureintro.pdf Graphic file (type pdf)
 <use figures/figureintro.pdf>
 Package pdftex.def Info: figures/figureintro.pdf  used on input line 5.
@@ -1086,7 +1086,7 @@ Overfull \hbox (209.38861pt too wide) has occurred while \output is active
 \openout4 = `motivation.vrb'.
 
  (./motivation.vrb
-<figures/aitalk2.png, id=426, 1552.80125pt x 811.03pt>
+<figures/aitalk2.png, id=432, 1552.80125pt x 811.03pt>
 File: figures/aitalk2.png Graphic file (type png)
 <use figures/aitalk2.png>
 Package pdftex.def Info: figures/aitalk2.png  used on input line 5.
@@ -1098,7 +1098,7 @@ Package pdftex.def Info: figures/aitalk2.png  used on input line 5.
 
 
 (./motivation.vrb
-<figures/aitalk1.png, id=456, 945.5325pt x 801.99625pt>
+<figures/aitalk1.png, id=462, 945.5325pt x 801.99625pt>
 File: figures/aitalk1.png Graphic file (type png)
 <use figures/aitalk1.png>
 Package pdftex.def Info: figures/aitalk1.png  used on input line 4.
@@ -1124,7 +1124,7 @@ Overfull \vbox (8.12364pt too high) detected at line 213
 \openout4 = `motivation.vrb'.
 
  (./motivation.vrb
-<figures/standarddeeplearning.png, id=558, 1015.795pt x 441.65pt>
+<figures/standarddeeplearning.png, id=564, 1015.795pt x 441.65pt>
 File: figures/standarddeeplearning.png Graphic file (type png)
 <use figures/standarddeeplearning.png>
 Package pdftex.def Info: figures/standarddeeplearning.png  used on input line 6
@@ -1137,7 +1137,7 @@ Package pdftex.def Info: figures/standarddeeplearning.png  used on input line 6
 
 
 (./motivation.vrb
-<figures/generativelearning.png, id=589, 1025.8325pt x 453.695pt>
+<figures/generativelearning.png, id=595, 1025.8325pt x 453.695pt>
 File: figures/generativelearning.png Graphic file (type png)
 <use figures/generativelearning.png>
 Package pdftex.def Info: figures/generativelearning.png  used on input line 6.
@@ -1148,7 +1148,7 @@ Package pdftex.def Info: figures/generativelearning.png  used on input line 6.
 \openout4 = `motivation.vrb'.
 
  (./motivation.vrb
-<figures/generativemodels.png, id=621, 1039.885pt x 591.20876pt>
+<figures/generativemodels.png, id=627, 1039.885pt x 591.20876pt>
 File: figures/generativemodels.png Graphic file (type png)
 <use figures/generativemodels.png>
 Package pdftex.def Info: figures/generativemodels.png  used on input line 6.
@@ -1195,7 +1195,7 @@ Overfull \vbox (4.0094pt too high) detected at line 295
 \openout4 = `motivation.vrb'.
 
  (./motivation.vrb
-<figures/krenn2.png, id=860, 1354.05875pt x 703.62875pt>
+<figures/krenn2.png, id=866, 1354.05875pt x 703.62875pt>
 File: figures/krenn2.png Graphic file (type png)
 <use figures/krenn2.png>
 Package pdftex.def Info: figures/krenn2.png  used on input line 5.
@@ -1212,7 +1212,7 @@ Package pdftex.def Info: figures/krenn2.png  used on input line 5.
 \openout4 = `motivation.vrb'.
 
  (./motivation.vrb
-<figures/detectors.png, id=930, 664.4825pt x 622.325pt>
+<figures/detectors.png, id=936, 664.4825pt x 622.325pt>
 File: figures/detectors.png Graphic file (type png)
 <use figures/detectors.png>
 Package pdftex.def Info: figures/detectors.png  used on input line 6.
@@ -1238,7 +1238,7 @@ Overfull \vbox (111.98773pt too high) detected at line 434
 \openout4 = `motivation.vrb'.
 
  (./motivation.vrb
-<figures/examples_raw.png, id=1041, 867.24pt x 722.7pt>
+<figures/examples_raw.png, id=1047, 867.24pt x 722.7pt>
 File: figures/examples_raw.png Graphic file (type png)
 <use figures/examples_raw.png>
 Package pdftex.def Info: figures/examples_raw.png  used on input line 12.
@@ -1255,7 +1255,7 @@ Package pdftex.def Info: figures/examples_raw.png  used on input line 12.
 \openout4 = `motivation.vrb'.
 
  (./motivation.vrb
-<figures/nmatter.png, id=1111, 614.295pt x 405.515pt>
+<figures/nmatter.png, id=1117, 614.295pt x 405.515pt>
 File: figures/nmatter.png Graphic file (type png)
 <use figures/nmatter.png>
 Package pdftex.def Info: figures/nmatter.png  used on input line 3.
@@ -1266,7 +1266,7 @@ Package pdftex.def Info: figures/nmatter.png  used on input line 3.
 \openout4 = `motivation.vrb'.
 
  (./motivation.vrb
-<figures/mbpfig7.png, id=1145, 1371.1225pt x 581.17125pt>
+<figures/mbpfig7.png, id=1151, 1371.1225pt x 581.17125pt>
 File: figures/mbpfig7.png Graphic file (type png)
 <use figures/mbpfig7.png>
 Package pdftex.def Info: figures/mbpfig7.png  used on input line 3.
@@ -1278,13 +1278,13 @@ Package pdftex.def Info: figures/mbpfig7.png  used on input line 3.
 \openout4 = `motivation.vrb'.
 
  (./motivation.vrb
-<figures/elgasnew.png, id=1177, 678.535pt x 451.6875pt>
+<figures/elgasnew.png, id=1183, 678.535pt x 451.6875pt>
 File: figures/elgasnew.png Graphic file (type png)
 <use figures/elgasnew.png>
 Package pdftex.def Info: figures/elgasnew.png  used on input line 4.
-(pdftex.def)             Requested size: 308.06367pt x 205.07013pt.
+(pdftex.def)             Requested size: 273.83728pt x 182.28456pt.
 )
-Overfull \vbox (33.36292pt too high) detected at line 520
+Overfull \vbox (10.57735pt too high) detected at line 520
  []
 
 [34
@@ -1293,10 +1293,10 @@ Overfull \vbox (33.36292pt too high) detected at line 520
 \openout4 = `motivation.vrb'.
 
  (./motivation.vrb
-<figures/krenn1.png, id=1222, 1317.92375pt x 243.91125pt>
+<figures/krenn1.png, id=1228, 1317.92375pt x 243.91125pt>
 File: figures/krenn1.png Graphic file (type png)
 <use figures/krenn1.png>
-Package pdftex.def Info: figures/krenn1.png  used on input line 5.
+Package pdftex.def Info: figures/krenn1.png  used on input line 2.
 (pdftex.def)             Requested size: 359.4111pt x 66.51567pt.
 ) [35
 
@@ -1329,11 +1329,9 @@ Overfull \hbox (209.38861pt too wide) has occurred while \output is active
 [39
 
 ]
-Overfull \hbox (209.38861pt too wide) has occurred while \output is active
- [][]  \OT1/cmss/m/n/6 ([])  
- []
+\openout4 = `motivation.vrb'.
 
-[40
+ (./motivation.vrb) [40
 
 ]
 Overfull \hbox (209.38861pt too wide) has occurred while \output is active
@@ -1348,9 +1346,167 @@ Overfull \hbox (209.38861pt too wide) has occurred while \output is active
  (./motivation.vrb) [42
 
 ]
+<qcfigures/lab.jpeg, id=1480, 971.3088pt x 728.4816pt>
+File: qcfigures/lab.jpeg Graphic file (type jpg)
+<use qcfigures/lab.jpeg>
+Package pdftex.def Info: qcfigures/lab.jpeg  used on input line 685.
+(pdftex.def)             Requested size: 221.93199pt x 166.44678pt.
+
+Overfull \vbox (2.8614pt too high) detected at line 685
+ []
+
+
+Overfull \hbox (209.38861pt too wide) has occurred while \output is active
+ [][]  \OT1/cmss/m/n/6 ([])  
+ []
+
+[43
+
+ <./qcfigures/lab.jpeg>]
+<qcfigures/nordicquantumfig1.png, id=1511, 669.50125pt x 601.24625pt>
+File: qcfigures/nordicquantumfig1.png Graphic file (type png)
+<use qcfigures/nordicquantumfig1.png>
+Package pdftex.def Info: qcfigures/nordicquantumfig1.png  used on input line 71
+1.
+(pdftex.def)             Requested size: 170.7161pt x 153.31117pt.
+
+Overfull \hbox (28.45232pt too wide) in paragraph at lines 711--711
+ [] 
+ []
+
+
+Overfull \hbox (209.38861pt too wide) has occurred while \output is active
+ [][]  \OT1/cmss/m/n/6 ([])  
+ []
+
+[44
+
+ <./qcfigures/nordicquantumfig1.png>]
+<qcfigures/nordicquantumfig2.png, id=1542, 588.1975pt x 485.815pt>
+File: qcfigures/nordicquantumfig2.png Graphic file (type png)
+<use qcfigures/nordicquantumfig2.png>
+Package pdftex.def Info: qcfigures/nordicquantumfig2.png  used on input line 72
+8.
+(pdftex.def)             Requested size: 170.7161pt x 141.00134pt.
+
+Overfull \hbox (28.45232pt too wide) in paragraph at lines 728--728
+ [] 
+ []
+
+
+Overfull \hbox (209.38861pt too wide) has occurred while \output is active
+ [][]  \OT1/cmss/m/n/6 ([])  
+ []
+
+[45
+
+ <./qcfigures/nordicquantumfig2.png>]
+<qcfigures/nordicquantumfig3.png, id=1572, 628.3475pt x 601.24625pt>
+File: qcfigures/nordicquantumfig3.png Graphic file (type png)
+<use qcfigures/nordicquantumfig3.png>
+Package pdftex.def Info: qcfigures/nordicquantumfig3.png  used on input line 74
+7.
+(pdftex.def)             Requested size: 170.7161pt x 163.34782pt.
+
+Overfull \hbox (28.45232pt too wide) in paragraph at lines 747--747
+ [] 
+ []
+
+
+Overfull \hbox (209.38861pt too wide) has occurred while \output is active
+ [][]  \OT1/cmss/m/n/6 ([])  
+ []
+
+[46
+
+ <./qcfigures/nordicquantumfig3.png>]
+<qcfigures/nordicquantumfig4.png, id=1601, 562.1pt x 578.16pt>
+File: qcfigures/nordicquantumfig4.png Graphic file (type png)
+<use qcfigures/nordicquantumfig4.png>
+Package pdftex.def Info: qcfigures/nordicquantumfig4.png  used on input line 76
+4.
+(pdftex.def)             Requested size: 170.7161pt x 175.59308pt.
+
+Overfull \hbox (28.45232pt too wide) in paragraph at lines 764--764
+ [] 
+ []
+
+
+Overfull \hbox (209.38861pt too wide) has occurred while \output is active
+ [][]  \OT1/cmss/m/n/6 ([])  
+ []
+
+[47
+
+ <./qcfigures/nordicquantumfig4.png>]
+\openout4 = `motivation.vrb'.
+
+ (./motivation.vrb
+<qcfigures/Elhelium2.png, id=1630, 1141.26375pt x 632.3625pt>
+File: qcfigures/Elhelium2.png Graphic file (type png)
+<use qcfigures/Elhelium2.png>
+Package pdftex.def Info: qcfigures/Elhelium2.png  used on input line 6.
+(pdftex.def)             Requested size: 410.75331pt x 227.59244pt.
+)
+Overfull \vbox (18.9985pt too high) detected at line 780
+ []
+
+[48
+
+ <./qcfigures/Elhelium2.png>]
+<qcfigures/figure1.png, id=1662, 590.205pt x 1031.855pt>
+File: qcfigures/figure1.png Graphic file (type png)
+<use qcfigures/figure1.png>
+Package pdftex.def Info: qcfigures/figure1.png  used on input line 803.
+(pdftex.def)             Requested size: 110.96469pt x 193.99191pt.
+
+Overfull \hbox (209.38861pt too wide) has occurred while \output is active
+ [][]  \OT1/cmss/m/n/6 ([])  
+ []
+
+[49
+
+ <./qcfigures/figure1.png>]
+\openout4 = `motivation.vrb'.
+
+ (./motivation.vrb
+<qcfigures/timeevolution.png, id=1693, 1093.08376pt x 1185.42876pt>
+File: qcfigures/timeevolution.png Graphic file (type png)
+<use qcfigures/timeevolution.png>
+Package pdftex.def Info: qcfigures/timeevolution.png  used on input line 3.
+(pdftex.def)             Requested size: 222.48985pt x 241.278pt.
+) [50
+
+ <./qcfigures/timeevolution.png>]
+\openout4 = `motivation.vrb'.
+
+ (./motivation.vrb) [51
+
+]
+Overfull \hbox (209.38861pt too wide) has occurred while \output is active
+ [][]  \OT1/cmss/m/n/6 ([])  
+ []
+
+[52
+
+]
+\openout4 = `motivation.vrb'.
+
+ (./motivation.vrb) [53
+
+]
+\openout4 = `motivation.vrb'.
+
+ (./motivation.vrb)
+Overfull \vbox (13.83032pt too high) detected at line 906
+ []
+
+[54
+
+]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\translate ' on input line 693.
+(hyperref)                removing `\translate ' on input line 909.
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1360,54 +1516,75 @@ Overfull \hbox (209.38861pt too wide) has occurred while \output is active
  [][]  \OT1/cmss/m/n/6 ([])  
  []
 
-[43
+[55
 
 ]
 Overfull \hbox (209.38861pt too wide) has occurred while \output is active
  [][]  \OT1/cmss/m/n/6 ([])  
  []
 
-[44]
+[56]
 Overfull \hbox (209.38861pt too wide) has occurred while \output is active
  [][]  \OT1/cmss/m/n/6 ([])  
  []
 
-[45
+[57
 
 ]
 Overfull \hbox (209.38861pt too wide) has occurred while \output is active
  [][]  \OT1/cmss/m/n/6 ([])  
  []
 
-[46
+[58
 
 ]
 Overfull \hbox (209.38861pt too wide) has occurred while \output is active
  [][]  \OT1/cmss/m/n/6 ([])  
  []
 
-[47
+[59
 
 ]
 Overfull \hbox (209.38861pt too wide) has occurred while \output is active
  [][]  \OT1/cmss/m/n/6 ([])  
  []
 
-[48
+[60
 
 ]
 Overfull \hbox (209.38861pt too wide) has occurred while \output is active
  [][]  \OT1/cmss/m/n/6 ([])  
  []
 
-[49
+[61
 
 ]
 Overfull \hbox (209.38861pt too wide) has occurred while \output is active
  [][]  \OT1/cmss/m/n/6 ([])  
  []
 
-[50
+[62
+
+]
+\openout4 = `motivation.vrb'.
+
+ (./motivation.vrb) [63
+
+]
+\openout4 = `motivation.vrb'.
+
+ (./motivation.vrb) [64
+
+]
+\openout4 = `motivation.vrb'.
+
+ (./motivation.vrb)
+[65
+
+]
+\openout4 = `motivation.vrb'.
+
+ (./motivation.vrb) [66
 
 ]
 \tf@nav=\write6
@@ -1421,28 +1598,25 @@ Overfull \hbox (209.38861pt too wide) has occurred while \output is active
 
  (./motivation.aux)
 Package rerunfilecheck Info: File `motivation.out' has not changed.
-(rerunfilecheck)             Checksum: FD33393802D9437FBD61483A0D6ED467;1382.
+(rerunfilecheck)             Checksum: DAA2D20DB7B13B9DA88B17A71C6C80A6;1536.
  ) 
 Here is how much of TeX's memory you used:
- 26326 strings out of 476025
- 526880 string characters out of 5790017
- 1863388 words of memory out of 5000000
- 46049 multiletter control sequences out of 15000+600000
- 535758 words of font info for 103 fonts, out of 8000000 for 9000
+ 26557 strings out of 476025
+ 531763 string characters out of 5790017
+ 1865388 words of memory out of 5000000
+ 46202 multiletter control sequences out of 15000+600000
+ 543762 words of font info for 126 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 128i,15n,122p,408b,828s stack positions out of 10000i,1000n,20000p,200000b,200000s
-
-pdfTeX warning (dest): name{Navigation51} has been referenced but does not exis
-t, replaced by a fixed one
-
-</usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><
-/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></
-usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></u
-sr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></us
-r/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></us
-r/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr
-/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/
-local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/lo
+ 128i,15n,122p,552b,844s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
+></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb>
+</usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
+/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></
+usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></
+usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></u
+sr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></us
+r/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/
+local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/lo
 cal/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/l
 ocal/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/l
 ocal/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi12.pfb></usr/l
@@ -1451,11 +1625,13 @@ cal/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/loc
 al/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local
 /texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/
 texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/t
-exlive/2023/texmf-dist/fonts/type1/public/cm-super/sfso1000.pfb>
-Output written on motivation.pdf (50 pages, 5971167 bytes).
+exlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/loc
+al/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfso0800.pfb></usr/local
+/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfso1000.pfb>
+Output written on motivation.pdf (66 pages, 10447832 bytes).
 PDF statistics:
- 1793 PDF objects out of 2073 (max. 8388607)
- 1570 compressed objects within 16 object streams
- 110 named destinations out of 1000 (max. 500000)
- 622 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2346 PDF objects out of 2487 (max. 8388607)
+ 2052 compressed objects within 21 object streams
+ 142 named destinations out of 1000 (max. 500000)
+ 850 words of extra memory for PDF output out of 10000 (max. 10000000)
 
