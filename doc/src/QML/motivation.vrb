@@ -1,6 +1,0 @@
-\frametitle{Class of functions we can approximate}
-
-\begin{block}{}
-The class of functions that can be approximated are the continuous ones.
-If the function $F(\bm{x})$ is discontinuous, it won't in general be possible to approximate it. However, an NN may still give an approximation even if we fail in some points.
-\end{block}
