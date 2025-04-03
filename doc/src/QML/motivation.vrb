@@ -1,12 +1,26 @@
-\frametitle{Training solution}
+\frametitle{Observations (or conclusions if you prefer)}
 
-Optimizing with respect to the unknown parameters $\theta_j$ we get
-\[
-\bm{X}^T\bm{y} = \bm{X}^T\bm{X}\bm{\theta},
-\]
-and if the matrix $\bm{X}^T\bm{X}$ is invertible we have the optimal values
-\[
-\hat{\bm{\theta}} =\left(\bm{X}^T\bm{X}\right)^{-1}\bm{X}^T\bm{y}.
-\]
 
-We say we 'learn' the unknown parameters $\bm{\theta}$ from the last equation.
+\begin{block}{}
+\begin{itemize}
+\item How do we develop insights, competences, knowledge in statistical learning that can advance a given field?
+\begin{itemize}
+
+  \item For example: Can we use ML to find out which correlations are relevant and thereby diminish the dimensionality problem in standard many-body  theories?
+
+  \item Can we use AI/ML in detector analysis, accelerator design, analysis of experimental data and more?
+
+  \item Can we use AL/ML to carry out reliable extrapolations by using current experimental knowledge and current theoretical models?
+
+\end{itemize}
+
+\noindent
+\item The community needs to invest in relevant educational efforts and training of scientists with knowledge in AI/ML. These are great challenges to the CS and DS communities
+
+\item Quantum computing and quantum machine learning not discussed here
+
+\item Most likely tons of things I have forgotten
+\end{itemize}
+
+\noindent
+\end{block}
