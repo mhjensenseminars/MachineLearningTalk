@@ -1,0 +1,470 @@
+<!--
+HTML file automatically generated from DocOnce source
+(https://github.com/doconce/doconce/)
+doconce format html Geiloschool.do.txt --html_style=bootstrap --pygments_html_style=default --html_admon=bootstrap_panel --html_output=Geiloschool-bs --no_mako
+-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="DocOnce: https://github.com/doconce/doconce/" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Artificial intelligence and machine learning in physics, part I, introduction">
+<title>Artificial intelligence and machine learning in physics, part I, introduction</title>
+<!-- Bootstrap style: bootstrap -->
+<!-- doconce format html Geiloschool.do.txt --html_style=bootstrap --pygments_html_style=default --html_admon=bootstrap_panel --html_output=Geiloschool-bs --no_mako -->
+<link href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+<!-- not necessary
+<link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+-->
+<style type="text/css">
+/* Add scrollbar to dropdown menus in bootstrap navigation bar */
+.dropdown-menu {
+   height: auto;
+   max-height: 400px;
+   overflow-x: hidden;
+}
+/* Adds an invisible element before each target to offset for the navigation
+   bar */
+.anchor::before {
+  content:"";
+  display:block;
+  height:50px;      /* fixed header height for style bootstrap */
+  margin:-50px 0 0; /* negative fixed header height */
+}
+</style>
+</head>
+
+<!-- tocinfo
+{'highest level': 2,
+ 'sections': [('What is this talk about?', 2, None, 'what-is-this-talk-about'),
+              ('Thanks to many', 2, None, 'thanks-to-many'),
+              ('And sponsors', 2, None, 'and-sponsors'),
+              ('AI/ML and some statements you may have heard (and what do they '
+               'mean?)',
+               2,
+               None,
+               'ai-ml-and-some-statements-you-may-have-heard-and-what-do-they-mean'),
+              ('Types of machine learning',
+               2,
+               None,
+               'types-of-machine-learning'),
+              ('Main categories', 2, None, 'main-categories'),
+              ('The plethora  of machine learning algorithms/methods',
+               2,
+               None,
+               'the-plethora-of-machine-learning-algorithms-methods'),
+              ('Example of generative modeling, "taken from Generative Deep '
+               'Learning by David '
+               'Foster":"https://www.oreilly.com/library/view/generative-deep-learning/9781098134174/ch01.html"',
+               2,
+               None,
+               'example-of-generative-modeling-taken-from-generative-deep-learning-by-david-foster-https-www-oreilly-com-library-view-generative-deep-learning-9781098134174-ch01-html'),
+              ('Example of discriminative modeling, "taken from Generative '
+               'Deeep Learning by David '
+               'Foster":"https://www.oreilly.com/library/view/generative-deep-learning/9781098134174/ch01.html"',
+               2,
+               None,
+               'example-of-discriminative-modeling-taken-from-generative-deeep-learning-by-david-foster-https-www-oreilly-com-library-view-generative-deep-learning-9781098134174-ch01-html'),
+              ('Taxonomy of generative deep learning, "taken from Generative '
+               'Deep Learning by David '
+               'Foster":"https://www.oreilly.com/library/view/generative-deep-learning/9781098134174/ch01.html"',
+               2,
+               None,
+               'taxonomy-of-generative-deep-learning-taken-from-generative-deep-learning-by-david-foster-https-www-oreilly-com-library-view-generative-deep-learning-9781098134174-ch01-html'),
+              ('Good books with hands-on material and codes',
+               2,
+               None,
+               'good-books-with-hands-on-material-and-codes'),
+              ('What are the basic Machine Learning ingredients?',
+               2,
+               None,
+               'what-are-the-basic-machine-learning-ingredients'),
+              ('Low-level machine learning, the family of ordinary least '
+               'squares methods',
+               2,
+               None,
+               'low-level-machine-learning-the-family-of-ordinary-least-squares-methods'),
+              ('Setting up the equations', 2, None, 'setting-up-the-equations'),
+              ('The objective/cost/loss function',
+               2,
+               None,
+               'the-objective-cost-loss-function'),
+              ('Training solution', 2, None, 'training-solution'),
+              ('Ridge and LASSO Regression',
+               2,
+               None,
+               'ridge-and-lasso-regression'),
+              ('From OLS to Ridge and Lasso',
+               2,
+               None,
+               'from-ols-to-ridge-and-lasso'),
+              ('Lasso regression', 2, None, 'lasso-regression'),
+              ('Lots of room for creativity',
+               2,
+               None,
+               'lots-of-room-for-creativity'),
+              ('Selected references', 2, None, 'selected-references'),
+              ('Machine learning. A simple perspective on the interface '
+               'between ML and Physics',
+               2,
+               None,
+               'machine-learning-a-simple-perspective-on-the-interface-between-ml-and-physics'),
+              ('ML in Nuclear  Physics (or any field in physics)',
+               2,
+               None,
+               'ml-in-nuclear-physics-or-any-field-in-physics'),
+              ('Scientific Machine Learning',
+               2,
+               None,
+               'scientific-machine-learning'),
+              ('ML for detectors', 2, None, 'ml-for-detectors'),
+              ('Physics driven Machine Learning',
+               2,
+               None,
+               'physics-driven-machine-learning'),
+              ('And more', 2, None, 'and-more'),
+              ('Argon-46 by Solli et al., NIMA 1010, 165461 (2021)',
+               2,
+               None,
+               'argon-46-by-solli-et-al-nima-1010-165461-2021'),
+              ('Many-body physics, Quantum Monte Carlo and deep learning',
+               2,
+               None,
+               'many-body-physics-quantum-monte-carlo-and-deep-learning'),
+              ('Quantum Monte Carlo Motivation',
+               2,
+               None,
+               'quantum-monte-carlo-motivation'),
+              ('Quantum Monte Carlo Motivation',
+               2,
+               None,
+               'quantum-monte-carlo-motivation'),
+              ('Energy derivatives', 2, None, 'energy-derivatives'),
+              ('Derivatives of the local energy',
+               2,
+               None,
+               'derivatives-of-the-local-energy'),
+              ('Why Feed Forward Neural Networks (FFNN)?',
+               2,
+               None,
+               'why-feed-forward-neural-networks-ffnn'),
+              ('Universal approximation theorem',
+               2,
+               None,
+               'universal-approximation-theorem'),
+              ('The approximation theorem in words',
+               2,
+               None,
+               'the-approximation-theorem-in-words'),
+              ('More on the general approximation theorem',
+               2,
+               None,
+               'more-on-the-general-approximation-theorem'),
+              ('Class of functions we can approximate',
+               2,
+               None,
+               'class-of-functions-we-can-approximate'),
+              ('Monte Carlo methods and Neural Networks',
+               2,
+               None,
+               'monte-carlo-methods-and-neural-networks'),
+              ('Deep learning neural networks, "Variational Monte Carlo '
+               'calculations of $A\\le 4$ nuclei with an artificial '
+               'neural-network correlator ansatz by Adams et '
+               'al.":"https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.127.022502"',
+               2,
+               None,
+               'deep-learning-neural-networks-variational-monte-carlo-calculations-of-a-le-4-nuclei-with-an-artificial-neural-network-correlator-ansatz-by-adams-et-al-https-journals-aps-org-prl-abstract-10-1103-physrevlett-127-022502'),
+              ('Ansatz for a fermionic state function, Jane Kim et al, Commun '
+               'Phys 7, 148 (2024)',
+               2,
+               None,
+               'ansatz-for-a-fermionic-state-function-jane-kim-et-al-commun-phys-7-148-2024'),
+              ('Nuclear matter setup', 2, None, 'nuclear-matter-setup'),
+              ('Neutron star structure', 2, None, 'neutron-star-structure'),
+              ('"Dilute neutron star matter from neural-network quantum states '
+               'by Fore et al, Physical Review Research 5, 033062 '
+               '(2023)":"https://journals.aps.org/prresearch/pdf/10.1103/PhysRevResearch.5.033062" '
+               'at density $\\rho=0.04$ fm$^{-3}$',
+               2,
+               None,
+               'dilute-neutron-star-matter-from-neural-network-quantum-states-by-fore-et-al-physical-review-research-5-033062-2023-https-journals-aps-org-prresearch-pdf-10-1103-physrevresearch-5-033062-at-density-rho-0-04-fm-3'),
+              ('Pairing and Spin-singlet and triplet two-body distribution '
+               'functions at $\\rho=0.01$ fm$^{-3}$',
+               2,
+               None,
+               'pairing-and-spin-singlet-and-triplet-two-body-distribution-functions-at-rho-0-01-fm-3'),
+              ('Pairing and Spin-singlet and triplet two-body distribution '
+               'functions at $\\rho=0.04$ fm$^{-3}$',
+               2,
+               None,
+               'pairing-and-spin-singlet-and-triplet-two-body-distribution-functions-at-rho-0-04-fm-3'),
+              ('Pairing and Spin-singlet and triplet two-body distribution '
+               'functions at $\\rho=0.08$ fm$^{-3}$',
+               2,
+               None,
+               'pairing-and-spin-singlet-and-triplet-two-body-distribution-functions-at-rho-0-08-fm-3'),
+              ('Symmetric nuclear matter', 2, None, 'symmetric-nuclear-matter'),
+              ('Self-emerging clustering', 2, None, 'self-emerging-clustering'),
+              ('Clustering: Two-body pair distributions',
+               2,
+               None,
+               'clustering-two-body-pair-distributions'),
+              ('Nuclear matter proton fraction',
+               2,
+               None,
+               'nuclear-matter-proton-fraction'),
+              ('The electron gas in three dimensions with $N=14$ electrons '
+               '(Wigner-Seitz radius $r_s=2$ a.u.), "Gabriel Pescia, Jane Kim '
+               'et al. '
+               'arXiv.2305.07240,":"https://doi.org/10.48550/arXiv.2305.07240"',
+               2,
+               None,
+               'the-electron-gas-in-three-dimensions-with-n-14-electrons-wigner-seitz-radius-r-s-2-a-u-gabriel-pescia-jane-kim-et-al-arxiv-2305-07240-https-doi-org-10-48550-arxiv-2305-07240'),
+              ('Extrapolations and model interpretability',
+               2,
+               None,
+               'extrapolations-and-model-interpretability'),
+              ('Physics based statistical learning and data analysis',
+               2,
+               None,
+               'physics-based-statistical-learning-and-data-analysis'),
+              ("Bayes' Theorem", 2, None, 'bayes-theorem'),
+              ('"Quantified limits of the nuclear '
+               'landscape":"https://journals.aps.org/prc/abstract/10.1103/PhysRevC.101.044307"',
+               2,
+               None,
+               'quantified-limits-of-the-nuclear-landscape-https-journals-aps-org-prc-abstract-10-1103-physrevc-101-044307'),
+              ('Observations (or conclusions if you prefer)',
+               2,
+               None,
+               'observations-or-conclusions-if-you-prefer'),
+              ('More observations', 2, None, 'more-observations'),
+              ('Illustration of a single perceptron model and an FFNN',
+               2,
+               None,
+               'illustration-of-a-single-perceptron-model-and-an-ffnn'),
+              ('Our network example, simple percepetron with one input',
+               2,
+               None,
+               'our-network-example-simple-percepetron-with-one-input'),
+              ('Optimizing the parameters',
+               2,
+               None,
+               'optimizing-the-parameters'),
+              ('Implementing the simple perceptron model',
+               2,
+               None,
+               'implementing-the-simple-perceptron-model'),
+              ('Central magic', 2, None, 'central-magic'),
+              ('"Efficient solutions of fermionic systems using artificial '
+               'neural networks, Nordhagen et al, Frontiers in Physics 11, '
+               '2023":"https://doi.org/10.3389/fphy.2023.1061580"',
+               2,
+               None,
+               'efficient-solutions-of-fermionic-systems-using-artificial-neural-networks-nordhagen-et-al-frontiers-in-physics-11-2023-https-doi-org-10-3389-fphy-2023-1061580'),
+              ('Generative models: Why Boltzmann machines?',
+               2,
+               None,
+               'generative-models-why-boltzmann-machines'),
+              ('The structure of the RBM network',
+               2,
+               None,
+               'the-structure-of-the-rbm-network'),
+              ('The network', 2, None, 'the-network'),
+              ('Goals', 2, None, 'goals'),
+              ('Joint distribution', 2, None, 'joint-distribution'),
+              ('Network Elements, the energy function',
+               2,
+               None,
+               'network-elements-the-energy-function'),
+              ('Defining different types of RBMs (Energy based models)',
+               2,
+               None,
+               'defining-different-types-of-rbms-energy-based-models'),
+              ('Gaussian binary', 2, None, 'gaussian-binary'),
+              ('Representing the wave function',
+               2,
+               None,
+               'representing-the-wave-function'),
+              ('Define the cost function', 2, None, 'define-the-cost-function'),
+              ('Quantum dots and Boltzmann machines, onebody densities $N=6$, '
+               '$\\hbar\\omega=0.1$ a.u.',
+               2,
+               None,
+               'quantum-dots-and-boltzmann-machines-onebody-densities-n-6-hbar-omega-0-1-a-u'),
+              ('Onebody densities $N=30$, $\\hbar\\omega=1.0$ a.u.',
+               2,
+               None,
+               'onebody-densities-n-30-hbar-omega-1-0-a-u'),
+              ('Expectation values as functions of the oscillator frequency',
+               2,
+               None,
+               'expectation-values-as-functions-of-the-oscillator-frequency')]}
+end of tocinfo -->
+
+<body>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+     equationNumbers: {  autoNumber: "none"  },
+     extensions: ["AMSmath.js", "AMSsymbols.js", "autobold.js", "color.js"]
+  }
+});
+</script>
+<script type="text/javascript" async
+ src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<!-- Bootstrap navigation bar -->
+<div class="navbar navbar-default navbar-fixed-top">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="Geiloschool-bs.html">Artificial intelligence and machine learning in physics, part I, introduction</a>
+  </div>
+  <div class="navbar-collapse collapse navbar-responsive-collapse">
+    <ul class="nav navbar-nav navbar-right">
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Contents <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+     <!-- navigation toc: --> <li><a href="._Geiloschool-bs001.html#what-is-this-talk-about" style="font-size: 80%;">What is this talk about?</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool-bs002.html#thanks-to-many" style="font-size: 80%;">Thanks to many</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool-bs003.html#and-sponsors" style="font-size: 80%;">And sponsors</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool-bs004.html#ai-ml-and-some-statements-you-may-have-heard-and-what-do-they-mean" style="font-size: 80%;">AI/ML and some statements you may have heard (and what do they mean?)</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool-bs005.html#types-of-machine-learning" style="font-size: 80%;">Types of machine learning</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool-bs006.html#main-categories" style="font-size: 80%;">Main categories</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool-bs007.html#the-plethora-of-machine-learning-algorithms-methods" style="font-size: 80%;">The plethora  of machine learning algorithms/methods</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool-bs008.html#example-of-generative-modeling-taken-from-generative-deep-learning-by-david-foster-https-www-oreilly-com-library-view-generative-deep-learning-9781098134174-ch01-html" style="font-size: 80%;">Example of generative modeling, "taken from Generative Deep Learning by David Foster":"https://www.oreilly.com/library/view/generative-deep-learning/9781098134174/ch01.html"</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool-bs009.html#example-of-discriminative-modeling-taken-from-generative-deeep-learning-by-david-foster-https-www-oreilly-com-library-view-generative-deep-learning-9781098134174-ch01-html" style="font-size: 80%;">Example of discriminative modeling, "taken from Generative Deeep Learning by David Foster":"https://www.oreilly.com/library/view/generative-deep-learning/9781098134174/ch01.html"</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool-bs010.html#taxonomy-of-generative-deep-learning-taken-from-generative-deep-learning-by-david-foster-https-www-oreilly-com-library-view-generative-deep-learning-9781098134174-ch01-html" style="font-size: 80%;">Taxonomy of generative deep learning, "taken from Generative Deep Learning by David Foster":"https://www.oreilly.com/library/view/generative-deep-learning/9781098134174/ch01.html"</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool-bs011.html#good-books-with-hands-on-material-and-codes" style="font-size: 80%;">Good books with hands-on material and codes</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool-bs012.html#what-are-the-basic-machine-learning-ingredients" style="font-size: 80%;">What are the basic Machine Learning ingredients?</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool-bs013.html#low-level-machine-learning-the-family-of-ordinary-least-squares-methods" style="font-size: 80%;">Low-level machine learning, the family of ordinary least squares methods</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool-bs014.html#setting-up-the-equations" style="font-size: 80%;">Setting up the equations</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool-bs015.html#the-objective-cost-loss-function" style="font-size: 80%;">The objective/cost/loss function</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool-bs016.html#training-solution" style="font-size: 80%;">Training solution</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool-bs017.html#ridge-and-lasso-regression" style="font-size: 80%;">Ridge and LASSO Regression</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool-bs018.html#from-ols-to-ridge-and-lasso" style="font-size: 80%;">From OLS to Ridge and Lasso</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool-bs019.html#lasso-regression" style="font-size: 80%;">Lasso regression</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool-bs020.html#lots-of-room-for-creativity" style="font-size: 80%;">Lots of room for creativity</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool-bs021.html#selected-references" style="font-size: 80%;">Selected references</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool-bs022.html#machine-learning-a-simple-perspective-on-the-interface-between-ml-and-physics" style="font-size: 80%;">Machine learning. A simple perspective on the interface between ML and Physics</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool-bs023.html#ml-in-nuclear-physics-or-any-field-in-physics" style="font-size: 80%;">ML in Nuclear  Physics (or any field in physics)</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool-bs024.html#scientific-machine-learning" style="font-size: 80%;">Scientific Machine Learning</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool-bs025.html#ml-for-detectors" style="font-size: 80%;">ML for detectors</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool-bs026.html#physics-driven-machine-learning" style="font-size: 80%;">Physics driven Machine Learning</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool-bs027.html#and-more" style="font-size: 80%;">And more</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool-bs028.html#argon-46-by-solli-et-al-nima-1010-165461-2021" style="font-size: 80%;">Argon-46 by Solli et al., NIMA 1010, 165461 (2021)</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool-bs029.html#many-body-physics-quantum-monte-carlo-and-deep-learning" style="font-size: 80%;">Many-body physics, Quantum Monte Carlo and deep learning</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool-bs031.html#quantum-monte-carlo-motivation" style="font-size: 80%;">Quantum Monte Carlo Motivation</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool-bs031.html#quantum-monte-carlo-motivation" style="font-size: 80%;">Quantum Monte Carlo Motivation</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool-bs032.html#energy-derivatives" style="font-size: 80%;">Energy derivatives</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool-bs033.html#derivatives-of-the-local-energy" style="font-size: 80%;">Derivatives of the local energy</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool-bs034.html#why-feed-forward-neural-networks-ffnn" style="font-size: 80%;">Why Feed Forward Neural Networks (FFNN)?</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool-bs035.html#universal-approximation-theorem" style="font-size: 80%;">Universal approximation theorem</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool-bs036.html#the-approximation-theorem-in-words" style="font-size: 80%;">The approximation theorem in words</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool-bs037.html#more-on-the-general-approximation-theorem" style="font-size: 80%;">More on the general approximation theorem</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool-bs038.html#class-of-functions-we-can-approximate" style="font-size: 80%;">Class of functions we can approximate</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool-bs039.html#monte-carlo-methods-and-neural-networks" style="font-size: 80%;">Monte Carlo methods and Neural Networks</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool-bs040.html#deep-learning-neural-networks-variational-monte-carlo-calculations-of-a-le-4-nuclei-with-an-artificial-neural-network-correlator-ansatz-by-adams-et-al-https-journals-aps-org-prl-abstract-10-1103-physrevlett-127-022502" style="font-size: 80%;">Deep learning neural networks, "Variational Monte Carlo calculations of \( A\le 4 \) nuclei with an artificial neural-network correlator ansatz by Adams et al.":"https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.127.022502"</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool-bs041.html#ansatz-for-a-fermionic-state-function-jane-kim-et-al-commun-phys-7-148-2024" style="font-size: 80%;">Ansatz for a fermionic state function, Jane Kim et al, Commun Phys 7, 148 (2024)</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool-bs042.html#nuclear-matter-setup" style="font-size: 80%;">Nuclear matter setup</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool-bs043.html#neutron-star-structure" style="font-size: 80%;">Neutron star structure</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool-bs044.html#dilute-neutron-star-matter-from-neural-network-quantum-states-by-fore-et-al-physical-review-research-5-033062-2023-https-journals-aps-org-prresearch-pdf-10-1103-physrevresearch-5-033062-at-density-rho-0-04-fm-3" style="font-size: 80%;">"Dilute neutron star matter from neural-network quantum states by Fore et al, Physical Review Research 5, 033062 (2023)":"https://journals.aps.org/prresearch/pdf/10.1103/PhysRevResearch.5.033062" at density \( \rho=0.04 \) fm$^{-3}$</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool-bs045.html#pairing-and-spin-singlet-and-triplet-two-body-distribution-functions-at-rho-0-01-fm-3" style="font-size: 80%;">Pairing and Spin-singlet and triplet two-body distribution functions at \( \rho=0.01 \) fm$^{-3}$</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool-bs046.html#pairing-and-spin-singlet-and-triplet-two-body-distribution-functions-at-rho-0-04-fm-3" style="font-size: 80%;">Pairing and Spin-singlet and triplet two-body distribution functions at \( \rho=0.04 \) fm$^{-3}$</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool-bs047.html#pairing-and-spin-singlet-and-triplet-two-body-distribution-functions-at-rho-0-08-fm-3" style="font-size: 80%;">Pairing and Spin-singlet and triplet two-body distribution functions at \( \rho=0.08 \) fm$^{-3}$</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool-bs048.html#symmetric-nuclear-matter" style="font-size: 80%;">Symmetric nuclear matter</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool-bs049.html#self-emerging-clustering" style="font-size: 80%;">Self-emerging clustering</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool-bs050.html#clustering-two-body-pair-distributions" style="font-size: 80%;">Clustering: Two-body pair distributions</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool-bs051.html#nuclear-matter-proton-fraction" style="font-size: 80%;">Nuclear matter proton fraction</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool-bs052.html#the-electron-gas-in-three-dimensions-with-n-14-electrons-wigner-seitz-radius-r-s-2-a-u-gabriel-pescia-jane-kim-et-al-arxiv-2305-07240-https-doi-org-10-48550-arxiv-2305-07240" style="font-size: 80%;">The electron gas in three dimensions with \( N=14 \) electrons (Wigner-Seitz radius \( r_s=2 \) a.u.), "Gabriel Pescia, Jane Kim et al. arXiv.2305.07240,":"https://doi.org/10.48550/arXiv.2305.07240"</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool-bs053.html#extrapolations-and-model-interpretability" style="font-size: 80%;">Extrapolations and model interpretability</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool-bs054.html#physics-based-statistical-learning-and-data-analysis" style="font-size: 80%;">Physics based statistical learning and data analysis</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool-bs055.html#bayes-theorem" style="font-size: 80%;">Bayes' Theorem</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool-bs056.html#quantified-limits-of-the-nuclear-landscape-https-journals-aps-org-prc-abstract-10-1103-physrevc-101-044307" style="font-size: 80%;">"Quantified limits of the nuclear landscape":"https://journals.aps.org/prc/abstract/10.1103/PhysRevC.101.044307"</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool-bs057.html#observations-or-conclusions-if-you-prefer" style="font-size: 80%;">Observations (or conclusions if you prefer)</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool-bs058.html#more-observations" style="font-size: 80%;">More observations</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool-bs059.html#illustration-of-a-single-perceptron-model-and-an-ffnn" style="font-size: 80%;">Illustration of a single perceptron model and an FFNN</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool-bs060.html#our-network-example-simple-percepetron-with-one-input" style="font-size: 80%;">Our network example, simple percepetron with one input</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool-bs061.html#optimizing-the-parameters" style="font-size: 80%;">Optimizing the parameters</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool-bs062.html#implementing-the-simple-perceptron-model" style="font-size: 80%;">Implementing the simple perceptron model</a></li>
+     <!-- navigation toc: --> <li><a href="#central-magic" style="font-size: 80%;">Central magic</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool-bs064.html#efficient-solutions-of-fermionic-systems-using-artificial-neural-networks-nordhagen-et-al-frontiers-in-physics-11-2023-https-doi-org-10-3389-fphy-2023-1061580" style="font-size: 80%;">"Efficient solutions of fermionic systems using artificial neural networks, Nordhagen et al, Frontiers in Physics 11, 2023":"https://doi.org/10.3389/fphy.2023.1061580"</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool-bs065.html#generative-models-why-boltzmann-machines" style="font-size: 80%;">Generative models: Why Boltzmann machines?</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool-bs066.html#the-structure-of-the-rbm-network" style="font-size: 80%;">The structure of the RBM network</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool-bs067.html#the-network" style="font-size: 80%;">The network</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool-bs068.html#goals" style="font-size: 80%;">Goals</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool-bs069.html#joint-distribution" style="font-size: 80%;">Joint distribution</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool-bs070.html#network-elements-the-energy-function" style="font-size: 80%;">Network Elements, the energy function</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool-bs071.html#defining-different-types-of-rbms-energy-based-models" style="font-size: 80%;">Defining different types of RBMs (Energy based models)</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool-bs072.html#gaussian-binary" style="font-size: 80%;">Gaussian binary</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool-bs073.html#representing-the-wave-function" style="font-size: 80%;">Representing the wave function</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool-bs074.html#define-the-cost-function" style="font-size: 80%;">Define the cost function</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool-bs075.html#quantum-dots-and-boltzmann-machines-onebody-densities-n-6-hbar-omega-0-1-a-u" style="font-size: 80%;">Quantum dots and Boltzmann machines, onebody densities \( N=6 \), \( \hbar\omega=0.1 \) a.u.</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool-bs076.html#onebody-densities-n-30-hbar-omega-1-0-a-u" style="font-size: 80%;">Onebody densities \( N=30 \), \( \hbar\omega=1.0 \) a.u.</a></li>
+     <!-- navigation toc: --> <li><a href="._Geiloschool-bs077.html#expectation-values-as-functions-of-the-oscillator-frequency" style="font-size: 80%;">Expectation values as functions of the oscillator frequency</a></li>
+
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
+</div> <!-- end of navigation bar -->
+<div class="container">
+<p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p> <!-- add vertical space -->
+<a name="part0063"></a>
+<!-- !split -->
+<h2 id="central-magic" class="anchor">Central magic </h2>
+
+<a href="https://en.wikipedia.org/wiki/Automatic_differentiation" target="_self">Automatic differentiation</a>
+
+<p>
+<!-- navigation buttons at the bottom of the page -->
+<ul class="pagination">
+<li><a href="._Geiloschool-bs062.html">&laquo;</a></li>
+  <li><a href="._Geiloschool-bs000.html">1</a></li>
+  <li><a href="">...</a></li>
+  <li><a href="._Geiloschool-bs055.html">56</a></li>
+  <li><a href="._Geiloschool-bs056.html">57</a></li>
+  <li><a href="._Geiloschool-bs057.html">58</a></li>
+  <li><a href="._Geiloschool-bs058.html">59</a></li>
+  <li><a href="._Geiloschool-bs059.html">60</a></li>
+  <li><a href="._Geiloschool-bs060.html">61</a></li>
+  <li><a href="._Geiloschool-bs061.html">62</a></li>
+  <li><a href="._Geiloschool-bs062.html">63</a></li>
+  <li class="active"><a href="._Geiloschool-bs063.html">64</a></li>
+  <li><a href="._Geiloschool-bs064.html">65</a></li>
+  <li><a href="._Geiloschool-bs065.html">66</a></li>
+  <li><a href="._Geiloschool-bs066.html">67</a></li>
+  <li><a href="._Geiloschool-bs067.html">68</a></li>
+  <li><a href="._Geiloschool-bs068.html">69</a></li>
+  <li><a href="._Geiloschool-bs069.html">70</a></li>
+  <li><a href="._Geiloschool-bs070.html">71</a></li>
+  <li><a href="._Geiloschool-bs071.html">72</a></li>
+  <li><a href="._Geiloschool-bs072.html">73</a></li>
+  <li><a href="">...</a></li>
+  <li><a href="._Geiloschool-bs077.html">78</a></li>
+  <li><a href="._Geiloschool-bs064.html">&raquo;</a></li>
+</ul>
+<!-- ------------------- end of main content --------------- -->
+</div>  <!-- end container -->
+<!-- include javascript, jQuery *first* -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<!-- Bootstrap footer
+<footer>
+<a href="https://..."><img width="250" align=right src="https://..."></a>
+</footer>
+-->
+</body>
+</html>
+

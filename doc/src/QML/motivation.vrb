@@ -1,0 +1,12 @@
+\frametitle{Training solution}
+
+Optimizing with respect to the unknown parameters $\theta_j$ we get
+\[
+\bm{X}^T\bm{y} = \bm{X}^T\bm{X}\bm{\theta},
+\]
+and if the matrix $\bm{X}^T\bm{X}$ is invertible we have the optimal values
+\[
+\hat{\bm{\theta}} =\left(\bm{X}^T\bm{X}\right)^{-1}\bm{X}^T\bm{y}.
+\]
+
+We say we 'learn' the unknown parameters $\bm{\theta}$ from the last equation.

@@ -1,0 +1,12 @@
+\frametitle{Expectation values as functions of the oscillator frequency}
+
+\begin{block}{}
+
+\vspace{6mm}
+
+% inline figure
+\centerline{\includegraphics[width=0.9\linewidth]{figures/virialtheorem.pdf}}
+
+\vspace{6mm}
+
+\end{block}

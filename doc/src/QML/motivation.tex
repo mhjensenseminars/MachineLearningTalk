@@ -8,42 +8,61 @@
 \usetheme{Madrid} % You can change the theme as you like
 \usecolortheme{seagull}
 
+
+\begin{document}
+
 \title[Quantum Computing and ML]{\textbf{Quantum Technology and Artificial Intelligence}}
 \author{Morten Hjorth-Jensen}
 \institute{Department of Physics and Center for Computing in Science Education, University of Oslo, Norway}
 \date{Dscience seminar, UiO, April 3, 2025}
 
-\begin{document}
 
 %-----------------------------------------------------------
-\begin{frame}
-    \titlepage
-\end{frame}
+%\begin{frame}
+%    \titlepage
+%\end{frame}
 
 %-----------------------------------------------------------
-\begin{frame}{Outline}
-\tableofcontents
+
+
+\begin{frame}[plain,fragile]
+\titlepage
 \end{frame}
 
-%-----------------------------------------------------------
-\section{Introduction to Quantum Computing}
-\begin{frame}{What is Quantum Computing?}
-Quantum computing leverages principles of quantum mechanics to perform computations beyond classical capabilities.
+\begin{frame}[plain,fragile]
+\frametitle{What is this talk about?}
 
-\vspace{10pt}
-\textbf{Key Concepts:}
-\begin{itemize}
-    \item \textbf{Superposition:} Qubits can exist in a combination of states.
-    \item \textbf{Entanglement:} Correlation between qubits regardless of distance.
-    \item \textbf{Quantum Interference:} Probability amplitudes interfere to solve problems.
-\end{itemize}
+\begin{block}{}
+The main emphasis is to give you a short and hopefully pedestrian introduction to the whys and hows of machine learning and quantum technologies.
+And why this could (or should) be of interest. 
+\end{block}
 
-\pause
-\textbf{Qubit Representation:}
-\[
-\ket{\psi} = \alpha \ket{0} + \beta \ket{1}, \quad |\alpha|^2 + |\beta|^2 = 1
-\]
 \end{frame}
+
+\begin{frame}[plain,fragile]
+\frametitle{Thanks to many}
+
+Jane Kim (MSU), Julie Butler (MSU), Patrick Cook (MSU), Danny Jammooa (MSU), Daniel Bazin (MSU), Dean Lee (MSU), Witek Nazarewicz (MSU), Michelle Kuchera (Davidson College), Even Nordhagen (UiO), Robert Solli (UiO, Expert Analytics), Bryce Fore (ANL), Alessandro Lovato (ANL), Stefano Gandolfi (LANL), Francesco Pederiva (UniTN), and Giuseppe Carleo (EPFL). 
+Niyaz Beysengulov and Johannes Pollanen (experiment, MSU); Zachary Stewart, Jared Weidman, and Angela Wilson (quantum chemistry, MSU)
+Jonas Flaten, Oskar, Leinonen, Øyvind Sigmundson Schøyen, Stian Dysthe Bilek, and Håkon Emil Kristiansen (UiO). Excuses to those I have omitted.
+\end{frame}
+
+\begin{frame}[plain,fragile]
+\frametitle{And sponsors}
+
+\begin{enumerate}
+\item National Science Foundation, US (various grants)
+
+\item Department of Energy, US (various grants)
+
+\item Research Council of Norway (various grants) and my employers University of Oslo and Michigan State University
+\end{enumerate}
+
+\end{frame}
+
+
+
+
 
 %-----------------------------------------------------------
 \section{Introduction to Machine Learning}
@@ -57,12 +76,36 @@ Machine Learning (ML) is the study of algorithms that improve through data exper
     \item \textbf{Reinforcement Learning:} Learning through interaction with the environment.
 \end{itemize}
 
-\pause
+
 \textbf{ML Workflow:}
 \[
 \text{Data} \rightarrow \text{Model Training} \rightarrow \text{Prediction}
 \]
 \end{frame}
+
+
+
+%-----------------------------------------------------------
+\section{Introduction to Quantum Computing}
+\begin{frame}{What is Quantum Computing?}
+Quantum computing leverages principles of quantum mechanics to perform computations beyond classical capabilities.
+
+\vspace{10pt}
+\textbf{Key Concepts:}
+\begin{itemize}
+\item \textbf{Superposition:} Qubits can exist in a combination of states.
+\item \textbf{Entanglement:} Correlation between qubits regardless of distance.
+\item \textbf{Quantum Interference:} Probability amplitudes interfere to solve problems.
+\end{itemize}
+
+\textbf{Qubit Representation:}
+\[
+\ket{\psi} = \alpha \ket{0} + \beta \ket{1}, \quad |\alpha|^2 + |\beta|^2 = 1
+\]
+\end{frame}
+
+
+
 
 %-----------------------------------------------------------
 \section{Quantum Machine Learning (QML)}
@@ -77,7 +120,7 @@ Machine Learning (ML) is the study of algorithms that improve through data exper
     \item Quantum entanglement for richer data encoding.
 \end{itemize}
 
-\pause
+
 \textbf{Quantum Model Example:}
 \[
 U(\theta)\ket{x} \implies \text{Quantum Kernel for Classification}
@@ -90,8 +133,6 @@ U(\theta)\ket{x} \implies \text{Quantum Kernel for Classification}
 
 \begin{frame}[plain,fragile]
 \frametitle{AI/ML and some statements you may have heard (and what do they mean?)}
-
-https://www.businessenergyuk.com/knowledge-hub/chatgpt-energy-consumption-visualized/
 
 
 
@@ -109,54 +150,33 @@ If you wish to have a critical read on AI/ML from a societal point of view, see 
 \textbf{Here: with AI/ML we intend a collection of machine learning methods with an emphasis on statistical learning and data analysis}
 \end{frame}
 
-\begin{frame}[plain,fragile]
-\frametitle{Curse of dimensionality}
 
-\vspace{6mm}
+
+
+
+
+\begin{frame}[plain,fragile]
+\frametitle{Machine learning and AI models are computationally expensive}
+
 
 % inline figure
-\centerline{\includegraphics[width=1.0\linewidth]{figures/mbpfig2.png}}
+\centerline{\includegraphics[width=1.0\linewidth]{figures/aitalk2.png}}
 
-\vspace{6mm}
 \end{frame}
 
-\begin{frame}[plain,fragile]
-\frametitle{Neural network quantum states}
-
-\begin{block}{Neural networks compactly represent complex high-dimensional functions }
-Most quantum states of interest have distinctive features and intrinsic structures
-%FIGURE: [figures/mbpfig3.png, width=900 frac=1.0]
-\end{block}
-\end{frame}
 
 \begin{frame}[plain,fragile]
-\frametitle{Machine learning. A simple perspective on the interface between ML and Physics}
-
-\vspace{6mm}
+\frametitle{And power greedy, perhaps quantum computers can reduce the impact?}
 
 % inline figure
-\centerline{\includegraphics[width=1.0\linewidth]{figures/mlimage.png}}
-
-\vspace{6mm}
+\centerline{\includegraphics[width=0.7\linewidth]{figures/aitalk1.png}}
+Taken from \url{https://www.businessenergyuk.com/knowledge-hub/chatgpt-energy-consumption-visualized/}
 \end{frame}
 
-\begin{frame}[plain,fragile]
-\frametitle{Types of machine learning}
 
-\begin{block}{}
-The approaches to machine learning are many, but are often split into two main categories. 
-In \emph{supervised learning} we know the answer to a problem,
-and let the computer deduce the logic behind it. On the other hand, \emph{unsupervised learning}
-is a method for finding patterns and relationship in data sets without any prior knowledge of the system.
-
-An important  third category is  \emph{reinforcement learning}. This is a paradigm 
-of learning inspired by behavioural psychology, where learning is achieved by trial-and-error, 
-solely from rewards and punishment.
-\end{block}
-\end{frame}
 
 \begin{frame}[plain,fragile]
-\frametitle{Main categories}
+\frametitle{Main categories of Machine Learning}
 
 \begin{block}{}
 Another way to categorize machine learning tasks is to consider the desired output of a system.
@@ -520,4 +540,7 @@ accelerate scientific discovery. The report covers three main areas
 
 \end{block}
 \end{frame}
+
+
+
 
