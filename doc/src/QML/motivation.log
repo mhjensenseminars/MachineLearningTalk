@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.3.29)  3 APR 2025 07:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.3.29)  3 APR 2025 08:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1016,7 +1016,7 @@ Package hyperref Warning: Option `pdfauthor' has already been used,
 
 pdfTeX warning: pdflatex (file ./figures/figureintro.pdf): PDF inclusion: found
  PDF version <1.7>, but at most version <1.5> allowed
-<figures/figureintro.pdf, id=185, 1927.2pt x 1084.05pt>
+<figures/figureintro.pdf, id=191, 1927.2pt x 1084.05pt>
 File: figures/figureintro.pdf Graphic file (type pdf)
 <use figures/figureintro.pdf>
 Package pdftex.def Info: figures/figureintro.pdf  used on input line 5.
@@ -1078,116 +1078,113 @@ Overfull \hbox (209.38861pt too wide) has occurred while \output is active
 [10
 
 ]
-Overfull \hbox (209.38861pt too wide) has occurred while \output is active
- [][]  \OT1/cmss/m/n/6 ([])  
- []
-
-[11
-
-]
-Overfull \hbox (209.38861pt too wide) has occurred while \output is active
- [][]  \OT1/cmss/m/n/6 ([])  
- []
-
-[12
-
-]
 \openout4 = `motivation.vrb'.
 
- (./motivation.vrb) [13
+ (./motivation.vrb) [11
 
 ]
 \openout4 = `motivation.vrb'.
 
  (./motivation.vrb
-<figures/aitalk2.png, id=461, 1552.80125pt x 811.03pt>
+<figures/aitalk2.png, id=426, 1552.80125pt x 811.03pt>
 File: figures/aitalk2.png Graphic file (type png)
 <use figures/aitalk2.png>
 Package pdftex.def Info: figures/aitalk2.png  used on input line 5.
 (pdftex.def)             Requested size: 342.2953pt x 178.77365pt.
-) [14
+) [12
 
  <./figures/aitalk2.png>]
 \openout4 = `motivation.vrb'.
 
 
 (./motivation.vrb
-<figures/aitalk1.png, id=490, 945.5325pt x 801.99625pt>
+<figures/aitalk1.png, id=456, 945.5325pt x 801.99625pt>
 File: figures/aitalk1.png Graphic file (type png)
 <use figures/aitalk1.png>
 Package pdftex.def Info: figures/aitalk1.png  used on input line 4.
 (pdftex.def)             Requested size: 239.60567pt x 203.22751pt.
 )
-Overfull \vbox (8.12364pt too high) detected at line 235
+Overfull \vbox (8.12364pt too high) detected at line 213
  []
 
-[15
+[13
 
  <./figures/aitalk1.png>]
 \openout4 = `motivation.vrb'.
 
- (./motivation.vrb) [16
+ (./motivation.vrb) [14
 
 ]
 \openout4 = `motivation.vrb'.
 
  (./motivation.vrb)
-[17
+[15
 
 ]
 \openout4 = `motivation.vrb'.
 
  (./motivation.vrb
-<figures/standarddeeplearning.png, id=584, 1015.795pt x 441.65pt>
+<figures/standarddeeplearning.png, id=558, 1015.795pt x 441.65pt>
 File: figures/standarddeeplearning.png Graphic file (type png)
 <use figures/standarddeeplearning.png>
 Package pdftex.def Info: figures/standarddeeplearning.png  used on input line 6
 .
 (pdftex.def)             Requested size: 342.2953pt x 148.82468pt.
-) [18
+) [16
 
  <./figures/standarddeeplearning.png>]
 \openout4 = `motivation.vrb'.
 
 
 (./motivation.vrb
-<figures/generativelearning.png, id=614, 1025.8325pt x 453.695pt>
+<figures/generativelearning.png, id=589, 1025.8325pt x 453.695pt>
 File: figures/generativelearning.png Graphic file (type png)
 <use figures/generativelearning.png>
 Package pdftex.def Info: figures/generativelearning.png  used on input line 6.
 (pdftex.def)             Requested size: 342.2953pt x 151.38821pt.
-) [19
+) [17
 
  <./figures/generativelearning.png>]
 \openout4 = `motivation.vrb'.
 
  (./motivation.vrb
-<figures/generativemodels.png, id=644, 1039.885pt x 591.20876pt>
+<figures/generativemodels.png, id=621, 1039.885pt x 591.20876pt>
 File: figures/generativemodels.png Graphic file (type png)
 <use figures/generativemodels.png>
 Package pdftex.def Info: figures/generativemodels.png  used on input line 6.
 (pdftex.def)             Requested size: 342.2953pt x 194.60333pt.
 )
-Overfull \vbox (4.0094pt too high) detected at line 317
+Overfull \vbox (4.0094pt too high) detected at line 295
  []
 
-[20
+[18
 
  <./figures/generativemodels.png>]
 \openout4 = `motivation.vrb'.
 
- (./motivation.vrb) [21
+ (./motivation.vrb) [19
 
 {/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}]
 \openout4 = `motivation.vrb'.
 
  (./motivation.vrb)
-[22
+[20
 
 ]
 \openout4 = `motivation.vrb'.
 
- (./motivation.vrb) [23
+ (./motivation.vrb) [21
+
+]
+\openout4 = `motivation.vrb'.
+
+ (./motivation.vrb) [22
+
+]
+\openout4 = `motivation.vrb'.
+
+ (./motivation.vrb)
+[23
 
 ]
 \openout4 = `motivation.vrb'.
@@ -1197,98 +1194,106 @@ Overfull \vbox (4.0094pt too high) detected at line 317
 ]
 \openout4 = `motivation.vrb'.
 
- (./motivation.vrb)
-[25
+ (./motivation.vrb
+<figures/krenn2.png, id=860, 1354.05875pt x 703.62875pt>
+File: figures/krenn2.png Graphic file (type png)
+<use figures/krenn2.png>
+Package pdftex.def Info: figures/krenn2.png  used on input line 5.
+(pdftex.def)             Requested size: 359.4111pt x 186.76135pt.
+) [25
+
+ <./figures/krenn2.png>]
+\openout4 = `motivation.vrb'.
+
+
+(./motivation.vrb) [26
 
 ]
 \openout4 = `motivation.vrb'.
 
  (./motivation.vrb
-<figures/krenn2.png, id=818, 1354.05875pt x 703.62875pt>
-File: figures/krenn2.png Graphic file (type png)
-<use figures/krenn2.png>
-Package pdftex.def Info: figures/krenn2.png  used on input line 5.
-(pdftex.def)             Requested size: 359.4111pt x 186.76135pt.
-) [26
-
- <./figures/krenn2.png>]
-\openout4 = `motivation.vrb'.
-
- (./motivation.vrb) [27
-
-]
-\openout4 = `motivation.vrb'.
-
-
-(./motivation.vrb
-<figures/detectors.png, id=884, 664.4825pt x 622.325pt>
+<figures/detectors.png, id=930, 664.4825pt x 622.325pt>
 File: figures/detectors.png Graphic file (type png)
 <use figures/detectors.png>
 Package pdftex.def Info: figures/detectors.png  used on input line 6.
 (pdftex.def)             Requested size: 342.2953pt x 320.58167pt.
 )
-Overfull \vbox (111.98773pt too high) detected at line 440
+Overfull \vbox (111.98773pt too high) detected at line 434
  []
 
-[28
+[27
 
  <./figures/detectors.png>]
 \openout4 = `motivation.vrb'.
 
- (./motivation.vrb) [29
+ (./motivation.vrb) [28
 
 ]
 \openout4 = `motivation.vrb'.
 
  (./motivation.vrb)
-[30
+[29
 
 ]
 \openout4 = `motivation.vrb'.
 
  (./motivation.vrb
-<figures/examples_raw.png, id=989, 867.24pt x 722.7pt>
+<figures/examples_raw.png, id=1041, 867.24pt x 722.7pt>
 File: figures/examples_raw.png Graphic file (type png)
 <use figures/examples_raw.png>
 Package pdftex.def Info: figures/examples_raw.png  used on input line 12.
 (pdftex.def)             Requested size: 205.37926pt x 171.14679pt.
-)
-Overfull \vbox (14.04456pt too high) detected at line 480
- []
-
-[31
+) [30
 
  <./figures/examples_raw.png>]
 \openout4 = `motivation.vrb'.
 
- (./motivation.vrb) [32
-
-]
-\openout4 = `motivation.vrb'.
-
  (./motivation.vrb)
-[33
+[31
 
 ]
 \openout4 = `motivation.vrb'.
 
  (./motivation.vrb
-<figures/nmatter.png, id=1081, 614.295pt x 405.515pt>
+<figures/nmatter.png, id=1111, 614.295pt x 405.515pt>
 File: figures/nmatter.png Graphic file (type png)
 <use figures/nmatter.png>
-Package pdftex.def Info: figures/nmatter.png  used on input line 8.
+Package pdftex.def Info: figures/nmatter.png  used on input line 3.
 (pdftex.def)             Requested size: 308.06367pt x 203.36337pt.
-)
-Overfull \vbox (47.79944pt too high) detected at line 526
- []
-
-[34
+) [32
 
  <./figures/nmatter.png>]
 \openout4 = `motivation.vrb'.
 
  (./motivation.vrb
-<figures/krenn1.png, id=1123, 1317.92375pt x 243.91125pt>
+<figures/mbpfig7.png, id=1145, 1371.1225pt x 581.17125pt>
+File: figures/mbpfig7.png Graphic file (type png)
+<use figures/mbpfig7.png>
+Package pdftex.def Info: figures/mbpfig7.png  used on input line 3.
+(pdftex.def)             Requested size: 342.2953pt x 145.08849pt.
+)
+[33
+
+ <./figures/mbpfig7.png>]
+\openout4 = `motivation.vrb'.
+
+ (./motivation.vrb
+<figures/elgasnew.png, id=1177, 678.535pt x 451.6875pt>
+File: figures/elgasnew.png Graphic file (type png)
+<use figures/elgasnew.png>
+Package pdftex.def Info: figures/elgasnew.png  used on input line 4.
+(pdftex.def)             Requested size: 308.06367pt x 205.07013pt.
+)
+Overfull \vbox (33.36292pt too high) detected at line 520
+ []
+
+[34
+
+ <./figures/elgasnew.png>]
+\openout4 = `motivation.vrb'.
+
+ (./motivation.vrb
+<figures/krenn1.png, id=1222, 1317.92375pt x 243.91125pt>
 File: figures/krenn1.png Graphic file (type png)
 <use figures/krenn1.png>
 Package pdftex.def Info: figures/krenn1.png  used on input line 5.
@@ -1338,16 +1343,71 @@ Overfull \hbox (209.38861pt too wide) has occurred while \output is active
 [41
 
 ]
+\openout4 = `motivation.vrb'.
+
+ (./motivation.vrb) [42
+
+]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\translate ' on input line 693.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
 Overfull \hbox (209.38861pt too wide) has occurred while \output is active
  [][]  \OT1/cmss/m/n/6 ([])  
  []
 
-[42
+[43
 
 ]
-\openout4 = `motivation.vrb'.
+Overfull \hbox (209.38861pt too wide) has occurred while \output is active
+ [][]  \OT1/cmss/m/n/6 ([])  
+ []
 
- (./motivation.vrb) [43
+[44]
+Overfull \hbox (209.38861pt too wide) has occurred while \output is active
+ [][]  \OT1/cmss/m/n/6 ([])  
+ []
+
+[45
+
+]
+Overfull \hbox (209.38861pt too wide) has occurred while \output is active
+ [][]  \OT1/cmss/m/n/6 ([])  
+ []
+
+[46
+
+]
+Overfull \hbox (209.38861pt too wide) has occurred while \output is active
+ [][]  \OT1/cmss/m/n/6 ([])  
+ []
+
+[47
+
+]
+Overfull \hbox (209.38861pt too wide) has occurred while \output is active
+ [][]  \OT1/cmss/m/n/6 ([])  
+ []
+
+[48
+
+]
+Overfull \hbox (209.38861pt too wide) has occurred while \output is active
+ [][]  \OT1/cmss/m/n/6 ([])  
+ []
+
+[49
+
+]
+Overfull \hbox (209.38861pt too wide) has occurred while \output is active
+ [][]  \OT1/cmss/m/n/6 ([])  
+ []
+
+[50
 
 ]
 \tf@nav=\write6
@@ -1361,35 +1421,41 @@ Overfull \hbox (209.38861pt too wide) has occurred while \output is active
 
  (./motivation.aux)
 Package rerunfilecheck Info: File `motivation.out' has not changed.
-(rerunfilecheck)             Checksum: 9FACE105EE6BFB175F1763FFD2ED341B;1611.
+(rerunfilecheck)             Checksum: FD33393802D9437FBD61483A0D6ED467;1382.
  ) 
 Here is how much of TeX's memory you used:
- 26264 strings out of 476025
- 525670 string characters out of 5790017
+ 26326 strings out of 476025
+ 526880 string characters out of 5790017
  1863388 words of memory out of 5000000
- 46009 multiletter control sequences out of 15000+600000
- 535230 words of font info for 101 fonts, out of 8000000 for 9000
+ 46049 multiletter control sequences out of 15000+600000
+ 535758 words of font info for 103 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,15n,122p,408b,828s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
-></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb>
-</usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
-/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></
-usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></
-usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></u
-sr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></us
-r/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/
-local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr
-/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr
-/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></usr/
-local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/l
-ocal/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/loc
-al/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/loca
-l/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfso1000.pfb>
-Output written on motivation.pdf (43 pages, 4687621 bytes).
+
+pdfTeX warning (dest): name{Navigation51} has been referenced but does not exis
+t, replaced by a fixed one
+
+</usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><
+/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></
+usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></u
+sr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></us
+r/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></us
+r/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr
+/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/
+local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/lo
+cal/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/l
+ocal/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/l
+ocal/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi12.pfb></usr/l
+ocal/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></usr/lo
+cal/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/loc
+al/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local
+/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/
+texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/t
+exlive/2023/texmf-dist/fonts/type1/public/cm-super/sfso1000.pfb>
+Output written on motivation.pdf (50 pages, 5971167 bytes).
 PDF statistics:
- 1463 PDF objects out of 1728 (max. 8388607)
- 1271 compressed objects within 13 object streams
- 96 named destinations out of 1000 (max. 500000)
- 548 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1793 PDF objects out of 2073 (max. 8388607)
+ 1570 compressed objects within 16 object streams
+ 110 named destinations out of 1000 (max. 500000)
+ 622 words of extra memory for PDF output out of 10000 (max. 10000000)
 

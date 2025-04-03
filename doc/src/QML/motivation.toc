@@ -2,8 +2,6 @@
 \beamer@sectionintoc {2}{Introduction to Quantum Computing}{7}{0}{2}
 \beamer@sectionintoc {3}{Quantum Machine Learning (QML)}{8}{0}{3}
 \beamer@sectionintoc {4}{Quantum Speedups}{9}{0}{4}
-\beamer@sectionintoc {5}{Challenges in Quantum Machine Learning}{11}{0}{5}
-\beamer@sectionintoc {6}{Applications of QML}{12}{0}{6}
-\beamer@sectionintoc {7}{Additional material}{36}{0}{7}
-\beamer@sectionintoc {8}{Quantum Algorithms for ML}{36}{0}{8}
-\beamer@sectionintoc {9}{Future Perspectives}{42}{0}{9}
+\beamer@sectionintoc {5}{Challenges in Quantum Machine Learning}{10}{0}{5}
+\beamer@sectionintoc {6}{Applications of QML}{41}{0}{6}
+\beamer@sectionintoc {7}{Future Perspectives}{50}{1}{7}
