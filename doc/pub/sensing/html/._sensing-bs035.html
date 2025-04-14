@@ -42,6 +42,42 @@ doconce format html sensing.do.txt --html_style=bootstrap --pygments_html_style=
                None,
                'more-material-will-be-added'),
               ('Literature', 2, None, 'literature'),
+              ('Basics of quantum sensing',
+               2,
+               None,
+               'basics-of-quantum-sensing'),
+              ('Example of Readout Functions in Quantum Sensing',
+               2,
+               None,
+               'example-of-readout-functions-in-quantum-sensing'),
+              ('Example 1: Quantum Magnetometry with a Single Qubit',
+               2,
+               None,
+               'example-1-quantum-magnetometry-with-a-single-qubit'),
+              ('Step 1: Initial Qubit State',
+               2,
+               None,
+               'step-1-initial-qubit-state'),
+              ('Step 2: Interaction with External Field',
+               2,
+               None,
+               'step-2-interaction-with-external-field'),
+              ('As time evolves', 2, None, 'as-time-evolves'),
+              ('Step 3: Measurement (Readout Function)',
+               2,
+               None,
+               'step-3-measurement-readout-function'),
+              ('Measurement Probability', 2, None, 'measurement-probability'),
+              ('Readout Function', 2, None, 'readout-function'),
+              ('Example 2: Using a Readout Function to Estimate Parameters',
+               2,
+               None,
+               'example-2-using-a-readout-function-to-estimate-parameters'),
+              ('Expectation value of $\\hat{S}_z$',
+               2,
+               None,
+               'expectation-value-of-hat-s-z'),
+              ('Phase shift', 2, None, 'phase-shift'),
               ('One-qubit system', 2, None, 'one-qubit-system'),
               ('Definitions: Single qubit gates',
                2,
@@ -158,7 +194,36 @@ doconce format html sensing.do.txt --html_style=bootstrap --pygments_html_style=
                2,
                None,
                'two-qubit-program-example-best-seen-using-the-jupyter-notebook'),
-              ('Analysis', 2, None, 'analysis')]}
+              ('Analysis and additions', 2, None, 'analysis-and-additions'),
+              ('Conclusion', 2, None, 'conclusion'),
+              ('Other types of sensors', 2, None, 'other-types-of-sensors'),
+              ('Magnetic Field Sensing with Nitrogen-Vacancy (NV) Centers',
+               2,
+               None,
+               'magnetic-field-sensing-with-nitrogen-vacancy-nv-centers'),
+              ('Atomic Clocks', 2, None, 'atomic-clocks'),
+              ('Gravitational Wave Detection (LIGO)',
+               2,
+               None,
+               'gravitational-wave-detection-ligo'),
+              ('Quantum Thermometry', 2, None, 'quantum-thermometry'),
+              ('Entangled Photon Interferometry',
+               2,
+               None,
+               'entangled-photon-interferometry'),
+              ('Electric Field Sensing with Rydberg Atoms',
+               2,
+               None,
+               'electric-field-sensing-with-rydberg-atoms'),
+              ('Quantum Gyroscopes', 2, None, 'quantum-gyroscopes'),
+              ('Molecular Concentration Sensing',
+               2,
+               None,
+               'molecular-concentration-sensing'),
+              ('Superconducting Quantum Interference Devices (SQUIDs)',
+               2,
+               None,
+               'superconducting-quantum-interference-devices-squids')]}
 end of tocinfo -->
 
 <body>
@@ -196,57 +261,80 @@ MathJax.Hub.Config({
      <!-- navigation toc: --> <li><a href="._sensing-bs001.html#motivation-and-content" style="font-size: 80%;">Motivation and Content</a></li>
      <!-- navigation toc: --> <li><a href="._sensing-bs002.html#more-material-will-be-added" style="font-size: 80%;">More material will be added</a></li>
      <!-- navigation toc: --> <li><a href="._sensing-bs003.html#literature" style="font-size: 80%;">Literature</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs004.html#one-qubit-system" style="font-size: 80%;">One-qubit system</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs005.html#definitions-single-qubit-gates" style="font-size: 80%;">Definitions: Single qubit gates</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs006.html#pauli-gates" style="font-size: 80%;">Pauli gates</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs007.html#hadamard-gate" style="font-size: 80%;">Hadamard gate</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs008.html#sensing-hamiltonian" style="font-size: 80%;">Sensing Hamiltonian</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs009.html#time-dependent-hamiltonian-matrix" style="font-size: 80%;">Time-dependent Hamiltonian matrix</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs045.html#interaction-part" style="font-size: 80%;">Interaction part</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs011.html#non-interacting-solution" style="font-size: 80%;">Non-interacting solution</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs012.html#rewriting-with-pauli-matrices" style="font-size: 80%;">Rewriting with Pauli matrices</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs013.html#simple-time-dependence" style="font-size: 80%;">Simple time dependence</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs014.html#exact-solution" style="font-size: 80%;">Exact solution</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs015.html#selecting-parameters" style="font-size: 80%;">Selecting parameters</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs016.html#setting-up-the-matrix-for-the-simple-one-qubit-system" style="font-size: 80%;">Setting up the matrix for the simple one-qubit system</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs017.html#sensing-protocol-taken-from-degen-et-al" style="font-size: 80%;">Sensing protocol, taken from  Degen <em>et al.,</em></a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs018.html#initialization-and-sensing-analysis-ramsey-measurement" style="font-size: 80%;">Initialization and sensing analysis, Ramsey measurement</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs019.html#effects-of-stimulus" style="font-size: 80%;">Effects of stimulus</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs020.html#slowly-changing-potential" style="font-size: 80%;">Slowly changing potential</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs021.html#readout" style="font-size: 80%;">Readout</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs022.html#measurement" style="font-size: 80%;">Measurement</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs023.html#multiple-measurements" style="font-size: 80%;">Multiple measurements</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs024.html#example" style="font-size: 80%;">Example</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs025.html#evolution-of-initial-state" style="font-size: 80%;">Evolution of initial state</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs026.html#state-evolution" style="font-size: 80%;">State evolution</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs027.html#preparing-for-readout" style="font-size: 80%;">Preparing for readout</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs039.html#transition-probability" style="font-size: 80%;">Transition probability</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs029.html#ramsey-interferometry-https-en-wikipedia-org-wiki-ramsey-interferometry" style="font-size: 80%;">"Ramsey interferometry":"https://en.wikipedia.org/wiki/Ramsey_interferometry"</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs030.html#benefits-of-entanglement" style="font-size: 80%;">Benefits of Entanglement</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs031.html#ramsey-interferometry" style="font-size: 80%;">Ramsey interferometry</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs032.html#key-components-of-code-for-one-qubit" style="font-size: 80%;">Key components of code for one qubit</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs033.html#one-qubit-program-example-best-seen-using-the-jupyter-notebook" style="font-size: 80%;">One-qubit program example (best seen using the jupyter-notebook)</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs034.html#interpretation" style="font-size: 80%;">Interpretation</a></li>
-     <!-- navigation toc: --> <li><a href="#to-use-this-for-sensing-protocol-of-degen-et-al-2017" style="font-size: 80%;">To use this for sensing (protocol of Degen <em>et al.,</em> (2017))</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs036.html#feel-free-to-play-around-with-this-code" style="font-size: 80%;">Feel free to play around with this code</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs037.html#more-than-one-qubit" style="font-size: 80%;">More than one qubit</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs038.html#after-initialization" style="font-size: 80%;">After initialization</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs039.html#transition-probability" style="font-size: 80%;">Transition probability</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs052.html#role-of-entanglement" style="font-size: 80%;">Role of entanglement</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs041.html#two-qubits-and-entanglement" style="font-size: 80%;">Two qubits and entanglement</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs042.html#simple-system-to-lllustrate-entanglement" style="font-size: 80%;">Simple system to lllustrate entanglement</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs043.html#computational-basis-states" style="font-size: 80%;">Computational basis states</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs044.html#eigenstates-of-non-interacting-hamiltonian" style="font-size: 80%;">Eigenstates of non-interacting Hamiltonian</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs045.html#interaction-part" style="font-size: 80%;">Interaction part</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs046.html#entangled-state" style="font-size: 80%;">Entangled state</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs047.html#intermezzo-digression-on-density-matrices-and-entropy" style="font-size: 80%;">Intermezzo (digression) on density matrices and entropy</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs048.html#subsystems" style="font-size: 80%;">Subsystems</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs049.html#entropies" style="font-size: 80%;">Entropies</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs050.html#understanding-the-example" style="font-size: 80%;">Understanding the example</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs051.html#code-best-seen-in-jupyter-notebook" style="font-size: 80%;">Code, best seen in jupyter-notebook</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs052.html#role-of-entanglement" style="font-size: 80%;">Role of entanglement</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs053.html#two-qubit-program-example-best-seen-using-the-jupyter-notebook" style="font-size: 80%;">Two-qubit program example (best seen using the jupyter-notebook)</a></li>
-     <!-- navigation toc: --> <li><a href="._sensing-bs054.html#analysis" style="font-size: 80%;">Analysis</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs004.html#basics-of-quantum-sensing" style="font-size: 80%;">Basics of quantum sensing</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs005.html#example-of-readout-functions-in-quantum-sensing" style="font-size: 80%;">Example of Readout Functions in Quantum Sensing</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs006.html#example-1-quantum-magnetometry-with-a-single-qubit" style="font-size: 80%;">Example 1: Quantum Magnetometry with a Single Qubit</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs007.html#step-1-initial-qubit-state" style="font-size: 80%;">Step 1: Initial Qubit State</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs008.html#step-2-interaction-with-external-field" style="font-size: 80%;">Step 2: Interaction with External Field</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs009.html#as-time-evolves" style="font-size: 80%;">As time evolves</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs010.html#step-3-measurement-readout-function" style="font-size: 80%;">Step 3: Measurement (Readout Function)</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs011.html#measurement-probability" style="font-size: 80%;">Measurement Probability</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs012.html#readout-function" style="font-size: 80%;">Readout Function</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs013.html#example-2-using-a-readout-function-to-estimate-parameters" style="font-size: 80%;">Example 2: Using a Readout Function to Estimate Parameters</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs014.html#expectation-value-of-hat-s-z" style="font-size: 80%;">Expectation value of \( \hat{S}_z \)</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs015.html#phase-shift" style="font-size: 80%;">Phase shift</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs016.html#one-qubit-system" style="font-size: 80%;">One-qubit system</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs017.html#definitions-single-qubit-gates" style="font-size: 80%;">Definitions: Single qubit gates</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs018.html#pauli-gates" style="font-size: 80%;">Pauli gates</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs019.html#hadamard-gate" style="font-size: 80%;">Hadamard gate</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs020.html#sensing-hamiltonian" style="font-size: 80%;">Sensing Hamiltonian</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs021.html#time-dependent-hamiltonian-matrix" style="font-size: 80%;">Time-dependent Hamiltonian matrix</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs057.html#interaction-part" style="font-size: 80%;">Interaction part</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs023.html#non-interacting-solution" style="font-size: 80%;">Non-interacting solution</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs024.html#rewriting-with-pauli-matrices" style="font-size: 80%;">Rewriting with Pauli matrices</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs025.html#simple-time-dependence" style="font-size: 80%;">Simple time dependence</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs026.html#exact-solution" style="font-size: 80%;">Exact solution</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs027.html#selecting-parameters" style="font-size: 80%;">Selecting parameters</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs028.html#setting-up-the-matrix-for-the-simple-one-qubit-system" style="font-size: 80%;">Setting up the matrix for the simple one-qubit system</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs029.html#sensing-protocol-taken-from-degen-et-al" style="font-size: 80%;">Sensing protocol, taken from  Degen <em>et al.,</em></a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs030.html#initialization-and-sensing-analysis-ramsey-measurement" style="font-size: 80%;">Initialization and sensing analysis, Ramsey measurement</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs031.html#effects-of-stimulus" style="font-size: 80%;">Effects of stimulus</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs032.html#slowly-changing-potential" style="font-size: 80%;">Slowly changing potential</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs033.html#readout" style="font-size: 80%;">Readout</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs034.html#measurement" style="font-size: 80%;">Measurement</a></li>
+     <!-- navigation toc: --> <li><a href="#multiple-measurements" style="font-size: 80%;">Multiple measurements</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs036.html#example" style="font-size: 80%;">Example</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs037.html#evolution-of-initial-state" style="font-size: 80%;">Evolution of initial state</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs038.html#state-evolution" style="font-size: 80%;">State evolution</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs039.html#preparing-for-readout" style="font-size: 80%;">Preparing for readout</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs051.html#transition-probability" style="font-size: 80%;">Transition probability</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs041.html#ramsey-interferometry-https-en-wikipedia-org-wiki-ramsey-interferometry" style="font-size: 80%;">"Ramsey interferometry":"https://en.wikipedia.org/wiki/Ramsey_interferometry"</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs042.html#benefits-of-entanglement" style="font-size: 80%;">Benefits of Entanglement</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs043.html#ramsey-interferometry" style="font-size: 80%;">Ramsey interferometry</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs044.html#key-components-of-code-for-one-qubit" style="font-size: 80%;">Key components of code for one qubit</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs045.html#one-qubit-program-example-best-seen-using-the-jupyter-notebook" style="font-size: 80%;">One-qubit program example (best seen using the jupyter-notebook)</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs046.html#interpretation" style="font-size: 80%;">Interpretation</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs047.html#to-use-this-for-sensing-protocol-of-degen-et-al-2017" style="font-size: 80%;">To use this for sensing (protocol of Degen <em>et al.,</em> (2017))</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs048.html#feel-free-to-play-around-with-this-code" style="font-size: 80%;">Feel free to play around with this code</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs049.html#more-than-one-qubit" style="font-size: 80%;">More than one qubit</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs050.html#after-initialization" style="font-size: 80%;">After initialization</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs051.html#transition-probability" style="font-size: 80%;">Transition probability</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs064.html#role-of-entanglement" style="font-size: 80%;">Role of entanglement</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs053.html#two-qubits-and-entanglement" style="font-size: 80%;">Two qubits and entanglement</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs054.html#simple-system-to-lllustrate-entanglement" style="font-size: 80%;">Simple system to lllustrate entanglement</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs055.html#computational-basis-states" style="font-size: 80%;">Computational basis states</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs056.html#eigenstates-of-non-interacting-hamiltonian" style="font-size: 80%;">Eigenstates of non-interacting Hamiltonian</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs057.html#interaction-part" style="font-size: 80%;">Interaction part</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs058.html#entangled-state" style="font-size: 80%;">Entangled state</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs059.html#intermezzo-digression-on-density-matrices-and-entropy" style="font-size: 80%;">Intermezzo (digression) on density matrices and entropy</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs060.html#subsystems" style="font-size: 80%;">Subsystems</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs061.html#entropies" style="font-size: 80%;">Entropies</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs062.html#understanding-the-example" style="font-size: 80%;">Understanding the example</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs063.html#code-best-seen-in-jupyter-notebook" style="font-size: 80%;">Code, best seen in jupyter-notebook</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs064.html#role-of-entanglement" style="font-size: 80%;">Role of entanglement</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs065.html#two-qubit-program-example-best-seen-using-the-jupyter-notebook" style="font-size: 80%;">Two-qubit program example (best seen using the jupyter-notebook)</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs066.html#analysis-and-additions" style="font-size: 80%;">Analysis and additions</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs067.html#conclusion" style="font-size: 80%;">Conclusion</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs068.html#other-types-of-sensors" style="font-size: 80%;">Other types of sensors</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs069.html#magnetic-field-sensing-with-nitrogen-vacancy-nv-centers" style="font-size: 80%;">Magnetic Field Sensing with Nitrogen-Vacancy (NV) Centers</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs070.html#atomic-clocks" style="font-size: 80%;">Atomic Clocks</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs071.html#gravitational-wave-detection-ligo" style="font-size: 80%;">Gravitational Wave Detection (LIGO)</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs072.html#quantum-thermometry" style="font-size: 80%;">Quantum Thermometry</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs073.html#entangled-photon-interferometry" style="font-size: 80%;">Entangled Photon Interferometry</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs074.html#electric-field-sensing-with-rydberg-atoms" style="font-size: 80%;">Electric Field Sensing with Rydberg Atoms</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs075.html#quantum-gyroscopes" style="font-size: 80%;">Quantum Gyroscopes</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs076.html#molecular-concentration-sensing" style="font-size: 80%;">Molecular Concentration Sensing</a></li>
+     <!-- navigation toc: --> <li><a href="._sensing-bs077.html#superconducting-quantum-interference-devices-squids" style="font-size: 80%;">Superconducting Quantum Interference Devices (SQUIDs)</a></li>
 
         </ul>
       </li>
@@ -258,14 +346,23 @@ MathJax.Hub.Config({
 <p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p> <!-- add vertical space -->
 <a name="part0035"></a>
 <!-- !split -->
-<h2 id="to-use-this-for-sensing-protocol-of-degen-et-al-2017" class="anchor">To use this for sensing (protocol of Degen <em>et al.,</em> (2017)) </h2>
+<h2 id="multiple-measurements" class="anchor">Multiple measurements </h2>
 
-<ol>
-<li> Prepare the qubit in a known superposition state</li>
-<li> Let it evolve in the magnetic field for a known time</li>
-<li> Measure the expectation values</li>
-<li> Determine (here) \( B \) from the oscillation frequency</li>
-</ol>
+<p>However, by having
+multiple quantum sensing elements time-evolving together or by
+repeating the process many times before the external stimulus \( V(t) \)
+can change, a transition probability
+</p>
+$$
+p_{|0\rangle\rightarrow|1\rangle}=\left|\left\langle 1 \mid \psi_{\mathrm{Final}}\right\rangle\right|^{2}=\left|b^{\prime}\right|^{2},
+$$
+
+<p>can be estimated. The <em>sensing</em> is then achieved by taking a
+series of these transition probabilities as a time series, and then
+using the results to estimate the sensed stimulus \( V(t) \), see for example the abovementioned review of
+Degen et al., 2017.
+</p>
+
 <p>
 <!-- navigation buttons at the bottom of the page -->
 <ul class="pagination">
@@ -291,7 +388,7 @@ MathJax.Hub.Config({
   <li><a href="._sensing-bs043.html">44</a></li>
   <li><a href="._sensing-bs044.html">45</a></li>
   <li><a href="">...</a></li>
-  <li><a href="._sensing-bs054.html">55</a></li>
+  <li><a href="._sensing-bs077.html">78</a></li>
   <li><a href="._sensing-bs036.html">&raquo;</a></li>
 </ul>
 <!-- ------------------- end of main content --------------- -->

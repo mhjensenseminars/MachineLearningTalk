@@ -158,7 +158,7 @@ used to infer information about the external field.
 ===== Measurement Probability =====
 
 _Measurement Probability_: The probability of measuring the state
-|0\rangle or |1\rangle is given by the squared modulus of the
+$\vert 0\rangle$  or $\vert 1\rangle$ is given by the squared modulus of the
 corresponding amplitudes.
 
 o Probability of measuring $\vert 0\rangle$: $P(0) = |\alpha|^2$
@@ -196,11 +196,11 @@ of some observable (e.g., $\hat{S}_z)$ and comparing the outcomes to
 theoretical predictions.
 
 !split
-====== Expectation value of $\hat{S}_z$ =====
+===== Expectation value of $\hat{S}_z$ =====
 
 For example, the expectation value of $\hat{S}_z$ (the spin along the $z$-axis)
 in the state $\vert \psi(t) \rangle$ is:
-\bt
+!bt
 \[
 \langle \hat{S}_z \rangle = \langle \psi(t) \vert \hat{S}_z \vert \psi(t) \rangle = \frac{1}{2} \left( |\alpha|^2 - |\beta|^2 \right),
 \]
@@ -208,7 +208,7 @@ in the state $\vert \psi(t) \rangle$ is:
 
 
 !split
-====== Phase shift =====
+===== Phase shift =====
 
 Since the magnetic field causes a phase shift $\exp{-i \gamma B t}$, the
 measurement of the expectation value of $\hat{S}_z$ gives us a way to
@@ -1318,7 +1318,7 @@ plt.show()
 !ec
 
 !split
-===== Analysis =====
+===== Analysis and additions =====
 
 The result here is pretty boring, we just get $0.5$, as expected. The field acts only in the $z$-direction and is a constant. The probabilities are thus left unchanged.
 Feel free to change the Hamiltonian. Here's a list of suggestion:
@@ -1332,30 +1332,26 @@ o Study the Fisher entropy and much more
 Several of these additions will be added. 
 
 
+!split
+===== Conclusion =====
 
 
-
-
-
-
-
-
-Conclusion
-
-
-
+!bblock
 The readout functions in quantum sensing serve as the crucial step in
 extracting classical information from a quantum system after a set of
 operations. In quantum magnetometry, for instance, the readout is
 typically performed by measuring the qubit in the computational basis
 and using the outcome (such as the probabilities of measuring
-|0\rangle or |1\rangle) to infer properties like the magnetic field
+$\vert 0\rangle$ or $\vert 1\rangle$) to infer properties like the magnetic field
 strength. In more complex systems, the readout functions could involve
 more sophisticated measurements such as those based on quantum
 tomography, where the state of the system is fully reconstructed from
 measurement data.
+!eblock 
 
 
+!split
+===== Other types of sensors =====
 
 This process can be generalized to other types of quantum sensors,
 such as those measuring electric fields, temperature, or time. The
@@ -1363,48 +1359,93 @@ general concept remains: we manipulate a quantum system, measure it,
 and extract classical information to sense the desired physical
 quantity.
 
-
-1. **Magnetic Field Sensing with Nitrogen-Vacancy (NV) Centers**  
-  - **Parameter**: Magnetic field strength.  
-  - **Method**: NV centers in diamond have electron spins sensitive to magnetic fields. By optically detecting spin state changes (via fluorescence), magnetic fields at the nanoscale are estimated with high spatial resolution, useful in material science and biomedical imaging.
-
-2. **Atomic Clocks**  
-  - **Parameter**: Time/frequency.  
-  - **Method**: Atomic transitions (e.g., in cesium or rubidium) serve as frequency standards. Quantum superposition states are probed to lock oscillator frequencies, enabling ultra-precise timekeeping critical for GPS and telecommunications.
-
-3. **Gravitational Wave Detection (LIGO)**  
-  - **Parameter**: Phase shift induced by spacetime ripples.  
-  - **Method**: Squeezed light reduces quantum noise in interferometers, enhancing sensitivity to minute phase shifts caused by gravitational waves, pushing measurements below the standard quantum limit.
-
-4. **Quantum Thermometry**  
-  - **Parameter**: Temperature.  
-  - **Method**: Quantum probes like trapped ions or superconducting qubits exploit temperature-dependent decoherence or energy-level shifts to measure microkelvin-scale temperatures in cryogenic systems.
-
-5. **Entangled Photon Interferometry**  
-  - **Parameter**: Optical phase shifts.  
-  - **Method**: Entangled photons in interferometers achieve sub-shot-noise precision, enabling enhanced measurements of distances or refractive indices for applications in metrology and imaging.
-
-6. **Electric Field Sensing with Rydberg Atoms**  
-  - **Parameter**: Electric field strength.  
-  - **Method**: Rydberg atoms, highly sensitive to electric fields due to their large polarizability, detect field-induced Stark shifts via microwave spectroscopy, useful in electrometry and communications.
-
-7. **Quantum Gyroscopes**  
-  - **Parameter**: Rotation rate.  
-  - **Method**: Cold atom interferometers or entangled particles exploit the Sagnac effect to measure rotation with quantum-enhanced precision, advancing inertial navigation systems.
-
-8. **Molecular Concentration Sensing**  
-  - **Parameter**: Chemical concentration.  
-  - **Method**: Spin defects in diamond (e.g., NV centers) detect local magnetic perturbations from target molecules, enabling nanoscale NMR spectroscopy for biological or chemical analysis.
-
-9. **Superconducting Quantum Interference Devices (SQUIDs)**  
-  - **Parameter**: Magnetic flux.  
-  - **Method**: SQUIDs leverage flux quantization and Josephson junctions to measure extremely weak magnetic fields, applied in magnetoencephalography (MEG) for brain activity mapping.
-
-10. **Quantum-Enhanced Lidar**  
-   - **Parameter**: Distance/velocity.  
-   - **Method**: Entangled photons improve resolution and noise resilience in light detection and ranging (lidar), enabling precise 3D imaging for autonomous vehicles or environmental monitoring.
-
-These examples illustrate the diversity of quantum sensing
+The examples below illustrate the diversity of quantum sensing
 applications, where quantum states (entanglement, superposition,
 squeezing) or quantum systems (atoms, spins, photons) enable
 breakthroughs in precision beyond classical limits.
+
+
+
+
+!split
+===== Magnetic Field Sensing with Nitrogen-Vacancy (NV) Centers =====
+
+o Parameter: Magnetic field strength.  
+
+!bblock
+Method/platform: NV centers in diamond have electron spins sensitive to magnetic fields.
+By optically detecting spin state changes (via fluorescence), magnetic
+fields at the nanoscale are estimated with high spatial resolution,
+useful in material science and biomedical imaging.
+!eblock
+
+
+!split
+===== Atomic Clocks =====
+
+o Parameter: Time/frequency.  
+
+!bblock
+Method/platform: Atomic transitions (e.g., in cesium or rubidium) serve as frequency standards. Quantum superposition states are probed to lock oscillator frequencies, enabling ultra-precise timekeeping critical for GPS and telecommunications.
+!eblock
+
+!split
+===== Gravitational Wave Detection (LIGO) =====
+
+o Parameter: Phase shift induced by spacetime ripples.  
+!bblock
+Method/platform: Squeezed light reduces quantum noise in interferometers, enhancing sensitivity to minute phase shifts caused by gravitational waves, pushing measurements below the standard quantum limit.
+!eblock
+
+!split
+===== Quantum Thermometry =====
+
+o Parameter: Temperature.  
+
+!bblock
+Method/platform**: Quantum probes like trapped ions or superconducting qubits exploit temperature-dependent decoherence or energy-level shifts to measure microkelvin-scale temperatures in cryogenic systems.
+!eblock
+
+!split
+===== Entangled Photon Interferometry =====
+
+o Parameter: Optical phase shifts.
+!bblock
+Method/platform: Entangled photons in interferometers achieve sub-shot-noise precision, enabling enhanced measurements of distances or refractive indices for applications in metrology and imaging.
+!eblock
+
+!split
+===== Electric Field Sensing with Rydberg Atoms =====
+o Parameter: Electric field strength.  
+
+!bblock
+Method/platform: Rydberg atoms, highly sensitive to electric fields due to their large polarizability, detect field-induced Stark shifts via microwave spectroscopy, useful in electrometry and communications.
+!eblock
+
+!split
+===== Quantum Gyroscopes =====
+
+o Parameter: Rotation rate.  
+
+!bblock
+Method/platform: Cold atom interferometers or entangled particles exploit the Sagnac effect to measure rotation with quantum-enhanced precision, advancing inertial navigation systems.
+!eblock
+
+
+!split
+===== Molecular Concentration Sensing =====
+o Parameter: Chemical concentration.  
+
+!bblock
+Method/platform: Spin defects in diamond (e.g., NV centers) detect local magnetic perturbations from target molecules, enabling nanoscale NMR spectroscopy for biological or chemical analysis.
+!eblock
+
+!split
+===== Superconducting Quantum Interference Devices (SQUIDs) =====
+
+o Parameter: Magnetic flux.  
+
+!bblock
+Method/platform: SQUIDs leverage flux quantization and Josephson junctions to measure extremely weak magnetic fields, applied in magnetoencephalography (MEG) for brain activity mapping.
+!eblock
+

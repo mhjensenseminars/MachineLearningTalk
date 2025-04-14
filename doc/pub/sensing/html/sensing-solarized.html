@@ -69,6 +69,42 @@ div.toc p,a {
                None,
                'more-material-will-be-added'),
               ('Literature', 2, None, 'literature'),
+              ('Basics of quantum sensing',
+               2,
+               None,
+               'basics-of-quantum-sensing'),
+              ('Example of Readout Functions in Quantum Sensing',
+               2,
+               None,
+               'example-of-readout-functions-in-quantum-sensing'),
+              ('Example 1: Quantum Magnetometry with a Single Qubit',
+               2,
+               None,
+               'example-1-quantum-magnetometry-with-a-single-qubit'),
+              ('Step 1: Initial Qubit State',
+               2,
+               None,
+               'step-1-initial-qubit-state'),
+              ('Step 2: Interaction with External Field',
+               2,
+               None,
+               'step-2-interaction-with-external-field'),
+              ('As time evolves', 2, None, 'as-time-evolves'),
+              ('Step 3: Measurement (Readout Function)',
+               2,
+               None,
+               'step-3-measurement-readout-function'),
+              ('Measurement Probability', 2, None, 'measurement-probability'),
+              ('Readout Function', 2, None, 'readout-function'),
+              ('Example 2: Using a Readout Function to Estimate Parameters',
+               2,
+               None,
+               'example-2-using-a-readout-function-to-estimate-parameters'),
+              ('Expectation value of $\\hat{S}_z$',
+               2,
+               None,
+               'expectation-value-of-hat-s-z'),
+              ('Phase shift', 2, None, 'phase-shift'),
               ('One-qubit system', 2, None, 'one-qubit-system'),
               ('Definitions: Single qubit gates',
                2,
@@ -185,7 +221,36 @@ div.toc p,a {
                2,
                None,
                'two-qubit-program-example-best-seen-using-the-jupyter-notebook'),
-              ('Analysis', 2, None, 'analysis')]}
+              ('Analysis and additions', 2, None, 'analysis-and-additions'),
+              ('Conclusion', 2, None, 'conclusion'),
+              ('Other types of sensors', 2, None, 'other-types-of-sensors'),
+              ('Magnetic Field Sensing with Nitrogen-Vacancy (NV) Centers',
+               2,
+               None,
+               'magnetic-field-sensing-with-nitrogen-vacancy-nv-centers'),
+              ('Atomic Clocks', 2, None, 'atomic-clocks'),
+              ('Gravitational Wave Detection (LIGO)',
+               2,
+               None,
+               'gravitational-wave-detection-ligo'),
+              ('Quantum Thermometry', 2, None, 'quantum-thermometry'),
+              ('Entangled Photon Interferometry',
+               2,
+               None,
+               'entangled-photon-interferometry'),
+              ('Electric Field Sensing with Rydberg Atoms',
+               2,
+               None,
+               'electric-field-sensing-with-rydberg-atoms'),
+              ('Quantum Gyroscopes', 2, None, 'quantum-gyroscopes'),
+              ('Molecular Concentration Sensing',
+               2,
+               None,
+               'molecular-concentration-sensing'),
+              ('Superconducting Quantum Interference Devices (SQUIDs)',
+               2,
+               None,
+               'superconducting-quantum-interference-devices-squids')]}
 end of tocinfo -->
 
 <body>
@@ -220,7 +285,7 @@ MathJax.Hub.Config({
 </center>
 <br>
 <center>
-<h4>March 14, 2025</h4>
+<h4>April 14, 2025</h4>
 </center> <!-- date -->
 <br>
 
@@ -231,7 +296,7 @@ MathJax.Hub.Config({
 with quantum sensing using simple examples.  Numerical codes are
 included in order to illustrate basic elements of sensing.  The
 examples are tailored to simple one- and two-qubit systems. The
-material contains (as of now, March 14, 2025))
+material contains (April  14, 2025))
 </p>
 <ol>
 <li> One-qubit system with basic elements of sensing</li>
@@ -261,9 +326,187 @@ articles
 <li> See also recent work by Liu et at <a href="https://www.nature.com/articles/s41534-021-00507-x" target="_blank"><tt>https://www.nature.com/articles/s41534-021-00507-x</tt></a>. We may add codes which simulate these systems as well, stay tuned.</li>
 </ol>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="basics-of-quantum-sensing">Basics of quantum sensing </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p>In quantum sensing, <b>readout functions</b> refer to the methods used to
+extract information about the quantum system after a series of
+operations or measurements have been performed.
+</p>
+</div>
+ 
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p>The readout process
+typically involves measuring the state of quantum bits (qubits) or
+other quantum observables, and this information is then used to infer
+physical quantities such as time, magnetic fields, temperature, or
+other parameters being sensed.
+</p>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="example-of-readout-functions-in-quantum-sensing">Example of Readout Functions in Quantum Sensing </h2>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p><b>A common example in quantum sensing involves measuring the state of a
+qubit after it has interacted with some external field or force.</b> The
+quantum sensor&#8217;s response is determined by how the qubit state evolves
+due to the applied field, and the readout function is the measurement
+procedure that allows us to extract this information.
+</p>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="example-1-quantum-magnetometry-with-a-single-qubit">Example 1: Quantum Magnetometry with a Single Qubit </h2>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p>Let&#8217;s consider a typical scenario of quantum magnetometry using a
+single qubit that interacts with a magnetic field. We will use the
+concept of quantum state measurement as a readout function to infer
+the value of the magnetic field.
+</p>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="step-1-initial-qubit-state">Step 1: Initial Qubit State </h2>
+
+<p>In this example, we use a spin-1/2 system (e.g., a qubit) that is
+sensitive to an external magnetic field. A common method of performing
+quantum sensing is to apply a quantum gate (e.g., a rotation) to the
+qubit and then measure its state.
+</p>
+
+<p>Assume the initial state of the qubit is</p>
+$$
+\vert \psi \rangle = \alpha \vert 0\rangle + \beta |1\rangle,
+$$
+
+<p>where \( \alpha \) and \( \beta \) are complex
+amplitudes, and \( \vert 0\rangle \) and \( \vert 1\rangle \)
+are the computational basis
+states.
+</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="step-2-interaction-with-external-field">Step 2: Interaction with External Field </h2>
+
+<p>When a magnetic field is applied to the qubit, it will induce a phase
+shift in the qubit&#8217;s state. The evolution of the qubit&#8217;s state can be
+modeled using the time evolution operator U(t), which depends on the
+interaction with the magnetic field. The evolution can be described
+as:
+</p>
+$$
+U(t) = \exp{-\imath  \mathcal{H} t}
+$$
+
+<p>where \( \mathcal{H} \) is the Hamiltonian of the qubit system, which in
+the case of a spin-1/2 particle in a magnetic field \( B \) could be
+</p>
+$$
+\mathcal{H} =-\gamma B \hat{S}_z,
+$$
+
+<p>with \( \gamma \) being the gyromagnetic ratio and
+\( \hat{S}_z \) being the spin operator along the \( z \)-axis.
+</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="as-time-evolves">As time evolves </h2>
+
+<p>After time t, the qubit&#8217;s state becomes:</p>
+
+$$
+\vert \psi(t) \rangle = \alpha \vert 0\rangle + \beta \exp{-i \gamma B t} \vert 1\rangle,
+$$
+
+<p>Here, the phase shift \( \exp^{-i \gamma B t} \) accumulates depending on the applied magnetic field \( B \).</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="step-3-measurement-readout-function">Step 3: Measurement (Readout Function) </h2>
+
+<p>After the interaction with the magnetic field, the next step is to
+measure the qubit. The readout function involves projecting the
+quantum state onto a measurement basis, often the computational basis
+\( \{|0\rangle, |1\rangle\} \). The outcome of the measurement can then be
+used to infer information about the external field.
+</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="measurement-probability">Measurement Probability </h2>
+
+<p><b>Measurement Probability</b>: The probability of measuring the state
+\( \vert 0\rangle \)  or \( \vert 1\rangle \) is given by the squared modulus of the
+corresponding amplitudes.
+</p>
+
+<ol>
+<li> Probability of measuring \( \vert 0\rangle \): \( P(0) = |\alpha|^2 \)</li>
+<li> Probability of measuring \( \vert 1\rangle \): \( P(1) = |\beta \exp{-i \gamma B t}|^2 = |\beta|^2 \)</li>
+</ol>
+<!-- !split  -->
+<h2 id="readout-function">Readout Function </h2>
+
+<p><b>Readout Function</b>: The measurement outcome corresponds to a result that
+is used to estimate the magnetic field. For instance, if the qubit
+undergoes a rotation due to the magnetic field, the phase shift in the
+qubit&#8217;s state can be used to infer the magnetic field
+strength. Typically, a series of measurements and repeated experiments
+are performed to average out the noise and obtain a precise estimate
+of B.
+</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="example-2-using-a-readout-function-to-estimate-parameters">Example 2: Using a Readout Function to Estimate Parameters </h2>
+
+<p>Let&#8217;s say the qubit&#8217;s state before the measurement is in a
+superposition state, and we want to determine the magnetic field
+strength by reading out the qubit&#8217;s state. After the qubit has
+undergone the evolution \( U(t) \), we measure it in the computational basis
+and repeat the experiment many times to obtain the average outcome.
+</p>
+
+<p>We could perform parameter estimation by measuring the expected value
+of some observable (e.g., \( \hat{S}_z) \) and comparing the outcomes to
+theoretical predictions.
+</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="expectation-value-of-hat-s-z">Expectation value of \( \hat{S}_z \) </h2>
+
+<p>For example, the expectation value of \( \hat{S}_z \) (the spin along the \( z \)-axis)
+in the state \( \vert \psi(t) \rangle \) is:
+</p>
+$$
+\langle \hat{S}_z \rangle = \langle \psi(t) \vert \hat{S}_z \vert \psi(t) \rangle = \frac{1}{2} \left( |\alpha|^2 - |\beta|^2 \right),
+$$
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="phase-shift">Phase shift </h2>
+
+<p>Since the magnetic field causes a phase shift \( \exp{-i \gamma B t} \), the
+measurement of the expectation value of \( \hat{S}_z \) gives us a way to
+infer the magnetic field \( B \). By performing a series of measurements and
+comparing the observed values to theoretical models, we can estimate
+the field strength \( B \).
+</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
 <h2 id="one-qubit-system">One-qubit system </h2>
 
-<p>In the first part of this notebook, we will analyze our systems using
+<p>In the first part of these notes, we will analyze our systems using
 plain diagonalization and simple analytical manipulations.  Thereafter
 we will develop codes and material for performing a quantum computing
 simulation of the same systems (this material is not yet ready).
@@ -1408,7 +1651,7 @@ plt.show()
 
 
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
-<h2 id="analysis">Analysis </h2>
+<h2 id="analysis-and-additions">Analysis and additions </h2>
 
 <p>The result here is pretty boring, we just get \( 0.5 \), as expected. The field acts only in the \( z \)-direction and is a constant. The probabilities are thus left unchanged.
 Feel free to change the Hamiltonian. Here's a list of suggestion:
@@ -1422,6 +1665,161 @@ Feel free to change the Hamiltonian. Here's a list of suggestion:
 <li> Study the Fisher entropy and much more</li>
 </ol>
 <p>Several of these additions will be added. </p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="conclusion">Conclusion </h2>
+
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p>The readout functions in quantum sensing serve as the crucial step in
+extracting classical information from a quantum system after a set of
+operations. In quantum magnetometry, for instance, the readout is
+typically performed by measuring the qubit in the computational basis
+and using the outcome (such as the probabilities of measuring
+\( \vert 0\rangle \) or \( \vert 1\rangle \)) to infer properties like the magnetic field
+strength. In more complex systems, the readout functions could involve
+more sophisticated measurements such as those based on quantum
+tomography, where the state of the system is fully reconstructed from
+measurement data.
+</p>
+</div>
+ 
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="other-types-of-sensors">Other types of sensors </h2>
+
+<p>This process can be generalized to other types of quantum sensors,
+such as those measuring electric fields, temperature, or time. The
+general concept remains: we manipulate a quantum system, measure it,
+and extract classical information to sense the desired physical
+quantity.
+</p>
+
+<p>The examples below illustrate the diversity of quantum sensing
+applications, where quantum states (entanglement, superposition,
+squeezing) or quantum systems (atoms, spins, photons) enable
+breakthroughs in precision beyond classical limits.
+</p>
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="magnetic-field-sensing-with-nitrogen-vacancy-nv-centers">Magnetic Field Sensing with Nitrogen-Vacancy (NV) Centers </h2>
+
+<ol>
+<li> Parameter: Magnetic field strength.</li>  
+</ol>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p>Method/platform: NV centers in diamond have electron spins sensitive to magnetic fields.
+By optically detecting spin state changes (via fluorescence), magnetic
+fields at the nanoscale are estimated with high spatial resolution,
+useful in material science and biomedical imaging.
+</p>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="atomic-clocks">Atomic Clocks </h2>
+
+<ol>
+<li> Parameter: Time/frequency.</li>  
+</ol>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p>Method/platform: Atomic transitions (e.g., in cesium or rubidium) serve as frequency standards. Quantum superposition states are probed to lock oscillator frequencies, enabling ultra-precise timekeeping critical for GPS and telecommunications.</p>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="gravitational-wave-detection-ligo">Gravitational Wave Detection (LIGO) </h2>
+
+<ol>
+<li> Parameter: Phase shift induced by spacetime ripples.</li>  
+</ol>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p>Method/platform: Squeezed light reduces quantum noise in interferometers, enhancing sensitivity to minute phase shifts caused by gravitational waves, pushing measurements below the standard quantum limit.</p>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="quantum-thermometry">Quantum Thermometry </h2>
+
+<ol>
+<li> Parameter: Temperature.</li>  
+</ol>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p>Method/platform**: Quantum probes like trapped ions or superconducting qubits exploit temperature-dependent decoherence or energy-level shifts to measure microkelvin-scale temperatures in cryogenic systems.</p>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="entangled-photon-interferometry">Entangled Photon Interferometry </h2>
+
+<ol>
+<li> Parameter: Optical phase shifts.</li>
+</ol>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p>Method/platform: Entangled photons in interferometers achieve sub-shot-noise precision, enabling enhanced measurements of distances or refractive indices for applications in metrology and imaging.</p>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="electric-field-sensing-with-rydberg-atoms">Electric Field Sensing with Rydberg Atoms </h2>
+<ol>
+<li> Parameter: Electric field strength.</li>  
+</ol>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p>Method/platform: Rydberg atoms, highly sensitive to electric fields due to their large polarizability, detect field-induced Stark shifts via microwave spectroscopy, useful in electrometry and communications.</p>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="quantum-gyroscopes">Quantum Gyroscopes </h2>
+
+<ol>
+<li> Parameter: Rotation rate.</li>  
+</ol>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p>Method/platform: Cold atom interferometers or entangled particles exploit the Sagnac effect to measure rotation with quantum-enhanced precision, advancing inertial navigation systems.</p>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="molecular-concentration-sensing">Molecular Concentration Sensing </h2>
+<ol>
+<li> Parameter: Chemical concentration.</li>  
+</ol>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p>Method/platform: Spin defects in diamond (e.g., NV centers) detect local magnetic perturbations from target molecules, enabling nanoscale NMR spectroscopy for biological or chemical analysis.</p>
+</div>
+
+
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+<h2 id="superconducting-quantum-interference-devices-squids">Superconducting Quantum Interference Devices (SQUIDs) </h2>
+
+<ol>
+<li> Parameter: Magnetic flux.</li>  
+</ol>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+<p>Method/platform: SQUIDs leverage flux quantization and Josephson junctions to measure extremely weak magnetic fields, applied in magnetoencephalography (MEG) for brain activity mapping.</p>
+</div>
+
 <!-- ------------------- end of main content --------------- -->
 <center style="font-size:80%">
 <!-- copyright --> &copy; 1999-2025, Morten Hjorth-Jensen. Released under CC Attribution-NonCommercial 4.0 license
