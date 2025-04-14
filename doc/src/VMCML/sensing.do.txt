@@ -148,57 +148,73 @@ Here, the phase shift $\exp^{-i \gamma B t}$ accumulates depending on the applie
 ===== Step 3: Measurement (Readout Function) =====
 
 
-
 After the interaction with the magnetic field, the next step is to
 measure the qubit. The readout function involves projecting the
 quantum state onto a measurement basis, often the computational basis
-\{|0\rangle, |1\rangle\}. The outcome of the measurement can then be
+$\{|0\rangle, |1\rangle\}$. The outcome of the measurement can then be
 used to infer information about the external field.
 
-• Measurement Probability: The probability of measuring the state |0\rangle or |1\rangle is given by the squared modulus of the corresponding amplitudes.
+!split
+===== Measurement Probability =====
 
-• Probability of measuring |0\rangle:
+_Measurement Probability_: The probability of measuring the state
+|0\rangle or |1\rangle is given by the squared modulus of the
+corresponding amplitudes.
 
-P(0) = |\alpha|^2
+o Probability of measuring $\vert 0\rangle$: $P(0) = |\alpha|^2$
 
-• Probability of measuring |1\rangle:
+o Probability of measuring $\vert 1\rangle$: $P(1) = |\beta \exp{-i \gamma B t}|^2 = |\beta|^2$
 
-P(1) = |\beta e^{-i \gamma B t}|^2 = |\beta|^2
-
-• Readout Function: The measurement outcome corresponds to a result that is used to estimate the magnetic field. For instance, if the qubit undergoes a rotation due to the magnetic field, the phase shift in the qubit’s state can be used to infer the magnetic field strength. Typically, a series of measurements and repeated experiments are performed to average out the noise and obtain a precise estimate of B.
-
+!split 
+===== Readout Function =====
 
 
-Example 2: Using a Readout Function to Estimate Parameters
+_Readout Function_: The measurement outcome corresponds to a result that
+is used to estimate the magnetic field. For instance, if the qubit
+undergoes a rotation due to the magnetic field, the phase shift in the
+qubit’s state can be used to infer the magnetic field
+strength. Typically, a series of measurements and repeated experiments
+are performed to average out the noise and obtain a precise estimate
+of B.
+
+
+!split
+===== Example 2: Using a Readout Function to Estimate Parameters =====
 
 
 
 Let’s say the qubit’s state before the measurement is in a
 superposition state, and we want to determine the magnetic field
 strength by reading out the qubit’s state. After the qubit has
-undergone the evolution U(t), we measure it in the computational basis
+undergone the evolution $U(t)$, we measure it in the computational basis
 and repeat the experiment many times to obtain the average outcome.
 
 
 
 We could perform parameter estimation by measuring the expected value
-of some observable (e.g., \hat{S}_z) and comparing the outcomes to
+of some observable (e.g., $\hat{S}_z)$ and comparing the outcomes to
 theoretical predictions.
 
+!split
+====== Expectation value of $\hat{S}_z$ =====
+
+For example, the expectation value of $\hat{S}_z$ (the spin along the $z$-axis)
+in the state $\vert \psi(t) \rangle$ is:
+\bt
+\[
+\langle \hat{S}_z \rangle = \langle \psi(t) \vert \hat{S}_z \vert \psi(t) \rangle = \frac{1}{2} \left( |\alpha|^2 - |\beta|^2 \right),
+\]
+!et
 
 
-For example, the expectation value of \hat{S}_z (the spin along the
-z-axis) in the state | \psi(t) \rangle is:
+!split
+====== Phase shift =====
 
-\langle \hat{S}_z \rangle = \langle \psi(t) | \hat{S}_z | \psi(t) \rangle = \frac{1}{2} \left( |\alpha|^2 - |\beta|^2 \right)
-
-
-
-Since the magnetic field causes a phase shift e^{-i \gamma B t}, the
-measurement of the expectation value of \hat{S}_z gives us a way to
-infer the magnetic field B. By performing a series of measurements and
+Since the magnetic field causes a phase shift $\exp{-i \gamma B t}$, the
+measurement of the expectation value of $\hat{S}_z$ gives us a way to
+infer the magnetic field $B$. By performing a series of measurements and
 comparing the observed values to theoretical models, we can estimate
-the field strength B.
+the field strength $B$.
 
 
 
