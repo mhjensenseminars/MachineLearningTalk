@@ -1,6 +1,6 @@
 TITLE: Making sense of sensing? 
 AUTHOR: Morten Hjorth-Jensen {copyright, 1999-present|CC BY-NC} at Department of Physics, University of Oslo, Norway
-DATE: March 14, 2025
+DATE: April 14, 2025
 
 
 
@@ -11,7 +11,7 @@ These notes aim at linking entanglement in quantum mechanical systems
 with quantum sensing using simple examples.  Numerical codes are
 included in order to illustrate basic elements of sensing.  The
 examples are tailored to simple one- and two-qubit systems. The
-material contains (as of now, March 14, 2025))
+material contains (April  14, 2025))
 o One-qubit system with basic elements of sensing
 o Linking analytically solvable case with many-qubit entanglement and sensing
 o Simple two-particle (or two-qubit) system to demonstrate entanglement and its links with sensing
@@ -38,7 +38,7 @@ o See also recent work by Liu et at URL:"https://www.nature.com/articles/s41534-
 !split
 ===== One-qubit system =====
 
-In the first part of this notebook, we will analyze our systems using
+In the first part of these notes, we will analyze our systems using
 plain diagonalization and simple analytical manipulations.  Thereafter
 we will develop codes and material for performing a quantum computing
 simulation of the same systems (this material is not yet ready).
