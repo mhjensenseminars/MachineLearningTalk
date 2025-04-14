@@ -1149,8 +1149,14 @@ Several of these additions will be added.
 
 
 
-Add
-In quantum sensing, readout functions refer to the methods used to extract information about the quantum system after a series of operations or measurements have been performed. The readout process typically involves measuring the state of quantum bits (qubits) or other quantum observables, and this information is then used to infer physical quantities such as time, magnetic fields, temperature, or other parameters being sensed.
+
+In quantum sensing, readout functions refer to the methods used to
+extract information about the quantum system after a series of
+operations or measurements have been performed. The readout process
+typically involves measuring the state of quantum bits (qubits) or
+other quantum observables, and this information is then used to infer
+physical quantities such as time, magnetic fields, temperature, or
+other parameters being sensed.
 
 
 
@@ -1158,11 +1164,18 @@ Example of Readout Functions in Quantum Sensing
 
 
 
-A common example in quantum sensing involves measuring the state of a qubit after it has interacted with some external field or force. The quantum sensor’s response is determined by how the qubit state evolves due to the applied field, and the readout function is the measurement procedure that allows us to extract this information.
+A common example in quantum sensing involves measuring the state of a
+qubit after it has interacted with some external field or force. The
+quantum sensor’s response is determined by how the qubit state evolves
+due to the applied field, and the readout function is the measurement
+procedure that allows us to extract this information.
 
 
 
-Let’s consider a typical scenario of quantum magnetometry using a single qubit that interacts with a magnetic field. We will use the concept of quantum state measurement as a readout function to infer the value of the magnetic field.
+Let’s consider a typical scenario of quantum magnetometry using a
+single qubit that interacts with a magnetic field. We will use the
+concept of quantum state measurement as a readout function to infer
+the value of the magnetic field.
 
 
 
@@ -1178,7 +1191,10 @@ Step 1: Initial Qubit State
 
 
 
-Assume the initial state of the qubit is | \psi \rangle = \alpha |0\rangle + \beta |1\rangle, where \alpha and \beta are complex amplitudes, and |0\rangle and |1\rangle are the computational basis states.
+Assume the initial state of the qubit is | \psi \rangle = \alpha
+|0\rangle + \beta |1\rangle, where \alpha and \beta are complex
+amplitudes, and |0\rangle and |1\rangle are the computational basis
+states.
 
 
 
@@ -1186,7 +1202,11 @@ Step 2: Interaction with External Field
 
 
 
-When a magnetic field is applied to the qubit, it will induce a phase shift in the qubit’s state. The evolution of the qubit’s state can be modeled using the time evolution operator U(t), which depends on the interaction with the magnetic field. The evolution can be described as:
+When a magnetic field is applied to the qubit, it will induce a phase
+shift in the qubit’s state. The evolution of the qubit’s state can be
+modeled using the time evolution operator U(t), which depends on the
+interaction with the magnetic field. The evolution can be described
+as:
 
 U(t) = \exp(-i H t / \hbar)
 
@@ -1206,7 +1226,11 @@ Step 3: Measurement (Readout Function)
 
 
 
-After the interaction with the magnetic field, the next step is to measure the qubit. The readout function involves projecting the quantum state onto a measurement basis, often the computational basis \{|0\rangle, |1\rangle\}. The outcome of the measurement can then be used to infer information about the external field.
+After the interaction with the magnetic field, the next step is to
+measure the qubit. The readout function involves projecting the
+quantum state onto a measurement basis, often the computational basis
+\{|0\rangle, |1\rangle\}. The outcome of the measurement can then be
+used to infer information about the external field.
 
 • Measurement Probability: The probability of measuring the state |0\rangle or |1\rangle is given by the squared modulus of the corresponding amplitudes.
 
@@ -1226,21 +1250,32 @@ Example 2: Using a Readout Function to Estimate Parameters
 
 
 
-Let’s say the qubit’s state before the measurement is in a superposition state, and we want to determine the magnetic field strength by reading out the qubit’s state. After the qubit has undergone the evolution U(t), we measure it in the computational basis and repeat the experiment many times to obtain the average outcome.
+Let’s say the qubit’s state before the measurement is in a
+superposition state, and we want to determine the magnetic field
+strength by reading out the qubit’s state. After the qubit has
+undergone the evolution U(t), we measure it in the computational basis
+and repeat the experiment many times to obtain the average outcome.
 
 
 
-We could perform parameter estimation by measuring the expected value of some observable (e.g., \hat{S}_z) and comparing the outcomes to theoretical predictions.
+We could perform parameter estimation by measuring the expected value
+of some observable (e.g., \hat{S}_z) and comparing the outcomes to
+theoretical predictions.
 
 
 
-For example, the expectation value of \hat{S}_z (the spin along the z-axis) in the state | \psi(t) \rangle is:
+For example, the expectation value of \hat{S}_z (the spin along the
+z-axis) in the state | \psi(t) \rangle is:
 
 \langle \hat{S}_z \rangle = \langle \psi(t) | \hat{S}_z | \psi(t) \rangle = \frac{1}{2} \left( |\alpha|^2 - |\beta|^2 \right)
 
 
 
-Since the magnetic field causes a phase shift e^{-i \gamma B t}, the measurement of the expectation value of \hat{S}_z gives us a way to infer the magnetic field B. By performing a series of measurements and comparing the observed values to theoretical models, we can estimate the field strength B.
+Since the magnetic field causes a phase shift e^{-i \gamma B t}, the
+measurement of the expectation value of \hat{S}_z gives us a way to
+infer the magnetic field B. By performing a series of measurements and
+comparing the observed values to theoretical models, we can estimate
+the field strength B.
 
 
 
@@ -1251,11 +1286,24 @@ Conclusion
 
 
 
-The readout functions in quantum sensing serve as the crucial step in extracting classical information from a quantum system after a set of operations. In quantum magnetometry, for instance, the readout is typically performed by measuring the qubit in the computational basis and using the outcome (such as the probabilities of measuring |0\rangle or |1\rangle) to infer properties like the magnetic field strength. In more complex systems, the readout functions could involve more sophisticated measurements such as those based on quantum tomography, where the state of the system is fully reconstructed from measurement data.
+The readout functions in quantum sensing serve as the crucial step in
+extracting classical information from a quantum system after a set of
+operations. In quantum magnetometry, for instance, the readout is
+typically performed by measuring the qubit in the computational basis
+and using the outcome (such as the probabilities of measuring
+|0\rangle or |1\rangle) to infer properties like the magnetic field
+strength. In more complex systems, the readout functions could involve
+more sophisticated measurements such as those based on quantum
+tomography, where the state of the system is fully reconstructed from
+measurement data.
 
 
 
-This process can be generalized to other types of quantum sensors, such as those measuring electric fields, temperature, or time. The general concept remains: we manipulate a quantum system, measure it, and extract classical information to sense the desired physical quantity.
+This process can be generalized to other types of quantum sensors,
+such as those measuring electric fields, temperature, or time. The
+general concept remains: we manipulate a quantum system, measure it,
+and extract classical information to sense the desired physical
+quantity.
 
 
 1. **Magnetic Field Sensing with Nitrogen-Vacancy (NV) Centers**  
@@ -1298,4 +1346,7 @@ This process can be generalized to other types of quantum sensors, such as those
    - **Parameter**: Distance/velocity.  
    - **Method**: Entangled photons improve resolution and noise resilience in light detection and ranging (lidar), enabling precise 3D imaging for autonomous vehicles or environmental monitoring.
 
-These examples illustrate the diversity of quantum sensing applications, where quantum states (entanglement, superposition, squeezing) or quantum systems (atoms, spins, photons) enable breakthroughs in precision beyond classical limits.
+These examples illustrate the diversity of quantum sensing
+applications, where quantum states (entanglement, superposition,
+squeezing) or quantum systems (atoms, spins, photons) enable
+breakthroughs in precision beyond classical limits.
