@@ -134,15 +134,15 @@ $\hat{S}_z$ being the spin operator along the $z$-axis.
 !split
 ===== As time evolves =====
 
-After time t, the qubit’s state becomes:
+After time $t$, the qubit’s state becomes:
 
 !bt
 \[
-\vert \psi(t) \rangle = \alpha \vert 0\rangle + \beta \exp{-i \gamma B t} \vert 1\rangle,
+\vert \psi(t) \rangle = \alpha \vert 0\rangle + \beta \exp{-(i \gamma B t)} \vert 1\rangle,
 \]
 !et
 
-Here, the phase shift $\exp^{-i \gamma B t}$ accumulates depending on the applied magnetic field $B$.
+Here, the phase shift $\exp{-(i \gamma B t)}$ accumulates depending on the applied magnetic field $B$.
 
 !split
 ===== Step 3: Measurement (Readout Function) =====
@@ -163,7 +163,7 @@ corresponding amplitudes.
 
 o Probability of measuring $\vert 0\rangle$: $P(0) = |\alpha|^2$
 
-o Probability of measuring $\vert 1\rangle$: $P(1) = |\beta \exp{-i \gamma B t}|^2 = |\beta|^2$
+o Probability of measuring $\vert 1\rangle$: $P(1) = |\beta \exp{-(i \gamma B t)}|^2 = |\beta|^2$
 
 !split 
 ===== Readout Function =====
@@ -210,7 +210,7 @@ in the state $\vert \psi(t) \rangle$ is:
 !split
 ===== Phase shift =====
 
-Since the magnetic field causes a phase shift $\exp{-i \gamma B t}$, the
+Since the magnetic field causes a phase shift $\exp{-(i \gamma B t)}$, the
 measurement of the expectation value of $\hat{S}_z$ gives us a way to
 infer the magnetic field $B$. By performing a series of measurements and
 comparing the observed values to theoretical models, we can estimate
@@ -590,9 +590,10 @@ In the case where $V(t)$ is constant or changes much more slowly than our sensin
 !et
 The sensing state evolves thus as
 !bt
-\[
-|\psi(t)\rangle=\left(\exp{\imath t\left(E_{0}-\frac{1}{2}  V_z\right)}\left|\lambda_{0}\right\rangle\left\langle\lambda_{0}\right|+\exp{\imath t\left(E_{1}+\frac{1}{2}  V_z\right)}\left|\lambda_{1}\right\rangle\left\langle\lambda_{1}\right|\right)\left|\psi_{\mathrm{Initial}}\right\rangle,
-\]
+\begin{align*}
+|\psi(t)\rangle=&\left(\exp{\imath t\left(E_{0}-\frac{1}{2}  V_z\right)}\left|\lambda_{0}\right\rangle\left\langle\lambda_{0}\right|+\exp{\imath t\left(E_{1}+\frac{1}{2}  V_z\right)}\left|\lambda_{1}\right\rangle\left\langle\lambda_{1}\right|\right) \\
+& \times \left|\psi_{\mathrm{Initial}}\right\rangle,
+\end{align*}
 !et
 where we have using the spectral decomposition and the final representation of the
 sensing Hamiltonian found above.
@@ -1370,7 +1371,7 @@ breakthroughs in precision beyond classical limits.
 !split
 ===== Magnetic Field Sensing with Nitrogen-Vacancy (NV) Centers =====
 
-o Parameter: Magnetic field strength.  
+* Parameter: Magnetic field strength.  
 
 !bblock
 Method/platform: NV centers in diamond have electron spins sensitive to magnetic fields.
@@ -1383,7 +1384,7 @@ useful in material science and biomedical imaging.
 !split
 ===== Atomic Clocks =====
 
-o Parameter: Time/frequency.  
+* Parameter: Time/frequency.  
 
 !bblock
 Method/platform: Atomic transitions (e.g., in cesium or rubidium) serve as frequency standards. Quantum superposition states are probed to lock oscillator frequencies, enabling ultra-precise timekeeping critical for GPS and telecommunications.
@@ -1392,7 +1393,7 @@ Method/platform: Atomic transitions (e.g., in cesium or rubidium) serve as frequ
 !split
 ===== Gravitational Wave Detection (LIGO) =====
 
-o Parameter: Phase shift induced by spacetime ripples.  
+* Parameter: Phase shift induced by spacetime ripples.  
 !bblock
 Method/platform: Squeezed light reduces quantum noise in interferometers, enhancing sensitivity to minute phase shifts caused by gravitational waves, pushing measurements below the standard quantum limit.
 !eblock
@@ -1400,7 +1401,7 @@ Method/platform: Squeezed light reduces quantum noise in interferometers, enhanc
 !split
 ===== Quantum Thermometry =====
 
-o Parameter: Temperature.  
+* Parameter: Temperature.  
 
 !bblock
 Method/platform**: Quantum probes like trapped ions or superconducting qubits exploit temperature-dependent decoherence or energy-level shifts to measure microkelvin-scale temperatures in cryogenic systems.
@@ -1409,14 +1410,14 @@ Method/platform**: Quantum probes like trapped ions or superconducting qubits ex
 !split
 ===== Entangled Photon Interferometry =====
 
-o Parameter: Optical phase shifts.
+* Parameter: Optical phase shifts.
 !bblock
 Method/platform: Entangled photons in interferometers achieve sub-shot-noise precision, enabling enhanced measurements of distances or refractive indices for applications in metrology and imaging.
 !eblock
 
 !split
 ===== Electric Field Sensing with Rydberg Atoms =====
-o Parameter: Electric field strength.  
+* Parameter: Electric field strength.  
 
 !bblock
 Method/platform: Rydberg atoms, highly sensitive to electric fields due to their large polarizability, detect field-induced Stark shifts via microwave spectroscopy, useful in electrometry and communications.
@@ -1425,7 +1426,7 @@ Method/platform: Rydberg atoms, highly sensitive to electric fields due to their
 !split
 ===== Quantum Gyroscopes =====
 
-o Parameter: Rotation rate.  
+* Parameter: Rotation rate.  
 
 !bblock
 Method/platform: Cold atom interferometers or entangled particles exploit the Sagnac effect to measure rotation with quantum-enhanced precision, advancing inertial navigation systems.
@@ -1434,7 +1435,7 @@ Method/platform: Cold atom interferometers or entangled particles exploit the Sa
 
 !split
 ===== Molecular Concentration Sensing =====
-o Parameter: Chemical concentration.  
+* Parameter: Chemical concentration.  
 
 !bblock
 Method/platform: Spin defects in diamond (e.g., NV centers) detect local magnetic perturbations from target molecules, enabling nanoscale NMR spectroscopy for biological or chemical analysis.
@@ -1443,7 +1444,7 @@ Method/platform: Spin defects in diamond (e.g., NV centers) detect local magneti
 !split
 ===== Superconducting Quantum Interference Devices (SQUIDs) =====
 
-o Parameter: Magnetic flux.  
+* Parameter: Magnetic flux.  
 
 !bblock
 Method/platform: SQUIDs leverage flux quantization and Josephson junctions to measure extremely weak magnetic fields, applied in magnetoencephalography (MEG) for brain activity mapping.

@@ -502,13 +502,13 @@ $$
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 <h2 id="as-time-evolves">As time evolves </h2>
 
-<p>After time t, the qubit&#8217;s state becomes:</p>
+<p>After time \( t \), the qubit&#8217;s state becomes:</p>
 
 $$
-\vert \psi(t) \rangle = \alpha \vert 0\rangle + \beta \exp{-i \gamma B t} \vert 1\rangle,
+\vert \psi(t) \rangle = \alpha \vert 0\rangle + \beta \exp{-(i \gamma B t)} \vert 1\rangle,
 $$
 
-<p>Here, the phase shift \( \exp^{-i \gamma B t} \) accumulates depending on the applied magnetic field \( B \).</p>
+<p>Here, the phase shift \( \exp{-(i \gamma B t)} \) accumulates depending on the applied magnetic field \( B \).</p>
 
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 <h2 id="step-3-measurement-readout-function">Step 3: Measurement (Readout Function) </h2>
@@ -530,7 +530,7 @@ corresponding amplitudes.
 
 <ol>
 <li> Probability of measuring \( \vert 0\rangle \): \( P(0) = |\alpha|^2 \)</li>
-<li> Probability of measuring \( \vert 1\rangle \): \( P(1) = |\beta \exp{-i \gamma B t}|^2 = |\beta|^2 \)</li>
+<li> Probability of measuring \( \vert 1\rangle \): \( P(1) = |\beta \exp{-(i \gamma B t)}|^2 = |\beta|^2 \)</li>
 </ol>
 <!-- !split  -->
 <h2 id="readout-function">Readout Function </h2>
@@ -573,7 +573,7 @@ $$
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 <h2 id="phase-shift">Phase shift </h2>
 
-<p>Since the magnetic field causes a phase shift \( \exp{-i \gamma B t} \), the
+<p>Since the magnetic field causes a phase shift \( \exp{-(i \gamma B t)} \), the
 measurement of the expectation value of \( \hat{S}_z \) gives us a way to
 infer the magnetic field \( B \). By performing a series of measurements and
 comparing the observed values to theoretical models, we can estimate
@@ -962,7 +962,10 @@ $$
 
 <p>The sensing state evolves thus as</p>
 $$
-|\psi(t)\rangle=\left(\exp{\imath t\left(E_{0}-\frac{1}{2}  V_z\right)}\left|\lambda_{0}\right\rangle\left\langle\lambda_{0}\right|+\exp{\imath t\left(E_{1}+\frac{1}{2}  V_z\right)}\left|\lambda_{1}\right\rangle\left\langle\lambda_{1}\right|\right)\left|\psi_{\mathrm{Initial}}\right\rangle,
+\begin{align*}
+|\psi(t)\rangle=&\left(\exp{\imath t\left(E_{0}-\frac{1}{2}  V_z\right)}\left|\lambda_{0}\right\rangle\left\langle\lambda_{0}\right|+\exp{\imath t\left(E_{1}+\frac{1}{2}  V_z\right)}\left|\lambda_{1}\right\rangle\left\langle\lambda_{1}\right|\right) \\
+& \times \left|\psi_{\mathrm{Initial}}\right\rangle,
+\end{align*}
 $$
 
 <p>where we have using the spectral decomposition and the final representation of the
@@ -1782,9 +1785,9 @@ breakthroughs in precision beyond classical limits.
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 <h2 id="magnetic-field-sensing-with-nitrogen-vacancy-nv-centers">Magnetic Field Sensing with Nitrogen-Vacancy (NV) Centers </h2>
 
-<ol>
+<ul>
 <li> Parameter: Magnetic field strength.</li>  
-</ol>
+</ul>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -1799,9 +1802,9 @@ useful in material science and biomedical imaging.
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 <h2 id="atomic-clocks">Atomic Clocks </h2>
 
-<ol>
+<ul>
 <li> Parameter: Time/frequency.</li>  
-</ol>
+</ul>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -1812,9 +1815,9 @@ useful in material science and biomedical imaging.
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 <h2 id="gravitational-wave-detection-ligo">Gravitational Wave Detection (LIGO) </h2>
 
-<ol>
+<ul>
 <li> Parameter: Phase shift induced by spacetime ripples.</li>  
-</ol>
+</ul>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -1825,9 +1828,9 @@ useful in material science and biomedical imaging.
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 <h2 id="quantum-thermometry">Quantum Thermometry </h2>
 
-<ol>
+<ul>
 <li> Parameter: Temperature.</li>  
-</ol>
+</ul>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -1838,9 +1841,9 @@ useful in material science and biomedical imaging.
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 <h2 id="entangled-photon-interferometry">Entangled Photon Interferometry </h2>
 
-<ol>
+<ul>
 <li> Parameter: Optical phase shifts.</li>
-</ol>
+</ul>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -1850,9 +1853,9 @@ useful in material science and biomedical imaging.
 
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 <h2 id="electric-field-sensing-with-rydberg-atoms">Electric Field Sensing with Rydberg Atoms </h2>
-<ol>
+<ul>
 <li> Parameter: Electric field strength.</li>  
-</ol>
+</ul>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -1863,9 +1866,9 @@ useful in material science and biomedical imaging.
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 <h2 id="quantum-gyroscopes">Quantum Gyroscopes </h2>
 
-<ol>
+<ul>
 <li> Parameter: Rotation rate.</li>  
-</ol>
+</ul>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -1875,9 +1878,9 @@ useful in material science and biomedical imaging.
 
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 <h2 id="molecular-concentration-sensing">Molecular Concentration Sensing </h2>
-<ol>
+<ul>
 <li> Parameter: Chemical concentration.</li>  
-</ol>
+</ul>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -1888,9 +1891,9 @@ useful in material science and biomedical imaging.
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 <h2 id="superconducting-quantum-interference-devices-squids">Superconducting Quantum Interference Devices (SQUIDs) </h2>
 
-<ol>
+<ul>
 <li> Parameter: Magnetic flux.</li>  
-</ol>
+</ul>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
