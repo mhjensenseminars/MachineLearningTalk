@@ -307,3 +307,333 @@ Outlook: The intersection of ML and statistical physics is rapidly growing. Beyo
 
 Sources: This presentation is based on insights from recent literature at the interface of machine learning and physics, including applications of PCA and autoencoders to spin models , supervised neural network identification of phases , and variational autoencoder analyses of Ising model data . These demonstrate the effectiveness of ML in recognizing order parameters and critical points from raw data, as well as the importance of interpretability in bridging ML results with physical understanding .
 
+
+
+Machine Learning for Phase Transitions in Physical Systems
+
+
+
+
+
+
+
+Introduction to Phase Transitions and Models
+
+
+
+
+
+Phase Transitions: A phase transition is a change in the macroscopic state of a system (e.g. solid–liquid, magnetic order–disorder) characterized by abrupt changes in physical properties. In continuous (second-order) transitions, an order parameter changes continuously (but its derivative jumps) at a critical point, whereas in first-order transitions the order parameter itself jumps discontinuously . The order parameter $\phi$ is a quantity that distinguishes phases (e.g. magnetization in a magnet); it is nonzero in the ordered phase and zero in the disordered phase . At the critical temperature $T_c$ of a second-order transition, long-range correlations emerge, leading to critical fluctuations and scale-invariant patterns.
+
+
+
+Ising Model (2D): The Ising model is a simple statistical model of ferromagnetism consisting of spins $S_i = \pm1$ arranged on a lattice (here a 2D grid) . Each spin interacts with its nearest neighbors with coupling $J$ (favoring alignment). The Hamiltonian (energy function) is:
+
+
+
+$$H = -J \sum_{\langle i j\rangle} S_{i} S_{j},$$
+
+
+
+where $\langle i j\rangle$ denotes neighboring pairs . In zero external field, the 2D Ising model has a well-known continuous phase transition (Onsager’s solution) at $T_c/J = \frac{2}{\ln(1+\sqrt{2})} \approx 2.269$ . For $T < T_c$ (low temperature), spins are mostly aligned (ferromagnetic order, nonzero magnetization); for $T > T_c$ (high temperature), spins are disordered with zero net magnetization (paramagnetic phase) . At $T=T_c$, the system is critical, exhibiting fractal spin domains (no characteristic size) and diverging correlation length.
+
+
+
+Illustration of a 2D Ising model on a square lattice. Each site has a spin up (pink) or down (blue), interacting with nearest neighbors (gray bonds). In the ordered phase at low $T$, most spins align, whereas at high $T$ they are random. The Ising model undergoes a second-order phase transition at the critical temperature $T_c$ .
+
+
+
+Potts Model: The $q$-state Potts model generalizes Ising (which is $q=2$) to spins that can take $q$ different values. Spins on a lattice interact such that they prefer to be in the same state as their neighbors (with some coupling energy if they match) . The Potts model also exhibits phase transitions that can be of first or second order depending on $q$ and dimension (e.g. in 2D, $q\le4$ yields a continuous transition, while larger $q$ gives a first-order transition). Studying Ising and Potts models provides insight into ferromagnets and other systems . In all these models, identifying the critical point $T_c$ and the behavior of the order parameter near $T_c$ is a central task in statistical physics .
+
+
+
+Why ML for Phase Transitions? Traditional analysis of phase transitions relies on known order parameters or response functions (magnetization, susceptibility, etc.) which may not be obvious for complex or novel systems. Machine learning offers new ways to learn order parameters and detect phase changes directly from raw state configurations, without prior assumptions . We will explore three approaches – unsupervised, supervised, and generative ML – to classify phases in Ising/Potts models, using Monte Carlo simulation data as input.
+
+
+
+
+
+Data Generation via Monte Carlo Simulation
+
+
+
+
+
+To apply machine learning, we first need data: spin configurations at various temperatures (both below and above $T_c$). We use Monte Carlo (MC) simulations to generate equilibrium spin states for the Ising/Potts models. A common choice is the Metropolis-Hastings algorithm (importance-sampling Markov Chain Monte Carlo) in the canonical ensemble :
+
+
+
+Initialize the lattice with spins (random or all +1/-1).
+Propose a random spin flip at some site.
+Compute the energy change $\Delta E$ from flipping that spin.
+Accept or reject the flip: if $\Delta E < 0$ (energy lowers) accept unconditionally; if $\Delta E > 0$, accept with probability $\exp(-\Delta E / k_B T)$ . This satisfies detailed balance at temperature $T$.
+Repeat many times (sweeps) to reach equilibrium and sample uncorrelated configurations.
+
+
+
+
+This Metropolis MC generates samples according to the Boltzmann distribution $P({\sigma}) \propto \exp(-H/k_BT)$. We simulate across a range of temperatures (e.g. from well below $T_c$ to well above $T_c$) to obtain labeled datasets of spin configurations in the ordered and disordered phases. For example, in a 2D Ising model of size $L\times L$, one might collect thousands of spin configurations at each temperature $T$ (after sufficient equilibration sweeps) to serve as training data.
+
+
+
+Data characteristics: Below $T_c$, configurations have large magnetized domains (most spins up or down); above $T_c$, configurations are noisy with roughly equal up/down spins . Exactly at $T_c$, critical fluctuations yield characteristic clusters of all sizes. These differences (order vs disorder) are what we hope a machine learning algorithm can learn to recognize. However, near the critical point, configurations are very mixed and stochastic, making classification challenging. Thus, a good ML model may help pin down the precise $T_c$ by identifying when the system’s “pattern” changes.
+
+
+
+(Note: For efficiency, advanced MC methods like cluster algorithms (Wolff or Swendsen-Wang) can be used to reduce critical slowing down, but the basic data for ML is the same: a large collection of spin state matrices labeled by the simulation temperature or phase.)
+
+
+
+
+
+Unsupervised Learning: PCA for Phase Detection
+
+
+
+
+
+Principle Component Analysis (PCA): PCA is a linear dimensionality reduction technique that finds orthogonal directions (principal components) of maximum variance in the data . By projecting high-dimensional data (here, spin configurations) onto the first few principal components, we capture the most significant variations. The idea is that different phases might occupy different regions in this reduced feature space, enabling us to detect phase transitions without knowing labels in advance . Importantly, PCA makes no prior assumption about an order parameter or critical point – it simply finds directions in spin configuration space that have the largest variance across all samples.
+
+
+
+Applying PCA to Ising Model: We represent each spin configuration as a vector $x \in \mathbb{R}^{N}$ (with $N=L^2$ spins flattened into a vector of +1/−1). Running PCA on a set of configurations across various $T$, we obtain principal components $y_\ell = w_\ell \cdot x$ (linear combinations of spins) ranked by how much variance they explain . For the 2D Ising model, it turns out that the first principal component corresponds to the overall magnetization of the configuration – effectively the sum of spins . This makes sense: the largest variation in the data is between mostly-up-spin states at low $T$ and mixed states at high $T$ (with magnetization ~0). Thus, PCA automatically discovers the magnetization as the key distinguishing feature (order parameter) for the Ising transition .
+
+
+
+PCA projection of Ising model spin configurations (2D $20\times20$ lattice) for two temperature regimes: $T \ll T_c$ (ordered, red points) and $T \gg T_c$ (disordered, blue points). We flatten each configuration into a 400-dimensional vector and project onto the first two principal components. PC1 clearly separates the two phases by capturing the magnetization (ordered states have a large negative PC1, disordered states have positive PC1 in this example). PC2 carries much less variance. This unsupervised separation implies PCA identifies the phase transition feature without knowing any labels.
+
+
+
+By examining the PCA outputs, one can estimate the critical point. For example, as temperature increases, the distribution of samples along PC1 will shift from one cluster (ordered) to another (disordered). The point where the variance along PC1 (or the cluster separation) is maximal or changes rapidly corresponds to $T_c$. Indeed, studies have shown that quantitative PCA can locate critical points and distinguish different types of transitions . In one study, the principal component clearly indicated the symmetry-breaking phase transition and even differentiated first vs second order transitions in various spin models . By looking at the explained variance ratio, one often sees a peak or sudden change at $T_c$ . Thus, unsupervised PCA provides a quick way to detect a phase transition from raw data.
+
+
+
+However, PCA has limitations: it only captures linear correlations. If the order parameter is a non-linear function of the spins or if the phase transition involves more subtle patterns (e.g. topological order or complex degeneracies), PCA might not find a clear separation . For instance, a frustrated spin system might have an order parameter that is not simply the sum of spins, and PCA might fail to identify the phase unless higher principal components or non-linear methods are used . Despite this, PCA is a powerful first step and often yields interpretable results (principal components can be interpreted as approximate order parameters ). It exemplifies how emergent collective behavior can be detected by dimensionality reduction in an unsupervised way.
+
+
+
+PCA Implementation (PyTorch): In practice, implementing PCA can be done via singular value decomposition (SVD) on the data matrix. For example, using PyTorch one could do:
+
+import torch
+# Suppose data_tensor shape = (num_samples, L, L) with spins ±1.
+X = data_tensor.view(num_samples, -1).float()       # Flatten configurations
+X = X - X.mean(dim=0)                               # Center the data
+U, S, Vh = torch.linalg.svd(X)                      # Singular Value Decomp.
+principal_components = torch.matmul(X, Vh.T[:, :2]) # Project onto first 2 PCs
+explained_var = (S**2) / (S**2).sum()               # variance explained by each PC
+This would yield the principal component scores (principal_components) for each sample and the explained variance for each component. One can then analyze principal_components[:,0] (PC1) as a function of temperature to find $T_c$. In our Ising example, PC1 is strongly correlated with magnetization, so it jumps from negative to positive (or vice versa) around $T_c$.
+
+
+
+
+
+Supervised Learning: CNNs for Phase Classification
+
+
+
+
+
+Supervised Approach: In supervised learning, we use labeled data — here the label could be the phase (e.g. “ordered” vs “disordered”) or the temperature of the sample. A model is trained to predict the label from the input spin configuration. If successful, such a model effectively learns to distinguish phases of matter. One powerful supervised model for image-like data is the Convolutional Neural Network (CNN).
+
+
+
+Convolutional Neural Networks: CNNs are specifically designed to recognize spatial patterns. They apply learned convolution filters that scan across the lattice, picking up local features (like clusters of up or down spins, domain walls, etc.). Through multiple convolutional layers and nonlinear activations (ReLU, etc.), a CNN can hierarchically extract higher-level features from lower-level ones. Ultimately, fully-connected layers (dense layers) combine these features to output a prediction (e.g. a binary classification of phase).
+
+
+
+For the Ising model, a CNN can learn to detect magnetic domains or correlation patterns. For example, in the ordered phase, it might detect large uniform regions of +1 or -1 spins, whereas in the disordered phase it sees a noisy mix. At or near $T_c$, the task is hardest because of critical fluctuations – the CNN must identify more subtle cues. Remarkably, CNNs have been shown to detect phase transitions without explicit guidance. In one study, researchers trained a deep CNN on Ising model configurations labeled by temperature and found it could automatically pinpoint the critical temperature – the CNN’s predictions or internal activations signaled the transition point, even though it was not told about phases explicitly . In fact, the CNN was able to define a new effective order parameter from its learned features that estimated $T_c$ accurately .
+
+
+
+Cross-model generalization: An interesting finding is that a CNN trained on one model can sometimes generalize to others. For instance, a CNN trained to predict temperatures of 2D Ising configurations was able to detect the phase transition in the $q$-state Potts model with high accuracy, even though the Potts configurations look different (for $q>2$) . This suggests the CNN learned a general representation of ordering vs disorder (like recognizing clusters vs randomness). The deep CNN output was essentially acting as a continuous “temperature meter” and showed a sharp change at the critical point for any $q$, highlighting that the network found the underlying transition feature universally .
+
+
+
+CNN Architecture Example: We can design a simple CNN for classifying Ising configurations into two classes (below $T_c$ vs above $T_c$). For example, in PyTorch:
+
+import torch.nn as nn
+import torch.nn.functional as F
+
+class IsingPhaseCNN(nn.Module):
+    def __init__(self, L):
+        super(IsingPhaseCNN, self).__init__()
+        self.conv1 = nn.Conv2d(in_channels=1, out_channels=8, kernel_size=3, padding=1)
+        self.conv2 = nn.Conv2d(in_channels=8, out_channels=16, kernel_size=3, padding=1)
+        self.fc1   = nn.Linear(16 * L * L, 2)  # output 2 classes (0=ordered, 1=disordered)
+    def forward(self, x):
+        x = F.relu(self.conv1(x))      # conv layer 1 + ReLU
+        x = F.relu(self.conv2(x))      # conv layer 2 + ReLU
+        x = x.view(x.size(0), -1)      # flatten feature maps
+        x = self.fc1(x)                # linear output layer
+        return x
+
+model = IsingPhaseCNN(L=32)
+Here we used two convolutional layers (with 8 and 16 filters) followed by a fully-connected layer. Even this small network can achieve high accuracy in phase classification for reasonably sized lattices. We would train it on a dataset of spin configurations with labels (e.g. 0 for $T<T_c$, 1 for $T>T_c$) using a loss like cross-entropy. In training, the CNN will adjust its filters to detect useful features. For example, one filter might respond to local magnetization (counting majority spins in its receptive field), another might detect domain walls, etc. Over epochs of training, the network improves its ability to distinguish phases.
+
+
+
+Training and Performance: Using an optimizer like Adam, we can train the CNN until it classifies a separate test set with high accuracy. Typically, one finds that away from the critical region, the CNN reaches ~100% accuracy (ordered vs disordered states are easy to tell apart). Near $T_c$, even humans might not distinguish a single snapshot, and indeed the CNN’s confidence (or accuracy on states at $T\approx T_c$) will dip. One approach to locate $T_c$ is to see where the CNN is most confused. This is the basis of the “confusion scheme” where one trains a classifier assuming a trial critical temperature and finds the value that maximizes confusion (lowest accuracy) corresponds to the true $T_c$ . In general, a trained CNN can be used to scan through temperature and its output (or prediction probabilities) will change from one class to the other around $T_c$, thus identifying the transition.
+
+
+
+Supervised CNNs tend to be very effective: they can learn non-linear combinations of spins, capturing complex correlations beyond the linear order parameter. They have successfully identified even more complex phases (including topological phases, when given appropriate data encoded as images) in other studies. The drawback is that CNNs require labeled training data. For physical systems, this means we need prior knowledge to label phases or at least a range where phases are known. In our case, we labeled by temperature or phase from simulations – which is feasible since we know the model. But if we had experimental data without clear labels, training a CNN would be less straightforward (we might then resort to unsupervised or generative methods).
+
+
+
+Nonetheless, in many physics applications, simulation provides the ground truth for training, and then the CNN could potentially be applied to experimental observations to detect phases. Interpretability of CNNs is an ongoing challenge – they are often treated as black boxes. However, as mentioned, one can sometimes interpret a neuron or an output as an “order parameter” proxy or use visualization techniques to see what features the CNN is looking at. In summary, CNNs bring powerful pattern recognition to phase transition problems, achieving high performance in classification tasks and even generalizing insights across systems .
+
+
+
+
+
+Generative Learning: Variational Autoencoders (VAEs)
+
+
+
+
+
+Autoencoder concept: A Variational Autoencoder (VAE) is a generative model that learns to encode data into a low-dimensional latent representation and then decode from that representation back to the original data space. It consists of an encoder network $q_\phi(z|x)$ that maps an input $x$ (here a spin configuration) to a distribution over latent variables $z$, and a decoder network $p_\theta(x|z)$ that tries to reconstruct the original data from $z$. VAEs are trained by maximizing the evidence lower bound (ELBO), which can be written as:
+
+
+
+$$\mathcal{L}(\phi,\theta) = \mathbb{E}{q\phi(z|x)}[-\ln p_\theta(x|z)] + \mathrm{KL}(q_\phi(z|x),|,p(z)),$$
+
+
+
+where the first term is the reconstruction error and the second is a Kullback-Leibler divergence regularizer that pushes $q_\phi(z|x)$ towards a prior $p(z)$ (often a standard normal) . Intuitively, the VAE learns to compress the important information of the input into the latent variables $z$, while ensuring $z$ follows a reasonable distribution.
+
+
+
+Using VAEs for phase transitions: Since VAEs do not require labels (unsupervised), we can feed in spin configurations at all temperatures and let the model learn a latent representation of this ensemble. The hope is that the latent space will organize configurations according to their similarity, potentially clustering configurations by phase. For example, the VAE might learn one latent dimension that corresponds to the magnetization of the configuration (similar to PCA’s first component but now possibly in a non-linear way). Indeed, studies have found that autoencoders can capture phases and even locate critical points – effectively learning the order parameter or distinguishing feature on their own . One case showed that a VAE trained on 2D Ising model data could reproduce the entire phase diagram (mapping out ordered vs disordered regions) without any explicit definition of an order parameter . This means the VAE’s latent variables encoded the phase information spontaneously.
+
+
+
+How does a VAE indicate a phase transition? One way is to look at the distribution of latent encodings for data at different $T$. If one latent dimension corresponds to magnetization, as $T$ crosses $T_c$ the distribution of that latent variable will shift from a distribution centered near $\pm$ some value (bimodal for the two symmetry-broken magnetization directions) to a distribution centered at 0 (paramagnetic). The point of maximal variance in that latent or a sudden change in latent clustering would signal $T_c$. Another way is to look at reconstruction quality: an autoencoder might reconstruct ordered and disordered configurations well but if asked to reconstruct a configuration at $T_c$ (which might lie “between” the learned representations), it could have higher error. Some researchers have indeed used anomalies in autoencoder reconstruction error to detect transitions . Overall, a VAE can act as a probe: since it must compress the data, it will focus on the most salient features—often the presence or absence of order.
+
+
+
+VAE example architecture: For simplicity, one can use fully-connected layers on flattened spin configurations. For instance, a small VAE in PyTorch:
+
+class IsingVAE(nn.Module):
+    def __init__(self, N=400, z_dim=2):
+        super(IsingVAE, self).__init__()
+        # Encoder layers
+        self.fc1 = nn.Linear(N, 128)
+        self.fc_mu = nn.Linear(128, z_dim)
+        self.fc_logvar = nn.Linear(128, z_dim)
+        # Decoder layers
+        self.fc2 = nn.Linear(z_dim, 128)
+        self.fc3 = nn.Linear(128, N)
+    def encode(self, x):
+        h = F.relu(self.fc1(x))
+        return self.fc_mu(h), self.fc_logvar(h)   # outputs for mean and log-variance
+    def decode(self, z):
+        h = F.relu(self.fc2(z))
+        x_recon = torch.tanh(self.fc3(h))         # use tanh to get outputs in [-1,1]
+        return x_recon
+    def forward(self, x):
+        mu, logvar = self.encode(x)
+        # reparameterization trick
+        std = torch.exp(0.5 * logvar)
+        eps = torch.randn_like(std)
+        z = mu + eps * std
+        return self.decode(z), mu, logvar
+During training, one would compute the VAE loss for each batch as:
+
+x_recon, mu, logvar = model(x_batch)
+recon_loss = F.mse_loss(x_recon, x_batch, reduction='sum')
+kl_loss = -0.5 * torch.sum(1 + logvar - mu.pow(2) - logvar.exp())
+loss = recon_loss + kl_loss
+Minimizing this encourages accurate reconstruction while keeping $q_\phi(z|x)$ close to a normal distribution. After training on many configurations (spanning different $T$), we can analyze the learned latent space. For example, if $z$ is 2-dimensional, we can plot the encoded $z$ values for configurations colored by temperature. We might see that low-$T$ configs cluster in one part of $z$-space and high-$T$ configs in another, with a transition around $T_c$ where the clusters move or overlap.
+
+
+
+Insights from VAE: A VAE is a probabilistic model, so we can generate new spin configurations by sampling $z$ from the prior $p(z)$ and passing it through the decoder. In the ordered phase, sampling a certain range of $z$ might yield all spins up or all down configurations (with some noise), whereas sampling a different range yields disordered-looking patterns. This generation ability not only confirms what the VAE has learned, but also can be used to interpolate between phases. One can try values of $z$ that interpolate between an ordered and disordered latent code and decode them; somewhere in between, the decoded configurations should look critical. Such generative exploration can potentially reveal the nature of the transition (e.g. how rapidly order disappears).
+
+
+
+Researchers have successfully used VAEs to detect phase transitions without an order parameter. One study on an anisotropic 2D Ising model demonstrated that a VAE could reproduce the phase diagram across a range of coupling parameters and temperatures, identifying the critical line in the model purely from the encoded latent space . This means the VAE learned the relationship between interaction anisotropy, temperature, and order–disorder behavior, effectively acting as a scientific discovery tool. The latent variables in that case could be mapped to a combination of energy and magnetization features the system exhibits .
+
+
+
+However, like any neural network, a VAE’s latent features might be hard to interpret if they mix multiple physical factors. They also require more data and training time than PCA. VAEs, being generative, can suffer from issues like mode collapse or poor reconstructions if not tuned well. But when successfully trained, they offer a rich understanding: not only can they classify phases, they also model the entire data distribution, which means they capture fluctuations within each phase as well.
+
+
+
+In summary, generative models like VAEs provide an unsupervised, physics-agnostic way to learn phase transitions, discovering order parameters and criticality by compressing and rebuilding configurations. They complement the simpler PCA by capturing non-linear features and complement CNNs by not requiring labels. The trade-off is higher complexity and sometimes less direct interpretability (though latent dimensions can often be correlated with known physical quantities post hoc).
+
+
+
+
+
+Comparative Evaluation of Methods
+
+
+
+
+
+Now we compare the three approaches – PCA (unsupervised linear), CNN (supervised discriminative), and VAE (unsupervised generative) – in terms of their performance, interpretability, and use cases:
+
+
+
+Principal Component Analysis (PCA):
+Performance: Fast and easy to apply. It successfully detects phase transitions in systems where the variance is dominated by the order parameter . For the Ising model, PCA clearly signals $T_c$ by the change in the leading principal component distribution. However, PCA might fail for more complex transitions if the key feature is not a single linear combination of spins (e.g. topological phases or multipolar orders).
+Interpretability: Very high. The principal components can often be directly interpreted (e.g. PCA found magnetization direction for Ising ). This provides physical insight – PCA essentially finds the known order parameter (if one exists) or suggests a candidate order parameter from data. That weight vector can hint at which spins or correlations are important.
+Use Cases: Great as an initial exploratory tool when you have configuration data and suspect a phase transition but don’t know the order parameter. It’s unsupervised and needs no labeling or training hyperparameters. PCA is commonly used in physics to reduce data dimensions (it has been applied to spin models, percolation, even experimental imaging of cold atoms, etc. to find transitions). It is less useful if the phase transition is very subtle or requires higher-order correlations (then one might try kernel PCA or other non-linear dimensionality reduction).
+
+Convolutional Neural Network (CNN):
+Performance: Excellent at classification tasks. A well-trained CNN can achieve ~100% accuracy in identifying phases of the Ising or Potts models (except exactly at $T_c$ where fluctuations cause some ambiguity). CNNs can also generalize – as shown by transferring an Ising-trained CNN to detect transitions in Potts models – indicating robust feature learning. They can handle large system sizes and learn complex spatial patterns (like stripy or checkerboard orders, in other models).
+Interpretability: Moderate to low. While the CNN clearly works, understanding what exactly each filter or neuron represents physically is harder. There have been attempts (e.g. looking at the learned filters or saliency maps) to interpret them; in some cases, the CNN effectively learns something like magnetization or energy as intermediate quantities . One study even defined a “CNN order parameter” from the network’s output that matched the expected behavior . Overall, though, CNNs act more like black boxes compared to PCA.
+Use Cases: Best when you have labeled data or a well-defined classification goal. If you know the phases present in your system (even roughly) or you want a precise detector of a known transition, CNNs are ideal. They have been used not just for thermal phase transitions but also to classify quantum phases (feeding in, say, spin configurations from quantum Monte Carlo or experimental data) and even detect phase transitions from raw images in experiments. CNNs are also useful if your order parameter is complicated (e.g. requires recognizing a pattern) – the CNN will learn that pattern. The downside is the need for a training set and computational resources (training can be slow for large networks and system sizes). CNNs also might overfit if data is limited, though techniques like dropout and regularization help.
+
+Variational Autoencoder (VAE) / Generative Models:
+Performance: Good at qualitatively identifying transitions, though the results may be less sharp than a supervised classifier. A VAE can definitely indicate the presence of a phase transition (e.g. via clustering in latent space) and has successfully mapped phase diagrams . The generative ability means it learns the entire distribution of configurations for each phase – this is a richer task than just classification. That richness sometimes makes training harder; VAEs might require tuning to get meaningful latent representations (one has to choose the latent dimension, etc.). In terms of precision, a VAE might not pinpoint $T_c$ as exactly as a CNN trained explicitly to discriminate around $T_c$, but it will come close (one can often locate the point of maximal change in latent features or reconstruction error).
+Interpretability: Varies. If the latent dimension is small (2 or 3), one can visualize it and often find one axis corresponds to the order parameter. For example, one latent variable might track magnetization, while another might track some independent feature like energy or something specific to the dataset (perhaps the particular realization of domains) . Because the VAE is probabilistic, one can also examine the decoder’s output: for instance, input a latent vector and see what configuration is generated – this can tell you what the latent variables mean (e.g. setting a certain $z$ to a large value generates an ordered state). In the anisotropic Ising study, the latent variables from the VAE could be related back to known analytic results, reinforcing that they had physical meaning . However, if the latent space is high-dimensional, interpretability drops (though one could then use PCA on the latent vectors!).
+Use Cases: Useful when you don’t have labels at all, or when you want not just to classify but to learn the data distribution. Autoencoders can be applied to experimental data where phases are unknown – by clustering latent encodings you might discover new phases. They are also valuable for anomaly detection (a phase transition can be treated as an anomaly between two learned phases). VAEs (and other generative models like GANs) have been used in detecting transitions in fields like astrophysics, structural biology, etc., where one wants to let the model tell us if there’s a change in pattern. Additionally, generative models allow data augmentation – you can generate synthetic samples for further analysis. The cost is that training is more complex (two networks plus careful tuning to avoid issues like blurry reconstructions).
+
+
+
+
+
+In summary, PCA is simple and interpretable but limited, CNNs are powerful and precise but require prior knowledge (labels) and are less interpretable, and VAEs are very flexible and can discover new physics unsupervised but are complex to train and interpret. These methods are not exclusive — they can complement each other. For instance, one could use PCA to get a quick estimate of $T_c$, use that to label data, train a CNN for high-accuracy classification, and use a VAE to further explore the structure of configurations and generate new ones. In the modern exploration of phase transitions, all three approaches have proven valuable.
+
+
+
+
+
+Conclusion and Outlook
+
+
+
+
+
+We have seen that machine learning provides a diverse toolkit for tackling the problem of identifying and classifying phase transitions in physical systems:
+
+
+
+Theoretical recap: Using the Ising and Potts models as examples, we understand phase transitions in terms of symmetry breaking and order parameters (magnetization for Ising, etc.). These models provide a playground for ML since we can generate many samples via Monte Carlo and we know their phase diagrams.
+Unsupervised PCA: a quick way to reduce data that reveals the order parameter and critical point from raw configurations . It required no prior labeling and showed how variance in spin configurations is linked to physical phases.
+Supervised CNN: a powerful classifier that learned to distinguish phases with high accuracy, even finding its own representation of the order parameter . With labeled data, it can generalize and detect transitions in related systems . This demonstrates how pattern recognition can automate phase identification tasks that might be tedious by traditional means.
+Generative VAE: an advanced approach that learned the underlying distribution of configurations, encoding them in a latent space where phases become separated . The VAE could indicate the transition and generate new samples, pointing toward a deep understanding of the data manifold for each phase.
+
+
+
+
+Each approach has strengths and weaknesses, but together they show the potential of ML in physics. Importantly, these methods don’t replace traditional analysis but rather augment it: an ML algorithm might flag a possible phase transition or suggest an order parameter, which physicists can then confirm and study using theory or experiments. As a pedagogical tool, these examples also help students intuitively grasp concepts like order parameters (since the ML finds them) and criticality (since the ML’s performance often changes at $T_c$).
+
+
+
+Outlook: The application of machine learning to physical phase transitions is a rapidly developing field. Beyond PCA/CNN/VAE, researchers are exploring clustering algorithms, graph neural networks for complex lattices, reinforcement learning to discover new phases, and more. Unsupervised deep learning methods (like clustering in the latent space of an autoencoder, or newer techniques such as normalizing flows) are being used to detect topological phases or phase transitions in quantum systems where no local order parameter exists. There is also interest in interpretable ML, where the goal is not just to have a black-box classifier, but to extract human-understandable insight (for example, using symbolic regression on neural network outputs to see if it matches known physical formulae).
+
+
+
+Another promising direction is transfer learning – as we saw with the CNN and Potts model, an ML model trained on one system can sometimes be applied to another. This hints at a form of universal representation of order/disorder that ML can capture. In the future, one could imagine training a general “phase transition detector” network on many models, and then applying it to experimental data (like images of spins or other degrees of freedom) to identify unknown phase transitions in real materials.
+
+
+
+Finally, generative models might be used not just to learn phases but to propose new states of matter. For instance, a VAE or GAN trained on known phases could interpolate to suggest configurations that correspond to novel intermediate phases, which could then be tested in simulations or experiments.
+
+
+
+In conclusion, machine learning is becoming an indispensable tool in the study of phase transitions, offering new ways to classify, interpret, and even discover phases of matter. By combining theoretical knowledge (Ising/Potts models, order parameters, critical phenomena) with data-driven techniques (PCA, CNNs, VAEs), we gain a deeper and more automated understanding of when and how matter changes its state . This multidisciplinary approach is empowering physicists to tackle long-standing problems and explore uncharted territories in phase transition research. The lecture presented a snapshot through examples; graduate students equipped with these tools can apply them to their own research problems, potentially uncovering new physics with the help of machine learning.
+
