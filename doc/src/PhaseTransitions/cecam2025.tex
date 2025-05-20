@@ -1,0 +1,204 @@
+\documentclass{beamer}
+\usetheme{CambridgeUS}
+\usepackage{amsmath, amssymb, graphicx, listings, hyperref}
+
+% Python code style
+\definecolor{codegray}{gray}{0.95}
+\lstset{
+ language=Python,
+ backgroundcolor=\color{codegray},
+ basicstyle=\ttfamily\footnotesize,
+ keywordstyle=\color{blue},
+ commentstyle=\color{gray},
+ stringstyle=\color{red},
+ showstringspaces=false,
+ breaklines=true,
+ frame=single,
+}
+
+\title{Classification of Phase Transitions Using Machine Learning}
+\author{Morten Hjorth-Jensen}
+\institute{University of Oslo}
+\date{\today}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\begin{frame}{Outline}
+ \tableofcontents
+\end{frame}
+
+%--------------------------------------------
+
+\section{Order Parameters and Observables}
+
+\begin{frame}{Ising Model Order Parameter}
+ \begin{itemize}
+   \item Spins: $\sigma_i = \pm 1$
+   \item \textbf{Order parameter (magnetization):}
+   \[
+   M = \left\langle \frac{1}{N} \sum_i \sigma_i \right\rangle
+   \]
+   \item \textbf{Susceptibility:}
+   \[
+   \chi = \frac{N}{T} (\langle M^2 \rangle - \langle M \rangle^2)
+   \]
+   \item \textbf{Energy:}
+   \[
+   E = \left\langle -J \sum_{\langle ij \rangle} \sigma_i \sigma_j \right\rangle
+   \]
+   \item \textbf{Specific heat:}
+   \[
+   C = \frac{1}{NT^2} (\langle E^2 \rangle - \langle E \rangle^2)
+   \]
+ \end{itemize}
+\end{frame}
+
+\begin{frame}{Potts Model Order Parameter}
+ \begin{itemize}
+   \item $q$-state spins: $\sigma_i \in \{1, 2, ..., q\}$
+   \item Order parameter: fraction of majority state
+   \[
+   M_q = \left\langle \frac{q \cdot \max_k n_k - N}{N(q - 1)} \right\rangle, \quad n_k = \text{# of spins in state } k
+   \]
+   \item Susceptibility and specific heat computed analogously
+   \item Critical behavior depends on $q$ and dimensionality
+ \end{itemize}
+\end{frame}
+
+%--------------------------------------------
+
+\section{PyTorch Simulation Framework}
+
+\begin{frame}[fragile]{Ising Model: Metropolis Algorithm (PyTorch)}
+\begin{lstlisting}
+def local_energy(config, i, j):
+   L = config.shape[0]
+   spin = config[i, j]
+   neighbors = config[(i+1)%L, j] + config[(i-1)%L, j] + \
+               config[i, (j+1)%L] + config[i, (j-1)%L]
+   return -spin * neighbors
+
+def metropolis_step(config, beta):
+   L = config.shape[0]
+   for _ in range(L * L):
+       i, j = torch.randint(0, L, (2,))
+       dE = 2 * local_energy(config, i, j)
+       if dE <= 0 or torch.rand(1) < torch.exp(-beta * dE):
+           config[i, j] *= -1
+   return config
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{Compute Observables (Ising)}
+\begin{lstlisting}
+def compute_observables(config, J=1.0):
+   L = config.shape[0]
+   energy, magnet = 0.0, config.sum().item()
+   for i in range(L):
+       for j in range(L):
+           S = config[i, j]
+           neighbors = config[(i+1)%L, j] + config[i, (j+1)%L]
+           energy -= J * S * neighbors
+   norm = L * L
+   return energy / norm, magnet / norm
+\end{lstlisting}
+\end{frame}
+
+%--------------------------------------------
+
+\section{Generating Data and Labels}
+
+\begin{frame}[fragile]{Dataset Generator (Ising Model)}
+\begin{lstlisting}
+def generate_ising_data(L, T_vals, n_samples):
+   configs, energies, mags, labels = [], [], [], []
+   for T in T_vals:
+       beta = 1.0 / T
+       for _ in range(n_samples):
+           config = torch.randint(0, 2, (L, L)) * 2 - 1
+           for _ in range(500):  # Thermalization
+               config = metropolis_step(config, beta)
+           e, m = compute_observables(config)
+           configs.append(config.clone())
+           energies.append(e)
+           mags.append(m)
+           labels.append(int(T < 2.3))  # crude binary label
+   return torch.stack(configs), torch.tensor(labels), energies, mags
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{Visualize Magnetization vs Temperature}
+\begin{lstlisting}
+import matplotlib.pyplot as plt
+
+def plot_magnetization(T_vals, mags):
+   mags = torch.tensor(mags).reshape(len(T_vals), -1)
+   avg_mag = mags.abs().mean(dim=1)
+   plt.plot(T_vals, avg_mag)
+   plt.xlabel("Temperature T")
+   plt.ylabel("Magnetization |M|")
+   plt.title("Order Parameter vs Temperature")
+   plt.grid(True)
+   plt.show()
+\end{lstlisting}
+\end{frame}
+
+%--------------------------------------------
+
+\section{Machine Learning Classification}
+
+\begin{frame}[fragile]{CNN Classifier (PyTorch)}
+\begin{lstlisting}
+class PhaseClassifier(nn.Module):
+   def __init__(self):
+       super().__init__()
+       self.conv1 = nn.Conv2d(1, 32, 3, padding=1)
+       self.conv2 = nn.Conv2d(32, 64, 3, padding=1)
+       self.fc1 = nn.Linear(64*8*8, 128)
+       self.fc2 = nn.Linear(128, 2)
+
+   def forward(self, x):
+       x = F.relu(self.conv1(x))
+       x = F.max_pool2d(x, 2)
+       x = F.relu(self.conv2(x))
+       x = F.max_pool2d(x, 2)
+       x = x.view(x.size(0), -1)
+       x = F.relu(self.fc1(x))
+       return self.fc2(x)
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}{Training + Results}
+ \begin{itemize}
+   \item Train CNN using configurations labeled by $T$
+   \item Accuracy high away from $T_c$, drops near $T_c$
+   \item Predict critical point by analyzing output confidence
+   \item Extension: regression instead of classification to learn $T$
+ \end{itemize}
+\end{frame}
+
+%--------------------------------------------
+
+\section{Conclusion}
+
+\begin{frame}{Summary}
+ \begin{itemize}
+   \item Order parameters help interpret ML models
+   \item PyTorch enables efficient simulation and classification
+   \item ML can discover phase boundaries without explicit physical models
+   \item Open challenges: interpretability, generalization, scaling
+ \end{itemize}
+\end{frame}
+
+\begin{frame}{References}
+ \footnotesize
+ \begin{itemize}
+   \item Carrasquilla \& Melko, "Machine learning phases of matter", Nature Phys. (2017)
+   \item Wang, "Discovering phase transitions with unsupervised learning", PRB (2016)
+   \item Mehta et al., "A high-bias, low-variance introduction to ML for physicists", Phys. Rep. (2019)
+ \end{itemize}
+\end{frame}
+
+\end{document}
