@@ -1,0 +1,177 @@
+\documentclass{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage{graphicx}
+\usepackage{physics}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usepackage{caption}
+\usepackage{subcaption}
+\usetheme{Madrid}
+
+\title{Classifying Phase Transitions Using Machine Learning}
+\subtitle{Ising and Potts Models with PCA and Variational Autoencoders}
+\author{Morten Hjorth-Jensen}
+\date{\today}
+
+\begin{document}
+
+\frame{\titlepage}
+
+%-------------------------------------------------
+\begin{frame}{Outline}
+\tableofcontents
+\end{frame}
+
+%-------------------------------------------------
+\section{Introduction to Phase Transitions}
+\begin{frame}{What is a Phase Transition?}
+\begin{itemize}
+    \item Macroscopic changes in a system due to small variations in parameters like temperature or field.
+    \item Example: Ferromagnetic to paramagnetic transition in the Ising model.
+    \item Key concept: \textbf{Order parameter} (e.g. magnetization $M$).
+\end{itemize}
+\end{frame}
+
+%-------------------------------------------------
+\section{The Ising and Potts Models}
+\begin{frame}{The Ising Model}
+\begin{itemize}
+    \item Spins $s_i = \pm 1$ on a 2D lattice.
+    \item Hamiltonian: $H = -J \sum_{\langle i,j \rangle} s_i s_j - h \sum_i s_i$
+    \item Phase transition at $T_c \approx 2.269$ (2D, zero field).
+    \item Critical behavior: diverging correlation length, power-law scaling.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{The Potts Model}
+\begin{itemize}
+    \item Generalization: $q$-state spins $s_i \in \{1, ..., q\}$.
+    \item Hamiltonian: $H = -J \sum_{\langle i,j \rangle} \delta_{s_i, s_j}$
+    \item $q = 2$ is Ising model; $q > 4$ shows first-order transitions.
+    \item Used in modeling multi-phase materials, image segmentation.
+\end{itemize}
+\end{frame}
+
+%-------------------------------------------------
+\section{Data Generation}
+\begin{frame}{Monte Carlo Simulation}
+\begin{itemize}
+    \item Use Metropolis or Wolff algorithm to sample configurations.
+    \item Input: temperature grid around $T_c$.
+    \item Output: $N \times L^2$ binary configurations for Ising, categorical for Potts.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Preprocessing}
+\begin{itemize}
+    \item Normalize configurations (mean 0, std 1).
+    \item Flatten $L \times L$ grid to 1D vector.
+    \item Split into training/testing sets with labels (for supervised).
+\end{itemize}
+\end{frame}
+
+%-------------------------------------------------
+\section{Supervised Learning}
+\begin{frame}{Neural Network Classifier (PyTorch)}
+\begin{itemize}
+    \item Input: lattice configuration vector.
+    \item Output: classification (e.g. low vs. high $T$).
+    \item Loss: cross-entropy; Optimizer: Adam.
+\end{itemize}
+\begin{block}{Key Idea}
+    Learn to distinguish phases by training on labeled data.
+\end{block}
+\end{frame}
+
+%-------------------------------------------------
+\section{Unsupervised Learning}
+\begin{frame}{PCA: Principal Component Analysis}
+\begin{itemize}
+    \item Linear method: projects data onto orthogonal axes of max variance.
+    \item Useful for visualizing structure in data without labels.
+\end{itemize}
+\includegraphics[width=0.7\textwidth]{pca_latent_plot.png}
+\end{frame}
+
+\begin{frame}{Clustering and Phase Separation}
+\begin{itemize}
+    \item Apply $k$-means or DBSCAN in PCA space.
+    \item Phases form clusters below and above $T_c$.
+    \item Cluster centers shift with temperature.
+\end{itemize}
+\end{frame}
+
+%-------------------------------------------------
+\section{Variational Autoencoders (VAEs)}
+\begin{frame}{What is a VAE?}
+\begin{itemize}
+    \item Probabilistic autoencoder with latent variables.
+    \item Learns $q(z|x)$ encoder and $p(x|z)$ decoder.
+    \item Loss: ELBO = reconstruction + KL divergence.
+\end{itemize}
+\begin{equation*}
+\mathcal{L}_{\text{VAE}} = \mathbb{E}_{q(z|x)}[\log p(x|z)] - \text{KL}(q(z|x)\|p(z))
+\end{equation*}
+\end{frame}
+
+\begin{frame}{VAE Architecture (PyTorch)}
+\begin{itemize}
+    \item Input: configuration vector $x$.
+    \item Latent space: $z \in \mathbb{R}^2$ or $\mathbb{R}^d$.
+    \item Decoder reconstructs $x$ from $z$.
+\end{itemize}
+\includegraphics[width=0.6\textwidth]{vae_architecture.png}
+\end{frame}
+
+%-------------------------------------------------
+\section{VAE vs PCA}
+\begin{frame}{Latent Space Comparison}
+\begin{columns}
+\column{0.5\textwidth}
+\textbf{PCA}
+\begin{itemize}
+    \item Linear projection
+    \item Orthogonal axes
+    \item Fast, interpretable
+\end{itemize}
+\column{0.5\textwidth}
+\textbf{VAE}
+\begin{itemize}
+    \item Nonlinear manifold
+    \item Captures higher-order correlations
+    \item Learns generative model
+\end{itemize}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Detecting Criticality via Latent Variance}
+\begin{itemize}
+    \item VAE latent variables cluster in temperature space.
+    \item Variance in $z$ increases near $T_c$.
+    \item Can be used as an indicator of phase transition.
+\end{itemize}
+\includegraphics[width=0.7\textwidth]{latent_variance_plot.png}
+\end{frame}
+
+%-------------------------------------------------
+\section{Summary and Outlook}
+\begin{frame}{Key Takeaways}
+\begin{itemize}
+    \item Machine learning models can classify and detect phase transitions.
+    \item PCA gives interpretable linear structure; VAEs provide generative power.
+    \item Latent representations are effective probes of critical phenomena.
+    \item Future: use diffusion models or normalizing flows.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{References}
+\footnotesize
+\begin{itemize}
+    \item Wang, L. (2016). Discovering phase transitions with unsupervised learning. \textit{Phys. Rev. B}.
+    \item Carrasquilla, J., and Melko, R. (2017). Machine learning phases of matter. \textit{Nature Physics}.
+    \item Wetzel, S. (2017). Unsupervised learning of phase transitions: From PCA to VAE. \textit{Phys. Rev. E}.
+\end{itemize}
+\end{frame}
+
+\end{document}
