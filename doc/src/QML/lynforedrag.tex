@@ -13,9 +13,9 @@
 \begin{document}
 
 \title[Quantum Computing and ML]{\textbf{Quantum Technology and Artificial Intelligence}}
-\author{Morten Hjorth-Jensen}
+\author{Morten Hjorth-Jensen, mhjensen@uio.no}
 \institute{Department of Physics and Center for Computing in Science Education, University of Oslo, Norway}
-\date{Sintef, COSY center seminar, May 12, 2025}
+\date{August 14, 2025}
 
 
 %-----------------------------------------------------------
@@ -34,32 +34,41 @@
 \frametitle{What is this talk about?}
 
 \begin{block}{}
-The main emphasis is to give you a short and hopefully pedestrian introduction to the whys and hows of machine learning and quantum technologies.
-And why this could (or should) be of interest. 
+The main emphasis is to give you a short and hopefully pedestrian overview  to the whys and hows of machine learning and quantum technologies, why this could (or should) be of interest and where to find info about courses and study programs at UiO. 
 \end{block}
 
 \end{frame}
 
-\begin{frame}[plain,fragile]
-\frametitle{Thanks to many}
-
-Jane Kim (MSU), Julie Butler (MSU), Patrick Cook (MSU), Danny Jammooa (MSU), Daniel Bazin (MSU), Dean Lee (MSU), Witek Nazarewicz (MSU), Michelle Kuchera (Davidson College), Even Nordhagen (UiO), Robert Solli (UiO, Expert Analytics), Bryce Fore (ANL), Alessandro Lovato (ANL), Stefano Gandolfi (LANL), Francesco Pederiva (UniTN), and Giuseppe Carleo (EPFL). 
-Niyaz Beysengulov and Johannes Pollanen (experiment, MSU); Zachary Stewart, Jared Weidman, and Angela Wilson (quantum chemistry, MSU)
-Jonas Flaten, Oskar Leinonen, Øyvind Sigmundson Schøyen, Stian Dysthe Bilek, and Håkon Emil Kristiansen (UiO). Excuses to those I have forgotten.
-\end{frame}
 
 \begin{frame}[plain,fragile]
-\frametitle{And sponsors}
+\frametitle{Multiscale scientific problem, life science example}
 
-\begin{enumerate}
-\item National Science Foundation, US (various grants)
 
-\item Department of Energy, US (various grants)
-
-\item Research Council of Norway (various grants) and my employers University of Oslo (1999-present) and Michigan State University (former, 2012-2024)
-\end{enumerate}
+% inline figure
+\centerline{\includegraphics[width=1.05\linewidth]{figures/science2.png}}
 
 \end{frame}
+
+
+\begin{frame}[plain,fragile]
+\frametitle{Multiscale scientific problem, life science example, with mathematical methods}
+
+
+% inline figure
+\centerline{\includegraphics[width=1.05\linewidth]{figures/science1.png}}
+
+\end{frame}
+
+
+\begin{frame}[plain,fragile]
+\frametitle{Multiscale scientific problem, life science example with Machine learning}
+
+
+% inline figure
+\centerline{\includegraphics[width=1.05\linewidth]{figures/science3.png}}
+
+\end{frame}
+
 
 
 \begin{frame}[plain,fragile]
@@ -186,7 +195,7 @@ Quantum computing leverages principles of quantum mechanics to perform computati
 \noindent
 If you wish to have a critical read on AI/ML from a societal point of view, see \href{{https://www.katecrawford.net/}}{Kate Crawford's recent text Atlas of AI}.
 
-\textbf{Here: with AI/ML we intend a collection of machine learning methods with an emphasis on statistical learning and data analysis}
+\textbf{Here: with AI/ML we normally intend a collection of machine learning methods with an emphasis on statistical learning and data analysis}
 \end{frame}
 
 
@@ -210,27 +219,6 @@ If you wish to have a critical read on AI/ML from a societal point of view, see 
 % inline figure
 \centerline{\includegraphics[width=0.7\linewidth]{figures/aitalk1.png}}
 Taken from \url{https://www.businessenergyuk.com/knowledge-hub/chatgpt-energy-consumption-visualized/}
-\end{frame}
-
-
-
-\begin{frame}[plain,fragile]
-\frametitle{Main categories of Machine Learning}
-
-\begin{block}{}
-Another way to categorize machine learning tasks is to consider the desired output of a system.
-Some of the most common tasks are:
-
-\begin{itemize}
-  \item Classification: Outputs are divided into two or more classes. The goal is to   produce a model that assigns inputs into one of these classes. An example is to identify  digits based on pictures of hand-written ones. Classification is typically supervised learning.
-
-  \item Regression: Finding a functional relationship between an input data set and a reference data set.   The goal is to construct a function that maps input data to continuous output values.
-
-  \item Clustering: Data are divided into groups with certain common traits, without knowing the different groups beforehand.  It is thus a form of unsupervised learning.
-\end{itemize}
-
-\noindent
-\end{block}
 \end{frame}
 
 
@@ -313,79 +301,6 @@ We seek to minimize the function $\mathcal{C} (\bm{x}, f(\bm{\alpha}))$ by findi
 \end{block}
 \end{frame}
 
-\begin{frame}[plain,fragile]
-\frametitle{Low-level machine learning, the family of ordinary least squares methods}
-
-Our data which we want to apply a machine learning method on, consist
-of a set of inputs $\bm{x}^T=[x_0,x_1,x_2,\dots,x_{n-1}]$ and the
-outputs we want to model $\bm{y}^T=[y_0,y_1,y_2,\dots,y_{n-1}]$.
-We assume  that the output data can be represented (for a regression case) by a continuous function $f$
-through
-\[
-\bm{y}=f(\bm{x})+\bm{\epsilon}.
-\]
-\end{frame}
-
-\begin{frame}[plain,fragile]
-\frametitle{Setting up the equations}
-
-In linear regression we approximate the unknown function with another
-continuous function $\tilde{\bm{y}}(\bm{x})$ which depends linearly on
-some unknown parameters
-$\bm{\theta}^T=[\theta_0,\theta_1,\theta_2,\dots,\theta_{p-1}]$.
-
-The input data can be organized in terms of a so-called design matrix 
-with an approximating function $\bm{\tilde{y}}$ 
-\[
-\bm{\tilde{y}}= \bm{X}\bm{\theta},
-\]
-\end{frame}
-
-\begin{frame}[plain,fragile]
-\frametitle{The objective/cost/loss function}
-
-The  simplest approach is the mean squared error
-\[
-C(\bm{\Theta})=\frac{1}{n}\sum_{i=0}^{n-1}\left(y_i-\tilde{y}_i\right)^2=\frac{1}{n}\left\{\left(\bm{y}-\bm{\tilde{y}}\right)^T\left(\bm{y}-\bm{\tilde{y}}\right)\right\},
-\]
-or using the matrix $\bm{X}$ and in a more compact matrix-vector notation as
-\[
-C(\bm{\Theta})=\frac{1}{n}\left\{\left(\bm{y}-\bm{X}\bm{\theta}\right)^T\left(\bm{y}-\bm{X}\bm{\theta}\right)\right\}.
-\]
-This function represents one of many possible ways to define the so-called cost function.
-\end{frame}
-
-\begin{frame}[plain,fragile]
-\frametitle{Training solution}
-
-Optimizing with respect to the unknown parameters $\theta_j$ we get 
-\[
-\bm{X}^T\bm{y} = \bm{X}^T\bm{X}\bm{\theta},  
-\]
-and if the matrix $\bm{X}^T\bm{X}$ is invertible we have the optimal values
-\[
-\hat{\bm{\theta}} =\left(\bm{X}^T\bm{X}\right)^{-1}\bm{X}^T\bm{y}.
-\]
-
-We say we 'learn' the unknown parameters $\bm{\theta}$ from the last equation.
-\end{frame}
-
-
-\begin{frame}[plain,fragile]
-\frametitle{Why Neural Networks and deep learning?}
-\begin{block}{}
-According to the \emph{Universal approximation theorem}, a feed-forward
-neural network with just a single hidden layer containing a finite
-number of neurons can approximate a continuous multidimensional
-function to arbitrary accuracy, assuming the activation function for
-the hidden layer is a \textbf{non-constant, bounded and
-monotonically-increasing continuous function}.
-\end{block}
-\begin{block}{}
-\textbf{You can think of a neural network as a universal approximator}
-\end{block}
-\end{frame}
-
 
 \begin{frame}[plain,fragile]
 \frametitle{Schematic view on Machine Learning approaches}
@@ -397,132 +312,8 @@ monotonically-increasing continuous function}.
 \end{frame}
 
 
-
-
 \begin{frame}[plain,fragile]
-\frametitle{Scientific Machine Learning}
-
-An important and emerging field is what has been dubbed as scientific ML, see the article by Deiana et al, Applications and Techniques for Fast Machine Learning in Science, Big Data \textbf{5}, 787421 (2022) \href{{https://doi.org/10.3389/fdata.2022.787421}}{\nolinkurl{https://doi.org/10.3389/fdata.2022.787421}}
-
-\begin{block}{}
-The authors discuss applications and techniques for fast machine
-learning (ML) in science -- the concept of integrating power ML
-methods into the real-time experimental data processing loop to
-accelerate scientific discovery. The report covers three main areas
-
-\begin{enumerate}
-\item applications for fast ML across a number of scientific domains;
-
-\item techniques for training and implementing performant and resource-efficient ML algorithms;
-
-\item and computing architectures, platforms, and technologies for deploying these algorithms.
-\end{enumerate}
-
-\noindent
-\end{block}
-\end{frame}
-
-\begin{frame}[plain,fragile]
-\frametitle{ML for detectors}
-
-\vspace{6mm}
-
-% inline figure
-\centerline{\includegraphics[width=1.0\linewidth]{figures/detectors.png}}
-
-\vspace{6mm}
-\end{frame}
-
-
-\begin{frame}[plain,fragile]
-\frametitle{Physics driven Machine Learning}
-
-Another hot topic is what has loosely been dubbed \textbf{Physics-driven deep learning}. See the recent work on \href{{https://www.nature.com/articles/s42256-021-00302-5}}{Learning nonlinear operators via DeepONet based on the universal approximation theorem of operators, Nature Machine Learning, vol 3, 218 (2021)}.
-
-\end{frame}
-
-\begin{frame}[plain,fragile]
-\frametitle{And more}
-
-\begin{block}{}
-\begin{itemize}
-\item An important application of AI/ML methods is to improve the estimation of bias or uncertainty due to the introduction of or lack of physical constraints in various theoretical models.
-
-\item We expect to use AI/ML algorithms and methods to improve our knowledge about  correlations of physical model parameters in data for complex systems. Deep learning methods show great promise in circumventing the exploding dimensionalities encountered in many problems.
-
-\end{itemize}
-
-\noindent
-\end{block}
-\end{frame}
-
-\begin{frame}[plain,fragile]
-\frametitle{Argon-46 by Solli et al., NIMA 1010, 165461 (2021)}
-
-\begin{block}{}
-Each row is one event in two projections,
-where the color intensity of each point indicates higher charge values
-recorded by the detector. The bottom row illustrates a carbon event with
-a large fraction of noise, while the top row shows a proton event
-almost free of noise. 
-\end{block}
-
-% inline figure
-\centerline{\includegraphics[width=0.6\linewidth]{figures/examples_raw.png}}
-\end{frame}
-
-
-
-\begin{frame}[plain,fragile]
-\frametitle{Many-body physics, Quantum Monte Carlo and deep learning}
-
-\begin{block}{}
-Given a Hamiltonian $H$ and a trial wave function $\Psi_T$, the variational principle states that the expectation value of $\langle H \rangle$, defined through 
-\[
-   \langle E \rangle =
-   \frac{\int d\bm{R}\Psi^{\ast}_T(\bm{R})H(\bm{R})\Psi_T(\bm{R})}
-        {\int d\bm{R}\Psi^{\ast}_T(\bm{R})\Psi_T(\bm{R})},
-\]
-is an upper bound to the ground state energy $E_0$ of the hamiltonian $H$, that is 
-\[
-    E_0 \le \langle E \rangle.
-\]
-In general, the integrals involved in the calculation of various  expectation values  are multi-dimensional ones. Traditional integration methods such as the Gauss-Legendre will not be adequate for say the  computation of the energy of a many-body system.  \textbf{Basic philosophy: Let a neural network find the optimal wave function}
-\end{block}
-\end{frame}
-
-
-
-
-
-\begin{frame}[plain,fragile]
-\frametitle{\href{{https://journals.aps.org/prresearch/pdf/10.1103/PhysRevResearch.5.033062}}{Dilute neutron star matter from neural-network quantum states by Fore {\em et al.}, Physical Review Research 5, 033062 (2023)} at density $\rho=0.04$ fm$^{-3}$}
-
-\centerline{\includegraphics[width=0.9\linewidth]{figures/nmatter.png}}
-
-\end{frame}
-
-
-\begin{frame}[plain,fragile]
-\frametitle{Self-emerging clustering Fore {\em et al.}, \url{https://www.nature.com/articles/s42005-025-02015-2}}
-% inline figure
-\centerline{\includegraphics[width=1.0\linewidth]{figures/mbpfig7.png}}
-\end{frame}
-
-
-\begin{frame}[plain,fragile]
-\frametitle{The electron gas in three dimensions with $N=14$ electrons (Wigner-Seitz radius $r_s=2$ a.u.), Kim {\em et al.},\url{https://journals.aps.org/prb/abstract/10.1103/PhysRevB.110.035108}}
-
-\begin{block}{}
-\centerline{\includegraphics[width=0.8\linewidth]{figures/elgasnew.png}}
-
-\end{block}
-\end{frame}
-
-
-
-\begin{frame}[plain,fragile]
-\frametitle{And then quantum engineering and ML/AI}
+\frametitle{Quantum technologies and ML/AI}
 \centerline{\includegraphics[width=1.05\linewidth]{figures/krenn1}}
 
 \end{frame}
@@ -657,35 +448,6 @@ where \( N \) is the number of entangled particles.
 \end{alertblock}
 \end{frame}
 
-\frame
-    {
-      \frametitle{Important properties, electrons on helium}
-	
-      \begin{footnotesize}
-     \begin{columns}
-       \column{5.0cm}
-\begin{enumerate}
-\item Long coherence times
-
-\item Highly connect qubits
-
-\item Many qubits in a small area
-
-\item CMOS compatible
-
-\item Fast gates
-\end{enumerate}
-
-\column{6cm}
-      \begin{center}
-	\rotatebox[origin=c]{-90}{\includegraphics[width=1.3\textwidth]{qcfigures/lab.jpeg}}
-      \end{center}
-\end{columns}
-      \end{footnotesize}
-    }
-
-
-
 
 \frame
     {
@@ -763,327 +525,29 @@ Quantum information can be encoded in a number of ways using single electrons. C
       \end{footnotesize}
     }
     
-\section{Experiment and theory}
-
-
-
-
-\begin{frame}[plain,fragile]
-\frametitle{Qubit platforms}
-
-\vspace{6mm}
-
-% inline figure
-\centerline{\includegraphics[width=1.2\linewidth]{qcfigures/Elhelium2.png}}
-
-\vspace{6mm}
-\end{frame}
-
-\frame
-    {
-      \frametitle{Final experimental setup}
-	
-      \begin{footnotesize}
-     \begin{columns}
-       \column{5.0cm}
-\begin{enumerate}
-\item (a) Microdevice where two electrons are trapped in a double-well potential created by electrodes 1-7. The read-out is provided by two superconducting resonators dispersively coupled to  electron's in-plane motional states.
-
-\item (b) Coupling constants from each individual electrode beneath the helium layer.
-
-\item (c+d) The electron's energy in a  double-well electrostatic potential. 
-\end{enumerate}
-
-\column{6cm}
-      \begin{center}
-	\includegraphics[width=0.65\textwidth]{qcfigures/figure1.png}
-      \end{center}
-\end{columns}
-      \end{footnotesize}
-    }
-
-
-
-
-\begin{frame}[plain,fragile]
-\frametitle{Two-qubit gates and time evolution, SWAP gate}
-% inline figure
-\centerline{\includegraphics[width=0.65\linewidth]{qcfigures/timeevolution.png}}
-\end{frame}
-
-
-
-
-
-
-
-
-
 
 
 
 
 
 \begin{frame}[plain,fragile]
-\frametitle{Observations (or conclusions if you prefer)}
+\frametitle{Can I study these topics at UiO?}
 
-
-\begin{block}{}
-\begin{itemize}
-\item How do we develop insights, competences, knowledge in AI and quantum technologies  that can advance a given field?
-\begin{itemize}
-
-  \item For example: Can we use ML to find out which correlations are relevant and thereby diminish the dimensionality problem in complex interacting  many-particle systems?
-
-  \item Can we use AI/ML in detector analysis, accelerator design, analysis of experimental data and more?
-
-  \item Can we use AL/ML to carry out reliable extrapolations by using current experimental knowledge and current theoretical models?
-\item How do we study entanglement in various quantum platforms? Can we use AI/ML for better design?
-
-\end{itemize}
-
-\noindent
-\item The community needs to invest in relevant educational efforts and training of scientists with knowledge in AI/ML and quantum technologies
-
-\item Most likely tons of things I have forgotten
-\end{itemize}
-
-\noindent
-\end{block}
-\end{frame}
-
-\begin{frame}{More conclusions or perspectives: Selected applications of Quantum Machine Learning}
-\textbf{1. Quantum mechanical many-particle systems:}
-\begin{itemize}
-    \item Simulate  structures in nuclei, atoms, moleculs etc with QML.
-\end{itemize}
-
-\textbf{2. Finance:}
-\begin{itemize}
-    \item Quantum optimization for portfolio management.
-\end{itemize}
-
-\textbf{3. Image Recognition:}
-\begin{itemize}
-    \item Quantum-enhanced convolutional neural networks.
-\end{itemize}
-\end{frame}
-
-
-\begin{frame}[plain,fragile]
-\frametitle{Thank you for the attention and results from references in slides)}
-\begin{enumerate}
-
-\item Bryce Fore, Jane Kim, Morten Hjorth-Jensen, Alessandro Lovato, \textbf{Investigating the crust of neutron stars with neural-network quantum states}, Communications Physics \textbf{8}, 108  (2025) and \href{{https://www.nature.com/articles/s42005-025-02015-2}}{\nolinkurl{https://www.nature.com/articles/s42005-025-02015-2}}
-
-\item Patrick Cook, Danny Jammooa, Morten Hjorth-Jensen, Daniel D. Lee, Dean Lee, \textbf{Parametric Matrix Models}, Nature Communications  under review and \href{{https://arxiv.org/abs/2401.11694}}{\nolinkurl{https://arxiv.org/abs/2401.11694}}
-
-\item Niyaz R. Beysengulov, Johannes Pollanen, Øyvind S. Schøyen, Stian D. Bilek, Jonas B. Flaten, Oskar Leinonen, Håkon Emil Kristiansen, Zachary J. Stewart, Jared D. Weidman, Angela K. Wilson, Morten Hjorth-Jensen, Coulomb interaction-driven entanglement of electrons on helium, PRX Quantum 5, 030324 (2024) and \href{{https://journals.aps.org/prxquantum/abstract/10.1103/PRXQuantum.5.030324}}{\nolinkurl{https://journals.aps.org/prxquantum/abstract/10.1103/PRXQuantum.5.030324}}
-
-\end{enumerate}
-\end{frame}
-
-
-
-\begin{frame}[plain,fragile]
-\frametitle{Additional references)}
-\begin{enumerate}
-
-\item Jane Kim, Gabriel Pescia, Bryce Fore, Jannes Nys, Giuseppe Carleo, Stefano Gandolfi, Morten Hjorth-Jensen, Alessandro Lovato, \textbf{Neural-network quantum states for ultra-cold Fermi gases}, Communications Physics \textbf{7}, 148 (2024) and \href{{https://www.nature.com/articles/s42005-024-01613-w}}{\nolinkurl{https://www.nature.com/articles/s42005-024-01613-w}}
-
-\item Bryce Fore, Jane M. Kim, Giuseppe Carleo, Morten Hjorth-Jensen, Alessandro Lovato, and Maria Piarulli, \textbf{Dilute neutron star matter from neural-network quantum states}, \href{{https://journals.aps.org/prresearch/abstract/10.1103/PhysRevResearch.5.033062}}{Physical Review  Research 5, 033062 (2023)}
-
-\item Robert Solli, Daniel Bazin, Michelle P. Kuchera, Ryan R. Strauss, Morten Hjorth-Jensen, \emph{Unsupervised Learning for Identifying Events in Active Target Experiments}, \href{{https://www.sciencedirect.com/science/article/abs/pii/S0168900221004460}}{Nuclear Instruments and Methods in Physics Research Section A \textbf{1010}, 165461, (2020)}
-
-\end{enumerate}
-\end{frame}
-
-
-\appendix{Additional material}
-
-
-
-
-
-
-\begin{frame}{1. Quantum Support Vector Machines (QSVM)}
-\textbf{Quantum Kernel Estimation:}
-\begin{itemize}
-    \item Maps classical data to a quantum Hilbert space.
-    \item Quantum kernel measures similarity in high-dimensional space.
-\end{itemize}
-
-\pause
-\textbf{Quantum Kernel:}
-\[
-K(x, x') = |\braket{\psi(x) | \psi(x')}|^2
-\]
-
-\textbf{Advantage:}
-- Potentially exponential speedup over classical SVMs.
-\end{frame}
-
-\begin{frame}{2. Quantum Neural Networks (QNNs)}
-\textbf{Quantum Neural Networks} replace classical neurons with parameterized quantum circuits.
-
-\textbf{Key Concepts:}
-\begin{itemize}
-    \item Quantum Gates as Activation Functions.
-    \item Variational Quantum Circuits (VQCs) for optimization.
-\end{itemize}
-
-\pause
-\textbf{Parameterized Quantum Circuit:}
-\[
-U(\theta) = \prod_i R_y(\theta_i) \cdot CNOT \cdot R_x(\theta_i)
-\]
-
-\textbf{Advantage:}
-- Quantum gradients enable exploration of non-convex landscapes.
-\end{frame}
-
-\begin{frame}{3. Quantum Boltzmann Machines (QBMs)}
-\textbf{Quantum Boltzmann Machines} leverage quantum mechanics to sample from a probability distribution.
 
 \begin{itemize}
-    \item Quantum tunneling aids in escaping local minima.
-    \item Quantum annealing for optimization problems.
+\item Several courses on Machine learning and AI at UiO, from bachelor level to PhD level, see \url{https://github.com/CompPhysics/MachineLearning}
+\item Quantum technologies, quantum information theory, quantum computing, quantum sensing and more. Study directions in Physics bachelor degree, Physics master degree and Computational Science master of science program
+  \begin{enumerate}
+  \item Physics Bachelor of Science program  \url{https://www.uio.no/studier/program/fysikk-astronomi/studieretninger/kvanteteknologi/index.html}
+  \item Physics Master of Science program \url{https://www.uio.no/english/studies/programmes/physics-master/programme-options/quantum-technology/index.html}
+  \item Computational Science Master of Science program \url{https://www.uio.no/english/studies/programmes/computational-science-master/programme-options/quantum-technology/index.html}
+    \end{enumerate}
 \end{itemize}
 
-\pause
-\textbf{Quantum Hamiltonian:}
-\[
-H = -\sum_i b_i \sigma_i^z - \sum_{ij} w_{ij} \sigma_i^z \sigma_j^z
-\]
-
-\textbf{Advantage:}
-- Efficient sampling in complex probability distributions.
 \end{frame}
 
-
-\section{Future Perspectives}
-\begin{frame}{Future Perspectives in QML}
-\textbf{1. Fault-Tolerant Quantum Computing:}
-\begin{itemize}
-    \item Overcoming noise for stable quantum circuits.
-\end{itemize}
-
-\textbf{2. Hybrid Quantum-Classical Models:}
-\begin{itemize}
-    \item Combining quantum circuits with classical neural networks.
-\end{itemize}
-
-\textbf{3. Quantum Internet:}
-\begin{itemize}
-    \item Distributed quantum machine learning over quantum networks.
-\end{itemize}
-\end{frame}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-\begin{frame}[plain,fragile]
-\frametitle{Universal approximation theorem}
-
-The universal approximation theorem plays a central role in deep
-learning.  \href{{https://link.springer.com/article/10.1007/BF02551274}}{Cybenko (1989)} showed
-the following:
-
-\begin{block}{}
-Let $\sigma$ be any continuous sigmoidal function such that
-\[
-\sigma(z) = \left\{\begin{array}{cc} 1 & z\rightarrow \infty\\ 0 & z \rightarrow -\infty \end{array}\right.
-\]
-Given a continuous and deterministic function $F(\bm{x})$ on the unit
-cube in $d$-dimensions $F\in [0,1]^d$, $x\in [0,1]^d$ and a parameter
-$\epsilon >0$, there is a one-layer (hidden) neural network
-$f(\bm{x};\bm{\Theta})$ with $\bm{\Theta}=(\bm{W},\bm{b})$ and $\bm{W}\in
-\mathbb{R}^{m\times n}$ and $\bm{b}\in \mathbb{R}^{n}$, for which
-\[
-\vert F(\bm{x})-f(\bm{x};\bm{\Theta})\vert < \epsilon \hspace{0.1cm} \forall \bm{x}\in[0,1]^d.
-\]
-
-\end{block}
-\end{frame}
-
-\begin{frame}[plain,fragile]
-\frametitle{The approximation theorem in words}
-
-\textbf{Any continuous function $y=F(\bm{x})$ supported on the unit cube in
-$d$-dimensions can be approximated by a one-layer sigmoidal network to
-arbitrary accuracy.}
-
-\href{{https://www.sciencedirect.com/science/article/abs/pii/089360809190009T}}{Hornik (1991)} extended the theorem by letting any non-constant, bounded activation function to be included using that the expectation value
-\[
-\mathbb{E}[\vert F(\bm{x})\vert^2] =\int_{\bm{x}\in D} \vert F(\bm{x})\vert^2p(\bm{x})d\bm{x} < \infty.
-\]
-Then we have
-\[
-\mathbb{E}[\vert F(\bm{x})-f(\bm{x};\bm{\Theta})\vert^2] =\int_{\bm{x}\in D} \vert F(\bm{x})-f(\bm{x};\bm{\Theta})\vert^2p(\bm{x})d\bm{x} < \epsilon.
-\]
-\end{frame}
-
-\begin{frame}[plain,fragile]
-\frametitle{More on the general approximation theorem}
-
-None of the proofs give any insight into the relation between the
-number of of hidden layers and nodes and the approximation error
-$\epsilon$, nor the magnitudes of $\bm{W}$ and $\bm{b}$.
-
-Neural networks (NNs) have what we may call a kind of universality no matter what function we want to compute.
-
-\begin{block}{}
-It does not mean that an NN can be used to exactly compute any function. Rather, we get an approximation that is as good as we want. 
-\end{block}
-\end{frame}
-
-\begin{frame}[plain,fragile]
-\frametitle{Class of functions we can approximate}
-
-\begin{block}{}
-The class of functions that can be approximated are the continuous ones.
-If the function $F(\bm{x})$ is discontinuous, it won't in general be possible to approximate it. However, an NN may still give an approximation even if we fail in some points.
-\end{block}
-\end{frame}
 
 \end{document}
-
-%-----------------------------------------------------------
-\section{Future Perspectives}
-\begin{frame}{Future Perspectives}
-\textbf{Quantum Internet:}
-\begin{itemize}
-    \item Entanglement as a resource for global quantum networks.
-\end{itemize}
-
-\textbf{Fault-Tolerant Quantum Computing:}
-\begin{itemize}
-    \item Quantum error correction leveraging entanglement.
-\end{itemize}
-
-\textbf{Advanced Quantum Sensors:}
-\begin{itemize}
-    \item Improved sensitivity for medical and scientific applications.
-\end{itemize}
-
-\pause
-\textbf{Conclusion:}
-- Quantum entanglement is a fundamental resource.  
-- It enables quantum supremacy in communication, computation, and sensing.
-\end{frame}
-
 
 
 
