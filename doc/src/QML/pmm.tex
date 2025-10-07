@@ -127,7 +127,7 @@ for $X,Y$ in a Lie algebra . If $X$ and $Y$ commute, then simply $Z=X+Y$. If not
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Derivation: Outline (up to Third Order)}
+\begin{frame}{Derivation: to first order)}
 \begin{itemize}
 \item \textbf{Method:} Compare power series of $e^X e^Y$ and $e^Z$ and solve for $Z$ order-by-order .
 \item Expand both sides:
@@ -144,7 +144,7 @@ where $Z = X + Y + A_2 + A_3 + \cdots$ (with $A_n$ = terms of order $n$ in $X,Y$
 \end{frame}
 
 
-\begin{frame}{Derivation: Outline (up to Third Order)}
+\begin{frame}{Derivation: outline (to second order)}
 \begin{itemize}
 \item \textbf{Second order:} The $e^X e^Y$ expansion has $\frac{1}{2}(XY + YX)$ at order 2. Meanwhile $e^Z$ gives $\frac{1}{2}(X+Y)^2 = \frac{1}{2}(X^2 + XY + YX + Y^2)$. The extra $X^2$ and $Y^2$ terms match on both sides, but $XY+YX$ vs $XY+YX$ is already present. However, note that $XY + YX$ cannot simplify to $2XY$ unless $XY=YX$. The discrepancy appears at this order .
 \item Thus, we postulate $Z$ has a second-order correction $A_2 = \frac{1}{2}[X,Y]$ to account for the difference:
@@ -156,6 +156,13 @@ but including $A_2$ in $Z$ yields new cross terms when squaring $Z$:
 \frac{1}{2}(X+Y+A_2)^2 = \frac{1}{2}(X^2 + XY+YX + Y^2 + [X,Y]).
 \]
 which adds the $[X,Y]$ term we need. So $A_2 = \frac{1}{2}[X,Y]$ .
+\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}{Derivation: third order)}
+\begin{itemize}
 \item \textbf{Third order:} Now include $A_2$ and match cubic terms. There will be terms involving $X^2Y$, $XY^2$, etc. The mismatch yields terms $[X,[X,Y]]$ and $[Y,[X,Y]]$. By similar (though more involved) analysis or using the Jacobi identity, one finds
 \[
 A_3 = \frac{1}{12}[X,[X,Y]] - \frac{1}{12}[Y,[X,Y]]$ (which is equivalent to $\frac{1}{12}([X,[X,Y]] + [Y,[Y,X]]))
@@ -164,18 +171,20 @@ A_3 = \frac{1}{12}[X,[X,Y]] - \frac{1}{12}[Y,[X,Y]]$ (which is equivalent to $\f
 \end{itemize}
 \end{frame}
 
-\end{document}
 
-
-\begin{frame}{Special Case: Commutator is Central}
+\begin{frame}{Special case: scalar multiple}
 \begin{itemize}
 \item If $[X, Y]$ commutes with both $X$ and $Y$ (i.e. $[X,Y] = c,I$, a scalar multiple of the identity), \textbf{all higher-order commutators vanish}. In this case the BCH series \emph{terminates} after the second term .
 \item Then the exact result is:
-Z = X + Y + \frac{1}{2}[X,Y]\,,
-and no further corrections are needed .
+\[  
+Z = X + Y + \frac{1}{2}[X,Y],
+\]
+and no further corrections are needed.
 \item This scenario occurs often in quantum mechanics when $[X,Y]$ is a c-number (for example, if $X$ and $Y$ are operators proportional to canonical variables $p$ and $q$).
 \item \textbf{Example:} Position and momentum operators satisfy $[x, p] = i\hbar I$. Thus,
-e^{\frac{i}{\hbar} a x}\,e^{\frac{i}{\hbar} b p} = \exp\!\Big(\frac{i}{\hbar}(a x + b p) + \frac{i}{2\hbar} a b [x,p]\Big) = e^{\frac{i}{\hbar}(a x + b p + \frac{1}{2}ab\,i\hbar)}\,,
+\[  
+e^{\frac{i}{\hbar} a x}\,e^{\frac{i}{\hbar} b p} = \exp\!\Big(\frac{i}{\hbar}(a x + b p) + \frac{i}{2\hbar} a b [x,p]\Big) = e^{\frac{i}{\hbar}(a x + b p + \frac{1}{2}ab\,i\hbar)},
+\]
 yielding a phase factor $e^{-i ab/2}$ times $e^{\frac{i}{\hbar}(a x + b p)}$.  (This is the basis of the Weyl representation in quantum mechanics.)
 \item Another example: For harmonic oscillator ladder operators $[a, a^\dagger]=1$, the displacement operator factorization $e^{\alpha a} e^{-\alpha^* a^\dagger} = e^{-|\alpha|^2/2} e^{-\alpha^* a^\dagger + \alpha a}$ follows from BCH truncation.
 \end{itemize}
@@ -191,6 +200,12 @@ yielding a phase factor $e^{-i ab/2}$ times $e^{\frac{i}{\hbar}(a x + b p)}$.  (
 \item The BCH formula is used to prove properties like $\operatorname{tr}(\log(e^X e^Y)) = \operatorname{tr}(X) + \operatorname{tr}(Y)$ (since commutator contributions have zero trace) , and other structural results in Lie theory.
 \end{itemize}
 \end{frame}
+
+
+\end{document}
+
+
+
 
 \begin{frame}{Application: Quantum Time Evolution}
 \begin{itemize}
