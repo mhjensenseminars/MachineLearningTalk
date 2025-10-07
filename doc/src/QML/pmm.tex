@@ -40,9 +40,14 @@
 
 
 \begin{frame}[plain,fragile]
-\frametitle{What is this talk about?}
+\frametitle{Quantum control}
 
-\begin{block}{Trotterization and time-evolution}
+\begin{block}{The three steps of quantum control}
+\begin{enumerate}
+\item {\bf Quantum correlations:} Understanding and preparing an initial state
+\item {\bf Quantum dynamics:} Controlled evolution towards a desired final state
+\item {\bf Quantum measurements:} Measuring and characterizing the final state
+\end{enumerate}
 
 
 \end{block}
@@ -50,36 +55,43 @@
 \end{frame}
 
 \begin{frame}[plain,fragile]
-\frametitle{The three steps of quantum control}
+\frametitle{Quantum control and this talk}
+
+Last week we discussed the so-called Rodeo algorithm as a way to
+prepare an initial state and/or find the eigenpairs of a system. This
+week we will look at how to control the time-evolution of a system. In
+so doing, we will study
+\begin{block}{}
 \begin{enumerate}
-\item {\bf Quantum correlations:} Understanding and preparing an initial state
 \item {\bf Quantum dynamics:} Controlled evolution towards a desired final state
-\item {\bf Quantum measurements:} Measuring and characterizing the final state
+  \begin{itemize}
+  \item The Baker–Campbell–Hausdorff (BCH) formula
+  \item Combining Exponentials of Non-commuting Operators and the Lie-Trotter formula (Trotterization)
+  \item Parametric matrix models as a way to compute the Lie-Trotter formula, see \url{https://www.nature.com/articles/s41467-025-61362-4}, Cook, Jammooa, MHJ, Lee and Lee
+  \end{itemize}  
 \end{enumerate}
+
+\end{block}
+
 \end{frame}
 
-%\begin{frame}
-%\title{The Baker–Campbell–Hausdorff (BCH) Formula}
-%\subtitle{Combining Exponentials of Non-commuting Operators}
-%\end{frame}
 
 
-\section{Introduction and Motivation}
 \begin{frame}{Motivation: Non-commuting Exponentials}
 \begin{itemize}
 \item In quantum mechanics and Lie theory, we often encounter operators $X$ and $Y$ that do not commute ($[X,Y] \neq 0$).
 \item We want to find an effective operator $Z$ such that:
-e^{X} \, e^{Y} = e^{Z}\,,
+$e^{X} \, e^{Y} = e^{Z}$,
 for $X,Y$ in a Lie algebra . If $X$ and $Y$ commute, then simply $Z=X+Y$. If not, $Z$ includes additional correction terms.
 \item \textbf{BCH Formula:} $Z = \log(e^X e^Y)$ is given by an infinite series in $X, Y$ and their commutators. It provides a systematic expansion to combine exponentials of non-commuting operators .
 \item \textbf{Use Cases:} Combines two small transformations into one. Fundamental in connecting Lie group multiplication with Lie algebra addition, time-evolution with split Hamiltonians, etc.
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Recall: Commutators and Lie Algebra}
+\begin{frame}{Commutators and Lie Algebra}
 \begin{itemize}
-\item The \textbf{commutator} of two operators is $[X,Y] = XY - YX$. It measures the failure to commute.
-\item For a Lie algebra (e.g. operators in quantum mechanics), commutators of algebra elements remain in the algebra.
+\item The \textbf{commutator} of two operators is $[X,Y] = XY - YX$. 
+\item For a Lie algebra (common for operators in quantum mechanics), commutators of algebra elements remain in the algebra.
 \item The BCH formula asserts $Z$ can be expressed entirely in terms of $X$, $Y$, and nested commutators like $[X,[X,Y]]$, $[Y,[X,Y]]$, etc. – no other independent products appear .
 \item Notation: It’s useful to denote $\mathrm{ad}_X(Y) := [X,Y]$. Then nested commutators are iterated adjoint actions (e.g. $\mathrm{ad}_X^2(Y) = [X,[X,Y]]$, etc.).
 \item We assume familiarity with basic Lie algebra identities (Jacobi identity: $[X,[Y,Z]] + [Y,[Z,X]] + [Z,[X,Y]] = 0$) which will simplify nested commutators.
@@ -88,9 +100,10 @@ for $X,Y$ in a Lie algebra . If $X$ and $Y$ commute, then simply $Z=X+Y$. If not
 
 \section{The BCH Formula}
 \begin{frame}{BCH Expansion: First Terms}
-For $Z = \log(e^X e^Y)$, the expansion begins:
+  For $Z = \log(e^X e^Y)$, the expansion begins:
+\begin{align*}
 \begin{split} Z &= X + Y \\ &\quad+ \frac{1}{2}[X, Y] \\ &\quad+ \frac{1}{12}\big([X,[X,Y]] + [Y,[Y,X]]\big) \\ &\quad- \frac{1}{24}[Y,[X,[X,Y]]] + \cdots \end{split}
-
+\end{align*}
 \begin{itemize}
 \item The series alternates between symmetric and antisymmetric nested commutators at higher orders .
 \item All higher-order terms involve nested commutators of $X$ and $Y$ only. No ordinary products without commutators appear (ensuring $Z$ lies in the same Lie algebra) .
@@ -118,21 +131,41 @@ For $Z = \log(e^X e^Y)$, the expansion begins:
 \begin{itemize}
 \item \textbf{Method:} Compare power series of $e^X e^Y$ and $e^Z$ and solve for $Z$ order-by-order .
 \item Expand both sides:
+\[
 e^X e^Y = I + X + Y + \frac{1}{2}(X^2 + XY + YX + Y^2) + \frac{1}{6}(X^3 + \cdots) + \cdots
+\]
+\[
 e^Z = I + Z + \frac{1}{2}Z^2 + \frac{1}{6}Z^3 + \cdots
+\]
 where $Z = X + Y + A_2 + A_3 + \cdots$ (with $A_n$ = terms of order $n$ in $X,Y$).
 \item \textbf{First order:} Match linear terms: $Z^{(1)} = X + Y$. So far $Z = X+Y$.
+\item next slide
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}{Derivation: Outline (up to Third Order)}
+\begin{itemize}
 \item \textbf{Second order:} The $e^X e^Y$ expansion has $\frac{1}{2}(XY + YX)$ at order 2. Meanwhile $e^Z$ gives $\frac{1}{2}(X+Y)^2 = \frac{1}{2}(X^2 + XY + YX + Y^2)$. The extra $X^2$ and $Y^2$ terms match on both sides, but $XY+YX$ vs $XY+YX$ is already present. However, note that $XY + YX$ cannot simplify to $2XY$ unless $XY=YX$. The discrepancy appears at this order .
 \item Thus, we postulate $Z$ has a second-order correction $A_2 = \frac{1}{2}[X,Y]$ to account for the difference:
+\[  
 XY + YX = (X+Y)^2 - X^2 - Y^2 = XY + YX,
+\]
 but including $A_2$ in $Z$ yields new cross terms when squaring $Z$:
-\frac{1}{2}(X+Y+A_2)^2 = \frac{1}{2}(X^2 + XY+YX + Y^2 + [X,Y])\,,
+\[
+\frac{1}{2}(X+Y+A_2)^2 = \frac{1}{2}(X^2 + XY+YX + Y^2 + [X,Y]).
+\]
 which adds the $[X,Y]$ term we need. So $A_2 = \frac{1}{2}[X,Y]$ .
 \item \textbf{Third order:} Now include $A_2$ and match cubic terms. There will be terms involving $X^2Y$, $XY^2$, etc. The mismatch yields terms $[X,[X,Y]]$ and $[Y,[X,Y]]$. By similar (though more involved) analysis or using the Jacobi identity, one finds
-$A_3 = \frac{1}{12}[X,[X,Y]] - \frac{1}{12}[Y,[X,Y]]$ (which is equivalent to $\frac{1}{12}([X,[X,Y]] + [Y,[Y,X]])$) .
+\[
+A_3 = \frac{1}{12}[X,[X,Y]] - \frac{1}{12}[Y,[X,Y]]$ (which is equivalent to $\frac{1}{12}([X,[X,Y]] + [Y,[Y,X]]))
+\]
 \item This procedure can continue to higher orders (though it becomes increasingly complex).
 \end{itemize}
 \end{frame}
+
+\end{document}
+
 
 \begin{frame}{Special Case: Commutator is Central}
 \begin{itemize}
