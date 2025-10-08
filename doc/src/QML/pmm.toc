@@ -1,0 +1,6 @@
+\beamer@sectionintoc {1}{The BCH Formula}{6}{0}{1}
+\beamer@sectionintoc {2}{The BCH Formula}{7}{0}{2}
+\beamer@sectionintoc {3}{Applications}{14}{0}{3}
+\beamer@sectionintoc {4}{Applications}{15}{0}{4}
+\beamer@sectionintoc {5}{Python Demonstrations}{20}{0}{5}
+\beamer@sectionintoc {6}{Detailed examples and derivations}{27}{0}{6}
