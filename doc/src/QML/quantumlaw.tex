@@ -6,6 +6,13 @@
 \usepackage{hyperref}
 \usepackage{xmpmulti}
 \usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usepackage{siunitx}
+\usepackage{longtable}
+\sisetup{round-mode=places,round-precision=1}
+
+
 \usetheme{Madrid} % You can change the theme as you like
 \usecolortheme{seagull}
 
@@ -59,35 +66,73 @@ And why this could (or should) be of interest.
 
 
 \begin{frame}[plain,fragile]
+\frametitle{From Moore's law to Huang's law}
+
+\begin{tikzpicture}
+  \begin{semilogyaxis}[
+    width=12cm, height=8cm,
+    xlabel={Year},
+    ylabel={Compute Performance (relative units)},
+    xmin=2006, xmax=2025,
+    ymin=0.1, ymax=1e5,
+    xtick={2006,2010,2014,2018,2022,2025},
+    grid=both,
+    legend pos=north west,
+    legend cell align=left,
+    every axis plot/.append style={thick}
+  ]
+
+  % Moore's Law (doubling every two years)
+  \addplot[
+    blue, dashed, domain=2006:2025, samples=200
+  ] {2^((x-2006)/2)};
+  \addlegendentry{Moore's Law (CPU)}
+
+  % Huang's Law (doubling every year)
+  \addplot[
+    orange, domain=2006:2025, samples=200
+  ] {2^(x-2006)};
+  \addlegendentry{Huang's Law (GPU)}
+
+  % GPU Milestones
+  \node[anchor=south west,orange!80!black] at (axis cs:2007,1) {Tesla C870(\SI{0.52}{TFLOPs})};
+  \node[anchor=south west,orange!80!black] at (axis cs:2017,200) {Volta V100 (\SI{15.7}{TFLOPs})};
+  \node[anchor=south west,orange!80!black] at (axis cs:2017,2000) {Ampere A100 (2020, \SI{19.5}{TFLOPs})};
+  \node[anchor=south west,orange!80!black] at (axis cs:2017,10000) {Hopper H100 (2022,\SI{60}{TFLOPs})};
+  \end{semilogyaxis}
+\end{tikzpicture}
+
+\end{frame}
+
+
+
+\begin{frame}[plain,fragile]
+\frametitle{Machine learning and AI models are computationally expensive}
+
+
+% inline figure
+\centerline{\includegraphics[width=1.0\linewidth]{figures/aitalk2.png}}
+
+\end{frame}
+
+
+\begin{frame}[plain,fragile]
+\frametitle{And power greedy, perhaps quantum computers can reduce the impact?}
+
+% inline figure
+\centerline{\includegraphics[width=0.7\linewidth]{figures/aitalk1.png}}
+Taken from \url{https://www.businessenergyuk.com/knowledge-hub/chatgpt-energy-consumption-visualized/}
+\end{frame}
+
+
+
+\begin{frame}[plain,fragile]
 \frametitle{The future is here, now}
 
 
 % inline figure
 \centerline{\includegraphics[width=1.05\linewidth]{figures/figuregoogle.png}}
 
-\end{frame}
-
-
-
-
-
-%-----------------------------------------------------------
-
-\begin{frame}{What is Machine Learning?}
-Machine Learning (ML) is the study of algorithms that improve through data experience.
-
-\textbf{Types of Machine Learning:}
-\begin{itemize}
-    \item \textbf{Supervised Learning:} Labeled data for classification or regression.
-    \item \textbf{Unsupervised Learning:} No labels; discover hidden patterns.
-    \item \textbf{Reinforcement Learning:} Learning through interaction with the environment.
-\end{itemize}
-
-
-\textbf{ML Workflow:}
-\[
-\text{Data} \rightarrow \text{Model Training} \rightarrow \text{Prediction}
-\]
 \end{frame}
 
 
@@ -164,50 +209,6 @@ Quantum computing leverages principles of quantum mechanics to perform computati
 \begin{itemize}
     \item Difficult to scale circuits to large datasets.
 \end{itemize}
-\end{frame}
-
-
-
-\begin{frame}[plain,fragile]
-\frametitle{AI/ML and some statements you may have heard (and what do they mean?)}
-
-
-
-\begin{enumerate}
-\item Fei-Fei Li on ImageNet: \textbf{map out the entire world of objects} (\href{{https://cacm.acm.org/news/219702-the-data-that-transformed-ai-research-and-possibly-the-world/fulltext}}{The data that transformed AI research})
-
-\item Russell and Norvig in their popular textbook: \textbf{relevant to any intellectual task; it is truly a universal field} (\href{{http://aima.cs.berkeley.edu/}}{Artificial Intelligence, A modern approach})
-
-\item Woody Bledsoe puts it more bluntly: \textbf{in the long run, AI is the only science} (quoted in Pamilla McCorduck, \href{{https://www.pamelamccorduck.com/machines-who-think}}{Machines who think})
-\end{enumerate}
-
-\noindent
-If you wish to have a critical read on AI/ML from a societal point of view, see \href{{https://www.katecrawford.net/}}{Kate Crawford's recent text Atlas of AI}.
-
-\textbf{Here: with AI/ML we intend a collection of machine learning methods with an emphasis on statistical learning and data analysis}
-\end{frame}
-
-
-
-
-
-
-\begin{frame}[plain,fragile]
-\frametitle{Machine learning and AI models are computationally expensive}
-
-
-% inline figure
-\centerline{\includegraphics[width=1.0\linewidth]{figures/aitalk2.png}}
-
-\end{frame}
-
-
-\begin{frame}[plain,fragile]
-\frametitle{And power greedy, perhaps quantum computers can reduce the impact?}
-
-% inline figure
-\centerline{\includegraphics[width=0.7\linewidth]{figures/aitalk1.png}}
-Taken from \url{https://www.businessenergyuk.com/knowledge-hub/chatgpt-energy-consumption-visualized/}
 \end{frame}
 
 
@@ -350,7 +351,7 @@ where \( N \) is the number of entangled particles.
 
 
 % inline figure
-\centerline{\includegraphics[width=1.05\linewidth]{qcfigures/image1.png}}
+\centerline{\includegraphics[width=0.9\linewidth]{qcfigures/image1.png}}
 
 \end{frame}
 
@@ -360,7 +361,7 @@ where \( N \) is the number of entangled particles.
 
 
 % inline figure
-\centerline{\includegraphics[width=1.05\linewidth]{qcfigures/image2.png}}
+\centerline{\includegraphics[width=0.9\linewidth]{qcfigures/image2.png}}
 
 \end{frame}
 
@@ -369,7 +370,7 @@ where \( N \) is the number of entangled particles.
 
 
 % inline figure
-\centerline{\includegraphics[width=1.05\linewidth]{qcfigures/image3.png}}
+\centerline{\includegraphics[width=0.9\linewidth]{qcfigures/image3.png}}
 
 \end{frame}
 
@@ -378,7 +379,7 @@ where \( N \) is the number of entangled particles.
 
 
 % inline figure
-\centerline{\includegraphics[width=1.05\linewidth]{qcfigures/image4.png}}
+\centerline{\includegraphics[width=1.0\linewidth]{qcfigures/image4.png}}
 
 \end{frame}
 
@@ -387,7 +388,37 @@ where \( N \) is the number of entangled particles.
 
 
 % inline figure
-\centerline{\includegraphics[width=1.05\linewidth]{qcfigures/image5.png}}
+\centerline{\includegraphics[width=1.0\linewidth]{qcfigures/image5.png}}
+
+\end{frame}
+
+
+\begin{frame}[plain,fragile]
+\frametitle{Considerable investements (add source)}
+
+
+% inline figure
+\centerline{\includegraphics[width=0.9\linewidth]{qcfigures/image6.png}}
+
+\end{frame}
+
+
+
+    
+
+\section{Legal aspects and export control resrictions}
+
+\begin{frame}[plain,fragile]
+\frametitle{Quantum platforms}
+
+\begin{enumerate}
+\item Superconduting qubits
+\item Ion traps
+\item Quantum dot systems (in semiconductors)
+\item more text to come
+
+\end{enumerate}
+
 
 \end{frame}
 
@@ -395,7 +426,7 @@ where \( N \) is the number of entangled particles.
 \frame
     {
       \frametitle{Important properties, electrons on helium}
-	
+
       \begin{footnotesize}
      \begin{columns}
        \column{5.0cm}
@@ -413,7 +444,7 @@ where \( N \) is the number of entangled particles.
 
 \column{6cm}
       \begin{center}
-	\rotatebox[origin=c]{-90}{\includegraphics[width=1.3\textwidth]{qcfigures/lab.jpeg}}
+        \rotatebox[origin=c]{-90}{\includegraphics[width=1.3\textwidth]{qcfigures/lab.jpeg}}
       \end{center}
 \end{columns}
       \end{footnotesize}
@@ -422,8 +453,6 @@ where \( N \) is the number of entangled particles.
 
 
 
-
-    
 
 \frame
     {
@@ -543,23 +572,48 @@ Quantum information can be encoded in a number of ways using single electrons. C
 
 
 
+
+
+
 \begin{frame}[plain,fragile]
-\frametitle{Two-qubit gates and time evolution, SWAP gate}
-% inline figure
-\centerline{\includegraphics[width=0.65\linewidth]{qcfigures/timeevolution.png}}
+\frametitle{Export control}
+\begin{table}
+\begin{center}
+\scalebox{.65}{
+{\footnotesize
+\begin{tabular}{|l|p{3.5cm}|l|p{5.0cm}|}
+\hline
+\textbf{Technology/Component} & \textbf{Export Sensitivity Category} & \textbf{Reason for Sensitivity} \\
+\hline
+Superconducting CPW resonator (~6.04\,GHz) & Dual-Use (Quantum computing/EAR) & High-frequency superconducting circuit enabling dispersive qubit readout; advanced quantum sensor with potential defense/communications applications. \\
+\hline
+Single-electron trap (gated microchannel) &Dual-Use (Quantum hardware/EAR) & Precision single-electron trap for qubit storage and manipulation; specialized microelectronic architecture for quantum computing. \\
+\hline
+Superconducting electrodes (Nb films) &  Dual-Use (Superconducting electronics/EAR) & Superconducting materials in high-Q resonators and quantum circuits; key for low-loss quantum devices. \\
+\hline
+Pumped $^4$He cryostat (1.1\,K) &  Dual-Use (Cryogenic systems/EAR) & High-capacity cryogenic cooling enabling superconducting/qubit operation; cryogenic technology is often controlled (e.g. ECCN 3A904). \\
+\hline
+Superfluid $^4$He substrate &  Dual-Use (Cryogenic medium/EAR) & Specialized cryogenic environment for high-mobility electrons; a novel quantum material substrate with dual-use potential. \\
+\hline
+Cryogenic RF components  Dual-Use (RF electronics/EAR) & GHz-range passive components in quantum measurement chain; similar hardware is used in radar and communications systems. \\
+\hline
+Low-noise RF amplifiers &  Specialized amplifiers for weak-signal detection; critical in quantum readout and advanced electronic/sensor systems. \\
+\hline
+On-chip LC filters  & Dual-Use (RF filter technology/EAR) & Engineered filtering for high-frequency circuits; advanced RF integration relevant to communication and sensor devices. \\
+\hline
+Electron-on-helium qubit platform  & Dual-Use (Quantum computing/EAR) & Emerging quantum information platform targeted by new export controls; potential secure/advanced computation application. \\
+\hline
+\end{tabular}}}
+\end{center}
+\end{table}
+
+
 \end{frame}
 
 
 
 
-
-
-
-
-
-
-
-
+\end{document}
 
 
 \begin{frame}[plain,fragile]
