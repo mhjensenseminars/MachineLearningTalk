@@ -18,10 +18,6 @@
 
 
 
-%In Ireland, data centers consume more than 20 percent of the country’s electricity.
-%In Chile, precious aquifers are in danger of depletion.
-%In South Africa, where blackouts have long been routine, data centers are further taxing the national grid.
-%Similar concerns have surfaced in Brazil, Britain, India, Malaysia, the Netherlands, Singapore and Spain
 
 
 \begin{document}
@@ -49,14 +45,14 @@
 \frametitle{What is this talk about?}
 
 \begin{block}{}
-The main emphasis is to give you a short and hopefully pedestrian introduction to the whys and hows of quantum technologies.
-And why this could (or should) be of interest. 
+In this seminar I will try to give a pedestrian yet comprehensive overview of the fundamental principles underpinning quantum technologies. Beginning with the essential quantum concepts that form their theoretical foundation, I will examine how these ideas are translated into contemporary technological applications. The discussion will further address the interplay between scientific advances and current public and private investments in the field, providing an outlook on prospective developments over the coming decade. Finally, I will consider a range of ethical and legal challenges that accompany the ongoing expansion of quantum technologies.
+And why this could (or should) be of interest to a society as a whole. 
 \end{block}
 
 \end{frame}
 
 \begin{frame}[plain,fragile]
-\frametitle{Quantum technology and machine learning/AI are tighly interwoven }
+\frametitle{Quantum technologies and machine learning/AI are tighly interwoven }
 
 
 % inline figure
@@ -66,7 +62,7 @@ And why this could (or should) be of interest.
 
 
 \begin{frame}[plain,fragile]
-\frametitle{From Moore's law to Huang's law}
+\frametitle{From Moore's law to Huang's law, the race for more performance}
 
 \begin{tikzpicture}
   \begin{semilogyaxis}[
@@ -97,13 +93,13 @@ And why this could (or should) be of interest.
   % GPU Milestones
   \node[anchor=south west,orange!80!black] at (axis cs:2007,1) {Tesla C870(\SI{0.52}{TFLOPs})};
   \node[anchor=south west,orange!80!black] at (axis cs:2017,200) {Volta V100 (\SI{15.7}{TFLOPs})};
-  \node[anchor=south west,orange!80!black] at (axis cs:2017,2000) {Ampere A100 (2020, \SI{19.5}{TFLOPs})};
+  \node[anchor=south west,orange!80!black] at (axis cs:2016,2000) {Ampere A100 (2020, \SI{19.5}{TFLOPs})};
   \node[anchor=south west,orange!80!black] at (axis cs:2017,10000) {Hopper H100 (2022,\SI{60}{TFLOPs})};
   \end{semilogyaxis}
 \end{tikzpicture}
 
 \end{frame}
-
+e
 
 
 \begin{frame}[plain,fragile]
@@ -124,11 +120,18 @@ And why this could (or should) be of interest.
 Taken from \url{https://www.businessenergyuk.com/knowledge-hub/chatgpt-energy-consumption-visualized/}
 \end{frame}
 
-
-
+\begin{frame}
+\framtitle{And not exactly environmetally friendly}
+\begin{itemize}
+\item In Ireland, data centers consume more than 20 percent of the country’s electricity.
+\item In Chile, precious aquifers are in danger of depletion.
+\item In South Africa, where blackouts have long been routine, data centers are further taxing the national grid.
+\item Similar concerns have surfaced in Brazil, Britain, India, Malaysia, the Netherlands, Singapore and Spain
+\end{itemize}
+\end{frame}
 
 \begin{frame}[plain,fragile]
-\frametitle{The future is here, now}
+\frametitle{The future is here, sooner than we may think}
 
 
 % inline figure
@@ -152,7 +155,7 @@ Mention Alessandro Aresu's book
 
 %-----------------------------------------------------------
 %\section{Introduction to Quantum Computing}
-\begin{frame}{What is Quantum Computing?}
+\begin{frame}{The basis: What is Quantum Computing?}
 Quantum computing leverages principles of quantum mechanics to perform computations beyond classical capabilities.
 
 \vspace{10pt}
@@ -163,28 +166,13 @@ Quantum computing leverages principles of quantum mechanics to perform computati
 \item \textbf{Quantum Interference:} Probability amplitudes interfere to solve problems.
 \end{itemize}
 
-\textbf{Qubit Representation:}
-\[
-\ket{\psi} = \alpha \ket{0} + \beta \ket{1}, \quad |\alpha|^2 + |\beta|^2 = 1
-\]
+%\textbf{Qubit Representation:}
+%\[
+%\ket{\psi} = \alpha \ket{0} + \beta \ket{1}, \quad |\alpha|^2 + |\beta|^2 = 1
+%\]
 \end{frame}
 
 
-%-----------------------------------------------------------
-%\section{Quantum Machine Learning (QML)}
-\begin{frame}{What is Quantum Machine Learning?}
-\textbf{Quantum Machine Learning (QML)} integrates quantum computing with machine learning algorithms to exploit quantum advantages.
-
-\vspace{10pt}
-\textbf{Motivation:}
-\begin{itemize}
-    \item High-dimensional Hilbert spaces for better feature representation.
-    \item Quantum parallelism for faster computation.
-    \item Quantum entanglement for richer data encoding.
-\end{itemize}
-
-
-\end{frame}
 
 %\section{Quantum Speedups}
 \begin{frame}{Quantum Speedups}
@@ -334,6 +322,23 @@ where \( N \) is the number of entangled particles.
     \item Trade-off between information gain and entanglement preservation.
 \end{itemize}
 \end{frame}
+
+%-----------------------------------------------------------
+%\section{Quantum Machine Learning (QML)}
+\begin{frame}{What is Quantum Machine Learning?}
+\textbf{Quantum Machine Learning (QML)} integrates quantum computing with machine learning algorithms to exploit quantum advantages.
+
+\vspace{10pt}
+\textbf{Motivation:}
+\begin{itemize}
+    \item High-dimensional Hilbert spaces for better feature representation.
+    \item Quantum parallelism for faster computation.
+    \item Quantum entanglement for richer data encoding.
+\end{itemize}
+
+
+\end{frame}
+
 
 
 \begin{frame}[plain,fragile]
