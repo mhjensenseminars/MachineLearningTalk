@@ -11,8 +11,9 @@
 \usepackage{siunitx}
 \usepackage{longtable}
 \sisetup{round-mode=places,round-precision=1}
-
-
+\usepackage{braket}
+\usetikzlibrary{arrows.meta, shapes.misc, positioning, backgrounds}
+\usetikzlibrary{calc, decorations.markings,decorations.pathmorphing}
 \usetheme{Madrid} % You can change the theme as you like
 \usecolortheme{seagull}
 
@@ -172,6 +173,273 @@ Quantum computing leverages principles of quantum mechanics to perform computati
 %\]
 \end{frame}
 
+\begin{frame}{Superposition}
+\begin{tikzpicture}[
+   thick,
+   wire/.style={thick},
+   gate/.style={draw, rounded corners, minimum width=0.8cm, minimum height=0.6cm, font=\small, fill=white},
+   ctrl/.style={fill=black, circle, inner sep=1.5pt},
+   target/.style={draw, circle, inner sep=0pt, minimum width=0.4cm},
+   measure/.style={draw, rounded corners, minimum width=0.9cm, minimum height=0.6cm, font=\scriptsize, fill=white},
+   amp/.style={-Latex, very thick},
+   note/.style={font=\small},
+   outcome/.style={font=\small, align=center},
+   corr/.style={font=\footnotesize},
+]
+
+%%%% 1. LEFT: Initial product state %%%%
+
+\node[note, anchor=east] (psi0label) at (-0.4,0.75)
+{$\displaystyle \ket{\psi_\text{in}} = \ket{0}\otimes\ket{0}$};
+
+% Input kets (two wires)
+\node[note, anchor=east] (q0in) at (0,0.5) {$\ket{0}$};
+\node[note, anchor=east] (q1in) at (0,-0.5) {$\ket{0}$};
+
+% Horizontal wires (input region to circuit region)
+\draw[wire] (0.2,0.5) -- (2.0,0.5);
+\draw[wire] (0.2,-0.5) -- (2.0,-0.5);
+
+%%%% 2. CIRCUIT: H on top, then CNOT %%%%
+
+% Hadamard gate on first qubit
+\node[gate] (Hgate) at (2.3,0.5) {$H$};
+
+\draw[wire] (2.0,0.5) -- (Hgate.west);
+\draw[wire] (Hgate.east) -- (3.2,0.5);
+
+% Vertical line for CNOT control-target
+\draw[wire] (3.6,0.5) -- (3.6,-0.5);
+
+% Control dot on top wire
+\node[ctrl] (ctrl) at (3.6,0.5) {};
+
+% Target ⊕ on bottom wire
+\node[target] (targ) at (3.6,-0.5) {$\oplus$};
+
+% extend wires to the right of CNOT
+\draw[wire] (3.2,0.5) -- (4.2,0.5);
+\draw[wire] (2.0,-0.5) -- (4.2,-0.5);
+
+% Label under circuit: "Entangling operation"
+\node[font=\footnotesize, align=center] at (3.0,-1.2)
+{Hadamard + CNOT\\creates entanglement};
+
+%%%% 3. STATE AFTER CIRCUIT %%%%
+
+\node[note, anchor=west] (psiBell) at (4.5,0.0)
+{$\displaystyle
+\ket{\psi_\text{ent}} =
+\frac{1}{\sqrt{2}}\Big(\ket{00}+\ket{11}\Big)
+$};
+
+%%%% 4. MEASUREMENT BOXES %%%%
+
+% Measurement boxes on each qubit
+\node[measure] (M0) at (5.8,0.5) {measure};
+\node[measure] (M1) at (5.8,-0.5) {measure};
+
+% wires into measurement
+\draw[wire] (4.2,0.5) -- (M0.west);
+\draw[wire] (4.2,-0.5) -- (M1.west);
+
+% classical arrows out
+\draw[amp] (M0.east) -- ++(0.8,0.0) node[outcome, anchor=west]
+{$0$ or $1$};
+\draw[amp] (M1.east) -- ++(0.8,0.0) node[outcome, anchor=west]
+{$0$ or $1$};
+
+% Correlation annotation
+\node[corr, align=left, anchor=west] at (7.2,0.0)
+{Outcomes are\\perfectly correlated:\\
+if qubit A = 0, qubit B = 0;\\
+if qubit A = 1, qubit B = 1.};
+
+%%%% 5. BIG BRACE + TEXT EXPLANATION %%%%
+
+% Decorative brace under entire figure
+\draw[decorate, decoration={brace, amplitude=5pt}]
+ (0.1,-2.0) -- (7.6,-2.0)
+ node[midway, yshift=-0.6cm, align=center, font=\footnotesize]
+ {Entanglement: the two-qubit state cannot be written
+  as $\ket{\phi}_A \otimes \ket{\chi}_B$.\\
+  Measurement on one instantly fixes the other's outcome,
+  even though each result is individually random.};
+
+\end{tikzpicture}
+\end{frame}
+
+
+\begin{frame}{Quantum interference}
+
+\begin{tikzpicture}[scale=3,
+   axis/.style={->, thick},
+   basislabel/.style={anchor=south east, inner sep=1pt, font=\small},
+   statelabel/.style={anchor=west, font=\small},
+   myvec/.style={-Latex, thick},
+]
+
+% Bloch sphere
+\shade[ball color=white!95!gray, opacity=0.9] (0,0) circle (1cm);
+\draw[thin, black] (0,0) circle (1cm);
+
+% Draw "equator" ellipse (x-y plane)
+\draw[thin, black!70] (-1,0) arc[start angle=180, end angle=360, x radius=1cm, y radius=0.28cm];
+\draw[dashed, thin, black!40] (1,0) arc[start angle=0, end angle=180, x radius=1cm, y radius=0.28cm];
+
+% Axes
+\draw[axis] (0,-1.2) -- (0,1.2) node[above] {$z$};
+\draw[axis] (-1.2,0) -- (1.2,0) node[right] {$x$};
+
+% Poles: |0> at +z, |1> at -z
+\node[font=\small, anchor=south west] at (0,1.05) {$\ket{0}$};
+\node[font=\small, anchor=north west] at (0,-1.05) {$\ket{1}$};
+
+% State vector |ψ>
+% We'll pick some angles θ and φ.
+% θ = polar angle from +z, φ = azimuth in x-y plane.
+% Say θ = 40°, φ = 30°
+\pgfmathsetmacro{\th}{40}   % polar
+\pgfmathsetmacro{\ph}{30}   % azimuth
+\pgfmathsetmacro{\xp}{sin(\th)*cos(\ph)}
+\pgfmathsetmacro{\yp}{0.28*sin(\th)*sin(\ph)} % projected y (ellipse scaling)
+\pgfmathsetmacro{\zp}{cos(\th)}
+
+% draw projection of state onto equator
+\draw[dashed, black!60] (0,0) -- (\xp,\yp);
+
+% state vector
+\draw[myvec, ultra thick] (0,0) -- (\xp,\yp+\zp);
+
+% angle θ from +z axis
+\draw[thin] (0,0.9) arc[start angle=90, end angle={90-\th}, radius=0.9cm];
+\node[font=\scriptsize, anchor=west] at (0.4,0.8) {$\theta$};
+
+% angle φ in x-y plane
+\draw[thin] (0.4,0) arc[start angle=0, end angle=\ph, x radius=0.4cm, y radius=0.11cm];
+\node[font=\scriptsize, anchor=west] at (0.38,0.08) {$\phi$};
+
+% Label the state vector
+\node[statelabel] at ($(0,0)!1.15!(\xp,\yp+\zp)$) {$\ket{\psi} =
+\alpha\ket{0} + \beta\ket{1}$};
+
+% Show alpha,beta magnitudes as cos(θ/2), sin(θ/2)
+\node[font=\scriptsize, align=left, anchor=west] at (1.25,0.4) {$\alpha = \cos\frac{\theta}{2}$};
+\node[font=\scriptsize, align=left, anchor=west] at (1.25,0.2) {$\beta = e^{i\phi}\sin\frac{\theta}{2}$};
+
+% Little braces showing probabilities
+\draw[decorate,decoration={brace, amplitude=4pt}]
+ (0,0) -- (0,1)
+ node[midway, xshift=-0.4cm, font=\scriptsize, align=center]
+ {$|\alpha|^2$\\prob.\ of $\ket{0}$};
+
+\draw[decorate,decoration={brace, amplitude=4pt}]
+ (0,-1) -- (0,0)
+ node[midway, xshift=-0.4cm, font=\scriptsize, align=center]
+ {$|\beta|^2$\\prob.\ of $\ket{1}$};
+
+% Caption under figure
+\node[font=\footnotesize, align=center] at (0,-1.45)
+{Quantum superposition of a single qubit:\\
+the same physical state $\ket{\psi}$ is a coherent combination
+of $\ket{0}$ and $\ket{1}$.};
+
+\end{tikzpicture}
+\end{frame}
+
+
+\begin{frame}{Entanglement}
+
+
+\begin{tikzpicture}[
+   thick,
+   amp/.style={-Latex, very thick},
+   photon/.style={decorate, decoration={snake, amplitude=1pt, segment length=6pt}},
+   every node/.style={font=\small}
+]
+
+% --- Left: source and double slit geometry ---
+
+% Source
+\fill (0,0) circle (1.5pt);
+\node[anchor=east] at (0,0) {Source};
+
+% Barrier with two slits
+\draw (-0.2,-1.2) -- (-0.2,1.2);
+\draw (2.0,-1.2) -- (2.0,1.2);
+
+% Slits (gaps in barrier at x=2)
+\draw[line width=2pt] (2,0.25) -- (2,0.55);
+\draw[line width=2pt] (2,-0.55) -- (2,-0.25);
+
+\node[anchor=south] at (2,1.2) {Two slits};
+
+% Screen (vertical line)
+\draw (6,-1.2) -- (6,1.2);
+\node[anchor=west, align=left] at (6,1.2) {Screen\\(detection probability)};
+
+% Paths from source to screen via top slit
+\draw[photon] (0,0) .. controls (1,0.4) and (1.5,0.5) .. (2,0.4)
+              .. controls (3,0.5) and (4,0.8) .. (6,0.8);
+
+% Paths from source to screen via bottom slit
+\draw[photon] (0,0) .. controls (1,-0.4) and (1.5,-0.5) .. (2,-0.4)
+              .. controls (3,-0.5) and (4,-0.8) .. (6,-0.8);
+
+% Dotted guide showing many arrival points
+\foreach \y in {-0.9,-0.6,-0.3,0,0.3,0.6,0.9} {
+   \fill (6,\y) circle (0.5pt);
+}
+
+% Label amplitudes on each path
+\node[anchor=south west] at (1.2,0.5) {$\psi_1$};
+\node[anchor=north west] at (1.2,-0.5) {$\psi_2$};
+
+% Braces / explanation text
+\node[align=center, anchor=north west, font=\footnotesize] at (0.1,-1.4)
+{Two coherent paths\\
+$\Rightarrow$ two probability \emph{amplitudes}};
+
+% --- Middle: addition of amplitudes ---
+
+% Arrows to amplitude sum box
+\draw[amp] (3.2,0.6) -- (3.8,0.2);
+\draw[amp] (3.2,-0.6) -- (3.8,-0.2);
+
+% Box for complex amplitude sum
+\draw[rounded corners, thick, fill=white] (3.8,-0.5) rectangle (5.2,0.5);
+\node[align=center] at (4.5,0)
+{$\psi = \psi_1 + \psi_2$\\[4pt]
+(quantum\\ superposition)};
+
+% --- Right bottom: interference pattern plot ---
+
+% Axes for intensity vs position
+\begin{scope}[shift={(7.5,-1.2)}]
+   % axes
+   \draw[->] (0,0) -- (3.2,0) node[anchor=west] {position on screen};
+   \draw[->] (0,0) -- (0,2.2) node[anchor=south] {$|\psi|^2$};
+
+   % interference curve ~ cos^2
+   \draw[domain=0:3,smooth,variable=\x]
+       plot ({\x},{2*cos(180*\x r)^2});
+
+   % label
+   \node[anchor=west, align=left] at (0.2,1.8)
+   {Bright and dark\\fringes};
+\end{scope}
+
+% Arrow from screen to intensity plot
+\draw[amp] (6.2,-0.9) .. controls (6.8,-1.4) and (7.0,-1.4) .. (7.4,-1.2);
+
+% Caption
+\node[font=\footnotesize, align=center] at (4.5,-2.2)
+{Interference pattern arises from \textbf{phase-coherent} addition of amplitudes.\\
+Classical probabilities would \emph{add}; quantum amplitudes \emph{interfere}.};
+
+\end{tikzpicture}
+
+\end{frame}
 
 
 %\section{Quantum Speedups}
