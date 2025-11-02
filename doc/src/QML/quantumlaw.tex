@@ -46,8 +46,13 @@
 \frametitle{What is this talk about?}
 
 \begin{block}{}
-In this seminar I will try to give a pedestrian yet comprehensive overview of the fundamental principles underpinning quantum technologies. Beginning with the essential quantum concepts that form their theoretical foundation, I will examine how these ideas are translated into contemporary technological applications. The discussion will further address the interplay between scientific advances and current public and private investments in the field, providing an outlook on prospective developments over the coming decade. Finally, I will consider a range of ethical and legal challenges that accompany the ongoing expansion of quantum technologies.
-And why this could (or should) be of interest to a society as a whole. 
+
+\begin{itemize}
+\item In this seminar I will try to give a pedestrian yet comprehensive overview of the fundamental principles underpinning quantum technologies.
+
+\item I will examine how these ideas are translated into contemporary technological applications.
+\item   Finally, I will consider a range of ethical and legal challenges that accompany the ongoing expansion of quantum technologies.
+\end{itemize}
 \end{block}
 
 \end{frame}
@@ -93,14 +98,14 @@ And why this could (or should) be of interest to a society as a whole.
 
   % GPU Milestones
   \node[anchor=south west,orange!80!black] at (axis cs:2007,1) {Tesla C870(\SI{0.52}{TFLOPs})};
-  \node[anchor=south west,orange!80!black] at (axis cs:2015,200) {Volta V100 (\SI{15.7}{TFLOPs})};
-  \node[anchor=south west,orange!80!black] at (axis cs:2015,2000) {Ampere A100 (2020, \SI{19.5}{TFLOPs})};
-  \node[anchor=south west,orange!80!black] at (axis cs:2015,10000) {Hopper H100 (2022,\SI{60}{TFLOPs})};
+  \node[anchor=south west,orange!80!black] at (axis cs:2014,200) {Volta V100 (\SI{15.7}{TFLOPs})};
+  \node[anchor=south west,orange!80!black] at (axis cs:2014,2000) {Ampere A100 (2020, \SI{19.5}{TFLOPs})};
+  \node[anchor=south west,orange!80!black] at (axis cs:2014,10000) {Hopper H100 (2022,\SI{60}{TFLOPs})};
   \end{semilogyaxis}
 \end{tikzpicture}
 
 \end{frame}
-e
+
 
 
 \begin{frame}[plain,fragile]
@@ -122,7 +127,7 @@ Taken from \url{https://www.businessenergyuk.com/knowledge-hub/chatgpt-energy-co
 \end{frame}
 
 \begin{frame}
-\framtitle{And not exactly environmetally friendly}
+\frametitle{And not exactly environmetally friendly}
 \begin{itemize}
 \item In Ireland, data centers consume more than 20 percent of the country’s electricity.
 \item In Chile, precious aquifers are in danger of depletion.
@@ -142,7 +147,7 @@ Taken from \url{https://www.businessenergyuk.com/knowledge-hub/chatgpt-energy-co
 
 
 \begin{frame}[plain,fragile]
-\frametitle{Modern quantum platforms require cooling down to extremely low temperatures}}
+\frametitle{Modern quantum platforms require cooling down to extremely low temperatures}
 
 
 % inline figure
@@ -164,6 +169,18 @@ Taken from \url{https://www.businessenergyuk.com/knowledge-hub/chatgpt-energy-co
 
 
 
+\begin{frame}{What is quantum technology? Three main fields}
+\begin{block}{Quantum computing} is a new computing paradigm that capitalizes on the laws of quantum mechanics to provide significant performance improvement for certain applications, and to enable new territories of computing beyond existing classical
+computing.
+\end{block}
+\begin{block}{Quantum communication} is the secure transfer of quantum information across distances and could ensure security ofcommunication even in the face of unlimited quantum computing power.
+\end{block}    
+\begin{block}{Quantum sensing} includes a new generation of sensors, based on quantum systems, that provide measurements of various
+quantities (for example, electromagnetic fields, gravity, or time) and that are orders of magnitude more sensitive than classical
+sensors.
+\end{block}
+\end{frame}
+
 
 %-----------------------------------------------------------
 %\section{Introduction to Quantum Computing}
@@ -178,13 +195,101 @@ Quantum computing leverages principles of quantum mechanics to perform computati
 \item \textbf{Quantum Interference:} Probability amplitudes interfere to solve problems.
 \end{itemize}
 
-%\textbf{Qubit Representation:}
-%\[
-%\ket{\psi} = \alpha \ket{0} + \beta \ket{1}, \quad |\alpha|^2 + |\beta|^2 = 1
-%\]
 \end{frame}
 
 \begin{frame}{Superposition}
+
+\begin{tikzpicture}[scale=3,
+   axis/.style={->, thick},
+   basislabel/.style={anchor=south east, inner sep=1pt, font=\small},
+   statelabel/.style={anchor=west, font=\small},
+   myvec/.style={-Latex, thick},
+]
+
+% Bloch sphere
+\shade[ball color=white!95!gray, opacity=0.9] (0,0) circle (1cm);
+\draw[thin, black] (0,0) circle (1cm);
+
+% Draw "equator" ellipse (x-y plane)
+\draw[thin, black!70] (-1,0) arc[start angle=180, end angle=360, x radius=1cm, y radius=0.28cm];
+\draw[dashed, thin, black!40] (1,0) arc[start angle=0, end angle=180, x radius=1cm, y radius=0.28cm];
+
+% Axes
+\draw[axis] (0,-1.2) -- (0,1.2) node[above] {$z$};
+\draw[axis] (-1.2,0) -- (1.2,0) node[right] {$x$};
+
+% Poles: |0> at +z, |1> at -z
+\node[font=\small, anchor=south west] at (0,1.05) {$\ket{0}$};
+\node[font=\small, anchor=north west] at (0,-1.05) {$\ket{1}$};
+
+% State vector |ψ>
+% We'll pick some angles θ and φ.
+% θ = polar angle from +z, φ = azimuth in x-y plane.
+% Say θ = 40°, φ = 30°
+\pgfmathsetmacro{\th}{40}   % polar
+\pgfmathsetmacro{\ph}{30}   % azimuth
+\pgfmathsetmacro{\xp}{sin(\th)*cos(\ph)}
+\pgfmathsetmacro{\yp}{0.28*sin(\th)*sin(\ph)} % projected y (ellipse scaling)
+\pgfmathsetmacro{\zp}{cos(\th)}
+
+% draw projection of state onto equator
+\draw[dashed, black!60] (0,0) -- (\xp,\yp);
+
+% state vector
+\draw[myvec, ultra thick] (0,0) -- (\xp,\yp+\zp);
+
+% angle θ from +z axis
+\draw[thin] (0,0.9) arc[start angle=90, end angle={90-\th}, radius=0.9cm];
+\node[font=\scriptsize, anchor=west] at (0.4,0.8) {$\theta$};
+
+% angle φ in x-y plane
+\draw[thin] (0.4,0) arc[start angle=0, end angle=\ph, x radius=0.4cm, y radius=0.11cm];
+\node[font=\scriptsize, anchor=west] at (0.38,0.08) {$\phi$};
+
+% Label the state vector
+\node[statelabel] at ($(0,0)!1.15!(\xp,\yp+\zp)$) {$\ket{\psi} =
+\alpha\ket{0} + \beta\ket{1}$};
+
+% Show alpha,beta magnitudes as cos(θ/2), sin(θ/2)
+\node[font=\scriptsize, align=left, anchor=west] at (1.25,0.4) {$\alpha = \cos\frac{\theta}{2}$};
+\node[font=\scriptsize, align=left, anchor=west] at (1.25,0.2) {$\beta = e^{i\phi}\sin\frac{\theta}{2}$};
+
+% Little braces showing probabilities
+\draw[decorate,decoration={brace, amplitude=4pt}]
+ (0,0) -- (0,1)
+ node[midway, xshift=-0.4cm, font=\scriptsize, align=center]
+ {$|\alpha|^2$\\prob.\ of $\ket{0}$};
+
+\draw[decorate,decoration={brace, amplitude=4pt}]
+ (0,-1) -- (0,0)
+ node[midway, xshift=-0.4cm, font=\scriptsize, align=center]
+ {$|\beta|^2$\\prob.\ of $\ket{1}$};
+
+% Caption under figure
+\node[font=\footnotesize, align=center] at (0,-1.45)
+{Quantum superposition of a single qubit:\\
+the same physical state $\ket{\psi}$ is a coherent combination
+of $\ket{0}$ and $\ket{1}$.};
+
+\end{tikzpicture}
+\end{frame}
+
+
+\begin{frame}{What is Quantum Entanglement?}
+\textbf{Quantum Entanglement} is a quantum phenomenon where two or more particles become correlated in such a way that the state of one particle directly affects the state of the other, regardless of distance. Fundamental for making quantum gates, quantum sensors and much more. 
+
+\vspace{10pt}
+\textbf{Key Features:}
+\begin{itemize}
+    \item Non-local correlations
+    \item No classical analog
+    \item Violates Bell's inequalities
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}{Entanglement}
 \begin{tikzpicture}[
    thick,
    wire/.style={thick},
@@ -281,87 +386,8 @@ if qubit A = 1, qubit B = 1.};
 \end{frame}
 
 
-\begin{frame}{Quantum interference}
 
-\begin{tikzpicture}[scale=3,
-   axis/.style={->, thick},
-   basislabel/.style={anchor=south east, inner sep=1pt, font=\small},
-   statelabel/.style={anchor=west, font=\small},
-   myvec/.style={-Latex, thick},
-]
-
-% Bloch sphere
-\shade[ball color=white!95!gray, opacity=0.9] (0,0) circle (1cm);
-\draw[thin, black] (0,0) circle (1cm);
-
-% Draw "equator" ellipse (x-y plane)
-\draw[thin, black!70] (-1,0) arc[start angle=180, end angle=360, x radius=1cm, y radius=0.28cm];
-\draw[dashed, thin, black!40] (1,0) arc[start angle=0, end angle=180, x radius=1cm, y radius=0.28cm];
-
-% Axes
-\draw[axis] (0,-1.2) -- (0,1.2) node[above] {$z$};
-\draw[axis] (-1.2,0) -- (1.2,0) node[right] {$x$};
-
-% Poles: |0> at +z, |1> at -z
-\node[font=\small, anchor=south west] at (0,1.05) {$\ket{0}$};
-\node[font=\small, anchor=north west] at (0,-1.05) {$\ket{1}$};
-
-% State vector |ψ>
-% We'll pick some angles θ and φ.
-% θ = polar angle from +z, φ = azimuth in x-y plane.
-% Say θ = 40°, φ = 30°
-\pgfmathsetmacro{\th}{40}   % polar
-\pgfmathsetmacro{\ph}{30}   % azimuth
-\pgfmathsetmacro{\xp}{sin(\th)*cos(\ph)}
-\pgfmathsetmacro{\yp}{0.28*sin(\th)*sin(\ph)} % projected y (ellipse scaling)
-\pgfmathsetmacro{\zp}{cos(\th)}
-
-% draw projection of state onto equator
-\draw[dashed, black!60] (0,0) -- (\xp,\yp);
-
-% state vector
-\draw[myvec, ultra thick] (0,0) -- (\xp,\yp+\zp);
-
-% angle θ from +z axis
-\draw[thin] (0,0.9) arc[start angle=90, end angle={90-\th}, radius=0.9cm];
-\node[font=\scriptsize, anchor=west] at (0.4,0.8) {$\theta$};
-
-% angle φ in x-y plane
-\draw[thin] (0.4,0) arc[start angle=0, end angle=\ph, x radius=0.4cm, y radius=0.11cm];
-\node[font=\scriptsize, anchor=west] at (0.38,0.08) {$\phi$};
-
-% Label the state vector
-\node[statelabel] at ($(0,0)!1.15!(\xp,\yp+\zp)$) {$\ket{\psi} =
-\alpha\ket{0} + \beta\ket{1}$};
-
-% Show alpha,beta magnitudes as cos(θ/2), sin(θ/2)
-\node[font=\scriptsize, align=left, anchor=west] at (1.25,0.4) {$\alpha = \cos\frac{\theta}{2}$};
-\node[font=\scriptsize, align=left, anchor=west] at (1.25,0.2) {$\beta = e^{i\phi}\sin\frac{\theta}{2}$};
-
-% Little braces showing probabilities
-\draw[decorate,decoration={brace, amplitude=4pt}]
- (0,0) -- (0,1)
- node[midway, xshift=-0.4cm, font=\scriptsize, align=center]
- {$|\alpha|^2$\\prob.\ of $\ket{0}$};
-
-\draw[decorate,decoration={brace, amplitude=4pt}]
- (0,-1) -- (0,0)
- node[midway, xshift=-0.4cm, font=\scriptsize, align=center]
- {$|\beta|^2$\\prob.\ of $\ket{1}$};
-
-% Caption under figure
-\node[font=\footnotesize, align=center] at (0,-1.45)
-{Quantum superposition of a single qubit:\\
-the same physical state $\ket{\psi}$ is a coherent combination
-of $\ket{0}$ and $\ket{1}$.};
-
-\end{tikzpicture}
-\end{frame}
-
-
-\begin{frame}{Entanglement}
-
-
+\begin{frame}{Interference}
 \begin{tikzpicture}[
    thick,
    amp/.style={-Latex, very thick},
@@ -453,7 +479,7 @@ Classical probabilities would \emph{add}; quantum amplitudes \emph{interfere}.};
 \end{frame}
 
 
-%\section{Quantum Speedups}
+
 \begin{frame}{Quantum Speedups}
 \textbf{Why Quantum?}
 \begin{itemize}
@@ -494,23 +520,6 @@ Classical probabilities would \emph{add}; quantum amplitudes \emph{interfere}.};
 
 
 
-\begin{frame}{What is Quantum Entanglement?}
-\textbf{Quantum Entanglement} is a quantum phenomenon where two or more particles become correlated in such a way that the state of one particle directly affects the state of the other, regardless of distance.
-
-\vspace{10pt}
-\textbf{Key Features:}
-\begin{itemize}
-    \item Non-local correlations
-    \item No classical analog
-    \item Violates Bell's inequalities
-\end{itemize}
-
-\textbf{Entangled State Example:}
-\[
-\ket{\Phi^+} = \frac{1}{\sqrt{2}} (\ket{00} + \ket{11})
-\]
-
-\end{frame}
 
 
 \begin{frame}{1. Quantum Communication}
@@ -644,10 +653,11 @@ where \( N \) is the number of entangled particles.
 \frametitle{Quantum platforms}
 
 \begin{enumerate}
-\item Superconduting qubits
-\item Ion traps
-\item Quantum dot systems (in semiconductors)
-\item more text to come
+\item Superconducting qubits use Josephson junction circuits operated at millikelvin temperatures
+\item Trapped-ion computers confine ions (e.g.\ $^{171}$Yb$^+$, $^{40}$Ca$^+$) in electromagnetic traps, encoding qubits in internal electronic states. Gates are implemented with laser or microwave fields coupling to vibrational modes.
+\item Photonic quantum computing employs photons (in dual-rail or  continuous-variable encodings) as qubits
+\item Spin qubits—realized in silicon quantum dots, donor atoms, or color centers—encode information in electron or nuclear spin states.
+  \item such as electrons on helium/neon (more on this below)
 
 \end{enumerate}
 
@@ -659,7 +669,7 @@ where \( N \) is the number of entangled particles.
 \section{The next decade}
 
 \begin{frame}[plain,fragile]
-\frametitle{Considerable investements (add source)}
+\frametitle{Considerable investements (McKinsey Quantum Technology Monitor, June 2025 )}
 
 
 % inline figure
@@ -669,7 +679,7 @@ where \( N \) is the number of entangled particles.
 
 
 \begin{frame}[plain,fragile]
-\frametitle{Considerable investements (add source)}
+\frametitle{Quantum technology (QT) investments by funding type, 2014–24}
 
 
 % inline figure
@@ -678,7 +688,7 @@ where \( N \) is the number of entangled particles.
 \end{frame}
 
 \begin{frame}[plain,fragile]
-\frametitle{Considerable investements (add source)}
+\frametitle{Announcements of public investments in quantum technology }
 
 
 % inline figure
@@ -687,7 +697,8 @@ where \( N \) is the number of entangled particles.
 \end{frame}
 
 \begin{frame}[plain,fragile]
-\frametitle{Considerable investements (add source)}
+\frametitle{The United States and Japan lead other countries in the number of patents
+granted for quantum technology}
 
 
 % inline figure
@@ -696,7 +707,7 @@ where \( N \) is the number of entangled particles.
 \end{frame}
 
 \begin{frame}[plain,fragile]
-\frametitle{Considerable investements (add source)}
+\frametitle{The United States and China lead other countries in the number of filed patents}
 
 
 % inline figure
@@ -706,7 +717,8 @@ where \( N \) is the number of entangled particles.
 
 
 \begin{frame}[plain,fragile]
-\frametitle{Considerable investements (add source)}
+\frametitle{The quantum communication market is projected to reach 11 billion to
+15 billion USD by 2035.}
 
 
 % inline figure
