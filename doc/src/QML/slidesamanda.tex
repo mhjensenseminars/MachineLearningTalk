@@ -1,0 +1,170 @@
+% ============================================================
+% Beamer presentation: ML workflow mapping for the paper
+% ============================================================
+
+\documentclass{beamer}
+\usetheme{Madrid}
+\usepackage{amsmath}
+\usepackage{graphicx}
+
+\title[ML Workflow Summary]{Machine Learning Workflow Mapping \\
+and Analysis Pipeline for the Paper}
+\author{}
+\date{}
+
+\begin{document}
+
+% ------------------------------------------------------------
+\begin{frame}
+\titlepage
+\end{frame}
+
+% ------------------------------------------------------------
+\begin{frame}{Motivation}
+\begin{itemize}
+  \item The paper contains high-dimensional structured data.
+  \item Scientific goal: identify structure, classify states, and analyze latent geometry.
+  \item ML framing: \textbf{classification + representation learning + clustering}.
+  \item Topic modeling is not appropriate; the task is not textual or semantic.
+\end{itemize}
+\end{frame}
+
+% ------------------------------------------------------------
+\begin{frame}{Mapping Paper Sections to ML Concepts}
+\begin{itemize}
+  \item \textbf{Data description} $\rightarrow$ Feature types, dimensionality, labels.
+  \item \textbf{Methodology} $\rightarrow$ Supervised learning + latent space analysis.
+  \item \textbf{Experiments} $\rightarrow$ Training pipeline, hyperparameters, evaluation.
+  \item \textbf{Results} $\rightarrow$ Class separability, PCA/UMAP visualization.
+  \item \textbf{Conclusions} $\rightarrow$ Model behavior, robustness, limitations.
+\end{itemize}
+\end{frame}
+
+% ------------------------------------------------------------
+\begin{frame}{Overall ML Workflow}
+\begin{enumerate}
+  \item Data preprocessing and normalization.
+  \item Exploratory data analysis (EDA).
+  \item Dimensionality reduction (PCA/UMAP/t-SNE).
+  \item Supervised classification models.
+  \item Unsupervised clustering models.
+  \item Evaluation and cross-validation.
+  \item Interpretation of latent geometry.
+\end{enumerate}
+\end{frame}
+
+% ------------------------------------------------------------
+\begin{frame}{Dataset Characteristics}
+\begin{itemize}
+  \item High-dimensional numerical features.
+  \item Potential noise or correlations requiring normalization.
+  \item Likely labeled states (multi-class classification).
+  \item Latent manifold expected to be low dimensional.
+  \item Possible imbalance between categories.
+\end{itemize}
+\end{frame}
+
+% ------------------------------------------------------------
+\begin{frame}{Preprocessing Pipeline}
+\begin{itemize}
+  \item Standardization: mean-zero, unit variance.
+  \item Feature decorrelation: PCA whitening (optional).
+  \item Splitting: stratified train/validation/test.
+  \item Outlier detection: z-score or Isolation Forest.
+  \item Dimensionality reduction before clustering.
+\end{itemize}
+\end{frame}
+
+% ------------------------------------------------------------
+\begin{frame}{Representation Learning}
+\begin{itemize}
+  \item \textbf{PCA}: linear structure, explained variance.
+  \item \textbf{UMAP}: nonlinear manifold discovery, local/global structure.
+  \item \textbf{t-SNE}: high-resolution clustering visualization.
+  \item \textbf{Autoencoders}: unsupervised compression + feature extraction.
+  \item \textbf{Contrastive Learning (SimCLR)}: robust embeddings for classification.
+\end{itemize}
+\end{frame}
+
+% ------------------------------------------------------------
+\begin{frame}{Supervised Learning Algorithms}
+Recommended classifiers:
+\begin{itemize}
+  \item Logistic Regression (baseline, quick interpretability).
+  \item Support Vector Machines (RBF kernel for nonlinear boundaries).
+  \item Random Forests and XGBoost (feature importance).
+  \item Multi-layer Perceptron (deep fully-connected nets).
+  \item If relational structure appears: Graph Neural Networks.
+\end{itemize}
+\end{frame}
+
+% ------------------------------------------------------------
+\begin{frame}{Deep Learning Architectures}
+\begin{itemize}
+  \item Fully-connected feedforward networks with dropout.
+  \item Autoencoder encoder + classifier head.
+  \item Contrastive learning backbone + linear probe.
+  \item Attention-based models if sequence structure exists.
+\end{itemize}
+\end{frame}
+
+% ------------------------------------------------------------
+\begin{frame}{Unsupervised Clustering Methods}
+\begin{itemize}
+  \item k-means for centroid-based clusters.
+  \item Gaussian Mixture Models for soft cluster assignments.
+  \item Spectral clustering for data on manifolds.
+  \item HDBSCAN for non-spherical, density-based clusters.
+  \item Evaluate against labels using: ARI, NMI, homogeneity score.
+\end{itemize}
+\end{frame}
+
+% ------------------------------------------------------------
+\begin{frame}{Evaluation Strategy}
+\begin{itemize}
+  \item Metrics: accuracy, precision, recall, macro-F1.
+  \item Confusion matrix for class-wise error.
+  \item k-fold cross-validation for robustness.
+  \item Latent space interpretation: PCA/UMAP colored by labels.
+  \item Silhouette and ARI scores for cluster validation.
+\end{itemize}
+\end{frame}
+
+% ------------------------------------------------------------
+\begin{frame}{Visualization Tools}
+\begin{itemize}
+  \item Feature correlation heatmaps.
+  \item PCA eigenvalue spectrum.
+  \item UMAP/t-SNE for 2D/3D embeddings.
+  \item Confusion matrices.
+  \item Decision boundary overlays for simplified 2D spaces.
+\end{itemize}
+\end{frame}
+
+% ------------------------------------------------------------
+\begin{frame}{Recommended End-to-End Pipeline}
+\begin{enumerate}
+  \item Exploratory Data Analysis: statistics, correlations.
+  \item PCA / UMAP dimensionality reduction.
+  \item Train baseline classifier (LogReg, SVM).
+  \item Train deep classifier (MLP, autoencoder-based).
+  \item Evaluate on validation/test sets.
+  \item Cluster and compare unsupervised structure to labels.
+  \item Interpret latent geometry and misclassifications.
+\end{enumerate}
+\end{frame}
+
+% ------------------------------------------------------------
+\begin{frame}{Summary}
+\begin{itemize}
+  \item The paper aligns with classification + representation learning.
+  \item Topic modeling is not suitable for this dataset/task.
+  \item Both supervised and unsupervised ML pipelines apply.
+  \item Latent space analysis (PCA/UMAP) is critically important.
+  \item The proposed pipeline provides a reproducible ML framework.
+\end{itemize}
+\end{frame}
+
+% ------------------------------------------------------------
+\end{document}
+
