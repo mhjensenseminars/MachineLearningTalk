@@ -22,7 +22,7 @@
 
 \begin{document}
 
-\title[Quanum ML]{\textbf{Reinforcement Learning for Quantum Sensing}}
+\title{\textbf{Reinforcement Learning for Quantum Sensing}}
 \author{Morten Hjorth-Jensen}
 \institute{Department of Physics, UiO, Norway}
 \date{Quantum Machine Learning: from Fundamentals to Applications, Nordita, February 2-13, 2026}
@@ -45,7 +45,7 @@
 \frametitle{Inspiration and aims}
 
 \begin{block}{Aims}
-I will try to give you an overview on how we can model systems of relevance of quantum sensing, using machine learning and many-body methods. 
+I will try to give you an overview on how we can model systems of relevance of quantum sensing, using machine learning and many-body methods. Slides and jupyter-notebooks at \url{https://github.com/mhjensenseminars/MachineLearningTalk/tree/master/doc/src/QuantumSensing}
 \end{block}
 \begin{block}{Inspiration}
 \begin{itemize}
@@ -87,14 +87,13 @@ Jonas Flaten (UiO), Oskar Leinonen (UiO), Øyvind Sigmundson Schøyen (UiO), Sti
 
 \item A qubit-specific measurement capability
 \end{enumerate}
-
-\noindent
 \end{alertblock}
 \end{frame}
 
-\frame
-    {
-      \frametitle{Our platform, electrons on helium}
+\begin{frame}
+\frametitle{Our platform, electrons on helium}
+  {
+      
 	
       \begin{footnotesize}
      \begin{columns}
@@ -119,12 +118,12 @@ Jonas Flaten (UiO), Oskar Leinonen (UiO), Øyvind Sigmundson Schøyen (UiO), Sti
 \end{columns}
       \end{footnotesize}
     }
+\end{frame}
 
 
-\frame
-    {
+\begin{frame}
       \frametitle{Single electrons can make great qubits}
-	
+  {
       \begin{footnotesize}
      \begin{columns}
        \column{5.0cm}
@@ -144,11 +143,16 @@ Jonas Flaten (UiO), Oskar Leinonen (UiO), Øyvind Sigmundson Schøyen (UiO), Sti
 \end{columns}
       \end{footnotesize}
     }
+\end{frame}
 
-
-\frame
-    {
+\begin{frame}
       \frametitle{Trapping electrons in microchannels}
+\end{frame}
+
+\begin{frame}
+      \frametitle{Trapping electrons in microchannels}
+  {
+
 	
       \begin{footnotesize}
      \begin{columns}
@@ -163,10 +167,11 @@ Jonas Flaten (UiO), Oskar Leinonen (UiO), Øyvind Sigmundson Schøyen (UiO), Sti
 \end{columns}
       \end{footnotesize}
     }
-
-\frame
-    {
+\end{frame}
+\begin{frame}
       \frametitle{Control and readout}
+  {
+
 	
       \begin{footnotesize}
      \begin{columns}
@@ -182,11 +187,12 @@ Jonas Flaten (UiO), Oskar Leinonen (UiO), Øyvind Sigmundson Schøyen (UiO), Sti
 \end{columns}
       \end{footnotesize}
     }
+\end{frame}
 
-
-\frame
-    {
+\begin{frame}
       \frametitle{Operations for quantum computing}
+  {
+
 	
       \begin{footnotesize}
      \begin{columns}
@@ -201,13 +207,10 @@ Jonas Flaten (UiO), Oskar Leinonen (UiO), Øyvind Sigmundson Schøyen (UiO), Sti
 \end{columns}
       \end{footnotesize}
     }
-    
-\section{Experiment and theory}
+\end{frame}    
 
 
-
-
-\begin{frame}[plain,fragile]
+\begin{frame}
 \frametitle{Qubit platforms}
 
 \vspace{6mm}
@@ -218,9 +221,10 @@ Jonas Flaten (UiO), Oskar Leinonen (UiO), Øyvind Sigmundson Schøyen (UiO), Sti
 \vspace{6mm}
 \end{frame}
 
-\frame
-    {
+\begin{frame}
       \frametitle{Final experimental setup}
+  {
+
 	
       \begin{footnotesize}
      \begin{columns}
@@ -236,12 +240,12 @@ Jonas Flaten (UiO), Oskar Leinonen (UiO), Øyvind Sigmundson Schøyen (UiO), Sti
 
 \column{6cm}
       \begin{center}
-	\includegraphics[width=1.25\textwidth]{qcfigures/figure1.pdf}
+	\includegraphics[width=1.2\textwidth]{qcfigures/figure1.pdf}
       \end{center}
 \end{columns}
       \end{footnotesize}
     }
-
+\end{frame}
 
 \begin{frame}[plain,fragile]
 \frametitle{Recent work}
@@ -257,11 +261,11 @@ Jonas Flaten (UiO), Oskar Leinonen (UiO), Øyvind Sigmundson Schøyen (UiO), Sti
 \end{frame}
 
 
-\begin{frame}[plain,fragile]
-\frametitle{Two-qubit gates and time evolution, SWAP gate, arXiv:2509.13946}
+%\begin{frame}[plain,fragile]
+%\frametitle{Two-qubit gates and time evolution, SWAP gate, arXiv:2509.13946}
 % inline figure
-\centerline{\includegraphics[width=0.65\linewidth]{qcfigures/timeevolution.png}}
-\end{frame}
+%\centerline{\includegraphics[width=0.65\linewidth]{qcfigures/timeevolution.png}}
+%\end{frame}
 
 \begin{frame}[plain,fragile]
 \frametitle{Digression I, PINNs and quantum PINNs}
@@ -273,7 +277,7 @@ Jonas Flaten (UiO), Oskar Leinonen (UiO), Øyvind Sigmundson Schøyen (UiO), Sti
 %  \begin{threeparttable}
     \begin{tabular}{c|c|c|cc|cc}
       \toprule
-      $N$ & $\omega$ & DMC & PINN+BF & \%\,err & PINN+e & \%\,err \\
+      $N$ & $\omega$ & DMC & PINN+BF & \%\,err & PINN+CTNN & \%\,err \\
       \midrule
       2 & 0.001 & --- & $0.0137948(8)$ & --- & $\mathbf{0.013778(1)}$ & --- \\
     & 0.01 & ---            & $0.69125(2)$  & --- & $\mathbf{0.69036(1)}$ & --- \\
@@ -315,7 +319,7 @@ Jonas Flaten (UiO), Oskar Leinonen (UiO), Øyvind Sigmundson Schøyen (UiO), Sti
 \end{alertblock}       
 \column{5cm}
       \begin{center}
-	\includegraphics[width=1.3\textwidth]{qcfigures/trotter.png}
+	\includegraphics[width=1.2\textwidth]{qcfigures/trotter.png}
       \end{center}
 \end{columns}
       \end{footnotesize}
@@ -323,7 +327,302 @@ Jonas Flaten (UiO), Oskar Leinonen (UiO), Øyvind Sigmundson Schøyen (UiO), Sti
 \end{frame}
 
 
+
+\begin{frame}{Two-Electron 2D Schrödinger via DVR and CI with Slater Determinants}
+
+\textbf{Key approach for identical fermions:}
+\begin{itemize}
+\item We construct the two-electron basis using \textbf{Slater determinants} that include both spatial and spin degrees of freedom
+\item Each basis state is a properly antisymmetrized combination: $|\psi\rangle = |\phi_a \sigma_i; \phi_b \sigma_j\rangle$ where the total wavefunction is antisymmetric under particle exchange
+\item This naturally separates states into singlet (spatially symmetric) and triplet (spatially antisymmetric) configurations
+\item We include the full 2D soft Coulomb interaction and diagonalize the Hamiltonian in this antisymmetrized basis
+\item We compute both spin expectation values ($\langle S^2 \rangle$, $\langle S_z \rangle$) and entanglement entropy for each eigenstate
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Double-Well Trap Potential}
+
+We use an arbitrary 2D potential $V(x,y)$ for the single electrons, meant to represent the electrostatic trapping potential from electrodes beneath the helium surface. For simplicity we demonstrate with an analytic double-well form:
+
+\begin{itemize}
+\item Quartic double well in x: $V_x = k(x^2 - a^2)^2$
+\item Harmonic confinement in y: $V_y = \frac{1}{2}k_y y^2$
+\end{itemize}
+To allow specification of a 2D electrode geometry and voltages, one would solve the 3D Laplace equation for the electrode layout to find the coupling functions $\kappa_i(x,y)$ on the helium surface. Then the total trap potential is
+
+$$V(x,y) = \sum_i \kappa_i(x,y)\,V_i$$
+
+
+\end{frame}
+
+\begin{frame}[plain,fragile]
+\frametitle{Harmonic oscillator double well}
+
+%\vspace{6mm}
+
+\centerline{\includegraphics[width=0.9\linewidth]{qcfigures/figure_001.png}}
+
+%\vspace{6mm}
+\end{frame}
+
+
+
+\begin{frame}{Two-Electron Slater Determinant Basis for Identical Fermions}
+
+For \textbf{indistinguishable fermions}, we must construct properly antisymmetrized two-electron states using Slater determinants. Each basis state includes both spatial orbitals $\phi_i(\mathbf{r})$ and spin states $\sigma \in \{\uparrow, \downarrow\}$.
+
+A two-electron Slater determinant is:
+$$|\phi_a\sigma_i, \phi_b\sigma_j\rangle = \frac{1}{\sqrt{2}}\begin{vmatrix} \phi_a(\mathbf{r}_1)\sigma_i(1) & \phi_b(\mathbf{r}_1)\sigma_j(1) \\ \phi_a(\mathbf{r}_2)\sigma_i(2) & \phi_b(\mathbf{r}_2)\sigma_j(2) \end{vmatrix}$$
+
+For each eigenstate in our Slater determinant basis, we compute:
+1. \textbf{Spin expectation values}: $\langle S^2 \rangle$ and $\langle S_z \rangle$
+2. \textbf{Total entanglement entropy}: Via Schmidt decomposition including both spin and spatial degrees of freedom
+
+\end{frame}
+
+\begin{frame}{Why compute total (spatial + spin) entanglement?}
+
+For \textbf{indistinguishable fermions}, the spatial and spin degrees of freedom are fundamentally coupled by antisymmetrization:
+\begin{itemize}
+\item \textbf{Singlet states}: Spatially symmetric × spin antisymmetric
+\item \textbf{Triplet states}: Spatially antisymmetric × spin symmetric
+\end{itemize}
+This coupling means that \textbf{pure spatial entanglement alone would often be zero} because:
+\begin{itemize}
+\item For a pure singlet in orbital |a,a⟩, there's only one spatial configuration (both electrons in the same orbital)
+\item The entanglement comes from the spin antisymmetry: $(|\uparrow\downarrow\rangle - |\downarrow\uparrow\rangle)/\sqrt{2}$
+\end{itemize}
+The \textbf{total entanglement} (including both spin and spatial) captures the full quantum correlations between the two particles and is the physically meaningful measure for identical fermions.
+
+\end{frame}
+
+
+
+\begin{frame}[plain,fragile]
+\frametitle{States and entanglement}
+
+%\vspace{6mm}
+
+\centerline{\includegraphics[width=0.9\linewidth]{qcfigures/figure_003.png}}
+
+%\vspace{6mm}
+\end{frame}
+
+\begin{frame}[plain,fragile]
+\frametitle{Entanglement again}
+
+%\vspace{6mm}
+
+\centerline{\includegraphics[width=0.9\linewidth]{qcfigures/figure_004.png}}
+
+%\vspace{6mm}
+\end{frame}
+
+
+\begin{frame}[plain,fragile]{Time-Dependent Magnetic Field Perturbation and Quantum Sensing}
+
+We now add a \textbf{time-dependent magnetic field perturbation} $B(t)$ acting on one of the electron spins through the Pauli $\sigma_z$ operator:
+
+$$H_{\text{pert}}(t) = \frac{g\mu_B}{2} B(t) \sigma_z^{(1)}$$
+
+where we set $g\mu_B/2 = 1$ for simplicity (can be rescaled). This perturbation:
+\begin{itemize}
+\item Acts only on \textbf{electron 1}
+\item Causes \textbf{Zeeman splitting} between $|\uparrow\rangle$ and $|\downarrow\rangle$ states
+\item Induces a \textbf{phase} $\phi(t) = \int_0^t B(t') dt'$
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}[plain,fragile]{Physical Picture:}
+
+Starting with an \textbf{entangled singlet state}:
+$$|S\rangle = \frac{1}{\sqrt{2}}\left(|\uparrow\downarrow\rangle - |\downarrow\uparrow\rangle\right)$$
+
+The magnetic field on electron 1 causes:
+\begin{itemize}
+\item \textbf{Phase accumulation}: $|\uparrow\rangle_1 \to e^{i\phi(t)/2}|\uparrow\rangle_1$, $|\downarrow\rangle_1 \to e^{-i\phi(t)/2}|\downarrow\rangle_1$
+\item  \textbf{Singlet → Triplet leakage}: The singlet mixes with the triplet $T_0 = (|\uparrow\downarrow\rangle + |\downarrow\uparrow\rangle)/\sqrt{2}$
+\item \textbf{Measurable signal}: By monitoring the triplet population, we can \textbf{measure $\phi(t)$ and thus $B(t)$}
+\end{itemize}
+This is a \textbf{quantum sensing} protocol where entanglement enhances sensitivity to weak fields! Here we apply a weak oscillating field: $B(t) = B_0 \sin(\omega t)$
+
+\end{frame}
+
+\begin{frame}[plain,fragile]{Quantum Fisher Information (QFI)}
+
+The \textbf{Quantum Fisher Information} $F_Q(\phi)$ quantifies the sensitivity of the quantum state to the phase $\phi$:
+
+$$F_Q(\phi) = 4\left(\langle \partial_\phi \psi | \partial_\phi \psi \rangle - |\langle \psi | \partial_\phi \psi \rangle|^2\right)$$
+
+The \textbf{quantum Cramér-Rao bound} sets the fundamental limit on phase estimation:
+$$\Delta \phi \geq \frac{1}{\sqrt{N_{\text{meas}} F_Q(\phi)}}$$
+
+where $N_{\text{meas}}$ is the number of measurements. Higher QFI → better sensitivity!
+
+\end{frame}
+
+
+\begin{frame}[plain,fragile]
+\frametitle{Leakage to triplet states}
+
+%\vspace{6mm}
+
+\centerline{\includegraphics[width=0.9\linewidth]{qcfigures/figure_006.png}}
+
+%\vspace{6mm}
+\end{frame}
+
+\begin{frame}[plain,fragile]
+\frametitle{Singlet-triplet leakage}
+
+%\vspace{6mm}
+
+\centerline{\includegraphics[width=0.9\linewidth]{qcfigures/figure_008.png}}
+
+%\vspace{6mm}
+\end{frame}
+
+
+\begin{frame}[plain,fragile]{Reinforcement Learning for Optimal Quantum Control}
+
+We now implement a \textbf{model-based reinforcement learning} approach to optimize the control sequence for quantum sensing. Since we know the Hamiltonian, we can simulate the quantum dynamics and use RL to find optimal control strategies.
+
+\end{frame}
+
+\begin{frame}[plain,fragile]{RL Framework:}
+
+\begin{alertblock}{Sequential Decision Process}
+\begin{itemize}    
+\item \textbf{State}: $(t, |\psi(t)\rangle, \mu_\phi, \sigma_\phi^2)$ - time, quantum state, posterior mean & variance of phase
+\item \textbf{Action}: $(B_{\text{amp}}, t_{\text{pulse}}, V_{\text{trap}})$ - magnetic field amplitude, pulse duration, trap voltage
+\item  \textbf{Transition}: Evolve under $B(t)\sigma_z^{(1)} + V_{\text{trap}}(x,y)$ and kinetic plus Coulomb
+\item \textbf{Measurement}: Projective measurement in singlet/triplet basis
+\item \textbf{Reward}: Quantum Fisher Information of final state
+\end{itemize}
+\end{alertblock}
+\textbf{Goal}: Maximize cumulative QFI over multiple measurement cycles to achieve optimal phase estimation.
+
+\end{frame}
+
+\begin{frame}[plain,fragile]{RL Agent: Cross-Entropy Method (CEM)}
+
+\begin{alertblock}{Cross entropy}
+We use the \textbf{Cross-Entropy Method}, a simple yet effective model-based RL algorithm:
+\begin{itemize}
+\item Sample action sequences from a Gaussian distribution
+\item  Evaluate each sequence by simulation
+\item Select elite sequences (top performers)
+\item Update distribution to concentrate on elite actions
+\item Repeat until convergence
+\end{itemize}
+\end{alertblock}
+\end{frame}
+
+\begin{frame}[plain,fragile]
+\frametitle{Reinforcement learning}
+
+%\vspace{6mm}
+
+\centerline{\includegraphics[width=0.9\linewidth]{qcfigures/figure_009.png}}
+
+%\vspace{6mm}
+\end{frame}
+
+
+
+\begin{frame}[plain,fragile]{Key Insights from RL-Optimized Control}
+
+
+\begin{alertblock}{The RL agent discovers strategies that:}
+\begin{itemize}   
+\item \textbf{Maximize QFI}: By learning optimal pulse sequences that keep the state in regimes of high sensitivity
+
+\item \textbf{Adaptive sensing}: Adjust control based on measurement history to refine phase estimates
+
+\item \textbf{Balance exploration vs exploitation}: 
+\begin{itemize}
+\item Early cycles: stronger pulses to generate detectable leakage
+\item Later cycles: fine-tuned pulses to maximize information gain
+\end{itemize}
+\item \textbf{Sequential optimization}: Each measurement cycle informs the next, leading to cumulative information gain
+
+\item \textbf{Outperform heuristics}: The learned policy significantly outperforms random or fixed control sequences
+\end{itemize}
+\end{alertblock}
+This demonstrates that \textbf{model-based RL with known quantum dynamics} can discover non-intuitive control strategies that approach fundamental quantum limits of sensing!
+
+\end{frame}
+
+\begin{frame}[plain,fragile]{Physical Interpretation and conclusions I}
+
+\begin{alertblock}{What we've shown:}
+\begin{itemize}
+\item \textbf{Singlet-Triplet Oscillations}: The magnetic field $B(t)$ on one electron causes the initially pure singlet state to oscillate between singlet and triplet components. This "leakage" is directly measurable through spin-selective detection.
+\item \textbf{Phase-Dependent Signal}: The triplet population depends on the accumulated phase $\phi(t) = \int_0^t B(t') dt'$, providing a way to measure the time-integrated field.
+
+\item \textbf{Quantum Fisher Information}: Quantifies how sensitive our entangled state is to the phase. Higher QFI means:
+\begin{itemize}
+\item Better precision in estimating $\phi$ (and thus $B(t)$)
+\item Approach to the Heisenberg limit of quantum metrology
+\item Advantage over classical (separable state) sensors
+\end{itemize}
+\end{itemize}
+\end{alertblock}
+\end{frame}
+
+\begin{frame}[plain,fragile]{Physical Interpretation and conclusions II}
+
+\begin{alertblock}{What we've shown:}
+\begin{itemize}
+\item \textbf{Excited States vs Ground State}: We use an \textbf{excited singlet state with maximum entanglement} rather than the ground state because:
+\begin{itemize}
+\item Higher entanglement → stronger quantum correlations
+\item More sensitive response to perturbations
+\item Enhanced quantum Fisher information
+\item Better phase estimation precision
+\item The comparison shows QFI scales with entanglement!
+\end{itemize}
+\item  \textbf{Applications}:
+\begin{itemize}
+\item \textbf{Magnetic field sensing}: Detect weak, time-varying magnetic fields
+\item \textbf{NMR/ESR spectroscopy}: Enhanced signal detection
+\item \textbf{Quantum metrology}: Fundamental limits of measurement precision
+\item \textbf{Quantum information}: Characterizing decoherence and noise
+\end{itemize}
+\end{itemize}
+\end{alertblock}
+\end{frame}
+
+\begin{frame}[plain,fragile]{Physical Interpretation and conclusions III}
+\begin{alertblock}{Key result}
+
+Highly-entangled excited singlet states are superior quantum sensors
+compared to weakly-entangled ground states. The singlet→triplet
+leakage provides a direct readout of the magnetic field, with
+sensitivity quantified by the quantum Fisher information!
+\end{alertblock}
+\end{frame}
+
+
+
+\begin{frame}[plain,fragile]{Physical Insights:}
+
+This code demonstrates fundamental quantum mechanical principles:
+\begin{itemize}
+\item \textbf{Fermion antisymmetry}: Total wavefunction must be antisymmetric under particle exchange
+\item \textbf{Exchange interaction}: Energy splitting between singlet and triplet states arises from Coulomb exchange
+\item \textbf{Quantum entanglement}: Spatial and spin entanglement in two-electron systems
+\end{itemize}
+
+\end{frame}
+
+
+
 \end{document}
+
+
 
 
 
