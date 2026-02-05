@@ -1,0 +1,237 @@
+\documentclass{beamer}
+
+\usetheme{Madrid}
+\usepackage{amsmath,amssymb,physics}
+
+\title{Entanglement-Enhanced Quantum Sensing}
+\subtitle{Singlet--Triplet Interferometry, QFI, and Decoherence}
+\author{MHJ}
+\date{}
+
+\begin{document}
+
+%-------------------------------------------------
+\begin{frame}
+\titlepage
+\end{frame}
+
+%=================================================
+\section{Physical mechanism}
+
+\begin{frame}{Entangled probe state}
+We start from the spin singlet state
+\[
+\ket{S} = \frac{1}{\sqrt{2}}
+\left(
+\ket{\uparrow\downarrow} - \ket{\downarrow\uparrow}
+\right),
+\]
+which has total spin zero and is invariant under common-mode magnetic
+fields.
+
+\vspace{0.3cm}
+
+This makes the singlet a \textbf{noise-protected reference state} for
+differential sensing.
+\end{frame}
+
+%-------------------------------------------------
+\begin{frame}{Phase accumulation by a local magnetic field}
+A magnetic field acting only on electron 1 induces a relative phase
+\[
+\ket{\uparrow}_1 \rightarrow e^{+i\phi/2}\ket{\uparrow}_1,
+\qquad
+\ket{\downarrow}_1 \rightarrow e^{-i\phi/2}\ket{\downarrow}_1,
+\]
+with
+\[
+\phi(t) = \gamma \int_0^t B(t')\,dt'.
+\]
+
+Applying this to the singlet gives
+\[
+\ket{\psi(\phi)} =
+\frac{1}{\sqrt{2}}
+\left(
+e^{i\phi/2}\ket{\uparrow\downarrow}
+-
+e^{-i\phi/2}\ket{\downarrow\uparrow}
+\right).
+\]
+\end{frame}
+
+%-------------------------------------------------
+\begin{frame}{Singlet--triplet decomposition}
+Rewrite $\ket{\psi(\phi)}$ in the singlet--triplet basis:
+\[
+\ket{\psi(\phi)} =
+\cos\!\left(\frac{\phi}{2}\right)\ket{S}
++
+i\sin\!\left(\frac{\phi}{2}\right)\ket{T_0},
+\]
+where
+\[
+\ket{T_0} = \frac{1}{\sqrt{2}}
+\left(
+\ket{\uparrow\downarrow} + \ket{\downarrow\uparrow}
+\right).
+\]
+
+\vspace{0.3cm}
+
+\textbf{Key point:} the phase $\phi$ is converted into a measurable
+population transfer.
+\end{frame}
+
+%=================================================
+\section{Connection to Ramsey interferometry}
+
+\begin{frame}{Relation to Ramsey interferometry}
+This protocol is mathematically equivalent to a Ramsey experiment:
+\begin{itemize}
+  \item Singlet preparation $\leftrightarrow$ first $\pi/2$ pulse
+  \item Phase accumulation under $B(t)$ $\leftrightarrow$ free evolution
+  \item Singlet--triplet readout $\leftrightarrow$ final $\pi/2$ pulse
+\end{itemize}
+
+\vspace{0.3cm}
+
+Unlike single-spin Ramsey interferometry:
+\begin{itemize}
+  \item common-mode noise cancels automatically,
+  \item the interferometer operates in an \textbf{entangled basis}.
+\end{itemize}
+\end{frame}
+
+%=================================================
+\section{Quantum Fisher information}
+
+\begin{frame}{Quantum Fisher information: definition}
+For a pure state $\ket{\psi(\phi)}$, the quantum Fisher information is
+\[
+F_Q
+=
+4\left(
+\braket{\partial_\phi\psi|\partial_\phi\psi}
+-
+\left|\braket{\psi|\partial_\phi\psi}\right|^2
+\right).
+\]
+
+It sets the ultimate precision bound via the quantum Cramér--Rao inequality:
+\[
+\Delta \phi \ge \frac{1}{\sqrt{F_Q\,N}}.
+\]
+\end{frame}
+
+%-------------------------------------------------
+\begin{frame}{QFI for singlet--triplet interferometry}
+Using
+\[
+\ket{\psi(\phi)} =
+\cos\!\left(\frac{\phi}{2}\right)\ket{S}
++
+i\sin\!\left(\frac{\phi}{2}\right)\ket{T_0},
+\]
+we compute
+\[
+\partial_\phi \ket{\psi}
+=
+-\frac{1}{2}\sin\!\left(\frac{\phi}{2}\right)\ket{S}
++
+\frac{i}{2}\cos\!\left(\frac{\phi}{2}\right)\ket{T_0}.
+\]
+
+This yields
+\[
+F_Q = 1
+\quad \text{(per interrogation time unit)}.
+\]
+
+With optimized control and extended interaction time, $F_Q$ scales with
+the effective generator variance, leading to large enhancements.
+\end{frame}
+
+%-------------------------------------------------
+\begin{frame}{Physical meaning of QFI here}
+\begin{itemize}
+  \item The generator of $\phi$ acts \emph{differentially} on the two spins.
+  \item The singlet has maximal susceptibility to such differential phases.
+  \item Entanglement amplifies phase sensitivity beyond separable probes.
+\end{itemize}
+
+\vspace{0.3cm}
+
+This is the origin of the observed quantum metrological advantage.
+\end{frame}
+
+%=================================================
+\section{Decoherence and triplet leakage}
+
+\begin{frame}{Including decoherence}
+Decoherence (e.g.\ dephasing) suppresses singlet--triplet coherence.
+A simple phenomenological model gives
+\[
+\rho_{ST}(\phi,t)
+=
+\begin{pmatrix}
+\cos^2(\phi/2) & i e^{-\Gamma t}\cos(\phi/2)\sin(\phi/2) \\
+- i e^{-\Gamma t}\cos(\phi/2)\sin(\phi/2) & \sin^2(\phi/2)
+\end{pmatrix}.
+\]
+
+Here $\Gamma$ is the decoherence rate.
+\end{frame}
+
+%-------------------------------------------------
+\begin{frame}{Triplet leakage with decoherence}
+The measured triplet population becomes
+\[
+P_{T_0}(\phi,t)
+=
+\frac{1}{2}
+\left(
+1 - e^{-\Gamma t}\cos\phi
+\right).
+\]
+
+For small $\phi$:
+\[
+P_{T_0} \approx
+\frac{\phi^2}{4}\,e^{-\Gamma t}.
+\]
+
+\vspace{0.3cm}
+
+Decoherence reduces contrast but preserves phase sensitivity.
+\end{frame}
+
+%-------------------------------------------------
+\begin{frame}{Impact on quantum Fisher information}
+Decoherence reduces the QFI to
+\[
+F_Q(t) = F_Q(0)\,e^{-2\Gamma t}.
+\]
+
+\begin{itemize}
+  \item Short times: quantum advantage retained
+  \item Long times: decoherence restores shot-noise scaling
+\end{itemize}
+
+This defines the optimal sensing time.
+\end{frame}
+
+%=================================================
+\section{Summary}
+
+\begin{frame}{Summary}
+\begin{itemize}
+  \item Local magnetic fields induce singlet--triplet mixing.
+  \item Phase information is converted into measurable populations.
+  \item The protocol is an entanglement-based Ramsey interferometer.
+  \item Quantum Fisher information quantifies the enhanced sensitivity.
+  \item Decoherence limits, but does not invalidate, the quantum advantage.
+\end{itemize}
+\end{frame}
+
+\end{document}
