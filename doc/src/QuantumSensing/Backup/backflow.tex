@@ -1,0 +1,226 @@
+\documentclass{beamer}
+
+\usetheme{Madrid}
+\usepackage{amsmath,amssymb,physics}
+\usepackage{bm}
+
+\title{Backflow in Neural Quantum States}
+\subtitle{Slater--Jastrow--Backflow Wavefunctions and Links to Transformers}
+\author{MHJ }
+\date{}
+
+\begin{document}
+
+%-------------------------------------------------
+\begin{frame}
+\titlepage
+\end{frame}
+
+%-------------------------------------------------
+\begin{frame}{Outline}
+\begin{enumerate}
+    \item Slater--Jastrow wavefunctions (baseline for fermions)
+    \item Backflow: explicit coordinate/orbital transformations
+    \item Slater--Jastrow--Backflow (SJB) equations (continuum and lattice)
+    \item Why backflow improves nodal structure and correlations
+    \item Relation to Transformer-style architectures
+\end{enumerate}
+\end{frame}
+
+%=================================================
+\section{Slater--Jastrow baseline}
+
+\begin{frame}{Slater--Jastrow (SJ) variational ansatz}
+For $N$ fermions with coordinates $\bm{R}=(\bm{r}_1,\dots,\bm{r}_N)$,
+a standard correlated ansatz is the Slater--Jastrow form
+\[
+\Psi_{\mathrm{SJ}}(\bm{R})
+=
+\det\!\big[\phi_k(\bm{r}_i)\big]\;
+e^{J(\bm{R})}.
+\]
+
+\begin{itemize}
+    \item $\det[\phi_k(\bm{r}_i)]$ enforces antisymmetry and defines the nodal surface.
+    \item $e^{J(\bm{R})}$ (Jastrow factor) captures symmetric correlations (often pairwise).
+\end{itemize}
+
+A common two-body Jastrow form:
+\[
+J(\bm{R}) = \sum_{i<j} u(r_{ij}),\qquad r_{ij}=\abs{\bm{r}_i-\bm{r}_j}.
+\]
+\end{frame}
+
+\begin{frame}{Limitations of Slater--Jastrow}
+\begin{itemize}
+    \item The Jastrow factor improves correlation energy but \textbf{does not change the nodes}:
+    \[
+    \Psi_{\mathrm{SJ}}(\bm{R})=0 \iff \det[\phi_k(\bm{r}_i)]=0.
+    \]
+    \item For strongly correlated fermions, the \textbf{nodal surface} is often the main source of error.
+    \item Backflow is designed specifically to introduce flexible, configuration-dependent nodal structure.
+\end{itemize}
+\end{frame}
+
+%=================================================
+\section{Backflow: explicit equations}
+
+\begin{frame}{Backflow: configuration-dependent coordinates}
+Backflow replaces bare coordinates $\bm{r}_i$ by \emph{effective} coordinates
+\[
+\tilde{\bm{r}}_i = \bm{r}_i + \bm{\xi}_i(\bm{R}),
+\]
+where the backflow displacement $\bm{\xi}_i$ depends on the full configuration.
+
+A classical (pairwise) backflow form:
+\[
+\bm{\xi}_i(\bm{R}) = \sum_{j\neq i} \eta(r_{ij})\,(\bm{r}_i-\bm{r}_j),
+\]
+with a scalar backflow function $\eta(\cdot)$ (often parameterized).
+\end{frame}
+
+\begin{frame}{Slater--Jastrow--Backflow (SJB) ansatz}
+The Slater determinant is evaluated at backflow coordinates:
+\[
+\Psi_{\mathrm{SJB}}(\bm{R})
+=
+\det\!\big[\phi_k(\tilde{\bm{r}}_i)\big]\;
+e^{J(\bm{R})}.
+\]
+
+\begin{itemize}
+    \item Backflow alters the nodes:
+    \[
+    \Psi_{\mathrm{SJB}}(\bm{R})=0 \iff \det[\phi_k(\tilde{\bm{r}}_i(\bm{R}))]=0,
+    \]
+    so the nodal surface becomes an implicit, many-body object.
+    \item $J(\bm{R})$ still captures symmetric correlation and cusp conditions.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Backflow as orbital deformation (equivalent view)}
+Instead of moving coordinates, one may view backflow as making orbitals
+configuration-dependent:
+\[
+\phi_k(\bm{r}_i)\quad \longrightarrow \quad
+\phi_k\big(\bm{r}_i; \bm{R}\big)
+:= \phi_k\big(\tilde{\bm{r}}_i(\bm{R})\big).
+\]
+
+Thus, each particle experiences an \emph{effective environment-dependent orbital}
+set by the positions of all other particles.
+\end{frame}
+
+%=================================================
+\section{Lattice / second-quantized analogues}
+
+\begin{frame}{Lattice analogue: backflow features for occupations}
+For lattice fermions with occupations $\bm{n}=(n_1,\dots,n_L)$,
+a backflow-like construction introduces \emph{configuration-dependent features}
+\[
+\tilde{h}_i(\bm{n}) = h_i + \sum_{j\neq i} f_{ij}\,\Phi(n_i,n_j,\bm{n}),
+\]
+where $\tilde{h}_i$ plays the role of an effective site feature/embedding.
+
+A determinant-based ansatz may then use effective orbitals
+\[
+\Psi(\bm{n}) \propto \det\!\big[ \varphi_k(\tilde{h}_i(\bm{n})) \big]\times e^{J(\bm{n})},
+\]
+with a Jastrow-like factor $J(\bm{n})$ capturing density--density correlations.
+\end{frame}
+
+\begin{frame}{Neural backflow: learned displacements or embeddings}
+In NQS practice, backflow is often \textbf{neural}:
+\[
+\bm{\xi}_i(\bm{R}) = \mathcal{N}_\theta\!\left(i;\,\bm{R}\right),
+\]
+with $\mathcal{N}_\theta$ a symmetry-respecting neural network (e.g.\ equivariant).
+
+Then
+\[
+\tilde{\bm{r}}_i = \bm{r}_i + \mathcal{N}_\theta(i;\bm{R}),
+\qquad
+\Psi_{\mathrm{SJB}}(\bm{R})
+=
+\det[\phi_k(\tilde{\bm{r}}_i)]\,e^{J(\bm{R})}.
+\]
+
+This generalizes pairwise backflow to \emph{collective} many-body backflow.
+\end{frame}
+
+%=================================================
+\section{Relation to Transformers}
+
+\begin{frame}{Transformer view: tokens, context, and backflow}
+A Transformer builds \emph{context-dependent} representations:
+\[
+\text{token embedding } \bm{e}_i
+\quad \longrightarrow \quad
+\text{contextual embedding } \bm{h}_i(\{\bm{e}_j\}_{j=1}^N).
+\]
+
+Backflow is analogous:
+\[
+\bm{r}_i \quad \longrightarrow \quad
+\tilde{\bm{r}}_i(\bm{R})=\bm{r}_i+\bm{\xi}_i(\bm{R}),
+\]
+i.e.\ each particle coordinate (or feature) becomes \textbf{contextual},
+conditioned on the entire configuration.
+\end{frame}
+
+\begin{frame}{Self-attention as a backflow-like map (schematic)}
+In a Transformer layer, one often has
+\[
+\bm{h}_i = \bm{e}_i + \sum_{j} \alpha_{ij}\, \bm{V}\bm{e}_j,
+\qquad
+\alpha_{ij}=\mathrm{softmax}_j\!\left(\frac{(\bm{Q}\bm{e}_i)\cdot(\bm{K}\bm{e}_j)}{\sqrt{d}}\right).
+\]
+
+Compare with pairwise backflow:
+\[
+\tilde{\bm{r}}_i = \bm{r}_i + \sum_{j\neq i} \eta(r_{ij})\,(\bm{r}_i-\bm{r}_j).
+\]
+
+\textbf{Analogy:}
+\begin{itemize}
+  \item weights $\alpha_{ij}$ or $\eta(r_{ij})$ quantify \emph{influence} of $j$ on $i$,
+  \item both produce nonlocal, permutation-symmetric updates of per-particle features.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Why Transformer-style backflow is powerful for NQS}
+\begin{itemize}
+  \item Long-range correlations are captured naturally via attention over all particles.
+  \item Backflow/attention directly produces \textbf{configuration-dependent nodes} (fermions).
+  \item Parameter-efficient: global structure can be learned with fewer parameters than very deep MLPs.
+  \item Symmetry handling: permutation symmetry and (with equivariance) rotational symmetry can be enforced.
+\end{itemize}
+
+\vspace{0.3cm}
+\textbf{Takeaway:} backflow is the physics analogue of contextual embeddings; Transformers are
+a natural modern architecture to implement neural backflow maps.
+\end{frame}
+
+%=================================================
+\section{Summary}
+
+\begin{frame}{Summary}
+\begin{itemize}
+  \item Slater--Jastrow:
+  \[
+  \Psi_{\mathrm{SJ}}(\bm{R})=\det[\phi_k(\bm{r}_i)]\,e^{J(\bm{R})}
+  \]
+  captures correlations but leaves nodes fixed.
+  \item Backflow introduces effective coordinates
+  \[
+  \tilde{\bm{r}}_i=\bm{r}_i+\bm{\xi}_i(\bm{R})
+  \]
+  and yields Slater--Jastrow--Backflow:
+  \[
+  \Psi_{\mathrm{SJB}}(\bm{R})=\det[\phi_k(\tilde{\bm{r}}_i)]\,e^{J(\bm{R})}.
+  \]
+  \item Backflow $\leftrightarrow$ contextualization: conceptually aligned with Transformer self-attention.
+\end{itemize}
+\end{frame}
+
+\end{document}
