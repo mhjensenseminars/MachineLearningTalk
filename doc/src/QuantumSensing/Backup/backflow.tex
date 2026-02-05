@@ -223,4 +223,205 @@ a natural modern architecture to implement neural backflow maps.
 \end{itemize}
 \end{frame}
 
+
+%=================================================
+\section{What are barren plateaus?}
+
+\begin{frame}{Barren plateaus: definition}
+A \textbf{barren plateau} is a region of parameter space where
+\[
+\mathbb{E}\!\left[\partial_{\theta_i} \mathcal{L}\right] = 0,
+\qquad
+\mathrm{Var}\!\left[\partial_{\theta_i} \mathcal{L}\right]
+\sim e^{-cN},
+\]
+with $N$ the system size.
+
+\vspace{0.3cm}
+
+Consequences:
+\begin{itemize}
+  \item Gradients vanish exponentially with system size
+  \item Optimization becomes exponentially hard
+  \item Training is dominated by noise
+\end{itemize}
+\end{frame}
+
+%-------------------------------------------------
+\begin{frame}{Physical origin of barren plateaus}
+Barren plateaus arise when the variational state explores an
+\emph{effectively random} region of Hilbert space:
+\begin{itemize}
+  \item High expressivity $\rightarrow$ states resemble Haar-random vectors
+  \item Observables concentrate around their mean (concentration of measure)
+\end{itemize}
+
+\vspace{0.3cm}
+
+This phenomenon is generic to:
+\begin{itemize}
+  \item deep random quantum circuits,
+  \item unstructured variational ans\"atze,
+  \item overly flexible neural wavefunctions without physical bias.
+\end{itemize}
+\end{frame}
+
+%=================================================
+\section{Barren plateaus in variational quantum algorithms}
+
+\begin{frame}{Barren plateaus in VQE and QNNs}
+In VQE and circuit-based QNNs:
+\begin{itemize}
+  \item deep parameterized circuits form approximate unitary designs,
+  \item gradients of the energy concentrate near zero,
+  \item expressivity grows faster than trainability.
+\end{itemize}
+
+\vspace{0.3cm}
+
+Similarly, in NQS:
+\begin{itemize}
+  \item highly expressive networks may sample chaotic regions of state space,
+  \item energy landscapes become flat almost everywhere.
+\end{itemize}
+\end{frame}
+
+%=================================================
+\section{Why structure matters}
+
+\begin{frame}{Key insight: structure prevents barren plateaus}
+Barren plateaus are \emph{not inevitable}. They are avoided by:
+\begin{itemize}
+  \item locality,
+  \item symmetry constraints,
+  \item physically motivated parameterizations.
+\end{itemize}
+
+\vspace{0.3cm}
+
+\textbf{Principle:}
+\[
+\text{Expressivity} \quad \textbf{must be balanced with} \quad \text{inductive bias}.
+\]
+\end{frame}
+
+%=================================================
+\section{Backflow as a mitigation strategy}
+
+\begin{frame}{Backflow suppresses barren plateaus}
+Backflow modifies the wavefunction as
+\[
+\bm{x}_i \rightarrow \tilde{\bm{x}}_i(\bm{x}_1,\dots,\bm{x}_N),
+\]
+introducing correlations while preserving structure.
+
+\vspace{0.3cm}
+
+Why this helps:
+\begin{itemize}
+  \item gradients act on \emph{collective} coordinates,
+  \item nodal surfaces evolve smoothly,
+  \item the state remains close to physically relevant manifolds.
+\end{itemize}
+\end{frame}
+
+%-------------------------------------------------
+\begin{frame}{Backflow vs unstructured expressivity}
+\begin{center}
+\begin{tabular}{lcc}
+\hline
+ & \textbf{Unstructured NN} & \textbf{Backflow NQS} \\
+\hline
+Symmetry-aware & No & Yes \\
+Locality & Weak & Strong \\
+Gradient scaling & Exponential decay & Polynomial / stable \\
+Physical interpretability & Low & High \\
+\hline
+\end{tabular}
+\end{center}
+
+\vspace{0.3cm}
+
+Backflow provides \emph{targeted expressivity} instead of random expressivity.
+\end{frame}
+
+%=================================================
+\section{CTNN backflow and optimization}
+
+\begin{frame}{Why CTNN backflow is especially effective}
+CTNN backflow uses convolutional, translation-invariant maps:
+\[
+\tilde h_i = h_i + \sum_\delta \mathcal{C}_\theta(\delta)\, n_{i+\delta}.
+\]
+
+Advantages:
+\begin{itemize}
+  \item gradients scale with correlation length, not system size,
+  \item parameter sharing stabilizes optimization,
+  \item respects lattice symmetries by construction.
+\end{itemize}
+\end{frame}
+
+%-------------------------------------------------
+\begin{frame}{Optimization landscape with CTNN backflow}
+Empirically and theoretically:
+\begin{itemize}
+  \item gradients remain finite as $N$ increases,
+  \item training converges with shallow depth,
+  \item fewer parameters achieve the same accuracy.
+\end{itemize}
+
+\vspace{0.3cm}
+
+CTNN backflow avoids exploring chaotic regions of Hilbert space, keeping the
+state in a \emph{low-complexity manifold}.
+\end{frame}
+
+%=================================================
+\section{Relation to Transformers}
+
+\begin{frame}{Transformers: expressivity vs trainability}
+Transformers introduce global context via attention:
+\[
+\bm{h}_i = \bm{e}_i + \sum_j \alpha_{ij}\bm{V}\bm{e}_j.
+\]
+
+\begin{itemize}
+  \item High expressivity
+  \item Risk of barren plateaus if unregularized
+  \item Requires careful initialization and symmetry handling
+\end{itemize}
+\end{frame}
+
+%-------------------------------------------------
+\begin{frame}{Backflow as physics-informed contextualization}
+Backflow can be viewed as:
+\begin{itemize}
+  \item a constrained attention mechanism,
+  \item operating on relative coordinates or occupations,
+  \item with locality and symmetry hard-coded.
+\end{itemize}
+
+\vspace{0.3cm}
+
+\textbf{Key difference:}
+\[
+\text{Backflow} \Rightarrow \text{context with physics priors}.
+\]
+\end{frame}
+
+%=================================================
+\section{Practical optimization strategies}
+
+\begin{frame}{Best practices to avoid barren plateaus}
+\begin{itemize}
+  \item Use shallow, structured architectures
+  \item Introduce backflow before increasing depth
+  \item Enforce symmetries explicitly
+  \item Optimize incrementally (curriculum learning)
+  \item Monitor gradient variance, not just loss
+\end{itemize}
+\end{frame}
+
+
 \end{document}
