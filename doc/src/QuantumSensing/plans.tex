@@ -49,7 +49,18 @@
 
 \end{frame}
 
+\begin{frame}[plain,fragile]
+\frametitle{Many-body physics, Machine Learning, Quantum Machine Learning and Quantum Control}
 
+\begin{block}{}
+\begin{itemize}
+\item 
+\item 
+\item 
+\end{itemize}
+\end{block}
+
+\end{frame}
 
 
 
@@ -103,17 +114,6 @@
 \begin{frame}[plain,fragile]
 
 
-\frametitle{}
-
-\begin{block}{}
-\begin{itemize}
-\item 
-\item 
-\item 
-\end{itemize}
-\end{block}
-
-\end{frame}
 
 
 
@@ -177,7 +177,7 @@
 
 
 \begin{frame}[plain,fragile]
-\frametitle{Singlet-triplet leakage}
+\frametitle{Qauntum sensing: Singlet-triplet leakage for entangled electrons on helium}
 
 %\vspace{6mm}
 
@@ -208,32 +208,7 @@ W are implementing a \textbf{model-based reinforcement learning} approach to opt
 
 \end{frame}
 
-
-
-\begin{frame}[plain,fragile]{Key Insights from RL-Optimized Control}
-
-
-\begin{alertblock}{The RL agent discovers strategies that:}
-\begin{itemize}   
-\item \textbf{Maximize QFI}: By learning optimal pulse sequences that keep the state in regimes of high sensitivity
-
-\item \textbf{Adaptive sensing}: Adjust control based on measurement history to refine phase estimates
-
-\item \textbf{Balance exploration vs exploitation}: 
-\begin{itemize}
-\item Early cycles: stronger pulses to generate detectable leakage
-\item Later cycles: fine-tuned pulses to maximize information gain
-\end{itemize}
-\item \textbf{Sequential optimization}: Each measurement cycle informs the next, leading to cumulative information gain
-
-\item \textbf{Outperform heuristics}: The learned policy significantly outperforms random or fixed control sequences
-\end{itemize}
-\end{alertblock}
-This demonstrates that \textbf{model-based RL with known quantum dynamics} can discover non-intuitive control strategies that approach fundamental quantum limits of sensing!
-
-\end{frame}
-
-\begin{frame}[plain,fragile]{Physical Interpretation and conclusions I}
+\begin{frame}[plain,fragile]{Physical Interpretation}
 
 \begin{alertblock}{What we've shown:}
 \begin{itemize}
@@ -250,7 +225,7 @@ This demonstrates that \textbf{model-based RL with known quantum dynamics} can d
 \end{alertblock}
 \end{frame}
 
-\begin{frame}[plain,fragile]{Physical Interpretation and conclusions II}
+\begin{frame}[plain,fragile]{Physical Interpretation}
 
 \begin{alertblock}{What we've shown:}
 \begin{itemize}
@@ -273,27 +248,14 @@ This demonstrates that \textbf{model-based RL with known quantum dynamics} can d
 \end{alertblock}
 \end{frame}
 
-\begin{frame}[plain,fragile]{Physical Interpretation and conclusions III}
+\begin{frame}[plain,fragile]{Physical Interpretation}
 \begin{alertblock}{Key result}
 
 Highly-entangled excited singlet states are superior quantum sensors
-compared to weakly-entangled ground states. The singlet→triplet
+compared to weakly-entangled ground states. The singlet to triplet
 leakage provides a direct readout of the magnetic field, with
 sensitivity quantified by the quantum Fisher information!
 \end{alertblock}
-\end{frame}
-
-
-
-\begin{frame}[plain,fragile]{Physical Insights:}
-
-This code demonstrates fundamental quantum mechanical principles:
-\begin{itemize}
-\item \textbf{Fermion antisymmetry}: Total wavefunction must be antisymmetric under particle exchange
-\item \textbf{Exchange interaction}: Energy splitting between singlet and triplet states arises from Coulomb exchange
-\item \textbf{Quantum entanglement}: Spatial and spin entanglement in two-electron systems
-\end{itemize}
-
 \end{frame}
 
 
