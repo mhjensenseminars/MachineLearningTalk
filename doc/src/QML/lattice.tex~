@@ -1,0 +1,593 @@
+\documentclass[11pt]{beamer}
+\usetheme{Madrid}
+\usecolortheme{default}
+
+\usepackage{amsmath,amssymb,physics}
+\usepackage{bm}
+\usepackage{graphicx}
+\usepackage{tikz}
+
+\title[Quantum Simulation of Lattice Gauge Theories]
+{Quantum Simulations of Lattice Gauge Theories\\
+From Quantum Mechanics to Near-Term Quantum Algorithms}
+
+\author{MHJ notes based on Giovanni Pederiva's PhD thesis}
+\date{February 2026}
+
+\begin{document}
+
+%================================================
+\begin{frame}
+\titlepage
+\end{frame}
+
+%================================================
+\begin{frame}{Overarching arguments}
+
+This talk addresses:
+
+\begin{itemize}
+\item What are lattice gauge theories?
+\item Why are they computationally difficult?
+\item How can quantum computers help?
+\item What have recent algorithms achieved?
+\end{itemize}
+
+I will assume that people are familiar with QM, second quantization,
+many-body physics but I do not assume knowledge of lattice gauge
+theory or quantum computing. Much of this is based on two articles by
+Giovanni Pederiva and his thesis from fall 2022 at MSU
+
+\end{frame}
+
+%================================================
+\section{From Quantum Mechanics to Gauge Theories}
+
+%------------------------------------------------
+\begin{frame}{Starting Point: Many-Body Quantum Mechanics}
+
+We are familiar with:
+
+\[
+H = \sum_i \frac{p_i^2}{2m} + V(\{x_i\})
+\]
+
+\begin{itemize}
+\item Hilbert space grows exponentially
+\item Strong correlations require nonperturbative methods
+\end{itemize}
+
+Gauge theories generalize this idea to fields.
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{What is a Gauge Theory?}
+
+Gauge symmetry:
+
+\[
+\psi(x) \rightarrow e^{i\alpha(x)} \psi(x)
+\]
+
+Requires introduction of gauge field:
+
+\[
+A_\mu \rightarrow A_\mu - \partial_\mu \alpha
+\]
+
+Gauge invariance enforces local constraints.
+
+Physical examples:
+\begin{itemize}
+\item QED
+\item QCD
+\item Electroweak theory
+\end{itemize}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Why Are Gauge Theories Hard?}
+
+\begin{itemize}
+\item Infinite degrees of freedom
+\item Nonlinear self-interactions
+\item Confinement
+\item Chiral symmetry breaking
+\end{itemize}
+
+Perturbation theory fails at strong coupling.
+\end{frame}
+
+%================================================
+\section{Lattice Gauge Theory}
+
+%------------------------------------------------
+\begin{frame}{Idea of Lattice Regularization}
+
+Discretize space-time:
+
+\[
+x_\mu = n_\mu a
+\]
+
+Advantages:
+\begin{itemize}
+\item UV regulator
+\item Finite degrees of freedom
+\item Amenable to numerical computation
+\end{itemize}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Path Integral vs Hamiltonian Picture}
+
+Standard lattice QCD:
+
+\[
+Z = \int \mathcal{D}U\, e^{-S_E[U]}
+\]
+
+Monte Carlo sampling.
+
+Limitations:
+\begin{itemize}
+\item Sign problem
+\item Real-time evolution inaccessible
+\item Finite density problematic
+\end{itemize}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{The Sign Problem}
+
+If action becomes complex:
+
+\[
+e^{-S_E} \notin \mathbb{R}^+
+\]
+
+Importance sampling fails.
+
+Occurs in:
+\begin{itemize}
+\item Finite baryon density
+\item $\theta$-vacua
+\item Real-time dynamics
+\end{itemize}
+
+Motivation for quantum simulation.
+\end{frame}
+
+%================================================
+\section{Quantum Computing Basics}
+
+%------------------------------------------------
+\begin{frame}{What Is a Quantum Computer?}
+
+Hilbert space:
+
+\[
+\mathcal{H} = (\mathbb{C}^2)^{\otimes N}
+\]
+
+Dimension:
+\[
+2^N
+\]
+
+Unitary evolution:
+\[
+|\psi\rangle \rightarrow U |\psi\rangle
+\]
+
+Quantum computers naturally simulate Hamiltonian dynamics.
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Digital Quantum Simulation}
+
+Trotterization:
+
+\[
+e^{-i(H_A + H_B)t}
+\approx
+\left(e^{-iH_A \delta t} e^{-iH_B \delta t}\right)^M
+\]
+
+Quantum circuits approximate time evolution.
+\end{frame}
+
+%================================================
+\section{The Schwinger Model}
+
+%------------------------------------------------
+\begin{frame}{Classical example: Why the Schwinger Model?}
+
+1+1 dimensional QED.
+
+Contains:
+\begin{itemize}
+\item Confinement
+\item Massive boson
+\item $\theta$-dependence
+\end{itemize}
+
+Simplest nontrivial gauge theory.
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Continuum Lagrangian}
+
+\[
+\mathcal{L}
+=
+-\frac14 F_{\mu\nu}F^{\mu\nu}
++ i\bar\psi\gamma^\mu D_\mu\psi
+- m\bar\psi e^{i\theta\gamma_5}\psi
+\]
+
+Gauss law constraint:
+
+\[
+\partial_x E = g \psi^\dagger \psi
+\]
+\end{frame}
+
+%================================================
+\section{From Fields to Qubits}
+
+%------------------------------------------------
+\begin{frame}{Discretization}
+
+Spatial lattice:
+\[
+x_n = n a
+\]
+
+Use staggered fermions.
+
+Gauge fields on links.
+
+Gauss law allows elimination of gauge variables.
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Resulting Spin Hamiltonian}
+
+After Jordan–Wigner:
+
+\[
+H = H_{ZZ} + H_{\pm} + H_Z
+\]
+
+Features:
+
+\begin{itemize}
+\item Long-range interactions
+\item Nearest-neighbor hopping
+\item Mass terms
+\end{itemize}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Nonlocal Interaction Term}
+
+Gauss law elimination yields:
+
+\[
+H_{ZZ}
+=
+\frac{J}{2}
+\sum_{n=2}^{N-1}
+\sum_{k<l\le n}
+Z_k Z_l
+\]
+
+This term scales quadratically with system size.
+\end{frame}
+
+%================================================
+\section{Continuum Limit}
+
+%------------------------------------------------
+\begin{frame}{Continuum Scaling}
+
+Couplings:
+
+\[
+w = \frac{1}{2a}, \quad
+J = \frac{g^2 a}{2}
+\]
+
+As:
+\[
+a \to 0
+\]
+
+\begin{itemize}
+\item Hopping diverges
+\item Gap shrinks
+\end{itemize}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Adiabatic Time Scaling}
+
+Adiabatic condition:
+
+\[
+T \gg \frac{1}{\Delta^2}
+\]
+
+If:
+\[
+\Delta \to 0
+\]
+
+Then:
+\[
+T \to \infty
+\]
+
+Continuum limit challenging for adiabatic algorithms.
+\end{frame}
+
+%================================================
+\section{State Preparation Algorithms}
+
+%------------------------------------------------
+\begin{frame}{Adiabatic State Preparation}
+
+Interpolate:
+
+\[
+H(s) = (1-s)H_0 + sH
+\]
+
+Gate count per Trotter step:
+
+\[
+N_{\text{CNOT}} \sim (N-1)(N-2)
+\]
+
+Quadratic scaling.
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Quantum Approximate Optimization Algorithm}
+
+Variational ansatz:
+
+\[
+|\psi_M\rangle
+=
+\prod_{k=1}^M
+e^{-i\beta_k H_0}
+e^{-i\gamma_k H}
+|\psi_0\rangle
+\]
+
+Small $M$ sufficient.
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Blocked QAOA}
+
+Use simplified Hamiltonian in early layers.
+
+Full nonlocal term only once.
+
+Reduces effective depth.
+\end{frame}
+
+
+%================================================
+\section{Scaling Summary}
+
+%------------------------------------------------
+\begin{frame}{Explicit Scaling Comparison}
+
+\begin{tabular}{lcc}
+Method & Depth & Scaling \\
+\hline
+ASP & Large & $\sim M N^2$ \\
+QAOA & Moderate & $\sim M N^2$ \\
+Blocked QAOA & Reduced & $\sim N^2 + MN$ \\
+\hline
+\end{tabular}
+\end{frame}
+
+%================================================
+\section{Broader Perspective}
+
+%------------------------------------------------
+\begin{frame}{Toward QCD}
+
+Challenges:
+
+\begin{itemize}
+\item Higher dimensions
+\item Non-Abelian gauge groups
+\item Fermion doubling
+\item Error correction
+\end{itemize}
+
+Schwinger model is stepping stone.
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Open Research Questions}
+
+\begin{itemize}
+\item Efficient encoding of gauge symmetry
+\item Continuum extrapolation on quantum hardware
+\item Hybrid tensor-network–quantum methods
+\item Error mitigation strategies
+\end{itemize}
+\end{frame}
+
+%================================================
+\section{Beyond the Schwinger Model}
+
+%------------------------------------------------
+\begin{frame}{Beyond the Schwinger Model: Why Move Forward?}
+
+The Schwinger model (1+1D QED):
+
+\begin{itemize}
+\item Abelian
+\item No transverse gauge dynamics
+\item Gauge fields can be eliminated
+\end{itemize}
+
+But realistic gauge theories (e.g. QCD) are:
+
+\begin{itemize}
+\item Non-Abelian
+\item Higher dimensional (3+1D)
+\item Dynamically rich
+\end{itemize}
+
+Key question:
+\[
+\text{Can quantum simulation scale beyond 1+1D Abelian theories?}
+\]
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Non-Abelian Gauge Theories on Quantum Hardware}
+
+Progress beyond U(1):
+
+\begin{itemize}
+\item SU(2) lattice gauge theories in 1+1D
+\item Small SU(3) toy models
+\item Finite-dimensional truncations of gauge fields
+\end{itemize}
+
+New challenges:
+
+\begin{itemize}
+\item Self-interacting gauge bosons
+\item Larger local Hilbert spaces
+\item More complex Gauss-law constraints
+\end{itemize}
+
+Status: proof-of-principle demonstrations and classical circuit simulations.
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Higher Dimensions: 2+1D and Beyond}
+
+Moving to 2+1 dimensions introduces:
+
+\begin{itemize}
+\item Plaquette terms:
+\[
+U_p = \mathrm{Tr}(U_1 U_2 U_3^\dagger U_4^\dagger)
+\]
+\item Genuine magnetic field dynamics
+\item Multi-qubit interactions
+\end{itemize}
+
+Scaling challenge:
+
+\[
+\text{Gate depth} \sim N_{\text{sites}}^2 \text{ or worse}
+\]
+
+Only small lattices currently feasible.
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Quantum Link Models (QLMs)}
+
+Conceptual advance:
+
+Replace infinite-dimensional gauge links with
+finite-dimensional spin representations.
+
+\[
+U_{ij} \rightarrow \text{spin operators}
+\]
+
+Advantages:
+
+\begin{itemize}
+\item Finite local Hilbert space
+\item Hardware-friendly
+\item Gauge invariance encoded locally
+\end{itemize}
+
+Actively explored in:
+
+\begin{itemize}
+\item Trapped ions
+\item Rydberg atoms
+\item Cold atom optical lattices
+\end{itemize}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Analog Quantum Simulators}
+
+Parallel development:
+
+\begin{itemize}
+\item Z$_2$ lattice gauge theories
+\item U(1) gauge invariance
+\item Small SU(2) systems
+\end{itemize}
+
+Analog platforms:
+
+\begin{itemize}
+\item Ultracold atoms
+\item Rydberg arrays
+\item Trapped ions
+\end{itemize}
+
+In some cases, analog simulation has surpassed digital NISQ hardware.
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Where Do We Stand?}
+
+Current frontier:
+
+\begin{itemize}
+\item Schwinger model: mature benchmark
+\item SU(2) in 1+1D: active research
+\item 2+1D U(1): small systems
+\item Quantum link models: promising
+\end{itemize}
+
+Still missing:
+
+\begin{itemize}
+\item 3+1D SU(3) QCD on quantum hardware
+\item Continuum-limit extrapolation
+\item Fault-tolerant large-scale simulations
+\end{itemize}
+
+We are in the \textbf{proof-of-principle era}.
+\end{frame}
+
+%================================================
+\section{Conclusions}
+
+%------------------------------------------------
+\begin{frame}{Conclusions}
+
+\begin{itemize}
+\item Lattice gauge theories encode nonperturbative physics.
+\item Quantum computers simulate Hamiltonian dynamics directly.
+\item State preparation is the central challenge.
+\item Scaling to continuum remains open.
+\end{itemize}
+
+Quantum simulation of gauge theories is promising but technically demanding.
+\end{frame}
+
+\end{document}
+
