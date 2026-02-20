@@ -1,0 +1,190 @@
+%LATEX TEMPLATE FOR PROGRESS IN PARTICLE AND NUCLEAR PHYSICS - October 2021 
+%Foreword: 
+
+%Installation
+%If the document class \emph{elsarticle} is not available on your computer, you can download and install the system package \emph{texlive-publishers} (Linux) or install the \LaTeX\ package \emph{elsarticle} using the package manager of your \TeX\ installation, which is typically \TeX\ Live or Mik\TeX. You can alternatively use an online platform such as Overleaf, Authorea, etc
+
+%Functionality
+%The Elsevier article class is based on the standard article class and supports almost all of the functionality of that class. In addition, it features commands and options to format the
+%\begin{itemize}
+%\item document style
+%\item baselineskip
+%\item front matter
+%\item keywords and MSC codes
+%\item theorems, definitions and proofs
+%\item lables of enumerations
+%\item citation style and labeling.
+%\end{itemize}
+
+%Usage 
+%Once the package is properly installed, you can use the document class \emph{elsarticle} to create a manuscript. Please make sure that your manuscript follows the guidelines in the Guide for Authors of Progress in Particle and Nuclear Physics: https://www.elsevier.com/journals/progress-in-particle-and-nuclear-physics/0146-6410/guide-for-authors. It is not necessary to typeset your manuscript in exactly the same way as an article.
+
+
+\documentclass[review]{elsarticle}
+\usepackage{todonotes}
+
+%For line numbers
+%\usepackage{lineno}
+%\modulolinenumbers[5]
+
+\usepackage[colorlinks,citecolor=blue,linktoc=all,linkcolor=cyan]{hyperref}
+\usepackage{graphicx}
+\usepackage{bm}
+% Fonts
+\usepackage[T1]{fontenc}
+\usepackage{dsfont}               % use mathds instead of mathbb for outline fonts
+\usepackage{mathrsfs}             % provides mathscr without overwriting mathcal
+\usepackage{slashed}              % For Dirac slash notation.
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{amsfonts}
+\usepackage{MnSymbol}
+\usepackage{braket}
+\usepackage{multirow}
+\numberwithin{equation}{section}
+\numberwithin{table}{section}
+\numberwithin{figure}{section}
+\usepackage{subcaption}
+
+\journal{Progress in Particle and Nuclear Physics}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% JPPNP customization of the margins: 
+\topmargin-2.8cm
+\oddsidemargin-1cm
+\evensidemargin-1cm
+\textwidth18.5cm
+\textheight25.0cm
+
+
+% JPPNP customization of the headings: 
+\usepackage{titlesec}
+\usepackage{sectsty}
+\titleformat{\section}{\normalfont\Large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\normalfont\large\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\normalfont\normalsize\bfseries}{\thesubsubsection}{1em}{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\params}{\boldsymbol{\theta}}
+
+%%%%%%%%%%%%%%%%%%%%%%%
+%% `Elsevier LaTeX' style
+\bibliographystyle{elsarticle-num}
+%%%%%%%%%%%%%%%%%%%%%%%
+\biboptions{numbers,sort&compress}
+
+\begin{document}
+	
+	\begin{frontmatter}
+		
+%		\title{Strongly interacting nuclear many-body systems with neural-network quantum states}
+        \title{Neural-network quantum states for the nuclear many-body problem}
+
+		\author[argonne_phy,argonne_cps,trento,ific]{Alessandro Lovato \corref{mycorrespondingauthor}}
+		\ead{lovato@anl.gov}
+        \address[argonne_phy]{Physics Division, Argonne National Laboratory, Argonne, Illinois 60439, USA}
+        \address[argonne_cps]{Computational Science Division, Argonne National Laboratory, Argonne, Illinois 60439, USA}
+        \address[trento]{INFN-TIFPA Trento Institute of Fundamental Physics and Applications, 38123 Trento, Italy. }
+        \address[ific]{Instituto de Física Corpuscular (IFIC), Consejo Superior de Investigaciones Científicas (CSIC) and Universidad de Valencia
+        E-46980 Paterna, Valencia, Spain}
+		
+		%authors, affiliations, corresponding author mention        
+		\author[epfl]{Giuseppe Carleo}  
+        \address[epfl]{Institute of Physics, École Polytechnique Fédérale de Lausanne (EPFL), CH-1015 Lausanne, Switzerland}
+
+        \author[argonne_phy]{Bryce Fore}
+
+        \author[oslo]{Morten Hjorth-Jensen}
+        \address[oslo]{Department of Physics and Center for Computing in Science Education, University of Oslo, N-0316 Oslo, Norway}
+
+        \author[argonne_phy,ohio]{Jane Kim}
+        \address[ohio]{Institute of Nuclear and Particle Physics and Department of Physics and Astronomy, Ohio University, Athens, OH, 45701, USA}
+               
+        \author[barcelona-fqa,barcelona-icc]{Arnau Rios}
+        \address[barcelona-fqa]{Departament de Física Quàntica i Astrofísica, Universitat de Barcelona (UB), c. Martí i Franquès         1, E08028 Barcelona, Spain}
+        \address[barcelona-icc]{Institut de Ciències del Cosmos, Universitat de Barcelona (UB), c. Martí i Franquès 1, E08028 Barcelona, Spain}
+        
+        \author[fermilab,ific]{Noemi Rocco}
+        \address[fermilab]{Theoretical Physics Department Fermi National Accelerator Laboratory P.O. Box 500 Batavia Illinois 60510 USA}
+		
+        \begin{abstract}
+        A long-standing goal of nuclear theory is to explain how the structure and dynamics of atomic nuclei and neutron-star matter emerge from the underlying interactions among protons and neutrons. Achieving this goal requires solving the nuclear quantum many-body problem with high accuracy across a wide range of length scales and density regimes. In this review, we discuss how artificial neural network representations of the nuclear many-body wave function have significantly extended the capabilities of continuum quantum Monte Carlo methods. In particular, neural-network quantum states enable calculations of larger systems than were previously accessible and provide a flexible framework for capturing phenomena that challenge conventional approaches, including the emergence of nuclear clusters and superfluid phases in dense matter. We highlight recent applications to finite nuclei, infinite nuclear and neutron matter, and dynamical processes relevant to lepton–nucleus and nucleus–nucleus scattering. We also discuss conceptual and methodological connections with condensed matter physics, emphasizing developments in neural-network quantum states that bridge strongly correlated systems across disciplines. Together, these developments demonstrate how neural-network methods open new avenues toward unified and accurate descriptions of nuclear structure, matter, and reactions.
+        \end{abstract}
+        		
+        \begin{keyword}
+        Neural Network Quantum States\sep Nuclear Quantum Many-Body Problem\sep Atomic Nuclei \sep Neutron Star Matter \sep Nuclear Electroweak Interactions
+        \end{keyword}
+		
+	\end{frontmatter}
+	
+	\newpage
+	
+	\thispagestyle{empty}
+	\tableofcontents
+	
+	%to begin the line numbers: 
+	%\linenumbers
+	
+	
+	%beginning of the core of the manuscript
+
+\newpage
+\section{Introduction}
+\label{sec:intro}
+\input{introduction.tex}
+\newpage
+\section{The nuclear quantum many-body problem}
+\label{sec:nmbp}
+\input{nmbp}
+
+\newpage
+\section{Neural-network quantum states for nuclear physics}
+\label{sec:nqs}
+\input{nqs}
+   
+\newpage
+\section{Nuclear Physics Applications}
+\input{applications}
+\label{sec:applications}
+
+\newpage
+\section{Connections to condensed matter physics}
+\label{sub:condensed_matter} 
+\input{condensed_matter}
+
+
+\newpage
+\section{Conclusions and perspectives}
+\label{sec:conclusions}
+\input{conclusions}
+
+
+\newpage
+\section*{Acknowledgments}
+We acknowledge useful discussions with James Keeble, Mehdi Drissi, and Javier Rozalén-Sarmiento.
+
+% Ale, Noemi and Bryce funding
+The present research is supported by the U.S. Department of Energy, Office of Science, Office of Nuclear Physics, under contracts DE-AC02-06CH11357 (A.~L., B.~F.) and DE-FG02-93ER40756 (J.~K.), by the DOE Early Career Research Program (A.~L., B.~F., J.~K.), by the Fermi Research Alliance, LLC under Contract No. DE-AC02-07CH11359 with the U.S. Department of Energy, Office of Science, Office of High Energy Physics (N.~R.), by the SciDAC-5 NeuCol and NUCLEI programs (A.~L., N.~R.). (A.~L., N.~R.) also acknowledge financial support by grant PID2023-147458NB-C21 funded by MCIN/AEI/10.13039/501100011033 and by the European Union. 
+
+% ARNAU'S FUNDING
+A. R. acknowledges financial support from MCIN/AEI/10.13039/501100011033 through grants PID2021-127890NB-I00,; PID2023-147112NB-C22; CNS2022-135529 funded by the “European Union NextGenerationEU/PRTR”, 
+and CEX2024-001451-M  to the “Unit of Excellence Mar\'ia de Maeztu 2025-2031” award to the Institute of Cosmos Sciences; and by the Generalitat de Catalunya, through grant 2021SGR01095. 
+
+% Morten's funding
+M. H. J. has partly been partially supported by the U.S. Department of Energy through grant DE-SC0026198 and the U.S. National Science Foundation through grant PHY-2310020.  
+	
+%\bibliography{biblio}
+
+% ZOTERO SHOULD BE DIRECTLY LINKED TO HERE
+\bibliography{zotero_references}
+	
+	
+\newpage
+\appendix
+\renewcommand*{\thesection}{\Alph{section}}
+	
+%\section{Appendices, if necessary}\label{appendix}
+		
+\end{document}
