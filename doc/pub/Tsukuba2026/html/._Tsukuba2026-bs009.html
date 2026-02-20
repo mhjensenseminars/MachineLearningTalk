@@ -1,0 +1,447 @@
+<!--
+HTML file automatically generated from DocOnce source
+(https://github.com/doconce/doconce/)
+doconce format html Tsukuba2026.do.txt --html_style=bootstrap --pygments_html_style=default --html_admon=bootstrap_panel --html_output=Tsukuba2026-bs --no_mako
+-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="DocOnce: https://github.com/doconce/doconce/" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Machine Learning for Nuclear Physics and Many-body Physics">
+<title>Machine Learning for Nuclear Physics and Many-body Physics</title>
+<!-- Bootstrap style: bootstrap -->
+<!-- doconce format html Tsukuba2026.do.txt --html_style=bootstrap --pygments_html_style=default --html_admon=bootstrap_panel --html_output=Tsukuba2026-bs --no_mako -->
+<link href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+<!-- not necessary
+<link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+-->
+<style type="text/css">
+/* Add scrollbar to dropdown menus in bootstrap navigation bar */
+.dropdown-menu {
+   height: auto;
+   max-height: 400px;
+   overflow-x: hidden;
+}
+/* Adds an invisible element before each target to offset for the navigation
+   bar */
+.anchor::before {
+  content:"";
+  display:block;
+  height:50px;      /* fixed header height for style bootstrap */
+  margin:-50px 0 0; /* negative fixed header height */
+}
+</style>
+</head>
+
+<!-- tocinfo
+{'highest level': 2,
+ 'sections': [('What is this talk about?', 2, None, 'what-is-this-talk-about'),
+              ('Thanks to many', 2, None, 'thanks-to-many'),
+              ('AI/ML and some statements you may have heard (and what do they '
+               'mean?)',
+               2,
+               None,
+               'ai-ml-and-some-statements-you-may-have-heard-and-what-do-they-mean'),
+              ('Qauntum mechanical many-body problems (nuclear example here)',
+               2,
+               None,
+               'qauntum-mechanical-many-body-problems-nuclear-example-here'),
+              ('Curse of dimensionality', 2, None, 'curse-of-dimensionality'),
+              ('Neural network quantum states',
+               2,
+               None,
+               'neural-network-quantum-states'),
+              ('Machine learning. A simple perspective on the interface '
+               'between ML and Physics',
+               2,
+               None,
+               'machine-learning-a-simple-perspective-on-the-interface-between-ml-and-physics'),
+              ('ML in Nuclear  Physics (or any field, almost)',
+               2,
+               None,
+               'ml-in-nuclear-physics-or-any-field-almost'),
+              ('Types of machine learning',
+               2,
+               None,
+               'types-of-machine-learning'),
+              ('Main categories', 2, None, 'main-categories'),
+              ('The plethora  of machine learning algorithms/methods',
+               2,
+               None,
+               'the-plethora-of-machine-learning-algorithms-methods'),
+              ('Example of discriminative modeling, "taken from Generative '
+               'Deep Learning by David '
+               'Foster":"https://www.oreilly.com/library/view/generative-deep-learning/9781098134174/ch01.html"',
+               2,
+               None,
+               'example-of-discriminative-modeling-taken-from-generative-deep-learning-by-david-foster-https-www-oreilly-com-library-view-generative-deep-learning-9781098134174-ch01-html'),
+              ('Example of generative modeling, "taken from Generative Deep '
+               'Learning by David '
+               'Foster":"https://www.oreilly.com/library/view/generative-deep-learning/9781098134174/ch01.html"',
+               2,
+               None,
+               'example-of-generative-modeling-taken-from-generative-deep-learning-by-david-foster-https-www-oreilly-com-library-view-generative-deep-learning-9781098134174-ch01-html'),
+              ('Taxonomy of generative deep learning, "taken from Generative '
+               'Deep Learning by David '
+               'Foster":"https://www.oreilly.com/library/view/generative-deep-learning/9781098134174/ch01.html"',
+               2,
+               None,
+               'taxonomy-of-generative-deep-learning-taken-from-generative-deep-learning-by-david-foster-https-www-oreilly-com-library-view-generative-deep-learning-9781098134174-ch01-html'),
+              ('Good books with hands-on material and codes',
+               2,
+               None,
+               'good-books-with-hands-on-material-and-codes'),
+              ('More references', 2, None, 'more-references'),
+              ('What are the basic Machine Learning ingredients?',
+               2,
+               None,
+               'what-are-the-basic-machine-learning-ingredients'),
+              ('Low-level machine learning, the family of ordinary least '
+               'squares methods',
+               2,
+               None,
+               'low-level-machine-learning-the-family-of-ordinary-least-squares-methods'),
+              ('Setting up the equations', 2, None, 'setting-up-the-equations'),
+              ('The objective/cost/loss function',
+               2,
+               None,
+               'the-objective-cost-loss-function'),
+              ('Training solution', 2, None, 'training-solution'),
+              ('Selected references', 2, None, 'selected-references'),
+              ('Scientific Machine Learning',
+               2,
+               None,
+               'scientific-machine-learning'),
+              ('And more', 2, None, 'and-more'),
+              ('Many-body physics, Quantum Monte Carlo and deep learning',
+               2,
+               None,
+               'many-body-physics-quantum-monte-carlo-and-deep-learning'),
+              ('Quantum Monte Carlo Motivation',
+               2,
+               None,
+               'quantum-monte-carlo-motivation'),
+              ('Quantum Monte Carlo Motivation',
+               2,
+               None,
+               'quantum-monte-carlo-motivation'),
+              ('Energy derivatives', 2, None, 'energy-derivatives'),
+              ('Derivatives of the local energy',
+               2,
+               None,
+               'derivatives-of-the-local-energy'),
+              ('Why Feed Forward Neural Networks (FFNN)?',
+               2,
+               None,
+               'why-feed-forward-neural-networks-ffnn'),
+              ('Universal approximation theorem',
+               2,
+               None,
+               'universal-approximation-theorem'),
+              ('The approximation theorem in words',
+               2,
+               None,
+               'the-approximation-theorem-in-words'),
+              ('More on the general approximation theorem',
+               2,
+               None,
+               'more-on-the-general-approximation-theorem'),
+              ('Class of functions we can approximate',
+               2,
+               None,
+               'class-of-functions-we-can-approximate'),
+              ('Monte Carlo methods and Neural Networks',
+               2,
+               None,
+               'monte-carlo-methods-and-neural-networks'),
+              ('Deep learning neural networks, "Variational Monte Carlo '
+               'calculations of $A\\le 4$ nuclei with an artificial '
+               'neural-network correlator ansatz by Adams et '
+               'al.":"https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.127.022502"',
+               2,
+               None,
+               'deep-learning-neural-networks-variational-monte-carlo-calculations-of-a-le-4-nuclei-with-an-artificial-neural-network-correlator-ansatz-by-adams-et-al-https-journals-aps-org-prl-abstract-10-1103-physrevlett-127-022502'),
+              ('Ansatz for a fermionic state function, Jane Kim et al, Commun '
+               'Phys 7, 148 (2024)',
+               2,
+               None,
+               'ansatz-for-a-fermionic-state-function-jane-kim-et-al-commun-phys-7-148-2024'),
+              ('Nuclear matter setup', 2, None, 'nuclear-matter-setup'),
+              ('Neutron star structure', 2, None, 'neutron-star-structure'),
+              ('"Dilute neutron star matter from neural-network quantum states '
+               'by Fore et al, Physical Review Research 5, 033062 '
+               '(2023)":"https://journals.aps.org/prresearch/pdf/10.1103/PhysRevResearch.5.033062" '
+               'at density $\\rho=0.04$ fm$^{-3}$',
+               2,
+               None,
+               'dilute-neutron-star-matter-from-neural-network-quantum-states-by-fore-et-al-physical-review-research-5-033062-2023-https-journals-aps-org-prresearch-pdf-10-1103-physrevresearch-5-033062-at-density-rho-0-04-fm-3'),
+              ('Pairing and Spin-singlet and triplet two-body distribution '
+               'functions at $\\rho=0.01$ fm$^{-3}$',
+               2,
+               None,
+               'pairing-and-spin-singlet-and-triplet-two-body-distribution-functions-at-rho-0-01-fm-3'),
+              ('Pairing and Spin-singlet and triplet two-body distribution '
+               'functions at $\\rho=0.04$ fm$^{-3}$',
+               2,
+               None,
+               'pairing-and-spin-singlet-and-triplet-two-body-distribution-functions-at-rho-0-04-fm-3'),
+              ('Pairing and Spin-singlet and triplet two-body distribution '
+               'functions at $\\rho=0.08$ fm$^{-3}$',
+               2,
+               None,
+               'pairing-and-spin-singlet-and-triplet-two-body-distribution-functions-at-rho-0-08-fm-3'),
+              ('Self-emerging clustering', 2, None, 'self-emerging-clustering'),
+              ('Clustering: Two-body pair distributions',
+               2,
+               None,
+               'clustering-two-body-pair-distributions'),
+              ('Nuclear matter proton fraction',
+               2,
+               None,
+               'nuclear-matter-proton-fraction'),
+              ('The electron gas in three dimensions with $N=14$ electrons '
+               '(Wigner-Seitz radius $r_s=2$ a.u.), "Gabriel Pescia, Jane Kim '
+               'et al. PRB 110, 035108 '
+               '(2024),":"https://journals.aps.org/prb/abstract/10.1103/PhysRevB.110.035108"',
+               2,
+               None,
+               'the-electron-gas-in-three-dimensions-with-n-14-electrons-wigner-seitz-radius-r-s-2-a-u-gabriel-pescia-jane-kim-et-al-prb-110-035108-2024-https-journals-aps-org-prb-abstract-10-1103-physrevb-110-035108'),
+              ('Switching to quantum dots (ectrons confined in two dimensions)',
+               2,
+               None,
+               'switching-to-quantum-dots-ectrons-confined-in-two-dimensions'),
+              ('Observations (or conclusions if you prefer)',
+               2,
+               None,
+               'observations-or-conclusions-if-you-prefer'),
+              ('More observations', 2, None, 'more-observations'),
+              ('Possible start to raise awareness about ML in our own field',
+               2,
+               None,
+               'possible-start-to-raise-awareness-about-ml-in-our-own-field'),
+              ('Additional material', 2, None, 'additional-material'),
+              ('Our network example, simple percepetron with one input',
+               2,
+               None,
+               'our-network-example-simple-percepetron-with-one-input'),
+              ('Optimizing the parameters',
+               2,
+               None,
+               'optimizing-the-parameters'),
+              ('Implementing the simple perceptron model',
+               2,
+               None,
+               'implementing-the-simple-perceptron-model'),
+              ('Central magic', 2, None, 'central-magic'),
+              ('Essential elements of generative models',
+               2,
+               None,
+               'essential-elements-of-generative-models'),
+              ('Energy models', 2, None, 'energy-models'),
+              ('Probability model', 2, None, 'probability-model'),
+              ('Marginal and conditional probabilities',
+               2,
+               None,
+               'marginal-and-conditional-probabilities'),
+              ('Change of notation', 2, None, 'change-of-notation'),
+              ('Optimization problem', 2, None, 'optimization-problem'),
+              ('Further simplifications', 2, None, 'further-simplifications'),
+              ('Optimizing the logarithm instead',
+               2,
+               None,
+               'optimizing-the-logarithm-instead'),
+              ('Expression for the gradients',
+               2,
+               None,
+               'expression-for-the-gradients'),
+              ('The derivative of the partition function',
+               2,
+               None,
+               'the-derivative-of-the-partition-function'),
+              ('Explicit expression for the derivative',
+               2,
+               None,
+               'explicit-expression-for-the-derivative'),
+              ('Final expression', 2, None, 'final-expression'),
+              ('Introducing the energy model',
+               2,
+               None,
+               'introducing-the-energy-model'),
+              ('More compact notation', 2, None, 'more-compact-notation'),
+              ('Binary-binary model', 2, None, 'binary-binary-model')]}
+end of tocinfo -->
+
+<body>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+     equationNumbers: {  autoNumber: "none"  },
+     extensions: ["AMSmath.js", "AMSsymbols.js", "autobold.js", "color.js"]
+  }
+});
+</script>
+<script type="text/javascript" async
+ src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<!-- Bootstrap navigation bar -->
+<div class="navbar navbar-default navbar-fixed-top">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="Tsukuba2026-bs.html">Machine Learning for Nuclear Physics and Many-body Physics</a>
+  </div>
+  <div class="navbar-collapse collapse navbar-responsive-collapse">
+    <ul class="nav navbar-nav navbar-right">
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Contents <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+     <!-- navigation toc: --> <li><a href="._Tsukuba2026-bs001.html#what-is-this-talk-about" style="font-size: 80%;">What is this talk about?</a></li>
+     <!-- navigation toc: --> <li><a href="._Tsukuba2026-bs002.html#thanks-to-many" style="font-size: 80%;">Thanks to many</a></li>
+     <!-- navigation toc: --> <li><a href="._Tsukuba2026-bs003.html#ai-ml-and-some-statements-you-may-have-heard-and-what-do-they-mean" style="font-size: 80%;">AI/ML and some statements you may have heard (and what do they mean?)</a></li>
+     <!-- navigation toc: --> <li><a href="._Tsukuba2026-bs004.html#qauntum-mechanical-many-body-problems-nuclear-example-here" style="font-size: 80%;">Qauntum mechanical many-body problems (nuclear example here)</a></li>
+     <!-- navigation toc: --> <li><a href="._Tsukuba2026-bs005.html#curse-of-dimensionality" style="font-size: 80%;">Curse of dimensionality</a></li>
+     <!-- navigation toc: --> <li><a href="._Tsukuba2026-bs006.html#neural-network-quantum-states" style="font-size: 80%;">Neural network quantum states</a></li>
+     <!-- navigation toc: --> <li><a href="._Tsukuba2026-bs007.html#machine-learning-a-simple-perspective-on-the-interface-between-ml-and-physics" style="font-size: 80%;">Machine learning. A simple perspective on the interface between ML and Physics</a></li>
+     <!-- navigation toc: --> <li><a href="._Tsukuba2026-bs008.html#ml-in-nuclear-physics-or-any-field-almost" style="font-size: 80%;">ML in Nuclear  Physics (or any field, almost)</a></li>
+     <!-- navigation toc: --> <li><a href="#types-of-machine-learning" style="font-size: 80%;">Types of machine learning</a></li>
+     <!-- navigation toc: --> <li><a href="._Tsukuba2026-bs010.html#main-categories" style="font-size: 80%;">Main categories</a></li>
+     <!-- navigation toc: --> <li><a href="._Tsukuba2026-bs011.html#the-plethora-of-machine-learning-algorithms-methods" style="font-size: 80%;">The plethora  of machine learning algorithms/methods</a></li>
+     <!-- navigation toc: --> <li><a href="._Tsukuba2026-bs012.html#example-of-discriminative-modeling-taken-from-generative-deep-learning-by-david-foster-https-www-oreilly-com-library-view-generative-deep-learning-9781098134174-ch01-html" style="font-size: 80%;">Example of discriminative modeling, "taken from Generative Deep Learning by David Foster":"https://www.oreilly.com/library/view/generative-deep-learning/9781098134174/ch01.html"</a></li>
+     <!-- navigation toc: --> <li><a href="._Tsukuba2026-bs013.html#example-of-generative-modeling-taken-from-generative-deep-learning-by-david-foster-https-www-oreilly-com-library-view-generative-deep-learning-9781098134174-ch01-html" style="font-size: 80%;">Example of generative modeling, "taken from Generative Deep Learning by David Foster":"https://www.oreilly.com/library/view/generative-deep-learning/9781098134174/ch01.html"</a></li>
+     <!-- navigation toc: --> <li><a href="._Tsukuba2026-bs014.html#taxonomy-of-generative-deep-learning-taken-from-generative-deep-learning-by-david-foster-https-www-oreilly-com-library-view-generative-deep-learning-9781098134174-ch01-html" style="font-size: 80%;">Taxonomy of generative deep learning, "taken from Generative Deep Learning by David Foster":"https://www.oreilly.com/library/view/generative-deep-learning/9781098134174/ch01.html"</a></li>
+     <!-- navigation toc: --> <li><a href="._Tsukuba2026-bs015.html#good-books-with-hands-on-material-and-codes" style="font-size: 80%;">Good books with hands-on material and codes</a></li>
+     <!-- navigation toc: --> <li><a href="._Tsukuba2026-bs016.html#more-references" style="font-size: 80%;">More references</a></li>
+     <!-- navigation toc: --> <li><a href="._Tsukuba2026-bs017.html#what-are-the-basic-machine-learning-ingredients" style="font-size: 80%;">What are the basic Machine Learning ingredients?</a></li>
+     <!-- navigation toc: --> <li><a href="._Tsukuba2026-bs018.html#low-level-machine-learning-the-family-of-ordinary-least-squares-methods" style="font-size: 80%;">Low-level machine learning, the family of ordinary least squares methods</a></li>
+     <!-- navigation toc: --> <li><a href="._Tsukuba2026-bs019.html#setting-up-the-equations" style="font-size: 80%;">Setting up the equations</a></li>
+     <!-- navigation toc: --> <li><a href="._Tsukuba2026-bs020.html#the-objective-cost-loss-function" style="font-size: 80%;">The objective/cost/loss function</a></li>
+     <!-- navigation toc: --> <li><a href="._Tsukuba2026-bs021.html#training-solution" style="font-size: 80%;">Training solution</a></li>
+     <!-- navigation toc: --> <li><a href="._Tsukuba2026-bs022.html#selected-references" style="font-size: 80%;">Selected references</a></li>
+     <!-- navigation toc: --> <li><a href="._Tsukuba2026-bs023.html#scientific-machine-learning" style="font-size: 80%;">Scientific Machine Learning</a></li>
+     <!-- navigation toc: --> <li><a href="._Tsukuba2026-bs024.html#and-more" style="font-size: 80%;">And more</a></li>
+     <!-- navigation toc: --> <li><a href="._Tsukuba2026-bs025.html#many-body-physics-quantum-monte-carlo-and-deep-learning" style="font-size: 80%;">Many-body physics, Quantum Monte Carlo and deep learning</a></li>
+     <!-- navigation toc: --> <li><a href="._Tsukuba2026-bs027.html#quantum-monte-carlo-motivation" style="font-size: 80%;">Quantum Monte Carlo Motivation</a></li>
+     <!-- navigation toc: --> <li><a href="._Tsukuba2026-bs027.html#quantum-monte-carlo-motivation" style="font-size: 80%;">Quantum Monte Carlo Motivation</a></li>
+     <!-- navigation toc: --> <li><a href="._Tsukuba2026-bs028.html#energy-derivatives" style="font-size: 80%;">Energy derivatives</a></li>
+     <!-- navigation toc: --> <li><a href="._Tsukuba2026-bs029.html#derivatives-of-the-local-energy" style="font-size: 80%;">Derivatives of the local energy</a></li>
+     <!-- navigation toc: --> <li><a href="._Tsukuba2026-bs030.html#why-feed-forward-neural-networks-ffnn" style="font-size: 80%;">Why Feed Forward Neural Networks (FFNN)?</a></li>
+     <!-- navigation toc: --> <li><a href="._Tsukuba2026-bs031.html#universal-approximation-theorem" style="font-size: 80%;">Universal approximation theorem</a></li>
+     <!-- navigation toc: --> <li><a href="._Tsukuba2026-bs032.html#the-approximation-theorem-in-words" style="font-size: 80%;">The approximation theorem in words</a></li>
+     <!-- navigation toc: --> <li><a href="._Tsukuba2026-bs033.html#more-on-the-general-approximation-theorem" style="font-size: 80%;">More on the general approximation theorem</a></li>
+     <!-- navigation toc: --> <li><a href="._Tsukuba2026-bs034.html#class-of-functions-we-can-approximate" style="font-size: 80%;">Class of functions we can approximate</a></li>
+     <!-- navigation toc: --> <li><a href="._Tsukuba2026-bs035.html#monte-carlo-methods-and-neural-networks" style="font-size: 80%;">Monte Carlo methods and Neural Networks</a></li>
+     <!-- navigation toc: --> <li><a href="._Tsukuba2026-bs036.html#deep-learning-neural-networks-variational-monte-carlo-calculations-of-a-le-4-nuclei-with-an-artificial-neural-network-correlator-ansatz-by-adams-et-al-https-journals-aps-org-prl-abstract-10-1103-physrevlett-127-022502" style="font-size: 80%;">Deep learning neural networks, "Variational Monte Carlo calculations of \( A\le 4 \) nuclei with an artificial neural-network correlator ansatz by Adams et al.":"https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.127.022502"</a></li>
+     <!-- navigation toc: --> <li><a href="._Tsukuba2026-bs037.html#ansatz-for-a-fermionic-state-function-jane-kim-et-al-commun-phys-7-148-2024" style="font-size: 80%;">Ansatz for a fermionic state function, Jane Kim et al, Commun Phys 7, 148 (2024)</a></li>
+     <!-- navigation toc: --> <li><a href="._Tsukuba2026-bs038.html#nuclear-matter-setup" style="font-size: 80%;">Nuclear matter setup</a></li>
+     <!-- navigation toc: --> <li><a href="._Tsukuba2026-bs039.html#neutron-star-structure" style="font-size: 80%;">Neutron star structure</a></li>
+     <!-- navigation toc: --> <li><a href="._Tsukuba2026-bs040.html#dilute-neutron-star-matter-from-neural-network-quantum-states-by-fore-et-al-physical-review-research-5-033062-2023-https-journals-aps-org-prresearch-pdf-10-1103-physrevresearch-5-033062-at-density-rho-0-04-fm-3" style="font-size: 80%;">"Dilute neutron star matter from neural-network quantum states by Fore et al, Physical Review Research 5, 033062 (2023)":"https://journals.aps.org/prresearch/pdf/10.1103/PhysRevResearch.5.033062" at density \( \rho=0.04 \) fm$^{-3}$</a></li>
+     <!-- navigation toc: --> <li><a href="._Tsukuba2026-bs041.html#pairing-and-spin-singlet-and-triplet-two-body-distribution-functions-at-rho-0-01-fm-3" style="font-size: 80%;">Pairing and Spin-singlet and triplet two-body distribution functions at \( \rho=0.01 \) fm$^{-3}$</a></li>
+     <!-- navigation toc: --> <li><a href="._Tsukuba2026-bs042.html#pairing-and-spin-singlet-and-triplet-two-body-distribution-functions-at-rho-0-04-fm-3" style="font-size: 80%;">Pairing and Spin-singlet and triplet two-body distribution functions at \( \rho=0.04 \) fm$^{-3}$</a></li>
+     <!-- navigation toc: --> <li><a href="._Tsukuba2026-bs043.html#pairing-and-spin-singlet-and-triplet-two-body-distribution-functions-at-rho-0-08-fm-3" style="font-size: 80%;">Pairing and Spin-singlet and triplet two-body distribution functions at \( \rho=0.08 \) fm$^{-3}$</a></li>
+     <!-- navigation toc: --> <li><a href="._Tsukuba2026-bs044.html#self-emerging-clustering" style="font-size: 80%;">Self-emerging clustering</a></li>
+     <!-- navigation toc: --> <li><a href="._Tsukuba2026-bs045.html#clustering-two-body-pair-distributions" style="font-size: 80%;">Clustering: Two-body pair distributions</a></li>
+     <!-- navigation toc: --> <li><a href="._Tsukuba2026-bs046.html#nuclear-matter-proton-fraction" style="font-size: 80%;">Nuclear matter proton fraction</a></li>
+     <!-- navigation toc: --> <li><a href="._Tsukuba2026-bs047.html#the-electron-gas-in-three-dimensions-with-n-14-electrons-wigner-seitz-radius-r-s-2-a-u-gabriel-pescia-jane-kim-et-al-prb-110-035108-2024-https-journals-aps-org-prb-abstract-10-1103-physrevb-110-035108" style="font-size: 80%;">The electron gas in three dimensions with \( N=14 \) electrons (Wigner-Seitz radius \( r_s=2 \) a.u.), "Gabriel Pescia, Jane Kim et al. PRB 110, 035108 (2024),":"https://journals.aps.org/prb/abstract/10.1103/PhysRevB.110.035108"</a></li>
+     <!-- navigation toc: --> <li><a href="._Tsukuba2026-bs048.html#switching-to-quantum-dots-ectrons-confined-in-two-dimensions" style="font-size: 80%;">Switching to quantum dots (ectrons confined in two dimensions)</a></li>
+     <!-- navigation toc: --> <li><a href="._Tsukuba2026-bs049.html#observations-or-conclusions-if-you-prefer" style="font-size: 80%;">Observations (or conclusions if you prefer)</a></li>
+     <!-- navigation toc: --> <li><a href="._Tsukuba2026-bs050.html#more-observations" style="font-size: 80%;">More observations</a></li>
+     <!-- navigation toc: --> <li><a href="._Tsukuba2026-bs051.html#possible-start-to-raise-awareness-about-ml-in-our-own-field" style="font-size: 80%;">Possible start to raise awareness about ML in our own field</a></li>
+     <!-- navigation toc: --> <li><a href="._Tsukuba2026-bs052.html#additional-material" style="font-size: 80%;">Additional material</a></li>
+     <!-- navigation toc: --> <li><a href="._Tsukuba2026-bs053.html#our-network-example-simple-percepetron-with-one-input" style="font-size: 80%;">Our network example, simple percepetron with one input</a></li>
+     <!-- navigation toc: --> <li><a href="._Tsukuba2026-bs054.html#optimizing-the-parameters" style="font-size: 80%;">Optimizing the parameters</a></li>
+     <!-- navigation toc: --> <li><a href="._Tsukuba2026-bs055.html#implementing-the-simple-perceptron-model" style="font-size: 80%;">Implementing the simple perceptron model</a></li>
+     <!-- navigation toc: --> <li><a href="._Tsukuba2026-bs056.html#central-magic" style="font-size: 80%;">Central magic</a></li>
+     <!-- navigation toc: --> <li><a href="._Tsukuba2026-bs057.html#essential-elements-of-generative-models" style="font-size: 80%;">Essential elements of generative models</a></li>
+     <!-- navigation toc: --> <li><a href="._Tsukuba2026-bs058.html#energy-models" style="font-size: 80%;">Energy models</a></li>
+     <!-- navigation toc: --> <li><a href="._Tsukuba2026-bs059.html#probability-model" style="font-size: 80%;">Probability model</a></li>
+     <!-- navigation toc: --> <li><a href="._Tsukuba2026-bs060.html#marginal-and-conditional-probabilities" style="font-size: 80%;">Marginal and conditional probabilities</a></li>
+     <!-- navigation toc: --> <li><a href="._Tsukuba2026-bs061.html#change-of-notation" style="font-size: 80%;">Change of notation</a></li>
+     <!-- navigation toc: --> <li><a href="._Tsukuba2026-bs062.html#optimization-problem" style="font-size: 80%;">Optimization problem</a></li>
+     <!-- navigation toc: --> <li><a href="._Tsukuba2026-bs063.html#further-simplifications" style="font-size: 80%;">Further simplifications</a></li>
+     <!-- navigation toc: --> <li><a href="._Tsukuba2026-bs064.html#optimizing-the-logarithm-instead" style="font-size: 80%;">Optimizing the logarithm instead</a></li>
+     <!-- navigation toc: --> <li><a href="._Tsukuba2026-bs065.html#expression-for-the-gradients" style="font-size: 80%;">Expression for the gradients</a></li>
+     <!-- navigation toc: --> <li><a href="._Tsukuba2026-bs066.html#the-derivative-of-the-partition-function" style="font-size: 80%;">The derivative of the partition function</a></li>
+     <!-- navigation toc: --> <li><a href="._Tsukuba2026-bs067.html#explicit-expression-for-the-derivative" style="font-size: 80%;">Explicit expression for the derivative</a></li>
+     <!-- navigation toc: --> <li><a href="._Tsukuba2026-bs068.html#final-expression" style="font-size: 80%;">Final expression</a></li>
+     <!-- navigation toc: --> <li><a href="._Tsukuba2026-bs069.html#introducing-the-energy-model" style="font-size: 80%;">Introducing the energy model</a></li>
+     <!-- navigation toc: --> <li><a href="._Tsukuba2026-bs070.html#more-compact-notation" style="font-size: 80%;">More compact notation</a></li>
+     <!-- navigation toc: --> <li><a href="._Tsukuba2026-bs071.html#binary-binary-model" style="font-size: 80%;">Binary-binary model</a></li>
+
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
+</div> <!-- end of navigation bar -->
+<div class="container">
+<p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p> <!-- add vertical space -->
+<a name="part0009"></a>
+<!-- !split -->
+<h2 id="types-of-machine-learning" class="anchor">Types of machine learning </h2>
+
+<div class="panel panel-default">
+<div class="panel-body">
+<!-- subsequent paragraphs come in larger fonts, so start with a paragraph -->
+<p>The approaches to machine learning are many, but are often split into two main categories. 
+In <em>supervised learning</em> we know the answer to a problem,
+and let the computer deduce the logic behind it. On the other hand, <em>unsupervised learning</em>
+is a method for finding patterns and relationship in data sets without any prior knowledge of the system.
+</p>
+
+<p>An important  third category is  <em>reinforcement learning</em>. This is a paradigm 
+of learning inspired by behavioural psychology, where learning is achieved by trial-and-error, 
+solely from rewards and punishment.
+</p>
+</div>
+</div>
+
+
+<p>
+<!-- navigation buttons at the bottom of the page -->
+<ul class="pagination">
+<li><a href="._Tsukuba2026-bs008.html">&laquo;</a></li>
+  <li><a href="._Tsukuba2026-bs000.html">1</a></li>
+  <li><a href="._Tsukuba2026-bs001.html">2</a></li>
+  <li><a href="._Tsukuba2026-bs002.html">3</a></li>
+  <li><a href="._Tsukuba2026-bs003.html">4</a></li>
+  <li><a href="._Tsukuba2026-bs004.html">5</a></li>
+  <li><a href="._Tsukuba2026-bs005.html">6</a></li>
+  <li><a href="._Tsukuba2026-bs006.html">7</a></li>
+  <li><a href="._Tsukuba2026-bs007.html">8</a></li>
+  <li><a href="._Tsukuba2026-bs008.html">9</a></li>
+  <li class="active"><a href="._Tsukuba2026-bs009.html">10</a></li>
+  <li><a href="._Tsukuba2026-bs010.html">11</a></li>
+  <li><a href="._Tsukuba2026-bs011.html">12</a></li>
+  <li><a href="._Tsukuba2026-bs012.html">13</a></li>
+  <li><a href="._Tsukuba2026-bs013.html">14</a></li>
+  <li><a href="._Tsukuba2026-bs014.html">15</a></li>
+  <li><a href="._Tsukuba2026-bs015.html">16</a></li>
+  <li><a href="._Tsukuba2026-bs016.html">17</a></li>
+  <li><a href="._Tsukuba2026-bs017.html">18</a></li>
+  <li><a href="._Tsukuba2026-bs018.html">19</a></li>
+  <li><a href="">...</a></li>
+  <li><a href="._Tsukuba2026-bs071.html">72</a></li>
+  <li><a href="._Tsukuba2026-bs010.html">&raquo;</a></li>
+</ul>
+<!-- ------------------- end of main content --------------- -->
+</div>  <!-- end container -->
+<!-- include javascript, jQuery *first* -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<!-- Bootstrap footer
+<footer>
+<a href="https://..."><img width="250" align=right src="https://..."></a>
+</footer>
+-->
+</body>
+</html>
+
