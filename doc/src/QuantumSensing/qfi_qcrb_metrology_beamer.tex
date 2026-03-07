@@ -1,0 +1,347 @@
+
+\documentclass[aspectratio=169]{beamer}
+\usetheme{Madrid}
+
+\usepackage{amsmath,amssymb,amsfonts,bm}
+\usepackage{physics}
+
+\title{Quantum Fisher Information and Quantum Cramér–Rao Bound}
+\subtitle{Graduate Mini-Course on Quantum Metrology and Sensing}
+\author{}
+\date{}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\begin{frame}{Mini-course structure}
+This Beamer document is a structured graduate mini-course covering:
+\begin{itemize}
+\item Classical Fisher information and Cramér–Rao bound
+\item Quantum statistical models
+\item Symmetric logarithmic derivative (SLD)
+\item Derivation of Quantum Fisher Information (QFI)
+\item Quantum Cramér–Rao bound (QCRB)
+\item QFI for pure and mixed states
+\item Bures metric and fidelity geometry
+\item Ramsey interferometry
+\item Spin sensors and magnetic field estimation
+\item GHZ and squeezed states
+\item Multi-parameter estimation
+\item Noise and decoherence effects
+\item Bayesian estimation
+\item Numerical examples
+\end{itemize}
+\end{frame}
+
+\section{Classical Estimation Theory}
+
+\begin{frame}{Parameter estimation}
+Suppose a parameter $\theta$ determines a probability distribution
+\begin{equation}
+p(x|\theta).
+\end{equation}
+
+An estimator $\hat{\theta}$ is constructed from measurement outcomes.
+
+The variance of the estimator is
+
+\begin{equation}
+\mathrm{Var}(\hat{\theta})
+=
+\langle(\hat{\theta}-\theta)^2\rangle .
+\end{equation}
+\end{frame}
+
+\begin{frame}{Classical Fisher information}
+The Fisher information is defined as
+
+\begin{equation}
+F(\theta)
+=
+\sum_x
+p(x|\theta)
+\left(
+\frac{\partial}{\partial \theta}
+\ln p(x|\theta)
+\right)^2 .
+\end{equation}
+
+Equivalent form
+
+\begin{equation}
+F(\theta)
+=
+\sum_x
+\frac{1}{p(x|\theta)}
+\left(
+\frac{\partial p(x|\theta)}{\partial \theta}
+\right)^2 .
+\end{equation}
+\end{frame}
+
+\begin{frame}{Cramér–Rao bound}
+For unbiased estimators
+
+\begin{equation}
+\mathrm{Var}(\hat{\theta})
+\ge
+\frac{1}{M F(\theta)}
+\end{equation}
+
+where
+
+\begin{itemize}
+\item $M$ is number of measurements
+\item $F(\theta)$ is Fisher information.
+\end{itemize}
+\end{frame}
+
+\section{Quantum Estimation}
+
+\begin{frame}{Quantum statistical model}
+
+In quantum mechanics
+
+\begin{equation}
+\rho(\theta)
+\end{equation}
+
+depends on the unknown parameter.
+
+Measurement outcomes follow
+
+\begin{equation}
+p(x|\theta)
+=
+\mathrm{Tr}[\rho(\theta) E_x].
+\end{equation}
+
+where $E_x$ are POVM elements.
+\end{frame}
+
+\begin{frame}{Quantum Fisher Information}
+
+The maximal achievable Fisher information over all measurements is
+
+\begin{equation}
+F_Q(\theta)
+=
+\max_{E_x} F(\theta).
+\end{equation}
+
+This quantity is the \textbf{Quantum Fisher Information}.
+\end{frame}
+
+\section{Symmetric Logarithmic Derivative}
+
+\begin{frame}{SLD definition}
+
+The symmetric logarithmic derivative $L_\theta$ is defined via
+
+\begin{equation}
+\frac{\partial \rho}{\partial \theta}
+=
+\frac12 (\rho L_\theta + L_\theta \rho).
+\end{equation}
+\end{frame}
+
+\begin{frame}{QFI formula}
+
+The QFI can be written
+
+\begin{equation}
+F_Q(\theta)
+=
+\mathrm{Tr}(\rho L_\theta^2).
+\end{equation}
+\end{frame}
+
+\section{Pure States}
+
+\begin{frame}{Pure-state QFI}
+
+For
+
+\begin{equation}
+\rho = |\psi\rangle \langle \psi|
+\end{equation}
+
+the QFI becomes
+
+\begin{equation}
+F_Q =
+4\left(
+\langle \partial_\theta \psi | \partial_\theta \psi \rangle
+-
+|\langle \psi | \partial_\theta \psi \rangle|^2
+\right).
+\end{equation}
+\end{frame}
+
+\begin{frame}{Unitary encoding}
+
+If
+
+\begin{equation}
+|\psi(\theta)\rangle
+=
+e^{-i\theta G}|\psi_0\rangle
+\end{equation}
+
+then
+
+\begin{equation}
+F_Q = 4 \mathrm{Var}(G).
+\end{equation}
+\end{frame}
+
+\section{Spin Sensors}
+
+\begin{frame}{Magnetic field sensing}
+
+Hamiltonian
+
+\begin{equation}
+H = \gamma B S_z
+\end{equation}
+
+State evolution
+
+\begin{equation}
+|\psi(B)\rangle = e^{-i \gamma B t S_z} |\psi_0\rangle
+\end{equation}
+
+The QFI becomes
+
+\begin{equation}
+F_Q = 4 t^2 \mathrm{Var}(S_z).
+\end{equation}
+\end{frame}
+
+\section{Ramsey Interferometry}
+
+\begin{frame}{Ramsey protocol}
+
+Steps
+
+\begin{enumerate}
+\item Prepare superposition
+\item Free evolution
+\item Interference measurement
+\end{enumerate}
+
+Probability
+
+\begin{equation}
+P(\uparrow) = \frac12 (1+\cos(\theta)).
+\end{equation}
+\end{frame}
+
+\begin{frame}{QFI of Ramsey experiment}
+
+For $N$ independent spins
+
+\begin{equation}
+F_Q = N t^2.
+\end{equation}
+
+Precision
+
+\begin{equation}
+\Delta \theta = \frac{1}{\sqrt{N} t}.
+\end{equation}
+
+Standard Quantum Limit.
+\end{frame}
+
+\section{Entangled Sensors}
+
+\begin{frame}{GHZ states}
+
+\begin{equation}
+|\mathrm{GHZ}\rangle
+=
+\frac{1}{\sqrt2}(|000\rangle + |111\rangle)
+\end{equation}
+
+For $N$ particles
+
+\begin{equation}
+F_Q = N^2 t^2.
+\end{equation}
+\end{frame}
+
+\begin{frame}{Heisenberg limit}
+
+Precision scaling
+
+\begin{equation}
+\Delta \theta = \frac{1}{N}.
+\end{equation}
+
+Better than standard quantum limit.
+\end{frame}
+
+\section{Geometry}
+
+\begin{frame}{Bures metric}
+
+Quantum Fisher information defines the metric
+
+\begin{equation}
+ds^2 = \frac14 F_Q d\theta^2.
+\end{equation}
+
+This is the Bures metric on quantum state space.
+\end{frame}
+
+\section{Noise}
+
+\begin{frame}{Decoherence}
+
+Dephasing reduces QFI
+
+\begin{equation}
+F_Q(t) = N t^2 e^{-\gamma t}.
+\end{equation}
+
+Optimal sensing time exists.
+\end{frame}
+
+\section{Bayesian Estimation}
+
+\begin{frame}{Bayesian approach}
+
+Posterior distribution
+
+\begin{equation}
+p(\theta|x)
+\propto
+p(x|\theta)p(\theta).
+\end{equation}
+
+Allows sequential updating.
+\end{frame}
+
+\begin{frame}{Summary}
+
+Key results:
+
+\begin{itemize}
+\item Fisher information quantifies sensitivity
+\item QFI gives optimal achievable precision
+\item Quantum Cramér–Rao bound
+
+\begin{equation}
+\mathrm{Var}(\hat{\theta})
+\ge
+\frac{1}{M F_Q}.
+\end{equation}
+
+\item Entanglement enhances precision
+\end{itemize}
+
+\end{frame}
+
+\end{document}
