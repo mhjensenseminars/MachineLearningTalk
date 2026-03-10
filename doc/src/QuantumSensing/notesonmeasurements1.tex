@@ -1,0 +1,539 @@
+\documentclass{beamer}
+
+\usepackage{amsmath,amssymb,amsfonts,bm}
+\usepackage{physics}
+\usepackage{braket}
+
+\title{Entanglement-Sensitive Observables for a Two-Qubit Quantum Sensor}
+\subtitle{Spin and Spatial Entanglement, Collective Observables, and Links to High-Energy Physics}
+\author{}
+\date{}
+
+\begin{document}
+
+%================================================
+\begin{frame}
+  \titlepage
+\end{frame}
+
+%================================================
+\begin{frame}{Motivation}
+
+Consider two qubits used as a prototype quantum sensor.
+The qubits may be entangled in
+\begin{itemize}
+    \item spin,
+    \item spatial mode,
+    \item or both.
+\end{itemize}
+
+A natural question is:
+\begin{quote}
+Which observables best reveal the role of entanglement in the sensing protocol?
+\end{quote}
+
+A second question is whether one can go beyond local measurements and use
+observables acting on the whole two-qubit system.
+
+\end{frame}
+
+%================================================
+\begin{frame}{Basic Setup}
+
+Let the two qubits be labeled $A$ and $B$.
+For spin-$1/2$ degrees of freedom, define Pauli operators
+\[
+\sigma_x^{(A)},\sigma_y^{(A)},\sigma_z^{(A)},\qquad
+\sigma_x^{(B)},\sigma_y^{(B)},\sigma_z^{(B)}.
+\]
+
+We may also define collective operators
+\[
+J_\alpha = \frac{1}{2}\left(\sigma_\alpha^{(A)}+\sigma_\alpha^{(B)}\right),
+\qquad \alpha=x,y,z.
+\]
+
+If one qubit couples to a magnetic field $B$, a simple interaction Hamiltonian is
+\[
+H_{\mathrm{int}} = \frac{\gamma B}{2}\sigma_z^{(A)}.
+\]
+
+A more symmetric model is
+\[
+H_{\mathrm{int}} = \frac{\gamma_A B_A}{2}\sigma_z^{(A)}+
+\frac{\gamma_B B_B}{2}\sigma_z^{(B)}.
+\]
+
+\end{frame}
+
+%================================================
+\begin{frame}{Canonical Entangled Sensor States}
+
+Typical two-qubit entangled states include the Bell states
+\begin{align}
+\ket{\Phi^\pm} &= \frac{1}{\sqrt{2}}(\ket{00}\pm\ket{11}),\\
+\ket{\Psi^\pm} &= \frac{1}{\sqrt{2}}(\ket{01}\pm\ket{10}).
+\end{align}
+
+For sensing, these states are important because they respond differently to
+common-mode and differential fields.
+
+Examples:
+\begin{itemize}
+    \item $\ket{\Phi^\pm}$ are sensitive to collective phase accumulation,
+    \item $\ket{\Psi^\pm}$ can be sensitive to phase gradients and differential couplings.
+\end{itemize}
+
+\end{frame}
+
+%================================================
+\begin{frame}{Local Observables}
+
+The most obvious observables are local spin components:
+\[
+\expval{\sigma_\alpha^{(A)}}, \qquad \expval{\sigma_\alpha^{(B)}}.
+\]
+
+If only qubit $A$ is exposed to the signal field, then
+\[
+\expval{\sigma_z^{(A)}}, \quad \expval{\sigma_x^{(A)}}, \quad \expval{\sigma_y^{(A)}}
+\]
+can reveal local phase accumulation.
+
+However, these local observables do not always capture the metrological value
+of entanglement. In many cases, entanglement is invisible in all one-body marginals
+but appears clearly in correlations.
+
+\end{frame}
+
+%================================================
+\begin{frame}{Two-Body Correlation Observables}
+
+The simplest genuinely nonlocal observables are correlators
+\[
+C_{\alpha\beta}=\expval{\sigma_\alpha^{(A)}\sigma_\beta^{(B)}},
+\qquad \alpha,\beta\in\{x,y,z\}.
+\]
+
+Important examples:
+\begin{align}
+\expval{\sigma_z^{(A)}\sigma_z^{(B)}}, \\
+\expval{\sigma_x^{(A)}\sigma_x^{(B)}}, \\
+\expval{\sigma_y^{(A)}\sigma_y^{(B)}}.
+\end{align}
+
+These observables:
+\begin{itemize}
+    \item distinguish Bell states,
+    \item quantify alignment/anti-alignment,
+    \item detect how phase information is encoded jointly in the two qubits.
+\end{itemize}
+
+They are often the most direct observables for testing whether entanglement improves sensing.
+
+\end{frame}
+
+%================================================
+\begin{frame}{Connected Correlators}
+
+A better diagnostic than the raw correlator is often the connected correlation
+\[
+\langle \sigma_\alpha^{(A)}\sigma_\beta^{(B)} \rangle_c
+=
+\expval{\sigma_\alpha^{(A)}\sigma_\beta^{(B)}}
+-
+\expval{\sigma_\alpha^{(A)}}\expval{\sigma_\beta^{(B)}}.
+\]
+
+Why useful?
+\begin{itemize}
+    \item It removes trivial product-state contributions.
+    \item It isolates genuine correlation effects.
+    \item It is often nonzero precisely when entanglement is operationally relevant.
+\end{itemize}
+
+In sensing, a strong field dependence of connected correlators can signal
+that the parameter is encoded nonlocally.
+
+\end{frame}
+
+%================================================
+\begin{frame}{Collective Spin Observables}
+
+Observables acting on the whole system include
+\[
+J_x,\qquad J_y,\qquad J_z
+\]
+and quadratic forms
+\[
+J_x^2,\qquad J_y^2,\qquad J_z^2.
+\]
+
+For two qubits,
+\[
+J_\alpha^2 = \frac{1}{2}\left(I+\sigma_\alpha^{(A)}\sigma_\alpha^{(B)}\right).
+\]
+
+Thus collective spin fluctuations directly probe two-body correlations.
+
+Important quantities:
+\begin{align}
+\expval{J_\alpha}, \\
+(\Delta J_\alpha)^2 = \expval{J_\alpha^2}-\expval{J_\alpha}^2.
+\end{align}
+
+These are natural observables for testing whether entanglement sharpens or broadens phase sensitivity.
+
+\end{frame}
+
+%================================================
+\begin{frame}{Parity Observables}
+
+A very important global observable is parity.
+For example, along the $z$ axis:
+\[
+\Pi_z = \sigma_z^{(A)}\sigma_z^{(B)}.
+\]
+
+More generally, after a collective rotation one can measure
+\[
+\Pi(\phi) = U^\dagger(\phi)\,\sigma_z^{(A)}\sigma_z^{(B)}\,U(\phi).
+\]
+
+Parity is central in quantum metrology because
+\begin{itemize}
+    \item it is highly sensitive to phase accumulation,
+    \item it can saturate optimal sensitivity in some entangled interferometers,
+    \item it is directly measurable in many qubit platforms.
+\end{itemize}
+
+For Bell-like states, parity oscillations are often a clean signature of entanglement-enhanced sensing.
+
+\end{frame}
+
+%================================================
+\begin{frame}{Bell Operators and CHSH-Type Observables}
+
+Another nonlocal observable class is the Bell operator, e.g.
+\[
+\mathcal{B}
+=
+\mathbf{a}\cdot\bm{\sigma}^{(A)}\otimes
+(\mathbf{b}+\mathbf{b}')\cdot\bm{\sigma}^{(B)}
++
+\mathbf{a}'\cdot\bm{\sigma}^{(A)}\otimes
+(\mathbf{b}-\mathbf{b}')\cdot\bm{\sigma}^{(B)}.
+\]
+
+Its expectation value probes Bell nonlocality.
+
+Why relevant for sensing?
+\begin{itemize}
+    \item Bell-operator expectation values are built from precisely the correlators
+    that encode nonclassical joint response.
+    \item If the signal changes $\expval{\mathcal{B}}$, then the sensing process is affecting
+    nonlocal quantum correlations, not merely local polarization.
+\end{itemize}
+
+This is especially useful when studying robustness of sensing advantage against decoherence.
+
+\end{frame}
+
+%================================================
+\begin{frame}{Quantum Fisher Information as the Central Quantity}
+
+For parameter estimation, the most important quantity is often the
+quantum Fisher information (QFI),
+\[
+F_Q[\rho,G],
+\]
+where $G$ is the generator of the parameter encoding.
+
+For pure states,
+\[
+F_Q = 4(\Delta G)^2.
+\]
+
+Thus the observable content is encoded in the variance of the generator.
+
+Examples:
+\begin{itemize}
+    \item If the field couples only to qubit $A$, then $G=\sigma_z^{(A)}/2$.
+    \item If the field couples collectively, then $G=J_z$.
+    \item If one probes a gradient field, then $G=(\sigma_z^{(A)}-\sigma_z^{(B)})/2$.
+\end{itemize}
+
+Entanglement helps when it enhances the variance of the relevant global generator.
+
+\end{frame}
+
+%================================================
+\begin{frame}{Observables for Uniform and Gradient Fields}
+
+Two especially useful whole-system generators are
+
+\[
+G_{\mathrm{com}} = \frac{1}{2}\left(\sigma_z^{(A)}+\sigma_z^{(B)}\right)=J_z
+\]
+for common-mode fields, and
+\[
+G_{\mathrm{diff}} = \frac{1}{2}\left(\sigma_z^{(A)}-\sigma_z^{(B)}\right)
+\]
+for gradient or differential fields.
+
+Then one studies
+\[
+(\Delta G_{\mathrm{com}})^2,\qquad
+(\Delta G_{\mathrm{diff}})^2.
+\]
+
+Different entangled states optimize different sensing tasks:
+\begin{itemize}
+    \item $\ket{\Phi^\pm}$ can be highly sensitive to common phase shifts,
+    \item $\ket{\Psi^\pm}$ can be highly sensitive to differential phase shifts.
+\end{itemize}
+
+\end{frame}
+
+%================================================
+\begin{frame}{If the Qubits Are Also Spatially Entangled}
+
+Suppose each qubit also has a spatial degree of freedom, for example
+two paths or two locations.
+Then we may define mode operators or effective spatial Pauli operators
+\[
+\tau_x,\tau_y,\tau_z
+\]
+acting on the spatial subspace.
+
+Then one can study hybrid observables such as
+\[
+\sigma_z^{(A)}\otimes \tau_z^{(A)},\qquad
+\sigma_z^{(A)}\sigma_z^{(B)},\qquad
+\tau_x^{(A)}\tau_x^{(B)},
+\]
+or mixed spin-space correlators
+\[
+\sigma_x^{(A)}\tau_x^{(A)}\,\sigma_x^{(B)}\tau_x^{(B)}.
+\]
+
+These observables probe whether the sensing advantage arises from
+\begin{itemize}
+    \item spin entanglement,
+    \item spatial entanglement,
+    \item or spin-space hybrid entanglement.
+\end{itemize}
+
+\end{frame}
+
+%================================================
+\begin{frame}{Total-Spin Observables}
+
+For two spin-$1/2$ qubits, another very natural observable is
+\[
+\mathbf{J}^2 = J_x^2 + J_y^2 + J_z^2.
+\]
+
+This distinguishes singlet and triplet sectors:
+\begin{align}
+\mathbf{J}^2 \ket{\text{triplet}} &= 2 \ket{\text{triplet}},\\
+\mathbf{J}^2 \ket{\text{singlet}} &= 0.
+\end{align}
+
+This is useful because:
+\begin{itemize}
+    \item the singlet state is rotationally invariant,
+    \item triplet states respond differently to external fields,
+    \item total-spin measurements reveal how symmetry constrains sensing response.
+\end{itemize}
+
+This observable acts on the whole two-qubit system and is often more informative
+than local spin projections alone.
+
+\end{frame}
+
+%================================================
+\begin{frame}{Entanglement Witnesses as Observables}
+
+One may also construct entanglement witnesses $W$ such that
+\[
+\expval{W} < 0
+\]
+signals entanglement.
+
+For example, witnesses built from correlators
+\[
+W \sim I - \sigma_x^{(A)}\sigma_x^{(B)}
+- \sigma_y^{(A)}\sigma_y^{(B)}
+- \sigma_z^{(A)}\sigma_z^{(B)}
+\]
+can be directly measurable.
+
+These are not always optimal sensing observables, but they are useful for
+\begin{itemize}
+    \item verifying that the enhanced sensitivity truly comes from entanglement,
+    \item separating entanglement-enhanced performance from classical correlation effects.
+\end{itemize}
+
+\end{frame}
+
+%================================================
+\begin{frame}{Which Observables Are Best for Testing Entanglement in Sensing?}
+
+A practical hierarchy is:
+
+\begin{enumerate}
+    \item Local magnetization:
+    \[
+    \expval{\sigma_z^{(A)}},\quad \expval{\sigma_z^{(B)}}
+    \]
+    \item Two-body correlators:
+    \[
+    \expval{\sigma_\alpha^{(A)}\sigma_\beta^{(B)}}
+    \]
+    \item Collective observables:
+    \[
+    \expval{J_\alpha},\quad (\Delta J_\alpha)^2,\quad \expval{\mathbf{J}^2}
+    \]
+    \item Parity:
+    \[
+    \expval{\sigma_z^{(A)}\sigma_z^{(B)}}
+    \]
+    \item Generator variances / QFI:
+    \[
+    (\Delta G)^2,\quad F_Q
+    \]
+\end{enumerate}
+
+If the goal is specifically to quantify metrological gain, then
+generator variance and QFI are the most directly relevant quantities.
+
+\end{frame}
+
+%================================================
+\begin{frame}{Relevance for High-Energy Physics}
+
+Yes, several of these observables are relevant in high-energy physics.
+
+Examples include:
+\begin{itemize}
+    \item spin-correlation observables in relativistic two-particle production,
+    \item Bell-type correlators for particle-antiparticle systems,
+    \item flavor and spin oscillation observables,
+    \item collective symmetry generators in quantum field theory,
+    \item detector-response observables in relativistic quantum information.
+\end{itemize}
+
+The same mathematical structures appear:
+\[
+\expval{\sigma_\alpha^{(A)}\sigma_\beta^{(B)}},\qquad
+\expval{\mathcal{B}},\qquad
+(\Delta G)^2.
+\]
+
+Thus the language of quantum sensing overlaps strongly with the language of
+correlation measurements in high-energy and relativistic physics.
+
+\end{frame}
+
+%================================================
+\begin{frame}{Examples Relevant to High-Energy Physics}
+
+Some concrete directions where these observables matter:
+
+\begin{itemize}
+    \item \textbf{Top-quark or lepton spin correlations:}
+    measured through correlation tensors analogous to
+    \[
+    \expval{\sigma_i^{(A)}\sigma_j^{(B)}}.
+    \]
+
+    \item \textbf{Neutral meson or particle-antiparticle entanglement:}
+    Bell-like observables and parity-type observables test quantum coherence.
+
+    \item \textbf{Neutrino oscillation and flavor interferometry:}
+    collective generators and phase observables resemble sensing generators.
+
+    \item \textbf{Unruh/Hawking detector models:}
+    two-detector correlations and entanglement harvesting use very similar
+    joint observables.
+\end{itemize}
+
+So the same observables that diagnose entanglement-enhanced sensing can also be
+reinterpreted as probes of relativistic quantum correlations.
+
+\end{frame}
+
+%================================================
+\begin{frame}{A Useful Minimal Measurement Program}
+
+For a two-qubit entangled quantum sensor, a minimal but powerful set of measurements is:
+
+\begin{align}
+\expval{\sigma_z^{(A)}}, \qquad
+\expval{\sigma_z^{(B)}}, \\
+\expval{\sigma_x^{(A)}\sigma_x^{(B)}}, \qquad
+\expval{\sigma_y^{(A)}\sigma_y^{(B)}}, \qquad
+\expval{\sigma_z^{(A)}\sigma_z^{(B)}}, \\
+\expval{J_z}, \qquad
+(\Delta J_z)^2, \qquad
+(\Delta G_{\mathrm{diff}})^2.
+\end{align}
+
+If spatial entanglement is also present, add
+\[
+\expval{\tau_x^{(A)}\tau_x^{(B)}},\qquad
+\expval{\tau_z^{(A)}\tau_z^{(B)}},
+\]
+and mixed spin-space correlators.
+
+This set already gives a strong picture of whether the advantage comes from
+local response, joint response, or hybrid spin-space entanglement.
+
+\end{frame}
+
+%================================================
+\begin{frame}{Summary}
+
+For two spin and spatially entangled qubits used as a quantum sensor:
+
+\begin{itemize}
+    \item Local observables probe direct coupling to the field.
+    \item Two-body correlators reveal genuinely entangled response.
+    \item Collective observables such as $J_\alpha$, $J_\alpha^2$, and $\mathbf{J}^2$
+    act on the whole system and are highly informative.
+    \item Parity and Bell-type observables are powerful nonlocal diagnostics.
+    \item The most fundamental metrological quantity is the QFI,
+    determined by variances of the encoding generator.
+\end{itemize}
+
+Many of these observables are also directly relevant in high-energy physics,
+especially in studies of spin correlations, Bell tests, relativistic detector models,
+and quantum-field-theoretic interferometry.
+
+\end{frame}
+
+%================================================
+\begin{frame}{Take-Home Message}
+
+If entanglement is central to the sensing protocol, then measuring only
+\[
+\expval{\sigma_z^{(A)}}
+\]
+is usually not enough.
+
+The most informative whole-system observables are often
+\[
+\expval{\sigma_\alpha^{(A)}\sigma_\beta^{(B)}},\qquad
+\expval{J_\alpha},\qquad
+\expval{\mathbf{J}^2},\qquad
+\expval{\Pi},\qquad
+F_Q.
+\]
+
+These capture how the parameter is encoded collectively and whether
+entanglement genuinely improves sensitivity.
+
+\end{frame}
+
+\end{document}
