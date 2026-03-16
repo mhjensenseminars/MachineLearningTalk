@@ -3,8 +3,7 @@ author:
 - Morten Hjorth-Jensen
 date: March 16, 2026
 title: |
-  Artificial Intelligence and Quantum Technologies:\
-  Toward a New Paradigm for Computational Discovery
+  Artificial Intelligence and Quantum Technologies: Toward a New Paradigm for Computational Discovery
 ---
 
 # Introduction
@@ -27,13 +26,13 @@ wide range of disciplines, including climate science, neuroscience,
 materials research, and astrophysics. At the same time, artificial
 intelligence (AI) and machine learning (ML) have transformed how
 researchers analyze large datasets, discover patterns, and construct
-predictive models [@goodfellow2016deep].
+predictive models [1].
 
 Parallel to these developments, quantum technologies have experienced
 rapid progress in recent years. Advances in quantum computing, quantum
 sensing, and quantum communication are beginning to translate
 fundamental concepts from quantum mechanics---such as superposition and
-entanglement---into practical technologies [@preskill2018quantum].
+entanglement---into practical technologies [2].
 Quantum computers promise new computational capabilities for problems
 involving quantum simulation, optimization, and certain classes of
 linear algebra operations.
@@ -73,7 +72,7 @@ quantum information.
 Machine learning methods are increasingly being used to address these
 challenges. Reinforcement learning, for example, has proven particularly
 useful for discovering optimal control strategies in complex quantum
-systems [@bukov2026; @belliardo2024]. In such approaches, an agent
+systems [3,4]. In such approaches, an agent
 interacts with a simulated or experimental quantum system and gradually
 learns control protocols that optimize a desired objective, such as
 preparing a target quantum state or implementing a high-fidelity quantum
@@ -98,7 +97,7 @@ traditional optimization techniques.
 The relationship between artificial intelligence and quantum technology
 also operates in the opposite direction. Quantum computing may
 eventually provide new computational tools for machine learning itself
-[@schuld2021].
+[5].
 
 Many machine learning algorithms rely on linear algebra operations such
 as matrix inversion, eigenvalue decomposition, and optimization in
@@ -116,7 +115,7 @@ theory and statistical learning.
 In addition, hybrid quantum-classical algorithms have emerged as an
 important framework for near-term quantum devices. In these approaches,
 a classical optimization loop interacts with a quantum processor that
-evaluates parameterized quantum circuits [@cerezo2021variational]. Such
+evaluates parameterized quantum circuits. Such
 hybrid algorithms may play an important role in early quantum
 applications.
 
@@ -139,8 +138,7 @@ technologies may offer entirely new computational capabilities for
 specific classes of problems.
 
 The interaction of these components is illustrated conceptually in
-Fig. [1](#fig:futurevision){reference-type="ref"
-reference="fig:futurevision"}. In this emerging framework, computational
+Fig. 1. In this emerging framework, computational
 science becomes a tightly integrated ecosystem in which theory,
 simulation, data analysis, and experimental platforms interact
 continuously.
@@ -261,25 +259,20 @@ technologies continue to mature, their convergence will play a central
 role in addressing some of the most challenging problems in physics,
 chemistry, materials science, and beyond.
 
-::: {.thebibliography}
-9
+## References
 
-I. Goodfellow, Y. Bengio, and A. Courville, *Deep Learning*, MIT Press
+1. I. Goodfellow, Y. Bengio, and A. Courville, *Deep Learning*, MIT Press
 (2016).
 
-J. Preskill, Quantum computing in the NISQ era, *Quantum* **2**, 79
+2. J. Preskill, Quantum computing in the NISQ era, *Quantum* **2**, 79
 (2018).
 
-M. Bukov and F. Marquardt, Reinforcement learning for Quantum
+3. M. Bukov and F. Marquardt, Reinforcement learning for Quantum
 Technology, *arXiv:2601.18953*, (2026).
 
-F. Belliardo, F. Zoratti, F. Marquardt, and V. Giovannetti, Model-aware
+4. F. Belliardo, F. Zoratti, F. Marquardt, and V. Giovannetti, Model-aware
 reinforcement learning for high-performance Bayesian experimental design
 in quantum metrology, *Quantum* **8**, 1555 (2024)
 
-M. Schuld, and F. Petruccione, *Machine Learning with Quantum
+5. M. Schuld, and F. Petruccione, *Machine Learning with Quantum
 Computers*, Springer-Verlag, Berling, 2021.
-
-M. Cerezo et al., Variational quantum algorithms, *Nature Reviews
-Physics* **3**, 625--644 (2021).
-:::
