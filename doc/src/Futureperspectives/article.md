@@ -147,6 +147,8 @@ continuously.
 highlighting the interplay between high-performance computing,
 artificial intelligence, and quantum technologies. The integration of
 these components enables new workflows for scientific
+discovery.](Futurevision.pdf)
+
 discovery.](Futurevision.pdf){#fig:futurevision width="85%"}
 
 This integrated paradigm has several important implications. First,
