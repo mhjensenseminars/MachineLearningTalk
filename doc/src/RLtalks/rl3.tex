@@ -33,7 +33,6 @@
 \item Basic ingredients: states, actions, rewards, policies
 \item Value functions and Bellman equations
 \item Q-learning, policy gradients, actor--critic
-\item Worked RL example with equations and pseudocode
 \item Model-aware reinforcement learning
 \item Reinforcement learning for quantum control
 \item Applications to quantum sensing if time
@@ -69,6 +68,23 @@ Reinforcement learning (RL) addresses precisely this type of problem.
   \item  Federico Belliardo, Fabio Zoratti, Florian Marquardt, and Vittorio Giovannetti, \textit{Model-aware reinforcement learning for high-performance Bayesian experimental design in quantum metrology}, Quantum {\bf 8}, 1555 (2024).
   \end{itemize}
 
+\end{frame}
+
+
+\begin{frame}{What is Reinforcement Learning? In plain words}
+\begin{block}{}  
+
+The RL framework consists of an {\bf agent} that learns how to solve a
+task by interacting with a physical system, called the
+environment. The agent can select {\bf actions} that modify the {\bf
+  state} of the environment, as a consequence a {\bf reward} is given
+to the agent, and the process repeats in a positive feedback loop. The
+objective is to maximise the sum of expected rewards andf thereby
+accomplish the task. The agent learns a {\bf strategy} that can be
+meployed under similar yet different circumstances. The so-called {\bf
+  policy} os the rule for choosing actions.
+
+\end{block}
 \end{frame}
 
 
@@ -117,7 +133,7 @@ while non-adaptive strategies suppress dependence on the posterior and outcomes:
 
 
 %================================================
-\begin{frame}{Back to basic RL: What is Reinforcement Learning?}
+\begin{frame}{Back to basics: What is Reinforcement Learning?}
   An agent interacts with an environment over discrete time steps:
   \[
   s_0,a_0,r_1,s_1,a_1,r_2,\dots
@@ -545,101 +561,6 @@ while non-adaptive strategies suppress dependence on the posterior and outcomes:
   This is simple enough to analyze explicitly, but already contains the core RL ideas.
 \end{frame}
 
-%================================================
-\begin{frame}{Worked Example: Bellman Equations}
-  If the policy is deterministic and always moves right, then
-  \[
-  V(4)=0
-  \]
-  if we stop at the goal, and for $x<4$,
-  \[
-  V(x)=-1+\gamma V(x+1).
-  \]
-
-  Thus
-  \begin{align*}
-    V(3) &= -1,\\
-    V(2) &= -1+\gamma(-1),\\
-    V(1) &= -1+\gamma(-1-\gamma),\\
-    V(0) &= -1+\gamma(-1-\gamma-\gamma^2).
-  \end{align*}
-
-  So even this toy model already illustrates how future consequences are encoded recursively.
-\end{frame}
-
-%================================================
-\begin{frame}{Worked Example: Q-Learning Equations}
-  Suppose the agent experiences
-  \[
-  s_t=1,\qquad a_t=\text{right},\qquad r_{t+1}=-1,\qquad s_{t+1}=2.
-  \]
-
-  Then the update is
-  \[
-  Q(1,\text{right}) \leftarrow Q(1,\text{right}) +
-  \alpha\left[-1 + \gamma \max_a Q(2,a)-Q(1,\text{right})\right].
-  \]
-
-  If initially all $Q=0$, then
-  \[
-  Q(1,\text{right}) \leftarrow \alpha(-1).
-  \]
-
-  Repeated experience gradually propagates information backward from the goal.
-\end{frame}
-
-
-
-%================================================
-\begin{frame}[fragile]{Worked Example: Pseudocode}
-  \small
-\begin{verbatim}
-  Initialize Q(s,a) arbitrarily
-For each episode:
-    Initialize state s
-    While s is not terminal:
-        Choose action a from Q using epsilon-greedy
-        Take action a, observe reward r and next state s'
-        Q(s,a) <- Q(s,a) + alpha *
-                  [r + gamma * max_a' Q(s',a') - Q(s,a)]
-        s <- s'
-\end{verbatim}
-
-\begin{itemize}
-\item This is model-free.
-\item No knowledge of transition probabilities is required.
-\item The environment itself generates the data.
-\end{itemize}
-\end{frame}
-
-
-
-%================================================
-\begin{frame}[fragile]{Worked Example: Policy Gradient Pseudocode}
-  \small
-\begin{verbatim}
-  Initialize policy parameters theta
-  For each episode:
-  Generate trajectory using pi_theta
-  For each time step t:
-  Compute return G_t
-  Update:
-          theta <- theta + alpha *
-                 sum_t [grad_theta log pi_theta(a_t|s_t) * G_t]
-\end{verbatim}
-
-With a baseline:
-\[
-\theta \leftarrow \theta + \alpha
-\sum_t \nabla_\theta \log \pi_\theta(a_t|s_t)\,
-\big(G_t - b(s_t)\big)
-\]
-
-This becomes especially natural when actions are continuous.
-\end{frame}
-
-
-
 
 %================================================
 \begin{frame}{Model-Free vs Model-Aware Reinforcement Learning}
@@ -730,6 +651,9 @@ This becomes especially natural when actions are continuous.
   \end{itemize}
 \end{frame}
 
+
+
+
 %================================================
 \begin{frame}{Transition to Quantum Systems}
   Quantum control problems are naturally sequential:
@@ -802,6 +726,33 @@ This becomes especially natural when actions are continuous.
 
   Thus maximizing $F_Q$ is a natural control objective for reinforcement learning.
 \end{frame}
+
+\begin{frame}{RL Implementation Blueprint I}
+An actual implementation would follow these steps:
+\begin{itemize}
+  \item {\bf Define the environment:} Choose the sensor platform and identify its controllable parameters and observables.  Build a simulation of the sensor dynamics (e.g.\ master equation or Monte Carlo) that includes the unknown parameter. If possible, validate the simulation against experiments.
+  \item {\bf State representation:} Decide what information to feed to the agent.  This may be raw data (fluorescence images, spin readouts) or pre-processed features (means and variances). Include memory of previous steps if needed (e.g.\ via recurrent networks) to handle non-Markovian effects.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}{RL Implementation Blueprint II}
+\begin{itemize}
+  \item {\bf Action space:} Specify the set of actions.  For continuous controls, discretization or parameterized actions can be used.  Ensure actions respect experimental limits (e.g.\ maximum pulse amplitude). 
+  \item {\bf Reward function:} Choose a reward that captures precision.  A terminal reward $R = -\log(\text{estimation variance})$ is one option.  Alternatively, use stepwise rewards like Bayesian information gain.  Regularize the reward if necessary to avoid trivial strategies.
+  \item {\bf RL algorithm:} Select an algorithm based on action type.  For example, use DQN for coarse adjustment of discrete parameters, or SAC/DDPG for smooth continuous control.  Set neural network architectures appropriate for the state (e.g.\ convolutional nets for images).
+\end{itemize}
+\end{frame}
+
+\begin{frame}{RL Implementation Blueprint III}
+\begin{itemize}
+  \item {\bf Training:} Train the agent in simulation.  Introduce variability (randomize unknowns) to encourage generalization.  Use experience replay or batch updates to improve sample efficiency.  Monitor performance on validation scenarios.
+  \item {\bf Deployment:} Transfer the trained policy to the real device.  If training was in-silico, consider fine-tuning on the hardware with a few adjustment episodes.  Include safeguards for safety (e.g.\ bounding pulses) and mechanisms to reset the environment.
+\end{itemize}
+\end{frame}
+
+
+
 
 %================================================
 \begin{frame}{Worked Quantum Example: Two-Level Sensor}
@@ -915,299 +866,3 @@ This becomes especially natural when actions are continuous.
 
 
 
-\begin{frame}{Appendix A: probe, controls, and measurement model}
-A generic experiment is cast as
-\[
-  \rho \longmapsto \rho_{x,\theta}=\mathcal E_{x,\theta}(\rho),
-\]
-where $\rho$ is a reference probe state, $x$ denotes tunable controls, and $\theta\in\Theta$ are the unknown parameters.
-\vspace{0.6em}
-\begin{itemize}
-  \item Controls can be continuous or discrete, and may represent durations, detunings, phases, or measurement settings.
-  \item Parameters of interest can coexist with \emph{nuisance parameters}; estimating the latter can still improve the former.
-  \item A measurement is modeled by a POVM $\mathcal M^x=\{M^x_y\}$ with likelihood
-  \[
-    p(y\mid \theta,x)=\mathrm{tr}\!\left(M^x_y\rho_{x,\theta}\right).
-  \]
-\end{itemize}
-\end{frame}
-
-\begin{frame}{Appendix A: projective versus weak measurements}
-\begin{itemize}
-  \item For \textbf{projective measurements}, the probe is reinitialized after each shot; the next likelihood depends only on $x_{t+1}$ and $\theta$.
-  \item For \textbf{weak measurements}, information remains in the probe state, so the likelihood depends on the whole trajectory:
-  \[
-    p(y_{t+1}\mid x_{t+1},y_t,\theta)=\mathrm{tr}\!\left(M^{x_{t+1}}_{y_{t+1}}\,\rho_{x_t,y_t,\theta}\right).
-  \]
-  \item This turns the estimator into a partially observed control problem in which the posterior and probe state both carry memory.
-\end{itemize}
-\vspace{0.6em}
-\textbf{Control lesson:} the state fed to the agent is not the raw experimental history, but a compressed belief-state summary derived from Bayesian inference.
-\end{frame}
-
-\begin{frame}{Appendix B: particle-filter representation of the posterior}
-The posterior is approximated by a weighted ensemble
-\[
-  P(\theta)\approx\sum_{j=1}^N w_j^t\,\delta(\theta-\theta_j),
-\]
-with particles $\{\theta_j\}_{j=1}^N$ and weights $\{w_j^t\}_{j=1}^N$.
-\vspace{0.4em}
-\begin{itemize}
-  \item Initialize particles from the prior $\pi(\theta)$ and set $w_j^0=1/N$.
-  \item Apply Bayes updates after each observation:
-  \[
-    w_j^{t+1}=\frac{p(y_{t+1}\mid x_{t+1},\theta_j)w_j^t}{\sum_{i=1}^N p(y_{t+1}\mid x_{t+1},\theta_i)w_i^t}.
-  \]
-  \item The posterior mean and covariance become
-  \[
-    \hat\theta_t\approx\sum_j w_j^t\theta_j,
-    \qquad
-    \Sigma_t\approx\sum_j w_j^t(\theta_j-\hat\theta_t)(\theta_j-\hat\theta_t)^\top.
-  \]
-\end{itemize}
-These moments form the default summary presented to the policy.
-\end{frame}
-
-\begin{frame}{Appendix B.3: resampling, soft resampling, and proposal moves}
-\small
-When weights collapse onto a few particles, the filter is refreshed by resampling.
-\vspace{0.25em}
-\begin{block}{Soft resampling}
-Instead of sampling directly from $w_j$, define
-\[
-  q_j=\alpha w_j + (1-\alpha)\frac{1}{N},
-\]
-and draw new particles $\theta'_j=\theta_{\phi(j)}$ from $q_j$.
-\end{block}
-Corrected weights preserve the represented posterior:
-\[
-  w'_j\propto \frac{w_{\phi(j)}}{q_{\phi(j)}}.
-\]
-Further steps in Appendix B:
-\begin{itemize}
-  \item \textbf{Gaussian perturbation:} move particles toward $\hat\theta_t$ and break degeneracy.
-  \item \textbf{New-particle proposal:} inject particles from $\mathcal N(\hat\theta_t,\Sigma_t)$ to raise local resolution.
-\end{itemize}
-\normalsize
-\end{frame}
-
-\begin{frame}{Appendix B.4: state particle filter for weak measurements}
-For weak measurements, each parameter particle carries its own hypothetical probe state:
-\[
-  \rho_{\theta_j,\tau_t}=\mathcal M^{x_t}_{y_t}\circ\mathcal E_{\theta_j,x_t}\circ\cdots\circ
-  \mathcal M^{x_1}_{y_1}\circ\mathcal E_{\theta_j,x_1}(\rho).
-\]
-The normalized measurement backaction map is
-\[
-  \mathcal M^x_y(\rho)=\frac{M^x_y\rho M^{x\dagger}_y}{\mathrm{tr}[M^x_y\rho M^{x\dagger}_y]}.
-\]
-\begin{itemize}
-  \item The state particle filter stores $(\theta_j,w_j,\rho_{\theta_j,\tau_t})$.
-  \item It enables trajectory-dependent likelihood evaluation for probes that are not reinitialized between measurements.
-  \item This is the natural extension from Bayesian filtering over parameters to Bayesian filtering over \emph{parameter-conditioned states}.
-\end{itemize}
-\end{frame}
-
-\begin{frame}{Why differentiation is hard}
-The training objective depends on operations that are stochastic or discrete:
-\begin{itemize}
-  \item measurement outcomes $y_t\sim p(y_t\mid x_t,\theta)$,
-  \item categorical particle resampling,
-  \item stochastic perturbation and proposal draws,
-  \item optional discrete decision outputs in classification tasks.
-\end{itemize}
-\vspace{0.5em}
-Automatic differentiation treats sampled values as constants in the backward pass, so naively
-\[
-  \frac{d y_t}{d\lambda}=0,
-\]
-and the gradient would fail to capture how the policy changes the distribution of future trajectories.
-\vspace{0.5em}
-\textbf{Appendices C and D} supply the fix: combine score-function terms with differentiable surrogates wherever possible.
-\end{frame}
-
-\begin{frame}{Appendix C: differentiable particle filtering}
-Three ingredients make the particle filter trainable.
-\vspace{0.3em}
-\begin{enumerate}
-  \item \textbf{Soft resampling:} lets some gradient information survive resampling through the weights.
-  \item \textbf{Reparametrization trick:} write perturbations and proposals as differentiable functions of Gaussian noise,
-  \[
-    \delta'(y_t,\lambda)=\Sigma(y_t,\lambda)u+\mu(y_t,\lambda),
-    \qquad
-    \theta''_j(y_t,\lambda)=\Sigma_t(y_t,\lambda)u_j+\hat\theta_t(y_t,\lambda).
-  \]
-  \item \textbf{Scibior-Wood correction:} replace the new weights by the surrogate
-  \[
-    \tilde w'_j \leftarrow w'_j\,\frac{q_{\phi(j)}}{\mathrm{sg}[q_{\phi(j)}]},
-  \]
-  which leaves the forward pass unchanged but injects missing backward terms.
-\end{enumerate}
-\vspace{0.4em}
-For the MSE loss, the paper shows that this correction reproduces the needed score-function terms.
-\end{frame}
-
-\begin{frame}{Appendix D.1--D.3: Bayesian loss and policy-gradient correction}
-For continuous estimation tasks, the single-run loss is an MSE-type quantity,
-\[
-  \ell(\hat\theta,\theta)=\mathrm{tr}\!\left[G(\hat\theta-\theta)(\hat\theta-\theta)^\top\right],
-\]
-while discrete tasks use a $0$-$1$ loss.
-\vspace{0.4em}
-Monte Carlo over a batch of $B$ simulations gives
-\[
-  L(\lambda)=\frac{1}{B}\sum_{k=1}^B \ell(\hat\theta_k,\theta_k).
-\]
-Because outcomes are sampled from a policy-dependent distribution, the correct training loss becomes
-\[
-  \tilde\ell(\omega_k,\lambda)=\ell(\omega_k,\lambda)
-  +\mathrm{sg}[\ell(\omega_k,\lambda)]\log p(y_{k,0:M-1}\mid\theta_k,\lambda),
-\]
-so that the gradient includes both pathwise terms and score-function terms.
-\end{frame}
-
-\begin{frame}{Appendix D.4--D.6: cumulative and logarithmic losses}
-A final-time loss alone may not yield good performance at intermediate resource budgets.
-\vspace{0.5em}
-\begin{block}{Cumulative loss}
-\[
-  L_{\mathrm{cum}}(\lambda)=\frac{1}{MB}\sum_{t=0}^{M-1}\sum_{k=1}^B
-  \ell(\hat\theta_{k,t},\theta_k).
-\]
-This pressures the policy to use resources sensibly \emph{throughout} the experiment.
-\end{block}
-\begin{block}{Logarithmic loss}
-Taking a logarithm of the batch-averaged loss stabilizes optimization when the precision spans several orders of magnitude.
-\end{block}
-\begin{itemize}
-  \item A baseline can be subtracted inside the stop-gradient term to reduce gradient variance.
-  \item The paper uses Adam rather than plain SGD for the actual parameter updates.
-\end{itemize}
-\end{frame}
-
-\begin{frame}{Appendix E: simulation practice, hyperparameters, and scaling}
-\textbf{Practical tuning strategy}
-\begin{enumerate}
-  \item Choose the number of particles $N$ large enough that posterior discretization is not the bottleneck.
-  \item Use the remaining memory budget to set the batch size $B$.
-  \item Tune the initial learning rate with the chosen loss (cumulative or logarithmic).
-\end{enumerate}
-\vspace{0.5em}
-\textbf{Complexity trends reported in Appendix E.3}
-\[
-  \text{Memory}\sim \mathcal O(dN+N+n_\ell n_u),
-  \qquad
-  \text{Time}_{\mathrm{seq}}\sim \mathcal O(MN+Mn_\ell n_u^2),
-\]
-for parameter dimension $d$, measurements $M$, and a neural network with $n_\ell$ layers and $n_u$ units per layer.
-\begin{itemize}
-  \item Training benefits strongly from GPU parallelism over the batch.
-  \item Deployment can be far cheaper, especially for non-adaptive strategies or offline Bayesian updates.
-\end{itemize}
-\end{frame}
-
-\begin{frame}{Applications highlighted in the main text}
-\textbf{NV-center DC magnetometry}
-\begin{itemize}
-  \item Control variable: Ramsey free-evolution time $\tau$.
-  \item Likelihood: binary outcomes with dephasing-dependent contrast.
-  \item Learned strategies beat common heuristics and prior model-free RL baselines in the reported settings.
-\end{itemize}
-\vspace{0.5em}
-\textbf{Agnostic Dolinar receiver}
-\begin{itemize}
-  \item Task: discriminate coherent states while also treating the amplitude as an unknown nuisance parameter.
-  \item Control variable: beam-splitter reflectivity/phase sequence.
-  \item Adaptive RL approaches the finite-reference Helstrom limit more closely than prior hand-designed strategies.
-\end{itemize}
-\vspace{0.4em}
-\textit{Figures intentionally omitted here; the corresponding plots from the article can be inserted later.}
-\end{frame}
-
-\begin{frame}{Appendix F: frequentist optimization via Fisher information}
-The library also supports local frequentist design by optimizing the Cramer-Rao bound.
-\vspace{0.4em}
-\[
-  K=\mathbb E\!\left[(\hat\theta-\theta)(\hat\theta-\theta)^\top\right]\ge F^{-1}(\theta),
-\]
-with trajectory-level Fisher information
-\[
-  F_{ij}(\theta)=\mathbb E_y\!\left[\frac{\partial\log p(y\mid x,\theta)}{\partial\theta_i}
-  \frac{\partial\log p(y\mid x,\theta)}{\partial\theta_j}\right].
-\]
-Contracting with $G\ge 0$ gives the scalar loss
-\[
-  L(\lambda)=\mathrm{tr}\!\left(GF^{-1}\right).
-\]
-\begin{itemize}
-  \item The gradient requires differentiating the Fisher matrix through the policy.
-  \item Importance sampling can be used if rare trajectories dominate the Fisher information.
-\end{itemize}
-\end{frame}
-
-\begin{frame}{Appendix G: lower bounds and how to benchmark learned policies}
-Appendix G builds Bayesian Cramer-Rao style lower bounds tailored to the examples.
-\vspace{0.4em}
-\begin{itemize}
-  \item For measurement-limited protocols,
-  \[
-    \Delta^2\hat\theta\ge \frac{1}{\sup_h \mathbb E_\theta[I(\theta\mid \tau_h)] + I(\pi)}
-    \ge \frac{1}{M\,\mathbb E_\theta[\sup_\tau I(\theta\mid\tau)] + I(\pi)}.
-  \]
-  \item For time-limited protocols, the relevant object is the \emph{normalized} Fisher information $I(\theta\mid\tau)/\tau$.
-  \item In NV magnetometry, binary outcomes also imply bit-counting limits that can dominate when the Fisher-information bound is loose.
-\end{itemize}
-\vspace{0.4em}
-These bounds define the gray ``impossible region'' used in the paper's benchmark plots.
-\end{frame}
-
-\begin{frame}{Appendix H: backward recursion and the control-theory viewpoint}
-Appendix H reframes the learned policy as an approximation to a dynamic-programming solution.
-\vspace{0.4em}
-\begin{itemize}
-  \item At the last step, the optimal control $x^*_{M-1}$ minimizes the expected terminal loss conditioned on the current PF ensemble.
-  \item Recursing backward defines a family of optimal decision rules $r_t(p_t)$ acting on the particle-filter state.
-  \item The optimization is \textbf{non-myopic}: a control at time $t$ is chosen for its effect on the \emph{final} loss, not only the next measurement.
-\end{itemize}
-\vspace{0.5em}
-\begin{block}{Interpretation}
-The neural network is not a black box replacing physics; it is a function approximator for the intractable backward-recursion solution on belief states.
-\end{block}
-\end{frame}
-
-\begin{frame}{Appendix I: backpropagation structure and the stop-gradient trick}
-The terminal loss can be written as a composition of Bayes-update maps acting on the initial PF ensemble.
-\vspace{0.5em}
-The derivative expands into repeated products of two kinds of terms:
-\begin{itemize}
-  \item direct dependence of the Bayes update on the control selected by the agent,
-  \item indirect dependence through earlier PF states fed back into later policy evaluations.
-\end{itemize}
-\vspace{0.5em}
-Appendix I shows that:
-\begin{itemize}
-  \item these recursive terms generate expensive higher-order gradient paths,
-  \item inserting a stop-gradient on the PF input,
-  \[
-    x_{t+1}=F_\lambda\big(\mathrm{sg}[P(\theta\mid x_t,y_t);R_t;t]\big),
-  \]
-  removes a large fraction of backward complexity,
-  \item yet the resulting optimization remains non-myopic because each local update still targets final precision.
-\end{itemize}
-\end{frame}
-
-\begin{frame}{Take-home messages}
-\begin{enumerate}
-  \item \textbf{Belief-state control:} quantum metrology can be formulated as sequential control on a Bayesian belief state.
-  \item \textbf{Differentiable inference:} particle filtering can be embedded into model-aware RL through soft resampling, reparametrization, and score-function corrections.
-  \item \textbf{Versatility:} the same framework supports adaptive/non-adaptive and Bayesian/frequentist design.
-  \item \textbf{Interpretability:} Appendices H and I reveal the learned policy as an approximation to backward recursion with tractable backpropagation.
-\end{enumerate}
-\vspace{0.6em}
-\textbf{Possible closing slide additions:}
-benchmark plots, platform-specific diagrams, and an implementation workflow from \texttt{qsensoropt}.
-\end{frame}
-
-
-
-\end{document}
