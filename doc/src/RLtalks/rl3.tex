@@ -740,7 +740,7 @@ An actual implementation would follow these steps:
 \begin{itemize}
   \item {\bf Action space:} Specify the set of actions.  For continuous controls, discretization or parameterized actions can be used.  Ensure actions respect experimental limits (e.g.\ maximum pulse amplitude). 
   \item {\bf Reward function:} Choose a reward that captures precision.  A terminal reward $R = -\log(\text{estimation variance})$ is one option.  Alternatively, use stepwise rewards like Bayesian information gain.  Regularize the reward if necessary to avoid trivial strategies.
-  \item {\bf RL algorithm:} Select an algorithm based on action type.  For example, use DQN for coarse adjustment of discrete parameters, or SAC/DDPG for smooth continuous control.  Set neural network architectures appropriate for the state (e.g.\ convolutional nets for images).
+  \item {\bf RL algorithm:} Select an algorithm based on action type.  For example,  set neural network architectures appropriate for the state (e.g.\ convolutional nets for images).
 \end{itemize}
 \end{frame}
 
