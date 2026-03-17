@@ -1,0 +1,451 @@
+\documentclass{beamer}
+
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{graphicx}
+\usepackage{physics}
+\usepackage{tikz}
+
+\title{Reinforcement Learning for Quantum Control}
+\subtitle{Mathematical Foundations and Applications to Quantum Sensors}
+\author{}
+\date{}
+
+\begin{document}
+
+%------------------------------------------------
+\frame{\titlepage}
+
+%------------------------------------------------
+\begin{frame}{Motivation}
+
+Quantum technologies require precise control of complex systems.
+
+Challenges:
+
+\begin{itemize}
+\item high-dimensional control spaces
+\item noise and decoherence
+\item limited analytical solutions
+\end{itemize}
+
+Reinforcement learning provides a framework for
+\textbf{adaptive optimization of control strategies}.
+
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Reinforcement Learning Setup}
+
+At each time step $t$:
+
+\begin{itemize}
+\item state $s_t$
+\item action $a_t$
+\item reward $r_t$
+\end{itemize}
+
+Goal:
+
+\[
+\max_{\pi} J(\pi) =
+\mathbb{E}_\pi \left[\sum_{t=0}^\infty \gamma^t r_t \right]
+\]
+
+This is a stochastic optimal control problem.
+
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Markov Decision Processes}
+
+  MDP defined by:
+
+  \[
+  (s,a,P,R)
+  \]
+
+  Transition probability:
+
+  \[
+  P(s'|s,a)
+  \]
+
+  Reward:
+
+  \[
+  R(s,a)
+  \]
+
+  Key assumption:
+
+  \[
+  P(s_{t+1}|s_t,a_t,\dots) = P(s_{t+1}|s_t,a_t)
+  \]
+
+  (Markov property)
+
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Value Functions}
+
+  State-value function:
+
+  \[
+  V^\pi(s) = \mathbb{E}_\pi\left[\sum_t \gamma^t r_t \mid s_0=s\right]
+  \]
+
+  Action-value function:
+
+  \[
+  Q^\pi(s,a)
+  \]
+
+  Advantage:
+
+  \[
+  A^\pi(s,a) = Q^\pi(s,a) - V^\pi(s)
+  \]
+
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Bellman Equation}
+
+  The value function satisfies
+
+  \[
+  V^\pi(s) =
+  \sum_a \pi(a|s)\left[
+    R(s,a) + \gamma \sum_{s'} P(s'|s,a)V^\pi(s')
+    \right]
+  \]
+
+  This is a self-consistency equation.
+
+  Key idea:
+
+  \begin{center}
+    future reward = immediate reward + discounted continuation
+  \end{center}
+
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Optimal Value Function}
+
+  Define
+
+  \[
+  V^*(s) = \max_\pi V^\pi(s)
+  \]
+
+  Bellman optimality equation:
+
+  \[
+  V^*(s) = \max_a \left[
+    R(s,a) + \gamma \sum_{s'} P(s'|s,a)V^*(s')
+    \right]
+  \]
+
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Q-Learning}
+
+  Update rule:
+
+  \[
+  Q(s,a) \leftarrow Q(s,a) +
+  \alpha \left[r + \gamma \max_a Q(s',a) - Q(s,a)\right]
+  \]
+
+  This is a stochastic approximation to the Bellman equation.
+
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Value Iteration}
+
+  Algorithm:
+
+  \begin{enumerate}
+  \item initialize $V(s)$
+  \item iterate:
+    \[
+    V(s) \leftarrow \max_a \left[
+      R(s,a) + \gamma \sum_{s'} P(s'|s,a)V(s')
+      \right]
+    \]
+  \end{enumerate}
+
+  Converges to optimal value function.
+
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Policy Iteration}
+
+  Two steps:
+
+  \textbf{Policy evaluation}
+
+  \[
+  V^\pi(s)
+  \]
+
+  \textbf{Policy improvement}
+
+  \[
+  \pi(s) \leftarrow \arg\max_a Q^\pi(s,a)
+  \]
+
+  Repeat until convergence.
+
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Policy Gradient Methods}
+
+  Parameterize policy:
+
+  \[
+  \pi_\theta(a|s)
+  \]
+
+  Objective:
+
+  \[
+  J(\theta)
+  \]
+
+  Gradient:
+
+  \[
+  \nabla_\theta J =
+  \mathbb{E}\left[
+    \nabla_\theta \log \pi_\theta(a|s) Q^\pi(s,a)
+    \right]
+  \]
+
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{REINFORCE Algorithm}
+
+  Monte Carlo estimator:
+
+  \[
+  \nabla_\theta J \approx
+  \sum_t \nabla_\theta \log \pi_\theta(a_t|s_t) G_t
+  \]
+
+  where
+
+  \[
+  G_t = \sum_{k=t}^\infty \gamma^{k-t} r_k
+  \]
+
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Actor--Critic Methods}
+
+  Two components:
+
+  \begin{itemize}
+  \item Actor: policy $\pi_\theta$
+  \item Critic: value function $V_\phi$
+  \end{itemize}
+
+  Update:
+
+  \[
+  \delta_t = r_t + \gamma V(s_{t+1}) - V(s_t)
+  \]
+
+  Actor:
+
+  \[
+  \nabla_\theta \log \pi_\theta(a_t|s_t)\,\delta_t
+  \]
+
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{RL as Stochastic Optimization}
+
+  RL resembles variational optimization:
+
+  \[
+  \max_\theta J(\theta)
+  \]
+
+  But:
+
+  \begin{itemize}
+  \item objective unknown explicitly
+  \item gradients estimated from samples
+  \item environment acts as a stochastic simulator
+  \end{itemize}
+
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Connection to Control Theory}
+
+  RL relates to optimal control:
+
+  \begin{itemize}
+  \item Hamilton--Jacobi--Bellman equation
+  \item dynamic programming
+  \item stochastic control
+  \end{itemize}
+
+  RL provides numerical methods for these problems.
+
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Quantum Control}
+
+  Dynamics:
+
+  \[
+  i \frac{d}{dt}\ket{\psi} = H(t)\ket{\psi}
+  \]
+
+  Control Hamiltonian:
+
+  \[
+  H(t)=H_0 + \sum_k u_k(t) H_k
+  \]
+
+  Goal:
+
+  maximize fidelity or sensing performance.
+
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{RL Mapping to Quantum Control}
+
+  \begin{itemize}
+  \item state: quantum state or measurement outcomes
+  \item action: control pulses
+  \item reward: fidelity / Fisher information
+  \end{itemize}
+
+  RL learns optimal pulse sequences.
+
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Quantum Sensors}
+
+  Goal:
+
+  estimate parameter $\theta$.
+
+  Precision bound:
+
+  \[
+  \Delta \theta \ge \frac{1}{\sqrt{\nu F_Q}}
+  \]
+
+  Optimize $F_Q$ using control.
+
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Worked Example: Two-Level Sensor}
+
+  Hamiltonian:
+
+  \[
+  H = \frac{B}{2}\sigma_z + u_x(t)\sigma_x
+  \]
+
+  Goal:
+
+  maximize sensitivity to $B$.
+
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{RL Formulation}
+
+  Discrete time:
+
+  \[
+  a_t \in \{-u,0,+u\}
+  \]
+
+  Reward:
+
+  \[
+  R = F_Q
+  \]
+
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Physical Interpretation}
+
+  RL discovers:
+
+  \begin{itemize}
+  \item Ramsey sequences
+  \item spin echo
+  \item adaptive sensing
+  \end{itemize}
+
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Advantages}
+
+  \begin{itemize}
+  \item model-free
+  \item adaptive
+  \item robust to noise
+  \end{itemize}
+
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Challenges}
+
+  \begin{itemize}
+  \item sample complexity
+  \item scaling
+  \item experimental implementation
+  \end{itemize}
+
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Summary}
+
+  RL provides:
+
+  \begin{itemize}
+  \item stochastic optimization framework
+  \item tools for quantum control
+  \item new approaches to sensing
+  \end{itemize}
+
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{References}
+
+  \begin{itemize}
+  \item Sutton \& Barto
+  \item Bukov et al.
+  \item Cerezo et al.
+  \end{itemize}
+
+\end{frame}
+
+\end{document}

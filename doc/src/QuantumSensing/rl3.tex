@@ -1,0 +1,851 @@
+\documentclass{beamer}
+
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{physics}
+\usepackage{bm}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning}
+
+\title{Reinforcement Learning for Quantum Control}
+\subtitle{A Physics-Oriented Introduction with Applications to Quantum Sensors}
+\author{Morten Hjorth-Jensen}
+\date{March 17, 2026}
+
+\begin{document}
+
+%================================================
+\frame{\titlepage}
+
+%================================================
+\begin{frame}{Outline}
+\begin{enumerate}
+\item Why reinforcement learning?
+\item Basic ingredients: states, actions, rewards, policies
+\item Value functions and Bellman equations
+\item Q-learning, policy gradients, actor--critic
+\item Worked RL example with equations and pseudocode
+\item Model-aware reinforcement learning
+\item Reinforcement learning for quantum control
+\item Applications to quantum sensing
+\end{enumerate}
+\end{frame}
+
+%================================================
+\begin{frame}{Motivation}
+Many problems in physics can be phrased as optimization problems:
+\begin{itemize}
+\item variational calculations,
+\item control of dynamical systems,
+\item adaptive measurements,
+\item maximizing sensitivity in quantum sensors.
+\end{itemize}
+
+However, in many realistic settings:
+\begin{itemize}
+\item the objective is not known analytically,
+\item gradients are unavailable or noisy,
+\item decisions must be taken sequentially,
+\item present choices affect future opportunities.
+\end{itemize}
+
+Reinforcement learning (RL) addresses precisely this type of problem.
+\end{frame}
+
+
+%================================================
+\begin{frame}{What is Reinforcement Learning?}
+  An agent interacts with an environment over discrete time steps:
+  \[
+  s_0,a_0,r_1,s_1,a_1,r_2,\dots
+  \]
+
+  Core ingredients:
+  \begin{itemize}
+  \item \textbf{State} $s_t$: information available at time $t$,
+  \item \textbf{Action} $a_t$: decision taken by the agent,
+  \item \textbf{Reward} $r_{t+1}$: feedback from the environment,
+  \item \textbf{Policy} $\pi(a|s)$: rule for choosing actions.
+  \end{itemize}
+
+  Goal:
+  \[
+  \max_\pi \; \mathbb{E}_\pi\!\left[\sum_{t=0}^{\infty}\gamma^t r_{t+1}\right]
+  \]
+  where $0\le \gamma <1$ is a discount factor.
+\end{frame}
+
+%================================================
+\begin{frame}{Sequential Decision Making}
+  In ordinary optimization we choose parameters once.
+
+  In reinforcement learning we choose a \emph{sequence} of actions:
+  \[
+  a_0,a_1,a_2,\dots
+  \]
+
+  This matters because:
+  \begin{itemize}
+  \item actions change the future state,
+  \item the future state changes which actions are useful later,
+  \item rewards may be delayed.
+  \end{itemize}
+
+  Thus RL is best viewed as \textbf{optimization over trajectories or strategies}.
+\end{frame}
+
+%================================================
+\begin{frame}{Markov Decision Process}
+  The standard framework is a Markov Decision Process (MDP).
+
+  Elements:
+  \begin{itemize}
+  \item state space $\mathcal S$,
+  \item action space $\mathcal A$,
+  \item transition probability $P(s'|s,a)$,
+  \item reward function $R(s,a)$ or $R(s,a,s')$.
+  \end{itemize}
+
+  Markov property:
+  \[
+  P(s_{t+1}|s_t,a_t,s_{t-1},a_{t-1},\dots)=P(s_{t+1}|s_t,a_t)
+  \]
+
+  This is analogous to stochastic evolution equations in statistical physics.
+\end{frame}
+
+%================================================
+\begin{frame}{Return and Value Functions}
+  Define the return from time $t$:
+  \[
+  G_t = \sum_{k=0}^\infty \gamma^k r_{t+k+1}
+  \]
+
+  The \textbf{state-value function} under policy $\pi$ is
+  \[
+  V^\pi(s)=\mathbb{E}_\pi[G_t\mid s_t=s]
+  \]
+
+  The \textbf{action-value function} is
+  \[
+  Q^\pi(s,a)=\mathbb{E}_\pi[G_t\mid s_t=s,\; a_t=a]
+  \]
+
+  The \textbf{advantage} is
+  \[
+  A^\pi(s,a)=Q^\pi(s,a)-V^\pi(s)
+  \]
+
+  Interpretation: how much better is action $a$ than the typical action at state $s$?
+\end{frame}
+
+%================================================
+\begin{frame}{Bellman Equation}
+  The value function satisfies a recursive relation:
+  \[
+  V^\pi(s)=\sum_a \pi(a|s)\sum_{s'} P(s'|s,a)
+  \left[r(s,a,s')+\gamma V^\pi(s')\right]
+  \]
+
+  This is the Bellman equation.
+
+  Interpretation:
+  \[
+  \text{value} = \text{immediate reward} + \text{discounted future value}
+  \]
+
+  This is a self-consistency relation, reminiscent of mean-field equations and iterative schemes in physics.
+\end{frame}
+
+%================================================
+\begin{frame}{Optimal Bellman Equation}
+  Define the optimal value
+  \[
+  V^*(s)=\max_\pi V^\pi(s)
+  \]
+  and optimal action-value function
+  \[
+  Q^*(s,a)=\max_\pi Q^\pi(s,a).
+  \]
+
+  Then
+  \[
+  V^*(s)=\max_a \sum_{s'} P(s'|s,a)
+  \left[r(s,a,s')+\gamma V^*(s')\right]
+  \]
+
+  and
+  \[
+  Q^*(s,a)=\sum_{s'} P(s'|s,a)
+  \left[r(s,a,s')+\gamma \max_{a'}Q^*(s',a')\right].
+  \]
+
+  This is the basis for dynamic programming and Q-learning.
+\end{frame}
+
+%================================================
+\begin{frame}{Value Iteration and Policy Iteration}
+  \textbf{Value iteration:}
+  \[
+  V_{k+1}(s)=\max_a \sum_{s'} P(s'|s,a)\left[r+\gamma V_k(s')\right]
+  \]
+
+  \textbf{Policy iteration:}
+  \begin{enumerate}
+  \item Evaluate $V^\pi$ for current policy,
+  \item Improve the policy using
+    \[
+    \pi_{\text{new}}(s)=\arg\max_a Q^\pi(s,a)
+    \]
+  \end{enumerate}
+
+  These are exact if the model is known and the state-action spaces are manageable.
+\end{frame}
+
+%================================================
+\begin{frame}{Q-Learning}
+  When the model is unknown, we can learn directly from sampled transitions.
+
+  Q-learning update:
+  \[
+  Q(s_t,a_t)\leftarrow Q(s_t,a_t) +
+  \alpha\Big[r_{t+1}+\gamma \max_{a'}Q(s_{t+1},a')-Q(s_t,a_t)\Big]
+  \]
+
+  Here:
+  \begin{itemize}
+  \item $\alpha$ is the learning rate,
+  \item the term in brackets is the temporal-difference error.
+  \end{itemize}
+
+  This is a stochastic approximation to the Bellman optimality equation.
+\end{frame}
+
+%================================================
+\begin{frame}{Exploration vs Exploitation}
+  A central issue in RL is the exploration--exploitation tradeoff.
+
+  \begin{itemize}
+  \item \textbf{Exploitation}: choose the best-known action,
+  \item \textbf{Exploration}: try other actions to discover better strategies.
+  \end{itemize}
+
+  Common strategies:
+  \begin{itemize}
+  \item $\varepsilon$-greedy,
+  \item softmax/Boltzmann exploration,
+  \item entropy regularization.
+  \end{itemize}
+
+  This is analogous to balancing local minimization and global search in complex optimization landscapes.
+\end{frame}
+
+%================================================
+\begin{frame}{Why Policy Gradient Methods?}
+  Q-learning is natural for discrete action spaces.
+
+  But in physics and control problems we often have:
+  \begin{itemize}
+  \item continuous control amplitudes,
+  \item stochastic policies,
+  \item large state spaces,
+  \item differentiable parameterizations.
+  \end{itemize}
+
+  Then it is natural to parameterize the policy directly:
+  \[
+  \pi_\theta(a|s)
+  \]
+  and optimize the expected return
+  \[
+  J(\theta).
+  \]
+\end{frame}
+
+%================================================
+\begin{frame}{Policy Gradient Setup}
+  Define
+  \[
+  J(\theta)=\mathbb{E}_{\tau\sim \pi_\theta}[R(\tau)]
+  \]
+  where $\tau=(s_0,a_0,s_1,a_1,\dots)$ is a trajectory and
+  \[
+  R(\tau)=\sum_{t=0}^\infty \gamma^t r_{t+1}.
+  \]
+
+  Trajectory probability:
+  \[
+  P_\theta(\tau)=\rho(s_0)\prod_{t=0}^\infty \pi_\theta(a_t|s_t)P(s_{t+1}|s_t,a_t)
+  \]
+
+  We want to compute
+  \[
+  \nabla_\theta J(\theta).
+  \]
+\end{frame}
+
+%================================================
+\begin{frame}{Policy Gradient Theorem: Step 1}
+  Start with
+  \[
+  J(\theta)=\sum_\tau P_\theta(\tau)R(\tau).
+  \]
+
+  Differentiate:
+  \[
+  \nabla_\theta J(\theta)=\sum_\tau \nabla_\theta P_\theta(\tau)\,R(\tau).
+  \]
+
+  Use the log-derivative identity:
+  \[
+  \nabla_\theta P_\theta(\tau)=P_\theta(\tau)\nabla_\theta \log P_\theta(\tau).
+  \]
+
+  Hence
+  \[
+  \nabla_\theta J(\theta)=\sum_\tau P_\theta(\tau)\nabla_\theta \log P_\theta(\tau)\,R(\tau).
+  \]
+
+  Therefore
+  \[
+  \nabla_\theta J(\theta)=\mathbb{E}_{\tau\sim \pi_\theta}\left[\nabla_\theta \log P_\theta(\tau)\,R(\tau)\right].
+  \]
+\end{frame}
+
+%================================================
+\begin{frame}{Policy Gradient Theorem: Step 2}
+  Now expand the log trajectory probability:
+  \[
+  \log P_\theta(\tau)=\log \rho(s_0)+
+  \sum_{t=0}^\infty \log \pi_\theta(a_t|s_t)+
+  \sum_{t=0}^\infty \log P(s_{t+1}|s_t,a_t).
+  \]
+
+  Only the policy depends on $\theta$, so
+  \[
+  \nabla_\theta \log P_\theta(\tau)=
+  \sum_{t=0}^\infty \nabla_\theta \log \pi_\theta(a_t|s_t).
+  \]
+
+  Substituting,
+  \[
+  \nabla_\theta J(\theta)=
+  \mathbb{E}_{\tau\sim \pi_\theta}
+  \left[
+    \left(
+    \sum_{t=0}^\infty \nabla_\theta \log \pi_\theta(a_t|s_t)
+    \right)
+    R(\tau)
+    \right].
+  \]
+\end{frame}
+
+%================================================
+\begin{frame}{Policy Gradient Theorem: Step 3}
+  We can refine this by assigning to each time step only the future return from that point onward:
+  \[
+  G_t=\sum_{k=t}^\infty \gamma^{k-t}r_{k+1}.
+  \]
+
+  Then
+  \[
+  \nabla_\theta J(\theta)=
+  \mathbb{E}_{\pi_\theta}
+  \left[
+    \sum_{t=0}^\infty \nabla_\theta \log \pi_\theta(a_t|s_t)\,G_t
+    \right].
+  \]
+
+  This is the basis of the REINFORCE algorithm.
+
+  A more compact form is
+  \[
+  \nabla_\theta J(\theta)=
+  \mathbb{E}_{s\sim d^\pi,\,a\sim \pi_\theta}
+  \left[
+    \nabla_\theta \log \pi_\theta(a|s)\,Q^{\pi_\theta}(s,a)
+    \right]
+  \]
+  where $d^\pi(s)$ is the discounted state visitation distribution.
+\end{frame}
+
+%================================================
+\begin{frame}{Variance Reduction and Baselines}
+  The estimator can have high variance.
+
+  We may subtract a baseline $b(s)$ without changing the expectation:
+  \[
+  \nabla_\theta J(\theta)=
+  \mathbb{E}\left[
+    \nabla_\theta \log \pi_\theta(a|s)\left(Q^\pi(s,a)-b(s)\right)
+    \right].
+  \]
+
+  A natural choice is
+  \[
+  b(s)=V^\pi(s),
+  \]
+  which gives
+  \[
+  \nabla_\theta J(\theta)=
+  \mathbb{E}\left[
+    \nabla_\theta \log \pi_\theta(a|s)\,A^\pi(s,a)
+    \right].
+  \]
+
+  This motivates actor--critic methods.
+\end{frame}
+
+%================================================
+\begin{frame}{REINFORCE Algorithm}
+  \textbf{Basic Monte Carlo policy gradient algorithm}
+
+  For each episode:
+  \begin{enumerate}
+  \item Generate a trajectory using $\pi_\theta$,
+  \item Compute returns $G_t$,
+  \item Update parameters:
+    \[
+    \theta \leftarrow \theta + \alpha
+    \sum_t \nabla_\theta \log \pi_\theta(a_t|s_t)\,G_t
+    \]
+  \end{enumerate}
+
+  Advantages:
+  \begin{itemize}
+  \item simple,
+  \item direct,
+  \item works with stochastic policies.
+  \end{itemize}
+
+  Disadvantage:
+  \begin{itemize}
+  \item large variance.
+  \end{itemize}
+\end{frame}
+
+%================================================
+\begin{frame}{Actor--Critic Methods}
+  Actor--critic combines:
+  \begin{itemize}
+  \item \textbf{Actor}: policy $\pi_\theta(a|s)$,
+  \item \textbf{Critic}: estimate of value function $V_\phi(s)$.
+  \end{itemize}
+
+  Temporal-difference error:
+  \[
+  \delta_t=r_{t+1}+\gamma V_\phi(s_{t+1})-V_\phi(s_t)
+  \]
+
+  Policy update:
+  \[
+  \theta \leftarrow \theta + \alpha_\theta
+  \nabla_\theta \log \pi_\theta(a_t|s_t)\,\delta_t
+  \]
+
+  Critic update:
+  \[
+  \phi \leftarrow \phi - \alpha_\phi \nabla_\phi \delta_t^2
+  \]
+
+  This is often much more efficient than pure Monte Carlo policy gradients.
+\end{frame}
+
+%================================================
+\begin{frame}{Worked RL Example: Grid World}
+  Consider a particle moving on a 1D lattice:
+  \[
+  x \in \{0,1,2,3,4\}.
+  \]
+
+  Actions:
+  \[
+  a \in \{\text{left},\text{right}\}.
+  \]
+
+  Goal:
+  \begin{itemize}
+  \item reach $x=4$,
+  \item avoid spending too many steps,
+  \item possibly avoid a penalty region.
+  \end{itemize}
+
+  Reward example:
+  \[
+  r=
+  \begin{cases}
+    +10, & x=4,\\
+    -1, & \text{each intermediate step}.
+  \end{cases}
+  \]
+
+  This is simple enough to analyze explicitly, but already contains the core RL ideas.
+\end{frame}
+
+%================================================
+\begin{frame}{Worked Example: Bellman Equations}
+  If the policy is deterministic and always moves right, then
+  \[
+  V(4)=0
+  \]
+  if we stop at the goal, and for $x<4$,
+  \[
+  V(x)=-1+\gamma V(x+1).
+  \]
+
+  Thus
+  \begin{align*}
+    V(3) &= -1,\\
+    V(2) &= -1+\gamma(-1),\\
+    V(1) &= -1+\gamma(-1-\gamma),\\
+    V(0) &= -1+\gamma(-1-\gamma-\gamma^2).
+  \end{align*}
+
+  So even this toy model already illustrates how future consequences are encoded recursively.
+\end{frame}
+
+%================================================
+\begin{frame}{Worked Example: Q-Learning Equations}
+  Suppose the agent experiences
+  \[
+  s_t=1,\qquad a_t=\text{right},\qquad r_{t+1}=-1,\qquad s_{t+1}=2.
+  \]
+
+  Then the update is
+  \[
+  Q(1,\text{right}) \leftarrow Q(1,\text{right}) +
+  \alpha\left[-1 + \gamma \max_a Q(2,a)-Q(1,\text{right})\right].
+  \]
+
+  If initially all $Q=0$, then
+  \[
+  Q(1,\text{right}) \leftarrow \alpha(-1).
+  \]
+
+  Repeated experience gradually propagates information backward from the goal.
+\end{frame}
+
+%================================================
+\begin{frame}{Worked Example: Pseudocode}
+  \small
+\begin{verbatim}
+  Initialize Q(s,a) arbitrarily
+For each episode:
+    Initialize state s
+    While s is not terminal:
+        Choose action a from Q using epsilon-greedy
+        Take action a, observe reward r and next state s'
+        Q(s,a) <- Q(s,a) + alpha *
+                  [r + gamma * max_a' Q(s',a') - Q(s,a)]
+        s <- s'
+\end{verbatim}
+
+\begin{itemize}
+\item This is model-free.
+\item No knowledge of transition probabilities is required.
+\item The environment itself generates the data.
+\end{itemize}
+\end{frame}
+
+%================================================
+\begin{frame}{Worked Example: Policy Gradient Pseudocode}
+  \small
+\begin{verbatim}
+  Initialize policy parameters theta
+  For each episode:
+  Generate trajectory using pi_theta
+  For each time step t:
+  Compute return G_t
+  Update:
+          theta <- theta + alpha *
+                 sum_t [grad_theta log pi_theta(a_t|s_t) * G_t]
+\end{verbatim}
+
+With a baseline:
+\[
+\theta \leftarrow \theta + \alpha
+\sum_t \nabla_\theta \log \pi_\theta(a_t|s_t)\,
+\big(G_t - b(s_t)\big)
+\]
+
+This becomes especially natural when actions are continuous.
+\end{frame}
+
+%================================================
+\begin{frame}{Model-Free vs Model-Aware Reinforcement Learning}
+  Two broad philosophies:
+
+  \textbf{Model-free RL}
+  \begin{itemize}
+  \item learn directly from transitions,
+  \item no explicit model of $P(s'|s,a)$ is used,
+  \item examples: Q-learning, REINFORCE.
+  \end{itemize}
+
+  \textbf{Model-aware (or model-based) RL}
+  \begin{itemize}
+  \item use or learn a model of the dynamics,
+  \item plan using that model,
+  \item combine prediction and control.
+  \end{itemize}
+
+  In physics, model-aware RL is often especially attractive because we frequently know at least part of the dynamics.
+\end{frame}
+
+%================================================
+\begin{frame}{What is Model-Aware Reinforcement Learning?}
+  In model-aware RL we assume access to:
+  \begin{itemize}
+  \item known transition probabilities $P(s'|s,a)$, or
+  \item an approximate learned model $\hat P_\phi(s'|s,a)$.
+  \end{itemize}
+
+  Then we can:
+  \begin{itemize}
+  \item simulate hypothetical futures,
+  \item estimate returns before acting,
+  \item plan over multiple time steps,
+  \item use differentiable dynamics when available.
+  \end{itemize}
+
+  This is close in spirit to standard computational physics:
+  \[
+  \text{equations of motion} \;\Rightarrow\; \text{simulation} \;\Rightarrow\; \text{optimization}.
+  \]
+\end{frame}
+
+%================================================
+\begin{frame}{Benefits of Model-Aware RL}
+  Advantages:
+  \begin{itemize}
+  \item better sample efficiency,
+  \item ability to plan ahead,
+  \item easier incorporation of prior physical knowledge,
+  \item natural interface with control theory.
+  \end{itemize}
+
+  Disadvantages:
+  \begin{itemize}
+  \item model bias if the model is wrong,
+  \item errors may accumulate during planning,
+  \item learning an accurate model may be difficult.
+  \end{itemize}
+
+  Thus model-aware RL is especially useful when the dynamics are fairly well understood, but the control task remains hard.
+\end{frame}
+
+%================================================
+\begin{frame}{Model-Aware RL and Physics}
+  In many physics applications we know the dynamics:
+  \[
+  \dot x = f(x,u)
+  \]
+  or in quantum mechanics
+  \[
+  i\hbar \frac{d}{dt}\ket{\psi(t)}=H(u(t))\ket{\psi(t)}.
+  \]
+
+  Then the environment is not a black box:
+  \begin{itemize}
+  \item we can simulate trajectories,
+  \item estimate gradients,
+  \item evaluate candidate policies offline.
+  \end{itemize}
+
+  Model-aware RL thus sits naturally between:
+  \begin{itemize}
+  \item optimal control,
+  \item stochastic optimization,
+  \item machine learning.
+  \end{itemize}
+\end{frame}
+
+%================================================
+\begin{frame}{Transition to Quantum Systems}
+  Quantum control problems are naturally sequential:
+  \begin{itemize}
+  \item apply pulse,
+  \item observe state evolution,
+  \item choose next pulse,
+  \item optimize final performance.
+  \end{itemize}
+
+  This makes RL conceptually attractive.
+
+  At the same time, quantum dynamics are often known from the Schr\"odinger equation, which makes model-aware RL particularly relevant.
+\end{frame}
+
+%================================================
+\begin{frame}{Quantum Control}
+  Quantum dynamics:
+  \[
+  i\hbar \frac{d}{dt}\ket{\psi(t)} = H(t)\ket{\psi(t)}
+  \]
+
+  Controlled Hamiltonian:
+  \[
+  H(t)=H_0+\sum_k u_k(t)H_k
+  \]
+
+  Typical goals:
+  \begin{itemize}
+  \item state preparation,
+  \item gate synthesis,
+  \item suppression of decoherence,
+  \item enhancement of sensor performance.
+  \end{itemize}
+\end{frame}
+
+%================================================
+\begin{frame}{RL Formulation for Quantum Control}
+  Mapping:
+  \begin{itemize}
+  \item \textbf{State}: wavefunction, density matrix, or measurement record,
+  \item \textbf{Action}: control amplitude or pulse choice,
+  \item \textbf{Reward}: fidelity, energy, Fisher information, robustness.
+  \end{itemize}
+
+  Examples of terminal rewards:
+  \[
+  R = |\langle \psi_{\mathrm{target}}|\psi(T)\rangle|^2
+  \]
+  or
+  \[
+  R = F_Q(T)
+  \]
+  for a quantum sensing task.
+\end{frame}
+
+%================================================
+\begin{frame}{Quantum Sensors and Fisher Information}
+  A quantum sensor estimates a parameter $\theta$.
+
+  Precision is bounded by the quantum Cram\'er--Rao bound:
+  \[
+  \Delta \theta \ge \frac{1}{\sqrt{\nu F_Q}}
+  \]
+  where:
+  \begin{itemize}
+  \item $F_Q$ is the quantum Fisher information,
+  \item $\nu$ is the number of repetitions.
+  \end{itemize}
+
+  Thus maximizing $F_Q$ is a natural control objective for reinforcement learning.
+\end{frame}
+
+%================================================
+\begin{frame}{Worked Quantum Example: Two-Level Sensor}
+  Consider a qubit sensing a magnetic field $B$:
+  \[
+  H(t)=\frac{\omega_0}{2}\sigma_z + \frac{B}{2}\sigma_z + u_x(t)\sigma_x.
+  \]
+
+  Interpretation:
+  \begin{itemize}
+  \item $\omega_0$: bare splitting,
+  \item $B$: unknown signal,
+  \item $u_x(t)$: control field chosen by the agent.
+  \end{itemize}
+
+  Goal:
+  \begin{itemize}
+  \item accumulate phase information about $B$,
+  \item keep coherence as long as possible,
+  \item maximize final sensitivity.
+  \end{itemize}
+\end{frame}
+
+%================================================
+\begin{frame}{Quantum Sensor as an RL Problem}
+  Discretize time into steps $t_1,\dots,t_N$.
+
+  Possible actions:
+  \[
+  a_t \in \{-u,0,+u\}.
+  \]
+
+  Possible state representation:
+  \begin{itemize}
+  \item Bloch vector $(\langle \sigma_x\rangle,\langle \sigma_y\rangle,\langle \sigma_z\rangle)$,
+  \item time step,
+  \item previous measurement outcomes.
+  \end{itemize}
+
+  Possible reward:
+  \[
+  R = F_Q(T)
+  \]
+  or
+  \[
+  R=\left|\frac{\partial}{\partial B}\langle \sigma_y(T)\rangle\right|.
+  \]
+\end{frame}
+
+%================================================
+\begin{frame}{Why RL for Quantum Sensors?}
+  RL can learn how to:
+  \begin{itemize}
+  \item alternate between free precession and control,
+  \item suppress unwanted evolution,
+  \item balance phase accumulation against decoherence,
+  \item adapt measurements based on partial information.
+  \end{itemize}
+
+  The learned strategy may resemble:
+  \begin{itemize}
+  \item Ramsey interferometry,
+  \item spin echo,
+  \item dynamical decoupling,
+  \item adaptive phase estimation.
+  \end{itemize}
+\end{frame}
+
+%================================================
+\begin{frame}{Model-Aware RL for Quantum Control}
+  Quantum systems are a prime example of model-aware RL.
+
+  If the Hamiltonian is known, we can:
+  \begin{itemize}
+  \item simulate trajectories offline,
+  \item evaluate hypothetical pulse sequences,
+  \item use differentiable propagators,
+  \item combine RL with standard optimal-control ideas.
+  \end{itemize}
+
+  This is especially attractive for:
+  \begin{itemize}
+  \item quantum control,
+  \item calibration,
+  \item sensor design,
+  \item adaptive metrology.
+  \end{itemize}
+\end{frame}
+
+%================================================
+\begin{frame}{Summary}
+  Reinforcement learning provides:
+  \begin{itemize}
+  \item a framework for sequential decision making,
+  \item value-based and policy-based algorithms,
+  \item a natural extension of stochastic optimization,
+  \item direct relevance for quantum control and quantum sensing.
+  \end{itemize}
+
+  For physicists, the key conceptual bridge is:
+  \[
+  \text{variational optimization} + \text{stochastic dynamics} + \text{control}
+  \;\Rightarrow\; \text{reinforcement learning}.
+  \]
+\end{frame}
+
+%================================================
+\begin{frame}{Suggested Reading}
+  \begin{itemize}
+  \item R. Sutton and A. Barto, \emph{Reinforcement Learning: An Introduction}
+  \item M. Bukov et al., \emph{Reinforcement Learning in Different Phases of Quantum Control}, PRX 8, 031086 (2018)
+  \item M. Cerezo et al., \emph{Variational Quantum Algorithms}, Nat. Rev. Phys. 3, 625 (2021)
+  \item J. Biamonte et al., \emph{Quantum Machine Learning}, Nature 549, 195 (2017)
+  \end{itemize}
+\end{frame}
+
+\end{document}

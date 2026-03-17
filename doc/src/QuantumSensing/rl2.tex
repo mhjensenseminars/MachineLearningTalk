@@ -1,0 +1,441 @@
+\documentclass{beamer}
+
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{graphicx}
+\usepackage{physics}
+\usepackage{tikz}
+
+\title{Reinforcement Learning for Quantum Control}
+\subtitle{A Physics-Oriented Introduction with Applications to Quantum Sensors}
+\author{}
+\date{}
+
+\begin{document}
+
+%------------------------------------------------
+\frame{\titlepage}
+
+%------------------------------------------------
+\begin{frame}{Motivation}
+
+Many problems in modern physics can be viewed as optimization problems:
+
+\begin{itemize}
+\item finding ground states (variational methods)
+\item optimizing control pulses
+\item maximizing measurement precision
+\end{itemize}
+
+However:
+
+\begin{itemize}
+\item objective functions may be unknown
+\item gradients may be unavailable or noisy
+\item decisions may be sequential
+\end{itemize}
+
+Reinforcement learning (RL) provides a framework for
+\textbf{learning optimal strategies through interaction}.
+
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{What is Reinforcement Learning?}
+
+Reinforcement learning studies how an agent learns to act
+in an environment in order to maximize cumulative reward.
+
+Key ingredients:
+
+\begin{itemize}
+\item \textbf{State} $s_t$: description of the system
+\item \textbf{Action} $a_t$: decision made by the agent
+\item \textbf{Reward} $r_t$: feedback signal
+\end{itemize}
+
+The agent interacts with the system over time:
+
+\[
+(s_0,a_0,r_0,s_1,a_1,r_1,\dots)
+\]
+
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Sequential Decision Making}
+
+Unlike standard optimization, RL is inherently sequential.
+
+Decisions influence future states:
+
+\[
+s_t \rightarrow a_t \rightarrow s_{t+1}
+\]
+
+Thus we must consider long-term consequences.
+
+Goal:
+
+\[
+\max \mathbb{E}\left[\sum_{t=0}^\infty \gamma^t r_t \right]
+\]
+
+This resembles action principles in physics,
+where the total trajectory matters.
+
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Markov Decision Processes}
+
+We assume the system satisfies the Markov property:
+
+\[
+P(s_{t+1}|s_t,a_t,\dots)=P(s_{t+1}|s_t,a_t)
+\]
+
+An MDP is defined by:
+
+\begin{itemize}
+\item states $s$
+\item actions $a$
+\item transition probabilities $P(s'|s,a)$
+\item reward function $R(s,a)$
+\end{itemize}
+
+This is analogous to stochastic dynamics in physics.
+
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Policies}
+
+A policy specifies how actions are chosen:
+
+\[
+\pi(a|s)
+\]
+
+It can be:
+
+\begin{itemize}
+\item deterministic: $a = f(s)$
+\item stochastic: probabilities over actions
+\end{itemize}
+
+The goal of RL is to find an optimal policy $\pi^*$.
+
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Value Functions: Physical Interpretation}
+
+Define the value function:
+
+\[
+V^\pi(s) = \mathbb{E}_\pi\left[\sum_t \gamma^t r_t \mid s_0=s\right]
+\]
+
+Interpretation:
+
+\begin{itemize}
+\item expected ``future return''
+\item analogous to free energy or action
+\end{itemize}
+
+Similarly,
+
+\[
+Q^\pi(s,a)
+\]
+
+represents the value of taking action $a$ in state $s$.
+
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Bellman Equation: Self-Consistency}
+
+Key relation:
+
+\[
+V^\pi(s) = \sum_a \pi(a|s)\left[
+R(s,a) + \gamma \sum_{s'} P(s'|s,a)V^\pi(s')
+\right]
+\]
+
+Interpretation:
+
+\begin{itemize}
+\item immediate reward
+\item plus expected future reward
+\end{itemize}
+
+This is a recursive equation similar to
+self-consistency equations in many-body physics.
+
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Optimal Control Perspective}
+
+Define optimal value:
+
+\[
+V^*(s) = \max_\pi V^\pi(s)
+\]
+
+Bellman optimality:
+
+\[
+V^*(s) = \max_a \left[
+R(s,a) + \gamma \sum_{s'} P(s'|s,a)V^*(s')
+\right]
+\]
+
+This is the discrete analogue of the
+Hamilton--Jacobi--Bellman equation.
+
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Value Iteration}
+
+We can solve for $V^*$ iteratively:
+
+\[
+V_{k+1}(s) = \max_a \left[
+R(s,a) + \gamma \sum_{s'} P(s'|s,a)V_k(s')
+\right]
+\]
+
+This resembles iterative solutions in physics:
+
+\begin{itemize}
+\item self-consistent field methods
+\item renormalization procedures
+\end{itemize}
+
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Policy Iteration}
+
+Two-step algorithm:
+
+\textbf{1. Policy evaluation}
+
+Compute $V^\pi$
+
+\textbf{2. Policy improvement}
+
+\[
+\pi'(s) = \arg\max_a Q^\pi(s,a)
+\]
+
+Repeat until convergence.
+
+This is analogous to variational improvement.
+
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Q-Learning: Model-Free Approach}
+
+In many problems we do not know $P(s'|s,a)$.
+
+Q-learning uses data:
+
+\[
+Q(s,a) \leftarrow Q(s,a) + \alpha
+\left[r + \gamma \max_a Q(s',a) - Q(s,a)\right]
+\]
+
+Interpretation:
+
+\begin{itemize}
+\item temporal-difference learning
+\item stochastic approximation to Bellman equation
+\end{itemize}
+
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Policy Gradient Methods}
+
+We parameterize the policy:
+
+\[
+\pi_\theta(a|s)
+\]
+
+Objective:
+
+\[
+J(\theta)
+\]
+
+Gradient:
+
+\[
+\nabla_\theta J =
+\mathbb{E}[\nabla_\theta \log \pi_\theta(a|s) Q(s,a)]
+\]
+
+This resembles stochastic gradient descent.
+
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{REINFORCE Algorithm}
+
+Monte Carlo estimator:
+
+\[
+\nabla_\theta J \approx
+\sum_t \nabla_\theta \log \pi(a_t|s_t) G_t
+\]
+
+with return:
+
+\[
+G_t = \sum_{k=t}^\infty \gamma^{k-t} r_k
+\]
+
+Interpretation:
+
+\begin{itemize}
+\item increase probability of good trajectories
+\item decrease probability of bad ones
+\end{itemize}
+
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Actor--Critic Methods}
+
+Combine:
+
+\begin{itemize}
+\item Actor: policy
+\item Critic: value function
+\end{itemize}
+
+Temporal difference error:
+
+\[
+\delta = r + \gamma V(s') - V(s)
+\]
+
+Actor update:
+
+\[
+\nabla_\theta \log \pi(a|s)\,\delta
+\]
+
+This improves stability and efficiency.
+
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{RL as Variational Optimization}
+
+RL can be viewed as optimizing
+
+\[
+J(\theta)
+\]
+
+but with:
+
+\begin{itemize}
+\item unknown objective function
+\item stochastic gradients
+\item sequential dependence
+\end{itemize}
+
+Thus RL generalizes variational methods to
+\textbf{adaptive, sequential decision problems}.
+
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Transition to Quantum Systems}
+
+Many quantum problems naturally fit RL:
+
+\begin{itemize}
+\item sequential control
+\item measurement feedback
+\item stochastic noise
+\end{itemize}
+
+We now apply RL to quantum control and sensing.
+
+\end{frame}
+
+%------------------------------------------------
+% (Keep quantum control + sensing slides same as before)
+%------------------------------------------------
+
+\begin{frame}{Quantum Control}
+
+\[
+i \frac{d}{dt}\ket{\psi} = H(t)\ket{\psi}
+\]
+
+\[
+H(t)=H_0 + \sum_k u_k(t) H_k
+\]
+
+Goal: optimize control fields $u_k(t)$.
+
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{RL Mapping}
+
+\begin{itemize}
+\item state: quantum state
+\item action: control pulse
+\item reward: fidelity or Fisher information
+\end{itemize}
+
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Quantum Sensors}
+
+\[
+\Delta \theta \ge \frac{1}{\sqrt{\nu F_Q}}
+\]
+
+RL can optimize $F_Q$.
+
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Two-Level Sensor Example}
+
+\[
+H = \frac{B}{2}\sigma_z + u_x(t)\sigma_x
+\]
+
+Goal: maximize sensitivity to $B$.
+
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Summary}
+
+RL provides:
+
+\begin{itemize}
+\item a general framework for sequential optimization
+\item connections to stochastic control and variational methods
+\item powerful tools for quantum technologies
+\end{itemize}
+
+\end{frame}
+
+\end{document}
