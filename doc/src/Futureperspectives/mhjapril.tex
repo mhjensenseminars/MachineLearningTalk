@@ -1,0 +1,203 @@
+\documentclass{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb, bm}
+\usepackage{physics}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{xmpmulti}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usepackage{siunitx}
+\usepackage{longtable}
+\sisetup{round-mode=places,round-precision=1}
+\usepackage{braket}
+\usetikzlibrary{arrows.meta, shapes.misc, positioning, backgrounds}
+\usetikzlibrary{calc, decorations.markings,decorations.pathmorphing}
+\usetheme{Madrid} % You can change the theme as you like
+\usecolortheme{seagull}
+%\renewcommandCopy{\qty\SI} 
+
+
+
+\begin{document}
+
+\title{Machine Learning (classical and quantum) and Quantum Technologies for Quantum Control}
+\author{Morten Hjorth-Jensen}
+\institute{Department of Physics, UiO, Norway}
+\date{April 2026}
+
+
+
+\begin{frame}[plain,fragile]
+\titlepage
+\end{frame}
+
+
+
+\begin{frame}[plain,fragile]
+\frametitle{Many-body physics, Machine Learning, Quantum Machine Learning and Quantum Control}
+
+\begin{block}{}
+\begin{itemize}
+\item Development of many-body theories (with and without time-dependence) and new methods with and without machine learning (classical and quantum)
+\item Quantum engineering of devices for quantum circuits and quantum sensors (DRD5 project at CERN, HEP and NP applications)
+\item Reinforcement learning (quantum and classical) for optimization of quantum control
+\item Studies of noise in quantum computing and coupling to the environment
+\end{itemize}
+\end{block}
+
+\end{frame}
+
+\begin{frame}[plain,fragile]
+\frametitle{Vision for the future}
+
+%\vspace{6mm}
+
+\centerline{\includegraphics[width=1.0\linewidth]{qcfigures/Futurevision.pdf}}
+
+%\vspace{6mm}
+\end{frame}
+
+
+\begin{frame}[plain,fragile]
+\frametitle{Neural quantum states, PINNs and quantum PINNs: harmonic oscillator quantum dot}
+
+\begin{block}{Quantum Neural Networks and PINNs}
+\footnotesize{
+  \centering
+    \begin{tabular}{c|c|c|cc|cc}
+      $N$ & $\omega$ & DMC & PINN+BF & \%\,err & PINN+CTNN & \%\,err \\
+      6 & 0.001 & --- & $0.0137948(8)$ & --- & $\mathbf{0.013778(1)}$ & --- \\
+    & 0.01 & ---            & $0.69125(2)$  & --- & $\mathbf{0.69036(1)}$ & --- \\
+    & 0.10 & $3.55385(5)$   & $3.5549(1)$   & $+0.0295$ & $\mathbf{3.55388(5)}$ & $+0.0008$ \\
+    & 0.50 & $11.78484(6)$  & $11.7895(4)$  & $+0.0395$  & $\mathbf{11.7847(2)}$ & $-0.0000$ \\
+    & 1.00 & $20.15932(8)$  & $20.1610(6)$  & $+0.0083$  & $\mathbf{20.1585(3)}$ & $-0.0041$ \\
+    12 & 0.001 & ---          & $0.515823(3)$ & --- & $\mathbf{0.515365(4)}$ & --- \\
+    & 0.01 & ---           & $2.48620(5)$  & --- & $\mathbf{2.47363(4)}$ & --- \\
+    & 0.10 & $12.26984(8)$ & $12.2731(2)$  & $+0.0160$ & $\mathbf{12.2718(1)}$ & --- \\
+    & 0.50 & $39.1596(1)$  & $39.1786(8)$  & $+0.0485$ & $\mathbf{39.1604(3)}$ & $+0.0018$ \\
+    & 1.00 & $65.7001(1)$  & $65.717(1)$   & $+0.0257$ & $\mathbf{65.69556(5)}$ & $-0.0069$ \\
+    20 & 0.001 & ---          & --- & --- & $\mathbf{1.293033(6)}$ & --- \\
+    & 0.01 & ---           & ---  & --- & $\mathbf{6.14645(5)}$ & --- \\
+    & 0.10 & $29.9779(1)$ & ---  & --- & $29.9888(2)$ & $+0.0364$ \\
+    & 0.50 & $93.8752(1)$  & ---  & --- & $\mathbf{93.8789(5)}$ & $+0.0040$ \\
+    & 1.00 & $155.8822(1)$  & ---   & --- & $\mathbf{155.8738(7)}$ & $-0.0024$ \\
+\end{tabular}
+\end{block}
+\end{frame}
+
+\begin{frame}[plain,fragile]
+\frametitle{Parametric Matrix Models, Trotterization, Unitary CC, time-dependence  and quantum computing}
+      \begin{footnotesize}
+     \begin{columns}
+       \column{5.0cm}
+       \begin{alertblock}{Parametric matrix models}
+         \begin{itemize}
+           \item   Parametric matrix models (PMMs) as a way to compute the Lie-Trotter formula,
+             see Nature Communications {\bf 16}, 5929 (2025), Cook, Jammooa, MHJ, Lee and Lee
+           \item Extrapolated Trotter approximation for quantum computing simulations. We plot the lowest three energies of the effective Hamiltonian for the one-dimensional Heisenberg model with DM interactions versus time step $dt$. All training (diamonds) and validation (circles) samples are located away from dt = 0.
+         \end{itemize}
+\end{alertblock}       
+\column{5cm}
+      \begin{center}
+	\includegraphics[width=1.2\textwidth]{qcfigures/trotter.png}
+      \end{center}
+\end{columns}
+      \end{footnotesize}
+    }
+\end{frame}
+
+
+\begin{frame}[plain,fragile]{Novel approach to time-dependent DFT (TTDF) }
+
+We are implementing physics-informed neural networks wiht PMMs to time-dependent DFT. First applications to appear soon. Considerable improvements over traditional TDDFT. 
+
+\end{frame}
+
+
+\begin{frame}[plain,fragile]
+\frametitle{Quantum engineering, Di Vincenzo criteria}
+
+\begin{alertblock}{Quantum computing requirements }
+\begin{enumerate}
+\item A scalable physical system with well-characterized qubit
+
+\item The ability to initialize the state of the qubits to a simple fiducial state
+
+\item Long relevant quantum coherence times longer than the gate operation time
+
+\item A universal set of quantum gates
+
+\item A qubit-specific measurement capability
+\end{enumerate}
+\end{alertblock}
+\end{frame}
+
+\begin{frame}
+\frametitle{Our quantum computing platform, electrons on helium}
+  {
+      
+	
+      \begin{footnotesize}
+     \begin{columns}
+       \column{5.0cm}
+\begin{alertblock}{EEROQ and MSU}
+\begin{enumerate}
+\item Long coherence times
+
+\item Highly connect qubits
+
+\item Many qubits in a small area
+
+\item CMOS compatible
+
+\item Fast gates
+\end{enumerate}
+\end{alertblock}
+\column{6cm}
+      \begin{center}
+	\rotatebox[origin=c]{-90}{\includegraphics[width=1.3\textwidth]{qcfigures/lab.jpeg}}
+      \end{center}
+\end{columns}
+      \end{footnotesize}
+    }
+\end{frame}
+
+\begin{frame}{Recent publications}
+
+\footnotesize
+ \begin{enumerate}
+\item Niyaz R. Beysengulov, Johannes Pollanen, Øyvind S. Schøyen, Stian D. Bilek, Jonas B. Flaten, Oskar Leinonen, Håkon Emil Kristiansen, Zachary J. Stewart, Jared D. Weidman, Angela K. Wilson, Morten Hjorth-Jensen, {\em Coulomb interaction-driven entanglement of electrons on helium}, PRX Quantum {\bf 5}, 030324 (2024).
+\item Oskar Leinonen, Jonas B. Flaten, Stian D. Bilek, Øyvind S. Schøyen, Morten Hjorth-Jensen, Niyaz R. Beysengulov,  Zachary J. Stewart, Jared D. Weidman, Angela K. Wilson, {\em Design and Dynamics of High-Fidelity Two-Qubit Gates with Electrons on Helium}, Physical Review A {\bf 113}, 032624 (2026).
+\item Juan Manuel Scarpetta, John Henry Reina, and Morten Hjorth-Jensen, {\em Machine learning non-Markovian two-level quantum noise spectroscopy}, Physical Review Research {\bf 7}, 043285 (2025).
+\item   Niyaz R. Beysengulov,  Stian D.~Bilek, Antoine Camper, Jonas B.~Flaten, Morten Hjorth-Jensen, Gunnar F.~Lange, Oskar Leinonen, Jan Malamant, Francesco P.~Massel, Johannes Pollanen, Heidi Sandaker, Zachary J.~Stewart, Viktor Svensson, Jared D.~Weidman,
+{\em Electrons on  Helium and Entangled Quantum Sensors for Particle Physics} , Communication Physics, (2026), in press.
+\end{enumerate}
+
+\end{frame}
+
+
+
+\begin{frame}[plain,fragile]
+\frametitle{Inspiration}
+
+\begin{alertblock}{RL and quantum control inspiration}
+\begin{itemize}
+\item {\bf Reinforcement Learning for Quantum Technology}, by Marin Bukov and Florian Marquardt, arXiv:2601.18953
+\item {\bf Model-aware reinforcement learning for high-performance Bayesian experimental design in quantum metrology}, by Federico Belliardo, Fabio Zoratti, Florian Marquardt, and Vittorio Giovannetti, Quantum 8, 1555 (2024)
+\item {\bf Hybrid quantum-classical reinforcement learning in latent observation spaces}, Daniel T. R. Nagy, Csaba Czaban, Bence Bako, Peter Haga, Zsófia Kallus, and Zoltan Zimborás  Quantum Machine Intelligence {\bf 7}, 88 (2025).
+\end{itemize}
+\end{alertblock}
+
+\end{frame}
+
+
+
+\end{document}
+
+
+
+
+
+
