@@ -1,0 +1,1416 @@
+\documentclass[aspectratio=169]{beamer}
+
+% ---- Packages ----------------------------------------------------------------
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,shapes.geometric,backgrounds,fit}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{microtype}
+
+% ---- Colour palette ----------------------------------------------------------
+\definecolor{mqblue}{RGB}{0,73,135}       % deep institute blue
+\definecolor{mqgold}{RGB}{200,155,40}     % warm gold accent
+\definecolor{mqlight}{RGB}{220,232,245}   % very light blue tint
+\definecolor{mqmid}{RGB}{90,140,195}      % mid blue for accents
+\definecolor{mqgray}{RGB}{80,80,80}       % body text gray
+\definecolor{mqalert}{RGB}{180,40,40}     % red for emphasis
+
+% ---- Beamer theme ------------------------------------------------------------
+\usetheme{default}
+\usecolortheme{default}
+\usefonttheme{professionalfonts}
+
+\setbeamercolor{frametitle}{fg=white,bg=mqblue}
+\setbeamercolor{title}{fg=white}
+\setbeamercolor{subtitle}{fg=mqgold}
+\setbeamercolor{author}{fg=mqlight}
+\setbeamercolor{date}{fg=mqlight}
+\setbeamercolor{normal text}{fg=mqgray}
+\setbeamercolor{structure}{fg=mqblue}
+\setbeamercolor{alerted text}{fg=mqalert}
+\setbeamercolor{block title}{fg=white,bg=mqblue}
+\setbeamercolor{block body}{fg=mqgray,bg=mqlight}
+\setbeamercolor{itemize item}{fg=mqgold}
+\setbeamercolor{itemize subitem}{fg=mqmid}
+\setbeamercolor{enumerate item}{fg=mqblue}
+\setbeamercolor{footline}{fg=white,bg=mqblue}
+
+% ---- Title page background ---------------------------------------------------
+\setbeamercolor{background canvas}{bg=white}
+
+% ---- Frametitle style --------------------------------------------------------
+\setbeamertemplate{frametitle}{%
+  \vspace{0.05cm}%
+  \begin{beamercolorbox}[wd=\paperwidth,ht=0.65cm,dp=0.2cm,leftskip=0.4cm]{frametitle}%
+    \usebeamerfont{frametitle}\insertframetitle%
+    \ifx\insertframesubtitle\empty\else%
+      \\\usebeamerfont{framesubtitle}\textcolor{mqgold}{\insertframesubtitle}%
+    \fi%
+  \end{beamercolorbox}%
+}
+
+% ---- Footline ----------------------------------------------------------------
+\setbeamertemplate{footline}{%
+  \begin{beamercolorbox}[wd=\paperwidth,ht=0.42cm,dp=0.15cm]{footline}%
+    \hspace{0.4cm}%
+    \textcolor{mqlight}{\footnotesize AI \& Quantum Technologies}%
+    \hfill%
+    \textcolor{mqlight}{\footnotesize M.~Hjorth-Jensen \quad}%
+    \textcolor{mqgold}{\footnotesize\insertframenumber\,/\,\inserttotalframenumber}%
+    \hspace{0.3cm}%
+  \end{beamercolorbox}%
+}
+
+% ---- Navigation symbols off --------------------------------------------------
+\setbeamertemplate{navigation symbols}{}
+
+% ---- Itemize bullets ---------------------------------------------------------
+\setbeamertemplate{itemize item}{\raisebox{0.15ex}{\small$\blacktriangleright$}}
+\setbeamertemplate{itemize subitem}{\raisebox{0.15ex}{\small$\triangleright$}}
+
+% ---- Font sizes --------------------------------------------------------------
+\setbeamerfont{frametitle}{size=\large,series=\bfseries}
+\setbeamerfont{framesubtitle}{size=\normalsize,series=\mdseries}
+\setbeamerfont{title}{size=\LARGE,series=\bfseries}
+\setbeamerfont{subtitle}{size=\large,series=\mdseries}
+\setbeamerfont{block title}{size=\normalsize,series=\bfseries}
+
+% ---- Convenience command: highlighted box ------------------------------------
+\newcommand{\hlbox}[2][mqlight]{%
+  \begin{beamercolorbox}[rounded=true,shadow=false,sep=4pt,wd=\linewidth]{block body}%
+    \textcolor{mqblue}{\small #2}%
+  \end{beamercolorbox}%
+}
+
+% ---- Title block colours for the title page ----------------------------------
+\setbeamertemplate{title page}{%
+  \begin{tikzpicture}[remember picture, overlay]
+    % Full blue background
+    \fill[mqblue] (current page.south west) rectangle (current page.north east);
+    % Gold accent bar at top
+    \fill[mqgold] ([yshift=-0.0cm]current page.north west)
+                  rectangle ([yshift=-0.18cm]current page.north east);
+    % Decorative diagonal stripe (subtle)
+    \fill[mqmid,opacity=0.25]
+      ([xshift=8cm,yshift=0cm]current page.south west)
+      -- ([xshift=16.5cm,yshift=0cm]current page.south west)
+      -- (current page.north east)
+      -- ([xshift=10cm]current page.north east)
+      -- cycle;
+    % Gold bar at bottom
+    \fill[mqgold] ([yshift=0.55cm]current page.south west)
+                  rectangle (current page.south east);
+  \end{tikzpicture}%
+  \vspace{1.4cm}%
+  \begin{center}%
+    {\usebeamerfont{title}\usebeamercolor[fg]{title}\inserttitle\par}%
+    \vspace{0.5cm}%
+    {\usebeamerfont{subtitle}\textcolor{mqgold}{\insertsubtitle}\par}%
+    \vspace{0.8cm}%
+    \textcolor{white!80!mqblue}{\large\insertauthor}\par%
+    \vspace{0.25cm}%
+    \textcolor{white!60!mqblue}{\normalsize\insertinstitute}\par%
+    \vspace{0.25cm}%
+    \textcolor{mqgold}{\small\insertdate}%
+  \end{center}%
+}
+
+% =============================================================================
+\title{AI and Quantum Technologies}
+\author{Morten Hjorth-Jensen}
+\institute{Department of Physics and Center for Computing in Science Education, University of Oslo, Norway}
+\date{CircleU Frontiers in Artificial Intelligence, April 15, 2026 }
+% =============================================================================
+
+\begin{document}
+
+% ---- Title slide -------------------------------------------------------------
+\begin{frame}[plain]
+  \titlepage
+\end{frame}
+
+% ---- Outline -----------------------------------------------------------------
+\begin{frame}{Outline}
+\tableofcontents
+\end{frame}
+
+%==============================================================================
+\section{The Big Picture}
+%==============================================================================
+
+\begin{frame}{A Transformative Moment in Computational Science}
+
+  \begin{columns}[T]
+    \begin{column}{0.54\textwidth}
+      Two revolutions are unfolding in parallel:
+      \medskip
+      \begin{itemize}
+        \item \textbf{Artificial Intelligence} has transformed data-driven
+              modelling, optimisation, and prediction
+        \medskip
+        \item \textbf{Quantum Technologies} promise fundamentally new
+              approaches to computing, simulation, sensing, and communication
+      \end{itemize}
+      \bigskip
+      \alert{These two fields are now beginning to influence each other
+      in profound ways.}
+    \end{column}
+    \begin{column}{0.42\textwidth}
+      \begin{block}{Three Core Components}
+        \begin{enumerate}
+          \item High-performance computing (HPC)
+          \item Artificial intelligence \& ML
+          \item Quantum technologies
+        \end{enumerate}
+      \end{block}
+      \medskip
+      \small Together these may form a \textbf{new paradigm} for
+      scientific discovery.
+    \end{column}
+  \end{columns}
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}{The Role of Computational Science Today}
+
+  \begin{itemize}
+    \item Computational science is a central pillar of modern research,
+          complementing theory \emph{and} experiment
+    \medskip
+    \item Rapid growth of \textbf{HPC} enables increasingly realistic
+          simulations across climate science, neuroscience, materials
+          research, and astrophysics
+    \medskip
+    \item \textbf{AI and ML} have transformed how researchers analyse
+          large datasets, discover patterns, and build predictive models
+    \medskip
+    \item \textbf{Quantum technologies} are now translating fundamental
+          quantum-mechanical concepts — superposition, entanglement —
+          into practical technologies
+  \end{itemize}
+
+  \bigskip
+  \begin{center}
+    \textcolor{mqblue}{\bfseries
+    Quantum computers open new capabilities in simulation,
+    optimisation, and linear algebra.}
+  \end{center}
+
+\end{frame}
+
+%==============================================================================
+\section{AI for Quantum Technologies}
+%==============================================================================
+
+\begin{frame}{Machine learning meets quantum hardware}
+
+  \begin{columns}[T]
+    \begin{column}{0.52\textwidth}
+      \textbf{Core challenge:} Quantum devices are delicate systems.
+      Small imperfections $\Rightarrow$ decoherence and loss of information.
+
+      \bigskip
+      \textbf{Reinforcement learning} has proven particularly powerful:
+      \begin{itemize}
+        \item Agent interacts with a simulated/experimental quantum system
+        \item Learns control protocols that optimise a desired objective
+        \item Applications: state preparation, high-fidelity gate implementation
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.44\textwidth}
+      \begin{block}{ML Applications to Quantum Hardware}
+        \begin{itemize}
+          \item Calibration \& characterisation
+          \item Error mitigation \& noise reduction
+          \item Automated control-sequence discovery
+          \item Adaptive quantum experiment design
+        \end{itemize}
+      \end{block}
+      \medskip
+      \small Parameter spaces in quantum devices are \textbf{huge}
+      — traditional optimisation struggles.
+    \end{column}
+  \end{columns}
+
+\end{frame}
+
+%==============================================================================
+\section{Quantum Computing for AI}
+%==============================================================================
+
+\begin{frame}{Can quantum hardware accelerate machine learning?}
+
+  \begin{itemize}
+    \item Many ML algorithms rely on expensive \textbf{linear algebra}:
+          matrix inversion, eigenvalue decomposition, high-dimensional
+          optimisation
+    \medskip
+    \item Quantum algorithms have been proposed that may \emph{accelerate}
+          certain instances of these tasks: linear systems, sampling,
+          optimisation
+    \medskip
+    \item The field of \textbf{quantum machine learning} explores entirely
+          new computational models enabled by quantum hardware
+  \end{itemize}
+
+  \medskip
+  \begin{block}{Hybrid Quantum--Classical Algorithms}
+    \begin{itemize}
+      \item A classical optimisation loop interacts with a quantum
+            processor evaluating parameterised quantum circuits
+      \item Key framework for \emph{near-term} (NISQ) quantum devices
+      \item Practical quantum advantage for ML remains an \textbf{open question}
+    \end{itemize}
+  \end{block}
+
+\end{frame}
+
+%==============================================================================
+\section{A New Paradigm}
+%==============================================================================
+
+\begin{frame}{Toward a New Paradigm for Computational Discovery}
+
+  \begin{columns}[T]
+    \begin{column}{0.48\textwidth}
+      \textbf{Three pillars — distinct but interacting:}
+      \medskip
+      \begin{enumerate}
+        \setlength\itemsep{6pt}
+        \item \textcolor{mqblue}{\bfseries High-performance computing}\\
+              \small Large-scale simulations, data generation
+        \item \textcolor{mqblue}{\bfseries AI and machine learning}\\
+              \small Pattern recognition, surrogate modelling, model reduction
+        \item \textcolor{mqblue}{\bfseries Quantum technologies}\\
+              \small New capabilities for specific hard problems
+      \end{enumerate}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \textbf{Key implications:}
+      \medskip
+      \begin{itemize}
+        \setlength\itemsep{6pt}
+        \item Experiments generate \emph{massive datasets} requiring
+              sophisticated analysis
+        \item ML can \emph{accelerate} simulations via surrogate models
+              and effective physical representations
+        \item Quantum technologies may enable simulations of
+              \emph{strongly correlated} systems intractable classically
+      \end{itemize}
+    \end{column}
+  \end{columns}
+
+  \bigskip
+  \begin{center}
+    \textcolor{mqblue}{\bfseries
+    Computational science becomes a tightly integrated ecosystem:
+    theory, simulation, data analysis, and experiment interact continuously.}
+  \end{center}
+
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}{Conceptual Framework — Three Pillars of Future Discovery}
+%  \framesubtitle{Figure placeholder}
+
+  \begin{center}
+    \begin{tikzpicture}[scale=0.92]
+      % Placeholder rectangle
+      \draw[mqblue, line width=1.5pt, dashed, rounded corners=4pt]
+        (0,0) rectangle (12,5.8);
+      \node[mqgray, font=\large\bfseries] at (6,3.5)
+        {\includegraphics[width=0.9\linewidth]{Futurevision.pdf}};
+    \end{tikzpicture}
+  \end{center}
+
+\end{frame}
+
+%==============================================================================
+\section{Case Studies}
+%==============================================================================
+
+\begin{frame}{Case Studies — Overview}
+
+  \begin{columns}[T]
+    \begin{column}{0.48\textwidth}
+      \begin{block}{Quantum Control}
+        RL and neural-network optimisation discover control strategies
+        that \emph{outperform} traditional approaches for quantum
+        computers and sensors
+      \end{block}
+      \medskip
+      \begin{block}{Quantum Simulation of Many-Body Systems}
+        Classical approaches face \emph{exponential} complexity for
+        strongly correlated systems; hybrid quantum-classical methods
+        may provide new tools
+      \end{block}
+      \medskip
+      \begin{block}{AI-Assisted Hardware Development}
+        ML analyses experimental data, identifies noise sources, and
+        optimises device architectures — accelerating the path to
+        fault-tolerant quantum computers
+      \end{block}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \begin{block}{Quantum ML for Finance}
+        \begin{itemize}
+          \item Portfolio optimisation via QAOA / quantum annealing
+          \item Quantum kernel methods for financial time series
+          \item Quantum generative models for risk analysis and
+                Monte-Carlo-style simulations
+        \end{itemize}
+      \end{block}
+      \medskip
+      \begin{block}{Applications to Neuroscience}
+        \begin{itemize}
+          \item QML for high-dimensional neural data representation
+          \item Quantum simulation of spin-model-like neural dynamics
+        \end{itemize}
+      \end{block}
+    \end{column}
+  \end{columns}
+
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}{Spotlight: Quantum Control with Reinforcement Learning}
+
+  \begin{columns}[T]
+    \begin{column}{0.52\textwidth}
+      \textbf{Why is control hard?}
+      \begin{itemize}
+        \item Parameter spaces of quantum devices are extremely large
+        \item Traditional optimisation methods scale poorly
+        \item Noise and decoherence degrade any imperfect protocol
+      \end{itemize}
+      \bigskip
+      \textbf{What RL offers:}
+      \begin{itemize}
+        \item Model-free exploration of huge control landscapes
+        \item Discovers non-intuitive protocols
+        \item Adapts online to hardware drift
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.44\textwidth}
+      \begin{block}{Key References}
+        \footnotesize
+        \begin{itemize}
+          \item Bukov \& Marquardt,
+                \emph{RL for Quantum Technology},
+                arXiv:2601.18953 (2026)
+          \item Belliardo et al.,
+                \emph{Model-aware RL for Bayesian quantum metrology},
+                Quantum \textbf{8}, 1555 (2024)
+        \end{itemize}
+      \end{block}
+      \medskip
+      \small
+      \textcolor{mqblue}{Result:} RL agents have demonstrated gate
+      fidelities competitive with hand-tuned protocols on real hardware.
+    \end{column}
+  \end{columns}
+
+\end{frame}
+
+%------------------------------------------------------------------------------
+\begin{frame}{Spotlight: Quantum ML for Finance and Neuroscience}
+
+  \begin{columns}[T]
+    \begin{column}{0.48\textwidth}
+      \textbf{Finance}
+      \begin{itemize}
+        \item Large datasets, stochastic dynamics,
+              high-dimensional optimisation
+        \item \textbf{QAOA} / quantum annealing for combinatorial
+              portfolio optimisation
+        \item \textbf{Quantum kernel methods} — data encoded in
+              quantum states; similarity evaluated in Hilbert space
+        \item \textbf{Quantum generative models} — variational circuits
+              or quantum Boltzmann machines for risk analysis
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \textbf{Neuroscience}
+      \begin{itemize}
+        \item Brain: billions of interacting neurons, highly complex
+              dynamical system
+        \item ML already central for analysing neural recordings
+        \item \textbf{QML} may represent high-dimensional neural data
+              or model complex probability distributions
+        \item Models of collective neural behaviour resemble
+              \textbf{spin systems} from statistical physics
+              $\Rightarrow$ methods from quantum many-body physics
+              may offer new insights
+      \end{itemize}
+    \end{column}
+  \end{columns}
+
+\end{frame}
+
+%==============================================================================
+\section{Future Strategies}
+%==============================================================================
+
+\begin{frame}{Future Strategies and Requirements}
+
+  \begin{columns}[T]
+    \begin{column}{0.32\textwidth}
+      \begin{block}{\centering Interdisciplinary\\Collaboration}
+        \centering\medskip
+        Physics $\;\cdot\;$ Computer science $\;\cdot\;$
+        Mathematics $\;\cdot\;$ Engineering
+        \medskip
+
+        \small Key challenges lie \emph{at the intersection}
+        of these fields
+      \end{block}
+    \end{column}
+    \begin{column}{0.32\textwidth}
+      \begin{block}{\centering Education \&\\Training}
+        \centering\medskip
+        Future researchers need expertise in:
+        \medskip
+
+        \small Physics $\;\cdot\;$ Numerical methods $\;\cdot\;$
+        Machine learning $\;\cdot\;$ Quantum information science
+      \end{block}
+    \end{column}
+    \begin{column}{0.32\textwidth}
+      \begin{block}{\centering Research\\Infrastructure}
+        \centering\medskip
+        Integrated platforms combining:
+        \medskip
+
+        \small HPC resources $\;\cdot\;$ Experimental quantum platforms $\;\cdot\;$
+        ML-driven analysis environments
+      \end{block}
+    \end{column}
+  \end{columns}
+
+  \bigskip
+  \begin{center}
+    \textcolor{mqblue}{\bfseries
+    Realising this potential requires coordinated efforts across
+    multiple disciplines — no single community can do it alone.}
+  \end{center}
+
+\end{frame}
+
+
+%==============================================================================
+\section{Reinforcement Learning and Quantum Control}
+%==============================================================================
+
+
+%================================================
+\begin{frame}{Reinforcement Learning and Quantum Control: Motivation}
+Many problems in physics can be phrased as optimization problems:
+\begin{itemize}
+\item variational calculations,
+\item control of dynamical systems,
+\item adaptive measurements,
+\item maximizing sensitivity in quantum sensors.
+\end{itemize}
+
+However, in many realistic settings:
+\begin{itemize}
+\item the objective is not known analytically,
+\item gradients are unavailable or noisy,
+\item decisions must be taken sequentially,
+\item present choices affect future opportunities.
+\end{itemize}
+
+Reinforcement learning (RL) addresses precisely this type of problem.
+\end{frame}
+
+\begin{frame}{What is Reinforcement Learning? In plain words}
+\begin{block}{}  
+
+The RL framework consists of an {\bf agent} that learns how to solve a
+task by interacting with a physical system, called the
+environment. The agent can select {\bf actions} that modify the {\bf
+  state} of the environment, as a consequence a {\bf reward} is given
+to the agent, and the process repeats in a positive feedback loop. The
+objective is to maximise the sum of expected rewards andf thereby
+accomplish the task. The agent learns a {\bf strategy} that can be
+meployed under similar yet different circumstances. The so-called {\bf
+  policy} os the rule for choosing actions.
+
+\end{block}
+\end{frame}
+
+
+\begin{frame}{My more narrow motivation (another talk perhaps)}
+\begin{itemize}
+  \item Quantum sensors permit fine-grained control over probe evolution and measurement settings.
+  \item The central design problem is sequential: which control should be applied \emph{next}, given what has already been learned?
+  \item For realistic platforms, the estimation stack contains many non-smooth components: sampling of measurement outcomes, particle-filter resampling, and optional weak-measurement backaction.
+  \item The article by Belliardo {\em et al.} (UniPI, SNS)  proposes a \alert{model-aware RL} framework that treats experimental design as a trainable control problem while retaining a faithful physical model.
+\end{itemize}
+\end{frame}
+
+
+%================================================
+\begin{frame}{What is Reinforcement Learning?}
+  An agent interacts with an environment over discrete time steps:
+  \[
+  s_0,a_0,r_1,s_1,a_1,r_2,\dots
+  \]
+
+  Core ingredients:
+  \begin{itemize}
+  \item \textbf{State} $s_t$: information available at time $t$,
+  \item \textbf{Action} $a_t$: decision taken by the agent,
+  \item \textbf{Reward} $r_{t+1}$: feedback from the environment,
+  \item \textbf{Policy} $\pi(a|s)$: rule for choosing actions.
+  \end{itemize}
+
+  Goal:
+  \[
+  \max_\pi \; \mathbb{E}_\pi\!\left[\sum_{t=0}^{\infty}\gamma^t r_{t+1}\right]
+  \]
+  where $0\le \gamma <1$ is a discount factor.
+\end{frame}
+
+%================================================
+\begin{frame}{Sequential Decision Making}
+  In ordinary optimization we choose parameters once.
+
+  In reinforcement learning we choose a \emph{sequence} of actions:
+  \[
+  a_0,a_1,a_2,\dots
+  \]
+
+  This matters because:
+  \begin{itemize}
+  \item actions change the future state,
+  \item the future state changes which actions are useful later,
+  \item rewards may be delayed.
+  \end{itemize}
+
+  Thus RL is best viewed as \textbf{optimization over trajectories or strategies}.
+\end{frame}
+
+
+
+\begin{frame}{Model-aware RL}
+\begin{block}{Core idea}
+Use a differentiable simulation of the experiment, Bayesian inference by particle filtering, and policy optimization to learn adaptive or non-adaptive control laws for quantum metrology.
+\end{block}
+\begin{itemize}
+  \item \textbf{Bayesian mode:} optimize the final estimation error after a complete measurement sequence.
+  \item \textbf{Frequentist mode:} optimize the Cramer-Rao bound through the Fisher information matrix.
+  \item \textbf{Model-aware:} gradients are propagated through a known sensor model rather than inferred only from trial-and-error interaction.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{The measurement loop as a control architecture}
+\begin{enumerate}
+  \item From the current posterior summary, the agent outputs the next control $x_{t+1}$.
+  \item The probe evolves and is measured, producing a stochastic outcome $y_{t+1}$.
+  \item The Bayesian posterior is updated and fed back to the agent.
+\end{enumerate}
+\vspace{0.5em}
+Adaptive policies are written as
+\[
+  x_{t+1}=F_{\lambda}\!\big(P(\theta\mid x_t,y_t);\, y_t;\, R_t;\, t\big),
+\]
+while non-adaptive strategies suppress dependence on the posterior and outcomes:
+\[
+  x_{t+1}=F_{\lambda}(R_t,t).
+\]
+\begin{itemize}
+  \item $\lambda$: trainable parameters of the policy (typically a neural network).
+  \item $R_t$: resources consumed up to step $t$ (time, photons, signal amplitude, \ldots).
+\end{itemize}
+\end{frame}
+
+
+%================================================
+\begin{frame}{Model-Free vs Model-Aware Reinforcement Learning}
+  Two broad philosophies:
+
+  \textbf{Model-free RL}
+  \begin{itemize}
+  \item learn directly from transitions,
+  \item no explicit model of $P(s'|s,a)$ is used,
+  \item examples: Q-learning, REINFORCE.
+  \end{itemize}
+
+  \textbf{Model-aware (or model-based) RL}
+  \begin{itemize}
+  \item use or learn a model of the dynamics,
+  \item plan using that model,
+  \item combine prediction and control.
+  \end{itemize}
+
+  In physics, model-aware RL is often especially attractive because we frequently know at least part of the dynamics.
+\end{frame}
+
+%================================================
+\begin{frame}{What is Model-Aware Reinforcement Learning?}
+  In model-aware RL we assume access to:
+  \begin{itemize}
+  \item known transition probabilities $P(s'|s,a)$, or
+  \item an approximate learned model $\hat P_\phi(s'|s,a)$.
+  \end{itemize}
+
+  Then we can:
+  \begin{itemize}
+  \item simulate hypothetical futures,
+  \item estimate returns before acting,
+  \item plan over multiple time steps,
+  \item use differentiable dynamics when available.
+  \end{itemize}
+
+  This is close in spirit to standard computational physics:
+  \[
+  \text{equations of motion} \;\Rightarrow\; \text{simulation} \;\Rightarrow\; \text{optimization}.
+  \]
+\end{frame}
+
+%================================================
+\begin{frame}{Benefits of Model-Aware RL}
+  Advantages:
+  \begin{itemize}
+  \item better sample efficiency,
+  \item ability to plan ahead,
+  \item easier incorporation of prior physical knowledge,
+  \item natural interface with control theory.
+  \end{itemize}
+
+  Disadvantages:
+  \begin{itemize}
+  \item model bias if the model is wrong,
+  \item errors may accumulate during planning,
+  \item learning an accurate model may be difficult.
+  \end{itemize}
+
+  Thus model-aware RL is especially useful when the dynamics are fairly well understood, but the control task remains hard.
+\end{frame}
+
+%================================================
+\begin{frame}{Model-Aware RL and Physics}
+  In many physics applications we know the dynamics:
+  \[
+  \dot x = f(x,u)
+  \]
+  or in quantum mechanics
+  \[
+  i\hbar \frac{d}{dt}\vert \psi(t)\rangle =H(u(t))\vert \psi(t)\rangle.
+  \]
+
+  Then the environment is not a black box:
+  \begin{itemize}
+  \item we can simulate trajectories,
+  \item estimate gradients,
+  \item evaluate candidate policies offline.
+  \end{itemize}
+
+  Model-aware RL thus sits naturally between:
+  \begin{itemize}
+  \item optimal control,
+  \item stochastic optimization,
+  \item machine learning.
+  \end{itemize}
+\end{frame}
+
+
+%================================================
+\begin{frame}{Transition to Quantum Systems}
+  Quantum control problems are naturally sequential:
+  \begin{itemize}
+  \item apply pulse,
+  \item observe state evolution,
+  \item choose next pulse,
+  \item optimize final performance.
+  \end{itemize}
+
+  This makes RL conceptually attractive.
+At the same time, quantum dynamics are often known from the Schr\"odinger equation, which makes model-aware RL particularly relevant.
+\end{frame}
+
+%================================================
+\begin{frame}{Quantum Control}
+  Quantum dynamics:
+  \[
+  i\hbar \frac{d}{dt}\vert \psi(t)\rangle = H(t)\vert \psi(t)\rangle.
+  \]
+
+  Controlled Hamiltonian:
+  \[
+  H(t)=H_0+\sum_k u_k(t)H_k
+  \]
+
+  Typical goals:
+  \begin{itemize}
+  \item state preparation,
+  \item gate synthesis,
+  \item suppression of decoherence,
+  \item enhancement of sensor performance.
+  \end{itemize}
+\end{frame}
+
+
+\begin{frame}{Quantum Control}
+\centerline{\includegraphics[width=0.5\linewidth]{quantumcontrol.pdf}}
+\end{frame}
+
+
+%================================================
+\begin{frame}{RL Formulation for Quantum Control}
+  Mapping:
+  \begin{itemize}
+  \item \textbf{State}: wavefunction, density matrix, or measurement record,
+  \item \textbf{Action}: control amplitude or pulse choice,
+  \item \textbf{Reward}: fidelity, energy, Fisher information, robustness.
+  \end{itemize}
+
+  Examples of terminal rewards:
+  \[
+  R = |\langle \psi_{\mathrm{target}}|\psi(T)\rangle|^2
+  \]
+  or
+  \[
+  R = F_Q(T)
+  \]
+  for a quantum sensing task.
+\end{frame}
+
+%================================================
+\begin{frame}{Quantum Sensors and Fisher Information}
+  A quantum sensor estimates a parameter $\theta$.
+
+  Precision is bounded by the quantum Cram\'er--Rao bound:
+  \[
+  \Delta \theta \ge \frac{1}{\sqrt{\nu F_Q}}
+  \]
+  where:
+  \begin{itemize}
+  \item $F_Q$ is the quantum Fisher information,
+  \item $\nu$ is the number of repetitions.
+  \end{itemize}
+
+  Thus maximizing $F_Q$ is a natural control objective for reinforcement learning.
+\end{frame}
+
+\begin{frame}{RL Implementation Blueprint I}
+An actual implementation would follow these steps:
+\begin{itemize}
+  \item {\bf Define the environment:} Choose the sensor platform and identify its controllable parameters and observables.  Build a simulation of the sensor dynamics (e.g.\ master equation or Monte Carlo) that includes the unknown parameter. If possible, validate the simulation against experiments.
+  \item {\bf State representation:} Decide what information to feed to the agent.  This may be raw data (fluorescence images, spin readouts) or pre-processed features (means and variances). Include memory of previous steps if needed (e.g.\ via recurrent networks) to handle non-Markovian effects.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}{RL Implementation Blueprint II}
+\begin{itemize}
+  \item {\bf Action space:} Specify the set of actions.  For continuous controls, discretization or parameterized actions can be used.  Ensure actions respect experimental limits (e.g.\ maximum pulse amplitude). 
+  \item {\bf Reward function:} Choose a reward that captures precision.  A terminal reward $R = -\log(\text{estimation variance})$ is one option.  Alternatively, use stepwise rewards like Bayesian information gain.  Regularize the reward if necessary to avoid trivial strategies.
+  \item {\bf RL algorithm:} Select an algorithm based on action type.  For example,  set neural network architectures appropriate for the state (e.g.\ convolutional nets for images).
+\end{itemize}
+\end{frame}
+
+\begin{frame}{RL Implementation Blueprint III}
+\begin{itemize}
+  \item {\bf Training:} Train the agent in simulation.  Introduce variability (randomize unknowns) to encourage generalization.  Use experience replay or batch updates to improve sample efficiency.  Monitor performance on validation scenarios.
+  \item {\bf Deployment:} Transfer the trained policy to the real device.  If training was in-silico, consider fine-tuning on the hardware with a few adjustment episodes.  Include safeguards for safety (e.g.\ bounding pulses) and mechanisms to reset the environment.
+\end{itemize}
+\end{frame}
+
+
+
+
+%================================================
+\begin{frame}{Worked Quantum Example: Two-Level Sensor}
+  Consider a qubit sensing a magnetic field $B$:
+  \[
+  H(t)=\frac{\omega_0}{2}\sigma_z + \frac{B}{2}\sigma_z + u_x(t)\sigma_x.
+  \]
+
+  Interpretation:
+  \begin{itemize}
+  \item $\omega_0$: bare splitting,
+  \item $B$: unknown signal,
+  \item $u_x(t)$: control field chosen by the agent.
+  \end{itemize}
+
+  Goal:
+  \begin{itemize}
+  \item accumulate phase information about $B$,
+  \item keep coherence as long as possible,
+  \item maximize final sensitivity.
+  \end{itemize}
+\end{frame}
+
+%================================================
+\begin{frame}{Quantum Sensor as an RL Problem}
+  Discretize time into steps $t_1,\dots,t_N$.
+
+  Possible actions:
+  \[
+  a_t \in \{-u,0,+u\}.
+  \]
+
+  Possible state representation:
+  \begin{itemize}
+  \item Bloch vector $(\langle \sigma_x\rangle,\langle \sigma_y\rangle,\langle \sigma_z\rangle)$,
+  \item time step,
+  \item previous measurement outcomes.
+  \end{itemize}
+
+  Possible reward:
+  \[
+  R = F_Q(T)
+  \]
+  or
+  \[
+  R=\left|\frac{\partial}{\partial B}\langle \sigma_y(T)\rangle\right|.
+  \]
+\end{frame}
+
+%================================================
+\begin{frame}{Why RL for Quantum Sensors?}
+  RL can learn how to:
+  \begin{itemize}
+  \item alternate between free precession and control,
+  \item suppress unwanted evolution,
+  \item balance phase accumulation against decoherence,
+  \item adapt measurements based on partial information.
+  \end{itemize}
+
+  The learned strategy may resemble:
+  \begin{itemize}
+  \item Ramsey interferometry,
+  \item spin echo,
+  \item dynamical decoupling,
+  \item adaptive phase estimation.
+  \end{itemize}
+\end{frame}
+
+%================================================
+\begin{frame}{Model-Aware RL for Quantum Control}
+  Quantum systems are a prime example of model-aware RL.
+
+  If the Hamiltonian is known, we can:
+  \begin{itemize}
+  \item simulate trajectories offline,
+  \item evaluate hypothetical pulse sequences,
+  \item use differentiable propagators,
+  \item combine RL with standard optimal-control ideas.
+  \end{itemize}
+
+  This is especially attractive for:
+  \begin{itemize}
+  \item quantum control,
+  \item calibration,
+  \item sensor design,
+  \item adaptive metrology.
+  \end{itemize}
+\end{frame}
+
+%================================================
+\begin{frame}{RL and Quantum Control Summary}
+  Reinforcement learning provides:
+  \begin{itemize}
+  \item a framework for sequential decision making,
+  \item value-based and policy-based algorithms,
+  \item a natural extension of stochastic optimization,
+  \item direct relevance for quantum control and quantum sensing.
+  \end{itemize}
+
+  For physicists, the key conceptual bridge is:
+  \[
+  \text{variational optimization} + \text{stochastic dynamics} + \text{control}
+  \;\Rightarrow\; \text{reinforcement learning}.
+  \]
+\end{frame}
+
+
+
+%==============================================================================
+\section{Conclusions}
+%==============================================================================
+
+\begin{frame}{Conclusions}
+
+  \begin{itemize}
+    \setlength\itemsep{8pt}
+    \item AI and quantum technologies are \textbf{rapidly reshaping}
+          the landscape of computational science
+    \medskip
+    \item Their mutual interaction, combined with advances in HPC,
+          is transforming how scientific problems are approached and solved
+    \medskip
+    \item The integration of \textbf{theory, simulation, machine learning,
+          and quantum hardware} may enable entirely new forms of
+          scientific discovery
+    \medskip
+    \item Promising near-term applications span:
+          quantum control, many-body simulation, hardware development,
+          finance, and neuroscience
+  \end{itemize}
+
+  \bigskip
+  \begin{center}
+    \begin{beamercolorbox}[rounded=true,sep=6pt,center,wd=0.88\linewidth]{block title}
+      As these technologies continue to mature, their convergence
+      will play a central role in addressing some of the most
+      challenging problems in physics, chemistry, and materials science.
+    \end{beamercolorbox}
+  \end{center}
+
+\end{frame}
+
+
+
+%------------------------------------------------------------------------------
+\begin{frame}{Key References}
+
+  \footnotesize
+  \begin{thebibliography}{5}
+
+    \bibitem{goodfellow2016}
+    I.~Goodfellow, Y.~Bengio, and A.~Courville,
+    \emph{Deep Learning},
+    MIT Press (2016).
+
+    \bibitem{preskill2018}
+    J.~Preskill,
+    Quantum computing in the NISQ era,
+    \emph{Quantum} \textbf{2}, 79 (2018).
+
+    \bibitem{bukov2026}
+    M.~Bukov and F.~Marquardt,
+    Reinforcement learning for Quantum Technology,
+    arXiv:2601.18953 (2026).
+
+    \bibitem{belliardo2024}
+    F.~Belliardo, F.~Zoratti, F.~Marquardt, and V.~Giovannetti,
+    Model-aware reinforcement learning for high-performance
+    Bayesian experimental design in quantum metrology,
+    \emph{Quantum} \textbf{8}, 1555 (2024).
+
+    \bibitem{schuld2021}
+    M.~Schuld and F.~Petruccione,
+    \emph{Machine Learning with Quantum Computers},
+    Springer-Verlag (2021).
+
+  \end{thebibliography}
+
+\end{frame}
+
+
+%==============================================================================
+\appendix{Additional material on RL}
+%==============================================================================
+
+
+
+
+%================================================
+\begin{frame}{Markov Decision Process}
+  The standard framework is a Markov Decision Process (MDP).
+
+  Elements:
+  \begin{itemize}
+  \item state space $\mathcal S$,
+  \item action space $\mathcal A$,
+  \item transition probability $P(s'|s,a)$,
+  \item reward function $R(s,a)$ or $R(s,a,s')$.
+  \end{itemize}
+
+  Markov property:
+  \[
+  P(s_{t+1}|s_t,a_t,s_{t-1},a_{t-1},\dots)=P(s_{t+1}|s_t,a_t)
+  \]
+
+  This is analogous to stochastic evolution equations in statistical physics.
+\end{frame}
+
+%================================================
+\begin{frame}{Return and Value Functions}
+  Define the return from time $t$:
+  \[
+  G_t = \sum_{k=0}^\infty \gamma^k r_{t+k+1}
+  \]
+
+  The \textbf{state-value function} under policy $\pi$ is
+  \[
+  V^\pi(s)=\mathbb{E}_\pi[G_t\mid s_t=s]
+  \]
+
+  The \textbf{action-value function} is
+  \[
+  Q^\pi(s,a)=\mathbb{E}_\pi[G_t\mid s_t=s,\; a_t=a]
+  \]
+
+  The \textbf{advantage} is
+  \[
+  A^\pi(s,a)=Q^\pi(s,a)-V^\pi(s)
+  \]
+
+  Interpretation: how much better is action $a$ than the typical action at state $s$?
+\end{frame}
+
+%================================================
+\begin{frame}{Bellman Equation}
+  The value function satisfies a recursive relation:
+  \[
+  V^\pi(s)=\sum_a \pi(a|s)\sum_{s'} P(s'|s,a)
+  \left[r(s,a,s')+\gamma V^\pi(s')\right]
+  \]
+
+  This is the Bellman equation.
+
+  Interpretation:
+  \[
+  \text{value} = \text{immediate reward} + \text{discounted future value}
+  \]
+
+  This is a self-consistency relation, reminiscent of mean-field equations and iterative schemes in physics.
+\end{frame}
+
+%================================================
+\begin{frame}{Optimal Bellman Equation}
+  Define the optimal value
+  \[
+  V^*(s)=\max_\pi V^\pi(s)
+  \]
+  and optimal action-value function
+  \[
+  Q^*(s,a)=\max_\pi Q^\pi(s,a).
+  \]
+
+  Then
+  \[
+  V^*(s)=\max_a \sum_{s'} P(s'|s,a)
+  \left[r(s,a,s')+\gamma V^*(s')\right]
+  \]
+
+  and
+  \[
+  Q^*(s,a)=\sum_{s'} P(s'|s,a)
+  \left[r(s,a,s')+\gamma \max_{a'}Q^*(s',a')\right].
+  \]
+
+  This is the basis for dynamic programming and Q-learning.
+\end{frame}
+
+%================================================
+\begin{frame}{Value Iteration and Policy Iteration}
+  \textbf{Value iteration:}
+  \[
+  V_{k+1}(s)=\max_a \sum_{s'} P(s'|s,a)\left[r+\gamma V_k(s')\right]
+  \]
+
+  \textbf{Policy iteration:}
+  \begin{enumerate}
+  \item Evaluate $V^\pi$ for current policy,
+  \item Improve the policy using
+    \[
+    \pi_{\text{new}}(s)=\arg\max_a Q^\pi(s,a)
+    \]
+  \end{enumerate}
+
+  These are exact if the model is known and the state-action spaces are manageable.
+\end{frame}
+
+%================================================
+\begin{frame}{Q-Learning}
+  When the model is unknown, we can learn directly from sampled transitions.
+
+  Q-learning update:
+  \[
+  Q(s_t,a_t)\leftarrow Q(s_t,a_t) +
+  \alpha\Big[r_{t+1}+\gamma \max_{a'}Q(s_{t+1},a')-Q(s_t,a_t)\Big]
+  \]
+
+  Here:
+  \begin{itemize}
+  \item $\alpha$ is the learning rate,
+  \item the term in brackets is the temporal-difference error.
+  \end{itemize}
+
+  This is a stochastic approximation to the Bellman optimality equation.
+\end{frame}
+
+%================================================
+\begin{frame}{Exploration vs Exploitation}
+  A central issue in RL is the exploration--exploitation tradeoff.
+
+  \begin{itemize}
+  \item \textbf{Exploitation}: choose the best-known action,
+  \item \textbf{Exploration}: try other actions to discover better strategies.
+  \end{itemize}
+
+  Common strategies:
+  \begin{itemize}
+  \item $\varepsilon$-greedy,
+  \item softmax/Boltzmann exploration,
+  \item entropy regularization.
+  \end{itemize}
+
+  This is analogous to balancing local minimization and global search in complex optimization landscapes.
+\end{frame}
+
+%================================================
+\begin{frame}{Why Policy Gradient Methods?}
+  Q-learning is natural for discrete action spaces.
+
+  But in physics and control problems we often have:
+  \begin{itemize}
+  \item continuous control amplitudes,
+  \item stochastic policies,
+  \item large state spaces,
+  \item differentiable parameterizations.
+  \end{itemize}
+
+  Then it is natural to parameterize the policy directly:
+  \[
+  \pi_\theta(a|s)
+  \]
+  and optimize the expected return
+  \[
+  J(\theta).
+  \]
+\end{frame}
+
+%================================================
+\begin{frame}{Policy Gradient Setup}
+  Define
+  \[
+  J(\theta)=\mathbb{E}_{\tau\sim \pi_\theta}[R(\tau)]
+  \]
+  where $\tau=(s_0,a_0,s_1,a_1,\dots)$ is a trajectory and
+  \[
+  R(\tau)=\sum_{t=0}^\infty \gamma^t r_{t+1}.
+  \]
+
+  Trajectory probability:
+  \[
+  P_\theta(\tau)=\rho(s_0)\prod_{t=0}^\infty \pi_\theta(a_t|s_t)P(s_{t+1}|s_t,a_t)
+  \]
+
+  We want to compute
+  \[
+  \nabla_\theta J(\theta).
+  \]
+\end{frame}
+
+%================================================
+\begin{frame}{Policy Gradient Theorem: Step 1}
+  Start with
+  \[
+  J(\theta)=\sum_\tau P_\theta(\tau)R(\tau).
+  \]
+
+  Differentiate:
+  \[
+  \nabla_\theta J(\theta)=\sum_\tau \nabla_\theta P_\theta(\tau)\,R(\tau).
+  \]
+
+  Use the log-derivative identity:
+  \[
+  \nabla_\theta P_\theta(\tau)=P_\theta(\tau)\nabla_\theta \log P_\theta(\tau).
+  \]
+
+  Hence
+  \[
+  \nabla_\theta J(\theta)=\sum_\tau P_\theta(\tau)\nabla_\theta \log P_\theta(\tau)\,R(\tau).
+  \]
+
+  Therefore
+  \[
+  \nabla_\theta J(\theta)=\mathbb{E}_{\tau\sim \pi_\theta}\left[\nabla_\theta \log P_\theta(\tau)\,R(\tau)\right].
+  \]
+\end{frame}
+
+%================================================
+\begin{frame}{Policy Gradient Theorem: Step 2}
+  Now expand the log trajectory probability:
+  \[
+  \log P_\theta(\tau)=\log \rho(s_0)+
+  \sum_{t=0}^\infty \log \pi_\theta(a_t|s_t)+
+  \sum_{t=0}^\infty \log P(s_{t+1}|s_t,a_t).
+  \]
+
+  Only the policy depends on $\theta$, so
+  \[
+  \nabla_\theta \log P_\theta(\tau)=
+  \sum_{t=0}^\infty \nabla_\theta \log \pi_\theta(a_t|s_t).
+  \]
+
+  Substituting,
+  \[
+  \nabla_\theta J(\theta)=
+  \mathbb{E}_{\tau\sim \pi_\theta}
+  \left[
+    \left(
+    \sum_{t=0}^\infty \nabla_\theta \log \pi_\theta(a_t|s_t)
+    \right)
+    R(\tau)
+    \right].
+  \]
+\end{frame}
+
+%================================================
+\begin{frame}{Policy Gradient Theorem: Step 3}
+  We can refine this by assigning to each time step only the future return from that point onward:
+  \[
+  G_t=\sum_{k=t}^\infty \gamma^{k-t}r_{k+1}.
+  \]
+
+  Then
+  \[
+  \nabla_\theta J(\theta)=
+  \mathbb{E}_{\pi_\theta}
+  \left[
+    \sum_{t=0}^\infty \nabla_\theta \log \pi_\theta(a_t|s_t)\,G_t
+    \right].
+  \]
+
+  This is the basis of the REINFORCE algorithm.
+
+  A more compact form is
+  \[
+  \nabla_\theta J(\theta)=
+  \mathbb{E}_{s\sim d^\pi,\,a\sim \pi_\theta}
+  \left[
+    \nabla_\theta \log \pi_\theta(a|s)\,Q^{\pi_\theta}(s,a)
+    \right]
+  \]
+  where $d^\pi(s)$ is the discounted state visitation distribution.
+\end{frame}
+
+%================================================
+\begin{frame}{Variance Reduction and Baselines}
+  The estimator can have high variance.
+
+  We may subtract a baseline $b(s)$ without changing the expectation:
+  \[
+  \nabla_\theta J(\theta)=
+  \mathbb{E}\left[
+    \nabla_\theta \log \pi_\theta(a|s)\left(Q^\pi(s,a)-b(s)\right)
+    \right].
+  \]
+
+  A natural choice is
+  \[
+  b(s)=V^\pi(s),
+  \]
+  which gives
+  \[
+  \nabla_\theta J(\theta)=
+  \mathbb{E}\left[
+    \nabla_\theta \log \pi_\theta(a|s)\,A^\pi(s,a)
+    \right].
+  \]
+
+  This motivates actor--critic methods.
+\end{frame}
+
+%================================================
+\begin{frame}{REINFORCE Algorithm}
+  \textbf{Basic Monte Carlo policy gradient algorithm}
+
+  For each episode:
+  \begin{enumerate}
+  \item Generate a trajectory using $\pi_\theta$,
+  \item Compute returns $G_t$,
+  \item Update parameters:
+    \[
+    \theta \leftarrow \theta + \alpha
+    \sum_t \nabla_\theta \log \pi_\theta(a_t|s_t)\,G_t
+    \]
+  \end{enumerate}
+
+  Advantages:
+  \begin{itemize}
+  \item simple,
+  \item direct,
+  \item works with stochastic policies.
+  \end{itemize}
+
+  Disadvantage:
+  \begin{itemize}
+  \item large variance.
+  \end{itemize}
+\end{frame}
+
+%================================================
+\begin{frame}{Actor--Critic Methods}
+  Actor--critic combines:
+  \begin{itemize}
+  \item \textbf{Actor}: policy $\pi_\theta(a|s)$,
+  \item \textbf{Critic}: estimate of value function $V_\phi(s)$.
+  \end{itemize}
+
+  Temporal-difference error:
+  \[
+  \delta_t=r_{t+1}+\gamma V_\phi(s_{t+1})-V_\phi(s_t)
+  \]
+
+  Policy update:
+  \[
+  \theta \leftarrow \theta + \alpha_\theta
+  \nabla_\theta \log \pi_\theta(a_t|s_t)\,\delta_t
+  \]
+
+  Critic update:
+  \[
+  \phi \leftarrow \phi - \alpha_\phi \nabla_\phi \delta_t^2
+  \]
+
+  This is often much more efficient than pure Monte Carlo policy gradients.
+\end{frame}
+
+%================================================
+\begin{frame}{Worked RL Example: Grid World}
+  Consider a particle moving on a 1D lattice:
+  \[
+  x \in \{0,1,2,3,4\}.
+  \]
+
+  Actions:
+  \[
+  a \in \{\text{left},\text{right}\}.
+  \]
+
+  Goal:
+  \begin{itemize}
+  \item reach $x=4$,
+  \item avoid spending too many steps,
+  \item possibly avoid a penalty region.
+  \end{itemize}
+
+  Reward example:
+  \[
+  r=
+  \begin{cases}
+    +10, & x=4,\\
+    -1, & \text{each intermediate step}.
+  \end{cases}
+  \]
+
+  This is simple enough to analyze explicitly, but already contains the core RL ideas.
+\end{frame}
+
+
+
+
+%================================================
+
+
+\end{document}
+
+
+
+
+
+
