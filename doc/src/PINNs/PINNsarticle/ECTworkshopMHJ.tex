@@ -19,6 +19,7 @@
 
 %% ── Packages ────────────────────────────────────────────────────────────────
 \usepackage{amsmath,amssymb,bm,physics}
+\usepackage{braket}
 \usepackage{graphicx}
 \usepackage{booktabs}
 \usepackage{xcolor}
@@ -792,6 +793,84 @@ employed under similar yet different circumstances. The so-called {\bf
   \end{columns}
 \end{frame}
 
+%% ─── CTNN backflow: two summary slides (details in appendix) ─────────────────
+\begin{frame}{CTNN Backflow: Standard vs.\ Learned Coordinate Deformation}
+  \begin{columns}[T]
+    \column{0.48\textwidth}
+      \begin{block}{Standard backflow}
+        Effective coordinates via an \emph{analytic} pairwise form:
+        \[
+          \tilde{\mathbf{r}}_i = \mathbf{r}_i
+            + \sum_{j\neq i}\eta(r_{ij})(\mathbf{r}_i-\mathbf{r}_j)
+        \]
+        Physically motivated, few parameters, but limited
+        expressivity and no access to higher-body structure.
+      \end{block}
+    \column{0.48\textwidth}
+      \begin{alertblock}{CTNN backflow}
+        Replaces the analytic form with a \emph{learned} many-body map:
+        \[
+          \tilde{\mathbf{r}}_i = \mathbf{r}_i + F_{i,\theta}(\mathbf{R})
+        \]
+        Node features $\mathbf h_i$ and edge features $\mathbf h_{ij}$
+        are computed by a graph-neural-network layer; linear transports
+        between node and edge spaces produce the displacement
+        $F_{i,\theta}$.
+      \end{alertblock}
+  \end{columns}
+  \renewcommand{\arraystretch}{1.2}
+  \begin{center}\small
+  \begin{tabular}{lcc}
+    \toprule
+    Feature & Standard BF & CTNN BF \\
+    \midrule
+    Functional form   & analytic  & learned \\
+    Structure         & pairwise  & many-body / hierarchical \\
+    Parameters        & few       & many \\
+    Expressivity      & limited   & high \\
+    \bottomrule
+  \end{tabular}
+  \end{center}
+  \vspace{0.1cm}
+  {\footnotesize See appendix for full derivation.}
+\end{frame}
+
+%%
+\begin{frame}{CTNN Backflow: Antisymmetry and the Variational Principle}
+  \begin{columns}[T]
+    \column{0.52\textwidth}
+      \begin{block}{How the Slater determinant is modified}
+        Without backflow each row of the Slater matrix depends only on
+        particle $i$: $M_{ia}=\phi_a(\mathbf{r}_i)$.
+
+        \smallskip
+        With CTNN backflow, orbitals are evaluated at \emph{effective}
+        coordinates:
+        \[
+          \widetilde{M}_{ia}
+          = \phi_a\!\bigl(\mathbf{r}_i+F_{i,\theta}(\mathbf{R})\bigr).
+        \]
+        Every row now depends on the \emph{full} configuration — these
+        are configuration-dependent quasi-orbitals.
+      \end{block}
+    \column{0.44\textwidth}
+      \begin{block}{Antisymmetry preserved}
+        If $F_{i,\theta}$ is permutation-equivariant,
+        swapping $i\leftrightarrow j$ swaps two rows of
+        $\widetilde{M}$, so
+        $D_{\rm BF}\mapsto -D_{\rm BF}$. \checkmark
+      \end{block}
+      \vspace{0.3cm}
+      \begin{alertblock}{Variational role}
+        CTNN backflow enlarges the variational manifold beyond
+        Jastrow + orbital parameters to include the learned
+        many-body geometry of the effective coordinates, and
+        can improve both many-body correlations and the nodal
+        surface — potentially lowering $E(\theta)$.
+      \end{alertblock}
+  \end{columns}
+\end{frame}
+
 
 
 %% ============================================================
@@ -831,7 +910,7 @@ employed under similar yet different circumstances. The so-called {\bf
   \begin{itemize}
     \item $N=2$: both ans\"atze reproduce DMC within statistical error for
           all $\omega$
-    \item $N\ge6$: PINN+CTNN systematically more accurate than PINN+BF
+    \item $N\ge6$: PINN+CTNN performs somewhat better  than PINN+BF
     \item $N=20$: CTNN remains accurate at scale; errors $\lesssim 0.04\%$
   \end{itemize}
 \end{frame}
@@ -918,7 +997,7 @@ employed under similar yet different circumstances. The so-called {\bf
 \end{frame}
 
 %%
-\begin{frame}{Energy-Partition Diagnostics}
+\begin{frame}{Ratios of Expectation Values}
   \begin{columns}[T]
     \column{0.49\textwidth}
       \centering
@@ -970,7 +1049,7 @@ employed under similar yet different circumstances. The so-called {\bf
   \begin{alertblock}{Key result}
     \textbf{Every single run lies below its CI reference.}
     Non-MCMC training achieves sub-0.06\% accuracy across all $N$,
-    with three independent seeds. Seed spread decreases with $N$. Loss functions do not increase.
+    with three independent seeds. Loss functions do not increase with $N$ (tentative results).
   \end{alertblock}
 \end{frame}
 
@@ -983,12 +1062,12 @@ employed under similar yet different circumstances. The so-called {\bf
 \begin{frame}{Summary: Energetics}
   \begin{columns}[T]
     \column{0.50\textwidth}
-      \begin{block}{Energetic accuracy}
+      \begin{block}{Accuracy with respect to DMC}
         \begin{itemize}
           \item Residual pretraining + SR tail pipeline
           \item $N=2$: both PINN+BF and PINN+CTNN agree with DMC
                 to within statistical uncertainty
-          \item $N=6,12,20$: PINN+CTNN systematically outperforms
+          \item $N=6,12,20$: PINN+CTNN seems to perform better than
                 PINN+BF at moderate/strong confinement
           \item Deviations from DMC: $\lesssim 0.05\%$ in benchmarked
                 regimes
@@ -999,8 +1078,6 @@ employed under similar yet different circumstances. The so-called {\bf
         \begin{itemize}
           \item $\Gamma(\omega)$: interaction-to-kinetic ratio grows
                 from $<1$ to $\sim 57$ across the $\omega$ range
-          \item $\mathcal{C}(\omega)\to 1$: quasi-classical balance
-                at $\omega=10^{-3}$; better approached for larger $N$
           \item $r_{\rm rms}$: $\sim\!70\times$ expansion from
                 $\omega=1$ to $\omega=10^{-3}$
         \end{itemize}
@@ -1109,6 +1186,327 @@ employed under similar yet different circumstances. The so-called {\bf
 \end{frame}
 
 \appendix
+
+%% ============================================================
+\section*{Appendix: CTNN Backflow — Full Derivation}
+%% ============================================================
+
+\begin{frame}{CTNN Backflow vs.\ Standard Backflow: Aim}
+These slides provide the full derivation supporting the two summary slides
+in the main talk. They cover:
+\begin{enumerate}
+  \item What standard backflow is and its limitations.
+  \item How CTNN backflow replaces the analytic form with a learned
+        many-body map.
+  \item How backflow modifies the Slater determinant mathematically.
+  \item How the full construction enters the variational principle.
+\end{enumerate}
+\vspace{0.3cm}
+The main physical context is a fermionic many-body wave function where
+one wants a flexible yet antisymmetric ansatz that captures strong
+correlations and improves the nodal surface.
+\end{frame}
+
+%% ── Standard backflow ───────────────────────────────────────────────────────
+
+\begin{frame}{Ordinary Slater--Jastrow Ansatz}
+A common fermionic variational ansatz is
+\[
+  \Psi(\mathbf{R})
+  = e^{J(\mathbf{R})}\det[\phi_a(\mathbf{r}_i)],
+  \qquad
+  \mathbf{R}=(\mathbf{r}_1,\dots,\mathbf{r}_N).
+\]
+\begin{itemize}
+  \item $J(\mathbf{R})$ is a symmetric Jastrow factor capturing dynamic
+        correlations.
+  \item The determinant enforces fermionic antisymmetry.
+  \item The single-particle orbitals are evaluated at the \emph{bare}
+        coordinates $\mathbf{r}_i$.
+\end{itemize}
+\vspace{0.3cm}
+\begin{alertblock}{Limitation}
+  Jastrow factors alone cannot move the nodal surface of
+  $\Psi$, which determines the fixed-node error in DMC and
+  the quality of the variational bound.
+  Backflow addresses this by modifying the coordinates
+  \emph{before} they enter the determinant.
+\end{alertblock}
+\end{frame}
+
+\begin{frame}{Standard Backflow}
+Standard backflow introduces \emph{effective} (quasi-particle) coordinates
+\[
+  \tilde{\mathbf{r}}_i = \mathbf{r}_i + \bm{\xi}_i(\mathbf{R}),
+\]
+with the classic pairwise ansatz
+\[
+  \bm{\xi}_i(\mathbf{R})
+  = \sum_{j\neq i}\eta(r_{ij})\,(\mathbf{r}_i-\mathbf{r}_j),
+  \qquad r_{ij}=|\mathbf{r}_i-\mathbf{r}_j|.
+\]
+Particle $i$ is displaced by a weighted sum of pairwise vectors from
+all other particles; $\eta(r)$ is a short-ranged scalar function.
+
+\begin{columns}[T]
+  \column{0.48\textwidth}
+    \begin{block}{Strengths}
+      \begin{itemize}
+        \item Physically motivated
+        \item Analytically tractable
+        \item Easy to interpret
+      \end{itemize}
+    \end{block}
+  \column{0.48\textwidth}
+    \begin{alertblock}{Limitations}
+      \begin{itemize}
+        \item Restricted functional flexibility
+        \item Cannot capture higher-body structure
+        \item Tied to a chosen analytic form
+      \end{itemize}
+    \end{alertblock}
+\end{columns}
+\end{frame}
+
+%% ── CTNN backflow ────────────────────────────────────────────────────────────
+
+\begin{frame}{CTNN Backflow: Core Idea}
+CTNN backflow replaces the fixed analytic pairwise form by a
+\emph{learned} many-body map:
+\[
+  \tilde{\mathbf{r}}_i = \mathbf{r}_i + F_{i,\theta}(\mathbf{R}),
+  \qquad\text{or collectively,}\qquad
+  \tilde{\mathbf{R}} = F_\theta(\mathbf{R}).
+\]
+The essential conceptual shift is
+\[
+  \underbrace{\text{analytic pairwise deformation}}_{\text{standard BF}}
+  \quad\longrightarrow\quad
+  \underbrace{\text{learned many-body coordinate transformation}}_{\text{CTNN BF}}.
+\]
+
+\begin{block}{Generic CTNN construction}
+  \[
+    h_i = \phi_\theta(\mathbf{r}_i),\qquad
+    h_{ij}=\psi_\theta(\mathbf{r}_i,\mathbf{r}_j),\qquad
+    H_i = \textstyle\sum_{j\neq i}h_{ij},
+  \]
+  \[
+    \tilde{\mathbf{r}}_i = \mathbf{r}_i + g_\theta(h_i,H_i).
+  \]
+  The functions $\phi_\theta$, $\psi_\theta$, $g_\theta$ are learned and
+  can represent non-trivial collective structure beyond pairwise corrections.
+\end{block}
+\end{frame}
+
+\begin{frame}{Standard vs.\ CTNN Backflow: Feature Comparison}
+  \renewcommand{\arraystretch}{1.3}
+  \begin{center}
+  \begin{tabular}{p{3.8cm}cc}
+    \toprule
+    \textbf{Feature} & \textbf{Standard BF} & \textbf{CTNN BF} \\
+    \midrule
+    Functional form   & analytic             & learned \\
+    Typical structure & pairwise             & many-body / hierarchical \\
+    Parameters        & few                  & many \\
+    Expressivity      & limited              & high \\
+    Interpretability  & high                 & moderate \\
+    \bottomrule
+  \end{tabular}
+  \end{center}
+
+  \vspace{0.4cm}
+  \begin{columns}[T]
+    \column{0.48\textwidth}
+      \[
+        \boxed{\text{Standard BF}=\text{analytic pairwise correction}}
+      \]
+    \column{0.48\textwidth}
+      \[
+        \boxed{\text{CTNN BF}=\text{learned many-body deformation}}
+      \]
+  \end{columns}
+\end{frame}
+
+%% ── Modification of the Slater determinant ───────────────────────────────────
+
+\begin{frame}{Backflow-Modified Slater Determinant}
+  \begin{columns}[T]
+    \column{0.48\textwidth}
+      \begin{block}{Without backflow}
+        \[
+          M_{ia}(\mathbf{R})=\phi_a(\mathbf{r}_i),\quad
+          D(\mathbf{R})=\det M(\mathbf{R}).
+        \]
+        Each row depends \emph{only} on the coordinate of one particle.
+      \end{block}
+    \column{0.48\textwidth}
+      \begin{alertblock}{With backflow}
+        \[
+          \widetilde{M}_{ia}(\mathbf{R})
+          =\phi_a\!\bigl(\tilde{\mathbf{r}}_i(\mathbf{R})\bigr),
+        \]
+        \[
+          D_{\rm BF}(\mathbf{R})
+          =\det\bigl[\phi_a(\tilde{\mathbf{r}}_i(\mathbf{R}))\bigr].
+        \]
+        Each row now depends on the \emph{full} configuration through
+        $\tilde{\mathbf{r}}_i(\mathbf{R})$.
+      \end{alertblock}
+  \end{columns}
+  \vspace{0.4cm}
+  \begin{block}{What has changed mathematically?}
+    After backflow, $\widetilde{M}_{ia}=\phi_a(\mathbf{r}_i+F_{i,\theta}(\mathbf{R}))$,
+    so every row becomes a many-body object — yet the determinant remains
+    antisymmetric (see next slide). The orbitals become
+    \emph{configuration-dependent quasi-orbitals}.
+  \end{block}
+\end{frame}
+
+\begin{frame}{Why Antisymmetry Is Preserved}
+\begin{block}{Permutation equivariance}
+  If the backflow map $F_{i,\theta}$ is permutation-equivariant,
+  then exchanging particles $i\leftrightarrow j$ exchanges the
+  corresponding effective coordinates:
+  \[
+    \tilde{\mathbf{r}}_i(\mathbf{R})
+    \;\longleftrightarrow\;
+    \tilde{\mathbf{r}}_j(\mathbf{R}).
+  \]
+\end{block}
+\vspace{0.2cm}
+Hence two rows of $\widetilde{M}$ are exchanged, giving
+\[
+  D_{\rm BF}(\mathbf{R})\;\mapsto\;-D_{\rm BF}(\mathbf{R}).
+\]
+Antisymmetry is preserved. \checkmark
+\vspace{0.3cm}
+\begin{block}{Small-displacement expansion}
+  For small backflow $\tilde{\mathbf{r}}_i=\mathbf{r}_i+\delta\mathbf{r}_i$:
+  \[
+    \widetilde{M}_{ia}
+    \approx \phi_a(\mathbf{r}_i)
+      + F_{i,\theta}(\mathbf{R})\cdot\nabla\phi_a(\mathbf{r}_i)+\cdots
+  \]
+  Backflow introduces configuration-dependent gradient corrections
+  inside the determinant.
+\end{block}
+\end{frame}
+
+\begin{frame}{Full Ansatz: Backflow Plus Jastrow}
+The complete variational wave function is
+\[
+  \Psi_\theta(\mathbf{R})
+  = e^{J_\theta(\mathbf{R})}
+    \det\!\bigl[\phi_a\!\bigl(\mathbf{r}_i+F_{i,\theta}(\mathbf{R})\bigr)\bigr].
+\]
+\begin{itemize}
+  \item $J_\theta$ handles \emph{symmetric} (Jastrow) correlations.
+  \item The determinant enforces fermionic antisymmetry.
+  \item CTNN backflow changes the \emph{nodal structure} through the
+        effective coordinates — something Jastrow factors alone cannot do.
+\end{itemize}
+\vspace{0.3cm}
+\begin{alertblock}{Key point}
+  CTNN backflow is not a preprocessing step: it is an intrinsic part of
+  the variational wave function, and its parameters $\theta$ are
+  optimized together with the Jastrow and orbital parameters.
+\end{alertblock}
+\end{frame}
+
+%% ── Connection to the variational principle ──────────────────────────────────
+
+\begin{frame}{CTNN Backflow and the Variational Principle}
+  \begin{columns}[T]
+    \column{0.52\textwidth}
+      The variational energy is
+      \[
+        E(\theta)
+        =\frac{\langle\Psi_\theta|H|\Psi_\theta\rangle}
+              {\langle\Psi_\theta|\Psi_\theta\rangle}
+        \ge E_0.
+      \]
+      With CTNN backflow the parameter set $\theta$ includes the
+      learned map $F_{i,\theta}$, so the \emph{variational manifold
+      is enlarged} beyond Jastrow + orbital coefficients to include
+      the many-body geometry of the effective coordinates.
+    \column{0.44\textwidth}
+      \begin{block}{Two ways backflow helps}
+        \begin{enumerate}
+          \item Captures additional many-body correlations
+          \item Improves the nodal surface of $\Psi_\theta$
+        \end{enumerate}
+        Both effects can lower $E(\theta)$ toward $E_0$.
+      \end{block}
+      \vspace{0.2cm}
+      \begin{alertblock}{Derivative structure}
+        Spatial derivatives involve a chain rule through
+        $\tilde{\mathbf{r}}_i(\mathbf{R})$, modifying gradients,
+        Laplacians, the kinetic energy, and parameter gradients for
+        optimization.
+      \end{alertblock}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Full Variational Optimization Problem}
+The optimization target is
+\[
+  \theta^\star
+  = \arg\min_\theta
+    \frac{\langle\Psi_\theta|H|\Psi_\theta\rangle}
+         {\langle\Psi_\theta|\Psi_\theta\rangle},
+  \qquad
+  \Psi_\theta(\mathbf{R})
+  = e^{J_\theta(\mathbf{R})}
+    \det\!\bigl[\phi_a\!\bigl(\mathbf{r}_i+F_{i,\theta}(\mathbf{R})\bigr)\bigr].
+\]
+
+\begin{block}{Local energy in VMC / PINN+SR}
+  \[
+    E_{\rm loc}(\mathbf{R})
+    = \frac{H\Psi_\theta(\mathbf{R})}{\Psi_\theta(\mathbf{R})},
+    \qquad
+    E(\theta)
+    = \frac{\int|\Psi_\theta|^2 E_{\rm loc}\,d\mathbf{R}}
+           {\int|\Psi_\theta|^2\,d\mathbf{R}}.
+  \]
+  Optimization requires evaluating the backflow-modified determinant
+  and its derivatives on sampled configurations at each step.
+\end{block}
+\vspace{0.2cm}
+In the PINN+CTNN pipeline, the SR tail phase minimizes $E(\theta)$
+directly, restoring the variational upper-bound property after
+residual-based pretraining.
+\end{frame}
+
+\begin{frame}{CTNN Backflow: Summary}
+\begin{itemize}
+  \item Standard backflow uses an analytic pairwise correction
+        $\bm{\xi}_i=\sum_{j\neq i}\eta(r_{ij})(\mathbf{r}_i-\mathbf{r}_j)$.
+  \item CTNN backflow uses a learned many-body map $F_{i,\theta}(\mathbf{R})$
+        built from node and edge features in a graph-neural-network layer.
+  \item The Slater determinant is modified by evaluating orbitals at
+        effective coordinates:
+        $\phi_a(\mathbf{r}_i)\;\to\;\phi_a(\tilde{\mathbf{r}}_i(\mathbf{R}))$.
+  \item Antisymmetry is preserved if the map is permutation-equivariant.
+  \item CTNN backflow enlarges the variational manifold and can lower the
+        ground-state energy by improving many-body correlations and the
+        nodal surface.
+\end{itemize}
+\vspace{0.2cm}
+\begin{alertblock}{Take-home formulas}
+  \[
+    \tilde{\mathbf{r}}_i=\mathbf{r}_i+F_{i,\theta}(\mathbf{R}),
+    \qquad
+    \Psi_\theta=e^{J_\theta}\det[\phi_a(\tilde{\mathbf{r}}_i)],
+    \qquad
+    E(\theta)=\frac{\langle\Psi_\theta|H|\Psi_\theta\rangle}
+                   {\langle\Psi_\theta|\Psi_\theta\rangle}.
+  \]
+\end{alertblock}
+\end{frame}
+
+%% ── Other appendix slides ────────────────────────────────────────────────────
 
 \begin{frame}{Activation Functions and Higher-Order Derivatives}
       \begin{itemize}
