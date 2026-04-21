@@ -32,7 +32,7 @@
 \author[M.~Hjorth-Jensen]{Morten Hjorth-Jensen}
 \institute[UiO]{Department of Physics \& Center for Computing in Science Education\\
   University of Oslo, Norway}
-\date{\today}
+\date{ECT* workshop on the Fermion sign Problem, Trento, April 20-24, 2026}
 
 %% ============================================================
 \begin{document}
@@ -86,6 +86,18 @@
   \end{columns}
 \end{frame}
 
+\begin{frame}[plain,fragile]
+\frametitle{Acknowledgements}
+
+\begin{alertblock}{Many good friends and colleagues}
+Jane Kim (ANL), Patrick Cook (MSU), Danny Jammooa (MSU), Dean Lee (MSU), Ryan LaRose (MSU), Nick Cariello (MSU), Bryce Fore (ANL), Alessandro Lovato (ANL), Stefano Gandolfi (LANL), Francesco Pederiva (UniTN), Arnau Rious (Barcelona), Giuseppe Carleo (EPFL), 
+Niyaz Beysengulov (EEROQ), Johannes Pollanen (EEROQ, MSU), Zachary Stewart (MSU), Jared Weidman (MSU), Angela Wilson (MSU), Francesco Massel (USN, UiO), Gunnar Lange (UiO), Viktor Svensson (UiO), Cecilie Glittum (UiO),
+Jonas Flaten (UiO), Oskar Leinonen (UiO), Øyvind Sigmundson Schøyen (UiO), Stian Dysthe Bilek (UiO), and Håkon Emil Kristiansen (UiO). Apologies to those omitted.
+\end{alertblock}
+
+\end{frame}
+
+
 %%
 \begin{frame}{Why Existing Methods Struggle}
   \begin{columns}[T]
@@ -113,7 +125,7 @@
       \begin{block}{This talk}
         PINNs within a Slater--Jastrow--neural-correlator ansatz applied
         to quantum dots, $N = 2, 6, 12, 20$, across five orders of
-        magnitude in confinement $\omega$.
+        magnitude in confinement $\omega$ (oscillator frequency).
       \end{block}
   \end{columns}
 \end{frame}
@@ -127,7 +139,7 @@
 %% ============================================================
 
 \begin{frame}[plain,fragile]
-\frametitle{Di~Vincenzo Criteria for Quantum Computing}
+\frametitle{Why quantum dots? A long digression: Di~Vincenzo Criteria for Quantum Computing}
 
 \begin{alertblock}{Quantum computing requirements}
 \begin{enumerate}
@@ -181,7 +193,7 @@
 \begin{alertblock}{Electrons on helium}
        At the heart is the trapping and control
        of individual electrons floating above pools of superfluid
-       helium. These electrons form the qubits of our quantum
+       helium. These electrons form the qubits of apotential paltform  for quantum
        computer, and the purity of the superfluid helium protects the
        intrinsic quantum properties of each electron. The  ultimate
        goal is to build a large-scale quantum computer based on
@@ -263,7 +275,7 @@
 
 
 
-\begin{frame}{Two-Electron 2D Schrödinger via DVR and FCI with Slater Determinants}
+\begin{frame}{Two-Electron 2D Schrödinger via FCI with Slater Determinants}
 
 \textbf{Key approach for identical fermions:}
 \begin{itemize}
@@ -271,14 +283,14 @@
 \item Each basis state is a properly antisymmetrized combination: $|\psi\rangle = |\phi_a \sigma_i; \phi_b \sigma_j\rangle$ where the total wavefunction is antisymmetric under particle exchange
 \item This naturally separates states into singlet (spatially symmetric) and triplet (spatially antisymmetric) configurations
 \item We include the full 2D soft Coulomb interaction and diagonalize the Hamiltonian in this antisymmetrized basis
-\item We compute both spin expectation values ($\langle S^2 \rangle$, $\langle S_z \rangle$) and entanglement entropy for each eigenstate
+\item We compute both spin expectation values ($\langle S^2 \rangle$, $\langle S_z \rangle$) and study the entanglement entropy for each eigenstate
 \end{itemize}
 
 \end{frame}
 
 \begin{frame}{Double-Well Trap Potential}
 
-We use an arbitrary 2D potential $V(x,y)$ for the single electrons, meant to represent the electrostatic trapping potential from electrodes beneath the helium surface. For simplicity we demonstrate with an analytic double-well form:
+We use an arbitrary 2D potential $V(x,y)$ for the single electrons, meant to represent the electrostatic trapping potential from electrodes beneath the helium surface. For simplicity here we show  an analytic double-well form:
 
 \begin{itemize}
 \item Quartic double well in x: $V_x = k(x^2 - a^2)^2$
@@ -333,9 +345,9 @@ The \textbf{total entanglement} (including both spin and spatial) captures the f
 \end{frame}
 
 
-\begin{frame}{What is Reinforcement Learning? (Used here to maximise entanglement)}
+\begin{frame}{What is Reinforcement Learning? (Used here to maximize entanglement)}
 \begin{block}{Setting: electrons on helium}
-In our double-well setup, the \textbf{agent} controls the electrode voltages $\{V_i\}$; the \textbf{reward} is the total entanglement entropy of the two-electron state. RL finds the voltage configuration that maximises quantum correlations.
+In our double-well setup, the \textbf{agent} controls the electrode voltages $\{V_i\}$; the \textbf{reward} is the total entanglement entropy of the two-electron state. RL finds the voltage configuration that maximizes quantum correlations.
 \end{block}
 
 \begin{block}{General framework}  
@@ -345,7 +357,7 @@ task by interacting with a physical system, called the
 environment. The agent can select {\bf actions} that modify the {\bf
   state} of the environment; as a consequence a {\bf reward} is given
 to the agent, and the process repeats in a positive feedback loop. The
-objective is to maximise the sum of expected rewards and thereby
+objective is to maximize the sum of expected rewards and thereby
 accomplish the task. The agent learns a {\bf strategy} that can be
 employed under similar yet different circumstances. The so-called {\bf
   policy} is the rule for choosing actions.
@@ -372,7 +384,7 @@ employed under similar yet different circumstances. The so-called {\bf
   \vspace{0.5cm}
   \begin{alertblock}{Key PINN advantage for quantum dots}
     Wave function learned as a continuous function
-    of particle coordinates; antisymmetry, normalisation, and conservation
+    of particle coordinates; antisymmetry, normalization, and conservation
     laws imposed as explicit constraints or penalty terms.
   \end{alertblock}
 \end{frame}
@@ -418,8 +430,6 @@ employed under similar yet different circumstances. The so-called {\bf
 
 %%
 \begin{frame}{Activation Functions and Higher-Order Derivatives}
-  \begin{columns}[T]
-    \column{0.50\textwidth}
       \begin{itemize}
         \item PINNs require second- (or higher-) order derivatives through AD
         \item Activation function choice is critical for $\ell \ge 2$ PDEs
@@ -427,47 +437,12 @@ employed under similar yet different circumstances. The so-called {\bf
         \item \textbf{ReLU is unsuitable} for second-order operators
               (second derivative is zero almost everywhere)
       \end{itemize}
-      \vspace{0.3cm}
-      \begin{alertblock}{Sobolev approximation}
-        Must control error in $W^{\ell,p}$ norms, not just $L^2/L^\infty$.
-        Smooth activations ensure well-behaved derivatives.
-      \end{alertblock}
-    \column{0.46\textwidth}
-      \centering
-      \includegraphics[width=\linewidth]{figures/activation_derivatives}
-  \end{columns}
 \end{frame}
 
-%%
-\begin{frame}{Five Theoretical Challenges of PINNs}
-  \begin{enumerate}\itemsep4pt
-    \item \textbf{Sobolev approximation.}
-          Universal approximation in $L^2/L^\infty$ does not automatically
-          extend to derivatives; need control in $W^{\ell,p}$ norms matching
-          the PDE order.
-
-    \item \textbf{Stability (residual-to-error).}
-          Small residual $\not\Rightarrow$ small solution error; well-posedness
-          is required; inverse problems may need regularisation.
-
-    \item \textbf{Sampling \& generalisation.}
-          Collocation minimises a sampled surrogate; bad capacity control or
-          imbalanced interior/boundary sampling can leave large population
-          residuals.
-
-    \item \textbf{Optimisation and conditioning.}
-          Disparate physics terms produce ill-conditioned gradients; NTK
-          spectrum governs convergence rate.
-
-    \item \textbf{Spectral bias.}
-          Gradient methods prefer low-frequency components; sharp layers or
-          oscillations require special treatment (Fourier features, curriculum).
-  \end{enumerate}
-\end{frame}
 
 %%
 \begin{frame}{Mitigation Strategies and Biases}
-  Generalisation in physics ML means \alert{consistency with physical laws},
+  Generalization in physics ML means \alert{consistency with physical laws},
   not merely accuracy on unseen data. Three interacting mechanisms:
   \begin{enumerate}
     \item Algorithmic stability of gradient-based optimisation
@@ -484,14 +459,14 @@ employed under similar yet different circumstances. The so-called {\bf
           \item Weak/variational or energy formulations when strong form
                 is unstable
           \item Hard-enforce essential boundary conditions
-          \item Non-dimensionalise and balance loss terms
+          \item Balance various loss terms
         \end{itemize}
       \column{0.48\textwidth}
         \begin{itemize}
           \item Smooth activations; architectures controlling derivatives
           \item Exploit symmetry and equivariance
           \item Second-order optimisers (L-BFGS, Stochastic Reconfiguration)
-          \item Importance/stratified sampling; space-time curricula
+          \item Importance/stratified sampling; space-time protocols
         \end{itemize}
     \end{columns}
   \end{block}
@@ -520,7 +495,7 @@ employed under similar yet different circumstances. The so-called {\bf
 \end{frame}
 
 \begin{frame}{The Variational Principle}
-  For a normalised trial wave function $\psi_\theta$:
+  For a normalized trial wave function $\psi_\theta$:
   \[
     E[\psi_\theta]
     = \frac{\langle\psi_\theta|H|\psi_\theta\rangle}
@@ -543,11 +518,7 @@ employed under similar yet different circumstances. The so-called {\bf
 \end{frame}
 
 \begin{frame}{Two PINN Training Strategies}
-  A PINN represents the wave function as a neural network:
-  \[
-    \psi_\theta(\mathbf{x}) \approx \text{wave function}
-  \]
-
+  A PINN represents the wave function as a neural network.
   \vspace{0.3cm}
   \begin{columns}[T]
     \column{0.48\textwidth}
@@ -585,7 +556,7 @@ employed under similar yet different circumstances. The so-called {\bf
         \item Energies \emph{below} the true ground state
         \item Convergence to incorrect eigenstates
         \item Residual small but solution error large
-              (stability issue — see earlier slides)
+              (stability issues)
       \end{itemize}
     \column{0.44\textwidth}
       \begin{alertblock}{Conclusion}
@@ -603,10 +574,10 @@ employed under similar yet different circumstances. The so-called {\bf
 \begin{frame}{Key Practical Issues}
   \begin{columns}[T]
     \column{0.48\textwidth}
-      \textbf{Normalisation}
+      \textbf{Normalization}
       \begin{itemize}
         \item Must be enforced explicitly or via the energy quotient
-        \item Unnormalised networks can give arbitrarily low apparent energies
+        \item Unnormalized networks can give arbitrarily low apparent energies
       \end{itemize}
       \vspace{0.3cm}
       \textbf{Symmetry constraints}
@@ -624,7 +595,7 @@ employed under similar yet different circumstances. The so-called {\bf
       \textbf{Boundary conditions}
       \begin{itemize}
         \item Hard enforcement preferred over soft penalties
-        \item Soft BCs can be dominated by other loss terms
+        \item Soft boundary conditions can be dominated by other loss terms
       \end{itemize}
   \end{columns}
 \end{frame}
@@ -665,7 +636,7 @@ employed under similar yet different circumstances. The so-called {\bf
                        & $\|(H-E)\psi_\theta\|^2$ \\
     Variational bound  & \alert{Yes}: $E_\theta\geq E_0$ & No guarantee \\
     Enforces PDE       & Implicitly (at minimum)   & Explicitly \\
-    Normalisation      & Automatic via quotient    & Must be added \\
+    Normalization      & Automatic via quotient    & Must be added \\
     Risk of sub-$E_0$  & None                      & Present \\
     Connection to QMC  & Direct (Rayleigh--Ritz)   & Indirect \\
     \bottomrule
@@ -678,7 +649,7 @@ employed under similar yet different circumstances. The so-called {\bf
       \begin{block}{When variational principle is preserved}
         \begin{itemize}
           \item Loss $\equiv$ energy Rayleigh quotient
-          \item Normalisation enforced via quotient
+          \item Normalization enforced via quotient
           \item Antisymmetry exact (Slater determinant)
           \item SR / natural-gradient optimisation tail
         \end{itemize}
@@ -687,7 +658,7 @@ employed under similar yet different circumstances. The so-called {\bf
       \begin{alertblock}{When it is not}
         \begin{itemize}
           \item Dominant PDE residual loss
-          \item Soft normalisation penalty
+          \item Soft normalization penalty
           \item No antisymmetry architecture
           \item Pure gradient-descent on residual
         \end{itemize}
@@ -748,52 +719,6 @@ employed under similar yet different circumstances. The so-called {\bf
 \end{frame}
 
 %%
-\begin{frame}{Neural Correlator $W_\theta$: Architecture Details}
-  \begin{columns}[T]
-    \column{0.52\textwidth}
-      \textbf{Particle branch (DeepSets)}
-      \[
-        \mathbf h_i^\phi = \phi(\tilde{\mathbf x}_i),\qquad
-        \overline{\mathbf h}^\phi
-        = \tfrac{1}{N}\textstyle\sum_i \mathbf h_i^\phi
-      \]
-
-      \textbf{Pair branch — safe distance features}\\
-      Mollified radius: $\tilde r_{ij}^{\rm soft}=\!\sqrt{\tilde r_{ij}^2
-        +\varepsilon^2}$,\; $\varepsilon\propto a_{\rm ho}$
-
-      Six smooth channels per pair:
-      \[
-        \mathbf u_{ij}=\bigl[s_1,s_2,s_3,{\rm rbf}_{0.25},{\rm rbf}_1,{\rm rbf}_4\bigr]
-      \]
-      Short-range gate: $\chi(\tilde r)=\tilde r^2/(\tilde r^2+r_g^2)$
-      \[
-        \overline{\mathbf h}^\psi
-        = \tfrac{2}{N(N-1)}\textstyle\sum_{i<j}
-          \chi(\tilde r_{ij})\,\mathbf h^\psi_{ij}
-      \]
-    \column{0.45\textwidth}
-      \textbf{Global scalars + readout}
-      \[
-        g_1 = \tfrac{1}{Nd}\textstyle\sum_i\!\|\tilde{\mathbf x}_i\|^2,\quad
-        g_2 = \tfrac{2}{N(N-1)}\textstyle\sum_{i<j} s_1
-      \]
-      \[
-        W_\theta = \rho\!\bigl(\overline{\mathbf h}^\phi\,\|\,
-        \overline{\mathbf h}^\psi\,\|\,[g_1,g_2]\bigr)
-      \]
-      \vspace{0.2cm}
-      \begin{alertblock}{Design principles}
-        \begin{itemize}
-          \item Permutation-invariant by construction
-          \item Safe features avoid derivative singularities at $r_{ij}\to0$
-          \item Mollification scale $\varepsilon\propto a_{\rm ho}$ tracks the trap
-        \end{itemize}
-      \end{alertblock}
-  \end{columns}
-\end{frame}
-
-%%
 \begin{frame}{Analytic Pair Term and Backflow Modules}
   \begin{columns}[T]
     \column{0.48\textwidth}
@@ -825,48 +750,6 @@ employed under similar yet different circumstances. The so-called {\bf
   \end{columns}
 \end{frame}
 
-%% ============================================================
-\section{Results: Ground-State Energies}
-%% ============================================================
-
-%% ─── Implementation details: benchmark reference, architecture, protocol ────
-\begin{frame}{Exact Diagonalisation Reference}
-  \begin{columns}[T]
-    \column{0.52\textwidth}
-      \textbf{CI via 2D DVR (discrete variable representation)}
-      \begin{enumerate}
-        \item Each of $K$ wells contributes $n_{\rm sp}$ single-particle
-              orbitals from its local HO basis
-        \item $N$-particle product space: $n_{\rm sp}^N$ configurations,
-              sorted by non-interacting energy
-        \item Lowest $n_{\rm ci}$ retained; full $N$-body Hamiltonian
-              (kinetic $+$ Coulomb) built and diagonalised
-      \end{enumerate}
-      \vspace{0.3cm}
-      \begin{block}{Convergence criterion}
-        SP energies $\approx \omega$ (DVR resolves the HO ground state)
-      \end{block}
-    \column{0.44\textwidth}
-      \renewcommand{\arraystretch}{1.25}
-      \scriptsize
-      \begin{tabular}{c|ccc|c}
-        \toprule
-        $N$ & $n_{\rm sp}$ & $n_{\rm ci}$ & grid & SP energy \\
-        \midrule
-        2--4 & 40  & 300 & $24\!\times\!24$ & 0.998 \\
-        6    & 10  & 500 & $24\!\times\!16$ & 1.000 \\
-        8    & --  & --  & $16\!\times\!16$ & 0.842$^\dagger$ \\
-        \bottomrule
-      \end{tabular}
-      \normalsize
-      \vspace{0.25cm}
-      \begin{alertblock}{$N=8$ caveat}
-        $n_{\rm sp}^8$ too large for efficient enumeration at large $n_x$.
-        $E_0^{(N=8)}=10.512$\,au is a \emph{provisional} lower estimate of
-        the CI upper bound ($\dagger$ under-resolved).
-      \end{alertblock}
-  \end{columns}
-\end{frame}
 
 \begin{frame}{Network Architecture}
   \begin{columns}[T]
@@ -882,12 +765,10 @@ employed under similar yet different circumstances. The so-called {\bf
         \end{itemize}
       \end{block}
     \column{0.48\textwidth}
-      \begin{block}{SpectralG network (imaginary-time evolution)}
+      \begin{block}{Spectral network (imaginary-time evolution)}
         \begin{itemize}
           \item 3 temporal modes $\{A_k(\tau)\}$ + constant
-          \item Spatial network: 2 layers, width 32
-          \item FiLM conditioning on $\tau$ through spectral mode
-                amplitudes
+          \item Spatial network: 2 layers, width 32 nodes
           \item Boundary condition: $g \to 0$ as $\tau\to\infty$
                 enforced analytically
         \end{itemize}
@@ -902,45 +783,15 @@ employed under similar yet different circumstances. The so-called {\bf
 \end{frame}
 
 \begin{frame}{Training Protocol}
-  \begin{columns}[T]
-    \column{0.50\textwidth}
       \textbf{Ground-state training (all production runs)}
       \begin{itemize}
         \item Optimiser: Adam, $\text{lr}=10^{-4}$, cosine warm-up
               (200--400 epochs), $\text{lr}_{\rm min}=0.1\times\text{lr}$
         \item Batch size $n_{\rm coll}$: 512 ($N\leq4$), 1024 ($N=6$),
               2048 ($N=8$)
-        \item Loss: energy-variance with $\alpha$ annealing $0\to1$
-              over first 60\% of epochs
         \item Laplacian: finite difference ($h=0.01$) for $N>4$
-        \item Local energy clip: $5.0\times\mathrm{MAD}(E_L)$
         \item Gradient clip: $0.2$
       \end{itemize}
-    \column{0.46\textwidth}
-      \begin{block}{Annealed loss}
-        \[
-          \mathcal{L} = \alpha\,(\langle E_L\rangle - E_{\rm ref})^2
-          + (1-\alpha)\,\mathrm{Var}(E_L)
-        \]
-        $\alpha=0$: variance min.\ (converge to eigenstate)\\
-        $\alpha\to1$: anchor to CI reference $E_{\rm ref}$
-      \end{block}
-      \vspace{0.2cm}
-      \begin{block}{Imaginary-time profiles}
-        \renewcommand{\arraystretch}{1.2}
-        \scriptsize
-        \begin{tabular}{l|cc}
-          \toprule
-          & Fast & Full \\
-          \midrule
-          GS epochs   & 250  & 600   \\
-          PDE epochs  & 3000 & 10000 \\
-          $n_{\rm precompute}$ & 3072 & 8192 \\
-          \bottomrule
-        \end{tabular}
-        \normalsize
-      \end{block}
-  \end{columns}
 \end{frame}
 
 %%
@@ -973,13 +824,15 @@ employed under similar yet different circumstances. The so-called {\bf
           \item Two ans\"atze: PINN+BF and PINN+CTNN
         \end{itemize}
       \end{block}
-      \vspace{0.3cm}
-      \begin{alertblock}{Energy closure}
-        $E-(T+V_{\rm int}+V_{\rm trap})\approx 0$\\
-        typically $10^{-11}$--$10^{-7}$ (absolute)
-      \end{alertblock}
   \end{columns}
 \end{frame}
+
+
+%% ============================================================
+\section{Results: Ground-State Energies}
+%% ============================================================
+
+
 
 %% ─── Results begin here ─────────────────────────────────────────────────────
 
@@ -1094,45 +947,51 @@ employed under similar yet different circumstances. The so-called {\bf
       \begin{alertblock}{Key trend}
         At $\omega=10^{-3}$, $N\ge 12$: $\mathcal{C}< 1.05$, i.e.\
         $V_{\rm int}\approx 2V_{\rm trap}$ to $\lesssim 5\%$.
-        System is well into interaction-dominated regime.
       \end{alertblock}
   \end{columns}
 \end{frame}
 
 %%
-\begin{frame}{Energy-Partition Diagnostics (Figures)}
+\begin{frame}{Energy-Partition Diagnostics}
   \begin{columns}[T]
     \column{0.49\textwidth}
       \centering
       \includegraphics[width=\linewidth]{figures/energy/ratios_allN_Gamma.png}
       \vspace{2pt}
-      {\scriptsize (a) $\Gamma(\omega)=\langle V_{\rm int}\rangle/\langle T\rangle$ (log--log). Interaction dominance rises sharply as $\omega\to 0$.}
+      {\scriptsize (a) $\Gamma(\omega)=\langle V_{\rm int}\rangle/\langle T\rangle$ (log--log). Interaction dominance increases as $\omega\to 0$.}
     \column{0.49\textwidth}
       \centering
       \includegraphics[width=\linewidth]{figures/energy/ratios_allN_classical.png}
       \vspace{2pt}
-      {\scriptsize (b) $\mathcal{C}(\omega)=2\langle V_{\rm trap}\rangle/\langle V_{\rm int}\rangle$. Larger $N$ approaches the quasi-classical limit more rapidly.}
+      {\scriptsize (b) $\mathcal{C}(\omega)=2\langle V_{\rm trap}\rangle/\langle V_{\rm int}\rangle$.}
   \end{columns}
 
-  \vspace{0.3cm}
-  RMS cloud radius per particle:
-  $r_{\rm rms}=\sqrt{2\langle V_{\rm trap}\rangle/(N\omega^2)}$
-
-  \begin{center}
-    \begin{tabular}{c|cccc}
-      \toprule
-      $\omega$ & $N=2$ & $N=6$ & $N=12$ & $N=20$ \\
-      \midrule
-      $1$         &  1.14 &  1.62 &  2.04 &  2.40 \\
-      $10^{-3}$   & 69.9  & 126   & 171   & 209   \\
-      \bottomrule
-    \end{tabular}
-  \end{center}
-  \small Dramatic swelling confirms interaction-driven expansion.
 \end{frame}
 
 
 %% ─── Reproducibility: seed spread vs CI reference ──────────────────────────
+
+%% ─── Implementation details: benchmark reference, architecture, protocol ────
+\begin{frame}{Exact Diagonalization Reference}
+      \textbf{CI via 2D DVR (discrete variable representation)}
+      \begin{enumerate}
+        \item Each of $K$ wells contributes $n_{\rm sp}$ single-particle
+              orbitals from its local HO basis
+        \item $N$-particle product space: $n_{\rm sp}^N$ configurations,
+              sorted by non-interacting energy
+      \end{enumerate}
+      \begin{tabular}{c|ccc|c}
+        \toprule
+        $N$ & $n_{\rm sp}$ & $n_{\rm ci}$ & grid & SP energy \\
+        \midrule
+        2--4 & 40  & 300 & $24\!\times\!24$ & 0.998 \\
+        6    & 10  & 500 & $24\!\times\!16$ & 1.000 \\
+        \bottomrule
+      \end{tabular}
+\end{frame}
+
+
+
 \begin{frame}{Reproducibility Across Seeds: CI Benchmark ($N=2$--$6$, $\omega=1$)}
   \begin{center}
     \renewcommand{\arraystretch}{1.30}
@@ -1166,8 +1025,7 @@ employed under similar yet different circumstances. The so-called {\bf
   \begin{alertblock}{Key result}
     \textbf{Every single run lies below its CI reference.}
     Non-MCMC training achieves sub-0.06\% accuracy across all $N$,
-    with three independent seeds. Seed spread decreases with $N$ in
-    relative units.
+    with three independent seeds. Seed spread decreases with $N$. Loss functions do not increase.
   \end{alertblock}
 \end{frame}
 
@@ -1183,7 +1041,6 @@ employed under similar yet different circumstances. The so-called {\bf
       \begin{block}{Energetic accuracy}
         \begin{itemize}
           \item Residual pretraining + SR tail pipeline
-          \item Virial identity: internal validation to $<0.4\%$
           \item $N=2$: both PINN+BF and PINN+CTNN agree with DMC
                 to within statistical uncertainty
           \item $N=6,12,20$: PINN+CTNN systematically outperforms
@@ -1211,8 +1068,7 @@ employed under similar yet different circumstances. The so-called {\bf
 \begin{frame}{Methodological Contributions}
   \begin{enumerate}\itemsep5pt
     \item \textbf{Architecture.}
-          Permutation-invariant DeepSets + safe pair features; mollified
-          distances avoid coalescence singularities; PINN loss with explicit
+          Permutation-invariant DeepSets + safe pair features; PINN loss with explicit
           physical constraints.
 
     \item \textbf{Training pipeline.}
@@ -1232,18 +1088,11 @@ employed under similar yet different circumstances. The so-called {\bf
 
 %%
 \begin{frame}{PINNs vs.\ VMC: Complementary Strengths}
-  \begin{block}{Why PINNs generalise for physics}
-    Inductive biases are not optional — they define what ``correct'' means:
-    symmetry, conservation laws, and the PDE structure are built directly
-    into the loss function.
-  \end{block}
-
   \vspace{0.3cm}
   \begin{columns}[T]
     \column{0.48\textwidth}
       \begin{block}{PINN advantages}
         \begin{itemize}
-          \item No MC sampling in configuration space
           \item Wave function is a continuous function of coordinates
           \item Natural access to excited states, complex geometries,
                 and time-dependent problems
@@ -1277,17 +1126,17 @@ employed under similar yet different circumstances. The so-called {\bf
       \textbf{Computational / methodological}
       \begin{itemize}
         \item Scaling to $N>20$: sparse/message-passing architectures
-              to reduce $O(N^2)$ cost
+              to reduce $O(N^2)$ cost, work in progress
         \item Transfer learning: pre-train on one $\omega$, fine-tune
               across the full $\omega$ grid
         \item Excited states: add orthogonality constraints to loss
-        \item Real-time dynamics: extend PINN loss with time derivative
-        \item Improved optimisers: natural gradient, KFAC for SR tail
+        \item Real-time dynamics: extend PINN loss with time dependence
+        \item Improved optimisers: ?
       \end{itemize}
     \column{0.50\textwidth}
       \textbf{Physics questions}
       \begin{itemize}
-        \item Detailed melting scenario at intermediate $\omega$
+        \item Transition to Wigner-Seitz 
         \item Spin degree of freedom and magnetic field effects
         \item Coupled dots and transport / conductance calculations
         \item Entanglement structure of the many-body wave function
@@ -1320,15 +1169,5 @@ employed under similar yet different circumstances. The so-called {\bf
 
 
 %% ─── Acknowledgements ───────────────────────────────────────────────────────
-\begin{frame}[plain,fragile]
-\frametitle{Acknowledgements}
-
-\begin{alertblock}{Many good friends and colleagues}
-Jane Kim (ANL), Patrick Cook (MSU), Danny Jammooa (MSU), Dean Lee (MSU), Ryan LaRose (MSU), Nick Cariello (MSU), Bryce Fore (ANL), Alessandro Lovato (ANL), Stefano Gandolfi (LANL), Francesco Pederiva (UniTN), Arnau Rious (Barcelona), Giuseppe Carleo (EPFL), 
-Niyaz Beysengulov (EEROQ), Johannes Pollanen (EEROQ, MSU), Zachary Stewart (MSU), Jared Weidman (MSU), Angela Wilson (MSU), Francesco Massel (USN, UiO), Gunnar Lange (UiO), Viktor Svensson (UiO), Cecilie Glittum (UiO),
-Jonas Flaten (UiO), Oskar Leinonen (UiO), Øyvind Sigmundson Schøyen (UiO), Stian Dysthe Bilek (UiO), and Håkon Emil Kristiansen (UiO). Apologies to those omitted.
-\end{alertblock}
-
-\end{frame}
 
 \end{document}
