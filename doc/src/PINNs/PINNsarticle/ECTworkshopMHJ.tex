@@ -80,8 +80,7 @@
       \end{block}
       \vspace{0.4cm}
       \begin{alertblock}{Core challenge}
-        Hilbert space grows combinatorially with $N$; exact solutions
-        rapidly become intractable.
+        Hilbert space grows combinatorially with $N$
       \end{alertblock}
   \end{columns}
 \end{frame}
@@ -94,12 +93,6 @@ Jane Kim (ANL), Patrick Cook (MSU), Danny Jammooa (MSU), Dean Lee (MSU), Ryan La
 Niyaz Beysengulov (EEROQ), Johannes Pollanen (EEROQ, MSU), Zachary Stewart (MSU), Jared Weidman (MSU), Angela Wilson (MSU), Aleksander Sekkelsten (UiO), Francesco Massel (USN, UiO), Gunnar Lange (UiO), Viktor Svensson (UiO), Cecilie Glittum (UiO),
 Jonas Flaten (UiO), Oskar Leinonen (UiO), Øyvind Sigmundson Schøyen (UiO), Stian Dysthe Bilek (UiO), and Håkon Emil Kristiansen (UiO). Apologies to those omitted.
 \end{alertblock}
-
-\end{frame}
-
-
-\begin{frame}[plain,fragile]
-\frametitle{Neural Quantum States for Nuclear Physics}
 
 \begin{alertblock}{Review article}
 Alessandro Lovato, Giuseppe Carleo, Bryce Fore, MHJ, Jane Kim, Arnau Rios, Noemi Rocco, {\em Neural-network quantum states for the nuclear many-body problem}, Progress in Nuclear and Particle Physics, under review and \url{https://arxiv.org/abs/2602.13826}.
@@ -114,7 +107,7 @@ Alessandro Lovato, Giuseppe Carleo, Bryce Fore, MHJ, Jane Kim, Arnau Rios, Noemi
     \column{0.48\textwidth}
       \textbf{Traditional methods and their limitations}
       \begin{itemize}
-        \item \textbf{Exact diagonalisation:} restricted to very small $N$
+        \item \textbf{Exact diagonalization:} restricted to very small $N$
         \item \textbf{Quantum Monte Carlo:} fermion sign problem;
               stochastic errors
         \item \textbf{DFT:} uncontrolled approximations; limited in
@@ -183,6 +176,7 @@ Alessandro Lovato, Giuseppe Carleo, Bryce Fore, MHJ, Jane Kim, Arnau Rios, Noemi
 \item CMOS compatible
 
 \item Fast gates
+\item G. Kolstra {\em et al.}, {\em High-impedance resonators for strong coupling to an electron on helium}, Phys. Rev. Applied {\bf 23}, 024001 (2025).
 \end{enumerate}
 \end{alertblock}
 \column{6cm}
@@ -376,6 +370,53 @@ employed under similar yet different circumstances. The so-called {\bf
 \end{frame}
 
 
+\begin{frame}{Machine learning meets quantum hardware}
+
+  \begin{columns}[T]
+    \begin{column}{0.52\textwidth}
+      \textbf{Core challenge:} Quantum devices are delicate systems.
+      Small imperfections $\Rightarrow$ decoherence and loss of information.
+
+      \bigskip
+      \textbf{Reinforcement learning} has proven particularly powerful:
+      \begin{itemize}
+        \item Agent interacts with a simulated/experimental quantum system
+        \item Learns control protocols that optimize a desired objective
+        \item Applications: state preparation, high-fidelity gate implementation
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.44\textwidth}
+      \begin{block}{ML Applications to Quantum Hardware}
+        \begin{itemize}
+          \item Calibration \& characterisation
+          \item Error mitigation \& noise reduction
+          \item Automated control-sequence discovery
+          \item Adaptive quantum experiment design
+        \end{itemize}
+      \end{block}
+      \medskip
+      \small Parameter spaces in quantum devices are \textbf{huge}
+      — traditional optimization struggles.
+    \end{column}
+  \end{columns}
+
+\end{frame}
+
+
+\begin{frame}{Conceptual Framework — Three Pillars of Future Discovery}
+\centerline{\includegraphics[width=0.85\linewidth]{Futurevision.pdf}}
+
+\end{frame}
+
+
+
+
+\begin{frame}{Quantum Control}
+\centerline{\includegraphics[width=0.5\linewidth]{quantumcontrol.pdf}}
+\end{frame}
+
+
+
 \begin{frame}{Neural Paradigms for Quantum Many-Body Problems}
   \renewcommand{\arraystretch}{1.35}
   \begin{tabular}{p{2.6cm}p{4.0cm}p{4.6cm}}
@@ -439,15 +480,6 @@ employed under similar yet different circumstances. The so-called {\bf
 \end{frame}
 
 %%
-\begin{frame}{Activation Functions and Higher-Order Derivatives}
-      \begin{itemize}
-        \item PINNs require second- (or higher-) order derivatives through AD
-        \item Activation function choice is critical for $\ell \ge 2$ PDEs
-        \item \textbf{Smooth activations required:} $\tanh$, SiLU, Softplus
-        \item \textbf{ReLU is unsuitable} for second-order operators
-              (second derivative is zero almost everywhere)
-      \end{itemize}
-\end{frame}
 
 
 %%
@@ -455,7 +487,7 @@ employed under similar yet different circumstances. The so-called {\bf
   Generalization in physics ML means \alert{consistency with physical laws},
   not merely accuracy on unseen data. Three interacting mechanisms:
   \begin{enumerate}
-    \item Algorithmic stability of gradient-based optimisation
+    \item Algorithmic stability of gradient-based optimization
     \item Implicit bias toward smooth, low-complexity solutions
     \item Architectural inductive biases encoding domain knowledge
   \end{enumerate}
@@ -475,7 +507,7 @@ employed under similar yet different circumstances. The so-called {\bf
         \begin{itemize}
           \item Smooth activations; architectures controlling derivatives
           \item Exploit symmetry and equivariance
-          \item Second-order optimisers (L-BFGS, Stochastic Reconfiguration)
+          \item Second-order optimizers (L-BFGS, Stochastic Reconfiguration)
           \item Importance/stratified sampling; space-time protocols
         \end{itemize}
     \end{columns}
@@ -661,7 +693,7 @@ employed under similar yet different circumstances. The so-called {\bf
           \item Loss $\equiv$ energy Rayleigh quotient
           \item Normalization enforced via quotient
           \item Antisymmetry exact (Slater determinant)
-          \item SR / natural-gradient optimisation tail
+          \item SR / natural-gradient optimization tail
         \end{itemize}
       \end{block}
     \column{0.44\textwidth}
@@ -760,82 +792,6 @@ employed under similar yet different circumstances. The so-called {\bf
   \end{columns}
 \end{frame}
 
-
-\begin{frame}{Network Architecture}
-  \begin{columns}[T]
-    \column{0.48\textwidth}
-      \begin{block}{Ground-state PINN Jastrow}
-        \begin{itemize}
-          \item 2 hidden layers, width 64, GELU activations
-          \item Input: all pairwise distances + absolute positions
-          \item Output: scalar log-amplitude correction $J$
-          \item Backflow: optional (2 layers, width 32);
-                \alert{disabled} in all production runs
-          \item Parameters: ${\sim}25$K ($N=2$) to ${\sim}45$K ($N=6$)
-        \end{itemize}
-      \end{block}
-    \column{0.48\textwidth}
-      \begin{block}{Spectral network (imaginary-time evolution)}
-        \begin{itemize}
-          \item 3 temporal modes $\{A_k(\tau)\}$ + constant
-          \item Spatial network: 2 layers, width 32 nodes
-          \item Boundary condition: $g \to 0$ as $\tau\to\infty$
-                enforced analytically
-        \end{itemize}
-      \end{block}
-      \vspace{0.2cm}
-      \begin{alertblock}{Wavefunction form}
-        $\psi = \exp(J)\cdot D$ \quad (Jastrow $\times$ Slater determinant)\\[3pt]
-        Singlet: $\log|\psi_{\rm singlet}| =
-          \mathrm{logaddexp}(J(\mathbf{r}_1,\mathbf{r}_2),\,J(\mathbf{r}_2,\mathbf{r}_1))$
-      \end{alertblock}
-  \end{columns}
-\end{frame}
-
-\begin{frame}{Training Protocol}
-      \textbf{Ground-state training (all production runs)}
-      \begin{itemize}
-        \item Optimiser: Adam, $\text{lr}=10^{-4}$, cosine warm-up
-              (200--400 epochs), $\text{lr}_{\rm min}=0.1\times\text{lr}$
-        \item Batch size $n_{\rm coll}$: 512 ($N\leq4$), 1024 ($N=6$),
-              2048 ($N=8$)
-        \item Laplacian: finite difference ($h=0.01$) for $N>4$
-        \item Gradient clip: $0.2$
-      \end{itemize}
-\end{frame}
-
-%%
-\begin{frame}{Training Pipeline and Benchmark Strategy}
-  \begin{columns}[T]
-    \column{0.52\textwidth}
-      \textbf{Training pipeline}
-      \begin{enumerate}
-        \item \textbf{Residual-based pretraining:}
-              PINN loss enforces the many-body Schr\"odinger equation
-              at collocation points
-        \item \textbf{Stochastic Reconfiguration (SR) tail:}
-              second-order-like variational refinement; improves energy
-              and wave-function quality
-      \end{enumerate}
-      \vspace{0.3cm}
-      \textbf{Internal consistency check}\\
-      Harmonic-plus-Coulomb virial identity:
-      \[
-        2\langle T\rangle = 2\langle V_{\rm trap}\rangle
-        - \langle V_{\rm int}\rangle
-      \]
-      Satisfied to sub-percent accuracy (worst case $\lesssim 0.4\%$).
-    \column{0.44\textwidth}
-      \begin{block}{Benchmark scope}
-        \begin{itemize}
-          \item $N=2,6,12,20$ electrons
-          \item $\omega\in\{10^{-3},10^{-2},0.1,0.5,1.0\}$
-          \item Compared to diffusion Monte Carlo (DMC) where available
-          \item Two ans\"atze: PINN+BF and PINN+CTNN
-        \end{itemize}
-      \end{block}
-  \end{columns}
-\end{frame}
 
 
 %% ============================================================
@@ -979,27 +935,6 @@ employed under similar yet different circumstances. The so-called {\bf
 \end{frame}
 
 
-%% ─── Reproducibility: seed spread vs CI reference ──────────────────────────
-
-%% ─── Implementation details: benchmark reference, architecture, protocol ────
-\begin{frame}{Exact Diagonalization Reference}
-      \textbf{CI via 2D DVR (discrete variable representation)}
-      \begin{enumerate}
-        \item Each of $K$ wells contributes $n_{\rm sp}$ single-particle
-              orbitals from its local HO basis
-        \item $N$-particle product space: $n_{\rm sp}^N$ configurations,
-              sorted by non-interacting energy
-      \end{enumerate}
-      \begin{tabular}{c|ccc|c}
-        \toprule
-        $N$ & $n_{\rm sp}$ & $n_{\rm ci}$ & grid & SP energy \\
-        \midrule
-        2--4 & 40  & 300 & $24\!\times\!24$ & 0.998 \\
-        6    & 10  & 500 & $24\!\times\!16$ & 1.000 \\
-        \bottomrule
-      \end{tabular}
-\end{frame}
-
 
 
 \begin{frame}{Reproducibility Across Seeds: CI Benchmark ($N=2$--$6$, $\omega=1$)}
@@ -1082,8 +1017,7 @@ employed under similar yet different circumstances. The so-called {\bf
           physical constraints.
 
     \item \textbf{Training pipeline.}
-          Residual-based pretraining $\to$ SR tail; virial identity used as
-          ongoing physics-based validation.
+          Residual-based pretraining $\to$ SR tail
 
   \end{enumerate}
 
@@ -1115,7 +1049,7 @@ employed under similar yet different circumstances. The so-called {\bf
           \item Established workhorse for large-$N$ ground states
           \item Efficient MC sampling of high-dimensional spaces
           \item Variational upper bounds by construction
-          \item Rich library of optimised ansatz forms
+          \item Rich library of optimized ansatz forms
         \end{itemize}
       \end{block}
   \end{columns}
@@ -1125,7 +1059,7 @@ employed under similar yet different circumstances. The so-called {\bf
     VMC excels at large-$N$ ground states;
     PINNs are strong candidates for continuous-space, dynamical, constrained, and
     few-to-intermediate-body problems.
-    Cross-fertilisation between the two frameworks is the key direction.
+    Cross-fertilization between the two frameworks is an important direction.
   \end{alertblock}
 \end{frame}
 
@@ -1141,7 +1075,7 @@ employed under similar yet different circumstances. The so-called {\bf
               across the full $\omega$ grid
         \item Excited states: add orthogonality constraints to loss
         \item Real-time dynamics: extend PINN loss with time dependence
-        \item Improved optimisers: ?
+        \item Improved optimizers: ?
       \end{itemize}
     \column{0.50\textwidth}
       \textbf{Physics questions}
@@ -1174,10 +1108,120 @@ employed under similar yet different circumstances. The so-called {\bf
   \end{enumerate}
 \end{frame}
 
+\appendix
+
+\begin{frame}{Activation Functions and Higher-Order Derivatives}
+      \begin{itemize}
+        \item PINNs require second- (or higher-) order derivatives through AD
+        \item Activation function choice is critical for $\ell \ge 2$ PDEs
+        \item \textbf{Smooth activations required:} $\tanh$, SiLU, Softplus
+        \item \textbf{ReLU is unsuitable} for second-order operators
+              (second derivative is zero almost everywhere)
+      \end{itemize}
+\end{frame}
 
 
+\begin{frame}{Network Architecture}
+  \begin{columns}[T]
+    \column{0.48\textwidth}
+      \begin{block}{Ground-state PINN Jastrow}
+        \begin{itemize}
+          \item 2 hidden layers, width 64, GELU activations
+          \item Input: all pairwise distances + absolute positions
+          \item Output: scalar log-amplitude correction $J$
+          \item Backflow: optional (2 layers, width 32);
+                \alert{disabled} in all production runs
+          \item Parameters: ${\sim}25$K ($N=2$) to ${\sim}45$K ($N=6$)
+        \end{itemize}
+      \end{block}
+    \column{0.48\textwidth}
+      \begin{block}{Spectral network (imaginary-time evolution)}
+        \begin{itemize}
+          \item 3 temporal modes $\{A_k(\tau)\}$ + constant
+          \item Spatial network: 2 layers, width 32 nodes
+          \item Boundary condition: $g \to 0$ as $\tau\to\infty$
+                enforced analytically
+        \end{itemize}
+      \end{block}
+      \vspace{0.2cm}
+      \begin{alertblock}{Wavefunction form}
+        $\psi = \exp(J)\cdot D$ \quad (Jastrow $\times$ Slater determinant)\\[3pt]
+        Singlet: $\log|\psi_{\rm singlet}| =
+          \mathrm{logaddexp}(J(\mathbf{r}_1,\mathbf{r}_2),\,J(\mathbf{r}_2,\mathbf{r}_1))$
+      \end{alertblock}
+  \end{columns}
+\end{frame}
 
+\begin{frame}{Training Protocol}
+      \textbf{Ground-state training (all production runs)}
+      \begin{itemize}
+        \item Optimizer: Adam, $\text{lr}=10^{-4}$, cosine warm-up
+              (200--400 epochs), $\text{lr}_{\rm min}=0.1\times\text{lr}$
+        \item Batch size $n_{\rm coll}$: 512 ($N\leq4$), 1024 ($N=6$),
+              2048 ($N=8$)
+        \item Laplacian: finite difference ($h=0.01$) for $N>4$
+        \item Gradient clip: $0.2$
+      \end{itemize}
+\end{frame}
 
-%% ─── Acknowledgements ───────────────────────────────────────────────────────
+%%
+\begin{frame}{Training Pipeline and Benchmark Strategy}
+  \begin{columns}[T]
+    \column{0.52\textwidth}
+      \textbf{Training pipeline}
+      \begin{enumerate}
+        \item \textbf{Residual-based pretraining:}
+              PINN loss enforces the many-body Schr\"odinger equation
+              at collocation points
+        \item \textbf{Stochastic Reconfiguration (SR) tail:}
+              second-order-like variational refinement; improves energy
+              and wave-function quality
+      \end{enumerate}
+      \vspace{0.3cm}
+      \textbf{Internal consistency check}\\
+      Harmonic-plus-Coulomb virial identity:
+      \[
+        2\langle T\rangle = 2\langle V_{\rm trap}\rangle
+        - \langle V_{\rm int}\rangle
+      \]
+      Satisfied to sub-percent accuracy (worst case $\lesssim 0.4\%$).
+    \column{0.44\textwidth}
+      \begin{block}{Benchmark scope}
+        \begin{itemize}
+          \item $N=2,6,12,20$ electrons
+          \item $\omega\in\{10^{-3},10^{-2},0.1,0.5,1.0\}$
+          \item Compared to diffusion Monte Carlo (DMC) where available
+          \item Two ans\"atze: PINN+BF and PINN+CTNN
+        \end{itemize}
+      \end{block}
+  \end{columns}
+\end{frame}
+
+%% ─── Reproducibility: seed spread vs CI reference ──────────────────────────
+
+%% ─── Implementation details: benchmark reference, architecture, protocol ────
+\begin{frame}{Exact Diagonalization Reference}
+      \textbf{CI via 2D DVR (discrete variable representation)}
+      \begin{enumerate}
+        \item Each of $K$ wells contributes $n_{\rm sp}$ single-particle
+              orbitals from its local HO basis
+        \item $N$-particle product space: $n_{\rm sp}^N$ configurations,
+              sorted by non-interacting energy
+      \end{enumerate}
+      \begin{tabular}{c|ccc|c}
+        \toprule
+        $N$ & $n_{\rm sp}$ & $n_{\rm ci}$ & grid & SP energy \\
+        \midrule
+        2--4 & 40  & 300 & $24\!\times\!24$ & 0.998 \\
+        6    & 10  & 500 & $24\!\times\!16$ & 1.000 \\
+        \bottomrule
+      \end{tabular}
+\end{frame}
+
 
 \end{document}
+
+
+
+
+
