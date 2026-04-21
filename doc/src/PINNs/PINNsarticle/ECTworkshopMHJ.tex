@@ -571,18 +571,18 @@ employed under similar yet different circumstances. The so-called {\bf
           = \frac{\langle\psi_\theta|H|\psi_\theta\rangle}
                  {\langle\psi_\theta|\psi_\theta\rangle}
         \]
-        Equivalent to Rayleigh--Ritz minimisation.\\
+        Equivalent to Rayleigh--Ritz minimization.\\
         \alert{Variational principle preserved:}
         $E_\theta \geq E_0$.
       \end{block}
     \column{0.48\textwidth}
-      \begin{alertblock}{2.\ Residual minimisation (PDE-based)}
+      \begin{alertblock}{2.\ Residual minimization (PDE-based)}
         \[
           \mathcal{L}(\theta)
           = \bigl\|(H-E)\psi_\theta\bigr\|^2
         \]
         Enforces the Schr\"{o}dinger equation directly.\\
-        Residual minimisation $\neq$ energy minimisation.
+        Residual minimization $\neq$ energy minimization.
       \end{alertblock}
   \end{columns}
 \end{frame}
@@ -1090,12 +1090,8 @@ employed under similar yet different circumstances. The so-called {\bf
 \begin{frame}{Methodological Contributions}
   \begin{enumerate}\itemsep5pt
     \item \textbf{Architecture.}
-          Permutation-invariant DeepSets + safe pair features; PINN loss with explicit
+          Permutation-invariant DeepSets + pair features; PINN loss with explicit
           physical constraints.
-
-    \item \textbf{Training pipeline.}
-          Residual-based pretraining $\to$ SR tail
-
   \end{enumerate}
 
   \vspace{0.3cm}
@@ -1161,7 +1157,6 @@ employed under similar yet different circumstances. The so-called {\bf
         \item Spin degree of freedom and magnetic field effects
         \item Coupled dots and transport / conductance calculations
         \item Entanglement structure of the many-body wave function
-        \item Connection to 2D Wigner crystal in the thermodynamic limit
       \end{itemize}
   \end{columns}
 \end{frame}
