@@ -1,0 +1,99 @@
+AI for Quantum Control: A Hybrid Reinforcement Learning and Agentic AI Research Program
+
+Mastering quantum control, the steering of a quantum system toward a
+desired state or operation through precisely engineered external fields,
+is one of the defining grand challenges of modern quantum science.
+Progress requires reliable and efficient schemes for manipulating
+quantum systems with classical means, intertwining deep theoretical
+questions with demanding computational and experimental tasks. Central
+to this challenge is the notion of controllability: the ability to
+drive any admissible initial state to a chosen final state in finite
+time using physically realizable controls. Despite significant advances
+in optimal control theory, scalable and robust solutions remain elusive
+for the noisy, high-dimensional quantum systems that underpin emerging
+quantum technologies.
+
+We propose a research program that addresses this challenge through a
+unified hybrid architecture combining reinforcement learning (RL) with
+agentic AI. Quantum control is naturally cast as a sequential
+decision-making problem: time is discretized, each update to a control
+amplitude constitutes an action, and the quantum dynamics, which is governed by
+the Schrödinger or Lindblad equation, serves as the environment. Gate
+fidelity, together with penalties for leakage, pulse roughness, and
+energy cost, defines the reward signal. This formulation subsumes
+traditional optimal-control approaches, while offering substantially greater flexibility in
+noisy, feedback-driven, or model-uncertain settings where
+gradient-based approaches struggle. Critically, it enables
+closed-loop, adaptive control that responds in real time to
+experimental conditions — a capability that is essential for practical
+quantum devices operating in the presence of decoherence and
+calibration drift.
+
+Beyond the low-level RL controller, however, realistic quantum-science
+workflows demand more than pulse optimization alone. They require
+choosing simulation fidelity, adjusting reward formulations across
+training stages, calling external solvers at appropriate moments,
+diagnosing failure modes, and deciding when to hand off to classical
+polishing routines or to redirect the search entirely. These are
+inherently agentic tasks. We therefore augment the RL controller with a
+high-level agentic planner that orchestrates the entire scientific
+workflow: it decomposes objectives, maintains a memory of past runs and
+diagnostics, selects and invokes simulation tools, and adaptively
+manages the interplay between exploration and exploitation at the level
+of the research strategy itself. Formally, this two-level structure,
+agentic planner above, RL controller below, and a physics simulator or
+experiment interface at the base, constitutes a two-level optimization
+hierarchy in which the agent effectively optimizes the context in which
+RL itself is executed. The planner does not merely tune hyperparameters;
+it reasons about which scientific questions to pursue next, making the
+system a genuine autonomous research assistant rather than a fixed
+optimizer.
+
+This architecture has direct and high-impact applications across two
+central thrusts of our program. In quantum gate and circuit synthesis,
+the hybrid system discovers high-fidelity pulse sequences for
+multi-qubit unitaries such as CZ and iSWAP gates, maintaining
+robustness to detuning and decoherence while adapting its strategy as
+experimental constraints evolve. The agentic layer can, for example,
+automatically increase simulation fidelity once a candidate pulse clears
+a coarse robustness check, or switch from RL-based exploration to a
+classical polishing step when the solution is sufficiently mature. In
+quantum sensing, the RL layer optimizes interrogation times, control
+pulses, and adaptive measurement bases, while the agentic layer
+switches estimation protocols in response to current posterior
+uncertainty, selects which physical parameter to target next, and
+benchmarks competing strategies using the quantum Fisher information.
+By doing so, the system pushes sensing precision toward fundamental
+Heisenberg-limited bounds in a fully automated and adaptive manner —
+an advance of direct relevance to applications in magnetometry,
+gravimetry, and quantum-enhanced imaging.
+
+Our research program is grounded in, and continuously informed by, a
+broad theoretical foundation spanning quantum many-body theory,
+quantum information science, and machine learning. We develop quantum
+many-body methods to characterize and model the physical platforms of
+interest, and we apply these models directly in the design of optimal
+experimental settings for quantum gates, circuits, and sensors. The
+physical platforms at the center of our experimental collaborations are
+quantum dot systems and electrons on superfluid helium, both of which
+are candidates for scalable quantum hardware, pursued in close
+partnership with leading universities and private industry. Alongside
+the physics and control research, we develop and study quantum
+computing algorithms that can leverage the improved gates and circuits
+produced by our control framework, creating a coherent pipeline from
+fundamental theory through hardware control to algorithmic application.
+
+Our group is well positioned to execute this program. It currently
+comprises two professors, three postdoctoral fellows, six doctoral
+students, and more than ten Master of Science students, forming a
+critical mass of expertise across quantum physics, computational
+methods, and AI. We maintain an active and collaborative research
+environment supported by a broad curriculum of advanced courses in
+quantum technologies, quantum science, machine learning, and AI. Our
+courses aim at training the next generation of researchers and
+continuously sharpen the group's collective expertise. This combination
+of theoretical depth, computational capability, experimental
+partnerships, and educational infrastructure positions our group to
+make decisive contributions to the development of intelligent,
+autonomous quantum control as a foundational technology for the quantum
+era.
