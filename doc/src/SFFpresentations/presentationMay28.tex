@@ -1,0 +1,519 @@
+%% QONTROL Beamer Presentation
+%% Centre for Quantum Control (QONTROL), University of Oslo
+%% Research Tracks RT1--RT4
+
+\documentclass[aspectratio=169,10pt]{beamer}
+
+\usetheme{Madrid}
+\usecolortheme{seahorse}
+\useinnertheme{rounded}
+
+%% Packages
+\usepackage{amsmath, amssymb}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{hyperref}
+
+%% Custom colours
+\definecolor{qontrolbrown}{RGB}{186,148,78}
+\definecolor{qontrolblue}{RGB}{30,80,140}
+
+\setbeamercolor{frametitle}{bg=qontrolblue, fg=white}
+\setbeamercolor{title}{bg=qontrolblue, fg=white}
+\setbeamercolor{section in head/foot}{bg=qontrolblue}
+\setbeamercolor{block title}{bg=qontrolbrown, fg=white}
+\setbeamercolor{block body}{bg=qontrolbrown!15}
+\setbeamercolor{block title alerted}{bg=qontrolblue, fg=white}
+\setbeamercolor{block body alerted}{bg=qontrolblue!10}
+
+%% Reduce block internal padding
+\setbeamertemplate{blocks}[rounded][shadow=false]
+\addtobeamertemplate{block begin}{}{\vspace{-3pt}}
+\addtobeamertemplate{block end}{\vspace{-3pt}}{}
+\addtobeamertemplate{block alerted begin}{}{\vspace{-3pt}}
+\addtobeamertemplate{block alerted end}{\vspace{-3pt}}{}
+
+%% Compress list spacing inside beamer
+\makeatletter
+\let\orig@itemize\itemize
+\renewcommand{\itemize}{\orig@itemize\setlength{\itemsep}{1pt}\setlength{\topsep}{2pt}\setlength{\parsep}{0pt}}
+\let\orig@enumerate\enumerate
+\renewcommand{\enumerate}{\orig@enumerate\setlength{\itemsep}{1pt}\setlength{\topsep}{2pt}\setlength{\parsep}{0pt}}
+\makeatother
+
+%% Title information
+\title[QONTROL Research Tracks]{%
+  \textbf{Centre for Quantum Control (QONTROL)}\\[2pt]
+  \large Research Tracks: RT1\,--\,RT4}
+\subtitle{\textit{Unlocking the potential of quantum systems}}
+\institute[UiO]{%
+  Department of Physics \& Department of Chemistry\\
+  University of Oslo, Norway}
+\date{2028--2037}
+
+%%====================================================================
+\begin{document}
+
+\begin{frame}[plain]
+  \titlepage
+\end{frame}
+
+\begin{frame}{Overview}
+  \tableofcontents
+\end{frame}
+
+%%====================================================================
+\section{Introduction: QONTROL at a Glance}
+
+\begin{frame}{QONTROL: Mission and Vision}
+  \begin{columns}[T]
+    \column{0.57\textwidth}
+      \begin{block}{Mission}
+        Develop theoretical, computational, and experimental tools
+        to \textbf{control quantum states} in atoms, molecules, and
+        materials -- underpinning the \emph{second quantum revolution}.
+      \end{block}
+      \vspace{2pt}
+      \begin{alertblock}{Central scientific question}
+        \textit{How can we engineer external forces to make quantum
+        systems behave as we desire?}
+      \end{alertblock}
+      \vspace{2pt}
+      \begin{block}{Key quantum concepts}
+        Superposition \quad\textbullet\quad Interference \quad\textbullet\quad Entanglement
+      \end{block}
+    \column{0.41\textwidth}
+      \begin{block}{Systems covered}
+        \begin{itemize}
+          \item Atoms \& molecules
+          \item Nanoscale systems / quantum dots
+          \item Solid-state defects
+          \item Quantum materials
+        \end{itemize}
+      \end{block}
+      \vspace{2pt}
+      \begin{block}{Duration \& host}
+        \textbf{2028--2037} (two 5-year periods)\\
+        University of Oslo (UiO)
+      \end{block}
+      \vspace{2pt}
+      \begin{block}{Controllability}
+        Drive any initial state to a chosen final state in
+        finite time using admissible controls.
+      \end{block}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{The Four Research Tracks}
+  \begin{center}
+  \renewcommand{\arraystretch}{1.35}
+  \begin{tabular}{>{\bfseries\color{qontrolblue}}c
+                  >{\bfseries}l
+                  p{0.60\textwidth}}
+    \toprule
+    Track & Name & Core focus \\
+    \midrule
+    RT1 & Quantum Correlations  & Many-body entanglement; strongly correlated systems \\
+    RT2 & Quantum Dynamics      & Time evolution; driven systems; decoherence mitigation \\
+    RT3 & Quantum Readout       & Measurement; sensing; metrology \\
+    RT4 & Method Development    & Algorithms, ML, open software, hardware benchmarking \\
+    \bottomrule
+  \end{tabular}
+  \end{center}
+  \vspace{3pt}
+  \begin{block}{Overall structure}
+    All four tracks are \textbf{tightly coupled} and span three research areas:
+    \emph{Atoms \& Molecules} \textbullet\
+    \emph{Nanoscale Systems} \textbullet\
+    \emph{Quantum Materials}.\\[2pt]
+    Achieving quantum control requires:
+    \textbf{(i)} preparing an initial state (RT1);
+    \textbf{(ii)} steering its evolution (RT2);
+    \textbf{(iii)} measuring the final state (RT3).
+    RT4 provides the methodological backbone for all tracks.
+  \end{block}
+\end{frame}
+
+%%====================================================================
+\section{RT1: Quantum Correlations}
+
+\begin{frame}{RT1 -- Quantum Correlations: Scope \& Objectives}
+  \begin{columns}[T]
+    \column{0.54\textwidth}
+      \begin{block}{Scope}
+        Addresses fundamental correlations in
+        \textbf{many-body quantum systems}: atoms, molecules,
+        quantum dots, and correlated materials.
+      \end{block}
+      \vspace{2pt}
+      \begin{block}{Key scientific challenges}
+        \begin{itemize}
+          \item Beyond mean-field toward \textbf{predictive many-body treatments}
+          \item Entangled relativistic \& non-relativistic electronic states
+          \item Correlated electron--nuclear motion beyond Born--Oppenheimer
+          \item Mechanisms of \textbf{defect--qubit} formation and exotic
+                correlated-material phenomena
+        \end{itemize}
+      \end{block}
+    \column{0.44\textwidth}
+      \begin{alertblock}{Beyond-state-of-the-art objectives}
+        \begin{enumerate}
+          \item Realize and characterize superposition and
+                entanglement in quantum systems
+          \item Explore non-classical correlations in chemical
+                bond breaking and formation
+        \end{enumerate}
+      \end{alertblock}
+      \vspace{2pt}
+      \begin{block}{Principal Investigators (Fig.\,3)}
+        \textbf{Atoms \& Molecules:}
+          T.\,B.\,Pedersen (TBP), M.\,Repi\v{s}k\'{y} (MR)\\[2pt]
+        \textbf{Nanoscale Systems:}
+          M.\,E.\,Bathen (MEB), S.\,Kvaal (SK)\\[2pt]
+        \textbf{Quantum Materials:}
+          J.\,Wells (JW), L.\,Vines (LV)
+      \end{block}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{RT1 -- Quantum Correlations: Research Highlights}
+  \begin{block}{Electrons on liquid helium and quantum dots\normalfont\small(Hjorth-Jensen et al., PRX Quantum 2024)}
+    Coulomb interactions tuned by electric fields to create
+    \textbf{charge qubits with long coherence times}.
+    Exact experimental and theoretical treatment; basis for
+    prototype quantum gates, circuits and sensors.
+  \end{block}
+  \vspace{2pt}
+  \begin{block}{Beyond Born--Oppenheimer \normalfont\small(Pedersen, Kvaal et al., JACS 2024)}
+    First extraction of molecular and electronic structure from
+    all-particle non-BO wave functions by stochastic sampling of
+    conditional quantum probability distributions -- essential for
+    interpreting \textbf{attosecond quantum dynamics simulations}.
+  \end{block}
+  \vspace{2pt}
+  \begin{block}{Silicon-vacancy defects in SiC \normalfont\small(Bathen, Vines et al., npj QI 2019)}
+    Theory, computation, and experiment to identify and control
+    charge-transition levels and phonon couplings of
+    \textbf{single-photon emitters and spin qubits} in 4H--SiC,
+    advancing integration into quantum devices.
+  \end{block}
+\end{frame}
+
+%%====================================================================
+\section{RT2: Quantum Dynamics}
+
+\begin{frame}{RT2 -- Quantum Dynamics: Scope \& Objectives}
+  \begin{columns}[T]
+    \column{0.54\textwidth}
+      \begin{block}{Scope}
+        Understanding and \textbf{steering the time evolution}
+        of quantum systems: free and driven dynamics,
+        beyond few-level models, with relativistic effects.
+      \end{block}
+      \vspace{2pt}
+      \begin{block}{Key scientific challenges}
+        \begin{itemize}
+          \item Model \textbf{open quantum systems} with realistic environments
+          \item Design \textbf{optimal inverse-control strategies}
+          \item Mitigate \textbf{decoherence and noise}
+          \item Time-dependent many-body theory for ionization processes
+          \item ML-guided control from high-accuracy simulations
+        \end{itemize}
+      \end{block}
+    \column{0.44\textwidth}
+      \begin{alertblock}{Beyond-state-of-the-art objectives}
+        \begin{enumerate}
+          \item Theory and experiment for qubit time evolution
+                in nanoscale systems
+          \item Reveal ultrafast quantum dynamics via attosecond
+                probing and modeling
+        \end{enumerate}
+      \end{alertblock}
+      \vspace{2pt}
+      \begin{block}{Principal Investigators (Fig.\,3)}
+        \textbf{Atoms \& Molecules:} TBP, MR\\[2pt]
+        \textbf{Nanoscale Systems:} MEB, SK\\[2pt]
+        \textbf{Quantum Materials:} JW, LV
+      \end{block}
+      \vspace{2pt}
+      \begin{block}{Attosecond chemistry}
+        Laser pulses on the electron time scale enable control
+        of chemical reactions via electron--nuclear entanglement.
+      \end{block}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{RT2 -- Quantum Dynamics: Methods \& Tools}
+  \begin{columns}[T]
+    \column{0.48\textwidth}
+      \begin{block}{Theoretical framework}
+        Unified framework combining \textbf{theoretical modeling,
+        simulation, and data-driven control}:
+        \begin{itemize}
+          \item Time-dependent many-body theory for open systems
+          \item Optimal control theory (GRAPE, CRAB, \ldots)
+          \item Lindblad / non-Markovian master equations
+          \item Connects experimental observations with theory
+        \end{itemize}
+      \end{block}
+    \column{0.48\textwidth}
+      \begin{block}{Machine-learning guidance}
+        \begin{itemize}
+          \item Reinforcement learning for optimal pulse design
+          \item ML-guided control from high-accuracy simulations
+          \item Programmable quantum evolution and robust qubits
+          \item Generative models for control-landscape exploration
+        \end{itemize}
+      \end{block}
+  \end{columns}
+  \vspace{4pt}
+  \begin{alertblock}{Key ambition}
+    Develop time-dependent many-body theories for
+    \textbf{open quantum systems including ionization processes},
+    creating a unified framework connecting experiment with theory.
+  \end{alertblock}
+\end{frame}
+
+%%====================================================================
+\section{RT3: Quantum Readout}
+
+\begin{frame}{RT3 -- Quantum Readout: Scope \& Objectives}
+  \begin{columns}[T]
+    \column{0.54\textwidth}
+      \begin{block}{Scope}
+        Characterising quantum states through \textbf{measurement}:
+        cornerstone of quantum computing, sensing, and metrology.
+        Targets enhanced detection sensitivity via quantum correlations.
+      \end{block}
+      \vspace{2pt}
+      \begin{block}{Key scientific challenges}
+        \begin{itemize}
+          \item \textbf{Critical quantum sensing}: exploit proximity to
+                quantum phase transitions for enhanced precision
+          \item Study quantum material response to minute perturbations
+                to optimise measurement fidelity
+          \item Deepen the role of superposition, interference, and
+                entanglement in quantum information processing
+          \item \emph{In operando} characterisation of prototype devices
+        \end{itemize}
+      \end{block}
+    \column{0.44\textwidth}
+      \begin{alertblock}{Beyond-state-of-the-art objectives}
+        \begin{enumerate}
+          \item Enhance sensitivity using superposition,
+                interference, and entanglement
+          \item \textit{In operando} characterisation of
+                prototype quantum devices
+        \end{enumerate}
+      \end{alertblock}
+      \vspace{2pt}
+      \begin{block}{Principal Investigators (Fig.\,3)}
+        \textbf{Atoms \& Molecules:} TBP, MR\\[2pt]
+        \textbf{Nanoscale Systems:} MEB, SK\\[2pt]
+        \textbf{Quantum Materials:} JW, LV
+      \end{block}
+      \vspace{2pt}
+      \begin{block}{Role across all tracks}
+        RT3 specifically deepens the role of entanglement
+        in \textbf{sensing and information processing}.
+      \end{block}
+  \end{columns}
+\end{frame}
+
+%%====================================================================
+\section{RT4: Method Development}
+
+\begin{frame}{RT4 -- Method Development: Scope \& Objectives}
+  \begin{columns}[T]
+    \column{0.54\textwidth}
+      \begin{block}{Scope}
+        \textbf{Methodological and technological foundation}
+        for all other RTs: advances in experiment, computation,
+        and data science.
+      \end{block}
+      \vspace{2pt}
+      \begin{block}{Key activities}
+        \begin{itemize}
+          \item Next-generation algorithms for static and time-dependent
+                quantum-mechanical calculations
+          \item \textbf{ML-enhanced modeling} of open quantum systems
+          \item \textbf{Quantum-computing--based simulations}
+          \item Open datasets and automated workflows
+          \item State-of-the-art magnetic resonance and photoemission tools
+          \item Generative deep learning and reinforcement learning
+        \end{itemize}
+      \end{block}
+    \column{0.44\textwidth}
+      \begin{alertblock}{Beyond-state-of-the-art objectives}
+        \begin{enumerate}
+          \item Synergetic development of new AI methods and
+                many-body models for quantum control
+          \item Develop and benchmark experimental hardware
+                for coherent control of nanoscale systems
+        \end{enumerate}
+      \end{alertblock}
+      \vspace{2pt}
+      \begin{block}{Principal Investigators (Fig.\,3)}
+        \textbf{Atoms \& Molecules:} TBP, MR\\[2pt]
+        \textbf{Nanoscale Systems:} MEB, SK\\[2pt]
+        \textbf{Quantum Materials:} JW, LV
+      \end{block}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{RT4 -- Method Development: Hylleraas Software Platform}
+  \begin{columns}[T]
+    \column{0.50\textwidth}
+      \begin{block}{Hylleraas Software Platform (HSP)}
+        \begin{itemize}
+          \item Flexible \textbf{open-source software library}
+                integrating quantum and classical dynamics codes
+                with ML techniques
+          \item High-performance computing framework
+          \item All software and datasets \textbf{openly accessible}
+                {\small(gitlab.com/hylleraasplatform)}
+          \item Ensures reproducibility and interoperability
+        \end{itemize}
+      \end{block}
+    \column{0.48\textwidth}
+      \begin{block}{Machine learning integration}
+        Pioneered ML-driven materials prediction and design,
+        enabling rapid exploration of vast parameter spaces:
+        \begin{itemize}
+          \item Data-driven discovery and control
+          \item Generative deep learning
+          \item Agent based AI and Reinforcement learning for Quantum Control
+        \end{itemize}
+      \end{block}
+  \end{columns}
+  \vspace{3pt}
+  \begin{alertblock}{Transformative potential}
+    The systematic integration of quantum science and ML is
+    \textbf{transformative}, enabling data-driven discovery across
+    all research tracks and accelerating the second quantum revolution.
+  \end{alertblock}
+\end{frame}
+
+%%====================================================================
+\section{Principal Investigators}
+
+\begin{frame}{Principal Investigators}
+  \renewcommand{\arraystretch}{1.25}
+  \footnotesize
+  \begin{tabular}{>{\bfseries}p{3.5cm}
+                  p{2.5cm}
+                  p{1.7cm}
+                  p{5.9cm}}
+    \toprule
+    Name & Role & Dept & Key expertise \\
+    \midrule
+    Morten Hjorth-Jensen
+      & Director 2028--32
+      & Physics
+      & Quantum many-body theory; ML; quantum computing \\
+    Marianne E.\ Bathen
+      & Director 2033--37
+      & Physics/ CMSE
+      & Solid-state physics; expt quantum materials \\
+    Thomas Bondo Pedersen
+      & Group Leader
+      & Chemistry
+      & Quantum many-body theory; laser-driven dynamics \\
+    Simen Kvaal
+      & Group Leader
+      & Chemistry
+      & Quantum many-body theory; static \& real-time theory \\
+    Michal Repi\v{s}k\'{y}
+      & Group Leader
+      & Chemistry
+      & Relativistic electronic-structure; ReSpect code \\
+    Lasse Vines
+      & Group Leader
+      & Physics/CMSE
+      & Semiconductor defect physics; expt quantum materials \\
+    Justin Wells
+      & Group Leader
+      & Physics/CMSE
+      & Photoemission spectroscopy; expt quantum materials \\
+    \bottomrule
+  \end{tabular}
+  \vspace{3pt}
+  \newline
+  {\scriptsize All at University of Oslo (UiO).
+  CMSE\,=\,Centre for Materials Science\\ and Nanotechnology.}
+\end{frame}
+
+\begin{frame}{PI Research-Area Assignments (from Fig.\,3)}
+  \renewcommand{\arraystretch}{1.3}
+  \small
+  \begin{tabular}{>{\bfseries}p{4.0cm}
+                  >{\centering\arraybackslash}p{3.0cm}
+                  >{\centering\arraybackslash}p{3.0cm}
+                  >{\centering\arraybackslash}p{3.0cm}}
+    \toprule
+    Research Track
+      & \textbf{Atoms \& Molecules}
+      & \textbf{Nanoscale Systems}
+      & \textbf{Quantum Materials} \\
+    \midrule
+    RT1 Quantum Correlations & TBP, MR & MEB, SK & JW, LV \\
+    RT2 Quantum Dynamics     & TBP, MR & MEB, SK & JW, LV \\
+    RT3 Quantum Readout      & TBP, MR & MEB, SK & JW, LV \\
+    RT4 Method Development   & TBP, MR & MEB, SK & JW, LV \\
+    \midrule
+    \multicolumn{4}{l}{\textbf{Centre Director (all RTs):}
+      MHJ\,=\,Morten Hjorth-Jensen} \\
+    \bottomrule
+  \end{tabular}
+  \vspace{4pt}
+  \begin{block}{Initials key}
+    \footnotesize
+    \textbf{MHJ}\,Morten Hjorth-Jensen\quad
+    \textbf{TBP}\,Thomas Bondo Pedersen\quad
+    \textbf{MR}\,Michal Repi\v{s}k\'{y}\quad
+    \textbf{MEB}\,Marianne E.\ Bathen\\[2pt]
+    \textbf{SK}\,Simen Kvaal\quad
+    \textbf{JW}\,Justin Wells\quad
+    \textbf{LV}\,Lasse Vines
+  \end{block}
+
+\end{frame}
+
+
+\begin{frame}{More people}
+  \renewcommand{\arraystretch}{1.3}
+  \small
+  \begin{tabular}{>{\bfseries}p{4.0cm}
+                  >{\centering\arraybackslash}p{3.0cm}
+                  >{\centering\arraybackslash}p{3.0cm}
+                  >{\centering\arraybackslash}p{3.0cm}}
+    \toprule
+    Research Track
+      & \textbf{Atoms \& Molecules}
+      & \textbf{Nanoscale Systems}
+      & \textbf{Quantum Materials} \\
+    \midrule
+    RT1 Quantum Correlations & ET, MC & SV, FM, CG, GL & FM, CG GL  \\
+    RT2 Quantum Dynamics     & ET  & ET, FM, GL & FM, GL \\
+    RT3 Quantum Readout      &  & FM, GL & FM, GL  \\
+    RT4 Method Development   & AN, DB, MC, ET, AC & SV, FM, GL, CG & FM, GL, CG  \\
+  \end{tabular}
+  \vspace{4pt}
+  \begin{block}{Initials key}
+    \footnotesize
+    \textbf{SV}\,Susanne Viefers\quad
+    \textbf{FM}\,Francesco Massel\quad
+    \textbf{DB}\,David Balcells\quad
+        \textbf{CG}\,Cecilie Glittum\quad
+    \textbf{MEB}\,Erik Tellgren\\[2pt]
+    \textbf{AC}\,Antoine Camper\quad
+    \textbf{MC}\,Michele Cascella\quad
+            \textbf{GL}\,Gunnar Lange\quad
+    \textbf{AN}\,Ainara Nova
+  \end{block}
+
+\end{frame}
+
+
+\end{document}

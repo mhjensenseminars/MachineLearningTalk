@@ -1,0 +1,6 @@
+\beamer@sectionintoc {1}{Introduction: QONTROL at a Glance}{3}{0}{1}
+\beamer@sectionintoc {2}{RT1: Quantum Correlations}{5}{0}{2}
+\beamer@sectionintoc {3}{RT2: Quantum Dynamics}{7}{0}{3}
+\beamer@sectionintoc {4}{RT3: Quantum Readout}{9}{0}{4}
+\beamer@sectionintoc {5}{RT4: Method Development}{10}{0}{5}
+\beamer@sectionintoc {6}{Principal Investigators}{12}{0}{6}
