@@ -1,0 +1,504 @@
+\documentclass[10pt,aspectratio=169]{beamer}
+
+%=====================================================================
+%  Beyond Pontryagin-Optimal Quantum Control
+%  Beamer (metropolis) presentation generated from lecture notes,
+%  with expanded mathematical derivations.
+%=====================================================================
+
+\usetheme{metropolis}
+\metroset{block=fill, numbering=fraction, progressbar=frametitle}
+
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{mathtools}
+\usepackage{bm}
+\usepackage{physics}      % provides \ket, \bra, \braket, \dd, etc.
+\usepackage{xcolor}
+\usepackage{booktabs}
+
+% --- colours -------------------------------------------------------
+\definecolor{qblue}{HTML}{1F6FEB}
+\definecolor{qred}{HTML}{C0392B}
+\definecolor{qgreen}{HTML}{1E8449}
+\setbeamercolor{frametitle}{bg=qblue!88!black}
+\setbeamercolor{progress bar}{fg=qred}
+
+% --- handy macros --------------------------------------------------
+\newcommand{\Hop}{\hat H}
+\newcommand{\Hc}{\mathcal{H}}                 % Pontryagin/control function
+\renewcommand{\Re}{\operatorname{Re}}
+\renewcommand{\Im}{\operatorname{Im}}
+\newcommand{\dt}{\frac{\dd}{\dd t}}
+\newcommand{\psit}{\ket{\psi(t)}}
+\newcommand{\chit}{\ket{\chi(t)}}
+\newcommand{\FQ}{F_{\!Q}}
+\DeclareMathOperator{\Var}{Var}
+
+\title{Beyond Pontryagin-Optimal Quantum Control}
+\subtitle{Optimal control, robustness, and learning-based protocols}
+\date{\today}
+\author{Centre for Quantum Control --- working notes}
+\institute{Optimal control theory $\cdot$ Reinforcement learning $\cdot$ Many-body physics}
+
+\begin{document}
+
+\maketitle
+
+\begin{frame}{Outline}
+  \tableofcontents
+\end{frame}
+
+%=====================================================================
+\section{The quantum control problem}
+%=====================================================================
+
+\begin{frame}{Setting: a controlled Schr\"odinger equation}
+  We steer a quantum system with time-dependent control fields $u_k(t)$:
+  \begin{equation}
+    i\hbar\,\dt\psit
+      = \Big(\Hop_0 + \textstyle\sum_k u_k(t)\,\Hop_k\Big)\psit .
+    \label{eq:tdse}
+  \end{equation}
+  \begin{itemize}
+    \item $\Hop_0$ --- the \alert{drift} Hamiltonian (always present).
+    \item $\Hop_k$ --- the \alert{control} Hamiltonians (knobs we can turn).
+    \item $u_k(t)$ --- the control \alert{pulses} we are free to design.
+  \end{itemize}
+  \vspace{0.5em}
+  Setting $\hbar=1$ and $\Hop(u)\equiv \Hop_0+\sum_k u_k\Hop_k$, the dynamics are
+  \begin{equation}
+    \dt\psit = -\,i\,\Hop(u)\,\psit ,
+    \qquad \ket{\psi(0)}=\ket{\psi_0}.
+  \end{equation}
+  The map $u_k(\cdot)\mapsto \ket{\psi(T)}$ is what we optimise.
+\end{frame}
+
+\begin{frame}{What do we optimise?}
+  A control task fixes an objective functional $J[u]$. Typical choices:
+  \begin{center}
+  \begin{tabular}{@{}ll@{}}
+    \toprule
+    \textbf{Task} & \textbf{Objective} \\
+    \midrule
+    State transfer & $F = \abs{\braket{\psi_{\mathrm{tgt}}}{\psi(T)}}^2$ \\
+    Gate synthesis & $F = \tfrac{1}{d^2}\,\abs{\Tr\!\big(U_{\mathrm{tgt}}^\dagger U(T)\big)}^2$ \\
+    Entanglement   & maximise an entanglement monotone of $\ket{\psi(T)}$ \\
+    Sensing        & maximise quantum Fisher information $\FQ(T)$ \\
+    Energy/time    & minimise $\int_0^T \sum_k u_k^2\,\dd t$ \ or \ minimise $T$ \\
+    \bottomrule
+  \end{tabular}
+  \end{center}
+  \vspace{0.6em}
+  All share the structure
+  \[
+    \max_{u(\cdot)}\; J[u]=\Phi\big(\ket{\psi(T)}\big)
+      \;-\;\int_0^T \ell\big(\psi(t),u(t)\big)\,\dd t,
+  \]
+  a terminal reward $\Phi$ plus a running cost $\ell$.
+\end{frame}
+
+%=====================================================================
+\section{Pontryagin's Maximum Principle}
+%=====================================================================
+
+\begin{frame}{Pontryagin's Maximum Principle (PMP)}
+  PMP gives \alert{necessary conditions} for an optimum of a constrained
+  dynamical optimisation. Classically, for $\dot x = f(x,u)$ one introduces a
+  costate $p(t)$ and the \alert{control (Pontryagin) function}
+  \[
+    \Hc(x,p,u) = p^{\!\top} f(x,u) - \ell(x,u).
+  \]
+  The optimal triple $(x^\star,p^\star,u^\star)$ satisfies
+  \begin{align}
+    \dot x      &= +\,\partial_p \Hc, &
+    \dot p      &= -\,\partial_x \Hc, \\[2pt]
+    u^\star(t)  &= \arg\max_{u\in\mathcal{U}} \;\Hc\big(x^\star,p^\star,u\big).
+  \end{align}
+  \begin{alertblock}{Key point}
+    The control is chosen to \emph{maximise} $\Hc$ pointwise in time over the
+    admissible set $\mathcal{U}$. The costate $p$ propagates the sensitivity of
+    the objective \emph{backwards} from the terminal time.
+  \end{alertblock}
+\end{frame}
+
+\begin{frame}{Derivation I --- the augmented functional}
+  We maximise $J=\Phi(\ket{\psi(T)})$ subject to \eqref{eq:tdse}.
+  Adjoin the dynamics with a costate $\chit$ (a Lagrange multiplier that is
+  itself a ket), using $2\Re$ to vary bra and ket consistently:
+  \begin{equation}
+    \bar J = \Phi\big(\ket{\psi(T)}\big)
+      \;-\; 2\Re\!\int_0^T \big\langle \chi \,\big|\, \dot\psi + i\Hop(u)\,\psi\big\rangle\,\dd t .
+  \end{equation}
+  Integrate the $\langle\chi|\dot\psi\rangle$ term by parts:
+  \begin{equation}
+    -2\Re\!\int_0^T\!\!\braket{\chi}{\dot\psi}\,\dd t
+      = -2\Re\,\braket{\chi}{\psi}\Big|_0^T
+        + 2\Re\!\int_0^T\!\!\braket{\dot\chi}{\psi}\,\dd t .
+  \end{equation}
+  Collecting terms, the first variation in $\ket{\psi}$ is
+  \begin{equation}
+    \delta\bar J
+      = \underbrace{\delta\Phi - 2\Re\braket{\chi(T)}{\delta\psi(T)}}_{\text{boundary}}
+      \;+\; 2\Re\!\int_0^T \big\langle \dot\chi + i\Hop\,\chi \,\big|\, \delta\psi\big\rangle\,\dd t .
+  \end{equation}
+  (using $\braket{\chi}{i\Hop\,\delta\psi}=\braket{-i\Hop\,\chi}{\delta\psi}$ since $\Hop=\Hop^\dagger$).
+\end{frame}
+
+\begin{frame}{Derivation II --- costate equation \& terminal condition}
+  Stationarity for arbitrary interior variations $\delta\psi(t)$ forces the
+  integrand to vanish:
+  \begin{equation}
+    \boxed{\;\dt\chit = -\,i\,\Hop(u)\,\chit\;}
+  \end{equation}
+  \alert{The costate obeys the same Schr\"odinger equation as the state.}
+  The boundary term fixes the terminal condition. For state transfer,
+  $\Phi=\abs{\braket{\psi_{\mathrm{tgt}}}{\psi(T)}}^2$ gives
+  \[
+    \delta\Phi = 2\Re\big[\braket{\psi(T)}{\psi_{\mathrm{tgt}}}\braket{\psi_{\mathrm{tgt}}}{\delta\psi(T)}\big],
+  \]
+  so matching the boundary term yields
+  \begin{equation}
+    \ket{\chi(T)} = \ket{\psi_{\mathrm{tgt}}}\!\braket{\psi_{\mathrm{tgt}}}{\psi(T)}
+                  = \hat P_{\mathrm{tgt}}\,\ket{\psi(T)} .
+  \end{equation}
+  \begin{itemize}
+    \item Forward: integrate $\ket\psi$ from $\ket{\psi_0}$.
+    \item Backward: integrate $\ket\chi$ from $\hat P_{\mathrm{tgt}}\ket{\psi(T)}$.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Derivation III --- the gradient (GRAPE)}
+  Varying the \emph{control} in $\bar J$ (with $\delta\Hop=\sum_k\delta u_k\,\Hop_k$):
+  \begin{equation}
+    \delta\bar J
+      = -2\Re\!\int_0^T \big\langle \chi \,\big|\, i\,\delta\Hop\,\psi\big\rangle\,\dd t
+      = \int_0^T \sum_k \delta u_k(t)\,
+        \underbrace{2\,\Im\!\braket{\chi(t)}{\Hop_k\,\psi(t)}}_{\displaystyle =\;\delta J/\delta u_k(t)}\,\dd t .
+  \end{equation}
+  \begin{equation}
+    \boxed{\;\frac{\delta J}{\delta u_k(t)}
+      = 2\,\Im\,\braket{\chi(t)}{\Hop_k\,\psi(t)}\;}
+  \end{equation}
+  \begin{itemize}
+    \item This is exactly the \alert{GRAPE} gradient used in numerical pulse
+          optimisation: forward-propagate $\ket\psi$, backward-propagate
+          $\ket\chi$, overlap with each $\Hop_k$.
+    \item Gradient ascent $u_k \leftarrow u_k + \eta\,\delta J/\delta u_k$ climbs
+          toward a PMP stationary point.
+  \end{itemize}
+\end{frame}
+
+%=====================================================================
+\section{The structure of optimal pulses}
+%=====================================================================
+
+\begin{frame}{Bang-bang controls from the switching function}
+  The control function is \alert{affine} in $u_k$:
+  \[
+    \Hc = \Im\braket{\chi}{\Hop_0\,\psi}
+        + \sum_k u_k\, \underbrace{\Im\braket{\chi}{\Hop_k\,\psi}}_{\displaystyle\phi_k(t)} .
+  \]
+  Maximising over the box $u_k\in[u_{\min},u_{\max}]$ a \emph{linear} function
+  pushes $u_k$ to an endpoint, governed by the \alert{switching function}
+  $\phi_k(t)$:
+  \begin{equation}
+    u_k^\star(t)=
+    \begin{cases}
+      u_{\max}, & \phi_k(t) > 0,\\[2pt]
+      u_{\min}, & \phi_k(t) < 0.
+    \end{cases}
+  \end{equation}
+  \begin{block}{Time-optimal spin flip (single control)}
+    A single switch at $t_1$ gives the textbook bang--bang pulse
+    \[
+      u(t)=
+      \begin{cases}
+        +u_{\max}, & t<t_1,\\
+        -u_{\max}, & t>t_1.
+      \end{cases}
+    \]
+  \end{block}
+\end{frame}
+
+\begin{frame}{Singular arcs}
+  What if $\phi_k(t)=0$ on a whole interval, not just at isolated points?
+  Then $\Hc$ does not determine $u_k$ at first order --- a \alert{singular arc}.
+  \begin{itemize}
+    \item One differentiates $\phi_k(t)=0$ repeatedly in time until $u_k$
+          reappears:
+          \[
+            \dot\phi_k = \Im\braket{\chi}{[\,\Hop(u),\Hop_k\,]\,\psi}, \quad\ldots
+          \]
+          using $\dt\Im\braket{\chi}{A\psi}=\Im\braket{\chi}{[\,A,\Hop(u)\,]^{\!*}\!\psi}$-type identities.
+    \item The \alert{generalised Legendre--Clebsch (Kelley) condition}
+          $(-1)^q\,\partial_{u_k}\!\big(\tfrac{\dd^{2q}}{\dd t^{2q}}\partial_{u_k}\Hc\big)\ge 0$
+          must hold on the arc.
+  \end{itemize}
+  \vspace{0.4em}
+  \textbf{Takeaway.} PMP outputs are typically \emph{bang-bang}, \emph{piecewise
+  constant}, \emph{singular}, or smooth analytic trajectories --- and they are
+  optimal \emph{within the assumed model}.
+\end{frame}
+
+%=====================================================================
+\section{Beyond ``Pontryagin-optimal''}
+%=====================================================================
+
+\begin{frame}{What could ``beyond Pontryagin-optimal'' mean?}
+  PMP \emph{is} the optimum --- so at first sight nothing beats it. The phrase
+  is meaningful once we remember PMP optimises a \alert{model}, for a
+  \alert{single} Hamiltonian, over a \alert{restricted} ansatz, usually
+  \alert{open-loop}, and only when the costates are \alert{tractable}.
+  \begin{enumerate}
+    \item Optimal only for the model $\;\dot x = f(x,u)$.
+    \item Optimality vs.\ robustness.
+    \item Restricted ansatz spaces.
+    \item Open-loop vs.\ adaptive (feedback) control.
+    \item Many-body intractability.
+  \end{enumerate}
+  \vspace{0.4em}
+  Each gap is a place where machine learning / reinforcement learning (RL) can
+  do better \emph{in practice}.
+\end{frame}
+
+\begin{frame}{1. Optimal only for the model}
+  PMP solves $\dot x = f(x,u)$ exactly. The real device has
+  \begin{center}
+    noise \;$\cdot$\; calibration errors \;$\cdot$\; drift \;$\cdot$\;
+    decoherence \;$\cdot$\; model mismatch.
+  \end{center}
+  Write the true generator as a perturbation,
+  \[
+    \Hop_{\text{true}} = \Hop(u) + \delta\Hop(t),\qquad
+    \mathcal{L}_{\text{true}} = -i[\Hop(u),\,\cdot\,] + \mathcal{D}[\,\cdot\,],
+  \]
+  with a dissipator $\mathcal{D}$ (Lindblad). The model-optimal $u^\star$ need not
+  be optimal for $\Hop_{\text{true}}$ or for the open-system dynamics.
+  \begin{exampleblock}{Consequence}
+    An RL agent trained \emph{directly on hardware outcomes} optimises the true
+    (unknown) objective and can outperform the model-optimal pulse --- one of
+    the most active directions in quantum control today.
+  \end{exampleblock}
+\end{frame}
+
+\begin{frame}{2. Robustness vs.\ optimality --- the flat-optimum picture}
+  Hardware needs performance \emph{averaged} over uncertain parameters $\theta$:
+  \begin{equation}
+    J_{\text{rob}}[u] = \int \dd\theta\; p(\theta)\,F\big(T,\theta\big).
+  \end{equation}
+  Expand $F$ about the nominal $\theta_0$ with $\Var(\theta)=\sigma_\theta^2$:
+  \begin{equation}
+    J_{\text{rob}} \approx F(\theta_0)
+      + \tfrac12\,\sigma_\theta^2\,\partial_\theta^2 F(\theta_0) + \cdots
+  \end{equation}
+  \begin{itemize}
+    \item The sharp PMP optimum maximises $F(\theta_0)$ but may have large
+          \emph{negative} curvature $\partial_\theta^2 F$ --- it is \alert{fragile}.
+    \item Maximising $J_{\text{rob}}$ trades a little peak fidelity for a
+          \alert{flat} optimum (small $\abs{\partial_\theta^2 F}$): slightly
+          slower / less optimal, but far more robust --- usually preferable.
+  \end{itemize}
+  ML readily optimises the ensemble objective $J_{\text{rob}}$ where analytic PMP
+  struggles.
+\end{frame}
+
+\begin{frame}{3. Restricted ansatz spaces}
+  Numerical PMP/GRAPE almost always imposes constraints:
+  \begin{itemize}
+    \item bounded amplitudes $\;\abs{u_k}\le u_{\max}$,
+    \item finite bandwidth $\;\abs{\tilde u_k(\omega)}=0$ for $\abs{\omega}>\omega_c$,
+    \item smoothness / slew-rate limits $\;\abs{\dot u_k}\le s_{\max}$.
+  \end{itemize}
+  The ``optimum'' is then optimal \emph{only inside that constrained set}
+  $\mathcal{U}_{\text{ansatz}}\subset\mathcal{U}$.
+  \begin{equation}
+    \max_{u\in\mathcal{U}_{\text{ansatz}}} J \;\le\; \max_{u\in\mathcal{U}} J .
+  \end{equation}
+  ML/RL can search richer pulse families (e.g.\ learned parameterisations,
+  multi-tone or non-intuitive shapes) and discover structures \emph{outside}
+  the original ansatz --- ``beyond what was thought achievable''.
+\end{frame}
+
+\begin{frame}{4. Open-loop vs.\ adaptive control}
+  PMP is usually \alert{open-loop}: $u(t)$ is fixed in advance. Modern
+  experiments use mid-circuit measurements, feedback and adaptive protocols, so
+  the control depends on measurement records $m$:
+  \begin{equation}
+    u = u(t,m), \qquad m=\{\text{outcomes up to }t\}.
+  \end{equation}
+  This is a \alert{partially observed} control problem (a POMDP). The relevant
+  object is a \emph{policy} mapping the information state to actions,
+  \[
+    u_t = \pi(s_t), \qquad s_t = \text{(belief / measurement history)} .
+  \]
+  \begin{alertblock}{Why RL fits}
+    Reinforcement learning is built to optimise feedback policies under partial
+    observation, where a single open-loop PMP trajectory is not even the right
+    object.
+  \end{alertblock}
+\end{frame}
+
+\begin{frame}{5. Many-body intractability}
+  For small systems PMP is exact and elegant. For
+  \[
+    N \sim 100 \quad\text{interacting qubits/spins:}\qquad \dim\mathcal{H}=2^{N}.
+  \]
+  \begin{itemize}
+    \item The state $\ket\psi$ and costate $\ket\chi$ live in an exponentially
+          large space.
+    \item Propagating the costate exactly becomes impossible; the GRAPE gradient
+          $2\,\Im\braket{\chi}{\Hop_k\psi}$ cannot be evaluated.
+  \end{itemize}
+  ML can operate on \alert{compressed} representations --- tensor networks,
+  neural quantum states, or model-free policies trained on measurable
+  observables --- discovering approximate strategies that are simply
+  \emph{computationally inaccessible} to conventional PMP.
+\end{frame}
+
+%=====================================================================
+\section{Pontryagin and reinforcement learning}
+%=====================================================================
+
+\begin{frame}{The bridge: PMP is the local face of dynamic programming}
+  Dynamic programming defines the optimal value function
+  \[
+    V(x,t)=\max_{u(\cdot)}\Big[\Phi(x(T))-\!\int_t^T\!\ell\,\dd s\Big],
+  \]
+  obeying the \alert{Hamilton--Jacobi--Bellman (HJB)} equation
+  \begin{equation}
+    -\,\partial_t V(x,t) = \max_{u\in\mathcal{U}}\;\Hc\big(x,\partial_x V,u\big).
+  \end{equation}
+  Along the optimal trajectory the PMP costate is the value gradient:
+  \begin{equation}
+    \boxed{\;p^\star(t) = \partial_x V\big(x^\star(t),t\big)\;}
+  \end{equation}
+  \begin{itemize}
+    \item PMP $\Rightarrow$ a \emph{single optimal trajectory} (open-loop).
+    \item HJB / DP $\Rightarrow$ the \emph{global feedback policy} $u=\pi(x)$.
+    \item RL approximates the DP solution from samples --- naturally handling
+          noise, feedback and high dimension.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Reinforcement learning in one slide}
+  Model the experiment as a Markov decision process: state $s_t$, action $a_t$
+  (a pulse / measurement / reset), reward $r_t$, transition $P(s'\!\mid s,a)$.
+  Maximise discounted return $\;\mathbb{E}\big[\sum_t \gamma^t r_t\big]$.
+  \begin{align}
+    V^\pi(s) &= \mathbb{E}_\pi\Big[\textstyle\sum_{t\ge0}\gamma^t r_t \,\Big|\, s_0=s\Big], \\
+    V^\star(s) &= \max_a\Big[\,r(s,a) + \gamma \textstyle\sum_{s'} P(s'\!\mid s,a)\,V^\star(s')\,\Big].
+    \tag{Bellman optimality}
+  \end{align}
+  \begin{itemize}
+    \item No model of $f$ or $\mathcal{D}$ is required --- learn from data.
+    \item The control law is a learned policy $u_t=\pi_\vartheta(s_t)$ with
+          parameters $\vartheta$ (e.g.\ a neural network).
+    \item For many protocols there is \emph{no known PMP formulation} of the full
+          problem --- the agent explores a far larger protocol space.
+  \end{itemize}
+\end{frame}
+
+%=====================================================================
+\section{Worked examples}
+%=====================================================================
+
+\begin{frame}{Example A --- quantum sensing and the Fisher bound}
+  Estimate a field $B$ encoded unitarily, $\ket{\psi_B}=e^{-iB\hat G T}\ket{\psi_0}$.
+  The precision is bounded by the \alert{quantum Cram\'er--Rao bound}
+  \begin{equation}
+    \Var(\hat B) \;\ge\; \frac{1}{M\,\FQ},\qquad
+    \FQ = 4\big(\!\braket{\partial_B\psi}{\partial_B\psi} - \abs{\braket{\psi}{\partial_B\psi}}^2\big).
+  \end{equation}
+  For unitary encoding this reduces to a generator variance:
+  \begin{equation}
+    \boxed{\;\FQ = 4\,T^2\,\Var(\hat G)
+      = 4\,T^2\big(\langle \hat G^2\rangle-\langle \hat G\rangle^2\big)\;}
+  \end{equation}
+  \begin{itemize}
+    \item Maximising $\Var(\hat G)$ over $N$ probes gives Heisenberg scaling
+          $\FQ\sim N^2$ (e.g.\ GHZ states), vs.\ the standard limit $\FQ\sim N$.
+    \item PMP yields an optimal pulse sequence \emph{for the assumed model}.
+    \item With uncertain noise/decoherence, an RL agent trained on measured
+          sensitivity can find sequences with larger \emph{observed} $\FQ$ ---
+          ``beyond Pontryagin''.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Example B --- autonomous quantum experiments}
+  A heavily studied frontier: the agent decides
+  \begin{center}
+    \emph{what} pulse to apply $\cdot$ \emph{when} to measure $\cdot$
+    \emph{when} to reset $\cdot$ \emph{when} to switch strategy.
+  \end{center}
+  The control law is a learned policy
+  \begin{equation}
+    u_t = \pi(s_t),
+  \end{equation}
+  acting on an information state $s_t$ (belief over the unknown device).
+  \begin{itemize}
+    \item There is often \alert{no known Pontryagin formulation} for the full
+          adaptive, partially observed problem.
+    \item The agent explores a much larger space of \emph{protocols}, not just
+          pulse shapes --- closing the loop between control and experiment.
+  \end{itemize}
+\end{frame}
+
+%=====================================================================
+\section{A flagship question for the Centre}
+%=====================================================================
+
+\begin{frame}{Sharpening the scientific question}
+  \begin{alertblock}{Flagship challenge}
+    \emph{Can machine-learning and reinforcement-learning methods discover robust
+    and adaptive quantum control protocols that outperform conventional
+    Pontryagin-based strategies under realistic noise, uncertainty, and feedback
+    constraints?}
+  \end{alertblock}
+  \vspace{0.5em}
+  \begin{itemize}
+    \item It does \alert{not} claim RL violates optimal control theory.
+    \item It asks whether RL beats the best \emph{practical} implementations of
+          PMP on \emph{real} devices.
+    \item It is precise, falsifiable, and experimentally grounded.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Why it is a good flagship}
+  The question naturally connects the Centre's pillars:
+  \begin{columns}[T]
+    \begin{column}{0.5\textwidth}
+      \textbf{Methods}
+      \begin{itemize}
+        \item optimal control theory (PMP / GRAPE / Krotov)
+        \item reinforcement learning
+        \item many-body physics
+        \item quantum information
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \textbf{Platforms}
+      \begin{itemize}
+        \item quantum sensing
+        \item superconducting qubits
+        \item neutral-atom processors
+        \item quantum error correction
+        \item quantum chemistry
+        \item autonomous laboratories
+      \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}[standout]{Summary}
+  \begin{itemize}
+    \item PMP is the rigorous optimum \alert{of a model} --- giving costate
+          equations, the GRAPE gradient, and bang-bang/singular structure.
+    \item ``Beyond Pontryagin'' lives in the gaps: noise, robustness, restricted
+          ansatz, feedback, and intractability.
+    \item RL is the DP/feedback counterpart of PMP, and the natural tool for
+          those gaps.
+  \end{itemize}
+\end{frame}
+
+\end{document}
