@@ -1,0 +1,335 @@
+% ============================================================
+%  Guidance deck: 50 logical qubits & the Hubbard model on Magne
+%  Companion to the EIGEN-Q QuNorth application
+% ============================================================
+\documentclass[aspectratio=169,11pt]{beamer}
+
+% ---- Robust, theme-light setup (compiles with pdflatex) ----
+\usetheme{default}
+\usecolortheme{default}
+\useinnertheme{rectangles}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{itemize items}[circle]
+\setbeamertemplate{itemize subitem}[triangle]
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{tikz}
+
+% ---- QuNorth-style palette (matches the application) -------
+\definecolor{qnblue}{RGB}{0,60,120}
+\definecolor{qnlight}{RGB}{220,232,245}
+\definecolor{qngray}{RGB}{90,90,100}
+\definecolor{qnaccent}{RGB}{200,80,30}
+\definecolor{qngreen}{RGB}{0,120,80}
+
+\setbeamercolor{structure}{fg=qnblue}
+\setbeamercolor{frametitle}{fg=qnblue}
+\setbeamercolor{title}{fg=qnblue}
+\setbeamercolor{block title}{bg=qnblue,fg=white}
+\setbeamercolor{block body}{bg=qnlight,fg=black}
+\setbeamercolor{block title alerted}{bg=qnaccent,fg=white}
+\setbeamercolor{block body alerted}{bg=qnlight,fg=black}
+\setbeamerfont{frametitle}{series=\bfseries}
+\setbeamerfont{title}{series=\bfseries}
+\setbeamerfont{block title}{series=\bfseries}
+
+% frame title with a thin rule underneath
+\setbeamertemplate{frametitle}{%
+  \vspace{6pt}\hspace{-2pt}%
+  {\usebeamerfont{frametitle}\usebeamercolor[fg]{frametitle}\insertframetitle}\\[-3pt]%
+  {\color{qnblue}\rule{\linewidth}{0.8pt}}%
+}
+
+\setbeamertemplate{footline}{%
+  \hbox{\hspace*{0.06\paperwidth}%
+  \color{qngray}\scriptsize EIGEN-Q $\cdot$ 50 logical qubits \& the Hubbard model on Magne
+  \hfill \insertframenumber/\inserttotalframenumber\hspace*{0.06\paperwidth}}\vspace{4pt}}
+
+\newcommand{\ket}[1]{|#1\rangle}
+\newcommand{\Tstar}{T^{\star}}
+
+% ============================================================
+\title{\large Can 50 Logical Qubits Beat Classical Limits\\ for the Hubbard Model?}
+\subtitle{\normalsize Guidance for the EIGEN-Q proposal on the Magne system}
+\author{\small Technical assessment prepared for M.~Hjorth-Jensen \& the EIGEN-Q team}
+\date{\small June 2026}
+
+\begin{document}
+
+% ---------- Title ----------
+\begin{frame}[plain]
+  \titlepage
+  \begin{center}\small\color{qngray}
+  Neutral-atom Magne $\cdot$ 50 logical / $\sim$1{,}225 physical qubits $\cdot$ online $\approx$ 2026/27
+  \end{center}
+\end{frame}
+
+% ---------- Bottom line up front ----------
+\begin{frame}{Bottom line up front}
+\begin{block}{The honest one-sentence answer}
+For \emph{generic ground-state energies} of the 2D Hubbard model, \textbf{50 logical
+qubits will not beat classical methods} --- but for a \emph{narrow, genuinely hard
+niche} (frustrated $+$ doped lattices and real-time dynamics) it can produce results
+that classical methods cannot reach reliably.
+\end{block}
+
+\vspace{2pt}
+\begin{itemize}
+  \item 50 logical qubits $\Rightarrow$ \textbf{$\sim$24--25 lattice sites} (2 qubits/site).
+  \item Your own classical reach is already \textbf{larger}: ED to 24 sites, DMRG to 48 sites.
+  \item So ``advantage'' cannot come from \emph{size}. It must come from the \textbf{regime}:
+        where the sign problem and entanglement defeat QMC and DMRG.
+  \item The \textbf{binding constraint} on Magne will be circuit \emph{depth}
+        (logical error rate), not qubit count.
+\end{itemize}
+
+\vspace{2pt}
+{\small\color{qngray} Recommendation: frame Hubbard work as a credible
+\emph{stepping-stone demonstration} on classically-hard regimes, not as ground-state quantum advantage.}
+\end{frame}
+
+% ---------- Qubit budget ----------
+\begin{frame}{How many sites does 50 logical qubits actually buy?}
+\begin{columns}[T]
+\begin{column}{0.56\textwidth}
+The Hubbard site carries two spin-orbitals $(\uparrow,\downarrow)$.
+Under Jordan--Wigner / Bravyi--Kitaev each spin-orbital $=$ one qubit:
+\[
+   L \text{ sites} \;\longrightarrow\; 2L \text{ qubits}.
+\]
+\begin{itemize}
+  \item $50$ logical qubits $\Rightarrow L \approx 25$ sites (e.g.\ a $5\times5$ cluster).
+  \item Rodeo needs $1$--$3$ ancillas $\Rightarrow$ \textbf{$\sim$23--24 physical sites}.
+  \item $t$--$J$ / infinite-$U$: local space is $\{0,\uparrow,\downarrow\}$ (3 states).
+        A compact (qutrit-like) encoding can recover a few extra sites,
+        \textbf{$\sim$30 sites at best}.
+\end{itemize}
+\end{column}
+\begin{column}{0.42\textwidth}
+\begin{block}{Sanity check on the text}
+The application mentions ``Hubbard clusters with more than 30 sites'' at 20--40
+qubits. With $2$ qubits/site that needs \textbf{60+ qubits} --- inconsistent with
+50 logical. Either state the compact encoding explicitly, or revise to
+$\le 25$ sites.
+\end{block}
+\end{column}
+\end{columns}
+\end{frame}
+
+% ---------- Where the classical frontier really is ----------
+\begin{frame}{Where the classical frontier really is}
+\begin{center}\small
+\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{@{}lll@{}}
+\toprule
+\textbf{Method} & \textbf{Reach for 2D Hubbard} & \textbf{What breaks it} \\
+\midrule
+Exact diagonalisation & $\sim$20--22 sites (routine); & memory: Hilbert space $\sim 4^{L}$\\
+ & 32--36 sites (extreme HPC) & \\
+DMRG / MPS & 1D: hundreds of sites; & 2D area law: bond dim.\ grows \\
+ & 2D cyl.\ width $\lesssim 6$--$8$; \textbf{your 48} & exponentially with width \\
+AFQMC / DQMC & hundreds of sites & \textbf{sign problem} (doped \& frustrated) \\
+ & \emph{only} where no sign problem & \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\vspace{4pt}
+\begin{alertblock}{Consequence}
+A $\sim$25-site quantum result sits \emph{at or below} the existing classical reach
+for \textbf{static ground-state energy}. The cross-validated Simons-collaboration
+benchmarks already pin down 2D square-lattice Hubbard energies far beyond this size.
+\end{alertblock}
+\end{frame}
+
+% ---------- The real wall ----------
+\begin{frame}{The real classical wall is not size --- it is sign \& entanglement}
+\begin{columns}[T]
+\begin{column}{0.5\textwidth}
+\textbf{Where classical methods genuinely fail:}
+\begin{itemize}
+  \item \textbf{Frustration} (checkerboard, pyrochlore)
+        $\Rightarrow$ QMC sign problem \emph{even near half-filling}.
+  \item \textbf{Doping / finite hole density}
+        $\Rightarrow$ sign problem for QMC.
+  \item \textbf{Spin-liquid regime} $\Rightarrow$ high entanglement
+        $\Rightarrow$ DMRG bond dimension explodes.
+  \item \textbf{Dynamics / spectral functions / excited states}
+        $\Rightarrow$ time-entanglement growth (DMRG) and analytic
+        continuation (QMC).
+\end{itemize}
+\end{column}
+\begin{column}{0.5\textwidth}
+\begin{block}{This is precisely \texttt{hubbard.txt}}
+Your notes already identify the wall:
+\begin{itemize}\small
+  \item ``DMRG \dots\ rather hopeless to go beyond two holes\dots\
+        entanglement \dots\ major obstacle\dots\ quantum spin-liquid regime.''
+  \item Analytical RVB proof holds only for \textbf{1--2 holes};
+        \textbf{3--4 holes} (finite density) is open.
+  \item Finite $U$ phase diagram is open.
+\end{itemize}
+\end{block}
+\end{column}
+\end{columns}
+\end{frame}
+
+% ---------- So is 25 sites beyond classical? ----------
+\begin{frame}{So --- is $\sim$25 sites ``beyond classical''? A layered answer}
+\renewcommand{\arraystretch}{1.3}
+\begin{center}\small
+\begin{tabular}{@{}p{5.6cm}p{6.2cm}@{}}
+\toprule
+\textbf{Target} & \textbf{Verdict at 50 logical qubits} \\
+\midrule
+2D square Hubbard, GS energy, half / weak doping
+  & \textcolor{qnaccent}{\textbf{No advantage.}} Classical does this far larger. \\
+Frustrated lattice, \textbf{1--2 holes}
+  & Useful as \emph{validation} (you have ED/DMRG/proof here). \\
+Frustrated lattice, \textbf{3--4 holes / finite density}
+  & \textcolor{qngreen}{\textbf{Genuinely hard classically}} --- sign problem $+$
+    entanglement. A reliable 24--30-site result \emph{is} new. \\
+Real-time dynamics, spectral functions, excited states
+  & \textcolor{qngreen}{\textbf{Structural quantum advantage}} candidate even at modest size. \\
+\bottomrule
+\end{tabular}
+\end{center}
+\vspace{2pt}
+{\small\color{qngray} The defensible advantage claim lives in the bottom two rows ---
+exactly the open problems in your notes. Finite-size effects on a $5\times5$ frustrated
+cluster are real, so pair every run with a careful finite-size analysis.}
+\end{frame}
+
+% ---------- Depth is the binding constraint ----------
+\begin{frame}{The binding constraint is depth, not width}
+\begin{itemize}
+  \item Magne packs $\sim$1{,}225 physical into 50 logical $\Rightarrow$
+        \textbf{$\sim$24 physical per logical} $\Rightarrow$ a \emph{low} code distance ($d\!\approx\!3$--$5$).
+  \item Low distance $\Rightarrow$ a logical error floor that caps the number of
+        logical operations you can chain before errors accumulate.
+  \item Your pipeline is \textbf{depth-hungry}: adiabatic refinement
+        ($\propto \Tstar$ Trotter steps) $+$ $M$ rounds of controlled-$e^{-iHt_j}$.
+        For $\sim$25 sites this is easily $10^{3}$--$10^{4}$ logical two-qubit gates.
+\end{itemize}
+\begin{alertblock}{Implication}
+The first question is not ``do we have enough qubits?'' (you do, for $\sim$25 sites)
+but ``\textbf{can the logical error rate sustain the circuit depth?}''.
+This must be settled by \emph{classical emulation with a realistic Magne noise model}
+\emph{before} hardware time is committed.
+\end{alertblock}
+\end{frame}
+
+% ---------- What the resource literature says ----------
+\begin{frame}{What the published resource estimates say}
+\begin{itemize}
+  \item Ground-state advantage for the 2D Fermi--Hubbard model is estimated at
+        \textbf{$\sim 10^{5}$ physical qubits} (surface code, $p=10^{-3}$).
+        \hfill {\scriptsize[npj Quantum Inf.\ \textbf{10}, 2024; arXiv:2210.14109]}
+  \item Even at $p=10^{-4}$, beating classical for the $8\times8$ Hubbard model needs
+        \textbf{$\sim 6.5\times10^{4}$ physical qubits}.
+        \hfill {\scriptsize[arXiv:2408.14929]}
+  \item Finding the Hubbard ground state is \textbf{QMA-hard}; frustrated / triangular /
+        three-band variants are \emph{expected} to require quantum resources.
+        \hfill {\scriptsize[perf.-model study, ACM 2023]}
+\end{itemize}
+\begin{block}{Reading this for Magne}
+Magne's $\sim$1{,}225 physical qubits are \textbf{1--2 orders of magnitude} below the
+threshold these studies set for \emph{ground-state} 2D-Hubbard advantage. That is not
+a flaw --- it tells you Magne's value is as a \textbf{Level-2 demonstration and
+algorithm-validation platform}, and as the on-ramp to the machines that will cross the line.
+\end{block}
+\end{frame}
+
+% ---------- The genuine opportunity ----------
+\begin{frame}{Where the genuine opportunity is for \emph{this} team}
+\begin{enumerate}
+  \item \textbf{Frustrated $t$--$J$ with $3$--$4$ holes.} Sign problem (QMC) $+$ entanglement
+        (DMRG) make this classically unreliable; $24$--$30$ sites with refinement$+$rodeo
+        is a real target and directly extends your RVB-stability question to finite density.
+  \item \textbf{Dynamics \& excited states of the RVB spin liquid.} Spectral functions
+        $S(\mathbf{q},\omega)$, dynamical structure factors, and low-lying excitations ---
+        a structural-advantage regime, and it answers your open ``which observables?'' question.
+  \item \textbf{Finite-$U$ phase boundary.} Map RVB stability vs.\ $U/t$ where the
+        $J\neq0$ results already hint the answer is ``yes for $U\gg t$''.
+  \item \textbf{Method head-to-head.} Demonstrate refinement$+$rodeo is \emph{more efficient
+        than DMRG} on systems up to 48 sites --- exactly the claim your notes flag as valuable
+        even if Magne cannot exceed 48 sites.
+\end{enumerate}
+\end{frame}
+
+% ---------- Recommendations ----------
+\begin{frame}{Concrete recommendations for the proposal}
+\begin{columns}[T]
+\begin{column}{0.5\textwidth}
+\textbf{Framing}
+\begin{itemize}\small
+  \item Drop any implicit ``GS-energy quantum advantage'' claim for 2D Hubbard;
+        reviewers know the resource estimates.
+  \item Position Hubbard work as \textbf{(a)} hard-regime demonstration and
+        \textbf{(b)} algorithm validation / stepping-stone.
+  \item State the advantage targets explicitly: \emph{sign-problem regimes} and \emph{dynamics}.
+\end{itemize}
+\textbf{Technical}
+\begin{itemize}\small
+  \item Fix the ``$>30$ sites at 20--40 qubits'' line, or specify a compact $t$--$J$ encoding.
+\end{itemize}
+\end{column}
+\begin{column}{0.5\textwidth}
+\textbf{De-risking (do first)}
+\begin{itemize}\small
+  \item Build a \textbf{logical depth budget}:
+        Trotter steps $\times$ rodeo rounds $\times$ gate count, folded against
+        Magne's projected logical error rate.
+  \item Classically emulate the full pipeline \emph{with realistic noise}
+        on $4$--$16$ sites before requesting hardware.
+\end{itemize}
+\textbf{Benchmark ladder}
+\begin{itemize}\small
+  \item $4$--$6$ sites: validate vs.\ ED.
+  \item $16$ sites, $1$--$2$ holes: validate vs.\ your ED/DMRG/proof.
+  \item $24$--$30$ sites, $3$--$4$ holes: the \emph{new} science.
+\end{itemize}
+\end{column}
+\end{columns}
+\end{frame}
+
+% ---------- Closing ----------
+\begin{frame}{Closing summary}
+\begin{block}{Can you move beyond classical limits with 50 logical qubits?}
+\textbf{Not for Hubbard ground-state energies in general} --- 25 sites is at or below
+classical reach, and depth (not qubits) is the limiter.
+\textbf{Yes, plausibly, in a focused niche:} frustrated lattices at finite hole density
+and real-time/dynamical observables, where the sign problem and entanglement defeat
+classical methods even at modest size.
+\end{block}
+\begin{itemize}
+  \item Treat Magne as a \textbf{Level-2 demonstrator} on classically-hard regimes ---
+        scientifically valuable and fundable on its own terms.
+  \item Validate the depth budget under noise \emph{first}; let that, not qubit count, gate the targets.
+  \item Aim the science where your team is unique: \textbf{RVB at finite doping} and its dynamics.
+\end{itemize}
+\end{frame}
+
+% ---------- References ----------
+\begin{frame}{Key references used}
+\scriptsize
+\begin{itemize}
+  \item Magne / QuNorth specifications --- EIFO \& Novo Nordisk Foundation announcement (2025);
+        Quantum Computing Report (2026): 50 logical / 1{,}225 physical neutral-atom qubits.
+  \item ``Hunting for quantum-classical crossover in condensed matter problems,''
+        npj Quantum Inf.\ \textbf{10} (2024) / arXiv:2210.14109 ($\sim 10^{5}$ physical qubits for 2D Hubbard GS).
+  \item ``Compilation of Trotter-based time evolution \dots,'' arXiv:2408.14929
+        ($\sim 6.5\times10^{4}$ physical qubits for $8\times8$ at $p=10^{-4}$).
+  \item ``A performance model for \dots\ practical quantum advantage,'' ACM (2023)
+        (Hubbard GS is QMA-hard; frustrated variants expected to need quantum).
+  \item Tohyama \emph{et al.}, Phys.\ Rev.\ B \textbf{72}, 045113 (2005) (ED to 20 sites in 2D);
+        Tianhe-2 distributed Lanczos to 36 sites.
+  \item Internal: \texttt{application.tex} (EIGEN-Q) and \texttt{hubbard.txt} (RVB / frustrated $t$--$J$ notes).
+\end{itemize}
+\end{frame}
+
+\end{document}

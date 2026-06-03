@@ -1,0 +1,284 @@
+% ============================================================
+%  Companion deck: 50 logical qubits & 2D quantum dots on Magne
+%  VQE-UCCSD initial state + Rodeo  (EIGEN-Q application)
+% ============================================================
+\documentclass[aspectratio=169,11pt]{beamer}
+
+\usetheme{default}
+\usecolortheme{default}
+\useinnertheme{rectangles}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{itemize items}[circle]
+\setbeamertemplate{itemize subitem}[triangle]
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{array}
+
+\definecolor{qnblue}{RGB}{0,60,120}
+\definecolor{qnlight}{RGB}{220,232,245}
+\definecolor{qngray}{RGB}{90,90,100}
+\definecolor{qnaccent}{RGB}{200,80,30}
+\definecolor{qngreen}{RGB}{0,120,80}
+
+\setbeamercolor{structure}{fg=qnblue}
+\setbeamercolor{frametitle}{fg=qnblue}
+\setbeamercolor{title}{fg=qnblue}
+\setbeamercolor{block title}{bg=qnblue,fg=white}
+\setbeamercolor{block body}{bg=qnlight,fg=black}
+\setbeamercolor{block title alerted}{bg=qnaccent,fg=white}
+\setbeamercolor{block body alerted}{bg=qnlight,fg=black}
+\setbeamerfont{frametitle}{series=\bfseries}
+\setbeamerfont{title}{series=\bfseries}
+\setbeamerfont{block title}{series=\bfseries}
+
+\setbeamertemplate{frametitle}{%
+  \vspace{6pt}\hspace{-2pt}%
+  {\usebeamerfont{frametitle}\usebeamercolor[fg]{frametitle}\insertframetitle}\\[-3pt]%
+  {\color{qnblue}\rule{\linewidth}{0.8pt}}%
+}
+\setbeamertemplate{footline}{%
+  \hbox{\hspace*{0.06\paperwidth}%
+  \color{qngray}\scriptsize EIGEN-Q $\cdot$ 50 logical qubits \& 2D quantum dots on Magne
+  \hfill \insertframenumber/\inserttotalframenumber\hspace*{0.06\paperwidth}}\vspace{4pt}}
+
+\newcommand{\ket}[1]{|#1\rangle}
+
+\title{\large Can 50 Logical Qubits Run Serious\\ Quantum-Dot Benchmarks on Magne?}
+\subtitle{\normalsize VQE--UCCSD initial states feeding the Rodeo algorithm}
+\author{\small Feasibility assessment for M.~Hjorth-Jensen \& the EIGEN-Q team}
+\date{\small June 2026}
+
+\begin{document}
+
+\begin{frame}[plain]
+  \titlepage
+  \begin{center}\small\color{qngray}
+  $N$ electrons in a 2D harmonic trap $+$ Coulomb $\cdot$
+  HO basis of $K$ spin-orbitals $\cdot$ Jordan--Wigner
+  \end{center}
+\end{frame}
+
+% ---------- BLUF ----------
+\begin{frame}{Bottom line up front}
+\begin{block}{The one-sentence answer}
+For 2D quantum dots, \textbf{qubit count is not the bottleneck} --- 50 logical
+qubits comfortably hold the largest natural basis ($K=42$ spin-orbitals, shells
+$0$--$5$) for $N=2,6,12$ electrons, with ancillas to spare. The limiter is
+\textbf{circuit depth}, and these runs will \emph{validate} the pipeline rather
+than beat classical methods.
+\end{block}
+\vspace{2pt}
+\begin{itemize}
+  \item Mapping here is \textbf{1 qubit per spin-orbital} (not 2/site as in Hubbard):
+        $K$ spin-orbitals $\to K$ qubits.
+  \item \textbf{$\sim$12 qubits} already gives a non-trivial, exactly-checkable
+        correlation benchmark (the notebook's $K=12$ case).
+  \item \textbf{$\sim$42 qubits} reaches the full shells-$0$--$5$ space --- a
+        $\sim\!10^{10}$-determinant FCI, right at the classical exact-FCI frontier.
+  \item No quantum advantage: coupled cluster / DMRG / selected-CI own this regime.
+        Value $=$ \textbf{clean pipeline validation} and high-overlap state prep for Rodeo.
+\end{itemize}
+\end{frame}
+
+% ---------- mapping ----------
+\begin{frame}{The encoding: $K$ spin-orbitals $\to K$ qubits}
+\begin{columns}[T]
+\begin{column}{0.54\textwidth}
+Each harmonic-oscillator shell $N_s=2n+|m|$ holds $2(N_s{+}1)$ spin-orbitals.
+Under Jordan--Wigner, \textbf{one spin-orbital $=$ one qubit}.
+\vspace{4pt}
+\begin{center}\small
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{@{}ccccc@{}}
+\toprule
+shells & spin-orb.\ $K$ & \textbf{qubits} & magic $N$ \\
+\midrule
+$0$       & 2  & 2  & 2 \\
+$0$--$1$  & 6  & 6  & 6 \\
+$0$--$2$  & 12 & 12 & 12 \\
+$0$--$3$  & 20 & 20 & 20 \\
+$0$--$4$  & 30 & 30 & 30 \\
+$0$--$5$  & \textbf{42} & \textbf{42} & 42 \\
+$0$--$6$  & 56 & \alert{56} & 56 \\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{column}
+\begin{column}{0.46\textwidth}
+\begin{block}{Headroom on Magne}
+50 logical qubits $\Rightarrow$ active space up to \textbf{$K\approx47$--$49$}
+spin-orbitals (after $1$--few Rodeo ancillas).
+\begin{itemize}\small
+  \item Shells $0$--$5$ ($K=42$): \textbf{fits comfortably}.
+  \item Shells $0$--$6$ ($K=56$): \textbf{does not fit}.
+\end{itemize}
+So the natural maximal dot active space on Magne is \textbf{$K=42$}.
+\end{block}
+\end{column}
+\end{columns}
+\end{frame}
+
+% ---------- qubit budget table ----------
+\begin{frame}{Qubit budget vs.\ classical cost}
+\begin{center}\small
+\renewcommand{\arraystretch}{1.18}
+\begin{tabular}{@{}rrlrl@{}}
+\toprule
+$N$ & \textbf{qubits $K$} & shells & FCI dim $\binom{K}{N}$ & classical status \\
+\midrule
+2  & 12 & $0$--$2$ & 66            & trivial \\
+2  & 20 & $0$--$3$ & 190           & trivial \\
+2  & 42 & $0$--$5$ & 861           & trivial \\
+6  & 20 & $0$--$3$ & 38{,}760      & trivial \\
+6  & 30 & $0$--$4$ & $5.9\times10^{5}$ & trivial \\
+6  & 42 & $0$--$5$ & $5.2\times10^{6}$ & easy exact FCI \\
+12 & 30 & $0$--$4$ & $8.6\times10^{7}$ & easy exact FCI \\
+12 & 42 & $0$--$5$ & $1.1\times10^{10}$ & \textbf{exact-FCI frontier} \\
+20 & 42 & $0$--$5$ & $5.1\times10^{11}$ & beyond exact FCI (CC/DMRG ok) \\
+\bottomrule
+\end{tabular}
+\end{center}
+\vspace{2pt}
+{\small\color{qngray} Symmetry sectors ($M$, $S_z$) shrink these $\sim 5$--$20\times$.
+Note: at the magic numbers $N$ sits far from half-filling, so FCI dimensions stay
+modest --- the dot is \emph{not} a worst-case correlation problem.}
+\end{frame}
+
+% ---------- classical frontier ----------
+\begin{frame}{Where the classical frontier is for quantum dots}
+\begin{itemize}
+  \item Exact FCI is feasible to $\binom{K}{N}\!\sim\!10^{10}$ determinants ---
+        i.e.\ up to the $N{=}12$, $K{=}42$ case \emph{on a workstation/cluster}.
+  \item Beyond that, \textbf{coupled cluster (CCSD(T)), DMRG, selected-CI and AFQMC}
+        are accurate \emph{and cheap} for these systems.
+  \item Quantum dots in this notebook's regime are \textbf{smooth and
+        moderately correlated}: HF is a good reference, correlation converges by
+        $K\!\approx\!12$, UCCSD recovers it in a $\sim$7-parameter landscape.
+\end{itemize}
+\begin{alertblock}{Consequence}
+There is \textbf{no quantum-dot regime reachable with 50 logical qubits that beats
+classical methods.} This is expected --- and fine. The scientific role of these runs
+is \textbf{algorithm validation against an exact reference}, and demonstrating
+high-overlap initial states for Rodeo.
+\end{alertblock}
+\end{frame}
+
+% ---------- how many qubits for serious ----------
+\begin{frame}{So how many logical qubits for a ``serious'' benchmark?}
+\renewcommand{\arraystretch}{1.3}
+\begin{center}\small
+\begin{tabular}{@{}p{3.2cm}p{2.2cm}p{6.4cm}@{}}
+\toprule
+\textbf{Benchmark tier} & \textbf{qubits} & \textbf{What it demonstrates} \\
+\midrule
+Sanity / shakedown & 2--6 & JW Hamiltonian, $Z$-basis readout, HF state prep. \\
+\textbf{Meaningful} & \textbf{12} & First real correlation (notebook's $K{=}12$,
+   $\sim$7 UCCSD amplitudes); exact FCI check; full VQE$\to$Rodeo loop. \\
+Substantial & 20--30 & $N{=}2,6$ in larger bases; non-trivial UCCSD depth;
+   approaches basis-set convergence. \\
+Maximal natural & 42 & Shells $0$--$5$; $N{=}12$ is a $\sim\!10^{10}$-det FCI ---
+   a genuinely meaty benchmark, \emph{if} depth allows. \\
+\bottomrule
+\end{tabular}
+\end{center}
+\vspace{2pt}
+\begin{block}{Verdict on the qubit axis}
+\textbf{12} qubits for a credible first benchmark, \textbf{20--30} for a substantial one,
+\textbf{42} for the largest natural dot space --- all inside 50.
+\textbf{Qubit count is not the limiter.}
+\end{block}
+\end{frame}
+
+% ---------- depth is the limiter ----------
+\begin{frame}{The binding constraint is depth (again)}
+Raw Trotterised UCCSD two-qubit-gate counts under Jordan--Wigner (1 Trotter step):
+\begin{center}\small
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{@{}rrrrr@{}}
+\toprule
+$N$ & $K$ & singles & doubles & $\sim$2-qubit gates \\
+\midrule
+2  & 12 & 20  & 45     & $\sim\!10^{4}$ \\
+6  & 20 & 84  & 1{,}365 & $\sim\!4\times10^{5}$ \\
+12 & 30 & 216 & 10{,}098 & $\sim\!5\times10^{6}$ \\
+12 & 42 & 360 & 28{,}710 & $\sim\!2\times10^{7}$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+\begin{itemize}\small
+  \item JW adds non-local $Z$-strings of length up to $K$ per term --- neutral-atom
+        reconfigurable connectivity helps, but depth still grows fast.
+  \item Rodeo adds $M$ rounds of controlled-$e^{-iH t_j}$; $H$ has
+        $\sim\!10^{2}$ ($K{=}12$) to $\sim\!10^{5}$ ($K{=}42$) Pauli terms per Trotter step.
+  \item \textbf{Depth-feasible on an early Level-2 machine: $K\!=\!12$, perhaps $K\!=\!20$
+        with ADAPT-VQE.} $K\!=\!30$--$42$ are qubit-feasible but \emph{depth-prohibitive} at first.
+\end{itemize}
+\end{frame}
+
+% ---------- recommendations ----------
+\begin{frame}{Recommendations}
+\begin{columns}[T]
+\begin{column}{0.5\textwidth}
+\textbf{Make depth, not width, the design driver}
+\begin{itemize}\small
+  \item Use \textbf{ADAPT-VQE} / symmetry-adapted pools: the raw $28{,}710$ doubles at
+        $K{=}42$ collapse to $O(10$--$100)$ selected operators.
+  \item Exploit the \textbf{division of labour}: VQE need only reach overlap
+        $p\!\approx\!0.9$--$0.95$ --- \emph{Rodeo} supplies the precision. A \emph{shallow}
+        UCCSD that gets high overlap is enough; do not over-optimise VQE depth.
+\end{itemize}
+\end{column}
+\begin{column}{0.5\textwidth}
+\textbf{Choose friendly physics \& honest claims}
+\begin{itemize}\small
+  \item Work at \textbf{moderate $\hbar\omega$} (weak/intermediate coupling) where HF is a
+        good reference; avoid the small-$\hbar\omega$ Wigner-molecule regime that needs deeper circuits.
+  \item In the application, replace ``20--40 qubits'' with explicit $(N,K)$:
+        e.g.\ \emph{``$N{=}2$--$12$ dots in active spaces up to $K{=}42$ spin-orbitals
+        ($\le 42$ qubits).''}
+  \item Always pair a run with its \textbf{exact-FCI reference} --- the dot's great virtue.
+\end{itemize}
+\end{column}
+\end{columns}
+\end{frame}
+
+% ---------- benchmark ladder ----------
+\begin{frame}{A concrete benchmark ladder for Magne}
+\begin{enumerate}
+  \item \textbf{$K=2$ ($N=2$)} --- hardware sanity: HF state, diagonal $H$, Rodeo on a 1-state space.
+  \item \textbf{$K=6$ ($N=2$)} --- first off-diagonal scattering; validate VQE energy vs.\ FCI ($\dim 15$).
+  \item \textbf{$K=12$ ($N=2$) --- the flagship first benchmark.} $\sim$7 UCCSD amplitudes,
+        FCI $\dim 66$, full VQE$\to$Rodeo with exact reference. \emph{$\sim$12 logical qubits.}
+  \item \textbf{$K=20$ ($N=2$ or $6$)} --- ADAPT-VQE; measure rodeo convergence vs.\ rounds $M$.
+        \emph{$\sim$20 qubits.}
+  \item \textbf{Stretch: $K=30$--$42$ ($N=6,12$)} --- only as the logical depth budget allows;
+        $N{=}12,K{=}42$ is the $\sim\!10^{10}$-det showcase. \emph{30--42 qubits.}
+\end{enumerate}
+\vspace{2pt}
+{\small\color{qngray} Every rung has an exact classical answer, so each one cleanly
+separates \emph{algorithm error} from \emph{hardware error} --- exactly what a Level-2
+demonstration needs.}
+\end{frame}
+
+% ---------- closing ----------
+\begin{frame}{Closing summary}
+\begin{block}{Feasibility of quantum dots on Magne (50 logical qubits)}
+\textbf{Qubit-feasible across the board:} 12 qubits for a meaningful benchmark,
+20--30 for a substantial one, 42 for the full shells-$0$--$5$ space --- all within budget.
+\textbf{Depth-limited:} only the smaller cases ($K\!\le\!20$, with ADAPT-VQE) will run to
+convergence on an early Level-2 machine. \textbf{No classical advantage} --- and none expected.
+\end{block}
+\begin{itemize}
+  \item The quantum dot is the \textbf{ideal validation system}: exact FCI reference at every size,
+        smooth correlation, and a clean test of VQE--UCCSD $\to$ Rodeo end-to-end.
+  \item Spend the qubits you have on \textbf{depth-reducing structure} (ADAPT, symmetry,
+        shallow high-overlap VQE), not on the largest possible basis.
+  \item Use it to \textbf{characterise Magne and de-risk the pipeline} before the
+        harder Hubbard / nuclear targets.
+\end{itemize}
+\end{frame}
+
+\end{document}
