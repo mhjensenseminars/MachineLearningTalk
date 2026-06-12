@@ -14,6 +14,7 @@
 \usepackage{graphicx}
 \usepackage{xcolor}
 \usepackage{booktabs}
+\usepackage{makecell}
 \usepackage{hyperref}
 
 % Slightly tighter list spacing
@@ -70,9 +71,9 @@
 %=================================================
 \begin{frame}{Starting discussion about localization}
   \begin{itemize}
-    \item Lead suggestion: Justin and Thomas
-    \item Estimate on how many we could be
-    \item Need to get started as soon as possible
+    \item Lead suggestion: Justin (agreed) and Thomas
+    \item Rough estimate on how many we could be
+    \item Need to get started as soon as possible, see also forms from the MN-college (mail from Ingse N June 8)
   \end{itemize}
 \end{frame}
 
@@ -127,13 +128,13 @@ Stokastisk modellering, statistikk og risikoanalyse & 15 & 219 & 188 & 74 \\
 \end{table}
 \end{frame}
 
-\begin{frame}{PIs and associated researchers}
+\begin{frame}{PIs and associated researchers (1/2)}
 \begin{table}[h]
 \centering
-\footnotesize
-\setlength{\tabcolsep}{4.5pt}
-\renewcommand{\arraystretch}{1.15}
-\begin{tabular}{@{}llllccccll@{}}
+\scriptsize
+\setlength{\tabcolsep}{3.5pt}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{2.7cm}>{\raggedright\arraybackslash}p{1.9cm}llcccc>{\raggedright\arraybackslash}p{2.3cm}c@{}}
 \toprule
 \textbf{Name} & \textbf{Title} & \textbf{Aff.} & \textbf{Role} & \textbf{RT1} & \textbf{RT2} & \textbf{RT3} & \textbf{RT4} & \textbf{Ext.\ funding} & \textbf{m/f}\\
 \midrule
@@ -148,20 +149,32 @@ Michal Repisk\'y          & Sr.\ Researcher& Chem., UiO & PI            & X & X 
 Lasse Vines               & Professor      & Phys., UiO & PI            & X &   & X &   & Toppforsk (RCN)        & m\\
 Justin W.\ Wells          & Professor      & Phys., UiO & PI            & X &   & X &   & RCN                    & m\\
 \bottomrule
+\end{tabular}
+\end{table}
+\end{frame}
+
+\begin{frame}{PIs and associated researchers (2/2)}
+\begin{table}[h]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{3.5pt}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{2.7cm}>{\raggedright\arraybackslash}p{1.9cm}llcccc>{\raggedright\arraybackslash}p{2.3cm}c@{}}
+\toprule
+\textbf{Name} & \textbf{Title} & \textbf{Aff.} & \textbf{Role} & \textbf{RT1} & \textbf{RT2} & \textbf{RT3} & \textbf{RT4} & \textbf{Ext.\ funding} & \textbf{m/f}\\
 \midrule
 \multicolumn{10}{@{}l}{\textit{Associated investigators (AI)}}\\
-Susanne Viefers     & Professor      & Phys., UiO & AI            & X & X &   &  &                & f\\
-Francesco P.\ Massel               & Professor      & Phys., UiO/USN & AI            & X & X  & X & X  &  RCN, QuantERA       & m\\
-Ainara Nova          & Assoc.\ Prof.\ & Chem., UiO & AI            &  &  &   &  &           & f\\
-Michele Cascella               & Professor     & Chem., UiO & AI            &  &  &   & X &      & m\\
-David Balcells          & Sr.\ Researcher& Chem., UiO & AI            &  &  &   & X &           & m\\
-Erik Tellgren          & Sr.\ Researcher& Chem., UiO & AI            & X & X  &   & X &           & m\\
-Antoine Camper          & Sr.\ Researcher& Phys., UiO & AI            & X & X &   &  &           & m\\
-Simon Cooil          & Sr.\ Researcher& Phys., UiO & AI            &  &  & X  &  &           & m\\
-David Gongorra          & Sr.\ Researcher& Phys., UiO & AI            &  &  & X  &  &           & m\\
-Cecilie Glittum          & Post-doctoral fellow& Phys., UiO & AI            & X & X &   & X &           & f\\
-Gunnar F.\ Lange          & Post-doctoral fellow& Phys., UiO & AI            & X & X &   & X &           & m\\
-
+Susanne Viefers       & Professor            & Phys., UiO     & AI & X & X &   &   &                & f\\
+Francesco P.\ Massel  & Professor            & Phys., UiO/USN & AI & X & X & X & X & RCN, QuantERA  & m\\
+Ainara Nova           & Assoc.\ Prof.\       & Chem., UiO     & AI &   &   &   &   &                & f\\
+Michele Cascella      & Professor            & Chem., UiO     & AI &   &   &   & X &                & m\\
+David Balcells        & Sr.\ Researcher      & Chem., UiO     & AI &   &   &   & X &                & m\\
+Erik Tellgren         & Sr.\ Researcher      & Chem., UiO     & AI & X & X &   & X &                & m\\
+Antoine Camper        & Sr.\ Researcher      & Phys., UiO     & AI & X & X &   &   &                & m\\
+Simon Cooil           & Sr.\ Researcher      & Phys., UiO     & AI &   &   & X &   &                & m\\
+David Gongorra        & Sr.\ Researcher      & Phys., UiO     & AI &   &   & X &   &                & m\\
+Cecilie Glittum       & Post-doctoral fellow & Phys., UiO     & AI & X & X &   & X &                & f\\
+Gunnar F.\ Lange      & Post-doctoral fellow & Phys., UiO     & AI & X & X &   & X &                & m\\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -175,6 +188,57 @@ Gunnar F.\ Lange          & Post-doctoral fellow& Phys., UiO & AI            & X
   \item PhDs and PDs: estimate 15-20 at any time
   \item Total people: 65-70
   \end{itemize}
+\end{frame}
+
+%-------------------------------------------------
+% Space-requirement form (translated from the UiO 2026
+% "Skjema for Arealbehov", page 1, second table)
+%-------------------------------------------------
+\begin{frame}{Space requirements for a co-located centre}
+  \small
+  Form to be completed for a co-located SFF VI centre (2028--2038).\\[-0.3em]
+  {\footnotesize\itshape Translated from the UiO 2026 ``Skjema for Arealbehov''.}
+  \vfill
+  \begin{table}[h]
+  \centering
+  \scriptsize
+  \setlength{\tabcolsep}{4pt}
+  \renewcommand{\arraystretch}{1.9}
+  \begin{tabular}{@{}>{\raggedright\arraybackslash}p{3.0cm}cc>{\raggedright\arraybackslash}p{1.9cm}cc@{}}
+  \toprule
+  \textbf{Space category} &
+  \makecell{\textbf{Area (m\textsuperscript{2})}\\\textbf{dry rooms}} &
+  \makecell{\textbf{Area (m\textsuperscript{2})}\\\textbf{wet rooms}} &
+  \textbf{Possible physical location} &
+  \makecell{\textbf{Assumed}\\\textbf{conversion}\\\textbf{need (m\textsuperscript{2})}} &
+  \makecell{\textbf{Estimated}\\\textbf{cost (NOK)}\textsuperscript{*}} \\
+  \midrule
+  Space in the institute's premises          & & & & & \\
+  Space in the faculty's premises            & & & & & \\
+  Space in UiO premises outside inst./fac.   & & & & & \\
+  Space in external premises                 & & & & & \\
+  Need for new space                         & & & & & \\
+  \textbf{Total}                             & & & & & \\
+  \bottomrule
+  \end{tabular}
+  \end{table}
+  \vfill
+  {\scriptsize
+  \textsuperscript{*}\,Conversion costs are estimated at NOK 15\,000/m\textsuperscript{2} for dry area and
+  NOK 25\,000--30\,000/m\textsuperscript{2} for wet area; the estimates already include relatively large rebuilds.}
+\end{frame}
+
+%-------------------------------------------------
+\begin{frame}{Space requirements --- notes on rent}
+  \begin{block}{Internal rent model}
+    The internal-rent model applies: the MN-college is charged for the space it occupies
+    according to the prevailing rates.
+  \end{block}
+  \begin{block}{External rent}
+    External rent varies and must be requested from the relevant external owner. Price variations
+    here are large and are clarified/approved by each individual faculty before any lease
+    agreement is signed.
+  \end{block}
 \end{frame}
 
 \section{Budget}
