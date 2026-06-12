@@ -1,0 +1,430 @@
+\documentclass[10pt,aspectratio=169]{beamer}
+
+%-------------------------------------------------
+% Theme and packages
+%-------------------------------------------------
+\usetheme{Madrid}
+\usecolortheme{seahorse}
+\useoutertheme{infolines}
+\useinnertheme{rounded}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{hyperref}
+
+% Slightly tighter list spacing
+\setbeamertemplate{itemize items}[circle]
+\setbeamertemplate{itemize subitem}[triangle]
+\setbeamertemplate{navigation symbols}{}
+
+% Highlight box for reviewer quotes
+\setbeamercolor{quotebox}{bg=blue!8,fg=black}
+\newcommand{\reviewerquote}[1]{%
+  \begin{beamercolorbox}[sep=6pt,rounded=true,shadow=true]{quotebox}%
+  \itshape #1%
+  \end{beamercolorbox}%
+}
+
+%-------------------------------------------------
+% Title information
+%-------------------------------------------------
+\title[SFF Evaluation -- Interpretation]{Interpretations of the SFF Evaluation \\ \small Center for Quantum Control (Project 362317)}
+\subtitle{From Phase 1 (Mark 6) toward an Outstanding Phase 2 Proposal}
+\author{Morten Hjorth-Jensen}
+\institute[UiO]{University of Oslo}
+\date{\today}
+
+\begin{document}
+
+%-------------------------------------------------
+\begin{frame}
+  \titlepage
+\end{frame}
+
+%-------------------------------------------------
+\begin{frame}{Outline}
+  \tableofcontents
+\end{frame}
+
+%=================================================
+\section{Overall impression}
+%=================================================
+\begin{frame}{Overall impression of the Phase 1 evaluation}
+  \begin{itemize}
+    \item The review says this  was a \textbf{very strong} Phase 1 proposal.
+    \item All four criteria received the mark \textbf{6 (Excellent)} on the 1--7 scale. Is this scale correct?
+    \item On the Research Council scale, mark 6 means the proposal
+          \emph{``successfully addresses essentially all aspects of the criterion and has only minor shortcomings.''}
+    \item The path to a competitive Phase 2 application is therefore essentially about
+          \textbf{closing the gap from 6 to 7 (Outstanding)} by addressing the specific
+          \emph{minor shortcomings} hinted at in each section.
+  \end{itemize}
+  \vfill
+  \begin{block}{Structure of these notes}
+    \begin{enumerate}
+      \item A less in-depth interpretation of the feedback.
+      \item A discussion of explicit things we can address in the full proposal.
+    \end{enumerate}
+  \end{block}
+\end{frame}
+
+%=================================================
+\section{Part 1: A less in-depth interpretation}
+%=================================================
+
+\begin{frame}{Excellence -- Quality of R\&D activities}
+  This section contains the most concrete criticism. Two distinct points are flagged.
+  \vfill
+  \begin{block}{1. Research questions need sharper articulation}
+    Each of the four tracks should open with a \emph{small set of falsifiable scientific questions},
+    rather than thematic descriptions.
+  \end{block}
+  \begin{block}{2. Machine-learning methods need more detail}
+    The ML-guided control component is the methodological area the panel found least convincing.
+    The full application should include:
+    \begin{itemize}
+      \item concrete algorithms and model architectures,
+      \item training and data strategies,
+      \item validation protocols,
+      \item the interface between ML and the physics/chemistry tracks.
+    \end{itemize}
+    A dedicated methods section for ML-guided quantum control is likely warranted.
+  \end{block}
+\end{frame}
+
+%-------------------------------------------------
+\begin{frame}{Impact}
+  Two implicit concerns stand out.
+  \vfill
+  \begin{block}{Scale}
+    The panel notes that the center is
+    \reviewerquote{relatively small compared with major international centers}
+    \vspace{0.3em}
+    This is the only comparative remark in the whole report -- and it is not a compliment.
+    Phase 2 should either
+    \begin{itemize}
+      \item grow the scope and team to match international peers, or
+      \item explicitly argue why the chosen size delivers \emph{more impact per krone} than larger competitors.
+    \end{itemize}
+  \end{block}
+  \begin{block}{Generic impact narrative}
+    The current text stays at the level of \emph{application areas} without committing to specific deliverables,
+    pathways, or partners. Phase 2 requires explicit dissemination, exploitation, and open-science
+    plans, plus communication and engagement with different target audiences.
+  \end{block}
+\end{frame}
+
+%-------------------------------------------------
+\begin{frame}{Implementation}
+  \reviewerquote{some uncertainty exists regarding continuity and transition of leadership}
+  \vfill
+  Succession uncertainty is one of the recurring reasons SFF panels downgrade otherwise excellent centers.
+  \vfill
+  \begin{block}{Phase 2 should include a written succession plan}
+    \begin{itemize}
+      \item Who can step in as director if needed?
+      \item How are deputy and co-director roles structured?
+      \item How is leadership of each of the four tracks backed up?
+      \item How does the center survive the departure of a key PI?
+    \end{itemize}
+  \end{block}
+  \begin{block}{Additional Phase 2 requirements (not yet present)}
+    \begin{itemize}
+      \item An explicit training environment beyond what individual groups offer.
+      \item Appropriate management and governance structures.
+      \item A description of the physical organisation supporting cross-track collaboration.
+      \item If gender-imbalanced: concrete plans to qualify under-represented-gender researchers
+            for senior positions.
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+%=================================================
+\section{Part 2: Explicit things we can address}
+%=================================================
+
+\begin{frame}{How to read the comments}
+  Our goal is to prepare a much larger and more competitive Phase 2 SFF proposal.
+  \vfill
+  \begin{itemize}
+    \item We should read the comments not as criticism, but as indications of where reviewers want
+          \textbf{additional depth, precision, and evidence}.
+    \item I think that for  highly competitive SFF evaluations, proposals with uniformly excellent scores are
+          distinguished by how convincingly they address \emph{these} details.
+  \end{itemize}
+\end{frame}
+
+%-------------------------------------------------
+\begin{frame}{1. The clearest weakness: explicit research questions}
+  \reviewerquote{The proposal would benefit from clearer articulation of the specific research questions within each track.}
+  \vfill
+  The reviewers liked the four-track structure but wanted more than broad themes.
+  \vfill
+  \begin{columns}[T]
+    \column{0.45\textwidth}
+    \textbf{Instead of:}
+    \begin{itemize}
+      \item Quantum control of many-body systems
+      \item Machine learning for quantum dynamics
+    \end{itemize}
+
+    \column{0.55\textwidth}
+    \textbf{Formulate questions such as:}
+    \begin{itemize}\small
+      \item What are the fundamental limits on controllability in interacting many-body systems?
+      \item Can agent-based AI (with reinforcement learning) discover control protocols beyond Pontryagin-optimal solutions?
+      \item Can quantum Fisher information provide universal bounds on control fidelity?
+      \item Can generative models compress experimentally relevant quantum states?
+    \end{itemize}
+  \end{columns}
+  \vfill
+  \begin{center}
+    \emph{The best SFF proposals resemble a collection of major open problems, not activities.}
+  \end{center}
+\end{frame}
+
+%-------------------------------------------------
+\begin{frame}{2. Machine learning needs greater methodological precision}
+  \reviewerquote{more detailed descriptions of certain methods -- particularly those related to machine-learning-guided control.}
+  \vfill
+  The panel accepted that ML is important, but were not yet convinced it is sufficiently specified.
+  \vfill
+  \begin{columns}[T]
+    \column{0.45\textwidth}
+    \textbf{Name explicit ML methodologies:}
+    \begin{itemize}\small
+      \item Agent-based AI and Reinforcement learning
+      \item Physics-informed neural networks
+      \item Bayesian optimization
+      \item Diffusion models
+      \item Transformer architectures
+      \item Generative quantum state models
+      \item Graph neural networks
+    \end{itemize}
+
+    \column{0.5\textwidth}
+    \textbf{For each method, explain:}
+    \begin{itemize}\small
+      \item why it is needed,
+      \item what scientific question it addresses,
+      \item why existing methods are insufficient.
+    \end{itemize}
+  \end{columns}
+\end{frame}
+
+%-------------------------------------------------
+\begin{frame}{2. ML as a research theme, not just a tool}
+  A common weakness in AI-related proposals is that ML appears as a \emph{tool} rather than a
+  \emph{research theme}.
+  \vfill
+  \begin{block}{The proposal should argue}
+    New machine-learning methodologies will emerge \textbf{from quantum control challenges themselves}.
+  \end{block}
+  \vfill
+  \begin{block}{Examples of methodological novelty}
+    \begin{itemize}
+      \item Reinforcement learning for quantum control under uncertainty.
+      \item Scientific foundation models for quantum experiments.
+      \item Physics-informed generative models.
+      \item Hybrid quantum-classical learning algorithms.
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+%-------------------------------------------------
+\begin{frame}{3. Clarify scientific ambition versus feasibility}
+  The reviewers repeatedly praise the ambition, but Phase 2 should make the relationship
+  between risk levels much more explicit.
+  \vfill
+  \begin{columns}[T]
+    \column{0.5\textwidth}
+    \textbf{Flagship challenges}
+    \begin{itemize}
+      \item Fault-tolerant quantum control.
+      \item AI-designed quantum sensors.
+      \item Autonomous quantum experiments.
+    \end{itemize}
+
+    \column{0.5\textwidth}
+    \textbf{Fallback pathways}\\
+    If a flagship goal fails:
+    \begin{itemize}
+      \item What is still learned?
+      \item What publishable results remain?
+    \end{itemize}
+  \end{columns}
+  \vfill
+  \begin{center}
+    SFF panels routinely ask: \emph{What happens if the most ambitious ideas fail?}
+  \end{center}
+\end{frame}
+
+%-------------------------------------------------
+\begin{frame}{4. Leadership succession and long-term sustainability}
+  \reviewerquote{some uncertainty exists regarding continuity and transition of leadership}
+  \vfill
+  The panel implicitly asked:
+  \begin{itemize}
+    \item How dependent is the center on a single person?
+    \item What happens after 5--10 years?
+    \item How are younger leaders being developed?
+  \end{itemize}
+  \vfill
+  \begin{block}{Explicit leadership pipeline}
+    \begin{itemize}
+      \item Deputy director(s).
+      \item Future work-package leaders.
+      \item Early-career leadership positions.
+      \item Documented succession plans.
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+%-------------------------------------------------
+\begin{frame}{5. Demonstrate stronger center-level synergy}
+  The next proposal must repeatedly answer:
+  \begin{center}
+    \large \emph{Why does this need to be a Center of Excellence, rather than a collection of excellent groups?}
+  \end{center}
+  \vfill
+  \begin{block}{Cross-track flagship projects}
+    \begin{itemize}
+      \item Quantum sensing $+$ AI.
+      \item Quantum materials $+$ machine learning.
+      \item Quantum chemistry $+$ control theory.
+      \item Experimental platforms $+$ digital twins.
+    \end{itemize}
+  \end{block}
+  \vfill
+  \begin{center}
+    Each major breakthrough should \textbf{require} collaboration between several tracks.
+  \end{center}
+\end{frame}
+
+%-------------------------------------------------
+\begin{frame}{6. Strengthen international positioning}
+  \reviewerquote{relatively small compared with major international centers}
+  \vfill
+  This reveals a comparison class. For Phase 2, compare explicitly to:
+  \vfill
+  \begin{columns}[T]
+    \column{0.5\textwidth}
+    \begin{itemize}
+      \item QuICS (Maryland)
+      \item IQIM (Caltech)
+      \item IQC Waterloo
+    \end{itemize}
+
+    \column{0.5\textwidth}
+    \begin{itemize}
+      \item CQT Singapore
+      \item Munich Quantum Valley
+      \item Quantum Delta NL
+    \end{itemize}
+  \end{columns}
+  \vfill
+  \begin{block}{Then explain}
+    \begin{itemize}
+      \item Where Norway can \emph{lead}.
+      \item What niche is uniquely Norwegian.
+      \item Why the center will become internationally indispensable.
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+%-------------------------------------------------
+\begin{frame}{7. Expand the impact narrative}
+  The current impact section is strong but generic (secure communication, advanced materials,
+  healthcare, clean energy). Phase 2 should make this much more concrete.
+  \vfill
+  \begin{columns}[T]
+    \column{0.33\textwidth}
+    \textbf{Scientific impact}
+    \begin{itemize}\small
+      \item New theory of quantum control.
+      \item New algorithms.
+      \item Open-source software.
+    \end{itemize}
+
+    \column{0.33\textwidth}
+    \textbf{Technology impact}
+    \begin{itemize}\small
+      \item Quantum sensors.
+      \item Quantum materials discovery.
+      \item Quantum computing architectures.
+    \end{itemize}
+
+    \column{0.33\textwidth}
+    \textbf{Human capital impact}
+    \begin{itemize}\small
+      \item Number of PhDs.
+      \item Industrial internships.
+      \item International mobility.
+    \end{itemize}
+  \end{columns}
+\end{frame}
+
+%-------------------------------------------------
+\begin{frame}{8. What is missing entirely from the criticism?}
+  Interestingly, there are \textbf{no} criticisms regarding:
+  \begin{itemize}
+    \item scientific quality,
+    \item leadership competence,
+    \item publication record,
+    \item feasibility,
+    \item interdisciplinarity.
+  \end{itemize}
+  \vfill
+  \begin{center}
+    \emph{This is very encouraging.} The panel is convinced the team can do the work.
+  \end{center}
+  \vfill
+  \begin{block}{The next proposal should focus less on proving excellence and more on:}
+    \begin{enumerate}
+      \item Sharper scientific questions.
+      \item More detailed methodology.
+      \item Clearer ML strategy.
+      \item Stronger center-level integration.
+      \item Leadership succession.
+      \item A stronger international vision.
+    \end{enumerate}
+  \end{block}
+\end{frame}
+
+%=================================================
+\section{Overall interpretation}
+%=================================================
+
+\begin{frame}{Reading between the lines}
+  \reviewerquote{We are convinced that this is an excellent team pursuing an important and
+  potentially transformative topic. For the full SFF proposal we would like to see a more
+  detailed scientific roadmap, especially regarding machine-learning-guided quantum control,
+  clearer articulation of the key scientific questions, and stronger evidence that the center
+  will function as more than the sum of its individual research groups.}
+  \vfill
+  \begin{itemize}
+    \item A very favourable position going into a second-round SFF application.
+    \item The reviewers did not identify fundamental weaknesses.
+    \item They asked for \textbf{greater precision}, \textbf{sharper focus}, and a
+          \textbf{more developed center strategy}.
+  \end{itemize}
+\end{frame}
+
+%-------------------------------------------------
+\begin{frame}{Summary: priorities for the Phase 2 proposal}
+  \begin{enumerate}
+    \item \textbf{Leadership continuity and succession plan} -- the only explicit Implementation concern.
+    \item \textbf{Detailed methodology for ML-guided quantum control} -- dedicated methods section.
+    \item \textbf{Sharpened research questions} per track -- falsifiable, ambitious, specific.
+    \item \textbf{Scale and international positioning} -- either grow, or justify the chosen scale against named peer centers.
+    \item \textbf{Center-level synergy} -- cross-track flagship projects that no single group could deliver.
+    \item \textbf{Risk management} -- flagship goals with explicit fallback pathways.
+    \item \textbf{Phase 2 requirements} -- dissemination, exploitation, open science, training environment, gender plans, governance.
+  \end{enumerate}
+\end{frame}
+
+
+\end{document}
