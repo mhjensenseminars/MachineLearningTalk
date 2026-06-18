@@ -1,0 +1,297 @@
+\documentclass[10pt,aspectratio=169]{beamer}
+
+%-------------------------------------------------
+% Theme and packages (matched to SFF_interpretation.tex)
+%-------------------------------------------------
+\usetheme{Madrid}
+\usecolortheme{seahorse}
+\useoutertheme{infolines}
+\useinnertheme{rounded}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{array}
+
+% Slightly tighter list spacing
+\setbeamertemplate{itemize items}[circle]
+\setbeamertemplate{itemize subitem}[triangle]
+\setbeamertemplate{navigation symbols}{}
+
+% Highlight box for reviewer quotes (as in SFF_interpretation.tex)
+\setbeamercolor{quotebox}{bg=blue!8,fg=black}
+\newcommand{\reviewerquote}[1]{%
+  \begin{beamercolorbox}[sep=6pt,rounded=true,shadow=true]{quotebox}%
+  \itshape #1%
+  \end{beamercolorbox}%
+}
+
+% Status labels for the scorecard
+\newcommand{\strongA}{\textcolor{green!55!black}{\textbf{Strong}}}
+\newcommand{\partialA}{\textcolor{orange!85!black}{\textbf{Partial}}}
+\newcommand{\todoA}{\textcolor{red!75!black}{\textbf{To write}}}
+
+%-------------------------------------------------
+% Title information
+%-------------------------------------------------
+\title[QONTROL -- Project meeting]{Centre for Quantum Control (QONTROL) \\ \small Project meeting -- agenda and writing path forward}
+\subtitle{Project 362317 -- toward the Phase 2 SFF proposal}
+\author{The SFF gang}
+\institute[UiO]{University of Oslo}
+\date{June 19, 2026}
+
+\begin{document}
+
+%-------------------------------------------------
+\begin{frame}
+  \titlepage
+\end{frame}
+
+%=================================================
+\section{Agenda}
+%=================================================
+\begin{frame}{Agenda}
+  \begin{enumerate}
+    \item \textbf{Recap of the previous meeting} and approval/adjournment of minutes.
+    \vfill
+    \item \textbf{Location discussion.} Review of the various emails on this matter,
+          including the most recent communication from the MN faculty; brief discussion.
+    \vfill
+    \item \textbf{Application and writing process.} \emph{Main focus today:} where the
+          current draft stands against the reviewer feedback, and a concrete path forward.
+    \vfill
+    \item \textbf{Any other business.}
+  \end{enumerate}
+  \vfill
+  \begin{center}
+    \small Items 1, 2 and 4 kept short; the bulk of the meeting is item 3.
+  \end{center}
+\end{frame}
+
+%=================================================
+\section{1. Recap}
+%=================================================
+\begin{frame}{1. Recap of the previous meeting}
+  \begin{itemize}
+    \item Phase 1 evaluation: mark \textbf{6 (Excellent)} on all four criteria; no fundamental
+          weaknesses identified.
+    \item The panel asked for \textbf{greater precision, sharper focus, and a more developed
+          centre strategy}, not for proof of excellence if we have correctly interpreted the reviews.
+    \item We agreed on seven Phase 2 priorities (questions, ML methodology, scale, synergy,
+          succession, risk, Phase 2 formalities).
+  \end{itemize}
+  \vfill
+  \begin{block}{Since then}
+    The draft \texttt{application.tex} has been substantially extended: five cross-track science
+    cases, a named ML methodology stack, a scale/ecosystem argument, and an explicit leadership
+    succession.
+  \end{block}
+\end{frame}
+
+%=================================================
+\section{2. Location}
+%=================================================
+\begin{frame}{2. Location discussion plus brief on Budget}
+  To be discussed on the basis of the recent correspondence (including the latest message from
+  the MN faculty). For the minutes, proposed discussion points:
+  \vfill
+  \begin{itemize}
+    \item Brief status: what has the MN faculty most recently communicated?
+    \item Options on the table and their consequences for co-location.
+    \item Constraints: space, timing relative to the SFF deadline, and dependencies on QSTAR/DSQS.
+    \item Decision is probably not needed asap but we should keep working on this topic, Justin, Marianne and Thomas lead this part. The research admin of UiO lists June 30 as a deadline. Our own MN-college says not much will be done before vacation period is over.
+  \end{itemize}
+  \vfill
+  \begin{center}
+    \small (See the slides from the Research Admin from June 18, webinar at UiO and \url{https://www-int.uio.no/for-ansatte/arbeidsstotte/forskningsstotte/finansiering/nasjonale/norges-forskningsraad/sff-vi/index.html}.)
+  \end{center}
+\end{frame}
+
+%=================================================
+\section{3. Application and writing process}
+%=================================================
+\begin{frame}{3. Application and writing process -- where we stand}
+  \reviewerquote{We are convinced that this is an excellent team pursuing an important and
+  potentially transformative topic. For the full SFF proposal we would like to see a more detailed
+  scientific roadmap, especially regarding machine-learning-guided quantum control, clearer
+  articulation of the key scientific questions, and stronger evidence that the centre will function
+  as more than the sum of its individual research groups.}
+  \vfill
+  \begin{itemize}
+    \item The first draft attempts to  answers the spirit of this letter on several fronts.
+    \item Today: a \textbf{scorecard} of reviewer priority $\rightarrow$ what the draft now does
+          $\rightarrow$ status, then the \textbf{gaps} and a \textbf{writing plan}.
+  \end{itemize}
+\end{frame}
+
+%-------------------------------------------------
+\begin{frame}{3. Scorecard (1/2): how the draft matches the reviewers}
+  \footnotesize
+  \renewcommand{\arraystretch}{1.3}
+  \begin{tabular}{@{}p{3.0cm}p{7.6cm}p{1.4cm}@{}}
+    \toprule
+    \textbf{Reviewer priority} & \textbf{What the current draft does} & \textbf{Status}\\
+    \midrule
+    1. Detailed ML-guided control methodology &
+    Named stack across RT1/RT2/RT4: neural quantum states, physics-informed neural networks,
+    reinforcement learning, Bayesian optimization, and our parametric matrix models (PMM/T-PMM);
+    set beside coupled-cluster, FCI, DFT and their time-dependent variants. & \partialA \\
+    2. Centre-level synergy (``more than the sum'') &
+    Every science case is explicitly cross-track (RT1--RT4); five flagship cases that no single
+    group could deliver. & \partialA \\
+    3. Scale and international positioning &
+    Dedicated paragraph: named peers (QuICS, IQIM, IQC, CQT, Munich Quantum Valley, Quantum Delta
+    NL), $\sim$100 researchers, integration-over-size argument, QSTAR/DSQS/QUBITS + national
+    infrastructure. & \partialA \\
+    4. Leadership continuity and succession &
+    Hjorth-Jensen (2028--32) $\rightarrow$ Bathen (2033--37); Pedersen Deputy Director for all 10
+    years with leadership training; gender balance through Bathen. & \partialA \\
+    \bottomrule
+  \end{tabular}
+\end{frame}
+
+%-------------------------------------------------
+\begin{frame}{3. Scorecard (2/2): how the draft matches the reviewers}
+  \footnotesize
+  \renewcommand{\arraystretch}{1.3}
+  \begin{tabular}{@{}p{3.0cm}p{7.6cm}p{1.4cm}@{}}
+    \toprule
+    \textbf{Reviewer priority} & \textbf{What the current draft does} & \textbf{Status}\\
+    \midrule
+    5. Sharpened, falsifiable research questions per track &
+    Science cases pose concrete, falsifiable questions (RL/QFI, PMM, Rodeo); RT4 carries an explicit
+    question list. \emph{Still needed:} a short ``key questions'' box for RT1, RT2 and RT3. & \partialA\\
+    6. Risk management: flagship $+$ fallback &
+    Ambitious flagships are stated, but explicit \emph{fallback pathways} (``what is still learned if
+    the flagship fails?'') are not yet written. & \todoA\\
+    7. Phase 2 formalities &
+    Governance (Board, Scientific Advisory Board, Management Team, Head of Office), training numbers,
+    gender, open-source/HSP releases. \emph{To expand:} explicit open-science/data-management and
+    innovation/exploitation plans. & \partialA\\
+    \midrule
+    \multicolumn{3}{@{}p{12.0cm}@{}}{\textit{Encouraging:} the panel raised \textbf{no} concern about
+    scientific quality, leadership, publications, feasibility, or interdisciplinarity, we need not
+    re-prove excellence.}\\
+    \bottomrule
+  \end{tabular}
+\end{frame}
+
+%-------------------------------------------------
+\begin{frame}{3. Five cross-track science cases}
+  Directly addresses the ``more than the sum of its groups'' and ``sharper questions'' comments.
+  \vfill
+  \begin{enumerate}\small
+    \item \textbf{System--environment correlations with parametric matrix models} (RT1): zero-shot
+          entanglement entropy and purity of an open system.
+    \item \textbf{Emulating open-system dynamics with the tensor PMM} (RT2): a scalable digital twin
+          for dissipative, non-Markovian evolution.
+    \item \textbf{Reinforcement-learning discovery of entanglement-enhanced sensing} (RT4, with
+          RT1--RT3): the two-electron $\mathcal{F}_Q=4$ vs.\ $2$ advantage.
+    \item \textbf{Point defects in 4H--SiC as quantum sensors} (RT1--RT4): ML-designed,
+          entanglement-enhanced magnetometry.
+    \item \textbf{Eigenstate preparation by resolution refinement $+$ Rodeo} (RT1, RT2, RT4):
+          correlated eigenstates on neutral-atom hardware.
+  \end{enumerate}
+  \vfill
+  \begin{center}\small Each case names the tracks it couples, the synergy is only structural now, not asserted.\end{center}
+\end{frame}
+
+%-------------------------------------------------
+\begin{frame}{3. The possibly strongest answer: ML as a research theme}
+  \reviewerquote{more detailed descriptions of certain methods, particularly those related to
+  machine-learning-guided control.}
+  \vfill
+  \begin{columns}[T]
+    \column{0.5\textwidth}
+    \textbf{Now named and motivated}
+    \begin{itemize}\small
+      \item Neural quantum states; physics-informed neural networks.
+      \item Reinforcement learning; Bayesian optimization.
+      \item Parametric matrix models (our own method).
+      \item Conventional solvers: CC/UCC, FCI, DFT, TD-CC, TD-DFT.
+    \end{itemize}
+    \column{0.5\textwidth}
+    \textbf{Framed as a theme, not a tool}
+    \begin{itemize}\small
+      \item New ML methodology emerges \emph{from} the control problem.
+      \item PMM/T-PMM developed within the centre.
+      \item Differentiable surrogates feed RT4 control.
+    \end{itemize}
+  \end{columns}
+  \vfill
+  \begin{block}{Optional additions the reviewers listed}
+    \small Diffusion models, transformer architectures, graph neural networks -- add only where a
+    concrete scientific question justifies them.
+  \end{block}
+\end{frame}
+
+%-------------------------------------------------
+\begin{frame}{3. The gaps to close before submission}
+  \begin{enumerate}
+    \item \textbf{Per-track key questions.} Add a compact, falsifiable ``key questions'' box to
+          \textbf{RT1, RT2, RT3} (RT4 already has one).
+    \vfill
+    \item \textbf{Risk / fallback.} A short table: for each cross-track flagship, the success metric
+          \emph{and} the publishable fallback result if the most ambitious goal fails.
+    \vfill
+    \item \textbf{Concrete impact.} Split Impact into \emph{scientific} / \emph{technology} /
+          \emph{human-capital} with numbers (PhDs, internships, mobility, software, sensors).
+    \vfill
+    \item \textbf{Phase 2 formalities.} Dedicated open-science \& data-management plan,
+          innovation/exploitation plan, recruitment \& gender action plan, governance detail.
+  \end{enumerate}
+\end{frame}
+
+%-------------------------------------------------
+\begin{frame}{3. Proposed path forward -- writing plan}
+  \begin{block}{Ownership}
+    \begin{itemize}\small
+      \item RT1--RT4 lead authors among the PIs; each owns its key-questions box and risk row.
+      \item Cross-track science cases co-owned by the tracks they couple.
+      \item One editor for voice, figures, and reviewer-response consistency.
+    \end{itemize}
+  \end{block}
+  \begin{block}{Coordination}
+    \begin{itemize}\small
+      \item Align scope with QSTAR and DSQS to show complementarity, not overlap.
+      \item Lock the ecosystem/foundation figure and the team table early. Add GANTT chart?
+      \item Budget and in-kind consistent with the ``lean coordinating core'' narrative.
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+%-------------------------------------------------
+\begin{frame}{3. Proposed path forward (20 weeks left): milestones}
+  \footnotesize
+  \renewcommand{\arraystretch}{1.3}
+  \begin{tabular}{@{}p{2.6cm}p{9.6cm}@{}}
+    \toprule
+    \textbf{Milestone} & \textbf{Deliverable}\\
+    \midrule
+    Now $\rightarrow$ July 13 approx  & First draft with updates on RT1-RT4 and impact, implementation and organization \\
+    Mid July $\rightarrow$ Mid Aug & concrete impact metrics and the Phase 2 formal sections. \\
+    Mid Aug $\rightarrow$ Mid Sept  & Full internal draft; read by a internal panel/external / Scientific Advisory Board contact.\\
+    Mid Sept $\rightarrow$ Mid Oct & Revise on internal feedback; finalise figures, budget, and team table.\\
+    Submission & Final proof-read against the reviewer letter, point by point.\\
+    \bottomrule
+  \end{tabular}
+\end{frame}
+
+%=================================================
+\section{4. AOB}
+%=================================================
+\begin{frame}{4. Any other business}
+  \begin{itemize}
+    \item Items not covered above.
+    \item Date and focus of the next meeting.
+    \item Actions and owners agreed today.
+  \end{itemize}
+  \vfill
+  \begin{center}\emph{Enjoy your summer}\end{center}
+\end{frame}
+
+\end{document}
