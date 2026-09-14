@@ -1,0 +1,96 @@
+\documentclass{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,bm}
+\usepackage{physics}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usetheme{Madrid}
+\usecolortheme{seagull}
+\graphicspath{{./}{figures/}{TalksMaterialQML/figures/}{TalksMaterialQML/qcfigures/}}
+
+\title[SHORT TITLE]{\textbf{LONG TITLE}}
+\author{Morten Hjorth-Jensen}
+\institute{Department of Physics and Center for Computing in Science Education, University of Oslo, Norway}
+\date{EVENT, PLACE, DATE}
+
+\begin{document}
+
+\begin{frame}[plain,fragile]
+\titlepage
+\end{frame}
+
+\begin{frame}[plain,fragile]
+\frametitle{What is this talk about?}
+\begin{block}{}
+One paragraph, in plain words, on the aim of the talk and why the audience should care.
+\end{block}
+\end{frame}
+
+\begin{frame}[plain,fragile]
+\frametitle{Thanks to many}
+Collaborators (see reusable-frames.md).
+\end{frame}
+
+\begin{frame}[plain,fragile]
+\frametitle{Outline}
+\tableofcontents
+\end{frame}
+
+%-----------------------------------------------------------
+\section{Big picture}
+
+\begin{frame}[plain,fragile]
+\frametitle{One idea per frame}
+\begin{itemize}
+\item at most five bullets
+\item or one equation
+\[
+\hat H = \sum_i \left(-\frac{1}{2}\nabla_i^2 + v(\bm{r}_i)\right) + \sum_{i<j} u(\bm{r}_i,\bm{r}_j)
+\]
+\end{itemize}
+\end{frame}
+
+\begin{frame}[plain,fragile]
+\frametitle{A figure frame}
+\centerline{\includegraphics[width=0.9\linewidth]{figureintro.pdf}}
+{\footnotesize Taken from ...}
+\end{frame}
+
+%-----------------------------------------------------------
+\section{Application}
+
+\begin{frame}[plain,fragile]
+\frametitle{Figure plus text}
+\begin{columns}
+\column{0.55\linewidth}
+\includegraphics[width=\linewidth]{fig1.pdf}
+\column{0.45\linewidth}
+\begin{itemize}
+\item message 1
+\item message 2
+\end{itemize}
+\end{columns}
+\end{frame}
+
+%-----------------------------------------------------------
+\section{Conclusions and perspectives}
+
+\begin{frame}[plain,fragile]
+\frametitle{References}
+\begin{enumerate}
+\item Authors, \textbf{Title}, Journal \textbf{vol}, page (year), \href{URL}{\nolinkurl{URL}}
+\end{enumerate}
+\end{frame}
+
+\begin{frame}
+\centering
+\Huge Thank you
+\end{frame}
+
+\appendix
+\begin{frame}[plain,fragile]
+\frametitle{Backup: details}
+\end{frame}
+
+\end{document}
