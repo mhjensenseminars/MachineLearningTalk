@@ -1,0 +1,325 @@
+\documentclass{beamer}
+\usetheme{Madrid}
+
+\usepackage{amsmath,amssymb,physics,bm}
+\usepackage{graphicx}
+
+\title{Physics-Informed Neural Networks \\ and Properties of Quantum Dot Systems}
+\author{Morten Hjorth-Jensen}
+\institute{University of Oslo}
+\date{February 20, 2026, CCS at Univ-TSUKUBA}
+
+\begin{document}
+
+%=========================================================
+\begin{frame}
+\titlepage
+\end{frame}
+
+%=========================================================
+\begin{frame}{Outline}
+\tableofcontents
+\end{frame}
+
+%=========================================================
+\section{Motivation}
+
+%---------------------------------------------------------
+\begin{frame}{Quantum Dots as Artificial Atoms}
+\begin{itemize}
+\item Semiconductor-confined electrons
+\item Tunable confinement $\omega$
+\item Strong Coulomb correlations
+\item Few-body → mesoscopic regime
+\end{itemize}
+
+\vspace{0.3cm}
+Goal:
+\[
+\text{Understand correlation-driven structure formation}
+\]
+\end{frame}
+
+%---------------------------------------------------------
+\begin{frame}{The Many-Body Hamiltonian}
+\[
+H =
+\sum_i
+\left(
+-\frac{1}{2}\nabla_i^2
++
+\frac{1}{2}\omega^2 r_i^2
+\right)
++
+\sum_{i<j}\frac{1}{|r_i-r_j|}
+\]
+
+Competition:
+\begin{itemize}
+\item Kinetic energy
+\item Trap confinement
+\item Coulomb repulsion
+\end{itemize}
+\end{frame}
+
+%---------------------------------------------------------
+\begin{frame}{Why Is This Hard?}
+\begin{itemize}
+\item Exponential Hilbert space growth
+\item Strong correlation effects
+\item Near-Wigner crystallization at weak confinement
+\end{itemize}
+
+Traditional methods:
+\begin{itemize}
+\item Exact diagonalization (small $N$)
+\item Diffusion Monte Carlo
+\item Configuration interaction
+\end{itemize}
+\end{frame}
+
+%=========================================================
+\section{Physics-Informed Neural Networks}
+
+%---------------------------------------------------------
+\begin{frame}{Idea of PINNs}
+Instead of sampling:
+\[
+H\Psi = E\Psi
+\]
+
+Minimize PDE residual:
+\[
+\mathcal{L}
+=
+\langle |(H-E)\Psi_\theta|^2 \rangle
+\]
+
+Advantages:
+\begin{itemize}
+\item No stochastic Monte Carlo noise
+\item Direct enforcement of Schrödinger equation
+\item Continuous representation
+\end{itemize}
+\end{frame}
+
+%---------------------------------------------------------
+\begin{frame}{Wavefunction Ansatz}
+\[
+\Psi(R)
+=
+\text{SD}(R')
+\exp(U(R) + W_\theta(R))
+\]
+
+Components:
+\begin{itemize}
+\item Slater determinant
+\item Jastrow correlation
+\item Neural correlator
+\item Optional backflow
+\end{itemize}
+\end{frame}
+
+%---------------------------------------------------------
+\begin{frame}{Neural Correlator}
+Permutation invariant construction:
+
+\[
+W_\theta(R)
+=
+\rho\Big(h_\phi \parallel h_\psi \parallel g_1 \parallel g_2\Big)
+\]
+
+Features:
+\begin{itemize}
+\item Pairwise distances
+\item Safe-distance channels
+\item Radial global scalars
+\end{itemize}
+\end{frame}
+
+%---------------------------------------------------------
+\begin{frame}{Backflow Deformation}
+Coordinate transformation:
+
+\[
+R' = R + \Delta_\beta(R)
+\]
+
+Neural backflow:
+\begin{itemize}
+\item Message passing
+\item $O(N^2)$ scaling
+\end{itemize}
+\end{frame}
+
+%=========================================================
+\section{Energy Results}
+
+%---------------------------------------------------------
+\begin{frame}{Energy Benchmarking}
+Residual pretraining + SR refinement.
+
+Comparison with DMC:
+
+\centering
+\fbox{\parbox{0.8\linewidth}{Placeholder for Energy Table}}
+\end{frame}
+
+%---------------------------------------------------------
+\begin{frame}{Energy Partitioning}
+\[
+E = T + V_{\text{int}} + V_{\text{trap}}
+\]
+
+Diagnostics:
+\[
+\Gamma(\omega) = \frac{\langle V_{\text{int}}\rangle}{\langle T\rangle}
+\]
+\[
+C(\omega)=\frac{2\langle V_{\text{trap}}\rangle}{\langle V_{\text{int}}\rangle}
+\]
+\end{frame}
+
+%---------------------------------------------------------
+\begin{frame}{Wigner Crossover}
+As $\omega \to 0$:
+\begin{itemize}
+\item Coulomb dominates kinetic
+\item $C(\omega)\to 1$
+\item Radial expansion
+\end{itemize}
+
+\centering
+\fbox{\parbox{0.8\linewidth}{Placeholder for Wigner Crossover Figure}}
+\end{frame}
+
+%=========================================================
+\section{Structural Analysis}
+
+%---------------------------------------------------------
+\begin{frame}{Density Profiles}
+Weak confinement:
+\begin{itemize}
+\item Multi-shell structure
+\item Radial ordering
+\end{itemize}
+
+Strong confinement:
+\begin{itemize}
+\item Single dense core
+\end{itemize}
+
+\centering
+\fbox{\parbox{0.8\linewidth}{Placeholder for Density Plots}}
+\end{frame}
+
+%---------------------------------------------------------
+\begin{frame}{Shell Topology}
+Rank-based shell identification:
+
+Examples:
+\[
+(1,5), \quad (3,9), \quad (1,7,12)
+\]
+
+Collapse under strong confinement:
+\[
+(1,N-1)
+\]
+\end{frame}
+
+%---------------------------------------------------------
+\begin{frame}{Angular Ordering}
+Registered bond order:
+\[
+\psi^{\text{reg}}_{n_s}
+=
+\left|
+\frac{1}{n_s}
+\sum_{j\in s} e^{in_s\theta_j^{\text{reg}}}
+\right|
+\]
+
+Strong ordering at weak $\omega$.
+\end{frame}
+
+%---------------------------------------------------------
+\begin{frame}{Shell Disorder}
+Lindemann-type fluctuation:
+
+\[
+L_{s,\text{reg}}
+\]
+
+Weak confinement:
+\begin{itemize}
+\item Small fluctuations
+\item Stiff shells
+\end{itemize}
+
+Strong confinement:
+\begin{itemize}
+\item Melting behavior
+\end{itemize}
+\end{frame}
+
+%=========================================================
+\section{Physical Interpretation}
+
+%---------------------------------------------------------
+\begin{frame}{Finite-$N$ Wigner Molecules}
+Combined evidence:
+\begin{itemize}
+\item Shell topology
+\item Angular order
+\item Energy ratios
+\item Radial expansion
+\end{itemize}
+
+Interpretation:
+\[
+\text{Finite-size Wigner crystallization}
+\]
+\end{frame}
+
+%---------------------------------------------------------
+\begin{frame}{Scaling and Model Robustness}
+\begin{itemize}
+\item Neural-only vs hybrid ansatz
+\item Backflow improves accuracy
+\item Scaling $O(N^2)$ manageable
+\end{itemize}
+\end{frame}
+
+%=========================================================
+\section{Conclusions}
+
+%---------------------------------------------------------
+\begin{frame}{Main Results}
+\begin{itemize}
+\item PINNs successfully solve correlated quantum dot systems
+\item Energies competitive with DMC
+\item Clear Wigner crossover at weak confinement
+\item Structural diagnostics confirm ordering
+\end{itemize}
+\end{frame}
+
+%---------------------------------------------------------
+\begin{frame}{Outlook}
+\begin{itemize}
+\item Larger particle numbers
+\item Time-dependent dynamics
+\item Extension to 3D
+\item Hybrid PINN–VMC strategies
+\end{itemize}
+\end{frame}
+
+%---------------------------------------------------------
+\begin{frame}
+\centering
+\Huge Thank you
+\end{frame}
+
+\end{document}

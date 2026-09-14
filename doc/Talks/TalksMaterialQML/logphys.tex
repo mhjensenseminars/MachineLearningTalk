@@ -1,0 +1,105 @@
+\documentclass[10pt]{beamer}
+
+% Basic setup
+\usetheme{default}
+\usecolortheme{default}
+\usefonttheme{professionalfonts}
+
+\usepackage{amsmath}
+\usepackage{tikz}
+\usetikzlibrary{positioning,fit,shapes.geometric}
+
+\title{Physical vs.\ Logical Qubits}
+\author{Notes by MHJ}
+\date{October 2023}
+
+\begin{document}
+
+% -------------------------------------------------------------
+\begin{frame}
+ \titlepage
+\end{frame}
+
+% -------------------------------------------------------------
+\begin{frame}{What is a physical qubit?}
+ \begin{itemize}
+   \item A \textbf{physical qubit} is a concrete, hardware implementation of a two-level system:
+     \begin{itemize}
+       \item superconducting transmon, trapped ion, spin in a quantum dot, NV center, photon, \dots
+     \end{itemize}
+   \item Each physical qubit:
+     \begin{itemize}
+       \item has a finite coherence time (T$_1$, T$_2$),
+       \item suffers from bit-flip and phase-flip errors,
+       \item is directly controlled by microwave/laser pulses or other hardware controls.
+     \end{itemize}
+   \item Useful for small experiments, but error rates are typically too high for long algorithms.
+ \end{itemize}
+\end{frame}
+
+% -------------------------------------------------------------
+\begin{frame}{What is a logical qubit?}
+ \begin{itemize}
+   \item A \textbf{logical qubit} is an \emph{encoded} qubit:
+     \[
+       \lvert 0_L\rangle, \ \lvert 1_L\rangle
+     \]
+     stored across many physical qubits using a quantum error-correcting code.
+   \item The code allows:
+     \begin{itemize}
+       \item detection and correction of physical errors,
+       \item reduction of the effective error rate per logical qubit,
+       \item construction of fault-tolerant logical gates.
+     \end{itemize}
+   \item Example: surface code can require hundreds to thousands of physical qubits per logical qubit for very low logical error rates.
+ \end{itemize}
+\end{frame}
+
+% -------------------------------------------------------------
+\begin{frame}{From physical to logical qubits (conceptual picture)}
+ \centering
+ \begin{tikzpicture}[
+=latex,
+     qubit/.style={circle, draw, minimum size=5mm, inner sep=0pt},
+     logical/.style={rounded corners=4pt, draw, thick, inner sep=4pt},
+     label/.style={font=\scriptsize}
+ ]
+
+ % --- Single physical qubit (top left) ---
+ \node[qubit, fill=blue!5] (phys_single) at (0,1.8) {$q$};
+ \node[label, right=4pt of phys_single.east] {Single \textbf{physical} qubit};
+
+ % --- Many physical qubits forming one logical qubit ---
+ \node[label] at (-3.2,0.8) {Physical qubit layer};
+
+ \node[qubit] (p1) at (-3,0) {};
+ \node[qubit] (p2) [right=0.55cm of p1] {};
+ \node[qubit] (p3) [right=0.55cm of p2] {};
+ \node[qubit] (p4) [right=0.55cm of p3] {};
+ \node[qubit] (p5) [right=0.55cm of p4] {};
+
+ \node[label, above=0pt of p1] {$q_1$};
+ \node[label, above=0pt of p2] {$q_2$};
+ \node[label, above=0pt of p3] {$q_3$};
+ \node[label, above=0pt of p4] {$q_4$};
+ \node[label, above=0pt of p5] {$q_5$};
+
+ \node[logical, fit=(p1) (p5), label={[label]below:$\lvert 0_L\rangle$}] (logical1) {};
+
+ \node[label, right=0.5cm of logical1.east] {One \textbf{logical qubit}};
+
+ % --- Arrow / annotation ---
+ \draw[->, thick] (phys_single.south) .. controls (0,1.1) and (-1.0,0.7) .. (p3.north)
+     node[midway, right, xshift=4pt, yshift=4pt, label]
+     {Encoding spreads information\\over many noisy qubits};
+
+ \end{tikzpicture}
+
+ \vspace{0.6em}
+ \begin{itemize}
+   \item Logical qubits enable \textbf{fault-tolerant quantum computing}.
+   \item Many logical qubits are needed for large-scale algorithms (e.g.\ Shor, chemistry, QPE).
+ \end{itemize}
+\end{frame}
+
+\end{document}

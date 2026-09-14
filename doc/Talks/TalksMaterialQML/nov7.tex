@@ -1,0 +1,95 @@
+\documentclass{beamer}
+\begin{document}
+
+\begin{frame}
+\frametitle{Quantum vs Classical: Theoretical Advantages}
+\begin{center}
+{\Large Quantum Computing Concepts and Advantages}\\[1ex]
+\small (conceptual, minimal formalism)
+\end{center}
+\end{frame}
+
+\section{Qubits and Superposition}
+\begin{frame}
+\frametitle{Qubits and Superposition}
+\begin{itemize}
+  \item A {\bf qubit} is a two-state quantum system (states $|0\rangle$, $|1\rangle$).  Its general state is 
+    $|\psi\rangle = \alpha|0\rangle + \beta|1\rangle$, with complex amplitudes $\alpha,\beta$ ($|\alpha|^2+|\beta|^2=1$) [oai_citation:0‡quantum.microsoft.com](https://quantum.microsoft.com/en-us/insights/education/concepts/what-is-a-qubit#:~:text=Bits%20in%20classical%20computers%20can,combination%20of%20these%20four%20states). 
+  \item  Geometric picture: the {\em Bloch sphere} represents all pure qubit states (antipodal points $\leftrightarrow |0\rangle,|1\rangle$, and any point on sphere corresponds to some superposition) [oai_citation:1‡en.wikipedia.org](https://en.wikipedia.org/wiki/Bloch_sphere#:~:text=The%20Bloch%20sphere%20is%20a,states%20of%20the%20system%2C%20whereas).
+  \item {\bf Classical bits vs qubits}: bits are deterministic (either 0 or 1).  Qubits can be in a superposition of 0 and 1 simultaneously (probabilistic until measured) [oai_citation:2‡quantum.microsoft.com](https://quantum.microsoft.com/en-us/insights/education/concepts/what-is-a-qubit#:~:text=Bits%20in%20classical%20computers%20can,combination%20of%20these%20four%20states).
+  \item Example: two classical bits encode one of 4 states (00, 01, 10, 11).  Two qubits can encode all combinations of these states in superposition [oai_citation:3‡quantum.microsoft.com](https://quantum.microsoft.com/en-us/insights/education/concepts/what-is-a-qubit#:~:text=Bits%20in%20classical%20computers%20can,combination%20of%20these%20four%20states).
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Entanglement}
+\begin{itemize}
+  \item {\bf Entanglement} is a quantum correlation between qubits.  An entangled pair (or multi-qubit system) is described by one joint wavefunction, not separable into independent qubit states [oai_citation:4‡quantum.microsoft.com](https://quantum.microsoft.com/en-us/insights/education/concepts/entanglement#:~:text=Entanglement%20is%20a%20fundamental%20concept,a%20product%20of%20individual%20wavefunctions).
+  \item Measurement on one qubit of an entangled pair instantly affects the other: e.g. if two qubits share the entangled state, finding one in $|0\rangle$ forces the other to collapse accordingly [oai_citation:5‡quantum.microsoft.com](https://quantum.microsoft.com/en-us/insights/education/concepts/entanglement#:~:text=for%20each%20system,state%20of%20the%20other%20systems).
+  \item Entanglement has no classical analog.  It enables nonlocal correlations used in quantum protocols (e.g.\ teleportation, correlated operations) [oai_citation:6‡quantum.microsoft.com](https://quantum.microsoft.com/en-us/insights/education/concepts/entanglement#:~:text=Entanglement%20is%20a%20fundamental%20concept,a%20product%20of%20individual%20wavefunctions).
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Quantum Interference}
+\begin{itemize}
+  \item Quantum amplitudes behave like waves and {\bf interfere}.  Probability amplitudes for different paths can add (constructive interference) or cancel (destructive interference) [oai_citation:7‡techtarget.com](https://www.techtarget.com/whatis/definition/quantum-interference#:~:text=Quantum%20interference%20is%20similar%20to,and%20the%20two%20cancel%20out).
+  \item As a result, some outcomes become more likely and others less likely when the quantum state is measured [oai_citation:8‡techtarget.com](https://www.techtarget.com/whatis/definition/quantum-interference#:~:text=Quantum%20interference%20is%20similar%20to,and%20the%20two%20cancel%20out).
+  \item This interference is key to quantum computation: clever quantum algorithms manipulate amplitudes so that the correct answers are constructively enhanced and wrong ones cancel out.
+\end{itemize}
+\end{frame}
+
+\section{Classical vs Quantum Computation}
+\begin{frame}
+\frametitle{Classical vs Quantum}
+\begin{itemize}
+  \item {\bf Deterministic vs Probabilistic}: Classical algorithms yield a definite output for given input (deterministic logic gates). Quantum algorithms yield outcomes with certain probabilities, requiring repetition to obtain a result with high confidence.
+  \item Qubits allow {\bf parallelism}: An $n$-qubit system can be in a superposition of up to $2^n$ basis states at once [oai_citation:9‡spinquanta.com](https://www.spinquanta.com/news-detail/quantum-parallel-advantage#:~:text=a%20unique%20quantum%20property%20called,superposition), whereas $n$ classical bits represent exactly one of $2^n$ states at a time.
+  \item Even though measurement gives one result, quantum operations act on all components of the superposition simultaneously (quantum parallelism) [oai_citation:10‡spinquanta.com](https://www.spinquanta.com/news-detail/quantum-parallel-advantage#:~:text=a%20unique%20quantum%20property%20called,superposition) [oai_citation:11‡ibm.com](https://www.ibm.com/think/topics/quantum-computing#:~:text=A%20qubit%20can%20behave%20like,range%20of%20possibilities%20is%20astronomical).
+  \item Interference and entanglement are then used to amplify correct results and suppress incorrect ones (e.g.\ in Grover's and Shor's algorithms) [oai_citation:12‡spinquanta.com](https://www.spinquanta.com/news-detail/quantum-parallel-advantage#:~:text=However%2C%20it%27s%20not%20just%20about,Grover%27s%20search%20or%20Shor%27s%20factoring).
+\end{itemize}
+\end{frame}
+
+\section{Quantum Algorithms}
+\begin{frame}
+\frametitle{Shor's Factoring Algorithm}
+\begin{itemize}
+  \item Shor's quantum algorithm factors an integer $N$ in {\em polynomial} time (roughly $O((\log N)^2)$ with optimizations) [oai_citation:13‡en.wikipedia.org](https://en.wikipedia.org/wiki/Shor%27s_algorithm#:~:text=On%20a%20quantum%20computer%2C%20to,thus%20demonstrating%20that%20the).
+  \item In contrast, the best classical algorithms (like the number field sieve) run in sub-exponential time, much slower for large $N$ [oai_citation:14‡en.wikipedia.org](https://en.wikipedia.org/wiki/Shor%27s_algorithm#:~:text=On%20a%20quantum%20computer%2C%20to,thus%20demonstrating%20that%20the).
+  \item This exponential speedup means that RSA and similar cryptosystems (whose security relies on factoring being hard) could be broken by a large-scale quantum computer [oai_citation:15‡en.wikipedia.org](https://en.wikipedia.org/wiki/Shor%27s_algorithm#:~:text=RSA%20can%20be%20broken%20if,RSA%20by%20constructing%20a%20large).
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Grover's Search Algorithm}
+\begin{itemize}
+  \item Grover's algorithm finds a marked item in an unsorted list of size $N$ in $O(\sqrt{N})$ steps [oai_citation:16‡en.wikipedia.org](https://en.wikipedia.org/wiki/Grover%27s_algorithm#:~:text=Grover%27s%20algorithm%20outputs%20%CF%89%20with,be%20run%20twice%20on%20average).
+  \item A classical unstructured search requires $O(N)$ steps in the worst case [oai_citation:17‡en.wikipedia.org](https://en.wikipedia.org/wiki/Grover%27s_algorithm#:~:text=The%20analogous%20problem%20in%20classical,steps%29.%5B%201).  Thus Grover provides a {\bf quadratic speedup} [oai_citation:18‡en.wikipedia.org](https://en.wikipedia.org/wiki/Grover%27s_algorithm#:~:text=Unlike%20other%20quantum%20algorithms%2C%20which,Grover%27s%20algorithm%20could).
+  \item For example, a brute-force search of a 128-bit key space ($2^{128}$ possibilities) takes $O(2^{128})$ classically but only $O(2^{64})$ steps with Grover [oai_citation:19‡en.wikipedia.org](https://en.wikipedia.org/wiki/Grover%27s_algorithm#:~:text=Unlike%20other%20quantum%20algorithms%2C%20which,Grover%27s%20algorithm%20could).
+  \item Grover’s speedup is not exponential, but it is still significant for large problems and gives provable improvements for many search-based tasks.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Quantum Parallelism and Exponential State Space}
+\begin{itemize}
+  \item An $n$-qubit register is described by a $2^n$-dimensional state space.  In superposition, it {\em encodes} all $2^n$ basis states simultaneously [oai_citation:20‡spinquanta.com](https://www.spinquanta.com/news-detail/quantum-parallel-advantage#:~:text=a%20unique%20quantum%20property%20called,superposition) [oai_citation:21‡ibm.com](https://www.ibm.com/think/topics/quantum-computing#:~:text=A%20qubit%20can%20behave%20like,range%20of%20possibilities%20is%20astronomical).
+  \item A single quantum gate applies to all components of the superposition in parallel (this is quantum parallelism) [oai_citation:22‡spinquanta.com](https://www.spinquanta.com/news-detail/quantum-parallel-advantage#:~:text=a%20unique%20quantum%20property%20called,superposition).
+  \item By using interference and entanglement, quantum algorithms can {\em explore} an exponentially large solution space and amplify correct solutions [oai_citation:23‡spinquanta.com](https://www.spinquanta.com/news-detail/quantum-parallel-advantage#:~:text=However%2C%20it%27s%20not%20just%20about,Grover%27s%20search%20or%20Shor%27s%20factoring).
+  \item In principle, this means quantum computers can tackle certain problems by examining many possibilities at once, beyond classical brute force.
+\end{itemize}
+\end{frame}
+
+\section{Summary}
+\begin{frame}
+\frametitle{Summary and Outlook}
+\begin{itemize}
+  \item Quantum computing uses {\bf qubits} with superposition and entanglement to process information in ways beyond classical bits [oai_citation:24‡quantum.microsoft.com](https://quantum.microsoft.com/en-us/insights/education/concepts/what-is-a-qubit#:~:text=Bits%20in%20classical%20computers%20can,combination%20of%20these%20four%20states) [oai_citation:25‡quantum.microsoft.com](https://quantum.microsoft.com/en-us/insights/education/concepts/entanglement#:~:text=Entanglement%20is%20a%20fundamental%20concept,a%20product%20of%20individual%20wavefunctions).
+  \item Key quantum effects are {\bf superposition}, {\bf entanglement}, and {\bf interference} [oai_citation:26‡quantum.microsoft.com](https://quantum.microsoft.com/en-us/insights/education/concepts/what-is-a-qubit#:~:text=Bits%20in%20classical%20computers%20can,combination%20of%20these%20four%20states) [oai_citation:27‡techtarget.com](https://www.techtarget.com/whatis/definition/quantum-interference#:~:text=Quantum%20interference%20is%20similar%20to,and%20the%20two%20cancel%20out).
+  \item Certain algorithms exploit these to gain speedups: e.g.\ Shor's algorithm (exponential factoring speedup) [oai_citation:28‡en.wikipedia.org](https://en.wikipedia.org/wiki/Shor%27s_algorithm#:~:text=On%20a%20quantum%20computer%2C%20to,thus%20demonstrating%20that%20the) and Grover's algorithm (quadratic search speedup) [oai_citation:29‡en.wikipedia.org](https://en.wikipedia.org/wiki/Grover%27s_algorithm#:~:text=Grover%27s%20algorithm%20outputs%20%CF%89%20with,be%20run%20twice%20on%20average).
+  \item The {\bf exponential state space} (2^n amplitudes) provides massive parallelism [oai_citation:30‡spinquanta.com](https://www.spinquanta.com/news-detail/quantum-parallel-advantage#:~:text=a%20unique%20quantum%20property%20called,superposition) [oai_citation:31‡ibm.com](https://www.ibm.com/think/topics/quantum-computing#:~:text=A%20qubit%20can%20behave%20like,range%20of%20possibilities%20is%20astronomical), but careful interference is needed to extract answers.
+  \item Building large, error-corrected quantum computers is challenging, but the potential advantages (in cryptography, optimization, simulation, etc.) drive active research.
+\end{itemize}
+\end{frame}
+
+\end{document}
