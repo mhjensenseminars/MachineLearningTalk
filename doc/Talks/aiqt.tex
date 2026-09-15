@@ -1,4 +1,4 @@
-\documentclass{beamer}
+\documentclass{beamer}A
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath,amssymb,bm}
 \usepackage{physics}
@@ -16,7 +16,7 @@
 \subtitle{From general considerations to a reinforcement-learning designed quantum sensor}
 \author{Morten (\textbf{望天（モーテン）}) Hjorth-Jensen}
 \institute[University of Oslo]{Department of Physics and Center for Computing in Science Education, University of Oslo, Norway}
-\date{Time and place to be changed}
+\date{Japan-Norway Research Alliance – Next Generation Research with AI, September 18, 2026}
 
 \begin{document}
 
@@ -39,13 +39,12 @@ Machine learning is becoming the design and control layer of quantum devices, an
 \begin{frame}[plain,fragile]
 \frametitle{Thanks to many, and to our sponsors}
 {\small
-Maria Elena Perruzza (UiA/USN), Niyaz Beysengulov (EeroQ), Stian Bilek, Antoine Camper, Jonas Flaten, Gunnar Lange, Oskar Leinonen, Jan Malamant, Francesco Massel, Heidi Sandaker, Viktor Svensson (UiO), Johannes Pollanen (MSU/EeroQ), Zachary Stewart and Jared Weidman (MSU), and the CERN DRD5 collaboration on quantum sensors.
-
-Jane Kim, Julie Butler, Patrick Cook, Danny Jammooa, Dean Lee, Witek Nazarewicz (MSU), Bryce Fore and Alessandro Lovato (ANL), Giuseppe Carleo (EPFL), Even Nordhagen and Robert Solli (UiO). Excuses to those I have omitted.
+Niyaz Beysengulov (EeroQ), Stian Bilek, Antoine Camper, Jonas Flaten, Gunnar Lange, Oskar Leinonen, Jan Malamant, Francesco Massel, Heidi Sandaker, Viktor Svensson (UiO), Johannes Pollanen (MSU/EeroQ), Zachary Stewart and Jared Weidman (MSU), Angela Wilson (MSU/Texas AM), Maria Elena Perruzza (UiA/USN),  and the CERN DRD5 collaboration on quantum sensors.
+Jane Kim (ANL), Patrick Cook, Danny Jammooa, Dean Lee, Bryce Fore (ANL), Alessandro Lovato (ANL), and Giuseppe Carleo (EPFL). Excuses to those I have omitted.
 }
 \vspace{2mm}
 \begin{block}{Sponsors}
-Research Council of Norway (QONTROL Centre for Quantum Control and other grants), University of Oslo, and earlier support from NSF and DOE (US) and Michigan State University.
+University of Oslo, NSF (US) and DOE (US) and Michigan State University.
 \end{block}
 \end{frame}
 
@@ -138,7 +137,7 @@ Entanglement is a \emph{resource}: it increases the variance of the generator th
 \end{columns}
 \vspace{3mm}
 \begin{block}{Common ground}
-Both are optimisation problems in exponentially large spaces; both need physicists who speak both languages.
+Both are optimisation problems in exponentially large spaces; both need scientists who speak both languages.
 \end{block}
 \end{frame}
 
@@ -272,11 +271,6 @@ R(\bm{a}) = r_{\rm f}\, r_{\rm cfi} - \left(\omega_\mu p_\mu + \omega_{\rm b} p_
 {\footnotesize One-body probabilities of the three lowest left-localised (L0, L1, L2, top) and right-localised (R0, R1, R2, bottom) orbitals. Localisation is what makes $\ket{00}=\ket{0}_L\otimes\ket{0}_R$ a good qubit pair.}
 \end{frame}
 
-\begin{frame}[plain,fragile]
-\frametitle{Sensing dynamics: the two-level picture holds}
-\centerline{\includegraphics[width=0.9\linewidth]{fig4.pdf}}
-{\footnotesize Populations of $\ket{S^*}$, $\ket{T_0^*}$ and $\ket{T_\pm^*}$ under a field gradient for the RL-optimised trap. The full CI dynamics is well described by the effective singlet--triplet Hamiltonian. Time in units of $\mu$m$^2$ ($\hbar=1$).}
-\end{frame}
 
 \begin{frame}[plain,fragile]
 \frametitle{Fisher information: entangled probe versus independent spins}
@@ -338,7 +332,6 @@ This is a theoretical proposal: the physics is solved exactly for two electrons,
 \item Machine learning is the natural \textbf{design and control layer}: a reinforcement-learning agent, rewarded with a metrological figure of merit, found a trap geometry with clean, localised qubits.
 \item The recipe is general: physics simulator as environment, hardware knobs as actions, Fisher information as reward.
 \item Next: time-dependent signals, realistic noise, larger arrays, and closing the loop with experiments on electrons on helium.
-\item We need to train people who are fluent in both AI and quantum physics.
 \end{itemize}
 \end{block}
 \end{frame}
@@ -362,6 +355,14 @@ This is a theoretical proposal: the physics is solved exactly for two electrons,
 %-----------------------------------------------------------
 \appendix
 \section*{Backup}
+
+\begin{frame}[plain,fragile]
+\frametitle{Sensing dynamics: the two-level picture holds}
+\centerline{\includegraphics[width=0.9\linewidth]{fig4.pdf}}
+{\footnotesize Populations of $\ket{S^*}$, $\ket{T_0^*}$ and $\ket{T_\pm^*}$ under a field gradient for the RL-optimised trap. The full CI dynamics is well described by the effective singlet--triplet Hamiltonian. Time in units of $\mu$m$^2$ ($\hbar=1$).}
+\end{frame}
+
+
 
 \begin{frame}[plain,fragile]
 \frametitle{Backup: PPO hyperparameters}
