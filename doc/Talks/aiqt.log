@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.14.0 (TeX Live 2022/dev/Debian)  (format=lualatex 2026.8.13)  15 SEP 2026 09:07
+This is LuaHBTeX, Version 1.14.0 (TeX Live 2022/dev/Debian)  (format=lualatex 2026.9.11)  16 SEP 2026 04:49
  restricted system commands enabled.
 **aiqt.tex
 (./aiqt.tex
@@ -670,6 +670,18 @@ File: ot1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 \beamer@dimb=\dimen282
 )
 (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerouterthemedefault.sty)))
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1 \documentclass{beamer}A
+                         
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
 (/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2021/02/14 v1.3d Input encoding file
 \inpenc@prehook=\toks46
@@ -793,10 +805,11 @@ l.11 \setmainjfont
 
 Here is how much of LuaTeX's memory you used:
  24088 strings out of 477805
- 100000,953878 words of node,token memory allocated 408 words of node memory still in use:
-   4 hlist, 1 rule, 1 dir, 57 glue_spec, 1 write, 1 pdf_colorstack nodes
-   avail lists: 2:17,3:2,5:2,7:2,9:2
+ 100000,953878 words of node,token memory allocated 463 words of node memory still in use:
+   6 hlist, 1 rule, 1 local_par, 1 dir, 3 glue, 1 penalty, 1 glyph, 57 glue_spec
+, 1 write, 1 pdf_colorstack nodes
+   avail lists: 1:1,2:17,3:1,4:1,5:2,7:2,9:2
  43728 multiletter control sequences out of 65536+600000
  17 fonts using 716403 bytes
- 99i,0n,98p,410b,282s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 99i,0n,98p,406b,282s stack positions out of 5000i,500n,10000p,200000b,80000s
 !  ==> Fatal error occurred, no output PDF file produced!

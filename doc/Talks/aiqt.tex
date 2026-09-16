@@ -1,4 +1,4 @@
-\documentclass{beamer}A
+\documentclass{beamer}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath,amssymb,bm}
 \usepackage{physics}
@@ -75,6 +75,35 @@ Here: a collection of methods that \textbf{learn a model from data by minimising
 \text{data } \bm{x} \;\rightarrow\; \text{model } f_{\bm{\theta}} \;\rightarrow\; \text{cost } \mathcal{C}(\bm{x},f_{\bm{\theta}}) \;\rightarrow\; \min_{\bm{\theta}} \mathcal{C}
 \]
 The third family is the one we will use later: a physics simulator is the environment, electrode voltages are the actions, and the reward is a measure of sensor quality.
+\end{frame}
+
+\begin{frame}[plain,fragile]
+\frametitle{Agents for AI: from predicting to acting}
+\small
+\begin{block}{}
+An \textbf{AI agent} does not just make a prediction: it \emph{observes} its environment, \emph{acts}, receives \emph{feedback}, and repeats,
+$s_t \rightarrow a_t\sim\pi_{\bm{\theta}}(\cdot\,|\,s_t) \rightarrow r_t \rightarrow \text{update } \bm{\theta}$.
+\end{block}
+\begin{columns}[t]
+\column{0.5\linewidth}
+\begin{block}{Two flavours}
+\begin{itemize}
+\item \textbf{RL agents:} a neural-network policy $\pi_{\bm{\theta}}$ trained to maximise a reward; actions are numbers (voltages, pulse amplitudes)
+\item \textbf{Language-model agents:} an LLM that plans, writes and runs code, and uses simulators and instruments as \emph{tools}
+\end{itemize}
+\end{block}
+\column{0.5\linewidth}
+\begin{block}{In quantum control today}
+\begin{itemize}
+\item Control pulses and gates beyond human-crafted protocols
+\item Autonomous qubit tune-up and calibration (quantum dots, superconducting circuits)
+\item Real-time quantum error correction run by an RL agent
+\item Closed-loop experiments: agent proposes, hardware answers
+\end{itemize}
+\end{block}
+\end{columns}
+\vspace{1mm}
+{\scriptsize Our example later: the environment is a physics simulator, the actions are electrode voltages, and the agent designs a quantum sensor.\\ Bukov et al., PRX \textbf{8}, 031086 (2018); Niu et al., npj Quantum Inf.\ \textbf{5}, 33 (2019); Sivak et al., Nature \textbf{616}, 50 (2023); Zwolak and Taylor, Rev.\ Mod.\ Phys.\ \textbf{95}, 011006 (2023).}
 \end{frame}
 
 \begin{frame}[plain,fragile]
